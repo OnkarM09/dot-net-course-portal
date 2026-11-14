@@ -1,0 +1,1299 @@
+{
+  "source_file": "Notes - Section 23 - SOLID Principles.pdf",
+  "absolute_path": "D:/Dot net core/Asp.Net_Core_-Udemy-/Notes-20250125T050818Z-001/Notes/Notes - Section 23 - SOLID Principles.pdf",
+  "section_number": 23,
+  "normalized_section": "23",
+  "is_cheatsheet": false,
+  "total_pages": 4,
+  "total_raw_chars": 3380,
+  "total_repaired_chars": 3637,
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "ASP.NET Core - True Ultimate Guide\nSection 23: SOLID Principles - Notes\nSOLID Principles\nSOLID is an acronym representing five key principles of object-oriented design:\n1. Single Responsibility Principle (SRP)\no A class should have only one reason to change.\no Promotes focused and maintainable classes.\n2. Open/Closed Principle (OCP)\no Software entities should be open for extension but closed for modification.\no Encourage adding new features without changing existing code.\n3. Liskov Substitution Principle (LSP)\no Objects of a derived class should be substitutable for objects of the base class\nwithout affecting the correctness of the program.\no Ensures that inheritance relationships are used appropriately.\n4. Interface Segregation Principle (ISP)\no Clients should not be forced to depend on interfaces they do not use.\no Promotes smaller, more focused interfaces.\n5. Dependency Inversion Principle (DIP)\no High-level modules should not depend on low-level modules. Both should depend\non abstractions.\no Abstractions should not depend on details. Details should depend on abstractions.\no Encourages loose coupling and flexibility.\nBenefits of SOLID Principles\n• Maintainability: Makes your code easier to understand, modify, and extend.\n• Testability: Promotes writing unit tests by encouraging loose coupling and dependency\ninjection.\n• Flexibility: Makes your code adaptable to changes in requirements.\n• Reusability: Encourages the creation of reusable components.\n",
+      "repaired_text": "ASP.NET Core - True Ultimate Guide\nSection 23: SOLID Principles - Notes\nSOLID Principles\nSOLID is an acronym representing five key principles of object-oriented design:\n   1. Single Responsibility Principle (SRP)\n        o A class should have only one reason to change.\n        o Promotes focused and maintainable classes.\n   2. Open/Closed Principle (OCP)\n        o Software entities should be open for extension but closed for modification.\n        o Encourage adding new features without changing existing code.\n   3. Liskov Substitution Principle (LSP)\n        o Objects of a derived class should be substitutable for objects of the base class\n           without affecting the correctness of the program.\n        o Ensures that inheritance relationships are used appropriately.\n   4. Interface Segregation Principle (ISP)\n        o Clients should not be forced to depend on interfaces they do not use.\n        o Promotes smaller, more focused interfaces.\n   5. Dependency Inversion Principle (DIP)\n        o High-level modules should not depend on low-level modules. Both should depend\n           on abstractions.\n        o Abstractions should not depend on details. Details should depend on abstractions.\n        o Encourages loose coupling and flexibility.\nBenefits of SOLID Principles\n   • Maintainability: Makes your code easier to understand, modify, and extend.\n   • Testability: Promotes writing unit tests by encouraging loose coupling and dependency\n      injection.\n   • Flexibility: Makes your code adaptable to changes in requirements.\n   • Reusability: Encourages the creation of reusable components.",
+      "lines": [
+        {
+          "text": "ASP.NET Core - True Ultimate Guide",
+          "rawText": "ASP.NET Core - True Ultimate Guide",
+          "x": 72.024,
+          "y": 742.66,
+          "fontSize": 15.96,
+          "fontName": "g_d44_f1"
+        },
+        {
+          "text": "Section 23: SOLID Principles - Notes",
+          "rawText": "Section 23: SOLID Principles - Notes",
+          "x": 72.024,
+          "y": 722.38,
+          "fontSize": 12.96,
+          "fontName": "g_d44_f1"
+        },
+        {
+          "text": "SOLID Principles",
+          "rawText": "SOLID Principles",
+          "x": 72.024,
+          "y": 662.26,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f3"
+        },
+        {
+          "text": "SOLID is an acronym representing five key principles of object-oriented design:",
+          "rawText": "SOLID is an acronym representing five key principles of object-oriented design:",
+          "x": 72.024,
+          "y": 639.82,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "   1. Single Responsibility Principle (SRP)",
+          "rawText": "1. Single Responsibility Principle (SRP)",
+          "x": 90.024,
+          "y": 617.26,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "        o A class should have only one reason to change.",
+          "rawText": "o A class should have only one reason to change.",
+          "x": 126.02,
+          "y": 594.82,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f5"
+        },
+        {
+          "text": "        o Promotes focused and maintainable classes.",
+          "rawText": "o Promotes focused and maintainable classes.",
+          "x": 126.02,
+          "y": 572.23,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f5"
+        },
+        {
+          "text": "   2. Open/Closed Principle (OCP)",
+          "rawText": "2. Open/Closed Principle (OCP)",
+          "x": 90.024,
+          "y": 549.79,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "        o Software entities should be open for extension but closed for modification.",
+          "rawText": "o Software entities should be open for extension but closed for modification.",
+          "x": 126.02,
+          "y": 527.35,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f5"
+        },
+        {
+          "text": "        o Encourage adding new features without changing existing code.",
+          "rawText": "o Encourage adding new features without changing existing code.",
+          "x": 126.02,
+          "y": 504.79,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f5"
+        },
+        {
+          "text": "   3. Liskov Substitution Principle (LSP)",
+          "rawText": "3. Liskov Substitution Principle (LSP)",
+          "x": 90.024,
+          "y": 482.35,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "        o Objects of a derived class should be substitutable for objects of the base class",
+          "rawText": "o Objects of a derived class should be substitutable for objects of the base class",
+          "x": 126.02,
+          "y": 459.79,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f5"
+        },
+        {
+          "text": "           without affecting the correctness of the program.",
+          "rawText": "without affecting the correctness of the program.",
+          "x": 144.02,
+          "y": 445.39,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "        o Ensures that inheritance relationships are used appropriately.",
+          "rawText": "o Ensures that inheritance relationships are used appropriately.",
+          "x": 126.02,
+          "y": 422.83,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f5"
+        },
+        {
+          "text": "   4. Interface Segregation Principle (ISP)",
+          "rawText": "4. Interface Segregation Principle (ISP)",
+          "x": 90.024,
+          "y": 400.39,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "        o Clients should not be forced to depend on interfaces they do not use.",
+          "rawText": "o Clients should not be forced to depend on interfaces they do not use.",
+          "x": 126.02,
+          "y": 377.81,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f5"
+        },
+        {
+          "text": "        o Promotes smaller, more focused interfaces.",
+          "rawText": "o Promotes smaller, more focused interfaces.",
+          "x": 126.02,
+          "y": 355.37,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f5"
+        },
+        {
+          "text": "   5. Dependency Inversion Principle (DIP)",
+          "rawText": "5. Dependency Inversion Principle (DIP)",
+          "x": 90.024,
+          "y": 332.81,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "        o High-level modules should not depend on low-level modules. Both should depend",
+          "rawText": "o High-level modules should not depend on low-level modules. Both should depend",
+          "x": 126.02,
+          "y": 310.37,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f5"
+        },
+        {
+          "text": "           on abstractions.",
+          "rawText": "on abstractions.",
+          "x": 144.02,
+          "y": 295.85,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "        o Abstractions should not depend on details. Details should depend on abstractions.",
+          "rawText": "o Abstractions should not depend on details. Details should depend on abstractions.",
+          "x": 126.02,
+          "y": 273.41,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f5"
+        },
+        {
+          "text": "        o Encourages loose coupling and flexibility.",
+          "rawText": "o Encourages loose coupling and flexibility.",
+          "x": 126.02,
+          "y": 250.85,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f5"
+        },
+        {
+          "text": "Benefits of SOLID Principles",
+          "rawText": "Benefits of SOLID Principles",
+          "x": 72.024,
+          "y": 183.38,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f3"
+        },
+        {
+          "text": "   • Maintainability: Makes your code easier to understand, modify, and extend.",
+          "rawText": "• Maintainability: Makes your code easier to understand, modify, and extend.",
+          "x": 90.024,
+          "y": 160.94,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f6"
+        },
+        {
+          "text": "   • Testability: Promotes writing unit tests by encouraging loose coupling and dependency",
+          "rawText": "• Testability: Promotes writing unit tests by encouraging loose coupling and dependency",
+          "x": 90.024,
+          "y": 138.38,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f6"
+        },
+        {
+          "text": "      injection.",
+          "rawText": "injection.",
+          "x": 108.02,
+          "y": 123.98,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "   • Flexibility: Makes your code adaptable to changes in requirements.",
+          "rawText": "• Flexibility: Makes your code adaptable to changes in requirements.",
+          "x": 90.024,
+          "y": 101.42,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f6"
+        },
+        {
+          "text": "   • Reusability: Encourages the creation of reusable components.",
+          "rawText": "• Reusability: Encourages the creation of reusable components.",
+          "x": 90.024,
+          "y": 78.984,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f6"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "banner_header",
+          "page": 1,
+          "lines": [
+            "ASP.NET Core - True Ultimate Guide"
+          ],
+          "text": "ASP.NET Core - True Ultimate Guide"
+        },
+        {
+          "type": "banner_header",
+          "page": 1,
+          "lines": [
+            "Section 23: SOLID Principles - Notes"
+          ],
+          "text": "Section 23: SOLID Principles - Notes"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "SOLID Principles"
+          ],
+          "text": "SOLID Principles"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "SOLID is an acronym representing five key principles of object-oriented design:"
+          ],
+          "text": "SOLID is an acronym representing five key principles of object-oriented design:"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "1. Single Responsibility Principle (SRP)"
+          ],
+          "text": "1. Single Responsibility Principle (SRP)"
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "        o A class should have only one reason to change."
+          ],
+          "text": "        o A class should have only one reason to change."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "        o Promotes focused and maintainable classes."
+          ],
+          "text": "        o Promotes focused and maintainable classes."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "2. Open/Closed Principle (OCP)"
+          ],
+          "text": "2. Open/Closed Principle (OCP)"
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "        o Software entities should be open for extension but closed for modification."
+          ],
+          "text": "        o Software entities should be open for extension but closed for modification."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "        o Encourage adding new features without changing existing code."
+          ],
+          "text": "        o Encourage adding new features without changing existing code."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "3. Liskov Substitution Principle (LSP)"
+          ],
+          "text": "3. Liskov Substitution Principle (LSP)"
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "        o Objects of a derived class should be substitutable for objects of the base class"
+          ],
+          "text": "        o Objects of a derived class should be substitutable for objects of the base class"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "           without affecting the correctness of the program."
+          ],
+          "text": "           without affecting the correctness of the program."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "        o Ensures that inheritance relationships are used appropriately."
+          ],
+          "text": "        o Ensures that inheritance relationships are used appropriately."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "4. Interface Segregation Principle (ISP)"
+          ],
+          "text": "4. Interface Segregation Principle (ISP)"
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "        o Clients should not be forced to depend on interfaces they do not use."
+          ],
+          "text": "        o Clients should not be forced to depend on interfaces they do not use."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "        o Promotes smaller, more focused interfaces."
+          ],
+          "text": "        o Promotes smaller, more focused interfaces."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "5. Dependency Inversion Principle (DIP)"
+          ],
+          "text": "5. Dependency Inversion Principle (DIP)"
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "        o High-level modules should not depend on low-level modules. Both should depend"
+          ],
+          "text": "        o High-level modules should not depend on low-level modules. Both should depend"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "           on abstractions."
+          ],
+          "text": "           on abstractions."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "        o Abstractions should not depend on details. Details should depend on abstractions."
+          ],
+          "text": "        o Abstractions should not depend on details. Details should depend on abstractions."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "        o Encourages loose coupling and flexibility."
+          ],
+          "text": "        o Encourages loose coupling and flexibility."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Benefits of SOLID Principles"
+          ],
+          "text": "Benefits of SOLID Principles"
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Maintainability: Makes your code easier to understand, modify, and extend."
+          ],
+          "text": "   • Maintainability: Makes your code easier to understand, modify, and extend."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Testability: Promotes writing unit tests by encouraging loose coupling and dependency"
+          ],
+          "text": "   • Testability: Promotes writing unit tests by encouraging loose coupling and dependency"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "      injection."
+          ],
+          "text": "      injection."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Flexibility: Makes your code adaptable to changes in requirements."
+          ],
+          "text": "   • Flexibility: Makes your code adaptable to changes in requirements."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Reusability: Encourages the creation of reusable components."
+          ],
+          "text": "   • Reusability: Encourages the creation of reusable components."
+        }
+      ],
+      "char_count_raw": 1475,
+      "char_count_repaired": 1617
+    },
+    {
+      "page_number": 2,
+      "raw_text": "Interview Tips\n• Understanding: Be able to explain each principle clearly and concisely.\n• Examples: Provide real-world or code examples that demonstrate how to apply each\nprinciple.\n• Benefits: Articulate the advantages of adhering to SOLID principles.\n• Trade-offs: Acknowledge that there might be trade-offs and complexities in applying these\nprinciples in certain situations.\n• Practical Application: Discuss how you have used or would use SOLID principles in your own\nprojects.\nExample Code (Conceptual)\n// SRP (Single Responsibility Principle)\npublic class ProductService\n{\n// Handles product-related logic, like adding or retrieving products.\n}\npublic class OrderService\n{\n// Handles order-related logic, like creating or processing orders.\n}\n// OCP (Open/Closed Principle)\npublic interface IPaymentProcessor\n{\nvoid ProcessPayment(PaymentDetails details);\n}\npublic class CreditCardPaymentProcessor : IPaymentProcessor { /* ... */ }\npublic class PayPalPaymentProcessor : IPaymentProcessor { /* ... */ }\n",
+      "repaired_text": "Interview Tips\n   • Understanding: Be able to explain each principle clearly and concisely.\n   • Examples: Provide real-world or code examples that demonstrate how to apply each\n      principle.\n   • Benefits: Articulate the advantages of adhering to SOLID principles.\n   • Trade-offs: Acknowledge that there might be trade-offs and complexities in applying these\n      principles in certain situations.\n   • Practical Application: Discuss how you have used or would use SOLID principles in your own\n      projects.\nExample Code (Conceptual)\n// SRP (Single Responsibility Principle)\npublic class ProductService\n{\n  // Handles product-related logic, like adding or retrieving products.\n}\npublic class OrderService\n{\n  // Handles order-related logic, like creating or processing orders.\n}\n// OCP (Open/Closed Principle)\npublic interface IPaymentProcessor\n{\n  void ProcessPayment(PaymentDetails details);\n}\npublic class CreditCardPaymentProcessor : IPaymentProcessor { /* ... */ }\npublic class PayPalPaymentProcessor : IPaymentProcessor { /* ... */ }",
+      "lines": [
+        {
+          "text": "Interview Tips",
+          "rawText": "Interview Tips",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f3"
+        },
+        {
+          "text": "   • Understanding: Be able to explain each principle clearly and concisely.",
+          "rawText": "• Understanding: Be able to explain each principle clearly and concisely.",
+          "x": 90.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f6"
+        },
+        {
+          "text": "   • Examples: Provide real-world or code examples that demonstrate how to apply each",
+          "rawText": "• Examples: Provide real-world or code examples that demonstrate how to apply each",
+          "x": 90.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f6"
+        },
+        {
+          "text": "      principle.",
+          "rawText": "principle.",
+          "x": 108.02,
+          "y": 699.94,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "   • Benefits: Articulate the advantages of adhering to SOLID principles.",
+          "rawText": "• Benefits: Articulate the advantages of adhering to SOLID principles.",
+          "x": 90.024,
+          "y": 677.5,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f6"
+        },
+        {
+          "text": "   • Trade-offs: Acknowledge that there might be trade-offs and complexities in applying these",
+          "rawText": "• Trade-offs: Acknowledge that there might be trade-offs and complexities in applying these",
+          "x": 90.024,
+          "y": 655.06,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f6"
+        },
+        {
+          "text": "      principles in certain situations.",
+          "rawText": "principles in certain situations.",
+          "x": 108.02,
+          "y": 640.54,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "   • Practical Application: Discuss how you have used or would use SOLID principles in your own",
+          "rawText": "• Practical Application: Discuss how you have used or would use SOLID principles in your own",
+          "x": 90.024,
+          "y": 617.98,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f6"
+        },
+        {
+          "text": "      projects.",
+          "rawText": "projects.",
+          "x": 108.02,
+          "y": 603.58,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "Example Code (Conceptual)",
+          "rawText": "Example Code (Conceptual)",
+          "x": 72.024,
+          "y": 558.55,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f3"
+        },
+        {
+          "text": "// SRP (Single Responsibility Principle)",
+          "rawText": "// SRP (Single Responsibility Principle)",
+          "x": 72.024,
+          "y": 535.99,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "public class ProductService",
+          "rawText": "public class ProductService",
+          "x": 72.024,
+          "y": 513.55,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 491.11,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "  // Handles product-related logic, like adding or retrieving products.",
+          "rawText": "// Handles product-related logic, like adding or retrieving products.",
+          "x": 81.984,
+          "y": 468.55,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 446.11,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "public class OrderService",
+          "rawText": "public class OrderService",
+          "x": 72.024,
+          "y": 401.11,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 378.53,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "  // Handles order-related logic, like creating or processing orders.",
+          "rawText": "// Handles order-related logic, like creating or processing orders.",
+          "x": 81.984,
+          "y": 356.09,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 333.65,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "// OCP (Open/Closed Principle)",
+          "rawText": "// OCP (Open/Closed Principle)",
+          "x": 72.024,
+          "y": 266.09,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "public interface IPaymentProcessor",
+          "rawText": "public interface IPaymentProcessor",
+          "x": 72.024,
+          "y": 243.65,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 221.09,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "  void ProcessPayment(PaymentDetails details);",
+          "rawText": "void ProcessPayment(PaymentDetails details);",
+          "x": 81.984,
+          "y": 198.62,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 176.18,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "public class CreditCardPaymentProcessor : IPaymentProcessor { /* ... */ }",
+          "rawText": "public class CreditCardPaymentProcessor : IPaymentProcessor { /* ... */ }",
+          "x": 72.024,
+          "y": 108.62,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "public class PayPalPaymentProcessor : IPaymentProcessor { /* ... */ }",
+          "rawText": "public class PayPalPaymentProcessor : IPaymentProcessor { /* ... */ }",
+          "x": 72.024,
+          "y": 86.184,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Interview Tips"
+          ],
+          "text": "Interview Tips"
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
+            "   • Understanding: Be able to explain each principle clearly and concisely."
+          ],
+          "text": "   • Understanding: Be able to explain each principle clearly and concisely."
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
+            "   • Examples: Provide real-world or code examples that demonstrate how to apply each"
+          ],
+          "text": "   • Examples: Provide real-world or code examples that demonstrate how to apply each"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "      principle."
+          ],
+          "text": "      principle."
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
+            "   • Benefits: Articulate the advantages of adhering to SOLID principles."
+          ],
+          "text": "   • Benefits: Articulate the advantages of adhering to SOLID principles."
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
+            "   • Trade-offs: Acknowledge that there might be trade-offs and complexities in applying these"
+          ],
+          "text": "   • Trade-offs: Acknowledge that there might be trade-offs and complexities in applying these"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "      principles in certain situations."
+          ],
+          "text": "      principles in certain situations."
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
+            "   • Practical Application: Discuss how you have used or would use SOLID principles in your own"
+          ],
+          "text": "   • Practical Application: Discuss how you have used or would use SOLID principles in your own"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "      projects."
+          ],
+          "text": "      projects."
+        },
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Example Code (Conceptual)"
+          ],
+          "text": "Example Code (Conceptual)"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "// SRP (Single Responsibility Principle)",
+            "public class ProductService",
+            "{",
+            "  // Handles product-related logic, like adding or retrieving products.",
+            "}",
+            "public class OrderService",
+            "{",
+            "  // Handles order-related logic, like creating or processing orders.",
+            "}",
+            "// OCP (Open/Closed Principle)",
+            "public interface IPaymentProcessor",
+            "{",
+            "  void ProcessPayment(PaymentDetails details);",
+            "}",
+            "public class CreditCardPaymentProcessor : IPaymentProcessor { /* ... */ }",
+            "public class PayPalPaymentProcessor : IPaymentProcessor { /* ... */ }"
+          ],
+          "text": "// SRP (Single Responsibility Principle)\npublic class ProductService\n{\n  // Handles product-related logic, like adding or retrieving products.\n}\npublic class OrderService\n{\n  // Handles order-related logic, like creating or processing orders.\n}\n// OCP (Open/Closed Principle)\npublic interface IPaymentProcessor\n{\n  void ProcessPayment(PaymentDetails details);\n}\npublic class CreditCardPaymentProcessor : IPaymentProcessor { /* ... */ }\npublic class PayPalPaymentProcessor : IPaymentProcessor { /* ... */ }"
+        }
+      ],
+      "char_count_raw": 1009,
+      "char_count_repaired": 1047
+    },
+    {
+      "page_number": 3,
+      "raw_text": "// LSP (Liskov Substitution Principle)\npublic class Rectangle\n{\npublic virtual int Width { get; set; }\npublic virtual int Height { get; set; }\n// ...\n}\npublic class Square : Rectangle\n// Violates LSP\n{\npublic override int Width\n{\nget => base.Width;\nset\n{\nbase.Width = value;\nbase.Height = value; // Setting width also sets height\n}\n}\npublic override int Height\n{\nget => base.Height;\nset\n{\nbase.Height = value;\nbase.Width = value; // Setting height also sets width\n}\n",
+      "repaired_text": "// LSP (Liskov Substitution Principle)\npublic class Rectangle\n{\n  public virtual int Width { get; set; }\n  public virtual int Height { get; set; }\n  // ...\n}\npublic class Square : Rectangle\n// Violates LSP\n{\n  public override int Width\n  {\n   get => base.Width;\n   set\n   {\n     base.Width = value;\n     base.Height = value; // Setting width also sets height\n   }\n  }\n  public override int Height\n  {\n   get => base.Height;\n   set\n   {\n     base.Height = value;\n     base.Width = value; // Setting height also sets width\n   }",
+      "lines": [
+        {
+          "text": "// LSP (Liskov Substitution Principle)",
+          "rawText": "// LSP (Liskov Substitution Principle)",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "public class Rectangle",
+          "rawText": "public class Rectangle",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "  public virtual int Width { get; set; }",
+          "rawText": "public virtual int Width { get; set; }",
+          "x": 82.104,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "  public virtual int Height { get; set; }",
+          "rawText": "public virtual int Height { get; set; }",
+          "x": 82.104,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "  // ...",
+          "rawText": "// ...",
+          "x": 81.984,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "public class Square : Rectangle",
+          "rawText": "public class Square : Rectangle",
+          "x": 72.024,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "// Violates LSP",
+          "rawText": "// Violates LSP",
+          "x": 72.024,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "  public override int Width",
+          "rawText": "public override int Width",
+          "x": 82.104,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 444.55,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "   get => base.Width;",
+          "rawText": "get => base.Width;",
+          "x": 92.064,
+          "y": 422.11,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "   set",
+          "rawText": "set",
+          "x": 92.064,
+          "y": 399.55,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "   {",
+          "rawText": "{",
+          "x": 92.064,
+          "y": 377.09,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "     base.Width = value;",
+          "rawText": "base.Width = value;",
+          "x": 102.02,
+          "y": 354.53,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "     base.Height = value; // Setting width also sets height",
+          "rawText": "base.Height = value; // Setting width also sets height",
+          "x": 102.02,
+          "y": 332.09,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "   }",
+          "rawText": "}",
+          "x": 92.064,
+          "y": 309.65,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 82.104,
+          "y": 287.09,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "  public override int Height",
+          "rawText": "public override int Height",
+          "x": 82.104,
+          "y": 242.09,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 219.65,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "   get => base.Height;",
+          "rawText": "get => base.Height;",
+          "x": 92.064,
+          "y": 197.06,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "   set",
+          "rawText": "set",
+          "x": 92.064,
+          "y": 174.62,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "   {",
+          "rawText": "{",
+          "x": 92.064,
+          "y": 152.18,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "     base.Height = value;",
+          "rawText": "base.Height = value;",
+          "x": 102.02,
+          "y": 129.62,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "     base.Width = value; // Setting height also sets width",
+          "rawText": "base.Width = value; // Setting height also sets width",
+          "x": 102.02,
+          "y": 107.18,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "   }",
+          "rawText": "}",
+          "x": 92.064,
+          "y": 84.624,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            "// LSP (Liskov Substitution Principle)",
+            "public class Rectangle",
+            "{",
+            "  public virtual int Width { get; set; }",
+            "  public virtual int Height { get; set; }",
+            "  // ...",
+            "}",
+            "public class Square : Rectangle",
+            "// Violates LSP",
+            "{",
+            "  public override int Width",
+            "  {",
+            "   get => base.Width;"
+          ],
+          "text": "// LSP (Liskov Substitution Principle)\npublic class Rectangle\n{\n  public virtual int Width { get; set; }\n  public virtual int Height { get; set; }\n  // ...\n}\npublic class Square : Rectangle\n// Violates LSP\n{\n  public override int Width\n  {\n   get => base.Width;"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "   set"
+          ],
+          "text": "   set"
+        },
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            "   {",
+            "     base.Width = value;",
+            "     base.Height = value; // Setting width also sets height",
+            "   }",
+            "  }",
+            "  public override int Height",
+            "  {",
+            "   get => base.Height;"
+          ],
+          "text": "   {\n     base.Width = value;\n     base.Height = value; // Setting width also sets height\n   }\n  }\n  public override int Height\n  {\n   get => base.Height;"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "   set"
+          ],
+          "text": "   set"
+        },
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            "   {",
+            "     base.Height = value;",
+            "     base.Width = value; // Setting height also sets width",
+            "   }"
+          ],
+          "text": "   {\n     base.Height = value;\n     base.Width = value; // Setting height also sets width\n   }"
+        }
+      ],
+      "char_count_raw": 466,
+      "char_count_repaired": 525
+    },
+    {
+      "page_number": 4,
+      "raw_text": "}\n}\n// ISP (Interface Segregation Principle)\npublic interface IPrinter\n{\nvoid Print();\n}\npublic interface IScanner\n{\nvoid Scan();\n}\npublic class PrintScanMachine : IPrinter, IScanner { /* ... */ }\n// DIP (Dependency Inversion Principle)\npublic class OrderProcessor\n{\nprivate readonly IPaymentProcessor _paymentProcessor;\npublic OrderProcessor(IPaymentProcessor paymentProcessor)\n{\n_paymentProcessor = paymentProcessor;\n}\n// ...\n}\n",
+      "repaired_text": "  }\n}\n// ISP (Interface Segregation Principle)\npublic interface IPrinter\n{\n  void Print();\n}\npublic interface IScanner\n{\n  void Scan();\n}\npublic class PrintScanMachine : IPrinter, IScanner { /* ... */ }\n// DIP (Dependency Inversion Principle)\npublic class OrderProcessor\n{\n  private readonly IPaymentProcessor _paymentProcessor;\n  public OrderProcessor(IPaymentProcessor paymentProcessor)\n  {\n   _paymentProcessor = paymentProcessor;\n  }\n  // ...\n}",
+      "lines": [
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 82.104,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "// ISP (Interface Segregation Principle)",
+          "rawText": "// ISP (Interface Segregation Principle)",
+          "x": 72.024,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "public interface IPrinter",
+          "rawText": "public interface IPrinter",
+          "x": 72.024,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "  void Print();",
+          "rawText": "void Print();",
+          "x": 81.984,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "public interface IScanner",
+          "rawText": "public interface IScanner",
+          "x": 72.024,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "  void Scan();",
+          "rawText": "void Scan();",
+          "x": 81.984,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "public class PrintScanMachine : IPrinter, IScanner { /* ... */ }",
+          "rawText": "public class PrintScanMachine : IPrinter, IScanner { /* ... */ }",
+          "x": 72.024,
+          "y": 422.11,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "// DIP (Dependency Inversion Principle)",
+          "rawText": "// DIP (Dependency Inversion Principle)",
+          "x": 72.024,
+          "y": 377.09,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "public class OrderProcessor",
+          "rawText": "public class OrderProcessor",
+          "x": 72.024,
+          "y": 354.53,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 332.09,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "  private readonly IPaymentProcessor _paymentProcessor;",
+          "rawText": "private readonly IPaymentProcessor _paymentProcessor;",
+          "x": 82.104,
+          "y": 309.65,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "  public OrderProcessor(IPaymentProcessor paymentProcessor)",
+          "rawText": "public OrderProcessor(IPaymentProcessor paymentProcessor)",
+          "x": 82.104,
+          "y": 264.65,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 242.09,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "   _paymentProcessor = paymentProcessor;",
+          "rawText": "_paymentProcessor = paymentProcessor;",
+          "x": 91.944,
+          "y": 219.65,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 82.104,
+          "y": 174.62,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "  // ...",
+          "rawText": "// ...",
+          "x": 81.984,
+          "y": 129.62,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 107.18,
+          "fontSize": 11.04,
+          "fontName": "g_d44_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "page": 4,
+          "lines": [
+            "  }",
+            "}",
+            "// ISP (Interface Segregation Principle)",
+            "public interface IPrinter",
+            "{",
+            "  void Print();",
+            "}",
+            "public interface IScanner",
+            "{",
+            "  void Scan();",
+            "}",
+            "public class PrintScanMachine : IPrinter, IScanner { /* ... */ }",
+            "// DIP (Dependency Inversion Principle)",
+            "public class OrderProcessor",
+            "{",
+            "  private readonly IPaymentProcessor _paymentProcessor;",
+            "  public OrderProcessor(IPaymentProcessor paymentProcessor)",
+            "  {",
+            "   _paymentProcessor = paymentProcessor;",
+            "  }",
+            "  // ...",
+            "}"
+          ],
+          "text": "  }\n}\n// ISP (Interface Segregation Principle)\npublic interface IPrinter\n{\n  void Print();\n}\npublic interface IScanner\n{\n  void Scan();\n}\npublic class PrintScanMachine : IPrinter, IScanner { /* ... */ }\n// DIP (Dependency Inversion Principle)\npublic class OrderProcessor\n{\n  private readonly IPaymentProcessor _paymentProcessor;\n  public OrderProcessor(IPaymentProcessor paymentProcessor)\n  {\n   _paymentProcessor = paymentProcessor;\n  }\n  // ...\n}"
+        }
+      ],
+      "char_count_raw": 430,
+      "char_count_repaired": 448
+    }
+  ],
+  "title": "SOLID Principles"
+}

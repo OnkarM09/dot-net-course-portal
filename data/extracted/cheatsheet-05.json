@@ -1,0 +1,1665 @@
+{
+  "source_file": "Cheat Sheet - Section 5 - Asp.Net Core.pdf",
+  "absolute_path": "D:/Dot net core/Asp.Net_Core_-Udemy-/Notes-20250125T050818Z-001/Cheat Sheets/Cheat Sheet - Section 5 - Asp.Net Core.pdf",
+  "section_number": 5,
+  "normalized_section": "05",
+  "is_cheatsheet": true,
+  "total_pages": 8,
+  "total_raw_chars": 5273,
+  "total_repaired_chars": 5269,
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "Asp.Net Core – True Ultimate Guide\nSection 5 – Routing – Cheat Sheet\nIntroduction to Routing\nRouting is a process of matching incoming HTTP requests by checking the HTTP method and url; and\nthen invoking corresponding endpoints.\nRouting - UseRouting and UseEndPoints\nUseRouting( )\napp.UseRouting();\nEnables routing and selects an appropriate end point based on the url path and HTTP method.\nUseEndPoints( )\napp.UseEndPoints(endpoints =>\n{\nendpoints.Map(…);\nendpoints.MapGet(…);\nendpoints.MapPost(…);\n);\nExecutes the appropriate endpoint based on the endpoint selected by the above UseRouting()\nmethod.\n",
+      "repaired_text": "Asp.Net Core – True Ultimate Guide\nSection 5 – Routing – Cheat Sheet\nIntroduction to Routing\nRouting is a process of matching incoming HTTP requests by checking the HTTP method and url; and\nthen invoking corresponding endpoints.\nRouting - UseRouting and UseEndPoints\nUseRouting( )\napp.UseRouting();\nEnables routing and selects an appropriate end point based on the url path and HTTP method.\nUseEndPoints( )\napp.UseEndPoints(endpoints =>\n{\nendpoints.Map(…);\nendpoints.MapGet(…);\nendpoints.MapPost(…);\n);\nExecutes the appropriate endpoint based on the endpoint selected by the above UseRouting()\nmethod.",
+      "lines": [
+        {
+          "text": "Asp.Net Core – True Ultimate Guide",
+          "rawText": "Asp.Net Core – True Ultimate Guide",
+          "x": 72.024,
+          "y": 753.96,
+          "fontSize": 15.96,
+          "fontName": "g_d9_f2"
+        },
+        {
+          "text": "Section 5 – Routing – Cheat Sheet",
+          "rawText": "Section 5 – Routing – Cheat Sheet",
+          "x": 72.024,
+          "y": 725.98,
+          "fontSize": 15.96,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Introduction to Routing",
+          "rawText": "Introduction to Routing",
+          "x": 72.024,
+          "y": 677.38,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Routing is a process of matching incoming HTTP requests by checking the HTTP method and url; and",
+          "rawText": "Routing is a process of matching incoming HTTP requests by checking the HTTP method and url; and",
+          "x": 72.024,
+          "y": 654.94,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "then invoking corresponding endpoints.",
+          "rawText": "then invoking corresponding endpoints.",
+          "x": 72.024,
+          "y": 640.42,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Routing - UseRouting and UseEndPoints",
+          "rawText": "Routing - UseRouting and UseEndPoints",
+          "x": 72.024,
+          "y": 422.35,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "UseRouting( )",
+          "rawText": "UseRouting( )",
+          "x": 72.024,
+          "y": 399.79,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "app.UseRouting();",
+          "rawText": "app.UseRouting();",
+          "x": 72.024,
+          "y": 377.33,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Enables routing and selects an appropriate end point based on the url path and HTTP method.",
+          "rawText": "Enables routing and selects an appropriate end point based on the url path and HTTP method.",
+          "x": 72.024,
+          "y": 354.89,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "UseEndPoints( )",
+          "rawText": "UseEndPoints( )",
+          "x": 72.024,
+          "y": 309.89,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "app.UseEndPoints(endpoints =>",
+          "rawText": "app.UseEndPoints(endpoints =>",
+          "x": 72.024,
+          "y": 287.33,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 264.89,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "endpoints.Map(…);",
+          "rawText": "endpoints.Map(…);",
+          "x": 74.544,
+          "y": 242.33,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f6"
+        },
+        {
+          "text": "endpoints.MapGet(…);",
+          "rawText": "endpoints.MapGet(…);",
+          "x": 74.544,
+          "y": 219.89,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f6"
+        },
+        {
+          "text": "endpoints.MapPost(…);",
+          "rawText": "endpoints.MapPost(…);",
+          "x": 74.544,
+          "y": 197.42,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f6"
+        },
+        {
+          "text": ");",
+          "rawText": ");",
+          "x": 72.024,
+          "y": 174.86,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Executes the appropriate endpoint based on the endpoint selected by the above UseRouting()",
+          "rawText": "Executes the appropriate endpoint based on the endpoint selected by the above UseRouting()",
+          "x": 72.024,
+          "y": 152.42,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "method.",
+          "rawText": "method.",
+          "x": 72.024,
+          "y": 137.9,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "banner_header",
+          "page": 1,
+          "lines": [
+            "Asp.Net Core – True Ultimate Guide"
+          ],
+          "text": "Asp.Net Core – True Ultimate Guide"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Section 5 – Routing – Cheat Sheet"
+          ],
+          "text": "Section 5 – Routing – Cheat Sheet"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Introduction to Routing"
+          ],
+          "text": "Introduction to Routing"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Routing is a process of matching incoming HTTP requests by checking the HTTP method and url; and",
+            "then invoking corresponding endpoints."
+          ],
+          "text": "Routing is a process of matching incoming HTTP requests by checking the HTTP method and url; and\nthen invoking corresponding endpoints."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Routing - UseRouting and UseEndPoints"
+          ],
+          "text": "Routing - UseRouting and UseEndPoints"
+        },
+        {
+          "type": "code",
+          "page": 1,
+          "lines": [
+            "UseRouting( )",
+            "app.UseRouting();"
+          ],
+          "text": "UseRouting( )\napp.UseRouting();"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Enables routing and selects an appropriate end point based on the url path and HTTP method."
+          ],
+          "text": "Enables routing and selects an appropriate end point based on the url path and HTTP method."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "UseEndPoints( )"
+          ],
+          "text": "UseEndPoints( )"
+        },
+        {
+          "type": "code",
+          "page": 1,
+          "lines": [
+            "app.UseEndPoints(endpoints =>",
+            "{",
+            "endpoints.Map(…);",
+            "endpoints.MapGet(…);",
+            "endpoints.MapPost(…);",
+            ");",
+            "Executes the appropriate endpoint based on the endpoint selected by the above UseRouting()"
+          ],
+          "text": "app.UseEndPoints(endpoints =>\n{\nendpoints.Map(…);\nendpoints.MapGet(…);\nendpoints.MapPost(…);\n);\nExecutes the appropriate endpoint based on the endpoint selected by the above UseRouting()"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "method."
+          ],
+          "text": "method."
+        }
+      ],
+      "char_count_raw": 602,
+      "char_count_repaired": 601
+    },
+    {
+      "page_number": 2,
+      "raw_text": "Map, MapGet, MapPost\nendpoints.Map( )\nendpoints.Map(\"path\", async (HttpContext context) =>\n{\n//code\n});\nExecutes the endpoint when a HTTP request's url path begins with the specified path.\nendpoints.MapGet( )\nendpoints.MapGet(\"path\", async (HttpContext context) =>\n{\n//code\n});\nExecutes the endpoint when a HTTP GET request's url path begins with the specified path.\nendpoints.MapPost( )\nendpoints.MapPost(\"path\", async (HttpContext context) =>\n{\n//code\n});\nExecutes the endpoint when a HTTP POST request's url path begins with the specified path.\nGetEndpoint( )\ncontext.GetEndpoint();\nReturns an instance of Microsoft.AspNetCore.Http.Endpoint type, which represents an endpoint.\nThat instance contains two important properties: DisplayName, RequestDelegate.\n",
+      "repaired_text": "Map, MapGet, MapPost\nendpoints.Map( )\nendpoints.Map(\"path\", async (HttpContext context) =>\n{\n//code\n});\nExecutes the endpoint when a HTTP request's url path begins with the specified path.\nendpoints.MapGet( )\nendpoints.MapGet(\"path\", async (HttpContext context) =>\n{\n//code\n});\nExecutes the endpoint when a HTTP GET request's url path begins with the specified path.\nendpoints.MapPost( )\nendpoints.MapPost(\"path\", async (HttpContext context) =>\n{\n//code\n});\nExecutes the endpoint when a HTTP POST request's url path begins with the specified path.\nGetEndpoint( )\ncontext.GetEndpoint();\nReturns an instance of Microsoft.AspNetCore.Http.Endpoint type, which represents an endpoint.\nThat instance contains two important properties: DisplayName, RequestDelegate.",
+      "lines": [
+        {
+          "text": "Map, MapGet, MapPost",
+          "rawText": "Map, MapGet, MapPost",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "endpoints.Map( )",
+          "rawText": "endpoints.Map( )",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "endpoints.Map(\"path\", async (HttpContext context) =>",
+          "rawText": "endpoints.Map(\"path\", async (HttpContext context) =>",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "//code",
+          "rawText": "//code",
+          "x": 74.544,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "});",
+          "rawText": "});",
+          "x": 72.024,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Executes the endpoint when a HTTP request's url path begins with the specified path.",
+          "rawText": "Executes the endpoint when a HTTP request's url path begins with the specified path.",
+          "x": 72.024,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "endpoints.MapGet( )",
+          "rawText": "endpoints.MapGet( )",
+          "x": 72.024,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "endpoints.MapGet(\"path\", async (HttpContext context) =>",
+          "rawText": "endpoints.MapGet(\"path\", async (HttpContext context) =>",
+          "x": 72.024,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "//code",
+          "rawText": "//code",
+          "x": 74.544,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "});",
+          "rawText": "});",
+          "x": 72.024,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Executes the endpoint when a HTTP GET request's url path begins with the specified path.",
+          "rawText": "Executes the endpoint when a HTTP GET request's url path begins with the specified path.",
+          "x": 72.024,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "endpoints.MapPost( )",
+          "rawText": "endpoints.MapPost( )",
+          "x": 72.024,
+          "y": 422.11,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "endpoints.MapPost(\"path\", async (HttpContext context) =>",
+          "rawText": "endpoints.MapPost(\"path\", async (HttpContext context) =>",
+          "x": 72.024,
+          "y": 399.55,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 377.09,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "//code",
+          "rawText": "//code",
+          "x": 74.544,
+          "y": 354.53,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "});",
+          "rawText": "});",
+          "x": 72.024,
+          "y": 332.09,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Executes the endpoint when a HTTP POST request's url path begins with the specified path.",
+          "rawText": "Executes the endpoint when a HTTP POST request's url path begins with the specified path.",
+          "x": 72.024,
+          "y": 309.65,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "GetEndpoint( )",
+          "rawText": "GetEndpoint( )",
+          "x": 72.024,
+          "y": 242.09,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "context.GetEndpoint();",
+          "rawText": "context.GetEndpoint();",
+          "x": 72.024,
+          "y": 158.06,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Returns an instance of Microsoft.AspNetCore.Http.Endpoint type, which represents an endpoint.",
+          "rawText": "Returns an instance of Microsoft.AspNetCore.Http.Endpoint type, which represents an endpoint.",
+          "x": 72.024,
+          "y": 135.5,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "That instance contains two important properties: DisplayName, RequestDelegate.",
+          "rawText": "That instance contains two important properties: DisplayName, RequestDelegate.",
+          "x": 72.024,
+          "y": 113.06,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Map, MapGet, MapPost"
+          ],
+          "text": "Map, MapGet, MapPost"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "endpoints.Map( )",
+            "endpoints.Map(\"path\", async (HttpContext context) =>"
+          ],
+          "text": "endpoints.Map( )\nendpoints.Map(\"path\", async (HttpContext context) =>"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "{",
+            "//code",
+            "});"
+          ],
+          "text": "{\n//code\n});"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "Executes the endpoint when a HTTP request's url path begins with the specified path.",
+            "endpoints.MapGet( )",
+            "endpoints.MapGet(\"path\", async (HttpContext context) =>"
+          ],
+          "text": "Executes the endpoint when a HTTP request's url path begins with the specified path.\nendpoints.MapGet( )\nendpoints.MapGet(\"path\", async (HttpContext context) =>"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "{",
+            "//code",
+            "});"
+          ],
+          "text": "{\n//code\n});"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "Executes the endpoint when a HTTP GET request's url path begins with the specified path.",
+            "endpoints.MapPost( )",
+            "endpoints.MapPost(\"path\", async (HttpContext context) =>"
+          ],
+          "text": "Executes the endpoint when a HTTP GET request's url path begins with the specified path.\nendpoints.MapPost( )\nendpoints.MapPost(\"path\", async (HttpContext context) =>"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "{",
+            "//code",
+            "});"
+          ],
+          "text": "{\n//code\n});"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "Executes the endpoint when a HTTP POST request's url path begins with the specified path."
+          ],
+          "text": "Executes the endpoint when a HTTP POST request's url path begins with the specified path."
+        },
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "GetEndpoint( )"
+          ],
+          "text": "GetEndpoint( )"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "context.GetEndpoint();"
+          ],
+          "text": "context.GetEndpoint();"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "Returns an instance of Microsoft.AspNetCore.Http.Endpoint type, which represents an endpoint.",
+            "That instance contains two important properties: DisplayName, RequestDelegate."
+          ],
+          "text": "Returns an instance of Microsoft.AspNetCore.Http.Endpoint type, which represents an endpoint.\nThat instance contains two important properties: DisplayName, RequestDelegate."
+        }
+      ],
+      "char_count_raw": 759,
+      "char_count_repaired": 758
+    },
+    {
+      "page_number": 3,
+      "raw_text": "Route Parameters\n\"{parameter}\"\nA route parameter can match with any value.\nDefault Route Parameters\n\"{parameter=default_value}\"\nA route parameter with default value matches with any value.\nIt also matches with empty value. In this case, the default value will be considered into the\nparameter.\nOptional Route Parameters\n\"{parameter?}\"\n\"?\" indicates an optional parameter.\nThat means, it matches with a value or empty value also.\n",
+      "repaired_text": "Route Parameters\n\"{parameter}\"\nA route parameter can match with any value.\nDefault Route Parameters\n\"{parameter=default_value}\"\nA route parameter with default value matches with any value.\nIt also matches with empty value. In this case, the default value will be considered into the\nparameter.\nOptional Route Parameters\n\"{parameter?}\"\n\"?\" indicates an optional parameter.\nThat means, it matches with a value or empty value also.",
+      "lines": [
+        {
+          "text": "Route Parameters",
+          "rawText": "Route Parameters",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "\"{parameter}\"",
+          "rawText": "\"{parameter}\"",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "A route parameter can match with any value.",
+          "rawText": "A route parameter can match with any value.",
+          "x": 72.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Default Route Parameters",
+          "rawText": "Default Route Parameters",
+          "x": 72.024,
+          "y": 538.87,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "\"{parameter=default_value}\"",
+          "rawText": "\"{parameter=default_value}\"",
+          "x": 72.024,
+          "y": 516.43,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "A route parameter with default value matches with any value.",
+          "rawText": "A route parameter with default value matches with any value.",
+          "x": 72.024,
+          "y": 493.99,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "It also matches with empty value. In this case, the default value will be considered into the",
+          "rawText": "It also matches with empty value. In this case, the default value will be considered into the",
+          "x": 72.024,
+          "y": 471.43,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "parameter.",
+          "rawText": "parameter.",
+          "x": 72.024,
+          "y": 456.91,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Optional Route Parameters",
+          "rawText": "Optional Route Parameters",
+          "x": 72.024,
+          "y": 411.91,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "\"{parameter?}\"",
+          "rawText": "\"{parameter?}\"",
+          "x": 72.024,
+          "y": 389.45,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "\"?\" indicates an optional parameter.",
+          "rawText": "\"?\" indicates an optional parameter.",
+          "x": 72.024,
+          "y": 367.01,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "That means, it matches with a value or empty value also.",
+          "rawText": "That means, it matches with a value or empty value also.",
+          "x": 72.024,
+          "y": 344.45,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 3,
+          "lines": [
+            "Route Parameters"
+          ],
+          "text": "Route Parameters"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "\"{parameter}\"",
+            "A route parameter can match with any value."
+          ],
+          "text": "\"{parameter}\"\nA route parameter can match with any value."
+        },
+        {
+          "type": "heading",
+          "page": 3,
+          "lines": [
+            "Default Route Parameters"
+          ],
+          "text": "Default Route Parameters"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "\"{parameter=default_value}\"",
+            "A route parameter with default value matches with any value.",
+            "It also matches with empty value. In this case, the default value will be considered into the",
+            "parameter."
+          ],
+          "text": "\"{parameter=default_value}\"\nA route parameter with default value matches with any value.\nIt also matches with empty value. In this case, the default value will be considered into the\nparameter."
+        },
+        {
+          "type": "heading",
+          "page": 3,
+          "lines": [
+            "Optional Route Parameters"
+          ],
+          "text": "Optional Route Parameters"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "\"{parameter?}\"",
+            "\"?\" indicates an optional parameter.",
+            "That means, it matches with a value or empty value also."
+          ],
+          "text": "\"{parameter?}\"\n\"?\" indicates an optional parameter.\nThat means, it matches with a value or empty value also."
+        }
+      ],
+      "char_count_raw": 429,
+      "char_count_repaired": 428
+    },
+    {
+      "page_number": 4,
+      "raw_text": "Route Constraints\nRoute Parameter with Constraint:\n\"{parameter:constraint}\"\nA route parameter that has a constraint can match with a value that satisfies the given constraint.\nMultiple Constraints\n\"{parameter:constraint1:constraint2}\"\nA route parameter can have more than one constraint, separated with colon ( : ).\nint\nMatches with any integer.\nEg: {id:int} matches with 123456789, -123456789\nbool\nMatches with true or false. Case-insensitive.\nEg: {active:bool} matches with true, false, TRUE, FALSE\n",
+      "repaired_text": "Route Constraints\nRoute Parameter with Constraint:\n\"{parameter:constraint}\"\nA route parameter that has a constraint can match with a value that satisfies the given constraint.\nMultiple Constraints\n\"{parameter:constraint1:constraint2}\"\nA route parameter can have more than one constraint, separated with colon ( : ).\nint\nMatches with any integer.\nEg: {id:int} matches with 123456789, -123456789\nbool\nMatches with true or false. Case-insensitive.\nEg: {active:bool} matches with true, false, TRUE, FALSE",
+      "lines": [
+        {
+          "text": "Route Constraints",
+          "rawText": "Route Constraints",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Route Parameter with Constraint:",
+          "rawText": "Route Parameter with Constraint:",
+          "x": 72.024,
+          "y": 490.87,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "\"{parameter:constraint}\"",
+          "rawText": "\"{parameter:constraint}\"",
+          "x": 72.024,
+          "y": 468.43,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "A route parameter that has a constraint can match with a value that satisfies the given constraint.",
+          "rawText": "A route parameter that has a constraint can match with a value that satisfies the given constraint.",
+          "x": 72.024,
+          "y": 445.87,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Multiple Constraints",
+          "rawText": "Multiple Constraints",
+          "x": 72.024,
+          "y": 400.87,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "\"{parameter:constraint1:constraint2}\"",
+          "rawText": "\"{parameter:constraint1:constraint2}\"",
+          "x": 72.024,
+          "y": 378.41,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "A route parameter can have more than one constraint, separated with colon ( : ).",
+          "rawText": "A route parameter can have more than one constraint, separated with colon ( : ).",
+          "x": 72.024,
+          "y": 355.97,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "int",
+          "rawText": "int",
+          "x": 72.024,
+          "y": 288.41,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Matches with any integer.",
+          "rawText": "Matches with any integer.",
+          "x": 72.024,
+          "y": 265.97,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Eg: {id:int} matches with 123456789, -123456789",
+          "rawText": "Eg: {id:int} matches with 123456789, -123456789",
+          "x": 72.024,
+          "y": 243.41,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "bool",
+          "rawText": "bool",
+          "x": 72.024,
+          "y": 198.5,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Matches with true or false. Case-insensitive.",
+          "rawText": "Matches with true or false. Case-insensitive.",
+          "x": 72.024,
+          "y": 175.94,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Eg: {active:bool} matches with true, false, TRUE, FALSE",
+          "rawText": "Eg: {active:bool} matches with true, false, TRUE, FALSE",
+          "x": 72.024,
+          "y": 153.5,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "Route Constraints"
+          ],
+          "text": "Route Constraints"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "Route Parameter with Constraint:",
+            "\"{parameter:constraint}\"",
+            "A route parameter that has a constraint can match with a value that satisfies the given constraint."
+          ],
+          "text": "Route Parameter with Constraint:\n\"{parameter:constraint}\"\nA route parameter that has a constraint can match with a value that satisfies the given constraint."
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "Multiple Constraints"
+          ],
+          "text": "Multiple Constraints"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "\"{parameter:constraint1:constraint2}\"",
+            "A route parameter can have more than one constraint, separated with colon ( : ).",
+            "int",
+            "Matches with any integer.",
+            "Eg: {id:int} matches with 123456789, -123456789",
+            "bool",
+            "Matches with true or false. Case-insensitive.",
+            "Eg: {active:bool} matches with true, false, TRUE, FALSE"
+          ],
+          "text": "\"{parameter:constraint1:constraint2}\"\nA route parameter can have more than one constraint, separated with colon ( : ).\nint\nMatches with any integer.\nEg: {id:int} matches with 123456789, -123456789\nbool\nMatches with true or false. Case-insensitive.\nEg: {active:bool} matches with true, false, TRUE, FALSE"
+        }
+      ],
+      "char_count_raw": 501,
+      "char_count_repaired": 500
+    },
+    {
+      "page_number": 5,
+      "raw_text": "datetime\nMatches a valid DateTime value with formats \"yyyy-MM-dd hh:mm:ss tt\" and \"MM/dd/yyyy\nhh:mm:ss tt\".\nEg: {id:datetime} matches with 2030-01-01%2011:59%20pm\nNote: '%20' is equal to space.\ndecimal\nMatches with a valid decimal value.\nEg: {price:decimal} matches with 49.99, -1, 0.01\nlong\nMatches a valid long value.\nEg: {id:long} matches with 123456789, -123456789\nguid\nMatches with a valid Guid value (Globally Unique Identifier - A hexadecimal number that is\nuniversally unique).\nEg: {id:guid} matches with 123E4567-E89B-12D3-A456-426652340000\nminlength(value)\nMatches with a string that has at least specified number of characters.\nEg: {username:minlength(4)} matches with John, Allen, William\nmaxlength(value)\nMatches with a string that has less than or equal to the specified number of characters.\nEg: {username:maxlength(7)} matches with John, Allen, William\nlength(min,max)\nMatches with a string that has number of characters between given minimum and maximum length\n(both numbers including).\nEg: {username:length(4, 7)} matches with John, Allen, William\n",
+      "repaired_text": "datetime\nMatches a valid DateTime value with formats \"yyyy-MM-dd hh:mm:ss tt\" and \"MM/dd/yyyy\nhh:mm:ss tt\".\nEg: {id:datetime} matches with 2030-01-01%2011:59%20pm\nNote: '%20' is equal to space.\ndecimal\nMatches with a valid decimal value.\nEg: {price:decimal} matches with 49.99, -1, 0.01\nlong\nMatches a valid long value.\nEg: {id:long} matches with 123456789, -123456789\nguid\nMatches with a valid Guid value (Globally Unique Identifier - A hexadecimal number that is\nuniversally unique).\nEg: {id:guid} matches with 123E4567-E89B-12D3-A456-426652340000\nminlength(value)\nMatches with a string that has at least specified number of characters.\nEg: {username:minlength(4)} matches with John, Allen, William\nmaxlength(value)\nMatches with a string that has less than or equal to the specified number of characters.\nEg: {username:maxlength(7)} matches with John, Allen, William\nlength(min,max)\nMatches with a string that has number of characters between given minimum and maximum length\n(both numbers including).\nEg: {username:length(4, 7)} matches with John, Allen, William",
+      "lines": [
+        {
+          "text": "datetime",
+          "rawText": "datetime",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Matches a valid DateTime value with formats \"yyyy-MM-dd hh:mm:ss tt\" and \"MM/dd/yyyy",
+          "rawText": "Matches a valid DateTime value with formats \"yyyy-MM-dd hh:mm:ss tt\" and \"MM/dd/yyyy",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "hh:mm:ss tt\".",
+          "rawText": "hh:mm:ss tt\".",
+          "x": 72.024,
+          "y": 722.5,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Eg: {id:datetime} matches with 2030-01-01%2011:59%20pm",
+          "rawText": "Eg: {id:datetime} matches with 2030-01-01%2011:59%20pm",
+          "x": 72.024,
+          "y": 699.94,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Note: '%20' is equal to space.",
+          "rawText": "Note: '%20' is equal to space.",
+          "x": 72.024,
+          "y": 677.5,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "decimal",
+          "rawText": "decimal",
+          "x": 72.024,
+          "y": 632.5,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Matches with a valid decimal value.",
+          "rawText": "Matches with a valid decimal value.",
+          "x": 72.024,
+          "y": 610.06,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Eg: {price:decimal} matches with 49.99, -1, 0.01",
+          "rawText": "Eg: {price:decimal} matches with 49.99, -1, 0.01",
+          "x": 72.024,
+          "y": 587.5,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "long",
+          "rawText": "long",
+          "x": 72.024,
+          "y": 542.47,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Matches a valid long value.",
+          "rawText": "Matches a valid long value.",
+          "x": 72.024,
+          "y": 520.03,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Eg: {id:long} matches with 123456789, -123456789",
+          "rawText": "Eg: {id:long} matches with 123456789, -123456789",
+          "x": 72.024,
+          "y": 497.59,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "guid",
+          "rawText": "guid",
+          "x": 72.024,
+          "y": 452.59,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Matches with a valid Guid value (Globally Unique Identifier - A hexadecimal number that is",
+          "rawText": "Matches with a valid Guid value (Globally Unique Identifier - A hexadecimal number that is",
+          "x": 72.024,
+          "y": 430.03,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "universally unique).",
+          "rawText": "universally unique).",
+          "x": 72.024,
+          "y": 415.63,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Eg: {id:guid} matches with 123E4567-E89B-12D3-A456-426652340000",
+          "rawText": "Eg: {id:guid} matches with 123E4567-E89B-12D3-A456-426652340000",
+          "x": 72.024,
+          "y": 393.05,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "minlength(value)",
+          "rawText": "minlength(value)",
+          "x": 72.024,
+          "y": 348.05,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Matches with a string that has at least specified number of characters.",
+          "rawText": "Matches with a string that has at least specified number of characters.",
+          "x": 72.024,
+          "y": 325.61,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Eg: {username:minlength(4)} matches with John, Allen, William",
+          "rawText": "Eg: {username:minlength(4)} matches with John, Allen, William",
+          "x": 72.024,
+          "y": 303.05,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "maxlength(value)",
+          "rawText": "maxlength(value)",
+          "x": 72.024,
+          "y": 258.17,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Matches with a string that has less than or equal to the specified number of characters.",
+          "rawText": "Matches with a string that has less than or equal to the specified number of characters.",
+          "x": 72.024,
+          "y": 235.61,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Eg: {username:maxlength(7)} matches with John, Allen, William",
+          "rawText": "Eg: {username:maxlength(7)} matches with John, Allen, William",
+          "x": 72.024,
+          "y": 213.14,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "length(min,max)",
+          "rawText": "length(min,max)",
+          "x": 72.024,
+          "y": 168.14,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Matches with a string that has number of characters between given minimum and maximum length",
+          "rawText": "Matches with a string that has number of characters between given minimum and maximum length",
+          "x": 72.024,
+          "y": 145.58,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "(both numbers including).",
+          "rawText": "(both numbers including).",
+          "x": 72.024,
+          "y": 131.18,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Eg: {username:length(4, 7)} matches with John, Allen, William",
+          "rawText": "Eg: {username:length(4, 7)} matches with John, Allen, William",
+          "x": 72.024,
+          "y": 108.62,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "datetime",
+            "Matches a valid DateTime value with formats \"yyyy-MM-dd hh:mm:ss tt\" and \"MM/dd/yyyy",
+            "hh:mm:ss tt\".",
+            "Eg: {id:datetime} matches with 2030-01-01%2011:59%20pm"
+          ],
+          "text": "datetime\nMatches a valid DateTime value with formats \"yyyy-MM-dd hh:mm:ss tt\" and \"MM/dd/yyyy\nhh:mm:ss tt\".\nEg: {id:datetime} matches with 2030-01-01%2011:59%20pm"
+        },
+        {
+          "type": "callout",
+          "page": 5,
+          "lines": [
+            "Note: '%20' is equal to space."
+          ],
+          "text": "Note: '%20' is equal to space."
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "decimal",
+            "Matches with a valid decimal value.",
+            "Eg: {price:decimal} matches with 49.99, -1, 0.01",
+            "long",
+            "Matches a valid long value.",
+            "Eg: {id:long} matches with 123456789, -123456789",
+            "guid",
+            "Matches with a valid Guid value (Globally Unique Identifier - A hexadecimal number that is",
+            "universally unique).",
+            "Eg: {id:guid} matches with 123E4567-E89B-12D3-A456-426652340000",
+            "minlength(value)",
+            "Matches with a string that has at least specified number of characters.",
+            "Eg: {username:minlength(4)} matches with John, Allen, William",
+            "maxlength(value)",
+            "Matches with a string that has less than or equal to the specified number of characters.",
+            "Eg: {username:maxlength(7)} matches with John, Allen, William",
+            "length(min,max)",
+            "Matches with a string that has number of characters between given minimum and maximum length",
+            "(both numbers including).",
+            "Eg: {username:length(4, 7)} matches with John, Allen, William"
+          ],
+          "text": "decimal\nMatches with a valid decimal value.\nEg: {price:decimal} matches with 49.99, -1, 0.01\nlong\nMatches a valid long value.\nEg: {id:long} matches with 123456789, -123456789\nguid\nMatches with a valid Guid value (Globally Unique Identifier - A hexadecimal number that is\nuniversally unique).\nEg: {id:guid} matches with 123E4567-E89B-12D3-A456-426652340000\nminlength(value)\nMatches with a string that has at least specified number of characters.\nEg: {username:minlength(4)} matches with John, Allen, William\nmaxlength(value)\nMatches with a string that has less than or equal to the specified number of characters.\nEg: {username:maxlength(7)} matches with John, Allen, William\nlength(min,max)\nMatches with a string that has number of characters between given minimum and maximum length\n(both numbers including).\nEg: {username:length(4, 7)} matches with John, Allen, William"
+        }
+      ],
+      "char_count_raw": 1066,
+      "char_count_repaired": 1065
+    },
+    {
+      "page_number": 6,
+      "raw_text": "length(value)\nMatches with a string that has exactly specified number of characters.\nEg: {tin:length(9)} matches with 987654321\nmin(value)\nMatches with an integer value greater than or equal to the specified value.\nEg: {age:min(18)} matches with 18, 19, 100\nmax(value)\nMatches with an integer value less than or equal to the specified value.\nEg: {age:max(100)} matches with -1, 1, 18, 100\nrange(min,max)\nMatches with an integer value between the specified minimum and maximum values (both numbers\nincluding).\nEg: {age:range(18,100)} matches with 18, 19, 99, 100\nalpha\nMatches with a string that contains only alphabets (A-Z) and (a-z).\nEg: {username:alpha} matches with rick, william\nregex(expression)\nMatches with a string that matches with the specified regular expression.\nEg 1: {age:regex(^[0-9]{2}$)} matches with any two-digit number, such as 10, 11, 98, 99\nEg 2: {age:regex(^\\d{3}-\\d{3}$)} matches with any three-digit number, then hyphen, and then three-\ndigit number, such as 123-456\n",
+      "repaired_text": "length(value)\nMatches with a string that has exactly specified number of characters.\nEg: {tin:length(9)} matches with 987654321\nmin(value)\nMatches with an integer value greater than or equal to the specified value.\nEg: {age:min(18)} matches with 18, 19, 100\nmax(value)\nMatches with an integer value less than or equal to the specified value.\nEg: {age:max(100)} matches with -1, 1, 18, 100\nrange(min,max)\nMatches with an integer value between the specified minimum and maximum values (both numbers\nincluding).\nEg: {age:range(18,100)} matches with 18, 19, 99, 100\nalpha\nMatches with a string that contains only alphabets (A-Z) and (a-z).\nEg: {username:alpha} matches with rick, william\nregex(expression)\nMatches with a string that matches with the specified regular expression.\nEg 1: {age:regex(^[0-9]{2}$)} matches with any two-digit number, such as 10, 11, 98, 99\nEg 2: {age:regex(^\\d{3}-\\d{3}$)} matches with any three-digit number, then hyphen, and then threedigit\nnumber, such as 123-456",
+      "lines": [
+        {
+          "text": "length(value)",
+          "rawText": "length(value)",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Matches with a string that has exactly specified number of characters.",
+          "rawText": "Matches with a string that has exactly specified number of characters.",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Eg: {tin:length(9)} matches with 987654321",
+          "rawText": "Eg: {tin:length(9)} matches with 987654321",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "min(value)",
+          "rawText": "min(value)",
+          "x": 72.024,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Matches with an integer value greater than or equal to the specified value.",
+          "rawText": "Matches with an integer value greater than or equal to the specified value.",
+          "x": 72.024,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Eg: {age:min(18)} matches with 18, 19, 100",
+          "rawText": "Eg: {age:min(18)} matches with 18, 19, 100",
+          "x": 72.024,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "max(value)",
+          "rawText": "max(value)",
+          "x": 72.024,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Matches with an integer value less than or equal to the specified value.",
+          "rawText": "Matches with an integer value less than or equal to the specified value.",
+          "x": 72.024,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Eg: {age:max(100)} matches with -1, 1, 18, 100",
+          "rawText": "Eg: {age:max(100)} matches with -1, 1, 18, 100",
+          "x": 72.024,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "range(min,max)",
+          "rawText": "range(min,max)",
+          "x": 72.024,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Matches with an integer value between the specified minimum and maximum values (both numbers",
+          "rawText": "Matches with an integer value between the specified minimum and maximum values (both numbers",
+          "x": 72.024,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "including).",
+          "rawText": "including).",
+          "x": 72.024,
+          "y": 452.59,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Eg: {age:range(18,100)} matches with 18, 19, 99, 100",
+          "rawText": "Eg: {age:range(18,100)} matches with 18, 19, 99, 100",
+          "x": 72.024,
+          "y": 430.03,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "alpha",
+          "rawText": "alpha",
+          "x": 72.024,
+          "y": 385.01,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Matches with a string that contains only alphabets (A-Z) and (a-z).",
+          "rawText": "Matches with a string that contains only alphabets (A-Z) and (a-z).",
+          "x": 72.024,
+          "y": 362.57,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Eg: {username:alpha} matches with rick, william",
+          "rawText": "Eg: {username:alpha} matches with rick, william",
+          "x": 72.024,
+          "y": 340.13,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "regex(expression)",
+          "rawText": "regex(expression)",
+          "x": 72.024,
+          "y": 295.13,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Matches with a string that matches with the specified regular expression.",
+          "rawText": "Matches with a string that matches with the specified regular expression.",
+          "x": 72.024,
+          "y": 272.57,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Eg 1: {age:regex(^[0-9]{2}$)} matches with any two-digit number, such as 10, 11, 98, 99",
+          "rawText": "Eg 1: {age:regex(^[0-9]{2}$)} matches with any two-digit number, such as 10, 11, 98, 99",
+          "x": 72.024,
+          "y": 250.13,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Eg 2: {age:regex(^\\d{3}-\\d{3}$)} matches with any three-digit number, then hyphen, and then three-",
+          "rawText": "Eg 2: {age:regex(^\\d{3}-\\d{3}$)} matches with any three-digit number, then hyphen, and then three-",
+          "x": 72.024,
+          "y": 227.69,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "digit number, such as 123-456",
+          "rawText": "digit number, such as 123-456",
+          "x": 72.024,
+          "y": 213.14,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "length(value)",
+            "Matches with a string that has exactly specified number of characters.",
+            "Eg: {tin:length(9)} matches with 987654321",
+            "min(value)",
+            "Matches with an integer value greater than or equal to the specified value.",
+            "Eg: {age:min(18)} matches with 18, 19, 100",
+            "max(value)",
+            "Matches with an integer value less than or equal to the specified value.",
+            "Eg: {age:max(100)} matches with -1, 1, 18, 100",
+            "range(min,max)",
+            "Matches with an integer value between the specified minimum and maximum values (both numbers",
+            "including).",
+            "Eg: {age:range(18,100)} matches with 18, 19, 99, 100",
+            "alpha",
+            "Matches with a string that contains only alphabets (A-Z) and (a-z).",
+            "Eg: {username:alpha} matches with rick, william",
+            "regex(expression)",
+            "Matches with a string that matches with the specified regular expression.",
+            "Eg 1: {age:regex(^[0-9]{2}$)} matches with any two-digit number, such as 10, 11, 98, 99",
+            "Eg 2: {age:regex(^\\d{3}-\\d{3}$)} matches with any three-digit number, then hyphen, and then threedigit",
+            "number, such as 123-456"
+          ],
+          "text": "length(value)\nMatches with a string that has exactly specified number of characters.\nEg: {tin:length(9)} matches with 987654321\nmin(value)\nMatches with an integer value greater than or equal to the specified value.\nEg: {age:min(18)} matches with 18, 19, 100\nmax(value)\nMatches with an integer value less than or equal to the specified value.\nEg: {age:max(100)} matches with -1, 1, 18, 100\nrange(min,max)\nMatches with an integer value between the specified minimum and maximum values (both numbers\nincluding).\nEg: {age:range(18,100)} matches with 18, 19, 99, 100\nalpha\nMatches with a string that contains only alphabets (A-Z) and (a-z).\nEg: {username:alpha} matches with rick, william\nregex(expression)\nMatches with a string that matches with the specified regular expression.\nEg 1: {age:regex(^[0-9]{2}$)} matches with any two-digit number, such as 10, 11, 98, 99\nEg 2: {age:regex(^\\d{3}-\\d{3}$)} matches with any three-digit number, then hyphen, and then threedigit\nnumber, such as 123-456"
+        }
+      ],
+      "char_count_raw": 993,
+      "char_count_repaired": 990
+    },
+    {
+      "page_number": 7,
+      "raw_text": "Custom Route Constraint Classes\nCustom Route Constraint Class\npublic class ClassName : IRouteConstraint\n{\npublic bool Match(HttpContext? HttpContext, IRouter? route, string routeKey,\nRouteValueDictionary values, RouteDirection routeDirection)\n{\n//return true or false\n}\n}\nbuilder.Services.AddRouting(options =>\n{\noptions.ConstraintMap.Add(\"name\", typeof(ClassName));\n}); //adding the custom constraint to routing\n",
+      "repaired_text": "Custom Route Constraint Classes\nCustom Route Constraint Class\npublic class ClassName : IRouteConstraint\n{\n public bool Match(HttpContext? HttpContext, IRouter? route, string routeKey,\nRouteValueDictionary values, RouteDirection routeDirection)\n {\n  //return true or false\n }\n}\nbuilder.Services.AddRouting(options =>\n{\n options.ConstraintMap.Add(\"name\", typeof(ClassName));\n}); //adding the custom constraint to routing",
+      "lines": [
+        {
+          "text": "Custom Route Constraint Classes",
+          "rawText": "Custom Route Constraint Classes",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Custom Route Constraint Class",
+          "rawText": "Custom Route Constraint Class",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "public class ClassName : IRouteConstraint",
+          "rawText": "public class ClassName : IRouteConstraint",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": " public bool Match(HttpContext? HttpContext, IRouter? route, string routeKey,",
+          "rawText": "public bool Match(HttpContext? HttpContext, IRouter? route, string routeKey,",
+          "x": 77.064,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "RouteValueDictionary values, RouteDirection routeDirection)",
+          "rawText": "RouteValueDictionary values, RouteDirection routeDirection)",
+          "x": 72.024,
+          "y": 655.06,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": " {",
+          "rawText": "{",
+          "x": 77.064,
+          "y": 632.5,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "  //return true or false",
+          "rawText": "//return true or false",
+          "x": 81.984,
+          "y": 610.06,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": " }",
+          "rawText": "}",
+          "x": 77.064,
+          "y": 587.5,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 565.03,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "builder.Services.AddRouting(options =>",
+          "rawText": "builder.Services.AddRouting(options =>",
+          "x": 72.024,
+          "y": 520.03,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 497.59,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": " options.ConstraintMap.Add(\"name\", typeof(ClassName));",
+          "rawText": "options.ConstraintMap.Add(\"name\", typeof(ClassName));",
+          "x": 77.064,
+          "y": 475.03,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "}); //adding the custom constraint to routing",
+          "rawText": "}); //adding the custom constraint to routing",
+          "x": 72.024,
+          "y": 452.59,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 7,
+          "lines": [
+            "Custom Route Constraint Classes"
+          ],
+          "text": "Custom Route Constraint Classes"
+        },
+        {
+          "type": "heading",
+          "page": 7,
+          "lines": [
+            "Custom Route Constraint Class"
+          ],
+          "text": "Custom Route Constraint Class"
+        },
+        {
+          "type": "code",
+          "page": 7,
+          "lines": [
+            "public class ClassName : IRouteConstraint",
+            "{",
+            " public bool Match(HttpContext? HttpContext, IRouter? route, string routeKey,"
+          ],
+          "text": "public class ClassName : IRouteConstraint\n{\n public bool Match(HttpContext? HttpContext, IRouter? route, string routeKey,"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "RouteValueDictionary values, RouteDirection routeDirection)"
+          ],
+          "text": "RouteValueDictionary values, RouteDirection routeDirection)"
+        },
+        {
+          "type": "code",
+          "page": 7,
+          "lines": [
+            " {",
+            "  //return true or false",
+            " }",
+            "}"
+          ],
+          "text": " {\n  //return true or false\n }\n}"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "builder.Services.AddRouting(options =>"
+          ],
+          "text": "builder.Services.AddRouting(options =>"
+        },
+        {
+          "type": "code",
+          "page": 7,
+          "lines": [
+            "{",
+            " options.ConstraintMap.Add(\"name\", typeof(ClassName));",
+            "}); //adding the custom constraint to routing"
+          ],
+          "text": "{\n options.ConstraintMap.Add(\"name\", typeof(ClassName));\n}); //adding the custom constraint to routing"
+        }
+      ],
+      "char_count_raw": 413,
+      "char_count_repaired": 418
+    },
+    {
+      "page_number": 8,
+      "raw_text": "Endpoint Selection Order\nTop is highest precedence (will be evaluated first)\n1: URL template with more segments.\nEg: \"a/b/c/d\" is higher than \"a/b/c\".\n2: URL template with literal text has more precedence than a parameter segment.\nEg: \"a/b\" is higher than \"a/{parameter}\".\n3: URL template that has a parameter segment with constraints has more precedence than a\nparameter segment without constraints.\nEg: \"a/b:int\" is higher than \"a/b\".\n4: Catch-all parameters (**).\nEg: \"a/{b}\" is higher than \"a/**\".\nWebRoot\n",
+      "repaired_text": "Endpoint Selection Order\nTop is highest precedence (will be evaluated first)\n1: URL template with more segments.\nEg: \"a/b/c/d\" is higher than \"a/b/c\".\n2: URL template with literal text has more precedence than a parameter segment.\nEg: \"a/b\" is higher than \"a/{parameter}\".\n3: URL template that has a parameter segment with constraints has more precedence than a\nparameter segment without constraints.\nEg: \"a/b:int\" is higher than \"a/b\".\n4: Catch-all parameters (**).\nEg: \"a/{b}\" is higher than \"a/**\".\nWebRoot",
+      "lines": [
+        {
+          "text": "Endpoint Selection Order",
+          "rawText": "Endpoint Selection Order",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Top is highest precedence (will be evaluated first)",
+          "rawText": "Top is highest precedence (will be evaluated first)",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "1: URL template with more segments.",
+          "rawText": "1: URL template with more segments.",
+          "x": 72.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Eg: \"a/b/c/d\" is higher than \"a/b/c\".",
+          "rawText": "Eg: \"a/b/c/d\" is higher than \"a/b/c\".",
+          "x": 72.024,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "2: URL template with literal text has more precedence than a parameter segment.",
+          "rawText": "2: URL template with literal text has more precedence than a parameter segment.",
+          "x": 72.024,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Eg: \"a/b\" is higher than \"a/{parameter}\".",
+          "rawText": "Eg: \"a/b\" is higher than \"a/{parameter}\".",
+          "x": 72.024,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "3: URL template that has a parameter segment with constraints has more precedence than a",
+          "rawText": "3: URL template that has a parameter segment with constraints has more precedence than a",
+          "x": 72.024,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "parameter segment without constraints.",
+          "rawText": "parameter segment without constraints.",
+          "x": 72.024,
+          "y": 542.47,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "Eg: \"a/b:int\" is higher than \"a/b\".",
+          "rawText": "Eg: \"a/b:int\" is higher than \"a/b\".",
+          "x": 72.024,
+          "y": 520.03,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "4: Catch-all parameters (**).",
+          "rawText": "4: Catch-all parameters (**).",
+          "x": 72.024,
+          "y": 475.03,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        },
+        {
+          "text": "Eg: \"a/{b}\" is higher than \"a/**\".",
+          "rawText": "Eg: \"a/{b}\" is higher than \"a/**\".",
+          "x": 72.024,
+          "y": 452.59,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f1"
+        },
+        {
+          "text": "WebRoot",
+          "rawText": "WebRoot",
+          "x": 72.024,
+          "y": 385.01,
+          "fontSize": 11.04,
+          "fontName": "g_d9_f4"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 8,
+          "lines": [
+            "Endpoint Selection Order"
+          ],
+          "text": "Endpoint Selection Order"
+        },
+        {
+          "type": "heading",
+          "page": 8,
+          "lines": [
+            "Top is highest precedence (will be evaluated first)"
+          ],
+          "text": "Top is highest precedence (will be evaluated first)"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "1: URL template with more segments.",
+            "Eg: \"a/b/c/d\" is higher than \"a/b/c\".",
+            "2: URL template with literal text has more precedence than a parameter segment.",
+            "Eg: \"a/b\" is higher than \"a/{parameter}\".",
+            "3: URL template that has a parameter segment with constraints has more precedence than a",
+            "parameter segment without constraints.",
+            "Eg: \"a/b:int\" is higher than \"a/b\".",
+            "4: Catch-all parameters (**).",
+            "Eg: \"a/{b}\" is higher than \"a/**\"."
+          ],
+          "text": "1: URL template with more segments.\nEg: \"a/b/c/d\" is higher than \"a/b/c\".\n2: URL template with literal text has more precedence than a parameter segment.\nEg: \"a/b\" is higher than \"a/{parameter}\".\n3: URL template that has a parameter segment with constraints has more precedence than a\nparameter segment without constraints.\nEg: \"a/b:int\" is higher than \"a/b\".\n4: Catch-all parameters (**).\nEg: \"a/{b}\" is higher than \"a/**\"."
+        },
+        {
+          "type": "heading",
+          "page": 8,
+          "lines": [
+            "WebRoot"
+          ],
+          "text": "WebRoot"
+        }
+      ],
+      "char_count_raw": 510,
+      "char_count_repaired": 509
+    }
+  ],
+  "title": "Routing"
+}

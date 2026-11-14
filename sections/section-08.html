@@ -1,0 +1,2644 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 08: Razor Views — ASP.NET Core Masterclass</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="alternate icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body id="top">
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  
+  <!-- Top Navigation Header -->
+  <header class="top-header" role="banner">
+    <div class="header-left">
+      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">☰</button>
+      <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+        <span class="sidebar-toggle-text">« Collapse</span>
+      </button>
+      <a href="../index.html" class="brand-link" aria-label="ASP.NET Core Masterclass Documentation Portal">
+        <span class="brand-icon" style="background: linear-gradient(135deg, #38bdf8, #6366f1); color: #0b0f19; font-weight: 900; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem;">.NET</span>
+        <span class="brand-text">ASP.NET Core Masterclass</span>
+      </a>
+      <span class="version-pill">.NET 8 / LTS</span>
+    </div>
+
+    <div class="header-right">
+      <a href="../index.html" class="index-home-btn" title="Back to Curriculum Dashboard">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span class="home-text">Course Index</span>
+      </a>
+
+      <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-text">Search topics, syntax, concepts...</span>
+        <kbd class="kbd-shortcut">Ctrl+K</kbd>
+      </button>
+
+      <button class="theme-toggle-btn" aria-label="Toggle dark/light theme" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle></svg>
+      </button>
+    </div>
+  </header>
+  
+
+  <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+  <!-- Documentation Layout -->
+  <div class="docs-wrapper">
+    
+    <aside class="docs-sidebar" aria-label="Course Navigation">
+      <div class="sidebar-top-bar">
+        <span class="sidebar-top-title">Curriculum</span>
+        <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" title="Collapse Sidebar" aria-label="Collapse Navigation Sidebar" type="button">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg>
+          <span>Collapse</span>
+        </button>
+      </div>
+
+      <div class="sidebar-search-box">
+        <input type="text" class="sidebar-filter-input" placeholder="Filter sections..." aria-label="Filter sidebar sections" />
+      </div>
+
+      <div style="margin-bottom: 1rem;">
+        <a href="../index.html" class="sidebar-link" style="color: var(--accent-primary); font-weight: 600;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Return to Dashboard</span>
+        </a>
+      </div>
+  
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 1: Foundations, HTTP, Middleware &amp; Routing</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">5</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-01.html" class="sidebar-link">
+            <span class="sidebar-sec-num">01</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Introduction</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-02.html" class="sidebar-link">
+            <span class="sidebar-sec-num">02</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Getting Started</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-03.html" class="sidebar-link">
+            <span class="sidebar-sec-num">03</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">HTTP</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-04.html" class="sidebar-link">
+            <span class="sidebar-sec-num">04</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Middleware</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-05.html" class="sidebar-link">
+            <span class="sidebar-sec-num">05</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Routing</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 2: Controllers, Model Binding &amp; Validation</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-06.html" class="sidebar-link">
+            <span class="sidebar-sec-num">06</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Controllers &amp; IActionResult</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-07.html" class="sidebar-link">
+            <span class="sidebar-sec-num">07</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Model Binding and Validations</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 3: Razor Views, Partial Views, View Components &amp; Tag Helpers</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">5</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-08.html" class="sidebar-link active" aria-current="page">
+            <span class="sidebar-sec-num">08</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Razor Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-09.html" class="sidebar-link">
+            <span class="sidebar-sec-num">09</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Layout Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-10.html" class="sidebar-link">
+            <span class="sidebar-sec-num">10</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Partial Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-11.html" class="sidebar-link">
+            <span class="sidebar-sec-num">11</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">View Components</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-17.html" class="sidebar-link">
+            <span class="sidebar-sec-num">17</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Tag Helpers</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 4: Dependency Injection, Environments &amp; Configuration</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-12.html" class="sidebar-link">
+            <span class="sidebar-sec-num">12</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Dependency Injection</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-13.html" class="sidebar-link">
+            <span class="sidebar-sec-num">13</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Environments</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-14.html" class="sidebar-link">
+            <span class="sidebar-sec-num">14</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Configuration</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-15.html" class="sidebar-link">
+            <span class="sidebar-sec-num">15</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">xUnit</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-16.html" class="sidebar-link">
+            <span class="sidebar-sec-num">16</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">CRUD Operations</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-18.html" class="sidebar-link">
+            <span class="sidebar-sec-num">18</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">EntityFrameworkCore</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-19.html" class="sidebar-link">
+            <span class="sidebar-sec-num">19</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Unit Testing - Advanced</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-20.html" class="sidebar-link">
+            <span class="sidebar-sec-num">20</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Logging</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-21.html" class="sidebar-link">
+            <span class="sidebar-sec-num">21</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Filters</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-22.html" class="sidebar-link">
+            <span class="sidebar-sec-num">22</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Error Handling</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-23.html" class="sidebar-link">
+            <span class="sidebar-sec-num">23</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">SOLID Principles</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-24.html" class="sidebar-link">
+            <span class="sidebar-sec-num">24</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Clean Architecture</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-25.html" class="sidebar-link">
+            <span class="sidebar-sec-num">25</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Identity and Authorization</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-26.html" class="sidebar-link">
+            <span class="sidebar-sec-num">26</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Web API</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-27.html" class="sidebar-link">
+            <span class="sidebar-sec-num">27</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Swagger</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-28.html" class="sidebar-link">
+            <span class="sidebar-sec-num">28</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Angular and CORS</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-29.html" class="sidebar-link">
+            <span class="sidebar-sec-num">29</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">JWT with Web API</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-30.html" class="sidebar-link">
+            <span class="sidebar-sec-num">30</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Minimal API</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content Container -->
+    <main class="docs-main-container" id="main-content" tabindex="-1">
+      <!-- Floating Expand Button when Sidebar is Collapsed -->
+      <button class="expand-sidebar-pill" id="expandSidebarPill" title="Expand Sidebar" aria-label="Expand Sidebar" type="button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg>
+        <span>» Expand Sidebar</span>
+      </button>
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
+        <a href="../index.html">Course Index</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span>Module 3</span>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span style="color: var(--text-main); font-weight: 600;">Section 08</span>
+      </nav>
+
+      <!-- Section Banner Header -->
+      <header class="section-banner">
+        <div class="section-meta-row">
+          <span class="module-badge">Module 3</span>
+          <span class="read-time-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            29 PDF Pages
+          </span>
+          <span class="tag-pill">ASP.NET Core</span>
+          <span class="tag-pill">.NET 8</span>
+          <span class="tag-pill" style="border-color: var(--accent-primary); color: var(--accent-primary);">Includes Cheat Sheet</span>
+        </div>
+        <h1>Section 08: Razor Views</h1>
+        <p class="section-description">
+          Authentic study and reference notes extracted directly from original masterclass course materials.
+        </p>
+      </header>
+
+      <!-- Body Content -->
+      <article class="docs-content">
+        
+<h2 id="mvc-architecture">MVC Architecture</h2>
+<p>Model-View-Controller (MVC) is a design pattern that organizes your application into three distinct
+components, each with a specific responsibility:</p>
+<ul>
+  <li>1. Model:</li>
+  <li>o Represents the data and business logic of your application.</li>
+  <li>o Encapsulates data access, validation rules, and any core business operations.</li>
+  <li>o Types of Models:</li>
+</ul>
+<p>▪ Business Model (Domain Model): Represents the real-world entities and
+                 relationships of your application domain (e.g., Product, Customer, Order).
+              ▪ View Model: A tailored model specifically designed to provide data to a
+                 view. It might aggregate data from multiple business models or contain
+                 properties for UI-specific concerns.</p>
+<ul>
+  <li>2. View:</li>
+  <li>o Renders the user interface (UI) based on the data provided by the controller.</li>
+  <li>o Typically, views are HTML templates with embedded server-side code (Razor syntax</li>
+</ul>
+<p>in ASP.NET Core) that dynamically generate the content.</p>
+<ul>
+  <li>3. Controller:</li>
+  <li>o Acts as the intermediary between the model and the view.</li>
+  <li>o Receives user input (from requests), interacts with the model to perform actions or</li>
+</ul>
+<p>retrieve data, and then selects the appropriate view to present the results.</p>
+
+<h2 id="execution-flow-of-a-request-in-mvc">Execution Flow of a Request in MVC</h2>
+<ul>
+  <li>1. Routing: The incoming request is processed by the routing middleware, which determines</li>
+</ul>
+<p>the appropriate controller and action method to handle it based on the URL pattern and
+      HTTP method.</p>
+<ul>
+  <li>2. Model Binding: If the action method has parameters, the model binder extracts data from</li>
+</ul>
+<p>the request (query string, route values, form data, body) and attempts to convert it into the
+      types expected by the parameters.</p>
+<ul>
+  <li>3. Model Validation: The model binder validates the bound data using data annotations and</li>
+</ul>
+<p>any custom validation logic you&#39;ve implemented. If validation fails, errors are added to the
+      ModelState object.</p>
+<ul>
+  <li>4. Controller Action Execution: If the model is valid, the controller action method executes its</li>
+</ul>
+<p>logic, which might involve:</p>
+<ul>
+  <li>o Interacting with business models to retrieve or update data.</li>
+  <li>o Performing calculations or other business operations.</li>
+  <li>o Preparing a view model to pass data to the view.</li>
+  <li>5. View Selection: The controller selects the appropriate view to render and passes the view</li>
+</ul>
+<p>model to it.</p>
+<ul>
+  <li>6. View Rendering: The view engine (Razor) generates the HTML output based on the view</li>
+</ul>
+<p>template and the data in the view model.</p>
+<ul>
+  <li>7. Response: The rendered HTML is sent back to the client as the HTTP response.</li>
+</ul>
+
+<h2 id="responsibilities-of-mvc-components">Responsibilities of MVC Components</h2>
+<ul>
+  <li>• Controller:</li>
+  <li>o Handles incoming requests and routes them to the correct action methods.</li>
+  <li>o Interacts with the model to fetch or modify data.</li>
+  <li>o Selects the appropriate view and passes necessary data to it.</li>
+  <li>o Handles errors and redirects.</li>
+  <li>• Model (Business Model):</li>
+  <li>o Encapsulates the business logic and data access of the application.</li>
+  <li>o Represents the core entities and relationships in your domain.</li>
+  <li>o Defines validation rules for ensuring data integrity.</li>
+  <li>• View Model:</li>
+  <li>o Tailored for a specific view, containing only the data required by that view.</li>
+  <li>o Simplifies data presentation in the view and avoids exposing unnecessary details.</li>
+  <li>• View:</li>
+  <li>o Renders the user interface based on the data provided by the controller.</li>
+  <li>o Uses Razor syntax to combine HTML markup with C# code for dynamic content</li>
+</ul>
+<p>generation.</p>
+
+<h2 id="benefits-and-goals-of-mvc">Benefits and Goals of MVC</h2>
+<ul>
+  <li>• Separation of Concerns (SoC): The clear division of responsibilities makes code more</li>
+</ul>
+<p>organized, maintainable, and testable.</p>
+<ul>
+  <li>• Testability: Individual components (models, views, controllers) can be tested in isolation.</li>
+  <li>• Reusability: Views and models can be reused in different contexts.</li>
+  <li>• Parallel Development: Different team members can work on different parts of the</li>
+</ul>
+<p>application simultaneously.</p>
+<ul>
+  <li>• Maintainability: Changes to one component are less likely to affect others.</li>
+  <li>• Extensibility: New features can be added more easily due to the modular structure.</li>
+  <li>• Scalability: MVC architecture lends itself well to scaling as the application grows.</li>
+</ul>
+<p>The MVC pattern provides a structured and organized approach to building complex web
+applications, facilitating collaboration, code reusability, and long-term maintainability.
+Understanding these core concepts will make you a more effective ASP.NET Core developer.</p>
+
+<h2 id="views">Views</h2>
+<p>In ASP.NET Core MVC, views are responsible for rendering the user interface (UI) that your
+application presents to the user. They are typically HTML templates with embedded Razor syntax,
+which is a powerful templating engine that allows you to seamlessly blend HTML markup with C#
+code.</p>
+
+<h2 id="notes">Notes</h2>
+<ul>
+  <li>• Dynamic Content: Views can generate dynamic content based on data passed to them from</li>
+</ul>
+<p>the controller (the model). This allows you to display information fetched from databases,
+      user inputs, and other sources.</p>
+<ul>
+  <li>• Razor Syntax: Views use Razor syntax, which starts with @ symbols, to embed C# code</li>
+</ul>
+<p>within the HTML. This code can perform tasks like looping through data collections,
+      conditional rendering, and accessing model properties.</p>
+
+<h2 id="addcontrollerswithviews-method">AddControllersWithViews() Method</h2>
+<p>This extension method is used to register the necessary services for MVC (models, views, controllers)
+with the dependency injection container. It&#39;s a shortcut for adding multiple services at once,
+including:</p>
+<ul>
+  <li>• Controller Discovery: Automatically discovers controller classes in your project.</li>
+  <li>• View Engine: Configures Razor as the view engine.</li>
+  <li>• Model Binding: Sets up model binding for handling form submissions.</li>
+  <li>• Validation: Enables model validation.</li>
+</ul>
+
+<h2 id="viewresult">ViewResult</h2>
+<p>The ViewResult class is an action result type in ASP.NET Core MVC that represents a view to be
+rendered. When a controller action returns a ViewResult, the MVC framework locates the
+corresponding view file, passes the model data (if any) to it, and renders the view&#39;s content as HTML.</p>
+
+<h2 id="default-view-locations">Default View Locations</h2>
+<p>ASP.NET Core MVC follows a convention for determining where to find view files:</p>
+<ul>
+  <li>• By Convention: By default, the view engine looks for views in the</li>
+</ul>
+<p>Views/[ControllerName]/[ActionName].cshtml path. For example, the Index action method
+      in the HomeController would look for a view file at Views/Home/Index.cshtml.</p>
+<ul>
+  <li>• Overriding with ViewName: You can explicitly specify the view name using the ViewName</li>
+</ul>
+<p>property of the ViewResult or the View() helper method.</p>
+<ul>
+  <li>• Shared Views: Shared views are stored in the Views/Shared folder and can be used by</li>
+</ul>
+<p>multiple controllers.</p>
+
+<h2 id="code">Code</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// Program.cs</code></pre>
+    </div>
+  <p>builder.Services.AddControllersWithViews(); // Enables MVC features</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// ...
+// HomeController.cs
+[Route(&quot;home&quot;)]
+public IActionResult Index()
+{
+  return View(); // Renders Views/Home/Index.cshtml
+}
+// Views/Home/Index.cshtml</code></pre>
+    </div>
+  <p>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+   &lt;title&gt;Asp.Net Core App&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;</p>
+
+<h2 id="welcome">Welcome</h2>
+<p>&lt;/body&gt;
+&lt;/html&gt;</p>
+<ul>
+  <li>1. Enabling MVC: The AddControllersWithViews() method configures the application for MVC,</li>
+</ul>
+<p>including view support.</p>
+<ul>
+  <li>2. Controller Action: The Index action method in HomeController returns a ViewResult without</li>
+</ul>
+<p>specifying a view name.</p>
+<ul>
+  <li>3. View Location: Since no view name is explicitly provided, the MVC framework follows the</li>
+</ul>
+<p>convention and looks for the view at Views/Home/Index.cshtml.</p>
+<ul>
+  <li>4. View Content: The Index.cshtml view contains simple HTML that will be rendered as the</li>
+</ul>
+<p>response.</p>
+
+<h2 id="razor-view-engine">Razor View Engine</h2>
+<p>Razor is the default view engine in ASP.NET Core MVC. It provides a concise and elegant way to
+create dynamic web pages by combining C# code with HTML markup.</p>
+
+<h2 id="key-razor-syntax-elements">Key Razor Syntax Elements</h2>
+<ul>
+  <li>1. Code Blocks (@{...}):</li>
+  <li>o Purpose: Enclose multi-line C# code statements.</li>
+  <li>o Use Cases:</li>
+</ul>
+<p>▪ Declaring variables
+              ▪ Defining complex logic
+              ▪ Executing database queries or other operations</p>
+<ul>
+  <li>2. Expressions (@variable or @method()):</li>
+  <li>o Purpose: Embed C# expressions directly into the HTML output.</li>
+  <li>o Use Cases:</li>
+</ul>
+<p>▪ Displaying values from variables or model properties
+              ▪ Calling helper methods or functions</p>
+<ul>
+  <li>3. Literals (@: or &lt;text&gt;):</li>
+  <li>o Purpose: Output raw text without HTML encoding.</li>
+  <li>o Use Cases:</li>
+</ul>
+<p>▪ Displaying plain text, HTML snippets, or values that might contain HTML
+                 characters</p>
+
+<h2 id="control-flow-in-razor-views">Control Flow in Razor Views</h2>
+<ul>
+  <li>1. @if, @else, @elseif:</li>
+  <li>o Purpose: Conditional rendering of HTML blocks based on C# conditions.</li>
+  <li>o Example:</li>
+</ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@if (person.DateOfBirth.HasValue)
+{
+  &lt;p&gt;Age: @(Math.Round((DateTime.Now - person.DateOfBirth).Value.TotalDays / 365.25)) years
+}</code></pre>
+    </div>
+  <p>old&lt;/p&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+  <p>else</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+  &lt;p&gt;Date of birth is unknown&lt;/p&gt;
+}</code></pre>
+    </div>
+  <p>2. @switch:</p>
+<ul>
+  <li>o Purpose: Choose one of several blocks of code to execute based on the value of an</li>
+</ul>
+<p>expression.</p>
+<ul>
+  <li>o Example:</li>
+</ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@switch (person.PersonGender)
+{
+}</code></pre>
+    </div>
+  <p>case Gender.Male:</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;p&gt;November 19 is International Men&#39;s Day&lt;/p&gt;
+   break;</code></pre>
+    </div>
+  <p>case Gender.Female:</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;p&gt;March 8 is International Women&#39;s Day&lt;/p&gt;
+   break;
+  // ... other cases ...</code></pre>
+    </div>
+  <p>3. @foreach:</p>
+<ul>
+  <li>o Purpose: Iterate over a collection (e.g., a list or array) and render HTML for each</li>
+</ul>
+<p>item.</p>
+<ul>
+  <li>o Example:</li>
+</ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@foreach (var person in people)
+{
+  &lt;div&gt;@person.Name, @person.PersonGender&lt;/div&gt;
+}</code></pre>
+    </div>
+  <ul>
+  <li>4. @for:</li>
+  <li>o Purpose: Execute a code block a specific number of times.</li>
+  <li>o Example:</li>
+</ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@for (int i = 0; i &lt; 5; i++)
+{
+  &lt;p&gt;Iteration: @i&lt;/p&gt;
+}</code></pre>
+    </div>
+  <p>Notes</p>
+<ul>
+  <li>• Razor Syntax: Familiarize yourself with Razor syntax (code blocks, expressions, literals) for</li>
+</ul>
+<p>embedding C# code in your views.</p>
+<ul>
+  <li>• Control Flow: Understand how to use if, else, switch, foreach, and for to control the flow of</li>
+</ul>
+<p>logic and create dynamic views.</p>
+<ul>
+  <li>• Model Binding: Views often work with models passed from the controller. Use Razor</li>
+</ul>
+<p>expressions to access and display model properties.</p>
+
+<h2 id="local-functions-in-razor-views">Local Functions in Razor Views</h2>
+<p>Local functions are C# functions defined within the scope of a Razor code block (a code block
+enclosed in @{ ... }). They allow you to encapsulate reusable logic directly in your views, making your
+view code more modular, organized, and easier to read.</p>
+
+<h2 id="syntax-and-features">Syntax and Features</h2>
+<ul>
+  <li>• Declaration: Local functions are declared using the standard C# method syntax, typically</li>
+</ul>
+<p>within an @functions { ... } block.</p>
+<ul>
+  <li>• Scope: They can only be called within the code block or section where they are defined.</li>
+  <li>• Parameters and Return Types: Local functions can take parameters and return values, just</li>
+</ul>
+<p>like regular C# methods.</p>
+<ul>
+  <li>• Accessibility: They are implicitly private to the view.</li>
+  <li>• Access to View Data: Local functions can access variables and model properties declared</li>
+</ul>
+<p>within the same code block.</p>
+<p>Why Use Local Functions?</p>
+<ul>
+  <li>• Encapsulation: Group related logic into self-contained functions, improving code readability.</li>
+  <li>• Readability: Break down complex code into smaller, more manageable chunks.</li>
+  <li>• Reusability: Call local functions multiple times within the same view, avoiding code</li>
+</ul>
+<p>duplication.</p>
+<ul>
+  <li>• Cleaner Views: Reduce the amount of inline C# code scattered throughout your HTML</li>
+</ul>
+<p>markup.</p>
+
+<h2 id="code-1">Code</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@using ViewsExample.Models
+@{
+  string appTitle = &quot;Asp.Net Core Demo App&quot;;
+}</code></pre>
+    </div>
+  <p>List&lt;Person&gt; people = new List&lt;Person&gt;()</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+// ... (person data
+)
+  };
+}
+@functions {</code></pre>
+    </div>
+  <p>double? GetAge(DateTime? dateOfBirth)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+}</code></pre>
+    </div>
+  <p>if (dateOfBirth is not null)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+     return Math.Round((DateTime.Now - dateOfBirth.Value).TotalDays / 365.25);
+   }</code></pre>
+    </div>
+  <p>else</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+   {
+     return null;
+   }
+  }
+  int x = 10; // Example of a local variable</code></pre>
+    </div>
+  <p>string Name { get; set; } = &quot;Hello name&quot;; // Example of a local property</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+  <p>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+   &lt;title&gt;@appTitle&lt;/title&gt;
+   &lt;meta charset=&quot;utf-8&quot; /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;h1&gt;Welcome to @Name&lt;/h1&gt;
+   @for (int i = 0; i &lt; 2; i++)
+   {
+     Person person = people[i];
+     &lt;div&gt;
+}</code></pre>
+    </div>
+  <p>@person.Name</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;span&gt;, &lt;/span&gt;
+      &lt;span&gt;@person.PersonGender&lt;/span&gt;
+      @if (person.DateOfBirth != null)
+      {
+        &lt;span&gt;@person.DateOfBirth.Value.ToString(&quot;MM/dd/yyyy&quot;)&lt;/span&gt;
+        &lt;span&gt;@GetAge(person.DateOfBirth) years old&lt;/span&gt;
+      }
+     &lt;/div&gt;</code></pre>
+    </div>
+  <p>&lt;/body&gt;
+&lt;/html&gt;
+In this code:</p>
+<ul>
+  <li>1. Local Function: GetAge(DateTime? dateOfBirth) calculates the age of a person based on</li>
+</ul>
+<p>their date of birth.</p>
+<ul>
+  <li>2. Local Variable: int x = 10; This is not used in the view but demonstrates how to declare local</li>
+</ul>
+<p>variables within a Razor code block.</p>
+<ul>
+  <li>3. Local Property: string Name { get; set; } = &quot;Hello name&quot;; This is used to set the title of the</li>
+</ul>
+<p>page.
+The GetAge function is called within the @foreach loop to display the age of each person if their
+date of birth is available.</p>
+
+<h2 id="important-considerations">Important Considerations</h2>
+<ul>
+  <li>• Overuse: Avoid overusing local functions. They&#39;re great for encapsulation, but too many can</li>
+</ul>
+<p>make your views harder to follow.</p>
+<ul>
+  <li>• Alternatives: Consider helper methods or view components for more complex or reusable</li>
+</ul>
+<p>logic.
+Html.Raw()
+In Razor views, the default behavior is to automatically encode HTML content to prevent potential
+security vulnerabilities like cross-site scripting (XSS) attacks. However, sometimes you have
+legitimate HTML content (e.g., from a rich text editor or a trusted source) that you want to render
+as-is, without encoding. This is where Html.Raw() comes in.</p>
+
+<h2 id="purpose">Purpose</h2>
+<ul>
+  <li>• Bypass HTML Encoding: Html.Raw() prevents Razor from encoding the HTML content you</li>
+</ul>
+<p>provide, allowing it to be rendered directly in the browser.</p>
+<ul>
+  <li>• Displaying Trusted HTML: Use it when you trust the source of the HTML content and want</li>
+</ul>
+<p>to preserve its formatting and structure.</p>
+<ul>
+  <li>• Dynamic Content Generation: Html.Raw() can be used to dynamically insert HTML</li>
+</ul>
+<p>fragments into your views based on data or logic.</p>
+
+<h2 id="syntax">Syntax</h2>
+<p>@Html.Raw(htmlContent)</p>
+<p>where htmlContent is a string variable or expression containing the HTML you want to render
+without encoding.</p>
+
+<h2 id="important-considerations-1">Important Considerations</h2>
+<ul>
+  <li>• Security Risk: Use Html.Raw() with extreme caution. If the htmlContent originates from</li>
+</ul>
+<p>user input or an untrusted source, it could lead to XSS vulnerabilities. Always sanitize and
+      validate user-generated content before rendering it with Html.Raw().</p>
+<ul>
+  <li>• Content Security Policy (CSP): Consider implementing a CSP to further mitigate XSS risks. A</li>
+</ul>
+<p>CSP defines a set of rules that govern how the browser handles external scripts, styles, and
+      other resources.</p>
+
+<h2 id="code-2">Code</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@{
+  // ... (other variables and logic) ...
+  string alertMessage = $&quot;&lt;script&gt;alert(&#39;{people.Count} people found&#39;)&lt;/script&gt;&quot;;
+}</code></pre>
+    </div>
+  <p>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;/head&gt;
+&lt;body&gt;
+  @Html.Raw(alertMessage)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;h1&gt;Welcome&lt;/h1&gt;
+  @for (int i = 0; i &lt; 2; i++)
+  {
+   // ... (rest of the view code) ...
+  }</code></pre>
+    </div>
+  <p>&lt;/body&gt;
+&lt;/html&gt;
+In this code:</p>
+<ul>
+  <li>1. Raw HTML String: The variable alertMessage contains a string of HTML that includes a</li>
+</ul>
+<p>&lt;script&gt; tag intended to display an alert message with the number of people found.</p>
+<ul>
+  <li>2. Html.Raw() Usage: The @Html.Raw(alertMessage) line tells Razor to render the contents of</li>
+</ul>
+<p>alertMessage directly into the HTML output without encoding. This will result in the
+      following HTML in the output:
+&lt;script&gt;alert(&#39;3 people found&#39;)&lt;/script&gt;</p>
+<ul>
+  <li>3. Client-Side Execution: When the browser parses this HTML, it will execute the JavaScript</li>
+</ul>
+<p>code inside the &lt;script&gt; tag, triggering an alert box.</p>
+<ul>
+  <li>4. No sanitization: In this example, since the number of people is not user input, there is no</li>
+</ul>
+<p>risk of XSS attack. However, if the content of the alert message is coming from user input, it
+      is essential to santize it before displaying it to prevent XSS attacks.</p>
+
+<h2 id="notes-1">Notes</h2>
+<ul>
+  <li>• Trust but Verify: Only use Html.Raw() when you&#39;re absolutely sure the content is safe and</li>
+</ul>
+<p>from a trusted source.</p>
+<ul>
+  <li>• Security Risks: Be aware of the potential for XSS vulnerabilities when rendering raw HTML.</li>
+  <li>• Alternative Approaches: If you need to inject dynamic HTML content, consider safer</li>
+</ul>
+<p>alternatives like partial views or view components.</p>
+<ul>
+  <li>• Content Security Policy (CSP): Implement a CSP to add an extra layer of protection against</li>
+</ul>
+<p>XSS attacks.</p>
+
+<h2 id="viewdata-and-viewbag">ViewData and ViewBag</h2>
+<p>Both ViewData and ViewBag are mechanisms in ASP.NET Core MVC for passing data from your
+controller actions to your views. While they serve the same purpose, they differ in their
+implementation and syntax.</p>
+<ul>
+  <li>• ViewData (Dictionary-Based):</li>
+  <li>o It&#39;s a dictionary-like object (ViewDataDictionary) that stores key-value pairs.</li>
+  <li>o Keys are strings, and values can be of any type.</li>
+  <li>o Access data using string keys: ViewData[&quot;keyName&quot;].</li>
+  <li>o Requires casting when retrieving non-string values.</li>
+  <li>• ViewBag (Dynamic):</li>
+  <li>o It&#39;s a dynamic wrapper around the ViewData dictionary.</li>
+  <li>o Allows you to access data using dot notation: ViewBag.keyName.</li>
+  <li>o No explicit casting is needed for non-string values.</li>
+</ul>
+
+<h2 id="availability-in-controllers-and-views">Availability in Controllers and Views</h2>
+<p>Both ViewData and ViewBag are accessible in:</p>
+<ul>
+  <li>• Controllers: You set values in the controller action and they are passed to the view.</li>
+  <li>• Views: You retrieve values from the ViewData dictionary or the ViewBag dynamic object in</li>
+</ul>
+<p>the view to render content.
+Code of ViewData:</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// HomeController.cs (Controller
+)
+ViewData[&quot;appTitle&quot;] = &quot;Asp.Net Core Demo App&quot;;
+ViewData[&quot;people&quot;] = people;
+// Index.cshtml (View
+)</code></pre>
+    </div>
+  <p>&lt;title&gt;@ViewData[&quot;appTitle&quot;]&lt;/title&gt;
+List&lt;Person&gt;? people = (List&lt;Person&gt;?)ViewData[&quot;people&quot;];
+Code of ViewBag:</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// HomeController.cs (Controller
+)
+ViewBag.appTitle = &quot;Asp.Net Core Demo App&quot;;
+ViewBag.people = people;
+// Index.cshtml (View
+)</code></pre>
+    </div>
+  <p>&lt;title&gt;@ViewBag.appTitle&lt;/title&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@foreach (Person person in ViewBag.people)</code></pre>
+    </div>
+  <p>Best Practices</p>
+<ul>
+  <li>• Choose One: It&#39;s generally recommended to pick either ViewData or ViewBag and use it</li>
+</ul>
+<p>consistently throughout your project to maintain a clear and unified approach.</p>
+<ul>
+  <li>• Strong Typing with View Models: While ViewData and ViewBag offer flexibility, they lack</li>
+</ul>
+<p>compile-time type safety. For larger applications, prefer strongly typed view models to pass
+      data to views.</p>
+<ul>
+  <li>• Limited Scope: Understand that ViewData and ViewBag data exists only for the duration of</li>
+</ul>
+<p>the current request and response cycle. It&#39;s not meant for persisting data between requests.</p>
+<ul>
+  <li>• Meaningful Keys: Use descriptive and meaningful keys for your data to improve code</li>
+</ul>
+<p>readability.</p>
+
+<h2 id="things-to-avoid">Things to Avoid</h2>
+<ul>
+  <li>• Overuse: Don&#39;t overstuff ViewData or ViewBag with excessive data. Keep it concise and</li>
+</ul>
+<p>focused on the specific information needed by the view.</p>
+<ul>
+  <li>• Magic Strings: Avoid hardcoding strings for keys. Use constants or enums for better</li>
+</ul>
+<p>maintainability.</p>
+<ul>
+  <li>• Sensitive Data: Never pass sensitive data like passwords or authentication tokens through</li>
+</ul>
+<p>ViewData or ViewBag.</p>
+
+<h2 id="strongly-typed-views">Strongly Typed Views</h2>
+<p>In ASP.NET Core MVC, a strongly typed view is a view that is associated with a specific model class.
+This means that the view has direct access to the properties and methods of that model, providing
+compile-time type checking and IntelliSense support within the view.
+The @model Directive
+The @model directive is used at the top of a view to specify the model type for that view. For
+example, @model Person indicates that the view expects to work with data of the Person class.</p>
+
+<h2 id="when-to-use-strongly-typed-views">When to Use Strongly Typed Views</h2>
+<ul>
+  <li>• Complex Data: When your view needs to display or interact with complex data structures</li>
+</ul>
+<p>that have multiple properties or relationships.</p>
+<ul>
+  <li>• Type Safety: When you want to catch type-related errors during development, rather than</li>
+</ul>
+<p>at runtime.</p>
+<ul>
+  <li>• IntelliSense: When you want the full power of Visual Studio&#39;s IntelliSense to help you code</li>
+</ul>
+<p>faster and with fewer errors.</p>
+<ul>
+  <li>• Refactoring: When you need to change the model, strongly typed views make it easier to</li>
+</ul>
+<p>update the corresponding views automatically.</p>
+
+<h2 id="best-practices">Best Practices</h2>
+<ul>
+  <li>• Use View Models: Instead of directly passing your business models to views, create</li>
+</ul>
+<p>specialized view models tailored to the data needed by each view. This helps keep your
+      views clean and focused.</p>
+<ul>
+  <li>• Naming Conventions: Follow standard naming conventions for your view models (e.g.,</li>
+</ul>
+<p>ProductViewModel, OrderDetailsViewModel).</p>
+<ul>
+  <li>• Keep Views Simple: Views should primarily focus on presentation logic. Avoid complex</li>
+</ul>
+<p>business logic within views.</p>
+<ul>
+  <li>• Partial Views: Leverage partial views for reusable components, passing view models to them</li>
+</ul>
+<p>as needed.</p>
+<ul>
+  <li>• Leverage Tag Helpers: Explore the use of Tag Helpers, which provide a more HTML-friendly</li>
+</ul>
+<p>way to interact with your models in views.
+Code:
+Controller (HomeController.cs)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// ...
+[Route(&quot;home&quot;)]
+[Route(&quot;/&quot;)]
+public IActionResult Index()
+{
+}</code></pre>
+    </div>
+  <p>List&lt;Person&gt; people = new List&lt;Person&gt;()</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+}</code></pre>
+    </div>
+  <p>new Person() { Name = &quot;John&quot;, DateOfBirth = DateTime.Parse(&quot;2000-05-06&quot;), PersonGender =
+Gender.Male},</p>
+<p>new Person() { Name = &quot;Linda&quot;, DateOfBirth = DateTime.Parse(&quot;2005-01-09&quot;), PersonGender =
+Gender.Female},
+   new Person() { Name = &quot;Susan&quot;, DateOfBirth = null, PersonGender = Gender.Other}</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">return View(&quot;Index&quot;, people); // Pass the &#39;people&#39; list as the model
+}
+[Route(&quot;person-details/{name}&quot;)]
+public IActionResult Details(string? name)
+{
+  // ... (Retrieve the person based on the name) ...
+  Person? matchingPerson = people.Where(temp =&gt; temp.Name == name).FirstOrDefault();
+  return View(matchingPerson); // Pass a single &#39;Person&#39; object as the model</code></pre>
+    </div>
+  <p>Both action methods pass the model(s) to the view using return View(model).
+View (Index.cshtml)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@using ViewsExample.Models
+@model IEnumerable&lt;Person&gt; // Indicates that the model is a collection of Person objects</code></pre>
+    </div>
+  <p>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;@ViewBag.appTitle&lt;/title&gt;
+  &lt;/head&gt;
+&lt;body&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;div class=&quot;page-content&quot;&gt;
+  &lt;h1&gt;Persons&lt;/h1&gt;
+  @foreach (Person person in Model)
+  {
+   &lt;div class=&quot;box float-left w-50&quot;&gt;
+     &lt;h3&gt;@person.Name&lt;/h3&gt;
+     &lt;table class=&quot;table w-100&quot;&gt;
+}</code></pre>
+    </div>
+  <p>&lt;tbody&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;tr&gt;
+        &lt;td&gt;Gender&lt;/td&gt;
+        &lt;td&gt;@person.PersonGender&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Date of Birth&lt;/td&gt;
+        &lt;td&gt;@person.DateOfBirth?.ToString(&quot;MM/dd/yyyy&quot;)&lt;/td&gt;
+      &lt;/tr&gt;</code></pre>
+    </div>
+  <p>&lt;/tbody&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+     &lt;/table&gt;
+     &lt;a href=&quot;/person-details/@person.Name&quot;&gt;Details&lt;/a&gt;
+   &lt;/div&gt;
+  }
+  &lt;/div&gt;</code></pre>
+    </div>
+  <p>&lt;/body&gt;
+&lt;/html&gt;
+This view iterates over the Model (which is a list of Person objects) using a foreach loop. Inside the
+loop, it accesses the properties of each Person object directly (e.g., @person.Name,
+@person.PersonGender) thanks to strong typing.
+View (Details.cshtml)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@using ViewsExample.Models
+@model Person // Indicates that the model is a single Person object</code></pre>
+    </div>
+  <p>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Person Details&lt;/title&gt;
+  &lt;/head&gt;
+&lt;body&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;div class=&quot;page-content&quot;&gt;
+   &lt;h1&gt;Person Details&lt;/h1&gt;
+   &lt;div class=&quot;box&quot;&gt;
+     &lt;h3&gt;@Model.Name&lt;/h3&gt;
+     &lt;table class=&quot;table w-100&quot;&gt;</code></pre>
+    </div>
+  <p>&lt;tbody&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;tr&gt;
+        &lt;td&gt;Gender&lt;/td&gt;
+        &lt;td&gt;@Model.PersonGender&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Date of Birth&lt;/td&gt;
+        &lt;td&gt;@Model.DateOfBirth?.ToString(&quot;MM/dd/yyyy&quot;)&lt;/td&gt;
+      &lt;/tr&gt;</code></pre>
+    </div>
+  <p>&lt;/tbody&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;/table&gt;
+   &lt;/div&gt;
+   &lt;a href=&quot;/home&quot;&gt;Back to persons&lt;/a&gt;
+  &lt;/div&gt;</code></pre>
+    </div>
+  <p>&lt;/body&gt;
+&lt;/html&gt;
+This view displays the details of a single Person object. Notice that you can directly access properties
+like @Model.Name without any casting or dictionary lookups.</p>
+
+<h2 id="strongly-typed-views-with-multiple-models">Strongly Typed Views with Multiple Models</h2>
+<p>When your view requires data from more than one model class, the most common and
+recommended approach is to create a view model. A view model is a custom class that encapsulates
+all the data necessary for a specific view, aggregating properties from multiple models or providing
+additional properties tailored for the view&#39;s presentation needs.
+Why Use View Models?</p>
+<ul>
+  <li>• Encapsulation: Keeps your view logic organized and prevents your views from becoming</li>
+</ul>
+<p>tightly coupled to your underlying business models.</p>
+<ul>
+  <li>• Flexibility: Allows you to combine data from different sources (multiple models,</li>
+</ul>
+<p>configuration settings, etc.) into a single object for the view.</p>
+<ul>
+  <li>• Type Safety: Strongly typed views with view models offer compile-time type checking and</li>
+</ul>
+<p>IntelliSense, improving development efficiency.</p>
+<ul>
+  <li>• Data Shaping: You can create properties in the view model specifically designed for how you</li>
+</ul>
+<p>want to display data in the view, such as formatted strings or calculated values.</p>
+
+<h2 id="creating-and-using-view-models">Creating and Using View Models</h2>
+<ul>
+  <li>1. Define the View Model: Create a new class in your Models folder to represent the view</li>
+</ul>
+<p>model. This class will have properties to hold the data from the various models your view
+      needs.</p>
+<ul>
+  <li>2. Populate in the Controller: In your controller action, retrieve the data from your different</li>
+</ul>
+<p>models and use them to create an instance of your view model.</p>
+<ul>
+  <li>3. Pass to the View: Pass the populated view model object to the view using the View method.</li>
+  <li>4. Access in the View: In your view, use the @model directive at the top to specify the type of</li>
+</ul>
+<p>your view model. You can then access the view model&#39;s properties using
+      Model.&lt;PropertyName&gt;.
+Code Example: PersonAndProductWrapperModel</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// PersonAndProductWrapperModel.cs (View Model
+)
+public class PersonAndProductWrapperModel
+{
+  public Person PersonData { get; set; }
+  public Product ProductData { get; set; }
+}
+// HomeController.cs (Controller
+)
+public IActionResult SomeAction()
+{
+}</code></pre>
+    </div>
+  <p>Person person = GetPersonData(); // Fetch person data
+  Product product = GetProductData(); // Fetch product data</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">var viewModel = new PersonAndProductWrapperModel
+  {
+   PersonData = person,
+   ProductData = product
+  };
+  return View(viewModel);</code></pre>
+    </div>
+  <p>View (PersonAndProduct.cshtml)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@using ViewsExample.Models
+@model PersonAndProductWrapperModel</code></pre>
+    </div>
+  <p>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;div class=&quot;page-content&quot;&gt;
+   &lt;h1&gt;Person and Product&lt;/h1&gt;
+   &lt;div class=&quot;box w-100&quot;&gt;
+     &lt;h3&gt;Person&lt;/h3&gt;
+     &lt;table class=&quot;table w-50&quot;&gt;</code></pre>
+    </div>
+  <p>&lt;tbody&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;tr&gt;
+      &lt;td&gt;Person Name&lt;/td&gt;
+      &lt;td&gt;@Model.PersonData.Name&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+      &lt;td&gt;Gender&lt;/td&gt;
+      &lt;td&gt;@Model.PersonData.PersonGender&lt;/td&gt;
+      &lt;/tr&gt;</code></pre>
+    </div>
+  <p>&lt;/tbody&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;/table&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;box w-100&quot;&gt;
+     &lt;h3&gt;Product&lt;/h3&gt;
+     &lt;table class=&quot;table w-50&quot;&gt;</code></pre>
+    </div>
+  <p>&lt;tbody&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;tr&gt;
+      &lt;td&gt;Product Id&lt;/td&gt;
+      &lt;td&gt;@Model.ProductData.ProductId&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+      &lt;td&gt;Product Name&lt;/td&gt;
+      &lt;td&gt;@Model.ProductData.ProductName&lt;/td&gt;
+      &lt;/tr&gt;</code></pre>
+    </div>
+  <p>&lt;/tbody&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;/table&gt;
+   &lt;/div&gt;
+  &lt;/div&gt;</code></pre>
+    </div>
+  <p>&lt;/body&gt;
+&lt;/html&gt;
+Key Points:</p>
+<ul>
+  <li>• Organization: View models help keep your views focused on presentation and your</li>
+</ul>
+<p>controllers focused on data retrieval and processing.</p>
+<ul>
+  <li>• Maintainability: When your underlying models change, you only need to update your view</li>
+</ul>
+<p>model, not every view that uses that data.</p>
+<ul>
+  <li>• Flexibility: You can include additional properties in your view model that aren&#39;t part of your</li>
+</ul>
+<p>original models. This could be formatting options, computed values, or flags for controlling
+      the view&#39;s behavior.
+_ViewImports.cshtml
+The _ViewImports.cshtml file is a special file in ASP.NET Core MVC that allows you to centralize
+common directives and settings that apply to multiple views within your application. This file
+typically resides in the Views folder at the root of your project, but you can also place it within
+subfolders to apply the settings to views within those specific folders.
+What Can You Put in _ViewImports.cshtml?</p>
+<ul>
+  <li>• @using Directives: Import namespaces that you frequently use in your views. This</li>
+</ul>
+<p>eliminates the need to include these directives in every individual view.</p>
+<ul>
+  <li>• @addTagHelper Directives: Make Tag Helpers available to your views. Tag Helpers are</li>
+</ul>
+<p>server-side code snippets that generate or modify HTML elements in a more intuitive way
+      than traditional Razor syntax.</p>
+<ul>
+  <li>• @inject Directives: Inject services into your views, making them accessible for use in your</li>
+</ul>
+<p>Razor code.</p>
+<ul>
+  <li>• @model Directive (Optional): Specify a default model type for all views in the directory or</li>
+</ul>
+<p>subdirectories (not recommended for complex projects).</p>
+<ul>
+  <li>• @layout Directive (Optional): Set a default layout for all views in the directory or</li>
+</ul>
+<p>subdirectories.</p>
+
+<h2 id="how-it-works">How It Works</h2>
+<p>When your application processes a request for a view, it looks for a _ViewImports.cshtml file in the
+following order:</p>
+<ul>
+  <li>1. The same directory as the view: If found, the directives and settings in this file are applied.</li>
+  <li>2. Parent directories: It then checks the parent directory of the view, and so on, up to the root</li>
+</ul>
+<p>Views folder.</p>
+<ul>
+  <li>3. Root Views folder: Finally, it checks the _ViewImports.cshtml file in the root Views folder.</li>
+</ul>
+<p>Directives in a child folder&#39;s _ViewImports.cshtml file can override settings inherited from parent
+directories.
+Code Example: _ViewImports.cshtml</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@using System.Collections.Generic // Import the generic collections namespace
+@using YourProject.Models // Import your project&#39;s models namespace
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers // Add built-in ASP.NET Core Tag Helpers</code></pre>
+    </div>
+  <p>Benefits of Using _ViewImports.cshtml</p>
+<ul>
+  <li>• Reduced Redundancy: Avoid repeating the same directives in multiple views.</li>
+  <li>• Consistent Configuration: Easily apply common settings across your views.</li>
+  <li>• Improved Readability: Keep your individual view files cleaner and more focused on their</li>
+</ul>
+<p>specific content.
+Code of View:</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@model YourProject.Models.Product</code></pre>
+    </div>
+  <p>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Product Details&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;h1&gt;@Model.Name&lt;/h1&gt;</code></pre>
+    </div>
+  <p>&lt;/body&gt;
+&lt;/html&gt;</p>
+<p>In this example, the @model directive is not required in the view because it&#39;s already specified in the
+_ViewImports.cshtml file. Similarly, you don&#39;t need to include the @using directive for your model&#39;s
+namespace.</p>
+
+<h2 id="important-considerations-2">Important Considerations</h2>
+<ul>
+  <li>• Scoping: Directives in _ViewImports.cshtml are scoped to the directory and its</li>
+</ul>
+<p>subdirectories.</p>
+<ul>
+  <li>• Overriding: Settings in a child folder&#39;s _ViewImports.cshtml file override those in parent</li>
+</ul>
+<p>folders.</p>
+<ul>
+  <li>• Flexibility: Use multiple _ViewImports.cshtml files in different folders to manage settings at</li>
+</ul>
+<p>a more granular level.</p>
+
+<h2 id="key-points-to-remember">Key Points to Remember</h2>
+<ul>
+  <li>• Centralization: Use _ViewImports.cshtml to centralize common view directives and settings.</li>
+  <li>• DRY Principle: Adhere to the Don&#39;t Repeat Yourself (DRY) principle by avoiding redundant</li>
+</ul>
+<p>code.</p>
+<ul>
+  <li>• Scoping and Overriding: Understand how the cascading nature of _ViewImports.cshtml files</li>
+</ul>
+<p>works.</p>
+
+<h2 id="shared-views">Shared Views</h2>
+<p>In ASP.NET Core MVC, a shared view is a view file (.cshtml) that is not tied to a specific controller or
+action. These views typically reside in the Views/Shared folder and are designed to be reused across
+different controllers or even multiple projects.
+Why Use Shared Views?</p>
+<ul>
+  <li>• Reduce Duplication: Avoid writing the same code repeatedly for common UI elements</li>
+</ul>
+<p>across your application.</p>
+<ul>
+  <li>• Consistent UI: Maintain a unified look and feel across different pages and sections of your</li>
+</ul>
+<p>site.</p>
+<ul>
+  <li>• Simplified Maintenance: Update the shared view once, and the changes automatically apply</li>
+</ul>
+<p>to all views that use it.</p>
+
+<h2 id="how-shared-views-work">How Shared Views Work</h2>
+<ul>
+  <li>1. Location: By default, ASP.NET Core MVC looks for shared views in the Views/Shared folder.</li>
+</ul>
+<p>You can also create subfolders within Views/Shared to further organize your shared views.</p>
+<ul>
+  <li>2. Naming: Name your shared views in a way that reflects their purpose or content. Common</li>
+</ul>
+<p>examples include:</p>
+<ul>
+  <li>o _Layout.cshtml: The main layout for your application&#39;s pages.</li>
+  <li>o _PartialName.cshtml: Smaller, reusable components (partial views) that can be</li>
+</ul>
+<p>embedded in other views.</p>
+<ul>
+  <li>3. Rendering: You can render a shared view using the following approaches:</li>
+  <li>o PartialView(): Renders a partial view.</li>
+  <li>o View(): Can be used to render a shared view directly, but it&#39;s more common to use</li>
+</ul>
+<p>PartialView() for partial views and reserve View() for full pages.
+Code Example: Shared View All.cshtml
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;All Products&lt;/title&gt;
+  &lt;meta charset=&quot;UTF-8&quot; /&gt;
+  &lt;link href=&quot;~/StyleSheet.css&quot; rel=&quot;stylesheet&quot; /&gt;
+&lt;/head&gt;
+&lt;body&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;div class=&quot;page-content&quot;&gt;
+   &lt;h1&gt;All Products&lt;/h1&gt;
+   &lt;/div&gt;</code></pre>
+    </div>
+  <p>&lt;/body&gt;
+&lt;/html&gt;
+This shared view (All.cshtml) can be reused by multiple controllers to display the &quot;All Products&quot; page
+with the same structure and styling.</p>
+<p>Code Example: Controllers Using the Shared View</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// HomeController.cs
+[Route(&quot;home/all-products&quot;)]
+public IActionResult All()
+{
+  return View(); // Will look for Views/Home/All.cshtml first, then Views/Shared/All.cshtml
+}
+// ProductsController.cs
+[Route(&quot;products/all&quot;)]
+public IActionResult All()
+{
+  return View(); // Will look for Views/Products/All.cshtml first, then Views/Shared/All.cshtml
+}</code></pre>
+    </div>
+  <p>In both HomeController and ProductsController, the All action method returns a ViewResult.
+ASP.NET Core will first look for a view named All.cshtml within the specific controller&#39;s view folder
+(e.g., Views/Home or Views/Products). If it doesn&#39;t find it there, it will look for it in the Views/Shared
+folder.</p>
+
+<h2 id="important-considerations-3">Important Considerations</h2>
+<ul>
+  <li>• Naming Convention: Prefix the names of partial views with an underscore (e.g.,</li>
+</ul>
+<p>_ProductCard.cshtml) to distinguish them from full views.</p>
+<ul>
+  <li>• Data Passing: Use view models to pass data to shared views, ensuring that the view has</li>
+</ul>
+<p>access to all the information it needs to render correctly.</p>
+<ul>
+  <li>• Flexibility: You can override shared views within specific controllers if you need to customize</li>
+</ul>
+<p>them for a particular use case.
+Shared views are a cornerstone of maintainable and scalable ASP.NET Core MVC applications. By
+leveraging their reusability, you can significantly streamline your development process and ensure a
+consistent user experience across your website or application.</p>
+
+<h2 id="key-points-to-remember-1">Key Points to Remember</h2>
+
+<h2 id="1-views">1. Views</h2>
+<ul>
+  <li>• Purpose: Render the user interface (UI) of your MVC application.</li>
+  <li>• Razor View Engine: Default engine for combining HTML markup with C# code.</li>
+  <li>• View File Location: Typically found in the Views folder, organized by controller.</li>
+  <li>• View Selection: Controllers return ViewResult or other action results to render views.</li>
+  <li>• Model Binding: Views often receive data from controllers (the model) for dynamic</li>
+</ul>
+<p>rendering.</p>
+
+<h2 id="2-razor-syntax-essentials">2. Razor Syntax Essentials</h2>
+<ul>
+  <li>• Code Blocks (@{...}): For multi-line C# code.</li>
+  <li>• Expressions (@variable or @method()): Embed C# expressions.</li>
+  <li>• Literals (@: or &lt;text&gt;): Output raw text (no HTML encoding).</li>
+  <li>• Control Flow: Use @if, @else, @switch, @foreach, @for for conditional and iterative logic.</li>
+  <li>• Comments: @*...*@ for server-side comments.</li>
+</ul>
+
+<h2 id="3-local-functions">3. Local Functions</h2>
+<ul>
+  <li>• Purpose: Encapsulate reusable C# functions within Razor views.</li>
+  <li>• Syntax: Define within @functions { ... }.</li>
+  <li>• Benefits: Improved organization, readability, and reusability within a view.</li>
+</ul>
+
+<h2 id="4-htmlraw">4. Html.Raw()</h2>
+<ul>
+  <li>• Purpose: Renders raw HTML content without encoding.</li>
+  <li>• Warning: Use with caution due to potential XSS vulnerabilities.</li>
+  <li>• Alternatives: Consider partial views or view components for dynamic HTML generation.</li>
+</ul>
+
+<h2 id="5-viewdata-and-viewbag">5. ViewData and ViewBag</h2>
+<ul>
+  <li>• Purpose: Pass data from controllers to views.</li>
+  <li>• ViewData: Dictionary-based (ViewData[&quot;key&quot;]).</li>
+  <li>• ViewBag: Dynamic wrapper around ViewData (ViewBag.key).</li>
+  <li>• Recommendation: Prefer strongly typed views or view models for better type safety and</li>
+</ul>
+<p>maintainability.</p>
+
+<h2 id="6-strongly-typed-views">6. Strongly Typed Views</h2>
+<ul>
+  <li>• Purpose: Associate a view with a specific model class using the @model directive.</li>
+  <li>• Benefits: Type safety, IntelliSense, and improved maintainability.</li>
+  <li>• View Models: Combine data from multiple models into a single view model class.</li>
+  <li>7. _ViewImports.cshtml</li>
+  <li>• Purpose: Centralize common @using, @addTagHelper, @inject, and other directives.</li>
+  <li>• Location: In the root Views folder or subfolders.</li>
+  <li>• Benefits: Reduce redundancy, ensure consistency, and improve readability.</li>
+</ul>
+
+<h2 id="8-shared-views">8. Shared Views</h2>
+<ul>
+  <li>• Purpose: Reusable view components stored in the Views/Shared folder.</li>
+  <li>• Types:</li>
+  <li>o Layout Pages: Define the overall page structure.</li>
+  <li>o Partial Views: Reusable chunks of UI elements.</li>
+  <li>• Rendering: Use PartialView() to render partial views, View() for full views.</li>
+</ul>
+<p>Interview Tips:</p>
+<ul>
+  <li>• Razor Syntax: Be ready to write examples of different Razor syntax elements and explain</li>
+</ul>
+<p>their use cases.</p>
+<ul>
+  <li>• View Logic: Discuss when it&#39;s appropriate to use local functions or view models in your</li>
+</ul>
+<p>views.</p>
+<ul>
+  <li>• Security: Emphasize the importance of security (input validation, avoiding Html.Raw() for</li>
+</ul>
+<p>untrusted content) when working with views.</p>
+<ul>
+  <li>• Best Practices: Demonstrate your knowledge of using view models, shared views, and</li>
+</ul>
+<p>_ViewImports.cshtml for cleaner and more maintainable code.</p>
+
+<hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
+<section class="cheatsheet-section" aria-labelledby="cheat-sheet-quick-reference">
+  <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
+  <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
+  <p>Section 8 – Model Binding and Validations – Cheat Sheet</p>
+  <h3 id="model-view-controller-mvc-pattern">Model-View-Controller (MVC) Pattern</h3>
+  <p>&quot;Model-View-Controller&quot; (MVC) is an architectural pattern that separates application code into three
+main components: Models, Views and Controllers.</p>
+  <ul>
+    <li>1. Controller invokes Business Model.</li>
+    <li>2. Controller creates object of View Model.</li>
+    <li>3. Controller invokes View.</li>
+    <li>4. View accesses View Model.</li>
+  </ul>
+  <h3 id="responsibilities-of-model-view-controller">Responsibilities of Model-View-Controller</h3>
+  <h3 id="controller">Controller</h3>
+  <ul>
+    <li>• Receives HTTP request data.</li>
+    <li>• Invoke business model to execute business logic.</li>
+  </ul>
+  <h3 id="business-model">Business Model</h3>
+  <ul>
+    <li>• Receives input data from the controller.</li>
+    <li>• Performs business operations such as retrieving / inserting data from database.</li>
+    <li>• Sends data of the database back to the controller.</li>
+  </ul>
+  <h3 id="controller-1">Controller</h3>
+  <ul>
+    <li>• Creates object of ViewModel and files data into its properties.</li>
+    <li>• Selects a view &amp; invokes it &amp; also passes the object of ViewModel to the view.</li>
+  </ul>
+  <h3 id="view">View</h3>
+  <ul>
+    <li>• Receives the object of ViewModel from the controller.</li>
+    <li>• Accesses properties of ViewModel to render data in html code.</li>
+    <li>• After the view renders, the rendered view result will be sent as response.</li>
+  </ul>
+  <h3 id="benefits-goals-of-mvc-architectural-pattern">Benefits / Goals of MVC architectural pattern</h3>
+  <ul>
+    <li>• Clean separation of concerns</li>
+    <li>• Each component (model, view and controller) performs single responsibility.</li>
+    <li>• Identifying and fixing errors will be easy.</li>
+    <li>• Each component (model, view and controller) can be developed independently.</li>
+    <li>• In practical, both view and controller depend on the model.</li>
+    <li>• Model doesn&#39;t depend on neither view nor the controller.</li>
+    <li>• This is one of the key benefits of the &#39;clean separation&#39;.</li>
+    <li>• This separation allows the model to be built and tested independently.</li>
+    <li>• Unit testing each individual component is easier.</li>
+  </ul>
+  <h3 id="views-1">Views</h3>
+  <p>View is a web page (.cshtml) that is responsible for containing presentation logic that merges data
+along with static design code (HTML).</p>
+  <ul>
+    <li>• Controller creates an object of ViewModel and fills data in its properties.</li>
+    <li>• Controller selects an appropriate view and invokes the same view &amp; supplies object of</li>
+  </ul>
+  <p>ViewModel to the View.</p>
+  <ul>
+    <li>• View access the ViewModel.</li>
+    <li>• View contains HTML markup with Razor markup (C# code in view to render dynamic</li>
+  </ul>
+  <p>content).</p>
+  <ul>
+    <li>• Razor is the view engine that defines syntax to write C# code in the view. @ is the syntax of</li>
+  </ul>
+  <p>Razor syntax.</p>
+  <ul>
+    <li>• View is NOT supposed to have lots of C# code. Any code written in the view should relate to</li>
+  </ul>
+  <p>presenting the content (presentation logic).</p>
+  <ul>
+    <li>• View should neither directly call the business model, nor call the controller&#39;s action</li>
+  </ul>
+  <p>methods. But it can send requests to controllers.</p>
+  <h3 id="razor-view-engine-1">Razor View Engine</h3>
+  <h3 id="razor-code-block">Razor Code Block</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@{
+}</code></pre>
+    </div>
+    <p>C# / html code here</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+    <p>Razor code block is a C# code block that contains one or more lines of C# code that can contain any
+statements and local functions.</p>
+  <h3 id="razor-expressions">Razor Expressions</h3>
+  <p>@Expression
+--or--
+@(Expression)
+Razor expression is a C# expression (accessing a field, property or method call) that returns a value.</p>
+  <h3 id="razor-if">Razor - If</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@if (condition) {
+}</code></pre>
+    </div>
+    <p>C# / html code here</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+    <p>Razor - if…else</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@if (condition) {
+}</code></pre>
+    </div>
+    <p>C# / html code here</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">}
+else {</code></pre>
+    </div>
+    <p>C# / html code here</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+    <p>Else…if and nested-if also supported.</p>
+  <h3 id="razor-switch">Razor - Switch</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@switch (variable) {
+ case value1: C# / html code here; break;
+ case value2: C# / html code here; break;
+ default: C# / html code here; break;
+}</code></pre>
+    </div>
+    <p>Razor - foreach</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@foreach (var variable in collection ) {
+}</code></pre>
+    </div>
+    <p>C# / html code here</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+    <h3 id="razor-for">Razor - for</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@for (initialization; condition; iteration) {
+}</code></pre>
+    </div>
+    <p>C# / html code here</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+    <p>Razor - Literal</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@{
+}</code></pre>
+    </div>
+    <p>@: static text</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+    <p>Razor - Literal
+&lt;text&gt;static text&lt;/text&gt;</p>
+  <h3 id="razor-local-functions">Razor - Local Functions</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@{
+return_type method_name(arguments) {
+}
+}</code></pre>
+    </div>
+    <p>C# / html code here</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+    <p>The local functions are callable within the same view.</p>
+  <h3 id="razor-members">Razor - Members</h3>
+  <h3 id="razor-methods-properties-fields">Razor - Methods, Properties, Fields</h3>
+  <p>@functions {
+return_type method_name(arguments) {
+ C# / html code here</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">data_type field_name;</code></pre>
+    </div>
+    <p>data_type property_name</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+ set { … }
+ get { … }
+}</code></pre>
+    </div>
+    <p>The members of razor view can be accessible within the same view.
+Html.Raw( )</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@{
+string variable = &quot;html code&quot;;
+}</code></pre>
+    </div>
+    <p>@Html.Raw(variable) //prints the html markup without encoding (converting html tags into plain
+text)</p>
+  <h3 id="viewdata">ViewData</h3>
+  <p>ViewData is a dictionary object that is automatically created up on receiving a request and will be
+automatically deleted before sending response to the client.
+It is mainly used to send data from controller to view.</p>
+  <p>ViewData is a property of Microsoft.AspNetCore.Mvc.Controller class and
+Microsoft.AspNetCore.Mvc.Razor.RazorPage class.
+It is of Microsoft.AspNet.Mvc.ViewFeatures.ViewDataDictionary type.</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">namespace Microsoft.AspNetCore.Mvc
+{
+public abstract class Controller : ControllerBase
+{
+ public ViewDataDictionary ViewData { get; set; }
+}
+}</code></pre>
+    </div>
+    <p>• It is derived from IDictionary&lt;KeyValuePair&lt;string, object&gt;&gt; type.</p>
+  <ul>
+    <li>• That means, it acts as a dictionary of key/value pairs.</li>
+    <li>• Key is of string type.</li>
+    <li>• Value is of object type.</li>
+  </ul>
+  <h3 id="viewdata-properties-and-methods">ViewData - Properties and Methods</h3>
+  <ul>
+    <li>• int Count { get; set; } //gets the number of elements.</li>
+    <li>• [string Key] //Gets or sets an element.</li>
+    <li>• Add(string key, object value) //Adds a new element.</li>
+    <li>• ContainsKey(string key) //Determines whether the specified key exists or not.</li>
+    <li>• Clear() //Clears (removes) all elements.</li>
+  </ul>
+  <h3 id="viewbag">ViewBag</h3>
+  <p>ViewBag is a property of Controller and View, that is used to access the ViewData easily.
+ViewBag is &#39;dynamic&#39; type.</p>
+  <p>ViewBag is a property of Microsoft.AspNetCore.Mvc.Controller class and
+Microsoft.AspNetCore.Mvc.Razor.RazorPageBase class.
+It is of dynamic type.</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">namespace Microsoft.AspNetCore.Mvc
+{
+public abstract class Controller : ControllerBase
+{
+ public dynamic ViewBag { get; set; }
+}
+}</code></pre>
+    </div>
+    <p>The &#39;dynamic&#39; type similar to &#39;var&#39; keyword.
+But, it checks the data type and at run time, rather than at compilation time.
+If you try to access a non-existing property in the ViewBag, it returns null.
+[string Key] //Gets or sets an element.
+Benefits of &#39;ViewBag&#39; over ViewData
+ViewBag&#39;s syntax is easier to access its properties than ViewData.
+Eg: ViewBag.property [vs] ViewData[&quot;key&quot;]
+You need NOT type-cast the values while reading it.
+Eg: ViewBag.object_name.property
+[vs]
+(ViewData[&quot;key&quot;] as ClassName).Property</p>
+  <h3 id="strongly-typed-views-1">Strongly Typed Views</h3>
+  <p>Strongly Typed View is a view that is bound to a specified model class.
+It is mainly used to access the model object / model collection easily in the view.</p>
+  <h3 id="benefits-of-strongly-typed-views">Benefits of Strongly Typed Views</h3>
+  <ul>
+    <li>• You will get Intellisense while accessing model properties in strongly typed views, since the</li>
+  </ul>
+  <p>type of model class was mentioned at @model directive.</p>
+  <ul>
+    <li>• Property names are compile-time checked; and shown as errors in case of misspelled / nonexisting</li>
+  </ul>
+  <p>properties in strongly typed views.</p>
+  <ul>
+    <li>• You will have only one model per one view in strongly typed views.</li>
+    <li>• Easy to identify which model is being accessed in the view.</li>
+  </ul>
+  <h3 id="helper-methods-in-controller-to-invoke-a-view">Helper methods in Controller to invoke a View</h3>
+  <ul>
+    <li>• return View( ); //View name is the same name as the current action method.</li>
+    <li>• return View(object Model ); //View name is the same name as the current action method &amp;</li>
+  </ul>
+  <p>the view can be a strongly-typed view to receive the supplied model object.</p>
+  <ul>
+    <li>• return View(string ViewName); //View name is explicitly specified.</li>
+    <li>• return View(string ViewName, object Model ); //View name is explicitly specified &amp; the view</li>
+  </ul>
+  <p>can be a strongly-typed view to receive the supplied model object.</p>
+  <h3 id="strongly-typed-views-2">Strongly Typed Views</h3>
+  <p>Strongly Typed View can be bound to a single model directly.
+But that model class can have reference to objects of other model classes.
+ViewImports.cshtml
+ViewImports.cshtml is a special file in the &quot;Views&quot; folder or its subfolder, which executes
+automatically before execution of a view.
+It is mainly used to import common namespaces that are to imported in a view.</p>
+
+    <div class="diagram-container">
+      <div class="diagram-title">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+        <span>Cheat Sheet Architecture Diagram</span>
+      </div>
+      <pre class="diagram-pre">[Vector Diagram / Illustrated Schema (Operator count: 161)]</pre>
+    </div>
+    <h3 id="shared-views-1">Shared Views</h3>
+  <p>Shared views are placed in &quot;Shared&quot; folder in &quot;Views&quot; folder.
+They are accessible from any controller, if the view is NOT present in the &quot;Views\ControllerName&quot;
+folder.</p>
+  <h3 id="view-resolution">View Resolution</h3>
+</section>
+
+      </article>
+
+      <!-- Completion Toggle Control -->
+      <div class="completion-container">
+        <div>
+          <strong style="color: var(--text-main); font-size: 0.95rem;">Section Progress</strong>
+          <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">Mark this section complete to record your learning progress locally.</p>
+        </div>
+        <button class="mark-complete-btn" id="markCompleteBtn" type="button" aria-pressed="false" aria-label="Mark Section Complete">
+          <svg class="complete-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span class="complete-text">Mark Section Complete</span>
+        </button>
+      </div>
+
+      <!-- Bottom Navigation Prev / Next -->
+      <nav class="bottom-nav" aria-label="Previous and Next Section Navigation">
+        
+      <a href="section-07.html" class="nav-card prev" aria-label="Previous Section: Sec 07 - Model Binding and Validations">
+        <span class="nav-direction">← Previous Section</span>
+        <span class="nav-title">Sec 07: Model Binding and Validations</span>
+      </a>
+    
+        
+      <a href="section-09.html" class="nav-card next" aria-label="Next Section: Sec 09 - Layout Views">
+        <span class="nav-direction">Next Section →</span>
+        <span class="nav-title">Sec 09: Layout Views</span>
+      </a>
+    
+      </nav>
+
+      <!-- Section Footer -->
+      <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); color: var(--text-dim); font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;" role="contentinfo">
+        <span>ASP.NET Core Masterclass — Offline Documentation Portal</span>
+        <a href="#top" style="color: var(--text-muted); text-decoration: none;">↑ Back to top</a>
+      </footer>
+    </main>
+
+    <!-- Right Table of Contents (TOC) -->
+    <aside class="docs-toc" aria-label="Page Table of Contents">
+      <div class="toc-title">On This Page</div>
+      <ul class="toc-list">
+        
+        <li class="toc-item">
+          <a href="#mvc-architecture" class="toc-link">MVC Architecture</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#execution-flow-of-a-request-in-mvc" class="toc-link">Execution Flow of a Request in MVC</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#responsibilities-of-mvc-components" class="toc-link">Responsibilities of MVC Components</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#benefits-and-goals-of-mvc" class="toc-link">Benefits and Goals of MVC</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#views" class="toc-link">Views</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#notes" class="toc-link">Notes</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#addcontrollerswithviews-method" class="toc-link">AddControllersWithViews() Method</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#viewresult" class="toc-link">ViewResult</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#default-view-locations" class="toc-link">Default View Locations</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code" class="toc-link">Code</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#welcome" class="toc-link">Welcome</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#razor-view-engine" class="toc-link">Razor View Engine</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-razor-syntax-elements" class="toc-link">Key Razor Syntax Elements</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#control-flow-in-razor-views" class="toc-link">Control Flow in Razor Views</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#local-functions-in-razor-views" class="toc-link">Local Functions in Razor Views</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#syntax-and-features" class="toc-link">Syntax and Features</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-1" class="toc-link">Code</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#important-considerations" class="toc-link">Important Considerations</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#purpose" class="toc-link">Purpose</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#syntax" class="toc-link">Syntax</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#important-considerations-1" class="toc-link">Important Considerations</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-2" class="toc-link">Code</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#notes-1" class="toc-link">Notes</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#viewdata-and-viewbag" class="toc-link">ViewData and ViewBag</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#availability-in-controllers-and-views" class="toc-link">Availability in Controllers and Views</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#things-to-avoid" class="toc-link">Things to Avoid</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#strongly-typed-views" class="toc-link">Strongly Typed Views</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#when-to-use-strongly-typed-views" class="toc-link">When to Use Strongly Typed Views</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#best-practices" class="toc-link">Best Practices</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#strongly-typed-views-with-multiple-models" class="toc-link">Strongly Typed Views with Multiple Models</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#creating-and-using-view-models" class="toc-link">Creating and Using View Models</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#how-it-works" class="toc-link">How It Works</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#important-considerations-2" class="toc-link">Important Considerations</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#shared-views" class="toc-link">Shared Views</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#how-shared-views-work" class="toc-link">How Shared Views Work</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#important-considerations-3" class="toc-link">Important Considerations</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-points-to-remember-1" class="toc-link">Key Points to Remember</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#1-views" class="toc-link">1. Views</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#2-razor-syntax-essentials" class="toc-link">2. Razor Syntax Essentials</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#3-local-functions" class="toc-link">3. Local Functions</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#4-htmlraw" class="toc-link">4. Html.Raw()</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#5-viewdata-and-viewbag" class="toc-link">5. ViewData and ViewBag</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#6-strongly-typed-views" class="toc-link">6. Strongly Typed Views</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#8-shared-views" class="toc-link">8. Shared Views</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#cheat-sheet-quick-reference" class="toc-link">Cheat Sheet &amp; Quick Reference</a>
+        </li>
+      
+      </ul>
+    </aside>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/search-index.js"></script>
+  <script src="../assets/js/search-engine.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

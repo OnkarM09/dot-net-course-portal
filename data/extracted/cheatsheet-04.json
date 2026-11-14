@@ -1,0 +1,1197 @@
+{
+  "source_file": "Cheat Sheet - Section 4 - Asp.Net Core.pdf",
+  "absolute_path": "D:/Dot net core/Asp.Net_Core_-Udemy-/Notes-20250125T050818Z-001/Cheat Sheets/Cheat Sheet - Section 4 - Asp.Net Core.pdf",
+  "section_number": 4,
+  "normalized_section": "04",
+  "is_cheatsheet": true,
+  "total_pages": 6,
+  "total_raw_chars": 2744,
+  "total_repaired_chars": 2786,
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "Asp.Net Core – True Ultimate Guide\nSection 4 – Middleware – Cheat Sheet\nIntroduction to Middleware\nMiddleware is a component that is assembled into the application pipeline to handle requests and\nresponses.\nMiddlewares are chained one-after-other and execute in the same sequence how they're added.\nMiddleware can be a request delegate (anonymous method or lambda expression) [or] a class.\nMiddleware - Run\napp.Run( )\napp.Run(async (HttpContext context) =>\n{\n//code\n});\nThe extension method called “Run” is used to execute a terminating / short-circuiting middleware\nthat doesn’t forward the request to the next middleware.\nMiddleware Chain\n",
+      "repaired_text": "Asp.Net Core – True Ultimate Guide\nSection 4 – Middleware – Cheat Sheet\nIntroduction to Middleware\nMiddleware is a component that is assembled into the application pipeline to handle requests and\nresponses.\nMiddlewares are chained one-after-other and execute in the same sequence how they're added.\nMiddleware can be a request delegate (anonymous method or lambda expression) [or] a class.\nMiddleware - Run\napp.Run( )\napp.Run(async (HttpContext context) =>\n{\n//code\n});\nThe extension method called “Run” is used to execute a terminating / short-circuiting middleware\nthat doesn’t forward the request to the next middleware.\nMiddleware Chain",
+      "lines": [
+        {
+          "text": "Asp.Net Core – True Ultimate Guide",
+          "rawText": "Asp.Net Core – True Ultimate Guide",
+          "x": 72.024,
+          "y": 753.96,
+          "fontSize": 15.96,
+          "fontName": "g_d7_f2"
+        },
+        {
+          "text": "Section 4 – Middleware – Cheat Sheet",
+          "rawText": "Section 4 – Middleware – Cheat Sheet",
+          "x": 72.024,
+          "y": 725.98,
+          "fontSize": 15.96,
+          "fontName": "g_d7_f4"
+        },
+        {
+          "text": "Introduction to Middleware",
+          "rawText": "Introduction to Middleware",
+          "x": 72.024,
+          "y": 677.38,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f4"
+        },
+        {
+          "text": "Middleware is a component that is assembled into the application pipeline to handle requests and",
+          "rawText": "Middleware is a component that is assembled into the application pipeline to handle requests and",
+          "x": 72.024,
+          "y": 654.94,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "responses.",
+          "rawText": "responses.",
+          "x": 72.024,
+          "y": 640.42,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "Middlewares are chained one-after-other and execute in the same sequence how they're added.",
+          "rawText": "Middlewares are chained one-after-other and execute in the same sequence how they're added.",
+          "x": 72.024,
+          "y": 617.98,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "Middleware can be a request delegate (anonymous method or lambda expression) [or] a class.",
+          "rawText": "Middleware can be a request delegate (anonymous method or lambda expression) [or] a class.",
+          "x": 72.024,
+          "y": 349.01,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "Middleware - Run",
+          "rawText": "Middleware - Run",
+          "x": 72.024,
+          "y": 304.01,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f4"
+        },
+        {
+          "text": "app.Run( )",
+          "rawText": "app.Run( )",
+          "x": 72.024,
+          "y": 281.57,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f4"
+        },
+        {
+          "text": "app.Run(async (HttpContext context) =>",
+          "rawText": "app.Run(async (HttpContext context) =>",
+          "x": 72.024,
+          "y": 259.13,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 236.57,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "//code",
+          "rawText": "//code",
+          "x": 72.024,
+          "y": 214.1,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "});",
+          "rawText": "});",
+          "x": 72.024,
+          "y": 191.54,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "The extension method called “Run” is used to execute a terminating / short-circuiting middleware",
+          "rawText": "The extension method called “Run” is used to execute a terminating / short-circuiting middleware",
+          "x": 72.024,
+          "y": 169.1,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f6"
+        },
+        {
+          "text": "that doesn’t forward the request to the next middleware.",
+          "rawText": "that doesn’t forward the request to the next middleware.",
+          "x": 72.024,
+          "y": 154.58,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f6"
+        },
+        {
+          "text": "Middleware Chain",
+          "rawText": "Middleware Chain",
+          "x": 72.024,
+          "y": 109.58,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f4"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "banner_header",
+          "page": 1,
+          "lines": [
+            "Asp.Net Core – True Ultimate Guide"
+          ],
+          "text": "Asp.Net Core – True Ultimate Guide"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Section 4 – Middleware – Cheat Sheet"
+          ],
+          "text": "Section 4 – Middleware – Cheat Sheet"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Introduction to Middleware"
+          ],
+          "text": "Introduction to Middleware"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Middleware is a component that is assembled into the application pipeline to handle requests and",
+            "responses.",
+            "Middlewares are chained one-after-other and execute in the same sequence how they're added.",
+            "Middleware can be a request delegate (anonymous method or lambda expression) [or] a class."
+          ],
+          "text": "Middleware is a component that is assembled into the application pipeline to handle requests and\nresponses.\nMiddlewares are chained one-after-other and execute in the same sequence how they're added.\nMiddleware can be a request delegate (anonymous method or lambda expression) [or] a class."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Middleware - Run"
+          ],
+          "text": "Middleware - Run"
+        },
+        {
+          "type": "code",
+          "page": 1,
+          "lines": [
+            "app.Run( )",
+            "app.Run(async (HttpContext context) =>",
+            "{",
+            "//code",
+            "});"
+          ],
+          "text": "app.Run( )\napp.Run(async (HttpContext context) =>\n{\n//code\n});"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "The extension method called “Run” is used to execute a terminating / short-circuiting middleware",
+            "that doesn’t forward the request to the next middleware."
+          ],
+          "text": "The extension method called “Run” is used to execute a terminating / short-circuiting middleware\nthat doesn’t forward the request to the next middleware."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Middleware Chain"
+          ],
+          "text": "Middleware Chain"
+        }
+      ],
+      "char_count_raw": 641,
+      "char_count_repaired": 640
+    },
+    {
+      "page_number": 2,
+      "raw_text": "app.Use( )\napp.Use(async (HttpContext context, RequestDelegate next) =>\n{\n//before logic\nawait next(context);\n//after logic\n});\nThe extension method called “Use” is used to execute a non-terminating / short-circuiting\nmiddleware that may / may not forward the request to the next middleware.\nMiddleware Class\nMiddleware class is used to separate the middleware logic from a lambda expression to a separate /\nreusable class.\nclass MiddlewareClassName : IMiddleware\n{\npublic async Task InvokeAsync(HttpContext context, RequestDelegate next)\n{\n//before logic\nawait next(context);\n//after logic\n",
+      "repaired_text": "app.Use( )\napp.Use(async (HttpContext context, RequestDelegate next) =>\n{\n //before logic\n await next(context);\n //after logic\n});\nThe extension method called “Use” is used to execute a non-terminating / short-circuiting\nmiddleware that may / may not forward the request to the next middleware.\nMiddleware Class\nMiddleware class is used to separate the middleware logic from a lambda expression to a separate /\nreusable class.\nclass MiddlewareClassName : IMiddleware\n{\n public async Task InvokeAsync(HttpContext context, RequestDelegate next)\n {\n  //before logic\n  await next(context);\n  //after logic",
+      "lines": [
+        {
+          "text": "app.Use( )",
+          "rawText": "app.Use( )",
+          "x": 72.024,
+          "y": 517.75,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f4"
+        },
+        {
+          "text": "app.Use(async (HttpContext context, RequestDelegate next) =>",
+          "rawText": "app.Use(async (HttpContext context, RequestDelegate next) =>",
+          "x": 72.024,
+          "y": 495.19,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 472.75,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " //before logic",
+          "rawText": "//before logic",
+          "x": 77.064,
+          "y": 450.31,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " await next(context);",
+          "rawText": "await next(context);",
+          "x": 77.064,
+          "y": 427.75,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " //after logic",
+          "rawText": "//after logic",
+          "x": 77.064,
+          "y": 405.31,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "});",
+          "rawText": "});",
+          "x": 72.024,
+          "y": 382.73,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "The extension method called “Use” is used to execute a non-terminating / short-circuiting",
+          "rawText": "The extension method called “Use” is used to execute a non-terminating / short-circuiting",
+          "x": 72.024,
+          "y": 360.29,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f6"
+        },
+        {
+          "text": "middleware that may / may not forward the request to the next middleware.",
+          "rawText": "middleware that may / may not forward the request to the next middleware.",
+          "x": 72.024,
+          "y": 345.77,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "Middleware Class",
+          "rawText": "Middleware Class",
+          "x": 72.024,
+          "y": 278.33,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f4"
+        },
+        {
+          "text": "Middleware class is used to separate the middleware logic from a lambda expression to a separate /",
+          "rawText": "Middleware class is used to separate the middleware logic from a lambda expression to a separate /",
+          "x": 72.024,
+          "y": 255.77,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "reusable class.",
+          "rawText": "reusable class.",
+          "x": 72.024,
+          "y": 241.37,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "class MiddlewareClassName : IMiddleware",
+          "rawText": "class MiddlewareClassName : IMiddleware",
+          "x": 72.024,
+          "y": 218.81,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 196.34,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " public async Task InvokeAsync(HttpContext context, RequestDelegate next)",
+          "rawText": "public async Task InvokeAsync(HttpContext context, RequestDelegate next)",
+          "x": 77.064,
+          "y": 173.78,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " {",
+          "rawText": "{",
+          "x": 77.064,
+          "y": 151.34,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "  //before logic",
+          "rawText": "//before logic",
+          "x": 81.984,
+          "y": 128.9,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "  await next(context);",
+          "rawText": "await next(context);",
+          "x": 82.104,
+          "y": 106.34,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "  //after logic",
+          "rawText": "//after logic",
+          "x": 81.984,
+          "y": 83.904,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "app.Use( )",
+            "app.Use(async (HttpContext context, RequestDelegate next) =>",
+            "{",
+            " //before logic",
+            " await next(context);",
+            " //after logic",
+            "});"
+          ],
+          "text": "app.Use( )\napp.Use(async (HttpContext context, RequestDelegate next) =>\n{\n //before logic\n await next(context);\n //after logic\n});"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "The extension method called “Use” is used to execute a non-terminating / short-circuiting",
+            "middleware that may / may not forward the request to the next middleware."
+          ],
+          "text": "The extension method called “Use” is used to execute a non-terminating / short-circuiting\nmiddleware that may / may not forward the request to the next middleware."
+        },
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Middleware Class"
+          ],
+          "text": "Middleware Class"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "Middleware class is used to separate the middleware logic from a lambda expression to a separate /",
+            "reusable class."
+          ],
+          "text": "Middleware class is used to separate the middleware logic from a lambda expression to a separate /\nreusable class."
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "class MiddlewareClassName : IMiddleware",
+            "{",
+            " public async Task InvokeAsync(HttpContext context, RequestDelegate next)",
+            " {",
+            "  //before logic",
+            "  await next(context);",
+            "  //after logic"
+          ],
+          "text": "class MiddlewareClassName : IMiddleware\n{\n public async Task InvokeAsync(HttpContext context, RequestDelegate next)\n {\n  //before logic\n  await next(context);\n  //after logic"
+        }
+      ],
+      "char_count_raw": 591,
+      "char_count_repaired": 601
+    },
+    {
+      "page_number": 3,
+      "raw_text": "}\n}\napp.UseMiddleware<MiddlewareClassName>();\nMiddleware Extensions\nclass MiddlewareClassName : IMiddleware\n{\npublic async Task InvokeAsync(HttpContext context,RequestDelegate next)\n{\n//before logic\nawait next(context);\n//after logic\n}\n});\nMiddleware extension method is used to invoke the middleware with a single method call.\nstatic class ClassName\n{\npublic static IApplicationBuilder ExtensionMethodName(this IApplicationBuilder app)\n{\nreturn app.UseMiddleware<MiddlewareClassName>();\n}\n}\napp.ExtensionMethodName();\nConventional Middleware\nclass MiddlewareClassName\n{\nprivate readonly RequestDelegate _next;\npublic MiddlewareClassName(RequestDelegate next)\n",
+      "repaired_text": " }\n}\napp.UseMiddleware<MiddlewareClassName>();\nMiddleware Extensions\nclass MiddlewareClassName : IMiddleware\n{\n public async Task InvokeAsync(HttpContext context,RequestDelegate next)\n {\n  //before logic\n  await next(context);\n  //after logic\n }\n});\nMiddleware extension method is used to invoke the middleware with a single method call.\nstatic class ClassName\n{\n public static IApplicationBuilder ExtensionMethodName(this IApplicationBuilder app)\n {\n  return app.UseMiddleware<MiddlewareClassName>();\n }\n}\napp.ExtensionMethodName();\nConventional Middleware\nclass MiddlewareClassName\n{\n private readonly RequestDelegate _next;\n public MiddlewareClassName(RequestDelegate next)",
+      "lines": [
+        {
+          "text": " }",
+          "rawText": "}",
+          "x": 77.064,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "app.UseMiddleware<MiddlewareClassName>();",
+          "rawText": "app.UseMiddleware<MiddlewareClassName>();",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "Middleware Extensions",
+          "rawText": "Middleware Extensions",
+          "x": 72.024,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f4"
+        },
+        {
+          "text": "class MiddlewareClassName : IMiddleware",
+          "rawText": "class MiddlewareClassName : IMiddleware",
+          "x": 72.024,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " public async Task InvokeAsync(HttpContext context,RequestDelegate next)",
+          "rawText": "public async Task InvokeAsync(HttpContext context,RequestDelegate next)",
+          "x": 77.064,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " {",
+          "rawText": "{",
+          "x": 77.064,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "  //before logic",
+          "rawText": "//before logic",
+          "x": 81.984,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "  await next(context);",
+          "rawText": "await next(context);",
+          "x": 82.104,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "  //after logic",
+          "rawText": "//after logic",
+          "x": 81.984,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " }",
+          "rawText": "}",
+          "x": 77.064,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "});",
+          "rawText": "});",
+          "x": 72.024,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "Middleware extension method is used to invoke the middleware with a single method call.",
+          "rawText": "Middleware extension method is used to invoke the middleware with a single method call.",
+          "x": 72.024,
+          "y": 422.11,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "static class ClassName",
+          "rawText": "static class ClassName",
+          "x": 72.024,
+          "y": 399.55,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 377.09,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " public static IApplicationBuilder ExtensionMethodName(this IApplicationBuilder app)",
+          "rawText": "public static IApplicationBuilder ExtensionMethodName(this IApplicationBuilder app)",
+          "x": 77.064,
+          "y": 354.53,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " {",
+          "rawText": "{",
+          "x": 77.064,
+          "y": 332.09,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "  return app.UseMiddleware<MiddlewareClassName>();",
+          "rawText": "return app.UseMiddleware<MiddlewareClassName>();",
+          "x": 82.104,
+          "y": 309.65,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " }",
+          "rawText": "}",
+          "x": 77.064,
+          "y": 287.09,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 264.65,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "app.ExtensionMethodName();",
+          "rawText": "app.ExtensionMethodName();",
+          "x": 72.024,
+          "y": 242.09,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "Conventional Middleware",
+          "rawText": "Conventional Middleware",
+          "x": 72.024,
+          "y": 197.06,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f4"
+        },
+        {
+          "text": "class MiddlewareClassName",
+          "rawText": "class MiddlewareClassName",
+          "x": 72.024,
+          "y": 174.62,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 152.18,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " private readonly RequestDelegate _next;",
+          "rawText": "private readonly RequestDelegate _next;",
+          "x": 77.064,
+          "y": 129.62,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " public MiddlewareClassName(RequestDelegate next)",
+          "rawText": "public MiddlewareClassName(RequestDelegate next)",
+          "x": 77.064,
+          "y": 84.624,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            " }",
+            "}",
+            "app.UseMiddleware<MiddlewareClassName>();"
+          ],
+          "text": " }\n}\napp.UseMiddleware<MiddlewareClassName>();"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "Middleware Extensions"
+          ],
+          "text": "Middleware Extensions"
+        },
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            "class MiddlewareClassName : IMiddleware",
+            "{",
+            " public async Task InvokeAsync(HttpContext context,RequestDelegate next)",
+            " {",
+            "  //before logic",
+            "  await next(context);",
+            "  //after logic",
+            " }",
+            "});"
+          ],
+          "text": "class MiddlewareClassName : IMiddleware\n{\n public async Task InvokeAsync(HttpContext context,RequestDelegate next)\n {\n  //before logic\n  await next(context);\n  //after logic\n }\n});"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "Middleware extension method is used to invoke the middleware with a single method call."
+          ],
+          "text": "Middleware extension method is used to invoke the middleware with a single method call."
+        },
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            "static class ClassName",
+            "{",
+            " public static IApplicationBuilder ExtensionMethodName(this IApplicationBuilder app)",
+            " {",
+            "  return app.UseMiddleware<MiddlewareClassName>();",
+            " }",
+            "}",
+            "app.ExtensionMethodName();"
+          ],
+          "text": "static class ClassName\n{\n public static IApplicationBuilder ExtensionMethodName(this IApplicationBuilder app)\n {\n  return app.UseMiddleware<MiddlewareClassName>();\n }\n}\napp.ExtensionMethodName();"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "Conventional Middleware"
+          ],
+          "text": "Conventional Middleware"
+        },
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            "class MiddlewareClassName",
+            "{",
+            " private readonly RequestDelegate _next;",
+            " public MiddlewareClassName(RequestDelegate next)"
+          ],
+          "text": "class MiddlewareClassName\n{\n private readonly RequestDelegate _next;\n public MiddlewareClassName(RequestDelegate next)"
+        }
+      ],
+      "char_count_raw": 660,
+      "char_count_repaired": 676
+    },
+    {
+      "page_number": 4,
+      "raw_text": "{\n_next = next;\n}\npublic async Task InvokeAsync(HttpContext context)\n{\n//before logic\nawait _next(context);\n//after logic\n}\n});\nstatic class ClassName\n{\npublic static IApplicationBuilder ExtensionMethodName(this IApplicationBuilder app)\n{\nreturn app.UseMiddleware<MiddlewareClassName>();\n}\n}\napp.ExtensionMethodName();\nThe Right Order of Middleware\n",
+      "repaired_text": " {\n  _next = next;\n }\n public async Task InvokeAsync(HttpContext context)\n {\n //before logic\n await _next(context);\n //after logic\n }\n});\nstatic class ClassName\n{\n public static IApplicationBuilder ExtensionMethodName(this IApplicationBuilder app)\n {\n return app.UseMiddleware<MiddlewareClassName>();\n }\n}\napp.ExtensionMethodName();\nThe Right Order of Middleware",
+      "lines": [
+        {
+          "text": " {",
+          "rawText": "{",
+          "x": 77.064,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "  _next = next;",
+          "rawText": "_next = next;",
+          "x": 82.104,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " }",
+          "rawText": "}",
+          "x": 77.064,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " public async Task InvokeAsync(HttpContext context)",
+          "rawText": "public async Task InvokeAsync(HttpContext context)",
+          "x": 77.064,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " {",
+          "rawText": "{",
+          "x": 77.064,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " //before logic",
+          "rawText": "//before logic",
+          "x": 79.584,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " await _next(context);",
+          "rawText": "await _next(context);",
+          "x": 79.584,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " //after logic",
+          "rawText": "//after logic",
+          "x": 79.584,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " }",
+          "rawText": "}",
+          "x": 77.064,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "});",
+          "rawText": "});",
+          "x": 72.024,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "static class ClassName",
+          "rawText": "static class ClassName",
+          "x": 72.024,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " public static IApplicationBuilder ExtensionMethodName(this IApplicationBuilder app)",
+          "rawText": "public static IApplicationBuilder ExtensionMethodName(this IApplicationBuilder app)",
+          "x": 77.064,
+          "y": 444.55,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " {",
+          "rawText": "{",
+          "x": 77.064,
+          "y": 422.11,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " return app.UseMiddleware<MiddlewareClassName>();",
+          "rawText": "return app.UseMiddleware<MiddlewareClassName>();",
+          "x": 79.584,
+          "y": 399.55,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " }",
+          "rawText": "}",
+          "x": 77.064,
+          "y": 377.09,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 354.53,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "app.ExtensionMethodName();",
+          "rawText": "app.ExtensionMethodName();",
+          "x": 72.024,
+          "y": 332.09,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "The Right Order of Middleware",
+          "rawText": "The Right Order of Middleware",
+          "x": 72.024,
+          "y": 264.65,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f4"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "page": 4,
+          "lines": [
+            " {",
+            "  _next = next;",
+            " }",
+            " public async Task InvokeAsync(HttpContext context)",
+            " {",
+            " //before logic",
+            " await _next(context);",
+            " //after logic",
+            " }",
+            "});",
+            "static class ClassName",
+            "{",
+            " public static IApplicationBuilder ExtensionMethodName(this IApplicationBuilder app)",
+            " {",
+            " return app.UseMiddleware<MiddlewareClassName>();",
+            " }",
+            "}",
+            "app.ExtensionMethodName();"
+          ],
+          "text": " {\n  _next = next;\n }\n public async Task InvokeAsync(HttpContext context)\n {\n //before logic\n await _next(context);\n //after logic\n }\n});\nstatic class ClassName\n{\n public static IApplicationBuilder ExtensionMethodName(this IApplicationBuilder app)\n {\n return app.UseMiddleware<MiddlewareClassName>();\n }\n}\napp.ExtensionMethodName();"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "The Right Order of Middleware"
+          ],
+          "text": "The Right Order of Middleware"
+        }
+      ],
+      "char_count_raw": 349,
+      "char_count_repaired": 362
+    },
+    {
+      "page_number": 5,
+      "raw_text": "app.UseExceptionHandler(\"/Error\");\napp.UseHsts();\napp.UseHttpsRedirection();\napp.UseStaticFiles();\napp.UseRouting();\napp.UseCors();\napp.UseAuthentication();\napp.UseAuthorization();\napp.UseSession();\napp.MapControllers();\n//add your custom middlewares\napp.Run();\nMiddleware - UseWhen\n",
+      "repaired_text": "app.UseExceptionHandler(\"/Error\");\napp.UseHsts();\napp.UseHttpsRedirection();\napp.UseStaticFiles();\napp.UseRouting();\napp.UseCors();\napp.UseAuthentication();\napp.UseAuthorization();\napp.UseSession();\napp.MapControllers();\n//add your custom middlewares\napp.Run();\nMiddleware - UseWhen",
+      "lines": [
+        {
+          "text": "app.UseExceptionHandler(\"/Error\");",
+          "rawText": "app.UseExceptionHandler(\"/Error\");",
+          "x": 72.024,
+          "y": 496.87,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "app.UseHsts();",
+          "rawText": "app.UseHsts();",
+          "x": 72.024,
+          "y": 474.43,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "app.UseHttpsRedirection();",
+          "rawText": "app.UseHttpsRedirection();",
+          "x": 72.024,
+          "y": 451.87,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "app.UseStaticFiles();",
+          "rawText": "app.UseStaticFiles();",
+          "x": 72.024,
+          "y": 429.43,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "app.UseRouting();",
+          "rawText": "app.UseRouting();",
+          "x": 72.024,
+          "y": 406.87,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "app.UseCors();",
+          "rawText": "app.UseCors();",
+          "x": 72.024,
+          "y": 384.41,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "app.UseAuthentication();",
+          "rawText": "app.UseAuthentication();",
+          "x": 72.024,
+          "y": 361.85,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "app.UseAuthorization();",
+          "rawText": "app.UseAuthorization();",
+          "x": 72.024,
+          "y": 339.41,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "app.UseSession();",
+          "rawText": "app.UseSession();",
+          "x": 72.024,
+          "y": 316.97,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "app.MapControllers();",
+          "rawText": "app.MapControllers();",
+          "x": 72.024,
+          "y": 294.41,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "//add your custom middlewares",
+          "rawText": "//add your custom middlewares",
+          "x": 72.024,
+          "y": 271.97,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "app.Run();",
+          "rawText": "app.Run();",
+          "x": 72.024,
+          "y": 249.41,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "Middleware - UseWhen",
+          "rawText": "Middleware - UseWhen",
+          "x": 72.024,
+          "y": 204.38,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f4"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "page": 5,
+          "lines": [
+            "app.UseExceptionHandler(\"/Error\");",
+            "app.UseHsts();",
+            "app.UseHttpsRedirection();",
+            "app.UseStaticFiles();",
+            "app.UseRouting();",
+            "app.UseCors();",
+            "app.UseAuthentication();",
+            "app.UseAuthorization();",
+            "app.UseSession();",
+            "app.MapControllers();",
+            "//add your custom middlewares",
+            "app.Run();"
+          ],
+          "text": "app.UseExceptionHandler(\"/Error\");\napp.UseHsts();\napp.UseHttpsRedirection();\napp.UseStaticFiles();\napp.UseRouting();\napp.UseCors();\napp.UseAuthentication();\napp.UseAuthorization();\napp.UseSession();\napp.MapControllers();\n//add your custom middlewares\napp.Run();"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "Middleware - UseWhen"
+          ],
+          "text": "Middleware - UseWhen"
+        }
+      ],
+      "char_count_raw": 283,
+      "char_count_repaired": 282
+    },
+    {
+      "page_number": 6,
+      "raw_text": "app.UseWhen( )\napp.UseWhen(\ncontext => { return boolean; },\napp =>\n{\n//add your middlewares\n}\n);\nThe extension method called “UseWhen” is used to execute a branch of middleware only when the\nspecified condition is true.\n",
+      "repaired_text": "app.UseWhen( )\napp.UseWhen(\n context => { return boolean; },\n app =>\n {\n  //add your middlewares\n }\n);\nThe extension method called “UseWhen” is used to execute a branch of middleware only when the\nspecified condition is true.",
+      "lines": [
+        {
+          "text": "app.UseWhen( )",
+          "rawText": "app.UseWhen( )",
+          "x": 72.024,
+          "y": 520.63,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f4"
+        },
+        {
+          "text": "app.UseWhen(",
+          "rawText": "app.UseWhen(",
+          "x": 72.024,
+          "y": 498.19,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " context => { return boolean; },",
+          "rawText": "context => { return boolean; },",
+          "x": 77.064,
+          "y": 475.63,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " app =>",
+          "rawText": "app =>",
+          "x": 77.064,
+          "y": 453.19,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " {",
+          "rawText": "{",
+          "x": 77.064,
+          "y": 430.63,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "  //add your middlewares",
+          "rawText": "//add your middlewares",
+          "x": 81.984,
+          "y": 408.19,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": " }",
+          "rawText": "}",
+          "x": 77.064,
+          "y": 385.61,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": ");",
+          "rawText": ");",
+          "x": 72.024,
+          "y": 363.17,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        },
+        {
+          "text": "The extension method called “UseWhen” is used to execute a branch of middleware only when the",
+          "rawText": "The extension method called “UseWhen” is used to execute a branch of middleware only when the",
+          "x": 72.024,
+          "y": 340.73,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f6"
+        },
+        {
+          "text": "specified condition is true.",
+          "rawText": "specified condition is true.",
+          "x": 72.024,
+          "y": 326.21,
+          "fontSize": 11.04,
+          "fontName": "g_d7_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "page": 6,
+          "lines": [
+            "app.UseWhen( )",
+            "app.UseWhen(",
+            " context => { return boolean; },",
+            " app =>",
+            " {",
+            "  //add your middlewares",
+            " }",
+            ");"
+          ],
+          "text": "app.UseWhen( )\napp.UseWhen(\n context => { return boolean; },\n app =>\n {\n  //add your middlewares\n }\n);"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "The extension method called “UseWhen” is used to execute a branch of middleware only when the",
+            "specified condition is true."
+          ],
+          "text": "The extension method called “UseWhen” is used to execute a branch of middleware only when the\nspecified condition is true."
+        }
+      ],
+      "char_count_raw": 220,
+      "char_count_repaired": 225
+    }
+  ],
+  "title": "Middleware"
+}

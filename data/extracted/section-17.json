@@ -1,0 +1,3599 @@
+{
+  "source_file": "Notes - Section 17 - Tag Helpers.pdf",
+  "absolute_path": "D:/Dot net core/Asp.Net_Core_-Udemy-/Notes-20250125T050818Z-001/Notes/Notes - Section 17 - Tag Helpers.pdf",
+  "section_number": 17,
+  "normalized_section": "17",
+  "is_cheatsheet": false,
+  "total_pages": 9,
+  "total_raw_chars": 10734,
+  "total_repaired_chars": 12486,
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "ASP.NET Core - True Ultimate Guide\nSection 17: Tag Helpers - Notes\nTag Helpers\nTag helpers are a feature in ASP.NET Core MVC that allow you to extend HTML elements with server-\nside capabilities. They are C# classes that modify the behavior and output of HTML elements during\nthe rendering process.\nBenefits of Tag Helpers\n• HTML-Friendly Syntax: Tag helpers look like standard HTML elements, making them easier\nto read and write than traditional HTML helpers.\n• Strong Typing: Tag helpers offer compile-time type safety and IntelliSense support, catching\nerrors early in development.\n• Code Reuse: They can be easily reused across different views and projects.\n• Reduced Server Roundtrips: Tag helpers execute on the server, allowing you to perform\ncomplex logic and data binding before the page is sent to the client.\n• Extensibility: You can create your own custom tag helpers to meet specific needs.\nWhen to Use Tag Helpers\n• Form Handling: Create forms and bind them to your models easily.\n• Links and URLs: Generate links with correct routing information.\n• Caching: Control how your views are cached.\n• Conditional Rendering: Show or hide content based on conditions.\n• Custom Elements: Build reusable custom UI components.\nBest Practices\n• Namespace Management: Keep tag helper namespaces organized (e.g., @addTagHelper *,\nMicrosoft.AspNetCore.Mvc.TagHelpers).\n• Readability: Keep tag helper attributes concise and self-explanatory.\n• Performance: Be mindful of the number of tag helpers used in a view, as they can impact\nrendering performance.\n• Testing: Write unit tests for your custom tag helpers to ensure their correct behavior.\n",
+      "repaired_text": "ASP.NET Core - True Ultimate Guide\nSection 17: Tag Helpers - Notes\nTag Helpers\nTag helpers are a feature in ASP.NET Core MVC that allow you to extend HTML elements with serverside\ncapabilities. They are C# classes that modify the behavior and output of HTML elements during\nthe rendering process.\nBenefits of Tag Helpers\n   • HTML-Friendly Syntax: Tag helpers look like standard HTML elements, making them easier\n      to read and write than traditional HTML helpers.\n   • Strong Typing: Tag helpers offer compile-time type safety and IntelliSense support, catching\n      errors early in development.\n   • Code Reuse: They can be easily reused across different views and projects.\n   • Reduced Server Roundtrips: Tag helpers execute on the server, allowing you to perform\n      complex logic and data binding before the page is sent to the client.\n   • Extensibility: You can create your own custom tag helpers to meet specific needs.\nWhen to Use Tag Helpers\n   • Form Handling: Create forms and bind them to your models easily.\n   • Links and URLs: Generate links with correct routing information.\n   • Caching: Control how your views are cached.\n   • Conditional Rendering: Show or hide content based on conditions.\n   • Custom Elements: Build reusable custom UI components.\nBest Practices\n   • Namespace Management: Keep tag helper namespaces organized (e.g., @addTagHelper *,\n      Microsoft.AspNetCore.Mvc.TagHelpers).\n   • Readability: Keep tag helper attributes concise and self-explanatory.\n   • Performance: Be mindful of the number of tag helpers used in a view, as they can impact\n      rendering performance.\n   • Testing: Write unit tests for your custom tag helpers to ensure their correct behavior.",
+      "lines": [
+        {
+          "text": "ASP.NET Core - True Ultimate Guide",
+          "rawText": "ASP.NET Core - True Ultimate Guide",
+          "x": 72.024,
+          "y": 742.66,
+          "fontSize": 15.96,
+          "fontName": "g_d32_f1"
+        },
+        {
+          "text": "Section 17: Tag Helpers - Notes",
+          "rawText": "Section 17: Tag Helpers - Notes",
+          "x": 72.024,
+          "y": 722.38,
+          "fontSize": 12.96,
+          "fontName": "g_d32_f1"
+        },
+        {
+          "text": "Tag Helpers",
+          "rawText": "Tag Helpers",
+          "x": 72.024,
+          "y": 684.82,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f2"
+        },
+        {
+          "text": "Tag helpers are a feature in ASP.NET Core MVC that allow you to extend HTML elements with server-",
+          "rawText": "Tag helpers are a feature in ASP.NET Core MVC that allow you to extend HTML elements with server-",
+          "x": 72.024,
+          "y": 662.26,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "side capabilities. They are C# classes that modify the behavior and output of HTML elements during",
+          "rawText": "side capabilities. They are C# classes that modify the behavior and output of HTML elements during",
+          "x": 72.024,
+          "y": 647.74,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "the rendering process.",
+          "rawText": "the rendering process.",
+          "x": 72.024,
+          "y": 633.34,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "Benefits of Tag Helpers",
+          "rawText": "Benefits of Tag Helpers",
+          "x": 72.024,
+          "y": 588.34,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f2"
+        },
+        {
+          "text": "   • HTML-Friendly Syntax: Tag helpers look like standard HTML elements, making them easier",
+          "rawText": "• HTML-Friendly Syntax: Tag helpers look like standard HTML elements, making them easier",
+          "x": 90.024,
+          "y": 565.75,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      to read and write than traditional HTML helpers.",
+          "rawText": "to read and write than traditional HTML helpers.",
+          "x": 108.02,
+          "y": 551.35,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   • Strong Typing: Tag helpers offer compile-time type safety and IntelliSense support, catching",
+          "rawText": "• Strong Typing: Tag helpers offer compile-time type safety and IntelliSense support, catching",
+          "x": 90.024,
+          "y": 528.79,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      errors early in development.",
+          "rawText": "errors early in development.",
+          "x": 108.02,
+          "y": 514.27,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   • Code Reuse: They can be easily reused across different views and projects.",
+          "rawText": "• Code Reuse: They can be easily reused across different views and projects.",
+          "x": 90.024,
+          "y": 491.83,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "   • Reduced Server Roundtrips: Tag helpers execute on the server, allowing you to perform",
+          "rawText": "• Reduced Server Roundtrips: Tag helpers execute on the server, allowing you to perform",
+          "x": 90.024,
+          "y": 469.39,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      complex logic and data binding before the page is sent to the client.",
+          "rawText": "complex logic and data binding before the page is sent to the client.",
+          "x": 108.02,
+          "y": 454.87,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   • Extensibility: You can create your own custom tag helpers to meet specific needs.",
+          "rawText": "• Extensibility: You can create your own custom tag helpers to meet specific needs.",
+          "x": 90.024,
+          "y": 432.31,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "When to Use Tag Helpers",
+          "rawText": "When to Use Tag Helpers",
+          "x": 72.024,
+          "y": 387.41,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f2"
+        },
+        {
+          "text": "   • Form Handling: Create forms and bind them to your models easily.",
+          "rawText": "• Form Handling: Create forms and bind them to your models easily.",
+          "x": 90.024,
+          "y": 364.85,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "   • Links and URLs: Generate links with correct routing information.",
+          "rawText": "• Links and URLs: Generate links with correct routing information.",
+          "x": 90.024,
+          "y": 342.41,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "   • Caching: Control how your views are cached.",
+          "rawText": "• Caching: Control how your views are cached.",
+          "x": 90.024,
+          "y": 319.85,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "   • Conditional Rendering: Show or hide content based on conditions.",
+          "rawText": "• Conditional Rendering: Show or hide content based on conditions.",
+          "x": 90.024,
+          "y": 297.41,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "   • Custom Elements: Build reusable custom UI components.",
+          "rawText": "• Custom Elements: Build reusable custom UI components.",
+          "x": 90.024,
+          "y": 274.85,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "Best Practices",
+          "rawText": "Best Practices",
+          "x": 72.024,
+          "y": 229.97,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f2"
+        },
+        {
+          "text": "   • Namespace Management: Keep tag helper namespaces organized (e.g., @addTagHelper *,",
+          "rawText": "• Namespace Management: Keep tag helper namespaces organized (e.g., @addTagHelper *,",
+          "x": 90.024,
+          "y": 207.38,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      Microsoft.AspNetCore.Mvc.TagHelpers).",
+          "rawText": "Microsoft.AspNetCore.Mvc.TagHelpers).",
+          "x": 108.02,
+          "y": 192.86,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   • Readability: Keep tag helper attributes concise and self-explanatory.",
+          "rawText": "• Readability: Keep tag helper attributes concise and self-explanatory.",
+          "x": 90.024,
+          "y": 170.42,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "   • Performance: Be mindful of the number of tag helpers used in a view, as they can impact",
+          "rawText": "• Performance: Be mindful of the number of tag helpers used in a view, as they can impact",
+          "x": 90.024,
+          "y": 147.98,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      rendering performance.",
+          "rawText": "rendering performance.",
+          "x": 108.02,
+          "y": 133.46,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   • Testing: Write unit tests for your custom tag helpers to ensure their correct behavior.",
+          "rawText": "• Testing: Write unit tests for your custom tag helpers to ensure their correct behavior.",
+          "x": 90.024,
+          "y": 110.9,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "banner_header",
+          "page": 1,
+          "lines": [
+            "ASP.NET Core - True Ultimate Guide"
+          ],
+          "text": "ASP.NET Core - True Ultimate Guide"
+        },
+        {
+          "type": "banner_header",
+          "page": 1,
+          "lines": [
+            "Section 17: Tag Helpers - Notes"
+          ],
+          "text": "Section 17: Tag Helpers - Notes"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Tag Helpers"
+          ],
+          "text": "Tag Helpers"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Tag helpers are a feature in ASP.NET Core MVC that allow you to extend HTML elements with serverside",
+            "capabilities. They are C# classes that modify the behavior and output of HTML elements during",
+            "the rendering process."
+          ],
+          "text": "Tag helpers are a feature in ASP.NET Core MVC that allow you to extend HTML elements with serverside\ncapabilities. They are C# classes that modify the behavior and output of HTML elements during\nthe rendering process."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Benefits of Tag Helpers"
+          ],
+          "text": "Benefits of Tag Helpers"
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • HTML-Friendly Syntax: Tag helpers look like standard HTML elements, making them easier"
+          ],
+          "text": "   • HTML-Friendly Syntax: Tag helpers look like standard HTML elements, making them easier"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "      to read and write than traditional HTML helpers."
+          ],
+          "text": "      to read and write than traditional HTML helpers."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Strong Typing: Tag helpers offer compile-time type safety and IntelliSense support, catching"
+          ],
+          "text": "   • Strong Typing: Tag helpers offer compile-time type safety and IntelliSense support, catching"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "      errors early in development."
+          ],
+          "text": "      errors early in development."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Code Reuse: They can be easily reused across different views and projects."
+          ],
+          "text": "   • Code Reuse: They can be easily reused across different views and projects."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Reduced Server Roundtrips: Tag helpers execute on the server, allowing you to perform"
+          ],
+          "text": "   • Reduced Server Roundtrips: Tag helpers execute on the server, allowing you to perform"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "      complex logic and data binding before the page is sent to the client."
+          ],
+          "text": "      complex logic and data binding before the page is sent to the client."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Extensibility: You can create your own custom tag helpers to meet specific needs."
+          ],
+          "text": "   • Extensibility: You can create your own custom tag helpers to meet specific needs."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "When to Use Tag Helpers"
+          ],
+          "text": "When to Use Tag Helpers"
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Form Handling: Create forms and bind them to your models easily."
+          ],
+          "text": "   • Form Handling: Create forms and bind them to your models easily."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Links and URLs: Generate links with correct routing information."
+          ],
+          "text": "   • Links and URLs: Generate links with correct routing information."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Caching: Control how your views are cached."
+          ],
+          "text": "   • Caching: Control how your views are cached."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Conditional Rendering: Show or hide content based on conditions."
+          ],
+          "text": "   • Conditional Rendering: Show or hide content based on conditions."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Custom Elements: Build reusable custom UI components."
+          ],
+          "text": "   • Custom Elements: Build reusable custom UI components."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Best Practices"
+          ],
+          "text": "Best Practices"
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Namespace Management: Keep tag helper namespaces organized (e.g., @addTagHelper *,"
+          ],
+          "text": "   • Namespace Management: Keep tag helper namespaces organized (e.g., @addTagHelper *,"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "      Microsoft.AspNetCore.Mvc.TagHelpers)."
+          ],
+          "text": "      Microsoft.AspNetCore.Mvc.TagHelpers)."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Readability: Keep tag helper attributes concise and self-explanatory."
+          ],
+          "text": "   • Readability: Keep tag helper attributes concise and self-explanatory."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Performance: Be mindful of the number of tag helpers used in a view, as they can impact"
+          ],
+          "text": "   • Performance: Be mindful of the number of tag helpers used in a view, as they can impact"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "      rendering performance."
+          ],
+          "text": "      rendering performance."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Testing: Write unit tests for your custom tag helpers to ensure their correct behavior."
+          ],
+          "text": "   • Testing: Write unit tests for your custom tag helpers to ensure their correct behavior."
+        }
+      ],
+      "char_count_raw": 1644,
+      "char_count_repaired": 1713
+    },
+    {
+      "page_number": 2,
+      "raw_text": "Things to Avoid\n• Overusing Tag Helpers: Use them for appropriate tasks, not for every HTML element.\n• Excessive Nesting: Avoid deeply nested tag helpers, as it can make your code difficult to\nread.\n• Mixing Tag Helpers and HTML Helpers: Try to use either tag helpers or HTML helpers\nconsistently within a view to maintain a cleaner code structure.\nImportant Tag Helpers with Examples\n1. Anchor Tag Helper (<a>):\n<a asp-controller=\"Home\" asp-action=\"Index\">Home</a>\no Generates a link to the Index action method in the HomeController.\no Automatically handles routing and URL generation.\n2. Form Tag Helper (<form>):\n<form asp-controller=\"Products\" asp-action=\"Create\" method=\"post\">\n</form>\no Creates a form that submits data to the Create action in the ProductsController.\no Handles anti-forgery tokens automatically for better security.\n3. Input Tag Helper (<input>):\n<input asp-for=\"ProductName\" class=\"form-control\" />\no Binds the input field to the ProductName property of your model.\no Automatically sets the input type (e.g., text, email, password) based on the property\ntype.\n4. Select Tag Helper (<select>):\n<select asp-for=\"CategoryId\" asp-items=\"Model.Categories\"></select>\no Creates a dropdown list bound to the CategoryId property.\no asp-items takes a collection of items to populate the dropdown.\n",
+      "repaired_text": "Things to Avoid\n   • Overusing Tag Helpers: Use them for appropriate tasks, not for every HTML element.\n   • Excessive Nesting: Avoid deeply nested tag helpers, as it can make your code difficult to\n      read.\n   • Mixing Tag Helpers and HTML Helpers: Try to use either tag helpers or HTML helpers\n      consistently within a view to maintain a cleaner code structure.\nImportant Tag Helpers with Examples\n   1. Anchor Tag Helper (<a>):\n        <a asp-controller=\"Home\" asp-action=\"Index\">Home</a>\n        o Generates a link to the Index action method in the HomeController.\n        o Automatically handles routing and URL generation.\n   2. Form Tag Helper (<form>):\n        <form asp-controller=\"Products\" asp-action=\"Create\" method=\"post\">\n        </form>\n        o Creates a form that submits data to the Create action in the ProductsController.\n        o Handles anti-forgery tokens automatically for better security.\n   3. Input Tag Helper (<input>):\n        <input asp-for=\"ProductName\" class=\"form-control\" />\n        o Binds the input field to the ProductName property of your model.\n        o Automatically sets the input type (e.g., text, email, password) based on the property\n           type.\n   4. Select Tag Helper (<select>):\n        <select asp-for=\"CategoryId\" asp-items=\"Model.Categories\"></select>\n        o Creates a dropdown list bound to the CategoryId property.\n        o asp-items takes a collection of items to populate the dropdown.",
+      "lines": [
+        {
+          "text": "Things to Avoid",
+          "rawText": "Things to Avoid",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f2"
+        },
+        {
+          "text": "   • Overusing Tag Helpers: Use them for appropriate tasks, not for every HTML element.",
+          "rawText": "• Overusing Tag Helpers: Use them for appropriate tasks, not for every HTML element.",
+          "x": 90.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "   • Excessive Nesting: Avoid deeply nested tag helpers, as it can make your code difficult to",
+          "rawText": "• Excessive Nesting: Avoid deeply nested tag helpers, as it can make your code difficult to",
+          "x": 90.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      read.",
+          "rawText": "read.",
+          "x": 108.02,
+          "y": 677.5,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   • Mixing Tag Helpers and HTML Helpers: Try to use either tag helpers or HTML helpers",
+          "rawText": "• Mixing Tag Helpers and HTML Helpers: Try to use either tag helpers or HTML helpers",
+          "x": 90.024,
+          "y": 655.06,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      consistently within a view to maintain a cleaner code structure.",
+          "rawText": "consistently within a view to maintain a cleaner code structure.",
+          "x": 108.02,
+          "y": 640.54,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "Important Tag Helpers with Examples",
+          "rawText": "Important Tag Helpers with Examples",
+          "x": 72.024,
+          "y": 573.07,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f2"
+        },
+        {
+          "text": "   1. Anchor Tag Helper (<a>):",
+          "rawText": "1. Anchor Tag Helper (<a>):",
+          "x": 90.024,
+          "y": 550.51,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "        <a asp-controller=\"Home\" asp-action=\"Index\">Home</a>",
+          "rawText": "<a asp-controller=\"Home\" asp-action=\"Index\">Home</a>",
+          "x": 126.02,
+          "y": 528.07,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "        o Generates a link to the Index action method in the HomeController.",
+          "rawText": "o Generates a link to the Index action method in the HomeController.",
+          "x": 126.02,
+          "y": 505.51,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o Automatically handles routing and URL generation.",
+          "rawText": "o Automatically handles routing and URL generation.",
+          "x": 126.02,
+          "y": 483.07,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "   2. Form Tag Helper (<form>):",
+          "rawText": "2. Form Tag Helper (<form>):",
+          "x": 90.024,
+          "y": 438.07,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "        <form asp-controller=\"Products\" asp-action=\"Create\" method=\"post\">",
+          "rawText": "<form asp-controller=\"Products\" asp-action=\"Create\" method=\"post\">",
+          "x": 126.02,
+          "y": 415.63,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "        </form>",
+          "rawText": "</form>",
+          "x": 126.02,
+          "y": 393.05,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "        o Creates a form that submits data to the Create action in the ProductsController.",
+          "rawText": "o Creates a form that submits data to the Create action in the ProductsController.",
+          "x": 126.02,
+          "y": 370.61,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o Handles anti-forgery tokens automatically for better security.",
+          "rawText": "o Handles anti-forgery tokens automatically for better security.",
+          "x": 126.02,
+          "y": 348.05,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "   3. Input Tag Helper (<input>):",
+          "rawText": "3. Input Tag Helper (<input>):",
+          "x": 90.024,
+          "y": 303.05,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "        <input asp-for=\"ProductName\" class=\"form-control\" />",
+          "rawText": "<input asp-for=\"ProductName\" class=\"form-control\" />",
+          "x": 126.02,
+          "y": 280.61,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "        o Binds the input field to the ProductName property of your model.",
+          "rawText": "o Binds the input field to the ProductName property of your model.",
+          "x": 126.02,
+          "y": 258.17,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o Automatically sets the input type (e.g., text, email, password) based on the property",
+          "rawText": "o Automatically sets the input type (e.g., text, email, password) based on the property",
+          "x": 126.02,
+          "y": 235.61,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "           type.",
+          "rawText": "type.",
+          "x": 144.02,
+          "y": 221.09,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   4. Select Tag Helper (<select>):",
+          "rawText": "4. Select Tag Helper (<select>):",
+          "x": 90.024,
+          "y": 176.18,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "        <select asp-for=\"CategoryId\" asp-items=\"Model.Categories\"></select>",
+          "rawText": "<select asp-for=\"CategoryId\" asp-items=\"Model.Categories\"></select>",
+          "x": 126.02,
+          "y": 153.62,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "        o Creates a dropdown list bound to the CategoryId property.",
+          "rawText": "o Creates a dropdown list bound to the CategoryId property.",
+          "x": 126.02,
+          "y": 131.18,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o asp-items takes a collection of items to populate the dropdown.",
+          "rawText": "o asp-items takes a collection of items to populate the dropdown.",
+          "x": 126.02,
+          "y": 108.62,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Things to Avoid"
+          ],
+          "text": "Things to Avoid"
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
+            "   • Overusing Tag Helpers: Use them for appropriate tasks, not for every HTML element."
+          ],
+          "text": "   • Overusing Tag Helpers: Use them for appropriate tasks, not for every HTML element."
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
+            "   • Excessive Nesting: Avoid deeply nested tag helpers, as it can make your code difficult to"
+          ],
+          "text": "   • Excessive Nesting: Avoid deeply nested tag helpers, as it can make your code difficult to"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "      read."
+          ],
+          "text": "      read."
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
+            "   • Mixing Tag Helpers and HTML Helpers: Try to use either tag helpers or HTML helpers"
+          ],
+          "text": "   • Mixing Tag Helpers and HTML Helpers: Try to use either tag helpers or HTML helpers"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "      consistently within a view to maintain a cleaner code structure."
+          ],
+          "text": "      consistently within a view to maintain a cleaner code structure."
+        },
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Important Tag Helpers with Examples"
+          ],
+          "text": "Important Tag Helpers with Examples"
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
+            "   1. Anchor Tag Helper (<a>):"
+          ],
+          "text": "   1. Anchor Tag Helper (<a>):"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "        <a asp-controller=\"Home\" asp-action=\"Index\">Home</a>"
+          ],
+          "text": "        <a asp-controller=\"Home\" asp-action=\"Index\">Home</a>"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "        o Generates a link to the Index action method in the HomeController."
+          ],
+          "text": "        o Generates a link to the Index action method in the HomeController."
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
+            "        o Automatically handles routing and URL generation."
+          ],
+          "text": "        o Automatically handles routing and URL generation."
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
+            "   2. Form Tag Helper (<form>):"
+          ],
+          "text": "   2. Form Tag Helper (<form>):"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "        <form asp-controller=\"Products\" asp-action=\"Create\" method=\"post\">",
+            "        </form>"
+          ],
+          "text": "        <form asp-controller=\"Products\" asp-action=\"Create\" method=\"post\">\n        </form>"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "        o Creates a form that submits data to the Create action in the ProductsController."
+          ],
+          "text": "        o Creates a form that submits data to the Create action in the ProductsController."
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
+            "        o Handles anti-forgery tokens automatically for better security."
+          ],
+          "text": "        o Handles anti-forgery tokens automatically for better security."
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
+            "   3. Input Tag Helper (<input>):"
+          ],
+          "text": "   3. Input Tag Helper (<input>):"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "        <input asp-for=\"ProductName\" class=\"form-control\" />"
+          ],
+          "text": "        <input asp-for=\"ProductName\" class=\"form-control\" />"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "        o Binds the input field to the ProductName property of your model."
+          ],
+          "text": "        o Binds the input field to the ProductName property of your model."
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
+            "        o Automatically sets the input type (e.g., text, email, password) based on the property"
+          ],
+          "text": "        o Automatically sets the input type (e.g., text, email, password) based on the property"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "           type."
+          ],
+          "text": "           type."
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
+            "   4. Select Tag Helper (<select>):"
+          ],
+          "text": "   4. Select Tag Helper (<select>):"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "        <select asp-for=\"CategoryId\" asp-items=\"Model.Categories\"></select>"
+          ],
+          "text": "        <select asp-for=\"CategoryId\" asp-items=\"Model.Categories\"></select>"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "        o Creates a dropdown list bound to the CategoryId property."
+          ],
+          "text": "        o Creates a dropdown list bound to the CategoryId property."
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
+            "        o asp-items takes a collection of items to populate the dropdown."
+          ],
+          "text": "        o asp-items takes a collection of items to populate the dropdown."
+        }
+      ],
+      "char_count_raw": 1311,
+      "char_count_repaired": 1458
+    },
+    {
+      "page_number": 3,
+      "raw_text": "5. Label Tag Helper (<label>):\n<label asp-for=\"ProductName\"></label>\no Generates a label for the ProductName input field, automatically setting the for\nattribute to match the input's ID.\n6. Cache Tag Helper (<cache>):\n<cache expires-after=\"@TimeSpan.FromMinutes(10)\">\nContent to cache\n</cache>\no Caches the enclosed content for the specified duration.\no Improves performance for content that doesn't change frequently.\n7. Environment Tag Helper (<environment>):\n<link rel=\"stylesheet\" href=\"~/css/site.css\" asp-append-version=\"true\" />\no The asp-append-version attribute automatically adds a version query string to the\nURL in non-development environments, which helps with cache busting when you\ndeploy updates.\nControllers\n• Index (Read):\no HTTP Verb: GET\no Purpose: Displays a list or table of entities (e.g., persons).\no Logic:\n1. Retrieves data from the PersonsService using methods like\nGetFilteredPersons and GetSortedPersons.\n2. Populates ViewBag with:\n",
+      "repaired_text": "   5. Label Tag Helper (<label>):\n        <label asp-for=\"ProductName\"></label>\n        o Generates a label for the ProductName input field, automatically setting the for\n           attribute to match the input's ID.\n   6. Cache Tag Helper (<cache>):\n           <cache expires-after=\"@TimeSpan.FromMinutes(10)\">\n             Content to cache\n           </cache>\n        o Caches the enclosed content for the specified duration.\n        o Improves performance for content that doesn't change frequently.\n   7. Environment Tag Helper (<environment>):\n        <link rel=\"stylesheet\" href=\"~/css/site.css\" asp-append-version=\"true\" />\n        o The asp-append-version attribute automatically adds a version query string to the\n           URL in non-development environments, which helps with cache busting when you\n           deploy updates.\nControllers\n   • Index (Read):\n        o HTTP Verb: GET\n        o Purpose: Displays a list or table of entities (e.g., persons).\n        o Logic:\n              1. Retrieves data from the PersonsService using methods like\n                 GetFilteredPersons and GetSortedPersons.\n              2. Populates ViewBag with:",
+      "lines": [
+        {
+          "text": "   5. Label Tag Helper (<label>):",
+          "rawText": "5. Label Tag Helper (<label>):",
+          "x": 90.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "        <label asp-for=\"ProductName\"></label>",
+          "rawText": "<label asp-for=\"ProductName\"></label>",
+          "x": 126.02,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "        o Generates a label for the ProductName input field, automatically setting the for",
+          "rawText": "o Generates a label for the ProductName input field, automatically setting the for",
+          "x": 126.02,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "           attribute to match the input's ID.",
+          "rawText": "attribute to match the input's ID.",
+          "x": 144.02,
+          "y": 699.94,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   6. Cache Tag Helper (<cache>):",
+          "rawText": "6. Cache Tag Helper (<cache>):",
+          "x": 90.024,
+          "y": 655.06,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "           <cache expires-after=\"@TimeSpan.FromMinutes(10)\">",
+          "rawText": "<cache expires-after=\"@TimeSpan.FromMinutes(10)\">",
+          "x": 144.02,
+          "y": 632.5,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "             Content to cache",
+          "rawText": "Content to cache",
+          "x": 154.1,
+          "y": 610.06,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "           </cache>",
+          "rawText": "</cache>",
+          "x": 144.02,
+          "y": 587.5,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "        o Caches the enclosed content for the specified duration.",
+          "rawText": "o Caches the enclosed content for the specified duration.",
+          "x": 126.02,
+          "y": 565.03,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o Improves performance for content that doesn't change frequently.",
+          "rawText": "o Improves performance for content that doesn't change frequently.",
+          "x": 126.02,
+          "y": 542.47,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "   7. Environment Tag Helper (<environment>):",
+          "rawText": "7. Environment Tag Helper (<environment>):",
+          "x": 90.024,
+          "y": 497.59,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "        <link rel=\"stylesheet\" href=\"~/css/site.css\" asp-append-version=\"true\" />",
+          "rawText": "<link rel=\"stylesheet\" href=\"~/css/site.css\" asp-append-version=\"true\" />",
+          "x": 126.02,
+          "y": 452.59,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "        o The asp-append-version attribute automatically adds a version query string to the",
+          "rawText": "o The asp-append-version attribute automatically adds a version query string to the",
+          "x": 126.02,
+          "y": 430.03,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "           URL in non-development environments, which helps with cache busting when you",
+          "rawText": "URL in non-development environments, which helps with cache busting when you",
+          "x": 144.02,
+          "y": 415.63,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "           deploy updates.",
+          "rawText": "deploy updates.",
+          "x": 144.02,
+          "y": 401.11,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "Controllers",
+          "rawText": "Controllers",
+          "x": 72.024,
+          "y": 243.65,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f2"
+        },
+        {
+          "text": "   • Index (Read):",
+          "rawText": "• Index (Read):",
+          "x": 90.024,
+          "y": 221.09,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "        o HTTP Verb: GET",
+          "rawText": "o HTTP Verb: GET",
+          "x": 126.02,
+          "y": 198.62,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o Purpose: Displays a list or table of entities (e.g., persons).",
+          "rawText": "o Purpose: Displays a list or table of entities (e.g., persons).",
+          "x": 126.02,
+          "y": 176.18,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o Logic:",
+          "rawText": "o Logic:",
+          "x": 126.02,
+          "y": 153.62,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "              1. Retrieves data from the PersonsService using methods like",
+          "rawText": "1. Retrieves data from the PersonsService using methods like",
+          "x": 162.02,
+          "y": 131.18,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                 GetFilteredPersons and GetSortedPersons.",
+          "rawText": "GetFilteredPersons and GetSortedPersons.",
+          "x": 180.02,
+          "y": 116.66,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "              2. Populates ViewBag with:",
+          "rawText": "2. Populates ViewBag with:",
+          "x": 162.02,
+          "y": 94.224,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "   5. Label Tag Helper (<label>):"
+          ],
+          "text": "   5. Label Tag Helper (<label>):"
+        },
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            "        <label asp-for=\"ProductName\"></label>"
+          ],
+          "text": "        <label asp-for=\"ProductName\"></label>"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "        o Generates a label for the ProductName input field, automatically setting the for",
+            "           attribute to match the input's ID."
+          ],
+          "text": "        o Generates a label for the ProductName input field, automatically setting the for\n           attribute to match the input's ID."
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "   6. Cache Tag Helper (<cache>):"
+          ],
+          "text": "   6. Cache Tag Helper (<cache>):"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "           <cache expires-after=\"@TimeSpan.FromMinutes(10)\">"
+          ],
+          "text": "           <cache expires-after=\"@TimeSpan.FromMinutes(10)\">"
+        },
+        {
+          "type": "heading",
+          "page": 3,
+          "lines": [
+            "Content to cache"
+          ],
+          "text": "Content to cache"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "           </cache>"
+          ],
+          "text": "           </cache>"
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "        o Caches the enclosed content for the specified duration."
+          ],
+          "text": "        o Caches the enclosed content for the specified duration."
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "        o Improves performance for content that doesn't change frequently."
+          ],
+          "text": "        o Improves performance for content that doesn't change frequently."
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "   7. Environment Tag Helper (<environment>):"
+          ],
+          "text": "   7. Environment Tag Helper (<environment>):"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "        <link rel=\"stylesheet\" href=\"~/css/site.css\" asp-append-version=\"true\" />"
+          ],
+          "text": "        <link rel=\"stylesheet\" href=\"~/css/site.css\" asp-append-version=\"true\" />"
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "        o The asp-append-version attribute automatically adds a version query string to the"
+          ],
+          "text": "        o The asp-append-version attribute automatically adds a version query string to the"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "           URL in non-development environments, which helps with cache busting when you",
+            "           deploy updates."
+          ],
+          "text": "           URL in non-development environments, which helps with cache busting when you\n           deploy updates."
+        },
+        {
+          "type": "heading",
+          "page": 3,
+          "lines": [
+            "Controllers"
+          ],
+          "text": "Controllers"
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "   • Index (Read):"
+          ],
+          "text": "   • Index (Read):"
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "        o HTTP Verb: GET"
+          ],
+          "text": "        o HTTP Verb: GET"
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "        o Purpose: Displays a list or table of entities (e.g., persons)."
+          ],
+          "text": "        o Purpose: Displays a list or table of entities (e.g., persons)."
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "        o Logic:"
+          ],
+          "text": "        o Logic:"
+        },
+        {
+          "type": "heading",
+          "page": 3,
+          "lines": [
+            "1. Retrieves data from the PersonsService using methods like"
+          ],
+          "text": "1. Retrieves data from the PersonsService using methods like"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "                 GetFilteredPersons and GetSortedPersons."
+          ],
+          "text": "                 GetFilteredPersons and GetSortedPersons."
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "              2. Populates ViewBag with:"
+          ],
+          "text": "              2. Populates ViewBag with:"
+        }
+      ],
+      "char_count_raw": 961,
+      "char_count_repaired": 1157
+    },
+    {
+      "page_number": 4,
+      "raw_text": "▪ SearchFields: A dictionary of searchable fields and their display\nnames.\n▪ CurrentSearchBy: The currently selected search field.\n▪ CurrentSearchString: The current search term.\n▪ CurrentSortBy: The current sorting field.\n▪ CurrentSortOrder: The current sort order (ASC or DESC).\n3. Returns the Index view with the filtered and sorted data.\n• Create (Create):\no HTTP Verbs: GET (Display form), POST (Process submission)\no Purpose: Creates a new entity.\no Logic:\n▪ GET:\n1. Retrieves a list of countries from CountriesService for populating the\n\"Country\" dropdown in the form.\n2. Returns the Create view.\n▪ POST:\n1. Receives PersonAddRequest via model binding.\n2. Validates the model state.\n3. If valid, calls _personsService.AddPerson to create the new person\nand redirects to the Index action.\n4. If invalid, repopulates ViewBag.Countries and ViewBag.Errors and\nreturns the Create view with error messages.\n• Edit (Update):\no HTTP Verbs: GET (Display form), POST (Process submission)\no Purpose: Updates an existing entity.\no Logic:\n▪ GET:\n1. Retrieves the person to edit using\n_personsService.GetPersonByPersonID.\n",
+      "repaired_text": "                   ▪ SearchFields: A dictionary of searchable fields and their display\n                      names.\n                   ▪ CurrentSearchBy: The currently selected search field.\n                   ▪ CurrentSearchString: The current search term.\n                   ▪ CurrentSortBy: The current sorting field.\n                   ▪ CurrentSortOrder: The current sort order (ASC or DESC).\n              3. Returns the Index view with the filtered and sorted data.\n   • Create (Create):\n        o HTTP Verbs: GET (Display form), POST (Process submission)\n        o Purpose: Creates a new entity.\n        o Logic:\n              ▪ GET:\n                   1. Retrieves a list of countries from CountriesService for populating the\n                      \"Country\" dropdown in the form.\n                   2. Returns the Create view.\n              ▪ POST:\n                   1. Receives PersonAddRequest via model binding.\n                   2. Validates the model state.\n                   3. If valid, calls _personsService.AddPerson to create the new person\n                      and redirects to the Index action.\n                   4. If invalid, repopulates ViewBag.Countries and ViewBag.Errors and\n                      returns the Create view with error messages.\n   • Edit (Update):\n        o HTTP Verbs: GET (Display form), POST (Process submission)\n        o Purpose: Updates an existing entity.\n        o Logic:\n              ▪ GET:\n                   1. Retrieves the person to edit using\n                      _personsService.GetPersonByPersonID.",
+      "lines": [
+        {
+          "text": "                   ▪ SearchFields: A dictionary of searchable fields and their display",
+          "rawText": "▪ SearchFields: A dictionary of searchable fields and their display",
+          "x": 198.05,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f7"
+        },
+        {
+          "text": "                      names.",
+          "rawText": "names.",
+          "x": 216.05,
+          "y": 744.94,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                   ▪ CurrentSearchBy: The currently selected search field.",
+          "rawText": "▪ CurrentSearchBy: The currently selected search field.",
+          "x": 198.05,
+          "y": 722.5,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f7"
+        },
+        {
+          "text": "                   ▪ CurrentSearchString: The current search term.",
+          "rawText": "▪ CurrentSearchString: The current search term.",
+          "x": 198.05,
+          "y": 699.94,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f7"
+        },
+        {
+          "text": "                   ▪ CurrentSortBy: The current sorting field.",
+          "rawText": "▪ CurrentSortBy: The current sorting field.",
+          "x": 198.05,
+          "y": 677.5,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f7"
+        },
+        {
+          "text": "                   ▪ CurrentSortOrder: The current sort order (ASC or DESC).",
+          "rawText": "▪ CurrentSortOrder: The current sort order (ASC or DESC).",
+          "x": 198.05,
+          "y": 655.06,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f7"
+        },
+        {
+          "text": "              3. Returns the Index view with the filtered and sorted data.",
+          "rawText": "3. Returns the Index view with the filtered and sorted data.",
+          "x": 162.02,
+          "y": 632.5,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   • Create (Create):",
+          "rawText": "• Create (Create):",
+          "x": 90.024,
+          "y": 587.5,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "        o HTTP Verbs: GET (Display form), POST (Process submission)",
+          "rawText": "o HTTP Verbs: GET (Display form), POST (Process submission)",
+          "x": 126.02,
+          "y": 565.03,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o Purpose: Creates a new entity.",
+          "rawText": "o Purpose: Creates a new entity.",
+          "x": 126.02,
+          "y": 542.47,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o Logic:",
+          "rawText": "o Logic:",
+          "x": 126.02,
+          "y": 520.03,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "              ▪ GET:",
+          "rawText": "▪ GET:",
+          "x": 162.02,
+          "y": 497.59,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f7"
+        },
+        {
+          "text": "                   1. Retrieves a list of countries from CountriesService for populating the",
+          "rawText": "1. Retrieves a list of countries from CountriesService for populating the",
+          "x": 198.05,
+          "y": 475.03,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                      \"Country\" dropdown in the form.",
+          "rawText": "\"Country\" dropdown in the form.",
+          "x": 216.05,
+          "y": 460.51,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                   2. Returns the Create view.",
+          "rawText": "2. Returns the Create view.",
+          "x": 198.05,
+          "y": 438.07,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "              ▪ POST:",
+          "rawText": "▪ POST:",
+          "x": 162.02,
+          "y": 415.63,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f7"
+        },
+        {
+          "text": "                   1. Receives PersonAddRequest via model binding.",
+          "rawText": "1. Receives PersonAddRequest via model binding.",
+          "x": 198.05,
+          "y": 393.05,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                   2. Validates the model state.",
+          "rawText": "2. Validates the model state.",
+          "x": 198.05,
+          "y": 370.61,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                   3. If valid, calls _personsService.AddPerson to create the new person",
+          "rawText": "3. If valid, calls _personsService.AddPerson to create the new person",
+          "x": 198.05,
+          "y": 348.05,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                      and redirects to the Index action.",
+          "rawText": "and redirects to the Index action.",
+          "x": 216.05,
+          "y": 333.65,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                   4. If invalid, repopulates ViewBag.Countries and ViewBag.Errors and",
+          "rawText": "4. If invalid, repopulates ViewBag.Countries and ViewBag.Errors and",
+          "x": 198.05,
+          "y": 311.09,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                      returns the Create view with error messages.",
+          "rawText": "returns the Create view with error messages.",
+          "x": 216.05,
+          "y": 296.57,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   • Edit (Update):",
+          "rawText": "• Edit (Update):",
+          "x": 90.024,
+          "y": 229.13,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "        o HTTP Verbs: GET (Display form), POST (Process submission)",
+          "rawText": "o HTTP Verbs: GET (Display form), POST (Process submission)",
+          "x": 126.02,
+          "y": 206.66,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o Purpose: Updates an existing entity.",
+          "rawText": "o Purpose: Updates an existing entity.",
+          "x": 126.02,
+          "y": 184.1,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o Logic:",
+          "rawText": "o Logic:",
+          "x": 126.02,
+          "y": 161.66,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "              ▪ GET:",
+          "rawText": "▪ GET:",
+          "x": 162.02,
+          "y": 139.1,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f7"
+        },
+        {
+          "text": "                   1. Retrieves the person to edit using",
+          "rawText": "1. Retrieves the person to edit using",
+          "x": 198.05,
+          "y": 116.66,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                      _personsService.GetPersonByPersonID.",
+          "rawText": "_personsService.GetPersonByPersonID.",
+          "x": 216.05,
+          "y": 102.14,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "                   ▪ SearchFields: A dictionary of searchable fields and their display",
+            "                      names.",
+            "                   ▪ CurrentSearchBy: The currently selected search field.",
+            "                   ▪ CurrentSearchString: The current search term.",
+            "                   ▪ CurrentSortBy: The current sorting field.",
+            "                   ▪ CurrentSortOrder: The current sort order (ASC or DESC)."
+          ],
+          "text": "                   ▪ SearchFields: A dictionary of searchable fields and their display\n                      names.\n                   ▪ CurrentSearchBy: The currently selected search field.\n                   ▪ CurrentSearchString: The current search term.\n                   ▪ CurrentSortBy: The current sorting field.\n                   ▪ CurrentSortOrder: The current sort order (ASC or DESC)."
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "              3. Returns the Index view with the filtered and sorted data."
+          ],
+          "text": "              3. Returns the Index view with the filtered and sorted data."
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "   • Create (Create):"
+          ],
+          "text": "   • Create (Create):"
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "        o HTTP Verbs: GET (Display form), POST (Process submission)"
+          ],
+          "text": "        o HTTP Verbs: GET (Display form), POST (Process submission)"
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "        o Purpose: Creates a new entity."
+          ],
+          "text": "        o Purpose: Creates a new entity."
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "        o Logic:"
+          ],
+          "text": "        o Logic:"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "              ▪ GET:"
+          ],
+          "text": "              ▪ GET:"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "1. Retrieves a list of countries from CountriesService for populating the"
+          ],
+          "text": "1. Retrieves a list of countries from CountriesService for populating the"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "                      \"Country\" dropdown in the form."
+          ],
+          "text": "                      \"Country\" dropdown in the form."
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "                   2. Returns the Create view."
+          ],
+          "text": "                   2. Returns the Create view."
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "              ▪ POST:"
+          ],
+          "text": "              ▪ POST:"
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "                   1. Receives PersonAddRequest via model binding."
+          ],
+          "text": "                   1. Receives PersonAddRequest via model binding."
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "                   2. Validates the model state."
+          ],
+          "text": "                   2. Validates the model state."
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "3. If valid, calls _personsService.AddPerson to create the new person"
+          ],
+          "text": "3. If valid, calls _personsService.AddPerson to create the new person"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "                      and redirects to the Index action."
+          ],
+          "text": "                      and redirects to the Index action."
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "4. If invalid, repopulates ViewBag.Countries and ViewBag.Errors and"
+          ],
+          "text": "4. If invalid, repopulates ViewBag.Countries and ViewBag.Errors and"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "                      returns the Create view with error messages."
+          ],
+          "text": "                      returns the Create view with error messages."
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "   • Edit (Update):"
+          ],
+          "text": "   • Edit (Update):"
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "        o HTTP Verbs: GET (Display form), POST (Process submission)"
+          ],
+          "text": "        o HTTP Verbs: GET (Display form), POST (Process submission)"
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "        o Purpose: Updates an existing entity."
+          ],
+          "text": "        o Purpose: Updates an existing entity."
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "        o Logic:"
+          ],
+          "text": "        o Logic:"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "              ▪ GET:"
+          ],
+          "text": "              ▪ GET:"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "1. Retrieves the person to edit using"
+          ],
+          "text": "1. Retrieves the person to edit using"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "                      _personsService.GetPersonByPersonID."
+          ],
+          "text": "                      _personsService.GetPersonByPersonID."
+        }
+      ],
+      "char_count_raw": 1115,
+      "char_count_repaired": 1562
+    },
+    {
+      "page_number": 5,
+      "raw_text": "2. Retrieves a list of countries from CountriesService for the\ndropdown.\n3. Returns the Edit view with the person's data in a\nPersonUpdateRequest.\n▪ POST:\n1. Receives PersonUpdateRequest via model binding.\n2. Validates the model state.\n3. If valid, calls _personsService.UpdatePerson and redirects to the\nIndex action.\n4. If invalid, repopulates ViewBag.Countries and ViewBag.Errors and\nreturns the Edit view with error messages.\n• Delete (Delete):\no HTTP Verbs: GET (Display confirmation), POST (Perform deletion)\no Purpose: Deletes an existing entity.\no Logic:\n▪ GET:\n1. Retrieves the person to delete using\n_personsService.GetPersonByPersonID.\n2. Returns the Delete view to confirm the deletion.\n▪ POST:\n1. Receives PersonUpdateRequest (containing the PersonID) via model\nbinding.\n2. Calls _personsService.DeletePerson and redirects to the Index\naction.\nViews\n• Index.cshtml (Read):\no Displays a table of persons.\no Uses tag helpers (asp-controller, asp-action, etc.) to generate links.\n",
+      "repaired_text": "                   2. Retrieves a list of countries from CountriesService for the\n                      dropdown.\n                   3. Returns the Edit view with the person's data in a\n                      PersonUpdateRequest.\n              ▪ POST:\n                   1. Receives PersonUpdateRequest via model binding.\n                   2. Validates the model state.\n                   3. If valid, calls _personsService.UpdatePerson and redirects to the\n                      Index action.\n                   4. If invalid, repopulates ViewBag.Countries and ViewBag.Errors and\n                      returns the Edit view with error messages.\n   • Delete (Delete):\n        o HTTP Verbs: GET (Display confirmation), POST (Perform deletion)\n        o Purpose: Deletes an existing entity.\n        o Logic:\n              ▪ GET:\n                   1. Retrieves the person to delete using\n                      _personsService.GetPersonByPersonID.\n                   2. Returns the Delete view to confirm the deletion.\n              ▪ POST:\n                   1. Receives PersonUpdateRequest (containing the PersonID) via model\n                      binding.\n                   2. Calls _personsService.DeletePerson and redirects to the Index\n                      action.\nViews\n   • Index.cshtml (Read):\n        o Displays a table of persons.\n        o Uses tag helpers (asp-controller, asp-action, etc.) to generate links.",
+      "lines": [
+        {
+          "text": "                   2. Retrieves a list of countries from CountriesService for the",
+          "rawText": "2. Retrieves a list of countries from CountriesService for the",
+          "x": 198.05,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                      dropdown.",
+          "rawText": "dropdown.",
+          "x": 216.05,
+          "y": 744.94,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                   3. Returns the Edit view with the person's data in a",
+          "rawText": "3. Returns the Edit view with the person's data in a",
+          "x": 198.05,
+          "y": 722.5,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                      PersonUpdateRequest.",
+          "rawText": "PersonUpdateRequest.",
+          "x": 216.05,
+          "y": 707.98,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "              ▪ POST:",
+          "rawText": "▪ POST:",
+          "x": 162.02,
+          "y": 685.54,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f7"
+        },
+        {
+          "text": "                   1. Receives PersonUpdateRequest via model binding.",
+          "rawText": "1. Receives PersonUpdateRequest via model binding.",
+          "x": 198.05,
+          "y": 662.98,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                   2. Validates the model state.",
+          "rawText": "2. Validates the model state.",
+          "x": 198.05,
+          "y": 640.54,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                   3. If valid, calls _personsService.UpdatePerson and redirects to the",
+          "rawText": "3. If valid, calls _personsService.UpdatePerson and redirects to the",
+          "x": 198.05,
+          "y": 617.98,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                      Index action.",
+          "rawText": "Index action.",
+          "x": 216.05,
+          "y": 603.58,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                   4. If invalid, repopulates ViewBag.Countries and ViewBag.Errors and",
+          "rawText": "4. If invalid, repopulates ViewBag.Countries and ViewBag.Errors and",
+          "x": 198.05,
+          "y": 581.02,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                      returns the Edit view with error messages.",
+          "rawText": "returns the Edit view with error messages.",
+          "x": 216.05,
+          "y": 566.47,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   • Delete (Delete):",
+          "rawText": "• Delete (Delete):",
+          "x": 90.024,
+          "y": 499.03,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "        o HTTP Verbs: GET (Display confirmation), POST (Perform deletion)",
+          "rawText": "o HTTP Verbs: GET (Display confirmation), POST (Perform deletion)",
+          "x": 126.02,
+          "y": 476.59,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o Purpose: Deletes an existing entity.",
+          "rawText": "o Purpose: Deletes an existing entity.",
+          "x": 126.02,
+          "y": 454.03,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o Logic:",
+          "rawText": "o Logic:",
+          "x": 126.02,
+          "y": 431.59,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "              ▪ GET:",
+          "rawText": "▪ GET:",
+          "x": 162.02,
+          "y": 409.03,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f7"
+        },
+        {
+          "text": "                   1. Retrieves the person to delete using",
+          "rawText": "1. Retrieves the person to delete using",
+          "x": 198.05,
+          "y": 386.57,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                      _personsService.GetPersonByPersonID.",
+          "rawText": "_personsService.GetPersonByPersonID.",
+          "x": 216.05,
+          "y": 372.05,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                   2. Returns the Delete view to confirm the deletion.",
+          "rawText": "2. Returns the Delete view to confirm the deletion.",
+          "x": 198.05,
+          "y": 349.61,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "              ▪ POST:",
+          "rawText": "▪ POST:",
+          "x": 162.02,
+          "y": 327.05,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f7"
+        },
+        {
+          "text": "                   1. Receives PersonUpdateRequest (containing the PersonID) via model",
+          "rawText": "1. Receives PersonUpdateRequest (containing the PersonID) via model",
+          "x": 198.05,
+          "y": 304.61,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                      binding.",
+          "rawText": "binding.",
+          "x": 216.05,
+          "y": 290.09,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                   2. Calls _personsService.DeletePerson and redirects to the Index",
+          "rawText": "2. Calls _personsService.DeletePerson and redirects to the Index",
+          "x": 198.05,
+          "y": 267.65,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "                      action.",
+          "rawText": "action.",
+          "x": 216.05,
+          "y": 253.13,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "Views",
+          "rawText": "Views",
+          "x": 72.024,
+          "y": 163.1,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f2"
+        },
+        {
+          "text": "   • Index.cshtml (Read):",
+          "rawText": "• Index.cshtml (Read):",
+          "x": 90.024,
+          "y": 140.66,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "        o Displays a table of persons.",
+          "rawText": "o Displays a table of persons.",
+          "x": 126.02,
+          "y": 118.22,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o Uses tag helpers (asp-controller, asp-action, etc.) to generate links.",
+          "rawText": "o Uses tag helpers (asp-controller, asp-action, etc.) to generate links.",
+          "x": 126.02,
+          "y": 95.664,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "2. Retrieves a list of countries from CountriesService for the"
+          ],
+          "text": "2. Retrieves a list of countries from CountriesService for the"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "                      dropdown."
+          ],
+          "text": "                      dropdown."
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "3. Returns the Edit view with the person's data in a"
+          ],
+          "text": "3. Returns the Edit view with the person's data in a"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "                      PersonUpdateRequest.",
+            "              ▪ POST:"
+          ],
+          "text": "                      PersonUpdateRequest.\n              ▪ POST:"
+        },
+        {
+          "type": "list_item",
+          "page": 5,
+          "lines": [
+            "                   1. Receives PersonUpdateRequest via model binding."
+          ],
+          "text": "                   1. Receives PersonUpdateRequest via model binding."
+        },
+        {
+          "type": "list_item",
+          "page": 5,
+          "lines": [
+            "                   2. Validates the model state."
+          ],
+          "text": "                   2. Validates the model state."
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "3. If valid, calls _personsService.UpdatePerson and redirects to the"
+          ],
+          "text": "3. If valid, calls _personsService.UpdatePerson and redirects to the"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "                      Index action."
+          ],
+          "text": "                      Index action."
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "4. If invalid, repopulates ViewBag.Countries and ViewBag.Errors and"
+          ],
+          "text": "4. If invalid, repopulates ViewBag.Countries and ViewBag.Errors and"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "                      returns the Edit view with error messages."
+          ],
+          "text": "                      returns the Edit view with error messages."
+        },
+        {
+          "type": "list_item",
+          "page": 5,
+          "lines": [
+            "   • Delete (Delete):"
+          ],
+          "text": "   • Delete (Delete):"
+        },
+        {
+          "type": "list_item",
+          "page": 5,
+          "lines": [
+            "        o HTTP Verbs: GET (Display confirmation), POST (Perform deletion)"
+          ],
+          "text": "        o HTTP Verbs: GET (Display confirmation), POST (Perform deletion)"
+        },
+        {
+          "type": "list_item",
+          "page": 5,
+          "lines": [
+            "        o Purpose: Deletes an existing entity."
+          ],
+          "text": "        o Purpose: Deletes an existing entity."
+        },
+        {
+          "type": "list_item",
+          "page": 5,
+          "lines": [
+            "        o Logic:"
+          ],
+          "text": "        o Logic:"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "              ▪ GET:"
+          ],
+          "text": "              ▪ GET:"
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "1. Retrieves the person to delete using"
+          ],
+          "text": "1. Retrieves the person to delete using"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "                      _personsService.GetPersonByPersonID."
+          ],
+          "text": "                      _personsService.GetPersonByPersonID."
+        },
+        {
+          "type": "list_item",
+          "page": 5,
+          "lines": [
+            "                   2. Returns the Delete view to confirm the deletion."
+          ],
+          "text": "                   2. Returns the Delete view to confirm the deletion."
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "              ▪ POST:"
+          ],
+          "text": "              ▪ POST:"
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "1. Receives PersonUpdateRequest (containing the PersonID) via model"
+          ],
+          "text": "1. Receives PersonUpdateRequest (containing the PersonID) via model"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "                      binding."
+          ],
+          "text": "                      binding."
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "2. Calls _personsService.DeletePerson and redirects to the Index"
+          ],
+          "text": "2. Calls _personsService.DeletePerson and redirects to the Index"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "                      action."
+          ],
+          "text": "                      action."
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "Views"
+          ],
+          "text": "Views"
+        },
+        {
+          "type": "list_item",
+          "page": 5,
+          "lines": [
+            "   • Index.cshtml (Read):"
+          ],
+          "text": "   • Index.cshtml (Read):"
+        },
+        {
+          "type": "list_item",
+          "page": 5,
+          "lines": [
+            "        o Displays a table of persons."
+          ],
+          "text": "        o Displays a table of persons."
+        },
+        {
+          "type": "list_item",
+          "page": 5,
+          "lines": [
+            "        o Uses tag helpers (asp-controller, asp-action, etc.) to generate links."
+          ],
+          "text": "        o Uses tag helpers (asp-controller, asp-action, etc.) to generate links."
+        }
+      ],
+      "char_count_raw": 990,
+      "char_count_repaired": 1421
+    },
+    {
+      "page_number": 6,
+      "raw_text": "o Includes a form for searching and sorting.\no Renders a partial view (_GridColumnHeader) to create sortable table headers.\n• Create.cshtml:\no Renders a form for creating a new person.\no Uses tag helpers for model binding and validation.\no Displays validation errors using asp-validation-summary and asp-validation-for.\n• Edit.cshtml:\no Similar to Create.cshtml but for editing an existing person.\n• Delete.cshtml:\no Displays a confirmation message and a form to confirm the deletion.\no Uses tag helpers for binding the PersonID.\nClient-Side Validations\nClient-side validations are enabled in these views through the inclusion of jQuery, jQuery Validate,\nand jQuery Unobtrusive Validation libraries in the @section scripts block. These libraries work\ntogether to provide:\n• Instant Feedback: Validation messages appear immediately when the user interacts with the\nform fields.\n• Reduced Server Load: Validations are performed on the client-side, reducing the number of\nround trips to the server.\nHttpPost Action Method Submission Process\n1. Form Submission: The user fills out the form and clicks the submit button.\n2. Client-Side Validation (Optional): If enabled, JavaScript validation checks are performed\nbefore the form is submitted to the server. If there are errors, they are displayed\nimmediately, and the submission is prevented.\n3. Request Sent to Server: If there are no client-side errors, the form data is sent to the server\nvia a POST request.\n",
+      "repaired_text": "        o Includes a form for searching and sorting.\n        o Renders a partial view (_GridColumnHeader) to create sortable table headers.\n   • Create.cshtml:\n        o Renders a form for creating a new person.\n        o Uses tag helpers for model binding and validation.\n        o Displays validation errors using asp-validation-summary and asp-validation-for.\n   • Edit.cshtml:\n        o Similar to Create.cshtml but for editing an existing person.\n   • Delete.cshtml:\n        o Displays a confirmation message and a form to confirm the deletion.\n        o Uses tag helpers for binding the PersonID.\nClient-Side Validations\nClient-side validations are enabled in these views through the inclusion of jQuery, jQuery Validate,\nand jQuery Unobtrusive Validation libraries in the @section scripts block. These libraries work\ntogether to provide:\n   • Instant Feedback: Validation messages appear immediately when the user interacts with the\n      form fields.\n   • Reduced Server Load: Validations are performed on the client-side, reducing the number of\n      round trips to the server.\nHttpPost Action Method Submission Process\n   1. Form Submission: The user fills out the form and clicks the submit button.\n   2. Client-Side Validation (Optional): If enabled, JavaScript validation checks are performed\n      before the form is submitted to the server. If there are errors, they are displayed\n      immediately, and the submission is prevented.\n   3. Request Sent to Server: If there are no client-side errors, the form data is sent to the server\n      via a POST request.",
+      "lines": [
+        {
+          "text": "        o Includes a form for searching and sorting.",
+          "rawText": "o Includes a form for searching and sorting.",
+          "x": 126.02,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o Renders a partial view (_GridColumnHeader) to create sortable table headers.",
+          "rawText": "o Renders a partial view (_GridColumnHeader) to create sortable table headers.",
+          "x": 126.02,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "   • Create.cshtml:",
+          "rawText": "• Create.cshtml:",
+          "x": 90.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "        o Renders a form for creating a new person.",
+          "rawText": "o Renders a form for creating a new person.",
+          "x": 126.02,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o Uses tag helpers for model binding and validation.",
+          "rawText": "o Uses tag helpers for model binding and validation.",
+          "x": 126.02,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o Displays validation errors using asp-validation-summary and asp-validation-for.",
+          "rawText": "o Displays validation errors using asp-validation-summary and asp-validation-for.",
+          "x": 126.02,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "   • Edit.cshtml:",
+          "rawText": "• Edit.cshtml:",
+          "x": 90.024,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "        o Similar to Create.cshtml but for editing an existing person.",
+          "rawText": "o Similar to Create.cshtml but for editing an existing person.",
+          "x": 126.02,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "   • Delete.cshtml:",
+          "rawText": "• Delete.cshtml:",
+          "x": 90.024,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "        o Displays a confirmation message and a form to confirm the deletion.",
+          "rawText": "o Displays a confirmation message and a form to confirm the deletion.",
+          "x": 126.02,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o Uses tag helpers for binding the PersonID.",
+          "rawText": "o Uses tag helpers for binding the PersonID.",
+          "x": 126.02,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "Client-Side Validations",
+          "rawText": "Client-Side Validations",
+          "x": 72.024,
+          "y": 377.09,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f2"
+        },
+        {
+          "text": "Client-side validations are enabled in these views through the inclusion of jQuery, jQuery Validate,",
+          "rawText": "Client-side validations are enabled in these views through the inclusion of jQuery, jQuery Validate,",
+          "x": 72.024,
+          "y": 354.53,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "and jQuery Unobtrusive Validation libraries in the @section scripts block. These libraries work",
+          "rawText": "and jQuery Unobtrusive Validation libraries in the @section scripts block. These libraries work",
+          "x": 72.024,
+          "y": 340.13,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "together to provide:",
+          "rawText": "together to provide:",
+          "x": 72.024,
+          "y": 325.61,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   • Instant Feedback: Validation messages appear immediately when the user interacts with the",
+          "rawText": "• Instant Feedback: Validation messages appear immediately when the user interacts with the",
+          "x": 90.024,
+          "y": 303.05,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      form fields.",
+          "rawText": "form fields.",
+          "x": 108.02,
+          "y": 288.65,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   • Reduced Server Load: Validations are performed on the client-side, reducing the number of",
+          "rawText": "• Reduced Server Load: Validations are performed on the client-side, reducing the number of",
+          "x": 90.024,
+          "y": 266.09,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      round trips to the server.",
+          "rawText": "round trips to the server.",
+          "x": 108.02,
+          "y": 251.69,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "HttpPost Action Method Submission Process",
+          "rawText": "HttpPost Action Method Submission Process",
+          "x": 72.024,
+          "y": 206.66,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f2"
+        },
+        {
+          "text": "   1. Form Submission: The user fills out the form and clicks the submit button.",
+          "rawText": "1. Form Submission: The user fills out the form and clicks the submit button.",
+          "x": 90.024,
+          "y": 184.1,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   2. Client-Side Validation (Optional): If enabled, JavaScript validation checks are performed",
+          "rawText": "2. Client-Side Validation (Optional): If enabled, JavaScript validation checks are performed",
+          "x": 90.024,
+          "y": 161.66,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "      before the form is submitted to the server. If there are errors, they are displayed",
+          "rawText": "before the form is submitted to the server. If there are errors, they are displayed",
+          "x": 108.02,
+          "y": 147.14,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "      immediately, and the submission is prevented.",
+          "rawText": "immediately, and the submission is prevented.",
+          "x": 108.02,
+          "y": 132.62,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   3. Request Sent to Server: If there are no client-side errors, the form data is sent to the server",
+          "rawText": "3. Request Sent to Server: If there are no client-side errors, the form data is sent to the server",
+          "x": 90.024,
+          "y": 110.18,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "      via a POST request.",
+          "rawText": "via a POST request.",
+          "x": 108.02,
+          "y": 95.664,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "        o Includes a form for searching and sorting."
+          ],
+          "text": "        o Includes a form for searching and sorting."
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "        o Renders a partial view (_GridColumnHeader) to create sortable table headers."
+          ],
+          "text": "        o Renders a partial view (_GridColumnHeader) to create sortable table headers."
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "   • Create.cshtml:"
+          ],
+          "text": "   • Create.cshtml:"
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "        o Renders a form for creating a new person."
+          ],
+          "text": "        o Renders a form for creating a new person."
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "        o Uses tag helpers for model binding and validation."
+          ],
+          "text": "        o Uses tag helpers for model binding and validation."
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "        o Displays validation errors using asp-validation-summary and asp-validation-for."
+          ],
+          "text": "        o Displays validation errors using asp-validation-summary and asp-validation-for."
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "   • Edit.cshtml:"
+          ],
+          "text": "   • Edit.cshtml:"
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "        o Similar to Create.cshtml but for editing an existing person."
+          ],
+          "text": "        o Similar to Create.cshtml but for editing an existing person."
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "   • Delete.cshtml:"
+          ],
+          "text": "   • Delete.cshtml:"
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "        o Displays a confirmation message and a form to confirm the deletion."
+          ],
+          "text": "        o Displays a confirmation message and a form to confirm the deletion."
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "        o Uses tag helpers for binding the PersonID."
+          ],
+          "text": "        o Uses tag helpers for binding the PersonID."
+        },
+        {
+          "type": "heading",
+          "page": 6,
+          "lines": [
+            "Client-Side Validations"
+          ],
+          "text": "Client-Side Validations"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "Client-side validations are enabled in these views through the inclusion of jQuery, jQuery Validate,",
+            "and jQuery Unobtrusive Validation libraries in the @section scripts block. These libraries work",
+            "together to provide:"
+          ],
+          "text": "Client-side validations are enabled in these views through the inclusion of jQuery, jQuery Validate,\nand jQuery Unobtrusive Validation libraries in the @section scripts block. These libraries work\ntogether to provide:"
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "   • Instant Feedback: Validation messages appear immediately when the user interacts with the"
+          ],
+          "text": "   • Instant Feedback: Validation messages appear immediately when the user interacts with the"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "      form fields."
+          ],
+          "text": "      form fields."
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "   • Reduced Server Load: Validations are performed on the client-side, reducing the number of"
+          ],
+          "text": "   • Reduced Server Load: Validations are performed on the client-side, reducing the number of"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "      round trips to the server."
+          ],
+          "text": "      round trips to the server."
+        },
+        {
+          "type": "heading",
+          "page": 6,
+          "lines": [
+            "HttpPost Action Method Submission Process"
+          ],
+          "text": "HttpPost Action Method Submission Process"
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "   1. Form Submission: The user fills out the form and clicks the submit button."
+          ],
+          "text": "   1. Form Submission: The user fills out the form and clicks the submit button."
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "   2. Client-Side Validation (Optional): If enabled, JavaScript validation checks are performed"
+          ],
+          "text": "   2. Client-Side Validation (Optional): If enabled, JavaScript validation checks are performed"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "      before the form is submitted to the server. If there are errors, they are displayed",
+            "      immediately, and the submission is prevented."
+          ],
+          "text": "      before the form is submitted to the server. If there are errors, they are displayed\n      immediately, and the submission is prevented."
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "   3. Request Sent to Server: If there are no client-side errors, the form data is sent to the server"
+          ],
+          "text": "   3. Request Sent to Server: If there are no client-side errors, the form data is sent to the server"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "      via a POST request."
+          ],
+          "text": "      via a POST request."
+        }
+      ],
+      "char_count_raw": 1458,
+      "char_count_repaired": 1575
+    },
+    {
+      "page_number": 7,
+      "raw_text": "4. Model Binding: ASP.NET Core's model binding system extracts the form data and attempts\nto create a model object (PersonAddRequest or PersonUpdateRequest) based on the form\nfield names.\n5. Model Validation: Data annotations and custom validation rules are applied to the model\nobject. If errors are found, they are added to the ModelState object.\n6. Controller Action Logic:\no If ModelState.IsValid is true, the action performs the appropriate CRUD operation\n(create, update, delete) using the service layer.\no If ModelState.IsValid is false, the action typically returns the view again,\nrepopulating the form with the user's input and displaying error messages.\n7. Redirect (Optional): After a successful POST request, the action often redirects to another\npage (e.g., the \"Index\" view) to prevent accidental re-submissions.\nKey Points to Remember\nTag Helpers\n• Purpose: Server-side code that modifies HTML elements to include server-side logic.\n• Benefits:\no HTML-friendly syntax\no Strong typing and IntelliSense\no Code reuse\no Reduced server round-trips\n• Common Tag Helpers:\no a: Creates links (e.g., asp-controller, asp-action).\no form: Generates HTML forms (e.g., asp-controller, asp-action, method).\no input, textarea, select: Bind to model properties (e.g., asp-for).\no label: Creates labels for form fields (asp-for).\no cache: Caches a portion of the view.\no partial: Renders a partial view.\no environment: Conditionally renders content based on the environment.\n",
+      "repaired_text": "   4. Model Binding: ASP.NET Core's model binding system extracts the form data and attempts\n      to create a model object (PersonAddRequest or PersonUpdateRequest) based on the form\n      field names.\n   5. Model Validation: Data annotations and custom validation rules are applied to the model\n      object. If errors are found, they are added to the ModelState object.\n   6. Controller Action Logic:\n        o If ModelState.IsValid is true, the action performs the appropriate CRUD operation\n           (create, update, delete) using the service layer.\n        o If ModelState.IsValid is false, the action typically returns the view again,\n           repopulating the form with the user's input and displaying error messages.\n   7. Redirect (Optional): After a successful POST request, the action often redirects to another\n      page (e.g., the \"Index\" view) to prevent accidental re-submissions.\nKey Points to Remember\nTag Helpers\n   • Purpose: Server-side code that modifies HTML elements to include server-side logic.\n   • Benefits:\n        o HTML-friendly syntax\n        o Strong typing and IntelliSense\n        o Code reuse\n        o Reduced server round-trips\n   • Common Tag Helpers:\n        o a: Creates links (e.g., asp-controller, asp-action).\n        o form: Generates HTML forms (e.g., asp-controller, asp-action, method).\n        o input, textarea, select: Bind to model properties (e.g., asp-for).\n        o label: Creates labels for form fields (asp-for).\n        o cache: Caches a portion of the view.\n        o partial: Renders a partial view.\n        o environment: Conditionally renders content based on the environment.",
+      "lines": [
+        {
+          "text": "   4. Model Binding: ASP.NET Core's model binding system extracts the form data and attempts",
+          "rawText": "4. Model Binding: ASP.NET Core's model binding system extracts the form data and attempts",
+          "x": 90.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "      to create a model object (PersonAddRequest or PersonUpdateRequest) based on the form",
+          "rawText": "to create a model object (PersonAddRequest or PersonUpdateRequest) based on the form",
+          "x": 108.02,
+          "y": 744.94,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "      field names.",
+          "rawText": "field names.",
+          "x": 108.02,
+          "y": 730.42,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   5. Model Validation: Data annotations and custom validation rules are applied to the model",
+          "rawText": "5. Model Validation: Data annotations and custom validation rules are applied to the model",
+          "x": 90.024,
+          "y": 707.98,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "      object. If errors are found, they are added to the ModelState object.",
+          "rawText": "object. If errors are found, they are added to the ModelState object.",
+          "x": 108.02,
+          "y": 693.46,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   6. Controller Action Logic:",
+          "rawText": "6. Controller Action Logic:",
+          "x": 90.024,
+          "y": 671.02,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "        o If ModelState.IsValid is true, the action performs the appropriate CRUD operation",
+          "rawText": "o If ModelState.IsValid is true, the action performs the appropriate CRUD operation",
+          "x": 126.02,
+          "y": 648.46,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "           (create, update, delete) using the service layer.",
+          "rawText": "(create, update, delete) using the service layer.",
+          "x": 144.02,
+          "y": 634.06,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "        o If ModelState.IsValid is false, the action typically returns the view again,",
+          "rawText": "o If ModelState.IsValid is false, the action typically returns the view again,",
+          "x": 126.02,
+          "y": 611.5,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "           repopulating the form with the user's input and displaying error messages.",
+          "rawText": "repopulating the form with the user's input and displaying error messages.",
+          "x": 144.02,
+          "y": 597.1,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   7. Redirect (Optional): After a successful POST request, the action often redirects to another",
+          "rawText": "7. Redirect (Optional): After a successful POST request, the action often redirects to another",
+          "x": 90.024,
+          "y": 574.51,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "      page (e.g., the \"Index\" view) to prevent accidental re-submissions.",
+          "rawText": "page (e.g., the \"Index\" view) to prevent accidental re-submissions.",
+          "x": 108.02,
+          "y": 559.99,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "Key Points to Remember",
+          "rawText": "Key Points to Remember",
+          "x": 72.024,
+          "y": 470.11,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f2"
+        },
+        {
+          "text": "Tag Helpers",
+          "rawText": "Tag Helpers",
+          "x": 72.024,
+          "y": 447.55,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f2"
+        },
+        {
+          "text": "   • Purpose: Server-side code that modifies HTML elements to include server-side logic.",
+          "rawText": "• Purpose: Server-side code that modifies HTML elements to include server-side logic.",
+          "x": 90.024,
+          "y": 425.11,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "   • Benefits:",
+          "rawText": "• Benefits:",
+          "x": 90.024,
+          "y": 402.55,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "        o HTML-friendly syntax",
+          "rawText": "o HTML-friendly syntax",
+          "x": 126.02,
+          "y": 380.09,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o Strong typing and IntelliSense",
+          "rawText": "o Strong typing and IntelliSense",
+          "x": 126.02,
+          "y": 357.65,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o Code reuse",
+          "rawText": "o Code reuse",
+          "x": 126.02,
+          "y": 335.09,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o Reduced server round-trips",
+          "rawText": "o Reduced server round-trips",
+          "x": 126.02,
+          "y": 312.65,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "   • Common Tag Helpers:",
+          "rawText": "• Common Tag Helpers:",
+          "x": 90.024,
+          "y": 290.09,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "        o a: Creates links (e.g., asp-controller, asp-action).",
+          "rawText": "o a: Creates links (e.g., asp-controller, asp-action).",
+          "x": 126.02,
+          "y": 267.65,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o form: Generates HTML forms (e.g., asp-controller, asp-action, method).",
+          "rawText": "o form: Generates HTML forms (e.g., asp-controller, asp-action, method).",
+          "x": 126.02,
+          "y": 245.09,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o input, textarea, select: Bind to model properties (e.g., asp-for).",
+          "rawText": "o input, textarea, select: Bind to model properties (e.g., asp-for).",
+          "x": 126.02,
+          "y": 222.65,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o label: Creates labels for form fields (asp-for).",
+          "rawText": "o label: Creates labels for form fields (asp-for).",
+          "x": 126.02,
+          "y": 200.18,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o cache: Caches a portion of the view.",
+          "rawText": "o cache: Caches a portion of the view.",
+          "x": 126.02,
+          "y": 177.62,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o partial: Renders a partial view.",
+          "rawText": "o partial: Renders a partial view.",
+          "x": 126.02,
+          "y": 155.18,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        },
+        {
+          "text": "        o environment: Conditionally renders content based on the environment.",
+          "rawText": "o environment: Conditionally renders content based on the environment.",
+          "x": 126.02,
+          "y": 132.62,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f6"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   4. Model Binding: ASP.NET Core's model binding system extracts the form data and attempts"
+          ],
+          "text": "   4. Model Binding: ASP.NET Core's model binding system extracts the form data and attempts"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "      to create a model object (PersonAddRequest or PersonUpdateRequest) based on the form",
+            "      field names."
+          ],
+          "text": "      to create a model object (PersonAddRequest or PersonUpdateRequest) based on the form\n      field names."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   5. Model Validation: Data annotations and custom validation rules are applied to the model"
+          ],
+          "text": "   5. Model Validation: Data annotations and custom validation rules are applied to the model"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "      object. If errors are found, they are added to the ModelState object."
+          ],
+          "text": "      object. If errors are found, they are added to the ModelState object."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   6. Controller Action Logic:"
+          ],
+          "text": "   6. Controller Action Logic:"
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "        o If ModelState.IsValid is true, the action performs the appropriate CRUD operation"
+          ],
+          "text": "        o If ModelState.IsValid is true, the action performs the appropriate CRUD operation"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "           (create, update, delete) using the service layer."
+          ],
+          "text": "           (create, update, delete) using the service layer."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "        o If ModelState.IsValid is false, the action typically returns the view again,"
+          ],
+          "text": "        o If ModelState.IsValid is false, the action typically returns the view again,"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "           repopulating the form with the user's input and displaying error messages."
+          ],
+          "text": "           repopulating the form with the user's input and displaying error messages."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   7. Redirect (Optional): After a successful POST request, the action often redirects to another"
+          ],
+          "text": "   7. Redirect (Optional): After a successful POST request, the action often redirects to another"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "      page (e.g., the \"Index\" view) to prevent accidental re-submissions."
+          ],
+          "text": "      page (e.g., the \"Index\" view) to prevent accidental re-submissions."
+        },
+        {
+          "type": "heading",
+          "page": 7,
+          "lines": [
+            "Key Points to Remember"
+          ],
+          "text": "Key Points to Remember"
+        },
+        {
+          "type": "heading",
+          "page": 7,
+          "lines": [
+            "Tag Helpers"
+          ],
+          "text": "Tag Helpers"
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • Purpose: Server-side code that modifies HTML elements to include server-side logic."
+          ],
+          "text": "   • Purpose: Server-side code that modifies HTML elements to include server-side logic."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • Benefits:"
+          ],
+          "text": "   • Benefits:"
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "        o HTML-friendly syntax"
+          ],
+          "text": "        o HTML-friendly syntax"
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "        o Strong typing and IntelliSense"
+          ],
+          "text": "        o Strong typing and IntelliSense"
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "        o Code reuse"
+          ],
+          "text": "        o Code reuse"
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "        o Reduced server round-trips"
+          ],
+          "text": "        o Reduced server round-trips"
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • Common Tag Helpers:"
+          ],
+          "text": "   • Common Tag Helpers:"
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "        o a: Creates links (e.g., asp-controller, asp-action)."
+          ],
+          "text": "        o a: Creates links (e.g., asp-controller, asp-action)."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "        o form: Generates HTML forms (e.g., asp-controller, asp-action, method)."
+          ],
+          "text": "        o form: Generates HTML forms (e.g., asp-controller, asp-action, method)."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "        o input, textarea, select: Bind to model properties (e.g., asp-for)."
+          ],
+          "text": "        o input, textarea, select: Bind to model properties (e.g., asp-for)."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "        o label: Creates labels for form fields (asp-for)."
+          ],
+          "text": "        o label: Creates labels for form fields (asp-for)."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "        o cache: Caches a portion of the view."
+          ],
+          "text": "        o cache: Caches a portion of the view."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "        o partial: Renders a partial view."
+          ],
+          "text": "        o partial: Renders a partial view."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "        o environment: Conditionally renders content based on the environment."
+          ],
+          "text": "        o environment: Conditionally renders content based on the environment."
+        }
+      ],
+      "char_count_raw": 1474,
+      "char_count_repaired": 1644
+    },
+    {
+      "page_number": 8,
+      "raw_text": "CRUD Operations with Tag Helpers\nIndex (Read)\n• a (Anchor): Create links to Create, Edit, and Delete actions.\n<a asp-action=\"Create\">Create</a>\n<a asp-action=\"Edit\" asp-route-id=\"@item.Id\">Edit</a>\n<a asp-action=\"Delete\" asp-route-id=\"@item.Id\">Delete</a>\n• form (Form): Create a form for filtering or searching.\n<form asp-action=\"Index\" method=\"get\">\n<input type=\"text\" name=\"searchString\" />\n<button type=\"submit\">Search</button>\n</form>\nCreate & Edit\n• form: Create the form for submitting data.\n<form asp-action=\"Create\" method=\"post\">\n</form>\n• input, textarea, select: Bind to model properties.\n<input asp-for=\"Name\" />\n<textarea asp-for=\"Description\"></textarea>\n<select asp-for=\"CategoryId\" asp-items=\"ViewBag.Categories\"></select>\n• label: Generate labels for input fields.\n<label asp-for=\"Name\"></label>\n• span (Validation): Display validation messages.\n<span asp-validation-for=\"Name\"></span>\n• div (Validation Summary): Summarize validation errors.\n<div asp-validation-summary=\"All\"></div>\n",
+      "repaired_text": "CRUD Operations with Tag Helpers\nIndex (Read)\n   • a (Anchor): Create links to Create, Edit, and Delete actions.\n      <a asp-action=\"Create\">Create</a>\n      <a asp-action=\"Edit\" asp-route-id=\"@item.Id\">Edit</a>\n      <a asp-action=\"Delete\" asp-route-id=\"@item.Id\">Delete</a>\n   • form (Form): Create a form for filtering or searching.\n      <form asp-action=\"Index\" method=\"get\">\n       <input type=\"text\" name=\"searchString\" />\n       <button type=\"submit\">Search</button>\n      </form>\nCreate & Edit\n   • form: Create the form for submitting data.\n      <form asp-action=\"Create\" method=\"post\">\n      </form>\n   • input, textarea, select: Bind to model properties.\n      <input asp-for=\"Name\" />\n      <textarea asp-for=\"Description\"></textarea>\n      <select asp-for=\"CategoryId\" asp-items=\"ViewBag.Categories\"></select>\n   • label: Generate labels for input fields.\n      <label asp-for=\"Name\"></label>\n   • span (Validation): Display validation messages.\n      <span asp-validation-for=\"Name\"></span>\n   • div (Validation Summary): Summarize validation errors.\n      <div asp-validation-summary=\"All\"></div>",
+      "lines": [
+        {
+          "text": "CRUD Operations with Tag Helpers",
+          "rawText": "CRUD Operations with Tag Helpers",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f2"
+        },
+        {
+          "text": "Index (Read)",
+          "rawText": "Index (Read)",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f2"
+        },
+        {
+          "text": "   • a (Anchor): Create links to Create, Edit, and Delete actions.",
+          "rawText": "• a (Anchor): Create links to Create, Edit, and Delete actions.",
+          "x": 90.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      <a asp-action=\"Create\">Create</a>",
+          "rawText": "<a asp-action=\"Create\">Create</a>",
+          "x": 108.02,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "      <a asp-action=\"Edit\" asp-route-id=\"@item.Id\">Edit</a>",
+          "rawText": "<a asp-action=\"Edit\" asp-route-id=\"@item.Id\">Edit</a>",
+          "x": 108.02,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "      <a asp-action=\"Delete\" asp-route-id=\"@item.Id\">Delete</a>",
+          "rawText": "<a asp-action=\"Delete\" asp-route-id=\"@item.Id\">Delete</a>",
+          "x": 108.02,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   • form (Form): Create a form for filtering or searching.",
+          "rawText": "• form (Form): Create a form for filtering or searching.",
+          "x": 90.024,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      <form asp-action=\"Index\" method=\"get\">",
+          "rawText": "<form asp-action=\"Index\" method=\"get\">",
+          "x": 108.02,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "       <input type=\"text\" name=\"searchString\" />",
+          "rawText": "<input type=\"text\" name=\"searchString\" />",
+          "x": 118.1,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "       <button type=\"submit\">Search</button>",
+          "rawText": "<button type=\"submit\">Search</button>",
+          "x": 118.1,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "      </form>",
+          "rawText": "</form>",
+          "x": 108.02,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "Create & Edit",
+          "rawText": "Create & Edit",
+          "x": 72.024,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f2"
+        },
+        {
+          "text": "   • form: Create the form for submitting data.",
+          "rawText": "• form: Create the form for submitting data.",
+          "x": 90.024,
+          "y": 444.55,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      <form asp-action=\"Create\" method=\"post\">",
+          "rawText": "<form asp-action=\"Create\" method=\"post\">",
+          "x": 108.02,
+          "y": 422.11,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "      </form>",
+          "rawText": "</form>",
+          "x": 108.02,
+          "y": 399.55,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   • input, textarea, select: Bind to model properties.",
+          "rawText": "• input, textarea, select: Bind to model properties.",
+          "x": 90.024,
+          "y": 354.53,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      <input asp-for=\"Name\" />",
+          "rawText": "<input asp-for=\"Name\" />",
+          "x": 108.02,
+          "y": 332.09,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "      <textarea asp-for=\"Description\"></textarea>",
+          "rawText": "<textarea asp-for=\"Description\"></textarea>",
+          "x": 108.02,
+          "y": 309.65,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "      <select asp-for=\"CategoryId\" asp-items=\"ViewBag.Categories\"></select>",
+          "rawText": "<select asp-for=\"CategoryId\" asp-items=\"ViewBag.Categories\"></select>",
+          "x": 108.02,
+          "y": 287.09,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   • label: Generate labels for input fields.",
+          "rawText": "• label: Generate labels for input fields.",
+          "x": 90.024,
+          "y": 242.09,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      <label asp-for=\"Name\"></label>",
+          "rawText": "<label asp-for=\"Name\"></label>",
+          "x": 108.02,
+          "y": 219.65,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   • span (Validation): Display validation messages.",
+          "rawText": "• span (Validation): Display validation messages.",
+          "x": 90.024,
+          "y": 174.62,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      <span asp-validation-for=\"Name\"></span>",
+          "rawText": "<span asp-validation-for=\"Name\"></span>",
+          "x": 108.02,
+          "y": 152.18,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   • div (Validation Summary): Summarize validation errors.",
+          "rawText": "• div (Validation Summary): Summarize validation errors.",
+          "x": 90.024,
+          "y": 107.18,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      <div asp-validation-summary=\"All\"></div>",
+          "rawText": "<div asp-validation-summary=\"All\"></div>",
+          "x": 108.02,
+          "y": 84.624,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 8,
+          "lines": [
+            "CRUD Operations with Tag Helpers"
+          ],
+          "text": "CRUD Operations with Tag Helpers"
+        },
+        {
+          "type": "heading",
+          "page": 8,
+          "lines": [
+            "Index (Read)"
+          ],
+          "text": "Index (Read)"
+        },
+        {
+          "type": "list_item",
+          "page": 8,
+          "lines": [
+            "   • a (Anchor): Create links to Create, Edit, and Delete actions."
+          ],
+          "text": "   • a (Anchor): Create links to Create, Edit, and Delete actions."
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "      <a asp-action=\"Create\">Create</a>",
+            "      <a asp-action=\"Edit\" asp-route-id=\"@item.Id\">Edit</a>",
+            "      <a asp-action=\"Delete\" asp-route-id=\"@item.Id\">Delete</a>"
+          ],
+          "text": "      <a asp-action=\"Create\">Create</a>\n      <a asp-action=\"Edit\" asp-route-id=\"@item.Id\">Edit</a>\n      <a asp-action=\"Delete\" asp-route-id=\"@item.Id\">Delete</a>"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "   • form (Form): Create a form for filtering or searching."
+          ],
+          "text": "   • form (Form): Create a form for filtering or searching."
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "      <form asp-action=\"Index\" method=\"get\">",
+            "       <input type=\"text\" name=\"searchString\" />",
+            "       <button type=\"submit\">Search</button>",
+            "      </form>"
+          ],
+          "text": "      <form asp-action=\"Index\" method=\"get\">\n       <input type=\"text\" name=\"searchString\" />\n       <button type=\"submit\">Search</button>\n      </form>"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "Create & Edit"
+          ],
+          "text": "Create & Edit"
+        },
+        {
+          "type": "list_item",
+          "page": 8,
+          "lines": [
+            "   • form: Create the form for submitting data."
+          ],
+          "text": "   • form: Create the form for submitting data."
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "      <form asp-action=\"Create\" method=\"post\">",
+            "      </form>"
+          ],
+          "text": "      <form asp-action=\"Create\" method=\"post\">\n      </form>"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "   • input, textarea, select: Bind to model properties."
+          ],
+          "text": "   • input, textarea, select: Bind to model properties."
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "      <input asp-for=\"Name\" />"
+          ],
+          "text": "      <input asp-for=\"Name\" />"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "      <textarea asp-for=\"Description\"></textarea>"
+          ],
+          "text": "      <textarea asp-for=\"Description\"></textarea>"
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "      <select asp-for=\"CategoryId\" asp-items=\"ViewBag.Categories\"></select>"
+          ],
+          "text": "      <select asp-for=\"CategoryId\" asp-items=\"ViewBag.Categories\"></select>"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "   • label: Generate labels for input fields."
+          ],
+          "text": "   • label: Generate labels for input fields."
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "      <label asp-for=\"Name\"></label>"
+          ],
+          "text": "      <label asp-for=\"Name\"></label>"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "   • span (Validation): Display validation messages."
+          ],
+          "text": "   • span (Validation): Display validation messages."
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "      <span asp-validation-for=\"Name\"></span>"
+          ],
+          "text": "      <span asp-validation-for=\"Name\"></span>"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "   • div (Validation Summary): Summarize validation errors."
+          ],
+          "text": "   • div (Validation Summary): Summarize validation errors."
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "      <div asp-validation-summary=\"All\"></div>"
+          ],
+          "text": "      <div asp-validation-summary=\"All\"></div>"
+        }
+      ],
+      "char_count_raw": 1002,
+      "char_count_repaired": 1114
+    },
+    {
+      "page_number": 9,
+      "raw_text": "Delete\n• form: Create a form that submits a delete request.HTML\n<form asp-action=\"Delete\" asp-route-id=\"@Model.Id\" method=\"post\">\n<button type=\"submit\">Delete</button>\n</form>\nKey\n• Understanding: Explain the benefits of tag helpers over traditional HTML helpers.\n• Usage: Demonstrate how to use common tag helpers in CRUD scenarios.\n• Model Binding and Validation: Show how to use tag helpers to bind to models and display\nvalidation errors.\n• Best Practices: Discuss how to write clean, maintainable, and reusable code with tag\nhelpers.\n• Performance Considerations: Explain how tag helpers can impact performance and how to\nmitigate potential issues (e.g., caching).\n• Security: Emphasize the importance of input validation and output encoding to prevent XSS\nvulnerabilities.\n",
+      "repaired_text": "Delete\n   • form: Create a form that submits a delete request.HTML\n      <form asp-action=\"Delete\" asp-route-id=\"@Model.Id\" method=\"post\">\n       <button type=\"submit\">Delete</button>\n      </form>\nKey\n   • Understanding: Explain the benefits of tag helpers over traditional HTML helpers.\n   • Usage: Demonstrate how to use common tag helpers in CRUD scenarios.\n   • Model Binding and Validation: Show how to use tag helpers to bind to models and display\n      validation errors.\n   • Best Practices: Discuss how to write clean, maintainable, and reusable code with tag\n      helpers.\n   • Performance Considerations: Explain how tag helpers can impact performance and how to\n      mitigate potential issues (e.g., caching).\n   • Security: Emphasize the importance of input validation and output encoding to prevent XSS\n      vulnerabilities.",
+      "lines": [
+        {
+          "text": "Delete",
+          "rawText": "Delete",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f2"
+        },
+        {
+          "text": "   • form: Create a form that submits a delete request.HTML",
+          "rawText": "• form: Create a form that submits a delete request.HTML",
+          "x": 90.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      <form asp-action=\"Delete\" asp-route-id=\"@Model.Id\" method=\"post\">",
+          "rawText": "<form asp-action=\"Delete\" asp-route-id=\"@Model.Id\" method=\"post\">",
+          "x": 108.02,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "       <button type=\"submit\">Delete</button>",
+          "rawText": "<button type=\"submit\">Delete</button>",
+          "x": 118.1,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "      </form>",
+          "rawText": "</form>",
+          "x": 108.02,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "Key",
+          "rawText": "Key",
+          "x": 72.024,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f2"
+        },
+        {
+          "text": "   • Understanding: Explain the benefits of tag helpers over traditional HTML helpers.",
+          "rawText": "• Understanding: Explain the benefits of tag helpers over traditional HTML helpers.",
+          "x": 90.024,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "   • Usage: Demonstrate how to use common tag helpers in CRUD scenarios.",
+          "rawText": "• Usage: Demonstrate how to use common tag helpers in CRUD scenarios.",
+          "x": 90.024,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "   • Model Binding and Validation: Show how to use tag helpers to bind to models and display",
+          "rawText": "• Model Binding and Validation: Show how to use tag helpers to bind to models and display",
+          "x": 90.024,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      validation errors.",
+          "rawText": "validation errors.",
+          "x": 108.02,
+          "y": 497.59,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   • Best Practices: Discuss how to write clean, maintainable, and reusable code with tag",
+          "rawText": "• Best Practices: Discuss how to write clean, maintainable, and reusable code with tag",
+          "x": 90.024,
+          "y": 475.03,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      helpers.",
+          "rawText": "helpers.",
+          "x": 108.02,
+          "y": 460.51,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   • Performance Considerations: Explain how tag helpers can impact performance and how to",
+          "rawText": "• Performance Considerations: Explain how tag helpers can impact performance and how to",
+          "x": 90.024,
+          "y": 438.07,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      mitigate potential issues (e.g., caching).",
+          "rawText": "mitigate potential issues (e.g., caching).",
+          "x": 108.02,
+          "y": 423.55,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        },
+        {
+          "text": "   • Security: Emphasize the importance of input validation and output encoding to prevent XSS",
+          "rawText": "• Security: Emphasize the importance of input validation and output encoding to prevent XSS",
+          "x": 90.024,
+          "y": 401.11,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f4"
+        },
+        {
+          "text": "      vulnerabilities.",
+          "rawText": "vulnerabilities.",
+          "x": 108.02,
+          "y": 386.57,
+          "fontSize": 11.04,
+          "fontName": "g_d32_f3"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 9,
+          "lines": [
+            "Delete"
+          ],
+          "text": "Delete"
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "   • form: Create a form that submits a delete request.HTML"
+          ],
+          "text": "   • form: Create a form that submits a delete request.HTML"
+        },
+        {
+          "type": "code",
+          "page": 9,
+          "lines": [
+            "      <form asp-action=\"Delete\" asp-route-id=\"@Model.Id\" method=\"post\">",
+            "       <button type=\"submit\">Delete</button>",
+            "      </form>"
+          ],
+          "text": "      <form asp-action=\"Delete\" asp-route-id=\"@Model.Id\" method=\"post\">\n       <button type=\"submit\">Delete</button>\n      </form>"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "Key"
+          ],
+          "text": "Key"
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "   • Understanding: Explain the benefits of tag helpers over traditional HTML helpers."
+          ],
+          "text": "   • Understanding: Explain the benefits of tag helpers over traditional HTML helpers."
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "   • Usage: Demonstrate how to use common tag helpers in CRUD scenarios."
+          ],
+          "text": "   • Usage: Demonstrate how to use common tag helpers in CRUD scenarios."
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "   • Model Binding and Validation: Show how to use tag helpers to bind to models and display"
+          ],
+          "text": "   • Model Binding and Validation: Show how to use tag helpers to bind to models and display"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "      validation errors."
+          ],
+          "text": "      validation errors."
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "   • Best Practices: Discuss how to write clean, maintainable, and reusable code with tag"
+          ],
+          "text": "   • Best Practices: Discuss how to write clean, maintainable, and reusable code with tag"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "      helpers."
+          ],
+          "text": "      helpers."
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "   • Performance Considerations: Explain how tag helpers can impact performance and how to"
+          ],
+          "text": "   • Performance Considerations: Explain how tag helpers can impact performance and how to"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "      mitigate potential issues (e.g., caching)."
+          ],
+          "text": "      mitigate potential issues (e.g., caching)."
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "   • Security: Emphasize the importance of input validation and output encoding to prevent XSS"
+          ],
+          "text": "   • Security: Emphasize the importance of input validation and output encoding to prevent XSS"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "      vulnerabilities."
+          ],
+          "text": "      vulnerabilities."
+        }
+      ],
+      "char_count_raw": 779,
+      "char_count_repaired": 842
+    }
+  ],
+  "title": "Tag Helpers"
+}

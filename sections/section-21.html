@@ -1,0 +1,3094 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 21: Filters — ASP.NET Core Masterclass</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="alternate icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body id="top">
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  
+  <!-- Top Navigation Header -->
+  <header class="top-header" role="banner">
+    <div class="header-left">
+      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">☰</button>
+      <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+        <span class="sidebar-toggle-text">« Collapse</span>
+      </button>
+      <a href="../index.html" class="brand-link" aria-label="ASP.NET Core Masterclass Documentation Portal">
+        <span class="brand-icon" style="background: linear-gradient(135deg, #38bdf8, #6366f1); color: #0b0f19; font-weight: 900; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem;">.NET</span>
+        <span class="brand-text">ASP.NET Core Masterclass</span>
+      </a>
+      <span class="version-pill">.NET 8 / LTS</span>
+    </div>
+
+    <div class="header-right">
+      <a href="../index.html" class="index-home-btn" title="Back to Curriculum Dashboard">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span class="home-text">Course Index</span>
+      </a>
+
+      <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-text">Search topics, syntax, concepts...</span>
+        <kbd class="kbd-shortcut">Ctrl+K</kbd>
+      </button>
+
+      <button class="theme-toggle-btn" aria-label="Toggle dark/light theme" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle></svg>
+      </button>
+    </div>
+  </header>
+  
+
+  <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+  <!-- Documentation Layout -->
+  <div class="docs-wrapper">
+    
+    <aside class="docs-sidebar" aria-label="Course Navigation">
+      <div class="sidebar-top-bar">
+        <span class="sidebar-top-title">Curriculum</span>
+        <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" title="Collapse Sidebar" aria-label="Collapse Navigation Sidebar" type="button">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg>
+          <span>Collapse</span>
+        </button>
+      </div>
+
+      <div class="sidebar-search-box">
+        <input type="text" class="sidebar-filter-input" placeholder="Filter sections..." aria-label="Filter sidebar sections" />
+      </div>
+
+      <div style="margin-bottom: 1rem;">
+        <a href="../index.html" class="sidebar-link" style="color: var(--accent-primary); font-weight: 600;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Return to Dashboard</span>
+        </a>
+      </div>
+  
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 1: Foundations, HTTP, Middleware &amp; Routing</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">5</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-01.html" class="sidebar-link">
+            <span class="sidebar-sec-num">01</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Introduction</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-02.html" class="sidebar-link">
+            <span class="sidebar-sec-num">02</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Getting Started</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-03.html" class="sidebar-link">
+            <span class="sidebar-sec-num">03</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">HTTP</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-04.html" class="sidebar-link">
+            <span class="sidebar-sec-num">04</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Middleware</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-05.html" class="sidebar-link">
+            <span class="sidebar-sec-num">05</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Routing</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 2: Controllers, Model Binding &amp; Validation</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-06.html" class="sidebar-link">
+            <span class="sidebar-sec-num">06</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Controllers &amp; IActionResult</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-07.html" class="sidebar-link">
+            <span class="sidebar-sec-num">07</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Model Binding and Validations</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 3: Razor Views, Partial Views, View Components &amp; Tag Helpers</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">5</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-08.html" class="sidebar-link">
+            <span class="sidebar-sec-num">08</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Razor Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-09.html" class="sidebar-link">
+            <span class="sidebar-sec-num">09</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Layout Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-10.html" class="sidebar-link">
+            <span class="sidebar-sec-num">10</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Partial Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-11.html" class="sidebar-link">
+            <span class="sidebar-sec-num">11</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">View Components</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-17.html" class="sidebar-link">
+            <span class="sidebar-sec-num">17</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Tag Helpers</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 4: Dependency Injection, Environments &amp; Configuration</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-12.html" class="sidebar-link">
+            <span class="sidebar-sec-num">12</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Dependency Injection</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-13.html" class="sidebar-link">
+            <span class="sidebar-sec-num">13</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Environments</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-14.html" class="sidebar-link">
+            <span class="sidebar-sec-num">14</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Configuration</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-15.html" class="sidebar-link">
+            <span class="sidebar-sec-num">15</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">xUnit</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-16.html" class="sidebar-link">
+            <span class="sidebar-sec-num">16</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">CRUD Operations</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-18.html" class="sidebar-link">
+            <span class="sidebar-sec-num">18</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">EntityFrameworkCore</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-19.html" class="sidebar-link">
+            <span class="sidebar-sec-num">19</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Unit Testing - Advanced</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-20.html" class="sidebar-link">
+            <span class="sidebar-sec-num">20</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Logging</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-21.html" class="sidebar-link active" aria-current="page">
+            <span class="sidebar-sec-num">21</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Filters</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-22.html" class="sidebar-link">
+            <span class="sidebar-sec-num">22</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Error Handling</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-23.html" class="sidebar-link">
+            <span class="sidebar-sec-num">23</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">SOLID Principles</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-24.html" class="sidebar-link">
+            <span class="sidebar-sec-num">24</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Clean Architecture</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-25.html" class="sidebar-link">
+            <span class="sidebar-sec-num">25</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Identity and Authorization</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-26.html" class="sidebar-link">
+            <span class="sidebar-sec-num">26</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Web API</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-27.html" class="sidebar-link">
+            <span class="sidebar-sec-num">27</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Swagger</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-28.html" class="sidebar-link">
+            <span class="sidebar-sec-num">28</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Angular and CORS</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-29.html" class="sidebar-link">
+            <span class="sidebar-sec-num">29</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">JWT with Web API</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-30.html" class="sidebar-link">
+            <span class="sidebar-sec-num">30</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Minimal API</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content Container -->
+    <main class="docs-main-container" id="main-content" tabindex="-1">
+      <!-- Floating Expand Button when Sidebar is Collapsed -->
+      <button class="expand-sidebar-pill" id="expandSidebarPill" title="Expand Sidebar" aria-label="Expand Sidebar" type="button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg>
+        <span>» Expand Sidebar</span>
+      </button>
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
+        <a href="../index.html">Course Index</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span>Module 5</span>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span style="color: var(--text-main); font-weight: 600;">Section 21</span>
+      </nav>
+
+      <!-- Section Banner Header -->
+      <header class="section-banner">
+        <div class="section-meta-row">
+          <span class="module-badge">Module 5</span>
+          <span class="read-time-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            26 PDF Pages
+          </span>
+          <span class="tag-pill">ASP.NET Core</span>
+          <span class="tag-pill">.NET 8</span>
+          <span class="tag-pill" style="border-color: var(--accent-primary); color: var(--accent-primary);">Includes Cheat Sheet</span>
+        </div>
+        <h1>Section 21: Filters</h1>
+        <p class="section-description">
+          Authentic study and reference notes extracted directly from original masterclass course materials.
+        </p>
+      </header>
+
+      <!-- Body Content -->
+      <article class="docs-content">
+        <p>Filters in ASP.NET Core MVC
+Filters are powerful components in ASP.NET Core MVC that allow you to intercept and execute code
+before, after, or even around the execution of your controller actions or Razor Pages. They provide a
+clean and modular way to implement cross-cutting concerns like:</p>
+<ul>
+  <li>• Authentication: Verifying user identities before granting access to certain actions.</li>
+  <li>• Authorization: Checking if a user is authorized to perform a specific action.</li>
+  <li>• Caching: Caching responses to improve performance.</li>
+  <li>• Error Handling: Handling exceptions and generating appropriate error responses.</li>
+  <li>• Logging: Recording information about requests and responses.</li>
+  <li>• Action Filtering: Modifying action parameters or results.</li>
+</ul>
+
+<h2 id="purpose-of-filters">Purpose of Filters</h2>
+<ul>
+  <li>• Encapsulation: Filters encapsulate reusable logic that can be applied to multiple actions or</li>
+</ul>
+<p>controllers, reducing code duplication and promoting maintainability.</p>
+<ul>
+  <li>• Clean Separation: They help keep your controller actions focused on their core responsibility</li>
+</ul>
+<p>of handling requests and generating responses, while delegating cross-cutting concerns to
+      filters.</p>
+<ul>
+  <li>• Extensibility: ASP.NET Core MVC provides a framework for creating custom filters tailored to</li>
+</ul>
+<p>your application&#39;s specific needs.</p>
+
+<h2 id="best-practices">Best Practices</h2>
+<ul>
+  <li>• Choose the Right Filter Type: Select the appropriate filter type (action, authorization,</li>
+</ul>
+<p>resource, exception, result) based on the desired interception point and the kind of logic you
+      want to implement.</p>
+<ul>
+  <li>• Dependency Injection (DI): Leverage DI to inject services and dependencies into your filters,</li>
+</ul>
+<p>ensuring loose coupling and testability.</p>
+<ul>
+  <li>• Keep Filters Small and Focused: Each filter should have a single, well-defined responsibility.</li>
+</ul>
+<p>Avoid putting too much logic into a single filter.</p>
+<ul>
+  <li>• Consider Performance: Be mindful of the potential performance impact of filters, especially</li>
+</ul>
+<p>if you have many filters or complex logic within them.</p>
+<ul>
+  <li>• Order Matters: The order in which filters are executed is important. Understand the default</li>
+</ul>
+<p>order and how to customize it using the Order property if necessary.</p>
+
+<h2 id="action-filters">Action Filters</h2>
+<p>Action filters, implemented using the IActionFilter interface, are invoked before and after an action
+method executes. They provide hooks where you can:</p>
+<ul>
+  <li>• Pre-Action Logic (OnActionExecuting):</li>
+  <li>o Inspect and modify the action arguments or the ActionExecutingContext object.</li>
+  <li>o Short-circuit the action execution (e.g., by setting the Result property of the</li>
+</ul>
+<p>context).</p>
+<ul>
+  <li>• Post-Action Logic (OnActionExecuted):</li>
+  <li>o Inspect and modify the action result or the ActionExecutedContext object.</li>
+  <li>o Log information about the action&#39;s execution.</li>
+</ul>
+
+<h2 id="viewdata-in-action-filters">ViewData in Action Filters</h2>
+<p>While not as common as using strongly typed models or view models, you can use the ViewData
+dictionary within action filters to pass additional data to your views.</p>
+<ul>
+  <li>• Setting Values: In the OnActionExecuting method, you can add data to the ViewData</li>
+</ul>
+<p>dictionary using context.Controller.ViewData[&quot;key&quot;] = value.</p>
+<ul>
+  <li>• Accessing in Views: This data will then be available in the corresponding view.</li>
+</ul>
+
+<h2 id="serilog-structured-logging-in-filters">Serilog Structured Logging in Filters</h2>
+<p>Serilog, with its emphasis on structured logging, integrates seamlessly with filters, allowing you to
+capture valuable contextual information about the action&#39;s execution.</p>
+<ul>
+  <li>• Inject ILogger: Use dependency injection to get an ILogger instance in your filter.</li>
+  <li>• Log Messages: Use _logger.LogInformation, _logger.LogWarning, etc., to log messages with</li>
+</ul>
+<p>structured data (key-value pairs).</p>
+
+<h2 id="code-explanation">Code Explanation</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// PersonsListActionFilter.cs (Action Filter
+)
+public class PersonsListActionFilter : IActionFilter
+{
+  private readonly ILogger&lt;PersonsListActionFilter&gt; _logger; // Injected logger
+  public PersonsListActionFilter(ILogger&lt;PersonsListActionFilter&gt; logger)
+  {
+   _logger = logger;
+  }
+  public void OnActionExecuted(ActionExecutedContext context)
+  {
+   _logger.LogInformation(&quot;PersonsListActionFilter.OnActionExecuted method&quot;);
+  }
+  public void OnActionExecuting(ActionExecutingContext context)
+  {
+   _logger.LogInformation(&quot;PersonsListActionFilter.OnActionExecuting method&quot;);
+  }
+}</code></pre>
+    </div>
+  <p>In this action filter:</p>
+<ul>
+  <li>1. ILogger Injection: The constructor receives an ILogger instance through dependency</li>
+</ul>
+<p>injection. The generic type parameter PersonsListActionFilter specifies the category name
+      for the logger, allowing for targeted configuration.</p>
+<ul>
+  <li>2. OnActionExecuting and OnActionExecuted:</li>
+  <li>o These methods are called before and after the action method executes, respectively.</li>
+  <li>o In this simple example, they just log informational messages using the injected</li>
+</ul>
+<p>logger.</p>
+
+<h2 id="applying-the-filter">Applying the Filter</h2>
+<p>You can apply this filter in a few ways:</p>
+<ul>
+  <li>• Globally: Register the filter in Program.cs (or Startup.cs) to apply it to all controllers and</li>
+</ul>
+<p>actions in your application.</p>
+<ul>
+  <li>• Controller-Level: Apply the [PersonsListActionFilter] attribute to your controller class to</li>
+</ul>
+<p>apply it to all actions within that controller.</p>
+<ul>
+  <li>• Action-Level: Apply the [PersonsListActionFilter] attribute to specific action methods to filter</li>
+</ul>
+<p>only those actions.</p>
+
+<h2 id="example-usage">Example Usage</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// PersonsController.cs
+[Route(&quot;[controller]&quot;)]</code></pre>
+    </div>
+  <p>[PersonsListActionFilter] // Apply the filter to the entire controller</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class PersonsController : Controller
+{
+  // ... your actions ...
+}</code></pre>
+    </div>
+  <p>In this scenario, the PersonsListActionFilter will be executed before and after every action method
+within the PersonsController.
+Remember that you can enhance this action filter by adding more meaningful logic to the
+OnActionExecuting and OnActionExecuted methods, such as:</p>
+<ul>
+  <li>• OnActionExecuting:</li>
+  <li>o Checking authorization or authentication.</li>
+  <li>o Validating or modifying action parameters.</li>
+  <li>o Setting up logging context or other data.</li>
+  <li>• OnActionExecuted:</li>
+  <li>o Logging the outcome of the action.</li>
+  <li>o Modifying the action result (if needed).</li>
+  <li>o Performing cleanup or other post-processing tasks.</li>
+</ul>
+
+<h2 id="filter-arguments">Filter Arguments</h2>
+<p>Filters often require additional data or configuration to perform their tasks effectively. You can
+provide this information through filter arguments.</p>
+<ul>
+  <li>• How to Pass Arguments:</li>
+  <li>o When applying a filter using the [TypeFilter] or [ServiceFilter] attributes, you can</li>
+</ul>
+<p>specify an Arguments property, which takes an array of objects.</p>
+<ul>
+  <li>• Example:</li>
+</ul>
+<p>[TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { &quot;My-Key-From-Action&quot;,
+&quot;My-Value-From-Action&quot;, 1 })]
+In this example, the ResponseHeaderActionFilter receives three arguments: a key, a value, and an
+order number.</p>
+
+<h2 id="global-filters">Global Filters</h2>
+<p>Global filters are applied to all controllers and actions in your ASP.NET Core MVC application. They
+are useful for implementing cross-cutting concerns that need to be enforced consistently throughout
+your application.</p>
+<ul>
+  <li>• How to Register Global Filters:</li>
+  <li>o In Program.cs (or Startup.cs in older versions), add your filter to the Filters collection</li>
+</ul>
+<p>within the MvcOptions configuration:</p>
+<ul>
+  <li>• builder.Services.AddControllersWithViews(options =&gt; {</li>
+  <li>• // ...</li>
+</ul>
+<p>•</p>
+<ul>
+  <li>• // Registering a global filter</li>
+  <li>• options.Filters.Add(new ResponseHeaderActionFilter(logger, &quot;My-Key-From-Global&quot;, &quot;My-</li>
+</ul>
+<p>Value-From-Global&quot;, 2));
+});</p>
+<ul>
+  <li>• Example:</li>
+  <li>o A global authorization filter that requires users to be authenticated for all actions</li>
+</ul>
+<p>except those explicitly marked with [AllowAnonymous].</p>
+<ul>
+  <li>o A global exception filter that logs all unhandled exceptions.</li>
+</ul>
+<p>Custom Order of Filters: Controlling Execution Sequence</p>
+<p>By default, ASP.NET Core executes filters in a predefined order. However, you can customize this
+order to suit your application&#39;s needs.</p>
+<ul>
+  <li>• Order Property:</li>
+  <li>o Both the [TypeFilter] and [ServiceFilter] attributes have an Order property that you</li>
+</ul>
+<p>can use to specify the execution order of your filter.</p>
+<ul>
+  <li>o Filters with lower Order values are executed first.</li>
+  <li>• IOrderedFilter Interface:</li>
+  <li>o For more fine-grained control over filter ordering, implement the IOrderedFilter</li>
+</ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">interface in your filter class.</code></pre>
+    </div>
+  <p>o This interface requires you to implement the Order property, which returns an
+           integer value representing the filter&#39;s order.</p>
+
+<h2 id="code-explanation-1">Code Explanation</h2>
+<p>Let&#39;s break down the relevant parts of your code:</p>
+
+<h2 id="personslistactionfilter">PersonsListActionFilter</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// ...
+public void OnActionExecuting(ActionExecutingContext context)
+{
+  // ...
+}</code></pre>
+    </div>
+  <p>if (context.ActionArguments.ContainsKey(&quot;searchBy&quot;))</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+   string? searchBy = Convert.ToString(context.ActionArguments[&quot;searchBy&quot;]);
+}</code></pre>
+    </div>
+  <p>if (!string.IsNullOrEmpty(searchBy))</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+   {
+     // ... (validation logic to ensure &#39;searchBy&#39; is valid) ...
+   }
+  }
+}
+public void OnActionExecuted(ActionExecutedContext context)
+{
+  // ...
+  // Accessing arguments passed to the action method using HttpContext.Items</code></pre>
+    </div>
+  <p>IDictionary&lt;string, object?&gt;? parameters = (IDictionary&lt;string,
+object?&gt;?)context.HttpContext.Items[&quot;arguments&quot;];
+  if (parameters != null)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+// ... (logic to populate ViewData with the action arguments
+)
+  }
+  // ... (populating ViewBag.SearchFields) ...</code></pre>
+    </div>
+  <p>• OnActionExecuting:</p>
+<ul>
+  <li>o It stores the ActionArguments (parameters passed to the action) in</li>
+</ul>
+<p>HttpContext.Items so they can be accessed later in OnActionExecuted.</p>
+<ul>
+  <li>o It also validates the searchBy parameter to ensure it&#39;s one of the allowed values.</li>
+  <li>• OnActionExecuted:</li>
+  <li>o Retrieves the action arguments from HttpContext.Items.</li>
+  <li>o Populates ViewData with the values of the action arguments (if present).</li>
+  <li>o Sets up ViewBag.SearchFields with a dictionary of search options.</li>
+</ul>
+
+<h2 id="responseheaderactionfilter">ResponseHeaderActionFilter</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class ResponseHeaderActionFilter : IActionFilter, IOrderedFilter
+{
+  // ...
+  public int Order { get; } // Implementing IOrderedFilter
+  public ResponseHeaderActionFilter(ILogger&lt;ResponseHeaderActionFilter&gt; logger, string key, string
+}</code></pre>
+    </div>
+  <p>value, int order)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+   // ...
+   Order = order; // Set the order of the filter
+  }
+// ... (OnActionExecuting and OnActionExecuted methods
+)</code></pre>
+    </div>
+  <p>• IOrderedFilter Implementation: This filter implements IOrderedFilter, allowing you to
+      explicitly control its execution order.</p>
+<ul>
+  <li>• Order Property: The Order property is set in the constructor and determines the filter&#39;s</li>
+</ul>
+<p>position in the execution sequence.</p>
+
+<h2 id="personscontroller">PersonsController</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">[Route(&quot;[controller]&quot;)]</code></pre>
+    </div>
+  <p>[TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { &quot;My-Key-From-
+Controller&quot;, &quot;My-Value-From-Controller&quot;, 3 }, Order = 3)]</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class PersonsController : Controller
+{
+  // ...
+  [Route(&quot;[action]&quot;)]
+  [Route(&quot;/&quot;)]
+}</code></pre>
+    </div>
+  <p>[TypeFilter(typeof(PersonsListActionFilter), Order = 4)] // Applied to Index action with Order = 4
+  [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { &quot;MyKey-
+FromAction&quot;, &quot;MyValue-From-Action&quot;, 1 }, Order = 1)]</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public async Task&lt;IActionResult&gt; Index(string searchBy, string? searchString, string sortBy =
+nameof(PersonResponse.PersonName), SortOrderOptions sortOrder = SortOrderOptions.ASC)
+  {
+   // ...
+  }
+  // ... (other actions) ...</code></pre>
+    </div>
+  <p>• Controller-level filter: The ResponseHeaderActionFilter is applied at the controller level with
+      Order = 3. It will be executed for all actions in this controller.</p>
+<ul>
+  <li>• Action-level filters: The Index action has two filters applied:</li>
+  <li>o PersonsListActionFilter with Order = 4.</li>
+  <li>o Another instance of ResponseHeaderActionFilter with Order = 1.</li>
+</ul>
+
+<h2 id="filter-execution-order">Filter Execution Order</h2>
+<p>For the Index action, the filters will be executed in the following order:</p>
+
+<h2 id="1-responseheaderactionfilter-from-action-order-1">1. ResponseHeaderActionFilter (from action, Order = 1)</h2>
+
+<h2 id="2-responseheaderactionfilter-from-controller-order-3">2. ResponseHeaderActionFilter (from controller, Order = 3)</h2>
+
+<h2 id="3-personslistactionfilter-order-4">3. PersonsListActionFilter (Order = 4)</h2>
+
+<h2 id="notes">Notes</h2>
+<ul>
+  <li>• ActionArguments vs. ViewData:</li>
+  <li>o ActionArguments represent the original input parameters to the action method.</li>
+  <li>o ViewData is used to pass data from the controller (or filters) to the view.</li>
+  <li>• HttpContext.Items: This dictionary is a useful way to pass data between different</li>
+</ul>
+<p>middleware components or filters within the same request.</p>
+<ul>
+  <li>• Serilog: Use structured logging to capture valuable context information in your filters (e.g.,</li>
+</ul>
+<p>action name, parameter values).</p>
+<ul>
+  <li>• Testability: Write unit tests for your filters to ensure they behave correctly in isolation.</li>
+</ul>
+
+<h2 id="asynchronous-filters">Asynchronous Filters</h2>
+<p>In the realm of modern web development, asynchronous operations (e.g., database calls, API
+requests) are prevalent. ASP.NET Core MVC filters support asynchronous execution through the
+IAsyncActionFilter and IAsyncResultFilter interfaces. These interfaces allow you to perform
+asynchronous tasks within your filter logic, making your code more efficient and responsive.</p>
+<ul>
+  <li>• IAsyncActionFilter:</li>
+  <li>o Methods:</li>
+</ul>
+<p>▪ OnActionExecutionAsync(ActionExecutingContext context,</p>
+
+<h2 id="actionexecutiondelegate-next">ActionExecutionDelegate next)</h2>
+<ul>
+  <li>o Purpose: Intercepts the action execution pipeline asynchronously.</li>
+  <li>o Notes:</li>
+</ul>
+<p>▪ The next delegate now returns a Task that represents the execution of the
+                 rest of the filter pipeline and the action method.
+              ▪ You can await this task to wait for the subsequent operations to complete.
+              ▪ You can perform asynchronous tasks within the filter&#39;s logic and await their
+                 completion before or after calling next.</p>
+<ul>
+  <li>• IAsyncResultFilter:</li>
+  <li>o Methods:</li>
+</ul>
+<p>▪ OnResultExecutionAsync(ResultExecutingContext context,</p>
+
+<h2 id="resultexecutiondelegate-next">ResultExecutionDelegate next)</h2>
+<ul>
+  <li>o Purpose: Intercepts the result execution pipeline asynchronously.</li>
+  <li>o Notes:</li>
+</ul>
+<p>▪ Similar to IAsyncActionFilter, but it operates on the action result rather than
+                 the action itself.
+              ▪ You can use it for asynchronous tasks related to transforming or modifying
+                 the result before it&#39;s sent to the client.</p>
+
+<h2 id="short-circuiting-action-filters">Short-Circuiting Action Filters</h2>
+<p>Short-circuiting is a technique where an action filter can decide to terminate the filter pipeline early
+and directly return a result without invoking the action method or any subsequent filters. This can be
+useful for:</p>
+<ul>
+  <li>• Validation: If model validation fails, you can short-circuit and return a validation error</li>
+</ul>
+<p>response immediately.</p>
+<ul>
+  <li>• Authentication/Authorization: If a user isn&#39;t authenticated or authorized, you can shortcircuit</li>
+</ul>
+<p>and return an appropriate response.</p>
+<ul>
+  <li>• Caching: If a cached response is available, you can short-circuit and return it directly.</li>
+  <li>• How to Short-Circuit:</li>
+  <li>o In an IActionFilter, set the context.Result property to an IActionResult.</li>
+  <li>o In an IAsyncResultFilter, set the context.Cancel property to true and provide a new</li>
+</ul>
+<p>context.Result.
+Code Explanation: PersonCreateAndEditPostActionFilter</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// PersonCreateAndEditPostActionFilter.cs (Async Action Filter
+)
+public class PersonCreateAndEditPostActionFilter : IAsyncActionFilter
+{
+// ... (_countriesService injection
+)
+  public async Task OnActionExecutionAsync(ActionExecutingContext context,
+}</code></pre>
+    </div>
+  <p>ActionExecutionDelegate next)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+// ... (potential before logic, not shown in this example
+)
+}</code></pre>
+    </div>
+  <p>if (context.Controller is PersonsController personsController)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+}</code></pre>
+    </div>
+  <p>if (!personsController.ModelState.IsValid)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+      // ... (Prepare countries for ViewBag) ...
+      // ... (Populate ViewBag.Errors with validation errors) ...
+      var personRequest = context.ActionArguments[&quot;personRequest&quot;];
+      context.Result = personsController.View(personRequest); // Short-circuit
+     }</code></pre>
+    </div>
+  <p>else</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+      await next(); // Continue the pipeline if model is valid
+     }</code></pre>
+    </div>
+  <p>else</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+     await next();
+   }
+// ... (potential after logic, not shown in this example
+)</code></pre>
+    </div>
+  <p>In this code:</p>
+<ul>
+  <li>1. IAsyncActionFilter Implementation: The filter implements the IAsyncActionFilter interface</li>
+</ul>
+<p>for asynchronous operation.</p>
+<ul>
+  <li>2. OnActionExecutionAsync: This method is called asynchronously during the action execution</li>
+</ul>
+<p>pipeline.</p>
+<ul>
+  <li>3. Controller Check: It checks if the controller is of type PersonsController.</li>
+  <li>4. Model State Validation: If the ModelState is invalid, it prepares the necessary data for the</li>
+</ul>
+<p>view (ViewBag.Countries, ViewBag.Errors) and short-circuits the pipeline by setting
+      context.Result to the View result with the original request data (personRequest).</p>
+<ul>
+  <li>5. Continue Pipeline: If the model state is valid or the controller is not PersonsController, it</li>
+</ul>
+<p>calls await next() to proceed with the action method and subsequent filters.</p>
+
+<h2 id="notes-1">Notes</h2>
+<ul>
+  <li>• Async Filters: Use IAsyncActionFilter or IAsyncResultFilter when you need to perform</li>
+</ul>
+<p>asynchronous tasks within your filters.</p>
+<ul>
+  <li>• Short-Circuiting: Use context.Result or context.Cancel to terminate the filter pipeline early if</li>
+</ul>
+<p>certain conditions are met.</p>
+<ul>
+  <li>• HttpContext.Items: This is a useful dictionary for passing data between middleware</li>
+</ul>
+<p>components or filters within the same request.</p>
+<ul>
+  <li>• ActionArguments vs. ViewData:</li>
+  <li>o ActionArguments are the original input parameters passed to the action.</li>
+  <li>o ViewData is used to pass additional data from the controller or filters to the view.</li>
+  <li>• Testing: Remember to write unit tests for your filters, including scenarios that test shortcircuiting</li>
+</ul>
+<p>behavior.</p>
+
+<h2 id="result-filters">Result Filters</h2>
+<p>Result filters, implemented by the IResultFilter or IAsyncResultFilter interfaces, are triggered just
+before and after the execution of an action result (the IActionResult returned by the action method).
+They give you the opportunity to:</p>
+<ul>
+  <li>• Inspect and Modify the Result: You can examine and potentially modify the result before it</li>
+</ul>
+<p>is sent to the client. This is useful for adding headers, transforming the result&#39;s content, or
+      making other adjustments based on specific conditions.</p>
+<ul>
+  <li>• Perform Post-Processing: After the result has been executed (sent to the client), you can</li>
+</ul>
+<p>carry out tasks like logging or cleaning up resources.</p>
+<ul>
+  <li>• IResultFilter:</li>
+  <li>o Methods: OnResultExecuting(ResultExecutingContext context) (before),</li>
+</ul>
+
+<h2 id="onresultexecutedresultexecutedcontext-context-after">OnResultExecuted(ResultExecutedContext context) (after)</h2>
+<ul>
+  <li>o Synchronous execution: Best suited for synchronous operations on the result.</li>
+  <li>• IAsyncResultFilter:</li>
+  <li>o Methods: OnResultExecutionAsync(ResultExecutingContext context,</li>
+</ul>
+
+<h2 id="resultexecutiondelegate-next-1">ResultExecutionDelegate next)</h2>
+<ul>
+  <li>o Asynchronous execution: Enables asynchronous operations on the result using</li>
+</ul>
+<p>await.</p>
+
+<h2 id="resource-filters">Resource Filters</h2>
+<p>Resource filters, implementing IResourceFilter or IAsyncResourceFilter, are executed before and
+after model binding and action execution. They are ideal for tasks related to resource access and
+management.</p>
+<ul>
+  <li>• Methods:</li>
+  <li>o IResourceFilter: OnResourceExecuting(ResourceExecutingContext context),</li>
+</ul>
+
+<h2 id="onresourceexecutedresourceexecutedcontext-context">OnResourceExecuted(ResourceExecutedContext context)</h2>
+<ul>
+  <li>o IAsyncResourceFilter: OnResourceExecutionAsync(ResourceExecutingContext</li>
+</ul>
+<p>context, ResourceExecutionDelegate next)</p>
+<ul>
+  <li>• Common Use Cases:</li>
+  <li>o Caching: Implement caching logic to avoid unnecessary action execution.</li>
+  <li>o Performance Monitoring: Measure the execution time of actions.</li>
+  <li>o Resource Cleanup: Release resources acquired during action execution.</li>
+</ul>
+<p>Authorization Filters: Guarding Your Actions
+Authorization filters, implementing the IAuthorizationFilter interface, are responsible for
+determining whether a user is allowed to access a particular action method. They run before model
+binding and action execution.</p>
+<ul>
+  <li>• Method: OnAuthorization(AuthorizationFilterContext context)</li>
+  <li>• Purpose: Check authentication and authorization policies.</li>
+  <li>• Short-Circuiting: If authorization fails, you typically set context.Result to an appropriate</li>
+</ul>
+<p>result (e.g., 401 Unauthorized or a redirect to the login page).</p>
+
+<h2 id="exception-filters">Exception Filters</h2>
+<p>Exception filters, implemented through the IExceptionFilter interface, handle exceptions thrown
+during the execution of action methods or other filters.</p>
+<ul>
+  <li>• Method: OnException(ExceptionContext context)</li>
+  <li>• Purpose: Log exceptions, create custom error responses, or perform other error-handling</li>
+</ul>
+<p>tasks.</p>
+<ul>
+  <li>• Short-Circuiting: By setting context.ExceptionHandled = true and providing a new</li>
+</ul>
+<p>context.Result, you can prevent the exception from propagating further and control the
+      error response sent to the client.</p>
+
+<h2 id="impact-of-short-circuiting">Impact of Short-Circuiting</h2>
+<ul>
+  <li>• Action Filters: Short-circuiting an action filter prevents the action method and any</li>
+</ul>
+<p>subsequent action filters from executing. Control is transferred directly to the result
+      execution pipeline.</p>
+<ul>
+  <li>• Result Filters: Short-circuiting a result filter bypasses the execution of any subsequent result</li>
+</ul>
+<p>filters. Control is returned to the previous filter or the MVC framework.</p>
+<ul>
+  <li>• Resource Filters: Short-circuiting a resource filter prevents the action method, action filters,</li>
+</ul>
+<p>and result filters from executing. The response is generated based on the IActionResult set in
+      the context.Result.</p>
+<ul>
+  <li>• Authorization Filters: Short-circuiting an authorization filter prevents all subsequent steps in</li>
+</ul>
+<p>the pipeline, including model binding, action execution, and result execution.</p>
+
+<h2 id="code-explanation-2">Code Explanation</h2>
+<p>Let&#39;s analyze the filters in your code:</p>
+<ul>
+  <li>1. TokenAuthorizationFilter:</li>
+  <li>o An authorization filter that checks for the presence and validity of an &quot;Auth-Key&quot;</li>
+</ul>
+<p>cookie.</p>
+<ul>
+  <li>o If the cookie is missing or invalid, it short-circuits the pipeline and returns a 401</li>
+</ul>
+<p>Unauthorized status code.</p>
+<ul>
+  <li>2. HandleExceptionFilter:</li>
+  <li>o An exception filter that logs errors and, in development environments, returns a</li>
+</ul>
+<p>ContentResult with the exception message and a 500 Internal Server Error status
+           code.</p>
+<ul>
+  <li>3. FeatureDisabledResourceFilter:</li>
+  <li>o A resource filter that checks if a feature is disabled.</li>
+  <li>o If disabled, it short-circuits the pipeline and returns a 501 Not Implemented status</li>
+</ul>
+<p>code.</p>
+<ul>
+  <li>4. PersonsListResultFilter:</li>
+  <li>o A result filter that adds a &quot;Last-Modified&quot; header to the response after the action</li>
+</ul>
+<p>result has been executed.</p>
+<ul>
+  <li>5. TokenResultFilter:</li>
+  <li>o A result filter that appends an &quot;Auth-Key&quot; cookie to the response before it is sent to</li>
+</ul>
+<p>the client.</p>
+
+<h2 id="notes-2">Notes</h2>
+<ul>
+  <li>• Filter Types: Understand the different filter types and when to use each one.</li>
+  <li>• Async Filters: Use async filters for asynchronous operations within your filter logic.</li>
+  <li>• Short-Circuiting: Use this technique to control the filter pipeline and return early responses.</li>
+  <li>• Order of Execution: Be aware of the default filter execution order and how to customize it</li>
+</ul>
+<p>using the Order property or IOrderedFilter.</p>
+<ul>
+  <li>• Dependency Injection: Utilize DI to inject services and dependencies into your filters.</li>
+</ul>
+
+<h2 id="ialwaysrunresultfilter">IAlwaysRunResultFilter</h2>
+<p>The IAlwaysRunResultFilter interface inherits from the standard IResultFilter interface and
+introduces a crucial distinction: its methods (OnResultExecuting and OnResultExecuted) are
+guaranteed to execute even if another filter in the pipeline short-circuits the result. This makes it an
+indispensable tool for scenarios where you need to perform actions or modifications on the
+response regardless of whether the action method or other filters completed successfully.
+Notes:</p>
+<ul>
+  <li>• Inheritance: IAlwaysRunResultFilter extends IResultFilter, inheriting its two methods:</li>
+  <li>o OnResultExecuting(ResultExecutingContext context): Called before the action result</li>
+</ul>
+<p>is executed.</p>
+<ul>
+  <li>o OnResultExecuted(ResultExecutedContext context): Called after the action result has</li>
+</ul>
+<p>been executed.</p>
+<ul>
+  <li>• Guaranteed Execution:</li>
+  <li>o The core feature of IAlwaysRunResultFilter is that its methods are always invoked,</li>
+</ul>
+<p>even if:
+              ▪ An exception occurs in the action method or a previous filter.
+              ▪ Another filter short-circuits the pipeline by setting context.Cancel = true and
+                 providing a new context.Result.
+              ▪ The action method itself returns a result that short-circuits the pipeline (e.g.,</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">return new EmptyResult();).</code></pre>
+    </div>
+  <p>• Use Cases:</p>
+<ul>
+  <li>o Logging: Log the final outcome of the request, including any exceptions or shortcircuited</li>
+</ul>
+<p>results.</p>
+<ul>
+  <li>o Response Modification: Apply modifications to the response headers or content,</li>
+</ul>
+<p>even if the action was not executed.</p>
+<ul>
+  <li>o Cleanup: Perform essential cleanup tasks or release resources, regardless of the</li>
+</ul>
+<p>action&#39;s success or failure.</p>
+
+<h2 id="code-explanation-3">Code Explanation</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// PersonAlwaysRunResultFilter.cs
+public class PersonAlwaysRunResultFilter : IAlwaysRunResultFilter
+{
+// (You might inject dependencies here if needed
+)
+  public void OnResultExecuted(ResultExecutedContext context)
+  {
+// Logic to execute after the result has been executed (sent to the client
+)
+  }
+  public void OnResultExecuting(ResultExecutingContext context)
+  {
+   // Logic to execute before the result is executed
+  }
+}</code></pre>
+    </div>
+  <p>• Empty Implementation: In this example, the OnResultExecuted and OnResultExecuting
+      methods are empty. You would replace these placeholders with your actual filter logic.</p>
+
+<h2 id="applying-the-filter-1">Applying the Filter</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// PersonsController.cs (HttpPost Edit action
+)
+[HttpPost]
+[Route(&quot;[action]/{personID}&quot;)]</code></pre>
+    </div>
+  <p>[TypeFilter(typeof(PersonCreateAndEditPostActionFilter))]
+[TypeFilter(typeof(TokenAuthorizationFilter))]
+[TypeFilter(typeof(PersonAlwaysRunResultFilter))]</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// Apply the filter
+public async Task&lt;IActionResult&gt; Edit(PersonUpdateRequest personRequest)
+{
+ // ...
+}</code></pre>
+    </div>
+  <p>The PersonAlwaysRunResultFilter is applied to the Edit (POST) action method using the [TypeFilter]
+attribute.</p>
+
+<h2 id="example-scenarios">Example Scenarios</h2>
+<ul>
+  <li>1. Logging the Final Response: Even if an exception occurs within the action method or a</li>
+</ul>
+<p>previous filter, the OnResultExecuted method of PersonAlwaysRunResultFilter will still be
+      called, allowing you to log the final status code and any error details.</p>
+<ul>
+  <li>2. Adding Headers: You could use OnResultExecuting to add custom headers to the response,</li>
+</ul>
+<p>ensuring they are included even if the action is short-circuited.</p>
+<ul>
+  <li>3. Resource Cleanup: If your action acquires resources (e.g., database connections, file</li>
+</ul>
+<p>handles), you can use OnResultExecuted to release them reliably, even if an exception
+      occurs.</p>
+
+<h2 id="caveats">Caveats</h2>
+<ul>
+  <li>• Can&#39;t Change the Result: While IAlwaysRunResultFilter guarantees execution, it cannot</li>
+</ul>
+<p>change the IActionResult once it has been set by another filter or the action method itself.
+      Its primary purpose is to observe or modify the response or perform cleanup tasks.</p>
+<ul>
+  <li>• Order: IAlwaysRunResultFilter is executed at the very end of the result filter pipeline, after</li>
+</ul>
+<p>all other result filters, regardless of their specified order.</p>
+
+<h2 id="filter-overrides">Filter Overrides</h2>
+<p>In ASP.NET Core MVC, filter overrides empower you to selectively disable or alter the behavior of
+filters on a per-action or per-controller basis. This granular control is essential for situations where
+you need to:</p>
+<ul>
+  <li>• Bypass a Filter: Skip the execution of a specific filter for a particular action or controller.</li>
+  <li>• Modify Filter Behavior: Change the arguments or settings of a filter for a specific action or</li>
+</ul>
+<p>controller.</p>
+
+<h2 id="key-mechanisms-for-filter-overrides">Key Mechanisms for Filter Overrides</h2>
+<ul>
+  <li>1. [NonAction] Attribute:</li>
+  <li>o Purpose: Prevents a method from being treated as an action method by the MVC</li>
+</ul>
+<p>framework. This effectively bypasses all filters (action filters, result filters, etc.) that
+           would otherwise be applied to the method.</p>
+<ul>
+  <li>o Usage: Apply this attribute to methods within your controller that you don&#39;t want to</li>
+</ul>
+<p>be considered action methods.</p>
+<ul>
+  <li>2. [SkipFilter] Attribute (Custom):</li>
+  <li>o Purpose: A custom attribute that allows you to skip the execution of a specific filter</li>
+</ul>
+<p>or a group of filters for a particular action or controller.</p>
+<ul>
+  <li>o Implementation: In your code example, the SkipFilter attribute implements the</li>
+</ul>
+<p>IFilterMetadata interface, which is a marker interface used to identify filter
+           attributes.</p>
+<ul>
+  <li>3. Overriding Filter Arguments:</li>
+  <li>o Purpose: Modify the arguments passed to a filter for a specific action or controller.</li>
+  <li>o Mechanism: When applying the filter attribute, provide the updated arguments.</li>
+</ul>
+
+<h2 id="code-explanation-4">Code Explanation</h2>
+
+<h2 id="skipfilter-attribute">SkipFilter Attribute</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// SkipFilter.cs
+public class SkipFilter : Attribute, IFilterMetadata
+{
+}</code></pre>
+    </div>
+  <p>This simple attribute acts as a marker that you can apply to actions or controllers to indicate that you
+want to skip specific filters.</p>
+
+<h2 id="personalwaysrunresultfilter-with-override-logic">PersonAlwaysRunResultFilter with Override Logic</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// PersonAlwaysRunResultFilter.cs
+public void OnResultExecuting(ResultExecutingContext context)
+{
+}</code></pre>
+    </div>
+  <p>if (context.Filters.OfType&lt;SkipFilter&gt;().Any())</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+}</code></pre>
+    </div>
+  <p>return; // Skip this filter if the SkipFilter attribute is present</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// ... Your filter logic here ...</code></pre>
+    </div>
+  <p>In this modified filter:</p>
+<ul>
+  <li>1. Check for SkipFilter: The OnResultExecuting method checks if the context.Filters collection</li>
+</ul>
+<p>contains any instances of the SkipFilter attribute.</p>
+<ul>
+  <li>2. Skip if Present: If SkipFilter is found, the filter&#39;s logic is bypassed by simply returning from</li>
+</ul>
+<p>the method.</p>
+<ul>
+  <li>3. Execute Otherwise: If SkipFilter is not present, the filter proceeds with its normal execution.</li>
+</ul>
+
+<h2 id="applying-the-skipfilter-attribute">Applying the SkipFilter Attribute</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// In your controller</code></pre>
+    </div>
+  <p>[SkipFilter] // Skip specific filters for this action</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public IActionResult SomeAction()
+{
+  // ...
+}</code></pre>
+    </div>
+  <p>By applying the SkipFilter attribute to an action method, you instruct any filters that check for this
+attribute (like the modified PersonAlwaysRunResultFilter) to bypass their logic for that specific
+action.</p>
+
+<h2 id="notes-3">Notes</h2>
+<ul>
+  <li>• [NonAction]: Use to completely exclude a method from being treated as an action.</li>
+  <li>• Custom Attributes: Create custom attributes like SkipFilter to provide more fine-grained</li>
+</ul>
+<p>control over filter execution.</p>
+<ul>
+  <li>• Override Arguments: Modify filter behavior by providing different arguments when applying</li>
+</ul>
+<p>the filter attribute.</p>
+<ul>
+  <li>• Flexibility: Filter overrides allow you to adapt your filter pipeline to specific actions or</li>
+</ul>
+<p>controllers, enhancing your control and customization options.</p>
+
+<h2 id="service-filters">Service Filters</h2>
+<p>Service filters, applied using the [ServiceFilter] attribute, offer a powerful mechanism for injecting
+dependencies directly into your filters. This is essential when your filters require access to services
+like loggers, configuration settings, or data repositories to perform their tasks effectively.</p>
+<ul>
+  <li>• [ServiceFilter] Attribute:</li>
+  <li>o Purpose: Instructs ASP.NET Core MVC to resolve the filter instance from the</li>
+</ul>
+<p>dependency injection (DI) container.</p>
+<ul>
+  <li>o Usage: Apply this attribute to controllers or actions, specifying the type of the filter</li>
+</ul>
+<p>you want to inject.</p>
+<ul>
+  <li>o Benefits:</li>
+</ul>
+<p>▪ Promotes loose coupling and testability by allowing filters to receive their
+                 dependencies through constructor injection.
+              ▪ Enables you to manage filter lifetimes (transient, scoped, singleton) using
+                 the DI container.</p>
+<p>Filter Attribute Classes: Encapsulating Filter Metadata
+Filter attribute classes serve as a convenient way to package metadata about a filter and apply it
+declaratively to controllers or actions. They typically inherit from the Attribute class and implement
+one or more filter interfaces (e.g., IActionFilter, IAuthorizationFilter, etc.).</p>
+<ul>
+  <li>• Purpose:</li>
+  <li>o Provide a concise and readable way to apply filters.</li>
+  <li>o Encapsulate filter-specific settings or configurations within the attribute&#39;s</li>
+</ul>
+<p>properties.</p>
+<ul>
+  <li>• Example:</li>
+</ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class MyActionFilterAttribute : Attribute, IActionFilter
+{
+// Filter properties (e.g., configuration settings
+)
+  public string SomeSetting { get; set; }
+  // ... implementation of IActionFilter methods ...
+}</code></pre>
+    </div>
+  <p>IFilterFactory Interface
+The IFilterFactory interface allows you to create filter instances dynamically at runtime, offering
+flexibility and customization beyond what&#39;s possible with simple attribute classes.</p>
+<ul>
+  <li>• IsReusable Property: Indicates whether the created filter instance can be reused across</li>
+</ul>
+<p>multiple requests (if true) or should be a new instance for each request (if false).</p>
+<ul>
+  <li>• CreateInstance(IServiceProvider serviceProvider) Method: This method is responsible for</li>
+</ul>
+<p>creating the actual filter instance. It receives an IServiceProvider which you can use to
+      resolve dependencies from the DI container.</p>
+
+<h2 id="code-explanation-5">Code Explanation</h2>
+<p>Let&#39;s break down the relevant filter-related code in your examples:</p>
+
+<h2 id="personslistactionfilter-1">PersonsListActionFilter</h2>
+<ul>
+  <li>• This is a standard action filter (IActionFilter) that performs some logic before and after the</li>
+</ul>
+<p>action method executes.</p>
+<ul>
+  <li>• It utilizes an ILogger (injected through the constructor) for logging and modifies the</li>
+</ul>
+<p>ViewData in the OnActionExecuted method.</p>
+
+<h2 id="responseheaderfilterfactoryattribute-and-responseheaderactionfilter">ResponseHeaderFilterFactoryAttribute and ResponseHeaderActionFilter</h2>
+<ul>
+  <li>• ResponseHeaderFilterFactoryAttribute:</li>
+  <li>o Implements the IFilterFactory interface.</li>
+  <li>o IsReusable is set to false, meaning a new filter instance will be created for each</li>
+</ul>
+<p>request.</p>
+<ul>
+  <li>o The CreateInstance method:</li>
+  <li>1. Resolves the ResponseHeaderActionFilter from the DI container.</li>
+</ul>
+
+<h2 id="2-sets-the-key-value-and-order-properties-of-the-filter-based-on-the">2. Sets the Key, Value, and Order properties of the filter based on the</h2>
+<p>attribute&#39;s constructor arguments.</p>
+<ul>
+  <li>3. Returns the configured filter instance.</li>
+  <li>• ResponseHeaderActionFilter:</li>
+  <li>o An async action filter (IAsyncActionFilter) that adds a custom header to the response</li>
+</ul>
+<p>after the action method executes.</p>
+<ul>
+  <li>o Its Key, Value, and Order properties are set by the</li>
+</ul>
+<p>ResponseHeaderFilterFactoryAttribute.</p>
+
+<h2 id="personscontroller-filter-application">PersonsController (Filter Application)</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">[Route(&quot;[action]&quot;)]
+[Route(&quot;/&quot;)]</code></pre>
+    </div>
+  <p>[ServiceFilter(typeof(PersonsListActionFilter), Order = 4)]
+[ResponseHeaderFilterFactory(&quot;MyKey-FromAction&quot;, &quot;MyValue-FromAction&quot;, 1)] // Using the filter
+factory
+[TypeFilter(typeof(PersonsListResultFilter))]
+[SkipFilter]</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public async Task&lt;IActionResult&gt; Index(string searchBy, string? searchString, string sortBy =
+nameof(PersonResponse.PersonName), SortOrderOptions sortOrder = SortOrderOptions.ASC)
+{
+  // ...
+}</code></pre>
+    </div>
+  <p>In the Index action:</p>
+<ul>
+  <li>• [ServiceFilter(typeof(PersonsListActionFilter))]: Applies the PersonsListActionFilter, resolving</li>
+</ul>
+<p>it from the DI container.</p>
+<ul>
+  <li>• [ResponseHeaderFilterFactory(...)]: Uses the filter factory to create and apply an instance of</li>
+</ul>
+<p>ResponseHeaderActionFilter with the specified arguments.</p>
+<ul>
+  <li>• [SkipFilter]: This custom attribute is used to skip specific filters that check for its presence (as</li>
+</ul>
+<p>demonstrated in a previous example).</p>
+
+<h2 id="notes-4">Notes</h2>
+<ul>
+  <li>• ServiceFilter: Use for filters that require dependencies from the DI container.</li>
+  <li>• Filter Attribute Classes: A convenient way to encapsulate filter metadata and apply filters</li>
+</ul>
+<p>declaratively.</p>
+<ul>
+  <li>• IFilterFactory: Enables dynamic filter creation and customization.</li>
+  <li>• IsReusable: Control whether filter instances are reused or created anew for each request.</li>
+  <li>• CreateInstance: Implement this method to create and configure your filter instances.</li>
+</ul>
+
+<h2 id="key-points-to-remember">Key Points to Remember</h2>
+
+<h2 id="filters-core-concepts">Filters - Core Concepts</h2>
+<ul>
+  <li>• Purpose: Intercept and execute code before, after, or around controller actions or Razor</li>
+</ul>
+<p>Pages.</p>
+<ul>
+  <li>• Benefits:</li>
+  <li>o Modularize cross-cutting concerns (auth, logging, caching, etc.)</li>
+  <li>o Clean separation of concerns</li>
+  <li>o Reusability</li>
+  <li>o Extensibility</li>
+  <li>• Types:</li>
+  <li>o IActionFilter: Before and after action execution.</li>
+  <li>o IAuthorizationFilter: Authorization checks before action execution.</li>
+  <li>o IResourceFilter: Before and after model binding and action execution.</li>
+  <li>o IExceptionFilter: Handles exceptions.</li>
+  <li>o IResultFilter: Before and after action result execution.</li>
+</ul>
+
+<h2 id="key-filter-interfaces-and-attributes">Key Filter Interfaces and Attributes</h2>
+<ul>
+  <li>• IActionFilter, IAsyncResultFilter: Intercept action execution (sync and async).</li>
+  <li>• IAuthorizationFilter: Perform authorization checks.</li>
+  <li>• IResourceFilter, IAsyncResourceFilter: Manage resource access and lifecycle (sync and</li>
+</ul>
+<p>async).</p>
+<ul>
+  <li>• IExceptionFilter: Handle exceptions gracefully.</li>
+  <li>• IResultFilter, IAsyncResultFilter: Work with the action result (sync and async).</li>
+  <li>• IAlwaysRunResultFilter: Guaranteed execution, even if other filters short-circuit.</li>
+  <li>• [TypeFilter]: Apply a filter by its type, with optional arguments.</li>
+  <li>• [ServiceFilter]: Resolve a filter from the DI container.</li>
+</ul>
+
+<h2 id="filter-overrides-1">Filter Overrides</h2>
+<ul>
+  <li>• [NonAction]: Exclude a method from being treated as an action (bypasses filters).</li>
+  <li>• Custom Attributes: Create your own attributes to skip or modify filter behavior.</li>
+</ul>
+
+<h2 id="filter-factories">Filter Factories</h2>
+<ul>
+  <li>• IFilterFactory Interface: Create filter instances dynamically at runtime.</li>
+  <li>• IsReusable Property: Control whether the filter instance can be reused.</li>
+  <li>• CreateInstance Method: Implement to create and configure filter instances.</li>
+</ul>
+
+<h2 id="short-circuiting">Short-Circuiting</h2>
+<ul>
+  <li>• Action Filters: Set context.Result to bypass the action and subsequent filters.</li>
+  <li>• Result Filters: Set context.Cancel = true and provide a new context.Result.</li>
+  <li>• Resource Filters: Set context.Result to bypass action execution and result filters.</li>
+  <li>• Authorization Filters: Set context.Result to bypass the entire pipeline (including model</li>
+</ul>
+<p>binding).</p>
+
+<h2 id="best-practices-1">Best Practices</h2>
+<ul>
+  <li>• Choose the Right Filter: Select the appropriate filter type for your needs.</li>
+  <li>• Dependency Injection: Use DI to inject services into your filters.</li>
+  <li>• Keep Filters Small and Focused: Each filter should have a single responsibility.</li>
+  <li>• Performance: Be mindful of the potential performance impact of filters.</li>
+  <li>• Order Matters: Understand the default filter execution order and how to customize it.</li>
+</ul>
+
+<h2 id="interview-tips">Interview Tips</h2>
+<ul>
+  <li>• Explain Filter Types: Clearly articulate the purpose and use cases for each filter type.</li>
+  <li>• Short-Circuiting: Demonstrate how and when to use short-circuiting effectively.</li>
+  <li>• Custom Filters: Be prepared to discuss scenarios where you would create custom filters and</li>
+</ul>
+<p>how you would implement them.</p>
+<ul>
+  <li>• Filter Ordering: Explain the default order and how to customize it if needed.</li>
+  <li>• Best Practices: Showcase your knowledge of filter best practices and common pitfalls.</li>
+</ul>
+
+<hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
+<section class="cheatsheet-section" aria-labelledby="cheat-sheet-quick-reference">
+  <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
+  <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
+  <p>Section 21 – Filters – Cheat Sheet</p>
+  <h3 id="filters">Filters</h3>
+  <p>Filters are the code blocks that execute before / after specific stages in &quot;Filter Pipeline&quot;.
+Filters perform specific tasks such as authorization, caching, exeption handling etc.</p>
+  <h3 id="filter-pipeline">Filter Pipeline</h3>
+  <h3 id="overview-of-types-of-filters">Overview of Types of Filters</h3>
+  <h3 id="authorization-filter">Authorization Filter</h3>
+  <p>Determines whether the user is authorized to access the action method.</p>
+  <h3 id="resource-filter">Resource Filter</h3>
+  <h3 id="invoking-custom-model-binder-explicitly">Invoking custom model binder explicitly</h3>
+  <p>Caching the response.</p>
+  <h3 id="action-filter">Action Filter</h3>
+  <p>Manipulating &amp; validating the action method parameters.
+Manipulating the ViewData.
+Overriding the IActionResult provided by action method.</p>
+  <h3 id="exception-filter">Exception Filter</h3>
+  <p>Handling unhandled exception that occur in model binding, action filters or action methods.</p>
+  <h3 id="result-filter">Result Filter</h3>
+  <p>Preventing IActionResult from execution.
+Adding last-moment changes to response (such as adding response headers).</p>
+  <h3 id="action-filter-1">Action Filter</h3>
+  <h3 id="when-it-runs">When it runs</h3>
+  <p>Runs immediately before and after an action method executes.
+&#39;OnActionExecuting&#39; method</p>
+  <ul>
+    <li>• It can access the action method parameters, read them &amp; do necessary manipulations on</li>
+  </ul>
+  <p>them.</p>
+  <ul>
+    <li>• It can validate action method parameters.</li>
+    <li>• It can short-circuit the action (prevent action method from execution) and return a different</li>
+  </ul>
+  <p>IActionResult.
+&#39;OnActionExecuted&#39; method</p>
+  <ul>
+    <li>• It can manipulate the ViewData.</li>
+    <li>• It can change the result returned from the action method.</li>
+  </ul>
+  <h3 id="filter-arguments-1">Filter Arguments</h3>
+  <h3 id="global-filters-1">Global Filters</h3>
+  <h3 id="filter-scopes">Filter Scopes</h3>
+  <p>What are global filters?
+Global filters are applied to all action methods of all controllers in the project.
+How to add global filters in Program.cs?
+builder.Services.AddControllersWithViews(options =&gt; {
+ options.Filters.Add&lt;FilterClassName&gt;(); //add by type</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">//or</code></pre>
+    </div>
+    <p>options.Filters.Add(new FilterClassName()); //add filter instance
+});</p>
+  <h3 id="default-order-of-filter-execution">Default Order of Filter Execution</h3>
+  <h3 id="custom-order-of-filters">Custom Order of Filters</h3>
+  <h3 id="iorderedfilter">IOrderedFilter</h3>
+  <h3 id="example">Example</h3>
+  <h3 id="iorderedfilter-1">IOrderedFilter</h3>
+  <h3 id="action-filter-with-iorderedfilter">Action filter with IOrderedFilter</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class FilterClassName : IActionFilter, IOrderedFilter
+{
+ public int Order { get; set; } //Defines sequence of execution
+ public FilterClassName(int order)
+ {
+  Order = order;
+ }
+ public void OnActionExecuting(ActionExecutingContext context)
+ {
+  //TO DO: before logic here
+ }
+ public void OnActionExecuted(ActionExecutedContext context)
+ {
+  //TO DO: after logic here
+ }
+}</code></pre>
+    </div>
+    <p>Async Filters</p>
+  <h3 id="asynchronous-action-filter">Asynchronous Action Filter</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class FilterClassName : IAsyncActionFilter, IOrderedFilter
+{
+ public int Order { get; set; } //Defines sequence of execution
+ public FilterClassName(int order)
+ {
+  Order = order;
+ }
+ public async Task OnActionExecutionAsync(ActionExecutingContext context,
+}</code></pre>
+    </div>
+    <p>ActionExecutionDelegate next)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+  //TO DO: before logic here
+  await next();
+  //TO DO: after logic here
+ }</code></pre>
+    </div>
+    <h3 id="short-circuiting-filters">Short-circuiting Filters</h3>
+  <h3 id="action-filters-1">Action Filters</h3>
+  <h3 id="when-it-runs-1">When it runs</h3>
+  <p>Runs immediately before and after an action method executes.
+&#39;OnActionExecuting&#39; method</p>
+  <ul>
+    <li>• It can access the action method parameters, read them &amp; do necessary manipulations on</li>
+  </ul>
+  <p>them.</p>
+  <ul>
+    <li>• It can validate action method parameters.</li>
+    <li>• It can short-circuit the action (prevent action method from execution) and return a different</li>
+  </ul>
+  <p>IActionResult.
+&#39;OnActionExecuted&#39; method</p>
+  <ul>
+    <li>• It can manipulate the ViewData.</li>
+    <li>• It can change the result returned from the action method.</li>
+    <li>• It can throw exceptions to either return the exception to the exception filter (if exists); or</li>
+  </ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">return the error response to the browser.</code></pre>
+    </div>
+    <h3 id="short-circuiting-action-filter">Short-Circuiting Action Filter</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class FilterClassName : IAsyncActionFilter, IOrderedFilter
+{
+public int Order { get; set; } //Defines sequence of execution
+public FilterClassName(int order)
+{
+ Order = order;
+}
+public async Task OnActionExecutionAsync(ActionExecutingContext context,
+}</code></pre>
+    </div>
+    <p>ActionExecutionDelegate next)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+ //TO DO: before logic here
+ context.Result = some_action_result; //you can return any type of IActionResult
+ //Not calling next(). So it leads remaining filters &amp; action method short-circuited.
+}</code></pre>
+    </div>
+    <p>Short-Circuiting (exit) the filters</p>
+  <h3 id="result-filter-1">Result Filter</h3>
+  <h3 id="when-it-runs-2">When it runs</h3>
+  <ul>
+    <li>• Runs immediately before and after an IActionResult executes.</li>
+    <li>• It can access the IActionResult returned by the action method.</li>
+  </ul>
+  <p>&#39;OnResultExecuting&#39; method</p>
+  <ul>
+    <li>• It can continue executing the IActionResult normally, by not assigning &quot;Result&quot; property of</li>
+  </ul>
+  <p>the context.</p>
+  <ul>
+    <li>• It can short-circuit the action (prevent IActionResult from execution) and return a different</li>
+  </ul>
+  <p>IActionResult.
+&#39;OnResultExecuted&#39; method</p>
+  <ul>
+    <li>• It can manipulate the last-moment changes in the response, such as adding necessary</li>
+  </ul>
+  <p>response headers.</p>
+  <ul>
+    <li>• It should not throw exceptions because, exceptions raised in result filters would not be</li>
+  </ul>
+  <p>caught by the exception filter.</p>
+  <h3 id="synchronous-result-filter">Synchronous Result Filter</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class FilterClassName : IResultFilter, IOrderedFilter
+{
+ public int Order { get; set; } //Defines sequence of execution
+ public FilterClassName(int order)
+ {
+  Order = order;
+ }
+ public void OnResultExecuting(ResultExecutingContext context)
+ {
+  //TO DO: before logic here
+ }
+ public void OnResultExecuted(ResultExecutedContext context)
+ {
+  //TO DO: after logic here
+ }
+}</code></pre>
+    </div>
+    <h3 id="asynchronous-result-filter">Asynchronous Result Filter</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class FilterClassName : IAsyncResultFilter, IOrderedFilter
+{
+ public int Order { get; set; } //Defines sequence of execution
+ public FilterClassName(int order)
+ {
+  Order = order;
+ }
+ public async Task OnResultExecutionAsync(ResultExecutingContext context,
+}</code></pre>
+    </div>
+    <p>ResultExecutionDelegate next)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+ //TO DO: before logic here
+ await next();
+ //TO DO: after logic here
+ }</code></pre>
+    </div>
+    <p>Resource Filter</p>
+  <h3 id="when-it-runs-3">When it runs</h3>
+  <p>Runs immediately after Authorize Filter and after Result Filter executes.
+&#39;OnResourceExecuting&#39; method</p>
+  <ul>
+    <li>• It can do some work before model binding. Eg: Adding metrics to an action method.</li>
+    <li>• It can change the way how model binding works (invoking a custom model binder explicitly).</li>
+    <li>• It can short-circuit the action (prevent IActionResult from execution) and return a different</li>
+  </ul>
+  <p>IActionResult.
+Eg: Short-circuit if an unsupported content type is requested.
+&#39;OnResourceExecuted&#39; method</p>
+  <ul>
+    <li>• It can read the response body and store it in cache.</li>
+  </ul>
+  <h3 id="synchronous-resource-filter">Synchronous Resource Filter</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class FilterClassName : IResourceFilter, IOrderedFilter
+{
+ public int Order { get; set; } //Defines sequence of execution
+ public FilterClassName(int order)
+ {
+  Order = order;
+ }
+ public void OnResourceExecuting(ResourceExecutingContext context)
+ {
+  //TO DO: before logic here
+ }
+ public void OnResourceExecuted(ResourceExecutedContext context)
+ {
+  //TO DO: after logic here
+ }
+}</code></pre>
+    </div>
+    <h3 id="asynchronous-resource-filter">Asynchronous Resource Filter</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class FilterClassName : IAsyncResourceFilter, IOrderedFilter
+{
+ public int Order { get; set; } //Defines sequence of execution
+ public FilterClassName(int order)
+ {
+  Order = order;
+ }
+ public async Task OnResourceExecutionAsync(ResourceExecutingContext context,
+}</code></pre>
+    </div>
+    <p>ResourceExecutionDelegate next)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+  //TO DO: before logic here
+  await next();
+  //TO DO: after logic here
+ }</code></pre>
+    </div>
+    <p>Authorization Filter</p>
+  <h3 id="authorization-filters">Authorization Filters</h3>
+  <p>Runs before any other filters in the filter pipeline.
+&#39;OnAuthorize&#39; method</p>
+  <ul>
+    <li>• Determines whether the user is authorized for the request.</li>
+    <li>• Short-circuits the pipeline if the request is NOT authorized.</li>
+    <li>• Don&#39;t throw exceptions in OnAuthorize method, as they will not be handled by exception</li>
+  </ul>
+  <p>filters.</p>
+  <h3 id="synchronous-authorization-filter">Synchronous Authorization Filter</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class FilterClassName : IAuthorizationFilter
+{
+ public void OnAuthorization(AuthorizationFilterContext context)
+ {
+  //TO DO: authorization logic here
+ }
+}</code></pre>
+    </div>
+    <p>Asynchronous Authorization Filter</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class FilterClassName : IAsyncAuthorizationFilter
+{
+ public async Task OnAuthorizationAsync(AuthorizationFilterContext context)
+ {
+  //TO DO: authorization logic here
+ }
+}</code></pre>
+    </div>
+    <h3 id="exception-filter-1">Exception Filter</h3>
+  <h3 id="when-it-runs-4">When it runs</h3>
+  <p>Runs when an exception is raised during the filter pipeline.
+&#39;OnException method</p>
+  <ul>
+    <li>• Handles unhandled exceptions that occur in controller creation, model binding, action filters</li>
+  </ul>
+  <p>or action methods.</p>
+  <ul>
+    <li>• Doesn&#39;t handle the unhandled exceptions that occur in authorization filters, resource filters,</li>
+  </ul>
+  <p>result filters or IActionResult execution.</p>
+  <ul>
+    <li>• Recommended to be used only when you want a different error handling and generate</li>
+  </ul>
+  <p>different result for specific controllers; otherwise, ErrorHandlingMiddleware is
+      recommended over Exception Filters.</p>
+  <h3 id="synchronous-exception-filter">Synchronous Exception Filter</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class FilterClassName : IAsyncExceptionFilter
+{
+ public async Task OnExceptionAsync(ExceptionFilterContext context)
+ {
+  //TO DO: exception handling logic here, as follows
+  context.Result = some_action_result;
+  //or
+  context.ExceptionHandled = true;
+  return Task.CompletedTask;
+ }
+}</code></pre>
+    </div>
+    <p>Asynchronous Exception Filter</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class FilterClassName : IAsyncExceptionFilter
+{
+ public async Task OnExceptionAsync(ExceptionFilterContext context)
+ {
+  //TO DO: exception handling logic here, as follows
+  context.Result = some_action_result;
+  //or
+  context.ExceptionHandled = true;
+  return Task.CompletedTask;
+ }
+}</code></pre>
+    </div>
+    <h3 id="impact-of-short-circuiting-1">Impact of Short-Circuiting</h3>
+  <h3 id="short-circuiting-authorization-filter">Short-circuiting Authorization Filter</h3>
+  <h3 id="short-circuiting-resource-filter">Short-circuiting Resource Filter</h3>
+  <h3 id="short-circuiting-action-filter-1">Short-circuiting Action Filter</h3>
+  <h3 id="short-circuiting-exception-filter">Short-circuiting Exception Filter</h3>
+  <h3 id="short-circuiting-result-filter">Short-circuiting Result Filter</h3>
+  <h3 id="short-circuiting-the-filters">Short-circuiting the filters</h3>
+  <h3 id="alwaysrun-result-filter">AlwaysRun Result Filter</h3>
+  <h3 id="short-circuiting-authorization-filter-1">Short-circuiting Authorization Filter</h3>
+  <h3 id="short-circuiting-resource-filter-1">Short-circuiting Resource Filter</h3>
+  <h3 id="short-circuiting-action-filter-2">Short-circuiting Action Filter</h3>
+  <h3 id="short-circuiting-exception-filter-1">Short-circuiting Exception Filter</h3>
+  <h3 id="short-circuiting-result-filter-1">Short-circuiting Result Filter</h3>
+  <h3 id="when-alwaysrunresultfilter-runs">When AlwaysRunResultFilter runs</h3>
+  <p>Runs immediately before and after result filters.
+Result filters:
+Doesn&#39;t execute when authorization filter, resource filter or exception filter short-circuits.
+AlwaysRunResult filter:
+Execute always even when authorization filter, resource filter or exception filter short-circuits.
+&#39;OnResultExecuting&#39; method</p>
+  <h3 id="same-as-result-filter">Same as Result filter</h3>
+  <p>&#39;OnResultExecuted&#39; method</p>
+  <h3 id="same-as-result-filter-1">Same as Result filter</h3>
+  <h3 id="synchronous-always-run-result-filter">Synchronous Always Run Result Filter</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class FilterClassName : IAlwaysRunResultFilter
+{
+ public void OnResultExecuting(ResultExecutingContext context)
+ {
+  //TO DO: before logic here
+ }
+ public void OnResultExecuted(ResultExecutedContext context)
+ {
+  //TO DO: after logic here
+ }
+}</code></pre>
+    </div>
+    <p>Asynchronous Always Run Result Filter</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class FilterClassName : IAsyncAlwaysRunResultFilter
+{
+ public async Task OnResultExecutionAsync(ResultExecutingContext context,
+}</code></pre>
+    </div>
+    <p>ResultExecutionDelegate next)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+ //TO DO: before logic here
+ await next();
+ //TO DO: after logic here
+ }</code></pre>
+    </div>
+    <h3 id="filter-overrides-2">Filter Overrides</h3>
+  <p>[TypeFilter(typeof(FilterClassName))] //filter applied at controller level</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class ControllerName : Controller
+{
+ public IActionResult Action1() //requirement: The filter SHOULD execute
+ {
+ }
+ public IActionResult Action2() //requirement: The filter SHOULD NOT execute. But how??
+ {
+ }
+}</code></pre>
+    </div>
+    <p>Attribute to be applied to desired action method</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class SkipFilterAttribute : Attribute, IFilterMetadata
+{
+}</code></pre>
+    </div>
+    <p>Action method
+[SkipFilter]</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public IActionResult ActionMethod()
+{
+}</code></pre>
+    </div>
+    <p>Filter that respects &#39;SkipFilterAttribute&#39;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class FilterClassName : IActionFilter //or any other filter interface
+{
+ public void OnActionExecuting(ActionExecutingContext context)
+ {
+  //get list of filters applied to the current working action method
+}
+}</code></pre>
+    </div>
+    <p>if (context.Filters.OfType&lt;SkipResultFilter&gt;().Any())</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+  return;
+  }
+  //TO DO: before logic here
+ }
+ public void OnActionExecuted(ActionExecutedContext context)
+ {
+  //TO DO: after logic here</code></pre>
+    </div>
+    <p>It skips execution of code of a filter, for specific action methods.
+[ServiceFilter]</p>
+  <h3 id="common-purpose">Common purpose</h3>
+  <p>Both are used to apply a filter a controller or action method.</p>
+  <h3 id="type-filter-attribute">Type Filter Attribute</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">//can supply arguments to filter</code></pre>
+    </div>
+    <p>[TypeFilter(typeof(FilterClassName), Arguments = new object[] { arg1, arg2 })]</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public IActionResult ActionMethod()
+{
+}</code></pre>
+    </div>
+    <p>…</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+    <p>Service Filter Attribute</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">//can&#39;t supply arguments to filter</code></pre>
+    </div>
+    <p>[ServiceFilter(typeof(FilterClassName))]</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public IActionResult ActionMethod()
+{
+}</code></pre>
+    </div>
+    <p>…</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+    <p>Type Filter</p>
+  <ul>
+    <li>• Can supply arguments to the filter.</li>
+    <li>• Filter instances are created by using Microsoft.Extensions.DependencyInjection.</li>
+  </ul>
+  <p>ObjectFactory.</p>
+  <ul>
+    <li>• They&#39;re NOT created using DI (Dependency Injection).</li>
+    <li>• The lifetime of filter instances is by default transient (a new filter instance gets created every</li>
+  </ul>
+  <p>time when it is invoked).</p>
+  <ul>
+    <li>• But optionally, you can re-use the same instance of filter class across multiple requests, by</li>
+  </ul>
+  <p>setting a property called TypeFilterAttribute.IsReusable to &#39;true&#39;.</p>
+  <ul>
+    <li>• Filter classes NEED NOT be registered (added) to the IoC container.</li>
+    <li>• Filter classes CAN inject services using both constructor injection or method injection.</li>
+  </ul>
+  <h3 id="service-filter">Service Filter</h3>
+  <ul>
+    <li>• Can&#39;t supply arguments to the filter.</li>
+    <li>• Filter instances are created by using ServiceProvider (using DI).</li>
+    <li>• The lifetime of filter instances is the actual lifetime of the filter class added in the IoC</li>
+  </ul>
+  <p>container.</p>
+  <ul>
+    <li>• Eg: If the filter class is added to the IoC container with AddScoped() method, then its</li>
+  </ul>
+  <p>instances are scoped.</p>
+  <ul>
+    <li>• Filter class SHOULD be registered (added) to the IoC container, much like any other service.</li>
+    <li>• Filter classes CAN inject services using both constructor injection or method injection.</li>
+  </ul>
+  <h3 id="filter-attribtute-classes">Filter attribtute classes</h3>
+  <p>IActionFilter [vs] ActionFilterAttribute
+[versus]
+Action filter that implements &#39;IActionFilter&#39;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class FilterClassName : IActionFilter, IOrderedFilter
+{
+ //supports constructor DI
+}</code></pre>
+    </div>
+    <p>Action filter that inherits &#39;ActionFilterAttribute&#39;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class FilterClassName : ActionFilterAttribute
+{
+ //doesn&#39;t support constructor DI
+}</code></pre>
+    </div>
+    <p>Filter interfaces:</p>
+  <ul>
+    <li>• IAuthorizationFilter</li>
+    <li>• IResourceFilter</li>
+    <li>• IActionFilter</li>
+    <li>• IExceptionFilter</li>
+    <li>• IResultFilter</li>
+    <li>• IAsyncAuthorizationFilter</li>
+    <li>• IAsyncResourceFilter</li>
+    <li>• IAsyncActionFilter</li>
+    <li>• IAsyncExceptionFilter</li>
+    <li>• IAsyncResultFilter</li>
+  </ul>
+  <p>Filter attributes:</p>
+  <ul>
+    <li>• ActionFilterAttribute</li>
+    <li>• ExceptionFilterAttribute</li>
+    <li>• ResultFilterAttribute</li>
+  </ul>
+  <p>Action filter that implements &#39;IActionFilter&#39;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class FilterClassName : IActionFilter, IOrderedFilter
+{
+ public int Order { get; set; }
+ public FilterClassName(IService service, type arg)
+ {
+ }
+ public void OnActionExecuting(ActionExecutingContext context)
+ {
+ }
+ public void OnActionExecuted(ActionExecutedContext context)
+ {
+ }
+}</code></pre>
+    </div>
+    <p>[TypeFilter(typeof(FilterClassName),
+Arguments = new object[] { arg1, … })]</p>
+  <p>Action filter that inherits &#39;ActionFilterAttribute&#39;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class FilterClassName : ActionFilterAttribute
+{
+ public FilterClassName(type arg)
+ {
+ }
+ public override void OnActionExecuting(ActionExecutingContext context)
+ {
+ }
+ public override void OnActionExecuted(ActionExecutedContext context)
+ {
+ }
+}</code></pre>
+    </div>
+    <p>[FilterClassName(arg1, … )]</p>
+  <h3 id="internal-definitions-of-iactionfilter-and-actionfilterattribute">Internal definitions of IActionFilter and ActionFilterAttribute</h3>
+  <h3 id="iactionfilter">IActionFilter</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">namespace Microsoft.AspNetCore.Mvc.Filters
+{
+ public interface IActionFilter : IFilterMetadata
+ {
+  void OnActionExecuting(ActionExecutingContext context);
+  void OnActionExecuted(ActionExecutedContext context);
+ }
+}</code></pre>
+    </div>
+    <h3 id="actionfilterattribute">ActionFilterAttribute</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">namespace Microsoft.AspNetCore.Mvc.Filters
+{
+ public class ActionFilterAttribute : Attribute, IActionFilter, IAsyncActionFilter, IOrderedFilter,
+}</code></pre>
+    </div>
+    <p>IResultFilter, IAsyncResultFilter</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+  public virtual void OnActionExecuting(ActionExecutingContext context) { }
+  public virtual void OnActionExecuted(ActionExecutedContext context) { }
+  public virtual void OnResultExecuting(ActionExecutingContext context) { }
+  public virtual void OnResultExecuted(ActionExecutedContext context) { }
+  public virtual Task OnActionExecutionAsync(ActionExecutingContext context,
+ActionExecutionDelegate next) { }
+  public virtual Task OnResultExecutionAsync(ResultExecutingContext context,
+ResultExecutionDelegate next) { }
+  public int Order { get; set; }
+ }</code></pre>
+    </div>
+    <p>Filter interface [vs] FilterAttribute class
+Filter interface [such as IActionFilter, IResultFilter etc.]</p>
+  <ul>
+    <li>• Filter class MUST implement all methods - both &quot;Executing&quot; and &quot;Executed&quot; methods.</li>
+    <li>• Filter class CAN have DI with either constructor injection or method injection.</li>
+    <li>• Doesn&#39;t implement &quot;Attribute&quot; class.</li>
+    <li>• Filter should be applied to controller or action methods by using [ServiceFilter] or</li>
+  </ul>
+  <p>[TypeFilter] attributes; otherwise can be applied as global filter in the Program.cs.
+Eg: [TypeFilter(typeof(FilterClassName))] //lengthy</p>
+  <ul>
+    <li>• Filter class can receive arguments only through constructor parameters; but only with</li>
+  </ul>
+  <p>[TypeFilter] attribute; not with [ServiceFilter] attribute.</p>
+  <p>FilterAttribute class [such as ActionFilterAttribute etc.]</p>
+  <ul>
+    <li>• Filter class MAY override desired (either or both methods - &quot;Executing&quot; and &quot;Executed&quot;)</li>
+  </ul>
+  <p>methods.</p>
+  <ul>
+    <li>• Filter class CAN&#39;T have DI with neither constructor injection nor method injection.</li>
+    <li>• FilterAttribute class [such as ActionFilterAttribute etc.]</li>
+    <li>• Filter can be applied to controller or action methods by directly using the filter class name</li>
+  </ul>
+  <p>itself (without using [ServiceFilter] or [TypeFilter] attributes); otherwise can be applied as
+      global filter in the Program.cs.</p>
+  <ul>
+    <li>• Eg: [FilterClassName] //simple</li>
+    <li>• Filter class can receive arguments either through constructor parameters or filter class&#39;s</li>
+  </ul>
+  <p>properties.</p>
+  <h3 id="ifilterfactory">IFilterFactory</h3>
+  <p>Filter factory that inherits &#39;IFilterFactory&#39;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class FilterClassNameAttribute : Attribute,</code></pre>
+    </div>
+    <p>IFilterFactory</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+ public type Prop1 { get; set; }
+ public FilterClassName(type arg1, type arg2)
+ {
+  this.Prop1 = arg1; this.Prop2 = arg2;
+ }
+ public IFilterMetadata CreateInstance(IServiceProvider serviceProvider)
+ {
+}
+}</code></pre>
+    </div>
+    <p>FilterClassName filter = serviceProvider.GetRequiredService&lt;FilterClassName&gt;(); //instantiate the
+filter
+  filter.Property1 = Prop1;
+  …</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">return filter;</code></pre>
+    </div>
+    <p>[FilterClassName(arg1, arg2, … )]</p>
+  <p>Action filter that inherits &#39;ActionFilterAttribute&#39;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class FilterClassName : ActionFilterAttribute
+{
+ public FilterClassName(type arg1, type arg2)
+ {
+ }
+ public override void OnActionExecuting(ActionExecutingContext context)
+ {
+ }
+ public override void OnActionExecuted(ActionExecutedContext context)
+ {
+ }
+}</code></pre>
+    </div>
+    <p>[FilterClassName(arg1, arg2, … )]</p>
+  <h3 id="ifilterfactory-1">IFilterFactory</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">namespace Microsoft.AspNetCore.Mvc.Filters
+{
+ public interface IFilterFactory : IFilterMetadata
+ {
+  IFilterMetadata CreateInstance(IServiceProvider serviceProvider);
+  bool IsReusable { get; }
+ }
+}</code></pre>
+    </div>
+    <p>FilterAttribute class [such as ActionFilterAttribute etc.]</p>
+  <ul>
+    <li>• Filter CAN be applied as an attribute to the controller or action method. Eg:</li>
+  </ul>
+  <p>[FilterClassName]</p>
+  <ul>
+    <li>• Filter class CAN&#39;T have DI with neither constructor injection nor method injection.</li>
+    <li>• Filter class CAN receive arguments either through constructor parameters or filter class&#39;s</li>
+  </ul>
+  <p>properties.</p>
+  <h3 id="ifilterfactory-2">IFilterFactory</h3>
+  <ul>
+    <li>• Filter CAN be applied as an attribute to the controller or action method. Eg:</li>
+  </ul>
+  <p>[FilterClassName]</p>
+  <ul>
+    <li>• Filter class CAN have DI with either constructor injection or method injection.</li>
+    <li>• Filter class CAN receive arguments only through filter class&#39;s properties, if it is instantiated</li>
+  </ul>
+  <p>through ServiceProvider (using DI).
+Alternatively, if you don&#39;t need to inject services using DI in the filter class; you can instantiate the
+filter class with &#39;new&#39; keyword, in the CreateInstance() method of IFilterFactory; then the filter class
+can receive arguments either as constructor parameters or properties.
+Filters [vs] Middleware</p>
+  <h3 id="middleware">Middleware</h3>
+  <p>Middleware pipeline is a superset of Filter pipeline, which contains the full-set of all middlewares
+added to the ApplicationBuilder in the application&#39;s startup code (Program.cs).
+Middleware pipeline execute for all requests.
+Middleware handles application-level functionality such as Logging, HTTPS redirection, Performance
+profiling, Exception handling, Static files, Authentication etc., by accessing low-level abstractions
+such as HttpContext.</p>
+  <h3 id="filter">Filter</h3>
+  <p>Filter pipeline is a subset of Middleware pipeline which executes under &quot;EndPoint Middleware&quot;.
+In addition, filter pipeline executes for requests that reach &quot;EndPoint Middleware&quot;.
+Filters handle MVC-specific functionality such as manipulating or accessing ViewData, ViewBag,
+ModleState, Action result, Action parameters etc.</p>
+  <h3 id="middleware-pipeline">Middleware Pipeline</h3>
+</section>
+
+      </article>
+
+      <!-- Completion Toggle Control -->
+      <div class="completion-container">
+        <div>
+          <strong style="color: var(--text-main); font-size: 0.95rem;">Section Progress</strong>
+          <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">Mark this section complete to record your learning progress locally.</p>
+        </div>
+        <button class="mark-complete-btn" id="markCompleteBtn" type="button" aria-pressed="false" aria-label="Mark Section Complete">
+          <svg class="complete-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span class="complete-text">Mark Section Complete</span>
+        </button>
+      </div>
+
+      <!-- Bottom Navigation Prev / Next -->
+      <nav class="bottom-nav" aria-label="Previous and Next Section Navigation">
+        
+      <a href="section-20.html" class="nav-card prev" aria-label="Previous Section: Sec 20 - Logging">
+        <span class="nav-direction">← Previous Section</span>
+        <span class="nav-title">Sec 20: Logging</span>
+      </a>
+    
+        
+      <a href="section-22.html" class="nav-card next" aria-label="Next Section: Sec 22 - Error Handling">
+        <span class="nav-direction">Next Section →</span>
+        <span class="nav-title">Sec 22: Error Handling</span>
+      </a>
+    
+      </nav>
+
+      <!-- Section Footer -->
+      <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); color: var(--text-dim); font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;" role="contentinfo">
+        <span>ASP.NET Core Masterclass — Offline Documentation Portal</span>
+        <a href="#top" style="color: var(--text-muted); text-decoration: none;">↑ Back to top</a>
+      </footer>
+    </main>
+
+    <!-- Right Table of Contents (TOC) -->
+    <aside class="docs-toc" aria-label="Page Table of Contents">
+      <div class="toc-title">On This Page</div>
+      <ul class="toc-list">
+        
+        <li class="toc-item">
+          <a href="#purpose-of-filters" class="toc-link">Purpose of Filters</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#best-practices" class="toc-link">Best Practices</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#action-filters" class="toc-link">Action Filters</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#viewdata-in-action-filters" class="toc-link">ViewData in Action Filters</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#serilog-structured-logging-in-filters" class="toc-link">Serilog Structured Logging in Filters</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-explanation" class="toc-link">Code Explanation</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#applying-the-filter" class="toc-link">Applying the Filter</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#example-usage" class="toc-link">Example Usage</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#filter-arguments" class="toc-link">Filter Arguments</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#global-filters" class="toc-link">Global Filters</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-explanation-1" class="toc-link">Code Explanation</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#personslistactionfilter" class="toc-link">PersonsListActionFilter</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#responseheaderactionfilter" class="toc-link">ResponseHeaderActionFilter</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#personscontroller" class="toc-link">PersonsController</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#filter-execution-order" class="toc-link">Filter Execution Order</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#1-responseheaderactionfilter-from-action-order-1" class="toc-link">1. ResponseHeaderActionFilter (from action, Order = 1)</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#2-responseheaderactionfilter-from-controller-order-3" class="toc-link">2. ResponseHeaderActionFilter (from controller, Order = 3)</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#3-personslistactionfilter-order-4" class="toc-link">3. PersonsListActionFilter (Order = 4)</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#notes" class="toc-link">Notes</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#asynchronous-filters" class="toc-link">Asynchronous Filters</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#actionexecutiondelegate-next" class="toc-link">ActionExecutionDelegate next)</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#resultexecutiondelegate-next" class="toc-link">ResultExecutionDelegate next)</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#short-circuiting-action-filters" class="toc-link">Short-Circuiting Action Filters</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#notes-1" class="toc-link">Notes</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#result-filters" class="toc-link">Result Filters</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#onresultexecutedresultexecutedcontext-context-after" class="toc-link">OnResultExecuted(ResultExecutedContext context) (after)</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#resultexecutiondelegate-next-1" class="toc-link">ResultExecutionDelegate next)</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#resource-filters" class="toc-link">Resource Filters</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#onresourceexecutedresourceexecutedcontext-context" class="toc-link">OnResourceExecuted(ResourceExecutedContext context)</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#exception-filters" class="toc-link">Exception Filters</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#impact-of-short-circuiting" class="toc-link">Impact of Short-Circuiting</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-explanation-2" class="toc-link">Code Explanation</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#notes-2" class="toc-link">Notes</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#ialwaysrunresultfilter" class="toc-link">IAlwaysRunResultFilter</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-explanation-3" class="toc-link">Code Explanation</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#applying-the-filter-1" class="toc-link">Applying the Filter</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#example-scenarios" class="toc-link">Example Scenarios</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#caveats" class="toc-link">Caveats</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#filter-overrides" class="toc-link">Filter Overrides</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-mechanisms-for-filter-overrides" class="toc-link">Key Mechanisms for Filter Overrides</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-explanation-4" class="toc-link">Code Explanation</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#skipfilter-attribute" class="toc-link">SkipFilter Attribute</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#personalwaysrunresultfilter-with-override-logic" class="toc-link">PersonAlwaysRunResultFilter with Override Logic</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#applying-the-skipfilter-attribute" class="toc-link">Applying the SkipFilter Attribute</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#notes-3" class="toc-link">Notes</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#service-filters" class="toc-link">Service Filters</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-explanation-5" class="toc-link">Code Explanation</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#personslistactionfilter-1" class="toc-link">PersonsListActionFilter</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#responseheaderfilterfactoryattribute-and-responseheaderactionfilter" class="toc-link">ResponseHeaderFilterFactoryAttribute and ResponseHeaderActionFilter</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#2-sets-the-key-value-and-order-properties-of-the-filter-based-on-the" class="toc-link">2. Sets the Key, Value, and Order properties of the filter based on the</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#personscontroller-filter-application" class="toc-link">PersonsController (Filter Application)</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#notes-4" class="toc-link">Notes</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#filters-core-concepts" class="toc-link">Filters - Core Concepts</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-filter-interfaces-and-attributes" class="toc-link">Key Filter Interfaces and Attributes</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#filter-overrides-1" class="toc-link">Filter Overrides</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#filter-factories" class="toc-link">Filter Factories</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#short-circuiting" class="toc-link">Short-Circuiting</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#best-practices-1" class="toc-link">Best Practices</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#interview-tips" class="toc-link">Interview Tips</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#cheat-sheet-quick-reference" class="toc-link">Cheat Sheet &amp; Quick Reference</a>
+        </li>
+      
+      </ul>
+    </aside>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/search-index.js"></script>
+  <script src="../assets/js/search-engine.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

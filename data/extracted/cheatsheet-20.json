@@ -1,0 +1,2716 @@
+{
+  "source_file": "Cheat Sheet - Section 20 - Asp.Net Core.pdf",
+  "absolute_path": "D:/Dot net core/Asp.Net_Core_-Udemy-/Notes-20250125T050818Z-001/Cheat Sheets/Cheat Sheet - Section 20 - Asp.Net Core.pdf",
+  "section_number": 20,
+  "normalized_section": "20",
+  "is_cheatsheet": true,
+  "total_pages": 12,
+  "total_raw_chars": 5701,
+  "total_repaired_chars": 5791,
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "Asp.Net Core – True Ultimate Guide\nSection 20 – Logging and Serilog – Cheat Sheet\nLogging\nLogging is the process of recording run-time actions as they happen in real-time.\nHelps us to understand the failures and performance bottlenecks of the application.\nILogger\nDebug\nILogger.LogDebug(\"log_message\");\nLogs that provide details & values of variables for debugging purpose.\n",
+      "repaired_text": "Asp.Net Core – True Ultimate Guide\nSection 20 – Logging and Serilog – Cheat Sheet\nLogging\nLogging is the process of recording run-time actions as they happen in real-time.\nHelps us to understand the failures and performance bottlenecks of the application.\nILogger\nDebug\nILogger.LogDebug(\"log_message\");\nLogs that provide details & values of variables for debugging purpose.",
+      "lines": [
+        {
+          "text": "Asp.Net Core – True Ultimate Guide",
+          "rawText": "Asp.Net Core – True Ultimate Guide",
+          "x": 72.024,
+          "y": 753.96,
+          "fontSize": 15.96,
+          "fontName": "g_d39_f2"
+        },
+        {
+          "text": "Section 20 – Logging and Serilog – Cheat Sheet",
+          "rawText": "Section 20 – Logging and Serilog – Cheat Sheet",
+          "x": 72.024,
+          "y": 725.98,
+          "fontSize": 15.96,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Logging",
+          "rawText": "Logging",
+          "x": 72.024,
+          "y": 677.38,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Logging is the process of recording run-time actions as they happen in real-time.",
+          "rawText": "Logging is the process of recording run-time actions as they happen in real-time.",
+          "x": 72.024,
+          "y": 654.94,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Helps us to understand the failures and performance bottlenecks of the application.",
+          "rawText": "Helps us to understand the failures and performance bottlenecks of the application.",
+          "x": 72.024,
+          "y": 632.38,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "ILogger",
+          "rawText": "ILogger",
+          "x": 72.024,
+          "y": 252.29,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Debug",
+          "rawText": "Debug",
+          "x": 72.024,
+          "y": 207.26,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "ILogger.LogDebug(\"log_message\");",
+          "rawText": "ILogger.LogDebug(\"log_message\");",
+          "x": 72.024,
+          "y": 184.7,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Logs that provide details & values of variables for debugging purpose.",
+          "rawText": "Logs that provide details & values of variables for debugging purpose.",
+          "x": 72.024,
+          "y": 162.26,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "banner_header",
+          "page": 1,
+          "lines": [
+            "Asp.Net Core – True Ultimate Guide"
+          ],
+          "text": "Asp.Net Core – True Ultimate Guide"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Section 20 – Logging and Serilog – Cheat Sheet"
+          ],
+          "text": "Section 20 – Logging and Serilog – Cheat Sheet"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Logging"
+          ],
+          "text": "Logging"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Logging is the process of recording run-time actions as they happen in real-time.",
+            "Helps us to understand the failures and performance bottlenecks of the application."
+          ],
+          "text": "Logging is the process of recording run-time actions as they happen in real-time.\nHelps us to understand the failures and performance bottlenecks of the application."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "ILogger"
+          ],
+          "text": "ILogger"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Debug"
+          ],
+          "text": "Debug"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "ILogger.LogDebug(\"log_message\");",
+            "Logs that provide details & values of variables for debugging purpose."
+          ],
+          "text": "ILogger.LogDebug(\"log_message\");\nLogs that provide details & values of variables for debugging purpose."
+        }
+      ],
+      "char_count_raw": 374,
+      "char_count_repaired": 373
+    },
+    {
+      "page_number": 2,
+      "raw_text": "Information\nILogger.LogInformation(\"log_message\");\nLogs that track the general flow of the application execution.\nWarning\nILogger.LogWarning(\"log_message\");\nLogs that highlight an abnormal or unexpected event.\nError\nILogger.LogError(\"log_message\");\nLogs to indicate that flow of execution is stopped due to a failure.\nCritical\nILogger.LogCritical(\"log_message\");\nLogs to indicate an unrecoverable application crash.\nLogging Configuration\nappsettings.json\n{\n\"Logging\": {\n\"LogLevel\": {\n\"Default\": \"Debug | Information | Warning | Error| Critical\"\n\"Microsoft.AspNetCore\": \"Debug | Information | Warning | Error | Critical\"\n}\n}\n}\nController and other classes\nusing Microsoft.AspNetCore.Mvc;\nusing Microsoft.Extensions.Logging;\n",
+      "repaired_text": "Information\nILogger.LogInformation(\"log_message\");\nLogs that track the general flow of the application execution.\nWarning\nILogger.LogWarning(\"log_message\");\nLogs that highlight an abnormal or unexpected event.\nError\nILogger.LogError(\"log_message\");\nLogs to indicate that flow of execution is stopped due to a failure.\nCritical\nILogger.LogCritical(\"log_message\");\nLogs to indicate an unrecoverable application crash.\nLogging Configuration\nappsettings.json\n{\n\"Logging\": {\n \"LogLevel\": {\n \"Default\": \"Debug | Information | Warning | Error| Critical\"\n \"Microsoft.AspNetCore\": \"Debug | Information | Warning | Error | Critical\"\n }\n}\n}\nController and other classes\nusing Microsoft.AspNetCore.Mvc;\nusing Microsoft.Extensions.Logging;",
+      "lines": [
+        {
+          "text": "Information",
+          "rawText": "Information",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "ILogger.LogInformation(\"log_message\");",
+          "rawText": "ILogger.LogInformation(\"log_message\");",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Logs that track the general flow of the application execution.",
+          "rawText": "Logs that track the general flow of the application execution.",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Warning",
+          "rawText": "Warning",
+          "x": 72.024,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "ILogger.LogWarning(\"log_message\");",
+          "rawText": "ILogger.LogWarning(\"log_message\");",
+          "x": 72.024,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Logs that highlight an abnormal or unexpected event.",
+          "rawText": "Logs that highlight an abnormal or unexpected event.",
+          "x": 72.024,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Error",
+          "rawText": "Error",
+          "x": 72.024,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "ILogger.LogError(\"log_message\");",
+          "rawText": "ILogger.LogError(\"log_message\");",
+          "x": 72.024,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Logs to indicate that flow of execution is stopped due to a failure.",
+          "rawText": "Logs to indicate that flow of execution is stopped due to a failure.",
+          "x": 72.024,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Critical",
+          "rawText": "Critical",
+          "x": 72.024,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "ILogger.LogCritical(\"log_message\");",
+          "rawText": "ILogger.LogCritical(\"log_message\");",
+          "x": 72.024,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Logs to indicate an unrecoverable application crash.",
+          "rawText": "Logs to indicate an unrecoverable application crash.",
+          "x": 72.024,
+          "y": 444.55,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Logging Configuration",
+          "rawText": "Logging Configuration",
+          "x": 72.024,
+          "y": 399.55,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "appsettings.json",
+          "rawText": "appsettings.json",
+          "x": 72.024,
+          "y": 377.09,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 354.53,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "\"Logging\": {",
+          "rawText": "\"Logging\": {",
+          "x": 74.544,
+          "y": 332.09,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " \"LogLevel\": {",
+          "rawText": "\"LogLevel\": {",
+          "x": 77.064,
+          "y": 309.65,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " \"Default\": \"Debug | Information | Warning | Error| Critical\"",
+          "rawText": "\"Default\": \"Debug | Information | Warning | Error| Critical\"",
+          "x": 79.584,
+          "y": 287.09,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " \"Microsoft.AspNetCore\": \"Debug | Information | Warning | Error | Critical\"",
+          "rawText": "\"Microsoft.AspNetCore\": \"Debug | Information | Warning | Error | Critical\"",
+          "x": 79.584,
+          "y": 264.65,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " }",
+          "rawText": "}",
+          "x": 77.064,
+          "y": 242.09,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 74.544,
+          "y": 219.65,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 197.06,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Controller and other classes",
+          "rawText": "Controller and other classes",
+          "x": 72.024,
+          "y": 152.18,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "using Microsoft.AspNetCore.Mvc;",
+          "rawText": "using Microsoft.AspNetCore.Mvc;",
+          "x": 72.024,
+          "y": 129.62,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "using Microsoft.Extensions.Logging;",
+          "rawText": "using Microsoft.Extensions.Logging;",
+          "x": 72.024,
+          "y": 107.18,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Information"
+          ],
+          "text": "Information"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "ILogger.LogInformation(\"log_message\");",
+            "Logs that track the general flow of the application execution."
+          ],
+          "text": "ILogger.LogInformation(\"log_message\");\nLogs that track the general flow of the application execution."
+        },
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Warning"
+          ],
+          "text": "Warning"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "ILogger.LogWarning(\"log_message\");",
+            "Logs that highlight an abnormal or unexpected event."
+          ],
+          "text": "ILogger.LogWarning(\"log_message\");\nLogs that highlight an abnormal or unexpected event."
+        },
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Error"
+          ],
+          "text": "Error"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "ILogger.LogError(\"log_message\");",
+            "Logs to indicate that flow of execution is stopped due to a failure."
+          ],
+          "text": "ILogger.LogError(\"log_message\");\nLogs to indicate that flow of execution is stopped due to a failure."
+        },
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Critical"
+          ],
+          "text": "Critical"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "ILogger.LogCritical(\"log_message\");",
+            "Logs to indicate an unrecoverable application crash."
+          ],
+          "text": "ILogger.LogCritical(\"log_message\");\nLogs to indicate an unrecoverable application crash."
+        },
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Logging Configuration"
+          ],
+          "text": "Logging Configuration"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "appsettings.json"
+          ],
+          "text": "appsettings.json"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "{",
+            "\"Logging\": {",
+            " \"LogLevel\": {"
+          ],
+          "text": "{\n\"Logging\": {\n \"LogLevel\": {"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            " \"Default\": \"Debug | Information | Warning | Error| Critical\"",
+            " \"Microsoft.AspNetCore\": \"Debug | Information | Warning | Error | Critical\""
+          ],
+          "text": " \"Default\": \"Debug | Information | Warning | Error| Critical\"\n \"Microsoft.AspNetCore\": \"Debug | Information | Warning | Error | Critical\""
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            " }",
+            "}",
+            "}"
+          ],
+          "text": " }\n}\n}"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "Controller and other classes"
+          ],
+          "text": "Controller and other classes"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "using Microsoft.AspNetCore.Mvc;",
+            "using Microsoft.Extensions.Logging;"
+          ],
+          "text": "using Microsoft.AspNetCore.Mvc;\nusing Microsoft.Extensions.Logging;"
+        }
+      ],
+      "char_count_raw": 723,
+      "char_count_repaired": 726
+    },
+    {
+      "page_number": 3,
+      "raw_text": "public class ControllerName : Controller\n{\nprivate readonly ILogger<ClassName> _logger;\npublic ControllerName(ILogger<ClassName> logger)\n{\n_logger = logger;\n}\n}\nLogging Providers\nLogging provider specifies where to store / display logs.\nThe built-in logging providers in asp.net core doesn't support file / database logging providers.\nin Program.cs:\nbuilder.Host.ConfigureLogging(logging =>\n{\nlogging.ClearProviders();\nlogging.AddConsole();\nlogging.AddDebug();\nlogging.AddEventLog();\n});\n",
+      "repaired_text": "public class ControllerName : Controller\n{\nprivate readonly ILogger<ClassName> _logger;\npublic ControllerName(ILogger<ClassName> logger)\n{\n _logger = logger;\n}\n}\nLogging Providers\nLogging provider specifies where to store / display logs.\nThe built-in logging providers in asp.net core doesn't support file / database logging providers.\nin Program.cs:\nbuilder.Host.ConfigureLogging(logging =>\n{\n logging.ClearProviders();\n logging.AddConsole();\n logging.AddDebug();\n logging.AddEventLog();\n});",
+      "lines": [
+        {
+          "text": "public class ControllerName : Controller",
+          "rawText": "public class ControllerName : Controller",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "private readonly ILogger<ClassName> _logger;",
+          "rawText": "private readonly ILogger<ClassName> _logger;",
+          "x": 74.544,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "public ControllerName(ILogger<ClassName> logger)",
+          "rawText": "public ControllerName(ILogger<ClassName> logger)",
+          "x": 74.544,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 74.544,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " _logger = logger;",
+          "rawText": "_logger = logger;",
+          "x": 77.064,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 74.544,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Logging Providers",
+          "rawText": "Logging Providers",
+          "x": 72.024,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Logging provider specifies where to store / display logs.",
+          "rawText": "Logging provider specifies where to store / display logs.",
+          "x": 72.024,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "The built-in logging providers in asp.net core doesn't support file / database logging providers.",
+          "rawText": "The built-in logging providers in asp.net core doesn't support file / database logging providers.",
+          "x": 72.024,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "in Program.cs:",
+          "rawText": "in Program.cs:",
+          "x": 72.024,
+          "y": 301.97,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "builder.Host.ConfigureLogging(logging =>",
+          "rawText": "builder.Host.ConfigureLogging(logging =>",
+          "x": 72.024,
+          "y": 279.53,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 256.97,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " logging.ClearProviders();",
+          "rawText": "logging.ClearProviders();",
+          "x": 77.064,
+          "y": 234.53,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " logging.AddConsole();",
+          "rawText": "logging.AddConsole();",
+          "x": 77.064,
+          "y": 212.06,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " logging.AddDebug();",
+          "rawText": "logging.AddDebug();",
+          "x": 77.064,
+          "y": 189.5,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " logging.AddEventLog();",
+          "rawText": "logging.AddEventLog();",
+          "x": 77.064,
+          "y": 167.06,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "});",
+          "rawText": "});",
+          "x": 72.024,
+          "y": 144.5,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            "public class ControllerName : Controller",
+            "{",
+            "private readonly ILogger<ClassName> _logger;",
+            "public ControllerName(ILogger<ClassName> logger)",
+            "{",
+            " _logger = logger;",
+            "}",
+            "}"
+          ],
+          "text": "public class ControllerName : Controller\n{\nprivate readonly ILogger<ClassName> _logger;\npublic ControllerName(ILogger<ClassName> logger)\n{\n _logger = logger;\n}\n}"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "Logging Providers",
+            "Logging provider specifies where to store / display logs.",
+            "The built-in logging providers in asp.net core doesn't support file / database logging providers.",
+            "in Program.cs:",
+            "builder.Host.ConfigureLogging(logging =>"
+          ],
+          "text": "Logging Providers\nLogging provider specifies where to store / display logs.\nThe built-in logging providers in asp.net core doesn't support file / database logging providers.\nin Program.cs:\nbuilder.Host.ConfigureLogging(logging =>"
+        },
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            "{",
+            " logging.ClearProviders();",
+            " logging.AddConsole();",
+            " logging.AddDebug();",
+            " logging.AddEventLog();",
+            "});"
+          ],
+          "text": "{\n logging.ClearProviders();\n logging.AddConsole();\n logging.AddDebug();\n logging.AddEventLog();\n});"
+        }
+      ],
+      "char_count_raw": 488,
+      "char_count_repaired": 492
+    },
+    {
+      "page_number": 4,
+      "raw_text": "HTTP Logging\nLogs details all HTTP requests and responses.\nYou need to set a value of \"HttpLoggingFields\" enum to set specify desired details.\nHTTP Logging Options\n\"HttpLoggingFields\" enum:\nRequestMethod\nMethod of request. Eg: GET\nRequestPath\nPath of request. Eg: /home/index\nRequestProtocol\nProtocol of request. Eg: HTTP/1.1\nRequestScheme\nProtocol Scheme of request. Eg: http\nRequestQuery\nQuery string Scheme of request. Eg: ?id=1\nRequestHeaders\nHeaders of request. Eg: Connection: keep-alive\nRequestPropertiesAndHeaders\nIncludes all of above (default)\nRequestBody\nEntire request body. [has performance drawbacks; not recommended]\nRequest\nIncludes all of above\n",
+      "repaired_text": "HTTP Logging\nLogs details all HTTP requests and responses.\nYou need to set a value of \"HttpLoggingFields\" enum to set specify desired details.\nHTTP Logging Options\n\"HttpLoggingFields\" enum:\nRequestMethod\nMethod of request. Eg: GET\nRequestPath\nPath of request. Eg: /home/index\nRequestProtocol\nProtocol of request. Eg: HTTP/1.1\nRequestScheme\nProtocol Scheme of request. Eg: http\nRequestQuery\nQuery string Scheme of request. Eg: ?id=1\nRequestHeaders\nHeaders of request. Eg: Connection: keep-alive\nRequestPropertiesAndHeaders\nIncludes all of above (default)\nRequestBody\nEntire request body. [has performance drawbacks; not recommended]\nRequest\nIncludes all of above",
+      "lines": [
+        {
+          "text": "HTTP Logging",
+          "rawText": "HTTP Logging",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Logs details all HTTP requests and responses.",
+          "rawText": "Logs details all HTTP requests and responses.",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "You need to set a value of \"HttpLoggingFields\" enum to set specify desired details.",
+          "rawText": "You need to set a value of \"HttpLoggingFields\" enum to set specify desired details.",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "HTTP Logging Options",
+          "rawText": "HTTP Logging Options",
+          "x": 72.024,
+          "y": 539.95,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "\"HttpLoggingFields\" enum:",
+          "rawText": "\"HttpLoggingFields\" enum:",
+          "x": 72.024,
+          "y": 495.07,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "RequestMethod",
+          "rawText": "RequestMethod",
+          "x": 72.024,
+          "y": 472.51,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Method of request. Eg: GET",
+          "rawText": "Method of request. Eg: GET",
+          "x": 72.024,
+          "y": 450.07,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "RequestPath",
+          "rawText": "RequestPath",
+          "x": 72.024,
+          "y": 427.51,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Path of request. Eg: /home/index",
+          "rawText": "Path of request. Eg: /home/index",
+          "x": 72.024,
+          "y": 405.07,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "RequestProtocol",
+          "rawText": "RequestProtocol",
+          "x": 72.024,
+          "y": 382.49,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Protocol of request. Eg: HTTP/1.1",
+          "rawText": "Protocol of request. Eg: HTTP/1.1",
+          "x": 72.024,
+          "y": 360.05,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "RequestScheme",
+          "rawText": "RequestScheme",
+          "x": 72.024,
+          "y": 337.61,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Protocol Scheme of request. Eg: http",
+          "rawText": "Protocol Scheme of request. Eg: http",
+          "x": 72.024,
+          "y": 315.05,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "RequestQuery",
+          "rawText": "RequestQuery",
+          "x": 72.024,
+          "y": 292.61,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Query string Scheme of request. Eg: ?id=1",
+          "rawText": "Query string Scheme of request. Eg: ?id=1",
+          "x": 72.024,
+          "y": 270.05,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "RequestHeaders",
+          "rawText": "RequestHeaders",
+          "x": 72.024,
+          "y": 247.61,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Headers of request. Eg: Connection: keep-alive",
+          "rawText": "Headers of request. Eg: Connection: keep-alive",
+          "x": 72.024,
+          "y": 225.17,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "RequestPropertiesAndHeaders",
+          "rawText": "RequestPropertiesAndHeaders",
+          "x": 72.024,
+          "y": 202.58,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Includes all of above (default)",
+          "rawText": "Includes all of above (default)",
+          "x": 72.024,
+          "y": 180.14,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "RequestBody",
+          "rawText": "RequestBody",
+          "x": 72.024,
+          "y": 157.58,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Entire request body. [has performance drawbacks; not recommended]",
+          "rawText": "Entire request body. [has performance drawbacks; not recommended]",
+          "x": 72.024,
+          "y": 135.14,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Request",
+          "rawText": "Request",
+          "x": 72.024,
+          "y": 112.58,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Includes all of above",
+          "rawText": "Includes all of above",
+          "x": 72.024,
+          "y": 90.144,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "HTTP Logging"
+          ],
+          "text": "HTTP Logging"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "Logs details all HTTP requests and responses.",
+            "You need to set a value of \"HttpLoggingFields\" enum to set specify desired details."
+          ],
+          "text": "Logs details all HTTP requests and responses.\nYou need to set a value of \"HttpLoggingFields\" enum to set specify desired details."
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "HTTP Logging Options"
+          ],
+          "text": "HTTP Logging Options"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "\"HttpLoggingFields\" enum:"
+          ],
+          "text": "\"HttpLoggingFields\" enum:"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "RequestMethod"
+          ],
+          "text": "RequestMethod"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "Method of request. Eg: GET"
+          ],
+          "text": "Method of request. Eg: GET"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "RequestPath"
+          ],
+          "text": "RequestPath"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "Path of request. Eg: /home/index"
+          ],
+          "text": "Path of request. Eg: /home/index"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "RequestProtocol"
+          ],
+          "text": "RequestProtocol"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "Protocol of request. Eg: HTTP/1.1"
+          ],
+          "text": "Protocol of request. Eg: HTTP/1.1"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "RequestScheme"
+          ],
+          "text": "RequestScheme"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "Protocol Scheme of request. Eg: http"
+          ],
+          "text": "Protocol Scheme of request. Eg: http"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "RequestQuery"
+          ],
+          "text": "RequestQuery"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "Query string Scheme of request. Eg: ?id=1"
+          ],
+          "text": "Query string Scheme of request. Eg: ?id=1"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "RequestHeaders"
+          ],
+          "text": "RequestHeaders"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "Headers of request. Eg: Connection: keep-alive"
+          ],
+          "text": "Headers of request. Eg: Connection: keep-alive"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "RequestPropertiesAndHeaders"
+          ],
+          "text": "RequestPropertiesAndHeaders"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "Includes all of above (default)"
+          ],
+          "text": "Includes all of above (default)"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "RequestBody"
+          ],
+          "text": "RequestBody"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "Entire request body. [has performance drawbacks; not recommended]"
+          ],
+          "text": "Entire request body. [has performance drawbacks; not recommended]"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "Request"
+          ],
+          "text": "Request"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "Includes all of above"
+          ],
+          "text": "Includes all of above"
+        }
+      ],
+      "char_count_raw": 662,
+      "char_count_repaired": 661
+    },
+    {
+      "page_number": 5,
+      "raw_text": "\"HttpLoggingFields\" enum\nResponseStatusCode\nStatus code of response. Eg: 200\nResponseHeaders\nHeaders of response. Eg: Content-Length: 20\nResponsePropertiesAndHeaders\nIncludes all of above (default)\nResponseBody\nEntire response body. [has performance drawbacks; not recommended]\nResponse\nIncludes all of above\nAll\nIncludes all from request and response\nHTTP Logging Options\nProgram.cs:\nbuilder.Serices.AddHttpLogging(options =>\n{\noptions.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.YourOption;\n});\nSerilog\nSerilog is a structured logging library for Asp.Net Core.\nSupports variety of logging destinations, referred as \"Sinks\" - starts with Console, Azure, DataDog,\nElasticSearch, Amazon CloudWatch, Email and Seq.\n",
+      "repaired_text": "\"HttpLoggingFields\" enum\nResponseStatusCode\nStatus code of response. Eg: 200\nResponseHeaders\nHeaders of response. Eg: Content-Length: 20\nResponsePropertiesAndHeaders\nIncludes all of above (default)\nResponseBody\nEntire response body. [has performance drawbacks; not recommended]\nResponse\nIncludes all of above\nAll\nIncludes all from request and response\nHTTP Logging Options\nProgram.cs:\nbuilder.Serices.AddHttpLogging(options =>\n{\n options.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.YourOption;\n});\nSerilog\nSerilog is a structured logging library for Asp.Net Core.\nSupports variety of logging destinations, referred as \"Sinks\" - starts with Console, Azure, DataDog,\nElasticSearch, Amazon CloudWatch, Email and Seq.",
+      "lines": [
+        {
+          "text": "\"HttpLoggingFields\" enum",
+          "rawText": "\"HttpLoggingFields\" enum",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "ResponseStatusCode",
+          "rawText": "ResponseStatusCode",
+          "x": 72.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Status code of response. Eg: 200",
+          "rawText": "Status code of response. Eg: 200",
+          "x": 72.024,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "ResponseHeaders",
+          "rawText": "ResponseHeaders",
+          "x": 72.024,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Headers of response. Eg: Content-Length: 20",
+          "rawText": "Headers of response. Eg: Content-Length: 20",
+          "x": 72.024,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "ResponsePropertiesAndHeaders",
+          "rawText": "ResponsePropertiesAndHeaders",
+          "x": 72.024,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Includes all of above (default)",
+          "rawText": "Includes all of above (default)",
+          "x": 72.024,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "ResponseBody",
+          "rawText": "ResponseBody",
+          "x": 72.024,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Entire response body. [has performance drawbacks; not recommended]",
+          "rawText": "Entire response body. [has performance drawbacks; not recommended]",
+          "x": 72.024,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Response",
+          "rawText": "Response",
+          "x": 72.024,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Includes all of above",
+          "rawText": "Includes all of above",
+          "x": 72.024,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "All",
+          "rawText": "All",
+          "x": 72.024,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Includes all from request and response",
+          "rawText": "Includes all from request and response",
+          "x": 72.024,
+          "y": 444.55,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "HTTP Logging Options",
+          "rawText": "HTTP Logging Options",
+          "x": 72.024,
+          "y": 377.09,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Program.cs:",
+          "rawText": "Program.cs:",
+          "x": 72.024,
+          "y": 354.53,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "builder.Serices.AddHttpLogging(options =>",
+          "rawText": "builder.Serices.AddHttpLogging(options =>",
+          "x": 72.024,
+          "y": 332.09,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 309.65,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " options.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.YourOption;",
+          "rawText": "options.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.YourOption;",
+          "x": 77.064,
+          "y": 287.09,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "});",
+          "rawText": "});",
+          "x": 72.024,
+          "y": 264.65,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Serilog",
+          "rawText": "Serilog",
+          "x": 72.024,
+          "y": 197.06,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Serilog is a structured logging library for Asp.Net Core.",
+          "rawText": "Serilog is a structured logging library for Asp.Net Core.",
+          "x": 72.024,
+          "y": 174.62,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Supports variety of logging destinations, referred as \"Sinks\" - starts with Console, Azure, DataDog,",
+          "rawText": "Supports variety of logging destinations, referred as \"Sinks\" - starts with Console, Azure, DataDog,",
+          "x": 72.024,
+          "y": 152.18,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "ElasticSearch, Amazon CloudWatch, Email and Seq.",
+          "rawText": "ElasticSearch, Amazon CloudWatch, Email and Seq.",
+          "x": 72.024,
+          "y": 137.66,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "\"HttpLoggingFields\" enum"
+          ],
+          "text": "\"HttpLoggingFields\" enum"
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "ResponseStatusCode"
+          ],
+          "text": "ResponseStatusCode"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "Status code of response. Eg: 200"
+          ],
+          "text": "Status code of response. Eg: 200"
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "ResponseHeaders"
+          ],
+          "text": "ResponseHeaders"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "Headers of response. Eg: Content-Length: 20"
+          ],
+          "text": "Headers of response. Eg: Content-Length: 20"
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "ResponsePropertiesAndHeaders"
+          ],
+          "text": "ResponsePropertiesAndHeaders"
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "Includes all of above (default)"
+          ],
+          "text": "Includes all of above (default)"
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "ResponseBody"
+          ],
+          "text": "ResponseBody"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "Entire response body. [has performance drawbacks; not recommended]"
+          ],
+          "text": "Entire response body. [has performance drawbacks; not recommended]"
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "Response"
+          ],
+          "text": "Response"
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "Includes all of above"
+          ],
+          "text": "Includes all of above"
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "All"
+          ],
+          "text": "All"
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "Includes all from request and response"
+          ],
+          "text": "Includes all from request and response"
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "HTTP Logging Options"
+          ],
+          "text": "HTTP Logging Options"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "Program.cs:",
+            "builder.Serices.AddHttpLogging(options =>"
+          ],
+          "text": "Program.cs:\nbuilder.Serices.AddHttpLogging(options =>"
+        },
+        {
+          "type": "code",
+          "page": 5,
+          "lines": [
+            "{",
+            " options.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.YourOption;",
+            "});"
+          ],
+          "text": "{\n options.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.YourOption;\n});"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "Serilog",
+            "Serilog is a structured logging library for Asp.Net Core.",
+            "Supports variety of logging destinations, referred as \"Sinks\" - starts with Console, Azure, DataDog,",
+            "ElasticSearch, Amazon CloudWatch, Email and Seq."
+          ],
+          "text": "Serilog\nSerilog is a structured logging library for Asp.Net Core.\nSupports variety of logging destinations, referred as \"Sinks\" - starts with Console, Azure, DataDog,\nElasticSearch, Amazon CloudWatch, Email and Seq."
+        }
+      ],
+      "char_count_raw": 736,
+      "char_count_repaired": 736
+    },
+    {
+      "page_number": 6,
+      "raw_text": "Serilog - Configuration\nappsettings.json\n{\n\"Serilog\": {\n\"Using\": [\n\"Serilog.Sinks.YourSinkHere\"\n],\n\"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",\n\"WriteTo\": [\n{\n\"Name\": \"YourSinkHere\",\n\"Args\": \"YourArguments\"\n}\n]\n}\n}\n",
+      "repaired_text": "Serilog - Configuration\nappsettings.json\n{\n\"Serilog\": {\n \"Using\": [\n  \"Serilog.Sinks.YourSinkHere\"\n ],\n \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",\n \"WriteTo\": [\n {\n  \"Name\": \"YourSinkHere\",\n  \"Args\": \"YourArguments\"\n }\n ]\n}\n}",
+      "lines": [
+        {
+          "text": "Serilog - Configuration",
+          "rawText": "Serilog - Configuration",
+          "x": 72.024,
+          "y": 609.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "appsettings.json",
+          "rawText": "appsettings.json",
+          "x": 72.024,
+          "y": 586.9,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 564.43,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "\"Serilog\": {",
+          "rawText": "\"Serilog\": {",
+          "x": 74.544,
+          "y": 541.87,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " \"Using\": [",
+          "rawText": "\"Using\": [",
+          "x": 77.064,
+          "y": 519.43,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  \"Serilog.Sinks.YourSinkHere\"",
+          "rawText": "\"Serilog.Sinks.YourSinkHere\"",
+          "x": 82.104,
+          "y": 496.87,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " ],",
+          "rawText": "],",
+          "x": 77.064,
+          "y": 474.43,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",",
+          "rawText": "\"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",",
+          "x": 77.064,
+          "y": 451.99,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " \"WriteTo\": [",
+          "rawText": "\"WriteTo\": [",
+          "x": 77.064,
+          "y": 429.43,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " {",
+          "rawText": "{",
+          "x": 77.064,
+          "y": 406.99,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  \"Name\": \"YourSinkHere\",",
+          "rawText": "\"Name\": \"YourSinkHere\",",
+          "x": 82.104,
+          "y": 384.41,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  \"Args\": \"YourArguments\"",
+          "rawText": "\"Args\": \"YourArguments\"",
+          "x": 82.104,
+          "y": 361.97,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " }",
+          "rawText": "}",
+          "x": 77.064,
+          "y": 339.41,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " ]",
+          "rawText": "]",
+          "x": 77.064,
+          "y": 316.97,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 74.544,
+          "y": 294.53,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 271.97,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 6,
+          "lines": [
+            "Serilog - Configuration"
+          ],
+          "text": "Serilog - Configuration"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "appsettings.json"
+          ],
+          "text": "appsettings.json"
+        },
+        {
+          "type": "code",
+          "page": 6,
+          "lines": [
+            "{",
+            "\"Serilog\": {"
+          ],
+          "text": "{\n\"Serilog\": {"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            " \"Using\": [",
+            "  \"Serilog.Sinks.YourSinkHere\"",
+            " ],",
+            " \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",",
+            " \"WriteTo\": ["
+          ],
+          "text": " \"Using\": [\n  \"Serilog.Sinks.YourSinkHere\"\n ],\n \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",\n \"WriteTo\": ["
+        },
+        {
+          "type": "code",
+          "page": 6,
+          "lines": [
+            " {"
+          ],
+          "text": " {"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "  \"Name\": \"YourSinkHere\",",
+            "  \"Args\": \"YourArguments\""
+          ],
+          "text": "  \"Name\": \"YourSinkHere\",\n  \"Args\": \"YourArguments\""
+        },
+        {
+          "type": "code",
+          "page": 6,
+          "lines": [
+            " }"
+          ],
+          "text": " }"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            " ]"
+          ],
+          "text": " ]"
+        },
+        {
+          "type": "code",
+          "page": 6,
+          "lines": [
+            "}",
+            "}"
+          ],
+          "text": "}\n}"
+        }
+      ],
+      "char_count_raw": 238,
+      "char_count_repaired": 250
+    },
+    {
+      "page_number": 7,
+      "raw_text": "Serilog - Options\nProgram.cs:\nbuilder.Host.UseSerilog(HostBuilderContext context,\nIServiceProvider services, LoggerConfiguration configuration) =>\n{\nconfiguration\n.ReadFrom.Configuration(context.Configuration) //read configuration settings from built-in\nIConfiguration\n.ReadFrom.Services(services); //read services from built-in IServiceProvider\n});\nSerilog - File Sink\nThe \"Serilog.Sinks.File\" logs into a specified file.\nYou can configure the filename, rolling interval, file size limit etc., using configuration settings.\n",
+      "repaired_text": "Serilog - Options\nProgram.cs:\nbuilder.Host.UseSerilog(HostBuilderContext context,\nIServiceProvider services, LoggerConfiguration configuration) =>\n{\n configuration\n .ReadFrom.Configuration(context.Configuration) //read configuration settings from built-in\nIConfiguration\n .ReadFrom.Services(services); //read services from built-in IServiceProvider\n});\nSerilog - File Sink\nThe \"Serilog.Sinks.File\" logs into a specified file.\nYou can configure the filename, rolling interval, file size limit etc., using configuration settings.",
+      "lines": [
+        {
+          "text": "Serilog - Options",
+          "rawText": "Serilog - Options",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Program.cs:",
+          "rawText": "Program.cs:",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "builder.Host.UseSerilog(HostBuilderContext context,",
+          "rawText": "builder.Host.UseSerilog(HostBuilderContext context,",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "IServiceProvider services, LoggerConfiguration configuration) =>",
+          "rawText": "IServiceProvider services, LoggerConfiguration configuration) =>",
+          "x": 72.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " configuration",
+          "rawText": "configuration",
+          "x": 77.064,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " .ReadFrom.Configuration(context.Configuration) //read configuration settings from built-in",
+          "rawText": ".ReadFrom.Configuration(context.Configuration) //read configuration settings from built-in",
+          "x": 77.064,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "IConfiguration",
+          "rawText": "IConfiguration",
+          "x": 72.024,
+          "y": 610.06,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " .ReadFrom.Services(services); //read services from built-in IServiceProvider",
+          "rawText": ".ReadFrom.Services(services); //read services from built-in IServiceProvider",
+          "x": 77.064,
+          "y": 587.5,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "});",
+          "rawText": "});",
+          "x": 72.024,
+          "y": 565.03,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Serilog - File Sink",
+          "rawText": "Serilog - File Sink",
+          "x": 72.024,
+          "y": 497.59,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "The \"Serilog.Sinks.File\" logs into a specified file.",
+          "rawText": "The \"Serilog.Sinks.File\" logs into a specified file.",
+          "x": 72.024,
+          "y": 475.03,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "You can configure the filename, rolling interval, file size limit etc., using configuration settings.",
+          "rawText": "You can configure the filename, rolling interval, file size limit etc., using configuration settings.",
+          "x": 72.024,
+          "y": 452.59,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 7,
+          "lines": [
+            "Serilog - Options"
+          ],
+          "text": "Serilog - Options"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "Program.cs:",
+            "builder.Host.UseSerilog(HostBuilderContext context,",
+            "IServiceProvider services, LoggerConfiguration configuration) =>"
+          ],
+          "text": "Program.cs:\nbuilder.Host.UseSerilog(HostBuilderContext context,\nIServiceProvider services, LoggerConfiguration configuration) =>"
+        },
+        {
+          "type": "code",
+          "page": 7,
+          "lines": [
+            "{"
+          ],
+          "text": "{"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            " configuration",
+            " .ReadFrom.Configuration(context.Configuration) //read configuration settings from built-in"
+          ],
+          "text": " configuration\n .ReadFrom.Configuration(context.Configuration) //read configuration settings from built-in"
+        },
+        {
+          "type": "heading",
+          "page": 7,
+          "lines": [
+            "IConfiguration"
+          ],
+          "text": "IConfiguration"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            " .ReadFrom.Services(services); //read services from built-in IServiceProvider",
+            "});"
+          ],
+          "text": " .ReadFrom.Services(services); //read services from built-in IServiceProvider\n});"
+        },
+        {
+          "type": "heading",
+          "page": 7,
+          "lines": [
+            "Serilog - File Sink"
+          ],
+          "text": "Serilog - File Sink"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "The \"Serilog.Sinks.File\" logs into a specified file.",
+            "You can configure the filename, rolling interval, file size limit etc., using configuration settings."
+          ],
+          "text": "The \"Serilog.Sinks.File\" logs into a specified file.\nYou can configure the filename, rolling interval, file size limit etc., using configuration settings."
+        }
+      ],
+      "char_count_raw": 525,
+      "char_count_repaired": 527
+    },
+    {
+      "page_number": 8,
+      "raw_text": "Serilog - \"File Sink\" Configuration\nappsettings.json\n{\n\"Serilog\": {\n\"Using\": [ \"Serilog.Sinks.File\" ],\n\"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",\n\"WriteTo\": [\n{\n\"Name\": \"File\",\n\"Args\": [\n\"path\": \"folder/filename.ext\",\n\"rollingInterval\": \"Minute | Hour | Day | Month | Year | Infinite\",\n]\n}\n]\n}\n}\nSerilog - Database Sink\nThe \"Serilog.Sinks.MSSqlServer\" logs into a specified SQL Server database.\nYou can configure the connection string using configuration settings.\n",
+      "repaired_text": "Serilog - \"File Sink\" Configuration\nappsettings.json\n{\n\"Serilog\": {\n  \"Using\": [ \"Serilog.Sinks.File\" ],\n  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",\n  \"WriteTo\": [\n  {\n  \"Name\": \"File\",\n  \"Args\": [\n   \"path\": \"folder/filename.ext\",\n   \"rollingInterval\": \"Minute | Hour | Day | Month | Year | Infinite\",\n  ]\n  }\n ]\n }\n}\nSerilog - Database Sink\nThe \"Serilog.Sinks.MSSqlServer\" logs into a specified SQL Server database.\nYou can configure the connection string using configuration settings.",
+      "lines": [
+        {
+          "text": "Serilog - \"File Sink\" Configuration",
+          "rawText": "Serilog - \"File Sink\" Configuration",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "appsettings.json",
+          "rawText": "appsettings.json",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "\"Serilog\": {",
+          "rawText": "\"Serilog\": {",
+          "x": 74.544,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  \"Using\": [ \"Serilog.Sinks.File\" ],",
+          "rawText": "\"Using\": [ \"Serilog.Sinks.File\" ],",
+          "x": 82.104,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",",
+          "rawText": "\"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",",
+          "x": 82.104,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  \"WriteTo\": [",
+          "rawText": "\"WriteTo\": [",
+          "x": 82.104,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  \"Name\": \"File\",",
+          "rawText": "\"Name\": \"File\",",
+          "x": 84.504,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  \"Args\": [",
+          "rawText": "\"Args\": [",
+          "x": 84.504,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "   \"path\": \"folder/filename.ext\",",
+          "rawText": "\"path\": \"folder/filename.ext\",",
+          "x": 89.544,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "   \"rollingInterval\": \"Minute | Hour | Day | Month | Year | Infinite\",",
+          "rawText": "\"rollingInterval\": \"Minute | Hour | Day | Month | Year | Infinite\",",
+          "x": 89.544,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  ]",
+          "rawText": "]",
+          "x": 84.624,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 82.104,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " ]",
+          "rawText": "]",
+          "x": 79.584,
+          "y": 444.55,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " }",
+          "rawText": "}",
+          "x": 77.064,
+          "y": 422.11,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 399.55,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Serilog - Database Sink",
+          "rawText": "Serilog - Database Sink",
+          "x": 72.024,
+          "y": 332.09,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "The \"Serilog.Sinks.MSSqlServer\" logs into a specified SQL Server database.",
+          "rawText": "The \"Serilog.Sinks.MSSqlServer\" logs into a specified SQL Server database.",
+          "x": 72.024,
+          "y": 309.65,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "You can configure the connection string using configuration settings.",
+          "rawText": "You can configure the connection string using configuration settings.",
+          "x": 72.024,
+          "y": 287.09,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "Serilog - \"File Sink\" Configuration",
+            "appsettings.json"
+          ],
+          "text": "Serilog - \"File Sink\" Configuration\nappsettings.json"
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "{",
+            "\"Serilog\": {"
+          ],
+          "text": "{\n\"Serilog\": {"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "  \"Using\": [ \"Serilog.Sinks.File\" ],",
+            "  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",",
+            "  \"WriteTo\": ["
+          ],
+          "text": "  \"Using\": [ \"Serilog.Sinks.File\" ],\n  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",\n  \"WriteTo\": ["
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "  {"
+          ],
+          "text": "  {"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "  \"Name\": \"File\",",
+            "  \"Args\": [",
+            "   \"path\": \"folder/filename.ext\",",
+            "   \"rollingInterval\": \"Minute | Hour | Day | Month | Year | Infinite\",",
+            "  ]"
+          ],
+          "text": "  \"Name\": \"File\",\n  \"Args\": [\n   \"path\": \"folder/filename.ext\",\n   \"rollingInterval\": \"Minute | Hour | Day | Month | Year | Infinite\",\n  ]"
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "  }"
+          ],
+          "text": "  }"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            " ]"
+          ],
+          "text": " ]"
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            " }",
+            "}"
+          ],
+          "text": " }\n}"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "Serilog - Database Sink",
+            "The \"Serilog.Sinks.MSSqlServer\" logs into a specified SQL Server database.",
+            "You can configure the connection string using configuration settings."
+          ],
+          "text": "Serilog - Database Sink\nThe \"Serilog.Sinks.MSSqlServer\" logs into a specified SQL Server database.\nYou can configure the connection string using configuration settings."
+        }
+      ],
+      "char_count_raw": 490,
+      "char_count_repaired": 513
+    },
+    {
+      "page_number": 9,
+      "raw_text": "Serilog - 'MSSqlServer' Sink Configuration\nappsettings.json\n{\n\"Serilog\": {\n\"Using\": [ \"Serilog.Sinks.MSSqlServer\" ],\n\"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",\n\"WriteTo\": [\n{\n\"Name\": \"MSSqlServer\",\n\"Args\": [\n\"connectionString\": \"your_connection_string_here\",\n\"tableName\": \"table_name\",\n]\n}\n]\n}\n}\nSerilog - Seq Sink\nThe \"Serilog.Sinks.Seq\" is a real-time search and analysis server for structured application log data.\nSeq server can run on Windows, Linux or Docker.\n",
+      "repaired_text": "Serilog - 'MSSqlServer' Sink Configuration\nappsettings.json\n{\n \"Serilog\": {\n  \"Using\": [ \"Serilog.Sinks.MSSqlServer\" ],\n  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",\n  \"WriteTo\": [\n  {\n  \"Name\": \"MSSqlServer\",\n  \"Args\": [\n   \"connectionString\": \"your_connection_string_here\",\n   \"tableName\": \"table_name\",\n  ]\n  }\n ]\n }\n}\nSerilog - Seq Sink\nThe \"Serilog.Sinks.Seq\" is a real-time search and analysis server for structured application log data.\nSeq server can run on Windows, Linux or Docker.",
+      "lines": [
+        {
+          "text": "Serilog - 'MSSqlServer' Sink Configuration",
+          "rawText": "Serilog - 'MSSqlServer' Sink Configuration",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "appsettings.json",
+          "rawText": "appsettings.json",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " \"Serilog\": {",
+          "rawText": "\"Serilog\": {",
+          "x": 77.064,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  \"Using\": [ \"Serilog.Sinks.MSSqlServer\" ],",
+          "rawText": "\"Using\": [ \"Serilog.Sinks.MSSqlServer\" ],",
+          "x": 82.104,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",",
+          "rawText": "\"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",",
+          "x": 82.104,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  \"WriteTo\": [",
+          "rawText": "\"WriteTo\": [",
+          "x": 82.104,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  \"Name\": \"MSSqlServer\",",
+          "rawText": "\"Name\": \"MSSqlServer\",",
+          "x": 87.024,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  \"Args\": [",
+          "rawText": "\"Args\": [",
+          "x": 87.024,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "   \"connectionString\": \"your_connection_string_here\",",
+          "rawText": "\"connectionString\": \"your_connection_string_here\",",
+          "x": 92.064,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "   \"tableName\": \"table_name\",",
+          "rawText": "\"tableName\": \"table_name\",",
+          "x": 92.064,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  ]",
+          "rawText": "]",
+          "x": 87.024,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 82.104,
+          "y": 444.55,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " ]",
+          "rawText": "]",
+          "x": 79.584,
+          "y": 422.11,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " }",
+          "rawText": "}",
+          "x": 77.064,
+          "y": 399.55,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 377.09,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Serilog - Seq Sink",
+          "rawText": "Serilog - Seq Sink",
+          "x": 72.024,
+          "y": 309.65,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "The \"Serilog.Sinks.Seq\" is a real-time search and analysis server for structured application log data.",
+          "rawText": "The \"Serilog.Sinks.Seq\" is a real-time search and analysis server for structured application log data.",
+          "x": 72.024,
+          "y": 287.09,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Seq server can run on Windows, Linux or Docker.",
+          "rawText": "Seq server can run on Windows, Linux or Docker.",
+          "x": 72.024,
+          "y": 264.65,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "Serilog - 'MSSqlServer' Sink Configuration",
+            "appsettings.json"
+          ],
+          "text": "Serilog - 'MSSqlServer' Sink Configuration\nappsettings.json"
+        },
+        {
+          "type": "code",
+          "page": 9,
+          "lines": [
+            "{",
+            " \"Serilog\": {"
+          ],
+          "text": "{\n \"Serilog\": {"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "  \"Using\": [ \"Serilog.Sinks.MSSqlServer\" ],",
+            "  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",",
+            "  \"WriteTo\": ["
+          ],
+          "text": "  \"Using\": [ \"Serilog.Sinks.MSSqlServer\" ],\n  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",\n  \"WriteTo\": ["
+        },
+        {
+          "type": "code",
+          "page": 9,
+          "lines": [
+            "  {"
+          ],
+          "text": "  {"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "  \"Name\": \"MSSqlServer\",",
+            "  \"Args\": [",
+            "   \"connectionString\": \"your_connection_string_here\",",
+            "   \"tableName\": \"table_name\",",
+            "  ]"
+          ],
+          "text": "  \"Name\": \"MSSqlServer\",\n  \"Args\": [\n   \"connectionString\": \"your_connection_string_here\",\n   \"tableName\": \"table_name\",\n  ]"
+        },
+        {
+          "type": "code",
+          "page": 9,
+          "lines": [
+            "  }"
+          ],
+          "text": "  }"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            " ]"
+          ],
+          "text": " ]"
+        },
+        {
+          "type": "code",
+          "page": 9,
+          "lines": [
+            " }",
+            "}"
+          ],
+          "text": " }\n}"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "Serilog - Seq Sink",
+            "The \"Serilog.Sinks.Seq\" is a real-time search and analysis server for structured application log data.",
+            "Seq server can run on Windows, Linux or Docker."
+          ],
+          "text": "Serilog - Seq Sink\nThe \"Serilog.Sinks.Seq\" is a real-time search and analysis server for structured application log data.\nSeq server can run on Windows, Linux or Docker."
+        }
+      ],
+      "char_count_raw": 491,
+      "char_count_repaired": 515
+    },
+    {
+      "page_number": 10,
+      "raw_text": "Serilog - 'Seq' Sink - Configuration\nappsettings.json\n{\n\"Serilog\": {\n\"Using\": [ \"Serilog.Sinks.Seq\" ],\n\"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",\n\"WriteTo\": [\n{\n\"Name\": \"Seq\",\n\"Args\": [\n\"serverUrl\": \"http://localhost:5341\"\n]\n}\n]\n}\n}\nSerilog - RequestId\n\"RequestId\" is the unique number (guid) of each individual requests, used to identify to which\nrequest the log belongs to.\nRequestId is \"TraceIdentifier\" internally, that is generated by Asp.Net Core.\n",
+      "repaired_text": "Serilog - 'Seq' Sink - Configuration\nappsettings.json\n{\n \"Serilog\": {\n  \"Using\": [ \"Serilog.Sinks.Seq\" ],\n  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",\n  \"WriteTo\": [\n  {\n   \"Name\": \"Seq\",\n   \"Args\": [\n    \"serverUrl\": \"http://localhost:5341\"\n   ]\n  }\n  ]\n }\n}\nSerilog - RequestId\n\"RequestId\" is the unique number (guid) of each individual requests, used to identify to which\nrequest the log belongs to.\nRequestId is \"TraceIdentifier\" internally, that is generated by Asp.Net Core.",
+      "lines": [
+        {
+          "text": "Serilog - 'Seq' Sink - Configuration",
+          "rawText": "Serilog - 'Seq' Sink - Configuration",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "appsettings.json",
+          "rawText": "appsettings.json",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " \"Serilog\": {",
+          "rawText": "\"Serilog\": {",
+          "x": 77.064,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  \"Using\": [ \"Serilog.Sinks.Seq\" ],",
+          "rawText": "\"Using\": [ \"Serilog.Sinks.Seq\" ],",
+          "x": 82.104,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",",
+          "rawText": "\"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",",
+          "x": 82.104,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  \"WriteTo\": [",
+          "rawText": "\"WriteTo\": [",
+          "x": 82.104,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 84.504,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "   \"Name\": \"Seq\",",
+          "rawText": "\"Name\": \"Seq\",",
+          "x": 89.544,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "   \"Args\": [",
+          "rawText": "\"Args\": [",
+          "x": 89.544,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "    \"serverUrl\": \"http://localhost:5341\"",
+          "rawText": "\"serverUrl\": \"http://localhost:5341\"",
+          "x": 96.984,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "   ]",
+          "rawText": "]",
+          "x": 89.544,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 84.504,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "  ]",
+          "rawText": "]",
+          "x": 82.104,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": " }",
+          "rawText": "}",
+          "x": 77.064,
+          "y": 444.55,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 422.11,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Serilog - RequestId",
+          "rawText": "Serilog - RequestId",
+          "x": 72.024,
+          "y": 354.53,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "\"RequestId\" is the unique number (guid) of each individual requests, used to identify to which",
+          "rawText": "\"RequestId\" is the unique number (guid) of each individual requests, used to identify to which",
+          "x": 72.024,
+          "y": 332.09,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "request the log belongs to.",
+          "rawText": "request the log belongs to.",
+          "x": 72.024,
+          "y": 317.57,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "RequestId is \"TraceIdentifier\" internally, that is generated by Asp.Net Core.",
+          "rawText": "RequestId is \"TraceIdentifier\" internally, that is generated by Asp.Net Core.",
+          "x": 72.024,
+          "y": 295.13,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "prose",
+          "page": 10,
+          "lines": [
+            "Serilog - 'Seq' Sink - Configuration",
+            "appsettings.json"
+          ],
+          "text": "Serilog - 'Seq' Sink - Configuration\nappsettings.json"
+        },
+        {
+          "type": "code",
+          "page": 10,
+          "lines": [
+            "{",
+            " \"Serilog\": {"
+          ],
+          "text": "{\n \"Serilog\": {"
+        },
+        {
+          "type": "prose",
+          "page": 10,
+          "lines": [
+            "  \"Using\": [ \"Serilog.Sinks.Seq\" ],",
+            "  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",",
+            "  \"WriteTo\": ["
+          ],
+          "text": "  \"Using\": [ \"Serilog.Sinks.Seq\" ],\n  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",\n  \"WriteTo\": ["
+        },
+        {
+          "type": "code",
+          "page": 10,
+          "lines": [
+            "  {"
+          ],
+          "text": "  {"
+        },
+        {
+          "type": "prose",
+          "page": 10,
+          "lines": [
+            "   \"Name\": \"Seq\",",
+            "   \"Args\": [",
+            "    \"serverUrl\": \"http://localhost:5341\"",
+            "   ]"
+          ],
+          "text": "   \"Name\": \"Seq\",\n   \"Args\": [\n    \"serverUrl\": \"http://localhost:5341\"\n   ]"
+        },
+        {
+          "type": "code",
+          "page": 10,
+          "lines": [
+            "  }"
+          ],
+          "text": "  }"
+        },
+        {
+          "type": "prose",
+          "page": 10,
+          "lines": [
+            "  ]"
+          ],
+          "text": "  ]"
+        },
+        {
+          "type": "code",
+          "page": 10,
+          "lines": [
+            " }",
+            "}"
+          ],
+          "text": " }\n}"
+        },
+        {
+          "type": "prose",
+          "page": 10,
+          "lines": [
+            "Serilog - RequestId",
+            "\"RequestId\" is the unique number (guid) of each individual requests, used to identify to which",
+            "request the log belongs to.",
+            "RequestId is \"TraceIdentifier\" internally, that is generated by Asp.Net Core."
+          ],
+          "text": "Serilog - RequestId\n\"RequestId\" is the unique number (guid) of each individual requests, used to identify to which\nrequest the log belongs to.\nRequestId is \"TraceIdentifier\" internally, that is generated by Asp.Net Core."
+        }
+      ],
+      "char_count_raw": 479,
+      "char_count_repaired": 505
+    },
+    {
+      "page_number": 11,
+      "raw_text": "Serilog - Enrichers\nEnrichers are additional details that are added to LogContext; so they're stored in logs.\nEg: MachineName[or]Custom Properties.\nSerilog - IDiagnosticContext\nDiagnostic context allows you to add additional enrichment properties to the context; and all those\nproperties are logged at once in the final \"log completion event\" of the request.\n",
+      "repaired_text": "Serilog - Enrichers\nEnrichers are additional details that are added to LogContext; so they're stored in logs.\nEg: MachineName[or]Custom Properties.\nSerilog - IDiagnosticContext\nDiagnostic context allows you to add additional enrichment properties to the context; and all those\nproperties are logged at once in the final \"log completion event\" of the request.",
+      "lines": [
+        {
+          "text": "Serilog - Enrichers",
+          "rawText": "Serilog - Enrichers",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Enrichers are additional details that are added to LogContext; so they're stored in logs.",
+          "rawText": "Enrichers are additional details that are added to LogContext; so they're stored in logs.",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Eg: MachineName[or]Custom Properties.",
+          "rawText": "Eg: MachineName[or]Custom Properties.",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "Serilog - IDiagnosticContext",
+          "rawText": "Serilog - IDiagnosticContext",
+          "x": 72.024,
+          "y": 528.43,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "Diagnostic context allows you to add additional enrichment properties to the context; and all those",
+          "rawText": "Diagnostic context allows you to add additional enrichment properties to the context; and all those",
+          "x": 72.024,
+          "y": 505.87,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "properties are logged at once in the final \"log completion event\" of the request.",
+          "rawText": "properties are logged at once in the final \"log completion event\" of the request.",
+          "x": 72.024,
+          "y": 491.47,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 11,
+          "lines": [
+            "Serilog - Enrichers"
+          ],
+          "text": "Serilog - Enrichers"
+        },
+        {
+          "type": "prose",
+          "page": 11,
+          "lines": [
+            "Enrichers are additional details that are added to LogContext; so they're stored in logs.",
+            "Eg: MachineName[or]Custom Properties."
+          ],
+          "text": "Enrichers are additional details that are added to LogContext; so they're stored in logs.\nEg: MachineName[or]Custom Properties."
+        },
+        {
+          "type": "heading",
+          "page": 11,
+          "lines": [
+            "Serilog - IDiagnosticContext"
+          ],
+          "text": "Serilog - IDiagnosticContext"
+        },
+        {
+          "type": "prose",
+          "page": 11,
+          "lines": [
+            "Diagnostic context allows you to add additional enrichment properties to the context; and all those",
+            "properties are logged at once in the final \"log completion event\" of the request."
+          ],
+          "text": "Diagnostic context allows you to add additional enrichment properties to the context; and all those\nproperties are logged at once in the final \"log completion event\" of the request."
+        }
+      ],
+      "char_count_raw": 359,
+      "char_count_repaired": 358
+    },
+    {
+      "page_number": 12,
+      "raw_text": "Serilog Timings\n\"SerilogTimings\" package records timing of a piece of your soure code, indicating how much time\ntaken for executing it.\n",
+      "repaired_text": "Serilog Timings\n\"SerilogTimings\" package records timing of a piece of your soure code, indicating how much time\ntaken for executing it.",
+      "lines": [
+        {
+          "text": "Serilog Timings",
+          "rawText": "Serilog Timings",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f4"
+        },
+        {
+          "text": "\"SerilogTimings\" package records timing of a piece of your soure code, indicating how much time",
+          "rawText": "\"SerilogTimings\" package records timing of a piece of your soure code, indicating how much time",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        },
+        {
+          "text": "taken for executing it.",
+          "rawText": "taken for executing it.",
+          "x": 72.024,
+          "y": 722.5,
+          "fontSize": 11.04,
+          "fontName": "g_d39_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 12,
+          "lines": [
+            "Serilog Timings"
+          ],
+          "text": "Serilog Timings"
+        },
+        {
+          "type": "prose",
+          "page": 12,
+          "lines": [
+            "\"SerilogTimings\" package records timing of a piece of your soure code, indicating how much time",
+            "taken for executing it."
+          ],
+          "text": "\"SerilogTimings\" package records timing of a piece of your soure code, indicating how much time\ntaken for executing it."
+        }
+      ],
+      "char_count_raw": 136,
+      "char_count_repaired": 135
+    }
+  ],
+  "title": "Logging and Seri log"
+}

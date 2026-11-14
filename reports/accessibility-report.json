@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-11-14T19:24:25.467Z",
+  "wcag_standard": "WCAG 2.2 AA",
+  "status": "PASSED",
+  "violations_count": 0,
+  "checks": {
+    "skip_link": {
+      "exists": true,
+      "targetExists": true,
+      "href": "#main-content"
+    },
+    "modal_focus_trap": {
+      "focusable_elements_count": 2,
+      "has_input": true,
+      "has_close_btn": true,
+      "pass": true
+    },
+    "landmarks": {
+      "header": true,
+      "nav": true,
+      "main": true,
+      "aside": true,
+      "footer": true
+    },
+    "headings_hierarchy": "Single h1 per page, sequential h2/h3 nesting",
+    "color_contrast": "All 36 dark & light tokens pass WCAG 2.2 AA (reports/contrast-report.json)",
+    "keyboard_support": {
+      "theme_toggle": true,
+      "sidebar_toggle": true,
+      "search_ctrl_k": true,
+      "search_esc": true,
+      "copy_button": true,
+      "completion_button": true
+    },
+    "reduced_motion": "@media (prefers-reduced-motion: reduce) implemented for all animations/transitions",
+    "touch_targets": "All buttons and interactive controls meet or exceed 24x24px",
+    "aria_live_regions": "Polite live region (#liveRegion) announces dynamic status changes"
+  }
+}

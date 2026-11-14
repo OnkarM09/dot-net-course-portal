@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 19: Unit Testing - Advanced — ASP.NET Core Masterclass</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="alternate icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body id="top">
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  
+  <!-- Top Navigation Header -->
+  <header class="top-header" role="banner">
+    <div class="header-left">
+      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">☰</button>
+      <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+        <span class="sidebar-toggle-text">« Collapse</span>
+      </button>
+      <a href="../index.html" class="brand-link" aria-label="ASP.NET Core Masterclass Documentation Portal">
+        <span class="brand-icon" style="background: linear-gradient(135deg, #38bdf8, #6366f1); color: #0b0f19; font-weight: 900; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem;">.NET</span>
+        <span class="brand-text">ASP.NET Core Masterclass</span>
+      </a>
+      <span class="version-pill">.NET 8 / LTS</span>
+    </div>
+
+    <div class="header-right">
+      <a href="../index.html" class="index-home-btn" title="Back to Curriculum Dashboard">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span class="home-text">Course Index</span>
+      </a>
+
+      <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-text">Search topics, syntax, concepts...</span>
+        <kbd class="kbd-shortcut">Ctrl+K</kbd>
+      </button>
+
+      <button class="theme-toggle-btn" aria-label="Toggle dark/light theme" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle></svg>
+      </button>
+    </div>
+  </header>
+  
+
+  <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+  <!-- Documentation Layout -->
+  <div class="docs-wrapper">
+    
+    <aside class="docs-sidebar" aria-label="Course Navigation">
+      <div class="sidebar-top-bar">
+        <span class="sidebar-top-title">Curriculum</span>
+        <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" title="Collapse Sidebar" aria-label="Collapse Navigation Sidebar" type="button">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg>
+          <span>Collapse</span>
+        </button>
+      </div>
+
+      <div class="sidebar-search-box">
+        <input type="text" class="sidebar-filter-input" placeholder="Filter sections..." aria-label="Filter sidebar sections" />
+      </div>
+
+      <div style="margin-bottom: 1rem;">
+        <a href="../index.html" class="sidebar-link" style="color: var(--accent-primary); font-weight: 600;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Return to Dashboard</span>
+        </a>
+      </div>
+  
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 1: Foundations, HTTP, Middleware &amp; Routing</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">5</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-01.html" class="sidebar-link">
+            <span class="sidebar-sec-num">01</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Introduction</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-02.html" class="sidebar-link">
+            <span class="sidebar-sec-num">02</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Getting Started</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-03.html" class="sidebar-link">
+            <span class="sidebar-sec-num">03</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">HTTP</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-04.html" class="sidebar-link">
+            <span class="sidebar-sec-num">04</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Middleware</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-05.html" class="sidebar-link">
+            <span class="sidebar-sec-num">05</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Routing</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 2: Controllers, Model Binding &amp; Validation</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-06.html" class="sidebar-link">
+            <span class="sidebar-sec-num">06</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Controllers &amp; IActionResult</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-07.html" class="sidebar-link">
+            <span class="sidebar-sec-num">07</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Model Binding and Validations</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 3: Razor Views, Partial Views, View Components &amp; Tag Helpers</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">5</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-08.html" class="sidebar-link">
+            <span class="sidebar-sec-num">08</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Razor Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-09.html" class="sidebar-link">
+            <span class="sidebar-sec-num">09</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Layout Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-10.html" class="sidebar-link">
+            <span class="sidebar-sec-num">10</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Partial Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-11.html" class="sidebar-link">
+            <span class="sidebar-sec-num">11</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">View Components</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-17.html" class="sidebar-link">
+            <span class="sidebar-sec-num">17</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Tag Helpers</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 4: Dependency Injection, Environments &amp; Configuration</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-12.html" class="sidebar-link">
+            <span class="sidebar-sec-num">12</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Dependency Injection</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-13.html" class="sidebar-link">
+            <span class="sidebar-sec-num">13</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Environments</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-14.html" class="sidebar-link">
+            <span class="sidebar-sec-num">14</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Configuration</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-15.html" class="sidebar-link">
+            <span class="sidebar-sec-num">15</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">xUnit</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-16.html" class="sidebar-link">
+            <span class="sidebar-sec-num">16</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">CRUD Operations</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-18.html" class="sidebar-link">
+            <span class="sidebar-sec-num">18</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">EntityFrameworkCore</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-19.html" class="sidebar-link active" aria-current="page">
+            <span class="sidebar-sec-num">19</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Unit Testing - Advanced</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-20.html" class="sidebar-link">
+            <span class="sidebar-sec-num">20</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Logging</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-21.html" class="sidebar-link">
+            <span class="sidebar-sec-num">21</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Filters</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-22.html" class="sidebar-link">
+            <span class="sidebar-sec-num">22</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Error Handling</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-23.html" class="sidebar-link">
+            <span class="sidebar-sec-num">23</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">SOLID Principles</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-24.html" class="sidebar-link">
+            <span class="sidebar-sec-num">24</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Clean Architecture</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-25.html" class="sidebar-link">
+            <span class="sidebar-sec-num">25</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Identity and Authorization</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-26.html" class="sidebar-link">
+            <span class="sidebar-sec-num">26</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Web API</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-27.html" class="sidebar-link">
+            <span class="sidebar-sec-num">27</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Swagger</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-28.html" class="sidebar-link">
+            <span class="sidebar-sec-num">28</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Angular and CORS</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-29.html" class="sidebar-link">
+            <span class="sidebar-sec-num">29</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">JWT with Web API</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-30.html" class="sidebar-link">
+            <span class="sidebar-sec-num">30</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Minimal API</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content Container -->
+    <main class="docs-main-container" id="main-content" tabindex="-1">
+      <!-- Floating Expand Button when Sidebar is Collapsed -->
+      <button class="expand-sidebar-pill" id="expandSidebarPill" title="Expand Sidebar" aria-label="Expand Sidebar" type="button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg>
+        <span>» Expand Sidebar</span>
+      </button>
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
+        <a href="../index.html">Course Index</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span>Module 5</span>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span style="color: var(--text-main); font-weight: 600;">Section 19</span>
+      </nav>
+
+      <!-- Section Banner Header -->
+      <header class="section-banner">
+        <div class="section-meta-row">
+          <span class="module-badge">Module 5</span>
+          <span class="read-time-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            13 PDF Pages
+          </span>
+          <span class="tag-pill">ASP.NET Core</span>
+          <span class="tag-pill">.NET 8</span>
+          <span class="tag-pill" style="border-color: var(--accent-primary); color: var(--accent-primary);">Includes Cheat Sheet</span>
+        </div>
+        <h1>Section 19: Unit Testing - Advanced</h1>
+        <p class="section-description">
+          Authentic study and reference notes extracted directly from original masterclass course materials.
+        </p>
+      </header>
+
+      <!-- Body Content -->
+      <article class="docs-content">
+        
+<h2 id="fluent-assertions">Fluent Assertions</h2>
+<p>Fluent Assertions is a .NET library that supercharges your unit tests by providing a more fluent,
+natural language syntax for assertions. Instead of using traditional, sometimes cryptic assertions like
+Assert.Equal or Assert.True, you write assertions that closely resemble how you would express
+expectations in plain English.</p>
+
+<h2 id="benefits-of-fluent-assertions">Benefits of Fluent Assertions</h2>
+<ul>
+  <li>• Readability: Tests become more self-explanatory and easier to understand, even for</li>
+</ul>
+<p>developers who are not familiar with the codebase.</p>
+<ul>
+  <li>• Maintainability: Changes to the underlying code often result in more understandable test</li>
+</ul>
+<p>failures due to the descriptive nature of the assertions.</p>
+<ul>
+  <li>• Rich API: Offers a vast collection of assertion methods covering various scenarios</li>
+</ul>
+<p>(collections, strings, exceptions, and more), making it easier to write comprehensive tests.</p>
+<ul>
+  <li>• Extensibility: Allows you to create custom assertions for specific needs.</li>
+</ul>
+
+<h2 id="important-fluent-assertions-methods-with-examples">Important Fluent Assertions Methods with Examples</h2>
+<ul>
+  <li>• Basic Assertions:</li>
+</ul>
+<p>result.Should().Be(5); // result should be equal to 5
+           result.Should().NotBe(10); // result should not be equal to 10
+           result.Should().BeTrue(); // result should be true
+           result.Should().BeFalse(); // result should be false
+           result.Should().BeNull(); // result should be null
+           result.Should().NotBeNull(); // result should not be null</p>
+<ul>
+  <li>• Collection Assertions:</li>
+</ul>
+<p>list.Should().HaveCount(3); // list should have 3 elements
+           list.Should().Contain(&quot;apple&quot;); // list should contain &quot;apple&quot;
+           list.Should().OnlyContain(x =&gt; x &gt; 0); // all elements in list should be greater than 0</p>
+<p>list.Should().BeEquivalentTo(new[] { 1, 2, 3 }); // lists should contain the same
+           elements (order doesn&#39;t matter)</p>
+<ul>
+  <li>• String Assertions:</li>
+</ul>
+<p>name.Should().StartWith(&quot;John&quot;); // name should start with &quot;John&quot;
+           name.Should().EndWith(&quot;Doe&quot;); // name should end with &quot;Doe&quot;
+           name.Should().Contain(&quot;Middle&quot;); // name should contain &quot;Middle&quot;
+           name.Should().MatchRegex(@&quot;\d{3}-\d{3}-\d{4}&quot;); // name should match a phone
+           number pattern</p>
+<ul>
+  <li>• Exception Assertions:</li>
+</ul>
+<p>Action act = () =&gt; someMethod();
+           act.Should().Throw&lt;ArgumentException&gt;(); // should throw ArgumentException
+           act.Should().Throw&lt;Exception&gt;()
+             .WithMessage(&quot;Invalid operation&quot;); // should throw an exception with a specific
+           message</p>
+<ul>
+  <li>• Type Assertions:</li>
+</ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">object obj = new Person();</code></pre>
+    </div>
+  <p>obj.Should().BeOfType&lt;Person&gt;(); // obj should be of type Person
+           obj.Should().BeAssignableTo&lt;object&gt;(); // obj should be assignable to object</p>
+
+<h2 id="autofixture">AutoFixture</h2>
+<p>AutoFixture is another powerful library that helps with unit testing by automatically generating test
+data for your classes. It saves you time and effort in creating complex objects for your tests,
+especially when dealing with objects that have many properties or nested objects.</p>
+
+<h2 id="benefits-of-autofixture">Benefits of AutoFixture</h2>
+<ul>
+  <li>• Test Data Generation: Easily create instances of your classes with sensible default values for</li>
+</ul>
+<p>properties.</p>
+<ul>
+  <li>• Customization: You can customize the generated data to fit specific test scenarios.</li>
+  <li>• Reduced Boilerplate: Eliminates the need to manually create test data for each test.</li>
+</ul>
+<p>Integrating AutoFixture with xUnit in ASP.NET Core</p>
+<ul>
+  <li>1. Install Package: Add the AutoFixture.Xunit2 NuGet package to your test project.</li>
+  <li>2. Use the [AutoData] Attribute: Decorate your test methods with [AutoData]. AutoFixture will</li>
+</ul>
+<p>automatically generate instances of the required types and pass them as arguments to your
+      test methods.</p>
+
+<h2 id="example-with-autofixture">Example with AutoFixture</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class PersonControllerTests
+{
+}</code></pre>
+    </div>
+  <p>[Theory, AutoData] // AutoFixture will create a Person instance for the test</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public void CreatePerson_ValidPerson_ReturnsOk(Person person, Mock&lt;IPersonsService&gt;</code></pre>
+    </div>
+  <p>mockPersonsService)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+// ... (rest of your test
+)
+  }</code></pre>
+    </div>
+  <p>Mocking
+In unit testing, the goal is to test a specific unit of code (like a service class) in isolation from its
+dependencies. This helps you focus on the logic of the unit you&#39;re testing without worrying about
+external factors like database interactions or network calls. Mocking is a technique that enables this
+isolation.
+Mocking involves creating substitute objects (mocks) that simulate the behavior of real
+dependencies. These mocks can be programmed to return specific data, throw exceptions, or track
+how they are used. This allows you to create controlled test scenarios and verify that your code
+interacts correctly with its dependencies.</p>
+
+<h2 id="moq">Moq</h2>
+<p>Moq is a popular and intuitive mocking framework for .NET. It provides a fluent API to create mock
+objects easily.</p>
+
+<h2 id="how-mocking-works-internally-with-moq">How Mocking Works Internally (with Moq)</h2>
+<ul>
+  <li>1. Create a Mock: You start by creating a mock object for the interface of the dependency you</li>
+</ul>
+<p>want to replace.</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">var mockPersonRepository = new Mock&lt;IPersonsRepository&gt;();</code></pre>
+    </div>
+  <p>2. Set Up Behavior: You configure how the mock should behave when its methods are called.
+      This typically involves specifying the return values, throwing exceptions, or verifying the
+      arguments passed to the methods.
+mockPersonRepository.Setup(repo =&gt; repo.GetAllPersons())
+       .ReturnsAsync(new List&lt;Person&gt; { /* your test data */ });</p>
+<ul>
+  <li>3. Inject the Mock: You inject the mock object into the class you&#39;re testing, either through</li>
+</ul>
+<p>constructor injection or property injection.</p>
+<ul>
+  <li>4. Exercise Your Code: You call the methods of the class under test, which will interact with the</li>
+</ul>
+<p>mock object instead of the real dependency.</p>
+<ul>
+  <li>5. Verify Interactions: You use Moq&#39;s verification features to check if the mock&#39;s methods were</li>
+</ul>
+<p>called as expected and with the correct parameters.
+Code:</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// PersonsServiceTest.cs (Constructor
+)
+      public PersonsServiceTest(ITestOutputHelper testOutputHelper)
+      {
+       _fixture = new Fixture(); // AutoFixture for test data generation
+       _personRepositoryMock = new Mock&lt;IPersonsRepository&gt;();
+       _personsRepository = _personRepositoryMock.Object; // Get the mock object
+       // Create a mock DbContext using EntityFrameworkCoreMock
+       var dbContextMock = new DbContextMock&lt;ApplicationDbContext&gt;(
+}</code></pre>
+    </div>
+  <p>new DbContextOptionsBuilder&lt;ApplicationDbContext&gt;().Options
+       );</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// Mock the Countries DbSet with initial data
+       dbContextMock.CreateDbSetMock(temp =&gt; temp.Countries, new List&lt;Country&gt; { });
+       // Mock the Persons DbSet with initial data
+       dbContextMock.CreateDbSetMock(temp =&gt; temp.Persons, new List&lt;Person&gt; { });
+       //Create services based on mocked DbContext object
+       _countriesService = new CountriesService(dbContextMock.Object);
+       _personService = new PersonsService(_personsRepository); // Pass the mocked repository</code></pre>
+    </div>
+  <p>to your service
+       _testOutputHelper = testOutputHelper;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+  <p>This code:</p>
+<ul>
+  <li>1. Creates mock objects for the IPersonsRepository interface and the ApplicationDbContext</li>
+</ul>
+<p>class.</p>
+<ul>
+  <li>2. Uses EntityFrameworkCoreMock to configure mock DbSet objects.</li>
+  <li>3. Initializes your services, passing the mock repository (_personsRepository) to your</li>
+</ul>
+<p>PersonsService.</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">//Example of setting up a mock method</code></pre>
+    </div>
+  <p>_personRepositoryMock
+.Setup(temp =&gt; temp.AddPerson(It.IsAny&lt;Person&gt;()))
+.ReturnsAsync(person);
+This code configures the mock repository to return the person object whenever the AddPerson
+method is called with any Person object.</p>
+
+<h2 id="best-practices">Best Practices</h2>
+<ul>
+  <li>• Focus on Behavior: Mock only the interactions you need to control in your test. Avoid overmocking</li>
+</ul>
+<p>.</p>
+<ul>
+  <li>• Loose Coupling: Design your classes with dependency injection in mind, making it easy to</li>
+</ul>
+<p>swap out real dependencies for mocks.</p>
+<ul>
+  <li>• Verification (Optional): Use Verify to ensure that your code interacts with the mock as</li>
+</ul>
+<p>expected.</p>
+<ul>
+  <li>• Readability: Strive for clear and expressive setup and verification code.</li>
+</ul>
+
+<h2 id="things-to-avoid">Things to Avoid</h2>
+<ul>
+  <li>• Mocking Everything: Don&#39;t mock classes that you are testing directly. The goal is to isolate</li>
+</ul>
+<p>the unit under test, not eliminate all dependencies.</p>
+<ul>
+  <li>• Excessive Setup: Avoid overly complex setups that obscure the intent of your tests.</li>
+  <li>• Verifying Implementation Details: Focus on verifying behavior, not specific implementation</li>
+</ul>
+<p>details.</p>
+
+<h2 id="integration-tests">Integration Tests</h2>
+<p>While unit tests focus on individual units in isolation, integration tests examine how different parts
+of your application work together. In ASP.NET Core MVC, this typically involves testing the
+interaction between controllers, views, services, and sometimes even external dependencies like
+databases or APIs.</p>
+
+<h2 id="why-integration-tests-matter">Why Integration Tests Matter</h2>
+<ul>
+  <li>• Real-World Scenarios: Integration tests simulate real user interactions, revealing potential</li>
+</ul>
+<p>issues that might not be caught by unit tests.</p>
+<ul>
+  <li>• End-to-End Testing: They help you verify that the entire flow of a request, from routing to</li>
+</ul>
+<p>model binding, validation, service calls, and view rendering, works correctly.</p>
+<ul>
+  <li>• Database Interaction Testing: Integration tests can test how your application interacts with</li>
+</ul>
+<p>a real (or in-memory) database, ensuring data persistence and retrieval are accurate.</p>
+<ul>
+  <li>• Confidence in Deployment: A strong suite of integration tests boosts your confidence when</li>
+</ul>
+<p>deploying your application, reducing the likelihood of unexpected errors in production.</p>
+
+<h2 id="key-elements-of-integration-tests-with-xunit">Key Elements of Integration Tests with xUnit</h2>
+<ul>
+  <li>• Test Server: You create a test server instance using a custom WebApplicationFactory, which</li>
+</ul>
+<p>allows you to simulate your application&#39;s behavior in a test environment.</p>
+<ul>
+  <li>• HTTP Client: You use an HttpClient to send HTTP requests to the test server, mimicking how</li>
+</ul>
+<p>a real client (like a browser) would interact with your application.</p>
+<ul>
+  <li>• Assertions: Use assertions (e.g., from FluentAssertions or xUnit&#39;s built-in assertions) to</li>
+</ul>
+<p>validate the responses received from the server.</p>
+
+<h2 id="best-practices-1">Best Practices</h2>
+<ul>
+  <li>• Focus on Integration: Test the interactions between components, not the isolated behavior</li>
+</ul>
+<p>of individual units.</p>
+<ul>
+  <li>• Database:</li>
+  <li>o In-Memory: Use an in-memory database (e.g., UseInMemoryDatabase) for faster</li>
+</ul>
+<p>tests and data isolation.</p>
+<ul>
+  <li>o Real Database (Optional): For more realistic testing, use a test database with a</li>
+</ul>
+<p>separate schema or dataset.</p>
+<ul>
+  <li>• Test Environment: Configure your test server to use a &quot;Test&quot; environment to avoid</li>
+</ul>
+<p>accidentally affecting your development or production databases.</p>
+<ul>
+  <li>• Clean Up: If you&#39;re using a real database, ensure you clean up the test data after each test or</li>
+</ul>
+<p>test class to maintain data consistency.</p>
+<ul>
+  <li>• Avoid External Dependencies: If your application relies on external APIs or services, consider</li>
+</ul>
+<p>mocking or stubbing them for integration tests to avoid network dependencies and keep
+      tests fast and reliable.</p>
+<ul>
+  <li>• Clear Test Names: Use descriptive names that explain the purpose and expected behavior of</li>
+</ul>
+<p>each test.</p>
+
+<h2 id="code">Code</h2>
+<p>CustomWebApplicationFactory:</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class CustomWebApplicationFactory : WebApplicationFactory&lt;Program&gt;
+{
+  protected override 1. github.com
+}</code></pre>
+    </div>
+  <p>github.com</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">void ConfigureWebHost(IWebHostBuilder builder)
+  {
+   base.ConfigureWebHost(builder);
+   builder.UseEnvironment(&quot;Test&quot;); 1. www.nuget.org
+}</code></pre>
+    </div>
+  <p>www.nuget.org</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// Set the environment to &quot;Test&quot;
+   builder.ConfigureServices(services =&gt; {
+     // Replace the default DbContext configuration with an in-memory database
+     var descriptor = services.SingleOrDefault(temp =&gt; temp.ServiceType ==
+typeof(DbContextOptions&lt;ApplicationDbContext&gt;));
+}</code></pre>
+    </div>
+  <p>if (descriptor != null)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+      services.Remove(descriptor); 1. github.com
+}</code></pre>
+    </div>
+  <p>MIT github.com</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+  <p>services.AddDbContext&lt;ApplicationDbContext&gt;(options =&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+      options.UseInMemoryDatabase(&quot;DatbaseForTesting&quot;); 1. github.com
+}</code></pre>
+    </div>
+  <p>github.com
+     });
+   });</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+  <p>This class sets up a customized WebApplicationFactory for your integration tests:</p>
+<ul>
+  <li>1. Inherits from WebApplicationFactory&lt;Program&gt;: This base class provides the core</li>
+</ul>
+<p>functionality for creating a test server instance.</p>
+<ul>
+  <li>2. ConfigureWebHost Override: You override this method to customize the configuration of</li>
+</ul>
+<p>the test server.</p>
+<ul>
+  <li>3. UseEnvironment(&quot;Test&quot;): Sets the ASPNETCORE_ENVIRONMENT variable to &quot;Test&quot;, ensuring</li>
+</ul>
+<p>that the application loads any test-specific configuration settings from appsettings.Test.json.</p>
+<ul>
+  <li>4. ConfigureServices: Replaces the default database context configuration with an in-memory</li>
+</ul>
+<p>database provider for testing.
+PersonsControllerIntegrationTest:</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class PersonsControllerIntegrationTest : IClassFixture&lt;CustomWebApplicationFactory&gt;
+{
+  private readonly HttpClient _client; 1. github.com
+}</code></pre>
+    </div>
+  <p>github.com</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// Constructor injection of the custom factory
+  public PersonsControllerIntegrationTest(CustomWebApplicationFactory factory)
+  {
+   _client = factory.CreateClient(); // Create an HttpClient to interact with the test server
+  }</code></pre>
+    </div>
+  <p>#region Index
+  [Fact]</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public async Task Index_ToReturnView()
+  {
+   // Act: Send a GET request to the &quot;/Persons/Index&quot; endpoint
+   HttpResponseMessage response = await _client.GetAsync(&quot;/Persons/Index&quot;);
+   // Assert:
+// 1. Check if the response was successful (status code 2xx
+)
+   response.Should().BeSuccessful();
+   // 2. Read the response content as a string
+   string responseBody = await response.Content.ReadAsStringAsync();
+   // 3. Parse the HTML content using HtmlAgilityPack
+   HtmlDocument html = new HtmlDocument();
+   html.LoadHtml(responseBody);
+   var document = html.DocumentNode;
+   // 4. Assert that the response contains a table with the class &quot;persons&quot;
+   document.QuerySelectorAll(&quot;table.persons&quot;).Should().NotBeNull();
+  }</code></pre>
+    </div>
+  <p>#endregion</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+  <p>This test class uses the custom CustomWebApplicationFactory to create a test server instance.</p>
+<ul>
+  <li>1. IClassFixture&lt;CustomWebApplicationFactory&gt;: This interface tells xUnit to create a single</li>
+</ul>
+<p>instance of CustomWebApplicationFactory and share it among all tests in this class. This
+      ensures that the test server is created only once, improving performance.</p>
+<ul>
+  <li>2. Constructor Injection: The constructor receives the factory and uses it to create an</li>
+</ul>
+<p>HttpClient that can send requests to the test server.</p>
+<ul>
+  <li>3. Index_ToReturnView Test:</li>
+  <li>o Act: Sends a GET request to the Persons/Index endpoint.</li>
+  <li>o Assert:</li>
+</ul>
+<p>▪ Checks if the response status code indicates success (2xx).
+              ▪ Parses the HTML response body using HtmlAgilityPack.
+              ▪ Asserts that the response contains a &lt;table&gt; element with the class
+                 &quot;persons&quot;. This verifies that the Index view is rendering correctly.</p>
+
+<h2 id="notes">Notes</h2>
+<ul>
+  <li>• Purpose: Integration tests verify interactions between components, not isolated unit</li>
+</ul>
+<p>behavior.</p>
+<ul>
+  <li>• Test Server: Use WebApplicationFactory to create a test server instance.</li>
+  <li>• In-Memory Database: Use an in-memory database for testing to isolate data and improve</li>
+</ul>
+<p>speed.</p>
+<ul>
+  <li>• Test Environment: Set the environment to &quot;Test&quot; for test-specific configurations.</li>
+  <li>• Clean Up: Ensure proper cleanup of test data (especially if using a real database).</li>
+  <li>• Mocking: Consider mocking external dependencies for faster and more reliable tests.</li>
+</ul>
+
+<h2 id="key-points-to-remember">Key Points to Remember</h2>
+<p>xUnit Advanced Topics</p>
+<ul>
+  <li>• [Theory] and [InlineData]:</li>
+  <li>o [Theory] marks a test method that should be executed with multiple data sets.</li>
+  <li>o [InlineData(...)] provides the data sets to use for the test.</li>
+  <li>• [ClassFixture]:</li>
+  <li>o Shares a fixture instance (e.g., a test database connection) across all tests in a class.</li>
+  <li>o Improves performance by avoiding redundant setup/teardown.</li>
+  <li>• Custom Assertions: Create your own assertions by extending the Xunit.Assert class.</li>
+  <li>• Test Collections: Group related tests using [Collection] and [CollectionDefinition] attributes.</li>
+  <li>• Parallelization: xUnit can run tests in parallel to improve execution speed.</li>
+</ul>
+
+<h2 id="mocking-moq">Mocking (Moq)</h2>
+<ul>
+  <li>• Purpose: Isolate the unit under test by simulating the behavior of dependencies.</li>
+  <li>• Key Methods:</li>
+  <li>o Setup(expression): Configures how a mock method should behave.</li>
+  <li>o Returns(value) or ReturnsAsync(value): Specifies the return value.</li>
+  <li>o Throws(exception) or ThrowsAsync(exception): Simulates an exception being</li>
+</ul>
+<p>thrown.</p>
+<ul>
+  <li>o Verify(expression, times): Ensures a method was called the expected number of</li>
+</ul>
+<p>times.</p>
+<ul>
+  <li>• Best Practices:</li>
+  <li>o Mock only what&#39;s necessary.</li>
+  <li>o Design for dependency injection.</li>
+  <li>o Use clear and expressive setup and verification code.</li>
+</ul>
+
+<h2 id="autofixture-1">AutoFixture</h2>
+<ul>
+  <li>• Purpose: Automatically generates test data for your classes.</li>
+  <li>• Key Features:</li>
+  <li>o [AutoData] attribute: Provides auto-generated instances to your test methods.</li>
+  <li>o Customization: Control how data is generated using customizations and builders.</li>
+  <li>• Benefits:</li>
+  <li>o Saves time writing test data.</li>
+  <li>o Encourages testing with a variety of inputs.</li>
+</ul>
+
+<h2 id="fluentassertions">FluentAssertions</h2>
+<ul>
+  <li>• Purpose: Provides a more fluent and readable syntax for assertions.</li>
+  <li>• Key Features:</li>
+  <li>o Method chaining for expressive assertions (e.g., result.Should().Be(5);)</li>
+  <li>o Rich API with assertions for various scenarios (collections, exceptions, strings, etc.).</li>
+</ul>
+
+<h2 id="repository-implementation-unit-testing">Repository Implementation &amp; Unit Testing</h2>
+<ul>
+  <li>• Purpose: Repositories handle data access logic (interaction with the database).</li>
+  <li>• Interfaces: Define interfaces (e.g., IPersonsRepository) to abstract data access and facilitate</li>
+</ul>
+<p>mocking.</p>
+<ul>
+  <li>• Unit Tests:</li>
+  <li>o Focus on testing the repository&#39;s logic in isolation.</li>
+  <li>o Use mocks for database interactions.</li>
+  <li>o Cover all CRUD operations and edge cases.</li>
+</ul>
+
+<h2 id="controller-unit-testing">Controller Unit Testing</h2>
+<ul>
+  <li>• Purpose: Test controller actions and their interactions with services and models.</li>
+  <li>• Mock Services: Use mocks to isolate controllers from external dependencies.</li>
+  <li>• Test Scenarios:</li>
+  <li>o Verify correct action results are returned (views, JSON data, redirects, etc.).</li>
+  <li>o Check if the controller interacts with services as expected.</li>
+  <li>o Test model validation and error handling.</li>
+</ul>
+
+<h2 id="integration-tests-1">Integration Tests</h2>
+<ul>
+  <li>• Purpose: Test how multiple components (controllers, views, services, and sometimes even a</li>
+</ul>
+<p>real database) work together.</p>
+<ul>
+  <li>• WebApplicationFactory: Create a test server instance to simulate real requests.</li>
+  <li>• HttpClient: Use an HTTP client to send requests to the test server.</li>
+  <li>• In-Memory Database: Often use an in-memory database for testing.</li>
+  <li>• Test Environment: Set the ASPNETCORE_ENVIRONMENT to &quot;Test&quot; for test-specific</li>
+</ul>
+<p>configuration.</p>
+
+<h2 id="interview-tips">Interview Tips</h2>
+<ul>
+  <li>• Demonstrate Understanding: Explain the purpose and benefits of each tool and technique.</li>
+  <li>• Code Examples: Be prepared to write or analyze code snippets showcasing these concepts.</li>
+  <li>• Best Practices: Discuss the best practices for each topic and common pitfalls to avoid.</li>
+  <li>• Real-World Scenarios: Connect these concepts to real-world testing challenges and how you</li>
+</ul>
+<p>would solve them.</p>
+
+<hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
+<section class="cheatsheet-section" aria-labelledby="cheat-sheet-quick-reference">
+  <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
+  <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
+  <p>Section 19 – xUnit Advanced – Cheat Sheet</p>
+  <h3 id="best-practices-of-unit-tests">Best Practices of Unit Tests</h3>
+  <h3 id="isolated-stand-alone">Isolated / Stand-alone</h3>
+  <p>(separated from any other dependencies such as file system or database)</p>
+  <h3 id="test-single-method-at-a-time">Test single method at-a-time</h3>
+  <p>(should not test more than one method in a single test case)</p>
+  <h3 id="unordered">Unordered</h3>
+  <p>(can be executed in any order)</p>
+  <h3 id="fast">Fast</h3>
+  <p>(Tests should take little time to run (about few milliseconds))</p>
+  <h3 id="repeatable">Repeatable</h3>
+  <p>(Tests can run repeatedly but should give same result, if no changes in the actual source code)</p>
+  <h3 id="timely">Timely</h3>
+  <p>(Time taken for writing a test case should not take longer time, than then time taken for writing the
+code that is being tested)</p>
+  <h3 id="mocking-the-dbcontext">Mocking the DbContext</h3>
+  <h3 id="test-double">Test Double</h3>
+  <p>A &quot;test double&quot; is an object that look and behave like their production equivalent objects.
+A &quot;test double&quot; is an object that look and behave like their production equivalent objects.</p>
+  <h3 id="fake">Fake</h3>
+  <p>An object that providers an alternative (dummy) implementation of an interface</p>
+  <h3 id="mock">Mock</h3>
+  <p>An object on which you fix specific return value for each individual method or property, without
+actual / full implementation of it.</p>
+  <h3 id="mocking-the-dbcontext-1">Mocking the DbContext</h3>
+  <h3 id="install-package-moq">Install-Package Moq</h3>
+  <p>Install-Package EntityFrameworkCoreMock.Moq</p>
+  <p>Mocking the DbContext:</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">var dbContextOptions = new DbContextOptionsBuilder&lt;DbContextClassName&gt;().Options;
+//mock the DbContext</code></pre>
+    </div>
+    <p>DbContextMock&lt;DbContextClass&gt; dbContextMock = new
+DbContextMock&lt;DbContextClass&gt;(dbContextOptions);</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">var initialData = new List&lt;ModelClass&gt;() { … };
+//mock the DbSet
+var dbSetMock = dbContextMock.CreateDbSetMock(temp =&gt; temp.DbSetName, initialData);
+//create service instance with mocked DbContext
+var service = newServiceClass(dbContextMock.Object);</code></pre>
+    </div>
+    <p>AutoFixture
+AutoFixture generates objects of the specified classes and their properties with some fake values
+based their data types.</p>
+  <h3 id="normal-object-creation">Normal object creation</h3>
+  <p>new ModelClass() {
+Property1 = value,
+Property2 = value</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+    <p>With AutoFixture
+Fixture.Create&lt;ModelClass&gt;(); //initializes all properties of the specified model class with dummy
+values</p>
+  <h3 id="autofixture-2">AutoFixture</h3>
+  <h3 id="install-package-autofixture">Install-Package AutoFixture</h3>
+  <p>Working with AutoFixture:</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">var fixture = new Fixture();
+//Simple AutoFixture
+var obj1 = fixture.Create&lt;ModelClass&gt;();
+//Customization with AutoFixture
+var obj2 = fixture.Build&lt;ModelClass&gt;()
+.With(temp =&gt; temp.Property1, value)
+.With(temp =&gt; temp.Property2, value)
+.Create();</code></pre>
+    </div>
+    <p>Fluent Assertions
+Fluent Assertions are a set of extension methods to make the assertions in unit testing more
+readable and human-friendly.</p>
+  <h3 id="install-package-fluentassertions">Install-Package FluentAssertions</h3>
+  <h3 id="assert">Assert</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">//Equal
+Assert.Equal(expected, actual);
+//Not Equal
+Assert.NotEqual(expected, actual);
+//Null
+Assert.Null(actual);
+//Not Null
+Assert.NotNull(actual);
+//True
+Assert.True(actual);
+//False
+Assert.False(actual);
+//Empty
+Assert.Empty(actual);
+//Not Empty
+Assert.NotEmpty(actual);
+//Null or empty</code></pre>
+    </div>
+    <p>Assert.True(string.IsNullOrEmpty(actual)); //string
+Assert.True(actual == null || actual.Length == 0); //collection</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">//Should not be null or empty</code></pre>
+    </div>
+    <p>Assert.False (string.IsNullOrEmpty(actual)); //string
+Assert.False(actual == null || actual.Length == 0); //collection</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">//number should be positive
+Assert.True(actual &gt; 0);
+//number should be negative
+Assert.True(actual &lt; 0);
+//number should be &gt;= expected
+Assert.True(actual &gt;= expected);
+//number should be &lt;= expected
+Assert.True(actual &lt;= expected);
+//number should be in given range
+Assert.True(actual &gt;= minimum &amp;&amp; actual &lt;= maximum);
+//number should not be in given range
+Assert.True(actual &lt; minimum || actual &gt; maximum);
+//check data type
+Assert.IsType&lt;ExpectedType&gt;(actual);
+//Compare properties of two objects (Equals method SHOULD BE overridden
+)
+Assert.Equal(expected, actual);
+//Compare properties (should not be equal) of two objects (Equals method SHOULD BE overridden
+)
+Assert.NotEqual(expected, actual);</code></pre>
+    </div>
+    <p>Fluent Assertion</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">//Equal
+actual.Should().Be(expected);
+//Not Equal
+actual.Should().NotBe(expected);
+//Null
+actual.Should().BeNull();
+//Not Null
+actual.Should().NotBeNull();
+//True
+actual.Should().BeTrue();
+//False
+actual.Should().BeFalse();
+//Empty
+actual.Should().BeEmpty();
+//Not Empty
+actual.Should().NotBeEmpty();
+//Null or empty
+actual.Should().BeNullOrEmpty();
+//Should not be null or empty
+actual.Should().NotBeNullOrEmpty();
+//number should be positive
+actual.Should().BePositive();
+//number should be negative
+actual.Should().BeNegative();
+//number should be &gt;= expected
+actual.Should().BeGreaterThanOrEqualTo(expected);
+//number should be &lt;= expected
+actual.Should().BeLessThanOrEqualTo(expected);
+//number should be in given range
+actual.Should().BeInRange(minimum, maximum);
+//number should not be in given range
+actual.Should().NotBeInRange(minimum, maximum);
+//number should be in given range
+actual.Should().BeInRange(minimum, maximum);
+//number should not be in given range
+actual.Should().NotBeInRange(minimum, maximum);
+//check data type (same type
+)
+actual.Should().BeOfType&lt;ExpectedType&gt;();
+//check data type (same type or derived type
+)
+actual.Should().BeAssignableTo&lt;ExpectedType&gt;();
+//Compare properties of two objects (Equals method NEED NOT be overridden
+)
+actual.Should().BeEquivalentTo(expected);
+//Compare properties (should not equal) of two objects (Equals method NEED NOT be overridden
+)
+actual.Should().BeNotEquivalentTo(expected);</code></pre>
+    </div>
+    <p>Fluent Assertions - Collections:
+actualCollection.Should().BeEmpty();
+actualCollection.Should().NotBeEmpty();
+actualCollection.Should().HaveCount(expectedCount);
+actualCollection.Should().NotHaveCount(expectedCount);
+actualCollection.Should().HaveCountGreaterThanOrEqualTo(expectedCount);
+actualCollection.Should().HaveCountLessThanOrEqualTo(expectedCount);
+actualCollection.Should().HaveSameCount(expectedCollection);
+actualCollection.Should().NotHaveSameCount(expectedCollection);
+actualCollection.Should().BeEquivalentTo(expectedCollection);
+actualCollection.Should().NotBeEquivalentTo(expectedCollection);
+actualCollection.Should().ContainInOrder(expectedCollection);
+actualCollection.Should().NotContainInOrder(expectedCollection);
+actualCollection.Should().OnlyHaveUniqueItems(expectedCount);
+actualCollection.Should().OnlyContain(temp =&gt; condition);
+actualCollection.Should().BeInAscendingOrder(temp =&gt; temp.Property);
+actualCollection.Should().BeInDescendingOrder(temp =&gt; temp.Property);
+actualCollection.Should().NotBeInAscendingOrder(temp =&gt; temp.Property);
+actualCollection.Should().NotBeInDescendingOrder(temp =&gt; temp.Property);
+delegateObj.Should().Throw&lt;ExceptionType&gt;();
+delegateObj.Should().NotThrow&lt;ExceptionType&gt;();</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">await delegateObj.Should().ThrowAsync&lt;ExceptionType&gt;();
+await delegateObj.Should().NotThrowAsync&lt;ExceptionType&gt;();</code></pre>
+    </div>
+    <p>Repository
+Repository (or Repository Pattern) is an abstraction between Data Access Layer (EF DbContext) and
+business logic layer (Service) of the application.</p>
+  <h3 id="unit-testing">Unit Testing</h3>
+  <h3 id="benefits-of-repository-pattern">Benefits of Repository Pattern</h3>
+  <p>Loosely-coupled business logic (service) &amp; data access.
+(You can independently develop them).</p>
+  <h3 id="changing-data-store">Changing data store</h3>
+  <p>(You can create alternative repository implementation for another data store, when needed).</p>
+  <h3 id="unit-testing-1">Unit Testing</h3>
+  <p>(Mocking the repository is much easier (and preferred) than mocking DbContext).</p>
+  <h3 id="mocking-the-repository">Mocking the Repository</h3>
+  <h3 id="install-package-moq-1">Install-Package Moq</h3>
+  <p>Mocking the Repository:</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">//mock the repository
+Mock&lt;IRepository&gt; repositoryMock = new Mock&lt;IRepository&gt;();
+//mock a method repository method
+repositoryMock.Setup(temp =&gt; temp.MethodName(It.Any&lt;ParameterType&gt;()))
+.Returns(return_value);
+//create service instance with mocked repository
+var service = newServiceClass(repositoryMock.Object);</code></pre>
+    </div>
+    <p>Mock&lt;IPersonsRepository&gt;
+Used to mock the methods of IPersonsRepository.</p>
+  <h3 id="ipersonsrepository">IPersonsRepository</h3>
+  <p>Represents the mocked object that was created by Mock&lt;T&gt;.</p>
+  <h3 id="unit-testing-the-controller">Unit Testing the Controller</h3>
+  <p>Unit Testing the Controller:</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">//Arrange
+ControllerName controller = new ControllerName();
+//Act
+IActionResult result = controller.ActionMethod();
+//Assert</code></pre>
+    </div>
+    <p>result.Should().BeAssignableTo&lt;ActionResultType&gt;(); //checking type of action result
+result.ViewData.Model.Should().BeAssignableTo&lt;ExpectedType&gt;(); //checking type of model
+result.ViewData.Model.Should().Be(expectedValue); //you can also use any other assertion</p>
+  <h3 id="efcore-in-memory-provider">EFCore In-Memory Provider</h3>
+  <p>Install-Package Microsoft.EntityFrameworkCore.InMemory
+Using In-memory provider:</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">var dbContextOptions =</code></pre>
+    </div>
+    <p>new DbContextOptionsBuilder&lt;DbContextClassName&gt;()
+.UseInMemoryDatabase(&quot;database_name&quot;);
+.Options;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">var dbContext = newDbContextClassName(dbContextOptions);</code></pre>
+    </div>
+    <h3 id="integration-test">Integration Test</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">//Create factory
+WebApplicationFactory factory = new WebApplicationFactory();
+//Create client
+HttpClient client = factory.CreateClient();
+//Send request client
+HttpResponseMessage response = await client.GetAsync(&quot;url&quot;);
+//Assert</code></pre>
+    </div>
+    <p>result.Should().BeSuccessful(); //Response status code should be 200 to 299</p>
+</section>
+
+      </article>
+
+      <!-- Completion Toggle Control -->
+      <div class="completion-container">
+        <div>
+          <strong style="color: var(--text-main); font-size: 0.95rem;">Section Progress</strong>
+          <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">Mark this section complete to record your learning progress locally.</p>
+        </div>
+        <button class="mark-complete-btn" id="markCompleteBtn" type="button" aria-pressed="false" aria-label="Mark Section Complete">
+          <svg class="complete-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span class="complete-text">Mark Section Complete</span>
+        </button>
+      </div>
+
+      <!-- Bottom Navigation Prev / Next -->
+      <nav class="bottom-nav" aria-label="Previous and Next Section Navigation">
+        
+      <a href="section-18.html" class="nav-card prev" aria-label="Previous Section: Sec 18 - EntityFrameworkCore">
+        <span class="nav-direction">← Previous Section</span>
+        <span class="nav-title">Sec 18: EntityFrameworkCore</span>
+      </a>
+    
+        
+      <a href="section-20.html" class="nav-card next" aria-label="Next Section: Sec 20 - Logging">
+        <span class="nav-direction">Next Section →</span>
+        <span class="nav-title">Sec 20: Logging</span>
+      </a>
+    
+      </nav>
+
+      <!-- Section Footer -->
+      <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); color: var(--text-dim); font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;" role="contentinfo">
+        <span>ASP.NET Core Masterclass — Offline Documentation Portal</span>
+        <a href="#top" style="color: var(--text-muted); text-decoration: none;">↑ Back to top</a>
+      </footer>
+    </main>
+
+    <!-- Right Table of Contents (TOC) -->
+    <aside class="docs-toc" aria-label="Page Table of Contents">
+      <div class="toc-title">On This Page</div>
+      <ul class="toc-list">
+        
+        <li class="toc-item">
+          <a href="#fluent-assertions" class="toc-link">Fluent Assertions</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#benefits-of-fluent-assertions" class="toc-link">Benefits of Fluent Assertions</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#important-fluent-assertions-methods-with-examples" class="toc-link">Important Fluent Assertions Methods with Examples</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#autofixture" class="toc-link">AutoFixture</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#benefits-of-autofixture" class="toc-link">Benefits of AutoFixture</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#example-with-autofixture" class="toc-link">Example with AutoFixture</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#moq" class="toc-link">Moq</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#how-mocking-works-internally-with-moq" class="toc-link">How Mocking Works Internally (with Moq)</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#best-practices" class="toc-link">Best Practices</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#things-to-avoid" class="toc-link">Things to Avoid</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#integration-tests" class="toc-link">Integration Tests</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#why-integration-tests-matter" class="toc-link">Why Integration Tests Matter</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-elements-of-integration-tests-with-xunit" class="toc-link">Key Elements of Integration Tests with xUnit</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#best-practices-1" class="toc-link">Best Practices</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code" class="toc-link">Code</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#notes" class="toc-link">Notes</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#mocking-moq" class="toc-link">Mocking (Moq)</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#autofixture-1" class="toc-link">AutoFixture</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#fluentassertions" class="toc-link">FluentAssertions</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#repository-implementation-unit-testing" class="toc-link">Repository Implementation &amp; Unit Testing</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#controller-unit-testing" class="toc-link">Controller Unit Testing</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#integration-tests-1" class="toc-link">Integration Tests</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#interview-tips" class="toc-link">Interview Tips</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#cheat-sheet-quick-reference" class="toc-link">Cheat Sheet &amp; Quick Reference</a>
+        </li>
+      
+      </ul>
+    </aside>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/search-index.js"></script>
+  <script src="../assets/js/search-engine.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

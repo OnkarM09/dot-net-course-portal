@@ -1,0 +1,2369 @@
+{
+  "source_file": "Cheat Sheet - Section 7 - Asp.Net Core.pdf",
+  "absolute_path": "D:/Dot net core/Asp.Net_Core_-Udemy-/Notes-20250125T050818Z-001/Cheat Sheets/Cheat Sheet - Section 7 - Asp.Net Core.pdf",
+  "section_number": 7,
+  "normalized_section": "07",
+  "is_cheatsheet": true,
+  "total_pages": 11,
+  "total_raw_chars": 6412,
+  "total_repaired_chars": 6551,
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "Asp.Net Core – True Ultimate Guide\nSection 7 – Model Binding and Validations – Cheat Sheet\nModel Binding\nModel Binding is a feature of asp.net core that reads values from http requests and pass them as\narguments to the action method.\nQueryString vs RouteData\n",
+      "repaired_text": "Asp.Net Core – True Ultimate Guide\nSection 7 – Model Binding and Validations – Cheat Sheet\nModel Binding\nModel Binding is a feature of asp.net core that reads values from http requests and pass them as\narguments to the action method.\nQueryString vs RouteData",
+      "lines": [
+        {
+          "text": "Asp.Net Core – True Ultimate Guide",
+          "rawText": "Asp.Net Core – True Ultimate Guide",
+          "x": 72.024,
+          "y": 753.96,
+          "fontSize": 15.96,
+          "fontName": "g_d13_f2"
+        },
+        {
+          "text": "Section 7 – Model Binding and Validations – Cheat Sheet",
+          "rawText": "Section 7 – Model Binding and Validations – Cheat Sheet",
+          "x": 72.024,
+          "y": 725.98,
+          "fontSize": 15.96,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Model Binding",
+          "rawText": "Model Binding",
+          "x": 72.024,
+          "y": 677.38,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Model Binding is a feature of asp.net core that reads values from http requests and pass them as",
+          "rawText": "Model Binding is a feature of asp.net core that reads values from http requests and pass them as",
+          "x": 72.024,
+          "y": 654.94,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "arguments to the action method.",
+          "rawText": "arguments to the action method.",
+          "x": 72.024,
+          "y": 640.42,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "QueryString vs RouteData",
+          "rawText": "QueryString vs RouteData",
+          "x": 72.024,
+          "y": 421.39,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "banner_header",
+          "page": 1,
+          "lines": [
+            "Asp.Net Core – True Ultimate Guide"
+          ],
+          "text": "Asp.Net Core – True Ultimate Guide"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Section 7 – Model Binding and Validations – Cheat Sheet"
+          ],
+          "text": "Section 7 – Model Binding and Validations – Cheat Sheet"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Model Binding"
+          ],
+          "text": "Model Binding"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Model Binding is a feature of asp.net core that reads values from http requests and pass them as",
+            "arguments to the action method."
+          ],
+          "text": "Model Binding is a feature of asp.net core that reads values from http requests and pass them as\narguments to the action method."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "QueryString vs RouteData"
+          ],
+          "text": "QueryString vs RouteData"
+        }
+      ],
+      "char_count_raw": 259,
+      "char_count_repaired": 258
+    },
+    {
+      "page_number": 2,
+      "raw_text": "[FromQuery] and [FromRoute]\n[FromQuery]\n//gets the value from query string only\npublic IActionResult ActionMethodName( [FromQuery] type parameter)\n{\n}\n[FromRoute]\n//gets the value from route parameters only\npublic IActionResult ActionMethodName( [FromRoute] type parameter)\n{\n}\n",
+      "repaired_text": "[FromQuery] and [FromRoute]\n[FromQuery]\n//gets the value from query string only\npublic IActionResult ActionMethodName( [FromQuery] type parameter)\n{\n}\n[FromRoute]\n//gets the value from route parameters only\npublic IActionResult ActionMethodName( [FromRoute] type parameter)\n{\n}",
+      "lines": [
+        {
+          "text": "[FromQuery] and [FromRoute]",
+          "rawText": "[FromQuery] and [FromRoute]",
+          "x": 72.024,
+          "y": 540.19,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "[FromQuery]",
+          "rawText": "[FromQuery]",
+          "x": 72.024,
+          "y": 304.61,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "//gets the value from query string only",
+          "rawText": "//gets the value from query string only",
+          "x": 72.024,
+          "y": 282.17,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "public IActionResult ActionMethodName( [FromQuery] type parameter)",
+          "rawText": "public IActionResult ActionMethodName( [FromQuery] type parameter)",
+          "x": 72.024,
+          "y": 259.73,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 237.17,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 214.7,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "[FromRoute]",
+          "rawText": "[FromRoute]",
+          "x": 72.024,
+          "y": 169.7,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "//gets the value from route parameters only",
+          "rawText": "//gets the value from route parameters only",
+          "x": 72.024,
+          "y": 147.14,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "public IActionResult ActionMethodName( [FromRoute] type parameter)",
+          "rawText": "public IActionResult ActionMethodName( [FromRoute] type parameter)",
+          "x": 72.024,
+          "y": 124.7,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 102.26,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 79.704,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "[FromQuery] and [FromRoute]",
+            "[FromQuery]",
+            "//gets the value from query string only",
+            "public IActionResult ActionMethodName( [FromQuery] type parameter)",
+            "{",
+            "}",
+            "[FromRoute]",
+            "//gets the value from route parameters only",
+            "public IActionResult ActionMethodName( [FromRoute] type parameter)",
+            "{",
+            "}"
+          ],
+          "text": "[FromQuery] and [FromRoute]\n[FromQuery]\n//gets the value from query string only\npublic IActionResult ActionMethodName( [FromQuery] type parameter)\n{\n}\n[FromRoute]\n//gets the value from route parameters only\npublic IActionResult ActionMethodName( [FromRoute] type parameter)\n{\n}"
+        }
+      ],
+      "char_count_raw": 278,
+      "char_count_repaired": 277
+    },
+    {
+      "page_number": 3,
+      "raw_text": "Models\nModel is a class that represents structure of data (as properties) that you would like to receive from\nthe request and/or send to the response.\nAlso known as POCO (Plain Old CLR Objects).\nModel\nclass ClassName\n{\npublic type PropertyName { get; set; }\n}\n",
+      "repaired_text": "Models\nModel is a class that represents structure of data (as properties) that you would like to receive from\nthe request and/or send to the response.\nAlso known as POCO (Plain Old CLR Objects).\nModel\nclass ClassName\n{\n public type PropertyName { get; set; }\n}",
+      "lines": [
+        {
+          "text": "Models",
+          "rawText": "Models",
+          "x": 72.024,
+          "y": 495.43,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Model is a class that represents structure of data (as properties) that you would like to receive from",
+          "rawText": "Model is a class that represents structure of data (as properties) that you would like to receive from",
+          "x": 72.024,
+          "y": 472.87,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "the request and/or send to the response.",
+          "rawText": "the request and/or send to the response.",
+          "x": 72.024,
+          "y": 458.47,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "Also known as POCO (Plain Old CLR Objects).",
+          "rawText": "Also known as POCO (Plain Old CLR Objects).",
+          "x": 72.024,
+          "y": 435.91,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "Model",
+          "rawText": "Model",
+          "x": 72.024,
+          "y": 222.89,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "class ClassName",
+          "rawText": "class ClassName",
+          "x": 72.024,
+          "y": 200.3,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 177.86,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " public type PropertyName { get; set; }",
+          "rawText": "public type PropertyName { get; set; }",
+          "x": 77.064,
+          "y": 155.42,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 132.86,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 3,
+          "lines": [
+            "Models"
+          ],
+          "text": "Models"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "Model is a class that represents structure of data (as properties) that you would like to receive from",
+            "the request and/or send to the response.",
+            "Also known as POCO (Plain Old CLR Objects)."
+          ],
+          "text": "Model is a class that represents structure of data (as properties) that you would like to receive from\nthe request and/or send to the response.\nAlso known as POCO (Plain Old CLR Objects)."
+        },
+        {
+          "type": "heading",
+          "page": 3,
+          "lines": [
+            "Model"
+          ],
+          "text": "Model"
+        },
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            "class ClassName",
+            "{",
+            " public type PropertyName { get; set; }",
+            "}"
+          ],
+          "text": "class ClassName\n{\n public type PropertyName { get; set; }\n}"
+        }
+      ],
+      "char_count_raw": 260,
+      "char_count_repaired": 260
+    },
+    {
+      "page_number": 4,
+      "raw_text": "form-urlencoded and form-data\nform-urlencoded (default)\nRequest Headers\nContent-Type: application/x-www-form-urlencoded\nRequest Body\nparam1=value1&param2=value2\nform-data\nRequest Headers\nContent-Type: multipart/form-data\nRequest Body\n--------------------------d74496d66958873e\nContent-Disposition: form-data; name=\"param1\"\nvalue1\n--------------------------d74496d66958873e\nContent-Disposition: form-data; name=\"param2\"\nvalue2\n",
+      "repaired_text": "form-urlencoded and form-data\nform-urlencoded (default)\nRequest Headers\nContent-Type: application/x-www-form-urlencoded\nRequest Body\nparam1=value1&param2=value2\nform-data\nRequest Headers\nContent-Type: multipart/form-data\nRequest Body\n--------------------------d74496d66958873e\nContent-Disposition: form-data; name=\"param1\"\nvalue1\n--------------------------d74496d66958873e\nContent-Disposition: form-data; name=\"param2\"\nvalue2",
+      "lines": [
+        {
+          "text": "form-urlencoded and form-data",
+          "rawText": "form-urlencoded and form-data",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "form-urlencoded (default)",
+          "rawText": "form-urlencoded (default)",
+          "x": 72.024,
+          "y": 514.87,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Request Headers",
+          "rawText": "Request Headers",
+          "x": 72.024,
+          "y": 492.43,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Content-Type: application/x-www-form-urlencoded",
+          "rawText": "Content-Type: application/x-www-form-urlencoded",
+          "x": 72.024,
+          "y": 469.87,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "Request Body",
+          "rawText": "Request Body",
+          "x": 72.024,
+          "y": 424.87,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "param1=value1&param2=value2",
+          "rawText": "param1=value1&param2=value2",
+          "x": 72.024,
+          "y": 402.43,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "form-data",
+          "rawText": "form-data",
+          "x": 72.024,
+          "y": 334.97,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Request Headers",
+          "rawText": "Request Headers",
+          "x": 72.024,
+          "y": 312.41,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Content-Type: multipart/form-data",
+          "rawText": "Content-Type: multipart/form-data",
+          "x": 72.024,
+          "y": 289.97,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "Request Body",
+          "rawText": "Request Body",
+          "x": 72.024,
+          "y": 244.97,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "--------------------------d74496d66958873e",
+          "rawText": "--------------------------d74496d66958873e",
+          "x": 72.024,
+          "y": 222.53,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "Content-Disposition: form-data; name=\"param1\"",
+          "rawText": "Content-Disposition: form-data; name=\"param1\"",
+          "x": 72.024,
+          "y": 199.94,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "value1",
+          "rawText": "value1",
+          "x": 72.024,
+          "y": 177.5,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "--------------------------d74496d66958873e",
+          "rawText": "--------------------------d74496d66958873e",
+          "x": 72.024,
+          "y": 154.94,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "Content-Disposition: form-data; name=\"param2\"",
+          "rawText": "Content-Disposition: form-data; name=\"param2\"",
+          "x": 72.024,
+          "y": 132.5,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "value2",
+          "rawText": "value2",
+          "x": 72.024,
+          "y": 110.06,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "form-urlencoded and form-data",
+            "form-urlencoded (default)"
+          ],
+          "text": "form-urlencoded and form-data\nform-urlencoded (default)"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "Request Headers"
+          ],
+          "text": "Request Headers"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "Content-Type: application/x-www-form-urlencoded"
+          ],
+          "text": "Content-Type: application/x-www-form-urlencoded"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "Request Body"
+          ],
+          "text": "Request Body"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "param1=value1&param2=value2",
+            "form-data"
+          ],
+          "text": "param1=value1&param2=value2\nform-data"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "Request Headers"
+          ],
+          "text": "Request Headers"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "Content-Type: multipart/form-data"
+          ],
+          "text": "Content-Type: multipart/form-data"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "Request Body"
+          ],
+          "text": "Request Body"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "--------------------------d74496d66958873e",
+            "Content-Disposition: form-data; name=\"param1\"",
+            "value1",
+            "--------------------------d74496d66958873e",
+            "Content-Disposition: form-data; name=\"param2\"",
+            "value2"
+          ],
+          "text": "--------------------------d74496d66958873e\nContent-Disposition: form-data; name=\"param1\"\nvalue1\n--------------------------d74496d66958873e\nContent-Disposition: form-data; name=\"param2\"\nvalue2"
+        }
+      ],
+      "char_count_raw": 426,
+      "char_count_repaired": 425
+    },
+    {
+      "page_number": 5,
+      "raw_text": "Model Validation\nclass ClassName\n{\n[Attribute] //applies validation rule on this property\npublic type PropertyName { get; set; }\n}\nModelState\nIsValid\nSpecifies whether there is at least one validation error or not (true or false).\nValues\nContains each model property value with corresponding \"Errors\" property that contains list of\nvalidation errors of that model property.\nErrorCount\nReturns number of errors.\nModel Validation\n[Required(ErrorMessage = \"value\")]\nSpecifies that the property value is required (can't be blank or empty).\n[StringLength(int maximumLength, MinimumLength = value, ErrorMessage = \"value\")]\nSpecifies minimum and maximum length (number of characters) allowed in the string.\n",
+      "repaired_text": "Model Validation\nclass ClassName\n{\n [Attribute] //applies validation rule on this property\n public type PropertyName { get; set; }\n}\nModelState\nIsValid\nSpecifies whether there is at least one validation error or not (true or false).\nValues\nContains each model property value with corresponding \"Errors\" property that contains list of\nvalidation errors of that model property.\nErrorCount\nReturns number of errors.\nModel Validation\n[Required(ErrorMessage = \"value\")]\nSpecifies that the property value is required (can't be blank or empty).\n[StringLength(int maximumLength, MinimumLength = value, ErrorMessage = \"value\")]\nSpecifies minimum and maximum length (number of characters) allowed in the string.",
+      "lines": [
+        {
+          "text": "Model Validation",
+          "rawText": "Model Validation",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "class ClassName",
+          "rawText": "class ClassName",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " [Attribute] //applies validation rule on this property",
+          "rawText": "[Attribute] //applies validation rule on this property",
+          "x": 77.064,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " public type PropertyName { get; set; }",
+          "rawText": "public type PropertyName { get; set; }",
+          "x": 77.064,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "ModelState",
+          "rawText": "ModelState",
+          "x": 72.024,
+          "y": 415.99,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "IsValid",
+          "rawText": "IsValid",
+          "x": 72.024,
+          "y": 393.41,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Specifies whether there is at least one validation error or not (true or false).",
+          "rawText": "Specifies whether there is at least one validation error or not (true or false).",
+          "x": 72.024,
+          "y": 370.97,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "Values",
+          "rawText": "Values",
+          "x": 72.024,
+          "y": 348.41,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Contains each model property value with corresponding \"Errors\" property that contains list of",
+          "rawText": "Contains each model property value with corresponding \"Errors\" property that contains list of",
+          "x": 72.024,
+          "y": 325.97,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "validation errors of that model property.",
+          "rawText": "validation errors of that model property.",
+          "x": 72.024,
+          "y": 311.45,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "ErrorCount",
+          "rawText": "ErrorCount",
+          "x": 72.024,
+          "y": 289.01,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Returns number of errors.",
+          "rawText": "Returns number of errors.",
+          "x": 72.024,
+          "y": 266.45,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "Model Validation",
+          "rawText": "Model Validation",
+          "x": 72.024,
+          "y": 198.98,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "[Required(ErrorMessage = \"value\")]",
+          "rawText": "[Required(ErrorMessage = \"value\")]",
+          "x": 72.024,
+          "y": 176.54,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Specifies that the property value is required (can't be blank or empty).",
+          "rawText": "Specifies that the property value is required (can't be blank or empty).",
+          "x": 72.024,
+          "y": 153.98,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "[StringLength(int maximumLength, MinimumLength = value, ErrorMessage = \"value\")]",
+          "rawText": "[StringLength(int maximumLength, MinimumLength = value, ErrorMessage = \"value\")]",
+          "x": 72.024,
+          "y": 108.98,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Specifies minimum and maximum length (number of characters) allowed in the string.",
+          "rawText": "Specifies minimum and maximum length (number of characters) allowed in the string.",
+          "x": 72.024,
+          "y": 86.544,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "Model Validation"
+          ],
+          "text": "Model Validation"
+        },
+        {
+          "type": "code",
+          "page": 5,
+          "lines": [
+            "class ClassName",
+            "{"
+          ],
+          "text": "class ClassName\n{"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            " [Attribute] //applies validation rule on this property"
+          ],
+          "text": " [Attribute] //applies validation rule on this property"
+        },
+        {
+          "type": "code",
+          "page": 5,
+          "lines": [
+            " public type PropertyName { get; set; }",
+            "}"
+          ],
+          "text": " public type PropertyName { get; set; }\n}"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "ModelState"
+          ],
+          "text": "ModelState"
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "IsValid"
+          ],
+          "text": "IsValid"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "Specifies whether there is at least one validation error or not (true or false)."
+          ],
+          "text": "Specifies whether there is at least one validation error or not (true or false)."
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "Values"
+          ],
+          "text": "Values"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "Contains each model property value with corresponding \"Errors\" property that contains list of",
+            "validation errors of that model property."
+          ],
+          "text": "Contains each model property value with corresponding \"Errors\" property that contains list of\nvalidation errors of that model property."
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "ErrorCount"
+          ],
+          "text": "ErrorCount"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "Returns number of errors."
+          ],
+          "text": "Returns number of errors."
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "Model Validation"
+          ],
+          "text": "Model Validation"
+        },
+        {
+          "type": "code",
+          "page": 5,
+          "lines": [
+            "[Required(ErrorMessage = \"value\")]"
+          ],
+          "text": "[Required(ErrorMessage = \"value\")]"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "Specifies that the property value is required (can't be blank or empty)."
+          ],
+          "text": "Specifies that the property value is required (can't be blank or empty)."
+        },
+        {
+          "type": "code",
+          "page": 5,
+          "lines": [
+            "[StringLength(int maximumLength, MinimumLength = value, ErrorMessage = \"value\")]"
+          ],
+          "text": "[StringLength(int maximumLength, MinimumLength = value, ErrorMessage = \"value\")]"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "Specifies minimum and maximum length (number of characters) allowed in the string."
+          ],
+          "text": "Specifies minimum and maximum length (number of characters) allowed in the string."
+        }
+      ],
+      "char_count_raw": 700,
+      "char_count_repaired": 701
+    },
+    {
+      "page_number": 6,
+      "raw_text": "[Range(int minimum, int maximum, ErrorMessage = \"value\")]\nSpecifies minimum and maximum numerical value allowed.\n[RegularExpression(string pattern, ErrorMessage = \"value\")]\nSpecifies the valid pattern (regular expression).\n[EmailAddress(ErrorMessage = \"value\")]\nSpecifies that the value should be a valid email address.\n[Phone(ErrorMessage = \"value\")]\nSpecifies that the value should be a valid phone number).\nEg: (999)-999-9999 or 9876543210\n[Compare(string otherProperty, ErrorMessage = \"value\")]\nSpecifies that the values of current property and other property should be same.\n[Url(ErrorMessage = \"value\")]\nSpecifies that the value should be a valid url (website address).\nEg: http://www.example.com\n[ValidateNever]\nSpecifies that the property should not be validated (excludes the property from model validation).\nCustom Validations\nclass ClassName : ValidationAttribute\n{\npublic override ValidationResult? IsValid(object? value, ValidationContext validationContext)\n{\n//return ValidationResult.Success;\n",
+      "repaired_text": "[Range(int minimum, int maximum, ErrorMessage = \"value\")]\nSpecifies minimum and maximum numerical value allowed.\n[RegularExpression(string pattern, ErrorMessage = \"value\")]\nSpecifies the valid pattern (regular expression).\n[EmailAddress(ErrorMessage = \"value\")]\nSpecifies that the value should be a valid email address.\n[Phone(ErrorMessage = \"value\")]\nSpecifies that the value should be a valid phone number).\nEg: (999)-999-9999 or 9876543210\n[Compare(string otherProperty, ErrorMessage = \"value\")]\nSpecifies that the values of current property and other property should be same.\n[Url(ErrorMessage = \"value\")]\nSpecifies that the value should be a valid url (website address).\nEg: http://www.example.com\n[ValidateNever]\nSpecifies that the property should not be validated (excludes the property from model validation).\nCustom Validations\nclass ClassName : ValidationAttribute\n{\n public override ValidationResult? IsValid(object? value, ValidationContext validationContext)\n {\n  //return ValidationResult.Success;",
+      "lines": [
+        {
+          "text": "[Range(int minimum, int maximum, ErrorMessage = \"value\")]",
+          "rawText": "[Range(int minimum, int maximum, ErrorMessage = \"value\")]",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Specifies minimum and maximum numerical value allowed.",
+          "rawText": "Specifies minimum and maximum numerical value allowed.",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "[RegularExpression(string pattern, ErrorMessage = \"value\")]",
+          "rawText": "[RegularExpression(string pattern, ErrorMessage = \"value\")]",
+          "x": 72.024,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Specifies the valid pattern (regular expression).",
+          "rawText": "Specifies the valid pattern (regular expression).",
+          "x": 72.024,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "[EmailAddress(ErrorMessage = \"value\")]",
+          "rawText": "[EmailAddress(ErrorMessage = \"value\")]",
+          "x": 72.024,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Specifies that the value should be a valid email address.",
+          "rawText": "Specifies that the value should be a valid email address.",
+          "x": 72.024,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "[Phone(ErrorMessage = \"value\")]",
+          "rawText": "[Phone(ErrorMessage = \"value\")]",
+          "x": 72.024,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Specifies that the value should be a valid phone number).",
+          "rawText": "Specifies that the value should be a valid phone number).",
+          "x": 72.024,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "Eg: (999)-999-9999 or 9876543210",
+          "rawText": "Eg: (999)-999-9999 or 9876543210",
+          "x": 72.024,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "[Compare(string otherProperty, ErrorMessage = \"value\")]",
+          "rawText": "[Compare(string otherProperty, ErrorMessage = \"value\")]",
+          "x": 72.024,
+          "y": 444.55,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Specifies that the values of current property and other property should be same.",
+          "rawText": "Specifies that the values of current property and other property should be same.",
+          "x": 72.024,
+          "y": 422.11,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "[Url(ErrorMessage = \"value\")]",
+          "rawText": "[Url(ErrorMessage = \"value\")]",
+          "x": 72.024,
+          "y": 377.09,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Specifies that the value should be a valid url (website address).",
+          "rawText": "Specifies that the value should be a valid url (website address).",
+          "x": 72.024,
+          "y": 354.53,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "Eg: http://www.example.com",
+          "rawText": "Eg: http://www.example.com",
+          "x": 72.024,
+          "y": 332.09,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "[ValidateNever]",
+          "rawText": "[ValidateNever]",
+          "x": 72.024,
+          "y": 287.09,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Specifies that the property should not be validated (excludes the property from model validation).",
+          "rawText": "Specifies that the property should not be validated (excludes the property from model validation).",
+          "x": 72.024,
+          "y": 264.65,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "Custom Validations",
+          "rawText": "Custom Validations",
+          "x": 72.024,
+          "y": 197.06,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "class ClassName : ValidationAttribute",
+          "rawText": "class ClassName : ValidationAttribute",
+          "x": 72.024,
+          "y": 174.62,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 152.18,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " public override ValidationResult? IsValid(object? value, ValidationContext validationContext)",
+          "rawText": "public override ValidationResult? IsValid(object? value, ValidationContext validationContext)",
+          "x": 77.064,
+          "y": 129.62,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " {",
+          "rawText": "{",
+          "x": 77.064,
+          "y": 107.18,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "  //return ValidationResult.Success;",
+          "rawText": "//return ValidationResult.Success;",
+          "x": 81.984,
+          "y": 84.624,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "page": 6,
+          "lines": [
+            "[Range(int minimum, int maximum, ErrorMessage = \"value\")]"
+          ],
+          "text": "[Range(int minimum, int maximum, ErrorMessage = \"value\")]"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "Specifies minimum and maximum numerical value allowed."
+          ],
+          "text": "Specifies minimum and maximum numerical value allowed."
+        },
+        {
+          "type": "code",
+          "page": 6,
+          "lines": [
+            "[RegularExpression(string pattern, ErrorMessage = \"value\")]"
+          ],
+          "text": "[RegularExpression(string pattern, ErrorMessage = \"value\")]"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "Specifies the valid pattern (regular expression).",
+            "[EmailAddress(ErrorMessage = \"value\")]",
+            "Specifies that the value should be a valid email address.",
+            "[Phone(ErrorMessage = \"value\")]",
+            "Specifies that the value should be a valid phone number).",
+            "Eg: (999)-999-9999 or 9876543210"
+          ],
+          "text": "Specifies the valid pattern (regular expression).\n[EmailAddress(ErrorMessage = \"value\")]\nSpecifies that the value should be a valid email address.\n[Phone(ErrorMessage = \"value\")]\nSpecifies that the value should be a valid phone number).\nEg: (999)-999-9999 or 9876543210"
+        },
+        {
+          "type": "code",
+          "page": 6,
+          "lines": [
+            "[Compare(string otherProperty, ErrorMessage = \"value\")]"
+          ],
+          "text": "[Compare(string otherProperty, ErrorMessage = \"value\")]"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "Specifies that the values of current property and other property should be same.",
+            "[Url(ErrorMessage = \"value\")]",
+            "Specifies that the value should be a valid url (website address).",
+            "Eg: http://www.example.com",
+            "[ValidateNever]",
+            "Specifies that the property should not be validated (excludes the property from model validation)."
+          ],
+          "text": "Specifies that the values of current property and other property should be same.\n[Url(ErrorMessage = \"value\")]\nSpecifies that the value should be a valid url (website address).\nEg: http://www.example.com\n[ValidateNever]\nSpecifies that the property should not be validated (excludes the property from model validation)."
+        },
+        {
+          "type": "heading",
+          "page": 6,
+          "lines": [
+            "Custom Validations"
+          ],
+          "text": "Custom Validations"
+        },
+        {
+          "type": "code",
+          "page": 6,
+          "lines": [
+            "class ClassName : ValidationAttribute",
+            "{",
+            " public override ValidationResult? IsValid(object? value, ValidationContext validationContext)",
+            " {",
+            "  //return ValidationResult.Success;"
+          ],
+          "text": "class ClassName : ValidationAttribute\n{\n public override ValidationResult? IsValid(object? value, ValidationContext validationContext)\n {\n  //return ValidationResult.Success;"
+        }
+      ],
+      "char_count_raw": 1008,
+      "char_count_repaired": 1011
+    },
+    {
+      "page_number": 7,
+      "raw_text": "//[or] return new ValidationResult(\"error message\");\n}\n}\nValidationAttribute\n• Base class for all validation attributes such as RequiredAttribute,\nRegularExpressionAttribute, RangeAttribute, StringLengthAttribute, CompareAttribute etc.\n• Provides properties such as ErrorMessage & methods such as Validate(), IsValid() etc.\nValidationContext\n• Acts as a parameter for \"IsValid()\" method of custom validation attribute classes.\n• Provides properties such as ObjectType, ObjectInstance.\nCustom Validations with Multiple Properties\n",
+      "repaired_text": "  //[or] return new ValidationResult(\"error message\");\n }\n}\nValidationAttribute\n   • Base class for all validation attributes such as RequiredAttribute,\n      RegularExpressionAttribute, RangeAttribute, StringLengthAttribute, CompareAttribute etc.\n   • Provides properties such as ErrorMessage & methods such as Validate(), IsValid() etc.\nValidationContext\n   • Acts as a parameter for \"IsValid()\" method of custom validation attribute classes.\n   • Provides properties such as ObjectType, ObjectInstance.\nCustom Validations with Multiple Properties",
+      "lines": [
+        {
+          "text": "  //[or] return new ValidationResult(\"error message\");",
+          "rawText": "//[or] return new ValidationResult(\"error message\");",
+          "x": 81.984,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " }",
+          "rawText": "}",
+          "x": 77.064,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "ValidationAttribute",
+          "rawText": "ValidationAttribute",
+          "x": 72.024,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "   • Base class for all validation attributes such as RequiredAttribute,",
+          "rawText": "• Base class for all validation attributes such as RequiredAttribute,",
+          "x": 90.024,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        },
+        {
+          "text": "      RegularExpressionAttribute, RangeAttribute, StringLengthAttribute, CompareAttribute etc.",
+          "rawText": "RegularExpressionAttribute, RangeAttribute, StringLengthAttribute, CompareAttribute etc.",
+          "x": 108.02,
+          "y": 632.5,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "   • Provides properties such as ErrorMessage & methods such as Validate(), IsValid() etc.",
+          "rawText": "• Provides properties such as ErrorMessage & methods such as Validate(), IsValid() etc.",
+          "x": 90.024,
+          "y": 610.06,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        },
+        {
+          "text": "ValidationContext",
+          "rawText": "ValidationContext",
+          "x": 72.024,
+          "y": 565.03,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "   • Acts as a parameter for \"IsValid()\" method of custom validation attribute classes.",
+          "rawText": "• Acts as a parameter for \"IsValid()\" method of custom validation attribute classes.",
+          "x": 90.024,
+          "y": 542.47,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        },
+        {
+          "text": "   • Provides properties such as ObjectType, ObjectInstance.",
+          "rawText": "• Provides properties such as ObjectType, ObjectInstance.",
+          "x": 90.024,
+          "y": 520.03,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        },
+        {
+          "text": "Custom Validations with Multiple Properties",
+          "rawText": "Custom Validations with Multiple Properties",
+          "x": 72.024,
+          "y": 475.03,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "page": 7,
+          "lines": [
+            "  //[or] return new ValidationResult(\"error message\");",
+            " }",
+            "}"
+          ],
+          "text": "  //[or] return new ValidationResult(\"error message\");\n }\n}"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "ValidationAttribute"
+          ],
+          "text": "ValidationAttribute"
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • Base class for all validation attributes such as RequiredAttribute,"
+          ],
+          "text": "   • Base class for all validation attributes such as RequiredAttribute,"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "      RegularExpressionAttribute, RangeAttribute, StringLengthAttribute, CompareAttribute etc."
+          ],
+          "text": "      RegularExpressionAttribute, RangeAttribute, StringLengthAttribute, CompareAttribute etc."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • Provides properties such as ErrorMessage & methods such as Validate(), IsValid() etc."
+          ],
+          "text": "   • Provides properties such as ErrorMessage & methods such as Validate(), IsValid() etc."
+        },
+        {
+          "type": "heading",
+          "page": 7,
+          "lines": [
+            "ValidationContext"
+          ],
+          "text": "ValidationContext"
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • Acts as a parameter for \"IsValid()\" method of custom validation attribute classes."
+          ],
+          "text": "   • Acts as a parameter for \"IsValid()\" method of custom validation attribute classes."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • Provides properties such as ObjectType, ObjectInstance."
+          ],
+          "text": "   • Provides properties such as ObjectType, ObjectInstance."
+        },
+        {
+          "type": "heading",
+          "page": 7,
+          "lines": [
+            "Custom Validations with Multiple Properties"
+          ],
+          "text": "Custom Validations with Multiple Properties"
+        }
+      ],
+      "char_count_raw": 529,
+      "char_count_repaired": 549
+    },
+    {
+      "page_number": 8,
+      "raw_text": "IValidatableObject\nclass ClassName : IValidatableObject\n{\n//model properties here\npublic IEnumerable<ValidationResult> Validate(ValidationContext validationContext)\n{\nif (condition)\n{\nyield return new ValidationResult(\"error message\");\n}\n}\n}\n• Base class for model classes with validation.\n• Provides a method called Validate() to define class level validation logic.\n• The Validate() method executes after validating all property-level validations are executed;\nbut doesn't execute if at least one property-level validations result error.\nValidationContext\n• Acts as a parameter for \"Validate()\" method of model classes with IValidatableObject.\n• Provides properties such as ObjectType, ObjectInstance.\n[Bind] and [BindNever]\n[Bind]\nclass ClassNameController\n{\npublic IActionResult ActionMethodName( [Bind(nameof(ClassName.PropertyName),\nnameof(ClassName.PropertyName) )] ClassName parameterName)\n{\n}\n}\n",
+      "repaired_text": "IValidatableObject\nclass ClassName : IValidatableObject\n{\n //model properties here\n public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)\n {\n  if (condition)\n  {\n  yield return new ValidationResult(\"error message\");\n  }\n }\n}\n   • Base class for model classes with validation.\n   • Provides a method called Validate() to define class level validation logic.\n   • The Validate() method executes after validating all property-level validations are executed;\n      but doesn't execute if at least one property-level validations result error.\nValidationContext\n   • Acts as a parameter for \"Validate()\" method of model classes with IValidatableObject.\n   • Provides properties such as ObjectType, ObjectInstance.\n[Bind] and [BindNever]\n[Bind]\nclass ClassNameController\n{\n public IActionResult ActionMethodName( [Bind(nameof(ClassName.PropertyName),\nnameof(ClassName.PropertyName) )] ClassName parameterName)\n {\n }\n}",
+      "lines": [
+        {
+          "text": "IValidatableObject",
+          "rawText": "IValidatableObject",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "class ClassName : IValidatableObject",
+          "rawText": "class ClassName : IValidatableObject",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " //model properties here",
+          "rawText": "//model properties here",
+          "x": 77.064,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)",
+          "rawText": "public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)",
+          "x": 77.064,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " {",
+          "rawText": "{",
+          "x": 77.064,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "  if (condition)",
+          "rawText": "if (condition)",
+          "x": 82.104,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "  yield return new ValidationResult(\"error message\");",
+          "rawText": "yield return new ValidationResult(\"error message\");",
+          "x": 87.024,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 82.104,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " }",
+          "rawText": "}",
+          "x": 77.064,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "   • Base class for model classes with validation.",
+          "rawText": "• Base class for model classes with validation.",
+          "x": 90.024,
+          "y": 444.55,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        },
+        {
+          "text": "   • Provides a method called Validate() to define class level validation logic.",
+          "rawText": "• Provides a method called Validate() to define class level validation logic.",
+          "x": 90.024,
+          "y": 422.11,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        },
+        {
+          "text": "   • The Validate() method executes after validating all property-level validations are executed;",
+          "rawText": "• The Validate() method executes after validating all property-level validations are executed;",
+          "x": 90.024,
+          "y": 399.55,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        },
+        {
+          "text": "      but doesn't execute if at least one property-level validations result error.",
+          "rawText": "but doesn't execute if at least one property-level validations result error.",
+          "x": 108.02,
+          "y": 385.01,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "ValidationContext",
+          "rawText": "ValidationContext",
+          "x": 72.024,
+          "y": 340.13,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "   • Acts as a parameter for \"Validate()\" method of model classes with IValidatableObject.",
+          "rawText": "• Acts as a parameter for \"Validate()\" method of model classes with IValidatableObject.",
+          "x": 90.024,
+          "y": 317.57,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        },
+        {
+          "text": "   • Provides properties such as ObjectType, ObjectInstance.",
+          "rawText": "• Provides properties such as ObjectType, ObjectInstance.",
+          "x": 90.024,
+          "y": 295.13,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        },
+        {
+          "text": "[Bind] and [BindNever]",
+          "rawText": "[Bind] and [BindNever]",
+          "x": 72.024,
+          "y": 250.13,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "[Bind]",
+          "rawText": "[Bind]",
+          "x": 72.024,
+          "y": 227.69,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "class ClassNameController",
+          "rawText": "class ClassNameController",
+          "x": 72.024,
+          "y": 205.1,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 182.66,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " public IActionResult ActionMethodName( [Bind(nameof(ClassName.PropertyName),",
+          "rawText": "public IActionResult ActionMethodName( [Bind(nameof(ClassName.PropertyName),",
+          "x": 77.064,
+          "y": 160.1,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "nameof(ClassName.PropertyName) )] ClassName parameterName)",
+          "rawText": "nameof(ClassName.PropertyName) )] ClassName parameterName)",
+          "x": 72.024,
+          "y": 145.58,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " {",
+          "rawText": "{",
+          "x": 77.064,
+          "y": 123.14,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " }",
+          "rawText": "}",
+          "x": 77.064,
+          "y": 100.7,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 78.144,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 8,
+          "lines": [
+            "IValidatableObject"
+          ],
+          "text": "IValidatableObject"
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "class ClassName : IValidatableObject",
+            "{",
+            " //model properties here",
+            " public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)",
+            " {"
+          ],
+          "text": "class ClassName : IValidatableObject\n{\n //model properties here\n public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)\n {"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "  if (condition)"
+          ],
+          "text": "  if (condition)"
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "  {",
+            "  yield return new ValidationResult(\"error message\");",
+            "  }",
+            " }",
+            "}"
+          ],
+          "text": "  {\n  yield return new ValidationResult(\"error message\");\n  }\n }\n}"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "   • Base class for model classes with validation."
+          ],
+          "text": "   • Base class for model classes with validation."
+        },
+        {
+          "type": "list_item",
+          "page": 8,
+          "lines": [
+            "   • Provides a method called Validate() to define class level validation logic."
+          ],
+          "text": "   • Provides a method called Validate() to define class level validation logic."
+        },
+        {
+          "type": "list_item",
+          "page": 8,
+          "lines": [
+            "   • The Validate() method executes after validating all property-level validations are executed;"
+          ],
+          "text": "   • The Validate() method executes after validating all property-level validations are executed;"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "      but doesn't execute if at least one property-level validations result error."
+          ],
+          "text": "      but doesn't execute if at least one property-level validations result error."
+        },
+        {
+          "type": "heading",
+          "page": 8,
+          "lines": [
+            "ValidationContext"
+          ],
+          "text": "ValidationContext"
+        },
+        {
+          "type": "list_item",
+          "page": 8,
+          "lines": [
+            "   • Acts as a parameter for \"Validate()\" method of model classes with IValidatableObject."
+          ],
+          "text": "   • Acts as a parameter for \"Validate()\" method of model classes with IValidatableObject."
+        },
+        {
+          "type": "list_item",
+          "page": 8,
+          "lines": [
+            "   • Provides properties such as ObjectType, ObjectInstance."
+          ],
+          "text": "   • Provides properties such as ObjectType, ObjectInstance."
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "[Bind] and [BindNever]",
+            "[Bind]",
+            "class ClassNameController",
+            "{",
+            " public IActionResult ActionMethodName( [Bind(nameof(ClassName.PropertyName),",
+            "nameof(ClassName.PropertyName) )] ClassName parameterName)",
+            " {",
+            " }",
+            "}"
+          ],
+          "text": "[Bind] and [BindNever]\n[Bind]\nclass ClassNameController\n{\n public IActionResult ActionMethodName( [Bind(nameof(ClassName.PropertyName),\nnameof(ClassName.PropertyName) )] ClassName parameterName)\n {\n }\n}"
+        }
+      ],
+      "char_count_raw": 904,
+      "char_count_repaired": 939
+    },
+    {
+      "page_number": 9,
+      "raw_text": "• [Bind] attribute specifies that only the specified properties should be included in model\nbinding.\n• Prevents over-posting (post values into unexpected properties) especially in 'Create'\nscenarios.\n[BindNever]\nclass ModelClassName\n{\n[BindNever]\npublic type PropertyName { get; set; }\n}\n• [BindNever] attribute specifies that the specified property should NOT be included in model\nbinding.\n• Useful when you have fewer properties to eliminate from model binding.\n[FromBody]\n//enables the input formatters to read data from request body (as JSON or XML or custom) only\npublic IActionResult ActionMethodName( [FromBody] type parameter)\n{\n}\n",
+      "repaired_text": "   • [Bind] attribute specifies that only the specified properties should be included in model\n      binding.\n   • Prevents over-posting (post values into unexpected properties) especially in 'Create'\n      scenarios.\n[BindNever]\nclass ModelClassName\n{\n [BindNever]\n public type PropertyName { get; set; }\n}\n   • [BindNever] attribute specifies that the specified property should NOT be included in model\n      binding.\n   • Useful when you have fewer properties to eliminate from model binding.\n[FromBody]\n//enables the input formatters to read data from request body (as JSON or XML or custom) only\npublic IActionResult ActionMethodName( [FromBody] type parameter)\n{\n}",
+      "lines": [
+        {
+          "text": "   • [Bind] attribute specifies that only the specified properties should be included in model",
+          "rawText": "• [Bind] attribute specifies that only the specified properties should be included in model",
+          "x": 90.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        },
+        {
+          "text": "      binding.",
+          "rawText": "binding.",
+          "x": 108.02,
+          "y": 744.94,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "   • Prevents over-posting (post values into unexpected properties) especially in 'Create'",
+          "rawText": "• Prevents over-posting (post values into unexpected properties) especially in 'Create'",
+          "x": 90.024,
+          "y": 722.5,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        },
+        {
+          "text": "      scenarios.",
+          "rawText": "scenarios.",
+          "x": 108.02,
+          "y": 707.98,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "[BindNever]",
+          "rawText": "[BindNever]",
+          "x": 72.024,
+          "y": 662.98,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "class ModelClassName",
+          "rawText": "class ModelClassName",
+          "x": 72.024,
+          "y": 640.54,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 617.98,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " [BindNever]",
+          "rawText": "[BindNever]",
+          "x": 77.064,
+          "y": 595.54,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " public type PropertyName { get; set; }",
+          "rawText": "public type PropertyName { get; set; }",
+          "x": 77.064,
+          "y": 573.07,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 550.51,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "   • [BindNever] attribute specifies that the specified property should NOT be included in model",
+          "rawText": "• [BindNever] attribute specifies that the specified property should NOT be included in model",
+          "x": 90.024,
+          "y": 528.07,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        },
+        {
+          "text": "      binding.",
+          "rawText": "binding.",
+          "x": 108.02,
+          "y": 513.55,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "   • Useful when you have fewer properties to eliminate from model binding.",
+          "rawText": "• Useful when you have fewer properties to eliminate from model binding.",
+          "x": 90.024,
+          "y": 491.11,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        },
+        {
+          "text": "[FromBody]",
+          "rawText": "[FromBody]",
+          "x": 72.024,
+          "y": 446.11,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "//enables the input formatters to read data from request body (as JSON or XML or custom) only",
+          "rawText": "//enables the input formatters to read data from request body (as JSON or XML or custom) only",
+          "x": 72.024,
+          "y": 423.55,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "public IActionResult ActionMethodName( [FromBody] type parameter)",
+          "rawText": "public IActionResult ActionMethodName( [FromBody] type parameter)",
+          "x": 72.024,
+          "y": 401.11,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 378.53,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 356.09,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "   • [Bind] attribute specifies that only the specified properties should be included in model"
+          ],
+          "text": "   • [Bind] attribute specifies that only the specified properties should be included in model"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "      binding."
+          ],
+          "text": "      binding."
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "   • Prevents over-posting (post values into unexpected properties) especially in 'Create'"
+          ],
+          "text": "   • Prevents over-posting (post values into unexpected properties) especially in 'Create'"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "      scenarios.",
+            "[BindNever]"
+          ],
+          "text": "      scenarios.\n[BindNever]"
+        },
+        {
+          "type": "code",
+          "page": 9,
+          "lines": [
+            "class ModelClassName",
+            "{"
+          ],
+          "text": "class ModelClassName\n{"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            " [BindNever]"
+          ],
+          "text": " [BindNever]"
+        },
+        {
+          "type": "code",
+          "page": 9,
+          "lines": [
+            " public type PropertyName { get; set; }",
+            "}"
+          ],
+          "text": " public type PropertyName { get; set; }\n}"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "   • [BindNever] attribute specifies that the specified property should NOT be included in model",
+            "      binding."
+          ],
+          "text": "   • [BindNever] attribute specifies that the specified property should NOT be included in model\n      binding."
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "   • Useful when you have fewer properties to eliminate from model binding."
+          ],
+          "text": "   • Useful when you have fewer properties to eliminate from model binding."
+        },
+        {
+          "type": "code",
+          "page": 9,
+          "lines": [
+            "[FromBody]",
+            "//enables the input formatters to read data from request body (as JSON or XML or custom) only",
+            "public IActionResult ActionMethodName( [FromBody] type parameter)",
+            "{",
+            "}"
+          ],
+          "text": "[FromBody]\n//enables the input formatters to read data from request body (as JSON or XML or custom) only\npublic IActionResult ActionMethodName( [FromBody] type parameter)\n{\n}"
+        }
+      ],
+      "char_count_raw": 639,
+      "char_count_repaired": 670
+    },
+    {
+      "page_number": 10,
+      "raw_text": "Input Formatters\nCustom Model Binders\nCustom Model Binder\nclass ClassName : IModelBinder\n{\npublic Task BindModelAsync(ModelBindingContext bindingContext)\n{\n//gets value from request\nbindingContext.ValueProvider.GetValue(\"FirstName\");\n//returns model object after reading data from the request\nbindingContext.Result = ModelBindingResult.Success(your_object);\n}\n}\nIModelBinder\n• Base interface for all custom model binders.\n• Provides a method called BindModelAsync, to define logic for binding (reading) data from\nthe request and creating a model object that has be received as parameter in the action\nmethod.\n",
+      "repaired_text": "Input Formatters\nCustom Model Binders\nCustom Model Binder\nclass ClassName : IModelBinder\n{\n public Task BindModelAsync(ModelBindingContext bindingContext)\n {\n  //gets value from request\n  bindingContext.ValueProvider.GetValue(\"FirstName\");\n  //returns model object after reading data from the request\n  bindingContext.Result = ModelBindingResult.Success(your_object);\n }\n}\nIModelBinder\n   • Base interface for all custom model binders.\n   • Provides a method called BindModelAsync, to define logic for binding (reading) data from\n      the request and creating a model object that has be received as parameter in the action\n      method.",
+      "lines": [
+        {
+          "text": "Input Formatters",
+          "rawText": "Input Formatters",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Custom Model Binders",
+          "rawText": "Custom Model Binders",
+          "x": 72.024,
+          "y": 472.63,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "Custom Model Binder",
+          "rawText": "Custom Model Binder",
+          "x": 72.024,
+          "y": 450.19,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "class ClassName : IModelBinder",
+          "rawText": "class ClassName : IModelBinder",
+          "x": 72.024,
+          "y": 427.63,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 405.19,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " public Task BindModelAsync(ModelBindingContext bindingContext)",
+          "rawText": "public Task BindModelAsync(ModelBindingContext bindingContext)",
+          "x": 77.064,
+          "y": 382.61,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " {",
+          "rawText": "{",
+          "x": 77.064,
+          "y": 360.17,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "  //gets value from request",
+          "rawText": "//gets value from request",
+          "x": 81.984,
+          "y": 337.73,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "  bindingContext.ValueProvider.GetValue(\"FirstName\");",
+          "rawText": "bindingContext.ValueProvider.GetValue(\"FirstName\");",
+          "x": 82.104,
+          "y": 315.17,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "  //returns model object after reading data from the request",
+          "rawText": "//returns model object after reading data from the request",
+          "x": 81.984,
+          "y": 270.17,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "  bindingContext.Result = ModelBindingResult.Success(your_object);",
+          "rawText": "bindingContext.Result = ModelBindingResult.Success(your_object);",
+          "x": 82.104,
+          "y": 247.73,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " }",
+          "rawText": "}",
+          "x": 77.064,
+          "y": 225.17,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 202.7,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "IModelBinder",
+          "rawText": "IModelBinder",
+          "x": 72.024,
+          "y": 157.7,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "   • Base interface for all custom model binders.",
+          "rawText": "• Base interface for all custom model binders.",
+          "x": 90.024,
+          "y": 135.26,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        },
+        {
+          "text": "   • Provides a method called BindModelAsync, to define logic for binding (reading) data from",
+          "rawText": "• Provides a method called BindModelAsync, to define logic for binding (reading) data from",
+          "x": 90.024,
+          "y": 112.7,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        },
+        {
+          "text": "      the request and creating a model object that has be received as parameter in the action",
+          "rawText": "the request and creating a model object that has be received as parameter in the action",
+          "x": 108.02,
+          "y": 98.304,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "      method.",
+          "rawText": "method.",
+          "x": 108.02,
+          "y": 83.784,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 10,
+          "lines": [
+            "Input Formatters"
+          ],
+          "text": "Input Formatters"
+        },
+        {
+          "type": "heading",
+          "page": 10,
+          "lines": [
+            "Custom Model Binders"
+          ],
+          "text": "Custom Model Binders"
+        },
+        {
+          "type": "heading",
+          "page": 10,
+          "lines": [
+            "Custom Model Binder"
+          ],
+          "text": "Custom Model Binder"
+        },
+        {
+          "type": "code",
+          "page": 10,
+          "lines": [
+            "class ClassName : IModelBinder",
+            "{",
+            " public Task BindModelAsync(ModelBindingContext bindingContext)",
+            " {",
+            "  //gets value from request",
+            "  bindingContext.ValueProvider.GetValue(\"FirstName\");",
+            "  //returns model object after reading data from the request",
+            "  bindingContext.Result = ModelBindingResult.Success(your_object);",
+            " }",
+            "}"
+          ],
+          "text": "class ClassName : IModelBinder\n{\n public Task BindModelAsync(ModelBindingContext bindingContext)\n {\n  //gets value from request\n  bindingContext.ValueProvider.GetValue(\"FirstName\");\n  //returns model object after reading data from the request\n  bindingContext.Result = ModelBindingResult.Success(your_object);\n }\n}"
+        },
+        {
+          "type": "prose",
+          "page": 10,
+          "lines": [
+            "IModelBinder"
+          ],
+          "text": "IModelBinder"
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "   • Base interface for all custom model binders."
+          ],
+          "text": "   • Base interface for all custom model binders."
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "   • Provides a method called BindModelAsync, to define logic for binding (reading) data from"
+          ],
+          "text": "   • Provides a method called BindModelAsync, to define logic for binding (reading) data from"
+        },
+        {
+          "type": "prose",
+          "page": 10,
+          "lines": [
+            "      the request and creating a model object that has be received as parameter in the action",
+            "      method."
+          ],
+          "text": "      the request and creating a model object that has be received as parameter in the action\n      method."
+        }
+      ],
+      "char_count_raw": 609,
+      "char_count_repaired": 637
+    },
+    {
+      "page_number": 11,
+      "raw_text": "ModelBindingContext\n• Acts as a parameter for \"BindModelAsync()\" method of custom model binder classes.\n• Provides properties such as HttpContext, ModelState, ValueProvider, Result etc..\nCustom Model Binder Providers\nclass ClassName : IModelBinderProvider\n{\npublic IModelBinder GetBinder(ModelBinderProviderContext providerContext)\n{\n//returns type of custom model binder class to be invoked\nreturn new BinderTypeModelBinder(typeof(YourModelBinderClassName));\n}\n}\nIModelBinderProvider\n• Base interface for all custom model binder providers.\n• Provides a method called GetBinder, to return the type of custom model binder class.\nModelBinderProviderContext\n• Acts as a parameter for \"GetBinder()\" method of custom model binder provider classes.\n• Provides properties such as BindingInfo, Services etc.\n",
+      "repaired_text": "ModelBindingContext\n   • Acts as a parameter for \"BindModelAsync()\" method of custom model binder classes.\n   • Provides properties such as HttpContext, ModelState, ValueProvider, Result etc..\nCustom Model Binder Providers\nclass ClassName : IModelBinderProvider\n{\n public IModelBinder GetBinder(ModelBinderProviderContext providerContext)\n {\n  //returns type of custom model binder class to be invoked\n  return new BinderTypeModelBinder(typeof(YourModelBinderClassName));\n }\n}\nIModelBinderProvider\n   • Base interface for all custom model binder providers.\n   • Provides a method called GetBinder, to return the type of custom model binder class.\nModelBinderProviderContext\n   • Acts as a parameter for \"GetBinder()\" method of custom model binder provider classes.\n   • Provides properties such as BindingInfo, Services etc.",
+      "lines": [
+        {
+          "text": "ModelBindingContext",
+          "rawText": "ModelBindingContext",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "   • Acts as a parameter for \"BindModelAsync()\" method of custom model binder classes.",
+          "rawText": "• Acts as a parameter for \"BindModelAsync()\" method of custom model binder classes.",
+          "x": 90.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        },
+        {
+          "text": "   • Provides properties such as HttpContext, ModelState, ValueProvider, Result etc..",
+          "rawText": "• Provides properties such as HttpContext, ModelState, ValueProvider, Result etc..",
+          "x": 90.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        },
+        {
+          "text": "Custom Model Binder Providers",
+          "rawText": "Custom Model Binder Providers",
+          "x": 72.024,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "class ClassName : IModelBinderProvider",
+          "rawText": "class ClassName : IModelBinderProvider",
+          "x": 72.024,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " public IModelBinder GetBinder(ModelBinderProviderContext providerContext)",
+          "rawText": "public IModelBinder GetBinder(ModelBinderProviderContext providerContext)",
+          "x": 77.064,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " {",
+          "rawText": "{",
+          "x": 77.064,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "  //returns type of custom model binder class to be invoked",
+          "rawText": "//returns type of custom model binder class to be invoked",
+          "x": 81.984,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "  return new BinderTypeModelBinder(typeof(YourModelBinderClassName));",
+          "rawText": "return new BinderTypeModelBinder(typeof(YourModelBinderClassName));",
+          "x": 82.104,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": " }",
+          "rawText": "}",
+          "x": 77.064,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f1"
+        },
+        {
+          "text": "IModelBinderProvider",
+          "rawText": "IModelBinderProvider",
+          "x": 72.024,
+          "y": 422.11,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "   • Base interface for all custom model binder providers.",
+          "rawText": "• Base interface for all custom model binder providers.",
+          "x": 90.024,
+          "y": 399.55,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        },
+        {
+          "text": "   • Provides a method called GetBinder, to return the type of custom model binder class.",
+          "rawText": "• Provides a method called GetBinder, to return the type of custom model binder class.",
+          "x": 90.024,
+          "y": 377.09,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        },
+        {
+          "text": "ModelBinderProviderContext",
+          "rawText": "ModelBinderProviderContext",
+          "x": 72.024,
+          "y": 332.09,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f4"
+        },
+        {
+          "text": "   • Acts as a parameter for \"GetBinder()\" method of custom model binder provider classes.",
+          "rawText": "• Acts as a parameter for \"GetBinder()\" method of custom model binder provider classes.",
+          "x": 90.024,
+          "y": 309.65,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        },
+        {
+          "text": "   • Provides properties such as BindingInfo, Services etc.",
+          "rawText": "• Provides properties such as BindingInfo, Services etc.",
+          "x": 90.024,
+          "y": 287.09,
+          "fontSize": 11.04,
+          "fontName": "g_d13_f6"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 11,
+          "lines": [
+            "ModelBindingContext"
+          ],
+          "text": "ModelBindingContext"
+        },
+        {
+          "type": "list_item",
+          "page": 11,
+          "lines": [
+            "   • Acts as a parameter for \"BindModelAsync()\" method of custom model binder classes."
+          ],
+          "text": "   • Acts as a parameter for \"BindModelAsync()\" method of custom model binder classes."
+        },
+        {
+          "type": "list_item",
+          "page": 11,
+          "lines": [
+            "   • Provides properties such as HttpContext, ModelState, ValueProvider, Result etc.."
+          ],
+          "text": "   • Provides properties such as HttpContext, ModelState, ValueProvider, Result etc.."
+        },
+        {
+          "type": "heading",
+          "page": 11,
+          "lines": [
+            "Custom Model Binder Providers"
+          ],
+          "text": "Custom Model Binder Providers"
+        },
+        {
+          "type": "code",
+          "page": 11,
+          "lines": [
+            "class ClassName : IModelBinderProvider",
+            "{",
+            " public IModelBinder GetBinder(ModelBinderProviderContext providerContext)",
+            " {",
+            "  //returns type of custom model binder class to be invoked",
+            "  return new BinderTypeModelBinder(typeof(YourModelBinderClassName));",
+            " }",
+            "}"
+          ],
+          "text": "class ClassName : IModelBinderProvider\n{\n public IModelBinder GetBinder(ModelBinderProviderContext providerContext)\n {\n  //returns type of custom model binder class to be invoked\n  return new BinderTypeModelBinder(typeof(YourModelBinderClassName));\n }\n}"
+        },
+        {
+          "type": "prose",
+          "page": 11,
+          "lines": [
+            "IModelBinderProvider"
+          ],
+          "text": "IModelBinderProvider"
+        },
+        {
+          "type": "list_item",
+          "page": 11,
+          "lines": [
+            "   • Base interface for all custom model binder providers."
+          ],
+          "text": "   • Base interface for all custom model binder providers."
+        },
+        {
+          "type": "list_item",
+          "page": 11,
+          "lines": [
+            "   • Provides a method called GetBinder, to return the type of custom model binder class."
+          ],
+          "text": "   • Provides a method called GetBinder, to return the type of custom model binder class."
+        },
+        {
+          "type": "heading",
+          "page": 11,
+          "lines": [
+            "ModelBinderProviderContext"
+          ],
+          "text": "ModelBinderProviderContext"
+        },
+        {
+          "type": "list_item",
+          "page": 11,
+          "lines": [
+            "   • Acts as a parameter for \"GetBinder()\" method of custom model binder provider classes."
+          ],
+          "text": "   • Acts as a parameter for \"GetBinder()\" method of custom model binder provider classes."
+        },
+        {
+          "type": "list_item",
+          "page": 11,
+          "lines": [
+            "   • Provides properties such as BindingInfo, Services etc."
+          ],
+          "text": "   • Provides properties such as BindingInfo, Services etc."
+        }
+      ],
+      "char_count_raw": 800,
+      "char_count_repaired": 824
+    }
+  ],
+  "title": "Model Binding and Validations"
+}

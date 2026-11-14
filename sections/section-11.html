@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 11: View Components — ASP.NET Core Masterclass</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="alternate icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body id="top">
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  
+  <!-- Top Navigation Header -->
+  <header class="top-header" role="banner">
+    <div class="header-left">
+      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">☰</button>
+      <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+        <span class="sidebar-toggle-text">« Collapse</span>
+      </button>
+      <a href="../index.html" class="brand-link" aria-label="ASP.NET Core Masterclass Documentation Portal">
+        <span class="brand-icon" style="background: linear-gradient(135deg, #38bdf8, #6366f1); color: #0b0f19; font-weight: 900; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem;">.NET</span>
+        <span class="brand-text">ASP.NET Core Masterclass</span>
+      </a>
+      <span class="version-pill">.NET 8 / LTS</span>
+    </div>
+
+    <div class="header-right">
+      <a href="../index.html" class="index-home-btn" title="Back to Curriculum Dashboard">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span class="home-text">Course Index</span>
+      </a>
+
+      <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-text">Search topics, syntax, concepts...</span>
+        <kbd class="kbd-shortcut">Ctrl+K</kbd>
+      </button>
+
+      <button class="theme-toggle-btn" aria-label="Toggle dark/light theme" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle></svg>
+      </button>
+    </div>
+  </header>
+  
+
+  <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+  <!-- Documentation Layout -->
+  <div class="docs-wrapper">
+    
+    <aside class="docs-sidebar" aria-label="Course Navigation">
+      <div class="sidebar-top-bar">
+        <span class="sidebar-top-title">Curriculum</span>
+        <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" title="Collapse Sidebar" aria-label="Collapse Navigation Sidebar" type="button">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg>
+          <span>Collapse</span>
+        </button>
+      </div>
+
+      <div class="sidebar-search-box">
+        <input type="text" class="sidebar-filter-input" placeholder="Filter sections..." aria-label="Filter sidebar sections" />
+      </div>
+
+      <div style="margin-bottom: 1rem;">
+        <a href="../index.html" class="sidebar-link" style="color: var(--accent-primary); font-weight: 600;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Return to Dashboard</span>
+        </a>
+      </div>
+  
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 1: Foundations, HTTP, Middleware &amp; Routing</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">5</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-01.html" class="sidebar-link">
+            <span class="sidebar-sec-num">01</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Introduction</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-02.html" class="sidebar-link">
+            <span class="sidebar-sec-num">02</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Getting Started</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-03.html" class="sidebar-link">
+            <span class="sidebar-sec-num">03</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">HTTP</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-04.html" class="sidebar-link">
+            <span class="sidebar-sec-num">04</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Middleware</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-05.html" class="sidebar-link">
+            <span class="sidebar-sec-num">05</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Routing</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 2: Controllers, Model Binding &amp; Validation</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-06.html" class="sidebar-link">
+            <span class="sidebar-sec-num">06</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Controllers &amp; IActionResult</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-07.html" class="sidebar-link">
+            <span class="sidebar-sec-num">07</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Model Binding and Validations</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 3: Razor Views, Partial Views, View Components &amp; Tag Helpers</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">5</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-08.html" class="sidebar-link">
+            <span class="sidebar-sec-num">08</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Razor Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-09.html" class="sidebar-link">
+            <span class="sidebar-sec-num">09</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Layout Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-10.html" class="sidebar-link">
+            <span class="sidebar-sec-num">10</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Partial Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-11.html" class="sidebar-link active" aria-current="page">
+            <span class="sidebar-sec-num">11</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">View Components</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-17.html" class="sidebar-link">
+            <span class="sidebar-sec-num">17</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Tag Helpers</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 4: Dependency Injection, Environments &amp; Configuration</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-12.html" class="sidebar-link">
+            <span class="sidebar-sec-num">12</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Dependency Injection</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-13.html" class="sidebar-link">
+            <span class="sidebar-sec-num">13</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Environments</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-14.html" class="sidebar-link">
+            <span class="sidebar-sec-num">14</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Configuration</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-15.html" class="sidebar-link">
+            <span class="sidebar-sec-num">15</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">xUnit</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-16.html" class="sidebar-link">
+            <span class="sidebar-sec-num">16</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">CRUD Operations</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-18.html" class="sidebar-link">
+            <span class="sidebar-sec-num">18</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">EntityFrameworkCore</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-19.html" class="sidebar-link">
+            <span class="sidebar-sec-num">19</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Unit Testing - Advanced</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-20.html" class="sidebar-link">
+            <span class="sidebar-sec-num">20</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Logging</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-21.html" class="sidebar-link">
+            <span class="sidebar-sec-num">21</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Filters</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-22.html" class="sidebar-link">
+            <span class="sidebar-sec-num">22</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Error Handling</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-23.html" class="sidebar-link">
+            <span class="sidebar-sec-num">23</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">SOLID Principles</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-24.html" class="sidebar-link">
+            <span class="sidebar-sec-num">24</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Clean Architecture</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-25.html" class="sidebar-link">
+            <span class="sidebar-sec-num">25</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Identity and Authorization</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-26.html" class="sidebar-link">
+            <span class="sidebar-sec-num">26</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Web API</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-27.html" class="sidebar-link">
+            <span class="sidebar-sec-num">27</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Swagger</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-28.html" class="sidebar-link">
+            <span class="sidebar-sec-num">28</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Angular and CORS</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-29.html" class="sidebar-link">
+            <span class="sidebar-sec-num">29</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">JWT with Web API</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-30.html" class="sidebar-link">
+            <span class="sidebar-sec-num">30</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Minimal API</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content Container -->
+    <main class="docs-main-container" id="main-content" tabindex="-1">
+      <!-- Floating Expand Button when Sidebar is Collapsed -->
+      <button class="expand-sidebar-pill" id="expandSidebarPill" title="Expand Sidebar" aria-label="Expand Sidebar" type="button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg>
+        <span>» Expand Sidebar</span>
+      </button>
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
+        <a href="../index.html">Course Index</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span>Module 3</span>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span style="color: var(--text-main); font-weight: 600;">Section 11</span>
+      </nav>
+
+      <!-- Section Banner Header -->
+      <header class="section-banner">
+        <div class="section-meta-row">
+          <span class="module-badge">Module 3</span>
+          <span class="read-time-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            13 PDF Pages
+          </span>
+          <span class="tag-pill">ASP.NET Core</span>
+          <span class="tag-pill">.NET 8</span>
+          <span class="tag-pill" style="border-color: var(--accent-primary); color: var(--accent-primary);">Includes Cheat Sheet</span>
+        </div>
+        <h1>Section 11: View Components</h1>
+        <p class="section-description">
+          Authentic study and reference notes extracted directly from original masterclass course materials.
+        </p>
+      </header>
+
+      <!-- Body Content -->
+      <article class="docs-content">
+        
+<h2 id="view-components">View Components</h2>
+<p>View Components are self-contained, reusable UI building blocks in ASP.NET Core MVC. They are
+designed to encapsulate rendering logic that&#39;s more complex than what you&#39;d typically put in a
+partial view but doesn&#39;t warrant the complexity of a full controller and view.</p>
+
+<h2 id="purpose">Purpose</h2>
+<ul>
+  <li>• Encapsulate Complexity: Group related UI rendering logic into a cohesive unit.</li>
+  <li>• Reusability: Use View Components across multiple views to avoid code duplication.</li>
+  <li>• Testability: Easier to unit test View Components due to their self-contained nature.</li>
+  <li>• Rendering Logic: Ideal for dynamic widgets, navigation menus, login forms, shopping cart</li>
+</ul>
+<p>summaries, or any UI element that involves fetching data or performing logic before
+      rendering.</p>
+
+<h2 id="best-practices">Best Practices</h2>
+<ul>
+  <li>• Naming: View Component classes should end with the suffix ViewComponent (e.g.,</li>
+</ul>
+<p>ProductListViewComponent).</p>
+<ul>
+  <li>• Structure: Place View Components in the ViewComponents folder. The associated view file</li>
+</ul>
+<p>should be placed in Views/Shared/Components/{ViewComponent Name}/{View
+      Name}.cshtml.</p>
+<ul>
+  <li>• Data: Pass data to the View Component using a strongly typed model or view model.</li>
+  <li>• Asynchronous: Use asynchronous methods (InvokeAsync) to avoid blocking threads when</li>
+</ul>
+<p>performing data access or other I/O operations.</p>
+<ul>
+  <li>• Simplicity: Keep the View Component&#39;s logic focused on rendering the UI element. Avoid</li>
+</ul>
+<p>complex business logic within the component.</p>
+
+<h2 id="things-to-avoid">Things to Avoid</h2>
+<ul>
+  <li>• Overuse: Don&#39;t use View Components for simple UI elements that can be handled by partial</li>
+</ul>
+<p>views.</p>
+<ul>
+  <li>• Tight Coupling: Avoid tightly coupling View Components to specific controllers or actions.</li>
+</ul>
+<p>Make them reusable across different parts of your application.</p>
+<ul>
+  <li>• Complex Logic: View Components should not be responsible for handling business logic.</li>
+</ul>
+<p>Instead, delegate that to your models or services.</p>
+<ul>
+  <li>• Direct Database Access: Avoid directly accessing your database from within a View</li>
+</ul>
+<p>Component. Use services for data access.</p>
+
+<h2 id="when-to-use-view-components">When to Use View Components</h2>
+<ul>
+  <li>• Complex UI Elements: When a UI element requires more complex rendering logic than a</li>
+</ul>
+<p>simple partial view.</p>
+<ul>
+  <li>• Data-Driven Elements: When you need to fetch data or perform some computation before</li>
+</ul>
+<p>rendering the UI element.</p>
+<ul>
+  <li>• Reusable Widgets: When you want to create a reusable widget that can be used in different</li>
+</ul>
+<p>parts of your application.</p>
+
+<h2 id="how-to-implement-view-components">How to Implement View Components</h2>
+<ul>
+  <li>1. Create a View Component Class: Derive from ViewComponent and implement an Invoke or</li>
+</ul>
+<p>InvokeAsync method.</p>
+
+<h2 id="2-create-a-view-create-a-razor-view-file-cshtml-within-the">2. Create a View: Create a Razor view file (.cshtml) within the</h2>
+<p>Views/Shared/Components/{ViewComponent Name} folder.</p>
+<ul>
+  <li>3. Invoke in Your View: Use the @await Component.InvokeAsync(&quot;ViewComponent Name&quot;,</li>
+</ul>
+<p>arguments) helper in your main view to render the View Component.</p>
+
+<h2 id="code">Code</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// GridViewComponent.cs (View Component
+)
+public class GridViewComponent : ViewComponent
+{
+  public async Task&lt;IViewComponentResult&gt; InvokeAsync()
+  {
+// Data for the view component (could come from a database, service, etc.
+)
+}
+}</code></pre>
+    </div>
+  <p>PersonGridModel model = new PersonGridModel()</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+     GridTitle = &quot;Persons List&quot;,
+     Persons = new List&lt;Person&gt;()
+     {
+}
+}</code></pre>
+    </div>
+  <p>new Person() { PersonName = &quot;John&quot;, JobTitle = &quot;Manager&quot; },</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+{
+      // more people
+     }
+   };
+   // ViewBag is not ideal; prefer using a strongly typed model
+   ViewData[&quot;Grid&quot;] = model;
+   return View(&quot;Sample&quot;); // This will look for the view in</code></pre>
+    </div>
+  <p>Views/Shared/Components/Grid/Sample.cshtml</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// Views/Home/Index.cshtml (Main View
+)</code></pre>
+    </div>
+  <p>@await Component.InvokeAsync(&quot;Grid&quot;) // Invokes the &quot;Grid&quot; view component</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// Views/Home/About.cshtml</code></pre>
+    </div>
+  <p>@await Component.InvokeAsync(&quot;Grid&quot;)
+&lt;vc:grid&gt;&lt;/vc:grid&gt; // alternative syntax (not preferred, as it is not strongly typed)
+Explanation:</p>
+<ul>
+  <li>• The GridViewComponent class is a view component that fetches a list of people and passes it</li>
+</ul>
+<p>to the &quot;Sample&quot; partial view along with a grid title using ViewBag.</p>
+<ul>
+  <li>• Views/Home/Index.cshtml and Views/Home/About.cshtml invoke the Grid view component</li>
+</ul>
+<p>using @await Component.InvokeAsync(&quot;Grid&quot;) (or, less ideally, the vc:grid tag helper),
+      rendering the person list in a grid format.</p>
+
+<h2 id="notes">Notes</h2>
+<ul>
+  <li>• Purpose: Encapsulate complex, reusable UI rendering logic.</li>
+  <li>• Naming: ViewComponent classes end with ViewComponent.</li>
+  <li>• Location: ViewComponents folder for classes, Views/Shared/Components/{ViewComponent</li>
+</ul>
+<p>Name} for views.</p>
+<ul>
+  <li>• Data Passing: Use strongly typed models or view models (preferable over ViewBag).</li>
+  <li>• Rendering: @await Component.InvokeAsync(&quot;ViewComponent Name&quot;, arguments)</li>
+</ul>
+
+<h2 id="strongly-typed-view-components">Strongly Typed View Components</h2>
+<p>Just like strongly typed views, strongly typed view components are associated with a specific model</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">class using the @model directive. This model class, often referred to as a &quot;view model,&quot; provides a</code></pre>
+    </div>
+  <p>structured way to pass data from the view component to its corresponding view. The primary
+benefit is enhanced type safety and improved code maintainability.</p>
+
+<h2 id="benefits-of-strongly-typed-view-components">Benefits of Strongly Typed View Components</h2>
+<ul>
+  <li>• Type Safety: Catches errors during development due to mismatched data types or property</li>
+</ul>
+<p>names, as the Razor engine enforces type checking based on your model class.</p>
+<ul>
+  <li>• IntelliSense: Enhances productivity by providing code completion and suggestions for model</li>
+</ul>
+<p>properties directly within the Razor view. This leads to fewer typos and faster development.</p>
+<ul>
+  <li>• Refactoring: Simplifies the process of updating views when your model changes. Since the</li>
+</ul>
+<p>view is strongly typed, renaming or modifying properties in the model will automatically
+      update the references in the view.</p>
+<ul>
+  <li>• Clarity and Readability: Makes your code more self-documenting by clearly defining the</li>
+</ul>
+<p>data structure expected by the view component.</p>
+
+<h2 id="how-to-implement-strongly-typed-view-components">How to Implement Strongly Typed View Components</h2>
+<ul>
+  <li>1. Create a View Model: Define a class that represents the data you want to pass to your view</li>
+</ul>
+<p>component. This class should contain all the necessary properties that the view component
+      will use to render its output.</p>
+<ul>
+  <li>2. Use @model in the View: In your view component&#39;s Razor view file (e.g., Default.cshtml),</li>
+</ul>
+<p>use the @model directive to specify the view model class.</p>
+<ul>
+  <li>3. Return the Model from InvokeAsync: In your view component&#39;s InvokeAsync method,</li>
+</ul>
+<p>create an instance of your view model, populate it with the required data, and return it
+      using View(model).</p>
+
+<h2 id="code-1">Code</h2>
+<p>PersonGridModel.cs (View Model)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class PersonGridModel
+{
+  public string GridTitle { get; set; }
+  public List&lt;Person&gt; Persons { get; set; }
+}</code></pre>
+    </div>
+  <p>This model will be used to represent the data passed from the view component to the view.
+GridViewComponent.cs</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// ViewComponent
+public class GridViewComponent : ViewComponent
+{
+  public async Task&lt;IViewComponentResult&gt; InvokeAsync()
+  {
+}
+}</code></pre>
+    </div>
+  <p>PersonGridModel personGridModel = new PersonGridModel()</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+     GridTitle = &quot;Persons List&quot;,
+     Persons = new List&lt;Person&gt;() {
+}
+}</code></pre>
+    </div>
+  <p>new Person() { PersonName = &quot;John&quot;, JobTitle = &quot;Manager&quot; },
+      new Person() { PersonName = &quot;Jones&quot;, JobTitle = &quot;Asst. Manager&quot; },
+      new Person() { PersonName = &quot;William&quot;, JobTitle = &quot;Clerk&quot; },</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">return View(&quot;Sample&quot;, personGridModel);</code></pre>
+    </div>
+  <p>The method now creates a PersonGridModel object, populates it, and passes it as the second
+argument of the View() method.
+Views/Shared/Components/Grid/Sample.cshtml</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@model PersonGridModel
+&lt;div class=&quot;box&quot;&gt;
+  &lt;h3&gt;@Model.GridTitle&lt;/h3&gt;
+  &lt;table class=&quot;table w-100&quot;&gt;</code></pre>
+    </div>
+  <p>&lt;thead&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;tr&gt;
+      &lt;th&gt;Sl. No&lt;/th&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+     &lt;/tr&gt;</code></pre>
+    </div>
+  <p>&lt;/thead&gt;
+   &lt;tbody&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@foreach (Person person in Model.Persons)
+     {
+      &lt;tr&gt;
+        &lt;td&gt;@person.PersonName&lt;/td&gt;
+        &lt;td&gt;@person.JobTitle&lt;/td&gt;
+      &lt;/tr&gt;
+     }</code></pre>
+    </div>
+  <p>&lt;/tbody&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;/table&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+  <p>• @model PersonGridModel: This specifies that the view is strongly typed and expects an
+      object of type PersonGridModel.</p>
+<ul>
+  <li>• Accessing Properties: The view directly accesses properties of the Model object like</li>
+</ul>
+<p>Model.GridTitle and Model.Persons.</p>
+
+<h2 id="notes-1">Notes</h2>
+<ul>
+  <li>• Strongly Typed: Use @model in the view component&#39;s view file to specify the view model</li>
+</ul>
+<p>type.</p>
+<ul>
+  <li>• Pass the Model: Pass an instance of your view model class when returning the view from the</li>
+</ul>
+<p>InvokeAsync method: return View(&quot;ViewName&quot;, model);</p>
+<ul>
+  <li>• Naming: View components should be named with the suffix &quot;ViewComponent&quot; (e.g.,</li>
+</ul>
+<p>ProductListViewComponent).</p>
+<ul>
+  <li>• Location: View component classes go in a ViewComponents folder, and their associated</li>
+</ul>
+<p>views go in Views/Shared/Components/{ViewComponent Name}/.</p>
+
+<h2 id="view-components-with-parameters">View Components with Parameters</h2>
+<p>While view components can function without parameters, passing parameters to them significantly
+enhances their flexibility and reusability. Parameters allow you to customize the behavior and
+output of a view component based on data provided by the calling view or controller. This makes
+view components more dynamic and adaptable to different scenarios within your application.</p>
+
+<h2 id="how-to-pass-parameters-to-view-components">How to Pass Parameters to View Components</h2>
+<ul>
+  <li>1. Define Parameters in InvokeAsync: In your view component class, define the parameters</li>
+</ul>
+<p>that you want to receive within the InvokeAsync (or Invoke) method. These parameters will
+      become part of the method&#39;s signature.</p>
+<ul>
+  <li>2. Pass Arguments When Invoking: When invoking the view component using @await</li>
+</ul>
+<p>Component.InvokeAsync(&quot;ViewComponent Name&quot;, arguments) or the &lt;vc:grid&gt; tag helper,
+      pass an anonymous object containing the parameter values. The property names in the
+      anonymous object must match the parameter names in the InvokeAsync method.</p>
+
+<h2 id="code-2">Code</h2>
+<p>GridViewComponent.cs</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class GridViewComponent : ViewComponent
+{
+  public async Task&lt;IViewComponentResult&gt; InvokeAsync(PersonGridModel grid)
+  {
+   return View(&quot;Sample&quot;, grid);
+  }
+}</code></pre>
+    </div>
+  <p>Parameter: The InvokeAsync method now takes a parameter of type PersonGridModel. This means
+the view component expects to receive a model containing grid data when it&#39;s invoked.
+Views/Home/Index.cshtml</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@{
+  PersonGridModel personGridModel = new PersonGridModel() { /* ... (data initialization) ... */ };
+}</code></pre>
+    </div>
+  <p>@await Component.InvokeAsync(&quot;Grid&quot;, new { grid = personGridModel })</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@{
+}</code></pre>
+    </div>
+  <p>PersonGridModel personGridModel2 = new PersonGridModel() { /* ... (different data initialization)
+... */ };</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+  <p>@await Component.InvokeAsync(&quot;Grid&quot;, new { grid = personGridModel2 })
+Two instances of PersonGridModel are created and passed as an argument to the view component
+when invoking it.
+Views/Home/About.cshtml</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@{
+  PersonGridModel personGridModel = new PersonGridModel() { /* ... (data initialization) ... */ };
+}</code></pre>
+    </div>
+  <p>&lt;vc:grid grid=&quot;personGridModel&quot;&gt;&lt;/vc:grid&gt;</p>
+<ul>
+  <li>• Tag Helper Usage: The &lt;vc:grid&gt; tag helper is used here to invoke the view component. The</li>
+</ul>
+<p>grid attribute is set to the personGridModel, passing the model data to the view component.</p>
+
+<h2 id="benefits-of-strongly-typed-view-components-with-parameters">Benefits of Strongly Typed View Components with Parameters</h2>
+<ul>
+  <li>• Type Safety: Ensures that you pass the correct data types to the view component,</li>
+</ul>
+<p>preventing runtime errors due to type mismatches.</p>
+<ul>
+  <li>• IntelliSense: You get code completion suggestions for parameter names and model</li>
+</ul>
+<p>properties, making development faster and more efficient.</p>
+<ul>
+  <li>• Flexibility: Customize the view component&#39;s behavior based on the provided parameters,</li>
+</ul>
+<p>making it more adaptable to different scenarios.</p>
+<ul>
+  <li>• Maintainability: Easier to refactor and modify the view component and its usage in your</li>
+</ul>
+<p>views.</p>
+
+<h2 id="notes-2">Notes</h2>
+<ul>
+  <li>• Define Parameters: Clearly define the parameters your view component expects in its</li>
+</ul>
+<p>InvokeAsync method.</p>
+<ul>
+  <li>• Pass Parameters: When invoking the view component, pass an anonymous object with</li>
+</ul>
+<p>properties matching the parameter names and types.</p>
+<ul>
+  <li>• Strongly Typed: Use a view model (like PersonGridModel) to pass structured data to your</li>
+</ul>
+<p>view component and benefit from type safety and IntelliSense.</p>
+
+<h2 id="viewcomponentresult">ViewComponentResult</h2>
+<p>While view components are primarily invoked from within views, the ViewComponentResult class
+allows you to directly return a rendered view component from a controller action. This provides a
+powerful way to integrate view components with your MVC controller logic and leverage their
+reusable rendering capabilities.</p>
+
+<h2 id="purpose-1">Purpose</h2>
+<ul>
+  <li>• Dynamic View Component Loading: Use ViewComponentResult to load view components</li>
+</ul>
+<p>on demand based on the controller&#39;s logic or data. This is particularly useful for rendering
+      complex UI elements that depend on specific data or conditions.</p>
+<ul>
+  <li>• Separation of Concerns: Keep your controller actions focused on handling requests and data</li>
+</ul>
+<p>retrieval, while delegating the rendering of specific UI components to view components.</p>
+<ul>
+  <li>• API-like Endpoints: Create API-like endpoints that return HTML fragments (view</li>
+</ul>
+<p>components) instead of JSON or XML data. This can be helpful for building hybrid
+      applications where you need to combine server-side rendering with client-side JavaScript.</p>
+
+<h2 id="creating-a-viewcomponentresult">Creating a ViewComponentResult</h2>
+<p>In your controller actions, you can return a ViewComponentResult using the ViewComponent()
+helper method:</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">return ViewComponent(&quot;ViewComponent Name&quot;, arguments);</code></pre>
+    </div>
+  <p>• ViewComponent Name: The name of the view component you want to invoke. This should
+      match the class name of your view component (without the &quot;ViewComponent&quot; suffix).</p>
+<ul>
+  <li>• arguments (Optional): An anonymous object containing the parameters you want to pass to</li>
+</ul>
+<p>the view component&#39;s InvokeAsync method.</p>
+
+<h2 id="code-3">Code</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// HomeController.cs (Controller
+)
+[Route(&quot;friends-list&quot;)]
+public IActionResult LoadFriendsList()
+{
+}</code></pre>
+    </div>
+  <p>PersonGridModel personGridModel = new PersonGridModel()</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+   GridTitle = &quot;Friends&quot;,
+   Persons = new List&lt;Person&gt;()
+   {
+     // ... (list of friends) ...
+   }
+  };
+  return ViewComponent(&quot;Grid&quot;, new { grid = personGridModel });</code></pre>
+    </div>
+  <p>In this code:</p>
+<ul>
+  <li>1. Data Preparation: The personGridModel object is created and populated with data for the</li>
+</ul>
+<p>list of friends.</p>
+
+<h2 id="2-viewcomponentresult-the-viewcomponent-method-is-used-to-return-a">2. ViewComponentResult: The ViewComponent() method is used to return a</h2>
+<p>ViewComponentResult. It takes two arguments:</p>
+<ul>
+  <li>o &quot;Grid&quot;: This indicates that we want to invoke the GridViewComponent.</li>
+  <li>o new { grid = personGridModel }: This anonymous object passes the</li>
+</ul>
+<p>personGridModel as the grid parameter to the InvokeAsync method of the
+           GridViewComponent.</p>
+
+<h2 id="how-it-works">How It Works</h2>
+<ul>
+  <li>1. Request: A request to /friends-list triggers the LoadFriendsList action.</li>
+  <li>2. View Component Invocation: The ViewComponentResult returned from the action causes</li>
+</ul>
+<p>ASP.NET Core MVC to locate and invoke the GridViewComponent.</p>
+<ul>
+  <li>3. View Component Execution: The InvokeAsync method within the GridViewComponent</li>
+</ul>
+<p>receives the personGridModel and uses it to render the &quot;Sample&quot; partial view.</p>
+<ul>
+  <li>4. Response: The rendered output of the GridViewComponent (the HTML for the grid of</li>
+</ul>
+<p>friends) is returned as the HTTP response.</p>
+
+<h2 id="notes-3">Notes</h2>
+<ul>
+  <li>• Purpose: Render view components directly from controller actions.</li>
+  <li>• Flexibility: Load view components dynamically based on controller logic.</li>
+  <li>• API-Style Endpoints: Useful for creating endpoints that return HTML fragments.</li>
+  <li>• Syntax: Use ViewComponent(&quot;ViewComponent Name&quot;, arguments) to create a</li>
+</ul>
+<p>ViewComponentResult.</p>
+<ul>
+  <li>• Parameters: Pass parameters to the view component using an anonymous object.</li>
+</ul>
+
+<h2 id="key-points-to-remember">Key Points to Remember</h2>
+
+<h2 id="1-view-components-modular-ui-components">1. View Components: Modular UI Components</h2>
+<ul>
+  <li>• Purpose: Encapsulate reusable UI rendering logic more complex than partial views.</li>
+  <li>• Benefits:</li>
+  <li>o Modularization and reusability</li>
+  <li>o Separation of concerns (UI logic from controllers)</li>
+  <li>o Improved testability</li>
+  <li>• Structure:</li>
+  <li>o Class: Inherits from ViewComponent (e.g., ProductListViewComponent).</li>
+  <li>o View: Razor file in Views/Shared/Components/{ViewComponent Name}/{View</li>
+</ul>
+<p>Name}.cshtml.</p>
+
+<h2 id="2-methods">2. Methods</h2>
+<ul>
+  <li>• Invoke or InvokeAsync: The main method for your component&#39;s logic.</li>
+  <li>o Returns IViewComponentResult.</li>
+  <li>o Can take parameters for customization.</li>
+  <li>o Use async for asynchronous operations.</li>
+</ul>
+
+<h2 id="3-invoking-view-components">3. Invoking View Components</h2>
+<ul>
+  <li>• In Views:</li>
+  <li>o @await Component.InvokeAsync(&quot;ViewComponent Name&quot;, arguments)</li>
+  <li>o &lt;vc:view-component-name&gt;&lt;/vc:view-component-name&gt; (Tag Helper syntax, less</li>
+</ul>
+<p>preferred)</p>
+<ul>
+  <li>• In Controllers:</li>
+  <li>o return ViewComponent(&quot;ViewComponent Name&quot;, arguments);</li>
+</ul>
+
+<h2 id="4-strongly-typed-view-components">4. Strongly Typed View Components</h2>
+<ul>
+  <li>• Purpose: Pass data to the view using a strongly typed model.</li>
+  <li>• Benefits: Type safety, IntelliSense, better maintainability.</li>
+  <li>• How to Use:</li>
+  <li>1. Create a view model class.</li>
+  <li>2. Use @model YourViewModel in the view component&#39;s view file.</li>
+  <li>3. Return the view model from InvokeAsync: return View(model);</li>
+</ul>
+
+<h2 id="5-passing-parameters">5. Passing Parameters</h2>
+<ul>
+  <li>• InvokeAsync Parameters: Define parameters in the InvokeAsync method signature.</li>
+  <li>• Invocation Arguments: Pass arguments as an anonymous object when invoking the</li>
+</ul>
+<p>component.
+Example:</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// ViewComponent
+public async Task&lt;IViewComponentResult&gt; InvokeAsync(int categoryId)
+{
+  var products = _productService.GetProductsByCategory(categoryId);
+  return View(products);
+}
+// View</code></pre>
+    </div>
+  <p>@await Component.InvokeAsync(&quot;ProductList&quot;, new { categoryId = 5 })</p>
+
+<h2 id="7-best-practices">7. Best Practices</h2>
+<ul>
+  <li>• Naming: Use the suffix &quot;ViewComponent&quot; for class names.</li>
+  <li>• Folder Structure:</li>
+  <li>o View components in the ViewComponents folder.</li>
+  <li>o Views in Views/Shared/Components/{ViewComponent Name}/.</li>
+  <li>• Strongly Typed: Use strongly typed view models.</li>
+  <li>• Async Operations: Use InvokeAsync for asynchronous tasks.</li>
+  <li>• Limit Logic: Keep logic focused on UI rendering, not business operations.</li>
+  <li>• Avoid Direct Database Access: Use services for data access.</li>
+</ul>
+
+<h2 id="8-things-to-avoid">8. Things to Avoid</h2>
+<ul>
+  <li>• Overuse: Don&#39;t use for simple UI elements.</li>
+  <li>• Tight Coupling: Keep them independent of specific controllers.</li>
+  <li>• Complex Logic: Avoid extensive business logic within components.</li>
+</ul>
+
+<h2 id="9-when-to-use">9. When to Use</h2>
+<ul>
+  <li>• Complex UI Elements: When a partial view is not enough.</li>
+  <li>• Data-Driven Elements: Dynamic content based on data/logic.</li>
+  <li>• Reusable Widgets: To create reusable UI components.</li>
+</ul>
+
+<hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
+<section class="cheatsheet-section" aria-labelledby="cheat-sheet-quick-reference">
+  <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
+  <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
+  <p>Section 11 – View Components – Cheat Sheet</p>
+  <h3 id="view-components-1">View Components</h3>
+  <p>View Component is a combination of a class (derived from Microsoft.AspNetCore.ViewComponent)
+that supplied data, and a partial view to render that data.</p>
+  <h3 id="invoking-view-component">Invoking View Component</h3>
+  <p>@await Component.InvokeAsync(&quot;view component name&quot;);
+--or--
+&lt;vc:view-component-name /&gt;</p>
+  <h3 id="view-components-2">View Components</h3>
+  <ul>
+    <li>• View component renders a chunk rather than a whole response.</li>
+    <li>• Includes the same separation-of-concerns and testability benefits found with a controller</li>
+  </ul>
+  <p>and view.</p>
+  <ul>
+    <li>• Should be either suffixed with the word &quot;ViewComponent&quot; or should have</li>
+  </ul>
+  <p>[ViewComponent] attribute.</p>
+  <ul>
+    <li>• Optionally, it can inherit from System.AspNetCore.Mvc.ViewComponent.</li>
+  </ul>
+  <h3 id="view-components-with-viewdata">View Components with ViewData</h3>
+  <p>The ViewComponent class can share ViewData object to the ViewComponent view.</p>
+  <h3 id="strongly-typed-viewcomponent">Strongly Typed ViewComponent</h3>
+  <p>Strongly Typed ViewComponent&#39;s view is tightly bound to a specified model class.
+So, it gets all the benefits of a strongly typed view.</p>
+  <h3 id="viewcomponents-with-parameters">ViewComponents with Parameters</h3>
+  <p>You can supply one or more parameters to the view component class.
+The parameters are received by InvokeAsync method of the view component class.
+All the parameters of view component are mandatory (must supply a value).</p>
+  <h3 id="invoking-viewcomponent-with-parameters">Invoking ViewComponent with parameters</h3>
+  <p>@await Component.InvokeAsync(&quot;view component name&quot;, new { param = value });
+-- or --
+&lt;vc:view-component-name param=&quot;value&quot; /&gt;</p>
+  <h3 id="viewcomponentresult-1">ViewComponentResult</h3>
+  <p>ViewComponent can represent the content of a view component .
+Generally useful to fetch view component&#39;s content into the browser, by making an asynchronous
+request (XMLHttpRequest / fetch request) from the browser.</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">return new ViewComponentResult() { ViewName = &quot;view component name&quot;, Arguments = new {
+param1 = value, param2 = value } };</code></pre>
+    </div>
+    <p>[or]</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+return ViewComponent(&quot;view component name&quot;, new { param1 = value, param2 = value } });</code></pre>
+    </div>
+  </section>
+
+      </article>
+
+      <!-- Completion Toggle Control -->
+      <div class="completion-container">
+        <div>
+          <strong style="color: var(--text-main); font-size: 0.95rem;">Section Progress</strong>
+          <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">Mark this section complete to record your learning progress locally.</p>
+        </div>
+        <button class="mark-complete-btn" id="markCompleteBtn" type="button" aria-pressed="false" aria-label="Mark Section Complete">
+          <svg class="complete-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span class="complete-text">Mark Section Complete</span>
+        </button>
+      </div>
+
+      <!-- Bottom Navigation Prev / Next -->
+      <nav class="bottom-nav" aria-label="Previous and Next Section Navigation">
+        
+      <a href="section-10.html" class="nav-card prev" aria-label="Previous Section: Sec 10 - Partial Views">
+        <span class="nav-direction">← Previous Section</span>
+        <span class="nav-title">Sec 10: Partial Views</span>
+      </a>
+    
+        
+      <a href="section-12.html" class="nav-card next" aria-label="Next Section: Sec 12 - Dependency Injection">
+        <span class="nav-direction">Next Section →</span>
+        <span class="nav-title">Sec 12: Dependency Injection</span>
+      </a>
+    
+      </nav>
+
+      <!-- Section Footer -->
+      <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); color: var(--text-dim); font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;" role="contentinfo">
+        <span>ASP.NET Core Masterclass — Offline Documentation Portal</span>
+        <a href="#top" style="color: var(--text-muted); text-decoration: none;">↑ Back to top</a>
+      </footer>
+    </main>
+
+    <!-- Right Table of Contents (TOC) -->
+    <aside class="docs-toc" aria-label="Page Table of Contents">
+      <div class="toc-title">On This Page</div>
+      <ul class="toc-list">
+        
+        <li class="toc-item">
+          <a href="#view-components" class="toc-link">View Components</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#purpose" class="toc-link">Purpose</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#best-practices" class="toc-link">Best Practices</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#things-to-avoid" class="toc-link">Things to Avoid</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#when-to-use-view-components" class="toc-link">When to Use View Components</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#how-to-implement-view-components" class="toc-link">How to Implement View Components</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#2-create-a-view-create-a-razor-view-file-cshtml-within-the" class="toc-link">2. Create a View: Create a Razor view file (.cshtml) within the</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code" class="toc-link">Code</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#notes" class="toc-link">Notes</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#strongly-typed-view-components" class="toc-link">Strongly Typed View Components</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#benefits-of-strongly-typed-view-components" class="toc-link">Benefits of Strongly Typed View Components</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#how-to-implement-strongly-typed-view-components" class="toc-link">How to Implement Strongly Typed View Components</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-1" class="toc-link">Code</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#notes-1" class="toc-link">Notes</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#view-components-with-parameters" class="toc-link">View Components with Parameters</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#how-to-pass-parameters-to-view-components" class="toc-link">How to Pass Parameters to View Components</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-2" class="toc-link">Code</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#benefits-of-strongly-typed-view-components-with-parameters" class="toc-link">Benefits of Strongly Typed View Components with Parameters</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#notes-2" class="toc-link">Notes</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#viewcomponentresult" class="toc-link">ViewComponentResult</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#purpose-1" class="toc-link">Purpose</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#creating-a-viewcomponentresult" class="toc-link">Creating a ViewComponentResult</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-3" class="toc-link">Code</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#2-viewcomponentresult-the-viewcomponent-method-is-used-to-return-a" class="toc-link">2. ViewComponentResult: The ViewComponent() method is used to return a</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#how-it-works" class="toc-link">How It Works</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#notes-3" class="toc-link">Notes</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#1-view-components-modular-ui-components" class="toc-link">1. View Components: Modular UI Components</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#2-methods" class="toc-link">2. Methods</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#3-invoking-view-components" class="toc-link">3. Invoking View Components</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#4-strongly-typed-view-components" class="toc-link">4. Strongly Typed View Components</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#5-passing-parameters" class="toc-link">5. Passing Parameters</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#7-best-practices" class="toc-link">7. Best Practices</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#8-things-to-avoid" class="toc-link">8. Things to Avoid</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#9-when-to-use" class="toc-link">9. When to Use</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#cheat-sheet-quick-reference" class="toc-link">Cheat Sheet &amp; Quick Reference</a>
+        </li>
+      
+      </ul>
+    </aside>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/search-index.js"></script>
+  <script src="../assets/js/search-engine.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

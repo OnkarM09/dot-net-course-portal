@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 15: xUnit — ASP.NET Core Masterclass</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="alternate icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body id="top">
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  
+  <!-- Top Navigation Header -->
+  <header class="top-header" role="banner">
+    <div class="header-left">
+      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">☰</button>
+      <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+        <span class="sidebar-toggle-text">« Collapse</span>
+      </button>
+      <a href="../index.html" class="brand-link" aria-label="ASP.NET Core Masterclass Documentation Portal">
+        <span class="brand-icon" style="background: linear-gradient(135deg, #38bdf8, #6366f1); color: #0b0f19; font-weight: 900; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem;">.NET</span>
+        <span class="brand-text">ASP.NET Core Masterclass</span>
+      </a>
+      <span class="version-pill">.NET 8 / LTS</span>
+    </div>
+
+    <div class="header-right">
+      <a href="../index.html" class="index-home-btn" title="Back to Curriculum Dashboard">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span class="home-text">Course Index</span>
+      </a>
+
+      <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-text">Search topics, syntax, concepts...</span>
+        <kbd class="kbd-shortcut">Ctrl+K</kbd>
+      </button>
+
+      <button class="theme-toggle-btn" aria-label="Toggle dark/light theme" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle></svg>
+      </button>
+    </div>
+  </header>
+  
+
+  <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+  <!-- Documentation Layout -->
+  <div class="docs-wrapper">
+    
+    <aside class="docs-sidebar" aria-label="Course Navigation">
+      <div class="sidebar-top-bar">
+        <span class="sidebar-top-title">Curriculum</span>
+        <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" title="Collapse Sidebar" aria-label="Collapse Navigation Sidebar" type="button">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg>
+          <span>Collapse</span>
+        </button>
+      </div>
+
+      <div class="sidebar-search-box">
+        <input type="text" class="sidebar-filter-input" placeholder="Filter sections..." aria-label="Filter sidebar sections" />
+      </div>
+
+      <div style="margin-bottom: 1rem;">
+        <a href="../index.html" class="sidebar-link" style="color: var(--accent-primary); font-weight: 600;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Return to Dashboard</span>
+        </a>
+      </div>
+  
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 1: Foundations, HTTP, Middleware &amp; Routing</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">5</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-01.html" class="sidebar-link">
+            <span class="sidebar-sec-num">01</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Introduction</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-02.html" class="sidebar-link">
+            <span class="sidebar-sec-num">02</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Getting Started</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-03.html" class="sidebar-link">
+            <span class="sidebar-sec-num">03</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">HTTP</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-04.html" class="sidebar-link">
+            <span class="sidebar-sec-num">04</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Middleware</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-05.html" class="sidebar-link">
+            <span class="sidebar-sec-num">05</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Routing</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 2: Controllers, Model Binding &amp; Validation</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-06.html" class="sidebar-link">
+            <span class="sidebar-sec-num">06</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Controllers &amp; IActionResult</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-07.html" class="sidebar-link">
+            <span class="sidebar-sec-num">07</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Model Binding and Validations</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 3: Razor Views, Partial Views, View Components &amp; Tag Helpers</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">5</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-08.html" class="sidebar-link">
+            <span class="sidebar-sec-num">08</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Razor Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-09.html" class="sidebar-link">
+            <span class="sidebar-sec-num">09</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Layout Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-10.html" class="sidebar-link">
+            <span class="sidebar-sec-num">10</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Partial Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-11.html" class="sidebar-link">
+            <span class="sidebar-sec-num">11</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">View Components</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-17.html" class="sidebar-link">
+            <span class="sidebar-sec-num">17</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Tag Helpers</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 4: Dependency Injection, Environments &amp; Configuration</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-12.html" class="sidebar-link">
+            <span class="sidebar-sec-num">12</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Dependency Injection</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-13.html" class="sidebar-link">
+            <span class="sidebar-sec-num">13</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Environments</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-14.html" class="sidebar-link">
+            <span class="sidebar-sec-num">14</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Configuration</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-15.html" class="sidebar-link active" aria-current="page">
+            <span class="sidebar-sec-num">15</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">xUnit</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-16.html" class="sidebar-link">
+            <span class="sidebar-sec-num">16</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">CRUD Operations</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-18.html" class="sidebar-link">
+            <span class="sidebar-sec-num">18</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">EntityFrameworkCore</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-19.html" class="sidebar-link">
+            <span class="sidebar-sec-num">19</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Unit Testing - Advanced</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-20.html" class="sidebar-link">
+            <span class="sidebar-sec-num">20</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Logging</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-21.html" class="sidebar-link">
+            <span class="sidebar-sec-num">21</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Filters</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-22.html" class="sidebar-link">
+            <span class="sidebar-sec-num">22</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Error Handling</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-23.html" class="sidebar-link">
+            <span class="sidebar-sec-num">23</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">SOLID Principles</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-24.html" class="sidebar-link">
+            <span class="sidebar-sec-num">24</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Clean Architecture</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-25.html" class="sidebar-link">
+            <span class="sidebar-sec-num">25</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Identity and Authorization</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-26.html" class="sidebar-link">
+            <span class="sidebar-sec-num">26</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Web API</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-27.html" class="sidebar-link">
+            <span class="sidebar-sec-num">27</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Swagger</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-28.html" class="sidebar-link">
+            <span class="sidebar-sec-num">28</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Angular and CORS</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-29.html" class="sidebar-link">
+            <span class="sidebar-sec-num">29</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">JWT with Web API</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-30.html" class="sidebar-link">
+            <span class="sidebar-sec-num">30</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Minimal API</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content Container -->
+    <main class="docs-main-container" id="main-content" tabindex="-1">
+      <!-- Floating Expand Button when Sidebar is Collapsed -->
+      <button class="expand-sidebar-pill" id="expandSidebarPill" title="Expand Sidebar" aria-label="Expand Sidebar" type="button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg>
+        <span>» Expand Sidebar</span>
+      </button>
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
+        <a href="../index.html">Course Index</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span>Module 5</span>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span style="color: var(--text-main); font-weight: 600;">Section 15</span>
+      </nav>
+
+      <!-- Section Banner Header -->
+      <header class="section-banner">
+        <div class="section-meta-row">
+          <span class="module-badge">Module 5</span>
+          <span class="read-time-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            12 PDF Pages
+          </span>
+          <span class="tag-pill">ASP.NET Core</span>
+          <span class="tag-pill">.NET 8</span>
+          <span class="tag-pill" style="border-color: var(--accent-primary); color: var(--accent-primary);">Includes Cheat Sheet</span>
+        </div>
+        <h1>Section 15: xUnit</h1>
+        <p class="section-description">
+          Authentic study and reference notes extracted directly from original masterclass course materials.
+        </p>
+      </header>
+
+      <!-- Body Content -->
+      <article class="docs-content">
+        
+<h2 id="introduction-to-unit-testing">Introduction to Unit Testing</h2>
+<p>Unit testing is a software development practice where you write code to test individual units (usually
+classes or methods) in isolation from the rest of the application. This helps you:</p>
+<ul>
+  <li>• Catch Bugs Early: Identify and fix issues early in the development cycle.</li>
+  <li>• Refactor with Confidence: Make changes to your code knowing that your tests will alert you</li>
+</ul>
+<p>if you break something.</p>
+<ul>
+  <li>• Improve Design: Guide you towards writing modular and loosely coupled code.</li>
+  <li>• Document Behavior: Tests serve as living documentation, illustrating how your code is</li>
+</ul>
+<p>intended to be used.
+xUnit
+xUnit is a popular open-source unit testing framework for .NET. It provides attributes and assertions
+to write and organize your tests easily. Some reasons to choose xUnit:</p>
+<ul>
+  <li>• Extensibility: It&#39;s highly extensible, allowing you to create custom attributes and assertions.</li>
+  <li>• Community: It has a large and active community, offering support and resources.</li>
+  <li>• Integration: It seamlessly integrates with popular tools like Visual Studio, ReSharper, and</li>
+</ul>
+<p>build servers.</p>
+<ul>
+  <li>• Performance: xUnit is known for its speed and efficiency.</li>
+</ul>
+
+<h2 id="best-practices-for-unit-testing">Best Practices for Unit Testing</h2>
+<ul>
+  <li>1. Isolate Units: Test each unit in isolation from its dependencies. Use mocking frameworks</li>
+</ul>
+<p>(Moq, NSubstitute) to create mock objects for dependencies.</p>
+<ul>
+  <li>2. Arrange-Act-Assert (AAA): Structure your tests using the AAA pattern:</li>
+  <li>o Arrange: Set up the necessary preconditions and inputs for your test.</li>
+  <li>o Act: Execute the code under test.</li>
+  <li>o Assert: Verify that the results match your expectations.</li>
+  <li>3. One Assert Per Test: Each test should ideally focus on verifying a single behavior or</li>
+</ul>
+<p>outcome.</p>
+<ul>
+  <li>4. Clear Naming: Use descriptive names for your test classes and methods.</li>
+  <li>5. Test Doubles (Mocks, Stubs, Fakes): Utilize test doubles to control and isolate the behavior</li>
+</ul>
+<p>of dependencies.</p>
+<ul>
+  <li>6. Test Edge Cases: Don&#39;t forget to test boundary conditions and unusual inputs.</li>
+  <li>7. Don&#39;t Test External Systems: Avoid testing code that interacts with databases, file systems,</li>
+</ul>
+<p>or network services directly in your unit tests. Mock these dependencies instead.</p>
+<ul>
+  <li>8. Keep Tests Fast: Unit tests should run quickly (milliseconds). If your tests are slow, they&#39;ll</li>
+</ul>
+<p>become a bottleneck in your development process.</p>
+
+<h2 id="things-to-avoid-in-unit-testing">Things to Avoid in Unit Testing</h2>
+<ul>
+  <li>• Testing Implementation Details: Focus on testing the behavior of your code, not how it&#39;s</li>
+</ul>
+<p>implemented internally.</p>
+<ul>
+  <li>• Slow Tests: Unit tests should be fast. Avoid unnecessary setup or teardown that slows down</li>
+</ul>
+<p>your test suite.</p>
+<ul>
+  <li>• Interdependent Tests: Tests should be independent of each other. The order in which they</li>
+</ul>
+<p>run should not matter.</p>
+<ul>
+  <li>• Logic in Tests: Keep the logic within your tests as simple as possible. Complex tests are hard</li>
+</ul>
+<p>to understand and maintain.</p>
+<ul>
+  <li>• Testing Trivial Things: Don&#39;t waste time writing tests for trivial code that&#39;s unlikely to break</li>
+</ul>
+<p>(e.g., simple property getters/setters).</p>
+
+<h2 id="example-test-class-conceptual">Example Test Class (Conceptual)</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class CalculatorTests
+{
+}</code></pre>
+    </div>
+  <p>[Fact] // Test attribute</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public void Add_ShouldReturnCorrectSum()
+  {
+   // Arrange
+   var calculator = new Calculator();
+   // Act
+   var result = calculator.Add(2, 3);
+   // Assert
+}</code></pre>
+    </div>
+  <p>Assert.Equal(5, result); // xUnit assertion</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+  <p>xUnit Attributes</p>
+<ul>
+  <li>• [Fact]: Marks a method as a test that should always pass.</li>
+  <li>• [Theory]: Marks a method as a test that should be run with multiple data sets (using</li>
+</ul>
+<p>[InlineData], etc.).
+xUnit Assertions</p>
+<ul>
+  <li>• Assert.Equal, Assert.NotEqual, Assert.True, Assert.False, Assert.Throws, etc.</li>
+</ul>
+
+<h2 id="unit-testing">Unit Testing</h2>
+<p>The AAA pattern is a widely adopted, structured approach to writing unit tests. It promotes clarity,
+maintainability, and focuses on the essential elements of a test:</p>
+<ul>
+  <li>1. Arrange:</li>
+  <li>o Set up the necessary preconditions for your test.</li>
+  <li>o Create instances of the class or objects you want to test.</li>
+  <li>o Initialize variables, mock dependencies (if any), and set up any required data.</li>
+  <li>2. Act:</li>
+  <li>o Execute the code under test (the method or function you want to verify).</li>
+  <li>o This is where you perform the action you want to test, like calling a method with</li>
+</ul>
+<p>specific input values.</p>
+<ul>
+  <li>3. Assert:</li>
+  <li>o Verify the outcome or behavior of the code under test.</li>
+  <li>o Use assertions to compare the actual results against your expected results.</li>
+  <li>o xUnit provides a rich set of assertions (e.g., Assert.Equal, Assert.True, Assert.Throws)</li>
+</ul>
+<p>to check various conditions.</p>
+
+<h2 id="code-example">Code Example</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">using Xunit;
+namespace CRUDTests
+{
+  public class UnitTest1
+  {
+}
+}</code></pre>
+    </div>
+  <p>[Fact] // Test attribute</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public void Test1()
+   {
+     // Arrange
+}</code></pre>
+    </div>
+  <p>MyMath mm = new MyMath(); // Create an instance of MyMath</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">int input1 = 10, input2 = 5;
+     int expected = 15; // Define the expected result
+     // Act
+     int actual = mm.Add(input1, input2); // Call the method under test
+     // Assert</code></pre>
+    </div>
+  <p>Assert.Equal(expected, actual); // Verify the result</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+  
+<h2 id="detailed-explanation">Detailed Explanation</h2>
+<ul>
+  <li>1. Namespace and Class: The UnitTest1 class resides in the CRUDTests namespace, which is a</li>
+</ul>
+<p>typical convention for organizing unit tests.</p>
+<ul>
+  <li>2. [Fact] Attribute: The [Fact] attribute marks the Test1 method as a test case. xUnit will</li>
+</ul>
+<p>automatically discover and execute this method.</p>
+<ul>
+  <li>3. Arrange:</li>
+  <li>o MyMath mm = new MyMath();: Creates an instance of the MyMath class (assuming</li>
+</ul>
+<p>it&#39;s the class you want to test).</p>
+<ul>
+  <li>o int input1 = 10, input2 = 5;: Sets up the input values for the Add method.</li>
+  <li>o int expected = 15;: Defines the expected output of the Add method.</li>
+  <li>4. Act:</li>
+  <li>o int actual = mm.Add(input1, input2);: Calls the Add method with the input values</li>
+</ul>
+<p>and stores the result in the actual variable. This is the core action being tested.</p>
+<ul>
+  <li>5. Assert:</li>
+  <li>o Assert.Equal(expected, actual);: This xUnit assertion verifies that the actual result</li>
+</ul>
+<p>(the output of the Add method) is equal to the expected value. If they are not equal,
+           the test will fail.</p>
+
+<h2 id="notes">Notes</h2>
+<ul>
+  <li>• Clarity: The AAA pattern makes your test code easy to read and understand.</li>
+  <li>• Focus: Each test should concentrate on a single aspect of your code&#39;s behavior.</li>
+  <li>• Testability: Write your code in a way that makes it testable. This often means designing with</li>
+</ul>
+<p>dependency injection in mind so that you can easily mock dependencies.</p>
+<ul>
+  <li>• Fast Feedback: Unit tests should be fast. If they are slow, it discourages you from running</li>
+</ul>
+<p>them frequently.</p>
+<ul>
+  <li>• Complete Coverage: Aim for high test coverage, ensuring that you test all important</li>
+</ul>
+<p>branches and conditions in your code.</p>
+
+<h2 id="crud-operations">CRUD Operations</h2>
+<p>CRUD operations are the fundamental actions you perform on data in a persistent storage (like a
+database):</p>
+<ul>
+  <li>• Create (C): Adding new data records.</li>
+  <li>• Read (R): Retrieving or fetching existing data.</li>
+  <li>• Update (U): Modifying existing data.</li>
+  <li>• Delete (D): Removing data records.</li>
+</ul>
+<p>Business Logic Implementation: Services and Controllers
+In ASP.NET Core MVC, CRUD operations are typically handled through a combination of services and
+controllers:</p>
+<ul>
+  <li>• Services: Services encapsulate the core business logic related to your data entities. They</li>
+</ul>
+<p>interact with the data access layer (e.g., Entity Framework Core) to perform database
+      operations (create, read, update, delete). Services should be designed with the Dependency
+      Inversion Principle (DIP) in mind, depending on abstractions (interfaces) rather than
+      concrete implementations.</p>
+<ul>
+  <li>• Controllers: Controllers handle incoming HTTP requests from clients, invoke the appropriate</li>
+</ul>
+<p>service methods to perform CRUD operations, and return the results to the client, often as
+      JSON data, views, or files.
+Code Example: In-Depth
+Let&#39;s analyze the provided code, which demonstrates a CRUD implementation for Person entities.</p>
+<ul>
+  <li>1. Service Interfaces (IPersonsService, ICountriesService): These interfaces define the</li>
+</ul>
+<p>contracts for your services, specifying the methods for CRUD operations (AddPerson,
+      GetAllPersons, GetPersonByPersonID, etc.).</p>
+<ul>
+  <li>2. Service Implementations (PersonsService, CountriesService): These classes implement the</li>
+</ul>
+<p>interfaces and provide the actual logic for interacting with data.</p>
+<ul>
+  <li>3. DTO Classes: Data Transfer Objects (DTOs) like PersonAddRequest, PersonResponse,</li>
+</ul>
+<p>CountryAddRequest, and CountryResponse are used to transfer data between layers of your
+      application (controller and service).</p>
+
+<h2 id="best-practices">Best Practices</h2>
+<ul>
+  <li>• Separation of Concerns (SoC): Strictly separate your business logic (in services) from your</li>
+</ul>
+<p>presentation logic (in controllers and views).</p>
+<ul>
+  <li>• Dependency Inversion Principle (DIP): Design your services to depend on abstractions</li>
+</ul>
+<p>(interfaces) rather than concrete implementations for better testability and flexibility.</p>
+<ul>
+  <li>• Dependency Injection (DI): Utilize DI to inject service dependencies into your controllers.</li>
+  <li>• Data Transfer Objects (DTOs): Use DTOs to control the shape of data exchanged between</li>
+</ul>
+<p>layers and prevent overposting vulnerabilities.</p>
+<ul>
+  <li>• Validation: Thoroughly validate all input data (using model validation and potentially custom</li>
+</ul>
+<p>validation) to prevent invalid or malicious data from entering your system.</p>
+<ul>
+  <li>• Error Handling: Implement robust error handling in both your services and controllers to</li>
+</ul>
+<p>gracefully manage unexpected situations and provide informative error messages to clients.</p>
+
+<h2 id="additional-tips">Additional Tips</h2>
+<ul>
+  <li>• Repository Pattern: Consider using the Repository pattern to further abstract your data</li>
+</ul>
+<p>access logic from your services.</p>
+<ul>
+  <li>• Unit Testing: Write unit tests for your services to verify that your CRUD operations work</li>
+</ul>
+<p>correctly.</p>
+<ul>
+  <li>• Asynchronous Operations: Use async and await keywords for database operations to</li>
+</ul>
+<p>improve responsiveness and scalability.</p>
+<ul>
+  <li>• API Design: If you are building a RESTful API, adhere to RESTful principles for resource</li>
+</ul>
+<p>naming, HTTP methods, and status codes.
+Example: Adding a Person Using Postman</p>
+<ul>
+  <li>1. Select the HTTP method POST.</li>
+  <li>2. Enter the URL: /persons/addperson.</li>
+  <li>3. In the &quot;Body&quot; tab of Postman, select &quot;raw&quot; and then choose &quot;JSON&quot; from the dropdown.</li>
+</ul>
+<p>Paste the following JSON data:</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+}</code></pre>
+    </div>
+  <p>&quot;PersonName&quot;: &quot;John Doe&quot;,
+ &quot;Email&quot;: &quot;john.doe@example.com&quot;,
+ &quot;DateOfBirth&quot;: &quot;1990-01-01&quot;,
+ &quot;Gender&quot;: &quot;Male&quot;,
+ &quot;CountryID&quot;: &quot;c366d10d-622e-402c-a35e-2e02662f0049&quot;,
+ &quot;Address&quot;: &quot;123 Main Street&quot;,
+ &quot;ReceiveNewsLetters&quot;: true</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+  <p>4. Click the &quot;Send&quot; button to execute the request.</p>
+<p>By following these guidelines, you&#39;ll be well-equipped to build robust and maintainable applications
+that can efficiently handle CRUD operations and manage complex business logic. Please let me know
+if you have any other questions.</p>
+
+<h2 id="unit-testing-1">Unit Testing</h2>
+<p>Unit testing is a software development practice where you write tests to verify the behavior of
+individual units or components of your application in isolation. In ASP.NET Core MVC, these units are
+often your service classes, which encapsulate the core business logic related to data manipulation
+and other operations.
+Why Unit Test CRUD Operations and Business Logic?</p>
+<ul>
+  <li>• Find Errors Early: Unit tests help you catch bugs and logical errors early in the development</li>
+</ul>
+<p>cycle before they cause problems in your application.</p>
+<ul>
+  <li>• Refactoring Confidence: When you modify or refactor your code, unit tests provide a safety</li>
+</ul>
+<p>net, ensuring that your changes haven&#39;t broken existing functionality.</p>
+<ul>
+  <li>• Documentation: Unit tests act as living documentation, illustrating how your code should</li>
+</ul>
+<p>behave under different scenarios.</p>
+
+<h2 id="key-principles">Key Principles</h2>
+<ul>
+  <li>• Isolation: Test each unit (e.g., a service method) in isolation from its dependencies</li>
+</ul>
+<p>(database, other services). Use mocks or stubs to simulate the behavior of dependencies.</p>
+<ul>
+  <li>• Arrange-Act-Assert (AAA): Structure your tests using this pattern:</li>
+  <li>o Arrange: Set up the necessary preconditions (create test data, mock objects).</li>
+  <li>o Act: Call the method under test.</li>
+  <li>o Assert: Verify that the actual outcome matches the expected outcome.</li>
+  <li>• Focus: Each test should focus on a specific behavior or functionality of the unit being tested.</li>
+  <li>• Fast Feedback: Unit tests should be fast and run frequently as part of your development</li>
+</ul>
+<p>process.</p>
+
+<h2 id="code-example-1">Code Example</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// CountriesServiceTest.cs
+public class CountriesServiceTest
+{
+  // ... (Constructor and setup) ...
+}</code></pre>
+    </div>
+  <p>#region AddCountry</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// ... (Other test cases) ...</code></pre>
+    </div>
+  <p>[Fact]</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public void AddCountry_ProperCountryDetails()
+  {
+   // Arrange
+   CountryAddRequest? request = new CountryAddRequest() { CountryName = &quot;Japan&quot; };
+   // Act
+   CountryResponse response = _countriesService.AddCountry(request);
+   List&lt;CountryResponse&gt; countries_from_GetAllCountries = _countriesService.GetAllCountries();
+   // Assert
+   Assert.True(response.CountryID != Guid.Empty);
+   Assert.Contains(response, countries_from_GetAllCountries);
+  }</code></pre>
+    </div>
+  <p>#endregion</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// ... (Tests for GetAllCountries and GetCountryByCountryID) ...</code></pre>
+    </div>
+  <p>Explanation of the Test Case AddCountry_ProperCountryDetails</p>
+<ul>
+  <li>1. Arrange: A valid CountryAddRequest object with the country name &quot;Japan&quot; is created.</li>
+  <li>2. Act: The AddCountry method of the CountriesService is called with the request object. The</li>
+</ul>
+<p>GetAllCountries method is also called to get the updated list of countries.</p>
+<ul>
+  <li>3. Assert:</li>
+  <li>o It checks if the CountryID in the response is not an empty GUID, indicating that a</li>
+</ul>
+<p>new country was added successfully.</p>
+<ul>
+  <li>o It verifies that the newly added country (response) is included in the list returned by</li>
+</ul>
+<p>GetAllCountries.</p>
+
+<h2 id="additional-considerations">Additional Considerations</h2>
+<ul>
+  <li>• Test Coverage: Strive for high test coverage to ensure you are testing all critical paths and</li>
+</ul>
+<p>edge cases in your business logic.</p>
+<ul>
+  <li>• Test Data: Use meaningful and diverse test data to thoroughly exercise your code.</li>
+  <li>• Mocking Dependencies: When testing components that interact with external systems</li>
+</ul>
+<p>(databases, APIs), use mocking frameworks like Moq or NSubstitute to isolate the unit under
+      test.</p>
+<ul>
+  <li>• Integration Tests: In addition to unit tests, write integration tests to verify how your</li>
+</ul>
+<p>components interact with each other and with external systems.</p>
+
+<h2 id="key-points-to-remember">Key Points to Remember</h2>
+
+<h2 id="core-concepts">Core Concepts</h2>
+<ul>
+  <li>• Unit Testing: Testing individual units (classes, methods) in isolation.</li>
+  <li>• Benefits: Early bug detection, confident refactoring, improved design, living documentation.</li>
+  <li>• xUnit Framework: Popular .NET testing framework known for extensibility, community,</li>
+</ul>
+<p>integration, and performance.</p>
+
+<h2 id="aaa-arrange-act-assert-pattern">AAA (Arrange-Act-Assert) Pattern</h2>
+<ul>
+  <li>1. Arrange: Set up the test&#39;s preconditions (create objects, initialize variables, mock</li>
+</ul>
+<p>dependencies).</p>
+<ul>
+  <li>2. Act: Execute the code under test (call the method you&#39;re testing).</li>
+  <li>3. Assert: Verify the outcome against expected results using assertions.</li>
+</ul>
+<p>xUnit Attributes</p>
+<ul>
+  <li>• [Fact]: Marks a method as a simple test case.</li>
+  <li>• [Theory]: Marks a method for data-driven testing (multiple inputs).</li>
+  <li>• [InlineData]: Provides data sets for [Theory] tests.</li>
+  <li>• [ClassFixture]: Shares a fixture instance across all tests in a class.</li>
+</ul>
+<p>xUnit Assertions</p>
+<ul>
+  <li>• Assert.Equal(expected, actual)</li>
+  <li>• Assert.NotEqual(expected, actual)</li>
+  <li>• Assert.True(condition)</li>
+  <li>• Assert.False(condition)</li>
+  <li>• Assert.Null(object)</li>
+  <li>• Assert.NotNull(object)</li>
+  <li>• Assert.Throws&lt;TException&gt;(() =&gt; codeToExecute)</li>
+</ul>
+
+<h2 id="mocking">Mocking</h2>
+<ul>
+  <li>• Purpose: Isolate the unit under test by replacing dependencies with mock objects.</li>
+  <li>• Frameworks: Moq, NSubstitute, FakeItEasy are popular mocking frameworks.</li>
+  <li>• Benefits:</li>
+  <li>o Control dependency behavior.</li>
+  <li>o Avoid hitting external systems (databases, network).</li>
+  <li>o Focus on testing your logic.</li>
+</ul>
+
+<h2 id="best-practices-1">Best Practices</h2>
+<ul>
+  <li>• One Assert Per Test: Each test should ideally focus on verifying one thing.</li>
+  <li>• Clear Naming: Use descriptive names that explain the purpose of the test.</li>
+  <li>• Test Edge Cases: Don&#39;t just test the happy path; cover boundary conditions and error</li>
+</ul>
+<p>scenarios.</p>
+<ul>
+  <li>• Don&#39;t Test External Systems: Use mocks for databases, file systems, and network calls.</li>
+  <li>• Keep Tests Fast: Unit tests should run quickly (milliseconds) to encourage frequent</li>
+</ul>
+<p>execution.</p>
+<ul>
+  <li>• Test Doubles: Understand the different types of test doubles (mocks, stubs, fakes) and when</li>
+</ul>
+<p>to use them.</p>
+<ul>
+  <li>• Refactor Tests: Keep your tests clean and maintainable, just like your production code.</li>
+</ul>
+
+<h2 id="things-to-avoid">Things to Avoid</h2>
+<ul>
+  <li>• Testing Implementation Details: Focus on testing behavior, not how the code is written</li>
+</ul>
+<p>internally.</p>
+<ul>
+  <li>• Slow Tests: Unit tests should not take long to execute.</li>
+  <li>• Test Dependencies: Isolate the unit under test by mocking dependencies.</li>
+  <li>• Logic in Tests: Keep test code simple and avoid complex branching logic.</li>
+  <li>• Testing Trivial Things: Don&#39;t waste time testing trivial code (e.g., simple getters/setters).</li>
+</ul>
+
+<h2 id="interview-tips">Interview Tips</h2>
+<ul>
+  <li>• AAA Pattern: Be able to explain and demonstrate the Arrange-Act-Assert pattern.</li>
+  <li>• Mocking: Understand the concept of mocking and why it&#39;s important for unit testing.</li>
+  <li>• Best Practices: Be familiar with the best practices and pitfalls to avoid.</li>
+  <li>• Code Example: Be prepared to write a simple unit test showcasing these concepts.</li>
+  <li>• Explain Benefits: Articulate the value of unit testing in terms of code quality, maintainability,</li>
+</ul>
+<p>and preventing regressions.</p>
+
+<hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
+<section class="cheatsheet-section" aria-labelledby="cheat-sheet-quick-reference">
+  <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
+  <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
+  <p>Section 15 – xUnit – Cheat Sheet</p>
+  <h3 id="introduction-to-xunit">Introduction to xUnit</h3>
+  <p>xUnit is the free, open source unit testing tool for .NET Framework.</p>
+  <ul>
+    <li>• Easy and extensible.</li>
+    <li>• Best to use with a mocking framework called &quot;Moq&quot;.</li>
+  </ul>
+  <h3 id="add-country-xunit-test">Add Country - xUnit Test</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public CountryResponse AddCountry(CountryAddRequest? countryAddRequest)
+{
+//Check if &quot;countryAddRequest&quot; is not null.
+//Validate all properties of &quot;countryAddRequest&quot;
+//Convert &quot;countryAddRequest&quot; from &quot;CountryAddRequest&quot; type to &quot;Country&quot;.
+//Generate a new CountryID
+//Then add it into List&lt;Country&gt;
+//Return CountryResponse object with generated CountryID
+}</code></pre>
+    </div>
+    <h3 id="get-all-countries-xunit-test">Get All Countries - xUnit Test</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public List&lt;CountryResponse&gt; GetAllCountries()
+{
+//Convert all countries from &quot;Country&quot; type to &quot;CountryResponse&quot; type.
+//Return all CountryResponse objects
+}</code></pre>
+    </div>
+    <p>Get Country by Country ID - xUnit Test</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public CountryResponse? GetCountryByCountryID(Guid? countryID)
+{
+//Check if &quot;countryID&quot; is not null.
+//Get matching country from List&lt;Country&gt; based countryID.
+//Convert matching country object from &quot;Country&quot; to &quot;CountryResponse&quot; type.
+//Return CountryResponse object
+}</code></pre>
+    </div>
+    <p>Add Person - xUnit Test</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public PersonResponse AddPerson(PersonAddRequest? personAddRequest)
+{
+//Check if &quot;personAddRequest&quot; is not null.
+//Validate all properties of &quot;personAddRequest&quot;.
+//Convert &quot;personAddRequest&quot; from &quot;PersonAddRequest&quot; type to &quot;Person&quot;.
+//Generate a new PersonID.
+//Then add it into List&lt;Person&gt;.
+//Return PersonResponse object with generated PersonID.
+}</code></pre>
+    </div>
+    <h3 id="get-person-by-person-id-xunit-test">Get Person by Person ID - xUnit Test</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public PersonResponse GetPersonByPersonID(Guid? personID)
+{
+//Check if &quot;personID&quot; is not null.
+//Get matching person from List&lt;Person&gt; based personID.
+//Convert matching person object from &quot;Person&quot; to &quot;PersonResponse&quot; type.
+//Return PersonResponse object
+}</code></pre>
+    </div>
+    <p>Get All Persons - xUnit Test</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public List&lt;PersonResponse&gt; GetAllPersons()
+{
+//Convert all persons from &quot;Person&quot; type to &quot;PersonResponse&quot; type.
+//Return all PersonResponse objects
+}</code></pre>
+    </div>
+    <p>Get Filtered Persons - xUnit Test</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public List&lt;PersonResponse&gt; GetFilteredPersons(string searchBy, string? searchString)
+{
+//Check if &quot;searchBy&quot; is not null.
+//Get matching persons from List&lt;Person&gt; based on given searchBy and searchString.
+//Convert the matching persons from &quot;Person&quot; type to &quot;PersonResponse&quot; type.
+//Return all matching PersonResponse objects
+}</code></pre>
+    </div>
+    <h3 id="get-sorted-persons-xunit-test">Get Sorted Persons - xUnit Test</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public List&lt;PersonResponse&gt; GetSortedPersons(List&lt;PersonResponse&gt; allPersons,</code></pre>
+    </div>
+    <p>string sortBy, SortOrderEnum sortOrder)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+//Check if &quot;sortBy&quot; is not null.
+//Get sorted persons from &quot;allPersons&quot; based on given &quot;sortBy&quot; and &quot;sortOrder&quot;.
+//Convert the sorted persons from &quot;Person&quot; type to &quot;PersonResponse&quot; type.
+//Return all sorted PersonResponse objects
+}</code></pre>
+    </div>
+    <p>Update Person - xUnit Test</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public PersonResponse UpdatePerson(PersonUpdateRequest? personUpdateRequest)
+{
+//Check if &quot;personUpdateRequest&quot; is not null.
+//Validate all properties of &quot;personUpdateRequest&quot;
+//Get the matching &quot;Person&quot; object from List&lt;Person&gt; based on PersonID.
+//Check if matching &quot;Person&quot; object is not null
+//Update all details from &quot;PersonUpdateRequest&quot; object to &quot;Person&quot; object
+//Convert the person object from &quot;Person&quot; to &quot;PersonResponse&quot; type
+//Return PersonResponse object with updated details
+}</code></pre>
+    </div>
+    <h3 id="delete-person-xunit-test">Delete Person - xUnit Test</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public bool DeletePerson(Guid? personID)
+{
+//Check if &quot;personID&quot; is not null.
+//Get the matching &quot;Person&quot; object from List&lt;Person&gt; based on PersonID.
+//Check if matching &quot;Person&quot; object is not null
+//Delete the matching &quot;Person&quot; object from List&lt;Person&gt;
+//Return Boolean value indicating whether person object was deleted or not
+}</code></pre>
+    </div>
+  </section>
+
+      </article>
+
+      <!-- Completion Toggle Control -->
+      <div class="completion-container">
+        <div>
+          <strong style="color: var(--text-main); font-size: 0.95rem;">Section Progress</strong>
+          <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">Mark this section complete to record your learning progress locally.</p>
+        </div>
+        <button class="mark-complete-btn" id="markCompleteBtn" type="button" aria-pressed="false" aria-label="Mark Section Complete">
+          <svg class="complete-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span class="complete-text">Mark Section Complete</span>
+        </button>
+      </div>
+
+      <!-- Bottom Navigation Prev / Next -->
+      <nav class="bottom-nav" aria-label="Previous and Next Section Navigation">
+        
+      <a href="section-14.html" class="nav-card prev" aria-label="Previous Section: Sec 14 - Configuration">
+        <span class="nav-direction">← Previous Section</span>
+        <span class="nav-title">Sec 14: Configuration</span>
+      </a>
+    
+        
+      <a href="section-16.html" class="nav-card next" aria-label="Next Section: Sec 16 - CRUD Operations">
+        <span class="nav-direction">Next Section →</span>
+        <span class="nav-title">Sec 16: CRUD Operations</span>
+      </a>
+    
+      </nav>
+
+      <!-- Section Footer -->
+      <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); color: var(--text-dim); font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;" role="contentinfo">
+        <span>ASP.NET Core Masterclass — Offline Documentation Portal</span>
+        <a href="#top" style="color: var(--text-muted); text-decoration: none;">↑ Back to top</a>
+      </footer>
+    </main>
+
+    <!-- Right Table of Contents (TOC) -->
+    <aside class="docs-toc" aria-label="Page Table of Contents">
+      <div class="toc-title">On This Page</div>
+      <ul class="toc-list">
+        
+        <li class="toc-item">
+          <a href="#introduction-to-unit-testing" class="toc-link">Introduction to Unit Testing</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#best-practices-for-unit-testing" class="toc-link">Best Practices for Unit Testing</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#things-to-avoid-in-unit-testing" class="toc-link">Things to Avoid in Unit Testing</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#example-test-class-conceptual" class="toc-link">Example Test Class (Conceptual)</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#unit-testing" class="toc-link">Unit Testing</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-example" class="toc-link">Code Example</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#detailed-explanation" class="toc-link">Detailed Explanation</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#notes" class="toc-link">Notes</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#crud-operations" class="toc-link">CRUD Operations</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#best-practices" class="toc-link">Best Practices</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#additional-tips" class="toc-link">Additional Tips</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#unit-testing-1" class="toc-link">Unit Testing</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-principles" class="toc-link">Key Principles</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-example-1" class="toc-link">Code Example</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#additional-considerations" class="toc-link">Additional Considerations</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#core-concepts" class="toc-link">Core Concepts</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#aaa-arrange-act-assert-pattern" class="toc-link">AAA (Arrange-Act-Assert) Pattern</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#mocking" class="toc-link">Mocking</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#best-practices-1" class="toc-link">Best Practices</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#things-to-avoid" class="toc-link">Things to Avoid</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#interview-tips" class="toc-link">Interview Tips</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#cheat-sheet-quick-reference" class="toc-link">Cheat Sheet &amp; Quick Reference</a>
+        </li>
+      
+      </ul>
+    </aside>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/search-index.js"></script>
+  <script src="../assets/js/search-engine.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

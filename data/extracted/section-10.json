@@ -1,0 +1,3737 @@
+{
+  "source_file": "Notes - Section 10 - Partial Views.pdf",
+  "absolute_path": "D:/Dot net core/Asp.Net_Core_-Udemy-/Notes-20250125T050818Z-001/Notes/Notes - Section 10 - Partial Views.pdf",
+  "section_number": 10,
+  "normalized_section": "10",
+  "is_cheatsheet": false,
+  "total_pages": 10,
+  "total_raw_chars": 12489,
+  "total_repaired_chars": 13226,
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "ASP.NET Core - True Ultimate Guide\nSection 10: Partial Views - Notes\nPartial Views\nIn ASP.NET Core MVC, a partial view is a reusable chunk of Razor markup (.cshtml) that can be\nembedded within other views. They are designed to encapsulate specific UI elements, such as lists,\nforms, or widgets, allowing you to avoid repeating code and maintain a more organized structure.\nWhy Use Partial Views?\n• Reusability: A single partial view can be used in multiple views, saving development time\nand reducing the potential for inconsistencies.\n• Modularity: Partial views help break down complex views into smaller, more manageable\ncomponents, making your code easier to read and maintain.\n• Dynamic Content: You can pass data to partial views, making them dynamic and adaptable\nto different contexts.\nNotes\n• Naming Convention: Partial views are typically named with a leading underscore (e.g.,\n_ListPartialView.cshtml). This convention helps distinguish them from full views.\n• Location: By default, partial views are located in the Views/Shared folder or in the same\nfolder as the view that uses them. You can override the default location by specifying the full\npath.\n• Rendering: You can render partial views in your main views using:\no Tag Helpers: <partial name=\"_ListPartialView\" /> or <partial\nname=\"_ListPartialView\" model=\"yourModel\" />\no HTML Helper: @await Html.PartialAsync(\"_ListPartialView\") or @await\nHtml.PartialAsync(\"_ListPartialView\", yourModel)\nCode Example\n_ListPartialView.cshtml (Partial View)\n<div class=\"list-container\">\n@{\n//ViewBag.ListTitle = \"Updated\"; // Not recommended\n",
+      "repaired_text": "ASP.NET Core - True Ultimate Guide\nSection 10: Partial Views - Notes\nPartial Views\nIn ASP.NET Core MVC, a partial view is a reusable chunk of Razor markup (.cshtml) that can be\nembedded within other views. They are designed to encapsulate specific UI elements, such as lists,\nforms, or widgets, allowing you to avoid repeating code and maintain a more organized structure.\nWhy Use Partial Views?\n   • Reusability: A single partial view can be used in multiple views, saving development time\n      and reducing the potential for inconsistencies.\n   • Modularity: Partial views help break down complex views into smaller, more manageable\n      components, making your code easier to read and maintain.\n   • Dynamic Content: You can pass data to partial views, making them dynamic and adaptable\n      to different contexts.\nNotes\n   • Naming Convention: Partial views are typically named with a leading underscore (e.g.,\n      _ListPartialView.cshtml). This convention helps distinguish them from full views.\n   • Location: By default, partial views are located in the Views/Shared folder or in the same\n      folder as the view that uses them. You can override the default location by specifying the full\n      path.\n   • Rendering: You can render partial views in your main views using:\n        o Tag Helpers: <partial name=\"_ListPartialView\" /> or <partial\n           name=\"_ListPartialView\" model=\"yourModel\" />\n        o HTML Helper: @await Html.PartialAsync(\"_ListPartialView\") or @await\n           Html.PartialAsync(\"_ListPartialView\", yourModel)\nCode Example\n_ListPartialView.cshtml (Partial View)\n<div class=\"list-container\">\n  @{\n   //ViewBag.ListTitle = \"Updated\"; // Not recommended",
+      "lines": [
+        {
+          "text": "ASP.NET Core - True Ultimate Guide",
+          "rawText": "ASP.NET Core - True Ultimate Guide",
+          "x": 72.024,
+          "y": 742.66,
+          "fontSize": 15.96,
+          "fontName": "g_d18_f1"
+        },
+        {
+          "text": "Section 10: Partial Views - Notes",
+          "rawText": "Section 10: Partial Views - Notes",
+          "x": 72.024,
+          "y": 722.38,
+          "fontSize": 12.96,
+          "fontName": "g_d18_f1"
+        },
+        {
+          "text": "Partial Views",
+          "rawText": "Partial Views",
+          "x": 72.024,
+          "y": 684.82,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "In ASP.NET Core MVC, a partial view is a reusable chunk of Razor markup (.cshtml) that can be",
+          "rawText": "In ASP.NET Core MVC, a partial view is a reusable chunk of Razor markup (.cshtml) that can be",
+          "x": 72.024,
+          "y": 662.26,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "embedded within other views. They are designed to encapsulate specific UI elements, such as lists,",
+          "rawText": "embedded within other views. They are designed to encapsulate specific UI elements, such as lists,",
+          "x": 72.024,
+          "y": 647.74,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "forms, or widgets, allowing you to avoid repeating code and maintain a more organized structure.",
+          "rawText": "forms, or widgets, allowing you to avoid repeating code and maintain a more organized structure.",
+          "x": 72.024,
+          "y": 633.34,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "Why Use Partial Views?",
+          "rawText": "Why Use Partial Views?",
+          "x": 72.024,
+          "y": 588.34,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "   • Reusability: A single partial view can be used in multiple views, saving development time",
+          "rawText": "• Reusability: A single partial view can be used in multiple views, saving development time",
+          "x": 90.024,
+          "y": 565.75,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      and reducing the potential for inconsistencies.",
+          "rawText": "and reducing the potential for inconsistencies.",
+          "x": 108.02,
+          "y": 551.35,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   • Modularity: Partial views help break down complex views into smaller, more manageable",
+          "rawText": "• Modularity: Partial views help break down complex views into smaller, more manageable",
+          "x": 90.024,
+          "y": 528.79,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      components, making your code easier to read and maintain.",
+          "rawText": "components, making your code easier to read and maintain.",
+          "x": 108.02,
+          "y": 514.27,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   • Dynamic Content: You can pass data to partial views, making them dynamic and adaptable",
+          "rawText": "• Dynamic Content: You can pass data to partial views, making them dynamic and adaptable",
+          "x": 90.024,
+          "y": 491.83,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      to different contexts.",
+          "rawText": "to different contexts.",
+          "x": 108.02,
+          "y": 477.31,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "Notes",
+          "rawText": "Notes",
+          "x": 72.024,
+          "y": 409.87,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "   • Naming Convention: Partial views are typically named with a leading underscore (e.g.,",
+          "rawText": "• Naming Convention: Partial views are typically named with a leading underscore (e.g.,",
+          "x": 90.024,
+          "y": 387.41,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      _ListPartialView.cshtml). This convention helps distinguish them from full views.",
+          "rawText": "_ListPartialView.cshtml). This convention helps distinguish them from full views.",
+          "x": 108.02,
+          "y": 372.89,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   • Location: By default, partial views are located in the Views/Shared folder or in the same",
+          "rawText": "• Location: By default, partial views are located in the Views/Shared folder or in the same",
+          "x": 90.024,
+          "y": 350.33,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      folder as the view that uses them. You can override the default location by specifying the full",
+          "rawText": "folder as the view that uses them. You can override the default location by specifying the full",
+          "x": 108.02,
+          "y": 335.93,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "      path.",
+          "rawText": "path.",
+          "x": 108.02,
+          "y": 321.41,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   • Rendering: You can render partial views in your main views using:",
+          "rawText": "• Rendering: You can render partial views in your main views using:",
+          "x": 90.024,
+          "y": 298.85,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "        o Tag Helpers: <partial name=\"_ListPartialView\" /> or <partial",
+          "rawText": "o Tag Helpers: <partial name=\"_ListPartialView\" /> or <partial",
+          "x": 126.02,
+          "y": 276.41,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "           name=\"_ListPartialView\" model=\"yourModel\" />",
+          "rawText": "name=\"_ListPartialView\" model=\"yourModel\" />",
+          "x": 144.02,
+          "y": 261.89,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "        o HTML Helper: @await Html.PartialAsync(\"_ListPartialView\") or @await",
+          "rawText": "o HTML Helper: @await Html.PartialAsync(\"_ListPartialView\") or @await",
+          "x": 126.02,
+          "y": 239.45,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "           Html.PartialAsync(\"_ListPartialView\", yourModel)",
+          "rawText": "Html.PartialAsync(\"_ListPartialView\", yourModel)",
+          "x": 144.02,
+          "y": 224.93,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "Code Example",
+          "rawText": "Code Example",
+          "x": 72.024,
+          "y": 179.9,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "_ListPartialView.cshtml (Partial View)",
+          "rawText": "_ListPartialView.cshtml (Partial View)",
+          "x": 72.024,
+          "y": 157.46,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "<div class=\"list-container\">",
+          "rawText": "<div class=\"list-container\">",
+          "x": 72.024,
+          "y": 134.9,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  @{",
+          "rawText": "@{",
+          "x": 82.104,
+          "y": 112.46,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   //ViewBag.ListTitle = \"Updated\"; // Not recommended",
+          "rawText": "//ViewBag.ListTitle = \"Updated\"; // Not recommended",
+          "x": 91.944,
+          "y": 90.024,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "banner_header",
+          "page": 1,
+          "lines": [
+            "ASP.NET Core - True Ultimate Guide"
+          ],
+          "text": "ASP.NET Core - True Ultimate Guide"
+        },
+        {
+          "type": "banner_header",
+          "page": 1,
+          "lines": [
+            "Section 10: Partial Views - Notes"
+          ],
+          "text": "Section 10: Partial Views - Notes"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Partial Views"
+          ],
+          "text": "Partial Views"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "In ASP.NET Core MVC, a partial view is a reusable chunk of Razor markup (.cshtml) that can be",
+            "embedded within other views. They are designed to encapsulate specific UI elements, such as lists,",
+            "forms, or widgets, allowing you to avoid repeating code and maintain a more organized structure.",
+            "Why Use Partial Views?"
+          ],
+          "text": "In ASP.NET Core MVC, a partial view is a reusable chunk of Razor markup (.cshtml) that can be\nembedded within other views. They are designed to encapsulate specific UI elements, such as lists,\nforms, or widgets, allowing you to avoid repeating code and maintain a more organized structure.\nWhy Use Partial Views?"
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Reusability: A single partial view can be used in multiple views, saving development time"
+          ],
+          "text": "   • Reusability: A single partial view can be used in multiple views, saving development time"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "      and reducing the potential for inconsistencies."
+          ],
+          "text": "      and reducing the potential for inconsistencies."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Modularity: Partial views help break down complex views into smaller, more manageable"
+          ],
+          "text": "   • Modularity: Partial views help break down complex views into smaller, more manageable"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "      components, making your code easier to read and maintain."
+          ],
+          "text": "      components, making your code easier to read and maintain."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Dynamic Content: You can pass data to partial views, making them dynamic and adaptable"
+          ],
+          "text": "   • Dynamic Content: You can pass data to partial views, making them dynamic and adaptable"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "      to different contexts."
+          ],
+          "text": "      to different contexts."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Notes"
+          ],
+          "text": "Notes"
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Naming Convention: Partial views are typically named with a leading underscore (e.g.,"
+          ],
+          "text": "   • Naming Convention: Partial views are typically named with a leading underscore (e.g.,"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "      _ListPartialView.cshtml). This convention helps distinguish them from full views."
+          ],
+          "text": "      _ListPartialView.cshtml). This convention helps distinguish them from full views."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Location: By default, partial views are located in the Views/Shared folder or in the same"
+          ],
+          "text": "   • Location: By default, partial views are located in the Views/Shared folder or in the same"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "      folder as the view that uses them. You can override the default location by specifying the full",
+            "      path."
+          ],
+          "text": "      folder as the view that uses them. You can override the default location by specifying the full\n      path."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Rendering: You can render partial views in your main views using:"
+          ],
+          "text": "   • Rendering: You can render partial views in your main views using:"
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "        o Tag Helpers: <partial name=\"_ListPartialView\" /> or <partial"
+          ],
+          "text": "        o Tag Helpers: <partial name=\"_ListPartialView\" /> or <partial"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "           name=\"_ListPartialView\" model=\"yourModel\" />"
+          ],
+          "text": "           name=\"_ListPartialView\" model=\"yourModel\" />"
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "        o HTML Helper: @await Html.PartialAsync(\"_ListPartialView\") or @await"
+          ],
+          "text": "        o HTML Helper: @await Html.PartialAsync(\"_ListPartialView\") or @await"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "           Html.PartialAsync(\"_ListPartialView\", yourModel)"
+          ],
+          "text": "           Html.PartialAsync(\"_ListPartialView\", yourModel)"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Code Example"
+          ],
+          "text": "Code Example"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "_ListPartialView.cshtml (Partial View)"
+          ],
+          "text": "_ListPartialView.cshtml (Partial View)"
+        },
+        {
+          "type": "code",
+          "page": 1,
+          "lines": [
+            "<div class=\"list-container\">",
+            "  @{",
+            "   //ViewBag.ListTitle = \"Updated\"; // Not recommended"
+          ],
+          "text": "<div class=\"list-container\">\n  @{\n   //ViewBag.ListTitle = \"Updated\"; // Not recommended"
+        }
+      ],
+      "char_count_raw": 1595,
+      "char_count_repaired": 1691
+    },
+    {
+      "page_number": 2,
+      "raw_text": "}\n<h3>@ViewBag.ListTitle</h3>\n<ul class=\"list\">\n@foreach (string item in ViewBag.ListItems)\n{\n<li>@item</li>\n}\n</ul>\n</div>\nViewBag: This example uses ViewBag to pass the ListTitle and ListItems data to the partial view.\nHowever, it is generally recommended to use a strongly typed model to pass data to partial views for\nbetter type safety and maintainability.\nViews/Home/Index.cshtml (Main View)\n<h1>Home</h1>\n<partial name=\"_ListPartialView\" />\n@{\nvar myViewData = new ViewDataDictionary(ViewData); // Create a new ViewDataDictionary\nmyViewData[\"ListTitle\"] = \"Countries\";\nmyViewData[\"ListItems\"] = new List<string>() { \"USA\", \"Canada\", \"Japan\", \"Germany\", \"India\" };\n}\n<div class=\"box\">\n<partial name=\"_ListPartialView\" view-data=\"myViewData\" />\n</div>\n<h3>ListTitle in View: @ViewData[\"ListTitle\"]</h3>\nThis main view renders the _ListPartialView twice:\n",
+      "repaired_text": "  }\n  <h3>@ViewBag.ListTitle</h3>\n  <ul class=\"list\">\n  @foreach (string item in ViewBag.ListItems)\n  {\n   <li>@item</li>\n  }\n  </ul>\n</div>\nViewBag: This example uses ViewBag to pass the ListTitle and ListItems data to the partial view.\nHowever, it is generally recommended to use a strongly typed model to pass data to partial views for\nbetter type safety and maintainability.\nViews/Home/Index.cshtml (Main View)\n<h1>Home</h1>\n<partial name=\"_ListPartialView\" />\n@{\n  var myViewData = new ViewDataDictionary(ViewData); // Create a new ViewDataDictionary\n  myViewData[\"ListTitle\"] = \"Countries\";\n  myViewData[\"ListItems\"] = new List<string>() { \"USA\", \"Canada\", \"Japan\", \"Germany\", \"India\" };\n}\n<div class=\"box\">\n  <partial name=\"_ListPartialView\" view-data=\"myViewData\" />\n</div>\n<h3>ListTitle in View: @ViewData[\"ListTitle\"]</h3>\nThis main view renders the _ListPartialView twice:",
+      "lines": [
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 82.104,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  <h3>@ViewBag.ListTitle</h3>",
+          "rawText": "<h3>@ViewBag.ListTitle</h3>",
+          "x": 82.104,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  <ul class=\"list\">",
+          "rawText": "<ul class=\"list\">",
+          "x": 82.104,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  @foreach (string item in ViewBag.ListItems)",
+          "rawText": "@foreach (string item in ViewBag.ListItems)",
+          "x": 82.104,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   <li>@item</li>",
+          "rawText": "<li>@item</li>",
+          "x": 91.944,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 82.104,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  </ul>",
+          "rawText": "</ul>",
+          "x": 82.104,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "</div>",
+          "rawText": "</div>",
+          "x": 72.024,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "ViewBag: This example uses ViewBag to pass the ListTitle and ListItems data to the partial view.",
+          "rawText": "ViewBag: This example uses ViewBag to pass the ListTitle and ListItems data to the partial view.",
+          "x": 72.024,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "However, it is generally recommended to use a strongly typed model to pass data to partial views for",
+          "rawText": "However, it is generally recommended to use a strongly typed model to pass data to partial views for",
+          "x": 72.024,
+          "y": 520.03,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "better type safety and maintainability.",
+          "rawText": "better type safety and maintainability.",
+          "x": 72.024,
+          "y": 505.51,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "Views/Home/Index.cshtml (Main View)",
+          "rawText": "Views/Home/Index.cshtml (Main View)",
+          "x": 72.024,
+          "y": 438.07,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "<h1>Home</h1>",
+          "rawText": "<h1>Home</h1>",
+          "x": 72.024,
+          "y": 415.63,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "<partial name=\"_ListPartialView\" />",
+          "rawText": "<partial name=\"_ListPartialView\" />",
+          "x": 72.024,
+          "y": 370.61,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "@{",
+          "rawText": "@{",
+          "x": 72.024,
+          "y": 325.61,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  var myViewData = new ViewDataDictionary(ViewData); // Create a new ViewDataDictionary",
+          "rawText": "var myViewData = new ViewDataDictionary(ViewData); // Create a new ViewDataDictionary",
+          "x": 81.984,
+          "y": 303.05,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  myViewData[\"ListTitle\"] = \"Countries\";",
+          "rawText": "myViewData[\"ListTitle\"] = \"Countries\";",
+          "x": 81.984,
+          "y": 280.61,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  myViewData[\"ListItems\"] = new List<string>() { \"USA\", \"Canada\", \"Japan\", \"Germany\", \"India\" };",
+          "rawText": "myViewData[\"ListItems\"] = new List<string>() { \"USA\", \"Canada\", \"Japan\", \"Germany\", \"India\" };",
+          "x": 81.984,
+          "y": 258.17,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 235.61,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "<div class=\"box\">",
+          "rawText": "<div class=\"box\">",
+          "x": 72.024,
+          "y": 213.14,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  <partial name=\"_ListPartialView\" view-data=\"myViewData\" />",
+          "rawText": "<partial name=\"_ListPartialView\" view-data=\"myViewData\" />",
+          "x": 82.104,
+          "y": 190.58,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "</div>",
+          "rawText": "</div>",
+          "x": 72.024,
+          "y": 168.14,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "<h3>ListTitle in View: @ViewData[\"ListTitle\"]</h3>",
+          "rawText": "<h3>ListTitle in View: @ViewData[\"ListTitle\"]</h3>",
+          "x": 72.024,
+          "y": 123.14,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "This main view renders the _ListPartialView twice:",
+          "rawText": "This main view renders the _ListPartialView twice:",
+          "x": 72.024,
+          "y": 78.144,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "  }",
+            "  <h3>@ViewBag.ListTitle</h3>",
+            "  <ul class=\"list\">",
+            "  @foreach (string item in ViewBag.ListItems)",
+            "  {",
+            "   <li>@item</li>",
+            "  }",
+            "  </ul>",
+            "</div>"
+          ],
+          "text": "  }\n  <h3>@ViewBag.ListTitle</h3>\n  <ul class=\"list\">\n  @foreach (string item in ViewBag.ListItems)\n  {\n   <li>@item</li>\n  }\n  </ul>\n</div>"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "ViewBag: This example uses ViewBag to pass the ListTitle and ListItems data to the partial view.",
+            "However, it is generally recommended to use a strongly typed model to pass data to partial views for",
+            "better type safety and maintainability.",
+            "Views/Home/Index.cshtml (Main View)"
+          ],
+          "text": "ViewBag: This example uses ViewBag to pass the ListTitle and ListItems data to the partial view.\nHowever, it is generally recommended to use a strongly typed model to pass data to partial views for\nbetter type safety and maintainability.\nViews/Home/Index.cshtml (Main View)"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "<h1>Home</h1>"
+          ],
+          "text": "<h1>Home</h1>"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "<partial name=\"_ListPartialView\" />"
+          ],
+          "text": "<partial name=\"_ListPartialView\" />"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "@{",
+            "  var myViewData = new ViewDataDictionary(ViewData); // Create a new ViewDataDictionary",
+            "  myViewData[\"ListTitle\"] = \"Countries\";",
+            "  myViewData[\"ListItems\"] = new List<string>() { \"USA\", \"Canada\", \"Japan\", \"Germany\", \"India\" };",
+            "}",
+            "<div class=\"box\">"
+          ],
+          "text": "@{\n  var myViewData = new ViewDataDictionary(ViewData); // Create a new ViewDataDictionary\n  myViewData[\"ListTitle\"] = \"Countries\";\n  myViewData[\"ListItems\"] = new List<string>() { \"USA\", \"Canada\", \"Japan\", \"Germany\", \"India\" };\n}\n<div class=\"box\">"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "  <partial name=\"_ListPartialView\" view-data=\"myViewData\" />"
+          ],
+          "text": "  <partial name=\"_ListPartialView\" view-data=\"myViewData\" />"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "</div>",
+            "<h3>ListTitle in View: @ViewData[\"ListTitle\"]</h3>"
+          ],
+          "text": "</div>\n<h3>ListTitle in View: @ViewData[\"ListTitle\"]</h3>"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "This main view renders the _ListPartialView twice:"
+          ],
+          "text": "This main view renders the _ListPartialView twice:"
+        }
+      ],
+      "char_count_raw": 859,
+      "char_count_repaired": 883
+    },
+    {
+      "page_number": 3,
+      "raw_text": "1. First Rendering:\no The @ViewBag.ListTitle value in the partial view will be null (as it wasn't explicitly set\nbefore the partial view is rendered).\no The @ViewBag.ListItems will also be null and the loop will not execute.\no A new ViewDataDictionary named myViewData is created.\n2. Second Rendering:\no The myViewData dictionary is used to pass the ListTitle (\"Countries\") and ListItems (a\nlist of countries) to the partial view.\no The partial view will display the list of countries because ViewBag.ListItems is not\nnull.\no After the partial view has rendered, the ViewData[\"ListTitle\"] still refers to the\noriginal value (\"Asp.Net Core Demo App\") set in the controller. This is because the\nmyViewData dictionary is a separate instance of ViewDataDictionary.\nViews/Home/About.cshtml (Main View)\n<h1>About</h1>\n<h2>About company here</h2>\n<p>Lorem Ipsum is simply dummy text...</p>\n@{\nawait Html.RenderPartialAsync(\"_ListPartialView\");\n}\nThis view also renders _ListPartialView using the Html.RenderPartialAsync method. The result is the\nsame as the first render in Index.cshtml.\nNotes\n• Reusability: Partial views are essential for DRY (Don't Repeat Yourself) development in your\nviews.\n• Flexibility: You can pass data to partial views to make them dynamic.\n• Rendering Options: Use tag helpers or HTML helpers to render partial views.\n• Data Sharing: Ensure that your partial views have access to the necessary data using view\nmodels.\n",
+      "repaired_text": "   1. First Rendering:\n        o The @ViewBag.ListTitle value in the partial view will be null (as it wasn't explicitly set\n           before the partial view is rendered).\n        o The @ViewBag.ListItems will also be null and the loop will not execute.\n        o A new ViewDataDictionary named myViewData is created.\n   2. Second Rendering:\n        o The myViewData dictionary is used to pass the ListTitle (\"Countries\") and ListItems (a\n           list of countries) to the partial view.\n        o The partial view will display the list of countries because ViewBag.ListItems is not\n           null.\n        o After the partial view has rendered, the ViewData[\"ListTitle\"] still refers to the\n           original value (\"Asp.Net Core Demo App\") set in the controller. This is because the\n           myViewData dictionary is a separate instance of ViewDataDictionary.\nViews/Home/About.cshtml (Main View)\n<h1>About</h1>\n<h2>About company here</h2>\n<p>Lorem Ipsum is simply dummy text...</p>\n@{\n  await Html.RenderPartialAsync(\"_ListPartialView\");\n}\nThis view also renders _ListPartialView using the Html.RenderPartialAsync method. The result is the\nsame as the first render in Index.cshtml.\nNotes\n   • Reusability: Partial views are essential for DRY (Don't Repeat Yourself) development in your\n      views.\n   • Flexibility: You can pass data to partial views to make them dynamic.\n   • Rendering Options: Use tag helpers or HTML helpers to render partial views.\n   • Data Sharing: Ensure that your partial views have access to the necessary data using view\n      models.",
+      "lines": [
+        {
+          "text": "   1. First Rendering:",
+          "rawText": "1. First Rendering:",
+          "x": 90.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "        o The @ViewBag.ListTitle value in the partial view will be null (as it wasn't explicitly set",
+          "rawText": "o The @ViewBag.ListTitle value in the partial view will be null (as it wasn't explicitly set",
+          "x": 126.02,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "           before the partial view is rendered).",
+          "rawText": "before the partial view is rendered).",
+          "x": 144.02,
+          "y": 722.5,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "        o The @ViewBag.ListItems will also be null and the loop will not execute.",
+          "rawText": "o The @ViewBag.ListItems will also be null and the loop will not execute.",
+          "x": 126.02,
+          "y": 699.94,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "        o A new ViewDataDictionary named myViewData is created.",
+          "rawText": "o A new ViewDataDictionary named myViewData is created.",
+          "x": 126.02,
+          "y": 677.5,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "   2. Second Rendering:",
+          "rawText": "2. Second Rendering:",
+          "x": 90.024,
+          "y": 632.5,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "        o The myViewData dictionary is used to pass the ListTitle (\"Countries\") and ListItems (a",
+          "rawText": "o The myViewData dictionary is used to pass the ListTitle (\"Countries\") and ListItems (a",
+          "x": 126.02,
+          "y": 610.06,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "           list of countries) to the partial view.",
+          "rawText": "list of countries) to the partial view.",
+          "x": 144.02,
+          "y": 595.54,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "        o The partial view will display the list of countries because ViewBag.ListItems is not",
+          "rawText": "o The partial view will display the list of countries because ViewBag.ListItems is not",
+          "x": 126.02,
+          "y": 573.07,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "           null.",
+          "rawText": "null.",
+          "x": 144.02,
+          "y": 558.55,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "        o After the partial view has rendered, the ViewData[\"ListTitle\"] still refers to the",
+          "rawText": "o After the partial view has rendered, the ViewData[\"ListTitle\"] still refers to the",
+          "x": 126.02,
+          "y": 535.99,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "           original value (\"Asp.Net Core Demo App\") set in the controller. This is because the",
+          "rawText": "original value (\"Asp.Net Core Demo App\") set in the controller. This is because the",
+          "x": 144.02,
+          "y": 521.59,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "           myViewData dictionary is a separate instance of ViewDataDictionary.",
+          "rawText": "myViewData dictionary is a separate instance of ViewDataDictionary.",
+          "x": 144.02,
+          "y": 507.07,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "Views/Home/About.cshtml (Main View)",
+          "rawText": "Views/Home/About.cshtml (Main View)",
+          "x": 72.024,
+          "y": 462.07,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "<h1>About</h1>",
+          "rawText": "<h1>About</h1>",
+          "x": 72.024,
+          "y": 439.63,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "<h2>About company here</h2>",
+          "rawText": "<h2>About company here</h2>",
+          "x": 72.024,
+          "y": 394.61,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "<p>Lorem Ipsum is simply dummy text...</p>",
+          "rawText": "<p>Lorem Ipsum is simply dummy text...</p>",
+          "x": 72.024,
+          "y": 372.05,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "@{",
+          "rawText": "@{",
+          "x": 72.024,
+          "y": 349.61,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  await Html.RenderPartialAsync(\"_ListPartialView\");",
+          "rawText": "await Html.RenderPartialAsync(\"_ListPartialView\");",
+          "x": 82.104,
+          "y": 327.05,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 304.61,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "This view also renders _ListPartialView using the Html.RenderPartialAsync method. The result is the",
+          "rawText": "This view also renders _ListPartialView using the Html.RenderPartialAsync method. The result is the",
+          "x": 72.024,
+          "y": 282.17,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "same as the first render in Index.cshtml.",
+          "rawText": "same as the first render in Index.cshtml.",
+          "x": 72.024,
+          "y": 267.65,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "Notes",
+          "rawText": "Notes",
+          "x": 72.024,
+          "y": 200.18,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "   • Reusability: Partial views are essential for DRY (Don't Repeat Yourself) development in your",
+          "rawText": "• Reusability: Partial views are essential for DRY (Don't Repeat Yourself) development in your",
+          "x": 90.024,
+          "y": 177.62,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      views.",
+          "rawText": "views.",
+          "x": 108.02,
+          "y": 163.1,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   • Flexibility: You can pass data to partial views to make them dynamic.",
+          "rawText": "• Flexibility: You can pass data to partial views to make them dynamic.",
+          "x": 90.024,
+          "y": 140.66,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "   • Rendering Options: Use tag helpers or HTML helpers to render partial views.",
+          "rawText": "• Rendering Options: Use tag helpers or HTML helpers to render partial views.",
+          "x": 90.024,
+          "y": 118.22,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "   • Data Sharing: Ensure that your partial views have access to the necessary data using view",
+          "rawText": "• Data Sharing: Ensure that your partial views have access to the necessary data using view",
+          "x": 90.024,
+          "y": 95.664,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      models.",
+          "rawText": "models.",
+          "x": 108.02,
+          "y": 81.144,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "   1. First Rendering:"
+          ],
+          "text": "   1. First Rendering:"
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "        o The @ViewBag.ListTitle value in the partial view will be null (as it wasn't explicitly set"
+          ],
+          "text": "        o The @ViewBag.ListTitle value in the partial view will be null (as it wasn't explicitly set"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "           before the partial view is rendered)."
+          ],
+          "text": "           before the partial view is rendered)."
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "        o The @ViewBag.ListItems will also be null and the loop will not execute."
+          ],
+          "text": "        o The @ViewBag.ListItems will also be null and the loop will not execute."
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "        o A new ViewDataDictionary named myViewData is created."
+          ],
+          "text": "        o A new ViewDataDictionary named myViewData is created."
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "   2. Second Rendering:"
+          ],
+          "text": "   2. Second Rendering:"
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "        o The myViewData dictionary is used to pass the ListTitle (\"Countries\") and ListItems (a"
+          ],
+          "text": "        o The myViewData dictionary is used to pass the ListTitle (\"Countries\") and ListItems (a"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "           list of countries) to the partial view."
+          ],
+          "text": "           list of countries) to the partial view."
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "        o The partial view will display the list of countries because ViewBag.ListItems is not"
+          ],
+          "text": "        o The partial view will display the list of countries because ViewBag.ListItems is not"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "           null."
+          ],
+          "text": "           null."
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "        o After the partial view has rendered, the ViewData[\"ListTitle\"] still refers to the"
+          ],
+          "text": "        o After the partial view has rendered, the ViewData[\"ListTitle\"] still refers to the"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "           original value (\"Asp.Net Core Demo App\") set in the controller. This is because the",
+            "           myViewData dictionary is a separate instance of ViewDataDictionary.",
+            "Views/Home/About.cshtml (Main View)"
+          ],
+          "text": "           original value (\"Asp.Net Core Demo App\") set in the controller. This is because the\n           myViewData dictionary is a separate instance of ViewDataDictionary.\nViews/Home/About.cshtml (Main View)"
+        },
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            "<h1>About</h1>",
+            "<h2>About company here</h2>",
+            "<p>Lorem Ipsum is simply dummy text...</p>",
+            "@{",
+            "  await Html.RenderPartialAsync(\"_ListPartialView\");",
+            "}"
+          ],
+          "text": "<h1>About</h1>\n<h2>About company here</h2>\n<p>Lorem Ipsum is simply dummy text...</p>\n@{\n  await Html.RenderPartialAsync(\"_ListPartialView\");\n}"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "This view also renders _ListPartialView using the Html.RenderPartialAsync method. The result is the",
+            "same as the first render in Index.cshtml."
+          ],
+          "text": "This view also renders _ListPartialView using the Html.RenderPartialAsync method. The result is the\nsame as the first render in Index.cshtml."
+        },
+        {
+          "type": "heading",
+          "page": 3,
+          "lines": [
+            "Notes"
+          ],
+          "text": "Notes"
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "   • Reusability: Partial views are essential for DRY (Don't Repeat Yourself) development in your"
+          ],
+          "text": "   • Reusability: Partial views are essential for DRY (Don't Repeat Yourself) development in your"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "      views."
+          ],
+          "text": "      views."
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "   • Flexibility: You can pass data to partial views to make them dynamic."
+          ],
+          "text": "   • Flexibility: You can pass data to partial views to make them dynamic."
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "   • Rendering Options: Use tag helpers or HTML helpers to render partial views."
+          ],
+          "text": "   • Rendering Options: Use tag helpers or HTML helpers to render partial views."
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "   • Data Sharing: Ensure that your partial views have access to the necessary data using view"
+          ],
+          "text": "   • Data Sharing: Ensure that your partial views have access to the necessary data using view"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "      models."
+          ],
+          "text": "      models."
+        }
+      ],
+      "char_count_raw": 1439,
+      "char_count_repaired": 1573
+    },
+    {
+      "page_number": 4,
+      "raw_text": "• Organization: Partial views contribute to a well-structured and maintainable codebase.\n• View Reusability: The same partial view can be rendered multiple times on the same page,\neach time with a different set of data.\nStrongly Typed Partial Views\nA strongly typed partial view, just like a strongly typed view, is associated with a specific model class\nusing the @model directive. This means that the partial view has direct access to the properties and\nmethods of that model, providing compile-time type checking and IntelliSense support within the\npartial view.\nBenefits of Strongly Typed Partial Views\n• Type Safety: Catches errors during development due to mismatched data types or property\nnames.\n• IntelliSense: Provides autocompletion and suggestions for model properties, leading to\nfaster and more accurate coding.\n• Refactoring: Makes it easier to update partial views when your model changes.\nHow to Use Strongly Typed Partial Views\n1. Create a Model Class: Define a class that represents the data structure you want to pass to\nyour partial view.\n2. Use @model in the Partial View: Add the @model directive at the top of your partial view,\nspecifying the model class: @model YourNamespace.YourModel.\n3. Pass the Model: When rendering the partial view from your main view, pass an instance of\nyour model class using the model attribute of the <partial> tag helper or the model\nparameter of the Html.PartialAsync method.\nCode Example\nListModel.cs (Model)\nnamespace PartialViewsExample.Models\n{\npublic class ListModel\n",
+      "repaired_text": "   • Organization: Partial views contribute to a well-structured and maintainable codebase.\n   • View Reusability: The same partial view can be rendered multiple times on the same page,\n      each time with a different set of data.\nStrongly Typed Partial Views\nA strongly typed partial view, just like a strongly typed view, is associated with a specific model class\nusing the @model directive. This means that the partial view has direct access to the properties and\nmethods of that model, providing compile-time type checking and IntelliSense support within the\npartial view.\nBenefits of Strongly Typed Partial Views\n   • Type Safety: Catches errors during development due to mismatched data types or property\n      names.\n   • IntelliSense: Provides autocompletion and suggestions for model properties, leading to\n      faster and more accurate coding.\n   • Refactoring: Makes it easier to update partial views when your model changes.\nHow to Use Strongly Typed Partial Views\n   1. Create a Model Class: Define a class that represents the data structure you want to pass to\n      your partial view.\n   2. Use @model in the Partial View: Add the @model directive at the top of your partial view,\n      specifying the model class: @model YourNamespace.YourModel.\n   3. Pass the Model: When rendering the partial view from your main view, pass an instance of\n      your model class using the model attribute of the <partial> tag helper or the model\n      parameter of the Html.PartialAsync method.\nCode Example\nListModel.cs (Model)\nnamespace PartialViewsExample.Models\n{\n  public class ListModel",
+      "lines": [
+        {
+          "text": "   • Organization: Partial views contribute to a well-structured and maintainable codebase.",
+          "rawText": "• Organization: Partial views contribute to a well-structured and maintainable codebase.",
+          "x": 90.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "   • View Reusability: The same partial view can be rendered multiple times on the same page,",
+          "rawText": "• View Reusability: The same partial view can be rendered multiple times on the same page,",
+          "x": 90.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      each time with a different set of data.",
+          "rawText": "each time with a different set of data.",
+          "x": 108.02,
+          "y": 722.5,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "Strongly Typed Partial Views",
+          "rawText": "Strongly Typed Partial Views",
+          "x": 72.024,
+          "y": 632.5,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "A strongly typed partial view, just like a strongly typed view, is associated with a specific model class",
+          "rawText": "A strongly typed partial view, just like a strongly typed view, is associated with a specific model class",
+          "x": 72.024,
+          "y": 610.06,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "using the @model directive. This means that the partial view has direct access to the properties and",
+          "rawText": "using the @model directive. This means that the partial view has direct access to the properties and",
+          "x": 72.024,
+          "y": 595.54,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "methods of that model, providing compile-time type checking and IntelliSense support within the",
+          "rawText": "methods of that model, providing compile-time type checking and IntelliSense support within the",
+          "x": 72.024,
+          "y": 581.02,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "partial view.",
+          "rawText": "partial view.",
+          "x": 72.024,
+          "y": 566.47,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "Benefits of Strongly Typed Partial Views",
+          "rawText": "Benefits of Strongly Typed Partial Views",
+          "x": 72.024,
+          "y": 521.59,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "   • Type Safety: Catches errors during development due to mismatched data types or property",
+          "rawText": "• Type Safety: Catches errors during development due to mismatched data types or property",
+          "x": 90.024,
+          "y": 499.03,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      names.",
+          "rawText": "names.",
+          "x": 108.02,
+          "y": 484.51,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   • IntelliSense: Provides autocompletion and suggestions for model properties, leading to",
+          "rawText": "• IntelliSense: Provides autocompletion and suggestions for model properties, leading to",
+          "x": 90.024,
+          "y": 462.07,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      faster and more accurate coding.",
+          "rawText": "faster and more accurate coding.",
+          "x": 108.02,
+          "y": 447.55,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   • Refactoring: Makes it easier to update partial views when your model changes.",
+          "rawText": "• Refactoring: Makes it easier to update partial views when your model changes.",
+          "x": 90.024,
+          "y": 425.11,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "How to Use Strongly Typed Partial Views",
+          "rawText": "How to Use Strongly Typed Partial Views",
+          "x": 72.024,
+          "y": 380.09,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "   1. Create a Model Class: Define a class that represents the data structure you want to pass to",
+          "rawText": "1. Create a Model Class: Define a class that represents the data structure you want to pass to",
+          "x": 90.024,
+          "y": 357.65,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "      your partial view.",
+          "rawText": "your partial view.",
+          "x": 108.02,
+          "y": 343.13,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   2. Use @model in the Partial View: Add the @model directive at the top of your partial view,",
+          "rawText": "2. Use @model in the Partial View: Add the @model directive at the top of your partial view,",
+          "x": 90.024,
+          "y": 320.57,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "      specifying the model class: @model YourNamespace.YourModel.",
+          "rawText": "specifying the model class: @model YourNamespace.YourModel.",
+          "x": 108.02,
+          "y": 306.17,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   3. Pass the Model: When rendering the partial view from your main view, pass an instance of",
+          "rawText": "3. Pass the Model: When rendering the partial view from your main view, pass an instance of",
+          "x": 90.024,
+          "y": 283.61,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "      your model class using the model attribute of the <partial> tag helper or the model",
+          "rawText": "your model class using the model attribute of the <partial> tag helper or the model",
+          "x": 108.02,
+          "y": 269.09,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "      parameter of the Html.PartialAsync method.",
+          "rawText": "parameter of the Html.PartialAsync method.",
+          "x": 108.02,
+          "y": 254.69,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "Code Example",
+          "rawText": "Code Example",
+          "x": 72.024,
+          "y": 187.1,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "ListModel.cs (Model)",
+          "rawText": "ListModel.cs (Model)",
+          "x": 72.024,
+          "y": 164.66,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "namespace PartialViewsExample.Models",
+          "rawText": "namespace PartialViewsExample.Models",
+          "x": 72.024,
+          "y": 142.22,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 119.66,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  public class ListModel",
+          "rawText": "public class ListModel",
+          "x": 82.104,
+          "y": 97.224,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "   • Organization: Partial views contribute to a well-structured and maintainable codebase."
+          ],
+          "text": "   • Organization: Partial views contribute to a well-structured and maintainable codebase."
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "   • View Reusability: The same partial view can be rendered multiple times on the same page,"
+          ],
+          "text": "   • View Reusability: The same partial view can be rendered multiple times on the same page,"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "      each time with a different set of data."
+          ],
+          "text": "      each time with a different set of data."
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "Strongly Typed Partial Views"
+          ],
+          "text": "Strongly Typed Partial Views"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "A strongly typed partial view, just like a strongly typed view, is associated with a specific model class",
+            "using the @model directive. This means that the partial view has direct access to the properties and",
+            "methods of that model, providing compile-time type checking and IntelliSense support within the",
+            "partial view."
+          ],
+          "text": "A strongly typed partial view, just like a strongly typed view, is associated with a specific model class\nusing the @model directive. This means that the partial view has direct access to the properties and\nmethods of that model, providing compile-time type checking and IntelliSense support within the\npartial view."
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "Benefits of Strongly Typed Partial Views"
+          ],
+          "text": "Benefits of Strongly Typed Partial Views"
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "   • Type Safety: Catches errors during development due to mismatched data types or property"
+          ],
+          "text": "   • Type Safety: Catches errors during development due to mismatched data types or property"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "      names."
+          ],
+          "text": "      names."
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "   • IntelliSense: Provides autocompletion and suggestions for model properties, leading to"
+          ],
+          "text": "   • IntelliSense: Provides autocompletion and suggestions for model properties, leading to"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "      faster and more accurate coding."
+          ],
+          "text": "      faster and more accurate coding."
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "   • Refactoring: Makes it easier to update partial views when your model changes."
+          ],
+          "text": "   • Refactoring: Makes it easier to update partial views when your model changes."
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "How to Use Strongly Typed Partial Views"
+          ],
+          "text": "How to Use Strongly Typed Partial Views"
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "   1. Create a Model Class: Define a class that represents the data structure you want to pass to"
+          ],
+          "text": "   1. Create a Model Class: Define a class that represents the data structure you want to pass to"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "      your partial view."
+          ],
+          "text": "      your partial view."
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "   2. Use @model in the Partial View: Add the @model directive at the top of your partial view,"
+          ],
+          "text": "   2. Use @model in the Partial View: Add the @model directive at the top of your partial view,"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "      specifying the model class: @model YourNamespace.YourModel."
+          ],
+          "text": "      specifying the model class: @model YourNamespace.YourModel."
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "   3. Pass the Model: When rendering the partial view from your main view, pass an instance of"
+          ],
+          "text": "   3. Pass the Model: When rendering the partial view from your main view, pass an instance of"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "      your model class using the model attribute of the <partial> tag helper or the model",
+            "      parameter of the Html.PartialAsync method."
+          ],
+          "text": "      your model class using the model attribute of the <partial> tag helper or the model\n      parameter of the Html.PartialAsync method."
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "Code Example"
+          ],
+          "text": "Code Example"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "ListModel.cs (Model)"
+          ],
+          "text": "ListModel.cs (Model)"
+        },
+        {
+          "type": "code",
+          "page": 4,
+          "lines": [
+            "namespace PartialViewsExample.Models",
+            "{",
+            "  public class ListModel"
+          ],
+          "text": "namespace PartialViewsExample.Models\n{\n  public class ListModel"
+        }
+      ],
+      "char_count_raw": 1528,
+      "char_count_repaired": 1595
+    },
+    {
+      "page_number": 5,
+      "raw_text": "{\npublic string ListTitle { get; set; } = \"\";\npublic List<string> ListItems { get; set; } = new List<string>();\n}\n}\nThis model will be used to represent the data for the list that's rendered in the partial view.\n_ListPartialView.cshtml (Strongly Typed Partial View)\n@model ListModel // Specify the model type\n<div class=\"list-container\">\n<h3>@Model.ListTitle</h3>\n<ul class=\"list\">\n@foreach (string item in Model.ListItems)\n{\n<li>@item</li>\n}\n</ul>\n</div>\n• @model ListModel: This directive indicates that this partial view expects a model of type\nListModel.\n• Access Model Properties: You can directly access properties of the model object using\n@Model.PropertyName.\nIndex.cshtml (Main View)\n@using PartialViewsExample.Models\n<h1>Home</h1>\n@{\nListModel listModel = new ListModel();\n",
+      "repaired_text": "  {\n   public string ListTitle { get; set; } = \"\";\n   public List<string> ListItems { get; set; } = new List<string>();\n  }\n}\nThis model will be used to represent the data for the list that's rendered in the partial view.\n_ListPartialView.cshtml (Strongly Typed Partial View)\n@model ListModel // Specify the model type\n<div class=\"list-container\">\n  <h3>@Model.ListTitle</h3>\n  <ul class=\"list\">\n  @foreach (string item in Model.ListItems)\n  {\n   <li>@item</li>\n  }\n  </ul>\n</div>\n   • @model ListModel: This directive indicates that this partial view expects a model of type\n      ListModel.\n   • Access Model Properties: You can directly access properties of the model object using\n      @Model.PropertyName.\nIndex.cshtml (Main View)\n@using PartialViewsExample.Models\n<h1>Home</h1>\n@{\n  ListModel listModel = new ListModel();",
+      "lines": [
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   public string ListTitle { get; set; } = \"\";",
+          "rawText": "public string ListTitle { get; set; } = \"\";",
+          "x": 92.064,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   public List<string> ListItems { get; set; } = new List<string>();",
+          "rawText": "public List<string> ListItems { get; set; } = new List<string>();",
+          "x": 92.064,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 82.104,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "This model will be used to represent the data for the list that's rendered in the partial view.",
+          "rawText": "This model will be used to represent the data for the list that's rendered in the partial view.",
+          "x": 72.024,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "_ListPartialView.cshtml (Strongly Typed Partial View)",
+          "rawText": "_ListPartialView.cshtml (Strongly Typed Partial View)",
+          "x": 72.024,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "@model ListModel // Specify the model type",
+          "rawText": "@model ListModel // Specify the model type",
+          "x": 72.024,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "<div class=\"list-container\">",
+          "rawText": "<div class=\"list-container\">",
+          "x": 72.024,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  <h3>@Model.ListTitle</h3>",
+          "rawText": "<h3>@Model.ListTitle</h3>",
+          "x": 82.104,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  <ul class=\"list\">",
+          "rawText": "<ul class=\"list\">",
+          "x": 82.104,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  @foreach (string item in Model.ListItems)",
+          "rawText": "@foreach (string item in Model.ListItems)",
+          "x": 82.104,
+          "y": 444.55,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 422.11,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   <li>@item</li>",
+          "rawText": "<li>@item</li>",
+          "x": 91.944,
+          "y": 399.55,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 82.104,
+          "y": 377.09,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  </ul>",
+          "rawText": "</ul>",
+          "x": 82.104,
+          "y": 354.53,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "</div>",
+          "rawText": "</div>",
+          "x": 72.024,
+          "y": 332.09,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   • @model ListModel: This directive indicates that this partial view expects a model of type",
+          "rawText": "• @model ListModel: This directive indicates that this partial view expects a model of type",
+          "x": 90.024,
+          "y": 309.65,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      ListModel.",
+          "rawText": "ListModel.",
+          "x": 108.02,
+          "y": 295.13,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   • Access Model Properties: You can directly access properties of the model object using",
+          "rawText": "• Access Model Properties: You can directly access properties of the model object using",
+          "x": 90.024,
+          "y": 272.57,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      @Model.PropertyName.",
+          "rawText": "@Model.PropertyName.",
+          "x": 108.02,
+          "y": 258.17,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "Index.cshtml (Main View)",
+          "rawText": "Index.cshtml (Main View)",
+          "x": 72.024,
+          "y": 213.14,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "@using PartialViewsExample.Models",
+          "rawText": "@using PartialViewsExample.Models",
+          "x": 72.024,
+          "y": 190.58,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "<h1>Home</h1>",
+          "rawText": "<h1>Home</h1>",
+          "x": 72.024,
+          "y": 145.58,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "@{",
+          "rawText": "@{",
+          "x": 72.024,
+          "y": 100.7,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  ListModel listModel = new ListModel();",
+          "rawText": "ListModel listModel = new ListModel();",
+          "x": 81.984,
+          "y": 78.144,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "page": 5,
+          "lines": [
+            "  {",
+            "   public string ListTitle { get; set; } = \"\";",
+            "   public List<string> ListItems { get; set; } = new List<string>();",
+            "  }",
+            "}"
+          ],
+          "text": "  {\n   public string ListTitle { get; set; } = \"\";\n   public List<string> ListItems { get; set; } = new List<string>();\n  }\n}"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "This model will be used to represent the data for the list that's rendered in the partial view.",
+            "_ListPartialView.cshtml (Strongly Typed Partial View)"
+          ],
+          "text": "This model will be used to represent the data for the list that's rendered in the partial view.\n_ListPartialView.cshtml (Strongly Typed Partial View)"
+        },
+        {
+          "type": "code",
+          "page": 5,
+          "lines": [
+            "@model ListModel // Specify the model type",
+            "<div class=\"list-container\">",
+            "  <h3>@Model.ListTitle</h3>",
+            "  <ul class=\"list\">",
+            "  @foreach (string item in Model.ListItems)",
+            "  {",
+            "   <li>@item</li>",
+            "  }",
+            "  </ul>",
+            "</div>"
+          ],
+          "text": "@model ListModel // Specify the model type\n<div class=\"list-container\">\n  <h3>@Model.ListTitle</h3>\n  <ul class=\"list\">\n  @foreach (string item in Model.ListItems)\n  {\n   <li>@item</li>\n  }\n  </ul>\n</div>"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "   • @model ListModel: This directive indicates that this partial view expects a model of type",
+            "      ListModel."
+          ],
+          "text": "   • @model ListModel: This directive indicates that this partial view expects a model of type\n      ListModel."
+        },
+        {
+          "type": "list_item",
+          "page": 5,
+          "lines": [
+            "   • Access Model Properties: You can directly access properties of the model object using"
+          ],
+          "text": "   • Access Model Properties: You can directly access properties of the model object using"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "      @Model.PropertyName.",
+            "Index.cshtml (Main View)"
+          ],
+          "text": "      @Model.PropertyName.\nIndex.cshtml (Main View)"
+        },
+        {
+          "type": "code",
+          "page": 5,
+          "lines": [
+            "@using PartialViewsExample.Models",
+            "<h1>Home</h1>",
+            "@{",
+            "  ListModel listModel = new ListModel();"
+          ],
+          "text": "@using PartialViewsExample.Models\n<h1>Home</h1>\n@{\n  ListModel listModel = new ListModel();"
+        }
+      ],
+      "char_count_raw": 783,
+      "char_count_repaired": 827
+    },
+    {
+      "page_number": 6,
+      "raw_text": "listModel.ListTitle = \"Countries\";\nlistModel.ListItems = new List<string>() { \"USA\", \"Canada\", \"Japan\", \"Germany\", \"India\" };\n}\n<partial name=\"_ListPartialView\" model=\"listModel\" />\n• Creating the Model: An instance of ListModel is created and populated with data.\n• Passing the Model: The model attribute in the <partial> tag helper is used to pass the\nlistModel to the _ListPartialView partial view.\nAbout.cshtml (Main View)\n@{\nListModel listModel = new ListModel();\nlistModel.ListTitle = \"Programming Languages\";\nlistModel.ListItems = new List<string>()\n{\n\"Java\",\n\"C#\",\n\"Python\"\n};\nawait Html.RenderPartialAsync(\"_ListPartialView\", listModel);\n}\nSame as the Index.cshtml, but using the Html.RenderPartialAsync HTML helper.\nNotes\n• Strongly Typed: Use @model to specify the type of data expected by the partial view.\n• Pass the Model: Pass an instance of your model class when rendering the partial view.\n• Type Safety and IntelliSense: Benefit from compile-time checking and code completion\nwhen working with model properties.\n• Best Practice: Strongly typed partial views promote clean, maintainable, and less error-\nprone code.\n",
+      "repaired_text": "  listModel.ListTitle = \"Countries\";\n  listModel.ListItems = new List<string>() { \"USA\", \"Canada\", \"Japan\", \"Germany\", \"India\" };\n}\n<partial name=\"_ListPartialView\" model=\"listModel\" />\n   • Creating the Model: An instance of ListModel is created and populated with data.\n   • Passing the Model: The model attribute in the <partial> tag helper is used to pass the\n      listModel to the _ListPartialView partial view.\nAbout.cshtml (Main View)\n@{\n  ListModel listModel = new ListModel();\n  listModel.ListTitle = \"Programming Languages\";\n  listModel.ListItems = new List<string>()\n  {\n  \"Java\",\n  \"C#\",\n  \"Python\"\n  };\n  await Html.RenderPartialAsync(\"_ListPartialView\", listModel);\n}\nSame as the Index.cshtml, but using the Html.RenderPartialAsync HTML helper.\nNotes\n   • Strongly Typed: Use @model to specify the type of data expected by the partial view.\n   • Pass the Model: Pass an instance of your model class when rendering the partial view.\n   • Type Safety and IntelliSense: Benefit from compile-time checking and code completion\n      when working with model properties.\n   • Best Practice: Strongly typed partial views promote clean, maintainable, and less errorprone\ncode.",
+      "lines": [
+        {
+          "text": "  listModel.ListTitle = \"Countries\";",
+          "rawText": "listModel.ListTitle = \"Countries\";",
+          "x": 82.104,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  listModel.ListItems = new List<string>() { \"USA\", \"Canada\", \"Japan\", \"Germany\", \"India\" };",
+          "rawText": "listModel.ListItems = new List<string>() { \"USA\", \"Canada\", \"Japan\", \"Germany\", \"India\" };",
+          "x": 82.104,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "<partial name=\"_ListPartialView\" model=\"listModel\" />",
+          "rawText": "<partial name=\"_ListPartialView\" model=\"listModel\" />",
+          "x": 72.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   • Creating the Model: An instance of ListModel is created and populated with data.",
+          "rawText": "• Creating the Model: An instance of ListModel is created and populated with data.",
+          "x": 90.024,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "   • Passing the Model: The model attribute in the <partial> tag helper is used to pass the",
+          "rawText": "• Passing the Model: The model attribute in the <partial> tag helper is used to pass the",
+          "x": 90.024,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      listModel to the _ListPartialView partial view.",
+          "rawText": "listModel to the _ListPartialView partial view.",
+          "x": 108.02,
+          "y": 632.5,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "About.cshtml (Main View)",
+          "rawText": "About.cshtml (Main View)",
+          "x": 72.024,
+          "y": 587.5,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "@{",
+          "rawText": "@{",
+          "x": 72.024,
+          "y": 565.03,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  ListModel listModel = new ListModel();",
+          "rawText": "ListModel listModel = new ListModel();",
+          "x": 81.984,
+          "y": 542.47,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  listModel.ListTitle = \"Programming Languages\";",
+          "rawText": "listModel.ListTitle = \"Programming Languages\";",
+          "x": 82.104,
+          "y": 520.03,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  listModel.ListItems = new List<string>()",
+          "rawText": "listModel.ListItems = new List<string>()",
+          "x": 82.104,
+          "y": 497.59,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 475.03,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  \"Java\",",
+          "rawText": "\"Java\",",
+          "x": 82.104,
+          "y": 452.59,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  \"C#\",",
+          "rawText": "\"C#\",",
+          "x": 82.104,
+          "y": 430.03,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  \"Python\"",
+          "rawText": "\"Python\"",
+          "x": 82.104,
+          "y": 407.59,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  };",
+          "rawText": "};",
+          "x": 82.104,
+          "y": 385.01,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  await Html.RenderPartialAsync(\"_ListPartialView\", listModel);",
+          "rawText": "await Html.RenderPartialAsync(\"_ListPartialView\", listModel);",
+          "x": 82.104,
+          "y": 340.13,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 317.57,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "Same as the Index.cshtml, but using the Html.RenderPartialAsync HTML helper.",
+          "rawText": "Same as the Index.cshtml, but using the Html.RenderPartialAsync HTML helper.",
+          "x": 72.024,
+          "y": 295.13,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "Notes",
+          "rawText": "Notes",
+          "x": 72.024,
+          "y": 227.69,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "   • Strongly Typed: Use @model to specify the type of data expected by the partial view.",
+          "rawText": "• Strongly Typed: Use @model to specify the type of data expected by the partial view.",
+          "x": 90.024,
+          "y": 205.1,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "   • Pass the Model: Pass an instance of your model class when rendering the partial view.",
+          "rawText": "• Pass the Model: Pass an instance of your model class when rendering the partial view.",
+          "x": 90.024,
+          "y": 182.66,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "   • Type Safety and IntelliSense: Benefit from compile-time checking and code completion",
+          "rawText": "• Type Safety and IntelliSense: Benefit from compile-time checking and code completion",
+          "x": 90.024,
+          "y": 160.1,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      when working with model properties.",
+          "rawText": "when working with model properties.",
+          "x": 108.02,
+          "y": 145.58,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   • Best Practice: Strongly typed partial views promote clean, maintainable, and less error-",
+          "rawText": "• Best Practice: Strongly typed partial views promote clean, maintainable, and less error-",
+          "x": 90.024,
+          "y": 123.14,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      prone code.",
+          "rawText": "prone code.",
+          "x": 108.02,
+          "y": 108.62,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "  listModel.ListTitle = \"Countries\";",
+            "  listModel.ListItems = new List<string>() { \"USA\", \"Canada\", \"Japan\", \"Germany\", \"India\" };"
+          ],
+          "text": "  listModel.ListTitle = \"Countries\";\n  listModel.ListItems = new List<string>() { \"USA\", \"Canada\", \"Japan\", \"Germany\", \"India\" };"
+        },
+        {
+          "type": "code",
+          "page": 6,
+          "lines": [
+            "}"
+          ],
+          "text": "}"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "<partial name=\"_ListPartialView\" model=\"listModel\" />"
+          ],
+          "text": "<partial name=\"_ListPartialView\" model=\"listModel\" />"
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "   • Creating the Model: An instance of ListModel is created and populated with data."
+          ],
+          "text": "   • Creating the Model: An instance of ListModel is created and populated with data."
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "   • Passing the Model: The model attribute in the <partial> tag helper is used to pass the"
+          ],
+          "text": "   • Passing the Model: The model attribute in the <partial> tag helper is used to pass the"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "      listModel to the _ListPartialView partial view.",
+            "About.cshtml (Main View)"
+          ],
+          "text": "      listModel to the _ListPartialView partial view.\nAbout.cshtml (Main View)"
+        },
+        {
+          "type": "code",
+          "page": 6,
+          "lines": [
+            "@{",
+            "  ListModel listModel = new ListModel();",
+            "  listModel.ListTitle = \"Programming Languages\";",
+            "  listModel.ListItems = new List<string>()",
+            "  {"
+          ],
+          "text": "@{\n  ListModel listModel = new ListModel();\n  listModel.ListTitle = \"Programming Languages\";\n  listModel.ListItems = new List<string>()\n  {"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "  \"Java\",",
+            "  \"C#\",",
+            "  \"Python\""
+          ],
+          "text": "  \"Java\",\n  \"C#\",\n  \"Python\""
+        },
+        {
+          "type": "code",
+          "page": 6,
+          "lines": [
+            "  };",
+            "  await Html.RenderPartialAsync(\"_ListPartialView\", listModel);",
+            "}"
+          ],
+          "text": "  };\n  await Html.RenderPartialAsync(\"_ListPartialView\", listModel);\n}"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "Same as the Index.cshtml, but using the Html.RenderPartialAsync HTML helper."
+          ],
+          "text": "Same as the Index.cshtml, but using the Html.RenderPartialAsync HTML helper."
+        },
+        {
+          "type": "heading",
+          "page": 6,
+          "lines": [
+            "Notes"
+          ],
+          "text": "Notes"
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "   • Strongly Typed: Use @model to specify the type of data expected by the partial view."
+          ],
+          "text": "   • Strongly Typed: Use @model to specify the type of data expected by the partial view."
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "   • Pass the Model: Pass an instance of your model class when rendering the partial view."
+          ],
+          "text": "   • Pass the Model: Pass an instance of your model class when rendering the partial view."
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "   • Type Safety and IntelliSense: Benefit from compile-time checking and code completion"
+          ],
+          "text": "   • Type Safety and IntelliSense: Benefit from compile-time checking and code completion"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "      when working with model properties."
+          ],
+          "text": "      when working with model properties."
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "   • Best Practice: Strongly typed partial views promote clean, maintainable, and less errorprone"
+          ],
+          "text": "   • Best Practice: Strongly typed partial views promote clean, maintainable, and less errorprone"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "code."
+          ],
+          "text": "code."
+        }
+      ],
+      "char_count_raw": 1133,
+      "char_count_repaired": 1182
+    },
+    {
+      "page_number": 7,
+      "raw_text": "PartialViewResult\nIn ASP.NET Core MVC, a PartialViewResult is a specific type of ActionResult designed for returning\npartial views from your controller actions. Partial views, as you know, are reusable chunks of Razor\nmarkup (.cshtml) that can be embedded within other views. However, instead of being rendered as a\nfull page, they're intended to be a fragment of HTML that can be inserted into a larger view.\nWhy Use PartialViewResult?\n• Dynamic Content Delivery: You can use PartialViewResult to load content dynamically into\nyour main view using AJAX or other client-side techniques.\n• Separation of Concerns: This result type helps keep your controller actions focused on\nreturning data and leaves the rendering of that data to the view.\n• Simplified Testing: Since PartialViewResult doesn't involve rendering a complete page, it's\noften easier to unit test your action methods that return partial views.\nCreating a PartialViewResult\nIn your controller actions, you can return a PartialViewResult in a couple of ways:\n1. Direct Instantiation:\nreturn new PartialViewResult\n{\nViewName = \"_ListPartialView\", // Name of the partial view\nViewData = new ViewDataDictionary(ViewData, model) // Pass the model data\n};\n2. Using the PartialView() Helper Method:\nreturn PartialView(\"_ListPartialView\", model); // Much simpler way\nThe PartialView() method is a shorthand provided by the Controller base class for conveniently\ncreating a PartialViewResult.\n",
+      "repaired_text": "PartialViewResult\nIn ASP.NET Core MVC, a PartialViewResult is a specific type of ActionResult designed for returning\npartial views from your controller actions. Partial views, as you know, are reusable chunks of Razor\nmarkup (.cshtml) that can be embedded within other views. However, instead of being rendered as a\nfull page, they're intended to be a fragment of HTML that can be inserted into a larger view.\nWhy Use PartialViewResult?\n   • Dynamic Content Delivery: You can use PartialViewResult to load content dynamically into\n      your main view using AJAX or other client-side techniques.\n   • Separation of Concerns: This result type helps keep your controller actions focused on\n      returning data and leaves the rendering of that data to the view.\n   • Simplified Testing: Since PartialViewResult doesn't involve rendering a complete page, it's\n      often easier to unit test your action methods that return partial views.\nCreating a PartialViewResult\nIn your controller actions, you can return a PartialViewResult in a couple of ways:\n   1. Direct Instantiation:\nreturn new PartialViewResult\n{\n  ViewName = \"_ListPartialView\", // Name of the partial view\n  ViewData = new ViewDataDictionary(ViewData, model) // Pass the model data\n};\n   2. Using the PartialView() Helper Method:\nreturn PartialView(\"_ListPartialView\", model); // Much simpler way\nThe PartialView() method is a shorthand provided by the Controller base class for conveniently\ncreating a PartialViewResult.",
+      "lines": [
+        {
+          "text": "PartialViewResult",
+          "rawText": "PartialViewResult",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "In ASP.NET Core MVC, a PartialViewResult is a specific type of ActionResult designed for returning",
+          "rawText": "In ASP.NET Core MVC, a PartialViewResult is a specific type of ActionResult designed for returning",
+          "x": 72.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "partial views from your controller actions. Partial views, as you know, are reusable chunks of Razor",
+          "rawText": "partial views from your controller actions. Partial views, as you know, are reusable chunks of Razor",
+          "x": 72.024,
+          "y": 677.5,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "markup (.cshtml) that can be embedded within other views. However, instead of being rendered as a",
+          "rawText": "markup (.cshtml) that can be embedded within other views. However, instead of being rendered as a",
+          "x": 72.024,
+          "y": 662.98,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "full page, they're intended to be a fragment of HTML that can be inserted into a larger view.",
+          "rawText": "full page, they're intended to be a fragment of HTML that can be inserted into a larger view.",
+          "x": 72.024,
+          "y": 648.46,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "Why Use PartialViewResult?",
+          "rawText": "Why Use PartialViewResult?",
+          "x": 72.024,
+          "y": 603.58,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "   • Dynamic Content Delivery: You can use PartialViewResult to load content dynamically into",
+          "rawText": "• Dynamic Content Delivery: You can use PartialViewResult to load content dynamically into",
+          "x": 90.024,
+          "y": 581.02,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      your main view using AJAX or other client-side techniques.",
+          "rawText": "your main view using AJAX or other client-side techniques.",
+          "x": 108.02,
+          "y": 566.47,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   • Separation of Concerns: This result type helps keep your controller actions focused on",
+          "rawText": "• Separation of Concerns: This result type helps keep your controller actions focused on",
+          "x": 90.024,
+          "y": 544.03,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      returning data and leaves the rendering of that data to the view.",
+          "rawText": "returning data and leaves the rendering of that data to the view.",
+          "x": 108.02,
+          "y": 529.51,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   • Simplified Testing: Since PartialViewResult doesn't involve rendering a complete page, it's",
+          "rawText": "• Simplified Testing: Since PartialViewResult doesn't involve rendering a complete page, it's",
+          "x": 90.024,
+          "y": 507.07,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      often easier to unit test your action methods that return partial views.",
+          "rawText": "often easier to unit test your action methods that return partial views.",
+          "x": 108.02,
+          "y": 492.55,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "Creating a PartialViewResult",
+          "rawText": "Creating a PartialViewResult",
+          "x": 72.024,
+          "y": 447.55,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "In your controller actions, you can return a PartialViewResult in a couple of ways:",
+          "rawText": "In your controller actions, you can return a PartialViewResult in a couple of ways:",
+          "x": 72.024,
+          "y": 425.11,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   1. Direct Instantiation:",
+          "rawText": "1. Direct Instantiation:",
+          "x": 90.024,
+          "y": 402.55,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "return new PartialViewResult",
+          "rawText": "return new PartialViewResult",
+          "x": 72.024,
+          "y": 380.09,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 357.65,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  ViewName = \"_ListPartialView\", // Name of the partial view",
+          "rawText": "ViewName = \"_ListPartialView\", // Name of the partial view",
+          "x": 82.104,
+          "y": 335.09,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  ViewData = new ViewDataDictionary(ViewData, model) // Pass the model data",
+          "rawText": "ViewData = new ViewDataDictionary(ViewData, model) // Pass the model data",
+          "x": 82.104,
+          "y": 312.65,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "};",
+          "rawText": "};",
+          "x": 72.024,
+          "y": 290.09,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   2. Using the PartialView() Helper Method:",
+          "rawText": "2. Using the PartialView() Helper Method:",
+          "x": 90.024,
+          "y": 245.09,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "return PartialView(\"_ListPartialView\", model); // Much simpler way",
+          "rawText": "return PartialView(\"_ListPartialView\", model); // Much simpler way",
+          "x": 72.024,
+          "y": 222.65,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "The PartialView() method is a shorthand provided by the Controller base class for conveniently",
+          "rawText": "The PartialView() method is a shorthand provided by the Controller base class for conveniently",
+          "x": 72.024,
+          "y": 200.18,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "creating a PartialViewResult.",
+          "rawText": "creating a PartialViewResult.",
+          "x": 72.024,
+          "y": 185.66,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 7,
+          "lines": [
+            "PartialViewResult"
+          ],
+          "text": "PartialViewResult"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "In ASP.NET Core MVC, a PartialViewResult is a specific type of ActionResult designed for returning",
+            "partial views from your controller actions. Partial views, as you know, are reusable chunks of Razor",
+            "markup (.cshtml) that can be embedded within other views. However, instead of being rendered as a",
+            "full page, they're intended to be a fragment of HTML that can be inserted into a larger view.",
+            "Why Use PartialViewResult?"
+          ],
+          "text": "In ASP.NET Core MVC, a PartialViewResult is a specific type of ActionResult designed for returning\npartial views from your controller actions. Partial views, as you know, are reusable chunks of Razor\nmarkup (.cshtml) that can be embedded within other views. However, instead of being rendered as a\nfull page, they're intended to be a fragment of HTML that can be inserted into a larger view.\nWhy Use PartialViewResult?"
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • Dynamic Content Delivery: You can use PartialViewResult to load content dynamically into"
+          ],
+          "text": "   • Dynamic Content Delivery: You can use PartialViewResult to load content dynamically into"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "      your main view using AJAX or other client-side techniques."
+          ],
+          "text": "      your main view using AJAX or other client-side techniques."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • Separation of Concerns: This result type helps keep your controller actions focused on"
+          ],
+          "text": "   • Separation of Concerns: This result type helps keep your controller actions focused on"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "      returning data and leaves the rendering of that data to the view."
+          ],
+          "text": "      returning data and leaves the rendering of that data to the view."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • Simplified Testing: Since PartialViewResult doesn't involve rendering a complete page, it's"
+          ],
+          "text": "   • Simplified Testing: Since PartialViewResult doesn't involve rendering a complete page, it's"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "      often easier to unit test your action methods that return partial views."
+          ],
+          "text": "      often easier to unit test your action methods that return partial views."
+        },
+        {
+          "type": "heading",
+          "page": 7,
+          "lines": [
+            "Creating a PartialViewResult"
+          ],
+          "text": "Creating a PartialViewResult"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "In your controller actions, you can return a PartialViewResult in a couple of ways:"
+          ],
+          "text": "In your controller actions, you can return a PartialViewResult in a couple of ways:"
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   1. Direct Instantiation:"
+          ],
+          "text": "   1. Direct Instantiation:"
+        },
+        {
+          "type": "code",
+          "page": 7,
+          "lines": [
+            "return new PartialViewResult",
+            "{",
+            "  ViewName = \"_ListPartialView\", // Name of the partial view",
+            "  ViewData = new ViewDataDictionary(ViewData, model) // Pass the model data",
+            "};"
+          ],
+          "text": "return new PartialViewResult\n{\n  ViewName = \"_ListPartialView\", // Name of the partial view\n  ViewData = new ViewDataDictionary(ViewData, model) // Pass the model data\n};"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "   2. Using the PartialView() Helper Method:"
+          ],
+          "text": "   2. Using the PartialView() Helper Method:"
+        },
+        {
+          "type": "code",
+          "page": 7,
+          "lines": [
+            "return PartialView(\"_ListPartialView\", model); // Much simpler way"
+          ],
+          "text": "return PartialView(\"_ListPartialView\", model); // Much simpler way"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "The PartialView() method is a shorthand provided by the Controller base class for conveniently",
+            "creating a PartialViewResult."
+          ],
+          "text": "The PartialView() method is a shorthand provided by the Controller base class for conveniently\ncreating a PartialViewResult."
+        }
+      ],
+      "char_count_raw": 1448,
+      "char_count_repaired": 1484
+    },
+    {
+      "page_number": 8,
+      "raw_text": "Code Example\nViews/Home/Index.cshtml (Main View)\n<button class=\"button button-blue-back\" type=\"button\" id=\"button-load\">Load Programming\nLanguages</button>\n<div class=\"programming-languages-content\">\n</div>\n<script>\ndocument.querySelector(\"#button-load\").addEventListener(\"click\", async function() {\nvar response = await fetch(\"programming-languages\");\nvar languages = await response.text();\ndocument.querySelector(\".programming-languages-content\").innerHTML = languages;\n});\n</script>\nThis view contains a button, a div, and some JavaScript to load the partial view's content when the\nuser clicks a button using fetch function.\nHomeController.cs (Controller)\n[Route(\"programming-languages\")]\npublic IActionResult ProgrammingLanguages()\n{\nListModel listModel = new ListModel() {\nListTitle = \"Programming Languages List\",\nListItems = new List<string>() { \"Python\", \"C#\", \"Go\" }\n};\nreturn PartialView(\"_ListPartialView\", listModel);\n}\n",
+      "repaired_text": "Code Example\nViews/Home/Index.cshtml (Main View)\n<button class=\"button button-blue-back\" type=\"button\" id=\"button-load\">Load Programming\nLanguages</button>\n<div class=\"programming-languages-content\">\n</div>\n<script>\n  document.querySelector(\"#button-load\").addEventListener(\"click\", async function() {\n   var response = await fetch(\"programming-languages\");\n   var languages = await response.text();\n   document.querySelector(\".programming-languages-content\").innerHTML = languages;\n  });\n</script>\nThis view contains a button, a div, and some JavaScript to load the partial view's content when the\nuser clicks a button using fetch function.\nHomeController.cs (Controller)\n[Route(\"programming-languages\")]\npublic IActionResult ProgrammingLanguages()\n{\n  ListModel listModel = new ListModel() {\n   ListTitle = \"Programming Languages List\",\n   ListItems = new List<string>() { \"Python\", \"C#\", \"Go\" }\n  };\n  return PartialView(\"_ListPartialView\", listModel);\n}",
+      "lines": [
+        {
+          "text": "Code Example",
+          "rawText": "Code Example",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "Views/Home/Index.cshtml (Main View)",
+          "rawText": "Views/Home/Index.cshtml (Main View)",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "<button class=\"button button-blue-back\" type=\"button\" id=\"button-load\">Load Programming",
+          "rawText": "<button class=\"button button-blue-back\" type=\"button\" id=\"button-load\">Load Programming",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "Languages</button>",
+          "rawText": "Languages</button>",
+          "x": 72.024,
+          "y": 699.94,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "<div class=\"programming-languages-content\">",
+          "rawText": "<div class=\"programming-languages-content\">",
+          "x": 72.024,
+          "y": 677.5,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "</div>",
+          "rawText": "</div>",
+          "x": 72.024,
+          "y": 632.5,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "<script>",
+          "rawText": "<script>",
+          "x": 72.024,
+          "y": 587.5,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  document.querySelector(\"#button-load\").addEventListener(\"click\", async function() {",
+          "rawText": "document.querySelector(\"#button-load\").addEventListener(\"click\", async function() {",
+          "x": 82.104,
+          "y": 565.03,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   var response = await fetch(\"programming-languages\");",
+          "rawText": "var response = await fetch(\"programming-languages\");",
+          "x": 91.944,
+          "y": 542.47,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   var languages = await response.text();",
+          "rawText": "var languages = await response.text();",
+          "x": 91.944,
+          "y": 520.03,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   document.querySelector(\".programming-languages-content\").innerHTML = languages;",
+          "rawText": "document.querySelector(\".programming-languages-content\").innerHTML = languages;",
+          "x": 92.064,
+          "y": 497.59,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  });",
+          "rawText": "});",
+          "x": 82.104,
+          "y": 475.03,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "</script>",
+          "rawText": "</script>",
+          "x": 72.024,
+          "y": 452.59,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "This view contains a button, a div, and some JavaScript to load the partial view's content when the",
+          "rawText": "This view contains a button, a div, and some JavaScript to load the partial view's content when the",
+          "x": 72.024,
+          "y": 430.03,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "user clicks a button using fetch function.",
+          "rawText": "user clicks a button using fetch function.",
+          "x": 72.024,
+          "y": 415.63,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "HomeController.cs (Controller)",
+          "rawText": "HomeController.cs (Controller)",
+          "x": 72.024,
+          "y": 348.05,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "[Route(\"programming-languages\")]",
+          "rawText": "[Route(\"programming-languages\")]",
+          "x": 72.024,
+          "y": 325.61,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "public IActionResult ProgrammingLanguages()",
+          "rawText": "public IActionResult ProgrammingLanguages()",
+          "x": 72.024,
+          "y": 303.05,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 280.61,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  ListModel listModel = new ListModel() {",
+          "rawText": "ListModel listModel = new ListModel() {",
+          "x": 81.984,
+          "y": 258.17,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   ListTitle = \"Programming Languages List\",",
+          "rawText": "ListTitle = \"Programming Languages List\",",
+          "x": 91.944,
+          "y": 235.61,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   ListItems = new List<string>() { \"Python\", \"C#\", \"Go\" }",
+          "rawText": "ListItems = new List<string>() { \"Python\", \"C#\", \"Go\" }",
+          "x": 91.944,
+          "y": 213.14,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  };",
+          "rawText": "};",
+          "x": 82.104,
+          "y": 190.58,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "  return PartialView(\"_ListPartialView\", listModel);",
+          "rawText": "return PartialView(\"_ListPartialView\", listModel);",
+          "x": 82.104,
+          "y": 145.58,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 123.14,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 8,
+          "lines": [
+            "Code Example"
+          ],
+          "text": "Code Example"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "Views/Home/Index.cshtml (Main View)"
+          ],
+          "text": "Views/Home/Index.cshtml (Main View)"
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "<button class=\"button button-blue-back\" type=\"button\" id=\"button-load\">Load Programming"
+          ],
+          "text": "<button class=\"button button-blue-back\" type=\"button\" id=\"button-load\">Load Programming"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "Languages</button>"
+          ],
+          "text": "Languages</button>"
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "<div class=\"programming-languages-content\">",
+            "</div>"
+          ],
+          "text": "<div class=\"programming-languages-content\">\n</div>"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "<script>",
+            "  document.querySelector(\"#button-load\").addEventListener(\"click\", async function() {"
+          ],
+          "text": "<script>\n  document.querySelector(\"#button-load\").addEventListener(\"click\", async function() {"
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "   var response = await fetch(\"programming-languages\");",
+            "   var languages = await response.text();",
+            "   document.querySelector(\".programming-languages-content\").innerHTML = languages;",
+            "  });"
+          ],
+          "text": "   var response = await fetch(\"programming-languages\");\n   var languages = await response.text();\n   document.querySelector(\".programming-languages-content\").innerHTML = languages;\n  });"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "</script>",
+            "This view contains a button, a div, and some JavaScript to load the partial view's content when the",
+            "user clicks a button using fetch function.",
+            "HomeController.cs (Controller)"
+          ],
+          "text": "</script>\nThis view contains a button, a div, and some JavaScript to load the partial view's content when the\nuser clicks a button using fetch function.\nHomeController.cs (Controller)"
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "[Route(\"programming-languages\")]",
+            "public IActionResult ProgrammingLanguages()",
+            "{",
+            "  ListModel listModel = new ListModel() {",
+            "   ListTitle = \"Programming Languages List\",",
+            "   ListItems = new List<string>() { \"Python\", \"C#\", \"Go\" }",
+            "  };",
+            "  return PartialView(\"_ListPartialView\", listModel);",
+            "}"
+          ],
+          "text": "[Route(\"programming-languages\")]\npublic IActionResult ProgrammingLanguages()\n{\n  ListModel listModel = new ListModel() {\n   ListTitle = \"Programming Languages List\",\n   ListItems = new List<string>() { \"Python\", \"C#\", \"Go\" }\n  };\n  return PartialView(\"_ListPartialView\", listModel);\n}"
+        }
+      ],
+      "char_count_raw": 933,
+      "char_count_repaired": 957
+    },
+    {
+      "page_number": 9,
+      "raw_text": "In this action method:\n1. Data Preparation: A ListModel object is created and populated with data for the list (title\nand items).\n2. Partial View Returned: The PartialView() method is used to return a PartialViewResult. The\nmethod takes two arguments:\no \"_ListPartialView\": The name of the partial view file (located in Views/Shared by\ndefault).\no listModel: The model data to pass to the partial view.\no When this action method is called via the URL /programming-languages by the\njavascript code on the page, it returns the partial view along with the data that is\nthen injected into the div with class programming-languages-content by the\njavascript.\nImportant Points:\n• AJAX and Dynamic Loading: PartialViewResult is frequently used in conjunction with AJAX to\nload content dynamically without full page refreshes.\n• View Model (Best Practice): Always try to use a view model to pass data to your partial\nviews for better type safety and maintainability.\n• Caching: Consider using output caching on your partial views to improve performance if they\nrender data that doesn't change frequently.\nKey Points to Remember\nPartial Views: Reusable View Components\n• Purpose: Encapsulate reusable UI elements or chunks of Razor markup (.cshtml) to avoid\nrepetition.\n• Benefits:\no Increased code reusability\no Improved code organization and maintainability\no Dynamic content generation\n• Naming Convention: Prefixed with an underscore (e.g., _PartialName.cshtml).\n• Location: Typically in Views/Shared or alongside the main view.\n• Rendering Options:\n",
+      "repaired_text": "In this action method:\n   1. Data Preparation: A ListModel object is created and populated with data for the list (title\n      and items).\n   2. Partial View Returned: The PartialView() method is used to return a PartialViewResult. The\n      method takes two arguments:\n        o \"_ListPartialView\": The name of the partial view file (located in Views/Shared by\n           default).\n        o listModel: The model data to pass to the partial view.\n        o When this action method is called via the URL /programming-languages by the\n           javascript code on the page, it returns the partial view along with the data that is\n           then injected into the div with class programming-languages-content by the\n           javascript.\nImportant Points:\n   • AJAX and Dynamic Loading: PartialViewResult is frequently used in conjunction with AJAX to\n      load content dynamically without full page refreshes.\n   • View Model (Best Practice): Always try to use a view model to pass data to your partial\n      views for better type safety and maintainability.\n   • Caching: Consider using output caching on your partial views to improve performance if they\n      render data that doesn't change frequently.\nKey Points to Remember\nPartial Views: Reusable View Components\n   • Purpose: Encapsulate reusable UI elements or chunks of Razor markup (.cshtml) to avoid\n      repetition.\n   • Benefits:\n        o Increased code reusability\n        o Improved code organization and maintainability\n        o Dynamic content generation\n   • Naming Convention: Prefixed with an underscore (e.g., _PartialName.cshtml).\n   • Location: Typically in Views/Shared or alongside the main view.\n   • Rendering Options:",
+      "lines": [
+        {
+          "text": "In this action method:",
+          "rawText": "In this action method:",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   1. Data Preparation: A ListModel object is created and populated with data for the list (title",
+          "rawText": "1. Data Preparation: A ListModel object is created and populated with data for the list (title",
+          "x": 90.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "      and items).",
+          "rawText": "and items).",
+          "x": 108.02,
+          "y": 722.5,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   2. Partial View Returned: The PartialView() method is used to return a PartialViewResult. The",
+          "rawText": "2. Partial View Returned: The PartialView() method is used to return a PartialViewResult. The",
+          "x": 90.024,
+          "y": 699.94,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "      method takes two arguments:",
+          "rawText": "method takes two arguments:",
+          "x": 108.02,
+          "y": 685.54,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "        o \"_ListPartialView\": The name of the partial view file (located in Views/Shared by",
+          "rawText": "o \"_ListPartialView\": The name of the partial view file (located in Views/Shared by",
+          "x": 126.02,
+          "y": 662.98,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "           default).",
+          "rawText": "default).",
+          "x": 144.02,
+          "y": 648.46,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "        o listModel: The model data to pass to the partial view.",
+          "rawText": "o listModel: The model data to pass to the partial view.",
+          "x": 126.02,
+          "y": 626.02,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "        o When this action method is called via the URL /programming-languages by the",
+          "rawText": "o When this action method is called via the URL /programming-languages by the",
+          "x": 126.02,
+          "y": 603.58,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "           javascript code on the page, it returns the partial view along with the data that is",
+          "rawText": "javascript code on the page, it returns the partial view along with the data that is",
+          "x": 144.02,
+          "y": 589.06,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "           then injected into the div with class programming-languages-content by the",
+          "rawText": "then injected into the div with class programming-languages-content by the",
+          "x": 144.02,
+          "y": 574.51,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "           javascript.",
+          "rawText": "javascript.",
+          "x": 144.02,
+          "y": 559.99,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "Important Points:",
+          "rawText": "Important Points:",
+          "x": 72.024,
+          "y": 515.11,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "   • AJAX and Dynamic Loading: PartialViewResult is frequently used in conjunction with AJAX to",
+          "rawText": "• AJAX and Dynamic Loading: PartialViewResult is frequently used in conjunction with AJAX to",
+          "x": 90.024,
+          "y": 492.55,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      load content dynamically without full page refreshes.",
+          "rawText": "load content dynamically without full page refreshes.",
+          "x": 108.02,
+          "y": 478.03,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   • View Model (Best Practice): Always try to use a view model to pass data to your partial",
+          "rawText": "• View Model (Best Practice): Always try to use a view model to pass data to your partial",
+          "x": 90.024,
+          "y": 455.59,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      views for better type safety and maintainability.",
+          "rawText": "views for better type safety and maintainability.",
+          "x": 108.02,
+          "y": 441.07,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   • Caching: Consider using output caching on your partial views to improve performance if they",
+          "rawText": "• Caching: Consider using output caching on your partial views to improve performance if they",
+          "x": 90.024,
+          "y": 418.63,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      render data that doesn't change frequently.",
+          "rawText": "render data that doesn't change frequently.",
+          "x": 108.02,
+          "y": 404.11,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "Key Points to Remember",
+          "rawText": "Key Points to Remember",
+          "x": 72.024,
+          "y": 314.09,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "Partial Views: Reusable View Components",
+          "rawText": "Partial Views: Reusable View Components",
+          "x": 72.024,
+          "y": 291.65,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "   • Purpose: Encapsulate reusable UI elements or chunks of Razor markup (.cshtml) to avoid",
+          "rawText": "• Purpose: Encapsulate reusable UI elements or chunks of Razor markup (.cshtml) to avoid",
+          "x": 90.024,
+          "y": 269.09,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "      repetition.",
+          "rawText": "repetition.",
+          "x": 108.02,
+          "y": 254.69,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "   • Benefits:",
+          "rawText": "• Benefits:",
+          "x": 90.024,
+          "y": 232.13,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "        o Increased code reusability",
+          "rawText": "o Increased code reusability",
+          "x": 126.02,
+          "y": 209.66,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "        o Improved code organization and maintainability",
+          "rawText": "o Improved code organization and maintainability",
+          "x": 126.02,
+          "y": 187.1,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "        o Dynamic content generation",
+          "rawText": "o Dynamic content generation",
+          "x": 126.02,
+          "y": 164.66,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "   • Naming Convention: Prefixed with an underscore (e.g., _PartialName.cshtml).",
+          "rawText": "• Naming Convention: Prefixed with an underscore (e.g., _PartialName.cshtml).",
+          "x": 90.024,
+          "y": 142.22,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "   • Location: Typically in Views/Shared or alongside the main view.",
+          "rawText": "• Location: Typically in Views/Shared or alongside the main view.",
+          "x": 90.024,
+          "y": 119.66,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "   • Rendering Options:",
+          "rawText": "• Rendering Options:",
+          "x": 90.024,
+          "y": 97.224,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "In this action method:"
+          ],
+          "text": "In this action method:"
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "   1. Data Preparation: A ListModel object is created and populated with data for the list (title"
+          ],
+          "text": "   1. Data Preparation: A ListModel object is created and populated with data for the list (title"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "      and items)."
+          ],
+          "text": "      and items)."
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "   2. Partial View Returned: The PartialView() method is used to return a PartialViewResult. The"
+          ],
+          "text": "   2. Partial View Returned: The PartialView() method is used to return a PartialViewResult. The"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "      method takes two arguments:"
+          ],
+          "text": "      method takes two arguments:"
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "        o \"_ListPartialView\": The name of the partial view file (located in Views/Shared by"
+          ],
+          "text": "        o \"_ListPartialView\": The name of the partial view file (located in Views/Shared by"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "           default)."
+          ],
+          "text": "           default)."
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "        o listModel: The model data to pass to the partial view."
+          ],
+          "text": "        o listModel: The model data to pass to the partial view."
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "        o When this action method is called via the URL /programming-languages by the"
+          ],
+          "text": "        o When this action method is called via the URL /programming-languages by the"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "           javascript code on the page, it returns the partial view along with the data that is",
+            "           then injected into the div with class programming-languages-content by the",
+            "           javascript.",
+            "Important Points:"
+          ],
+          "text": "           javascript code on the page, it returns the partial view along with the data that is\n           then injected into the div with class programming-languages-content by the\n           javascript.\nImportant Points:"
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "   • AJAX and Dynamic Loading: PartialViewResult is frequently used in conjunction with AJAX to"
+          ],
+          "text": "   • AJAX and Dynamic Loading: PartialViewResult is frequently used in conjunction with AJAX to"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "      load content dynamically without full page refreshes."
+          ],
+          "text": "      load content dynamically without full page refreshes."
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "   • View Model (Best Practice): Always try to use a view model to pass data to your partial"
+          ],
+          "text": "   • View Model (Best Practice): Always try to use a view model to pass data to your partial"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "      views for better type safety and maintainability."
+          ],
+          "text": "      views for better type safety and maintainability."
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "   • Caching: Consider using output caching on your partial views to improve performance if they"
+          ],
+          "text": "   • Caching: Consider using output caching on your partial views to improve performance if they"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "      render data that doesn't change frequently."
+          ],
+          "text": "      render data that doesn't change frequently."
+        },
+        {
+          "type": "heading",
+          "page": 9,
+          "lines": [
+            "Key Points to Remember"
+          ],
+          "text": "Key Points to Remember"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "Partial Views: Reusable View Components"
+          ],
+          "text": "Partial Views: Reusable View Components"
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "   • Purpose: Encapsulate reusable UI elements or chunks of Razor markup (.cshtml) to avoid"
+          ],
+          "text": "   • Purpose: Encapsulate reusable UI elements or chunks of Razor markup (.cshtml) to avoid"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "      repetition."
+          ],
+          "text": "      repetition."
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "   • Benefits:"
+          ],
+          "text": "   • Benefits:"
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "        o Increased code reusability"
+          ],
+          "text": "        o Increased code reusability"
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "        o Improved code organization and maintainability"
+          ],
+          "text": "        o Improved code organization and maintainability"
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "        o Dynamic content generation"
+          ],
+          "text": "        o Dynamic content generation"
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "   • Naming Convention: Prefixed with an underscore (e.g., _PartialName.cshtml)."
+          ],
+          "text": "   • Naming Convention: Prefixed with an underscore (e.g., _PartialName.cshtml)."
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "   • Location: Typically in Views/Shared or alongside the main view."
+          ],
+          "text": "   • Location: Typically in Views/Shared or alongside the main view."
+        },
+        {
+          "type": "list_item",
+          "page": 9,
+          "lines": [
+            "   • Rendering Options:"
+          ],
+          "text": "   • Rendering Options:"
+        }
+      ],
+      "char_count_raw": 1544,
+      "char_count_repaired": 1701
+    },
+    {
+      "page_number": 10,
+      "raw_text": "o Tag Helpers: <partial name=\"_PartialName\" /> or <partial name=\"_PartialName\"\nmodel=\"yourModel\" />\no HTML Helper: @await Html.PartialAsync(\"_PartialName\", model)\nViewData in Partial Views\n• Purpose: Pass data to partial views from the parent view or controller.\n• Usage:\no In the parent view or controller: ViewData[\"key\"] = value\no In the partial view: @ViewData[\"key\"]\n• Caveat: ViewData is not strongly typed; be careful with type casting and null checks.\nStrongly Typed Partial Views\n• Purpose: Associate a partial view with a specific model class using the @model directive.\n• Benefits:\no Type safety: Catches errors during development.\no IntelliSense: Code completion for model properties.\no Maintainability: Easier updates when models change.\n• How to Use:\n1. Create a model class.\n2. Use @model YourModel in the partial view.\n3. Pass a model instance when rendering: <partial model=\"yourModelInstance\" /> or @await\nHtml.PartialAsync(\"_PartialName\", yourModelInstance)\nPartialViewResult\n• Purpose: Return a partial view from a controller action (often for AJAX requests).\n• Creation:\no return PartialView(\"_PartialName\", model); (preferred)\no return new PartialViewResult { ViewName = \"_PartialName\", ViewData = ... };\n",
+      "repaired_text": "        o Tag Helpers: <partial name=\"_PartialName\" /> or <partial name=\"_PartialName\"\n           model=\"yourModel\" />\n        o HTML Helper: @await Html.PartialAsync(\"_PartialName\", model)\nViewData in Partial Views\n   • Purpose: Pass data to partial views from the parent view or controller.\n   • Usage:\n        o In the parent view or controller: ViewData[\"key\"] = value\n        o In the partial view: @ViewData[\"key\"]\n   • Caveat: ViewData is not strongly typed; be careful with type casting and null checks.\nStrongly Typed Partial Views\n   • Purpose: Associate a partial view with a specific model class using the @model directive.\n   • Benefits:\n        o Type safety: Catches errors during development.\n        o IntelliSense: Code completion for model properties.\n        o Maintainability: Easier updates when models change.\n   • How to Use:\n1. Create a model class.\n2. Use @model YourModel in the partial view.\n3. Pass a model instance when rendering: <partial model=\"yourModelInstance\" /> or @await\nHtml.PartialAsync(\"_PartialName\", yourModelInstance)\nPartialViewResult\n   • Purpose: Return a partial view from a controller action (often for AJAX requests).\n   • Creation:\n        o return PartialView(\"_PartialName\", model); (preferred)\n        o return new PartialViewResult { ViewName = \"_PartialName\", ViewData = ... };",
+      "lines": [
+        {
+          "text": "        o Tag Helpers: <partial name=\"_PartialName\" /> or <partial name=\"_PartialName\"",
+          "rawText": "o Tag Helpers: <partial name=\"_PartialName\" /> or <partial name=\"_PartialName\"",
+          "x": 126.02,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "           model=\"yourModel\" />",
+          "rawText": "model=\"yourModel\" />",
+          "x": 144.02,
+          "y": 744.94,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "        o HTML Helper: @await Html.PartialAsync(\"_PartialName\", model)",
+          "rawText": "o HTML Helper: @await Html.PartialAsync(\"_PartialName\", model)",
+          "x": 126.02,
+          "y": 722.5,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "ViewData in Partial Views",
+          "rawText": "ViewData in Partial Views",
+          "x": 72.024,
+          "y": 677.5,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "   • Purpose: Pass data to partial views from the parent view or controller.",
+          "rawText": "• Purpose: Pass data to partial views from the parent view or controller.",
+          "x": 90.024,
+          "y": 655.06,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "   • Usage:",
+          "rawText": "• Usage:",
+          "x": 90.024,
+          "y": 632.5,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "        o In the parent view or controller: ViewData[\"key\"] = value",
+          "rawText": "o In the parent view or controller: ViewData[\"key\"] = value",
+          "x": 126.02,
+          "y": 610.06,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "        o In the partial view: @ViewData[\"key\"]",
+          "rawText": "o In the partial view: @ViewData[\"key\"]",
+          "x": 126.02,
+          "y": 587.5,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "   • Caveat: ViewData is not strongly typed; be careful with type casting and null checks.",
+          "rawText": "• Caveat: ViewData is not strongly typed; be careful with type casting and null checks.",
+          "x": 90.024,
+          "y": 565.03,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "Strongly Typed Partial Views",
+          "rawText": "Strongly Typed Partial Views",
+          "x": 72.024,
+          "y": 497.59,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "   • Purpose: Associate a partial view with a specific model class using the @model directive.",
+          "rawText": "• Purpose: Associate a partial view with a specific model class using the @model directive.",
+          "x": 90.024,
+          "y": 475.03,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "   • Benefits:",
+          "rawText": "• Benefits:",
+          "x": 90.024,
+          "y": 452.59,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "        o Type safety: Catches errors during development.",
+          "rawText": "o Type safety: Catches errors during development.",
+          "x": 126.02,
+          "y": 430.03,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "        o IntelliSense: Code completion for model properties.",
+          "rawText": "o IntelliSense: Code completion for model properties.",
+          "x": 126.02,
+          "y": 407.59,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "        o Maintainability: Easier updates when models change.",
+          "rawText": "o Maintainability: Easier updates when models change.",
+          "x": 126.02,
+          "y": 385.01,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "   • How to Use:",
+          "rawText": "• How to Use:",
+          "x": 90.024,
+          "y": 362.57,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "1. Create a model class.",
+          "rawText": "1. Create a model class.",
+          "x": 72.024,
+          "y": 340.13,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "2. Use @model YourModel in the partial view.",
+          "rawText": "2. Use @model YourModel in the partial view.",
+          "x": 72.024,
+          "y": 317.57,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "3. Pass a model instance when rendering: <partial model=\"yourModelInstance\" /> or @await",
+          "rawText": "3. Pass a model instance when rendering: <partial model=\"yourModelInstance\" /> or @await",
+          "x": 72.024,
+          "y": 295.13,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "Html.PartialAsync(\"_PartialName\", yourModelInstance)",
+          "rawText": "Html.PartialAsync(\"_PartialName\", yourModelInstance)",
+          "x": 72.024,
+          "y": 280.61,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f2"
+        },
+        {
+          "text": "PartialViewResult",
+          "rawText": "PartialViewResult",
+          "x": 72.024,
+          "y": 235.61,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f3"
+        },
+        {
+          "text": "   • Purpose: Return a partial view from a controller action (often for AJAX requests).",
+          "rawText": "• Purpose: Return a partial view from a controller action (often for AJAX requests).",
+          "x": 90.024,
+          "y": 213.14,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "   • Creation:",
+          "rawText": "• Creation:",
+          "x": 90.024,
+          "y": 190.58,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f4"
+        },
+        {
+          "text": "        o return PartialView(\"_PartialName\", model); (preferred)",
+          "rawText": "o return PartialView(\"_PartialName\", model); (preferred)",
+          "x": 126.02,
+          "y": 168.14,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        },
+        {
+          "text": "        o return new PartialViewResult { ViewName = \"_PartialName\", ViewData = ... };",
+          "rawText": "o return new PartialViewResult { ViewName = \"_PartialName\", ViewData = ... };",
+          "x": 126.02,
+          "y": 145.58,
+          "fontSize": 11.04,
+          "fontName": "g_d18_f6"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "        o Tag Helpers: <partial name=\"_PartialName\" /> or <partial name=\"_PartialName\""
+          ],
+          "text": "        o Tag Helpers: <partial name=\"_PartialName\" /> or <partial name=\"_PartialName\""
+        },
+        {
+          "type": "prose",
+          "page": 10,
+          "lines": [
+            "           model=\"yourModel\" />"
+          ],
+          "text": "           model=\"yourModel\" />"
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "        o HTML Helper: @await Html.PartialAsync(\"_PartialName\", model)"
+          ],
+          "text": "        o HTML Helper: @await Html.PartialAsync(\"_PartialName\", model)"
+        },
+        {
+          "type": "heading",
+          "page": 10,
+          "lines": [
+            "ViewData in Partial Views"
+          ],
+          "text": "ViewData in Partial Views"
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "   • Purpose: Pass data to partial views from the parent view or controller."
+          ],
+          "text": "   • Purpose: Pass data to partial views from the parent view or controller."
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "   • Usage:"
+          ],
+          "text": "   • Usage:"
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "        o In the parent view or controller: ViewData[\"key\"] = value"
+          ],
+          "text": "        o In the parent view or controller: ViewData[\"key\"] = value"
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "        o In the partial view: @ViewData[\"key\"]"
+          ],
+          "text": "        o In the partial view: @ViewData[\"key\"]"
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "   • Caveat: ViewData is not strongly typed; be careful with type casting and null checks."
+          ],
+          "text": "   • Caveat: ViewData is not strongly typed; be careful with type casting and null checks."
+        },
+        {
+          "type": "heading",
+          "page": 10,
+          "lines": [
+            "Strongly Typed Partial Views"
+          ],
+          "text": "Strongly Typed Partial Views"
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "   • Purpose: Associate a partial view with a specific model class using the @model directive."
+          ],
+          "text": "   • Purpose: Associate a partial view with a specific model class using the @model directive."
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "   • Benefits:"
+          ],
+          "text": "   • Benefits:"
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "        o Type safety: Catches errors during development."
+          ],
+          "text": "        o Type safety: Catches errors during development."
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "        o IntelliSense: Code completion for model properties."
+          ],
+          "text": "        o IntelliSense: Code completion for model properties."
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "        o Maintainability: Easier updates when models change."
+          ],
+          "text": "        o Maintainability: Easier updates when models change."
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "   • How to Use:"
+          ],
+          "text": "   • How to Use:"
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "1. Create a model class."
+          ],
+          "text": "1. Create a model class."
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "2. Use @model YourModel in the partial view."
+          ],
+          "text": "2. Use @model YourModel in the partial view."
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "3. Pass a model instance when rendering: <partial model=\"yourModelInstance\" /> or @await"
+          ],
+          "text": "3. Pass a model instance when rendering: <partial model=\"yourModelInstance\" /> or @await"
+        },
+        {
+          "type": "prose",
+          "page": 10,
+          "lines": [
+            "Html.PartialAsync(\"_PartialName\", yourModelInstance)"
+          ],
+          "text": "Html.PartialAsync(\"_PartialName\", yourModelInstance)"
+        },
+        {
+          "type": "heading",
+          "page": 10,
+          "lines": [
+            "PartialViewResult"
+          ],
+          "text": "PartialViewResult"
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "   • Purpose: Return a partial view from a controller action (often for AJAX requests)."
+          ],
+          "text": "   • Purpose: Return a partial view from a controller action (often for AJAX requests)."
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "   • Creation:"
+          ],
+          "text": "   • Creation:"
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "        o return PartialView(\"_PartialName\", model); (preferred)"
+          ],
+          "text": "        o return PartialView(\"_PartialName\", model); (preferred)"
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "        o return new PartialViewResult { ViewName = \"_PartialName\", ViewData = ... };"
+          ],
+          "text": "        o return new PartialViewResult { ViewName = \"_PartialName\", ViewData = ... };"
+        }
+      ],
+      "char_count_raw": 1227,
+      "char_count_repaired": 1333
+    }
+  ],
+  "title": "Partial Views"
+}

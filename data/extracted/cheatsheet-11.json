@@ -1,0 +1,572 @@
+{
+  "source_file": "Cheat Sheet - Section 11 - Asp.Net Core.pdf",
+  "absolute_path": "D:/Dot net core/Asp.Net_Core_-Udemy-/Notes-20250125T050818Z-001/Cheat Sheets/Cheat Sheet - Section 11 - Asp.Net Core.pdf",
+  "section_number": 11,
+  "normalized_section": "11",
+  "is_cheatsheet": true,
+  "total_pages": 4,
+  "total_raw_chars": 1849,
+  "total_repaired_chars": 1869,
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "Asp.Net Core – True Ultimate Guide\nSection 11 – View Components – Cheat Sheet\nView Components\nView Component is a combination of a class (derived from Microsoft.AspNetCore.ViewComponent)\nthat supplied data, and a partial view to render that data.\nInvoking View Component\n@await Component.InvokeAsync(\"view component name\");\n--or--\n<vc:view-component-name />\nView Components\n• View component renders a chunk rather than a whole response.\n• Includes the same separation-of-concerns and testability benefits found with a controller\nand view.\n• Should be either suffixed with the word \"ViewComponent\" or should have\n[ViewComponent] attribute.\n• Optionally, it can inherit from System.AspNetCore.Mvc.ViewComponent.\n",
+      "repaired_text": "Asp.Net Core – True Ultimate Guide\nSection 11 – View Components – Cheat Sheet\nView Components\nView Component is a combination of a class (derived from Microsoft.AspNetCore.ViewComponent)\nthat supplied data, and a partial view to render that data.\nInvoking View Component\n@await Component.InvokeAsync(\"view component name\");\n--or--\n<vc:view-component-name />\nView Components\n   • View component renders a chunk rather than a whole response.\n   • Includes the same separation-of-concerns and testability benefits found with a controller\n      and view.\n   • Should be either suffixed with the word \"ViewComponent\" or should have\n      [ViewComponent] attribute.\n   • Optionally, it can inherit from System.AspNetCore.Mvc.ViewComponent.",
+      "lines": [
+        {
+          "text": "Asp.Net Core – True Ultimate Guide",
+          "rawText": "Asp.Net Core – True Ultimate Guide",
+          "x": 72.024,
+          "y": 753.96,
+          "fontSize": 15.96,
+          "fontName": "g_d21_f2"
+        },
+        {
+          "text": "Section 11 – View Components – Cheat Sheet",
+          "rawText": "Section 11 – View Components – Cheat Sheet",
+          "x": 72.024,
+          "y": 725.98,
+          "fontSize": 15.96,
+          "fontName": "g_d21_f4"
+        },
+        {
+          "text": "View Components",
+          "rawText": "View Components",
+          "x": 72.024,
+          "y": 677.38,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f4"
+        },
+        {
+          "text": "View Component is a combination of a class (derived from Microsoft.AspNetCore.ViewComponent)",
+          "rawText": "View Component is a combination of a class (derived from Microsoft.AspNetCore.ViewComponent)",
+          "x": 72.024,
+          "y": 654.94,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        },
+        {
+          "text": "that supplied data, and a partial view to render that data.",
+          "rawText": "that supplied data, and a partial view to render that data.",
+          "x": 72.024,
+          "y": 640.42,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        },
+        {
+          "text": "Invoking View Component",
+          "rawText": "Invoking View Component",
+          "x": 72.024,
+          "y": 404.35,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f4"
+        },
+        {
+          "text": "@await Component.InvokeAsync(\"view component name\");",
+          "rawText": "@await Component.InvokeAsync(\"view component name\");",
+          "x": 72.024,
+          "y": 381.89,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        },
+        {
+          "text": "--or--",
+          "rawText": "--or--",
+          "x": 72.024,
+          "y": 359.33,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        },
+        {
+          "text": "<vc:view-component-name />",
+          "rawText": "<vc:view-component-name />",
+          "x": 72.024,
+          "y": 336.89,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        },
+        {
+          "text": "View Components",
+          "rawText": "View Components",
+          "x": 72.024,
+          "y": 291.89,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f4"
+        },
+        {
+          "text": "   • View component renders a chunk rather than a whole response.",
+          "rawText": "• View component renders a chunk rather than a whole response.",
+          "x": 90.024,
+          "y": 269.45,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f6"
+        },
+        {
+          "text": "   • Includes the same separation-of-concerns and testability benefits found with a controller",
+          "rawText": "• Includes the same separation-of-concerns and testability benefits found with a controller",
+          "x": 90.024,
+          "y": 246.89,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f6"
+        },
+        {
+          "text": "      and view.",
+          "rawText": "and view.",
+          "x": 108.02,
+          "y": 232.37,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        },
+        {
+          "text": "   • Should be either suffixed with the word \"ViewComponent\" or should have",
+          "rawText": "• Should be either suffixed with the word \"ViewComponent\" or should have",
+          "x": 90.024,
+          "y": 209.9,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f6"
+        },
+        {
+          "text": "      [ViewComponent] attribute.",
+          "rawText": "[ViewComponent] attribute.",
+          "x": 108.02,
+          "y": 195.38,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        },
+        {
+          "text": "   • Optionally, it can inherit from System.AspNetCore.Mvc.ViewComponent.",
+          "rawText": "• Optionally, it can inherit from System.AspNetCore.Mvc.ViewComponent.",
+          "x": 90.024,
+          "y": 172.94,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f6"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "banner_header",
+          "page": 1,
+          "lines": [
+            "Asp.Net Core – True Ultimate Guide"
+          ],
+          "text": "Asp.Net Core – True Ultimate Guide"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Section 11 – View Components – Cheat Sheet"
+          ],
+          "text": "Section 11 – View Components – Cheat Sheet"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "View Components"
+          ],
+          "text": "View Components"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "View Component is a combination of a class (derived from Microsoft.AspNetCore.ViewComponent)",
+            "that supplied data, and a partial view to render that data."
+          ],
+          "text": "View Component is a combination of a class (derived from Microsoft.AspNetCore.ViewComponent)\nthat supplied data, and a partial view to render that data."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Invoking View Component"
+          ],
+          "text": "Invoking View Component"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "@await Component.InvokeAsync(\"view component name\");",
+            "--or--",
+            "<vc:view-component-name />"
+          ],
+          "text": "@await Component.InvokeAsync(\"view component name\");\n--or--\n<vc:view-component-name />"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "View Components"
+          ],
+          "text": "View Components"
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • View component renders a chunk rather than a whole response."
+          ],
+          "text": "   • View component renders a chunk rather than a whole response."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Includes the same separation-of-concerns and testability benefits found with a controller"
+          ],
+          "text": "   • Includes the same separation-of-concerns and testability benefits found with a controller"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "      and view."
+          ],
+          "text": "      and view."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Should be either suffixed with the word \"ViewComponent\" or should have"
+          ],
+          "text": "   • Should be either suffixed with the word \"ViewComponent\" or should have"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "      [ViewComponent] attribute."
+          ],
+          "text": "      [ViewComponent] attribute."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Optionally, it can inherit from System.AspNetCore.Mvc.ViewComponent."
+          ],
+          "text": "   • Optionally, it can inherit from System.AspNetCore.Mvc.ViewComponent."
+        }
+      ],
+      "char_count_raw": 710,
+      "char_count_repaired": 733
+    },
+    {
+      "page_number": 2,
+      "raw_text": "View Components with ViewData\nThe ViewComponent class can share ViewData object to the ViewComponent view.\nStrongly Typed ViewComponent\nStrongly Typed ViewComponent's view is tightly bound to a specified model class.\nSo, it gets all the benefits of a strongly typed view.\n",
+      "repaired_text": "View Components with ViewData\nThe ViewComponent class can share ViewData object to the ViewComponent view.\nStrongly Typed ViewComponent\nStrongly Typed ViewComponent's view is tightly bound to a specified model class.\nSo, it gets all the benefits of a strongly typed view.",
+      "lines": [
+        {
+          "text": "View Components with ViewData",
+          "rawText": "View Components with ViewData",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f4"
+        },
+        {
+          "text": "The ViewComponent class can share ViewData object to the ViewComponent view.",
+          "rawText": "The ViewComponent class can share ViewData object to the ViewComponent view.",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        },
+        {
+          "text": "Strongly Typed ViewComponent",
+          "rawText": "Strongly Typed ViewComponent",
+          "x": 72.024,
+          "y": 469.87,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f4"
+        },
+        {
+          "text": "Strongly Typed ViewComponent's view is tightly bound to a specified model class.",
+          "rawText": "Strongly Typed ViewComponent's view is tightly bound to a specified model class.",
+          "x": 72.024,
+          "y": 447.43,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        },
+        {
+          "text": "So, it gets all the benefits of a strongly typed view.",
+          "rawText": "So, it gets all the benefits of a strongly typed view.",
+          "x": 72.024,
+          "y": 424.87,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "View Components with ViewData"
+          ],
+          "text": "View Components with ViewData"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "The ViewComponent class can share ViewData object to the ViewComponent view."
+          ],
+          "text": "The ViewComponent class can share ViewData object to the ViewComponent view."
+        },
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Strongly Typed ViewComponent"
+          ],
+          "text": "Strongly Typed ViewComponent"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "Strongly Typed ViewComponent's view is tightly bound to a specified model class.",
+            "So, it gets all the benefits of a strongly typed view."
+          ],
+          "text": "Strongly Typed ViewComponent's view is tightly bound to a specified model class.\nSo, it gets all the benefits of a strongly typed view."
+        }
+      ],
+      "char_count_raw": 272,
+      "char_count_repaired": 271
+    },
+    {
+      "page_number": 3,
+      "raw_text": "ViewComponents with Parameters\nYou can supply one or more parameters to the view component class.\nThe parameters are received by InvokeAsync method of the view component class.\nAll the parameters of view component are mandatory (must supply a value).\nInvoking ViewComponent with parameters\n@await Component.InvokeAsync(\"view component name\", new { param = value });\n-- or --\n<vc:view-component-name param=\"value\" />\n",
+      "repaired_text": "ViewComponents with Parameters\nYou can supply one or more parameters to the view component class.\nThe parameters are received by InvokeAsync method of the view component class.\nAll the parameters of view component are mandatory (must supply a value).\nInvoking ViewComponent with parameters\n@await Component.InvokeAsync(\"view component name\", new { param = value });\n-- or --\n<vc:view-component-name param=\"value\" />",
+      "lines": [
+        {
+          "text": "ViewComponents with Parameters",
+          "rawText": "ViewComponents with Parameters",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f4"
+        },
+        {
+          "text": "You can supply one or more parameters to the view component class.",
+          "rawText": "You can supply one or more parameters to the view component class.",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        },
+        {
+          "text": "The parameters are received by InvokeAsync method of the view component class.",
+          "rawText": "The parameters are received by InvokeAsync method of the view component class.",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        },
+        {
+          "text": "All the parameters of view component are mandatory (must supply a value).",
+          "rawText": "All the parameters of view component are mandatory (must supply a value).",
+          "x": 72.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        },
+        {
+          "text": "Invoking ViewComponent with parameters",
+          "rawText": "Invoking ViewComponent with parameters",
+          "x": 72.024,
+          "y": 504.43,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f4"
+        },
+        {
+          "text": "@await Component.InvokeAsync(\"view component name\", new { param = value });",
+          "rawText": "@await Component.InvokeAsync(\"view component name\", new { param = value });",
+          "x": 72.024,
+          "y": 481.99,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        },
+        {
+          "text": "-- or --",
+          "rawText": "-- or --",
+          "x": 72.024,
+          "y": 459.43,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        },
+        {
+          "text": "<vc:view-component-name param=\"value\" />",
+          "rawText": "<vc:view-component-name param=\"value\" />",
+          "x": 72.024,
+          "y": 436.99,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 3,
+          "lines": [
+            "ViewComponents with Parameters"
+          ],
+          "text": "ViewComponents with Parameters"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "You can supply one or more parameters to the view component class.",
+            "The parameters are received by InvokeAsync method of the view component class.",
+            "All the parameters of view component are mandatory (must supply a value)."
+          ],
+          "text": "You can supply one or more parameters to the view component class.\nThe parameters are received by InvokeAsync method of the view component class.\nAll the parameters of view component are mandatory (must supply a value)."
+        },
+        {
+          "type": "heading",
+          "page": 3,
+          "lines": [
+            "Invoking ViewComponent with parameters"
+          ],
+          "text": "Invoking ViewComponent with parameters"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "@await Component.InvokeAsync(\"view component name\", new { param = value });",
+            "-- or --",
+            "<vc:view-component-name param=\"value\" />"
+          ],
+          "text": "@await Component.InvokeAsync(\"view component name\", new { param = value });\n-- or --\n<vc:view-component-name param=\"value\" />"
+        }
+      ],
+      "char_count_raw": 416,
+      "char_count_repaired": 415
+    },
+    {
+      "page_number": 4,
+      "raw_text": "ViewComponentResult\nViewComponent can represent the content of a view component .\nGenerally useful to fetch view component's content into the browser, by making an asynchronous\nrequest (XMLHttpRequest / fetch request) from the browser.\nreturn new ViewComponentResult() { ViewName = \"view component name\", Arguments = new {\nparam1 = value, param2 = value } };\n[or]\nreturn ViewComponent(\"view component name\", new { param1 = value, param2 = value } });\n",
+      "repaired_text": "ViewComponentResult\nViewComponent can represent the content of a view component .\nGenerally useful to fetch view component's content into the browser, by making an asynchronous\nrequest (XMLHttpRequest / fetch request) from the browser.\nreturn new ViewComponentResult() { ViewName = \"view component name\", Arguments = new {\nparam1 = value, param2 = value } };\n[or]\nreturn ViewComponent(\"view component name\", new { param1 = value, param2 = value } });",
+      "lines": [
+        {
+          "text": "ViewComponentResult",
+          "rawText": "ViewComponentResult",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f4"
+        },
+        {
+          "text": "ViewComponent can represent the content of a view component .",
+          "rawText": "ViewComponent can represent the content of a view component .",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        },
+        {
+          "text": "Generally useful to fetch view component's content into the browser, by making an asynchronous",
+          "rawText": "Generally useful to fetch view component's content into the browser, by making an asynchronous",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        },
+        {
+          "text": "request (XMLHttpRequest / fetch request) from the browser.",
+          "rawText": "request (XMLHttpRequest / fetch request) from the browser.",
+          "x": 72.024,
+          "y": 699.94,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        },
+        {
+          "text": "return new ViewComponentResult() { ViewName = \"view component name\", Arguments = new {",
+          "rawText": "return new ViewComponentResult() { ViewName = \"view component name\", Arguments = new {",
+          "x": 72.024,
+          "y": 481.87,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        },
+        {
+          "text": "param1 = value, param2 = value } };",
+          "rawText": "param1 = value, param2 = value } };",
+          "x": 72.024,
+          "y": 467.35,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        },
+        {
+          "text": "[or]",
+          "rawText": "[or]",
+          "x": 72.024,
+          "y": 444.79,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        },
+        {
+          "text": "return ViewComponent(\"view component name\", new { param1 = value, param2 = value } });",
+          "rawText": "return ViewComponent(\"view component name\", new { param1 = value, param2 = value } });",
+          "x": 72.024,
+          "y": 422.35,
+          "fontSize": 11.04,
+          "fontName": "g_d21_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "ViewComponentResult"
+          ],
+          "text": "ViewComponentResult"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "ViewComponent can represent the content of a view component .",
+            "Generally useful to fetch view component's content into the browser, by making an asynchronous",
+            "request (XMLHttpRequest / fetch request) from the browser."
+          ],
+          "text": "ViewComponent can represent the content of a view component .\nGenerally useful to fetch view component's content into the browser, by making an asynchronous\nrequest (XMLHttpRequest / fetch request) from the browser."
+        },
+        {
+          "type": "code",
+          "page": 4,
+          "lines": [
+            "return new ViewComponentResult() { ViewName = \"view component name\", Arguments = new {",
+            "param1 = value, param2 = value } };"
+          ],
+          "text": "return new ViewComponentResult() { ViewName = \"view component name\", Arguments = new {\nparam1 = value, param2 = value } };"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "[or]"
+          ],
+          "text": "[or]"
+        },
+        {
+          "type": "code",
+          "page": 4,
+          "lines": [
+            "return ViewComponent(\"view component name\", new { param1 = value, param2 = value } });"
+          ],
+          "text": "return ViewComponent(\"view component name\", new { param1 = value, param2 = value } });"
+        }
+      ],
+      "char_count_raw": 451,
+      "char_count_repaired": 450
+    }
+  ],
+  "title": "Section"
+}

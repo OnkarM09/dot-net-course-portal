@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASP.NET Core Masterclass — Architecture &amp; Documentation Portal</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body id="top">
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  
+  <!-- Top Navigation Header -->
+  <header class="top-header" role="banner">
+    <div class="header-left">
+      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">☰</button>
+      <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+        <span class="sidebar-toggle-text">« Collapse</span>
+      </button>
+      <a href="index.html" class="brand-link" aria-label="ASP.NET Core Masterclass Documentation Portal">
+        <span class="brand-icon" style="background: linear-gradient(135deg, #38bdf8, #6366f1); color: #0b0f19; font-weight: 900; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem;">.NET</span>
+        <span class="brand-text">ASP.NET Core Masterclass</span>
+      </a>
+      <span class="version-pill">.NET 8 / LTS</span>
+    </div>
+
+    <div class="header-right">
+      <a href="index.html" class="index-home-btn" title="Back to Curriculum Dashboard">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span class="home-text">Course Index</span>
+      </a>
+
+      <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-text">Search topics, syntax, concepts...</span>
+        <kbd class="kbd-shortcut">Ctrl+K</kbd>
+      </button>
+
+      <button class="theme-toggle-btn" aria-label="Toggle dark/light theme" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle></svg>
+      </button>
+    </div>
+  </header>
+  
+
+  <!-- Main Hero & Dashboard -->
+  <main id="main-content" tabindex="-1">
+    <section class="portal-hero">
+      <h1>ASP.NET Core Masterclass Documentation</h1>
+      <p class="portal-hero-lead">
+        Comprehensive, 100% offline-first community documentation portal covering ASP.NET Core MVC, RESTful Web APIs,
+        Minimal APIs, Entity Framework Core, xUnit Testing, Security, and Clean Architecture across all 30 curriculum sections.
+      </p>
+
+      <div style="margin-bottom: 2.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <button class="search-trigger-btn" style="padding: 10px 20px; font-size: 1rem; border-radius: 10px; background: var(--bg-surface-elevated); border-color: var(--accent-primary);" type="button">
+          <span aria-hidden="true">🔍</span>
+          <span>Open Global Search</span>
+          <kbd class="kbd-shortcut">Ctrl+K</kbd>
+        </button>
+        <a href="sections/section-01.html" class="index-home-btn" style="padding: 10px 20px; font-size: 1rem; border-radius: 10px; background: var(--accent-primary); color: #0f172a; font-weight: 700; text-decoration: none;">
+          Start Section 01: Introduction →
+        </a>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="portal-stats-row">
+        <div class="stat-card">
+          <div class="stat-number">7</div>
+          <div class="stat-label">Core Modules</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">30</div>
+          <div class="stat-label">Curriculum Sections</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">700+</div>
+          <div class="stat-label">Pages of Notes &amp; Cheatsheets</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="completedSectionsCount">0</div>
+          <div class="stat-label">Sections Completed</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modules Grid Section -->
+    <section class="modules-section" style="max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem;">
+      <h2 class="section-group-heading">Curriculum Architecture</h2>
+      <p class="section-group-sub">Organized into seven comprehensive architectural tiers from basic HTTP to enterprise security and Minimal APIs.</p>
+
+      <div class="modules-grid">
+        
+      <div class="module-card">
+        <div class="module-card-header">
+          <span class="module-badge" style="background: rgba(56, 189, 248, 0.15); color: var(--accent-primary); border: 1px solid rgba(56, 189, 248, 0.3);">
+            Module 1
+          </span>
+          <span class="tag-pill">5 Sections</span>
+        </div>
+        <h3 class="module-card-title">Foundations, HTTP, Middleware &amp; Routing</h3>
+        <p class="module-card-desc">.NET web architecture, HTTP lifecycle, Kestrel, middleware pipeline, and endpoint routing/constraints</p>
+        <ul class="module-sec-list">
+          
+        <li class="module-sec-item">
+          <a href="sections/section-01.html">
+            <span class="sidebar-sec-num">Sec 01</span>
+            <span>Introduction</span>
+          </a>
+          <span class="read-time-badge">2 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-02.html">
+            <span class="sidebar-sec-num">Sec 02</span>
+            <span>Getting Started</span>
+          </a>
+          <span class="read-time-badge">12 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-03.html">
+            <span class="sidebar-sec-num">Sec 03</span>
+            <span>HTTP</span>
+          </a>
+          <span class="read-time-badge">14 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-04.html">
+            <span class="sidebar-sec-num">Sec 04</span>
+            <span>Middleware</span>
+          </a>
+          <span class="read-time-badge">14 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-05.html">
+            <span class="sidebar-sec-num">Sec 05</span>
+            <span>Routing</span>
+          </a>
+          <span class="read-time-badge">18 pgs</span>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="module-card">
+        <div class="module-card-header">
+          <span class="module-badge" style="background: rgba(56, 189, 248, 0.15); color: var(--accent-primary); border: 1px solid rgba(56, 189, 248, 0.3);">
+            Module 2
+          </span>
+          <span class="tag-pill">2 Sections</span>
+        </div>
+        <h3 class="module-card-title">Controllers, Model Binding &amp; Validation</h3>
+        <p class="module-card-desc">Controllers, IActionResult, ActionResult&lt;T&gt;, binding sources, and validation rules</p>
+        <ul class="module-sec-list">
+          
+        <li class="module-sec-item">
+          <a href="sections/section-06.html">
+            <span class="sidebar-sec-num">Sec 06</span>
+            <span>Controllers &amp; IActionResult</span>
+          </a>
+          <span class="read-time-badge">19 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-07.html">
+            <span class="sidebar-sec-num">Sec 07</span>
+            <span>Model Binding and Validations</span>
+          </a>
+          <span class="read-time-badge">31 pgs</span>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="module-card">
+        <div class="module-card-header">
+          <span class="module-badge" style="background: rgba(56, 189, 248, 0.15); color: var(--accent-primary); border: 1px solid rgba(56, 189, 248, 0.3);">
+            Module 3
+          </span>
+          <span class="tag-pill">5 Sections</span>
+        </div>
+        <h3 class="module-card-title">Razor Views, Partial Views, View Components &amp; Tag Helpers</h3>
+        <p class="module-card-desc">Razor syntax, layout views, partial views, view components, and custom tag helpers</p>
+        <ul class="module-sec-list">
+          
+        <li class="module-sec-item">
+          <a href="sections/section-08.html">
+            <span class="sidebar-sec-num">Sec 08</span>
+            <span>Razor Views</span>
+          </a>
+          <span class="read-time-badge">29 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-09.html">
+            <span class="sidebar-sec-num">Sec 09</span>
+            <span>Layout Views</span>
+          </a>
+          <span class="read-time-badge">15 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-10.html">
+            <span class="sidebar-sec-num">Sec 10</span>
+            <span>Partial Views</span>
+          </a>
+          <span class="read-time-badge">10 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-11.html">
+            <span class="sidebar-sec-num">Sec 11</span>
+            <span>View Components</span>
+          </a>
+          <span class="read-time-badge">13 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-17.html">
+            <span class="sidebar-sec-num">Sec 17</span>
+            <span>Tag Helpers</span>
+          </a>
+          <span class="read-time-badge">9 pgs</span>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="module-card">
+        <div class="module-card-header">
+          <span class="module-badge" style="background: rgba(56, 189, 248, 0.15); color: var(--accent-primary); border: 1px solid rgba(56, 189, 248, 0.3);">
+            Module 4
+          </span>
+          <span class="tag-pill">3 Sections</span>
+        </div>
+        <h3 class="module-card-title">Dependency Injection, Environments &amp; Configuration</h3>
+        <p class="module-card-desc">IoC containers, service lifetimes, multi-environment setups, appsettings configuration, and options pattern</p>
+        <ul class="module-sec-list">
+          
+        <li class="module-sec-item">
+          <a href="sections/section-12.html">
+            <span class="sidebar-sec-num">Sec 12</span>
+            <span>Dependency Injection</span>
+          </a>
+          <span class="read-time-badge">22 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-13.html">
+            <span class="sidebar-sec-num">Sec 13</span>
+            <span>Environments</span>
+          </a>
+          <span class="read-time-badge">14 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-14.html">
+            <span class="sidebar-sec-num">Sec 14</span>
+            <span>Configuration</span>
+          </a>
+          <span class="read-time-badge">28 pgs</span>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="module-card">
+        <div class="module-card-header">
+          <span class="module-badge" style="background: rgba(56, 189, 248, 0.15); color: var(--accent-primary); border: 1px solid rgba(56, 189, 248, 0.3);">
+            Module 5
+          </span>
+          <span class="tag-pill">10 Sections</span>
+        </div>
+        <h3 class="module-card-title">Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</h3>
+        <p class="module-card-desc">xUnit unit testing, Moq, CRUD operations, Entity Framework Core, action/result filters, logging, error handling, SOLID, Clean Architecture, and ASP.NET Core Identity</p>
+        <ul class="module-sec-list">
+          
+        <li class="module-sec-item">
+          <a href="sections/section-15.html">
+            <span class="sidebar-sec-num">Sec 15</span>
+            <span>xUnit</span>
+          </a>
+          <span class="read-time-badge">12 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-16.html">
+            <span class="sidebar-sec-num">Sec 16</span>
+            <span>CRUD Operations</span>
+          </a>
+          <span class="read-time-badge">5 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-18.html">
+            <span class="sidebar-sec-num">Sec 18</span>
+            <span>EntityFrameworkCore</span>
+          </a>
+          <span class="read-time-badge">36 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-19.html">
+            <span class="sidebar-sec-num">Sec 19</span>
+            <span>Unit Testing - Advanced</span>
+          </a>
+          <span class="read-time-badge">13 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-20.html">
+            <span class="sidebar-sec-num">Sec 20</span>
+            <span>Logging</span>
+          </a>
+          <span class="read-time-badge">9 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-21.html">
+            <span class="sidebar-sec-num">Sec 21</span>
+            <span>Filters</span>
+          </a>
+          <span class="read-time-badge">26 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-22.html">
+            <span class="sidebar-sec-num">Sec 22</span>
+            <span>Error Handling</span>
+          </a>
+          <span class="read-time-badge">7 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-23.html">
+            <span class="sidebar-sec-num">Sec 23</span>
+            <span>SOLID Principles</span>
+          </a>
+          <span class="read-time-badge">4 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-24.html">
+            <span class="sidebar-sec-num">Sec 24</span>
+            <span>Clean Architecture</span>
+          </a>
+          <span class="read-time-badge">8 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-25.html">
+            <span class="sidebar-sec-num">Sec 25</span>
+            <span>Identity and Authorization</span>
+          </a>
+          <span class="read-time-badge">6 pgs</span>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="module-card">
+        <div class="module-card-header">
+          <span class="module-badge" style="background: rgba(56, 189, 248, 0.15); color: var(--accent-primary); border: 1px solid rgba(56, 189, 248, 0.3);">
+            Module 6
+          </span>
+          <span class="tag-pill">3 Sections</span>
+        </div>
+        <h3 class="module-card-title">RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</h3>
+        <p class="module-card-desc">RESTful API principles, conventions, content negotiation, OpenAPI/Swagger documentation, API versioning, and Angular integration with CORS</p>
+        <ul class="module-sec-list">
+          
+        <li class="module-sec-item">
+          <a href="sections/section-26.html">
+            <span class="sidebar-sec-num">Sec 26</span>
+            <span>Web API</span>
+          </a>
+          <span class="read-time-badge">41 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-27.html">
+            <span class="sidebar-sec-num">Sec 27</span>
+            <span>Swagger</span>
+          </a>
+          <span class="read-time-badge">12 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-28.html">
+            <span class="sidebar-sec-num">Sec 28</span>
+            <span>Angular and CORS</span>
+          </a>
+          <span class="read-time-badge">5 pgs</span>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="module-card">
+        <div class="module-card-header">
+          <span class="module-badge" style="background: rgba(56, 189, 248, 0.15); color: var(--accent-primary); border: 1px solid rgba(56, 189, 248, 0.3);">
+            Module 7
+          </span>
+          <span class="tag-pill">2 Sections</span>
+        </div>
+        <h3 class="module-card-title">API Security (JWT) &amp; Minimal APIs</h3>
+        <p class="module-card-desc">JWT authentication &amp; authorization, claims-based security, and high-performance Minimal APIs</p>
+        <ul class="module-sec-list">
+          
+        <li class="module-sec-item">
+          <a href="sections/section-29.html">
+            <span class="sidebar-sec-num">Sec 29</span>
+            <span>JWT with Web API</span>
+          </a>
+          <span class="read-time-badge">21 pgs</span>
+        </li>
+      
+        <li class="module-sec-item">
+          <a href="sections/section-30.html">
+            <span class="sidebar-sec-num">Sec 30</span>
+            <span>Minimal API</span>
+          </a>
+          <span class="read-time-badge">5 pgs</span>
+        </li>
+      
+        </ul>
+      </div>
+    
+      </div>
+    </section>
+
+    <!-- Masterclass Directory Section -->
+    <section style="max-width: 1200px; margin: 3rem auto; padding: 0 1.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+          <h2 style="font-size: 1.5rem; color: var(--text-main); margin-bottom: 0.3rem;">Complete Masterclass Directory</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Full searchable directory of all thirty sections with page counts and cheatsheet availability.</p>
+        </div>
+        <div style="width: 320px; max-width: 100%;">
+          <input type="text" id="directoryFilter" class="sidebar-filter-input" placeholder="Filter sections by title or module..." style="width: 100%; padding: 8px 12px; border-radius: 6px; background: var(--bg-surface); border: 1px solid var(--border-subtle); color: var(--text-main);" aria-label="Filter masterclass directory" />
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table aria-label="Curriculum Sections Directory">
+          <caption class="visually-hidden">Complete Masterclass Directory of 30 sections with title, module, page count, and status</caption>
+          <thead>
+            <tr>
+              <th scope="col">Section</th>
+              <th scope="col">Title</th>
+              <th scope="col">Module</th>
+              <th scope="col">Pages</th>
+              <th scope="col">Cheat Sheet</th>
+              <th scope="col">Status</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody id="directoryTableBody">
+            
+      <tr data-section-num="01">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 01</td>
+        <td>
+          <a href="sections/section-01.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Introduction
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 1</span></td>
+        <td>2</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-01.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="02">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 02</td>
+        <td>
+          <a href="sections/section-02.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Getting Started
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 1</span></td>
+        <td>12</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-02.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="03">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 03</td>
+        <td>
+          <a href="sections/section-03.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            HTTP
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 1</span></td>
+        <td>14</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-03.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="04">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 04</td>
+        <td>
+          <a href="sections/section-04.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Middleware
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 1</span></td>
+        <td>14</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-04.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="05">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 05</td>
+        <td>
+          <a href="sections/section-05.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Routing
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 1</span></td>
+        <td>18</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-05.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="06">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 06</td>
+        <td>
+          <a href="sections/section-06.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Controllers &amp; IActionResult
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 2</span></td>
+        <td>19</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-06.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="07">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 07</td>
+        <td>
+          <a href="sections/section-07.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Model Binding and Validations
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 2</span></td>
+        <td>31</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-07.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="08">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 08</td>
+        <td>
+          <a href="sections/section-08.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Razor Views
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 3</span></td>
+        <td>29</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-08.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="09">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 09</td>
+        <td>
+          <a href="sections/section-09.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Layout Views
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 3</span></td>
+        <td>15</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-09.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="10">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 10</td>
+        <td>
+          <a href="sections/section-10.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Partial Views
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 3</span></td>
+        <td>10</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-10.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="11">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 11</td>
+        <td>
+          <a href="sections/section-11.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            View Components
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 3</span></td>
+        <td>13</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-11.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="12">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 12</td>
+        <td>
+          <a href="sections/section-12.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Dependency Injection
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 4</span></td>
+        <td>22</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-12.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="13">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 13</td>
+        <td>
+          <a href="sections/section-13.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Environments
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 4</span></td>
+        <td>14</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-13.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="14">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 14</td>
+        <td>
+          <a href="sections/section-14.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Configuration
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 4</span></td>
+        <td>28</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-14.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="15">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 15</td>
+        <td>
+          <a href="sections/section-15.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            xUnit
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 5</span></td>
+        <td>12</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-15.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="16">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 16</td>
+        <td>
+          <a href="sections/section-16.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            CRUD Operations
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 5</span></td>
+        <td>5</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-16.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="17">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 17</td>
+        <td>
+          <a href="sections/section-17.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Tag Helpers
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 3</span></td>
+        <td>9</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-17.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="18">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 18</td>
+        <td>
+          <a href="sections/section-18.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            EntityFrameworkCore
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 5</span></td>
+        <td>36</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-18.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="19">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 19</td>
+        <td>
+          <a href="sections/section-19.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Unit Testing - Advanced
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 5</span></td>
+        <td>13</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-19.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="20">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 20</td>
+        <td>
+          <a href="sections/section-20.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Logging
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 5</span></td>
+        <td>9</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-20.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="21">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 21</td>
+        <td>
+          <a href="sections/section-21.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Filters
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 5</span></td>
+        <td>26</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-21.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="22">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 22</td>
+        <td>
+          <a href="sections/section-22.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Error Handling
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 5</span></td>
+        <td>7</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-22.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="23">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 23</td>
+        <td>
+          <a href="sections/section-23.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            SOLID Principles
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 5</span></td>
+        <td>4</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-23.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="24">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 24</td>
+        <td>
+          <a href="sections/section-24.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Clean Architecture
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 5</span></td>
+        <td>8</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-24.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="25">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 25</td>
+        <td>
+          <a href="sections/section-25.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Identity and Authorization
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 5</span></td>
+        <td>6</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-25.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="26">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 26</td>
+        <td>
+          <a href="sections/section-26.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Web API
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 6</span></td>
+        <td>41</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-26.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="27">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 27</td>
+        <td>
+          <a href="sections/section-27.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Swagger
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 6</span></td>
+        <td>12</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-27.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="28">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 28</td>
+        <td>
+          <a href="sections/section-28.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Angular and CORS
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 6</span></td>
+        <td>5</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-28.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="29">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 29</td>
+        <td>
+          <a href="sections/section-29.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            JWT with Web API
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 7</span></td>
+        <td>21</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-29.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+      <tr data-section-num="30">
+        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 30</td>
+        <td>
+          <a href="sections/section-30.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+            Minimal API
+          </a>
+        </td>
+        <td><span class="tag-pill">Mod 7</span></td>
+        <td>5</td>
+        <td>✓ Included</td>
+        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>
+          <a href="sections/section-30.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+            Read →
+          </a>
+        </td>
+      </tr>
+    
+          </tbody>
+        </table>
+      </div>
+      <div id="directoryEmptyState" style="display: none; padding: 2rem; text-align: center; color: var(--text-muted);">
+        No sections match your filter criteria.
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer style="margin-top: 4rem; padding: 2rem 1.5rem; border-top: 1px solid var(--border-subtle); background: var(--bg-surface); color: var(--text-muted); font-size: 0.85rem; text-align: center;" role="contentinfo">
+    <p>ASP.NET Core Masterclass — 100% Offline Static Reference Documentation Portal.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-dim);">Created as an open community learning companion. No external build step or CDNs required.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/search-index.js"></script>
+  <script src="assets/js/search-engine.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

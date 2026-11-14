@@ -1,0 +1,3630 @@
+{
+  "source_file": "Notes - Section 27 - Swagger.pdf",
+  "absolute_path": "D:/Dot net core/Asp.Net_Core_-Udemy-/Notes-20250125T050818Z-001/Notes/Notes - Section 27 - Swagger.pdf",
+  "section_number": 27,
+  "normalized_section": "27",
+  "is_cheatsheet": false,
+  "total_pages": 12,
+  "total_raw_chars": 11786,
+  "total_repaired_chars": 12225,
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "ASP.NET Core - True Ultimate Guide\nSection 27: Swagger - Notes\nSwagger / OpenAPI\nSwagger (now known as OpenAPI) is a framework for API documentation and specification. It allows\nyou to describe your RESTful API in a machine-readable format, providing a way to generate\ninteractive documentation, client SDKs, and server stubs. This makes APIs easier to understand, use,\nand test.\nOverview of Swagger / OpenAPI\nOpenAPI Specification (OAS) is a standard for defining RESTful APIs. It provides a way to describe\nthe endpoints, request/response formats, parameters, authentication methods, and more.\nSwagger tools are used to generate interactive documentation and client libraries based on the\nOpenAPI specification.\nSetting Up Swagger in ASP.NET Core\n1. Install Swagger NuGet Packages\nTo use Swagger in an ASP.NET Core application, you need to install the Swashbuckle.AspNetCore\nNuGet package, which provides the Swagger generator and UI.\ndotnet add package Swashbuckle.AspNetCore\n2. Configure Swagger in Program.cs\nIn your Program.cs file, you need to add Swagger services and configure the Swagger middleware.\nConfigureServices Method:\npublic void ConfigureServices(IServiceCollection services)\n{\nservices.AddControllers();\n// Register Swagger services\nservices.AddSwaggerGen(c =>\n{\nc.SwaggerDoc(\"v1\", new OpenApiInfo { Title = \"My API\", Version = \"v1\" });\n// Optionally, include XML comments for richer documentation\n",
+      "repaired_text": "ASP.NET Core - True Ultimate Guide\nSection 27: Swagger - Notes\nSwagger / OpenAPI\nSwagger (now known as OpenAPI) is a framework for API documentation and specification. It allows\nyou to describe your RESTful API in a machine-readable format, providing a way to generate\ninteractive documentation, client SDKs, and server stubs. This makes APIs easier to understand, use,\nand test.\nOverview of Swagger / OpenAPI\nOpenAPI Specification (OAS) is a standard for defining RESTful APIs. It provides a way to describe\nthe endpoints, request/response formats, parameters, authentication methods, and more.\nSwagger tools are used to generate interactive documentation and client libraries based on the\nOpenAPI specification.\nSetting Up Swagger in ASP.NET Core\n1. Install Swagger NuGet Packages\nTo use Swagger in an ASP.NET Core application, you need to install the Swashbuckle.AspNetCore\nNuGet package, which provides the Swagger generator and UI.\ndotnet add package Swashbuckle.AspNetCore\n2. Configure Swagger in Program.cs\nIn your Program.cs file, you need to add Swagger services and configure the Swagger middleware.\nConfigureServices Method:\npublic void ConfigureServices(IServiceCollection services)\n{\n  services.AddControllers();\n  // Register Swagger services\n  services.AddSwaggerGen(c =>\n  {\n   c.SwaggerDoc(\"v1\", new OpenApiInfo { Title = \"My API\", Version = \"v1\" });\n   // Optionally, include XML comments for richer documentation",
+      "lines": [
+        {
+          "text": "ASP.NET Core - True Ultimate Guide",
+          "rawText": "ASP.NET Core - True Ultimate Guide",
+          "x": 72.024,
+          "y": 742.66,
+          "fontSize": 15.96,
+          "fontName": "g_d52_f1"
+        },
+        {
+          "text": "Section 27: Swagger - Notes",
+          "rawText": "Section 27: Swagger - Notes",
+          "x": 72.024,
+          "y": 722.38,
+          "fontSize": 12.96,
+          "fontName": "g_d52_f1"
+        },
+        {
+          "text": "Swagger / OpenAPI",
+          "rawText": "Swagger / OpenAPI",
+          "x": 72.024,
+          "y": 684.82,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "Swagger (now known as OpenAPI) is a framework for API documentation and specification. It allows",
+          "rawText": "Swagger (now known as OpenAPI) is a framework for API documentation and specification. It allows",
+          "x": 72.024,
+          "y": 662.26,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "you to describe your RESTful API in a machine-readable format, providing a way to generate",
+          "rawText": "you to describe your RESTful API in a machine-readable format, providing a way to generate",
+          "x": 72.024,
+          "y": 647.74,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "interactive documentation, client SDKs, and server stubs. This makes APIs easier to understand, use,",
+          "rawText": "interactive documentation, client SDKs, and server stubs. This makes APIs easier to understand, use,",
+          "x": 72.024,
+          "y": 633.34,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "and test.",
+          "rawText": "and test.",
+          "x": 72.024,
+          "y": 618.82,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Overview of Swagger / OpenAPI",
+          "rawText": "Overview of Swagger / OpenAPI",
+          "x": 72.024,
+          "y": 573.79,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "OpenAPI Specification (OAS) is a standard for defining RESTful APIs. It provides a way to describe",
+          "rawText": "OpenAPI Specification (OAS) is a standard for defining RESTful APIs. It provides a way to describe",
+          "x": 72.024,
+          "y": 551.35,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "the endpoints, request/response formats, parameters, authentication methods, and more.",
+          "rawText": "the endpoints, request/response formats, parameters, authentication methods, and more.",
+          "x": 72.024,
+          "y": 536.83,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Swagger tools are used to generate interactive documentation and client libraries based on the",
+          "rawText": "Swagger tools are used to generate interactive documentation and client libraries based on the",
+          "x": 72.024,
+          "y": 514.27,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "OpenAPI specification.",
+          "rawText": "OpenAPI specification.",
+          "x": 72.024,
+          "y": 499.87,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Setting Up Swagger in ASP.NET Core",
+          "rawText": "Setting Up Swagger in ASP.NET Core",
+          "x": 72.024,
+          "y": 454.87,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "1. Install Swagger NuGet Packages",
+          "rawText": "1. Install Swagger NuGet Packages",
+          "x": 72.024,
+          "y": 432.31,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "To use Swagger in an ASP.NET Core application, you need to install the Swashbuckle.AspNetCore",
+          "rawText": "To use Swagger in an ASP.NET Core application, you need to install the Swashbuckle.AspNetCore",
+          "x": 72.024,
+          "y": 409.87,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "NuGet package, which provides the Swagger generator and UI.",
+          "rawText": "NuGet package, which provides the Swagger generator and UI.",
+          "x": 72.024,
+          "y": 395.33,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "dotnet add package Swashbuckle.AspNetCore",
+          "rawText": "dotnet add package Swashbuckle.AspNetCore",
+          "x": 72.024,
+          "y": 372.89,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "2. Configure Swagger in Program.cs",
+          "rawText": "2. Configure Swagger in Program.cs",
+          "x": 72.024,
+          "y": 327.89,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "In your Program.cs file, you need to add Swagger services and configure the Swagger middleware.",
+          "rawText": "In your Program.cs file, you need to add Swagger services and configure the Swagger middleware.",
+          "x": 72.024,
+          "y": 305.45,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "ConfigureServices Method:",
+          "rawText": "ConfigureServices Method:",
+          "x": 72.024,
+          "y": 282.89,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "public void ConfigureServices(IServiceCollection services)",
+          "rawText": "public void ConfigureServices(IServiceCollection services)",
+          "x": 72.024,
+          "y": 260.45,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 237.89,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  services.AddControllers();",
+          "rawText": "services.AddControllers();",
+          "x": 82.104,
+          "y": 215.42,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  // Register Swagger services",
+          "rawText": "// Register Swagger services",
+          "x": 81.984,
+          "y": 170.42,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  services.AddSwaggerGen(c =>",
+          "rawText": "services.AddSwaggerGen(c =>",
+          "x": 82.104,
+          "y": 147.98,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 125.42,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   c.SwaggerDoc(\"v1\", new OpenApiInfo { Title = \"My API\", Version = \"v1\" });",
+          "rawText": "c.SwaggerDoc(\"v1\", new OpenApiInfo { Title = \"My API\", Version = \"v1\" });",
+          "x": 92.064,
+          "y": 102.98,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   // Optionally, include XML comments for richer documentation",
+          "rawText": "// Optionally, include XML comments for richer documentation",
+          "x": 91.944,
+          "y": 80.424,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "banner_header",
+          "page": 1,
+          "lines": [
+            "ASP.NET Core - True Ultimate Guide"
+          ],
+          "text": "ASP.NET Core - True Ultimate Guide"
+        },
+        {
+          "type": "banner_header",
+          "page": 1,
+          "lines": [
+            "Section 27: Swagger - Notes"
+          ],
+          "text": "Section 27: Swagger - Notes"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Swagger / OpenAPI"
+          ],
+          "text": "Swagger / OpenAPI"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Swagger (now known as OpenAPI) is a framework for API documentation and specification. It allows",
+            "you to describe your RESTful API in a machine-readable format, providing a way to generate",
+            "interactive documentation, client SDKs, and server stubs. This makes APIs easier to understand, use,",
+            "and test."
+          ],
+          "text": "Swagger (now known as OpenAPI) is a framework for API documentation and specification. It allows\nyou to describe your RESTful API in a machine-readable format, providing a way to generate\ninteractive documentation, client SDKs, and server stubs. This makes APIs easier to understand, use,\nand test."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Overview of Swagger / OpenAPI"
+          ],
+          "text": "Overview of Swagger / OpenAPI"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "OpenAPI Specification (OAS) is a standard for defining RESTful APIs. It provides a way to describe",
+            "the endpoints, request/response formats, parameters, authentication methods, and more.",
+            "Swagger tools are used to generate interactive documentation and client libraries based on the",
+            "OpenAPI specification.",
+            "Setting Up Swagger in ASP.NET Core"
+          ],
+          "text": "OpenAPI Specification (OAS) is a standard for defining RESTful APIs. It provides a way to describe\nthe endpoints, request/response formats, parameters, authentication methods, and more.\nSwagger tools are used to generate interactive documentation and client libraries based on the\nOpenAPI specification.\nSetting Up Swagger in ASP.NET Core"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "1. Install Swagger NuGet Packages"
+          ],
+          "text": "1. Install Swagger NuGet Packages"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "To use Swagger in an ASP.NET Core application, you need to install the Swashbuckle.AspNetCore",
+            "NuGet package, which provides the Swagger generator and UI.",
+            "dotnet add package Swashbuckle.AspNetCore"
+          ],
+          "text": "To use Swagger in an ASP.NET Core application, you need to install the Swashbuckle.AspNetCore\nNuGet package, which provides the Swagger generator and UI.\ndotnet add package Swashbuckle.AspNetCore"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "2. Configure Swagger in Program.cs"
+          ],
+          "text": "2. Configure Swagger in Program.cs"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "In your Program.cs file, you need to add Swagger services and configure the Swagger middleware.",
+            "ConfigureServices Method:"
+          ],
+          "text": "In your Program.cs file, you need to add Swagger services and configure the Swagger middleware.\nConfigureServices Method:"
+        },
+        {
+          "type": "code",
+          "page": 1,
+          "lines": [
+            "public void ConfigureServices(IServiceCollection services)",
+            "{",
+            "  services.AddControllers();",
+            "  // Register Swagger services",
+            "  services.AddSwaggerGen(c =>",
+            "  {",
+            "   c.SwaggerDoc(\"v1\", new OpenApiInfo { Title = \"My API\", Version = \"v1\" });",
+            "   // Optionally, include XML comments for richer documentation"
+          ],
+          "text": "public void ConfigureServices(IServiceCollection services)\n{\n  services.AddControllers();\n  // Register Swagger services\n  services.AddSwaggerGen(c =>\n  {\n   c.SwaggerDoc(\"v1\", new OpenApiInfo { Title = \"My API\", Version = \"v1\" });\n   // Optionally, include XML comments for richer documentation"
+        }
+      ],
+      "char_count_raw": 1418,
+      "char_count_repaired": 1431
+    },
+    {
+      "page_number": 2,
+      "raw_text": "// var xmlFile = $\"{Assembly.GetExecutingAssembly().GetName().Name}.xml\";\n// var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);\n// c.IncludeXmlComments(xmlPath);\n});\n}\nConfigure Method:\npublic void Configure(IApplicationBuilder app, IWebHostEnvironment env)\n{\nif (env.IsDevelopment())\n{\napp.UseDeveloperExceptionPage();\n}\nelse\n{\napp.UseExceptionHandler(\"/Home/Error\");\napp.UseHsts();\n}\napp.UseHttpsRedirection();\napp.UseStaticFiles();\napp.UseRouting();\napp.UseAuthorization();\n// Use Swagger\napp.UseSwagger();\n// Use Swagger UI\napp.UseSwaggerUI(c =>\n{\nc.SwaggerEndpoint(\"/swagger/v1/swagger.json\", \"My API V1\");\nc.RoutePrefix = string.Empty; // Set Swagger UI at the app's root (optional)\n",
+      "repaired_text": "   // var xmlFile = $\"{Assembly.GetExecutingAssembly().GetName().Name}.xml\";\n   // var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);\n   // c.IncludeXmlComments(xmlPath);\n  });\n}\nConfigure Method:\npublic void Configure(IApplicationBuilder app, IWebHostEnvironment env)\n{\n  if (env.IsDevelopment())\n  {\n   app.UseDeveloperExceptionPage();\n  }\n  else\n  {\n   app.UseExceptionHandler(\"/Home/Error\");\n   app.UseHsts();\n  }\n  app.UseHttpsRedirection();\n  app.UseStaticFiles();\n  app.UseRouting();\n  app.UseAuthorization();\n  // Use Swagger\n  app.UseSwagger();\n  // Use Swagger UI\n  app.UseSwaggerUI(c =>\n  {\n   c.SwaggerEndpoint(\"/swagger/v1/swagger.json\", \"My API V1\");\n   c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root (optional)",
+      "lines": [
+        {
+          "text": "   // var xmlFile = $\"{Assembly.GetExecutingAssembly().GetName().Name}.xml\";",
+          "rawText": "// var xmlFile = $\"{Assembly.GetExecutingAssembly().GetName().Name}.xml\";",
+          "x": 91.944,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   // var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);",
+          "rawText": "// var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);",
+          "x": 91.944,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   // c.IncludeXmlComments(xmlPath);",
+          "rawText": "// c.IncludeXmlComments(xmlPath);",
+          "x": 91.944,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  });",
+          "rawText": "});",
+          "x": 82.104,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Configure Method:",
+          "rawText": "Configure Method:",
+          "x": 72.024,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "public void Configure(IApplicationBuilder app, IWebHostEnvironment env)",
+          "rawText": "public void Configure(IApplicationBuilder app, IWebHostEnvironment env)",
+          "x": 72.024,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  if (env.IsDevelopment())",
+          "rawText": "if (env.IsDevelopment())",
+          "x": 82.104,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   app.UseDeveloperExceptionPage();",
+          "rawText": "app.UseDeveloperExceptionPage();",
+          "x": 92.064,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 82.104,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  else",
+          "rawText": "else",
+          "x": 82.104,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   app.UseExceptionHandler(\"/Home/Error\");",
+          "rawText": "app.UseExceptionHandler(\"/Home/Error\");",
+          "x": 92.064,
+          "y": 444.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   app.UseHsts();",
+          "rawText": "app.UseHsts();",
+          "x": 92.064,
+          "y": 422.11,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 82.104,
+          "y": 399.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  app.UseHttpsRedirection();",
+          "rawText": "app.UseHttpsRedirection();",
+          "x": 82.104,
+          "y": 354.53,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  app.UseStaticFiles();",
+          "rawText": "app.UseStaticFiles();",
+          "x": 82.104,
+          "y": 332.09,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  app.UseRouting();",
+          "rawText": "app.UseRouting();",
+          "x": 82.104,
+          "y": 309.65,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  app.UseAuthorization();",
+          "rawText": "app.UseAuthorization();",
+          "x": 82.104,
+          "y": 287.09,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  // Use Swagger",
+          "rawText": "// Use Swagger",
+          "x": 81.984,
+          "y": 242.09,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  app.UseSwagger();",
+          "rawText": "app.UseSwagger();",
+          "x": 82.104,
+          "y": 219.65,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  // Use Swagger UI",
+          "rawText": "// Use Swagger UI",
+          "x": 81.984,
+          "y": 174.62,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  app.UseSwaggerUI(c =>",
+          "rawText": "app.UseSwaggerUI(c =>",
+          "x": 82.104,
+          "y": 152.18,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 129.62,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   c.SwaggerEndpoint(\"/swagger/v1/swagger.json\", \"My API V1\");",
+          "rawText": "c.SwaggerEndpoint(\"/swagger/v1/swagger.json\", \"My API V1\");",
+          "x": 92.064,
+          "y": 107.18,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root (optional)",
+          "rawText": "c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root (optional)",
+          "x": 92.064,
+          "y": 84.624,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "   // var xmlFile = $\"{Assembly.GetExecutingAssembly().GetName().Name}.xml\";",
+            "   // var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);",
+            "   // c.IncludeXmlComments(xmlPath);",
+            "  });",
+            "}"
+          ],
+          "text": "   // var xmlFile = $\"{Assembly.GetExecutingAssembly().GetName().Name}.xml\";\n   // var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);\n   // c.IncludeXmlComments(xmlPath);\n  });\n}"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "Configure Method:"
+          ],
+          "text": "Configure Method:"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "public void Configure(IApplicationBuilder app, IWebHostEnvironment env)",
+            "{"
+          ],
+          "text": "public void Configure(IApplicationBuilder app, IWebHostEnvironment env)\n{"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "  if (env.IsDevelopment())"
+          ],
+          "text": "  if (env.IsDevelopment())"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "  {",
+            "   app.UseDeveloperExceptionPage();",
+            "  }"
+          ],
+          "text": "  {\n   app.UseDeveloperExceptionPage();\n  }"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "  else"
+          ],
+          "text": "  else"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "  {",
+            "   app.UseExceptionHandler(\"/Home/Error\");",
+            "   app.UseHsts();",
+            "  }",
+            "  app.UseHttpsRedirection();",
+            "  app.UseStaticFiles();",
+            "  app.UseRouting();",
+            "  app.UseAuthorization();",
+            "  // Use Swagger",
+            "  app.UseSwagger();",
+            "  // Use Swagger UI",
+            "  app.UseSwaggerUI(c =>",
+            "  {",
+            "   c.SwaggerEndpoint(\"/swagger/v1/swagger.json\", \"My API V1\");",
+            "   c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root (optional)"
+          ],
+          "text": "  {\n   app.UseExceptionHandler(\"/Home/Error\");\n   app.UseHsts();\n  }\n  app.UseHttpsRedirection();\n  app.UseStaticFiles();\n  app.UseRouting();\n  app.UseAuthorization();\n  // Use Swagger\n  app.UseSwagger();\n  // Use Swagger UI\n  app.UseSwaggerUI(c =>\n  {\n   c.SwaggerEndpoint(\"/swagger/v1/swagger.json\", \"My API V1\");\n   c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root (optional)"
+        }
+      ],
+      "char_count_raw": 701,
+      "char_count_repaired": 756
+    },
+    {
+      "page_number": 3,
+      "raw_text": "});\napp.UseEndpoints(endpoints =>\n{\nendpoints.MapControllers();\n});\n}\n3. XML Comments for Enhanced Documentation\nTo enhance the documentation, you can include XML comments. This requires enabling XML\ndocumentation in your project file and configuring Swagger to include these comments.\nProject File (.csproj):\n<PropertyGroup>\n<GenerateDocumentationFile>true</GenerateDocumentationFile>\n<NoWarn>1591</NoWarn> <!-- Suppress missing XML comment warnings -->\n</PropertyGroup>\nUpdate Swagger Configuration:\nc.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, \"MyApi.xml\"));\n4. Testing the API Documentation\nOnce configured, run your application and navigate to the Swagger UI (usually at /swagger or the\nroot if configured) to see the interactive API documentation. Swagger UI allows you to explore and\ntest your API endpoints directly from the browser.\nDetailed Explanation of Code\n• AddSwaggerGen Method: Registers the Swagger generator with default settings. You can\nprovide additional options such as custom filters or document settings.\n• SwaggerDoc Method: Defines a Swagger document with a title and version. You can create\nmultiple versions if needed.\n",
+      "repaired_text": "  });\n  app.UseEndpoints(endpoints =>\n  {\n   endpoints.MapControllers();\n  });\n}\n3. XML Comments for Enhanced Documentation\nTo enhance the documentation, you can include XML comments. This requires enabling XML\ndocumentation in your project file and configuring Swagger to include these comments.\nProject File (.csproj):\n<PropertyGroup>\n  <GenerateDocumentationFile>true</GenerateDocumentationFile>\n  <NoWarn>1591</NoWarn> <!-- Suppress missing XML comment warnings -->\n</PropertyGroup>\nUpdate Swagger Configuration:\nc.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, \"MyApi.xml\"));\n4. Testing the API Documentation\nOnce configured, run your application and navigate to the Swagger UI (usually at /swagger or the\nroot if configured) to see the interactive API documentation. Swagger UI allows you to explore and\ntest your API endpoints directly from the browser.\nDetailed Explanation of Code\n   • AddSwaggerGen Method: Registers the Swagger generator with default settings. You can\n      provide additional options such as custom filters or document settings.\n   • SwaggerDoc Method: Defines a Swagger document with a title and version. You can create\n      multiple versions if needed.",
+      "lines": [
+        {
+          "text": "  });",
+          "rawText": "});",
+          "x": 82.104,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  app.UseEndpoints(endpoints =>",
+          "rawText": "app.UseEndpoints(endpoints =>",
+          "x": 82.104,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   endpoints.MapControllers();",
+          "rawText": "endpoints.MapControllers();",
+          "x": 91.944,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  });",
+          "rawText": "});",
+          "x": 82.104,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "3. XML Comments for Enhanced Documentation",
+          "rawText": "3. XML Comments for Enhanced Documentation",
+          "x": 72.024,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "To enhance the documentation, you can include XML comments. This requires enabling XML",
+          "rawText": "To enhance the documentation, you can include XML comments. This requires enabling XML",
+          "x": 72.024,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "documentation in your project file and configuring Swagger to include these comments.",
+          "rawText": "documentation in your project file and configuring Swagger to include these comments.",
+          "x": 72.024,
+          "y": 542.47,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Project File (.csproj):",
+          "rawText": "Project File (.csproj):",
+          "x": 72.024,
+          "y": 520.03,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "<PropertyGroup>",
+          "rawText": "<PropertyGroup>",
+          "x": 72.024,
+          "y": 497.59,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  <GenerateDocumentationFile>true</GenerateDocumentationFile>",
+          "rawText": "<GenerateDocumentationFile>true</GenerateDocumentationFile>",
+          "x": 82.104,
+          "y": 475.03,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  <NoWarn>1591</NoWarn> <!-- Suppress missing XML comment warnings -->",
+          "rawText": "<NoWarn>1591</NoWarn> <!-- Suppress missing XML comment warnings -->",
+          "x": 82.104,
+          "y": 452.59,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "</PropertyGroup>",
+          "rawText": "</PropertyGroup>",
+          "x": 72.024,
+          "y": 430.03,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Update Swagger Configuration:",
+          "rawText": "Update Swagger Configuration:",
+          "x": 72.024,
+          "y": 385.01,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, \"MyApi.xml\"));",
+          "rawText": "c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, \"MyApi.xml\"));",
+          "x": 72.024,
+          "y": 362.57,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "4. Testing the API Documentation",
+          "rawText": "4. Testing the API Documentation",
+          "x": 72.024,
+          "y": 317.57,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "Once configured, run your application and navigate to the Swagger UI (usually at /swagger or the",
+          "rawText": "Once configured, run your application and navigate to the Swagger UI (usually at /swagger or the",
+          "x": 72.024,
+          "y": 295.13,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "root if configured) to see the interactive API documentation. Swagger UI allows you to explore and",
+          "rawText": "root if configured) to see the interactive API documentation. Swagger UI allows you to explore and",
+          "x": 72.024,
+          "y": 280.61,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "test your API endpoints directly from the browser.",
+          "rawText": "test your API endpoints directly from the browser.",
+          "x": 72.024,
+          "y": 266.09,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Detailed Explanation of Code",
+          "rawText": "Detailed Explanation of Code",
+          "x": 72.024,
+          "y": 198.62,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "   • AddSwaggerGen Method: Registers the Swagger generator with default settings. You can",
+          "rawText": "• AddSwaggerGen Method: Registers the Swagger generator with default settings. You can",
+          "x": 90.024,
+          "y": 176.18,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f4"
+        },
+        {
+          "text": "      provide additional options such as custom filters or document settings.",
+          "rawText": "provide additional options such as custom filters or document settings.",
+          "x": 108.02,
+          "y": 161.66,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   • SwaggerDoc Method: Defines a Swagger document with a title and version. You can create",
+          "rawText": "• SwaggerDoc Method: Defines a Swagger document with a title and version. You can create",
+          "x": 90.024,
+          "y": 139.1,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f4"
+        },
+        {
+          "text": "      multiple versions if needed.",
+          "rawText": "multiple versions if needed.",
+          "x": 108.02,
+          "y": 124.7,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "  });"
+          ],
+          "text": "  });"
+        },
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            "  app.UseEndpoints(endpoints =>",
+            "  {",
+            "   endpoints.MapControllers();",
+            "  });",
+            "}"
+          ],
+          "text": "  app.UseEndpoints(endpoints =>\n  {\n   endpoints.MapControllers();\n  });\n}"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "3. XML Comments for Enhanced Documentation",
+            "To enhance the documentation, you can include XML comments. This requires enabling XML",
+            "documentation in your project file and configuring Swagger to include these comments.",
+            "Project File (.csproj):",
+            "<PropertyGroup>",
+            "  <GenerateDocumentationFile>true</GenerateDocumentationFile>",
+            "  <NoWarn>1591</NoWarn> <!-- Suppress missing XML comment warnings -->",
+            "</PropertyGroup>",
+            "Update Swagger Configuration:",
+            "c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, \"MyApi.xml\"));"
+          ],
+          "text": "3. XML Comments for Enhanced Documentation\nTo enhance the documentation, you can include XML comments. This requires enabling XML\ndocumentation in your project file and configuring Swagger to include these comments.\nProject File (.csproj):\n<PropertyGroup>\n  <GenerateDocumentationFile>true</GenerateDocumentationFile>\n  <NoWarn>1591</NoWarn> <!-- Suppress missing XML comment warnings -->\n</PropertyGroup>\nUpdate Swagger Configuration:\nc.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, \"MyApi.xml\"));"
+        },
+        {
+          "type": "heading",
+          "page": 3,
+          "lines": [
+            "4. Testing the API Documentation"
+          ],
+          "text": "4. Testing the API Documentation"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "Once configured, run your application and navigate to the Swagger UI (usually at /swagger or the",
+            "root if configured) to see the interactive API documentation. Swagger UI allows you to explore and",
+            "test your API endpoints directly from the browser."
+          ],
+          "text": "Once configured, run your application and navigate to the Swagger UI (usually at /swagger or the\nroot if configured) to see the interactive API documentation. Swagger UI allows you to explore and\ntest your API endpoints directly from the browser."
+        },
+        {
+          "type": "heading",
+          "page": 3,
+          "lines": [
+            "Detailed Explanation of Code"
+          ],
+          "text": "Detailed Explanation of Code"
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "   • AddSwaggerGen Method: Registers the Swagger generator with default settings. You can"
+          ],
+          "text": "   • AddSwaggerGen Method: Registers the Swagger generator with default settings. You can"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "      provide additional options such as custom filters or document settings."
+          ],
+          "text": "      provide additional options such as custom filters or document settings."
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "   • SwaggerDoc Method: Defines a Swagger document with a title and version. You can create"
+          ],
+          "text": "   • SwaggerDoc Method: Defines a Swagger document with a title and version. You can create"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "      multiple versions if needed."
+          ],
+          "text": "      multiple versions if needed."
+        }
+      ],
+      "char_count_raw": 1163,
+      "char_count_repaired": 1195
+    },
+    {
+      "page_number": 4,
+      "raw_text": "• UseSwagger and UseSwaggerUI Methods: Middleware components to serve the Swagger\nJSON endpoint and the interactive UI, respectively. SwaggerEndpoint specifies the path to\nthe Swagger JSON file.\n• XML Comments: Provides additional metadata for API methods and models, which is\ndisplayed in Swagger UI.\nContent Negotiation\nContent negotiation is a mechanism in HTTP that allows clients and servers to agree on the format\nof the response data. In ASP.NET Core, content negotiation determines how the response should be\nformatted based on the client's request headers and available formatters.\nOverview of Content Negotiation\nWhen a client sends a request, it may specify the desired response format through the Accept\nheader. The server processes this header and selects the appropriate formatter to serialize the\nresponse data into the requested format (e.g., JSON, XML).\nHow Content Negotiation Works\n1. Client Request: The client sends an HTTP request with the Accept header specifying the\ndesired media type (e.g., application/json, application/xml).\n2. Server Response: The server uses formatters to serialize the response data into the specified\nformat. If the requested format is not supported or available, the server may return a\ndefault format or an error.\nConfiguring Formatters in ASP.NET Core\nASP.NET Core provides built-in formatters for JSON and XML. You can configure these formatters in\nthe Program.cs file.\n1. JSON Formatter\nBy default, ASP.NET Core includes the JSON formatter via System.Text.Json. You can also use\nNewtonsoft.Json if you prefer.\n",
+      "repaired_text": "   • UseSwagger and UseSwaggerUI Methods: Middleware components to serve the Swagger\n      JSON endpoint and the interactive UI, respectively. SwaggerEndpoint specifies the path to\n      the Swagger JSON file.\n   • XML Comments: Provides additional metadata for API methods and models, which is\n      displayed in Swagger UI.\nContent Negotiation\nContent negotiation is a mechanism in HTTP that allows clients and servers to agree on the format\nof the response data. In ASP.NET Core, content negotiation determines how the response should be\nformatted based on the client's request headers and available formatters.\nOverview of Content Negotiation\nWhen a client sends a request, it may specify the desired response format through the Accept\nheader. The server processes this header and selects the appropriate formatter to serialize the\nresponse data into the requested format (e.g., JSON, XML).\nHow Content Negotiation Works\n   1. Client Request: The client sends an HTTP request with the Accept header specifying the\n      desired media type (e.g., application/json, application/xml).\n   2. Server Response: The server uses formatters to serialize the response data into the specified\n      format. If the requested format is not supported or available, the server may return a\n      default format or an error.\nConfiguring Formatters in ASP.NET Core\nASP.NET Core provides built-in formatters for JSON and XML. You can configure these formatters in\nthe Program.cs file.\n1. JSON Formatter\nBy default, ASP.NET Core includes the JSON formatter via System.Text.Json. You can also use\nNewtonsoft.Json if you prefer.",
+      "lines": [
+        {
+          "text": "   • UseSwagger and UseSwaggerUI Methods: Middleware components to serve the Swagger",
+          "rawText": "• UseSwagger and UseSwaggerUI Methods: Middleware components to serve the Swagger",
+          "x": 90.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f4"
+        },
+        {
+          "text": "      JSON endpoint and the interactive UI, respectively. SwaggerEndpoint specifies the path to",
+          "rawText": "JSON endpoint and the interactive UI, respectively. SwaggerEndpoint specifies the path to",
+          "x": 108.02,
+          "y": 744.94,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "      the Swagger JSON file.",
+          "rawText": "the Swagger JSON file.",
+          "x": 108.02,
+          "y": 730.42,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   • XML Comments: Provides additional metadata for API methods and models, which is",
+          "rawText": "• XML Comments: Provides additional metadata for API methods and models, which is",
+          "x": 90.024,
+          "y": 707.98,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f4"
+        },
+        {
+          "text": "      displayed in Swagger UI.",
+          "rawText": "displayed in Swagger UI.",
+          "x": 108.02,
+          "y": 693.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Content Negotiation",
+          "rawText": "Content Negotiation",
+          "x": 72.024,
+          "y": 603.58,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "Content negotiation is a mechanism in HTTP that allows clients and servers to agree on the format",
+          "rawText": "Content negotiation is a mechanism in HTTP that allows clients and servers to agree on the format",
+          "x": 72.024,
+          "y": 581.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "of the response data. In ASP.NET Core, content negotiation determines how the response should be",
+          "rawText": "of the response data. In ASP.NET Core, content negotiation determines how the response should be",
+          "x": 72.024,
+          "y": 566.47,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "formatted based on the client's request headers and available formatters.",
+          "rawText": "formatted based on the client's request headers and available formatters.",
+          "x": 72.024,
+          "y": 552.07,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Overview of Content Negotiation",
+          "rawText": "Overview of Content Negotiation",
+          "x": 72.024,
+          "y": 507.07,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "When a client sends a request, it may specify the desired response format through the Accept",
+          "rawText": "When a client sends a request, it may specify the desired response format through the Accept",
+          "x": 72.024,
+          "y": 484.51,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "header. The server processes this header and selects the appropriate formatter to serialize the",
+          "rawText": "header. The server processes this header and selects the appropriate formatter to serialize the",
+          "x": 72.024,
+          "y": 470.11,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "response data into the requested format (e.g., JSON, XML).",
+          "rawText": "response data into the requested format (e.g., JSON, XML).",
+          "x": 72.024,
+          "y": 455.59,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "How Content Negotiation Works",
+          "rawText": "How Content Negotiation Works",
+          "x": 72.024,
+          "y": 410.59,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "   1. Client Request: The client sends an HTTP request with the Accept header specifying the",
+          "rawText": "1. Client Request: The client sends an HTTP request with the Accept header specifying the",
+          "x": 90.024,
+          "y": 388.13,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "      desired media type (e.g., application/json, application/xml).",
+          "rawText": "desired media type (e.g., application/json, application/xml).",
+          "x": 108.02,
+          "y": 373.61,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   2. Server Response: The server uses formatters to serialize the response data into the specified",
+          "rawText": "2. Server Response: The server uses formatters to serialize the response data into the specified",
+          "x": 90.024,
+          "y": 351.05,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "      format. If the requested format is not supported or available, the server may return a",
+          "rawText": "format. If the requested format is not supported or available, the server may return a",
+          "x": 108.02,
+          "y": 336.65,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "      default format or an error.",
+          "rawText": "default format or an error.",
+          "x": 108.02,
+          "y": 322.13,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Configuring Formatters in ASP.NET Core",
+          "rawText": "Configuring Formatters in ASP.NET Core",
+          "x": 72.024,
+          "y": 254.69,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "ASP.NET Core provides built-in formatters for JSON and XML. You can configure these formatters in",
+          "rawText": "ASP.NET Core provides built-in formatters for JSON and XML. You can configure these formatters in",
+          "x": 72.024,
+          "y": 232.13,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "the Program.cs file.",
+          "rawText": "the Program.cs file.",
+          "x": 72.024,
+          "y": 217.58,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "1. JSON Formatter",
+          "rawText": "1. JSON Formatter",
+          "x": 72.024,
+          "y": 172.7,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "By default, ASP.NET Core includes the JSON formatter via System.Text.Json. You can also use",
+          "rawText": "By default, ASP.NET Core includes the JSON formatter via System.Text.Json. You can also use",
+          "x": 72.024,
+          "y": 150.14,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Newtonsoft.Json if you prefer.",
+          "rawText": "Newtonsoft.Json if you prefer.",
+          "x": 72.024,
+          "y": 135.62,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "   • UseSwagger and UseSwaggerUI Methods: Middleware components to serve the Swagger"
+          ],
+          "text": "   • UseSwagger and UseSwaggerUI Methods: Middleware components to serve the Swagger"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "      JSON endpoint and the interactive UI, respectively. SwaggerEndpoint specifies the path to",
+            "      the Swagger JSON file."
+          ],
+          "text": "      JSON endpoint and the interactive UI, respectively. SwaggerEndpoint specifies the path to\n      the Swagger JSON file."
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "   • XML Comments: Provides additional metadata for API methods and models, which is"
+          ],
+          "text": "   • XML Comments: Provides additional metadata for API methods and models, which is"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "      displayed in Swagger UI."
+          ],
+          "text": "      displayed in Swagger UI."
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "Content Negotiation"
+          ],
+          "text": "Content Negotiation"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "Content negotiation is a mechanism in HTTP that allows clients and servers to agree on the format",
+            "of the response data. In ASP.NET Core, content negotiation determines how the response should be",
+            "formatted based on the client's request headers and available formatters."
+          ],
+          "text": "Content negotiation is a mechanism in HTTP that allows clients and servers to agree on the format\nof the response data. In ASP.NET Core, content negotiation determines how the response should be\nformatted based on the client's request headers and available formatters."
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "Overview of Content Negotiation"
+          ],
+          "text": "Overview of Content Negotiation"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "When a client sends a request, it may specify the desired response format through the Accept",
+            "header. The server processes this header and selects the appropriate formatter to serialize the",
+            "response data into the requested format (e.g., JSON, XML)."
+          ],
+          "text": "When a client sends a request, it may specify the desired response format through the Accept\nheader. The server processes this header and selects the appropriate formatter to serialize the\nresponse data into the requested format (e.g., JSON, XML)."
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "How Content Negotiation Works"
+          ],
+          "text": "How Content Negotiation Works"
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "   1. Client Request: The client sends an HTTP request with the Accept header specifying the"
+          ],
+          "text": "   1. Client Request: The client sends an HTTP request with the Accept header specifying the"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "      desired media type (e.g., application/json, application/xml)."
+          ],
+          "text": "      desired media type (e.g., application/json, application/xml)."
+        },
+        {
+          "type": "list_item",
+          "page": 4,
+          "lines": [
+            "   2. Server Response: The server uses formatters to serialize the response data into the specified"
+          ],
+          "text": "   2. Server Response: The server uses formatters to serialize the response data into the specified"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "      format. If the requested format is not supported or available, the server may return a",
+            "      default format or an error.",
+            "Configuring Formatters in ASP.NET Core",
+            "ASP.NET Core provides built-in formatters for JSON and XML. You can configure these formatters in",
+            "the Program.cs file."
+          ],
+          "text": "      format. If the requested format is not supported or available, the server may return a\n      default format or an error.\nConfiguring Formatters in ASP.NET Core\nASP.NET Core provides built-in formatters for JSON and XML. You can configure these formatters in\nthe Program.cs file."
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "1. JSON Formatter"
+          ],
+          "text": "1. JSON Formatter"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "By default, ASP.NET Core includes the JSON formatter via System.Text.Json. You can also use",
+            "Newtonsoft.Json if you prefer."
+          ],
+          "text": "By default, ASP.NET Core includes the JSON formatter via System.Text.Json. You can also use\nNewtonsoft.Json if you prefer."
+        }
+      ],
+      "char_count_raw": 1564,
+      "char_count_repaired": 1611
+    },
+    {
+      "page_number": 5,
+      "raw_text": "Example Configuration with System.Text.Json:\nservices.AddControllers()\n.AddJsonOptions(options =>\n{\noptions.JsonSerializerOptions.PropertyNamingPolicy = null; // Disable camel casing\n});\nExample Configuration with Newtonsoft.Json:\nFirst, install the Microsoft.AspNetCore.Mvc.NewtonsoftJson NuGet package:\ndotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson\nThen configure it in Program.cs:\nservices.AddControllers()\n.AddNewtonsoftJson(options =>\n{\noptions.SerializerSettings.ContractResolver = new\nCamelCasePropertyNamesContractResolver();\n});\n2. XML Formatter\nTo enable XML formatting, you need to add the AddXmlSerializerFormatters method.\nExample Configuration:\nservices.AddControllers()\n.AddXmlSerializerFormatters(); // Add XML formatter\n",
+      "repaired_text": "Example Configuration with System.Text.Json:\n  services.AddControllers()\n   .AddJsonOptions(options =>\n   {\n     options.JsonSerializerOptions.PropertyNamingPolicy = null; // Disable camel casing\n   });\nExample Configuration with Newtonsoft.Json:\nFirst, install the Microsoft.AspNetCore.Mvc.NewtonsoftJson NuGet package:\ndotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson\nThen configure it in Program.cs:\n  services.AddControllers()\n   .AddNewtonsoftJson(options =>\n   {\n     options.SerializerSettings.ContractResolver = new\nCamelCasePropertyNamesContractResolver();\n   });\n2. XML Formatter\nTo enable XML formatting, you need to add the AddXmlSerializerFormatters method.\nExample Configuration:\n  services.AddControllers()\n   .AddXmlSerializerFormatters(); // Add XML formatter",
+      "lines": [
+        {
+          "text": "Example Configuration with System.Text.Json:",
+          "rawText": "Example Configuration with System.Text.Json:",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "  services.AddControllers()",
+          "rawText": "services.AddControllers()",
+          "x": 82.104,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   .AddJsonOptions(options =>",
+          "rawText": ".AddJsonOptions(options =>",
+          "x": 92.064,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   {",
+          "rawText": "{",
+          "x": 92.064,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "     options.JsonSerializerOptions.PropertyNamingPolicy = null; // Disable camel casing",
+          "rawText": "options.JsonSerializerOptions.PropertyNamingPolicy = null; // Disable camel casing",
+          "x": 101.9,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   });",
+          "rawText": "});",
+          "x": 92.064,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Example Configuration with Newtonsoft.Json:",
+          "rawText": "Example Configuration with Newtonsoft.Json:",
+          "x": 72.024,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "First, install the Microsoft.AspNetCore.Mvc.NewtonsoftJson NuGet package:",
+          "rawText": "First, install the Microsoft.AspNetCore.Mvc.NewtonsoftJson NuGet package:",
+          "x": 72.024,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson",
+          "rawText": "dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson",
+          "x": 72.024,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Then configure it in Program.cs:",
+          "rawText": "Then configure it in Program.cs:",
+          "x": 72.024,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  services.AddControllers()",
+          "rawText": "services.AddControllers()",
+          "x": 82.104,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   .AddNewtonsoftJson(options =>",
+          "rawText": ".AddNewtonsoftJson(options =>",
+          "x": 92.064,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   {",
+          "rawText": "{",
+          "x": 92.064,
+          "y": 444.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "     options.SerializerSettings.ContractResolver = new",
+          "rawText": "options.SerializerSettings.ContractResolver = new",
+          "x": 101.9,
+          "y": 422.11,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "CamelCasePropertyNamesContractResolver();",
+          "rawText": "CamelCasePropertyNamesContractResolver();",
+          "x": 72.024,
+          "y": 407.59,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   });",
+          "rawText": "});",
+          "x": 92.064,
+          "y": 385.01,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "2. XML Formatter",
+          "rawText": "2. XML Formatter",
+          "x": 72.024,
+          "y": 340.13,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "To enable XML formatting, you need to add the AddXmlSerializerFormatters method.",
+          "rawText": "To enable XML formatting, you need to add the AddXmlSerializerFormatters method.",
+          "x": 72.024,
+          "y": 317.57,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Example Configuration:",
+          "rawText": "Example Configuration:",
+          "x": 72.024,
+          "y": 295.13,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "  services.AddControllers()",
+          "rawText": "services.AddControllers()",
+          "x": 82.104,
+          "y": 272.57,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   .AddXmlSerializerFormatters(); // Add XML formatter",
+          "rawText": ".AddXmlSerializerFormatters(); // Add XML formatter",
+          "x": 92.064,
+          "y": 250.13,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "Example Configuration with System.Text.Json:"
+          ],
+          "text": "Example Configuration with System.Text.Json:"
+        },
+        {
+          "type": "code",
+          "page": 5,
+          "lines": [
+            "  services.AddControllers()"
+          ],
+          "text": "  services.AddControllers()"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "   .AddJsonOptions(options =>"
+          ],
+          "text": "   .AddJsonOptions(options =>"
+        },
+        {
+          "type": "code",
+          "page": 5,
+          "lines": [
+            "   {",
+            "     options.JsonSerializerOptions.PropertyNamingPolicy = null; // Disable camel casing",
+            "   });"
+          ],
+          "text": "   {\n     options.JsonSerializerOptions.PropertyNamingPolicy = null; // Disable camel casing\n   });"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "Example Configuration with Newtonsoft.Json:",
+            "First, install the Microsoft.AspNetCore.Mvc.NewtonsoftJson NuGet package:",
+            "dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson",
+            "Then configure it in Program.cs:"
+          ],
+          "text": "Example Configuration with Newtonsoft.Json:\nFirst, install the Microsoft.AspNetCore.Mvc.NewtonsoftJson NuGet package:\ndotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson\nThen configure it in Program.cs:"
+        },
+        {
+          "type": "code",
+          "page": 5,
+          "lines": [
+            "  services.AddControllers()"
+          ],
+          "text": "  services.AddControllers()"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "   .AddNewtonsoftJson(options =>"
+          ],
+          "text": "   .AddNewtonsoftJson(options =>"
+        },
+        {
+          "type": "code",
+          "page": 5,
+          "lines": [
+            "   {",
+            "     options.SerializerSettings.ContractResolver = new",
+            "CamelCasePropertyNamesContractResolver();",
+            "   });"
+          ],
+          "text": "   {\n     options.SerializerSettings.ContractResolver = new\nCamelCasePropertyNamesContractResolver();\n   });"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "2. XML Formatter",
+            "To enable XML formatting, you need to add the AddXmlSerializerFormatters method.",
+            "Example Configuration:"
+          ],
+          "text": "2. XML Formatter\nTo enable XML formatting, you need to add the AddXmlSerializerFormatters method.\nExample Configuration:"
+        },
+        {
+          "type": "code",
+          "page": 5,
+          "lines": [
+            "  services.AddControllers()"
+          ],
+          "text": "  services.AddControllers()"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "   .AddXmlSerializerFormatters(); // Add XML formatter"
+          ],
+          "text": "   .AddXmlSerializerFormatters(); // Add XML formatter"
+        }
+      ],
+      "char_count_raw": 750,
+      "char_count_repaired": 786
+    },
+    {
+      "page_number": 6,
+      "raw_text": "3. Custom Formatters\nYou can create custom formatters if you need to support additional formats.\nExample of a Custom Formatter:\nCreate a custom OutputFormatter:\npublic class CustomXmlOutputFormatter : TextOutputFormatter\n{\npublic CustomXmlOutputFormatter()\n{\nSupportedMediaTypes.Add(MediaTypeHeaderValue.Parse(\"application/custom-xml\"));\n}\npublic override bool CanWriteResult(OutputFormatterCanWriteContext context)\n{\nreturn context.ContentType.Equals(MediaTypeHeaderValue.Parse(\"application/custom-xml\"));\n}\npublic override Task WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding\nselectedEncoding)\n{\n// Implement custom XML serialization logic here\n}\n}\nRegister the custom formatter:\nservices.AddControllers(options =>\n{\noptions.OutputFormatters.Add(new CustomXmlOutputFormatter());\n});\n",
+      "repaired_text": "3. Custom Formatters\nYou can create custom formatters if you need to support additional formats.\nExample of a Custom Formatter:\nCreate a custom OutputFormatter:\npublic class CustomXmlOutputFormatter : TextOutputFormatter\n{\n  public CustomXmlOutputFormatter()\n  {\n   SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse(\"application/custom-xml\"));\n  }\n  public override bool CanWriteResult(OutputFormatterCanWriteContext context)\n  {\n   return context.ContentType.Equals(MediaTypeHeaderValue.Parse(\"application/custom-xml\"));\n  }\n  public override Task WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding\nselectedEncoding)\n  {\n   // Implement custom XML serialization logic here\n  }\n}\nRegister the custom formatter:\n  services.AddControllers(options =>\n  {\n   options.OutputFormatters.Add(new CustomXmlOutputFormatter());\n  });",
+      "lines": [
+        {
+          "text": "3. Custom Formatters",
+          "rawText": "3. Custom Formatters",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "You can create custom formatters if you need to support additional formats.",
+          "rawText": "You can create custom formatters if you need to support additional formats.",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Example of a Custom Formatter:",
+          "rawText": "Example of a Custom Formatter:",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "Create a custom OutputFormatter:",
+          "rawText": "Create a custom OutputFormatter:",
+          "x": 72.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "public class CustomXmlOutputFormatter : TextOutputFormatter",
+          "rawText": "public class CustomXmlOutputFormatter : TextOutputFormatter",
+          "x": 72.024,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  public CustomXmlOutputFormatter()",
+          "rawText": "public CustomXmlOutputFormatter()",
+          "x": 82.104,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse(\"application/custom-xml\"));",
+          "rawText": "SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse(\"application/custom-xml\"));",
+          "x": 92.064,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 82.104,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  public override bool CanWriteResult(OutputFormatterCanWriteContext context)",
+          "rawText": "public override bool CanWriteResult(OutputFormatterCanWriteContext context)",
+          "x": 82.104,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   return context.ContentType.Equals(MediaTypeHeaderValue.Parse(\"application/custom-xml\"));",
+          "rawText": "return context.ContentType.Equals(MediaTypeHeaderValue.Parse(\"application/custom-xml\"));",
+          "x": 92.064,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 82.104,
+          "y": 444.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  public override Task WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding",
+          "rawText": "public override Task WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding",
+          "x": 82.104,
+          "y": 399.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "selectedEncoding)",
+          "rawText": "selectedEncoding)",
+          "x": 72.024,
+          "y": 385.01,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 362.57,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   // Implement custom XML serialization logic here",
+          "rawText": "// Implement custom XML serialization logic here",
+          "x": 91.944,
+          "y": 340.13,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 82.104,
+          "y": 317.57,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 295.13,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Register the custom formatter:",
+          "rawText": "Register the custom formatter:",
+          "x": 72.024,
+          "y": 250.13,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  services.AddControllers(options =>",
+          "rawText": "services.AddControllers(options =>",
+          "x": 82.104,
+          "y": 227.69,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 205.1,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   options.OutputFormatters.Add(new CustomXmlOutputFormatter());",
+          "rawText": "options.OutputFormatters.Add(new CustomXmlOutputFormatter());",
+          "x": 91.944,
+          "y": 182.66,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  });",
+          "rawText": "});",
+          "x": 82.104,
+          "y": 160.1,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 6,
+          "lines": [
+            "3. Custom Formatters"
+          ],
+          "text": "3. Custom Formatters"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "You can create custom formatters if you need to support additional formats.",
+            "Example of a Custom Formatter:",
+            "Create a custom OutputFormatter:"
+          ],
+          "text": "You can create custom formatters if you need to support additional formats.\nExample of a Custom Formatter:\nCreate a custom OutputFormatter:"
+        },
+        {
+          "type": "code",
+          "page": 6,
+          "lines": [
+            "public class CustomXmlOutputFormatter : TextOutputFormatter",
+            "{",
+            "  public CustomXmlOutputFormatter()",
+            "  {",
+            "   SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse(\"application/custom-xml\"));",
+            "  }",
+            "  public override bool CanWriteResult(OutputFormatterCanWriteContext context)",
+            "  {",
+            "   return context.ContentType.Equals(MediaTypeHeaderValue.Parse(\"application/custom-xml\"));",
+            "  }",
+            "  public override Task WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding"
+          ],
+          "text": "public class CustomXmlOutputFormatter : TextOutputFormatter\n{\n  public CustomXmlOutputFormatter()\n  {\n   SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse(\"application/custom-xml\"));\n  }\n  public override bool CanWriteResult(OutputFormatterCanWriteContext context)\n  {\n   return context.ContentType.Equals(MediaTypeHeaderValue.Parse(\"application/custom-xml\"));\n  }\n  public override Task WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "selectedEncoding)"
+          ],
+          "text": "selectedEncoding)"
+        },
+        {
+          "type": "code",
+          "page": 6,
+          "lines": [
+            "  {",
+            "   // Implement custom XML serialization logic here",
+            "  }",
+            "}"
+          ],
+          "text": "  {\n   // Implement custom XML serialization logic here\n  }\n}"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "Register the custom formatter:"
+          ],
+          "text": "Register the custom formatter:"
+        },
+        {
+          "type": "code",
+          "page": 6,
+          "lines": [
+            "  services.AddControllers(options =>",
+            "  {",
+            "   options.OutputFormatters.Add(new CustomXmlOutputFormatter());",
+            "  });"
+          ],
+          "text": "  services.AddControllers(options =>\n  {\n   options.OutputFormatters.Add(new CustomXmlOutputFormatter());\n  });"
+        }
+      ],
+      "char_count_raw": 806,
+      "char_count_repaired": 841
+    },
+    {
+      "page_number": 7,
+      "raw_text": "Detailed Explanation of Code\n• AddJsonOptions: Configures JSON serialization settings, such as property naming policies.\n• AddNewtonsoftJson: Adds support for JSON serialization using Newtonsoft.Json, allowing\nfor more advanced configuration.\n• AddXmlSerializerFormatters: Enables XML serialization using the XML serializer.\n• Custom Formatters: Allow you to create formatters for unsupported media types or\ncustomize serialization logic.\nTesting Content Negotiation\nYou can test content negotiation by sending requests with different Accept headers using tools like\nPostman or curl.\nExample Request with curl:\ncurl -H \"Accept: application/json\" https://localhost:5001/api/products\ncurl -H \"Accept: application/xml\" https://localhost:5001/api/products\nExample Request with Postman:\n• Set the Accept header to application/json or application/xml in Postman and observe the\nresponse format.\nKey Points to Remember\n1. Content Negotiation: Determines the format of the response based on the client's Accept\nheader.\n2. Built-in Formatters: ASP.NET Core provides JSON and XML formatters out of the box.\n3. Custom Formatters: You can create custom formatters to support additional media types.\n4. Configuration: Use AddJsonOptions, AddNewtonsoftJson, and AddXmlSerializerFormatters\nto configure formatters.\n5. Testing: Use tools like Postman or curl to test different response formats.\n",
+      "repaired_text": "Detailed Explanation of Code\n   • AddJsonOptions: Configures JSON serialization settings, such as property naming policies.\n   • AddNewtonsoftJson: Adds support for JSON serialization using Newtonsoft.Json, allowing\n      for more advanced configuration.\n   • AddXmlSerializerFormatters: Enables XML serialization using the XML serializer.\n   • Custom Formatters: Allow you to create formatters for unsupported media types or\n      customize serialization logic.\nTesting Content Negotiation\nYou can test content negotiation by sending requests with different Accept headers using tools like\nPostman or curl.\nExample Request with curl:\ncurl -H \"Accept: application/json\" https://localhost:5001/api/products\ncurl -H \"Accept: application/xml\" https://localhost:5001/api/products\nExample Request with Postman:\n   • Set the Accept header to application/json or application/xml in Postman and observe the\n      response format.\nKey Points to Remember\n   1. Content Negotiation: Determines the format of the response based on the client's Accept\n      header.\n   2. Built-in Formatters: ASP.NET Core provides JSON and XML formatters out of the box.\n   3. Custom Formatters: You can create custom formatters to support additional media types.\n   4. Configuration: Use AddJsonOptions, AddNewtonsoftJson, and AddXmlSerializerFormatters\n      to configure formatters.\n   5. Testing: Use tools like Postman or curl to test different response formats.",
+      "lines": [
+        {
+          "text": "Detailed Explanation of Code",
+          "rawText": "Detailed Explanation of Code",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "   • AddJsonOptions: Configures JSON serialization settings, such as property naming policies.",
+          "rawText": "• AddJsonOptions: Configures JSON serialization settings, such as property naming policies.",
+          "x": 90.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f4"
+        },
+        {
+          "text": "   • AddNewtonsoftJson: Adds support for JSON serialization using Newtonsoft.Json, allowing",
+          "rawText": "• AddNewtonsoftJson: Adds support for JSON serialization using Newtonsoft.Json, allowing",
+          "x": 90.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f4"
+        },
+        {
+          "text": "      for more advanced configuration.",
+          "rawText": "for more advanced configuration.",
+          "x": 108.02,
+          "y": 699.94,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   • AddXmlSerializerFormatters: Enables XML serialization using the XML serializer.",
+          "rawText": "• AddXmlSerializerFormatters: Enables XML serialization using the XML serializer.",
+          "x": 90.024,
+          "y": 677.5,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f4"
+        },
+        {
+          "text": "   • Custom Formatters: Allow you to create formatters for unsupported media types or",
+          "rawText": "• Custom Formatters: Allow you to create formatters for unsupported media types or",
+          "x": 90.024,
+          "y": 655.06,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f4"
+        },
+        {
+          "text": "      customize serialization logic.",
+          "rawText": "customize serialization logic.",
+          "x": 108.02,
+          "y": 640.54,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Testing Content Negotiation",
+          "rawText": "Testing Content Negotiation",
+          "x": 72.024,
+          "y": 595.54,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "You can test content negotiation by sending requests with different Accept headers using tools like",
+          "rawText": "You can test content negotiation by sending requests with different Accept headers using tools like",
+          "x": 72.024,
+          "y": 573.07,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Postman or curl.",
+          "rawText": "Postman or curl.",
+          "x": 72.024,
+          "y": 558.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Example Request with curl:",
+          "rawText": "Example Request with curl:",
+          "x": 72.024,
+          "y": 535.99,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "curl -H \"Accept: application/json\" https://localhost:5001/api/products",
+          "rawText": "curl -H \"Accept: application/json\" https://localhost:5001/api/products",
+          "x": 72.024,
+          "y": 513.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "curl -H \"Accept: application/xml\" https://localhost:5001/api/products",
+          "rawText": "curl -H \"Accept: application/xml\" https://localhost:5001/api/products",
+          "x": 72.024,
+          "y": 491.11,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Example Request with Postman:",
+          "rawText": "Example Request with Postman:",
+          "x": 72.024,
+          "y": 468.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "   • Set the Accept header to application/json or application/xml in Postman and observe the",
+          "rawText": "• Set the Accept header to application/json or application/xml in Postman and observe the",
+          "x": 90.024,
+          "y": 446.11,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f4"
+        },
+        {
+          "text": "      response format.",
+          "rawText": "response format.",
+          "x": 108.02,
+          "y": 431.59,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Key Points to Remember",
+          "rawText": "Key Points to Remember",
+          "x": 72.024,
+          "y": 386.57,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "   1. Content Negotiation: Determines the format of the response based on the client's Accept",
+          "rawText": "1. Content Negotiation: Determines the format of the response based on the client's Accept",
+          "x": 90.024,
+          "y": 364.13,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "      header.",
+          "rawText": "header.",
+          "x": 108.02,
+          "y": 349.61,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   2. Built-in Formatters: ASP.NET Core provides JSON and XML formatters out of the box.",
+          "rawText": "2. Built-in Formatters: ASP.NET Core provides JSON and XML formatters out of the box.",
+          "x": 90.024,
+          "y": 327.05,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   3. Custom Formatters: You can create custom formatters to support additional media types.",
+          "rawText": "3. Custom Formatters: You can create custom formatters to support additional media types.",
+          "x": 90.024,
+          "y": 304.61,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   4. Configuration: Use AddJsonOptions, AddNewtonsoftJson, and AddXmlSerializerFormatters",
+          "rawText": "4. Configuration: Use AddJsonOptions, AddNewtonsoftJson, and AddXmlSerializerFormatters",
+          "x": 90.024,
+          "y": 282.17,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "      to configure formatters.",
+          "rawText": "to configure formatters.",
+          "x": 108.02,
+          "y": 267.65,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   5. Testing: Use tools like Postman or curl to test different response formats.",
+          "rawText": "5. Testing: Use tools like Postman or curl to test different response formats.",
+          "x": 90.024,
+          "y": 245.09,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 7,
+          "lines": [
+            "Detailed Explanation of Code"
+          ],
+          "text": "Detailed Explanation of Code"
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • AddJsonOptions: Configures JSON serialization settings, such as property naming policies."
+          ],
+          "text": "   • AddJsonOptions: Configures JSON serialization settings, such as property naming policies."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • AddNewtonsoftJson: Adds support for JSON serialization using Newtonsoft.Json, allowing"
+          ],
+          "text": "   • AddNewtonsoftJson: Adds support for JSON serialization using Newtonsoft.Json, allowing"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "      for more advanced configuration."
+          ],
+          "text": "      for more advanced configuration."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • AddXmlSerializerFormatters: Enables XML serialization using the XML serializer."
+          ],
+          "text": "   • AddXmlSerializerFormatters: Enables XML serialization using the XML serializer."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • Custom Formatters: Allow you to create formatters for unsupported media types or"
+          ],
+          "text": "   • Custom Formatters: Allow you to create formatters for unsupported media types or"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "      customize serialization logic."
+          ],
+          "text": "      customize serialization logic."
+        },
+        {
+          "type": "heading",
+          "page": 7,
+          "lines": [
+            "Testing Content Negotiation"
+          ],
+          "text": "Testing Content Negotiation"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "You can test content negotiation by sending requests with different Accept headers using tools like",
+            "Postman or curl.",
+            "Example Request with curl:",
+            "curl -H \"Accept: application/json\" https://localhost:5001/api/products",
+            "curl -H \"Accept: application/xml\" https://localhost:5001/api/products",
+            "Example Request with Postman:"
+          ],
+          "text": "You can test content negotiation by sending requests with different Accept headers using tools like\nPostman or curl.\nExample Request with curl:\ncurl -H \"Accept: application/json\" https://localhost:5001/api/products\ncurl -H \"Accept: application/xml\" https://localhost:5001/api/products\nExample Request with Postman:"
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • Set the Accept header to application/json or application/xml in Postman and observe the"
+          ],
+          "text": "   • Set the Accept header to application/json or application/xml in Postman and observe the"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "      response format."
+          ],
+          "text": "      response format."
+        },
+        {
+          "type": "heading",
+          "page": 7,
+          "lines": [
+            "Key Points to Remember"
+          ],
+          "text": "Key Points to Remember"
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   1. Content Negotiation: Determines the format of the response based on the client's Accept"
+          ],
+          "text": "   1. Content Negotiation: Determines the format of the response based on the client's Accept"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "      header."
+          ],
+          "text": "      header."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   2. Built-in Formatters: ASP.NET Core provides JSON and XML formatters out of the box."
+          ],
+          "text": "   2. Built-in Formatters: ASP.NET Core provides JSON and XML formatters out of the box."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   3. Custom Formatters: You can create custom formatters to support additional media types."
+          ],
+          "text": "   3. Custom Formatters: You can create custom formatters to support additional media types."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   4. Configuration: Use AddJsonOptions, AddNewtonsoftJson, and AddXmlSerializerFormatters"
+          ],
+          "text": "   4. Configuration: Use AddJsonOptions, AddNewtonsoftJson, and AddXmlSerializerFormatters"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "      to configure formatters."
+          ],
+          "text": "      to configure formatters."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   5. Testing: Use tools like Postman or curl to test different response formats."
+          ],
+          "text": "   5. Testing: Use tools like Postman or curl to test different response formats."
+        }
+      ],
+      "char_count_raw": 1379,
+      "char_count_repaired": 1438
+    },
+    {
+      "page_number": 8,
+      "raw_text": "API Versions\nAPI versioning is crucial for managing changes in your API while keeping backward compatibility.\nWith the deprecation of the Microsoft.AspNetCore.Mvc.Versioning package, you should use the new\nAsp.Versioning.Mvc package for implementing API versioning in ASP.NET Core.\nOverview of API Versioning\nAPI versioning allows you to introduce new features or changes in your API without breaking existing\nclients. It helps maintain multiple versions of an API simultaneously.\nImplementing API Versioning with Asp.Versioning.Mvc\n1. Install the New API Versioning NuGet Package\nInstall the Asp.Versioning.Mvc package to use the new API versioning library.\ndotnet add package Asp.Versioning.Mvc\n2. Configure API Versioning in Program.cs\nAdd and configure the API versioning services using the new package in the ConfigureServices\nmethod.\nExample Configuration:\nservices.AddControllers();\n// Add API versioning\nservices.AddApiVersioning(options =>\n{\noptions.ReportApiVersions = true; // Include API versions in response headers\noptions.AssumeDefaultVersionWhenUnspecified = true; // Assume default version if none\nspecified\noptions.DefaultApiVersion = new ApiVersion(1, 0); // Set default API version\noptions.ApiVersionReader = new HeaderApiVersionReader(\"api-version\"); // Read version from\nheader\n});\n",
+      "repaired_text": "API Versions\nAPI versioning is crucial for managing changes in your API while keeping backward compatibility.\nWith the deprecation of the Microsoft.AspNetCore.Mvc.Versioning package, you should use the new\nAsp.Versioning.Mvc package for implementing API versioning in ASP.NET Core.\nOverview of API Versioning\nAPI versioning allows you to introduce new features or changes in your API without breaking existing\nclients. It helps maintain multiple versions of an API simultaneously.\nImplementing API Versioning with Asp.Versioning.Mvc\n1. Install the New API Versioning NuGet Package\nInstall the Asp.Versioning.Mvc package to use the new API versioning library.\ndotnet add package Asp.Versioning.Mvc\n2. Configure API Versioning in Program.cs\nAdd and configure the API versioning services using the new package in the ConfigureServices\nmethod.\nExample Configuration:\n  services.AddControllers();\n  // Add API versioning\n  services.AddApiVersioning(options =>\n  {\n   options.ReportApiVersions = true; // Include API versions in response headers\n   options.AssumeDefaultVersionWhenUnspecified = true; // Assume default version if none\nspecified\n   options.DefaultApiVersion = new ApiVersion(1, 0); // Set default API version\n   options.ApiVersionReader = new HeaderApiVersionReader(\"api-version\"); // Read version from\nheader\n  });",
+      "lines": [
+        {
+          "text": "API Versions",
+          "rawText": "API Versions",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "API versioning is crucial for managing changes in your API while keeping backward compatibility.",
+          "rawText": "API versioning is crucial for managing changes in your API while keeping backward compatibility.",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "With the deprecation of the Microsoft.AspNetCore.Mvc.Versioning package, you should use the new",
+          "rawText": "With the deprecation of the Microsoft.AspNetCore.Mvc.Versioning package, you should use the new",
+          "x": 72.024,
+          "y": 722.5,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Asp.Versioning.Mvc package for implementing API versioning in ASP.NET Core.",
+          "rawText": "Asp.Versioning.Mvc package for implementing API versioning in ASP.NET Core.",
+          "x": 72.024,
+          "y": 707.98,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Overview of API Versioning",
+          "rawText": "Overview of API Versioning",
+          "x": 72.024,
+          "y": 662.98,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "API versioning allows you to introduce new features or changes in your API without breaking existing",
+          "rawText": "API versioning allows you to introduce new features or changes in your API without breaking existing",
+          "x": 72.024,
+          "y": 640.54,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "clients. It helps maintain multiple versions of an API simultaneously.",
+          "rawText": "clients. It helps maintain multiple versions of an API simultaneously.",
+          "x": 72.024,
+          "y": 626.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Implementing API Versioning with Asp.Versioning.Mvc",
+          "rawText": "Implementing API Versioning with Asp.Versioning.Mvc",
+          "x": 72.024,
+          "y": 581.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "1. Install the New API Versioning NuGet Package",
+          "rawText": "1. Install the New API Versioning NuGet Package",
+          "x": 72.024,
+          "y": 558.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "Install the Asp.Versioning.Mvc package to use the new API versioning library.",
+          "rawText": "Install the Asp.Versioning.Mvc package to use the new API versioning library.",
+          "x": 72.024,
+          "y": 535.99,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "dotnet add package Asp.Versioning.Mvc",
+          "rawText": "dotnet add package Asp.Versioning.Mvc",
+          "x": 72.024,
+          "y": 513.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "2. Configure API Versioning in Program.cs",
+          "rawText": "2. Configure API Versioning in Program.cs",
+          "x": 72.024,
+          "y": 468.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "Add and configure the API versioning services using the new package in the ConfigureServices",
+          "rawText": "Add and configure the API versioning services using the new package in the ConfigureServices",
+          "x": 72.024,
+          "y": 446.11,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "method.",
+          "rawText": "method.",
+          "x": 72.024,
+          "y": 431.59,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Example Configuration:",
+          "rawText": "Example Configuration:",
+          "x": 72.024,
+          "y": 409.03,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "  services.AddControllers();",
+          "rawText": "services.AddControllers();",
+          "x": 82.104,
+          "y": 386.57,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  // Add API versioning",
+          "rawText": "// Add API versioning",
+          "x": 81.984,
+          "y": 341.57,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  services.AddApiVersioning(options =>",
+          "rawText": "services.AddApiVersioning(options =>",
+          "x": 82.104,
+          "y": 319.13,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 296.57,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   options.ReportApiVersions = true; // Include API versions in response headers",
+          "rawText": "options.ReportApiVersions = true; // Include API versions in response headers",
+          "x": 91.944,
+          "y": 274.13,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   options.AssumeDefaultVersionWhenUnspecified = true; // Assume default version if none",
+          "rawText": "options.AssumeDefaultVersionWhenUnspecified = true; // Assume default version if none",
+          "x": 91.944,
+          "y": 251.69,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "specified",
+          "rawText": "specified",
+          "x": 72.024,
+          "y": 237.17,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   options.DefaultApiVersion = new ApiVersion(1, 0); // Set default API version",
+          "rawText": "options.DefaultApiVersion = new ApiVersion(1, 0); // Set default API version",
+          "x": 91.944,
+          "y": 214.58,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   options.ApiVersionReader = new HeaderApiVersionReader(\"api-version\"); // Read version from",
+          "rawText": "options.ApiVersionReader = new HeaderApiVersionReader(\"api-version\"); // Read version from",
+          "x": 91.944,
+          "y": 192.14,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "header",
+          "rawText": "header",
+          "x": 72.024,
+          "y": 177.62,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  });",
+          "rawText": "});",
+          "x": 82.104,
+          "y": 155.18,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 8,
+          "lines": [
+            "API Versions"
+          ],
+          "text": "API Versions"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "API versioning is crucial for managing changes in your API while keeping backward compatibility.",
+            "With the deprecation of the Microsoft.AspNetCore.Mvc.Versioning package, you should use the new",
+            "Asp.Versioning.Mvc package for implementing API versioning in ASP.NET Core."
+          ],
+          "text": "API versioning is crucial for managing changes in your API while keeping backward compatibility.\nWith the deprecation of the Microsoft.AspNetCore.Mvc.Versioning package, you should use the new\nAsp.Versioning.Mvc package for implementing API versioning in ASP.NET Core."
+        },
+        {
+          "type": "heading",
+          "page": 8,
+          "lines": [
+            "Overview of API Versioning"
+          ],
+          "text": "Overview of API Versioning"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "API versioning allows you to introduce new features or changes in your API without breaking existing",
+            "clients. It helps maintain multiple versions of an API simultaneously.",
+            "Implementing API Versioning with Asp.Versioning.Mvc"
+          ],
+          "text": "API versioning allows you to introduce new features or changes in your API without breaking existing\nclients. It helps maintain multiple versions of an API simultaneously.\nImplementing API Versioning with Asp.Versioning.Mvc"
+        },
+        {
+          "type": "heading",
+          "page": 8,
+          "lines": [
+            "1. Install the New API Versioning NuGet Package"
+          ],
+          "text": "1. Install the New API Versioning NuGet Package"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "Install the Asp.Versioning.Mvc package to use the new API versioning library.",
+            "dotnet add package Asp.Versioning.Mvc"
+          ],
+          "text": "Install the Asp.Versioning.Mvc package to use the new API versioning library.\ndotnet add package Asp.Versioning.Mvc"
+        },
+        {
+          "type": "heading",
+          "page": 8,
+          "lines": [
+            "2. Configure API Versioning in Program.cs"
+          ],
+          "text": "2. Configure API Versioning in Program.cs"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "Add and configure the API versioning services using the new package in the ConfigureServices",
+            "method.",
+            "Example Configuration:"
+          ],
+          "text": "Add and configure the API versioning services using the new package in the ConfigureServices\nmethod.\nExample Configuration:"
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "  services.AddControllers();",
+            "  // Add API versioning",
+            "  services.AddApiVersioning(options =>",
+            "  {",
+            "   options.ReportApiVersions = true; // Include API versions in response headers",
+            "   options.AssumeDefaultVersionWhenUnspecified = true; // Assume default version if none"
+          ],
+          "text": "  services.AddControllers();\n  // Add API versioning\n  services.AddApiVersioning(options =>\n  {\n   options.ReportApiVersions = true; // Include API versions in response headers\n   options.AssumeDefaultVersionWhenUnspecified = true; // Assume default version if none"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "specified",
+            "   options.DefaultApiVersion = new ApiVersion(1, 0); // Set default API version",
+            "   options.ApiVersionReader = new HeaderApiVersionReader(\"api-version\"); // Read version from",
+            "header",
+            "  });"
+          ],
+          "text": "specified\n   options.DefaultApiVersion = new ApiVersion(1, 0); // Set default API version\n   options.ApiVersionReader = new HeaderApiVersionReader(\"api-version\"); // Read version from\nheader\n  });"
+        }
+      ],
+      "char_count_raw": 1304,
+      "char_count_repaired": 1325
+    },
+    {
+      "page_number": 9,
+      "raw_text": "3. Define API Versions in Controllers\nUse the [ApiVersion] attribute to specify which versions a controller or action method supports.\nExample:\n[ApiController]\n[Route(\"api/[controller]\")]\npublic class ProductsController : ControllerBase\n{\n[HttpGet]\n[ApiVersion(\"1.0\")]\npublic IActionResult GetV1()\n{\nreturn Ok(\"API Version 1.0\");\n}\n[HttpGet]\n[ApiVersion(\"2.0\")]\n[Route(\"v2\")]\npublic IActionResult GetV2()\n{\nreturn Ok(\"API Version 2.0\");\n}\n}\n",
+      "repaired_text": "3. Define API Versions in Controllers\nUse the [ApiVersion] attribute to specify which versions a controller or action method supports.\nExample:\n[ApiController]\n[Route(\"api/[controller]\")]\npublic class ProductsController : ControllerBase\n{\n  [HttpGet]\n  [ApiVersion(\"1.0\")]\n  public IActionResult GetV1()\n  {\n   return Ok(\"API Version 1.0\");\n  }\n  [HttpGet]\n  [ApiVersion(\"2.0\")]\n  [Route(\"v2\")]\n  public IActionResult GetV2()\n  {\n   return Ok(\"API Version 2.0\");\n  }\n}",
+      "lines": [
+        {
+          "text": "3. Define API Versions in Controllers",
+          "rawText": "3. Define API Versions in Controllers",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "Use the [ApiVersion] attribute to specify which versions a controller or action method supports.",
+          "rawText": "Use the [ApiVersion] attribute to specify which versions a controller or action method supports.",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Example:",
+          "rawText": "Example:",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "[ApiController]",
+          "rawText": "[ApiController]",
+          "x": 72.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "[Route(\"api/[controller]\")]",
+          "rawText": "[Route(\"api/[controller]\")]",
+          "x": 72.024,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "public class ProductsController : ControllerBase",
+          "rawText": "public class ProductsController : ControllerBase",
+          "x": 72.024,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  [HttpGet]",
+          "rawText": "[HttpGet]",
+          "x": 82.104,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  [ApiVersion(\"1.0\")]",
+          "rawText": "[ApiVersion(\"1.0\")]",
+          "x": 82.104,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  public IActionResult GetV1()",
+          "rawText": "public IActionResult GetV1()",
+          "x": 82.104,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   return Ok(\"API Version 1.0\");",
+          "rawText": "return Ok(\"API Version 1.0\");",
+          "x": 92.064,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 82.104,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  [HttpGet]",
+          "rawText": "[HttpGet]",
+          "x": 82.104,
+          "y": 444.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  [ApiVersion(\"2.0\")]",
+          "rawText": "[ApiVersion(\"2.0\")]",
+          "x": 82.104,
+          "y": 422.11,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  [Route(\"v2\")]",
+          "rawText": "[Route(\"v2\")]",
+          "x": 82.104,
+          "y": 399.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  public IActionResult GetV2()",
+          "rawText": "public IActionResult GetV2()",
+          "x": 82.104,
+          "y": 377.09,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 354.53,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   return Ok(\"API Version 2.0\");",
+          "rawText": "return Ok(\"API Version 2.0\");",
+          "x": 92.064,
+          "y": 332.09,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 82.104,
+          "y": 309.65,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 287.09,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 9,
+          "lines": [
+            "3. Define API Versions in Controllers"
+          ],
+          "text": "3. Define API Versions in Controllers"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "Use the [ApiVersion] attribute to specify which versions a controller or action method supports.",
+            "Example:"
+          ],
+          "text": "Use the [ApiVersion] attribute to specify which versions a controller or action method supports.\nExample:"
+        },
+        {
+          "type": "code",
+          "page": 9,
+          "lines": [
+            "[ApiController]",
+            "[Route(\"api/[controller]\")]",
+            "public class ProductsController : ControllerBase",
+            "{",
+            "  [HttpGet]"
+          ],
+          "text": "[ApiController]\n[Route(\"api/[controller]\")]\npublic class ProductsController : ControllerBase\n{\n  [HttpGet]"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "  [ApiVersion(\"1.0\")]"
+          ],
+          "text": "  [ApiVersion(\"1.0\")]"
+        },
+        {
+          "type": "code",
+          "page": 9,
+          "lines": [
+            "  public IActionResult GetV1()",
+            "  {",
+            "   return Ok(\"API Version 1.0\");",
+            "  }",
+            "  [HttpGet]"
+          ],
+          "text": "  public IActionResult GetV1()\n  {\n   return Ok(\"API Version 1.0\");\n  }\n  [HttpGet]"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "  [ApiVersion(\"2.0\")]"
+          ],
+          "text": "  [ApiVersion(\"2.0\")]"
+        },
+        {
+          "type": "code",
+          "page": 9,
+          "lines": [
+            "  [Route(\"v2\")]",
+            "  public IActionResult GetV2()",
+            "  {",
+            "   return Ok(\"API Version 2.0\");",
+            "  }",
+            "}"
+          ],
+          "text": "  [Route(\"v2\")]\n  public IActionResult GetV2()\n  {\n   return Ok(\"API Version 2.0\");\n  }\n}"
+        }
+      ],
+      "char_count_raw": 441,
+      "char_count_repaired": 468
+    },
+    {
+      "page_number": 10,
+      "raw_text": "4. Specify API Versions in Routes\nYou can include the API version in the route to differentiate between versions.\nExample:\n[ApiController]\n[Route(\"api/v{version:apiVersion}/[controller]\")]\npublic class ProductsController : ControllerBase\n{\n[HttpGet]\npublic IActionResult Get()\n{\n// Handle request for the specified API version\nreturn Ok(\"API Versioned\");\n}\n}\n5. Use URL or Query String Versioning\nBesides headers, you can use URL segments or query strings for versioning.\nExample of URL Versioning:\n[ApiController]\n[Route(\"api/v{version:apiVersion}/products\")]\npublic class ProductsController : ControllerBase\n{\n[HttpGet]\npublic IActionResult Get()\n{\n// Handle request for the specified API version\nreturn Ok(\"API Versioned via URL\");\n}\n}\n",
+      "repaired_text": "4. Specify API Versions in Routes\nYou can include the API version in the route to differentiate between versions.\nExample:\n[ApiController]\n[Route(\"api/v{version:apiVersion}/[controller]\")]\npublic class ProductsController : ControllerBase\n{\n  [HttpGet]\n  public IActionResult Get()\n  {\n   // Handle request for the specified API version\n   return Ok(\"API Versioned\");\n  }\n}\n5. Use URL or Query String Versioning\nBesides headers, you can use URL segments or query strings for versioning.\nExample of URL Versioning:\n[ApiController]\n[Route(\"api/v{version:apiVersion}/products\")]\npublic class ProductsController : ControllerBase\n{\n  [HttpGet]\n  public IActionResult Get()\n  {\n   // Handle request for the specified API version\n   return Ok(\"API Versioned via URL\");\n  }\n}",
+      "lines": [
+        {
+          "text": "4. Specify API Versions in Routes",
+          "rawText": "4. Specify API Versions in Routes",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "You can include the API version in the route to differentiate between versions.",
+          "rawText": "You can include the API version in the route to differentiate between versions.",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Example:",
+          "rawText": "Example:",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "[ApiController]",
+          "rawText": "[ApiController]",
+          "x": 72.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "[Route(\"api/v{version:apiVersion}/[controller]\")]",
+          "rawText": "[Route(\"api/v{version:apiVersion}/[controller]\")]",
+          "x": 72.024,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "public class ProductsController : ControllerBase",
+          "rawText": "public class ProductsController : ControllerBase",
+          "x": 72.024,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  [HttpGet]",
+          "rawText": "[HttpGet]",
+          "x": 82.104,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  public IActionResult Get()",
+          "rawText": "public IActionResult Get()",
+          "x": 82.104,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   // Handle request for the specified API version",
+          "rawText": "// Handle request for the specified API version",
+          "x": 91.944,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   return Ok(\"API Versioned\");",
+          "rawText": "return Ok(\"API Versioned\");",
+          "x": 92.064,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 82.104,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "5. Use URL or Query String Versioning",
+          "rawText": "5. Use URL or Query String Versioning",
+          "x": 72.024,
+          "y": 422.11,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "Besides headers, you can use URL segments or query strings for versioning.",
+          "rawText": "Besides headers, you can use URL segments or query strings for versioning.",
+          "x": 72.024,
+          "y": 399.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Example of URL Versioning:",
+          "rawText": "Example of URL Versioning:",
+          "x": 72.024,
+          "y": 377.09,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "[ApiController]",
+          "rawText": "[ApiController]",
+          "x": 72.024,
+          "y": 354.53,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "[Route(\"api/v{version:apiVersion}/products\")]",
+          "rawText": "[Route(\"api/v{version:apiVersion}/products\")]",
+          "x": 72.024,
+          "y": 332.09,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "public class ProductsController : ControllerBase",
+          "rawText": "public class ProductsController : ControllerBase",
+          "x": 72.024,
+          "y": 309.65,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 287.09,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  [HttpGet]",
+          "rawText": "[HttpGet]",
+          "x": 82.104,
+          "y": 264.65,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  public IActionResult Get()",
+          "rawText": "public IActionResult Get()",
+          "x": 82.104,
+          "y": 242.09,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 219.65,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   // Handle request for the specified API version",
+          "rawText": "// Handle request for the specified API version",
+          "x": 91.944,
+          "y": 197.06,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   return Ok(\"API Versioned via URL\");",
+          "rawText": "return Ok(\"API Versioned via URL\");",
+          "x": 92.064,
+          "y": 174.62,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 82.104,
+          "y": 152.18,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 129.62,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 10,
+          "lines": [
+            "4. Specify API Versions in Routes"
+          ],
+          "text": "4. Specify API Versions in Routes"
+        },
+        {
+          "type": "prose",
+          "page": 10,
+          "lines": [
+            "You can include the API version in the route to differentiate between versions.",
+            "Example:"
+          ],
+          "text": "You can include the API version in the route to differentiate between versions.\nExample:"
+        },
+        {
+          "type": "code",
+          "page": 10,
+          "lines": [
+            "[ApiController]",
+            "[Route(\"api/v{version:apiVersion}/[controller]\")]",
+            "public class ProductsController : ControllerBase",
+            "{",
+            "  [HttpGet]",
+            "  public IActionResult Get()",
+            "  {",
+            "   // Handle request for the specified API version",
+            "   return Ok(\"API Versioned\");",
+            "  }",
+            "}"
+          ],
+          "text": "[ApiController]\n[Route(\"api/v{version:apiVersion}/[controller]\")]\npublic class ProductsController : ControllerBase\n{\n  [HttpGet]\n  public IActionResult Get()\n  {\n   // Handle request for the specified API version\n   return Ok(\"API Versioned\");\n  }\n}"
+        },
+        {
+          "type": "prose",
+          "page": 10,
+          "lines": [
+            "5. Use URL or Query String Versioning",
+            "Besides headers, you can use URL segments or query strings for versioning.",
+            "Example of URL Versioning:"
+          ],
+          "text": "5. Use URL or Query String Versioning\nBesides headers, you can use URL segments or query strings for versioning.\nExample of URL Versioning:"
+        },
+        {
+          "type": "code",
+          "page": 10,
+          "lines": [
+            "[ApiController]",
+            "[Route(\"api/v{version:apiVersion}/products\")]",
+            "public class ProductsController : ControllerBase",
+            "{",
+            "  [HttpGet]",
+            "  public IActionResult Get()",
+            "  {",
+            "   // Handle request for the specified API version",
+            "   return Ok(\"API Versioned via URL\");",
+            "  }",
+            "}"
+          ],
+          "text": "[ApiController]\n[Route(\"api/v{version:apiVersion}/products\")]\npublic class ProductsController : ControllerBase\n{\n  [HttpGet]\n  public IActionResult Get()\n  {\n   // Handle request for the specified API version\n   return Ok(\"API Versioned via URL\");\n  }\n}"
+        }
+      ],
+      "char_count_raw": 739,
+      "char_count_repaired": 766
+    },
+    {
+      "page_number": 11,
+      "raw_text": "Example of Query String Versioning:\npublic void ConfigureServices(IServiceCollection services)\n{\nservices.AddApiVersioning(options =>\n{\noptions.ApiVersionReader = new QueryStringApiVersionReader(\"api-version\"); // Read version\nfrom query string\n});\n}\n[ApiController]\n[Route(\"api/products\")]\npublic class ProductsController : ControllerBase\n{\n[HttpGet]\npublic IActionResult Get()\n{\n// Handle request for the specified API version\nreturn Ok(\"API Versioned via Query String\");\n}\n}\nDetailed Explanation of Code\n• AddApiVersioning: Configures API versioning services, including options for default version,\nversion reporting, and version readers.\n• [ApiVersion] Attribute: Specifies the supported versions for a controller or action method.\n• Routes: Define versioned routes to access different API versions.\n• Version Readers: Methods to extract version information from request headers, URLs, or\nquery strings.\n",
+      "repaired_text": "Example of Query String Versioning:\npublic void ConfigureServices(IServiceCollection services)\n{\n  services.AddApiVersioning(options =>\n  {\n   options.ApiVersionReader = new QueryStringApiVersionReader(\"api-version\"); // Read version\nfrom query string\n  });\n}\n[ApiController]\n[Route(\"api/products\")]\npublic class ProductsController : ControllerBase\n{\n  [HttpGet]\n  public IActionResult Get()\n  {\n   // Handle request for the specified API version\n   return Ok(\"API Versioned via Query String\");\n  }\n}\nDetailed Explanation of Code\n   • AddApiVersioning: Configures API versioning services, including options for default version,\n      version reporting, and version readers.\n   • [ApiVersion] Attribute: Specifies the supported versions for a controller or action method.\n   • Routes: Define versioned routes to access different API versions.\n   • Version Readers: Methods to extract version information from request headers, URLs, or\n      query strings.",
+      "lines": [
+        {
+          "text": "Example of Query String Versioning:",
+          "rawText": "Example of Query String Versioning:",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "public void ConfigureServices(IServiceCollection services)",
+          "rawText": "public void ConfigureServices(IServiceCollection services)",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  services.AddApiVersioning(options =>",
+          "rawText": "services.AddApiVersioning(options =>",
+          "x": 82.104,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   options.ApiVersionReader = new QueryStringApiVersionReader(\"api-version\"); // Read version",
+          "rawText": "options.ApiVersionReader = new QueryStringApiVersionReader(\"api-version\"); // Read version",
+          "x": 91.944,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "from query string",
+          "rawText": "from query string",
+          "x": 72.024,
+          "y": 632.5,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  });",
+          "rawText": "});",
+          "x": 82.104,
+          "y": 610.06,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 587.5,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "[ApiController]",
+          "rawText": "[ApiController]",
+          "x": 72.024,
+          "y": 542.47,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "[Route(\"api/products\")]",
+          "rawText": "[Route(\"api/products\")]",
+          "x": 72.024,
+          "y": 520.03,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "public class ProductsController : ControllerBase",
+          "rawText": "public class ProductsController : ControllerBase",
+          "x": 72.024,
+          "y": 497.59,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 475.03,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  [HttpGet]",
+          "rawText": "[HttpGet]",
+          "x": 82.104,
+          "y": 452.59,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  public IActionResult Get()",
+          "rawText": "public IActionResult Get()",
+          "x": 82.104,
+          "y": 430.03,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  {",
+          "rawText": "{",
+          "x": 82.104,
+          "y": 407.59,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   // Handle request for the specified API version",
+          "rawText": "// Handle request for the specified API version",
+          "x": 91.944,
+          "y": 385.01,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   return Ok(\"API Versioned via Query String\");",
+          "rawText": "return Ok(\"API Versioned via Query String\");",
+          "x": 92.064,
+          "y": 362.57,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "  }",
+          "rawText": "}",
+          "x": 82.104,
+          "y": 340.13,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 317.57,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "Detailed Explanation of Code",
+          "rawText": "Detailed Explanation of Code",
+          "x": 72.024,
+          "y": 272.57,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "   • AddApiVersioning: Configures API versioning services, including options for default version,",
+          "rawText": "• AddApiVersioning: Configures API versioning services, including options for default version,",
+          "x": 90.024,
+          "y": 250.13,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f4"
+        },
+        {
+          "text": "      version reporting, and version readers.",
+          "rawText": "version reporting, and version readers.",
+          "x": 108.02,
+          "y": 235.61,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   • [ApiVersion] Attribute: Specifies the supported versions for a controller or action method.",
+          "rawText": "• [ApiVersion] Attribute: Specifies the supported versions for a controller or action method.",
+          "x": 90.024,
+          "y": 213.14,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f4"
+        },
+        {
+          "text": "   • Routes: Define versioned routes to access different API versions.",
+          "rawText": "• Routes: Define versioned routes to access different API versions.",
+          "x": 90.024,
+          "y": 190.58,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f4"
+        },
+        {
+          "text": "   • Version Readers: Methods to extract version information from request headers, URLs, or",
+          "rawText": "• Version Readers: Methods to extract version information from request headers, URLs, or",
+          "x": 90.024,
+          "y": 168.14,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f4"
+        },
+        {
+          "text": "      query strings.",
+          "rawText": "query strings.",
+          "x": 108.02,
+          "y": 153.62,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "prose",
+          "page": 11,
+          "lines": [
+            "Example of Query String Versioning:"
+          ],
+          "text": "Example of Query String Versioning:"
+        },
+        {
+          "type": "code",
+          "page": 11,
+          "lines": [
+            "public void ConfigureServices(IServiceCollection services)",
+            "{",
+            "  services.AddApiVersioning(options =>",
+            "  {",
+            "   options.ApiVersionReader = new QueryStringApiVersionReader(\"api-version\"); // Read version"
+          ],
+          "text": "public void ConfigureServices(IServiceCollection services)\n{\n  services.AddApiVersioning(options =>\n  {\n   options.ApiVersionReader = new QueryStringApiVersionReader(\"api-version\"); // Read version"
+        },
+        {
+          "type": "prose",
+          "page": 11,
+          "lines": [
+            "from query string",
+            "  });"
+          ],
+          "text": "from query string\n  });"
+        },
+        {
+          "type": "code",
+          "page": 11,
+          "lines": [
+            "}",
+            "[ApiController]",
+            "[Route(\"api/products\")]",
+            "public class ProductsController : ControllerBase",
+            "{",
+            "  [HttpGet]",
+            "  public IActionResult Get()",
+            "  {",
+            "   // Handle request for the specified API version",
+            "   return Ok(\"API Versioned via Query String\");",
+            "  }",
+            "}"
+          ],
+          "text": "}\n[ApiController]\n[Route(\"api/products\")]\npublic class ProductsController : ControllerBase\n{\n  [HttpGet]\n  public IActionResult Get()\n  {\n   // Handle request for the specified API version\n   return Ok(\"API Versioned via Query String\");\n  }\n}"
+        },
+        {
+          "type": "prose",
+          "page": 11,
+          "lines": [
+            "Detailed Explanation of Code"
+          ],
+          "text": "Detailed Explanation of Code"
+        },
+        {
+          "type": "list_item",
+          "page": 11,
+          "lines": [
+            "   • AddApiVersioning: Configures API versioning services, including options for default version,"
+          ],
+          "text": "   • AddApiVersioning: Configures API versioning services, including options for default version,"
+        },
+        {
+          "type": "prose",
+          "page": 11,
+          "lines": [
+            "      version reporting, and version readers."
+          ],
+          "text": "      version reporting, and version readers."
+        },
+        {
+          "type": "list_item",
+          "page": 11,
+          "lines": [
+            "   • [ApiVersion] Attribute: Specifies the supported versions for a controller or action method."
+          ],
+          "text": "   • [ApiVersion] Attribute: Specifies the supported versions for a controller or action method."
+        },
+        {
+          "type": "list_item",
+          "page": 11,
+          "lines": [
+            "   • Routes: Define versioned routes to access different API versions."
+          ],
+          "text": "   • Routes: Define versioned routes to access different API versions."
+        },
+        {
+          "type": "list_item",
+          "page": 11,
+          "lines": [
+            "   • Version Readers: Methods to extract version information from request headers, URLs, or"
+          ],
+          "text": "   • Version Readers: Methods to extract version information from request headers, URLs, or"
+        },
+        {
+          "type": "prose",
+          "page": 11,
+          "lines": [
+            "      query strings."
+          ],
+          "text": "      query strings."
+        }
+      ],
+      "char_count_raw": 908,
+      "char_count_repaired": 954
+    },
+    {
+      "page_number": 12,
+      "raw_text": "Example Request with Postman:\n• Set the api-version header or use versioned URLs to test different API versions.\nKey Points to Remember\n1. API Versioning: Allows multiple versions of an API to coexist and ensures backward\ncompatibility.\n2. New Package: Use Asp.Versioning.Mvc instead of the deprecated\nMicrosoft.AspNetCore.Mvc.Versioning.\n3. Configuration: Set up API versioning in Program.cs using AddApiVersioning.\n4. Versioning Methods: Use header, URL segment, or query string methods to handle API\nversions.\n5. Testing: Validate versioning using tools like Postman or curl to ensure proper version\nhandling.\n",
+      "repaired_text": "Example Request with Postman:\n   • Set the api-version header or use versioned URLs to test different API versions.\nKey Points to Remember\n   1. API Versioning: Allows multiple versions of an API to coexist and ensures backward\n      compatibility.\n   2. New Package: Use Asp.Versioning.Mvc instead of the deprecated\n      Microsoft.AspNetCore.Mvc.Versioning.\n   3. Configuration: Set up API versioning in Program.cs using AddApiVersioning.\n   4. Versioning Methods: Use header, URL segment, or query string methods to handle API\n      versions.\n   5. Testing: Validate versioning using tools like Postman or curl to ensure proper version\n      handling.",
+      "lines": [
+        {
+          "text": "Example Request with Postman:",
+          "rawText": "Example Request with Postman:",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "   • Set the api-version header or use versioned URLs to test different API versions.",
+          "rawText": "• Set the api-version header or use versioned URLs to test different API versions.",
+          "x": 90.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f4"
+        },
+        {
+          "text": "Key Points to Remember",
+          "rawText": "Key Points to Remember",
+          "x": 72.024,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f3"
+        },
+        {
+          "text": "   1. API Versioning: Allows multiple versions of an API to coexist and ensures backward",
+          "rawText": "1. API Versioning: Allows multiple versions of an API to coexist and ensures backward",
+          "x": 90.024,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "      compatibility.",
+          "rawText": "compatibility.",
+          "x": 108.02,
+          "y": 632.5,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   2. New Package: Use Asp.Versioning.Mvc instead of the deprecated",
+          "rawText": "2. New Package: Use Asp.Versioning.Mvc instead of the deprecated",
+          "x": 90.024,
+          "y": 610.06,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "      Microsoft.AspNetCore.Mvc.Versioning.",
+          "rawText": "Microsoft.AspNetCore.Mvc.Versioning.",
+          "x": 108.02,
+          "y": 595.54,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   3. Configuration: Set up API versioning in Program.cs using AddApiVersioning.",
+          "rawText": "3. Configuration: Set up API versioning in Program.cs using AddApiVersioning.",
+          "x": 90.024,
+          "y": 573.07,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   4. Versioning Methods: Use header, URL segment, or query string methods to handle API",
+          "rawText": "4. Versioning Methods: Use header, URL segment, or query string methods to handle API",
+          "x": 90.024,
+          "y": 550.51,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "      versions.",
+          "rawText": "versions.",
+          "x": 108.02,
+          "y": 535.99,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "   5. Testing: Validate versioning using tools like Postman or curl to ensure proper version",
+          "rawText": "5. Testing: Validate versioning using tools like Postman or curl to ensure proper version",
+          "x": 90.024,
+          "y": 513.55,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        },
+        {
+          "text": "      handling.",
+          "rawText": "handling.",
+          "x": 108.02,
+          "y": 499.03,
+          "fontSize": 11.04,
+          "fontName": "g_d52_f2"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "prose",
+          "page": 12,
+          "lines": [
+            "Example Request with Postman:"
+          ],
+          "text": "Example Request with Postman:"
+        },
+        {
+          "type": "list_item",
+          "page": 12,
+          "lines": [
+            "   • Set the api-version header or use versioned URLs to test different API versions."
+          ],
+          "text": "   • Set the api-version header or use versioned URLs to test different API versions."
+        },
+        {
+          "type": "heading",
+          "page": 12,
+          "lines": [
+            "Key Points to Remember"
+          ],
+          "text": "Key Points to Remember"
+        },
+        {
+          "type": "list_item",
+          "page": 12,
+          "lines": [
+            "   1. API Versioning: Allows multiple versions of an API to coexist and ensures backward"
+          ],
+          "text": "   1. API Versioning: Allows multiple versions of an API to coexist and ensures backward"
+        },
+        {
+          "type": "prose",
+          "page": 12,
+          "lines": [
+            "      compatibility."
+          ],
+          "text": "      compatibility."
+        },
+        {
+          "type": "heading",
+          "page": 12,
+          "lines": [
+            "2. New Package: Use Asp.Versioning.Mvc instead of the deprecated"
+          ],
+          "text": "2. New Package: Use Asp.Versioning.Mvc instead of the deprecated"
+        },
+        {
+          "type": "prose",
+          "page": 12,
+          "lines": [
+            "      Microsoft.AspNetCore.Mvc.Versioning."
+          ],
+          "text": "      Microsoft.AspNetCore.Mvc.Versioning."
+        },
+        {
+          "type": "list_item",
+          "page": 12,
+          "lines": [
+            "   3. Configuration: Set up API versioning in Program.cs using AddApiVersioning."
+          ],
+          "text": "   3. Configuration: Set up API versioning in Program.cs using AddApiVersioning."
+        },
+        {
+          "type": "list_item",
+          "page": 12,
+          "lines": [
+            "   4. Versioning Methods: Use header, URL segment, or query string methods to handle API"
+          ],
+          "text": "   4. Versioning Methods: Use header, URL segment, or query string methods to handle API"
+        },
+        {
+          "type": "prose",
+          "page": 12,
+          "lines": [
+            "      versions."
+          ],
+          "text": "      versions."
+        },
+        {
+          "type": "list_item",
+          "page": 12,
+          "lines": [
+            "   5. Testing: Validate versioning using tools like Postman or curl to ensure proper version"
+          ],
+          "text": "   5. Testing: Validate versioning using tools like Postman or curl to ensure proper version"
+        },
+        {
+          "type": "prose",
+          "page": 12,
+          "lines": [
+            "      handling."
+          ],
+          "text": "      handling."
+        }
+      ],
+      "char_count_raw": 613,
+      "char_count_repaired": 654
+    }
+  ],
+  "title": "Swagger"
+}

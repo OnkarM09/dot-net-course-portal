@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 02: Getting Started — ASP.NET Core Masterclass</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="alternate icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body id="top">
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  
+  <!-- Top Navigation Header -->
+  <header class="top-header" role="banner">
+    <div class="header-left">
+      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">☰</button>
+      <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+        <span class="sidebar-toggle-text">« Collapse</span>
+      </button>
+      <a href="../index.html" class="brand-link" aria-label="ASP.NET Core Masterclass Documentation Portal">
+        <span class="brand-icon" style="background: linear-gradient(135deg, #38bdf8, #6366f1); color: #0b0f19; font-weight: 900; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem;">.NET</span>
+        <span class="brand-text">ASP.NET Core Masterclass</span>
+      </a>
+      <span class="version-pill">.NET 8 / LTS</span>
+    </div>
+
+    <div class="header-right">
+      <a href="../index.html" class="index-home-btn" title="Back to Curriculum Dashboard">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span class="home-text">Course Index</span>
+      </a>
+
+      <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-text">Search topics, syntax, concepts...</span>
+        <kbd class="kbd-shortcut">Ctrl+K</kbd>
+      </button>
+
+      <button class="theme-toggle-btn" aria-label="Toggle dark/light theme" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle></svg>
+      </button>
+    </div>
+  </header>
+  
+
+  <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+  <!-- Documentation Layout -->
+  <div class="docs-wrapper">
+    
+    <aside class="docs-sidebar" aria-label="Course Navigation">
+      <div class="sidebar-top-bar">
+        <span class="sidebar-top-title">Curriculum</span>
+        <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" title="Collapse Sidebar" aria-label="Collapse Navigation Sidebar" type="button">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg>
+          <span>Collapse</span>
+        </button>
+      </div>
+
+      <div class="sidebar-search-box">
+        <input type="text" class="sidebar-filter-input" placeholder="Filter sections..." aria-label="Filter sidebar sections" />
+      </div>
+
+      <div style="margin-bottom: 1rem;">
+        <a href="../index.html" class="sidebar-link" style="color: var(--accent-primary); font-weight: 600;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Return to Dashboard</span>
+        </a>
+      </div>
+  
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 1: Foundations, HTTP, Middleware &amp; Routing</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">5</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-01.html" class="sidebar-link">
+            <span class="sidebar-sec-num">01</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Introduction</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-02.html" class="sidebar-link active" aria-current="page">
+            <span class="sidebar-sec-num">02</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Getting Started</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-03.html" class="sidebar-link">
+            <span class="sidebar-sec-num">03</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">HTTP</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-04.html" class="sidebar-link">
+            <span class="sidebar-sec-num">04</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Middleware</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-05.html" class="sidebar-link">
+            <span class="sidebar-sec-num">05</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Routing</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 2: Controllers, Model Binding &amp; Validation</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-06.html" class="sidebar-link">
+            <span class="sidebar-sec-num">06</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Controllers &amp; IActionResult</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-07.html" class="sidebar-link">
+            <span class="sidebar-sec-num">07</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Model Binding and Validations</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 3: Razor Views, Partial Views, View Components &amp; Tag Helpers</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">5</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-08.html" class="sidebar-link">
+            <span class="sidebar-sec-num">08</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Razor Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-09.html" class="sidebar-link">
+            <span class="sidebar-sec-num">09</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Layout Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-10.html" class="sidebar-link">
+            <span class="sidebar-sec-num">10</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Partial Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-11.html" class="sidebar-link">
+            <span class="sidebar-sec-num">11</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">View Components</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-17.html" class="sidebar-link">
+            <span class="sidebar-sec-num">17</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Tag Helpers</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 4: Dependency Injection, Environments &amp; Configuration</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-12.html" class="sidebar-link">
+            <span class="sidebar-sec-num">12</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Dependency Injection</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-13.html" class="sidebar-link">
+            <span class="sidebar-sec-num">13</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Environments</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-14.html" class="sidebar-link">
+            <span class="sidebar-sec-num">14</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Configuration</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-15.html" class="sidebar-link">
+            <span class="sidebar-sec-num">15</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">xUnit</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-16.html" class="sidebar-link">
+            <span class="sidebar-sec-num">16</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">CRUD Operations</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-18.html" class="sidebar-link">
+            <span class="sidebar-sec-num">18</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">EntityFrameworkCore</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-19.html" class="sidebar-link">
+            <span class="sidebar-sec-num">19</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Unit Testing - Advanced</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-20.html" class="sidebar-link">
+            <span class="sidebar-sec-num">20</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Logging</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-21.html" class="sidebar-link">
+            <span class="sidebar-sec-num">21</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Filters</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-22.html" class="sidebar-link">
+            <span class="sidebar-sec-num">22</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Error Handling</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-23.html" class="sidebar-link">
+            <span class="sidebar-sec-num">23</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">SOLID Principles</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-24.html" class="sidebar-link">
+            <span class="sidebar-sec-num">24</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Clean Architecture</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-25.html" class="sidebar-link">
+            <span class="sidebar-sec-num">25</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Identity and Authorization</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-26.html" class="sidebar-link">
+            <span class="sidebar-sec-num">26</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Web API</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-27.html" class="sidebar-link">
+            <span class="sidebar-sec-num">27</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Swagger</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-28.html" class="sidebar-link">
+            <span class="sidebar-sec-num">28</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Angular and CORS</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-29.html" class="sidebar-link">
+            <span class="sidebar-sec-num">29</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">JWT with Web API</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-30.html" class="sidebar-link">
+            <span class="sidebar-sec-num">30</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Minimal API</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content Container -->
+    <main class="docs-main-container" id="main-content" tabindex="-1">
+      <!-- Floating Expand Button when Sidebar is Collapsed -->
+      <button class="expand-sidebar-pill" id="expandSidebarPill" title="Expand Sidebar" aria-label="Expand Sidebar" type="button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg>
+        <span>» Expand Sidebar</span>
+      </button>
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
+        <a href="../index.html">Course Index</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span>Module 1</span>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span style="color: var(--text-main); font-weight: 600;">Section 02</span>
+      </nav>
+
+      <!-- Section Banner Header -->
+      <header class="section-banner">
+        <div class="section-meta-row">
+          <span class="module-badge">Module 1</span>
+          <span class="read-time-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            12 PDF Pages
+          </span>
+          <span class="tag-pill">ASP.NET Core</span>
+          <span class="tag-pill">.NET 8</span>
+          <span class="tag-pill" style="border-color: var(--accent-primary); color: var(--accent-primary);">Includes Cheat Sheet</span>
+        </div>
+        <h1>Section 02: Getting Started</h1>
+        <p class="section-description">
+          Authentic study and reference notes extracted directly from original masterclass course materials.
+        </p>
+      </header>
+
+      <!-- Body Content -->
+      <article class="docs-content">
+        
+<h2 id="installing-visual-studio-community-and-logging-in">Installing Visual Studio Community and Logging In</h2>
+<ul>
+  <li>1. Download Visual Studio Community:</li>
+  <li>o Go to Visual Studio Downloads.</li>
+  <li>o Click on the &quot;Free Download&quot; button for Visual Studio Community.</li>
+  <li>2. Install Visual Studio Community:</li>
+  <li>o Run the downloaded installer.</li>
+  <li>o Choose the required workloads (for ASP.NET Core development, select &quot;.NET</li>
+</ul>
+<p>desktop development&quot; and &quot;ASP.NET and web development&quot;).</p>
+<ul>
+  <li>o Click &quot;Install&quot; and wait for the installation to complete.</li>
+  <li>3. Create a New Outlook.com Email:</li>
+  <li>o Go to Outlook Sign Up.</li>
+  <li>o Click on &quot;Create free account.&quot;</li>
+  <li>o Follow the prompts to set up a new email address.</li>
+  <li>4. Log In to Visual Studio:</li>
+  <li>o Open Visual Studio Community.</li>
+  <li>o If prompted, click &quot;Sign In.&quot;</li>
+  <li>o Enter your new Outlook.com email and password.</li>
+  <li>o Complete any additional sign-in steps if required.</li>
+</ul>
+
+<h2 id="common-settings-in-visual-studio">Common Settings in Visual Studio</h2>
+<ul>
+  <li>1. Editor Font:</li>
+  <li>o Go to Tools &gt; Options.</li>
+  <li>o Navigate to Environment &gt; Fonts and Colors.</li>
+  <li>o Select Text Editor from the &quot;Show settings for&quot; dropdown.</li>
+  <li>o Choose your desired font and size from the list.</li>
+  <li>2. Theme:</li>
+  <li>o Go to Tools &gt; Options.</li>
+  <li>o Navigate to Environment &gt; General.</li>
+  <li>o Select your preferred theme from the &quot;Color theme&quot; dropdown (e.g., Dark, Light,</li>
+</ul>
+<p>Blue).</p>
+<ul>
+  <li>3. Word Wrap:</li>
+  <li>o Go to Tools &gt; Options.</li>
+  <li>o Navigate to Text Editor &gt; All Languages.</li>
+  <li>o Check the box for Word wrap.</li>
+</ul>
+<p>These steps should get you started with Visual Studio Community and help you configure the
+environment to suit your preferences.
+Creating a New ASP.NET Core Empty Project</p>
+<ul>
+  <li>1. Open Visual Studio Community:</li>
+  <li>o Launch Visual Studio.</li>
+  <li>2. Create a New Project:</li>
+  <li>o Click on Create a new project.</li>
+  <li>3. Select Project Template:</li>
+  <li>o In the search box, type &quot;ASP.NET Core Empty&quot;.</li>
+  <li>o Select ASP.NET Core Empty and click Next.</li>
+  <li>4. Configure Your New Project:</li>
+  <li>o Enter the project name (e.g., &quot;MyFirstApp&quot;).</li>
+  <li>o Choose a location to save your project.</li>
+  <li>o Click Next.</li>
+  <li>5. Additional Information:</li>
+  <li>o Ensure .NET 7.0 (or the latest version) is selected.</li>
+  <li>o Uncheck Configure for HTTPS.</li>
+  <li>o Uncheck Enable Docker.</li>
+  <li>o Click Create.</li>
+</ul>
+
+<h2 id="explanation-of-the-code-in-detail">Explanation of the Code in Detail</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+app.MapGet(&quot;/&quot;, () =&gt; &quot;Hello World!&quot;);
+app.Run();
+   1. var builder = WebApplication.CreateBuilder(args);</code></pre>
+    </div>
+  <p>o Purpose: Initializes a new instance of the WebApplicationBuilder class.</p>
+<ul>
+  <li>o Details:</li>
+</ul>
+<p>▪ WebApplication.CreateBuilder(args):
+                   ▪ CreateBuilder is a static method that initializes a
+                      WebApplicationBuilder instance.
+                   ▪ args represents command-line arguments passed to the application.
+                   ▪ The builder sets up the default configuration, logging, and
+                      dependency injection (DI) services.
+              ▪ Configuration:
+                   ▪ Reads configuration settings from various sources (e.g.,
+                      appsettings.json, environment variables).
+              ▪ Logging:
+                   ▪ Configures default logging services.
+              ▪ Dependency Injection:
+                   ▪ Registers services to be used by the application via DI.</p>
+<ul>
+  <li>2. var app = builder.Build();</li>
+  <li>o Purpose: Builds the WebApplication instance.</li>
+  <li>o Details:</li>
+</ul>
+<p>▪ builder.Build():
+                   ▪ Finalizes the app&#39;s configuration and prepares it for running.
+                   ▪ Compiles all middleware components added during the build
+                      process.
+                   ▪ Creates the WebApplication object that will handle HTTP requests.</p>
+<ul>
+  <li>3. app.MapGet(&quot;/&quot;, () =&gt; &quot;Hello World!&quot;);</li>
+  <li>o Purpose: Sets up a route that maps HTTP GET requests to a specific path (in this</li>
+</ul>
+<p>case, the root URL).</p>
+<ul>
+  <li>o Details:</li>
+</ul>
+<p>▪ app.MapGet:
+                   ▪ A convenience method to define a route that matches GET requests.
+                   ▪ &quot;/&quot; specifies the root URL path.
+                   ▪ () =&gt; &quot;Hello World!&quot; is a lambda expression that defines the
+                      response to be returned when the route is accessed.
+                   ▪ The lambda returns a plain string &quot;Hello World!&quot; which is sent as the
+                      HTTP response body.</p>
+<ul>
+  <li>4. app.Run();</li>
+  <li>o Purpose: Runs the application.</li>
+  <li>o Details:</li>
+</ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">▪ app.Run():</code></pre>
+    </div>
+  <p>▪ Starts the Kestrel web server (or the configured server) and begins
+                      listening for incoming HTTP requests.
+                   ▪ This is a blocking call that keeps the application running until it is
+                      manually stopped (e.g., via Ctrl+C in the console).
+                   ▪ The application is now live and will respond to requests based on
+                      the configured routes and middleware.</p>
+
+<h2 id="summary">Summary</h2>
+<ul>
+  <li>• The code creates and configures a minimal ASP.NET Core web application.</li>
+  <li>• WebApplication.CreateBuilder(args) sets up the application with default settings.</li>
+  <li>• builder.Build() finalizes the configuration and prepares the application.</li>
+  <li>• app.MapGet(&quot;/&quot;, () =&gt; &quot;Hello World!&quot;) maps a GET request to the root URL and returns</li>
+</ul>
+<p>&quot;Hello World!&quot; as a response.</p>
+<ul>
+  <li>• app.Run() starts the web server and runs the application, ready to handle incoming requests.</li>
+</ul>
+
+<h2 id="kestrel-server-and-reverse-proxy-servers">Kestrel Server and Reverse Proxy Servers</h2>
+
+<h2 id="kestrel-server">Kestrel Server</h2>
+<p>Overview:</p>
+<ul>
+  <li>• Kestrel is the cross-platform web server for ASP.NET Core.</li>
+  <li>• It is lightweight and suitable for serving dynamic content.</li>
+</ul>
+<p>Responsibilities:</p>
+<ul>
+  <li>• HTTP Requests Handling: Handles incoming HTTP requests and responses.</li>
+  <li>• Hosting: Hosts the ASP.NET Core application.</li>
+  <li>• Configuration: Supports various configurations such as HTTP/2, HTTPS, etc.</li>
+</ul>
+<p>Use Case:</p>
+<ul>
+  <li>• Ideal for development and internal networks.</li>
+  <li>• Typically used in conjunction with a reverse proxy for production environments.</li>
+</ul>
+
+<h2 id="reverse-proxy-servers">Reverse Proxy Servers</h2>
+<p>Overview:</p>
+<ul>
+  <li>• A reverse proxy server forwards client requests to backend servers and returns the</li>
+</ul>
+<p>responses to the clients.</p>
+<ul>
+  <li>• Common reverse proxy servers include Nginx, Apache, and IIS.</li>
+</ul>
+<p>Responsibilities:</p>
+<ul>
+  <li>• Load Balancing: Distributes incoming requests across multiple servers.</li>
+  <li>• SSL Termination: Handles SSL/TLS encryption and decryption.</li>
+  <li>• Caching: Caches responses to improve performance.</li>
+  <li>• Security: Provides additional security features like request filtering, IP whitelisting, and rate</li>
+</ul>
+<p>limiting.
+Use Case:</p>
+<ul>
+  <li>• Used in front of Kestrel to enhance security, load balancing, and other enterprise-level</li>
+</ul>
+<p>requirements.</p>
+
+<h2 id="responsibilities-of-kestrel-and-reverse-proxy-servers">Responsibilities of Kestrel and Reverse Proxy Servers</h2>
+<p>Kestrel:</p>
+<ul>
+  <li>• Serves HTTP requests directly.</li>
+  <li>• Provides efficient request processing.</li>
+  <li>• Should be used behind a reverse proxy for additional security and stability.</li>
+</ul>
+<p>Reverse Proxy:</p>
+<ul>
+  <li>• Acts as an intermediary between clients and Kestrel.</li>
+  <li>• Provides SSL termination, load balancing, and security features.</li>
+  <li>• Enhances the overall performance and security of the application.</li>
+</ul>
+<p>Explanation of ASP.NET Core Logs</p>
+
+<h2 id="1-application-start-log-listening-on-port">1. Application Start Log: Listening on Port</h2>
+<p>info: Microsoft.Hosting.Lifetime[14]
+  Now listening on: http://localhost:5117</p>
+<ul>
+  <li>• Category: Microsoft.Hosting.Lifetime</li>
+  <li>• Event ID: 14</li>
+  <li>• Message: Now listening on: http://localhost:5117</li>
+  <li>• Explanation:</li>
+  <li>o Indicates that the Kestrel server is now running and ready to accept HTTP requests</li>
+</ul>
+<p>on the specified URL and port (http://localhost:5117).</p>
+<ul>
+  <li>o This log is crucial for knowing where your application is accessible.</li>
+</ul>
+
+<h2 id="2-application-started-log">2. Application Started Log</h2>
+<p>info: Microsoft.Hosting.Lifetime[0]
+  Application started. Press Ctrl+C to shut down.</p>
+<ul>
+  <li>• Category: Microsoft.Hosting.Lifetime</li>
+  <li>• Event ID: 0</li>
+  <li>• Message: Application started. Press Ctrl+C to shut down.</li>
+  <li>• Explanation:</li>
+  <li>o Confirms that the ASP.NET Core application has successfully started.</li>
+  <li>o Provides instructions for gracefully shutting down the application by pressing Ctrl+C</li>
+</ul>
+<p>in the terminal or command prompt where the application is running.</p>
+
+<h2 id="3-hosting-environment-log">3. Hosting Environment Log</h2>
+<p>info: Microsoft.Hosting.Lifetime[0]
+  Hosting environment: Development</p>
+<ul>
+  <li>• Category: Microsoft.Hosting.Lifetime</li>
+  <li>• Event ID: 0</li>
+  <li>• Message: Hosting environment: Development</li>
+  <li>• Explanation:</li>
+  <li>o Specifies the current hosting environment of the application (in this case,</li>
+</ul>
+<p>Development).</p>
+<ul>
+  <li>o The hosting environment can be Development, Staging, or Production, which affects</li>
+</ul>
+<p>how the application behaves, particularly in terms of logging, error handling, and
+           configuration settings.</p>
+
+<h2 id="4-content-root-path-log">4. Content Root Path Log</h2>
+<p>info: Microsoft.Hosting.Lifetime[0]
+  Content root path: c:\code\temp\MyFirstApp\MyFirstApp</p>
+<ul>
+  <li>• Category: Microsoft.Hosting.Lifetime</li>
+  <li>• Event ID: 0</li>
+  <li>• Message: Content root path: c:\code\temp\MyFirstApp\MyFirstApp</li>
+  <li>• Explanation:</li>
+  <li>o Indicates the content root path of the application, which is the base path where the</li>
+</ul>
+<p>application’s content files are located.</p>
+<ul>
+  <li>o This path is used to locate static files, views, and other content.</li>
+  <li>o It helps in understanding where the application’s files are located in the file system.</li>
+</ul>
+
+<h2 id="summary-1">Summary</h2>
+<ul>
+  <li>• Now listening on: Informs you where the application is accessible.</li>
+  <li>• Application started: Confirms the successful start of the application and how to shut it</li>
+</ul>
+<p>down.</p>
+<ul>
+  <li>• Hosting environment: Indicates the environment (Development, Staging, Production) the</li>
+</ul>
+<p>application is running in.</p>
+<ul>
+  <li>• Content root path: Shows the base path for the application&#39;s content files.</li>
+</ul>
+<p>These logs provide critical information about the state and configuration of your ASP.NET Core
+application, aiding in monitoring and troubleshooting.
+Detailed Notes for launchSettings.json
+launchSettings.json is a configuration file in ASP.NET Core projects used to define settings for how
+the application is launched during development. This includes settings for different environments,
+URLs, and other debugging options.
+Structure of launchSettings.json</p>
+<ul>
+  <li>1. $schema</li>
+  <li>o Specifies the schema URL for launchSettings.json, which helps with validation and</li>
+</ul>
+<p>IntelliSense support in IDEs like Visual Studio.
+&quot;$schema&quot;: &quot;http://json.schemastore.org/launchsettings.json&quot;</p>
+<ul>
+  <li>2. iisSettings</li>
+  <li>o Configures settings specifically for IIS Express, a lightweight, self-contained version</li>
+</ul>
+<p>of IIS optimized for developers.
+   &quot;iisSettings&quot;: {
+    &quot;windowsAuthentication&quot;: false,
+    &quot;anonymousAuthentication&quot;: true,
+    &quot;iisExpress&quot;: {
+    &quot;applicationUrl&quot;: &quot;http://localhost:19872&quot;,
+    &quot;sslPort&quot;: 0</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+  <ul>
+  <li>o windowsAuthentication: Enables or disables Windows Authentication.</li>
+  <li>o anonymousAuthentication: Enables or disables Anonymous Authentication.</li>
+  <li>o iisExpress:</li>
+</ul>
+<p>▪ applicationUrl: The URL for the application when using IIS Express.
+              ▪ sslPort: The port number for HTTPS. If 0, HTTPS is disabled.</p>
+<ul>
+  <li>3. profiles</li>
+  <li>o Defines different profiles for launching the application. Each profile can have unique</li>
+</ul>
+<p>settings.
+   &quot;profiles&quot;: {
+    &quot;http&quot;: {
+    &quot;commandName&quot;: &quot;Project&quot;,
+    &quot;dotnetRunMessages&quot;: true,
+    &quot;launchBrowser&quot;: true,
+    &quot;applicationUrl&quot;: &quot;http://localhost:5117&quot;,
+    &quot;environmentVariables&quot;: {
+     &quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">},
+    &quot;IIS Express&quot;: {</code></pre>
+    </div>
+  <p>&quot;commandName&quot;: &quot;IISExpress&quot;,
+    &quot;launchBrowser&quot;: true,
+    &quot;environmentVariables&quot;: {
+     &quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+  <p>o http profile:
+              ▪ commandName: Specifies how the application should be launched. Project
+                 means it will use dotnet run.
+              ▪ dotnetRunMessages: If true, enables detailed messages from dotnet run.</p>
+<p>▪ launchBrowser: If true, launches the default web browser when the
+                 application starts.
+              ▪ applicationUrl: The URL for the application when launched directly (e.g.,
+                 http://localhost:5117).
+              ▪ environmentVariables: Sets environment variables for the application. Here,
+                 ASPNETCORE_ENVIRONMENT is set to Development.</p>
+<ul>
+  <li>o IIS Express profile:</li>
+</ul>
+<p>▪ commandName: IISExpress means it will launch using IIS Express.
+              ▪ launchBrowser: If true, launches the default web browser when the
+                 application starts.
+              ▪ environmentVariables: Sets environment variables, with
+                 ASPNETCORE_ENVIRONMENT set to Development.
+Example launchSettings.json Code
+jsonCopy code{
+ &quot;$schema&quot;: &quot;http://json.schemastore.org/launchsettings.json&quot;,
+ &quot;iisSettings&quot;: {
+  &quot;windowsAuthentication&quot;: false,
+  &quot;anonymousAuthentication&quot;: true,
+  &quot;iisExpress&quot;: {
+  &quot;applicationUrl&quot;: &quot;http://localhost:19872&quot;,
+  &quot;sslPort&quot;: 0</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">}
+ },
+ &quot;profiles&quot;: {
+  &quot;http&quot;: {</code></pre>
+    </div>
+  <p>&quot;commandName&quot;: &quot;Project&quot;,
+  &quot;dotnetRunMessages&quot;: true,
+  &quot;launchBrowser&quot;: true,
+  &quot;applicationUrl&quot;: &quot;http://localhost:5117&quot;,
+  &quot;environmentVariables&quot;: {
+   &quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">},
+  &quot;IIS Express&quot;: {</code></pre>
+    </div>
+  <p>&quot;commandName&quot;: &quot;IISExpress&quot;,
+  &quot;launchBrowser&quot;: true,
+  &quot;environmentVariables&quot;: {
+   &quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+  <p>Explanation of the Example</p>
+<ul>
+  <li>1. $schema</li>
+  <li>o Provides IntelliSense and validation for the file.</li>
+  <li>2. iisSettings</li>
+  <li>o windowsAuthentication: Disabled.</li>
+  <li>o anonymousAuthentication: Enabled.</li>
+  <li>o iisExpress:</li>
+</ul>
+<p>▪ applicationUrl: The application is accessible at http://localhost:19872.
+              ▪ sslPort: HTTPS is disabled (sslPort is 0).</p>
+<ul>
+  <li>3. profiles</li>
+  <li>o http profile:</li>
+</ul>
+<p>▪ Launches using the dotnet run command.
+              ▪ Shows detailed dotnet run messages.
+              ▪ Launches the default web browser automatically.
+              ▪ Application URL is http://localhost:5117.
+              ▪ Sets ASPNETCORE_ENVIRONMENT to Development.</p>
+<ul>
+  <li>o IIS Express profile:</li>
+</ul>
+<p>▪ Launches using IIS Express.</p>
+<p>▪ Launches the default web browser automatically.
+              ▪ Sets ASPNETCORE_ENVIRONMENT to Development.</p>
+
+<h2 id="summary-2">Summary</h2>
+<ul>
+  <li>• launchSettings.json configures how an ASP.NET Core application is launched during</li>
+</ul>
+<p>development.</p>
+<ul>
+  <li>• It can define multiple profiles, each with its own settings for URLs, environment variables,</li>
+</ul>
+<p>and launch options.</p>
+<ul>
+  <li>• The iisSettings section configures IIS Express settings, while the profiles section defines</li>
+</ul>
+<p>different launch profiles for the application.</p>
+
+<hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
+<section class="cheatsheet-section" aria-labelledby="cheat-sheet-quick-reference">
+  <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
+  <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
+  <p>Section 2 – Getting Started – Cheat Sheet</p>
+  <h3 id="kestrel-and-other-servers">Kestrel and Other Servers</h3>
+  <h3 id="application-servers">Application Servers</h3>
+  <ul>
+    <li>• Kestrel</li>
+  </ul>
+  <h3 id="reverse-proxy-servers-1">Reverse Proxy Servers</h3>
+  <ul>
+    <li>• IIS</li>
+    <li>• Nginx</li>
+    <li>• Apache</li>
+  </ul>
+  <h3 id="benefits-of-reverse-proxy-servers">Benefits of Reverse Proxy Servers</h3>
+  <ul>
+    <li>• Load Balancing</li>
+    <li>• Caching</li>
+    <li>• URL Rewriting</li>
+    <li>• Decompressing the requests</li>
+    <li>• Authentication</li>
+    <li>• Decryption of SSL Certificates</li>
+  </ul>
+  <h3 id="iis-express">IIS express</h3>
+  <ul>
+    <li>• HTTP access logs</li>
+    <li>• Port sharing</li>
+    <li>• Windows authentication</li>
+    <li>• Management console</li>
+    <li>• Process activation</li>
+    <li>• Configuration API</li>
+    <li>• Request filters</li>
+    <li>• HTTP redirect rules</li>
+  </ul>
+</section>
+
+      </article>
+
+      <!-- Completion Toggle Control -->
+      <div class="completion-container">
+        <div>
+          <strong style="color: var(--text-main); font-size: 0.95rem;">Section Progress</strong>
+          <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">Mark this section complete to record your learning progress locally.</p>
+        </div>
+        <button class="mark-complete-btn" id="markCompleteBtn" type="button" aria-pressed="false" aria-label="Mark Section Complete">
+          <svg class="complete-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span class="complete-text">Mark Section Complete</span>
+        </button>
+      </div>
+
+      <!-- Bottom Navigation Prev / Next -->
+      <nav class="bottom-nav" aria-label="Previous and Next Section Navigation">
+        
+      <a href="section-01.html" class="nav-card prev" aria-label="Previous Section: Sec 01 - Introduction">
+        <span class="nav-direction">← Previous Section</span>
+        <span class="nav-title">Sec 01: Introduction</span>
+      </a>
+    
+        
+      <a href="section-03.html" class="nav-card next" aria-label="Next Section: Sec 03 - HTTP">
+        <span class="nav-direction">Next Section →</span>
+        <span class="nav-title">Sec 03: HTTP</span>
+      </a>
+    
+      </nav>
+
+      <!-- Section Footer -->
+      <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); color: var(--text-dim); font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;" role="contentinfo">
+        <span>ASP.NET Core Masterclass — Offline Documentation Portal</span>
+        <a href="#top" style="color: var(--text-muted); text-decoration: none;">↑ Back to top</a>
+      </footer>
+    </main>
+
+    <!-- Right Table of Contents (TOC) -->
+    <aside class="docs-toc" aria-label="Page Table of Contents">
+      <div class="toc-title">On This Page</div>
+      <ul class="toc-list">
+        
+        <li class="toc-item">
+          <a href="#installing-visual-studio-community-and-logging-in" class="toc-link">Installing Visual Studio Community and Logging In</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#common-settings-in-visual-studio" class="toc-link">Common Settings in Visual Studio</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#explanation-of-the-code-in-detail" class="toc-link">Explanation of the Code in Detail</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#summary" class="toc-link">Summary</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#kestrel-server-and-reverse-proxy-servers" class="toc-link">Kestrel Server and Reverse Proxy Servers</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#kestrel-server" class="toc-link">Kestrel Server</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#reverse-proxy-servers" class="toc-link">Reverse Proxy Servers</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#responsibilities-of-kestrel-and-reverse-proxy-servers" class="toc-link">Responsibilities of Kestrel and Reverse Proxy Servers</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#1-application-start-log-listening-on-port" class="toc-link">1. Application Start Log: Listening on Port</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#2-application-started-log" class="toc-link">2. Application Started Log</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#3-hosting-environment-log" class="toc-link">3. Hosting Environment Log</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#4-content-root-path-log" class="toc-link">4. Content Root Path Log</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#summary-1" class="toc-link">Summary</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#summary-2" class="toc-link">Summary</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#cheat-sheet-quick-reference" class="toc-link">Cheat Sheet &amp; Quick Reference</a>
+        </li>
+      
+      </ul>
+    </aside>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/search-index.js"></script>
+  <script src="../assets/js/search-engine.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

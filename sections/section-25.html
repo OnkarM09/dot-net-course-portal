@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 25: Identity and Authorization — ASP.NET Core Masterclass</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="alternate icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body id="top">
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  
+  <!-- Top Navigation Header -->
+  <header class="top-header" role="banner">
+    <div class="header-left">
+      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">☰</button>
+      <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+        <span class="sidebar-toggle-text">« Collapse</span>
+      </button>
+      <a href="../index.html" class="brand-link" aria-label="ASP.NET Core Masterclass Documentation Portal">
+        <span class="brand-icon" style="background: linear-gradient(135deg, #38bdf8, #6366f1); color: #0b0f19; font-weight: 900; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem;">.NET</span>
+        <span class="brand-text">ASP.NET Core Masterclass</span>
+      </a>
+      <span class="version-pill">.NET 8 / LTS</span>
+    </div>
+
+    <div class="header-right">
+      <a href="../index.html" class="index-home-btn" title="Back to Curriculum Dashboard">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span class="home-text">Course Index</span>
+      </a>
+
+      <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-text">Search topics, syntax, concepts...</span>
+        <kbd class="kbd-shortcut">Ctrl+K</kbd>
+      </button>
+
+      <button class="theme-toggle-btn" aria-label="Toggle dark/light theme" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle></svg>
+      </button>
+    </div>
+  </header>
+  
+
+  <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+  <!-- Documentation Layout -->
+  <div class="docs-wrapper">
+    
+    <aside class="docs-sidebar" aria-label="Course Navigation">
+      <div class="sidebar-top-bar">
+        <span class="sidebar-top-title">Curriculum</span>
+        <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" title="Collapse Sidebar" aria-label="Collapse Navigation Sidebar" type="button">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg>
+          <span>Collapse</span>
+        </button>
+      </div>
+
+      <div class="sidebar-search-box">
+        <input type="text" class="sidebar-filter-input" placeholder="Filter sections..." aria-label="Filter sidebar sections" />
+      </div>
+
+      <div style="margin-bottom: 1rem;">
+        <a href="../index.html" class="sidebar-link" style="color: var(--accent-primary); font-weight: 600;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Return to Dashboard</span>
+        </a>
+      </div>
+  
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 1: Foundations, HTTP, Middleware &amp; Routing</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">5</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-01.html" class="sidebar-link">
+            <span class="sidebar-sec-num">01</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Introduction</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-02.html" class="sidebar-link">
+            <span class="sidebar-sec-num">02</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Getting Started</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-03.html" class="sidebar-link">
+            <span class="sidebar-sec-num">03</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">HTTP</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-04.html" class="sidebar-link">
+            <span class="sidebar-sec-num">04</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Middleware</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-05.html" class="sidebar-link">
+            <span class="sidebar-sec-num">05</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Routing</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 2: Controllers, Model Binding &amp; Validation</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-06.html" class="sidebar-link">
+            <span class="sidebar-sec-num">06</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Controllers &amp; IActionResult</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-07.html" class="sidebar-link">
+            <span class="sidebar-sec-num">07</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Model Binding and Validations</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 3: Razor Views, Partial Views, View Components &amp; Tag Helpers</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">5</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-08.html" class="sidebar-link">
+            <span class="sidebar-sec-num">08</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Razor Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-09.html" class="sidebar-link">
+            <span class="sidebar-sec-num">09</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Layout Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-10.html" class="sidebar-link">
+            <span class="sidebar-sec-num">10</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Partial Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-11.html" class="sidebar-link">
+            <span class="sidebar-sec-num">11</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">View Components</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-17.html" class="sidebar-link">
+            <span class="sidebar-sec-num">17</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Tag Helpers</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 4: Dependency Injection, Environments &amp; Configuration</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-12.html" class="sidebar-link">
+            <span class="sidebar-sec-num">12</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Dependency Injection</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-13.html" class="sidebar-link">
+            <span class="sidebar-sec-num">13</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Environments</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-14.html" class="sidebar-link">
+            <span class="sidebar-sec-num">14</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Configuration</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-15.html" class="sidebar-link">
+            <span class="sidebar-sec-num">15</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">xUnit</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-16.html" class="sidebar-link">
+            <span class="sidebar-sec-num">16</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">CRUD Operations</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-18.html" class="sidebar-link">
+            <span class="sidebar-sec-num">18</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">EntityFrameworkCore</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-19.html" class="sidebar-link">
+            <span class="sidebar-sec-num">19</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Unit Testing - Advanced</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-20.html" class="sidebar-link">
+            <span class="sidebar-sec-num">20</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Logging</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-21.html" class="sidebar-link">
+            <span class="sidebar-sec-num">21</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Filters</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-22.html" class="sidebar-link">
+            <span class="sidebar-sec-num">22</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Error Handling</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-23.html" class="sidebar-link">
+            <span class="sidebar-sec-num">23</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">SOLID Principles</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-24.html" class="sidebar-link">
+            <span class="sidebar-sec-num">24</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Clean Architecture</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-25.html" class="sidebar-link active" aria-current="page">
+            <span class="sidebar-sec-num">25</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Identity and Authorization</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-26.html" class="sidebar-link">
+            <span class="sidebar-sec-num">26</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Web API</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-27.html" class="sidebar-link">
+            <span class="sidebar-sec-num">27</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Swagger</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-28.html" class="sidebar-link">
+            <span class="sidebar-sec-num">28</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Angular and CORS</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-29.html" class="sidebar-link">
+            <span class="sidebar-sec-num">29</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">JWT with Web API</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-30.html" class="sidebar-link">
+            <span class="sidebar-sec-num">30</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Minimal API</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content Container -->
+    <main class="docs-main-container" id="main-content" tabindex="-1">
+      <!-- Floating Expand Button when Sidebar is Collapsed -->
+      <button class="expand-sidebar-pill" id="expandSidebarPill" title="Expand Sidebar" aria-label="Expand Sidebar" type="button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg>
+        <span>» Expand Sidebar</span>
+      </button>
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
+        <a href="../index.html">Course Index</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span>Module 5</span>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span style="color: var(--text-main); font-weight: 600;">Section 25</span>
+      </nav>
+
+      <!-- Section Banner Header -->
+      <header class="section-banner">
+        <div class="section-meta-row">
+          <span class="module-badge">Module 5</span>
+          <span class="read-time-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            6 PDF Pages
+          </span>
+          <span class="tag-pill">ASP.NET Core</span>
+          <span class="tag-pill">.NET 8</span>
+          <span class="tag-pill" style="border-color: var(--accent-primary); color: var(--accent-primary);">Includes Cheat Sheet</span>
+        </div>
+        <h1>Section 25: Identity and Authorization</h1>
+        <p class="section-description">
+          Authentic study and reference notes extracted directly from original masterclass course materials.
+        </p>
+      </header>
+
+      <!-- Body Content -->
+      <article class="docs-content">
+        <p>ASP.NET Core Identity &amp; Authorization
+ASP.NET Core Identity is a robust and flexible membership system that enables you to add
+authentication and authorization features to your web applications. It provides essential building
+blocks for managing user accounts, passwords, roles, claims, tokens, and more.</p>
+
+<h2 id="purpose-and-when-to-use">Purpose and When to Use</h2>
+<ul>
+  <li>• User Authentication: Verify user identities and control access to protected resources.</li>
+  <li>• User Management: Handle user registration, login, logout, password reset, and profile</li>
+</ul>
+<p>management.</p>
+<ul>
+  <li>• Role-Based Authorization: Restrict access to specific actions or features based on user roles.</li>
+  <li>• Claims-Based Authorization: Make authorization decisions based on claims (attributes)</li>
+</ul>
+<p>associated with a user.</p>
+<ul>
+  <li>• External Login Providers: Integrate with external authentication providers (Google,</li>
+</ul>
+<p>Facebook, etc.).</p>
+<ul>
+  <li>• Two-Factor Authentication (2FA): Add an extra layer of security to your login process.</li>
+</ul>
+
+<h2 id="key-concepts">Key Concepts</h2>
+<ul>
+  <li>• Identity Models:</li>
+  <li>o ApplicationUser: Extends the IdentityUser class to represent your application&#39;s</li>
+</ul>
+<p>users. It can include additional properties like PersonName (in your example).</p>
+<ul>
+  <li>o ApplicationRole: Extends the IdentityRole class to define roles within your</li>
+</ul>
+<p>application.</p>
+<ul>
+  <li>• UserManager&lt;TUser&gt;: A core service for managing user accounts (creating, deleting,</li>
+</ul>
+<p>finding, updating).</p>
+<ul>
+  <li>• SignInManager&lt;TUser&gt;: Handles user sign-in and sign-out operations.</li>
+  <li>• RoleManager&lt;TRole&gt;: Manages roles and their assignments to users.</li>
+</ul>
+
+<h2 id="detailed-code-explanation">Detailed Code Explanation</h2>
+<p>AccountController:</p>
+<ul>
+  <li>• Constructor: The constructor injects the UserManager, SignInManager, and RoleManager</li>
+</ul>
+<p>services.</p>
+<ul>
+  <li>• Register (GET): Displays the registration form.</li>
+  <li>• Register (POST):</li>
+  <li>1. Model Validation: Checks if the submitted RegisterDTO is valid.</li>
+  <li>2. User Creation: Creates an ApplicationUser based on the RegisterDTO data.</li>
+  <li>3. Role Handling:</li>
+</ul>
+<p>▪ Creates the Admin or User role if it doesn&#39;t exist.
+              ▪ Assigns the user to the selected role.</p>
+<ul>
+  <li>4. Sign-In: Signs the user in upon successful registration.</li>
+  <li>5. Redirect: Redirects to the PersonsController.Index action.</li>
+  <li>6. Error Handling: If user creation fails, adds errors to the ModelState and re-renders</li>
+</ul>
+<p>the Register view.</p>
+<ul>
+  <li>• Login (GET): Displays the login form.</li>
+  <li>• Login (POST):</li>
+  <li>1. Model Validation: Checks if the submitted LoginDTO is valid.</li>
+</ul>
+
+<h2 id="2-sign-in-attempt-attempts-to-sign-in-the-user-using">2. Sign-In Attempt: Attempts to sign in the user using</h2>
+<p>_signInManager.PasswordSignInAsync.</p>
+<ul>
+  <li>3. Redirect (if successful):</li>
+</ul>
+<p>▪ Redirects to the Admin area&#39;s Home/Index if the user is an admin.
+              ▪ Redirects to the ReturnUrl (if provided and valid) or to
+                 PersonsController.Index otherwise.</p>
+<ul>
+  <li>4. Error Handling: If sign-in fails, adds an error to the ModelState and re-renders the</li>
+</ul>
+<p>Login view.</p>
+<ul>
+  <li>• Logout:</li>
+  <li>o [Authorize]: Ensures the user is authenticated before accessing this action.</li>
+  <li>o Signs the user out: Uses _signInManager.SignOutAsync.</li>
+  <li>o Redirect: Redirects to PersonsController.Index.</li>
+  <li>• IsEmailAlreadyRegistered:</li>
+  <li>o [AllowAnonymous]: Allows anonymous users to access this action (useful for clientside</li>
+</ul>
+<p>validation).</p>
+<ul>
+  <li>o Checks for Existing User: Uses _userManager.FindByEmailAsync to see if a user with</li>
+</ul>
+<p>the given email already exists.</p>
+<ul>
+  <li>o Returns JSON: Returns true if the email is available (no user found) and false</li>
+</ul>
+<p>otherwise.
+Program.cs:</p>
+<ul>
+  <li>• AddControllersWithViews(): Enables MVC controllers and views.</li>
+  <li>• AddIdentity&lt;ApplicationUser, ApplicationRole&gt;: Configures ASP.NET Core Identity with</li>
+</ul>
+<p>your custom user and role types.</p>
+<ul>
+  <li>o options.Password: Sets password complexity requirements.</li>
+  <li>• AddEntityFrameworkStores&lt;ApplicationDbContext&gt;: Configures EF Core to store Identity</li>
+</ul>
+<p>data in your ApplicationDbContext.</p>
+<ul>
+  <li>• AddDefaultTokenProviders(): Adds default token providers for features like password reset</li>
+</ul>
+<p>and two-factor authentication.</p>
+<ul>
+  <li>• AddUserStore, AddRoleStore: Configures specific stores for user and role data.</li>
+  <li>• AddAuthorization(): Sets up authorization policies.</li>
+  <li>o FallbackPolicy: Default policy applied if no specific policy is specified.</li>
+  <li>o AddPolicy(&quot;NotAuthorized&quot;, ...): Custom policy to allow only unauthenticated users.</li>
+  <li>• ConfigureApplicationCookie(): Customizes the cookie authentication options, setting the</li>
+</ul>
+<p>login path.</p>
+<ul>
+  <li>• AddHttpLogging(): Enables HTTP logging with specified fields.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+  <li>• IdentityUser and IdentityRole: Extend these base classes for your custom user and role</li>
+</ul>
+<p>models.</p>
+<ul>
+  <li>• UserManager, SignInManager, RoleManager: Core services for managing users, sign-in/out,</li>
+</ul>
+<p>and roles.</p>
+<ul>
+  <li>• [Authorize]: Attribute to restrict access to authenticated users.</li>
+  <li>• [AllowAnonymous]: Attribute to allow anonymous access.</li>
+  <li>• Authorization Policies: Use AddAuthorization to define custom policies.</li>
+  <li>• Password Complexity: Configure password requirements in AddIdentity.</li>
+  <li>• Tag Helpers: In views, use tag helpers like asp-controller, asp-action, asp-for, and aspvalidation</li>
+</ul>
+<p>-for.</p>
+<ul>
+  <li>• Client-Side Validation: You can enhance user experience by adding client-side validation</li>
+</ul>
+<p>using JavaScript libraries.</p>
+<ul>
+  <li>• ReturnUrl: Used to redirect users back to their original destination after logging in.</li>
+  <li>• Remote Validation: Allows for server-side validation of user input on the client-side using</li>
+</ul>
+<p>AJAX.</p>
+<ul>
+  <li>• Areas: Organize large applications into logical areas, each with its own set of controllers,</li>
+</ul>
+<p>views, and models.</p>
+<ul>
+  <li>• [Area] Attribute: Use to associate controllers with specific areas.</li>
+  <li>• HTTPS: Enable HTTPS in production for secure communication.</li>
+  <li>• XSRF (Cross-Site Request Forgery) Protection: Use [ValidateAntiForgeryToken] and tag</li>
+</ul>
+<p>helpers in forms to prevent CSRF attacks.</p>
+
+<h2 id="key-points-to-remember">Key Points to Remember</h2>
+<p>ASP.NET Core Identity</p>
+<ul>
+  <li>• Purpose: Robust membership system for user authentication and authorization.</li>
+  <li>• Key Features:</li>
+  <li>o User registration, login, logout</li>
+  <li>o Password management (hashing, reset)</li>
+  <li>o Role-based and claims-based authorization</li>
+  <li>o External login providers (Google, Facebook, etc.)</li>
+  <li>o Two-factor authentication (2FA)</li>
+</ul>
+
+<h2 id="identity-models">Identity Models</h2>
+<ul>
+  <li>• ApplicationUser: Extends IdentityUser to represent your app&#39;s users.</li>
+  <li>• ApplicationRole: Extends IdentityRole to define roles in your app.</li>
+</ul>
+
+<h2 id="key-services">Key Services</h2>
+<ul>
+  <li>• UserManager&lt;TUser&gt;: Manages user accounts (create, delete, find, update).</li>
+  <li>• SignInManager&lt;TUser&gt;: Handles user sign-in and sign-out.</li>
+  <li>• RoleManager&lt;TRole&gt;: Manages roles and their assignments to users.</li>
+</ul>
+
+<h2 id="views-and-controllers">Views and Controllers</h2>
+<ul>
+  <li>• Login and Logout Buttons: Use asp-controller and asp-action tag helpers to create</li>
+</ul>
+<p>login/logout links.</p>
+<ul>
+  <li>• Active Nav Link: Use a custom tag helper or CSS classes to highlight the active navigation</li>
+</ul>
+<p>link.</p>
+<ul>
+  <li>• Remote Validation: Use [Remote] attribute on model properties for server-side validation</li>
+</ul>
+<p>during form input.</p>
+<ul>
+  <li>• Conventional Routing: Use route attributes ([Route]) to define routes for actions like</li>
+</ul>
+<p>Register and Login.</p>
+
+<h2 id="security">Security</h2>
+<ul>
+  <li>• Password Complexity: Configure password requirements in AddIdentity (e.g., length, special</li>
+</ul>
+<p>characters).</p>
+<ul>
+  <li>• Authorization Policies: Use [Authorize] and Authorize(policyName) to protect actions and</li>
+</ul>
+<p>define custom policies.</p>
+<ul>
+  <li>• ReturnUrl: In login forms, use ReturnUrl to redirect users back to their original destination.</li>
+  <li>• HTTPS: Always enable HTTPS in production to encrypt sensitive data.</li>
+  <li>• XSRF (Cross-Site Request Forgery) Protection:</li>
+  <li>o Use [ValidateAntiForgeryToken] in actions and @Html.AntiForgeryToken() in forms</li>
+</ul>
+<p>to prevent CSRF attacks.</p>
+
+<h2 id="additional-concepts">Additional Concepts</h2>
+<ul>
+  <li>• User Roles: Assign users to roles to control access to features.</li>
+  <li>• Areas: Organize large applications into logical areas, each with its own set of controllers and</li>
+</ul>
+<p>views.</p>
+<ul>
+  <li>• Claims-Based Authorization: Make authorization decisions based on claims associated with</li>
+</ul>
+<p>the user.</p>
+
+<h2 id="code-snippets">Code Snippets</h2>
+<ul>
+  <li>• Registering a user:</li>
+</ul>
+<p>ApplicationUser user = new ApplicationUser() { /* ... */ };
+IdentityResult result = await _userManager.CreateAsync(user, registerDTO.Password);</p>
+<ul>
+  <li>• Signing in a user:</li>
+</ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">var result = await _signInManager.PasswordSignInAsync(loginDTO.Email, loginDTO.Password,
+isPersistent: false, lockoutOnFailure: false);</code></pre>
+    </div>
+  <p>• Checking user roles:
+if (await _userManager.IsInRoleAsync(user, &quot;Admin&quot;)) { /* ... */ }</p>
+
+<h2 id="interview-tips">Interview Tips</h2>
+<ul>
+  <li>• Concepts: Explain authentication vs. authorization, role-based vs. claims-based</li>
+</ul>
+<p>authorization.</p>
+<ul>
+  <li>• Implementation: Demonstrate how you would set up user registration, login, and logout.</li>
+  <li>• Security: Emphasize the importance of security best practices (HTTPS, XSRF protection,</li>
+</ul>
+<p>password hashing).</p>
+<ul>
+  <li>• Customization: Discuss how you would customize Identity (e.g., adding user profile fields,</li>
+</ul>
+<p>creating custom authorization policies).</p>
+
+<hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
+<section class="cheatsheet-section" aria-labelledby="cheat-sheet-quick-reference">
+  <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
+  <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
+  <p>Section 25 – Identity, Authorization, Security – Cheat Sheet</p>
+  <h3 id="introduction-to-identity">Introduction to Identity</h3>
+  <p>It is an API that manages users, passwords, profile data, roles, tokens, email confirmation, external
+logins etc.
+It is by default built on top of EntityFrameworkCore; you can also create custom data stores.
+IdentityUser&lt;T&gt;
+Acts as a base class for ApplicationUser class that acts as model class to store user details.
+You can add additional properties to the ApplicationUser class.
+Built-in Properties:</p>
+  <h3 id="1-id">1. Id</h3>
+  <h3 id="2-username">2. UserName</h3>
+  <h3 id="3-passwordhash">3. PasswordHash</h3>
+  <h3 id="4-email">4. Email</h3>
+  <h3 id="5-phonenumber">5. PhoneNumber</h3>
+  <p>IdentityRole&lt;T&gt;
+Acts as a base class for ApplicationRole class that acts as model class to store role details. Eg:
+&quot;admin&quot;
+You can add additional properties to the ApplicationRole class.
+Built-in Properties:</p>
+  <h3 id="1-id-1">1. Id</h3>
+  <h3 id="2-name">2. Name</h3>
+  <h3 id="register-view">Register View</h3>
+  <h3 id="managers">Managers</h3>
+  <h3 id="usermanager">UserManager</h3>
+  <p>Provides business logic methods for managing users.
+It provides methods for creating, searching, updating and deleting users.
+Methods:</p>
+  <ul>
+    <li>• CreateAsync()</li>
+    <li>• DeleteAsync()</li>
+    <li>• UpdateAsync()</li>
+    <li>• IsInRoleAsync()FindByEmailAsync()</li>
+    <li>• FindByIdAsync()</li>
+    <li>• FindByNameAsync()</li>
+  </ul>
+  <h3 id="signinmanager">SignInManager</h3>
+  <p>Provides business logic methods for sign-in and sign-in functionality of the users.
+It provides methods for creating, searching, updating and deleting users.
+Methods:</p>
+  <h3 id="signinasync">SignInAsync()</h3>
+  <h3 id="passwordsigninasync">PasswordSignInAsync()</h3>
+  <h3 id="signoutasync">SignOutAsync()</h3>
+  <h3 id="issignedin">IsSignedIn()</h3>
+  <h3 id="password-complexity-configuration">Password Complexity Configuration</h3>
+  <p>services.AddIdentity&lt;ApplicationUser, ApplicationRole&gt;(options =&gt; {
+ options.Password.RequiredLength = 6; //number of characters required in password
+ options.Password.RequireNonAlphanumeric = true; //is non-alphanumeric characters (symbols)
+required in password
+ options.Password.RequireUppercase = true; //is at least one upper case character required in
+password
+ options.Password.RequireLowercase = true; //is at least one lower case character required in
+password
+ options.Password.RequireDigit = true; //is at least one digit required in password
+ options.Password.RequiredUniqueChars = 1; //number of distinct characters required in password
+})
+.AddEntityFrameworkStores&lt;ApplicationDbContext&gt;()
+.AddDefaultTokenProviders()
+.AddUserStore&lt;UserStore&lt;ApplicationUser, ApplicationRole, ApplicationDbContext, Guid&gt;&gt;()
+.AddRoleStore&lt;RoleStore&lt;ApplicationRole, ApplicationDbContext, Guid&gt;&gt;();</p>
+  <h3 id="loginlogout-buttons">Login/Logout Buttons</h3>
+  <h3 id="login-view">Login View</h3>
+  <h3 id="authorization-policy">Authorization Policy</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">services.AddAuthorization(options =&gt;
+{
+ var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+ options.FallbackPolicy = policy;
+});</code></pre>
+    </div>
+    <h3 id="returnurl">ReturnUrl</h3>
+  <h3 id="remote-validation">Remote Validation</h3>
+  <h3 id="model-class">Model class</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class ModelClassName
+{
+}</code></pre>
+    </div>
+    <p>[Remote(action: &quot;action name&quot;, controller: &quot;controller name&quot;, ErrorMessage = &quot;error message&quot;)]</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public type PropertyName { get; set; }</code></pre>
+    </div>
+    <p>Conventional Routing
+Conventional routing is a type of routing system in asp.net core that defines route templates applied
+on all controllers in the entire application.
+You can override this using attribute routing on a specific action method.
+endpoints.MapControllerRoute(
+ name: &quot;default&quot;,
+ pattern: &quot;{controller=Persons}/{action=Index}/{id?}&quot;
+);</p>
+  <h3 id="areas">Areas</h3>
+  <p>Area is a group of related controllers, views and models that are related to specific module or
+specific user.</p>
+  <h3 id="user-roles">User Roles</h3>
+  <h3 id="role-based-authentication">Role Based Authentication</h3>
+  <p>User-role defines type of the user that has access to specific resources of the application.
+Examples: Administrator role, Customer role etc.</p>
+  <h3 id="https">HTTPS</h3>
+  <h3 id="xsrf">XSRF</h3>
+  <p>XSRF (Cross Site Request Forgery - CSRF) is a process of making a request to a web server from
+another domain, using an existing authentication of the same web server.
+Eg: attacker.com creates a form that sends malicious request to original.com.
+Attacker&#39;s request without AntiForgeryToken
+Attacker&#39;s request</p>
+  <p>Legit request [No attacker.com]</p>
+</section>
+
+      </article>
+
+      <!-- Completion Toggle Control -->
+      <div class="completion-container">
+        <div>
+          <strong style="color: var(--text-main); font-size: 0.95rem;">Section Progress</strong>
+          <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">Mark this section complete to record your learning progress locally.</p>
+        </div>
+        <button class="mark-complete-btn" id="markCompleteBtn" type="button" aria-pressed="false" aria-label="Mark Section Complete">
+          <svg class="complete-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span class="complete-text">Mark Section Complete</span>
+        </button>
+      </div>
+
+      <!-- Bottom Navigation Prev / Next -->
+      <nav class="bottom-nav" aria-label="Previous and Next Section Navigation">
+        
+      <a href="section-24.html" class="nav-card prev" aria-label="Previous Section: Sec 24 - Clean Architecture">
+        <span class="nav-direction">← Previous Section</span>
+        <span class="nav-title">Sec 24: Clean Architecture</span>
+      </a>
+    
+        
+      <a href="section-26.html" class="nav-card next" aria-label="Next Section: Sec 26 - Web API">
+        <span class="nav-direction">Next Section →</span>
+        <span class="nav-title">Sec 26: Web API</span>
+      </a>
+    
+      </nav>
+
+      <!-- Section Footer -->
+      <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); color: var(--text-dim); font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;" role="contentinfo">
+        <span>ASP.NET Core Masterclass — Offline Documentation Portal</span>
+        <a href="#top" style="color: var(--text-muted); text-decoration: none;">↑ Back to top</a>
+      </footer>
+    </main>
+
+    <!-- Right Table of Contents (TOC) -->
+    <aside class="docs-toc" aria-label="Page Table of Contents">
+      <div class="toc-title">On This Page</div>
+      <ul class="toc-list">
+        
+        <li class="toc-item">
+          <a href="#purpose-and-when-to-use" class="toc-link">Purpose and When to Use</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-concepts" class="toc-link">Key Concepts</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#detailed-code-explanation" class="toc-link">Detailed Code Explanation</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#2-sign-in-attempt-attempts-to-sign-in-the-user-using" class="toc-link">2. Sign-In Attempt: Attempts to sign in the user using</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#identity-models" class="toc-link">Identity Models</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-services" class="toc-link">Key Services</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#views-and-controllers" class="toc-link">Views and Controllers</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#security" class="toc-link">Security</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#additional-concepts" class="toc-link">Additional Concepts</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-snippets" class="toc-link">Code Snippets</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#interview-tips" class="toc-link">Interview Tips</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#cheat-sheet-quick-reference" class="toc-link">Cheat Sheet &amp; Quick Reference</a>
+        </li>
+      
+      </ul>
+    </aside>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/search-index.js"></script>
+  <script src="../assets/js/search-engine.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

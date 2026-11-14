@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 04: Middleware — ASP.NET Core Masterclass</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="alternate icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body id="top">
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  
+  <!-- Top Navigation Header -->
+  <header class="top-header" role="banner">
+    <div class="header-left">
+      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">☰</button>
+      <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+        <span class="sidebar-toggle-text">« Collapse</span>
+      </button>
+      <a href="../index.html" class="brand-link" aria-label="ASP.NET Core Masterclass Documentation Portal">
+        <span class="brand-icon" style="background: linear-gradient(135deg, #38bdf8, #6366f1); color: #0b0f19; font-weight: 900; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem;">.NET</span>
+        <span class="brand-text">ASP.NET Core Masterclass</span>
+      </a>
+      <span class="version-pill">.NET 8 / LTS</span>
+    </div>
+
+    <div class="header-right">
+      <a href="../index.html" class="index-home-btn" title="Back to Curriculum Dashboard">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span class="home-text">Course Index</span>
+      </a>
+
+      <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-text">Search topics, syntax, concepts...</span>
+        <kbd class="kbd-shortcut">Ctrl+K</kbd>
+      </button>
+
+      <button class="theme-toggle-btn" aria-label="Toggle dark/light theme" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle></svg>
+      </button>
+    </div>
+  </header>
+  
+
+  <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+  <!-- Documentation Layout -->
+  <div class="docs-wrapper">
+    
+    <aside class="docs-sidebar" aria-label="Course Navigation">
+      <div class="sidebar-top-bar">
+        <span class="sidebar-top-title">Curriculum</span>
+        <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" title="Collapse Sidebar" aria-label="Collapse Navigation Sidebar" type="button">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg>
+          <span>Collapse</span>
+        </button>
+      </div>
+
+      <div class="sidebar-search-box">
+        <input type="text" class="sidebar-filter-input" placeholder="Filter sections..." aria-label="Filter sidebar sections" />
+      </div>
+
+      <div style="margin-bottom: 1rem;">
+        <a href="../index.html" class="sidebar-link" style="color: var(--accent-primary); font-weight: 600;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Return to Dashboard</span>
+        </a>
+      </div>
+  
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 1: Foundations, HTTP, Middleware &amp; Routing</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">5</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-01.html" class="sidebar-link">
+            <span class="sidebar-sec-num">01</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Introduction</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-02.html" class="sidebar-link">
+            <span class="sidebar-sec-num">02</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Getting Started</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-03.html" class="sidebar-link">
+            <span class="sidebar-sec-num">03</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">HTTP</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-04.html" class="sidebar-link active" aria-current="page">
+            <span class="sidebar-sec-num">04</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Middleware</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-05.html" class="sidebar-link">
+            <span class="sidebar-sec-num">05</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Routing</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 2: Controllers, Model Binding &amp; Validation</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-06.html" class="sidebar-link">
+            <span class="sidebar-sec-num">06</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Controllers &amp; IActionResult</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-07.html" class="sidebar-link">
+            <span class="sidebar-sec-num">07</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Model Binding and Validations</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 3: Razor Views, Partial Views, View Components &amp; Tag Helpers</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">5</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-08.html" class="sidebar-link">
+            <span class="sidebar-sec-num">08</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Razor Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-09.html" class="sidebar-link">
+            <span class="sidebar-sec-num">09</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Layout Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-10.html" class="sidebar-link">
+            <span class="sidebar-sec-num">10</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Partial Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-11.html" class="sidebar-link">
+            <span class="sidebar-sec-num">11</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">View Components</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-17.html" class="sidebar-link">
+            <span class="sidebar-sec-num">17</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Tag Helpers</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 4: Dependency Injection, Environments &amp; Configuration</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-12.html" class="sidebar-link">
+            <span class="sidebar-sec-num">12</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Dependency Injection</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-13.html" class="sidebar-link">
+            <span class="sidebar-sec-num">13</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Environments</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-14.html" class="sidebar-link">
+            <span class="sidebar-sec-num">14</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Configuration</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-15.html" class="sidebar-link">
+            <span class="sidebar-sec-num">15</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">xUnit</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-16.html" class="sidebar-link">
+            <span class="sidebar-sec-num">16</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">CRUD Operations</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-18.html" class="sidebar-link">
+            <span class="sidebar-sec-num">18</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">EntityFrameworkCore</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-19.html" class="sidebar-link">
+            <span class="sidebar-sec-num">19</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Unit Testing - Advanced</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-20.html" class="sidebar-link">
+            <span class="sidebar-sec-num">20</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Logging</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-21.html" class="sidebar-link">
+            <span class="sidebar-sec-num">21</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Filters</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-22.html" class="sidebar-link">
+            <span class="sidebar-sec-num">22</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Error Handling</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-23.html" class="sidebar-link">
+            <span class="sidebar-sec-num">23</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">SOLID Principles</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-24.html" class="sidebar-link">
+            <span class="sidebar-sec-num">24</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Clean Architecture</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-25.html" class="sidebar-link">
+            <span class="sidebar-sec-num">25</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Identity and Authorization</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-26.html" class="sidebar-link">
+            <span class="sidebar-sec-num">26</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Web API</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-27.html" class="sidebar-link">
+            <span class="sidebar-sec-num">27</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Swagger</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-28.html" class="sidebar-link">
+            <span class="sidebar-sec-num">28</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Angular and CORS</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-29.html" class="sidebar-link">
+            <span class="sidebar-sec-num">29</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">JWT with Web API</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-30.html" class="sidebar-link">
+            <span class="sidebar-sec-num">30</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Minimal API</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content Container -->
+    <main class="docs-main-container" id="main-content" tabindex="-1">
+      <!-- Floating Expand Button when Sidebar is Collapsed -->
+      <button class="expand-sidebar-pill" id="expandSidebarPill" title="Expand Sidebar" aria-label="Expand Sidebar" type="button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg>
+        <span>» Expand Sidebar</span>
+      </button>
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
+        <a href="../index.html">Course Index</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span>Module 1</span>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span style="color: var(--text-main); font-weight: 600;">Section 04</span>
+      </nav>
+
+      <!-- Section Banner Header -->
+      <header class="section-banner">
+        <div class="section-meta-row">
+          <span class="module-badge">Module 1</span>
+          <span class="read-time-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            14 PDF Pages
+          </span>
+          <span class="tag-pill">ASP.NET Core</span>
+          <span class="tag-pill">.NET 8</span>
+          <span class="tag-pill" style="border-color: var(--accent-primary); color: var(--accent-primary);">Includes Cheat Sheet</span>
+        </div>
+        <h1>Section 04: Middleware</h1>
+        <p class="section-description">
+          Authentic study and reference notes extracted directly from original masterclass course materials.
+        </p>
+      </header>
+
+      <!-- Body Content -->
+      <article class="docs-content">
+        
+<h2 id="middleware">Middleware</h2>
+<p>At its core, middleware in ASP.NET Core is a series of components that form a pipeline through
+which every HTTP request and response flows. Each middleware component can:</p>
+<ul>
+  <li>1. Examine the incoming request.</li>
+  <li>2. Modify the request or response (if needed).</li>
+  <li>3. Invoke the next middleware in the pipeline or short-circuit the process and generate a</li>
+</ul>
+<p>response itself.
+This pipeline allows you to modularize your application&#39;s logic and add features like authentication,
+logging, error handling, routing, and more in a clean and maintainable way.</p>
+
+<h2 id="middleware-chain-request-pipeline">Middleware Chain (Request Pipeline)</h2>
+<p>Imagine the request pipeline as a series of connected pipes. Each piece of middleware is like a valve
+in this pipeline, allowing you to control the flow of information and apply specific operations at
+different stages. The order you register your middleware matters, as they are executed sequentially.
+app.Use vs. app.Run
+These two methods are fundamental for adding middleware to your pipeline, but they have key
+differences:</p>
+<ul>
+  <li>• app.Use(async (context, next) =&gt; { ... })</li>
+  <li>o Non-Terminal Middleware: This type of middleware typically performs some action</li>
+</ul>
+<p>and then calls the next delegate to pass control to the next middleware in the
+           pipeline.</p>
+<ul>
+  <li>o Can Modify Request/Response: It can change the request or response before</li>
+</ul>
+<p>passing it along.</p>
+<ul>
+  <li>o Examples: Authentication, logging, custom headers, etc.</li>
+  <li>• app.Run(async (context) =&gt; { ... })</li>
+  <li>o Terminal Middleware: This middleware doesn&#39;t call next; it ends the pipeline and</li>
+</ul>
+<p>generates the response itself.</p>
+<ul>
+  <li>o Often Used for the Final Response: It&#39;s commonly used for handling requests that</li>
+</ul>
+<p>don&#39;t need further processing (e.g., returning a simple message).</p>
+<ul>
+  <li>o Can&#39;t Modify Request: Since it&#39;s the end of the line, it cannot modify the request</li>
+</ul>
+<p>before passing it on.
+Code 1: The Consequence of Multiple app.Run Calls</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">app.Run(async (HttpContext context) =&gt; {
+  await context.Response.WriteAsync(&quot;Hello&quot;);
+});
+app.Run(async (HttpContext context) =&gt; {
+  await context.Response.WriteAsync(&quot;Hello again&quot;);
+});
+app.Run();</code></pre>
+    </div>
+  <p>In this code, only the first app.Run middleware will be executed. It terminates the pipeline by writing
+&quot;Hello&quot; to the response, and the subsequent app.Run (which would write &quot;Hello again&quot;) never gets a
+chance to run.
+Code 2: Chaining Middleware with app.Use and app.Run</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">//middlware 1
+app.Use(async (context, next) =&gt; {
+  await context.Response.WriteAsync(&quot;Hello &quot;);
+  await next(context);
+});
+//middleware 2
+app.Use(async (context, next) =&gt; {
+  await context.Response.WriteAsync(&quot;Hello again &quot;);
+  await next(context);
+});
+//middleware 3
+app.Run(async (HttpContext context) =&gt; {
+  await context.Response.WriteAsync(&quot;Hello again&quot;);
+});</code></pre>
+    </div>
+  <p>This code demonstrates a correct way to chain middleware.</p>
+<ul>
+  <li>1. The first app.Use writes &quot;Hello &quot; to the response and then calls next to pass control to the</li>
+</ul>
+<p>next middleware.</p>
+<ul>
+  <li>2. The second app.Use writes &quot;Hello again &quot; and also calls next.</li>
+  <li>3. The final app.Run (which is terminal) writes &quot;Hello again&quot; and ends the pipeline. The result</li>
+</ul>
+<p>would be output of &quot;Hello Hello again Hello again&quot;.</p>
+
+<h2 id="key-points-to-remember">Key Points to Remember</h2>
+<ul>
+  <li>• Middleware Order is Crucial: The order in which you register middleware matters, as they</li>
+</ul>
+<p>are executed in sequence.</p>
+<ul>
+  <li>• Use app.Use for Non-Terminal Actions: Use it for tasks like authentication, logging, or</li>
+</ul>
+<p>modifying headers/bodies.</p>
+<ul>
+  <li>• Use app.Run to Terminate the Pipeline: Employ it when you want to generate the final</li>
+</ul>
+<p>response.</p>
+<ul>
+  <li>• Short-Circuiting: Middleware can choose to short-circuit the pipeline (not call next) and</li>
+</ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">return a response early if needed.</code></pre>
+    </div>
+  <p>Custom Middleware in ASP.NET Cor
+While ASP.NET Core provides a plethora of built-in middleware components, sometimes you need to
+create your own to address specific requirements unique to your application. Custom middleware
+allows you to:</p>
+<ul>
+  <li>• Encapsulate logic: Bundle related operations (e.g., logging, security checks, custom headers)</li>
+</ul>
+<p>into a reusable component.</p>
+<ul>
+  <li>• Customize behavior: Tailor the request/response pipeline to precisely match your</li>
+</ul>
+<p>application&#39;s needs.</p>
+<ul>
+  <li>• Improve code organization: Keep your middleware code clean and maintainable.</li>
+</ul>
+
+<h2 id="anatomy-of-a-custom-middleware-class">Anatomy of a Custom Middleware Class</h2>
+<ul>
+  <li>1. Implement IMiddleware: This interface requires a single method: InvokeAsync(HttpContext</li>
+</ul>
+<p>context, RequestDelegate next). This is the heart of your middleware&#39;s logic.</p>
+<ul>
+  <li>2. InvokeAsync or Invoke Method:</li>
+  <li>o context: The HttpContext provides access to the request and response objects.</li>
+  <li>o next: The RequestDelegate allows you to call the next middleware in the pipeline.</li>
+</ul>
+
+<h2 id="code-explanation">Code Explanation</h2>
+<p>Let&#39;s dissect the code you provided:</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// MyCustomMiddleware.cs
+namespace MiddlewareExample.CustomMiddleware
+{
+  public class MyCustomMiddleware : IMiddleware
+  {
+   public async Task InvokeAsync(HttpContext context, RequestDelegate next)
+   {
+     await context.Response.WriteAsync(&quot;My Custom Middleware - Starts\n&quot;);
+     await next(context);
+     await context.Response.WriteAsync(&quot;My Custom Middleware - Ends\n&quot;);
+   }
+  }
+  // Extension method for easy registration
+  public static class CustomMiddlewareExtension
+  {
+   public static IApplicationBuilder UseMyCustomMiddleware(this IApplicationBuilder app)
+   {
+     return app.UseMiddleware&lt;MyCustomMiddleware&gt;();
+   }
+  }
+}</code></pre>
+    </div>
+  <p>• MyCustomMiddleware Class: This class implements IMiddleware. Its InvokeAsync method:</p>
+<ul>
+  <li>o Writes &quot;My Custom Middleware - Starts&quot; to the response.</li>
+  <li>o Calls next(context) to invoke the next middleware in the pipeline.</li>
+  <li>o Writes &quot;My Custom Middleware - Ends&quot; to the response after the next middleware</li>
+</ul>
+<p>has finished.</p>
+<ul>
+  <li>• CustomMiddlewareExtension Class: This provides a convenient extension method</li>
+</ul>
+<p>UseMyCustomMiddleware to register your middleware in the Startup.Configure method.</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// Program.cs (or Startup.cs
+)
+using MiddlewareExample.CustomMiddleware;
+// ...</code></pre>
+    </div>
+  <p>builder.Services.AddTransient&lt;MyCustomMiddleware&gt;(); // Register as transient</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">app.Use(async (HttpContext context, RequestDelegate next) =&gt; {
+  await context.Response.WriteAsync(&quot;From Midleware 1\n&quot;);
+  await next(context);
+});
+app.UseMyCustomMiddleware(); // Use the extension method
+app.Run(async (HttpContext context) =&gt; {
+  await context.Response.WriteAsync(&quot;From Middleware 3\n&quot;);
+});</code></pre>
+    </div>
+  <p>How It Works</p>
+<ul>
+  <li>1. Registration: You register MyCustomMiddleware as a transient service so that ASP.NET Core</li>
+</ul>
+<p>can create instances of it when needed.</p>
+<ul>
+  <li>2. Pipeline Integration: The app.UseMyCustomMiddleware() extension method seamlessly</li>
+</ul>
+<p>adds your middleware to the pipeline.</p>
+<ul>
+  <li>3. Execution Order: Middleware components are executed in the order they are added to the</li>
+</ul>
+<p>pipeline. In this case, the order would be Middleware 1, MyCustomMiddleware, then
+      Middleware 3.</p>
+
+<h2 id="output">Output</h2>
+<p>When you run the application, you&#39;ll see the following output in your browser:</p>
+
+<h2 id="from-midleware-1">From Midleware 1</h2>
+
+<h2 id="my-custom-middleware-starts">My Custom Middleware - Starts</h2>
+
+<h2 id="from-middleware-3">From Middleware 3</h2>
+
+<h2 id="my-custom-middleware-ends">My Custom Middleware - Ends</h2>
+<p>This clearly demonstrates the flow of execution through the middleware chain.</p>
+
+<h2 id="custom-conventional-middleware">Custom Conventional Middleware</h2>
+<p>ASP.NET Core middleware comes in two flavors: conventional and factory-based. Conventional
+middleware, as shown in your example, is a simple yet powerful way to encapsulate custom logic for
+processing HTTP requests and responses.</p>
+
+<h2 id="key-characteristics">Key Characteristics</h2>
+<ul>
+  <li>• Class-Based: Conventional middleware is implemented as a class.</li>
+  <li>• Constructor Injection: It receives dependencies (if any) through its constructor.</li>
+  <li>• Invoke Method: This is the heart of the middleware, containing the logic that handles each</li>
+</ul>
+<p>request.</p>
+<ul>
+  <li>• RequestDelegate: The Invoke method takes a RequestDelegate parameter (_next in your</li>
+</ul>
+<p>example). This delegate represents the next middleware in the pipeline.</p>
+<ul>
+  <li>• Flexibility: You have full control over the request and response objects within the Invoke</li>
+</ul>
+<p>method.
+Code Breakdown: HelloCustomMiddleware</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// HelloCustomMiddleware.cs
+public class HelloCustomMiddleware
+{
+  private readonly RequestDelegate _next;
+  public HelloCustomMiddleware(RequestDelegate next)
+  {
+   _next = next;
+  }
+  public async Task Invoke(HttpContext httpContext)
+  {
+}
+}</code></pre>
+    </div>
+  <p>if (httpContext.Request.Query.ContainsKey(&quot;firstname&quot;) &amp;&amp;
+     httpContext.Request.Query.ContainsKey(&quot;lastname&quot;))</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+     string fullName = httpContext.Request.Query[&quot;firstname&quot;] + &quot; &quot; +
+httpContext.Request.Query[&quot;lastname&quot;];
+     await httpContext.Response.WriteAsync(fullName);
+   }
+   await _next(httpContext);
+  }
+}
+// Extension method for easy registration
+public static class HelloCustomModdleExtensions
+{
+  public static IApplicationBuilder UseHelloCustomMiddleware(this IApplicationBuilder builder)
+  {
+   return builder.UseMiddleware&lt;HelloCustomMiddleware&gt;();</code></pre>
+    </div>
+  <p>Let&#39;s analyze each part:</p>
+<ul>
+  <li>1. Constructor: The constructor receives the RequestDelegate, which is stored for later use to</li>
+</ul>
+<p>invoke the next middleware in the pipeline.</p>
+<ul>
+  <li>2. Invoke Method:</li>
+  <li>o It checks if the query string contains both &quot;firstname&quot; and &quot;lastname&quot; parameters.</li>
+  <li>o If so, it combines the values into a fullName string and writes it to the response.</li>
+  <li>o Crucially: It calls await _next(httpContext); to continue the middleware chain. This</li>
+</ul>
+<p>line ensures that the request is passed on to subsequent middleware components,
+           even if a full name is generated.</p>
+<ul>
+  <li>o By design, any code after this line, such as the comment &quot;//after logic&quot;, would not</li>
+</ul>
+<p>execute for requests containing both &quot;firstname&quot; and &quot;lastname&quot;, as the await
+           _next(httpContext); line immediately transfers control to the next middleware in the
+           pipeline.</p>
+<ul>
+  <li>3. UseHelloCustomMiddleware Extension: This extension method simplifies the registration</li>
+</ul>
+<p>process by hiding the details of instantiating and using your custom middleware class.
+Program.cs (or Startup.cs): Using the Middleware</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// ... other middleware ...
+app.UseMyCustomMiddleware();
+app.UseHelloCustomMiddleware();
+// ...</code></pre>
+    </div>
+  <p>How It Works</p>
+<ul>
+  <li>1. When a request arrives, ASP.NET Core traverses the middleware pipeline.</li>
+  <li>2. It reaches HelloCustomMiddleware, which checks for the specific query parameters.</li>
+  <li>3. If the parameters are present, the middleware generates a personalized greeting.</li>
+  <li>4. Regardless of whether it generates the greeting, the middleware calls next(context) to pass</li>
+</ul>
+<p>the request along to the next middleware component in the pipeline.</p>
+
+<h2 id="key-points">Key Points</h2>
+<ul>
+  <li>• Simplicity: Conventional middleware is easy to write and understand.</li>
+  <li>• Control: You have fine-grained control over how the request is processed and how the</li>
+</ul>
+<p>response is generated.</p>
+<ul>
+  <li>• Extension Methods: Use extension methods to make middleware registration clean and</li>
+</ul>
+<p>readable.</p>
+
+<h2 id="the-ideal-order-of-middleware-pipeline">The Ideal Order of Middleware Pipeline</h2>
+<ul>
+  <li>1. Exception/Error Handling:</li>
+  <li>o Purpose: Catches and handles exceptions that occur anywhere in the pipeline.</li>
+  <li>o Examples: UseExceptionHandler, UseDeveloperExceptionPage (for development</li>
+</ul>
+<p>environments).</p>
+<ul>
+  <li>2. HTTPS Redirection:</li>
+  <li>o Purpose: Redirects HTTP requests to HTTPS for security.</li>
+  <li>o Example: UseHttpsRedirection.</li>
+  <li>3. Static Files:</li>
+  <li>o Purpose: Serves static files like images, CSS, and JavaScript directly to the client.</li>
+  <li>o Example: UseStaticFiles.</li>
+  <li>4. Routing:</li>
+  <li>o Purpose: Matches incoming requests to specific endpoints based on their URLs.</li>
+  <li>o Examples: UseRouting, UseEndpoints.</li>
+  <li>5. CORS (Cross-Origin Resource Sharing):</li>
+  <li>o Purpose: Enables secure cross-origin requests from different domains.</li>
+  <li>o Example: UseCors.</li>
+  <li>6. Authentication:</li>
+  <li>o Purpose: Verifies user identities and establishes a user principal.</li>
+  <li>o Example: UseAuthentication.</li>
+  <li>7. Authorization:</li>
+  <li>o Purpose: Determines whether a user is allowed to access a particular resource or</li>
+</ul>
+<p>perform a certain action.</p>
+<ul>
+  <li>o Example: UseAuthorization.</li>
+  <li>8. Custom Middleware:</li>
+  <li>o Purpose: Your application-specific middleware components to handle tasks like</li>
+</ul>
+<p>logging, feature flags, etc.</p>
+
+<h2 id="reasoning-behind-the-order">Reasoning Behind the Order</h2>
+<ul>
+  <li>• Early Exception Handling: Catching exceptions early prevents them from propagating and</li>
+</ul>
+<p>causing further issues down the pipeline.</p>
+<ul>
+  <li>• Security First: HTTPS redirection, authentication, and authorization are essential for securing</li>
+</ul>
+<p>your application.</p>
+<ul>
+  <li>• Performance Optimization: Static files, response caching, and compression are placed early</li>
+</ul>
+<p>to optimize the response generation process.</p>
+<ul>
+  <li>• Routing as a Foundation: Routing determines how requests are handled by your</li>
+</ul>
+<p>application&#39;s core logic.</p>
+<ul>
+  <li>• CORS for Flexibility: CORS allows your application to be consumed by a wider range of</li>
+</ul>
+<p>clients.</p>
+<ul>
+  <li>• Custom Middleware: Your custom middleware can be placed strategically within the</li>
+</ul>
+<p>pipeline to apply logic at the appropriate stage.</p>
+
+<h2 id="flexibility-and-exceptions">Flexibility and Exceptions</h2>
+<p>While this is the general recommended order, there might be exceptions based on your application&#39;s
+specific needs. For instance:</p>
+<ul>
+  <li>• Health Checks: You might want to place health check middleware very early in the pipeline</li>
+</ul>
+<p>to quickly determine the application&#39;s status without executing other middleware
+      components.</p>
+<ul>
+  <li>• Specialized Middleware: Some middleware components may have specific ordering</li>
+</ul>
+<p>requirements documented by their providers.
+Example (Program.cs or Startup.cs):</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();</code></pre>
+    </div>
+  <p>if (app.Environment.IsDevelopment())</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+  app.UseDeveloperExceptionPage();
+}
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
+// ... your custom middleware ...
+app.UseEndpoints(endpoints =&gt;
+{
+  endpoints.MapControllers(); // Or MapRazorPages(), MapGet(), etc.
+});</code></pre>
+    </div>
+  <p>By adhering to this recommended order, you&#39;ll create a well-structured and efficient ASP.NET Core
+application that&#39;s easier to maintain, debug, and secure.</p>
+
+<h2 id="usewhen">UseWhen()</h2>
+<p>UseWhen() is a powerful extension method in ASP.NET Core&#39;s IApplicationBuilder interface. It allows
+you to conditionally add middleware to your request pipeline based on a predicate (a condition).
+This means you can create dynamic pipelines where specific middleware components are executed
+only when certain conditions are met.</p>
+
+<h2 id="syntax">Syntax</h2>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">app.UseWhen(
+  context =&gt; /* Your condition here */,
+  app =&gt; /* Middleware configuration for the branch */
+);</code></pre>
+    </div>
+  <p>• context: The HttpContext object representing the current request.</p>
+<ul>
+  <li>• Predicate (Condition): A function that takes the HttpContext and returns true if the</li>
+</ul>
+<p>middleware branch should be executed, false otherwise.</p>
+<ul>
+  <li>• Middleware Configuration: An action that configures the middleware components that</li>
+</ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">should be executed if the condition is true. This is where you use app.Use(), app.Run(), or</code></pre>
+    </div>
+  <p>other middleware registration methods.</p>
+
+<h2 id="how-usewhen-works">How UseWhen() Works</h2>
+<ul>
+  <li>1. Predicate Evaluation: When a request comes in, the UseWhen() method first evaluates the</li>
+</ul>
+<p>predicate function against the HttpContext.</p>
+<ul>
+  <li>2. Branching (if true): If the predicate returns true, the middleware branch specified in the</li>
+</ul>
+<p>configuration action is executed. The request flows through this branch, potentially
+      undergoing modifications or generating a response.</p>
+<ul>
+  <li>3. Rejoining the Main Pipeline: After the branch is executed (or skipped if the predicate was</li>
+</ul>
+<p>false), the request flow rejoins the main pipeline, continuing with the next middleware
+      components registered after the UseWhen() call.
+Code Example: Explained</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">app.UseWhen(
+  context =&gt; context.Request.Query.ContainsKey(&quot;username&quot;),
+  app =&gt; {
+   app.Use(async (context, next) =&gt;
+   {
+     await context.Response.WriteAsync(&quot;Hello from Middleware branch&quot;);
+     await next();
+   });
+  });
+app.Run(async context =&gt;
+{
+  await context.Response.WriteAsync(&quot;Hello from middleware at main chain&quot;);
+});</code></pre>
+    </div>
+  <p>• Condition: The predicate context.Request.Query.ContainsKey(&quot;username&quot;) checks if the
+      query string contains a parameter named &quot;username&quot;.</p>
+<ul>
+  <li>• Branch Middleware: If the &quot;username&quot; parameter is present, the branch middleware is</li>
+</ul>
+<p>executed. It writes &quot;Hello from Middleware branch&quot; to the response and then calls next to
+      allow the rest of the pipeline to continue.</p>
+<ul>
+  <li>• Main Pipeline: The final app.Run middleware is part of the main pipeline. It writes &quot;Hello</li>
+</ul>
+<p>from middleware at main chain&quot; to the response.</p>
+
+<h2 id="output-1">Output</h2>
+<ul>
+  <li>• If the request contains the &quot;username&quot; query parameter (e.g., /path?username=John), the</li>
+</ul>
+<p>output will be:</p>
+<ul>
+  <li>• Hello from Middleware branch</li>
+</ul>
+
+<h2 id="hello-from-middleware-at-main-chain">Hello from middleware at main chain</h2>
+<ul>
+  <li>• If the request does not contain the &quot;username&quot; parameter (e.g., /path), the output will be:</li>
+</ul>
+
+<h2 id="hello-from-middleware-at-main-chain-1">Hello from middleware at main chain</h2>
+
+<h2 id="when-to-use-usewhen">When to Use UseWhen()</h2>
+<ul>
+  <li>• Conditional Features: Enable or disable certain features based on the request (e.g., logging</li>
+</ul>
+<p>only for certain users, applying caching rules based on query parameters).</p>
+<ul>
+  <li>• Dynamic Pipelines: Create pipelines that adapt to different requests (e.g., different</li>
+</ul>
+<p>authentication middleware for specific routes).</p>
+<ul>
+  <li>• A/B Testing: Route a subset of users through alternative middleware branches for</li>
+</ul>
+<p>experimentation.</p>
+<ul>
+  <li>• Debugging and Diagnostics: Apply diagnostic middleware only in development</li>
+</ul>
+<p>environments.
+Key Points to Remember:
+Conceptual Understanding:</p>
+<ul>
+  <li>1. The Pipeline: Middleware forms a pipeline for HTTP requests and responses. Each</li>
+</ul>
+<p>component can inspect, modify, or terminate the flow.</p>
+<ul>
+  <li>2. Order Matters: Middleware is executed in the order it&#39;s registered. Think carefully about the</li>
+</ul>
+<p>sequence.</p>
+<ul>
+  <li>3. Types of Middleware:</li>
+  <li>o Built-in: ASP.NET Core offers middleware for authentication, routing, static files, etc.</li>
+  <li>o Custom: You can create your own to add specific logic to your app.</li>
+</ul>
+<p>app.Use vs. app.Run:</p>
+<ul>
+  <li>1. app.Use: For non-terminal middleware. It calls next to pass control to the next component.</li>
+  <li>2. app.Run: For terminal middleware. It ends the pipeline and generates a response.</li>
+</ul>
+<p>Custom Middleware:</p>
+<ul>
+  <li>1. Two Ways:</li>
+  <li>o Conventional: Class-based, using the Invoke method and constructor injection.</li>
+  <li>o Factory-Based: Uses a delegate to create the middleware instance.</li>
+  <li>2. Benefits: Encapsulates logic, improves code organization, and allows you to tailor your</li>
+</ul>
+<p>application&#39;s behavior.
+Recommended Order: (Not strict, but a good guideline)</p>
+
+<h2 id="1-exception-handling">1. Exception Handling</h2>
+
+<h2 id="2-https-redirection">2. HTTPS Redirection</h2>
+
+<h2 id="3-static-files">3. Static Files</h2>
+
+<h2 id="4-routing">4. Routing</h2>
+
+<h2 id="5-cors">5. CORS</h2>
+
+<h2 id="6-authentication">6. Authentication</h2>
+
+<h2 id="7-authorization">7. Authorization</h2>
+
+<h2 id="8-custom-middleware">8. Custom Middleware</h2>
+
+<h2 id="9-mvcrazor-pagesminimal-apis">9. MVC/Razor Pages/Minimal APIs</h2>
+<p>Bonus Points:</p>
+<ul>
+  <li>• Short-Circuiting: Middleware can choose not to call next and return a response early.</li>
+  <li>• UseWhen: Conditionally add middleware branches based on request criteria.</li>
+  <li>• Middleware Ordering Flexibility: Understand the reasons behind the recommended order,</li>
+</ul>
+<p>but also know when to deviate from it based on your application&#39;s specific requirements.</p>
+
+<hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
+<section class="cheatsheet-section" aria-labelledby="cheat-sheet-quick-reference">
+  <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
+  <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
+  <p>Section 4 – Middleware – Cheat Sheet</p>
+  <h3 id="introduction-to-middleware">Introduction to Middleware</h3>
+  <p>Middleware is a component that is assembled into the application pipeline to handle requests and
+responses.
+Middlewares are chained one-after-other and execute in the same sequence how they&#39;re added.
+Middleware can be a request delegate (anonymous method or lambda expression) [or] a class.</p>
+  <h3 id="middleware-run">Middleware - Run</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">app.Run( )
+app.Run(async (HttpContext context) =&gt;
+{
+//code
+});</code></pre>
+    </div>
+    <p>The extension method called “Run” is used to execute a terminating / short-circuiting middleware
+that doesn’t forward the request to the next middleware.</p>
+  <h3 id="middleware-chain">Middleware Chain</h3>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">app.Use( )
+app.Use(async (HttpContext context, RequestDelegate next) =&gt;
+{
+ //before logic
+ await next(context);
+ //after logic
+});</code></pre>
+    </div>
+    <p>The extension method called “Use” is used to execute a non-terminating / short-circuiting
+middleware that may / may not forward the request to the next middleware.</p>
+  <h3 id="middleware-class">Middleware Class</h3>
+  <p>Middleware class is used to separate the middleware logic from a lambda expression to a separate /
+reusable class.</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">class MiddlewareClassName : IMiddleware
+{
+ public async Task InvokeAsync(HttpContext context, RequestDelegate next)
+ {
+  //before logic
+  await next(context);
+  //after logic
+ }
+}
+app.UseMiddleware&lt;MiddlewareClassName&gt;();</code></pre>
+    </div>
+    <p>Middleware Extensions</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">class MiddlewareClassName : IMiddleware
+{
+ public async Task InvokeAsync(HttpContext context,RequestDelegate next)
+ {
+  //before logic
+  await next(context);
+  //after logic
+ }
+});</code></pre>
+    </div>
+    <p>Middleware extension method is used to invoke the middleware with a single method call.</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">static class ClassName
+{
+ public static IApplicationBuilder ExtensionMethodName(this IApplicationBuilder app)
+ {
+  return app.UseMiddleware&lt;MiddlewareClassName&gt;();
+ }
+}
+app.ExtensionMethodName();</code></pre>
+    </div>
+    <p>Conventional Middleware</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">class MiddlewareClassName
+{
+ private readonly RequestDelegate _next;
+ public MiddlewareClassName(RequestDelegate next)
+ {
+  _next = next;
+ }
+ public async Task InvokeAsync(HttpContext context)
+ {
+ //before logic
+ await _next(context);
+ //after logic
+ }
+});
+static class ClassName
+{
+ public static IApplicationBuilder ExtensionMethodName(this IApplicationBuilder app)
+ {
+ return app.UseMiddleware&lt;MiddlewareClassName&gt;();
+ }
+}
+app.ExtensionMethodName();</code></pre>
+    </div>
+    <p>The Right Order of Middleware</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">app.UseExceptionHandler(&quot;/Error&quot;);
+app.UseHsts();
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseCors();
+app.UseAuthentication();
+app.UseAuthorization();
+app.UseSession();
+app.MapControllers();
+//add your custom middlewares
+app.Run();</code></pre>
+    </div>
+    <p>Middleware - UseWhen</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">app.UseWhen( )
+app.UseWhen(
+ context =&gt; { return boolean; },
+ app =&gt;
+ {
+  //add your middlewares
+ }
+);</code></pre>
+    </div>
+    <p>The extension method called “UseWhen” is used to execute a branch of middleware only when the
+specified condition is true.</p>
+</section>
+
+      </article>
+
+      <!-- Completion Toggle Control -->
+      <div class="completion-container">
+        <div>
+          <strong style="color: var(--text-main); font-size: 0.95rem;">Section Progress</strong>
+          <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">Mark this section complete to record your learning progress locally.</p>
+        </div>
+        <button class="mark-complete-btn" id="markCompleteBtn" type="button" aria-pressed="false" aria-label="Mark Section Complete">
+          <svg class="complete-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span class="complete-text">Mark Section Complete</span>
+        </button>
+      </div>
+
+      <!-- Bottom Navigation Prev / Next -->
+      <nav class="bottom-nav" aria-label="Previous and Next Section Navigation">
+        
+      <a href="section-03.html" class="nav-card prev" aria-label="Previous Section: Sec 03 - HTTP">
+        <span class="nav-direction">← Previous Section</span>
+        <span class="nav-title">Sec 03: HTTP</span>
+      </a>
+    
+        
+      <a href="section-05.html" class="nav-card next" aria-label="Next Section: Sec 05 - Routing">
+        <span class="nav-direction">Next Section →</span>
+        <span class="nav-title">Sec 05: Routing</span>
+      </a>
+    
+      </nav>
+
+      <!-- Section Footer -->
+      <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); color: var(--text-dim); font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;" role="contentinfo">
+        <span>ASP.NET Core Masterclass — Offline Documentation Portal</span>
+        <a href="#top" style="color: var(--text-muted); text-decoration: none;">↑ Back to top</a>
+      </footer>
+    </main>
+
+    <!-- Right Table of Contents (TOC) -->
+    <aside class="docs-toc" aria-label="Page Table of Contents">
+      <div class="toc-title">On This Page</div>
+      <ul class="toc-list">
+        
+        <li class="toc-item">
+          <a href="#middleware" class="toc-link">Middleware</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#middleware-chain-request-pipeline" class="toc-link">Middleware Chain (Request Pipeline)</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#anatomy-of-a-custom-middleware-class" class="toc-link">Anatomy of a Custom Middleware Class</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-explanation" class="toc-link">Code Explanation</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#output" class="toc-link">Output</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#from-midleware-1" class="toc-link">From Midleware 1</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#my-custom-middleware-starts" class="toc-link">My Custom Middleware - Starts</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#from-middleware-3" class="toc-link">From Middleware 3</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#my-custom-middleware-ends" class="toc-link">My Custom Middleware - Ends</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#custom-conventional-middleware" class="toc-link">Custom Conventional Middleware</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-characteristics" class="toc-link">Key Characteristics</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-points" class="toc-link">Key Points</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#the-ideal-order-of-middleware-pipeline" class="toc-link">The Ideal Order of Middleware Pipeline</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#reasoning-behind-the-order" class="toc-link">Reasoning Behind the Order</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#flexibility-and-exceptions" class="toc-link">Flexibility and Exceptions</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#usewhen" class="toc-link">UseWhen()</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#syntax" class="toc-link">Syntax</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#how-usewhen-works" class="toc-link">How UseWhen() Works</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#output-1" class="toc-link">Output</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#hello-from-middleware-at-main-chain" class="toc-link">Hello from middleware at main chain</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#hello-from-middleware-at-main-chain-1" class="toc-link">Hello from middleware at main chain</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#when-to-use-usewhen" class="toc-link">When to Use UseWhen()</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#1-exception-handling" class="toc-link">1. Exception Handling</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#2-https-redirection" class="toc-link">2. HTTPS Redirection</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#3-static-files" class="toc-link">3. Static Files</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#4-routing" class="toc-link">4. Routing</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#5-cors" class="toc-link">5. CORS</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#6-authentication" class="toc-link">6. Authentication</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#7-authorization" class="toc-link">7. Authorization</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#8-custom-middleware" class="toc-link">8. Custom Middleware</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#9-mvcrazor-pagesminimal-apis" class="toc-link">9. MVC/Razor Pages/Minimal APIs</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#cheat-sheet-quick-reference" class="toc-link">Cheat Sheet &amp; Quick Reference</a>
+        </li>
+      
+      </ul>
+    </aside>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/search-index.js"></script>
+  <script src="../assets/js/search-engine.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,531 @@
+{
+  "source_file": "Cheat Sheet - Section 10 - Asp.Net Core.pdf",
+  "absolute_path": "D:/Dot net core/Asp.Net_Core_-Udemy-/Notes-20250125T050818Z-001/Cheat Sheets/Cheat Sheet - Section 10 - Asp.Net Core.pdf",
+  "section_number": 10,
+  "normalized_section": "10",
+  "is_cheatsheet": true,
+  "total_pages": 3,
+  "total_raw_chars": 1784,
+  "total_repaired_chars": 1781,
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "Asp.Net Core – True Ultimate Guide\nSection 10 – Partial Views – Cheat Sheet\nPartial Views\nPartial view is a razor markup file (.cshtml) that can't be invoked individually from the controller; but\ncan be invoked from any view within the same web application.\nInvoking Partial Views\n<partial name=\"partial view name\" />\nReturns the content to the parent view.\n@await Html.PartialAsync(\"partial view name\")\nReturns the content to the parent view.\n@{ await Html.RenderPartialAsync(\"partial view name\"); }\nStreams the content to the browser.\nPartial Views with ViewData\nWhen partial view is invoked, it receives a copy of the parent view's ViewData object.\nSo, any changes made in the ViewData in the partial view, do NOT effect the ViewData of the parent\nview.\nOptionally, you can supply a custom ViewData object to the partial view, if you don't want the partial\nview to access the entire ViewData of the parent view.\n",
+      "repaired_text": "Asp.Net Core – True Ultimate Guide\nSection 10 – Partial Views – Cheat Sheet\nPartial Views\nPartial view is a razor markup file (.cshtml) that can't be invoked individually from the controller; but\ncan be invoked from any view within the same web application.\nInvoking Partial Views\n<partial name=\"partial view name\" />\nReturns the content to the parent view.\n@await Html.PartialAsync(\"partial view name\")\nReturns the content to the parent view.\n@{ await Html.RenderPartialAsync(\"partial view name\"); }\nStreams the content to the browser.\nPartial Views with ViewData\nWhen partial view is invoked, it receives a copy of the parent view's ViewData object.\nSo, any changes made in the ViewData in the partial view, do NOT effect the ViewData of the parent\nview.\nOptionally, you can supply a custom ViewData object to the partial view, if you don't want the partial\nview to access the entire ViewData of the parent view.",
+      "lines": [
+        {
+          "text": "Asp.Net Core – True Ultimate Guide",
+          "rawText": "Asp.Net Core – True Ultimate Guide",
+          "x": 72.024,
+          "y": 753.96,
+          "fontSize": 15.96,
+          "fontName": "g_d19_f2"
+        },
+        {
+          "text": "Section 10 – Partial Views – Cheat Sheet",
+          "rawText": "Section 10 – Partial Views – Cheat Sheet",
+          "x": 72.024,
+          "y": 725.98,
+          "fontSize": 15.96,
+          "fontName": "g_d19_f4"
+        },
+        {
+          "text": "Partial Views",
+          "rawText": "Partial Views",
+          "x": 72.024,
+          "y": 677.38,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f4"
+        },
+        {
+          "text": "Partial view is a razor markup file (.cshtml) that can't be invoked individually from the controller; but",
+          "rawText": "Partial view is a razor markup file (.cshtml) that can't be invoked individually from the controller; but",
+          "x": 72.024,
+          "y": 654.94,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "can be invoked from any view within the same web application.",
+          "rawText": "can be invoked from any view within the same web application.",
+          "x": 72.024,
+          "y": 640.42,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "Invoking Partial Views",
+          "rawText": "Invoking Partial Views",
+          "x": 72.024,
+          "y": 433.39,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f4"
+        },
+        {
+          "text": "<partial name=\"partial view name\" />",
+          "rawText": "<partial name=\"partial view name\" />",
+          "x": 72.024,
+          "y": 410.83,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "Returns the content to the parent view.",
+          "rawText": "Returns the content to the parent view.",
+          "x": 72.024,
+          "y": 388.37,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "@await Html.PartialAsync(\"partial view name\")",
+          "rawText": "@await Html.PartialAsync(\"partial view name\")",
+          "x": 72.024,
+          "y": 343.37,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "Returns the content to the parent view.",
+          "rawText": "Returns the content to the parent view.",
+          "x": 72.024,
+          "y": 320.93,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "@{ await Html.RenderPartialAsync(\"partial view name\"); }",
+          "rawText": "@{ await Html.RenderPartialAsync(\"partial view name\"); }",
+          "x": 72.024,
+          "y": 275.93,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "Streams the content to the browser.",
+          "rawText": "Streams the content to the browser.",
+          "x": 72.024,
+          "y": 253.37,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "Partial Views with ViewData",
+          "rawText": "Partial Views with ViewData",
+          "x": 72.024,
+          "y": 185.9,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f4"
+        },
+        {
+          "text": "When partial view is invoked, it receives a copy of the parent view's ViewData object.",
+          "rawText": "When partial view is invoked, it receives a copy of the parent view's ViewData object.",
+          "x": 72.024,
+          "y": 163.46,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "So, any changes made in the ViewData in the partial view, do NOT effect the ViewData of the parent",
+          "rawText": "So, any changes made in the ViewData in the partial view, do NOT effect the ViewData of the parent",
+          "x": 72.024,
+          "y": 140.9,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "view.",
+          "rawText": "view.",
+          "x": 72.024,
+          "y": 126.5,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "Optionally, you can supply a custom ViewData object to the partial view, if you don't want the partial",
+          "rawText": "Optionally, you can supply a custom ViewData object to the partial view, if you don't want the partial",
+          "x": 72.024,
+          "y": 103.94,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "view to access the entire ViewData of the parent view.",
+          "rawText": "view to access the entire ViewData of the parent view.",
+          "x": 72.024,
+          "y": 89.424,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "banner_header",
+          "page": 1,
+          "lines": [
+            "Asp.Net Core – True Ultimate Guide"
+          ],
+          "text": "Asp.Net Core – True Ultimate Guide"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Section 10 – Partial Views – Cheat Sheet"
+          ],
+          "text": "Section 10 – Partial Views – Cheat Sheet"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Partial Views"
+          ],
+          "text": "Partial Views"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Partial view is a razor markup file (.cshtml) that can't be invoked individually from the controller; but",
+            "can be invoked from any view within the same web application."
+          ],
+          "text": "Partial view is a razor markup file (.cshtml) that can't be invoked individually from the controller; but\ncan be invoked from any view within the same web application."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Invoking Partial Views"
+          ],
+          "text": "Invoking Partial Views"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "<partial name=\"partial view name\" />",
+            "Returns the content to the parent view.",
+            "@await Html.PartialAsync(\"partial view name\")",
+            "Returns the content to the parent view."
+          ],
+          "text": "<partial name=\"partial view name\" />\nReturns the content to the parent view.\n@await Html.PartialAsync(\"partial view name\")\nReturns the content to the parent view."
+        },
+        {
+          "type": "code",
+          "page": 1,
+          "lines": [
+            "@{ await Html.RenderPartialAsync(\"partial view name\"); }"
+          ],
+          "text": "@{ await Html.RenderPartialAsync(\"partial view name\"); }"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Streams the content to the browser."
+          ],
+          "text": "Streams the content to the browser."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Partial Views with ViewData"
+          ],
+          "text": "Partial Views with ViewData"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "When partial view is invoked, it receives a copy of the parent view's ViewData object.",
+            "So, any changes made in the ViewData in the partial view, do NOT effect the ViewData of the parent",
+            "view.",
+            "Optionally, you can supply a custom ViewData object to the partial view, if you don't want the partial",
+            "view to access the entire ViewData of the parent view."
+          ],
+          "text": "When partial view is invoked, it receives a copy of the parent view's ViewData object.\nSo, any changes made in the ViewData in the partial view, do NOT effect the ViewData of the parent\nview.\nOptionally, you can supply a custom ViewData object to the partial view, if you don't want the partial\nview to access the entire ViewData of the parent view."
+        }
+      ],
+      "char_count_raw": 915,
+      "char_count_repaired": 914
+    },
+    {
+      "page_number": 2,
+      "raw_text": "Invoking Partial Views with View Data\n@{ await Html.RenderPartialAsync(\"partial view name\", ViewData); }\n-- or --\n<partial name=\"partial view name\" view-data=\"ViewData\" />\nStrongly Typed Partial Views\nStrongly Typed Partial View is a partial view that is bound to a specified model class.\nSo, it gets all the benefits of a strongly typed view.\nInvoking Strongly-Typed Partial View\n@{ await Html.RenderPartialAsync(\"partial view name\", Model); }\n-- or --\n<partial name=\"partial view name\" model=\"Model\" />\n",
+      "repaired_text": "Invoking Partial Views with View Data\n@{ await Html.RenderPartialAsync(\"partial view name\", ViewData); }\n-- or --\n<partial name=\"partial view name\" view-data=\"ViewData\" />\nStrongly Typed Partial Views\nStrongly Typed Partial View is a partial view that is bound to a specified model class.\nSo, it gets all the benefits of a strongly typed view.\nInvoking Strongly-Typed Partial View\n@{ await Html.RenderPartialAsync(\"partial view name\", Model); }\n-- or --\n<partial name=\"partial view name\" model=\"Model\" />",
+      "lines": [
+        {
+          "text": "Invoking Partial Views with View Data",
+          "rawText": "Invoking Partial Views with View Data",
+          "x": 72.024,
+          "y": 598.3,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f4"
+        },
+        {
+          "text": "@{ await Html.RenderPartialAsync(\"partial view name\", ViewData); }",
+          "rawText": "@{ await Html.RenderPartialAsync(\"partial view name\", ViewData); }",
+          "x": 72.024,
+          "y": 575.86,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "-- or --",
+          "rawText": "-- or --",
+          "x": 72.024,
+          "y": 553.27,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "<partial name=\"partial view name\" view-data=\"ViewData\" />",
+          "rawText": "<partial name=\"partial view name\" view-data=\"ViewData\" />",
+          "x": 72.024,
+          "y": 530.83,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "Strongly Typed Partial Views",
+          "rawText": "Strongly Typed Partial Views",
+          "x": 72.024,
+          "y": 463.39,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f4"
+        },
+        {
+          "text": "Strongly Typed Partial View is a partial view that is bound to a specified model class.",
+          "rawText": "Strongly Typed Partial View is a partial view that is bound to a specified model class.",
+          "x": 72.024,
+          "y": 440.83,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "So, it gets all the benefits of a strongly typed view.",
+          "rawText": "So, it gets all the benefits of a strongly typed view.",
+          "x": 72.024,
+          "y": 418.39,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "Invoking Strongly-Typed Partial View",
+          "rawText": "Invoking Strongly-Typed Partial View",
+          "x": 72.024,
+          "y": 203.66,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f4"
+        },
+        {
+          "text": "@{ await Html.RenderPartialAsync(\"partial view name\", Model); }",
+          "rawText": "@{ await Html.RenderPartialAsync(\"partial view name\", Model); }",
+          "x": 72.024,
+          "y": 181.1,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "-- or --",
+          "rawText": "-- or --",
+          "x": 72.024,
+          "y": 158.66,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "<partial name=\"partial view name\" model=\"Model\" />",
+          "rawText": "<partial name=\"partial view name\" model=\"Model\" />",
+          "x": 72.024,
+          "y": 136.1,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Invoking Partial Views with View Data"
+          ],
+          "text": "Invoking Partial Views with View Data"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "@{ await Html.RenderPartialAsync(\"partial view name\", ViewData); }"
+          ],
+          "text": "@{ await Html.RenderPartialAsync(\"partial view name\", ViewData); }"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "-- or --",
+            "<partial name=\"partial view name\" view-data=\"ViewData\" />"
+          ],
+          "text": "-- or --\n<partial name=\"partial view name\" view-data=\"ViewData\" />"
+        },
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Strongly Typed Partial Views"
+          ],
+          "text": "Strongly Typed Partial Views"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "Strongly Typed Partial View is a partial view that is bound to a specified model class.",
+            "So, it gets all the benefits of a strongly typed view."
+          ],
+          "text": "Strongly Typed Partial View is a partial view that is bound to a specified model class.\nSo, it gets all the benefits of a strongly typed view."
+        },
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Invoking Strongly-Typed Partial View"
+          ],
+          "text": "Invoking Strongly-Typed Partial View"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "@{ await Html.RenderPartialAsync(\"partial view name\", Model); }"
+          ],
+          "text": "@{ await Html.RenderPartialAsync(\"partial view name\", Model); }"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "-- or --",
+            "<partial name=\"partial view name\" model=\"Model\" />"
+          ],
+          "text": "-- or --\n<partial name=\"partial view name\" model=\"Model\" />"
+        }
+      ],
+      "char_count_raw": 505,
+      "char_count_repaired": 504
+    },
+    {
+      "page_number": 3,
+      "raw_text": "PartialViewResult\nPartialViewResult can represent the content of a partial .\nGenerally useful to fetch partial view's content into the browser, by making an asynchronous\nrequest (XMLHttpRequest / fetch request) from the browser.\nreturn new PartialViewResult() { ViewName = \"partial view name\", Model = model };\n[or]\nreturn PartialView(\"partial view name\", model);\n",
+      "repaired_text": "PartialViewResult\nPartialViewResult can represent the content of a partial .\nGenerally useful to fetch partial view's content into the browser, by making an asynchronous\nrequest (XMLHttpRequest / fetch request) from the browser.\nreturn new PartialViewResult() { ViewName = \"partial view name\", Model = model };\n[or]\nreturn PartialView(\"partial view name\", model);",
+      "lines": [
+        {
+          "text": "PartialViewResult",
+          "rawText": "PartialViewResult",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f4"
+        },
+        {
+          "text": "PartialViewResult can represent the content of a partial .",
+          "rawText": "PartialViewResult can represent the content of a partial .",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "Generally useful to fetch partial view's content into the browser, by making an asynchronous",
+          "rawText": "Generally useful to fetch partial view's content into the browser, by making an asynchronous",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "request (XMLHttpRequest / fetch request) from the browser.",
+          "rawText": "request (XMLHttpRequest / fetch request) from the browser.",
+          "x": 72.024,
+          "y": 699.94,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "return new PartialViewResult() { ViewName = \"partial view name\", Model = model };",
+          "rawText": "return new PartialViewResult() { ViewName = \"partial view name\", Model = model };",
+          "x": 72.024,
+          "y": 503.11,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "[or]",
+          "rawText": "[or]",
+          "x": 72.024,
+          "y": 480.67,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        },
+        {
+          "text": "return PartialView(\"partial view name\", model);",
+          "rawText": "return PartialView(\"partial view name\", model);",
+          "x": 72.024,
+          "y": 458.23,
+          "fontSize": 11.04,
+          "fontName": "g_d19_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 3,
+          "lines": [
+            "PartialViewResult"
+          ],
+          "text": "PartialViewResult"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "PartialViewResult can represent the content of a partial .",
+            "Generally useful to fetch partial view's content into the browser, by making an asynchronous",
+            "request (XMLHttpRequest / fetch request) from the browser."
+          ],
+          "text": "PartialViewResult can represent the content of a partial .\nGenerally useful to fetch partial view's content into the browser, by making an asynchronous\nrequest (XMLHttpRequest / fetch request) from the browser."
+        },
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            "return new PartialViewResult() { ViewName = \"partial view name\", Model = model };"
+          ],
+          "text": "return new PartialViewResult() { ViewName = \"partial view name\", Model = model };"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "[or]"
+          ],
+          "text": "[or]"
+        },
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            "return PartialView(\"partial view name\", model);"
+          ],
+          "text": "return PartialView(\"partial view name\", model);"
+        }
+      ],
+      "char_count_raw": 364,
+      "char_count_repaired": 363
+    }
+  ],
+  "title": "Partial   Views"
+}

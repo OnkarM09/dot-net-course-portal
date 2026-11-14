@@ -1,0 +1,1368 @@
+{
+  "source_file": "Cheat Sheet - Section 25 - Asp.Net Core.pdf",
+  "absolute_path": "D:/Dot net core/Asp.Net_Core_-Udemy-/Notes-20250125T050818Z-001/Cheat Sheets/Cheat Sheet - Section 25 - Asp.Net Core.pdf",
+  "section_number": 25,
+  "normalized_section": "25",
+  "is_cheatsheet": true,
+  "total_pages": 12,
+  "total_raw_chars": 3674,
+  "total_repaired_chars": 3713,
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "Asp.Net Core – True Ultimate Guide\nSection 25 – Identity, Authorization, Security – Cheat Sheet\nIntroduction to Identity\nIt is an API that manages users, passwords, profile data, roles, tokens, email confirmation, external\nlogins etc.\nIt is by default built on top of EntityFrameworkCore; you can also create custom data stores.\nIdentityUser<T>\nActs as a base class for ApplicationUser class that acts as model class to store user details.\nYou can add additional properties to the ApplicationUser class.\nBuilt-in Properties:\n1. Id\n2. UserName\n3. PasswordHash\n4. Email\n5. PhoneNumber\n",
+      "repaired_text": "Asp.Net Core – True Ultimate Guide\nSection 25 – Identity, Authorization, Security – Cheat Sheet\nIntroduction to Identity\nIt is an API that manages users, passwords, profile data, roles, tokens, email confirmation, external\nlogins etc.\nIt is by default built on top of EntityFrameworkCore; you can also create custom data stores.\nIdentityUser<T>\nActs as a base class for ApplicationUser class that acts as model class to store user details.\nYou can add additional properties to the ApplicationUser class.\nBuilt-in Properties:\n   1. Id\n   2. UserName\n   3. PasswordHash\n   4. Email\n   5. PhoneNumber",
+      "lines": [
+        {
+          "text": "Asp.Net Core – True Ultimate Guide",
+          "rawText": "Asp.Net Core – True Ultimate Guide",
+          "x": 72.024,
+          "y": 753.96,
+          "fontSize": 15.96,
+          "fontName": "g_d49_f2"
+        },
+        {
+          "text": "Section 25 – Identity, Authorization, Security – Cheat Sheet",
+          "rawText": "Section 25 – Identity, Authorization, Security – Cheat Sheet",
+          "x": 72.024,
+          "y": 725.98,
+          "fontSize": 15.96,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "Introduction to Identity",
+          "rawText": "Introduction to Identity",
+          "x": 72.024,
+          "y": 677.38,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "It is an API that manages users, passwords, profile data, roles, tokens, email confirmation, external",
+          "rawText": "It is an API that manages users, passwords, profile data, roles, tokens, email confirmation, external",
+          "x": 72.024,
+          "y": 654.94,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "logins etc.",
+          "rawText": "logins etc.",
+          "x": 72.024,
+          "y": 640.42,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "It is by default built on top of EntityFrameworkCore; you can also create custom data stores.",
+          "rawText": "It is by default built on top of EntityFrameworkCore; you can also create custom data stores.",
+          "x": 72.024,
+          "y": 617.98,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "IdentityUser<T>",
+          "rawText": "IdentityUser<T>",
+          "x": 72.024,
+          "y": 356.81,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "Acts as a base class for ApplicationUser class that acts as model class to store user details.",
+          "rawText": "Acts as a base class for ApplicationUser class that acts as model class to store user details.",
+          "x": 72.024,
+          "y": 334.37,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "You can add additional properties to the ApplicationUser class.",
+          "rawText": "You can add additional properties to the ApplicationUser class.",
+          "x": 72.024,
+          "y": 311.93,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "Built-in Properties:",
+          "rawText": "Built-in Properties:",
+          "x": 72.024,
+          "y": 289.37,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "   1. Id",
+          "rawText": "1. Id",
+          "x": 90.024,
+          "y": 266.93,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "   2. UserName",
+          "rawText": "2. UserName",
+          "x": 90.024,
+          "y": 244.37,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "   3. PasswordHash",
+          "rawText": "3. PasswordHash",
+          "x": 90.024,
+          "y": 221.93,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "   4. Email",
+          "rawText": "4. Email",
+          "x": 90.024,
+          "y": 199.34,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "   5. PhoneNumber",
+          "rawText": "5. PhoneNumber",
+          "x": 90.024,
+          "y": 176.9,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "banner_header",
+          "page": 1,
+          "lines": [
+            "Asp.Net Core – True Ultimate Guide"
+          ],
+          "text": "Asp.Net Core – True Ultimate Guide"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Section 25 – Identity, Authorization, Security – Cheat Sheet"
+          ],
+          "text": "Section 25 – Identity, Authorization, Security – Cheat Sheet"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Introduction to Identity"
+          ],
+          "text": "Introduction to Identity"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "It is an API that manages users, passwords, profile data, roles, tokens, email confirmation, external",
+            "logins etc.",
+            "It is by default built on top of EntityFrameworkCore; you can also create custom data stores.",
+            "IdentityUser<T>",
+            "Acts as a base class for ApplicationUser class that acts as model class to store user details.",
+            "You can add additional properties to the ApplicationUser class.",
+            "Built-in Properties:"
+          ],
+          "text": "It is an API that manages users, passwords, profile data, roles, tokens, email confirmation, external\nlogins etc.\nIt is by default built on top of EntityFrameworkCore; you can also create custom data stores.\nIdentityUser<T>\nActs as a base class for ApplicationUser class that acts as model class to store user details.\nYou can add additional properties to the ApplicationUser class.\nBuilt-in Properties:"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "1. Id"
+          ],
+          "text": "1. Id"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "2. UserName"
+          ],
+          "text": "2. UserName"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "3. PasswordHash"
+          ],
+          "text": "3. PasswordHash"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "4. Email"
+          ],
+          "text": "4. Email"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "5. PhoneNumber"
+          ],
+          "text": "5. PhoneNumber"
+        }
+      ],
+      "char_count_raw": 583,
+      "char_count_repaired": 597
+    },
+    {
+      "page_number": 2,
+      "raw_text": "IdentityRole<T>\nActs as a base class for ApplicationRole class that acts as model class to store role details. Eg:\n\"admin\"\nYou can add additional properties to the ApplicationRole class.\nBuilt-in Properties:\n1. Id\n2. Name\nRegister View\n",
+      "repaired_text": "IdentityRole<T>\nActs as a base class for ApplicationRole class that acts as model class to store role details. Eg:\n\"admin\"\nYou can add additional properties to the ApplicationRole class.\nBuilt-in Properties:\n   1. Id\n   2. Name\nRegister View",
+      "lines": [
+        {
+          "text": "IdentityRole<T>",
+          "rawText": "IdentityRole<T>",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "Acts as a base class for ApplicationRole class that acts as model class to store role details. Eg:",
+          "rawText": "Acts as a base class for ApplicationRole class that acts as model class to store role details. Eg:",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "\"admin\"",
+          "rawText": "\"admin\"",
+          "x": 72.024,
+          "y": 722.5,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "You can add additional properties to the ApplicationRole class.",
+          "rawText": "You can add additional properties to the ApplicationRole class.",
+          "x": 72.024,
+          "y": 699.94,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "Built-in Properties:",
+          "rawText": "Built-in Properties:",
+          "x": 72.024,
+          "y": 677.5,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "   1. Id",
+          "rawText": "1. Id",
+          "x": 90.024,
+          "y": 655.06,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "   2. Name",
+          "rawText": "2. Name",
+          "x": 90.024,
+          "y": 632.5,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "Register View",
+          "rawText": "Register View",
+          "x": 72.024,
+          "y": 565.03,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "IdentityRole<T>",
+            "Acts as a base class for ApplicationRole class that acts as model class to store role details. Eg:",
+            "\"admin\"",
+            "You can add additional properties to the ApplicationRole class.",
+            "Built-in Properties:"
+          ],
+          "text": "IdentityRole<T>\nActs as a base class for ApplicationRole class that acts as model class to store role details. Eg:\n\"admin\"\nYou can add additional properties to the ApplicationRole class.\nBuilt-in Properties:"
+        },
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "1. Id"
+          ],
+          "text": "1. Id"
+        },
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "2. Name"
+          ],
+          "text": "2. Name"
+        },
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Register View"
+          ],
+          "text": "Register View"
+        }
+      ],
+      "char_count_raw": 236,
+      "char_count_repaired": 241
+    },
+    {
+      "page_number": 3,
+      "raw_text": "Managers\nUserManager\nProvides business logic methods for managing users.\nIt provides methods for creating, searching, updating and deleting users.\nMethods:\n• CreateAsync()\n• DeleteAsync()\n• UpdateAsync()\n• IsInRoleAsync()FindByEmailAsync()\n• FindByIdAsync()\n• FindByNameAsync()\n",
+      "repaired_text": "Managers\nUserManager\nProvides business logic methods for managing users.\nIt provides methods for creating, searching, updating and deleting users.\nMethods:\n   • CreateAsync()\n   • DeleteAsync()\n   • UpdateAsync()\n   • IsInRoleAsync()FindByEmailAsync()\n   • FindByIdAsync()\n   • FindByNameAsync()",
+      "lines": [
+        {
+          "text": "Managers",
+          "rawText": "Managers",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "UserManager",
+          "rawText": "UserManager",
+          "x": 72.024,
+          "y": 466.87,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "Provides business logic methods for managing users.",
+          "rawText": "Provides business logic methods for managing users.",
+          "x": 72.024,
+          "y": 444.43,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "It provides methods for creating, searching, updating and deleting users.",
+          "rawText": "It provides methods for creating, searching, updating and deleting users.",
+          "x": 72.024,
+          "y": 421.87,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "Methods:",
+          "rawText": "Methods:",
+          "x": 72.024,
+          "y": 399.43,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "   • CreateAsync()",
+          "rawText": "• CreateAsync()",
+          "x": 90.024,
+          "y": 376.85,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f7"
+        },
+        {
+          "text": "   • DeleteAsync()",
+          "rawText": "• DeleteAsync()",
+          "x": 90.024,
+          "y": 354.41,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f7"
+        },
+        {
+          "text": "   • UpdateAsync()",
+          "rawText": "• UpdateAsync()",
+          "x": 90.024,
+          "y": 331.97,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f7"
+        },
+        {
+          "text": "   • IsInRoleAsync()FindByEmailAsync()",
+          "rawText": "• IsInRoleAsync()FindByEmailAsync()",
+          "x": 90.024,
+          "y": 309.41,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f7"
+        },
+        {
+          "text": "   • FindByIdAsync()",
+          "rawText": "• FindByIdAsync()",
+          "x": 90.024,
+          "y": 286.97,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f7"
+        },
+        {
+          "text": "   • FindByNameAsync()",
+          "rawText": "• FindByNameAsync()",
+          "x": 90.024,
+          "y": 264.41,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f7"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 3,
+          "lines": [
+            "Managers"
+          ],
+          "text": "Managers"
+        },
+        {
+          "type": "heading",
+          "page": 3,
+          "lines": [
+            "UserManager"
+          ],
+          "text": "UserManager"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "Provides business logic methods for managing users.",
+            "It provides methods for creating, searching, updating and deleting users.",
+            "Methods:"
+          ],
+          "text": "Provides business logic methods for managing users.\nIt provides methods for creating, searching, updating and deleting users.\nMethods:"
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "   • CreateAsync()"
+          ],
+          "text": "   • CreateAsync()"
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "   • DeleteAsync()"
+          ],
+          "text": "   • DeleteAsync()"
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "   • UpdateAsync()"
+          ],
+          "text": "   • UpdateAsync()"
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "   • IsInRoleAsync()FindByEmailAsync()"
+          ],
+          "text": "   • IsInRoleAsync()FindByEmailAsync()"
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "   • FindByIdAsync()"
+          ],
+          "text": "   • FindByIdAsync()"
+        },
+        {
+          "type": "list_item",
+          "page": 3,
+          "lines": [
+            "   • FindByNameAsync()"
+          ],
+          "text": "   • FindByNameAsync()"
+        }
+      ],
+      "char_count_raw": 278,
+      "char_count_repaired": 295
+    },
+    {
+      "page_number": 4,
+      "raw_text": "SignInManager\nProvides business logic methods for sign-in and sign-in functionality of the users.\nIt provides methods for creating, searching, updating and deleting users.\nMethods:\nSignInAsync()\nPasswordSignInAsync()\nSignOutAsync()\nIsSignedIn()\nPassword Complexity Configuration\nservices.AddIdentity<ApplicationUser, ApplicationRole>(options => {\noptions.Password.RequiredLength = 6; //number of characters required in password\noptions.Password.RequireNonAlphanumeric = true; //is non-alphanumeric characters (symbols)\nrequired in password\noptions.Password.RequireUppercase = true; //is at least one upper case character required in\npassword\noptions.Password.RequireLowercase = true; //is at least one lower case character required in\npassword\noptions.Password.RequireDigit = true; //is at least one digit required in password\noptions.Password.RequiredUniqueChars = 1; //number of distinct characters required in password\n})\n.AddEntityFrameworkStores<ApplicationDbContext>()\n.AddDefaultTokenProviders()\n.AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()\n.AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();\n",
+      "repaired_text": "SignInManager\nProvides business logic methods for sign-in and sign-in functionality of the users.\nIt provides methods for creating, searching, updating and deleting users.\nMethods:\nSignInAsync()\nPasswordSignInAsync()\nSignOutAsync()\nIsSignedIn()\nPassword Complexity Configuration\nservices.AddIdentity<ApplicationUser, ApplicationRole>(options => {\n options.Password.RequiredLength = 6; //number of characters required in password\n options.Password.RequireNonAlphanumeric = true; //is non-alphanumeric characters (symbols)\nrequired in password\n options.Password.RequireUppercase = true; //is at least one upper case character required in\npassword\n options.Password.RequireLowercase = true; //is at least one lower case character required in\npassword\n options.Password.RequireDigit = true; //is at least one digit required in password\n options.Password.RequiredUniqueChars = 1; //number of distinct characters required in password\n})\n.AddEntityFrameworkStores<ApplicationDbContext>()\n.AddDefaultTokenProviders()\n.AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()\n.AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();",
+      "lines": [
+        {
+          "text": "SignInManager",
+          "rawText": "SignInManager",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "Provides business logic methods for sign-in and sign-in functionality of the users.",
+          "rawText": "Provides business logic methods for sign-in and sign-in functionality of the users.",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "It provides methods for creating, searching, updating and deleting users.",
+          "rawText": "It provides methods for creating, searching, updating and deleting users.",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "Methods:",
+          "rawText": "Methods:",
+          "x": 72.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "SignInAsync()",
+          "rawText": "SignInAsync()",
+          "x": 72.024,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "PasswordSignInAsync()",
+          "rawText": "PasswordSignInAsync()",
+          "x": 72.024,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "SignOutAsync()",
+          "rawText": "SignOutAsync()",
+          "x": 72.024,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "IsSignedIn()",
+          "rawText": "IsSignedIn()",
+          "x": 72.024,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "Password Complexity Configuration",
+          "rawText": "Password Complexity Configuration",
+          "x": 72.024,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "services.AddIdentity<ApplicationUser, ApplicationRole>(options => {",
+          "rawText": "services.AddIdentity<ApplicationUser, ApplicationRole>(options => {",
+          "x": 72.024,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": " options.Password.RequiredLength = 6; //number of characters required in password",
+          "rawText": "options.Password.RequiredLength = 6; //number of characters required in password",
+          "x": 77.064,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": " options.Password.RequireNonAlphanumeric = true; //is non-alphanumeric characters (symbols)",
+          "rawText": "options.Password.RequireNonAlphanumeric = true; //is non-alphanumeric characters (symbols)",
+          "x": 77.064,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "required in password",
+          "rawText": "required in password",
+          "x": 72.024,
+          "y": 444.55,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": " options.Password.RequireUppercase = true; //is at least one upper case character required in",
+          "rawText": "options.Password.RequireUppercase = true; //is at least one upper case character required in",
+          "x": 77.064,
+          "y": 422.11,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "password",
+          "rawText": "password",
+          "x": 72.024,
+          "y": 407.59,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": " options.Password.RequireLowercase = true; //is at least one lower case character required in",
+          "rawText": "options.Password.RequireLowercase = true; //is at least one lower case character required in",
+          "x": 77.064,
+          "y": 385.01,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "password",
+          "rawText": "password",
+          "x": 72.024,
+          "y": 370.61,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": " options.Password.RequireDigit = true; //is at least one digit required in password",
+          "rawText": "options.Password.RequireDigit = true; //is at least one digit required in password",
+          "x": 77.064,
+          "y": 348.05,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": " options.Password.RequiredUniqueChars = 1; //number of distinct characters required in password",
+          "rawText": "options.Password.RequiredUniqueChars = 1; //number of distinct characters required in password",
+          "x": 77.064,
+          "y": 325.61,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "})",
+          "rawText": "})",
+          "x": 72.024,
+          "y": 303.05,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": ".AddEntityFrameworkStores<ApplicationDbContext>()",
+          "rawText": ".AddEntityFrameworkStores<ApplicationDbContext>()",
+          "x": 72.024,
+          "y": 280.61,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": ".AddDefaultTokenProviders()",
+          "rawText": ".AddDefaultTokenProviders()",
+          "x": 72.024,
+          "y": 258.17,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": ".AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()",
+          "rawText": ".AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()",
+          "x": 72.024,
+          "y": 235.61,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": ".AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();",
+          "rawText": ".AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();",
+          "x": 72.024,
+          "y": 213.14,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "SignInManager"
+          ],
+          "text": "SignInManager"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "Provides business logic methods for sign-in and sign-in functionality of the users.",
+            "It provides methods for creating, searching, updating and deleting users.",
+            "Methods:"
+          ],
+          "text": "Provides business logic methods for sign-in and sign-in functionality of the users.\nIt provides methods for creating, searching, updating and deleting users.\nMethods:"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "SignInAsync()"
+          ],
+          "text": "SignInAsync()"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "PasswordSignInAsync()"
+          ],
+          "text": "PasswordSignInAsync()"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "SignOutAsync()"
+          ],
+          "text": "SignOutAsync()"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "IsSignedIn()"
+          ],
+          "text": "IsSignedIn()"
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "Password Complexity Configuration"
+          ],
+          "text": "Password Complexity Configuration"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "services.AddIdentity<ApplicationUser, ApplicationRole>(options => {",
+            " options.Password.RequiredLength = 6; //number of characters required in password",
+            " options.Password.RequireNonAlphanumeric = true; //is non-alphanumeric characters (symbols)",
+            "required in password",
+            " options.Password.RequireUppercase = true; //is at least one upper case character required in",
+            "password",
+            " options.Password.RequireLowercase = true; //is at least one lower case character required in",
+            "password",
+            " options.Password.RequireDigit = true; //is at least one digit required in password",
+            " options.Password.RequiredUniqueChars = 1; //number of distinct characters required in password",
+            "})",
+            ".AddEntityFrameworkStores<ApplicationDbContext>()",
+            ".AddDefaultTokenProviders()",
+            ".AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()",
+            ".AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();"
+          ],
+          "text": "services.AddIdentity<ApplicationUser, ApplicationRole>(options => {\n options.Password.RequiredLength = 6; //number of characters required in password\n options.Password.RequireNonAlphanumeric = true; //is non-alphanumeric characters (symbols)\nrequired in password\n options.Password.RequireUppercase = true; //is at least one upper case character required in\npassword\n options.Password.RequireLowercase = true; //is at least one lower case character required in\npassword\n options.Password.RequireDigit = true; //is at least one digit required in password\n options.Password.RequiredUniqueChars = 1; //number of distinct characters required in password\n})\n.AddEntityFrameworkStores<ApplicationDbContext>()\n.AddDefaultTokenProviders()\n.AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()\n.AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();"
+        }
+      ],
+      "char_count_raw": 1165,
+      "char_count_repaired": 1170
+    },
+    {
+      "page_number": 5,
+      "raw_text": "Login/Logout Buttons\nLogin View\nAuthorization Policy\nservices.AddAuthorization(options =>\n{\nvar policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();\noptions.FallbackPolicy = policy;\n});\n",
+      "repaired_text": "Login/Logout Buttons\nLogin View\nAuthorization Policy\nservices.AddAuthorization(options =>\n{\n var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();\n options.FallbackPolicy = policy;\n});",
+      "lines": [
+        {
+          "text": "Login/Logout Buttons",
+          "rawText": "Login/Logout Buttons",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "Login View",
+          "rawText": "Login View",
+          "x": 72.024,
+          "y": 535.75,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "Authorization Policy",
+          "rawText": "Authorization Policy",
+          "x": 72.024,
+          "y": 250.49,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "services.AddAuthorization(options =>",
+          "rawText": "services.AddAuthorization(options =>",
+          "x": 72.024,
+          "y": 227.93,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 205.46,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": " var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();",
+          "rawText": "var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();",
+          "x": 77.064,
+          "y": 183.02,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": " options.FallbackPolicy = policy;",
+          "rawText": "options.FallbackPolicy = policy;",
+          "x": 77.064,
+          "y": 160.46,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "});",
+          "rawText": "});",
+          "x": 72.024,
+          "y": 138.02,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "Login/Logout Buttons"
+          ],
+          "text": "Login/Logout Buttons"
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "Login View"
+          ],
+          "text": "Login View"
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "Authorization Policy"
+          ],
+          "text": "Authorization Policy"
+        },
+        {
+          "type": "code",
+          "page": 5,
+          "lines": [
+            "services.AddAuthorization(options =>",
+            "{",
+            " var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();",
+            " options.FallbackPolicy = policy;",
+            "});"
+          ],
+          "text": "services.AddAuthorization(options =>\n{\n var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();\n options.FallbackPolicy = policy;\n});"
+        }
+      ],
+      "char_count_raw": 211,
+      "char_count_repaired": 212
+    },
+    {
+      "page_number": 6,
+      "raw_text": "ReturnUrl\n",
+      "repaired_text": "ReturnUrl",
+      "lines": [
+        {
+          "text": "ReturnUrl",
+          "rawText": "ReturnUrl",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 6,
+          "lines": [
+            "ReturnUrl"
+          ],
+          "text": "ReturnUrl"
+        }
+      ],
+      "char_count_raw": 10,
+      "char_count_repaired": 9
+    },
+    {
+      "page_number": 7,
+      "raw_text": "Remote Validation\nModel class\npublic class ModelClassName\n{\n[Remote(action: \"action name\", controller: \"controller name\", ErrorMessage = \"error message\")]\npublic type PropertyName { get; set; }\n}\nConventional Routing\nConventional routing is a type of routing system in asp.net core that defines route templates applied\non all controllers in the entire application.\nYou can override this using attribute routing on a specific action method.\nendpoints.MapControllerRoute(\nname: \"default\",\npattern: \"{controller=Persons}/{action=Index}/{id?}\"\n);\n",
+      "repaired_text": "Remote Validation\nModel class\npublic class ModelClassName\n{\n [Remote(action: \"action name\", controller: \"controller name\", ErrorMessage = \"error message\")]\n public type PropertyName { get; set; }\n}\nConventional Routing\nConventional routing is a type of routing system in asp.net core that defines route templates applied\non all controllers in the entire application.\nYou can override this using attribute routing on a specific action method.\nendpoints.MapControllerRoute(\n name: \"default\",\n pattern: \"{controller=Persons}/{action=Index}/{id?}\"\n);",
+      "lines": [
+        {
+          "text": "Remote Validation",
+          "rawText": "Remote Validation",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "Model class",
+          "rawText": "Model class",
+          "x": 72.024,
+          "y": 640.9,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "public class ModelClassName",
+          "rawText": "public class ModelClassName",
+          "x": 72.024,
+          "y": 618.46,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 595.9,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": " [Remote(action: \"action name\", controller: \"controller name\", ErrorMessage = \"error message\")]",
+          "rawText": "[Remote(action: \"action name\", controller: \"controller name\", ErrorMessage = \"error message\")]",
+          "x": 77.064,
+          "y": 573.43,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": " public type PropertyName { get; set; }",
+          "rawText": "public type PropertyName { get; set; }",
+          "x": 77.064,
+          "y": 550.87,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 528.43,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "Conventional Routing",
+          "rawText": "Conventional Routing",
+          "x": 72.024,
+          "y": 438.43,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "Conventional routing is a type of routing system in asp.net core that defines route templates applied",
+          "rawText": "Conventional routing is a type of routing system in asp.net core that defines route templates applied",
+          "x": 72.024,
+          "y": 415.99,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "on all controllers in the entire application.",
+          "rawText": "on all controllers in the entire application.",
+          "x": 72.024,
+          "y": 401.47,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "You can override this using attribute routing on a specific action method.",
+          "rawText": "You can override this using attribute routing on a specific action method.",
+          "x": 72.024,
+          "y": 356.45,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "endpoints.MapControllerRoute(",
+          "rawText": "endpoints.MapControllerRoute(",
+          "x": 72.024,
+          "y": 334.01,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": " name: \"default\",",
+          "rawText": "name: \"default\",",
+          "x": 77.064,
+          "y": 311.45,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": " pattern: \"{controller=Persons}/{action=Index}/{id?}\"",
+          "rawText": "pattern: \"{controller=Persons}/{action=Index}/{id?}\"",
+          "x": 77.064,
+          "y": 289.01,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": ");",
+          "rawText": ");",
+          "x": 72.024,
+          "y": 266.57,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 7,
+          "lines": [
+            "Remote Validation"
+          ],
+          "text": "Remote Validation"
+        },
+        {
+          "type": "heading",
+          "page": 7,
+          "lines": [
+            "Model class"
+          ],
+          "text": "Model class"
+        },
+        {
+          "type": "code",
+          "page": 7,
+          "lines": [
+            "public class ModelClassName",
+            "{"
+          ],
+          "text": "public class ModelClassName\n{"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            " [Remote(action: \"action name\", controller: \"controller name\", ErrorMessage = \"error message\")]"
+          ],
+          "text": " [Remote(action: \"action name\", controller: \"controller name\", ErrorMessage = \"error message\")]"
+        },
+        {
+          "type": "code",
+          "page": 7,
+          "lines": [
+            " public type PropertyName { get; set; }",
+            "}"
+          ],
+          "text": " public type PropertyName { get; set; }\n}"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "Conventional Routing",
+            "Conventional routing is a type of routing system in asp.net core that defines route templates applied",
+            "on all controllers in the entire application.",
+            "You can override this using attribute routing on a specific action method.",
+            "endpoints.MapControllerRoute(",
+            " name: \"default\",",
+            " pattern: \"{controller=Persons}/{action=Index}/{id?}\"",
+            ");"
+          ],
+          "text": "Conventional Routing\nConventional routing is a type of routing system in asp.net core that defines route templates applied\non all controllers in the entire application.\nYou can override this using attribute routing on a specific action method.\nendpoints.MapControllerRoute(\n name: \"default\",\n pattern: \"{controller=Persons}/{action=Index}/{id?}\"\n);"
+        }
+      ],
+      "char_count_raw": 543,
+      "char_count_repaired": 546
+    },
+    {
+      "page_number": 8,
+      "raw_text": "Areas\nArea is a group of related controllers, views and models that are related to specific module or\nspecific user.\nUser Roles\n",
+      "repaired_text": "Areas\nArea is a group of related controllers, views and models that are related to specific module or\nspecific user.\nUser Roles",
+      "lines": [
+        {
+          "text": "Areas",
+          "rawText": "Areas",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "Area is a group of related controllers, views and models that are related to specific module or",
+          "rawText": "Area is a group of related controllers, views and models that are related to specific module or",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "specific user.",
+          "rawText": "specific user.",
+          "x": 72.024,
+          "y": 722.5,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "User Roles",
+          "rawText": "User Roles",
+          "x": 72.024,
+          "y": 453.91,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 8,
+          "lines": [
+            "Areas"
+          ],
+          "text": "Areas"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "Area is a group of related controllers, views and models that are related to specific module or",
+            "specific user."
+          ],
+          "text": "Area is a group of related controllers, views and models that are related to specific module or\nspecific user."
+        },
+        {
+          "type": "heading",
+          "page": 8,
+          "lines": [
+            "User Roles"
+          ],
+          "text": "User Roles"
+        }
+      ],
+      "char_count_raw": 128,
+      "char_count_repaired": 127
+    },
+    {
+      "page_number": 9,
+      "raw_text": "Role Based Authentication\nUser-role defines type of the user that has access to specific resources of the application.\nExamples: Administrator role, Customer role etc.\n",
+      "repaired_text": "Role Based Authentication\nUser-role defines type of the user that has access to specific resources of the application.\nExamples: Administrator role, Customer role etc.",
+      "lines": [
+        {
+          "text": "Role Based Authentication",
+          "rawText": "Role Based Authentication",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "User-role defines type of the user that has access to specific resources of the application.",
+          "rawText": "User-role defines type of the user that has access to specific resources of the application.",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "Examples: Administrator role, Customer role etc.",
+          "rawText": "Examples: Administrator role, Customer role etc.",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 9,
+          "lines": [
+            "Role Based Authentication"
+          ],
+          "text": "Role Based Authentication"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "User-role defines type of the user that has access to specific resources of the application.",
+            "Examples: Administrator role, Customer role etc."
+          ],
+          "text": "User-role defines type of the user that has access to specific resources of the application.\nExamples: Administrator role, Customer role etc."
+        }
+      ],
+      "char_count_raw": 168,
+      "char_count_repaired": 167
+    },
+    {
+      "page_number": 10,
+      "raw_text": "HTTPS\n",
+      "repaired_text": "HTTPS",
+      "lines": [
+        {
+          "text": "HTTPS",
+          "rawText": "HTTPS",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 10,
+          "lines": [
+            "HTTPS"
+          ],
+          "text": "HTTPS"
+        }
+      ],
+      "char_count_raw": 6,
+      "char_count_repaired": 5
+    },
+    {
+      "page_number": 11,
+      "raw_text": "XSRF\nXSRF (Cross Site Request Forgery - CSRF) is a process of making a request to a web server from\nanother domain, using an existing authentication of the same web server.\nEg: attacker.com creates a form that sends malicious request to original.com.\nAttacker's request without AntiForgeryToken\nAttacker's request\n",
+      "repaired_text": "XSRF\nXSRF (Cross Site Request Forgery - CSRF) is a process of making a request to a web server from\nanother domain, using an existing authentication of the same web server.\nEg: attacker.com creates a form that sends malicious request to original.com.\nAttacker's request without AntiForgeryToken\nAttacker's request",
+      "lines": [
+        {
+          "text": "XSRF",
+          "rawText": "XSRF",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "XSRF (Cross Site Request Forgery - CSRF) is a process of making a request to a web server from",
+          "rawText": "XSRF (Cross Site Request Forgery - CSRF) is a process of making a request to a web server from",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "another domain, using an existing authentication of the same web server.",
+          "rawText": "another domain, using an existing authentication of the same web server.",
+          "x": 72.024,
+          "y": 722.5,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "Eg: attacker.com creates a form that sends malicious request to original.com.",
+          "rawText": "Eg: attacker.com creates a form that sends malicious request to original.com.",
+          "x": 72.024,
+          "y": 699.94,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f1"
+        },
+        {
+          "text": "Attacker's request without AntiForgeryToken",
+          "rawText": "Attacker's request without AntiForgeryToken",
+          "x": 72.024,
+          "y": 655.06,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        },
+        {
+          "text": "Attacker's request",
+          "rawText": "Attacker's request",
+          "x": 72.024,
+          "y": 401.47,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 11,
+          "lines": [
+            "XSRF"
+          ],
+          "text": "XSRF"
+        },
+        {
+          "type": "prose",
+          "page": 11,
+          "lines": [
+            "XSRF (Cross Site Request Forgery - CSRF) is a process of making a request to a web server from",
+            "another domain, using an existing authentication of the same web server.",
+            "Eg: attacker.com creates a form that sends malicious request to original.com.",
+            "Attacker's request without AntiForgeryToken",
+            "Attacker's request"
+          ],
+          "text": "XSRF (Cross Site Request Forgery - CSRF) is a process of making a request to a web server from\nanother domain, using an existing authentication of the same web server.\nEg: attacker.com creates a form that sends malicious request to original.com.\nAttacker's request without AntiForgeryToken\nAttacker's request"
+        }
+      ],
+      "char_count_raw": 314,
+      "char_count_repaired": 313
+    },
+    {
+      "page_number": 12,
+      "raw_text": "Legit request [No attacker.com]\n",
+      "repaired_text": "Legit request [No attacker.com]",
+      "lines": [
+        {
+          "text": "Legit request [No attacker.com]",
+          "rawText": "Legit request [No attacker.com]",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d49_f4"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "prose",
+          "page": 12,
+          "lines": [
+            "Legit request [No attacker.com]"
+          ],
+          "text": "Legit request [No attacker.com]"
+        }
+      ],
+      "char_count_raw": 32,
+      "char_count_repaired": 31
+    }
+  ],
+  "title": "Section"
+}

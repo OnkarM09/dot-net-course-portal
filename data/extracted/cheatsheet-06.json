@@ -1,0 +1,2199 @@
+{
+  "source_file": "Cheat Sheet - Section 6 - Asp.Net Core.pdf",
+  "absolute_path": "D:/Dot net core/Asp.Net_Core_-Udemy-/Notes-20250125T050818Z-001/Cheat Sheets/Cheat Sheet - Section 6 - Asp.Net Core.pdf",
+  "section_number": 6,
+  "normalized_section": "06",
+  "is_cheatsheet": true,
+  "total_pages": 9,
+  "total_raw_chars": 6107,
+  "total_repaired_chars": 6207,
+  "pages": [
+    {
+      "page_number": 1,
+      "raw_text": "Asp.Net Core – True Ultimate Guide\nSection 6 – Controllers & IActionResult – Cheat Sheet\nIntroduction to Controllers\nController is a class that is used to group-up a set of actions (or action methods ).\nAction methods do perform certain operation when a request is received & returns the result\n(response).\nCreating Controllers\nControllers should be either or both:\n• The class name should be suffixed with \"Controller\". Eg: HomeController\n• The [Controller] attribute is applied to the same class or to its base class.\nController\n[Controller]\nclass ClassNameController\n{\n//action methods here\n}\nOptional:\n• Is a public class.\n• Inherited from Microsoft.AspNetCore.Mvc.Controller.\n",
+      "repaired_text": "Asp.Net Core – True Ultimate Guide\nSection 6 – Controllers & IActionResult – Cheat Sheet\nIntroduction to Controllers\nController is a class that is used to group-up a set of actions (or action methods ).\nAction methods do perform certain operation when a request is received & returns the result\n(response).\nCreating Controllers\nControllers should be either or both:\n   • The class name should be suffixed with \"Controller\". Eg: HomeController\n   • The [Controller] attribute is applied to the same class or to its base class.\nController\n[Controller]\nclass ClassNameController\n{\n //action methods here\n}\nOptional:\n   • Is a public class.\n   • Inherited from Microsoft.AspNetCore.Mvc.Controller.",
+      "lines": [
+        {
+          "text": "Asp.Net Core – True Ultimate Guide",
+          "rawText": "Asp.Net Core – True Ultimate Guide",
+          "x": 72.024,
+          "y": 753.96,
+          "fontSize": 15.96,
+          "fontName": "g_d11_f2"
+        },
+        {
+          "text": "Section 6 – Controllers & IActionResult – Cheat Sheet",
+          "rawText": "Section 6 – Controllers & IActionResult – Cheat Sheet",
+          "x": 72.024,
+          "y": 725.98,
+          "fontSize": 15.96,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "Introduction to Controllers",
+          "rawText": "Introduction to Controllers",
+          "x": 72.024,
+          "y": 677.38,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "Controller is a class that is used to group-up a set of actions (or action methods ).",
+          "rawText": "Controller is a class that is used to group-up a set of actions (or action methods ).",
+          "x": 72.024,
+          "y": 654.94,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "Action methods do perform certain operation when a request is received & returns the result",
+          "rawText": "Action methods do perform certain operation when a request is received & returns the result",
+          "x": 72.024,
+          "y": 632.38,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "(response).",
+          "rawText": "(response).",
+          "x": 72.024,
+          "y": 617.98,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "Creating Controllers",
+          "rawText": "Creating Controllers",
+          "x": 72.024,
+          "y": 427.03,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "Controllers should be either or both:",
+          "rawText": "Controllers should be either or both:",
+          "x": 72.024,
+          "y": 404.59,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "   • The class name should be suffixed with \"Controller\". Eg: HomeController",
+          "rawText": "• The class name should be suffixed with \"Controller\". Eg: HomeController",
+          "x": 90.024,
+          "y": 382.01,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f7"
+        },
+        {
+          "text": "   • The [Controller] attribute is applied to the same class or to its base class.",
+          "rawText": "• The [Controller] attribute is applied to the same class or to its base class.",
+          "x": 90.024,
+          "y": 359.57,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f7"
+        },
+        {
+          "text": "Controller",
+          "rawText": "Controller",
+          "x": 72.024,
+          "y": 314.57,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "[Controller]",
+          "rawText": "[Controller]",
+          "x": 72.024,
+          "y": 292.01,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "class ClassNameController",
+          "rawText": "class ClassNameController",
+          "x": 72.024,
+          "y": 269.57,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "x": 72.024,
+          "y": 247.13,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": " //action methods here",
+          "rawText": "//action methods here",
+          "x": 77.064,
+          "y": 224.57,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "x": 72.024,
+          "y": 202.1,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "Optional:",
+          "rawText": "Optional:",
+          "x": 72.024,
+          "y": 157.1,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "   • Is a public class.",
+          "rawText": "• Is a public class.",
+          "x": 90.024,
+          "y": 134.66,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f7"
+        },
+        {
+          "text": "   • Inherited from Microsoft.AspNetCore.Mvc.Controller.",
+          "rawText": "• Inherited from Microsoft.AspNetCore.Mvc.Controller.",
+          "x": 90.024,
+          "y": 112.1,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f7"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "banner_header",
+          "page": 1,
+          "lines": [
+            "Asp.Net Core – True Ultimate Guide"
+          ],
+          "text": "Asp.Net Core – True Ultimate Guide"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Section 6 – Controllers & IActionResult – Cheat Sheet"
+          ],
+          "text": "Section 6 – Controllers & IActionResult – Cheat Sheet"
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Introduction to Controllers"
+          ],
+          "text": "Introduction to Controllers"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Controller is a class that is used to group-up a set of actions (or action methods ).",
+            "Action methods do perform certain operation when a request is received & returns the result",
+            "(response)."
+          ],
+          "text": "Controller is a class that is used to group-up a set of actions (or action methods ).\nAction methods do perform certain operation when a request is received & returns the result\n(response)."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Creating Controllers"
+          ],
+          "text": "Creating Controllers"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Controllers should be either or both:"
+          ],
+          "text": "Controllers should be either or both:"
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • The class name should be suffixed with \"Controller\". Eg: HomeController"
+          ],
+          "text": "   • The class name should be suffixed with \"Controller\". Eg: HomeController"
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • The [Controller] attribute is applied to the same class or to its base class."
+          ],
+          "text": "   • The [Controller] attribute is applied to the same class or to its base class."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Controller"
+          ],
+          "text": "Controller"
+        },
+        {
+          "type": "code",
+          "page": 1,
+          "lines": [
+            "[Controller]",
+            "class ClassNameController",
+            "{",
+            " //action methods here",
+            "}"
+          ],
+          "text": "[Controller]\nclass ClassNameController\n{\n //action methods here\n}"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Optional:"
+          ],
+          "text": "Optional:"
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Is a public class."
+          ],
+          "text": "   • Is a public class."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "   • Inherited from Microsoft.AspNetCore.Mvc.Controller."
+          ],
+          "text": "   • Inherited from Microsoft.AspNetCore.Mvc.Controller."
+        }
+      ],
+      "char_count_raw": 681,
+      "char_count_repaired": 693
+    },
+    {
+      "page_number": 2,
+      "raw_text": "Enable 'routing' in controllers\nAddControllers( )\nbuilder.Services.AddControllers();\nAdds all controllers as services in the IServiceCollection.\nSo that, they can be accesed when a specific endpoint needs it.\nMapControllers()\napp.MapControllers();\nAdds all action methods as endpoints.\nSo that, no need of using UseEndPoints() method for adding action methods as end points.\nResponsibilities of Controllers\nReading requests\nExtracting data values from request such as query string parameters, request body, request cookies,\nrequest headers etc.\nInvoking models\nCalling business logic methods.\nGenerally business operations are available as 'services'.\nValidation\nValidate incoming request details (query string parameters, request body, request cookies, request\nheaders etc.)\nPreparing Response\nChoosing what kind of response has to be sent to the client & also preparing the response (action\nresult ).\n",
+      "repaired_text": "Enable 'routing' in controllers\nAddControllers( )\nbuilder.Services.AddControllers();\nAdds all controllers as services in the IServiceCollection.\nSo that, they can be accesed when a specific endpoint needs it.\nMapControllers()\napp.MapControllers();\nAdds all action methods as endpoints.\nSo that, no need of using UseEndPoints() method for adding action methods as end points.\nResponsibilities of Controllers\nReading requests\nExtracting data values from request such as query string parameters, request body, request cookies,\nrequest headers etc.\nInvoking models\nCalling business logic methods.\nGenerally business operations are available as 'services'.\nValidation\nValidate incoming request details (query string parameters, request body, request cookies, request\nheaders etc.)\nPreparing Response\nChoosing what kind of response has to be sent to the client & also preparing the response (action\nresult ).",
+      "lines": [
+        {
+          "text": "Enable 'routing' in controllers",
+          "rawText": "Enable 'routing' in controllers",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "AddControllers( )",
+          "rawText": "AddControllers( )",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "builder.Services.AddControllers();",
+          "rawText": "builder.Services.AddControllers();",
+          "x": 72.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "Adds all controllers as services in the IServiceCollection.",
+          "rawText": "Adds all controllers as services in the IServiceCollection.",
+          "x": 72.024,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "So that, they can be accesed when a specific endpoint needs it.",
+          "rawText": "So that, they can be accesed when a specific endpoint needs it.",
+          "x": 72.024,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "MapControllers()",
+          "rawText": "MapControllers()",
+          "x": 72.024,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "app.MapControllers();",
+          "rawText": "app.MapControllers();",
+          "x": 72.024,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "Adds all action methods as endpoints.",
+          "rawText": "Adds all action methods as endpoints.",
+          "x": 72.024,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "So that, no need of using UseEndPoints() method for adding action methods as end points.",
+          "rawText": "So that, no need of using UseEndPoints() method for adding action methods as end points.",
+          "x": 72.024,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "Responsibilities of Controllers",
+          "rawText": "Responsibilities of Controllers",
+          "x": 72.024,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "Reading requests",
+          "rawText": "Reading requests",
+          "x": 72.024,
+          "y": 467.11,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "Extracting data values from request such as query string parameters, request body, request cookies,",
+          "rawText": "Extracting data values from request such as query string parameters, request body, request cookies,",
+          "x": 72.024,
+          "y": 444.55,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "request headers etc.",
+          "rawText": "request headers etc.",
+          "x": 72.024,
+          "y": 430.03,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "Invoking models",
+          "rawText": "Invoking models",
+          "x": 72.024,
+          "y": 385.01,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "Calling business logic methods.",
+          "rawText": "Calling business logic methods.",
+          "x": 72.024,
+          "y": 362.57,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "Generally business operations are available as 'services'.",
+          "rawText": "Generally business operations are available as 'services'.",
+          "x": 72.024,
+          "y": 340.13,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "Validation",
+          "rawText": "Validation",
+          "x": 72.024,
+          "y": 295.13,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "Validate incoming request details (query string parameters, request body, request cookies, request",
+          "rawText": "Validate incoming request details (query string parameters, request body, request cookies, request",
+          "x": 72.024,
+          "y": 272.57,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "headers etc.)",
+          "rawText": "headers etc.)",
+          "x": 72.024,
+          "y": 258.17,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "Preparing Response",
+          "rawText": "Preparing Response",
+          "x": 72.024,
+          "y": 213.14,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "Choosing what kind of response has to be sent to the client & also preparing the response (action",
+          "rawText": "Choosing what kind of response has to be sent to the client & also preparing the response (action",
+          "x": 72.024,
+          "y": 190.58,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "result ).",
+          "rawText": "result ).",
+          "x": 72.024,
+          "y": 176.18,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f6"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "Enable 'routing' in controllers"
+          ],
+          "text": "Enable 'routing' in controllers"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "AddControllers( )",
+            "builder.Services.AddControllers();"
+          ],
+          "text": "AddControllers( )\nbuilder.Services.AddControllers();"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "Adds all controllers as services in the IServiceCollection.",
+            "So that, they can be accesed when a specific endpoint needs it."
+          ],
+          "text": "Adds all controllers as services in the IServiceCollection.\nSo that, they can be accesed when a specific endpoint needs it."
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "MapControllers()",
+            "app.MapControllers();"
+          ],
+          "text": "MapControllers()\napp.MapControllers();"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "Adds all action methods as endpoints.",
+            "So that, no need of using UseEndPoints() method for adding action methods as end points."
+          ],
+          "text": "Adds all action methods as endpoints.\nSo that, no need of using UseEndPoints() method for adding action methods as end points."
+        },
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Responsibilities of Controllers"
+          ],
+          "text": "Responsibilities of Controllers"
+        },
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Reading requests"
+          ],
+          "text": "Reading requests"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "Extracting data values from request such as query string parameters, request body, request cookies,",
+            "request headers etc."
+          ],
+          "text": "Extracting data values from request such as query string parameters, request body, request cookies,\nrequest headers etc."
+        },
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Invoking models"
+          ],
+          "text": "Invoking models"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "Calling business logic methods.",
+            "Generally business operations are available as 'services'."
+          ],
+          "text": "Calling business logic methods.\nGenerally business operations are available as 'services'."
+        },
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Validation"
+          ],
+          "text": "Validation"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "Validate incoming request details (query string parameters, request body, request cookies, request",
+            "headers etc.)"
+          ],
+          "text": "Validate incoming request details (query string parameters, request body, request cookies, request\nheaders etc.)"
+        },
+        {
+          "type": "heading",
+          "page": 2,
+          "lines": [
+            "Preparing Response"
+          ],
+          "text": "Preparing Response"
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
+            "Choosing what kind of response has to be sent to the client & also preparing the response (action",
+            "result )."
+          ],
+          "text": "Choosing what kind of response has to be sent to the client & also preparing the response (action\nresult )."
+        }
+      ],
+      "char_count_raw": 903,
+      "char_count_repaired": 902
+    },
+    {
+      "page_number": 3,
+      "raw_text": "ContentResult\nContentResult can represent any type of response, based on the specified MIME type.\nMIME type represents type of the content such as text/plain, text/html, application/json,\napplication, xml, application/pdf etc.\nreturn new ContentResult() { Content = \"content\", ContentType = \"content type\" };\n[or]\nreturn Content(\"content\", \"content type\");\nJsonResult\nJsonResult can represent an object in JavaScript Object Notation (JSON) format.\nEg: { \"firstName\": \"James\", \"lastName\": \"Smith\", \"age\": 25 }\nreturn new JsonResult(your_object);\n[or]\nreturn Json(your_object);\n",
+      "repaired_text": "ContentResult\nContentResult can represent any type of response, based on the specified MIME type.\nMIME type represents type of the content such as text/plain, text/html, application/json,\napplication, xml, application/pdf etc.\nreturn new ContentResult() { Content = \"content\", ContentType = \"content type\" };\n[or]\nreturn Content(\"content\", \"content type\");\nJsonResult\nJsonResult can represent an object in JavaScript Object Notation (JSON) format.\nEg: { \"firstName\": \"James\", \"lastName\": \"Smith\", \"age\": 25 }\nreturn new JsonResult(your_object);\n[or]\nreturn Json(your_object);",
+      "lines": [
+        {
+          "text": "ContentResult",
+          "rawText": "ContentResult",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "ContentResult can represent any type of response, based on the specified MIME type.",
+          "rawText": "ContentResult can represent any type of response, based on the specified MIME type.",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "MIME type represents type of the content such as text/plain, text/html, application/json,",
+          "rawText": "MIME type represents type of the content such as text/plain, text/html, application/json,",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "application, xml, application/pdf etc.",
+          "rawText": "application, xml, application/pdf etc.",
+          "x": 72.024,
+          "y": 699.94,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "return new ContentResult() { Content = \"content\", ContentType = \"content type\" };",
+          "rawText": "return new ContentResult() { Content = \"content\", ContentType = \"content type\" };",
+          "x": 72.024,
+          "y": 504.55,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "[or]",
+          "rawText": "[or]",
+          "x": 72.024,
+          "y": 481.99,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "return Content(\"content\", \"content type\");",
+          "rawText": "return Content(\"content\", \"content type\");",
+          "x": 72.024,
+          "y": 459.55,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "JsonResult",
+          "rawText": "JsonResult",
+          "x": 72.024,
+          "y": 392.09,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "JsonResult can represent an object in JavaScript Object Notation (JSON) format.",
+          "rawText": "JsonResult can represent an object in JavaScript Object Notation (JSON) format.",
+          "x": 72.024,
+          "y": 369.53,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "Eg: { \"firstName\": \"James\", \"lastName\": \"Smith\", \"age\": 25 }",
+          "rawText": "Eg: { \"firstName\": \"James\", \"lastName\": \"Smith\", \"age\": 25 }",
+          "x": 72.024,
+          "y": 347.09,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "return new JsonResult(your_object);",
+          "rawText": "return new JsonResult(your_object);",
+          "x": 72.024,
+          "y": 124.94,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "[or]",
+          "rawText": "[or]",
+          "x": 72.024,
+          "y": 102.5,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "return Json(your_object);",
+          "rawText": "return Json(your_object);",
+          "x": 72.024,
+          "y": 80.064,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 3,
+          "lines": [
+            "ContentResult"
+          ],
+          "text": "ContentResult"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "ContentResult can represent any type of response, based on the specified MIME type.",
+            "MIME type represents type of the content such as text/plain, text/html, application/json,",
+            "application, xml, application/pdf etc."
+          ],
+          "text": "ContentResult can represent any type of response, based on the specified MIME type.\nMIME type represents type of the content such as text/plain, text/html, application/json,\napplication, xml, application/pdf etc."
+        },
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            "return new ContentResult() { Content = \"content\", ContentType = \"content type\" };"
+          ],
+          "text": "return new ContentResult() { Content = \"content\", ContentType = \"content type\" };"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "[or]"
+          ],
+          "text": "[or]"
+        },
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            "return Content(\"content\", \"content type\");"
+          ],
+          "text": "return Content(\"content\", \"content type\");"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "JsonResult",
+            "JsonResult can represent an object in JavaScript Object Notation (JSON) format.",
+            "Eg: { \"firstName\": \"James\", \"lastName\": \"Smith\", \"age\": 25 }"
+          ],
+          "text": "JsonResult\nJsonResult can represent an object in JavaScript Object Notation (JSON) format.\nEg: { \"firstName\": \"James\", \"lastName\": \"Smith\", \"age\": 25 }"
+        },
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            "return new JsonResult(your_object);"
+          ],
+          "text": "return new JsonResult(your_object);"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
+            "[or]"
+          ],
+          "text": "[or]"
+        },
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            "return Json(your_object);"
+          ],
+          "text": "return Json(your_object);"
+        }
+      ],
+      "char_count_raw": 576,
+      "char_count_repaired": 575
+    },
+    {
+      "page_number": 4,
+      "raw_text": "File Results\nFile result sends the content of a file as response.\nEg: pdf file, txt file, exe file, zip file etc.\nVirtualFileResult\nreturn new VirtualFileResult(\"file relative path\", \"content type\");\n//or\nreturn File(\"file relative path\", \"content type\");\nRepresents a file within the WebRoot ('wwwroot' by default) folder.\nUsed when the file is present in the WebRoot folder.\nPhysicalFileResult\nRepresents a file that is not necessarily part of the project folder.\nUsed when the file is present outside the WebRoot folder.\nreturn new PhysicalFileResult(\"file absolute path\", \"content type\");\n//or\nreturn PhysicalFile(\"file absolute path\", \"content type\");\n",
+      "repaired_text": "File Results\nFile result sends the content of a file as response.\nEg: pdf file, txt file, exe file, zip file etc.\nVirtualFileResult\nreturn new VirtualFileResult(\"file relative path\", \"content type\");\n//or\nreturn File(\"file relative path\", \"content type\");\nRepresents a file within the WebRoot ('wwwroot' by default) folder.\nUsed when the file is present in the WebRoot folder.\nPhysicalFileResult\nRepresents a file that is not necessarily part of the project folder.\nUsed when the file is present outside the WebRoot folder.\nreturn new PhysicalFileResult(\"file absolute path\", \"content type\");\n//or\nreturn PhysicalFile(\"file absolute path\", \"content type\");",
+      "lines": [
+        {
+          "text": "File Results",
+          "rawText": "File Results",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "File result sends the content of a file as response.",
+          "rawText": "File result sends the content of a file as response.",
+          "x": 72.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "Eg: pdf file, txt file, exe file, zip file etc.",
+          "rawText": "Eg: pdf file, txt file, exe file, zip file etc.",
+          "x": 72.024,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "VirtualFileResult",
+          "rawText": "VirtualFileResult",
+          "x": 72.024,
+          "y": 469.87,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "return new VirtualFileResult(\"file relative path\", \"content type\");",
+          "rawText": "return new VirtualFileResult(\"file relative path\", \"content type\");",
+          "x": 72.024,
+          "y": 447.43,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "//or",
+          "rawText": "//or",
+          "x": 72.024,
+          "y": 424.99,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "return File(\"file relative path\", \"content type\");",
+          "rawText": "return File(\"file relative path\", \"content type\");",
+          "x": 72.024,
+          "y": 402.43,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "Represents a file within the WebRoot ('wwwroot' by default) folder.",
+          "rawText": "Represents a file within the WebRoot ('wwwroot' by default) folder.",
+          "x": 72.024,
+          "y": 379.97,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "Used when the file is present in the WebRoot folder.",
+          "rawText": "Used when the file is present in the WebRoot folder.",
+          "x": 72.024,
+          "y": 357.41,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "PhysicalFileResult",
+          "rawText": "PhysicalFileResult",
+          "x": 72.024,
+          "y": 312.41,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "Represents a file that is not necessarily part of the project folder.",
+          "rawText": "Represents a file that is not necessarily part of the project folder.",
+          "x": 72.024,
+          "y": 289.97,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "Used when the file is present outside the WebRoot folder.",
+          "rawText": "Used when the file is present outside the WebRoot folder.",
+          "x": 72.024,
+          "y": 267.53,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "return new PhysicalFileResult(\"file absolute path\", \"content type\");",
+          "rawText": "return new PhysicalFileResult(\"file absolute path\", \"content type\");",
+          "x": 72.024,
+          "y": 244.97,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "//or",
+          "rawText": "//or",
+          "x": 72.024,
+          "y": 222.53,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "return PhysicalFile(\"file absolute path\", \"content type\");",
+          "rawText": "return PhysicalFile(\"file absolute path\", \"content type\");",
+          "x": 72.024,
+          "y": 199.94,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "File Results"
+          ],
+          "text": "File Results"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "File result sends the content of a file as response.",
+            "Eg: pdf file, txt file, exe file, zip file etc."
+          ],
+          "text": "File result sends the content of a file as response.\nEg: pdf file, txt file, exe file, zip file etc."
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "VirtualFileResult"
+          ],
+          "text": "VirtualFileResult"
+        },
+        {
+          "type": "code",
+          "page": 4,
+          "lines": [
+            "return new VirtualFileResult(\"file relative path\", \"content type\");",
+            "//or",
+            "return File(\"file relative path\", \"content type\");"
+          ],
+          "text": "return new VirtualFileResult(\"file relative path\", \"content type\");\n//or\nreturn File(\"file relative path\", \"content type\");"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "Represents a file within the WebRoot ('wwwroot' by default) folder.",
+            "Used when the file is present in the WebRoot folder."
+          ],
+          "text": "Represents a file within the WebRoot ('wwwroot' by default) folder.\nUsed when the file is present in the WebRoot folder."
+        },
+        {
+          "type": "heading",
+          "page": 4,
+          "lines": [
+            "PhysicalFileResult"
+          ],
+          "text": "PhysicalFileResult"
+        },
+        {
+          "type": "prose",
+          "page": 4,
+          "lines": [
+            "Represents a file that is not necessarily part of the project folder.",
+            "Used when the file is present outside the WebRoot folder."
+          ],
+          "text": "Represents a file that is not necessarily part of the project folder.\nUsed when the file is present outside the WebRoot folder."
+        },
+        {
+          "type": "code",
+          "page": 4,
+          "lines": [
+            "return new PhysicalFileResult(\"file absolute path\", \"content type\");",
+            "//or",
+            "return PhysicalFile(\"file absolute path\", \"content type\");"
+          ],
+          "text": "return new PhysicalFileResult(\"file absolute path\", \"content type\");\n//or\nreturn PhysicalFile(\"file absolute path\", \"content type\");"
+        }
+      ],
+      "char_count_raw": 657,
+      "char_count_repaired": 656
+    },
+    {
+      "page_number": 5,
+      "raw_text": "FileContentResult\nRepresents a file from the byte[ ].\nUsed when a part of the file or byte[ ] from other data source has to be sent as response.\nreturn new FileContentResult(byte_array, \"content type\");\n//or\nreturn File(byte_array, \"content type\");\nIActionResult\nIt is the parent interface for all action result classes such as ContentResult, JsonResult,\nRedirectResult, StatusCodeResult, ViewResult etc.\nBy mentioning the return type as IActionResult, you can return either of the subtypes of\nIActionResult\n",
+      "repaired_text": "FileContentResult\nRepresents a file from the byte[ ].\nUsed when a part of the file or byte[ ] from other data source has to be sent as response.\nreturn new FileContentResult(byte_array, \"content type\");\n//or\nreturn File(byte_array, \"content type\");\nIActionResult\nIt is the parent interface for all action result classes such as ContentResult, JsonResult,\nRedirectResult, StatusCodeResult, ViewResult etc.\nBy mentioning the return type as IActionResult, you can return either of the subtypes of\nIActionResult",
+      "lines": [
+        {
+          "text": "FileContentResult",
+          "rawText": "FileContentResult",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "Represents a file from the byte[ ].",
+          "rawText": "Represents a file from the byte[ ].",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "Used when a part of the file or byte[ ] from other data source has to be sent as response.",
+          "rawText": "Used when a part of the file or byte[ ] from other data source has to be sent as response.",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "return new FileContentResult(byte_array, \"content type\");",
+          "rawText": "return new FileContentResult(byte_array, \"content type\");",
+          "x": 72.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "//or",
+          "rawText": "//or",
+          "x": 72.024,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "return File(byte_array, \"content type\");",
+          "rawText": "return File(byte_array, \"content type\");",
+          "x": 72.024,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "IActionResult",
+          "rawText": "IActionResult",
+          "x": 72.024,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "It is the parent interface for all action result classes such as ContentResult, JsonResult,",
+          "rawText": "It is the parent interface for all action result classes such as ContentResult, JsonResult,",
+          "x": 72.024,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "RedirectResult, StatusCodeResult, ViewResult etc.",
+          "rawText": "RedirectResult, StatusCodeResult, ViewResult etc.",
+          "x": 72.024,
+          "y": 520.03,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "By mentioning the return type as IActionResult, you can return either of the subtypes of",
+          "rawText": "By mentioning the return type as IActionResult, you can return either of the subtypes of",
+          "x": 72.024,
+          "y": 497.59,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "IActionResult",
+          "rawText": "IActionResult",
+          "x": 72.024,
+          "y": 483.07,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "FileContentResult"
+          ],
+          "text": "FileContentResult"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "Represents a file from the byte[ ].",
+            "Used when a part of the file or byte[ ] from other data source has to be sent as response."
+          ],
+          "text": "Represents a file from the byte[ ].\nUsed when a part of the file or byte[ ] from other data source has to be sent as response."
+        },
+        {
+          "type": "code",
+          "page": 5,
+          "lines": [
+            "return new FileContentResult(byte_array, \"content type\");",
+            "//or",
+            "return File(byte_array, \"content type\");"
+          ],
+          "text": "return new FileContentResult(byte_array, \"content type\");\n//or\nreturn File(byte_array, \"content type\");"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
+            "IActionResult",
+            "It is the parent interface for all action result classes such as ContentResult, JsonResult,",
+            "RedirectResult, StatusCodeResult, ViewResult etc.",
+            "By mentioning the return type as IActionResult, you can return either of the subtypes of"
+          ],
+          "text": "IActionResult\nIt is the parent interface for all action result classes such as ContentResult, JsonResult,\nRedirectResult, StatusCodeResult, ViewResult etc.\nBy mentioning the return type as IActionResult, you can return either of the subtypes of"
+        },
+        {
+          "type": "heading",
+          "page": 5,
+          "lines": [
+            "IActionResult"
+          ],
+          "text": "IActionResult"
+        }
+      ],
+      "char_count_raw": 508,
+      "char_count_repaired": 507
+    },
+    {
+      "page_number": 6,
+      "raw_text": "Status Code Results\nStatus code result sends an empty response with specified status code.\nEg: 200, 400, 401, 404, 500 etc.\nStatusCodeResult\nreturn new StatusCodeResult(status_code);\nUnauthorizedResult\nreturn new UnauthorizedResult();\nBadRequestResult\nreturn new BadRequestResult();\nNotFoundResult\nreturn new NotFoundResult();\nStatusCodeResult\n• Represents response with the specified status code.\n• Used when you would like to send a specific HTTP status code as response.\nreturn new StatusCodeResult(status_code);\n//or\nreturn StatusCode(status_code);\n",
+      "repaired_text": "Status Code Results\nStatus code result sends an empty response with specified status code.\nEg: 200, 400, 401, 404, 500 etc.\nStatusCodeResult\nreturn new StatusCodeResult(status_code);\nUnauthorizedResult\nreturn new UnauthorizedResult();\nBadRequestResult\nreturn new BadRequestResult();\nNotFoundResult\nreturn new NotFoundResult();\nStatusCodeResult\n   • Represents response with the specified status code.\n   • Used when you would like to send a specific HTTP status code as response.\n      return new StatusCodeResult(status_code);\n      //or\n      return StatusCode(status_code);",
+      "lines": [
+        {
+          "text": "Status Code Results",
+          "rawText": "Status Code Results",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "Status code result sends an empty response with specified status code.",
+          "rawText": "Status code result sends an empty response with specified status code.",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "Eg: 200, 400, 401, 404, 500 etc.",
+          "rawText": "Eg: 200, 400, 401, 404, 500 etc.",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "StatusCodeResult",
+          "rawText": "StatusCodeResult",
+          "x": 72.024,
+          "y": 493.63,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "return new StatusCodeResult(status_code);",
+          "rawText": "return new StatusCodeResult(status_code);",
+          "x": 72.024,
+          "y": 471.19,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "UnauthorizedResult",
+          "rawText": "UnauthorizedResult",
+          "x": 72.024,
+          "y": 426.19,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "return new UnauthorizedResult();",
+          "rawText": "return new UnauthorizedResult();",
+          "x": 72.024,
+          "y": 403.75,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "BadRequestResult",
+          "rawText": "BadRequestResult",
+          "x": 72.024,
+          "y": 358.73,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "return new BadRequestResult();",
+          "rawText": "return new BadRequestResult();",
+          "x": 72.024,
+          "y": 336.17,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "NotFoundResult",
+          "rawText": "NotFoundResult",
+          "x": 72.024,
+          "y": 291.17,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "return new NotFoundResult();",
+          "rawText": "return new NotFoundResult();",
+          "x": 72.024,
+          "y": 268.73,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "StatusCodeResult",
+          "rawText": "StatusCodeResult",
+          "x": 72.024,
+          "y": 223.73,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "   • Represents response with the specified status code.",
+          "rawText": "• Represents response with the specified status code.",
+          "x": 90.024,
+          "y": 201.26,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f7"
+        },
+        {
+          "text": "   • Used when you would like to send a specific HTTP status code as response.",
+          "rawText": "• Used when you would like to send a specific HTTP status code as response.",
+          "x": 90.024,
+          "y": 178.7,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f7"
+        },
+        {
+          "text": "      return new StatusCodeResult(status_code);",
+          "rawText": "return new StatusCodeResult(status_code);",
+          "x": 108.02,
+          "y": 156.26,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "      //or",
+          "rawText": "//or",
+          "x": 108.02,
+          "y": 133.82,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "      return StatusCode(status_code);",
+          "rawText": "return StatusCode(status_code);",
+          "x": 108.02,
+          "y": 111.26,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 6,
+          "lines": [
+            "Status Code Results"
+          ],
+          "text": "Status Code Results"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "Status code result sends an empty response with specified status code.",
+            "Eg: 200, 400, 401, 404, 500 etc."
+          ],
+          "text": "Status code result sends an empty response with specified status code.\nEg: 200, 400, 401, 404, 500 etc."
+        },
+        {
+          "type": "heading",
+          "page": 6,
+          "lines": [
+            "StatusCodeResult"
+          ],
+          "text": "StatusCodeResult"
+        },
+        {
+          "type": "code",
+          "page": 6,
+          "lines": [
+            "return new StatusCodeResult(status_code);"
+          ],
+          "text": "return new StatusCodeResult(status_code);"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "UnauthorizedResult"
+          ],
+          "text": "UnauthorizedResult"
+        },
+        {
+          "type": "code",
+          "page": 6,
+          "lines": [
+            "return new UnauthorizedResult();"
+          ],
+          "text": "return new UnauthorizedResult();"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "BadRequestResult"
+          ],
+          "text": "BadRequestResult"
+        },
+        {
+          "type": "code",
+          "page": 6,
+          "lines": [
+            "return new BadRequestResult();"
+          ],
+          "text": "return new BadRequestResult();"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "NotFoundResult"
+          ],
+          "text": "NotFoundResult"
+        },
+        {
+          "type": "code",
+          "page": 6,
+          "lines": [
+            "return new NotFoundResult();"
+          ],
+          "text": "return new NotFoundResult();"
+        },
+        {
+          "type": "prose",
+          "page": 6,
+          "lines": [
+            "StatusCodeResult"
+          ],
+          "text": "StatusCodeResult"
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "   • Represents response with the specified status code."
+          ],
+          "text": "   • Represents response with the specified status code."
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "   • Used when you would like to send a specific HTTP status code as response."
+          ],
+          "text": "   • Used when you would like to send a specific HTTP status code as response."
+        },
+        {
+          "type": "code",
+          "page": 6,
+          "lines": [
+            "      return new StatusCodeResult(status_code);",
+            "      //or",
+            "      return StatusCode(status_code);"
+          ],
+          "text": "      return new StatusCodeResult(status_code);\n      //or\n      return StatusCode(status_code);"
+        }
+      ],
+      "char_count_raw": 553,
+      "char_count_repaired": 576
+    },
+    {
+      "page_number": 7,
+      "raw_text": "UnauthoriziedResult\n• Represents response with HTTP status code '401 Unauthorized'.\n• Used when the user is unauthorized (not signed in).\nreturn new UnauthorizedResult();\n//or\nreturn Unauthorized();\nBadRequestResult\n• Represents response with HTTP status code '400 Bad Request'.\n• Used when the request values are invalid (validation error).\nreturn new BadRequestResult();\n//or\nreturn BadRequest();\nNotFoundResult\n• Represents response with HTTP status code '404 Not Found'.\n• Used when the requested information is not available at server.\nreturn new NotFoundResult();\n//or\nreturn NotFound();\n",
+      "repaired_text": "UnauthoriziedResult\n   • Represents response with HTTP status code '401 Unauthorized'.\n   • Used when the user is unauthorized (not signed in).\n      return new UnauthorizedResult();\n      //or\n      return Unauthorized();\nBadRequestResult\n   • Represents response with HTTP status code '400 Bad Request'.\n   • Used when the request values are invalid (validation error).\n      return new BadRequestResult();\n      //or\n      return BadRequest();\nNotFoundResult\n   • Represents response with HTTP status code '404 Not Found'.\n   • Used when the requested information is not available at server.\n      return new NotFoundResult();\n      //or\n      return NotFound();",
+      "lines": [
+        {
+          "text": "UnauthoriziedResult",
+          "rawText": "UnauthoriziedResult",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "   • Represents response with HTTP status code '401 Unauthorized'.",
+          "rawText": "• Represents response with HTTP status code '401 Unauthorized'.",
+          "x": 90.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f7"
+        },
+        {
+          "text": "   • Used when the user is unauthorized (not signed in).",
+          "rawText": "• Used when the user is unauthorized (not signed in).",
+          "x": 90.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f7"
+        },
+        {
+          "text": "      return new UnauthorizedResult();",
+          "rawText": "return new UnauthorizedResult();",
+          "x": 108.02,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "      //or",
+          "rawText": "//or",
+          "x": 108.02,
+          "y": 669.46,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "      return Unauthorized();",
+          "rawText": "return Unauthorized();",
+          "x": 108.02,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "BadRequestResult",
+          "rawText": "BadRequestResult",
+          "x": 72.024,
+          "y": 602.02,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "   • Represents response with HTTP status code '400 Bad Request'.",
+          "rawText": "• Represents response with HTTP status code '400 Bad Request'.",
+          "x": 90.024,
+          "y": 579.58,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f7"
+        },
+        {
+          "text": "   • Used when the request values are invalid (validation error).",
+          "rawText": "• Used when the request values are invalid (validation error).",
+          "x": 90.024,
+          "y": 556.99,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f7"
+        },
+        {
+          "text": "      return new BadRequestResult();",
+          "rawText": "return new BadRequestResult();",
+          "x": 108.02,
+          "y": 534.55,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "      //or",
+          "rawText": "//or",
+          "x": 108.02,
+          "y": 511.99,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "      return BadRequest();",
+          "rawText": "return BadRequest();",
+          "x": 108.02,
+          "y": 489.55,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "NotFoundResult",
+          "rawText": "NotFoundResult",
+          "x": 72.024,
+          "y": 444.55,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "   • Represents response with HTTP status code '404 Not Found'.",
+          "rawText": "• Represents response with HTTP status code '404 Not Found'.",
+          "x": 90.024,
+          "y": 422.11,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f7"
+        },
+        {
+          "text": "   • Used when the requested information is not available at server.",
+          "rawText": "• Used when the requested information is not available at server.",
+          "x": 90.024,
+          "y": 399.55,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f7"
+        },
+        {
+          "text": "      return new NotFoundResult();",
+          "rawText": "return new NotFoundResult();",
+          "x": 108.02,
+          "y": 377.09,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "      //or",
+          "rawText": "//or",
+          "x": 108.02,
+          "y": 354.53,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "      return NotFound();",
+          "rawText": "return NotFound();",
+          "x": 108.02,
+          "y": 332.09,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 7,
+          "lines": [
+            "UnauthoriziedResult"
+          ],
+          "text": "UnauthoriziedResult"
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • Represents response with HTTP status code '401 Unauthorized'."
+          ],
+          "text": "   • Represents response with HTTP status code '401 Unauthorized'."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • Used when the user is unauthorized (not signed in)."
+          ],
+          "text": "   • Used when the user is unauthorized (not signed in)."
+        },
+        {
+          "type": "code",
+          "page": 7,
+          "lines": [
+            "      return new UnauthorizedResult();",
+            "      //or",
+            "      return Unauthorized();"
+          ],
+          "text": "      return new UnauthorizedResult();\n      //or\n      return Unauthorized();"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "BadRequestResult"
+          ],
+          "text": "BadRequestResult"
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • Represents response with HTTP status code '400 Bad Request'."
+          ],
+          "text": "   • Represents response with HTTP status code '400 Bad Request'."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • Used when the request values are invalid (validation error)."
+          ],
+          "text": "   • Used when the request values are invalid (validation error)."
+        },
+        {
+          "type": "code",
+          "page": 7,
+          "lines": [
+            "      return new BadRequestResult();",
+            "      //or",
+            "      return BadRequest();"
+          ],
+          "text": "      return new BadRequestResult();\n      //or\n      return BadRequest();"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
+            "NotFoundResult"
+          ],
+          "text": "NotFoundResult"
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • Represents response with HTTP status code '404 Not Found'."
+          ],
+          "text": "   • Represents response with HTTP status code '404 Not Found'."
+        },
+        {
+          "type": "list_item",
+          "page": 7,
+          "lines": [
+            "   • Used when the requested information is not available at server."
+          ],
+          "text": "   • Used when the requested information is not available at server."
+        },
+        {
+          "type": "code",
+          "page": 7,
+          "lines": [
+            "      return new NotFoundResult();",
+            "      //or",
+            "      return NotFound();"
+          ],
+          "text": "      return new NotFoundResult();\n      //or\n      return NotFound();"
+        }
+      ],
+      "char_count_raw": 594,
+      "char_count_repaired": 665
+    },
+    {
+      "page_number": 8,
+      "raw_text": "Redirect Results\nRedirect result sends either HTTP 302 or 301 response to the browser, in order to redirect to a\nspecific action or url.\nEg: redirecting from 'action1' to 'action2'.\nRedirectToActionResult\nreturn new RedirectToActionResult(\"action\", \"controller\", new { route_values }, permanent);\nLocalRedirectResult\nreturn new LocalRedirectResult(\"local_url\", permanent);\nRedirectResult\nreturn new RedirectResult(\"url\", permanent);\nRedirectToActionResult\nRepresents response for redirecting from the current action method to another action method,\nbased on action name and controller name.\n302 - Found\nreturn new RedirectToActionResult(\"action\", \"controller\", new { route_values });\n//or\nreturn RedirectToAction(\"action\", \"controller\", new { route_values });\n",
+      "repaired_text": "Redirect Results\nRedirect result sends either HTTP 302 or 301 response to the browser, in order to redirect to a\nspecific action or url.\nEg: redirecting from 'action1' to 'action2'.\nRedirectToActionResult\nreturn new RedirectToActionResult(\"action\", \"controller\", new { route_values }, permanent);\nLocalRedirectResult\nreturn new LocalRedirectResult(\"local_url\", permanent);\nRedirectResult\nreturn new RedirectResult(\"url\", permanent);\nRedirectToActionResult\nRepresents response for redirecting from the current action method to another action method,\nbased on action name and controller name.\n302 - Found\nreturn new RedirectToActionResult(\"action\", \"controller\", new { route_values });\n//or\nreturn RedirectToAction(\"action\", \"controller\", new { route_values });",
+      "lines": [
+        {
+          "text": "Redirect Results",
+          "rawText": "Redirect Results",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "Redirect result sends either HTTP 302 or 301 response to the browser, in order to redirect to a",
+          "rawText": "Redirect result sends either HTTP 302 or 301 response to the browser, in order to redirect to a",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "specific action or url.",
+          "rawText": "specific action or url.",
+          "x": 72.024,
+          "y": 722.5,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "Eg: redirecting from 'action1' to 'action2'.",
+          "rawText": "Eg: redirecting from 'action1' to 'action2'.",
+          "x": 72.024,
+          "y": 699.94,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "RedirectToActionResult",
+          "rawText": "RedirectToActionResult",
+          "x": 72.024,
+          "y": 478.75,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "return new RedirectToActionResult(\"action\", \"controller\", new { route_values }, permanent);",
+          "rawText": "return new RedirectToActionResult(\"action\", \"controller\", new { route_values }, permanent);",
+          "x": 72.024,
+          "y": 456.19,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "LocalRedirectResult",
+          "rawText": "LocalRedirectResult",
+          "x": 72.024,
+          "y": 411.31,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "return new LocalRedirectResult(\"local_url\", permanent);",
+          "rawText": "return new LocalRedirectResult(\"local_url\", permanent);",
+          "x": 72.024,
+          "y": 388.73,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "RedirectResult",
+          "rawText": "RedirectResult",
+          "x": 72.024,
+          "y": 343.73,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "return new RedirectResult(\"url\", permanent);",
+          "rawText": "return new RedirectResult(\"url\", permanent);",
+          "x": 72.024,
+          "y": 321.29,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "RedirectToActionResult",
+          "rawText": "RedirectToActionResult",
+          "x": 72.024,
+          "y": 253.85,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "Represents response for redirecting from the current action method to another action method,",
+          "rawText": "Represents response for redirecting from the current action method to another action method,",
+          "x": 72.024,
+          "y": 231.29,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "based on action name and controller name.",
+          "rawText": "based on action name and controller name.",
+          "x": 72.024,
+          "y": 216.74,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "302 - Found",
+          "rawText": "302 - Found",
+          "x": 72.024,
+          "y": 171.86,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "return new RedirectToActionResult(\"action\", \"controller\", new { route_values });",
+          "rawText": "return new RedirectToActionResult(\"action\", \"controller\", new { route_values });",
+          "x": 72.024,
+          "y": 149.3,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "//or",
+          "rawText": "//or",
+          "x": 72.024,
+          "y": 126.86,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "return RedirectToAction(\"action\", \"controller\", new { route_values });",
+          "rawText": "return RedirectToAction(\"action\", \"controller\", new { route_values });",
+          "x": 72.024,
+          "y": 104.3,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "page": 8,
+          "lines": [
+            "Redirect Results"
+          ],
+          "text": "Redirect Results"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "Redirect result sends either HTTP 302 or 301 response to the browser, in order to redirect to a",
+            "specific action or url.",
+            "Eg: redirecting from 'action1' to 'action2'."
+          ],
+          "text": "Redirect result sends either HTTP 302 or 301 response to the browser, in order to redirect to a\nspecific action or url.\nEg: redirecting from 'action1' to 'action2'."
+        },
+        {
+          "type": "heading",
+          "page": 8,
+          "lines": [
+            "RedirectToActionResult"
+          ],
+          "text": "RedirectToActionResult"
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "return new RedirectToActionResult(\"action\", \"controller\", new { route_values }, permanent);"
+          ],
+          "text": "return new RedirectToActionResult(\"action\", \"controller\", new { route_values }, permanent);"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "LocalRedirectResult"
+          ],
+          "text": "LocalRedirectResult"
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "return new LocalRedirectResult(\"local_url\", permanent);"
+          ],
+          "text": "return new LocalRedirectResult(\"local_url\", permanent);"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "RedirectResult"
+          ],
+          "text": "RedirectResult"
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "return new RedirectResult(\"url\", permanent);"
+          ],
+          "text": "return new RedirectResult(\"url\", permanent);"
+        },
+        {
+          "type": "prose",
+          "page": 8,
+          "lines": [
+            "RedirectToActionResult",
+            "Represents response for redirecting from the current action method to another action method,",
+            "based on action name and controller name.",
+            "302 - Found"
+          ],
+          "text": "RedirectToActionResult\nRepresents response for redirecting from the current action method to another action method,\nbased on action name and controller name.\n302 - Found"
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
+            "return new RedirectToActionResult(\"action\", \"controller\", new { route_values });",
+            "//or",
+            "return RedirectToAction(\"action\", \"controller\", new { route_values });"
+          ],
+          "text": "return new RedirectToActionResult(\"action\", \"controller\", new { route_values });\n//or\nreturn RedirectToAction(\"action\", \"controller\", new { route_values });"
+        }
+      ],
+      "char_count_raw": 760,
+      "char_count_repaired": 759
+    },
+    {
+      "page_number": 9,
+      "raw_text": "301 - Moved Permanently\nreturn new RedirectToActionResult(\"action\", \"controller\", new { route_values }, true);\n//or\nreturn RedirectToActionPermanent(\"action\", \"controller\", new { route_values });\nLocalRedirectResult\nRepresents response for redirecting from the current action method to another action method,\nbased on the specified url.\n302 - Found\nreturn new LocalRedirectResult(\"url\");\n//or\nreturn LocalRedirect(\"url);\n301 - Moved Permanently\nreturn new LocalRedirectResult(\"url\", true);\n//or\nreturn LocalRedirectPermanent(\"url\");\nRedirectResult\nRepresents response for redirecting from the current action method to any other url (either within\nthe same web application or other web application).\n302 - Found\nreturn new RedirectResult(\"url\");\n//or\nreturn Redirect(\"url);\n301 - Moved Permanently\nreturn new RedirectResult(\"url\", true);\n//or\nreturn RedirectPermanent(\"url\");\n",
+      "repaired_text": "301 - Moved Permanently\nreturn new RedirectToActionResult(\"action\", \"controller\", new { route_values }, true);\n//or\nreturn RedirectToActionPermanent(\"action\", \"controller\", new { route_values });\nLocalRedirectResult\nRepresents response for redirecting from the current action method to another action method,\nbased on the specified url.\n302 - Found\nreturn new LocalRedirectResult(\"url\");\n//or\nreturn LocalRedirect(\"url);\n301 - Moved Permanently\nreturn new LocalRedirectResult(\"url\", true);\n//or\nreturn LocalRedirectPermanent(\"url\");\nRedirectResult\nRepresents response for redirecting from the current action method to any other url (either within\nthe same web application or other web application).\n302 - Found\nreturn new RedirectResult(\"url\");\n//or\nreturn Redirect(\"url);\n301 - Moved Permanently\nreturn new RedirectResult(\"url\", true);\n//or\nreturn RedirectPermanent(\"url\");",
+      "lines": [
+        {
+          "text": "301 - Moved Permanently",
+          "rawText": "301 - Moved Permanently",
+          "x": 72.024,
+          "y": 759.48,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "return new RedirectToActionResult(\"action\", \"controller\", new { route_values }, true);",
+          "rawText": "return new RedirectToActionResult(\"action\", \"controller\", new { route_values }, true);",
+          "x": 72.024,
+          "y": 737.02,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "//or",
+          "rawText": "//or",
+          "x": 72.024,
+          "y": 714.46,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "return RedirectToActionPermanent(\"action\", \"controller\", new { route_values });",
+          "rawText": "return RedirectToActionPermanent(\"action\", \"controller\", new { route_values });",
+          "x": 72.024,
+          "y": 692.02,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "LocalRedirectResult",
+          "rawText": "LocalRedirectResult",
+          "x": 72.024,
+          "y": 647.02,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "Represents response for redirecting from the current action method to another action method,",
+          "rawText": "Represents response for redirecting from the current action method to another action method,",
+          "x": 72.024,
+          "y": 624.46,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "based on the specified url.",
+          "rawText": "based on the specified url.",
+          "x": 72.024,
+          "y": 610.06,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "302 - Found",
+          "rawText": "302 - Found",
+          "x": 72.024,
+          "y": 565.03,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "return new LocalRedirectResult(\"url\");",
+          "rawText": "return new LocalRedirectResult(\"url\");",
+          "x": 72.024,
+          "y": 542.47,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "//or",
+          "rawText": "//or",
+          "x": 72.024,
+          "y": 520.03,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "return LocalRedirect(\"url);",
+          "rawText": "return LocalRedirect(\"url);",
+          "x": 72.024,
+          "y": 497.59,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "301 - Moved Permanently",
+          "rawText": "301 - Moved Permanently",
+          "x": 72.024,
+          "y": 452.59,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "return new LocalRedirectResult(\"url\", true);",
+          "rawText": "return new LocalRedirectResult(\"url\", true);",
+          "x": 72.024,
+          "y": 430.03,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "//or",
+          "rawText": "//or",
+          "x": 72.024,
+          "y": 407.59,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "return LocalRedirectPermanent(\"url\");",
+          "rawText": "return LocalRedirectPermanent(\"url\");",
+          "x": 72.024,
+          "y": 385.01,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "RedirectResult",
+          "rawText": "RedirectResult",
+          "x": 72.024,
+          "y": 340.13,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "Represents response for redirecting from the current action method to any other url (either within",
+          "rawText": "Represents response for redirecting from the current action method to any other url (either within",
+          "x": 72.024,
+          "y": 317.57,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "the same web application or other web application).",
+          "rawText": "the same web application or other web application).",
+          "x": 72.024,
+          "y": 303.05,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "302 - Found",
+          "rawText": "302 - Found",
+          "x": 72.024,
+          "y": 258.17,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "return new RedirectResult(\"url\");",
+          "rawText": "return new RedirectResult(\"url\");",
+          "x": 72.024,
+          "y": 235.61,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "//or",
+          "rawText": "//or",
+          "x": 72.024,
+          "y": 213.14,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "return Redirect(\"url);",
+          "rawText": "return Redirect(\"url);",
+          "x": 72.024,
+          "y": 190.58,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "301 - Moved Permanently",
+          "rawText": "301 - Moved Permanently",
+          "x": 72.024,
+          "y": 145.58,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f4"
+        },
+        {
+          "text": "return new RedirectResult(\"url\", true);",
+          "rawText": "return new RedirectResult(\"url\", true);",
+          "x": 72.024,
+          "y": 123.14,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "//or",
+          "rawText": "//or",
+          "x": 72.024,
+          "y": 100.7,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        },
+        {
+          "text": "return RedirectPermanent(\"url\");",
+          "rawText": "return RedirectPermanent(\"url\");",
+          "x": 72.024,
+          "y": 78.144,
+          "fontSize": 11.04,
+          "fontName": "g_d11_f1"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "301 - Moved Permanently"
+          ],
+          "text": "301 - Moved Permanently"
+        },
+        {
+          "type": "code",
+          "page": 9,
+          "lines": [
+            "return new RedirectToActionResult(\"action\", \"controller\", new { route_values }, true);",
+            "//or",
+            "return RedirectToActionPermanent(\"action\", \"controller\", new { route_values });"
+          ],
+          "text": "return new RedirectToActionResult(\"action\", \"controller\", new { route_values }, true);\n//or\nreturn RedirectToActionPermanent(\"action\", \"controller\", new { route_values });"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "LocalRedirectResult",
+            "Represents response for redirecting from the current action method to another action method,",
+            "based on the specified url.",
+            "302 - Found"
+          ],
+          "text": "LocalRedirectResult\nRepresents response for redirecting from the current action method to another action method,\nbased on the specified url.\n302 - Found"
+        },
+        {
+          "type": "code",
+          "page": 9,
+          "lines": [
+            "return new LocalRedirectResult(\"url\");",
+            "//or",
+            "return LocalRedirect(\"url);"
+          ],
+          "text": "return new LocalRedirectResult(\"url\");\n//or\nreturn LocalRedirect(\"url);"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "301 - Moved Permanently"
+          ],
+          "text": "301 - Moved Permanently"
+        },
+        {
+          "type": "code",
+          "page": 9,
+          "lines": [
+            "return new LocalRedirectResult(\"url\", true);",
+            "//or",
+            "return LocalRedirectPermanent(\"url\");"
+          ],
+          "text": "return new LocalRedirectResult(\"url\", true);\n//or\nreturn LocalRedirectPermanent(\"url\");"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "RedirectResult",
+            "Represents response for redirecting from the current action method to any other url (either within",
+            "the same web application or other web application).",
+            "302 - Found"
+          ],
+          "text": "RedirectResult\nRepresents response for redirecting from the current action method to any other url (either within\nthe same web application or other web application).\n302 - Found"
+        },
+        {
+          "type": "code",
+          "page": 9,
+          "lines": [
+            "return new RedirectResult(\"url\");",
+            "//or",
+            "return Redirect(\"url);"
+          ],
+          "text": "return new RedirectResult(\"url\");\n//or\nreturn Redirect(\"url);"
+        },
+        {
+          "type": "prose",
+          "page": 9,
+          "lines": [
+            "301 - Moved Permanently"
+          ],
+          "text": "301 - Moved Permanently"
+        },
+        {
+          "type": "code",
+          "page": 9,
+          "lines": [
+            "return new RedirectResult(\"url\", true);",
+            "//or",
+            "return RedirectPermanent(\"url\");"
+          ],
+          "text": "return new RedirectResult(\"url\", true);\n//or\nreturn RedirectPermanent(\"url\");"
+        }
+      ],
+      "char_count_raw": 875,
+      "char_count_repaired": 874
+    }
+  ],
+  "title": "Controllers & IActionResult"
+}

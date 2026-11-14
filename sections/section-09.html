@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 09: Layout Views — ASP.NET Core Masterclass</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="alternate icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body id="top">
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  
+  <!-- Top Navigation Header -->
+  <header class="top-header" role="banner">
+    <div class="header-left">
+      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">☰</button>
+      <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+        <span class="sidebar-toggle-text">« Collapse</span>
+      </button>
+      <a href="../index.html" class="brand-link" aria-label="ASP.NET Core Masterclass Documentation Portal">
+        <span class="brand-icon" style="background: linear-gradient(135deg, #38bdf8, #6366f1); color: #0b0f19; font-weight: 900; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem;">.NET</span>
+        <span class="brand-text">ASP.NET Core Masterclass</span>
+      </a>
+      <span class="version-pill">.NET 8 / LTS</span>
+    </div>
+
+    <div class="header-right">
+      <a href="../index.html" class="index-home-btn" title="Back to Curriculum Dashboard">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span class="home-text">Course Index</span>
+      </a>
+
+      <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-text">Search topics, syntax, concepts...</span>
+        <kbd class="kbd-shortcut">Ctrl+K</kbd>
+      </button>
+
+      <button class="theme-toggle-btn" aria-label="Toggle dark/light theme" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle></svg>
+      </button>
+    </div>
+  </header>
+  
+
+  <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+  <!-- Documentation Layout -->
+  <div class="docs-wrapper">
+    
+    <aside class="docs-sidebar" aria-label="Course Navigation">
+      <div class="sidebar-top-bar">
+        <span class="sidebar-top-title">Curriculum</span>
+        <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" title="Collapse Sidebar" aria-label="Collapse Navigation Sidebar" type="button">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg>
+          <span>Collapse</span>
+        </button>
+      </div>
+
+      <div class="sidebar-search-box">
+        <input type="text" class="sidebar-filter-input" placeholder="Filter sections..." aria-label="Filter sidebar sections" />
+      </div>
+
+      <div style="margin-bottom: 1rem;">
+        <a href="../index.html" class="sidebar-link" style="color: var(--accent-primary); font-weight: 600;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Return to Dashboard</span>
+        </a>
+      </div>
+  
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 1: Foundations, HTTP, Middleware &amp; Routing</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">5</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-01.html" class="sidebar-link">
+            <span class="sidebar-sec-num">01</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Introduction</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-02.html" class="sidebar-link">
+            <span class="sidebar-sec-num">02</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Getting Started</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-03.html" class="sidebar-link">
+            <span class="sidebar-sec-num">03</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">HTTP</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-04.html" class="sidebar-link">
+            <span class="sidebar-sec-num">04</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Middleware</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-05.html" class="sidebar-link">
+            <span class="sidebar-sec-num">05</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Routing</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 2: Controllers, Model Binding &amp; Validation</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-06.html" class="sidebar-link">
+            <span class="sidebar-sec-num">06</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Controllers &amp; IActionResult</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-07.html" class="sidebar-link">
+            <span class="sidebar-sec-num">07</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Model Binding and Validations</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 3: Razor Views, Partial Views, View Components &amp; Tag Helpers</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">5</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-08.html" class="sidebar-link">
+            <span class="sidebar-sec-num">08</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Razor Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-09.html" class="sidebar-link active" aria-current="page">
+            <span class="sidebar-sec-num">09</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Layout Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-10.html" class="sidebar-link">
+            <span class="sidebar-sec-num">10</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Partial Views</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-11.html" class="sidebar-link">
+            <span class="sidebar-sec-num">11</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">View Components</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-17.html" class="sidebar-link">
+            <span class="sidebar-sec-num">17</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Tag Helpers</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 4: Dependency Injection, Environments &amp; Configuration</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-12.html" class="sidebar-link">
+            <span class="sidebar-sec-num">12</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Dependency Injection</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-13.html" class="sidebar-link">
+            <span class="sidebar-sec-num">13</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Environments</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-14.html" class="sidebar-link">
+            <span class="sidebar-sec-num">14</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Configuration</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-15.html" class="sidebar-link">
+            <span class="sidebar-sec-num">15</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">xUnit</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-16.html" class="sidebar-link">
+            <span class="sidebar-sec-num">16</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">CRUD Operations</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-18.html" class="sidebar-link">
+            <span class="sidebar-sec-num">18</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">EntityFrameworkCore</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-19.html" class="sidebar-link">
+            <span class="sidebar-sec-num">19</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Unit Testing - Advanced</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-20.html" class="sidebar-link">
+            <span class="sidebar-sec-num">20</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Logging</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-21.html" class="sidebar-link">
+            <span class="sidebar-sec-num">21</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Filters</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-22.html" class="sidebar-link">
+            <span class="sidebar-sec-num">22</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Error Handling</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-23.html" class="sidebar-link">
+            <span class="sidebar-sec-num">23</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">SOLID Principles</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-24.html" class="sidebar-link">
+            <span class="sidebar-sec-num">24</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Clean Architecture</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-25.html" class="sidebar-link">
+            <span class="sidebar-sec-num">25</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Identity and Authorization</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-26.html" class="sidebar-link">
+            <span class="sidebar-sec-num">26</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Web API</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-27.html" class="sidebar-link">
+            <span class="sidebar-sec-num">27</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Swagger</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-28.html" class="sidebar-link">
+            <span class="sidebar-sec-num">28</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Angular and CORS</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
+        <li class="sidebar-nav-item">
+          <a href="section-29.html" class="sidebar-link">
+            <span class="sidebar-sec-num">29</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">JWT with Web API</span>
+          </a>
+        </li>
+      
+        <li class="sidebar-nav-item">
+          <a href="section-30.html" class="sidebar-link">
+            <span class="sidebar-sec-num">30</span>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Minimal API</span>
+          </a>
+        </li>
+      
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content Container -->
+    <main class="docs-main-container" id="main-content" tabindex="-1">
+      <!-- Floating Expand Button when Sidebar is Collapsed -->
+      <button class="expand-sidebar-pill" id="expandSidebarPill" title="Expand Sidebar" aria-label="Expand Sidebar" type="button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg>
+        <span>» Expand Sidebar</span>
+      </button>
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
+        <a href="../index.html">Course Index</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span>Module 3</span>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span style="color: var(--text-main); font-weight: 600;">Section 09</span>
+      </nav>
+
+      <!-- Section Banner Header -->
+      <header class="section-banner">
+        <div class="section-meta-row">
+          <span class="module-badge">Module 3</span>
+          <span class="read-time-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            15 PDF Pages
+          </span>
+          <span class="tag-pill">ASP.NET Core</span>
+          <span class="tag-pill">.NET 8</span>
+          <span class="tag-pill" style="border-color: var(--accent-primary); color: var(--accent-primary);">Includes Cheat Sheet</span>
+        </div>
+        <h1>Section 09: Layout Views</h1>
+        <p class="section-description">
+          Authentic study and reference notes extracted directly from original masterclass course materials.
+        </p>
+      </header>
+
+      <!-- Body Content -->
+      <article class="docs-content">
+        
+<h2 id="layout-views">Layout Views</h2>
+<p>In ASP.NET Core MVC, a layout view is a master template that defines the common structure and
+elements that you want to share across multiple pages within your application. This could include
+headers, navigation bars, footers, sidebars, and other common UI components.
+Why Use Layout Views?</p>
+<ul>
+  <li>• Reusability: Avoid repeating common HTML, CSS, and JavaScript code in every view.</li>
+  <li>• Consistency: Maintain a uniform look and feel across your entire application.</li>
+  <li>• Simplified Maintenance: Make updates to the layout view once, and the changes</li>
+</ul>
+<p>automatically apply to all views that use it.</p>
+<ul>
+  <li>• Improved Organization: Separate the structure of your pages from their specific content.</li>
+</ul>
+
+<h2 id="how-layout-views-work">How Layout Views Work</h2>
+<ul>
+  <li>1. The _Layout.cshtml File: The main layout view is typically named _Layout.cshtml and placed</li>
+</ul>
+<p>in the Views/Shared folder. You can also have multiple layout files if needed.</p>
+<ul>
+  <li>2. RenderBody() Method: The layout view contains a special Razor method called</li>
+</ul>
+<p>RenderBody(). This is a placeholder where the content of the specific view (e.g.,
+      Index.cshtml, About.cshtml) will be inserted.</p>
+<ul>
+  <li>3. Specifying the Layout: In your individual views, you use the Layout property to indicate</li>
+</ul>
+<p>which layout view to use. This can be done in two ways:</p>
+<ul>
+  <li>o Implicitly (Convention-based): If you don&#39;t explicitly specify a layout, ASP.NET Core</li>
+</ul>
+<p>MVC automatically uses the _Layout.cshtml file in the Views/Shared folder.</p>
+<ul>
+  <li>o Explicitly: Use the Layout property at the top of your view:</li>
+  <li>o @{</li>
+  <li>o Layout = &quot;~/Views/Shared/_Layout.cshtml&quot;;</li>
+</ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+  
+<h2 id="code-example">Code Example</h2>
+<p>_Layout.cshtml (Layout View)
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;@ViewData[&quot;Title&quot;]&lt;/title&gt;
+  &lt;link href=&quot;~/StyleSheet.css&quot; rel=&quot;stylesheet&quot; /&gt;
+&lt;/head&gt;
+&lt;body&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;div class=&quot;container&quot;&gt;
+   &lt;div class=&quot;navbar&quot;&gt;
+     &lt;div class=&quot;navbar-brand&quot;&gt;AspNet Core App&lt;/div&gt;
+     &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;page-content&quot;&gt;</code></pre>
+    </div>
+  <p>@RenderBody()</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;/div&gt;
+  &lt;/div&gt;</code></pre>
+    </div>
+  <p>&lt;/body&gt;
+&lt;/html&gt;</p>
+<ul>
+  <li>• @ViewData[&quot;Title&quot;]: Dynamically sets the title of the page. This value will be provided by</li>
+</ul>
+<p>the individual views.</p>
+<ul>
+  <li>• RenderBody(): This placeholder will be replaced by the content of the specific view being</li>
+</ul>
+<p>rendered.</p>
+<p>Index.cshtml (Content View)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@{
+  Layout = &quot;~/Views/Shared/_Layout.cshtml&quot;; // Explicitly specifies the layout
+  ViewData[&quot;Title&quot;] = &quot;Home&quot;;
+}
+&lt;h1&gt;Home&lt;/h1&gt;
+&lt;p&gt;Welcome to home page&lt;/p&gt;</code></pre>
+    </div>
+  <p>• Layout Property: Sets the layout for this view.</p>
+<ul>
+  <li>• ViewData[&quot;Title&quot;]: Sets the value for the Title property, which will be used in the layout</li>
+</ul>
+<p>view.
+About.cshtml (Content View)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@{
+  Layout = &quot;~/Views/Shared/_Layout.cshtml&quot;;
+  ViewData[&quot;Title&quot;] = &quot;About&quot;;
+}
+&lt;h1&gt;About&lt;/h1&gt;
+&lt;p&gt;About company&lt;/p&gt;</code></pre>
+    </div>
+  <p>This view follows the same structure, setting the title to &quot;About&quot;.
+Controller (HomeController.cs)
+The controller actions simply return the View() result, which triggers the view rendering process.
+Because the layout is not defined within the action, the default _Layout.cshtml is used.</p>
+
+<h2 id="notes">Notes</h2>
+<ul>
+  <li>• Structure and Consistency: Layout views help you establish a consistent page structure</li>
+</ul>
+<p>throughout your application.</p>
+<ul>
+  <li>• DRY Principle: Don&#39;t Repeat Yourself (DRY) by avoiding duplication of common elements in</li>
+</ul>
+<p>your views.</p>
+<ul>
+  <li>• RenderBody(): This method is essential for inserting the specific view&#39;s content into the</li>
+</ul>
+<p>layout.</p>
+<ul>
+  <li>• Layout Property: Use it to explicitly specify or override the layout for a particular view.</li>
+  <li>• Partial Views: You can use partial views within layout views to further break down your UI</li>
+</ul>
+<p>into reusable components.</p>
+<ul>
+  <li>• Sections: The RenderSection method allows you to define placeholders in the layout view</li>
+</ul>
+<p>and have individual views provide content for them.
+_ViewStart.cshtml
+The _ViewStart.cshtml file is a special file in ASP.NET Core MVC that allows you to configure
+common settings that apply to all views within a specific directory and its subdirectories. This file
+typically resides in the same folder as your views, but its effects cascade down to child folders.
+What Can You Put in _ViewStart.cshtml?
+The primary purpose of _ViewStart.cshtml is to specify the default layout for your views. You can
+also use it to set other common properties for your views, but using it for the layout is the most
+common practice.</p>
+<ul>
+  <li>• Layout Property: Sets the default layout for all views in the directory and its subdirectories.</li>
+  <li>• @{</li>
+  <li>• Layout = &quot;_Layout&quot;; // Sets the default layout to _Layout.cshtml</li>
+</ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp"></code></pre>
+    </div>
+  <p>You can specify the full path to the layout view if needed.</p>
+<ul>
+  <li>• Other Properties: While less common, you could set other properties of the View object</li>
+</ul>
+<p>within _ViewStart.cshtml. However, it&#39;s generally recommended to keep the main purpose
+      of this file to define the default layout.</p>
+
+<h2 id="how-it-works">How It Works</h2>
+<p>When ASP.NET Core MVC processes a request for a view, it looks for a _ViewStart.cshtml file in the
+following order:</p>
+<ul>
+  <li>1. The same directory as the view: If found, the layout specified in this file is applied to the</li>
+</ul>
+<p>view.</p>
+<ul>
+  <li>2. Parent directories: It then checks parent directories of the view, recursively, until it reaches</li>
+</ul>
+<p>the root Views folder.</p>
+<ul>
+  <li>3. Root Views folder: Finally, it checks the _ViewStart.cshtml file in the root Views folder. If a</li>
+</ul>
+<p>layout is specified there, it will be used as the default for any view that hasn&#39;t had a layout
+      explicitly set.
+Code Example:
+Imagine you have the following file structure:</p>
+
+<h2 id="views">Views/</h2>
+<p>_ViewStart.cshtml (Layout = &quot;_Layout&quot;)</p>
+
+<h2 id="home">Home/</h2>
+<p>Index.cshtml
+   About.cshtml</p>
+
+<h2 id="products">Products/</h2>
+<p>_ViewStart.cshtml (Layout = &quot;_ProductLayout&quot;)
+   Index.cshtml
+   Details.cshtml</p>
+<ul>
+  <li>• The Home/Index.cshtml and Home/About.cshtml views will use _Layout.cshtml as their</li>
+</ul>
+<p>layout (inherited from the root Views folder&#39;s _ViewStart.cshtml).</p>
+<ul>
+  <li>• The Products/Index.cshtml and Products/Details.cshtml views will use</li>
+</ul>
+<p>_ProductLayout.cshtml as their layout (specified in their own directory&#39;s _ViewStart.cshtml).
+Benefits of Using _ViewStart.cshtml</p>
+<ul>
+  <li>• DRY (Don&#39;t Repeat Yourself): Avoids repeating the layout specification in every view file.</li>
+  <li>• Centralized Configuration: Makes it easy to change the default layout for an entire section</li>
+</ul>
+<p>of your views.</p>
+<ul>
+  <li>• Maintainability: Simplifies updating your application&#39;s layout without modifying individual</li>
+</ul>
+<p>views.</p>
+
+<h2 id="important-considerations">Important Considerations</h2>
+<ul>
+  <li>• Override with Layout Property: You can still override the default layout in individual views</li>
+</ul>
+<p>by explicitly setting the Layout property.</p>
+<ul>
+  <li>• Cascading Behavior: Understand the cascading behavior when you have multiple</li>
+</ul>
+<p>_ViewStart.cshtml files in different directories.</p>
+<ul>
+  <li>• Scoping: Be aware that _ViewStart.cshtml affects views within the same directory and its</li>
+</ul>
+<p>subdirectories.</p>
+
+<h2 id="dynamic-layout-views">Dynamic Layout Views</h2>
+<p>While the _ViewStart.cshtml file is excellent for setting default layouts, sometimes you need more
+flexibility to choose different layouts based on specific conditions or logic within your views. This is
+where dynamic layout selection comes into play.
+The Layout Property: Your Key to Flexibility
+The Layout property, which you typically set in the _ViewStart.cshtml file, can also be set directly
+within individual views. This allows you to dynamically change the layout used for rendering a
+particular view based on the data or context of the request.</p>
+
+<h2 id="how-to-apply-dynamic-layouts">How to Apply Dynamic Layouts</h2>
+<ul>
+  <li>1. Conditional Logic: Use conditional statements (if, else, switch) in your Razor view to</li>
+</ul>
+<p>determine which layout to apply based on specific criteria.</p>
+<ul>
+  <li>2. Set Layout Property: Within the conditional blocks, assign the appropriate layout path to the</li>
+</ul>
+<p>Layout property.</p>
+<ul>
+  <li>3. Render the View: The MVC framework will use the dynamically assigned layout to render</li>
+</ul>
+<p>the final page.</p>
+<p>Code Example: Dynamic Layout Based on ViewBag.ProductID</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// Views/Products/Search.cshtml
+@{
+  ViewData[&quot;Title&quot;] = &quot;Search Products&quot;;
+}</code></pre>
+    </div>
+  <p>if (ViewBag.ProductID != null)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">{
+  {
+   Layout = &quot;~/Views/Shared/_ProductsLayout.cshtml&quot;;
+  }
+}
+&lt;h1&gt;Search Products&lt;/h1&gt;
+&lt;p&gt;search details here&lt;/p&gt;</code></pre>
+    </div>
+  <p>Explanation</p>
+<ul>
+  <li>1. Checking Condition: The code first checks if ViewBag.ProductID is not null. This suggests that</li>
+</ul>
+<p>the view is being rendered in the context of a specific product (since the product ID is
+      available).</p>
+<ul>
+  <li>2. Setting Layout: If ViewBag.ProductID is not null, the Layout property is set to</li>
+</ul>
+<p>~/Views/Shared/_ProductsLayout.cshtml. This means that the view will use a different
+      layout than the default one potentially specified in the _ViewStart.cshtml.</p>
+<ul>
+  <li>3. Default Layout: If ViewBag.ProductID is null, the view will fall back to the default layout,</li>
+</ul>
+<p>which is either specified in the _ViewStart.cshtml file or the application&#39;s global
+      configuration.</p>
+
+<h2 id="additional-considerations">Additional Considerations</h2>
+<ul>
+  <li>• Flexibility: You can use any condition you need to determine the appropriate layout. This</li>
+</ul>
+<p>could involve checking model properties, user roles, configuration settings, or other dynamic
+      values.</p>
+<ul>
+  <li>• Performance: If you have complex layout selection logic, consider moving it to your</li>
+</ul>
+<p>controller or a helper method to keep your views clean.</p>
+<ul>
+  <li>• Maintainability: Organize your layouts clearly, and document the conditions under which</li>
+</ul>
+<p>each layout is used.</p>
+
+<h2 id="important-considerations-1">Important Considerations</h2>
+<ul>
+  <li>• View Model: The preferred way to pass data from the controller to the view is by using a</li>
+</ul>
+<p>strongly typed view model. ViewBag is not type-safe and could lead to run-time errors if not
+      used with care.</p>
+<ul>
+  <li>• Error Handling: Handle the case where ViewBag.ProductID might not be set correctly or</li>
+</ul>
+<p>could be null when you expect it to have a value. This could help avoid unexpected runtime
+      errors.
+Example Usage in Controller (ProductsController.cs)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public IActionResult Search(int? productId)
+{
+  // ... (retrieve search results and potentially set ViewBag.ProductID)...
+  ViewBag.ProductID = productId;
+  return View();
+}</code></pre>
+    </div>
+  <p>By dynamically applying different layouts, you can create a more tailored and engaging user
+experience, adapting the structure and presentation of your views to match the specific context of
+each request. Let me know if you have any other questions!</p>
+
+<h2 id="layout-view-sections">Layout View Sections</h2>
+<p>In ASP.NET Core MVC, layout view sections allow you to define specific placeholders or areas within
+your layout view where content from individual views can be inserted. This provides a powerful way
+to control the placement and organization of content within your page&#39;s overall structure.</p>
+
+<h2 id="key-concepts">Key Concepts</h2>
+<ul>
+  <li>• @RenderSection() in Layout:</li>
+  <li>o Purpose: Defines a placeholder (section) in the layout view where content can be</li>
+</ul>
+<p>inserted from specific views.</p>
+<ul>
+  <li>o Syntax:</li>
+</ul>
+<p>@RenderSection(&quot;sectionName&quot;, required: true/false)
+              ▪ sectionName: A unique name for the section.
+              ▪ required: A boolean flag indicating whether the section is required (default
+                 is true). If true, views using this layout must provide content for this section;
+                 otherwise, an exception is thrown.</p>
+<ul>
+  <li>• @section in Content Views:</li>
+  <li>o Purpose: Provides the content to be inserted into the corresponding section in the</li>
+</ul>
+<p>layout view.</p>
+<ul>
+  <li>o Syntax:</li>
+</ul>
+<p>o</p>
+<ul>
+  <li>o @section sectionName {</li>
+</ul>
+<p>... }</p>
+
+<h2 id="code-example-1">Code Example</h2>
+<p>_Layout.cshtml (Layout View)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">&lt;div class=&quot;footer-content&quot;&gt;</code></pre>
+    </div>
+  <p>@RenderSection(&quot;footer_section&quot;, false) // Optional footer section</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;/div&gt;</code></pre>
+    </div>
+  <p>@RenderSection(&quot;footer_section&quot;, false): This line defines a section named footer_section. The
+false argument indicates that this section is optional. Views using this layout can choose whether or
+not to provide content for it.</p>
+<p>Views/Home/Contact.cshtml (Content View)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@section footer_section
+{
+  &lt;p&gt;Contact support: 98348734873984734&lt;/p&gt;
+}
+@section footer_section { ... }: This code block defines the content that will be rendered in the</code></pre>
+    </div>
+  <p>footer_section of the layout view.</p>
+
+<h2 id="how-it-works-1">How It Works</h2>
+<ul>
+  <li>1. When ASP.NET Core renders a view that uses the _Layout.cshtml layout, it encounters the</li>
+</ul>
+<p>@RenderSection(&quot;footer_section&quot;, false) line.</p>
+<ul>
+  <li>2. If the content view (e.g., Contact.cshtml) provides a @section footer_section block, that</li>
+</ul>
+<p>content is inserted into the layout at the @RenderSection location.</p>
+<ul>
+  <li>3. If the content view does not provide a @section footer_section block, and the section is</li>
+</ul>
+<p>marked as optional (false), no content is rendered in that section. If the section is required
+      (true), an error will be thrown.</p>
+
+<h2 id="notes-1">Notes</h2>
+<ul>
+  <li>• Flexibility: Sections let you dynamically control the placement of content in your layout.</li>
+  <li>• Reusability: You can reuse the same layout with different content views, each providing</li>
+</ul>
+<p>their own section content.</p>
+<ul>
+  <li>• Organization: Keep your layout code clean and focused by breaking down the page into</li>
+</ul>
+<p>logical sections.</p>
+<ul>
+  <li>• Optional vs. Required: Use the required flag in @RenderSection wisely to control whether</li>
+</ul>
+<p>views must provide content for a section.</p>
+<ul>
+  <li>• Default Content: You can provide default content within the @RenderSection block in the</li>
+</ul>
+<p>layout view, which will be rendered if the content view doesn&#39;t override it.</p>
+
+<h2 id="nested-layout-views">Nested Layout Views</h2>
+<p>In ASP.NET Core MVC, nested layout views allow you to create hierarchical layouts where one layout
+view inherits from another. This creates a structure where a child layout can define additional
+content or override specific sections of its parent layout, while still inheriting the overall structure
+and common elements.
+Why Use Nested Layouts?</p>
+<ul>
+  <li>• Enhanced Reusability: Achieve even greater reusability by creating multiple layers of layout</li>
+</ul>
+<p>views. This is particularly useful for large applications with distinct sections or modules that
+      share some common elements but also have unique layout requirements.</p>
+<ul>
+  <li>• Fine-Grained Control: Customize specific areas of a layout without duplicating large chunks</li>
+</ul>
+<p>of code. You can create a base layout for the entire application and then have specialized
+      layouts for different sections, such as the header, navigation, or footer.</p>
+<ul>
+  <li>• Maintainability: Manage and update layout elements more efficiently by making changes at</li>
+</ul>
+<p>the appropriate level in the layout hierarchy.</p>
+
+<h2 id="implementing-nested-layouts">Implementing Nested Layouts</h2>
+<ul>
+  <li>1. Parent Layout: Create a parent layout view that defines the main structure and common</li>
+</ul>
+<p>elements. Typically, this is your _Layout.cshtml file in the Views/Shared folder.</p>
+<ul>
+  <li>2. Child Layout: Create a child layout view that inherits from the parent layout. In the child</li>
+</ul>
+<p>layout, you can:</p>
+<ul>
+  <li>o Add new sections or content.</li>
+  <li>o Override sections defined in the parent layout using @section.</li>
+  <li>o Set the Layout property to the parent layout&#39;s path.</li>
+  <li>3. Content View: In your content views, you don&#39;t need to explicitly specify the child layout. It</li>
+</ul>
+<p>will automatically inherit from the parent layout if you don&#39;t set a Layout property.
+Code Example: In-Depth
+_MasterLayout.cshtml (Parent Layout)
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">&lt;div class=&quot;container&quot;&gt;
+   &lt;div class=&quot;header&quot;&gt;</code></pre>
+    </div>
+  <p>ASP.NET Core Demo App</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div&gt;</code></pre>
+    </div>
+  <p>@RenderBody()</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;/div&gt;</code></pre>
+    </div>
+  <p>&lt;/body&gt;
+&lt;/html&gt;
+RenderBody(): The key placeholder where the child layout&#39;s content will be inserted.
+_Layout.cshtml (Child Layout)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@{
+  Layout = &quot;~/Views/Shared/_MasterLayout.cshtml&quot;; // Inherit from _MasterLayout.cshtml
+}</code></pre>
+    </div>
+  <p>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;div class=&quot;container&quot;&gt;
+   &lt;div class=&quot;navbar&quot;&gt;
+     &lt;/div&gt;
+   &lt;div class=&quot;page-content&quot;&gt;</code></pre>
+    </div>
+  <p>@RenderBody()</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;/div&gt;
+   &lt;div class=&quot;footer-content&quot;&gt;</code></pre>
+    </div>
+  <p>@RenderSection(&quot;footer_section&quot;, false)</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">Razor / HTML</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-razor">&lt;/div&gt;
+  &lt;/div&gt;</code></pre>
+    </div>
+  <p>&lt;/body&gt;
+&lt;/html&gt;</p>
+<ul>
+  <li>• Layout = &quot;~/Views/Shared/_MasterLayout.cshtml&quot;: Specifies the parent layout.</li>
+  <li>• Additional Content: The child layout adds the navbar, page content area, and footer section.</li>
+  <li>• RenderBody(): Inherits this placeholder from the parent layout, so the content view&#39;s</li>
+</ul>
+<p>content will ultimately be rendered here.
+_ViewStart.cshtml</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">@{
+  Layout = &quot;~/Views/Shared/_Layout.cshtml&quot;;
+}</code></pre>
+    </div>
+  <p>This sets the default layout for all views in the application to be _Layout.cshtml.</p>
+
+<h2 id="how-the-nesting-works">How the Nesting Works</h2>
+<ul>
+  <li>1. When a view is rendered, ASP.NET Core first looks for a _ViewStart.cshtml file.</li>
+  <li>2. _ViewStart.cshtml specifies _Layout.cshtml as the default layout.</li>
+  <li>3. _Layout.cshtml, in turn, specifies _MasterLayout.cshtml as its parent.</li>
+  <li>4. The content view is rendered within the @RenderBody() section of _Layout.cshtml.</li>
+  <li>5. The combined content of _Layout.cshtml is then rendered within the @RenderBody()</li>
+</ul>
+<p>section of _MasterLayout.cshtml.</p>
+
+<h2 id="notes-2">Notes</h2>
+<ul>
+  <li>• Flexibility: Nested layouts provide flexibility to create complex and modular UI structures.</li>
+  <li>• Inheritance: Child layouts inherit the structure and content of their parent layouts.</li>
+  <li>• Overriding: Child layouts can override or extend sections defined in the parent layout.</li>
+  <li>• Maintainability: Makes it easier to update and manage the overall layout of your</li>
+</ul>
+<p>application.</p>
+
+<h2 id="key-points-to-remember">Key points to remember</h2>
+<p>Layout Views: Mastering Page Structure</p>
+<ul>
+  <li>• Purpose: Define a common template for the structure and shared elements of your web</li>
+</ul>
+<p>pages.</p>
+<ul>
+  <li>• Benefits:</li>
+  <li>o Reusability: Avoid code duplication.</li>
+  <li>o Consistency: Maintain a uniform look and feel across pages.</li>
+  <li>o Maintainability: Update the layout once, and changes apply everywhere.</li>
+  <li>• _Layout.cshtml: The main layout file, usually placed in the Views/Shared folder.</li>
+  <li>• RenderBody(): Placeholder in the layout view where the specific view&#39;s content is inserted.</li>
+  <li>• Layout Property:</li>
+  <li>o Used in content views to specify which layout to use.</li>
+  <li>o Can be set dynamically based on conditions in the view.</li>
+  <li>o If not set, the default _Layout.cshtml is used.</li>
+</ul>
+
+<h2 id="sections">Sections</h2>
+<ul>
+  <li>• Purpose: Define placeholders in the layout for content from specific views.</li>
+  <li>• @RenderSection(&quot;sectionName&quot;, required: true/false): Declares a section in the layout.</li>
+  <li>• @section sectionName { ... }: Provides content for the section in the content view.</li>
+  <li>• Optional vs. Required: Control whether a section is mandatory or optional using the</li>
+</ul>
+<p>required flag.</p>
+
+<h2 id="nested-layouts">Nested Layouts</h2>
+<ul>
+  <li>• Purpose: Create hierarchical layouts where one layout inherits from another.</li>
+  <li>• Benefits: Increased reusability and fine-grained control over layout customization.</li>
+  <li>• Implementation:</li>
+  <li>o Set the Layout property in the child layout to point to the parent layout.</li>
+  <li>o Use @RenderBody() in both layouts.</li>
+</ul>
+<p>_ViewStart.cshtml</p>
+<ul>
+  <li>• Purpose: Set the default layout for all views in a directory and its subdirectories.</li>
+  <li>• Location: Typically placed in the Views folder or in specific subfolders.</li>
+  <li>• Layout Property: Used within _ViewStart.cshtml to specify the default layout file.</li>
+</ul>
+
+<h2 id="additional-tips">Additional Tips</h2>
+<ul>
+  <li>• View Models: Pass data to layout views using strongly typed view models.</li>
+  <li>• Partial Views: Break down complex layouts into smaller, reusable partial views.</li>
+  <li>• Sections for Flexibility: Use sections to make your layouts adaptable to different content</li>
+</ul>
+<p>views.</p>
+<ul>
+  <li>• Error Handling: Handle potential errors (e.g., missing sections) gracefully.</li>
+</ul>
+
+<h2 id="interview-tips">Interview Tips</h2>
+<ul>
+  <li>• Explain the Hierarchy: Clearly articulate how nested layouts and _ViewStart.cshtml work</li>
+</ul>
+<p>together to define page structure.</p>
+<ul>
+  <li>• Code Examples: Be prepared to write code snippets demonstrating the use of layout views,</li>
+</ul>
+<p>sections, and dynamic layout selection.</p>
+<ul>
+  <li>• Best Practices: Discuss how to use layout views to create maintainable and reusable code.</li>
+  <li>• Troubleshooting: Explain how you would debug issues related to layout views (e.g.,</li>
+</ul>
+<p>incorrect layout rendering).</p>
+
+<hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
+<section class="cheatsheet-section" aria-labelledby="cheat-sheet-quick-reference">
+  <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
+  <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
+  <p>Section 9 – Layout Views – Cheat Sheet</p>
+  <h3 id="layout-views-1">Layout Views</h3>
+  <p>Layout View is a web page (.cshtml) that is responsible for containing presentation logic template
+(commonly the html template with header, sidebar, footer etc.)</p>
+  <h3 id="order-of-views-execution">Order of Views Execution</h3>
+  <h3 id="layout-views-2">Layout Views</h3>
+  <ul>
+    <li>• The @RenderBody() method presents only in layout view to represent the place where</li>
+  </ul>
+  <p>exactly the content from the view has to be rendered.</p>
+  <ul>
+    <li>• The &quot;Layout&quot; property of the view specifies path of the layout view.</li>
+    <li>• It can be dynamically set in the view.</li>
+    <li>• Both View and Layout View shares the same ViewData object.</li>
+    <li>• So it is possible to send data from view to layout, since the view executes first.</li>
+    <li>• The css files / js files imported in layout view will be applicable to view also, because the</li>
+  </ul>
+  <p>content of view will be merged into the layout view at run time.</p>
+</section>
+
+      </article>
+
+      <!-- Completion Toggle Control -->
+      <div class="completion-container">
+        <div>
+          <strong style="color: var(--text-main); font-size: 0.95rem;">Section Progress</strong>
+          <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">Mark this section complete to record your learning progress locally.</p>
+        </div>
+        <button class="mark-complete-btn" id="markCompleteBtn" type="button" aria-pressed="false" aria-label="Mark Section Complete">
+          <svg class="complete-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span class="complete-text">Mark Section Complete</span>
+        </button>
+      </div>
+
+      <!-- Bottom Navigation Prev / Next -->
+      <nav class="bottom-nav" aria-label="Previous and Next Section Navigation">
+        
+      <a href="section-08.html" class="nav-card prev" aria-label="Previous Section: Sec 08 - Razor Views">
+        <span class="nav-direction">← Previous Section</span>
+        <span class="nav-title">Sec 08: Razor Views</span>
+      </a>
+    
+        
+      <a href="section-10.html" class="nav-card next" aria-label="Next Section: Sec 10 - Partial Views">
+        <span class="nav-direction">Next Section →</span>
+        <span class="nav-title">Sec 10: Partial Views</span>
+      </a>
+    
+      </nav>
+
+      <!-- Section Footer -->
+      <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); color: var(--text-dim); font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;" role="contentinfo">
+        <span>ASP.NET Core Masterclass — Offline Documentation Portal</span>
+        <a href="#top" style="color: var(--text-muted); text-decoration: none;">↑ Back to top</a>
+      </footer>
+    </main>
+
+    <!-- Right Table of Contents (TOC) -->
+    <aside class="docs-toc" aria-label="Page Table of Contents">
+      <div class="toc-title">On This Page</div>
+      <ul class="toc-list">
+        
+        <li class="toc-item">
+          <a href="#layout-views" class="toc-link">Layout Views</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#how-layout-views-work" class="toc-link">How Layout Views Work</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-example" class="toc-link">Code Example</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#notes" class="toc-link">Notes</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#how-it-works" class="toc-link">How It Works</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#views" class="toc-link">Views/</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#home" class="toc-link">Home/</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#products" class="toc-link">Products/</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#important-considerations" class="toc-link">Important Considerations</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#dynamic-layout-views" class="toc-link">Dynamic Layout Views</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#how-to-apply-dynamic-layouts" class="toc-link">How to Apply Dynamic Layouts</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#additional-considerations" class="toc-link">Additional Considerations</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#important-considerations-1" class="toc-link">Important Considerations</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#layout-view-sections" class="toc-link">Layout View Sections</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-concepts" class="toc-link">Key Concepts</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-example-1" class="toc-link">Code Example</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#how-it-works-1" class="toc-link">How It Works</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#notes-1" class="toc-link">Notes</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#nested-layout-views" class="toc-link">Nested Layout Views</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#implementing-nested-layouts" class="toc-link">Implementing Nested Layouts</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#how-the-nesting-works" class="toc-link">How the Nesting Works</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#notes-2" class="toc-link">Notes</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-points-to-remember" class="toc-link">Key points to remember</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#sections" class="toc-link">Sections</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#nested-layouts" class="toc-link">Nested Layouts</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#additional-tips" class="toc-link">Additional Tips</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#interview-tips" class="toc-link">Interview Tips</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#cheat-sheet-quick-reference" class="toc-link">Cheat Sheet &amp; Quick Reference</a>
+        </li>
+      
+      </ul>
+    </aside>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/search-index.js"></script>
+  <script src="../assets/js/search-engine.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
