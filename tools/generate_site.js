@@ -425,6 +425,39 @@ function buildHeader(isRoot = false) {
   const prefix = isRoot ? '' : '../';
   const homeLink = isRoot ? 'index.html' : '../index.html';
 
+  if (isRoot) {
+    return `
+  <!-- Top Navigation Header -->
+  <header class="top-header" role="banner">
+    <div class="header-left">
+      <a href="index.html" class="brand-link" aria-label="ASP.NET Core Masterclass Documentation Portal">
+        <span class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+            <rect width="128" height="128" rx="28" fill="url(#brandGradDotNet)" />
+            <circle cx="28" cy="78" r="7" fill="#ffffff" />
+            <text x="38" y="82" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="900" fill="#ffffff" letter-spacing="-1.5">NET</text>
+          </svg>
+        </span>
+        <span class="brand-text">ASP.NET Core Masterclass</span>
+      </a>
+      <span class="version-pill">.NET 8 / LTS</span>
+    </div>
+
+    <div class="header-right">
+      <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-text">Search topics, syntax, concepts...</span>
+        <kbd class="kbd-shortcut">Ctrl+K</kbd>
+      </button>
+
+      <button class="theme-toggle-btn" aria-label="Toggle dark/light theme" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle></svg>
+      </button>
+    </div>
+  </header>
+    `;
+  }
+
   return `
   <!-- Top Navigation Header -->
   <header class="top-header" role="banner">
@@ -435,7 +468,13 @@ function buildHeader(isRoot = false) {
         <span class="sidebar-toggle-text">« Collapse</span>
       </button>
       <a href="${homeLink}" class="brand-link" aria-label="ASP.NET Core Masterclass Documentation Portal">
-        <span class="brand-icon" style="background: linear-gradient(135deg, #38bdf8, #6366f1); color: #0b0f19; font-weight: 900; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem;">.NET</span>
+        <span class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+            <rect width="128" height="128" rx="28" fill="url(#brandGradDotNet)" />
+            <circle cx="28" cy="78" r="7" fill="#ffffff" />
+            <text x="38" y="82" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="900" fill="#ffffff" letter-spacing="-1.5">NET</text>
+          </svg>
+        </span>
         <span class="brand-text">ASP.NET Core Masterclass</span>
       </a>
       <span class="version-pill">.NET 8 / LTS</span>
@@ -444,7 +483,7 @@ function buildHeader(isRoot = false) {
     <div class="header-right">
       <a href="${homeLink}" class="index-home-btn" title="Back to Curriculum Dashboard">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-        <span class="home-text">Course Index</span>
+        <span class="home-text">Curriculum</span>
       </a>
 
       <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
@@ -571,6 +610,13 @@ async function generateAll() {
 
       <!-- Section Banner Header -->
       <header class="section-banner">
+        <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
+          <a href="../index.html">Curriculum</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span>Module ${secMeta.module_number}: ${escapeHtml(secMeta.module_title)}</span>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span class="breadcrumb-current" aria-current="page">Section ${secNum}</span>
+        </nav>
         <div class="section-meta-row">
           <span class="module-badge">Module ${secMeta.module_number}</span>
           <span class="read-time-badge">
@@ -626,6 +672,11 @@ async function generateAll() {
     </aside>
   </div>
 
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to Top of Page" title="Back to Top" type="button">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
   <!-- Scripts -->
   <script src="../assets/js/search-index.js"></script>
   <script src="../assets/js/search-engine.js"></script>
@@ -647,9 +698,20 @@ async function generateAll() {
 
   // 2. Generate index.html
   console.log('Generating index.html...');
+  const moduleBadgeColors = {
+    1: { bg: 'rgba(99, 102, 241, 0.12)', color: '#818cf8', border: 'rgba(99, 102, 241, 0.35)' },
+    2: { bg: 'rgba(139, 92, 246, 0.12)', color: '#a78bfa', border: 'rgba(139, 92, 246, 0.35)' },
+    3: { bg: 'rgba(168, 85, 247, 0.12)', color: '#c084fc', border: 'rgba(168, 85, 247, 0.35)' },
+    4: { bg: 'rgba(79, 70, 229, 0.12)', color: '#818cf8', border: 'rgba(79, 70, 229, 0.35)' },
+    5: { bg: 'rgba(6, 182, 212, 0.12)', color: '#22d3ee', border: 'rgba(6, 182, 212, 0.35)' },
+    6: { bg: 'rgba(217, 70, 239, 0.12)', color: '#e879f9', border: 'rgba(217, 70, 239, 0.35)' },
+    7: { bg: 'rgba(244, 63, 94, 0.12)', color: '#fb7185', border: 'rgba(244, 63, 94, 0.35)' }
+  };
+
   let moduleCardsHtml = '';
   for (const mod of manifest.modules) {
     const modSections = manifest.sections.filter(s => mod.sections.includes(s.normalized_section));
+    const badge = moduleBadgeColors[mod.module_number] || { bg: 'rgba(139, 92, 246, 0.12)', color: '#a78bfa', border: 'rgba(139, 92, 246, 0.35)' };
     let secListItems = '';
     for (const sec of modSections) {
       secListItems += `
@@ -658,7 +720,7 @@ async function generateAll() {
             <span class="sidebar-sec-num">Sec ${sec.normalized_section}</span>
             <span>${escapeHtml(sec.title)}</span>
           </a>
-          <span class="read-time-badge">${sec.page_count} pgs</span>
+          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">${sec.page_count} pgs</span>
         </li>
       `;
     }
@@ -666,7 +728,7 @@ async function generateAll() {
     moduleCardsHtml += `
       <div class="module-card">
         <div class="module-card-header">
-          <span class="module-badge" style="background: rgba(56, 189, 248, 0.15); color: var(--accent-primary); border: 1px solid rgba(56, 189, 248, 0.3);">
+          <span class="module-badge" style="background: ${badge.bg}; color: ${badge.color}; border: 1px solid ${badge.border};">
             Module ${mod.module_number}
           </span>
           <span class="tag-pill">${modSections.length} Sections</span>
@@ -735,7 +797,7 @@ async function generateAll() {
           <span>Open Global Search</span>
           <kbd class="kbd-shortcut">Ctrl+K</kbd>
         </button>
-        <a href="sections/section-01.html" class="index-home-btn" style="padding: 10px 20px; font-size: 1rem; border-radius: 10px; background: var(--accent-primary); color: #0f172a; font-weight: 700; text-decoration: none;">
+        <a href="sections/section-01.html" class="hero-cta-btn">
           Start Section 01: Introduction →
         </a>
       </div>
