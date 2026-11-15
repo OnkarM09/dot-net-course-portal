@@ -153,21 +153,37 @@
     const moduleCards = document.querySelectorAll('.module-card[data-module-id]');
     moduleCards.forEach(card => {
       const modId = card.getAttribute('data-module-id');
-      const secItems = card.querySelectorAll('.module-sec-item');
+      const secPills = card.querySelectorAll('.module-sec-pill[data-sec-num]');
       let modCompletedCount = 0;
-      secItems.forEach(item => {
-        const secNumSpan = item.querySelector('.sidebar-sec-num');
-        if (secNumSpan) {
-          const num = secNumSpan.textContent.replace(/^Sec\s*/i, '').trim();
-          if (completedList.includes(num.padStart(2, '0'))) {
+      let total = 0;
+
+      if (secPills.length > 0) {
+        total = secPills.length;
+        secPills.forEach(pill => {
+          const num = (pill.getAttribute('data-sec-num') || '').padStart(2, '0');
+          if (completedList.includes(num)) {
             modCompletedCount++;
+            pill.classList.add('completed');
+          } else {
+            pill.classList.remove('completed');
           }
-        }
-      });
+        });
+      } else {
+        const secItems = card.querySelectorAll('.module-sec-item');
+        total = secItems.length;
+        secItems.forEach(item => {
+          const secNumSpan = item.querySelector('.sidebar-sec-num');
+          if (secNumSpan) {
+            const num = secNumSpan.textContent.replace(/^Sec\s*/i, '').trim().padStart(2, '0');
+            if (completedList.includes(num)) {
+              modCompletedCount++;
+            }
+          }
+        });
+      }
 
       const fill = card.querySelector('.module-card-progress-fill');
       const progressText = card.querySelector('.module-card-progress span');
-      const total = secItems.length;
       if (fill && total > 0) {
         const pct = Math.round((modCompletedCount / total) * 100);
         fill.style.width = `${pct}%`;

@@ -105,6 +105,7 @@ function renderListBlock(items) {
       let clean = redactForbidden(it).trim();
       clean = clean.replace(/^([•▪➢✓●○\*\-]|o|&bull;)\s+/, '').trim();
       clean = clean.replace(/^[•▪➢✓●○]\s*/, '').trim();
+      clean = clean.replace(/[\s\n•▪➢✓●○\*\-]+$/, '').trim();
       if (/^[a-z]\s+\(/.test(clean)) {
         clean = `<code>${clean.charAt(0)}</code>` + clean.slice(1);
       }
@@ -653,10 +654,6 @@ function buildHeader(isRoot = false) {
       <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
       </button>
-      <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
-        <span class="sidebar-toggle-text">« Collapse</span>
-      </button>
       <a href="${homeLink}" class="brand-link" aria-label="ASP.NET Core Masterclass Documentation Portal">
         <span class="brand-icon">
           ${brandIconSvg}
@@ -903,23 +900,32 @@ async function generateAll() {
     8: { bg: 'rgba(244, 63, 94, 0.12)', color: '#fb7185', border: 'rgba(244, 63, 94, 0.35)' }
   };
 
+  const moduleFocusTopics = {
+    1: ['Kestrel & IIS', 'HTTP Lifecycle', 'Middleware', 'Endpoint Routing', 'URL Constraints'],
+    2: ['MVC Controllers', 'Action Results', 'Model Binding', 'Data Annotations', 'Validation'],
+    3: ['Razor Syntax', 'Partial Views', 'View Components', 'Tag Helpers', 'Layouts & Sections'],
+    4: ['IoC Container', 'Service Lifetimes', 'appsettings.json', 'Options Pattern', 'Environments'],
+    5: ['xUnit Testing', 'Moq Framework', 'Repository Pattern', 'EF Core 8', 'LINQ Queries'],
+    6: ['Action Filters', 'Global Errors', 'Serilog Logging', 'Clean Architecture', 'Identity'],
+    7: ['RESTful Web APIs', 'OpenAPI & Swagger', 'API Versioning', 'CORS Policies', 'Angular Client'],
+    8: ['JWT Authentication', 'Role-Based Auth', 'Minimal APIs', 'Route Handlers', 'Endpoint Filters']
+  };
+
   let moduleCardsHtml = '';
   for (const mod of manifest.modules) {
     const modSections = manifest.sections.filter(s => mod.sections.includes(s.normalized_section));
+    const totalPages = modSections.reduce((sum, s) => sum + (s.page_count || 0), 0);
     const badge = moduleBadgeColors[mod.module_number] || { bg: 'rgba(139, 92, 246, 0.12)', color: '#a78bfa', border: 'rgba(139, 92, 246, 0.35)' };
-    let secListItems = '';
+    const focusTopics = moduleFocusTopics[mod.module_number] || ['Architecture', '.NET 8'];
+
+    let focusTagsHtml = focusTopics.map(t => `<span class="module-focus-tag">${escapeHtml(t)}</span>`).join('');
+
+    let secPillsHtml = '';
     for (const sec of modSections) {
-      secListItems += `
-        <li class="module-sec-item">
-          <a href="sections/${sec.html_filename}" class="module-sec-item-link">
-            <span class="sidebar-sec-num">Sec ${sec.normalized_section}</span>
-            <span class="module-sec-item-title">${escapeHtml(sec.title)}</span>
-          </a>
-          <div class="module-sec-meta">
-            ${sec.has_cheatsheet ? '<span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>' : ''}
-            <span>${sec.page_count} pgs</span>
-          </div>
-        </li>
+      secPillsHtml += `
+        <a href="sections/${sec.html_filename}" class="module-sec-pill" data-sec-num="${sec.normalized_section}" title="Sec ${sec.normalized_section}: ${escapeHtml(sec.title)} (${sec.page_count} pgs)">
+          <span>Sec ${sec.normalized_section}</span>
+        </a>
       `;
     }
 
@@ -931,7 +937,7 @@ async function generateAll() {
           <span class="module-badge" style="background: ${badge.bg}; color: ${badge.color}; border: 1px solid ${badge.border};">
             Module ${mod.module_number}
           </span>
-          <span class="module-sec-count-badge">${modSections.length} Sections</span>
+          <span class="module-sec-count-badge">${modSections.length} Sections &bull; ${totalPages} pgs</span>
         </div>
         
         <div class="module-card-body">
@@ -939,11 +945,18 @@ async function generateAll() {
           <p class="module-card-desc">${escapeHtml(mod.description)}</p>
         </div>
 
-        <div class="module-card-sections">
-          <div class="module-card-sections-label">Curriculum Sections:</div>
-          <ul class="module-sec-list">
-            ${secListItems}
-          </ul>
+        <div class="module-card-focus">
+          <div class="module-focus-label">Key Topics</div>
+          <div class="module-focus-tags">
+            ${focusTagsHtml}
+          </div>
+        </div>
+
+        <div class="module-card-sections-row">
+          <div class="module-sec-pills-label">Sections in Module</div>
+          <div class="module-sec-pills">
+            ${secPillsHtml}
+          </div>
         </div>
 
         <div class="module-card-footer">

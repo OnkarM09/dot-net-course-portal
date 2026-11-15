@@ -446,6 +446,7 @@ a:hover {
   line-height: 1.18;
   margin-bottom: 1.25rem;
   color: var(--text-main);
+  text-wrap: balance;
   background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -784,15 +785,28 @@ a:hover {
 
 .modules-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 1200px) {
+  .modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .modules-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .module-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 1.5rem;
+  padding: 1.35rem;
   display: flex;
   flex-direction: column;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
@@ -812,40 +826,113 @@ a:hover {
 }
 
 .module-badge {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 3px 10px;
+  padding: 3px 9px;
   border-radius: var(--radius-pill);
 }
 
 .module-sec-count-badge {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--text-dim);
   font-weight: 500;
   background: var(--bg-surface-elevated);
   padding: 2px 8px;
   border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
 }
 
 .module-card-body {
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
 }
 
 .module-card-title {
-  font-size: 1.18rem;
+  font-size: 1.12rem;
   font-weight: 700;
   color: var(--text-main);
   line-height: 1.35;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.45rem;
 }
 
 .module-card-desc {
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.48;
   margin: 0;
+}
+
+.module-card-focus {
+  margin-bottom: 0.85rem;
+}
+
+.module-focus-label,
+.module-sec-pills-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: var(--text-dim);
+  margin-bottom: 0.45rem;
+}
+
+.module-focus-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.module-focus-tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 2px 7px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-surface-elevated);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+}
+
+.module-card-sections-row {
+  margin-bottom: 0.85rem;
+}
+
+.module-sec-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.module-sec-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface-elevated);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  text-decoration: none;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+.module-sec-pill:hover {
+  background: var(--accent-glow);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  transform: translateY(-1px);
+}
+.module-sec-pill.completed {
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.1);
+}
+.module-sec-pill.completed::after {
+  content: '✓';
+  font-size: 0.68rem;
+  font-weight: 700;
+  margin-left: 2px;
 }
 
 .module-card-sections {
@@ -932,12 +1019,12 @@ a:hover {
 
 .module-card-footer {
   margin-top: auto;
-  padding-top: 1rem;
+  padding-top: 0.85rem;
   border-top: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .module-card-progress {
@@ -949,7 +1036,7 @@ a:hover {
 }
 
 .module-card-progress-bar {
-  width: 60px;
+  width: 55px;
   height: 4px;
   background: var(--bg-app);
   border-radius: var(--radius-pill);
@@ -965,7 +1052,7 @@ a:hover {
 }
 
 .module-card-action {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--accent-primary);
   display: inline-flex;
@@ -1075,7 +1162,8 @@ a:hover {
 /* Data Table Styling */
 .table-responsive {
   width: 100%;
-  overflow-x: auto;
+  max-height: 650px;
+  overflow: auto;
   -webkit-overflow-scrolling: touch;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
@@ -1091,7 +1179,11 @@ table {
 }
 
 thead th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
   background: var(--table-header-bg);
+  backdrop-filter: blur(8px);
   color: var(--text-dim);
   font-weight: 600;
   font-size: 0.78rem;
@@ -1459,6 +1551,7 @@ body.sidebar-collapsed .docs-main-container {
   line-height: 1.22;
   margin-bottom: 0.75rem;
   color: var(--text-main);
+  text-wrap: balance;
 }
 
 .section-description {
