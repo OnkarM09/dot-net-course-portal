@@ -648,14 +648,14 @@ async function generateAll() {
         <span class="nav-direction">&larr; Previous Section</span>
         <span class="nav-title">Sec ${prevSec.normalized_section}: ${escapeHtml(prevSec.title)}</span>
       </a>
-    ` : '<div></div>';
+    ` : '';
 
     let nextHtml = nextSec ? `
       <a href="${nextSec.html_filename}" class="nav-card next" aria-label="Next Section: Sec ${nextSec.normalized_section} - ${escapeHtml(nextSec.title)}">
         <span class="nav-direction">Next Section &rarr;</span>
         <span class="nav-title">Sec ${nextSec.normalized_section}: ${escapeHtml(nextSec.title)}</span>
       </a>
-    ` : '<div></div>';
+    ` : '';
 
     const fullPageHtml = `<!DOCTYPE html>
 <html lang="en" data-theme="dark">

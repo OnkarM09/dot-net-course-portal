@@ -1,6 +1,6 @@
 /**
  * Offline Search Index for ASP.NET Core Masterclass Documentation Portal
- * Auto-generated on 2026-11-15T05:19:08.032Z
+ * Auto-generated on 2026-11-15T05:35:43.678Z
  */
 window.SEARCH_INDEX = [
   {

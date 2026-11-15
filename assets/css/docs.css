@@ -918,8 +918,7 @@ tr:hover td {
    Bottom Navigation (Prev / Next Section)
    ========================================================================== */
 .bottom-nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 1.25rem;
   margin-top: 3.5rem;
   padding-top: 2rem;
@@ -927,6 +926,8 @@ tr:hover td {
 }
 
 .nav-card {
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   padding: 1.25rem;
@@ -945,6 +946,10 @@ tr:hover td {
 .nav-card.next {
   text-align: right;
   align-items: flex-end;
+}
+.nav-card:only-child {
+  text-align: left;
+  align-items: flex-start;
 }
 
 .nav-direction {
@@ -1445,7 +1450,7 @@ tr:hover td {
 
   /* Bottom Navigation */
   .bottom-nav {
-    grid-template-columns: 1fr;
+  flex-direction: column;
     gap: 1rem;
     margin-top: 2.5rem;
     padding-top: 1.75rem;
