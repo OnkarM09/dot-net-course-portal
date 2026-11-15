@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -401,14 +411,10 @@
         <p>Section 7: Model Binding and Validations – Notes</p>
 
 <h2 id="model-binding">Model Binding</h2>
-<p>Model binding is a powerful feature in ASP.NET Core MVC that automates the process of extracting
-data from various parts of an HTTP request (form data, route values, query strings) and converting it
-into strongly typed C# objects that you can use directly in your action methods.</p>
+<p>Model binding is a powerful feature in ASP.NET Core MVC that automates the process of extracting data from various parts of an HTTP request (form data, route values, query strings) and converting it into strongly typed C# objects that you can use directly in your action methods.</p>
 
 <h2 id="when-model-binding-executes">When Model Binding Executes</h2>
-<p>Model binding takes place after routing has determined which action method to invoke. The model
-binding system examines the parameters of the selected action method and tries to populate them
-with values from the incoming request.</p>
+<p>Model binding takes place after routing has determined which action method to invoke. The model binding system examines the parameters of the selected action method and tries to populate them with values from the incoming request.</p>
 
 <h2 id="order-of-model-binding">Order of Model Binding</h2>
 <p>ASP.NET Core model binding follows a specific order when looking for data sources:</p>
@@ -433,19 +439,19 @@ with values from the incoming request.</p>
   <li>Example: /products?category=electronics&amp;sort=price_desc
 Best Practices (Query Strings):</li>
   <li>Limit Sensitive Data: Avoid passing sensitive information like passwords or credit card
-      details in query strings.</li>
+details in query strings.</li>
   <li>Sanitize Input: Always sanitize and validate query string values to prevent security
-      vulnerabilities.</li>
+vulnerabilities.</li>
   <li>Keep It Simple: Use clear and meaningful parameter names. Avoid excessively long query
-      strings.</li>
+strings.</li>
   <li>Encoding: Properly encode special characters in query string values.</li>
 </ul>
 <p>Things to Avoid (Query Strings):</p>
 <ul>
   <li>Sensitive Data: Never pass sensitive data like passwords or authentication tokens in query
-      strings.</li>
+strings.</li>
   <li>Complex Objects: Avoid passing complex objects as query strings due to URL length
-      limitations.</li>
+limitations.</li>
   <li>Overuse: Don&#39;t overload URLs with too many query parameters.</li>
 </ul>
 
@@ -462,8 +468,7 @@ Best Practices (Query Strings):</li>
   <li>Constraints: Apply route constraints (e.g., int, guid) to ensure valid data types.</li>
   <li>Custom Constraints: Create custom constraints for more complex validation.</li>
 </ul>
-
-<h2 id="code">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -477,17 +482,16 @@ Best Practices (Query Strings):</li>
 [Route(&quot;bookstore/{bookid?}/{isloggedin?}&quot;)] // Route with optional parameters
 public IActionResult Index(int? bookid, bool? isloggedin)
 {
-  // ... validation logic (same as previous example) ...
-  return Content($&quot;Book id: {bookid}, isloggedin: {isloggedin}&quot;, &quot;text/plain&quot;);
+// ... validation logic (same as previous example) ...
+return Content($&quot;Book id: {bookid}, isloggedin: {isloggedin}&quot;, &quot;text/plain&quot;);
 }
 In this action method:</code></pre>
     </div>
   <ul>
-  <li>bookid and isloggedin parameters are automatically bound from the query string and route</li>
+  <li>bookid and isloggedin parameters are automatically bound from the query string and route
+data.</li>
 </ul>
-<p>data.</p>
-
-<h2 id="code-1">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -501,15 +505,13 @@ In this action method:</code></pre>
 [Route(&quot;store/books/{id}&quot;)] // Route with a required parameter
 public IActionResult Books()
 {
-  int id = Convert.ToInt32(Request.RouteValues[&quot;id&quot;]);
-  return Content($&quot;&lt;h1&gt;Book Store {id}&lt;/h1&gt;&quot;, &quot;text/html&quot;);
+int id = Convert.ToInt32(Request.RouteValues[&quot;id&quot;]);
+return Content($&quot;&lt;h1&gt;Book Store {id}&lt;/h1&gt;&quot;, &quot;text/html&quot;);
 }
 In this action method:</code></pre>
     </div>
   <ul>
   <li>id is a required parameter.</li>
-</ul>
-<ul>
   <li>id is bound from the route data (Request.RouteValues</li>
 </ul>
 
@@ -523,9 +525,7 @@ In this action method:</code></pre>
       </div>
       <pre><code class="language-csharp">[FromQuery] and [FromRoute]</code></pre>
     </div>
-  <p>While ASP.NET Core&#39;s model binding automatically tries to match action method parameters to
-different parts of the request (form data, route values, query strings), you can use the [FromQuery]
-and [FromRoute] attributes to explicitly tell the model binder where to look for specific values.</p>
+  <p>While ASP.NET Core&#39;s model binding automatically tries to match action method parameters to different parts of the request (form data, route values, query strings), you can use the [FromQuery] and [FromRoute] attributes to explicitly tell the model binder where to look for specific values.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -539,10 +539,8 @@ and [FromRoute] attributes to explicitly tell the model binder where to look for
     </div>
   <ul>
   <li>Purpose: Instructs the model binder to extract the parameter value from the query string.</li>
-</ul>
-<ul>
   <li>Usage: Apply this attribute to action method parameters that you expect to receive values
-      from the query string portion of the URL (the part after the &quot;?&quot;).</li>
+from the query string portion of the URL (the part after the &quot;?&quot;).</li>
   <li>Example:</li>
 </ul>
 
@@ -556,8 +554,7 @@ and [FromRoute] attributes to explicitly tell the model binder where to look for
       </div>
       <pre><code class="language-csharp">public IActionResult Index([FromQuery] int page) { ... }</code></pre>
     </div>
-  <p>In this example, the page parameter would be bound to the value of the page query parameter in
-the URL (e.g., /products?page=3).</p>
+  <p>In this example, the page parameter would be bound to the value of the page query parameter in the URL (e.g., /products?page=3).</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -571,10 +568,8 @@ the URL (e.g., /products?page=3).</p>
     </div>
   <ul>
   <li>Purpose: Instructs the model binder to extract the parameter value from the route data.</li>
-</ul>
-<ul>
   <li>Usage: Apply this attribute to action method parameters that you expect to receive values
-      from the route template of the URL.</li>
+from the route template of the URL.</li>
   <li>Example:</li>
 </ul>
 
@@ -605,43 +600,39 @@ In this example, the id parameter would be bound to the value of the id segment 
 [Route(&quot;bookstore/{bookid?}/{isloggedin?}&quot;)] // Route with optional parameters
 public IActionResult Index([FromQuery] int? bookid, [FromRoute] bool? isloggedin)
 {
-  // ... (rest of the validation and response logic) ...
+// ... (rest of the validation and response logic) ...
 }</code></pre>
     </div>
   <p>In this code:</p>
 <ul>
   <li>bookid (FromQuery): The model binder will attempt to retrieve the bookid value exclusively
-      from the query string. If it&#39;s not present in the query string, it will be set to null due to the
-      nullable type (int?).</li>
+from the query string. If it&#39;s not present in the query string, it will be set to null due to the
+nullable type (int?).</li>
   <li>isloggedin (FromRoute): The model binder will specifically look for the isloggedin value in
-      the route data. If the parameter is not present in the route, it will default to null due to the
-      nullable boolean type (bool?).</li>
+the route data. If the parameter is not present in the route, it will default to null due to the
+nullable boolean type (bool?).</li>
 </ul>
-<p>Combined Binding:
-By using both [FromQuery] and [FromRoute] on different parameters in the same action method,
-you can effectively bind values from both the query string and route data simultaneously.</p>
+<p>Combined Binding: By using both [FromQuery] and [FromRoute] on different parameters in the same action method, you can effectively bind values from both the query string and route data simultaneously.</p>
 
 <h2 id="notes">Notes</h2>
 <ul>
   <li>Explicit Binding: Use [FromQuery] and [FromRoute] for explicit control over where the
-      model binder gets values for your action method parameters.</li>
+model binder gets values for your action method parameters.</li>
   <li>Flexibility: You can combine both attributes in the same action to bind from multiple
-      sources.</li>
+sources.</li>
   <li>Default Behavior: Even without these attributes, ASP.NET Core&#39;s model binding will try to
-      intelligently determine the binding source. However, using these attributes makes your code
-      more explicit and less prone to unexpected behavior.</li>
+intelligently determine the binding source. However, using these attributes makes your code
+more explicit and less prone to unexpected behavior.</li>
   <li>Type Conversion: The model binder automatically attempts to convert values to the
-      appropriate data types for your action method parameters.</li>
+appropriate data types for your action method parameters.</li>
 </ul>
 
 <h2 id="model-classes">Model Classes</h2>
-<p>In ASP.NET Core MVC, model classes are the foundation for representing the data your application
-works with. They typically mirror the structure of your data, whether it comes from a database, an
-API, or other sources.</p>
+<p>In ASP.NET Core MVC, model classes are the foundation for representing the data your application works with. They typically mirror the structure of your data, whether it comes from a database, an API, or other sources.</p>
 <ul>
   <li>Purpose:</li>
   <li>Structure: Provide a well-defined structure for your data, including properties that
-           correspond to the fields or attributes of your data entities.</li>
+correspond to the fields or attributes of your data entities.</li>
   <li>Validation: Enforce data validation rules using attributes like [Required],</li>
 </ul>
 
@@ -653,35 +644,42 @@ API, or other sources.</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">[StringLength], and [Range].
-        o Organization: Keep your application&#39;s data logic organized and maintainable.
-   • Example Model Class:
-// Book.cs (Model
+      <pre><code class="language-csharp">[StringLength], and [Range].</code></pre>
+    </div>
+  <ul>
+  <li>Organization: Keep your application&#39;s data logic organized and maintainable.</li>
+  <li>Example Model Class:</li>
+</ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">// Book.cs (Model
 )
 namespace IActionResultExample.Models
 {
-  public class Book
-  {
-   public int? BookId { get; set; }
-   public string? Author { get; set; }
-   public override string ToString() // For easy display in this example
-   {
-     return $&quot;Book object - Book id: {BookId}, Author: {Author}&quot;;
-   }
-  }
+public class Book
+{
+public int? BookId { get; set; }
+public string? Author { get; set; }
+public override string ToString() // For easy display in this example
+{
+return $&quot;Book object - Book id: {BookId}, Author: {Author}&quot;;
+}
+}
 }</code></pre>
     </div>
-  <p>Model Binding with Model Classes</p>
-<p>Model binding with model classes simplifies the process of populating your model objects with data</p>
-<p>from incoming HTTP requests. Instead of manually extracting values from query strings, route data,</p>
-<ul>
-  <li>r form data, you can directly use the model class as a parameter in your action method.</li>
-</ul>
+  <p>Model Binding with Model Classes Model binding with model classes simplifies the process of populating your model objects with data from incoming HTTP requests. Instead of manually extracting values from query strings, route data, or form data, you can directly use the model class as a parameter in your action method.</p>
 <ul>
   <li>How it Works:</li>
   <li>1. Action Parameter: Declare an action method parameter of your model class type.</li>
   <li>2. Model Binding: The model binder automatically maps incoming request data to the
-           properties of your model class based on their names.</li>
+properties of your model class based on their names.</li>
   <li>3. Attribute Usage: You can use attributes like [FromQuery], [FromRoute], and</li>
 </ul>
 
@@ -695,9 +693,7 @@ namespace IActionResultExample.Models
       </div>
       <pre><code class="language-csharp">[FromBody] to specify where the model binder should look for the data for each</code></pre>
     </div>
-  <p>property.</p>
-
-<h2 id="code-2">Code</h2>
+  <p>Property. Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -709,24 +705,24 @@ namespace IActionResultExample.Models
       </div>
       <pre><code class="language-csharp">// HomeController.cs
 [Route(&quot;bookstore/{bookid?}/{isloggedin?}&quot;)]
-//Url: /bookstore/1/false?bookid=20&amp;isloggedin=true&amp;author=john
+//Url: /bookstore/1/false?bookid=20&amp;isloggedin=true&amp;author=
 public IActionResult Index([FromQuery] int? bookid, [FromRoute] bool? isloggedin, Book book)
 {
-  // ... validation and response logic ...
-  return Content($&quot;Book id: {bookid}, Book: {book}&quot;, &quot;text/plain&quot;);
+// ... validation and response logic ...
+return Content($&quot;Book id: {bookid}, Book: {book}&quot;, &quot;text/plain&quot;);
 }</code></pre>
     </div>
   <p>In this code:</p>
 <ul>
   <li>1. Model Class Parameter: The action method Index has a parameter named book.</li>
   <li>2. [FromQuery] Attribute: The BookId property of the Book class has the [FromQuery]
-      attribute, indicating that its value should be retrieved from the query string.</li>
+attribute, indicating that its value should be retrieved from the query string.</li>
   <li>3. Automatic Binding: When a request like
-      /bookstore/1/false?bookid=20&amp;isloggedin=true&amp;author=john comes in:</li>
+/bookstore/1/false?bookid=20&amp;isloggedin=true&amp;author= comes in:</li>
   <li>bookid (int?) will be 20 (from the query string, due to [FromQuery]).</li>
   <li>isloggedin (bool?) will be true (from the route data, due to [FromRoute]).</li>
-  <li>book.Author (string?) will be &quot;john&quot; (from the query string, because no attribute
-           was specified for the Author property so it defaults to looking in the query string).</li>
+  <li>book.Author (string?) will be &quot;&quot; (from the query string, because no attribute
+was specified for the Author property so it defaults to looking in the query string).</li>
 </ul>
 
 <h2 id="notes-1">Notes</h2>
@@ -734,23 +730,21 @@ public IActionResult Index([FromQuery] int? bookid, [FromRoute] bool? isloggedin
   <li>Simplified Code: Model binding reduces boilerplate code for extracting data from requests.</li>
   <li>Strong Typing: You work with strongly typed model objects in your actions.</li>
   <li>Clear Intent: Attributes like [FromQuery], [FromRoute], and [FromBody] make your code
-      more explicit.</li>
+more explicit.</li>
   <li>Automatic Conversion: The model binder tries to convert request data to match the types of
-      your model properties.</li>
+your model properties.</li>
   <li>Complex Types: You can bind complex objects from JSON or XML data in request bodies
-      (using [FromBody]).</li>
+(using [FromBody]).</li>
   <li>Validation: Leverage model validation attributes to ensure data integrity.</li>
 </ul>
 
 <h2 id="url-encoding">URL Encoding</h2>
-<p>URL encoding (or percent-encoding) is a mechanism to encode special characters in URLs that are
-not allowed in their raw form. This encoding is essential to ensure that URLs are transmitted
-correctly and that the server interprets them correctly.</p>
+<p>URL encoding (or percent-encoding) is a mechanism to encode special characters in URLs that are not allowed in their raw form. This encoding is essential to ensure that URLs are transmitted correctly and that the server interprets them correctly.</p>
 <ul>
   <li>Special Characters: Characters like spaces, ampersands (&amp;), question marks (?), and non-
-      ASCII characters need to be encoded.</li>
+ASCII characters need to be encoded.</li>
   <li>Encoding Format: Special characters are replaced with a percent sign (%) followed by two
-      hexadecimal digits representing their ASCII code.</li>
+hexadecimal digits representing their ASCII code.</li>
   <li>Example: A space is encoded as %20, and an ampersand is encoded as %26.</li>
 </ul>
 
@@ -758,18 +752,18 @@ correctly and that the server interprets them correctly.</p>
 <ul>
   <li>1. application/x-www-form-urlencoded:</li>
   <li>Purpose: The default encoding for HTML forms. It encodes form data as key-value
-           pairs separated by ampersands (&amp;) and with equal signs (=) between keys and
-           values. Spaces are converted to plus signs (+).</li>
+pairs separated by ampersands (&amp;) and with equal signs (=) between keys and
+values. Spaces are converted to plus signs (+).</li>
   <li>Usage: Suitable for simple forms with text data.</li>
   <li>Limitations: Not efficient for large amounts of data or binary data (like file uploads).</li>
   <li>2. multipart/form-data:</li>
   <li>Purpose: Designed for submitting forms with files or large amounts of data. Each
-           form field is sent as a separate part, with its own content type and headers.</li>
+form field is sent as a separate part, with its own content type and headers.</li>
   <li>Usage: Essential for file uploads.</li>
   <li>Benefits: Handles binary data efficiently and can support larger payloads.</li>
   <li>3. form-data:</li>
   <li>Purpose: A newer and more flexible format for form submissions that can handle
-           both simple and complex data, including files.</li>
+both simple and complex data, including files.</li>
   <li>Usage: Offers a more modern alternative to multipart/form-data.</li>
   <li>Benefits: Similar to multipart/form-data but with a more streamlined structure.</li>
 </ul>
@@ -781,37 +775,35 @@ correctly and that the server interprets them correctly.</p>
   <li>application/x-www-form-urlencoded: Default for simple forms.</li>
   <li>multipart/form-data or form-data: Required for file uploads and larger payloads.</li>
   <li>Model Binding: ASP.NET Core MVC automatically handles binding form data (submitted via
-      POST) to your model classes based on the Content-Type header.</li>
+POST) to your model classes based on the Content-Type header.</li>
 </ul>
 
 <h2 id="model-validation">Model Validation</h2>
-<p>Model validation is the process of verifying that the data submitted to your ASP.NET Core MVC
-application meets your defined criteria. This prevents invalid or malicious data from entering your
-system and helps maintain the integrity of your application&#39;s data.</p>
+<p>Model validation is the process of verifying that the data submitted to your ASP.NET Core MVC application meets your defined criteria. This prevents invalid or malicious data from entering your system and helps maintain the integrity of your application&#39;s data.</p>
 
 <h2 id="why-model-validation-matters">Why Model Validation Matters</h2>
 <ul>
   <li>Security: Protects against common attacks like SQL injection, cross-site scripting (XSS), and
-      overposting.</li>
+overposting.</li>
   <li>Data Integrity: Ensures that the data stored in your database or used in your application
-      logic is valid.</li>
+logic is valid.</li>
   <li>User Experience: Provides immediate feedback to users, guiding them to correct input
-      errors.</li>
+errors.</li>
 </ul>
 
-<h2 id="best-practices">Best Practices</h2>
+<h3 id="best-practices">Best Practices</h3>
 <ol>
   <li>Validate on Both Sides: Validate data both on the client-side (using JavaScript) for
-      immediate feedback and on the server-side for security (as client-side validation can be
-      bypassed).</li>
+immediate feedback and on the server-side for security (as client-side validation can be
+bypassed).</li>
   <li>Use Data Annotations: Leverage the built-in data annotation attributes provided by the
-      System.ComponentModel.DataAnnotations namespace to express validation rules concisely.</li>
+System.ComponentModel.DataAnnotations namespace to express validation rules concisely.</li>
   <li>Custom Validation Attributes: Create custom validation attributes for more complex or
-      domain-specific rules.</li>
+domain-specific rules.</li>
   <li>Model State: Always check the ModelState.IsValid property in your controller actions before
-      processing the data. If it&#39;s invalid, return an appropriate error response.</li>
+processing the data. If it&#39;s invalid, return an appropriate error response.</li>
   <li>Display Error Messages: Clearly display error messages to the user, indicating which fields
-      are invalid and why.</li>
+are invalid and why.</li>
 </ol>
 
 <h2 id="essential-data-annotations">Essential Data Annotations</h2>
@@ -828,16 +820,14 @@ system and helps maintain the integrity of your application&#39;s data.</p>
 </ul>
 
 <h2 id="model-state-in-controllers">Model State in Controllers</h2>
-<p>The ModelState object in your controllers is crucial for validation. It tracks the validation state of
-your model after the model binder has attempted to populate it from the request.</p>
+<p>The ModelState object in your controllers is crucial for validation. It tracks the validation state of your model after the model binder has attempted to populate it from the request.</p>
 <ul>
   <li>ModelState.IsValid: A boolean property that indicates whether all validation rules passed
-      (true) or if there were any errors (false).</li>
+(true) or if there were any errors (false).</li>
   <li>ModelState.AddModelError: Manually add a model error for a specific property.</li>
   <li>Error Messages: Retrieve error messages associated with specific properties.</li>
 </ul>
-
-<h2 id="code-3">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -851,30 +841,30 @@ your model after the model binder has attempted to populate it from the request.
 )
 public class Person
 {
-  // ... other properties
-  [Required(ErrorMessage = &quot;{0} can&#39;t be blank&quot;)]
-  [Compare(&quot;Password&quot;, ErrorMessage = &quot;{0} and {1} do not match&quot;)]
-  [Display(Name = &quot;Re-enter Password&quot;)]
-  public string? ConfirmPassword { get; set; }
-  // ... other properties
+// ... other properties
+[Required(ErrorMessage = &quot;{0} can&#39;t be blank&quot;)]
+[Compare(&quot;Password&quot;, ErrorMessage = &quot;{0} and {1} do not match&quot;)]
+[Display(Name = &quot;Re-enter Password&quot;)]
+public string? ConfirmPassword { get; set; }
+// ... other properties
 }
 // (In your controller action
 )
 public IActionResult Create(Person person)
 {
-  if (!ModelState.IsValid)
-  {
-   return View(person); // Return to the view with validation errors
-  }
-  // Model is valid, proceed with saving data
+if (!ModelState.IsValid)
+{
+return View(person); // Return to the view with validation errors
+}
+// Model is valid, proceed with saving data
 }</code></pre>
     </div>
   <p>In this code:</p>
 <ol>
   <li>Data Annotations: The Person model uses data annotations to enforce validation rules.</li>
   <li>Model State Check: The controller action checks ModelState.IsValid. If false, the original
-      view is re-rendered with the model object containing validation errors, allowing the user to
-      correct them.</li>
+view is re-rendered with the model object containing validation errors, allowing the user to
+correct them.</li>
   <li>Error Display: The view typically uses the @Html.ValidationSummary() and</li>
 </ol>
 
@@ -889,23 +879,20 @@ public IActionResult Create(Person person)
       <pre><code class="language-csharp">@Html.ValidationMessageFor() helper methods to display error messages to the user.
 Custom Validation with ValidationAttribute</code></pre>
     </div>
-  <p>While ASP.NET Core&#39;s built-in validation attributes cover a wide range of scenarios, you&#39;ll inevitably
-encounter validation rules specific to your application&#39;s business logic. Custom validation attributes,
-derived from the ValidationAttribute class, empower you to create these tailored validations.</p>
+  <p>While ASP.NET Core&#39;s built-in validation attributes cover a wide range of scenarios, you&#39;ll inevitably encounter validation rules specific to your application&#39;s business logic. Custom validation attributes, derived from the ValidationAttribute class, empower you to create these tailored validations.</p>
 
 <h2 id="key-steps">Key Steps</h2>
 <ul>
   <li>1. Inherit from ValidationAttribute: Create a class that inherits from ValidationAttribute.</li>
   <li>2. Override IsValid: The core of your custom validation logic lies in the IsValid method. This
-      method receives the value to be validated and a ValidationContext object (containing
-      additional information about the model).</li>
+method receives the value to be validated and a ValidationContext object (containing
+additional information about the model).</li>
   <li>3. Return ValidationResult:</li>
   <li>If the value is valid, return ValidationResult.Success.</li>
   <li>If the value is invalid, return a new ValidationResult object with your custom error
-           message.</li>
+message.</li>
 </ul>
-
-<h2 id="code-4">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -917,55 +904,52 @@ derived from the ValidationAttribute class, empower you to create these tailored
       </div>
       <pre><code class="language-csharp">public class DateRangeValidatorAttribute : ValidationAttribute
 {
-  public string OtherPropertyName { get; set; }
-  // Constructor
-  public DateRangeValidatorAttribute(string otherPropertyName)
-  {
-   OtherPropertyName = otherPropertyName;
-  }
-  protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
-  {
-   if (value != null)
-   {
-     // Get the &quot;to_date&quot;
-     DateTime toDate = Convert.ToDateTime(value);
-     // Get the &quot;from_date&quot;
-     var otherProperty = validationContext.ObjectType.GetProperty(OtherPropertyName);
-     if (otherProperty != null)
-     {
-      DateTime fromDate =
+public string OtherPropertyName { get; set; }
+// Constructor
+public DateRangeValidatorAttribute(string otherPropertyName)
+{
+OtherPropertyName = otherPropertyName;
+}
+protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
+{
+if (value != null)
+{
+// Get the &quot;to_date&quot;
+DateTime toDate = Convert.ToDateTime(value);
+// Get the &quot;from_date&quot;
+var otherProperty = validationContext.ObjectType.GetProperty(OtherPropertyName);
+if (otherProperty != null)
+{
+DateTime fromDate =
 Convert.ToDateTime(otherProperty.GetValue(validationContext.ObjectInstance));
-      if (fromDate &gt; toDate)
-      {
-        return new ValidationResult(ErrorMessage, new string[] { OtherPropertyName,
+if (fromDate &gt; toDate)
+{
+return new ValidationResult(ErrorMessage, new string[] { OtherPropertyName,
 validationContext.MemberName }); // Indicate the specific properties involved in the error
-      }
-      else
-      {
-        return ValidationResult.Success;
-      }
-     }
-     return null; // Return null if otherProperty is null
-   }
-   return null; // Return null if value is null
-  }
+}
+else
+{
+return ValidationResult.Success;
+}
+}
+return null; // Return null if otherProperty is null
+}
+return null; // Return null if value is null
+}
 }</code></pre>
     </div>
   <ul>
   <li>Purpose: Ensures that a date (e.g., ToDate) is not earlier than another date (FromDate).</li>
-</ul>
-<ul>
   <li>OtherPropertyName: Specifies the name of the property to compare against (in this case,
-      FromDate).</li>
+FromDate).</li>
   <li>IsValid:</li>
   <li>It retrieves the values of both properties using reflection.</li>
   <li>It compares the dates and returns an error message if toDate is earlier than
-           fromDate.</li>
+fromDate.</li>
   <li>The error message includes the names of both properties, providing clear feedback
-           to the user.</li>
+to the user.</li>
 </ul>
-
-<h2 id="code-5">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -977,32 +961,30 @@ validationContext.MemberName }); // Indicate the specific properties involved in
       </div>
       <pre><code class="language-csharp">public class MinimumYearValidatorAttribute : ValidationAttribute
 {
-  public int MinimumYear { get; set; } = 2000;
-  public string DefaultErrorMessage { get; set; } = &quot;Year should not be less than {0}&quot;;
-  // ... (constructors) ...
-  protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
-  {
-   if (value != null)
-   {
-     DateTime date = (DateTime)value;
-     if (date.Year &gt;= MinimumYear)
-     {
-      return ValidationResult.Success;
-     }
-     else
-     {
-      return new ValidationResult(string.Format(ErrorMessage ?? DefaultErrorMessage,
+public int MinimumYear { get; set; } = 2000;
+public string DefaultErrorMessage { get; set; } = &quot;Year should not be less than {0}&quot;;
+// ... (constructors) ...
+protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
+{
+if (value != null)
+{
+DateTime date = (DateTime)value;
+if (date.Year &gt;= MinimumYear)
+{
+return ValidationResult.Success;
+}
+else
+{
+return new ValidationResult(string.Format(ErrorMessage ?? DefaultErrorMessage,
 MinimumYear)); // Use custom or default error message
-     }
-   }
-   return null;
-  }
+}
+}
+return null;
+}
 }</code></pre>
     </div>
   <ul>
   <li>Purpose: Ensures that a date (e.g., DateOfBirth) is not earlier than a specified year.</li>
-</ul>
-<ul>
   <li>MinimumYear: Sets the minimum allowed year (defaulting to 2000).</li>
   <li>DefaultErrorMessage: Provides a default error message if a custom message isn&#39;t provided.</li>
   <li>IsValid:</li>
@@ -1010,34 +992,30 @@ MinimumYear)); // Use custom or default error message
 </ul>
 
 <h2 id="ivalidatableobject">IValidatableObject</h2>
-<p>While data annotations ([Required], [StringLength], etc.) provide a concise way to define validation
-rules on individual model properties, the IValidatableObject interface allows you to perform more
-complex, model-level validation logic that spans multiple properties or depends on the entire
-model&#39;s state.</p>
+<p>While data annotations ([Required], [StringLength], etc.) provide a concise way to define validation rules on individual model properties, the IValidatableObject interface allows you to perform more complex, model-level validation logic that spans multiple properties or depends on the entire model&#39;s state.</p>
 
 <h2 id="notes-3">Notes</h2>
 <ul>
   <li>Interface: IValidatableObject is an interface with a single method:
-      Validate(ValidationContext context).</li>
+Validate(ValidationContext context).</li>
   <li>Validate Method: This method is called by the model binder after individual property-level
-      validations (data annotations) have been checked.</li>
+validations (data annotations) have been checked.</li>
   <li>Yielding Errors: Within the Validate method, you can yield ValidationResult objects for any
-      errors you find. This allows you to report multiple errors for the entire model at once.</li>
+errors you find. This allows you to report multiple errors for the entire model at once.</li>
   <li>Model State Integration: The errors you yield are automatically added to the ModelState
-      object, making them available for error display in your views.</li>
+object, making them available for error display in your views.</li>
 </ul>
 
 <h2 id="when-to-use-ivalidatableobject">When to Use IValidatableObject</h2>
 <ul>
   <li>Cross-Property Validation: When validation logic depends on the values of multiple
-      properties (e.g., &quot;Start Date&quot; must be before &quot;End Date&quot;).</li>
+properties (e.g., &quot;Start Date&quot; must be before &quot;End Date&quot;).</li>
   <li>Complex Business Rules: When your validation rules involve complex logic or database
-      lookups.</li>
+lookups.</li>
   <li>Customizable Errors: When you want more control over the error messages displayed to the
-      user.</li>
+user.</li>
 </ul>
-
-<h2 id="code-6">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1051,44 +1029,44 @@ model&#39;s state.</p>
 )
 public class Person : IValidatableObject
 {
-  // ... (properties with data annotations) ...
-  public DateTime? DateOfBirth { get; set; }
-  public int? Age { get; set; } // New property
-  // ... (other properties and methods) ...
-  public IEnumerable&lt;ValidationResult&gt; Validate(ValidationContext validationContext)
-  {
-   if (DateOfBirth.HasValue == false &amp;&amp; Age.HasValue == false)
-   {
-     yield return new ValidationResult(&quot;Either of Date of Birth or Age must be supplied&quot;, new[] {
+// ... (properties with data annotations) ...
+public DateTime? DateOfBirth { get; set; }
+public int? Age { get; set; } // New property
+// ... (other properties and methods) ...
+public IEnumerable&lt;ValidationResult&gt; Validate(ValidationContext validationContext)
+{
+if (DateOfBirth.HasValue == false &amp;&amp; Age.HasValue == false)
+{
+yield return new ValidationResult(&quot;Either of Date of Birth or Age must be supplied&quot;, new[] {
 nameof(Age) }); // Yield an error
-   }
-  }
+}
+}
 }</code></pre>
     </div>
   <p>In this example:</p>
 <ul>
   <li>1. Implementation of IValidatableObject: The Person class now implements
-      IValidatableObject.</li>
+IValidatableObject.</li>
   <li>2. Validate Method:</li>
   <li>It checks if either DateOfBirth or Age is provided. If neither is present, it yields a
-           ValidationResult indicating that at least one of these properties must be supplied.</li>
+ValidationResult indicating that at least one of these properties must be supplied.</li>
   <li>Notice how the error message is specifically associated with the Age property using
-           new[] { nameof(Age) }. This helps target the error message to the correct field in
-           your view.</li>
+new[] { nameof(Age) }. This helps target the error message to the correct field in
+your view.</li>
   <li>3. Model State Update: When you use this model in your controller, the validation errors from
-      the Validate method will automatically be added to the ModelState, and you can check
-      ModelState.IsValid to determine if the model is valid.</li>
+the Validate method will automatically be added to the ModelState, and you can check
+ModelState.IsValid to determine if the model is valid.</li>
 </ul>
 
 <h2 id="notes-4">Notes</h2>
 <ul>
   <li>Model-Level Validation: IValidatableObject is ideal for validation logic that goes beyond
-      individual properties.</li>
+individual properties.</li>
   <li>Yielding Errors: Use the yield return statement to return multiple validation errors from the
-      Validate method.</li>
+Validate method.</li>
   <li>Error Targeting: Associate error messages with specific properties for clear user feedback.</li>
   <li>Integration with Data Annotations: IValidatableObject works in conjunction with data
-      annotations, providing a comprehensive validation approach.</li>
+annotations, providing a comprehensive validation approach.</li>
 </ul>
 
     <div class="code-block">
@@ -1101,8 +1079,7 @@ nameof(Age) }); // Yield an error
       </div>
       <pre><code class="language-csharp">[Bind] and [BindNever] Attributes</code></pre>
     </div>
-  <p>Model binding is powerful, but sometimes you want more granular control over which properties
-get populated from incoming request data. This is where [Bind] and [BindNever] come in.</p>
+  <p>Model binding is powerful, but sometimes you want more granular control over which properties get populated from incoming request data. This is where [Bind] and [BindNever] come in.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1116,10 +1093,8 @@ get populated from incoming request data. This is where [Bind] and [BindNever] c
     </div>
   <ul>
   <li>Purpose: Explicitly include specific properties for model binding.</li>
-</ul>
-<ul>
   <li>Usage: Apply this attribute to your action method parameter (e.g., the model class) and
-      provide a list of property names as arguments.</li>
+provide a list of property names as arguments.</li>
   <li>Example:</li>
 </ul>
 
@@ -1134,16 +1109,14 @@ get populated from incoming request data. This is where [Bind] and [BindNever] c
       <pre><code class="language-csharp">[HttpPost]
 public IActionResult Create([Bind(&quot;Title&quot;, &quot;Description&quot;)] Product product)
 {
-  // Only the Title and Description properties will be bound from the request.
+// Only the Title and Description properties will be bound from the request.
 }</code></pre>
     </div>
-  <p>In this example, even if the incoming request contains data for other properties of the Product class
-(like Price or Category), they will be ignored during model binding.
-[BindNever] Attribute</p>
+  <p>In this example, even if the incoming request contains data for other properties of the Product class (like Price or Category), they will be ignored during model binding. [BindNever] Attribute</p>
 <ul>
   <li>Purpose: Exclude specific properties from model binding.</li>
   <li>Usage: Apply this attribute directly to model properties that you never want to be bound
-      from the request.</li>
+from the request.</li>
   <li>Example:</li>
 </ul>
 
@@ -1157,15 +1130,12 @@ public IActionResult Create([Bind(&quot;Title&quot;, &quot;Description&quot;)] P
       </div>
       <pre><code class="language-csharp">public class Product
 {
-  // ... other properties
-  [BindNever]
-  public DateTime CreatedAt { get; set; } // Never bind from request
+// ... other properties
+[BindNever]
+public DateTime CreatedAt { get; set; } // Never bind from request
 }</code></pre>
     </div>
-  <p>In this example, the CreatedAt property will always retain its default value, regardless of whether
-the incoming request contains data for it.</p>
-
-<h2 id="code-7">Code</h2>
+  <p>In this example, the CreatedAt property will always retain its default value, regardless of whether the incoming request contains data for it. Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1194,32 +1164,32 @@ public class Person : IValidatableObject
         </button>
       </div>
       <pre><code class="language-csharp">public DateTime? DateOfBirth { get; set; }
-  // ... (other properties and methods) ...
+// ... (other properties and methods) ...
 }
 // HomeController.cs
 [Route(&quot;register&quot;)]
 public IActionResult Index(Person person)
 {
-  // ... (validation and response logic) ...</code></pre>
+// ... (validation and response logic) ...</code></pre>
     </div>
   <p>In this code:</p>
 <ol>
   <li>DateOfBirth (BindNever): The [BindNever] attribute on the DateOfBirth property tells the
-      model binder to completely ignore any data for this property coming from the request. Even
-      if the incoming request contains a value for DateOfBirth, it won&#39;t be assigned to the model
-      property.</li>
+model binder to completely ignore any data for this property coming from the request. Even
+if the incoming request contains a value for DateOfBirth, it won&#39;t be assigned to the model
+property.</li>
 </ol>
 
 <h2 id="notes-5">Notes</h2>
 <ul>
   <li>Security: [BindNever] is a valuable tool for preventing overposting attacks, where an
-      attacker tries to submit data for properties that shouldn&#39;t be modifiable from a client.</li>
+attacker tries to submit data for properties that shouldn&#39;t be modifiable from a client.</li>
   <li>Explicit Control: [Bind] and [BindNever] give you precise control over which model
-      properties are populated from incoming requests.</li>
+properties are populated from incoming requests.</li>
   <li>Default Behavior: Without these attributes, the model binder attempts to bind all public
-      properties of your model class.</li>
+properties of your model class.</li>
   <li>Complex Types: You can use [Bind] on nested complex properties to specify which
-      properties within those objects should be bound.</li>
+properties within those objects should be bound.</li>
 </ul>
 
     <div class="code-block">
@@ -1232,36 +1202,32 @@ public IActionResult Index(Person person)
       </div>
       <pre><code class="language-csharp">[FromBody] Attribute</code></pre>
     </div>
-  <p>The [FromBody] attribute is a crucial tool in ASP.NET Core MVC&#39;s model binding arsenal, designed to
-handle scenarios where the incoming data is contained within the body of an HTTP request. This is
-especially common when working with APIs and modern web applications that frequently exchange
-data in formats like JSON or XML.</p>
+  <p>The [FromBody] attribute is a crucial tool in ASP.NET Core MVC&#39;s model binding arsenal, designed to handle scenarios where the incoming data is contained within the body of an HTTP request. This is especially common when working with APIs and modern web applications that frequently exchange data in formats like JSON or XML.</p>
 
 <h2 id="how-it-works">How It Works</h2>
 <ol>
   <li>Request Body Identification: When a request arrives, the model binding middleware
-      examines the Content-Type header to determine the format of the data in the request body.
-      Typically, this is either application/json for JSON data or application/xml for XML data.</li>
+examines the Content-Type header to determine the format of the data in the request body.
+Typically, this is either application/json for JSON data or application/xml for XML data.</li>
   <li>Input Formatter Selection: Based on the Content-Type, the middleware selects an
-      appropriate input formatter. Input formatters are responsible for deserializing the raw
-      request body into a format that the model binder can understand.</li>
+appropriate input formatter. Input formatters are responsible for deserializing the raw
+request body into a format that the model binder can understand.</li>
   <li>Model Binding: The model binder takes the deserialized data and attempts to map it to the
-      properties of your model class. This mapping is typically done based on property names, but
-      you can customize it using various model binding attributes.</li>
+properties of your model class. This mapping is typically done based on property names, but
+you can customize it using various model binding attributes.</li>
   <li>Validation: After binding, the model undergoes validation to ensure it adheres to the rules
-      defined by data annotations or custom validation logic.</li>
+defined by data annotations or custom validation logic.</li>
 </ol>
 <p>Benefits of [FromBody]</p>
 <ul>
   <li>Complex Data Handling: Easily bind complex objects with nested properties from JSON or
-      XML payloads.</li>
+XML payloads.</li>
   <li>Separation of Concerns: The input formatter handles deserialization, keeping your controller
-      actions clean.</li>
+actions clean.</li>
   <li>API-Friendly: Aligns well with RESTful API practices, where data is often transmitted in the
-      request body.</li>
+request body.</li>
 </ul>
-
-<h2 id="code-8">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1277,75 +1243,71 @@ data in formats like JSON or XML.</p>
 // &quot;Password&quot;: &quot;william123&quot;, &quot;ConfirmPassword&quot;: &quot;william123&quot; }
 public IActionResult Index([FromBody] Person person)
 {
-  if (!ModelState.IsValid)
-  {
-   // ... (handle validation errors) ...
-  }
-  return Content($&quot;{person}&quot;);
+if (!ModelState.IsValid)
+{
+// ... (handle validation errors) ...
+}
+return Content($&quot;{person}&quot;);
 }</code></pre>
     </div>
   <p>In this code:</p>
 <ol>
   <li>[FromBody] Attribute: The [FromBody] attribute on the person parameter instructs the
-      model binder to look for the data in the request body.</li>
+model binder to look for the data in the request body.</li>
   <li>JSON Deserialization: If the request has a Content-Type of application/json, the built-in
-      JSON input formatter will deserialize the JSON data in the request body into a Person object.</li>
+JSON input formatter will deserialize the JSON data in the request body into a Person object.</li>
   <li>Model Validation: The ModelState.IsValid check ensures the deserialized Person object
-      meets your validation criteria.</li>
+meets your validation criteria.</li>
   <li>Successful Response: If the model is valid, the Content result returns a string representation
-      of the Person object.</li>
+of the Person object.</li>
 </ol>
 
 <h2 id="important-considerations">Important Considerations</h2>
 <ul>
   <li>Single [FromBody] Parameter: ASP.NET Core model binding allows only one parameter per
-      action method to be decorated with [FromBody]. This is because the request body is
-      typically a single stream of data.</li>
+action method to be decorated with [FromBody]. This is because the request body is
+typically a single stream of data.</li>
   <li>Content-Type: The Content-Type header of the request must match the expected format
-      (e.g., application/json) for the correct input formatter to be used.</li>
+(e.g., application/json) for the correct input formatter to be used.</li>
   <li>Security: Always validate and sanitize data from the request body to protect against
-      vulnerabilities like overposting and injection attacks.</li>
+vulnerabilities like overposting and injection attacks.</li>
 </ul>
 
 <h2 id="input-formatters">Input Formatters</h2>
-<p>Input formatters are specialized components in ASP.NET Core MVC responsible for deserializing data
-from the body of HTTP requests. When a request arrives with a payload, the input formatter
-decodes this data into a format (e.g., C# objects, collections) that your action methods can readily
-work with.</p>
+<p>Input formatters are specialized components in ASP.NET Core MVC responsible for deserializing data from the body of HTTP requests. When a request arrives with a payload, the input formatter decodes this data into a format (e.g., C# objects, collections) that your action methods can readily work with.</p>
 
 <h2 id="how-input-formatters-work">How Input Formatters Work</h2>
 <ol>
   <li>Content Negotiation: The model binding process begins with content negotiation, where
-      ASP.NET Core examines the Content-Type header of the request to determine the format of
-      the incoming data (e.g., JSON, XML).</li>
+ASP.NET Core examines the Content-Type header of the request to determine the format of
+the incoming data (e.g., JSON, XML).</li>
   <li>Input Formatter Selection: Based on the Content-Type, ASP.NET Core selects an appropriate
-      input formatter that knows how to handle that specific data format.</li>
+input formatter that knows how to handle that specific data format.</li>
   <li>Deserialization: The selected input formatter deserializes the raw data from the request
-      body into C# objects, collections, or other supported types.</li>
+body into C# objects, collections, or other supported types.</li>
   <li>Model Binding: The deserialized data is then passed to the model binder, which populates
-      the parameters of your action method.</li>
+the parameters of your action method.</li>
 </ol>
 
 <h2 id="common-input-formatters">Common Input Formatters</h2>
 <ul>
   <li>NewtonsoftJsonInputFormatter: Handles JSON (JavaScript Object Notation) data using the
-      popular Newtonsoft.Json library.</li>
+popular Newtonsoft.Json library.</li>
   <li>SystemTextJsonInputFormatter: Handles JSON data using the built-in System.Text.Json
-      serializer.</li>
+serializer.</li>
   <li>XmlSerializerInputFormatter: Handles XML (Extensible Markup Language) data using the
-      XmlSerializer.</li>
+XmlSerializer.</li>
 </ul>
 
 <h2 id="configuring-input-formatters">Configuring Input Formatters</h2>
 <ol>
   <li>Default Formatters: ASP.NET Core MVC includes NewtonsoftJsonInputFormatter as a default
-      formatter.</li>
+formatter.</li>
   <li>Additional Formatters: You can add support for other formatters (like
-      XmlSerializerInputFormatter) by explicitly registering them in your application&#39;s startup
-      configuration.</li>
+XmlSerializerInputFormatter) by explicitly registering them in your application&#39;s startup
+configuration.</li>
 </ol>
-
-<h2 id="code-9">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1360,44 +1322,41 @@ builder.Services.AddControllers().AddXmlSerializerFormatters();
 // ... other configuration ...
 In this code, the .AddXmlSerializerFormatters() extension method registers the</code></pre>
     </div>
-  <p>XmlSerializerInputFormatter, enabling your application to handle requests with an application/xml
-content type.</p>
+  <p>XmlSerializerInputFormatter, enabling your application to handle requests with an application/xml content type.</p>
 
 <h2 id="using-input-formatters">Using Input Formatters</h2>
 <ul>
   <li>Implicit Binding: If the Content-Type header of the request matches a supported format, the
-      corresponding input formatter is automatically used. You don&#39;t need to explicitly specify
-      which formatter to use in your action method.</li>
+corresponding input formatter is automatically used. You don&#39;t need to explicitly specify
+which formatter to use in your action method.</li>
   <li>Explicit Binding ([FromBody]): You can use the [FromBody] attribute on an action method
-      parameter to explicitly tell the model binder to look for the data in the request body. This is
-      often used when you have complex objects that need to be deserialized.</li>
+parameter to explicitly tell the model binder to look for the data in the request body. This is
+often used when you have complex objects that need to be deserialized.</li>
 </ul>
 
 <h2 id="important-considerations-1">Important Considerations</h2>
 <ul>
   <li>Content Negotiation: The success of model binding depends on the client sending a valid
-      Content-Type header that your application supports.</li>
+Content-Type header that your application supports.</li>
   <li>Error Handling: Handle potential deserialization errors gracefully. If the input formatter
-      cannot parse the request body, return an appropriate error response (e.g., 400 Bad
-      Request).</li>
+cannot parse the request body, return an appropriate error response (e.g., 400 Bad
+Request).</li>
   <li>Security: Always validate and sanitize data deserialized from the request body to protect
-      against security vulnerabilities.</li>
+against security vulnerabilities.</li>
   <li>Custom Input Formatters: For highly specialized scenarios or custom data formats, you can
-      create your own input formatters by implementing the IInputFormatter interface.</li>
+create your own input formatters by implementing the IInputFormatter interface.</li>
 </ul>
 
 <h2 id="custom-model-binders">Custom Model Binders</h2>
-<p>While ASP.NET Core&#39;s default model binder is quite versatile, it might not always meet your specific
-needs. This is where custom model binders step in, allowing you to precisely define how data is
-extracted from incoming requests and mapped onto your model properties.</p>
+<p>While ASP.NET Core&#39;s default model binder is quite versatile, it might not always meet your specific needs. This is where custom model binders step in, allowing you to precisely define how data is extracted from incoming requests and mapped onto your model properties.</p>
 
 <h2 id="purpose">Purpose</h2>
 <ul>
   <li>Flexibility: Handle complex or custom data formats that the default model binder doesn&#39;t
-      understand.</li>
+understand.</li>
   <li>Custom Logic: Implement specific business rules or data transformations during binding.</li>
   <li>Complete Control: Take full control over the binding process, from parsing the raw data to
-      populating your model object.</li>
+populating your model object.</li>
 </ul>
 
 <h2 id="implementing-imodelbinder">Implementing IModelBinder</h2>
@@ -1427,14 +1386,13 @@ extracted from incoming requests and mapped onto your model properties.</p>
       </div>
       <pre><code class="language-csharp">The core of your custom logic resides in the BindModelAsync method, where you:</code></pre>
     </div>
-  <p>1. Retrieve raw data from the bindingContext.ValueProvider.</p>
-<ol>
+  <ol>
+  <li>Retrieve raw data from the bindingContext.ValueProvider.</li>
   <li>Parse and validate the data according to your requirements.</li>
   <li>Create an instance of your model class and populate its properties.</li>
   <li>Set the bindingContext.Result to ModelBindingResult.Success(yourModelInstance).</li>
 </ol>
-
-<h2 id="code-10">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1447,29 +1405,26 @@ extracted from incoming requests and mapped onto your model properties.</p>
       <pre><code class="language-csharp">// PersonModelBinder.cs
 public class PersonModelBinder : IModelBinder
 {
-  public Task BindModelAsync(ModelBindingContext bindingContext)
-  {
-   Person person = new Person();
-   // ... (Logic to extract and populate properties from the ValueProvider) ...
-   bindingContext.Result = ModelBindingResult.Success(person);
-   return Task.CompletedTask;
-  }
+public Task BindModelAsync(ModelBindingContext bindingContext)
+{
+Person person = new Person();
+// ... (Logic to extract and populate properties from the ValueProvider) ...
+bindingContext.Result = ModelBindingResult.Success(person);
+return Task.CompletedTask;
+}
 }
 In this example, PersonModelBinder:</code></pre>
     </div>
-  <p>1. Creates a new Person object.</p>
-<ol>
+  <ol>
+  <li>Creates a new Person object.</li>
   <li>Extracts values for different properties (e.g., PersonName, Email, Phone) from the
-      ValueProvider (which can access form data, query string, route data, etc.).</li>
+ValueProvider (which can access form data, query string, route data, etc.).</li>
   <li>Performs some basic transformations (concatenating FirstName and LastName).</li>
   <li>Sets the model binding result to indicate success and return the populated Person object.</li>
 </ol>
 
 <h2 id="model-binder-providers">Model Binder Providers</h2>
-<p>To inform ASP.NET Core that you want to use your custom model binder for a specific type, you
-create a model binder provider. This provider implements the IModelBinderProvider interface.</p>
-
-<h2 id="code-11">Code</h2>
+<p>To inform ASP.NET Core that you want to use your custom model binder for a specific type, you create a model binder provider. This provider implements the IModelBinderProvider interface. Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1481,7 +1436,7 @@ create a model binder provider. This provider implements the IModelBinderProvide
       </div>
       <pre><code class="language-csharp">// (This code is not provided in your original request, but it&#39;s a common way to register a custom</code></pre>
     </div>
-  <p>model binder)</p>
+  <p>Model binder)</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1493,18 +1448,17 @@ create a model binder provider. This provider implements the IModelBinderProvide
       </div>
       <pre><code class="language-csharp">public class PersonBinderProvider : IModelBinderProvider
 {
-  public IModelBinder? GetBinder(ModelBinderProviderContext context)
-  {
-   if (context.Metadata.ModelType == typeof(Person))
-   {
-     return new BinderTypeModelBinder(typeof(PersonModelBinder));
-   }
-   return null;
-  }
+public IModelBinder? GetBinder(ModelBinderProviderContext context)
+{
+if (context.Metadata.ModelType == typeof(Person))
+{
+return new BinderTypeModelBinder(typeof(PersonModelBinder));
+}
+return null;
+}
 }</code></pre>
     </div>
-  <p>This provider checks if the model type is Person, and if so, it returns an instance of your
-PersonModelBinder.</p>
+  <p>This provider checks if the model type is Person, and if so, it returns an instance of your PersonModelBinder.</p>
 
 <h2 id="registration-and-usage">Registration and Usage</h2>
 
@@ -1519,17 +1473,13 @@ PersonModelBinder.</p>
       <pre><code class="language-csharp">// Program.cs (or Startup.cs
 )
 builder.Services.AddControllers(options =&gt; {
-  options.ModelBinderProviders.Insert(0, new PersonBinderProvider());
+options.ModelBinderProviders.Insert(0, new PersonBinderProvider());
 });</code></pre>
     </div>
-  <p>By inserting your PersonBinderProvider at index 0, you ensure it takes precedence over the default
-model binders.</p>
+  <p>By inserting your PersonBinderProvider at index 0, you ensure it takes precedence over the default model binders.</p>
 
 <h2 id="sample-request-data-postman">Sample Request Data (Postman)</h2>
-<p>To test this, you can use Postman to send a POST request to your controller action with the following
-JSON body:</p>
-
-<h2 id="json">JSON</h2>
+<p>To test this, you can use Postman to send a POST request to your controller action with the following JSON body: JSON</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1540,44 +1490,41 @@ JSON body:</p>
         </button>
       </div>
       <pre><code class="language-json">{
-  &quot;FirstName&quot;: &quot;John&quot;,
-  &quot;LastName&quot;: &quot;Doe&quot;,
-  &quot;Email&quot;: &quot;john.doe@example.com&quot;,
-  &quot;Phone&quot;: &quot;1234567890&quot;,
-  &quot;Password&quot;: &quot;password123&quot;,
-  &quot;ConfirmPassword&quot;: &quot;password123&quot;,
-  &quot;Price&quot;: 59.99,
-  &quot;DateOfBirth&quot;: &quot;2000-01-01&quot;
+&quot;FirstName&quot;: &quot;John&quot;,
+&quot;LastName&quot;: &quot;Doe&quot;,
+&quot;Email&quot;: &quot;john.doe@example.com&quot;,
+&quot;Phone&quot;: &quot;1234567890&quot;,
+&quot;Password&quot;: &quot;password123&quot;,
+&quot;ConfirmPassword&quot;: &quot;password123&quot;,
+&quot;Price&quot;: 59.99,
+&quot;DateOfBirth&quot;: &quot;2000-01-01&quot;
 }</code></pre>
     </div>
   <p>Important Considerations</p>
 <ul>
   <li>Complexity: Custom model binders can become complex, so use them judiciously when the
-      default behavior is insufficient.</li>
+default behavior is insufficient.</li>
   <li>Testability: Write unit tests for your custom model binders to ensure they function correctly
-      in different scenarios.</li>
+in different scenarios.</li>
   <li>Performance: Be mindful of performance when implementing complex parsing or validation
-      logic in your binder.</li>
+logic in your binder.</li>
   <li>Error Handling: Handle potential exceptions during data extraction and validation to provide
-      informative error responses.</li>
+informative error responses.</li>
   <li>Alternative Approaches: In some cases, using a custom input formatter in conjunction with
-      a simpler model binder might be a more suitable approach.</li>
+a simpler model binder might be a more suitable approach.</li>
 </ul>
 
 <h2 id="collection-binding">Collection Binding</h2>
-<p>ASP.NET Core&#39;s model binding isn&#39;t limited to simple properties; it can gracefully handle collections
-like lists and arrays within your model classes. This is especially useful when dealing with forms that
-allow users to input multiple values for a single field (e.g., selecting multiple interests from a
-checkbox list) or when working with data from APIs that naturally return collections.</p>
+<p>ASP.NET Core&#39;s model binding isn&#39;t limited to simple properties; it can gracefully handle collections like lists and arrays within your model classes. This is especially useful when dealing with forms that allow users to input multiple values for a single field (e.g., selecting multiple interests from a checkbox list) or when working with data from APIs that naturally return collections.</p>
 
 <h2 id="how-collection-binding-works">How Collection Binding Works</h2>
 <ol>
   <li>Collection Property in the Model: Your model class should have a property that&#39;s a
-      collection type (e.g., List&lt;T&gt;, T[]).</li>
+collection type (e.g., List&lt;T&gt;, T[]).</li>
   <li>Naming Convention: The incoming request parameters should follow a specific naming
-      convention to indicate which values belong to the collection.</li>
+convention to indicate which values belong to the collection.</li>
   <li>Model Binder Magic: The model binder automatically recognizes the naming convention
-      and populates the collection property accordingly.</li>
+and populates the collection property accordingly.</li>
 </ol>
 
 <h2 id="naming-conventions-for-collection-binding">Naming Conventions for Collection Binding</h2>
@@ -1599,21 +1546,19 @@ Code</li>
 )
 public class Person
 {
-  // ... other properties
-  public List&lt;string?&gt; Tags { get; set; } = new List&lt;string?&gt;(); // Collection property
+// ... other properties
+public List&lt;string?&gt; Tags { get; set; } = new List&lt;string?&gt;(); // Collection property
 }
 // HomeController.cs
 public IActionResult Index(Person person)
 {
-  // ... validation and response logic ...
-  return Content($&quot;Person: {person}, Tags: {string.Join(&quot;,&quot;, person.Tags)}&quot;, &quot;text/plain&quot;);
+// ... validation and response logic ...
+return Content($&quot;Person: {person}, Tags: {string.Join(&quot;,&quot;, person.Tags)}&quot;, &quot;text/plain&quot;);
 }</code></pre>
     </div>
   
 <h2 id="sample-request-data-postman-1">Sample Request Data (Postman)</h2>
-<p>To test this, you can send the following JSON request data to your register endpoint using Postman:</p>
-
-<h2 id="json-1">JSON</h2>
+<p>To test this, you can send the following JSON request data to your register endpoint using Postman: JSON</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1624,38 +1569,38 @@ public IActionResult Index(Person person)
         </button>
       </div>
       <pre><code class="language-csharp">{
-  &quot;PersonName&quot;: &quot;Alice&quot;,
-  &quot;Email&quot;: &quot;alice@example.com&quot;,
-  &quot;Phone&quot;: &quot;1234567890&quot;,
-  &quot;Password&quot;: &quot;alicepassword&quot;,
-  &quot;ConfirmPassword&quot;: &quot;alicepassword&quot;,
-  &quot;Price&quot;: 59.99,
-  &quot;DateOfBirth&quot;: &quot;1995-03-15&quot;,
-  &quot;Tags&quot;: [&quot;music&quot;, &quot;reading&quot;, &quot;coding&quot;]
+&quot;PersonName&quot;: &quot;Alice&quot;,
+&quot;Email&quot;: &quot;alice@example.com&quot;,
+&quot;Phone&quot;: &quot;1234567890&quot;,
+&quot;Password&quot;: &quot;alicepassword&quot;,
+&quot;ConfirmPassword&quot;: &quot;alicepassword&quot;,
+&quot;Price&quot;: 59.99,
+&quot;DateOfBirth&quot;: &quot;1995-03-15&quot;,
+&quot;Tags&quot;: [&quot;music&quot;, &quot;reading&quot;, &quot;coding&quot;]
 }
 Response The response should look like:
 Person object - Person name: Alice, Email: alice@example.com, Phone: 1234567890, Password:</code></pre>
     </div>
-  <p>alicepassword, Confirm Password: alicepassword, Price: 59.99, Tags: music,reading,coding</p>
+  <p>Alicepassword, Confirm Password: alicepassword, Price: 59.99, Tags: music,reading,coding</p>
 
-<h2 id="detailed-explanation">Detailed Explanation</h2>
+<h3 id="detailed-explanation">Detailed Explanation</h3>
 <ol>
   <li>Collection Property: The Person model has a Tags property, which is a List&lt;string?&gt;.</li>
   <li>JSON Data: The request body includes a Tags array with string values.</li>
   <li>Model Binding: The model binder automatically recognizes the Tags array in the JSON data
-      and populates the Person.Tags list with the corresponding values.</li>
+and populates the Person.Tags list with the corresponding values.</li>
 </ol>
 
 <h2 id="notes-6">Notes</h2>
 <ul>
   <li>Naming: Follow the correct naming convention (indexed or same name) for your collection
-      parameters in the request data.</li>
+parameters in the request data.</li>
   <li>Flexibility: You can bind to a variety of collection types, including lists, arrays, and custom
-      collections that implement ICollection&lt;T&gt;.</li>
+collections that implement ICollection&lt;T&gt;.</li>
   <li>Validation: Apply validation attributes to your collection properties (e.g., [Required],
-      [MaxLength]) to ensure data integrity.</li>
+[MaxLength]) to ensure data integrity.</li>
   <li>Custom Model Binders: If you have complex collection binding scenarios, you can create
-      custom model binders to handle them.</li>
+custom model binders to handle them.</li>
 </ul>
 
     <div class="code-block">
@@ -1668,32 +1613,27 @@ Person object - Person name: Alice, Email: alice@example.com, Phone: 1234567890,
       </div>
       <pre><code class="language-csharp">[FromHeader] Attribute</code></pre>
     </div>
-  <p>In ASP.NET Core MVC, the [FromHeader] attribute is used to instruct the model binder to fetch
-values for action method parameters directly from HTTP request headers. HTTP headers are keyvalue
-pairs that provide metadata about the request, such as the client&#39;s browser type (User-Agent),
-accepted content types (Accept), and authorization tokens.
-How [FromHeader] Works</p>
+  <p>In ASP.NET Core MVC, the [FromHeader] attribute is used to instruct the model binder to fetch values for action method parameters directly from HTTP request headers. HTTP headers are key- value pairs that provide metadata about the request, such as the client&#39;s browser type (User-Agent), accepted content types (Accept), and authorization tokens. How [FromHeader] Works</p>
 <ol>
   <li>Header Identification: When a request arrives, ASP.NET Core&#39;s model binding system
-      identifies action parameters marked with the [FromHeader] attribute.</li>
+identifies action parameters marked with the [FromHeader] attribute.</li>
   <li>Header Extraction: It then examines the request headers to locate the headers that match
-      the names specified in the [FromHeader] attribute.</li>
+the names specified in the [FromHeader] attribute.</li>
   <li>Value Assignment: If the matching header is found, its value is assigned to the
-      corresponding action parameter. If the header is not present or its value cannot be
-      converted to the parameter&#39;s type, the model state will be marked as invalid.</li>
+corresponding action parameter. If the header is not present or its value cannot be
+converted to the parameter&#39;s type, the model state will be marked as invalid.</li>
 </ol>
 <p>Why Use [FromHeader]?</p>
 <ul>
   <li>Access to Metadata: HTTP headers contain valuable information about the client, request,
-      and the data being transmitted.</li>
+and the data being transmitted.</li>
   <li>Custom Parameters: You can define custom headers to pass additional data to your API.</li>
-  <li>Security: Headers are often used for transmitting authentication tokens and other securityrelated
-information.</li>
+  <li>Security: Headers are often used for transmitting authentication tokens and other security-
+related information.</li>
   <li>Content Negotiation: Headers like Accept are used to determine the preferred format for
-      the response (e.g., JSON, XML).</li>
+the response (e.g., JSON, XML).</li>
 </ul>
-
-<h2 id="code-12">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1707,8 +1647,8 @@ information.</li>
 [Route(&quot;register&quot;)]
 public IActionResult Index(Person person, [FromHeader(Name = &quot;User-Agent&quot;)] string UserAgent)
 {
-  // ... (model validation logic) ...
-  return Content($&quot;{person}, {UserAgent}&quot;); // Include User-Agent in the response
+// ... (model validation logic) ...
+return Content($&quot;{person}, {UserAgent}&quot;); // Include User-Agent in the response
 }</code></pre>
     </div>
   <p>In this code:</p>
@@ -1726,90 +1666,96 @@ public IActionResult Index(Person person, [FromHeader(Name = &quot;User-Agent&qu
       </div>
       <pre><code class="language-csharp">[FromHeader] attribute. The Name property of the attribute is set to &quot;User-Agent,&quot;</code></pre>
     </div>
-  <p>indicating that this parameter should be bound to the value of the User-Agent header.</p>
+  <p>Indicating that this parameter should be bound to the value of the User-Agent header.</p>
 <ol>
   <li>Header Extraction: When a request is made to the /register endpoint, the model binder will
-      look for the User-Agent header in the request and assign its value to the UserAgent
-      parameter.</li>
+look for the User-Agent header in the request and assign its value to the UserAgent
+parameter.</li>
   <li>Response: The Content result now includes both the person&#39;s information (from the request
-      body) and the value of the User-Agent header in the response.</li>
+body) and the value of the User-Agent header in the response.</li>
 </ol>
 
 <h2 id="sample-request-data-postman-2">Sample Request Data (Postman)</h2>
-<p>To test this, you would send a POST request to the /register endpoint using Postman, with the same
-JSON body as before, but this time, you would also need to add a User-Agent header in the Headers
-tab with a value like:
-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)
-Chrome/58.0.3029.110 Safari/537.3</p>
+<p>To test this, you would send a POST request to the /register endpoint using Postman, with the same JSON body as before, but this time, you would also need to add a User-Agent header in the Headers tab with a value like: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3</p>
 
 <h2 id="important-considerations-2">Important Considerations</h2>
 <ul>
   <li>Case-Insensitivity: Header names are case-insensitive, so you can use [FromHeader(Name =
-      &quot;user-agent&quot;)] or [FromHeader(Name = &quot;USER-AGENT&quot;)].</li>
+&quot;user-agent&quot;)] or [FromHeader(Name = &quot;USER-AGENT&quot;)].</li>
   <li>Multiple Headers: You can use [FromHeader] on multiple parameters to bind values from
-      different headers.</li>
+different headers.</li>
   <li>Default Values: If a header is not present in the request, you can specify a default value for
-      the parameter using the ? operator (e.g., string? UserAgent).</li>
+the parameter using the ? operator (e.g., string? UserAgent).</li>
   <li>Alternative: If you need to access multiple headers or have more complex header parsing
-      logic, consider using Request.Headers directly in your action method.</li>
+logic, consider using Request.Headers directly in your action method.</li>
 </ul>
 
-<h2 id="key-points-to-remember">Key Points to Remember</h2>
+<h3 id="key-points-to-remember">Key Points to Remember</h3>
+
+<h3 id="1-model-binding-bridging-http-and-c">1. Model Binding: Bridging HTTP and C#</h3>
 <ul>
-  <li>1. Model Binding: Bridging HTTP and C#</li>
   <li>Purpose: Automatically maps data from HTTP requests (form data, route values, query
-      strings, headers, body) to action method parameters or model properties.</li>
+strings, headers, body) to action method parameters or model properties.</li>
   <li>Benefits: Reduces boilerplate code, provides strong typing, and simplifies data handling in
-      actions.</li>
+actions.</li>
   <li>Process:</li>
   <li>1. Request Analysis: Inspects the request&#39;s content type and method.</li>
   <li>2. Value Provider: Creates a value provider to access data from different sources.</li>
   <li>3. Model Binder Selection: Chooses the appropriate model binder based on the
-           parameter type and attributes.</li>
+parameter type and attributes.</li>
   <li>4. Property Mapping: Maps values from the value provider to model properties based
-           on name matching and attributes.</li>
-  <li>2. Model Validation: Ensuring Data Integrity</li>
+on name matching and attributes.</li>
+</ul>
+
+<h3 id="2-model-validation-ensuring-data-integrity">2. Model Validation: Ensuring Data Integrity</h3>
+<ul>
   <li>Purpose: Ensures that data submitted to your application meets predefined criteria before
-      processing.</li>
+processing.</li>
   <li>Why It Matters: Enhances security, maintains data integrity, and improves user experience.</li>
   <li>Approaches:</li>
   <li>Data Annotations: Use attributes like [Required], [StringLength], [Range], etc. (from
-           System.ComponentModel.DataAnnotations) to decorate model properties.</li>
+System.ComponentModel.DataAnnotations) to decorate model properties.</li>
   <li>IValidatableObject: Implement this interface to perform custom model-level
-           validation logic.</li>
+validation logic.</li>
   <li>Custom Validation Attributes: Create your own attributes inheriting from
-           ValidationAttribute for more complex rules.</li>
+ValidationAttribute for more complex rules.</li>
   <li>3. Model State:</li>
   <li>Centralized Validation: The ModelState object tracks the validation state of your model
-      after binding.</li>
+after binding.</li>
   <li>ModelState.IsValid: A boolean property indicating whether the model is valid or contains
-      errors.</li>
+errors.</li>
   <li>ModelState.AddModelError: Add custom error messages to the ModelState.</li>
-  <li>4. Attributes: Fine-Tuning Model Binding and Validation</li>
+</ul>
+
+<h3 id="4-attributes-fine-tuning-model-binding-and-validation">4. Attributes: Fine-Tuning Model Binding and Validation</h3>
+<ul>
   <li>[FromQuery]: Binds parameters from the query string.</li>
   <li>[FromRoute]: Binds parameters from the route data (URL segments).</li>
   <li>[FromBody]: Binds complex objects from the request body (JSON, XML).</li>
   <li>[FromHeader]: Binds parameters from HTTP headers.</li>
   <li>[Bind]: Explicitly includes specific properties for binding.</li>
   <li>[BindNever]: Excludes specific properties from binding (prevents overposting).</li>
-  <li>5. Custom Model Binders</li>
+</ul>
+
+<h3 id="5-custom-model-binders">5. Custom Model Binders</h3>
+<ul>
   <li>Purpose: Create your own logic to extract and map data to models when the default
-      behavior is insufficient.</li>
+behavior is insufficient.</li>
   <li>IModelBinder Interface: Implement this interface to define your custom binding logic.</li>
   <li>ModelBindingContext: This context object provides access to the value providers, model
-      metadata, and other relevant information.</li>
+metadata, and other relevant information.</li>
 </ul>
 
 <h2 id="additional-tips">Additional Tips</h2>
 <ul>
   <li>Default Model Binder: Understand the default model binding behavior and when you need
-      customization.</li>
+customization.</li>
   <li>Input Formatters: Know how input formatters work to deserialize request bodies in different
-      formats (JSON, XML).</li>
+formats (JSON, XML).</li>
   <li>Collection Binding: Be familiar with how to bind collections (lists, arrays) using proper
-      naming conventions.</li>
+naming conventions.</li>
   <li>Error Handling: Always check ModelState.IsValid in your actions and handle invalid model
-      states gracefully.</li>
+states gracefully.</li>
   <li>Security: Prioritize security by validating and sanitizing input data to prevent attacks.</li>
 </ul>
 
@@ -1818,8 +1764,7 @@ Chrome/58.0.3029.110 Safari/537.3</p>
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
   <h3 id="model-binding-1">Model Binding</h3>
-<p>Model Binding is a feature of asp.net core that reads values from http requests and pass them as
-arguments to the action method.</p>
+<p>Model Binding is a feature of asp.net core that reads values from http requests and pass them as arguments to the action method.</p>
   <h3 id="querystring-vs-routedata">QueryString vs RouteData</h3>
 
     <div class="code-block">
@@ -1843,10 +1788,7 @@ public IActionResult ActionMethodName( [FromRoute] type parameter)
 }</code></pre>
     </div>
     <h3 id="models">Models</h3>
-<p>Model is a class that represents structure of data (as properties) that you would like to receive from
-the request and/or send to the response.
-Also known as POCO (Plain Old CLR Objects).</p>
-  <h3 id="model">Model</h3>
+<p>Model is a class that represents structure of data (as properties) that you would like to receive from the request and/or send to the response. Also known as POCO (Plain Old CLR Objects). Model</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1858,30 +1800,18 @@ Also known as POCO (Plain Old CLR Objects).</p>
       </div>
       <pre><code class="language-csharp">class ClassName
 {
- public type PropertyName { get; set; }
+public type PropertyName { get; set; }
 }</code></pre>
     </div>
-  <p>form-urlencoded and form-data
-form-urlencoded (default)</p>
+  <p>Form-urlencoded and form-data</p>
+  <h3 id="form-urlencoded-default">form-urlencoded (default)</h3>
   <h3 id="request-headers">Request Headers</h3>
-<p>Content-Type: application/x-www-form-urlencoded</p>
-  <h3 id="request-body">Request Body</h3>
-<p>param1=value1&amp;param2=value2
-form-data</p>
+<p>Content-Type: application/x-www-form-urlencoded Request Body param1=value1&amp;param2=value2</p>
+  <h3 id="form-data">form-data</h3>
   <h3 id="request-headers-1">Request Headers</h3>
 <p>Content-Type: multipart/form-data</p>
-  <h3 id="request-body-1">Request Body</h3>
-<ul>
-  <li>d74496d66958873e</li>
-</ul>
-<p>Content-Disposition: form-data; name=&quot;param1&quot;</p>
-<p>value1</p>
-<ul>
-  <li>d74496d66958873e</li>
-</ul>
-<p>Content-Disposition: form-data; name=&quot;param2&quot;</p>
-<p>value2</p>
-  <h3 id="model-validation-1">Model Validation</h3>
+  <h3 id="request-body">Request Body</h3>
+<p>--------------------------d74496d66958873e Content-Disposition: form-data; name=&quot;param1&quot; value1 --------------------------d74496d66958873e Content-Disposition: form-data; name=&quot;param2&quot; value2 Model Validation</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1893,19 +1823,18 @@ form-data</p>
       </div>
       <pre><code class="language-csharp">class ClassName
 {
- [Attribute] //applies validation rule on this property
- public type PropertyName { get; set; }
+[Attribute] //applies validation rule on this property
+public type PropertyName { get; set; }
 }</code></pre>
     </div>
   <p>ModelState</p>
   <h3 id="isvalid">IsValid</h3>
 <p>Specifies whether there is at least one validation error or not (true or false).</p>
   <h3 id="values">Values</h3>
-<p>Contains each model property value with corresponding &quot;Errors&quot; property that contains list of
-validation errors of that model property.</p>
+<p>Contains each model property value with corresponding &quot;Errors&quot; property that contains list of validation errors of that model property.</p>
   <h3 id="errorcount">ErrorCount</h3>
 <p>Returns number of errors.</p>
-  <h3 id="model-validation-2">Model Validation</h3>
+  <h3 id="model-validation-1">Model Validation</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1953,12 +1882,7 @@ validation errors of that model property.</p>
       </div>
       <pre><code class="language-csharp">[RegularExpression(string pattern, ErrorMessage = &quot;value&quot;)]</code></pre>
     </div>
-  <p>Specifies the valid pattern (regular expression).
-[EmailAddress(ErrorMessage = &quot;value&quot;)]
-Specifies that the value should be a valid email address.
-[Phone(ErrorMessage = &quot;value&quot;)]
-Specifies that the value should be a valid phone number).
-Eg: (999)-999-9999 or 9876543210</p>
+  <p>Specifies the valid pattern (regular expression). [EmailAddress(ErrorMessage = &quot;value&quot;)] Specifies that the value should be a valid email address. [Phone(ErrorMessage = &quot;value&quot;)] Specifies that the value should be a valid phone number). Eg: (999)-999-9999 or 9876543210</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1970,13 +1894,7 @@ Eg: (999)-999-9999 or 9876543210</p>
       </div>
       <pre><code class="language-csharp">[Compare(string otherProperty, ErrorMessage = &quot;value&quot;)]</code></pre>
     </div>
-  <p>Specifies that the values of current property and other property should be same.
-[Url(ErrorMessage = &quot;value&quot;)]
-Specifies that the value should be a valid url (website address).
-Eg: http://www.example.com
-[ValidateNever]
-Specifies that the property should not be validated (excludes the property from model validation).</p>
-  <h3 id="custom-validations">Custom Validations</h3>
+  <p>Specifies that the values of current property and other property should be same. [Url(ErrorMessage = &quot;value&quot;)] Specifies that the value should be a valid url (website address). Eg: http://www.example.com [ValidateNever] Specifies that the property should not be validated (excludes the property from model validation). Custom Validations</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1988,19 +1906,19 @@ Specifies that the property should not be validated (excludes the property from 
       </div>
       <pre><code class="language-csharp">class ClassName : ValidationAttribute
 {
- public override ValidationResult? IsValid(object? value, ValidationContext validationContext)
- {
+public override ValidationResult? IsValid(object? value, ValidationContext validationContext)
+{
 //return ValidationResult.Success
 ;
 //[or] return new ValidationResult(&quot;error message&quot;
 );
- }
+}
 }</code></pre>
     </div>
   <p>ValidationAttribute</p>
 <ul>
   <li>Base class for all validation attributes such as RequiredAttribute,
-      RegularExpressionAttribute, RangeAttribute, StringLengthAttribute, CompareAttribute etc.</li>
+RegularExpressionAttribute, RangeAttribute, StringLengthAttribute, CompareAttribute etc.</li>
   <li>Provides properties such as ErrorMessage &amp; methods such as Validate(), IsValid() etc.</li>
 </ul>
   <h3 id="validationcontext">ValidationContext</h3>
@@ -2009,7 +1927,7 @@ Specifies that the property should not be validated (excludes the property from 
   <li>Provides properties such as ObjectType, ObjectInstance.</li>
 </ul>
   <h3 id="custom-validations-with-multiple-properties">Custom Validations with Multiple Properties</h3>
-  <h3 id="ivalidatableobject-1">IValidatableObject</h3>
+<p>IValidatableObject</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2021,23 +1939,21 @@ Specifies that the property should not be validated (excludes the property from 
       </div>
       <pre><code class="language-csharp">class ClassName : IValidatableObject
 {
- //model properties here
- public IEnumerable&lt;ValidationResult&gt; Validate(ValidationContext validationContext)
- {
-  if (condition)
-  {
-  yield return new ValidationResult(&quot;error message&quot;);
-  }
- }
+//model properties here
+public IEnumerable&lt;ValidationResult&gt; Validate(ValidationContext validationContext)
+{
+if (condition)
+{
+yield return new ValidationResult(&quot;error message&quot;);
+}
+}
 }</code></pre>
     </div>
   <ul>
   <li>Base class for model classes with validation.</li>
-</ul>
-<ul>
   <li>Provides a method called Validate() to define class level validation logic.</li>
   <li>The Validate() method executes after validating all property-level validations are executed;
-      but doesn&#39;t execute if at least one property-level validations result error.</li>
+but doesn&#39;t execute if at least one property-level validations result error.</li>
 </ul>
   <h3 id="validationcontext-1">ValidationContext</h3>
 <ul>
@@ -2057,17 +1973,17 @@ Specifies that the property should not be validated (excludes the property from 
 [Bind]
 class ClassNameController
 {
- public IActionResult ActionMethodName( [Bind(nameof(ClassName.PropertyName),
+public IActionResult ActionMethodName( [Bind(nameof(ClassName.PropertyName),
 nameof(ClassName.PropertyName) )] ClassName parameterName)
- {
- }
+{
+}
 }</code></pre>
     </div>
   <ul>
   <li>[Bind] attribute specifies that only the specified properties should be included in model
-      binding.</li>
+binding.</li>
   <li>Prevents over-posting (post values into unexpected properties) especially in &#39;Create&#39;
-      scenarios.</li>
+scenarios.</li>
 </ul>
 <p>[BindNever]</p>
 
@@ -2081,15 +1997,13 @@ nameof(ClassName.PropertyName) )] ClassName parameterName)
       </div>
       <pre><code class="language-csharp">class ModelClassName
 {
- [BindNever]
- public type PropertyName { get; set; }
+[BindNever]
+public type PropertyName { get; set; }
 }</code></pre>
     </div>
   <ul>
-  <li>[BindNever] attribute specifies that the specified property should NOT be included in model</li>
-</ul>
-<p>binding.</p>
-<ul>
+  <li>[BindNever] attribute specifies that the specified property should NOT be included in model
+binding.</li>
   <li>Useful when you have fewer properties to eliminate from model binding.</li>
 </ul>
 
@@ -2109,7 +2023,7 @@ public IActionResult ActionMethodName( [FromBody] type parameter)
     </div>
     <h3 id="input-formatters-1">Input Formatters</h3>
   <h3 id="custom-model-binders-1">Custom Model Binders</h3>
-  <h3 id="custom-model-binder">Custom Model Binder</h3>
+<p>Custom Model Binder</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2121,28 +2035,28 @@ public IActionResult ActionMethodName( [FromBody] type parameter)
       </div>
       <pre><code class="language-csharp">class ClassName : IModelBinder
 {
- public Task BindModelAsync(ModelBindingContext bindingContext)
- {
-  //gets value from request
-  bindingContext.ValueProvider.GetValue(&quot;FirstName&quot;);
-  //returns model object after reading data from the request
-  bindingContext.Result = ModelBindingResult.Success(your_object);
- }
+public Task BindModelAsync(ModelBindingContext bindingContext)
+{
+//gets value from request
+bindingContext.ValueProvider.GetValue(&quot;FirstName&quot;);
+//returns model object after reading data from the request
+bindingContext.Result = ModelBindingResult.Success(your_object);
+}
 }</code></pre>
     </div>
   <p>IModelBinder</p>
 <ul>
   <li>Base interface for all custom model binders.</li>
   <li>Provides a method called BindModelAsync, to define logic for binding (reading) data from
-      the request and creating a model object that has be received as parameter in the action
-      method.</li>
+the request and creating a model object that has be received as parameter in the action
+method.</li>
 </ul>
   <h3 id="modelbindingcontext">ModelBindingContext</h3>
 <ul>
   <li>Acts as a parameter for &quot;BindModelAsync()&quot; method of custom model binder classes.</li>
   <li>Provides properties such as HttpContext, ModelState, ValueProvider, Result etc..</li>
 </ul>
-  <h3 id="custom-model-binder-providers">Custom Model Binder Providers</h3>
+<p>Custom Model Binder Providers</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2154,11 +2068,11 @@ public IActionResult ActionMethodName( [FromBody] type parameter)
       </div>
       <pre><code class="language-csharp">class ClassName : IModelBinderProvider
 {
- public IModelBinder GetBinder(ModelBinderProviderContext providerContext)
- {
-  //returns type of custom model binder class to be invoked
-  return new BinderTypeModelBinder(typeof(YourModelBinderClassName));
- }
+public IModelBinder GetBinder(ModelBinderProviderContext providerContext)
+{
+//returns type of custom model binder class to be invoked
+return new BinderTypeModelBinder(typeof(YourModelBinderClassName));
+}
 }</code></pre>
     </div>
   <p>IModelBinderProvider</p>
@@ -2240,23 +2154,11 @@ public IActionResult ActionMethodName( [FromBody] type parameter)
         </li>
       
         <li class="toc-item">
-          <a href="#code" class="toc-link">Code</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#code-1" class="toc-link">Code</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#notes" class="toc-link">Notes</a>
         </li>
       
         <li class="toc-item">
           <a href="#model-classes" class="toc-link">Model Classes</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#code-2" class="toc-link">Code</a>
         </li>
       
         <li class="toc-item">
@@ -2284,7 +2186,7 @@ public IActionResult ActionMethodName( [FromBody] type parameter)
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices" class="toc-link">Best Practices</a>
+          <a href="#best-practices" class="toc-link toc-sub">Best Practices</a>
         </li>
       
         <li class="toc-item">
@@ -2296,19 +2198,7 @@ public IActionResult ActionMethodName( [FromBody] type parameter)
         </li>
       
         <li class="toc-item">
-          <a href="#code-3" class="toc-link">Code</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#key-steps" class="toc-link">Key Steps</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#code-4" class="toc-link">Code</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#code-5" class="toc-link">Code</a>
         </li>
       
         <li class="toc-item">
@@ -2324,15 +2214,7 @@ public IActionResult ActionMethodName( [FromBody] type parameter)
         </li>
       
         <li class="toc-item">
-          <a href="#code-6" class="toc-link">Code</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#notes-4" class="toc-link">Notes</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#code-7" class="toc-link">Code</a>
         </li>
       
         <li class="toc-item">
@@ -2341,10 +2223,6 @@ public IActionResult ActionMethodName( [FromBody] type parameter)
       
         <li class="toc-item">
           <a href="#how-it-works" class="toc-link">How It Works</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#code-8" class="toc-link">Code</a>
         </li>
       
         <li class="toc-item">
@@ -2368,10 +2246,6 @@ public IActionResult ActionMethodName( [FromBody] type parameter)
         </li>
       
         <li class="toc-item">
-          <a href="#code-9" class="toc-link">Code</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#using-input-formatters" class="toc-link">Using Input Formatters</a>
         </li>
       
@@ -2392,15 +2266,7 @@ public IActionResult ActionMethodName( [FromBody] type parameter)
         </li>
       
         <li class="toc-item">
-          <a href="#code-10" class="toc-link">Code</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#model-binder-providers" class="toc-link">Model Binder Providers</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#code-11" class="toc-link">Code</a>
         </li>
       
         <li class="toc-item">
@@ -2409,10 +2275,6 @@ public IActionResult ActionMethodName( [FromBody] type parameter)
       
         <li class="toc-item">
           <a href="#sample-request-data-postman" class="toc-link">Sample Request Data (Postman)</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#json" class="toc-link">JSON</a>
         </li>
       
         <li class="toc-item">
@@ -2432,19 +2294,11 @@ public IActionResult ActionMethodName( [FromBody] type parameter)
         </li>
       
         <li class="toc-item">
-          <a href="#json-1" class="toc-link">JSON</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#detailed-explanation" class="toc-link">Detailed Explanation</a>
+          <a href="#detailed-explanation" class="toc-link toc-sub">Detailed Explanation</a>
         </li>
       
         <li class="toc-item">
           <a href="#notes-6" class="toc-link">Notes</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#code-12" class="toc-link">Code</a>
         </li>
       
         <li class="toc-item">
@@ -2456,7 +2310,23 @@ public IActionResult ActionMethodName( [FromBody] type parameter)
         </li>
       
         <li class="toc-item">
-          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+          <a href="#key-points-to-remember" class="toc-link toc-sub">Key Points to Remember</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#1-model-binding-bridging-http-and-c" class="toc-link toc-sub">1. Model Binding: Bridging HTTP and C#</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#2-model-validation-ensuring-data-integrity" class="toc-link toc-sub">2. Model Validation: Ensuring Data Integrity</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#4-attributes-fine-tuning-model-binding-and-validation" class="toc-link toc-sub">4. Attributes: Fine-Tuning Model Binding and Validation</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#5-custom-model-binders" class="toc-link toc-sub">5. Custom Model Binders</a>
         </li>
       
         <li class="toc-item">

@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -400,38 +410,31 @@
       <article class="docs-content">
         
 <h2 id="services">Services</h2>
-<p>In ASP.NET Core MVC, services are classes responsible for implementing the core business logic of</p>
-<p>your application. They are designed to be reusable, self-contained, and independent of specific</p>
-<p>controllers or views. Services are the backbone of your application, handling tasks like data access,</p>
-<p>calculations, communication with external systems, and any other operations that involve the &quot;how&quot;</p>
-<ul>
-  <li>f your application&#39;s functionality.</li>
-</ul>
+<p>In ASP.NET Core MVC, services are classes responsible for implementing the core business logic of your application. They are designed to be reusable, self-contained, and independent of specific controllers or views. Services are the backbone of your application, handling tasks like data access, calculations, communication with external systems, and any other operations that involve the &quot;how&quot; of your application&#39;s functionality.</p>
 
 <h2 id="key-purposes-of-services">Key Purposes of Services</h2>
 <ol>
   <li>Encapsulation of Business Logic: Services provide a clean way to encapsulate complex
-      operations and keep them separate from your presentation layer (controllers and views).</li>
+operations and keep them separate from your presentation layer (controllers and views).</li>
   <li>Reusability: A single service can be used by multiple controllers, promoting DRY (Don&#39;t
-      Repeat Yourself) principles and making your code more maintainable.</li>
+Repeat Yourself) principles and making your code more maintainable.</li>
   <li>Testability: Services can be easily unit tested in isolation, allowing you to verify the
-      correctness of your business logic without the overhead of running the entire application.</li>
+correctness of your business logic without the overhead of running the entire application.</li>
   <li>Dependency Injection (DI): Services are typically registered in the DI container, making them
-      easily accessible to controllers and other components within your application.</li>
+easily accessible to controllers and other components within your application.</li>
 </ol>
 
 <h2 id="typical-responsibilities-of-services">Typical Responsibilities of Services</h2>
 <ul>
   <li>Data Access: Communicating with databases or other data sources to fetch, insert, update,
-      or delete data.</li>
+or delete data.</li>
   <li>Business Rules: Implementing the rules that govern how your application behaves (e.g.,
-      validation, calculations, transformations).</li>
+validation, calculations, transformations).</li>
   <li>Integration: Interacting with external systems or APIs.</li>
   <li>Notifications: Sending emails, SMS messages, or other notifications.</li>
   <li>Logging: Recording events and errors for troubleshooting and analysis.</li>
 </ul>
-
-<h2 id="code">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -445,117 +448,111 @@
 )
 namespace Services
 {
-  public class CitiesService
-  {
-   private List&lt;string&gt; _cities;
-   // Constructor
-   public CitiesService()
-   {
-     _cities = new List&lt;string&gt;() { &quot;London&quot;, &quot;Paris&quot;, &quot;New York&quot;, &quot;Tokyo&quot;, &quot;Rome&quot; };
-   }
-   public List&lt;string&gt; GetCities()
-   {
-     return _cities;
-   }
-  }
+public class CitiesService
+{
+private List&lt;string&gt; _cities;
+// Constructor
+public CitiesService()
+{
+_cities = new List&lt;string&gt;() { &quot;London&quot;, &quot;Paris&quot;, &quot;New York&quot;, &quot;Tokyo&quot;, &quot;Rome&quot; };
+}
+public List&lt;string&gt; GetCities()
+{
+return _cities;
+}
+}
 }
 // HomeController.cs (Controller
 )
 public class HomeController : Controller
 {
-  private readonly CitiesService _citiesService;
+private readonly CitiesService _citiesService;
 // Constructor (injecting the service
 )
-  public HomeController()
-  {
-   _citiesService = new CitiesService();
-  }
-  [Route(&quot;/&quot;)]
-  public IActionResult Index()
-  {
-   List&lt;string&gt; cities = _citiesService.GetCities();
-   return View(cities); // Pass the data to the view
-  }
+public HomeController()
+{
+_citiesService = new CitiesService();
+}
+[Route(&quot;/&quot;)]
+public IActionResult Index()
+{
+List&lt;string&gt; cities = _citiesService.GetCities();
+return View(cities); // Pass the data to the view
+}
 }
 Note that in this code example, there is no dependency injection being used. In real-world projects,
 it&#39;s good practice to register your services with ASP.NET Core&#39;s built-in dependency injection</code></pre>
     </div>
-  <p>container and then have them injected into your controllers (or other components) through the
-constructor.</p>
+  <p>Container and then have them injected into your controllers (or other components) through the constructor.</p>
 
 <h2 id="explanation">Explanation</h2>
 <ul>
   <li>1. CitiesService Class: This class represents a simple service that holds a list of city names and
-      provides a GetCities method to retrieve them.</li>
+provides a GetCities method to retrieve them.</li>
   <li>2. HomeController Class:</li>
   <li>Dependency: It has a dependency on the CitiesService class.</li>
   <li>Instantiation: In this simplified example, the CitiesService object is created directly
-           within the controller&#39;s constructor.</li>
+within the controller&#39;s constructor.</li>
   <li>Action Method: The Index action method calls the GetCities method of the
-           _citiesService to retrieve the list of cities and then passes this data to the view.</li>
+_citiesService to retrieve the list of cities and then passes this data to the view.</li>
 </ul>
 
-<h2 id="best-practices">Best Practices</h2>
+<h3 id="best-practices">Best Practices</h3>
 <ul>
   <li>Single Responsibility Principle (SRP): Design your services to have a single responsibility to
-      keep them focused and maintainable.</li>
+keep them focused and maintainable.</li>
   <li>Dependency Injection: Use dependency injection to manage service lifetimes and
-      dependencies, making your code loosely coupled and easier to test.</li>
+dependencies, making your code loosely coupled and easier to test.</li>
   <li>Interface-Based Programming: Define interfaces for your services to create abstraction
-      layers and facilitate testing with mocks.</li>
+layers and facilitate testing with mocks.</li>
   <li>Clear Naming: Use descriptive names for your services and their methods to make your code
-      self-documenting.</li>
+self-documenting.</li>
   <li>Testing: Write unit tests for your services to ensure that your business logic works correctly
-      in isolation.</li>
+in isolation.</li>
 </ul>
 
-<h2 id="key-points-to-remember">Key Points to Remember</h2>
+<h3 id="key-points-to-remember">Key Points to Remember</h3>
 <ul>
   <li>Encapsulation: Services encapsulate the &quot;how&quot; of your application logic, separating it from
-      the presentation layer.</li>
+the presentation layer.</li>
   <li>Reusability: Services can be reused across multiple controllers.</li>
   <li>Testability: Services are designed to be easily unit tested.</li>
   <li>Dependency Injection: Services are typically managed by the DI container and injected into
-      controllers.</li>
+controllers.</li>
 </ul>
 
 <h2 id="dependency-inversion-principle-dip">Dependency Inversion Principle (DIP)</h2>
 <p>DIP is a design principle that promotes loosely coupled software architecture. It states that:</p>
 <ol>
   <li>High-level modules should not depend on low-level modules. Both should depend on
-      abstractions.</li>
+abstractions.</li>
   <li>Abstractions should not depend on details. Details should depend on abstractions.</li>
 </ol>
 <p>In simpler terms:</p>
 <ul>
   <li>Instead of tightly coupling your classes by having them depend on concrete
-      implementations, they should depend on abstractions (interfaces or abstract classes).</li>
+implementations, they should depend on abstractions (interfaces or abstract classes).</li>
   <li>This allows you to easily swap out implementations without changing the higher-level code.</li>
 </ul>
-<p>Inversion of Control (IoC): Shifting Responsibility
-IoC is a broad principle that involves transferring the control of object creation and management
-from your application code to a framework or container. Instead of your classes explicitly creating
-their dependencies, they receive them from an external source. This external source is often a DI
-container.
-Dependency Injection (DI): The Practical Tool
-DI is a specific implementation of the IoC principle. It involves supplying dependencies to a class
-from outside the class itself. The most common way to do this in ASP.NET Core is through
-constructor injection, but there are also other techniques like property injection and method
-injection.</p>
+
+<h2 id="inversion-of-control-ioc-shifting-responsibility">Inversion of Control (IoC): Shifting Responsibility</h2>
+<p>IoC is a broad principle that involves transferring the control of object creation and management from your application code to a framework or container. Instead of your classes explicitly creating their dependencies, they receive them from an external source. This external source is often a DI container.</p>
+
+<h2 id="dependency-injection-di-the-practical-tool">Dependency Injection (DI): The Practical Tool</h2>
+<p>DI is a specific implementation of the IoC principle. It involves supplying dependencies to a class from outside the class itself. The most common way to do this in ASP.NET Core is through constructor injection, but there are also other techniques like property injection and method injection.</p>
 
 <h2 id="benefits-of-dip-ioc-and-di">Benefits of DIP, IoC, and DI</h2>
 <ul>
   <li>Loose Coupling: Reduces the direct dependencies between classes, making them easier to
-      change and test independently.</li>
+change and test independently.</li>
   <li>Flexibility: You can easily swap out different implementations of dependencies without
-      affecting the consuming class.</li>
+affecting the consuming class.</li>
   <li>Testability: Unit testing becomes much easier, as you can provide mock dependencies to
-      isolate the code under test.</li>
+isolate the code under test.</li>
   <li>Maintainability: Code becomes more modular, easier to understand, and less prone to
-      ripple effects from changes.</li>
+ripple effects from changes.</li>
 </ul>
-
-<h2 id="code-1">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -569,19 +566,19 @@ injection.</p>
 )
 namespace ServiceContracts
 {
-  public interface ICitiesService // Abstraction of CitiesService
-  {
-   List&lt;string&gt; GetCities();
-  }
+public interface ICitiesService // Abstraction of CitiesService
+{
+List&lt;string&gt; GetCities();
+}
 }
 // Services (Implementation
 )
 namespace Services
 {
-  public class CitiesService : ICitiesService // CitiesService depends on the ICitiesService abstraction
-  {
-   // ... (Implementation of GetCities) ...
-  }
+public class CitiesService : ICitiesService // CitiesService depends on the ICitiesService abstraction
+{
+// ... (Implementation of GetCities) ...
+}
 }</code></pre>
     </div>
   <p>The interface ICitiesService defines the abstraction for a service that can retrieve a list of cities. The</p>
@@ -596,9 +593,7 @@ namespace Services
       </div>
       <pre><code class="language-csharp">class CitiesService provides the concrete implementation, but it depends on the ICitiesService</code></pre>
     </div>
-  <p>interface, not on a concrete class.</p>
-
-<h2 id="code-2">Code</h2>
+  <p>Interface, not on a concrete class. Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -611,11 +606,10 @@ namespace Services
       <pre><code class="language-csharp">// Program.cs (or Startup.cs
 )
 builder.Services.Add(new ServiceDescriptor(
-  typeof(ICitiesService), // Interface to register</code></pre>
+typeof(ICitiesService), // Interface to register
+typeof(CitiesService), // Concrete implementation</code></pre>
     </div>
-  <p>typeof(CitiesService), // Concrete implementation
-  ServiceLifetime.Transient // Lifetime of the service (more on this later)
-));</p>
+  <p>ServiceLifetime.Transient // Lifetime of the service (more on this later) ));</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -629,46 +623,46 @@ builder.Services.Add(new ServiceDescriptor(
 )
 public class HomeController : Controller
 {
-  private readonly ICitiesService _citiesService; // Dependency on the interface
-  // Constructor injection
-  public HomeController(ICitiesService citiesService)
-  {
-   _citiesService = citiesService;
-  }
-  // ... (Action methods) ...
+private readonly ICitiesService _citiesService; // Dependency on the interface
+// Constructor injection
+public HomeController(ICitiesService citiesService)
+{
+_citiesService = citiesService;
+}
+// ... (Action methods) ...
 }</code></pre>
     </div>
   <p>In this code:</p>
 <ul>
   <li>1. Service Registration: The CitiesService is registered in the DI container using the Add
-      method. The ServiceDescriptor specifies:</li>
+method. The ServiceDescriptor specifies:</li>
   <li>The interface type (ICitiesService) that other components will request.</li>
   <li>The concrete implementation type (CitiesService) that the container will create.</li>
   <li>The lifetime of the service (ServiceLifetime.Transient means a new instance is
-           created for each request).</li>
+created for each request).</li>
   <li>2. Constructor Injection: The HomeController constructor has a parameter of type
-      ICitiesService. This means the DI container will automatically provide an instance of
-      CitiesService when the controller is created.</li>
+ICitiesService. This means the DI container will automatically provide an instance of
+CitiesService when the controller is created.</li>
 </ul>
 
 <h2 id="notes">Notes</h2>
 <ul>
   <li>Abstractions: Focus on designing interfaces or abstract classes to represent your
-      dependencies.</li>
+dependencies.</li>
   <li>Loose Coupling: Your classes should depend on abstractions, not concrete implementations.</li>
   <li>Dependency Injection: Use DI containers (like the one built into ASP.NET Core) to manage
-      and resolve dependencies.</li>
+and resolve dependencies.</li>
   <li>Service Lifetimes: Understand the different service lifetimes (Transient, Scoped, Singleton)
-      and choose the right one for each service.</li>
+and choose the right one for each service.</li>
 </ul>
 
 <h2 id="scenario-a-light-switch-and-light-bulb">Scenario - A Light Switch and Light Bulb</h2>
 <ul>
   <li>Without DIP/IoC/DI:</li>
   <li>Imagine a traditional light switch directly wired to a specific light bulb. If you want to
-           change the light bulb to a different type, you might need to rewire the switch, as it&#39;s
-           tightly coupled to the original bulb. This is analogous to tightly coupled code, where
-           classes depend directly on specific implementations of other classes.</li>
+change the light bulb to a different type, you might need to rewire the switch, as it&#39;s
+tightly coupled to the original bulb. This is analogous to tightly coupled code, where
+classes depend directly on specific implementations of other classes.</li>
   <li>With DIP/IoC/DI:</li>
   <li>Now, imagine a standard electrical outlet and a plug. The outlet represents an</li>
 </ul>
@@ -682,26 +676,19 @@ public class HomeController : Controller
         </button>
       </div>
       <pre><code class="language-csharp">interface (an abstraction), while the plug represents a class that implements this
-           interface. You can plug any compatible device (light bulb, fan, etc.) into the outlet,
-           and it will work. This is the essence of DIP - depending on abstractions, not concrete</code></pre>
+interface. You can plug any compatible device (light bulb, fan, etc.) into the outlet,
+and it will work. This is the essence of DIP - depending on abstractions, not concrete</code></pre>
     </div>
-  <p>implementations.</p>
+  <p>Implementations.</p>
 <ul>
   <li>The &quot;inversion of control&quot; comes in because the outlet (interface) dictates the shape
-           of the plug (implementation), not the other way around.</li>
+of the plug (implementation), not the other way around.</li>
   <li>&quot;Dependency injection&quot; happens when you plug a device into the outlet. The outlet
-           doesn&#39;t create the device; it simply receives it and allows it to function.</li>
+doesn&#39;t create the device; it simply receives it and allows it to function.</li>
 </ul>
 
 <h2 id="visual-representation">Visual Representation</h2>
-<p>Without DIP/IoC/DI:
-Light Switch -----&gt; Specific Light Bulb
-(Tightly Coupled)
-With DIP/IoC/DI:
-Outlet (Interface) &lt;--- Plug (Implementation)
-   |</p>
-<p>|
-  Light Bulb, Fan, etc.</p>
+<p>Without DIP/IoC/DI: Light Switch -----&gt; Specific Light Bulb (Tightly Coupled) With DIP/IoC/DI: Outlet (Interface) &lt;--- Plug (Implementation) | | Light Bulb, Fan, etc.</p>
 
 <h2 id="code-analogy">Code Analogy</h2>
 
@@ -716,54 +703,51 @@ Outlet (Interface) &lt;--- Plug (Implementation)
       <pre><code class="language-csharp">// Without DIP
 class LightSwitch
 {
-  private SpecificLightBulb _bulb = new SpecificLightBulb();
-  public void TurnOn()
-  {
-   _bulb.Illuminate();
-  }
+private SpecificLightBulb _bulb = new SpecificLightBulb();
+public void TurnOn()
+{
+_bulb.Illuminate();
+}
 }
 // With DIP
 interface ILight
 {
-  void Illuminate();
+void Illuminate();
 }
 class LightBulb : ILight { /* ... */ }
 class LightSwitch
 {
-  private ILight _light;
-  public LightSwitch(ILight light) // Dependency injection
-  {
-   _light = light;
-  }
-  public void TurnOn()
-  {
-   _light.Illuminate();
-  }
+private ILight _light;
+public LightSwitch(ILight light) // Dependency injection
+{
+_light = light;
+}
+public void TurnOn()
+{
+_light.Illuminate();
+}
 }
 In the DIP version:</code></pre>
     </div>
   <ul>
   <li>LightSwitch depends on the ILight interface, not a specific bulb.</li>
-</ul>
-<ul>
   <li>The LightBulb class implements ILight.</li>
   <li>The LightSwitch constructor takes an ILight parameter (dependency injection). Now, you can
-      pass in any object that implements ILight (a different type of bulb, a fan, etc.), and the
-      LightSwitch will work with it.</li>
+pass in any object that implements ILight (a different type of bulb, a fan, etc.), and the
+LightSwitch will work with it.</li>
 </ul>
 
-<h2 id="key-points">Key Points</h2>
+<h3 id="key-points">Key Points</h3>
 <ul>
   <li>DIP: Depend on abstractions (interfaces) to make your code more flexible and maintainable.</li>
   <li>IoC: Let a framework or container manage object creation and dependencies.</li>
   <li>DI: Implement IoC by having dependencies provided to your classes (often through
-      constructors).</li>
+constructors).</li>
   <li>Benefits: Achieve loose coupling, flexibility, testability, and maintainability in your code.</li>
 </ul>
 
 <h2 id="service-lifetimes">Service Lifetimes</h2>
-<p>When you register a service in the DI container, you specify its lifetime. This determines how the DI
-container creates and manages instances of that service throughout your application&#39;s execution.</p>
+<p>When you register a service in the DI container, you specify its lifetime. This determines how the DI container creates and manages instances of that service throughout your application&#39;s execution.</p>
 
 <h2 id="three-main-lifetime-options">Three Main Lifetime Options</h2>
 <ul>
@@ -771,35 +755,35 @@ container creates and manages instances of that service throughout your applicat
   <li>Creation: A new instance is created each time the service is requested (injected).</li>
   <li>Lifetime: The instance lives only as long as it&#39;s needed to fulfill the current request.</li>
   <li>Usage: Ideal for lightweight, stateless services where each request requires a fresh
-           instance.</li>
+instance.</li>
   <li>Example: Database context, logger, helper classes.</li>
   <li>2. Scoped:</li>
   <li>Creation: A single instance is created per HTTP request (or scope) within your
-           application.</li>
+application.</li>
   <li>Lifetime: The instance is shared throughout the request and disposed of when the
-           request ends.</li>
+request ends.</li>
   <li>Usage: The most common lifetime for web applications. Ensures consistency within
-           a request while avoiding long-lived objects.</li>
+a request while avoiding long-lived objects.</li>
   <li>Example: User-specific data, transaction handling, shopping carts.</li>
   <li>3. Singleton:</li>
   <li>Creation: A single instance is created for the entire lifetime of your application.</li>
   <li>Lifetime: The instance is shared across all requests and components.</li>
   <li>Usage: Suitable for stateless services, caches, background tasks, or configurations
-           that you want to load once and share globally.</li>
+that you want to load once and share globally.</li>
   <li>Example: Application-wide configuration settings, shared caches, singleton design
-           pattern implementations.</li>
+pattern implementations.</li>
 </ul>
 
 <h2 id="choosing-the-right-lifetime">Choosing the Right Lifetime</h2>
 <p>The lifetime you choose for a service depends on its purpose and how you intend to use it:</p>
 <ul>
   <li>State: If your service holds state that needs to be unique per request, use Scoped. If the
-      state needs to be shared globally, use Singleton. If state is irrelevant, Transient is often
-      sufficient.</li>
+state needs to be shared globally, use Singleton. If state is irrelevant, Transient is often
+sufficient.</li>
   <li>Resource Usage: Singleton services consume memory for the entire application lifetime, so
-      use them judiciously.</li>
-  <li>Concurrency: Be mindful of concurrency issues when using singleton services in multithreaded
-environments.</li>
+use them judiciously.</li>
+  <li>Concurrency: Be mindful of concurrency issues when using singleton services in multi-
+threaded environments.</li>
 </ul>
 
 <h2 id="registration-examples">Registration Examples</h2>
@@ -821,16 +805,15 @@ builder.Services.AddSingleton&lt;ISingletonService, SingletonService&gt;();</cod
   <p>Lifetime Best Practices</p>
 <ul>
   <li>Prefer Scoped for Web Apps: In most cases, Scoped is the recommended lifetime for
-      services in web applications.</li>
+services in web applications.</li>
   <li>Avoid Captive Dependencies: Don&#39;t inject a shorter-lived service (e.g., Transient) into a
-      longer-lived one (e.g., Singleton). This can lead to unexpected behavior and memory leaks.</li>
+longer-lived one (e.g., Singleton). This can lead to unexpected behavior and memory leaks.</li>
   <li>Consider Thread Safety: If you use a singleton service, ensure it&#39;s thread-safe if it will be
-      accessed concurrently.</li>
+accessed concurrently.</li>
 </ul>
-<p>Dependency Injection Techniques in ASP.NET Core
-ASP.NET Core provides a robust built-in dependency injection (DI) container that allows you to inject
-services into your application&#39;s components (controllers, middleware, view components, etc.). Here
-are the primary ways you can inject dependencies:</p>
+
+<h2 id="dependency-injection-techniques-in-aspnet-core">Dependency Injection Techniques in ASP.NET Core</h2>
+<p>ASP.NET Core provides a robust built-in dependency injection (DI) container that allows you to inject services into your application&#39;s components (controllers, middleware, view components, etc.). Here are the primary ways you can inject dependencies:</p>
 <ul>
   <li>1. Constructor Injection (Most Common):</li>
   <li>Mechanism: Dependencies are passed as parameters to the class&#39;s constructor.</li>
@@ -851,22 +834,20 @@ are the primary ways you can inject dependencies:</p>
       </div>
       <pre><code class="language-csharp">public class ProductsController : Controller
 {
-  private readonly IProductService _productService;
-  public ProductsController(IProductService productService)
-  {
-   _productService = productService;
-  }
+private readonly IProductService _productService;
+public ProductsController(IProductService productService)
+{
+_productService = productService;
 }
-   2. Property Injection (Less Common):</code></pre>
+}</code></pre>
     </div>
   <ul>
-  <li>Mechanism: Dependencies are assigned to public properties with a [FromServices]</li>
-</ul>
-<p>attribute.</p>
-<ul>
+  <li>2. Property Injection (Less Common):</li>
+  <li>Mechanism: Dependencies are assigned to public properties with a [FromServices]
+attribute.</li>
   <li>Benefits:</li>
   <li>Can be useful when you have optional dependencies or want to avoid
-                 constructor clutter.</li>
+constructor clutter.</li>
   <li>Allows for lazy loading of dependencies.</li>
   <li>Example:</li>
 </ul>
@@ -880,20 +861,18 @@ are the primary ways you can inject dependencies:</p>
         </button>
       </div>
       <pre><code class="language-csharp">public class MyMiddleware
-   {
-    [FromServices]
-    public ILogger&lt;MyMiddleware&gt; Logger { get; set; }
-}
-   3. Method Injection (Least Common):</code></pre>
+{
+[FromServices]
+public ILogger&lt;MyMiddleware&gt; Logger { get; set; }
+}</code></pre>
     </div>
   <ul>
+  <li>3. Method Injection (Least Common):</li>
   <li>Mechanism: Dependencies are passed as parameters to individual methods.</li>
-</ul>
-<ul>
   <li>Benefits:</li>
   <li>Provides fine-grained control over when dependencies are resolved.</li>
   <li>Can be useful in cases where you only need a dependency within a specific
-                 method.</li>
+method.</li>
   <li>Example:</li>
 </ul>
 
@@ -907,19 +886,17 @@ are the primary ways you can inject dependencies:</p>
       </div>
       <pre><code class="language-csharp">public IActionResult Index([FromServices] IUserService userService)
 {
-  // ... use the userService within this method
+// ... use the userService within this method
 }</code></pre>
     </div>
   <ul>
   <li>Use this injection technique if you require a service in one or few actions.</li>
-</ul>
-<ul>
   <li>4. Action Method Injection:</li>
   <li>Mechanism: Injects services directly into action methods as parameters.</li>
   <li>Benefits:</li>
   <li>Simplifies dependency management within specific actions.</li>
   <li>Useful for scenarios where a dependency is needed only in a particular action
-           method.</li>
+method.</li>
   <li>Example:</li>
 </ul>
 
@@ -933,40 +910,41 @@ are the primary ways you can inject dependencies:</p>
       </div>
       <pre><code class="language-csharp">public IActionResult MyAction([FromServices] IMyService service)
 {
-  // ... use the service within this action
+// ... use the service within this action
 }</code></pre>
     </div>
   
 <h2 id="choosing-the-right-injection-technique">Choosing the Right Injection Technique</h2>
 <ul>
   <li>Constructor Injection: The recommended and most common approach for mandatory
-      dependencies.</li>
+dependencies.</li>
   <li>Property Injection: Use for optional dependencies or when constructor injection is
-      cumbersome.</li>
+cumbersome.</li>
   <li>Method Injection: Consider this for dependencies that are only needed within specific
-      methods or for finer control over dependency resolution.</li>
+methods or for finer control over dependency resolution.</li>
   <li>Action Method Injection: Ideal for scenarios where a dependency is required only within a
-      specific action method.</li>
+specific action method.</li>
 </ul>
 
-<h2 id="key-points-to-remember-1">Key Points to Remember</h2>
+<h3 id="key-points-to-remember-1">Key Points to Remember</h3>
 <ul>
   <li>Loose Coupling: Regardless of the injection type, the core principle of DI is to achieve loose
-      coupling between components.</li>
+coupling between components.</li>
   <li>Dependency Inversion Principle (DIP): Ensure that your classes depend on abstractions
-      (interfaces) rather than concrete implementations.</li>
+(interfaces) rather than concrete implementations.</li>
   <li>Dependency Injection Container: ASP.NET Core&#39;s built-in DI container handles the
-      registration and resolution of services.</li>
+registration and resolution of services.</li>
   <li>Service Lifetimes: Understand the different service lifetimes (Transient, Scoped, Singleton)
-      and choose the appropriate one for each dependency.</li>
+and choose the appropriate one for each dependency.</li>
 </ul>
 
-<h2 id="best-practices-of-di">Best Practices of DI</h2>
+<h3 id="best-practices-of-di">Best Practices of DI</h3>
+
+<h3 id="1-constructor-injection-as-the-default">1. Constructor Injection as the Default</h3>
 <ul>
-  <li>1. Constructor Injection as the Default</li>
   <li>Why: Constructor injection is the most straightforward and reliable way to inject
-      dependencies. It ensures that a class has all its required dependencies before it can be used,
-      promoting object validity.</li>
+dependencies. It ensures that a class has all its required dependencies before it can be used,
+promoting object validity.</li>
   <li>How: Declare all the necessary dependencies as constructor parameters.</li>
 </ul>
 
@@ -980,21 +958,21 @@ are the primary ways you can inject dependencies:</p>
       </div>
       <pre><code class="language-csharp">public class ProductService : IProductService
 {
-  private readonly IProductRepository _productRepository;
-  private readonly ILogger&lt;ProductService&gt; _logger;
-  public ProductService(IProductRepository productRepository, ILogger&lt;ProductService&gt; logger)
-  {
-   _productRepository = productRepository;
-   _logger = logger;
-  }
+private readonly IProductRepository _productRepository;
+private readonly ILogger&lt;ProductService&gt; _logger;
+public ProductService(IProductRepository productRepository, ILogger&lt;ProductService&gt; logger)
+{
+_productRepository = productRepository;
+_logger = logger;
+}
 }</code></pre>
     </div>
-  <p>2. Use Interfaces for Dependencies</p>
-<ul>
+  <ul>
+  <li>2. Use Interfaces for Dependencies</li>
   <li>Why: Interfaces promote loose coupling, enabling you to easily swap implementations
-      during testing or when using different environments.</li>
+during testing or when using different environments.</li>
   <li>How: Define interfaces for your services and have your classes depend on the interfaces, not
-      concrete implementations.</li>
+concrete implementations.</li>
 </ul>
 <p>C#</p>
 
@@ -1009,38 +987,53 @@ are the primary ways you can inject dependencies:</p>
       <pre><code class="language-csharp">public interface IProductRepository { /* ... */ }
 public class ProductRepository : IProductRepository { /* ... */ }</code></pre>
     </div>
-  <p>3. Avoid Service Locator Anti-Pattern</p>
-<ul>
+  <ul>
+  <li>3. Avoid Service Locator Anti-Pattern</li>
   <li>Why: The Service Locator pattern involves directly accessing the DI container from within
-      your classes (e.g., using IServiceProvider.GetService()). This tightly couples your code to the
-      DI container and makes testing harder.</li>
+your classes (e.g., using IServiceProvider.GetService()). This tightly couples your code to the
+DI container and makes testing harder.</li>
   <li>How: Instead, have the DI container inject dependencies directly into your classes.</li>
-  <li>4. Register Dependencies at the Composition Root</li>
+</ul>
+
+<h3 id="4-register-dependencies-at-the-composition-root">4. Register Dependencies at the Composition Root</h3>
+<ul>
   <li>Why: The composition root (typically the <code>Program.cs</code> or <code>Startup.cs</code> file) is where you should
-      configure your DI container. This centralizes dependency registration and makes it easier to
-      manage and understand your application&#39;s structure.</li>
+configure your DI container. This centralizes dependency registration and makes it easier to
+manage and understand your application&#39;s structure.</li>
   <li>How: Use the IServiceCollection.Add* methods (e.g., AddTransient, AddScoped,
-      AddSingleton) to register your services and their lifetimes.</li>
-  <li>5. Choose the Appropriate Service Lifetime</li>
+AddSingleton) to register your services and their lifetimes.</li>
+</ul>
+
+<h3 id="5-choose-the-appropriate-service-lifetime">5. Choose the Appropriate Service Lifetime</h3>
+<ul>
   <li>Transient: A new instance is created each time the service is requested.</li>
   <li>Scoped: A single instance is created per request.</li>
   <li>Singleton: A single instance is created for the entire application lifetime.</li>
   <li>How: Carefully consider the nature of your service (stateful vs. stateless) and its usage
-      patterns to choose the right lifetime.</li>
-  <li>6. Avoid Captive Dependencies</li>
+patterns to choose the right lifetime.</li>
+</ul>
+
+<h3 id="6-avoid-captive-dependencies">6. Avoid Captive Dependencies</h3>
+<ul>
   <li>Why: A captive dependency occurs when you inject a shorter-lived service (e.g., Transient)
-      into a longer-lived service (e.g., Singleton). This can lead to unexpected behavior and
-      memory leaks.</li>
+into a longer-lived service (e.g., Singleton). This can lead to unexpected behavior and
+memory leaks.</li>
   <li>How: Ensure that your service lifetimes are compatible and that you don&#39;t inadvertently
-      capture a transient instance within a singleton.</li>
-  <li>7. Use Decorators to Add Cross-Cutting Concerns</li>
+capture a transient instance within a singleton.</li>
+</ul>
+
+<h3 id="7-use-decorators-to-add-cross-cutting-concerns">7. Use Decorators to Add Cross-Cutting Concerns</h3>
+<ul>
   <li>Why: Decorators wrap existing services and allow you to add additional behavior (e.g.,
-      logging, caching) without modifying the original service.</li>
+logging, caching) without modifying the original service.</li>
   <li>How: Implement the same interface as the service you want to decorate and inject the
-      original service into the decorator.</li>
-  <li>8. Leverage Options Pattern for Configuration</li>
+original service into the decorator.</li>
+</ul>
+
+<h3 id="8-leverage-options-pattern-for-configuration">8. Leverage Options Pattern for Configuration</h3>
+<ul>
   <li>Why: The Options pattern provides a strongly typed way to access configuration settings in
-      your services.</li>
+your services.</li>
   <li>How: Create classes that represent your configuration sections and use the IOptions</li>
 </ul>
 
@@ -1052,45 +1045,44 @@ public class ProductRepository : IProductRepository { /* ... */ }</code></pre>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">interface to inject them.
-9. Consider Pure DI for Testability
-   • Why: Pure DI (avoiding the IServiceProvider altogether) makes your classes more testable,
-      as you can easily provide mock dependencies during unit testing.
-   • How: Design your classes so that all their dependencies are passed through the constructor</code></pre>
+      <pre><code class="language-csharp">interface to inject them.</code></pre>
     </div>
   <ul>
-  <li>r other injection points.</li>
+  <li>9. Consider Pure DI for Testability</li>
+  <li>Why: Pure DI (avoiding the IServiceProvider altogether) makes your classes more testable,
+as you can easily provide mock dependencies during unit testing.</li>
+  <li>How: Design your classes so that all their dependencies are passed through the constructor
+or other injection points.</li>
 </ul>
+
+<h3 id="10-dont-overuse-di">10. Don&#39;t Overuse DI</h3>
 <ul>
-  <li>10. Don&#39;t Overuse DI</li>
   <li>Why: Dependency injection is a powerful tool, but it should be used judiciously. Overusing it
-      can lead to complex object graphs and make code harder to reason about.</li>
+can lead to complex object graphs and make code harder to reason about.</li>
   <li>How: Don&#39;t inject every single class in your application. Use DI for services and components
-      with clear dependencies and where you need flexibility and testability.</li>
+with clear dependencies and where you need flexibility and testability.</li>
 </ul>
 
 <h2 id="autofac">Autofac</h2>
-<p>While ASP.NET Core has a built-in dependency injection (DI) container, Autofac is a popular thirdparty
-IoC container known for its flexibility, advanced features, and customization options. It
-seamlessly integrates with ASP.NET Core, providing you with more powerful tools to manage your
-dependencies.</p>
+<p>While ASP.NET Core has a built-in dependency injection (DI) container, Autofac is a popular third- party IoC container known for its flexibility, advanced features, and customization options. It seamlessly integrates with ASP.NET Core, providing you with more powerful tools to manage your dependencies.</p>
 
 <h2 id="key-advantages-of-autofac">Key Advantages of Autofac</h2>
 <ul>
   <li>Flexibility: Offers a wider range of component lifetime scopes and registration options
-      compared to the built-in container.</li>
+compared to the built-in container.</li>
   <li>Customization: Provides more fine-grained control over how dependencies are resolved and
-      managed.</li>
+managed.</li>
   <li>Advanced Features: Supports features like module-based registration, property injection,
-      assembly scanning, and interception (for cross-cutting concerns).</li>
+assembly scanning, and interception (for cross-cutting concerns).</li>
   <li>Performance: Generally considered to have a good performance profile.</li>
 </ul>
-<p>Integrating Autofac with ASP.NET Core</p>
+
+<h2 id="integrating-autofac-with-aspnet-core">Integrating Autofac with ASP.NET Core</h2>
 <ol>
   <li>Install Package: Add the Autofac.Extensions.DependencyInjection NuGet package to your
-      project.</li>
+project.</li>
   <li>Configure Container: In your <code>Program.cs</code> (or <code>Startup.cs</code> in older versions), replace the default
-      service provider factory with Autofac&#39;s:</li>
+service provider factory with Autofac&#39;s:</li>
 </ol>
 
     <div class="code-block">
@@ -1103,9 +1095,9 @@ dependencies.</p>
       </div>
       <pre><code class="language-csharp">builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());</code></pre>
     </div>
-  <p>3. Register Services: Use the builder.Host.ConfigureContainer&lt;ContainerBuilder&gt; method to
-      access Autofac&#39;s ContainerBuilder and register your services: C#</p>
-<ol>
+  <ol>
+  <li>Register Services: Use the builder.Host.ConfigureContainer&lt;ContainerBuilder&gt; method to
+access Autofac&#39;s ContainerBuilder and register your services: C#</li>
   <li>builder.Host.ConfigureContainer&lt;ContainerBuilder&gt;(containerBuilder =&gt;</li>
   <li>{</li>
   <li>// Your Autofac registration logic here</li>
@@ -1137,32 +1129,22 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory()); // 
 builder.Services.AddControllersWithViews(); // Add MVC services
 builder.Host.ConfigureContainer&lt;ContainerBuilder&gt;(containerBuilder =&gt;
 {
-  containerBuilder.RegisterType&lt;CitiesService&gt;().As&lt;ICitiesService&gt;().InstancePerLifetimeScope(); //
-}</code></pre>
-    </div>
-  <p>Register CitiesService as Scoped</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">var app = builder.Build();
+containerBuilder.RegisterType&lt;CitiesService&gt;().As&lt;ICitiesService&gt;().InstancePerLifetimeScope(); //
+Register CitiesService as Scoped
+});
+var app = builder.Build();
 // ... the rest of the code ...</code></pre>
     </div>
   <p>In this code:</p>
 <ol>
   <li>UseServiceProviderFactory: This line tells ASP.NET Core to use Autofac as the service
-      provider.</li>
+provider.</li>
   <li>AddControllersWithViews: This registers the necessary services for MVC (models, views,
-      controllers).</li>
+controllers).</li>
   <li>ConfigureContainer: This lambda expression gives you access to Autofac&#39;s ContainerBuilder.</li>
   <li>RegisterType&lt;CitiesService&gt;().As&lt;ICitiesService&gt;().InstancePerLifetimeScope();: This
-      registers the CitiesService class as an implementation of the ICitiesService interface with a
-      scoped lifetime.</li>
+registers the CitiesService class as an implementation of the ICitiesService interface with a
+scoped lifetime.</li>
 </ol>
 
 <h2 id="autofac-registration-methods">Autofac Registration Methods</h2>
@@ -1172,38 +1154,37 @@ builder.Host.ConfigureContainer&lt;ContainerBuilder&gt;(containerBuilder =&gt;
   <li>Lifetime Scopes:</li>
   <li>InstancePerDependency() (equivalent to Transient)</li>
   <li>InstancePerLifetimeScope() (equivalent to Scoped)</li>
-  <li>SingleInstance() (equivalent to Singleton)
-Notes</li>
+  <li>SingleInstance() (equivalent to Singleton)</li>
+</ul>
+
+<h2 id="notes-1">Notes</h2>
+<ul>
   <li>Why Autofac?</li>
   <li>More flexibility and control over dependency resolution.</li>
   <li>Additional features (modules, property injection, etc.).</li>
   <li>Integration: Replace the default service provider factory with Autofac&#39;s.</li>
   <li>Registration: Use Autofac&#39;s syntax (RegisterType, As, lifetime scopes) within the
-      ConfigureContainer lambda.</li>
+ConfigureContainer lambda.</li>
   <li>Familiar Concepts: The underlying concepts of DI (abstractions, lifetimes) remain the same,
-      just with different syntax.</li>
+just with different syntax.</li>
 </ul>
 
 <h2 id="service-scope">Service Scope</h2>
-<p>In ASP.NET Core DI, a service scope is a logical boundary that defines the lifetime of services
-registered as Scoped. When a scope is created, the DI container instantiates any scoped services that
-are required within that scope. These scoped service instances are then shared across all
-components within that scope, ensuring consistency and avoiding unnecessary object creation.
-How Service Scopes Work in ASP.NET Core</p>
+<p>In ASP.NET Core DI, a service scope is a logical boundary that defines the lifetime of services registered as Scoped. When a scope is created, the DI container instantiates any scoped services that are required within that scope. These scoped service instances are then shared across all components within that scope, ensuring consistency and avoiding unnecessary object creation.</p>
+
+<h2 id="how-service-scopes-work-in-aspnet-core">How Service Scopes Work in ASP.NET Core</h2>
 <ol>
   <li>Request Scope (Default): In ASP.NET Core web applications, the most common scope is the
-      request scope. A new scope is automatically created at the beginning of each HTTP request.
-      All scoped services are resolved from this request scope and remain alive throughout the
-      entire request-response cycle. Once the request is processed, the scope is disposed, and all
-      scoped services within it are also disposed.</li>
+request scope. A new scope is automatically created at the beginning of each HTTP request.
+All scoped services are resolved from this request scope and remain alive throughout the
+entire request-response cycle. Once the request is processed, the scope is disposed, and all
+scoped services within it are also disposed.</li>
   <li>Explicitly Creating Scopes: You can also create custom scopes manually. This is useful in
-      scenarios where you need a scoped lifetime for operations that don&#39;t directly correspond to
-      an HTTP request (e.g., background tasks, unit testing). You can create a scope using the
-      IServiceProvider.CreateScope() method.</li>
+scenarios where you need a scoped lifetime for operations that don&#39;t directly correspond to
+an HTTP request (e.g., background tasks, unit testing). You can create a scope using the
+IServiceProvider.CreateScope() method.</li>
 </ol>
-
-<h2 id="code-3">Code</h2>
-<p>using (var scope = provider.CreateScope())</p>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1213,90 +1194,95 @@ How Service Scopes Work in ASP.NET Core</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">{
-  var scopedService = scope.ServiceProvider.GetRequiredService&lt;IScopedService&gt;();
-  // Use the scopedService within this scope
+      <pre><code class="language-csharp">using (var scope = provider.CreateScope())
+{
+var scopedService = scope.ServiceProvider.GetRequiredService&lt;IScopedService&gt;();
+// Use the scopedService within this scope
 }</code></pre>
     </div>
   
 <h2 id="lifetime-of-scoped-services">Lifetime of Scoped Services</h2>
 <ul>
   <li>Creation: A new instance of a scoped service is created the first time it&#39;s requested within a
-      scope.</li>
+scope.</li>
   <li>Sharing: Subsequent requests for the same scoped service within the same scope will
-      receive the same instance.</li>
+receive the same instance.</li>
   <li>Disposal: When the scope is disposed (e.g., at the end of an HTTP request), all scoped
-      services within that scope are also disposed.</li>
+services within that scope are also disposed.</li>
 </ul>
 
 <h2 id="benefits-of-service-scopes">Benefits of Service Scopes</h2>
 <ul>
   <li>State Management: Scoped services are perfect for managing state that needs to persist
-      throughout a request but should not leak across different requests.</li>
+throughout a request but should not leak across different requests.</li>
   <li>Efficient Resource Usage: Scopes ensure that you don&#39;t create unnecessary instances of
-      services, leading to better memory management.</li>
+services, leading to better memory management.</li>
   <li>Consistency: Scoped services provide a consistent view of data and state within a single
-      request.</li>
+request.</li>
 </ul>
 
 <h2 id="common-scenarios-for-scoped-services">Common Scenarios for Scoped Services</h2>
 <ul>
   <li>Database Contexts (EF Core): A new database context instance is usually created per
-      request to ensure data isolation and avoid concurrency issues.</li>
+request to ensure data isolation and avoid concurrency issues.</li>
   <li>User-Specific Data: Services holding data specific to the current user (e.g., shopping cart) are
-      often scoped to the request.</li>
+often scoped to the request.</li>
   <li>Logging with Context: If you need to log information with request-specific context, a scoped
-      logger is beneficial.</li>
+logger is beneficial.</li>
   <li>Transactions: If you need to maintain transactional integrity within a request, you can use a
-      scoped service to manage the transaction.</li>
+scoped service to manage the transaction.</li>
 </ul>
 
 <h2 id="important-considerations">Important Considerations</h2>
 <ul>
   <li>Avoid Captive Dependencies: Be cautious of injecting a scoped service into a singleton
-      service. This can lead to unexpected behavior and memory leaks because the scoped service
-      will be held alive for the entire application lifetime.</li>
+service. This can lead to unexpected behavior and memory leaks because the scoped service
+will be held alive for the entire application lifetime.</li>
   <li>Explicit Disposal: When you create custom scopes, remember to dispose them properly
-      using a using statement or by manually calling Dispose() on the IServiceScope object.</li>
+using a using statement or by manually calling Dispose() on the IServiceScope object.</li>
 </ul>
 
-<h2 id="key-points-to-remember-2">Key Points to Remember</h2>
+<h3 id="key-points-to-remember-2">Key Points to Remember</h3>
 
 <h2 id="dependency-inversion-principle-dip-1">Dependency Inversion Principle (DIP)</h2>
 <ul>
   <li>Core Idea: High-level modules shouldn&#39;t depend on low-level modules; both should depend
-      on abstractions (interfaces/abstract classes).</li>
+on abstractions (interfaces/abstract classes).</li>
   <li>Goal: Loose coupling, flexibility, testability.</li>
 </ul>
 
 <h2 id="inversion-of-control-ioc">Inversion of Control (IoC)</h2>
 <ul>
   <li>Core Idea: Transfer control of object creation and management from your code to a
-      framework or container (e.g., the DI container).</li>
+framework or container (e.g., the DI container).</li>
   <li>Goal: Decoupling, simplified configuration, improved testability.</li>
 </ul>
 
 <h2 id="dependency-injection-di">Dependency Injection (DI)</h2>
 <ul>
   <li>Core Idea: Dependencies are provided (injected) into a class from an external source (usually
-      a DI container).</li>
+a DI container).</li>
   <li>Types in ASP.NET Core:</li>
   <li>Constructor Injection: Dependencies are passed as constructor parameters (most
-           common).</li>
+common).</li>
   <li>Property Injection: Dependencies are assigned to properties with the [FromServices]
-           attribute.</li>
+attribute.</li>
   <li>Method Injection: Dependencies are passed as method parameters.</li>
   <li>Benefits:</li>
   <li>Loose coupling</li>
   <li>Flexibility</li>
   <li>Testability</li>
-  <li>Maintainability
-Service Lifetimes in ASP.NET Core DI</li>
+  <li>Maintainability</li>
+</ul>
+
+<h2 id="service-lifetimes-in-aspnet-core-di">Service Lifetimes in ASP.NET Core DI</h2>
+<ul>
   <li>Transient: A new instance created each time a service is requested.</li>
   <li>Scoped: A single instance created per request/scope.</li>
   <li>Singleton: A single instance created once and shared throughout the application&#39;s lifetime.</li>
 </ul>
-<p>Autofac: A Powerful IoC Container</p>
+
+<h2 id="autofac-a-powerful-ioc-container">Autofac: A Powerful IoC Container</h2>
 <ul>
   <li>Purpose: Alternative to the built-in ASP.NET Core DI container.</li>
   <li>Benefits:</li>
@@ -1306,7 +1292,7 @@ Service Lifetimes in ASP.NET Core DI</li>
   <li>Integration:</li>
   <li>Install Autofac.Extensions.DependencyInjection.</li>
   <li>Use builder.Host.UseServiceProviderFactory(new
-                 AutofacServiceProviderFactory()) in <code>Program.cs</code>.</li>
+AutofacServiceProviderFactory()) in <code>Program.cs</code>.</li>
   <li>Register services in builder.Host.ConfigureContainer&lt;ContainerBuilder&gt;.</li>
 </ul>
 
@@ -1314,17 +1300,20 @@ Service Lifetimes in ASP.NET Core DI</li>
 <ul>
   <li>containerBuilder.RegisterType&lt;T&gt;().As&lt;TInterface&gt;().InstancePerLifetimeScope();</li>
   <li>Equivalent to services.AddScoped&lt;TInterface, T&gt;().</li>
-  <li>InstancePerDependency() (Transient), SingleInstance() (Singleton)
-Interview Tips</li>
+  <li>InstancePerDependency() (Transient), SingleInstance() (Singleton)</li>
+</ul>
+
+<h2 id="interview-tips">Interview Tips</h2>
+<ul>
   <li>Conceptual Understanding: Be able to explain the principles of DIP, IoC, and DI and how
-      they relate to each other.</li>
+they relate to each other.</li>
   <li>Practical Application: Demonstrate your ability to choose the right lifetime for a given
-      service and explain the implications of each choice.</li>
+service and explain the implications of each choice.</li>
   <li>Best Practices: Discuss the advantages of using interfaces and constructor injection.</li>
   <li>Autofac: Highlight the benefits of using Autofac over the built-in container and showcase
-      your knowledge of its registration syntax.</li>
+your knowledge of its registration syntax.</li>
   <li>Troubleshooting: Explain how you would diagnose common DI issues (e.g., circular
-      dependencies, incorrect lifetimes).</li>
+dependencies, incorrect lifetimes).</li>
 </ul>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
@@ -1332,13 +1321,7 @@ Interview Tips</li>
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
   <h3 id="services-1">Services</h3>
-<p>&#39;Service&#39; is a class that contains business logic such as business calculations, business validations that
-are specific to the domain of the client&#39;s business.
-Service is an abstraction layer (middle layer) between presentation layer (or application layer) and
-data layer.
-It makes the business logic separated from presentation layer and data layer.
-It makes the business logic to be unit testable easily.
-Will be invoked by controller.</p>
+<p>&#39;Service&#39; is a class that contains business logic such as business calculations, business validations that are specific to the domain of the client&#39;s business. Service is an abstraction layer (middle layer) between presentation layer (or application layer) and data layer. It makes the business logic separated from presentation layer and data layer. It makes the business logic to be unit testable easily. Will be invoked by controller.</p>
   <h3 id="direct-dependency">Direct Dependency</h3>
 <p>Higher-level modules depend on lower-level modules.</p>
   <h3 id="dependency-problem">Dependency Problem</h3>
@@ -1346,28 +1329,21 @@ Will be invoked by controller.</p>
 <ul>
   <li>Means, both are tightly-coupled.</li>
   <li>The developer of higher-level module SHOULD WAIT until the completion of development of
-      lower-level module.</li>
+lower-level module.</li>
   <li>Requires much code changes in to interchange an alternative lower-level module.</li>
   <li>Any changes made in the lower-level module effects changes in the higher-level module.</li>
   <li>Difficult to test a single module without effecting / testing the other module.</li>
 </ul>
   <h3 id="dependency-inversion-principle">Dependency Inversion Principle</h3>
-<p>Dependency Inversion Principle (DIP) is a design principle (guideline), which is a solution for the
-dependency problem.
-&quot;The higher-level modules (clients) SHOULD NOT depend on low-level modules (dependencies).
-Both should depend on abstractions (interfaces or abstract class).&quot;
-&quot;Abstractions should not depend on details (both client and dependency).
-Details (both client and dependency) should depend on abstractions.&quot;
-The interface is controlled by the client.
-Both client and dependency depend on abstraction.</p>
+<p>Dependency Inversion Principle (DIP) is a design principle (guideline), which is a solution for the dependency problem. &quot;The higher-level modules (clients) SHOULD NOT depend on low-level modules (dependencies). Both should depend on abstractions (interfaces or abstract class).&quot; &quot;Abstractions should not depend on details (both client and dependency). Details (both client and dependency) should depend on abstractions.&quot; The interface is controlled by the client. Both client and dependency depend on abstraction.</p>
   <h3 id="inversion-of-control-ioc-1">Inversion of Control (IoC)</h3>
 <ul>
   <li>Inversion of Control (IoC) is a design pattern (reusable solution for a common problem),
-      which suggests &quot;IoC container&quot; for implementation of Dependency Inversion Principle (DIP).</li>
+which suggests &quot;IoC container&quot; for implementation of Dependency Inversion Principle (DIP).</li>
   <li>It inverses the control by shifting the control to IoC container.</li>
   <li>&quot;Don&#39;t call us, we will call you&quot; pattern.</li>
   <li>It can be implemented by other design patterns such as events, service locator, dependency
-      injection etc.</li>
+injection etc.</li>
 </ul>
 <p>All dependencies should be added into the IServiceCollection (acts as IoC container).</p>
 
@@ -1380,42 +1356,34 @@ Both client and dependency depend on abstraction.</p>
         </button>
       </div>
       <pre><code class="language-csharp">builder.Services.Add(
- new ServiceDescriptor(
-  typeof (Interface),
-  typeof (Service)</code></pre>
+new ServiceDescriptor(
+typeof (Interface),
+typeof (Service)</code></pre>
     </div>
-  <p>ServiceLifetime.LifeTime //Transient, Scoped, Singleton
- )
-);</p>
+  <p>ServiceLifetime.LifeTime //Transient, Scoped, Singleton ) );</p>
   <h3 id="dependency-injection-di-1">Dependency Injection (DI)</h3>
 <ul>
   <li>Dependency injection (DI) is a design pattern, which is a technique for achieving &quot;Inversion
-      of Control (IoC)&quot; between clients and their dependencies.</li>
+of Control (IoC)&quot; between clients and their dependencies.</li>
   <li>It allows you to inject (supply) a concrete implementation object of a low-level component
-      into a high-level component.</li>
+into a high-level component.</li>
   <li>The client class receives the dependency object as a parameter either in the constructor or
-      in a method.</li>
+in a method.</li>
 </ul>
-  <h3 id="method-injection">Method Injection</h3>
+<p>Method Injection</p>
   <h3 id="service-lifetime">Service Lifetime</h3>
-<p>(Transient, Scoped, Singleton)
-A service lifetime indicates when a new object of the service has to be created by the IoC / DI
-container.</p>
+<p>(Transient, Scoped, Singleton) A service lifetime indicates when a new object of the service has to be created by the IoC / DI container.</p>
 <ol>
   <li>Transient: Per injection</li>
   <li>Scoped: Per scope (browser request)</li>
   <li>Singleton: For entire application lifetime.</li>
 </ol>
   <h3 id="transient">Transient</h3>
-<p>Transient lifetime service objects are created each time when they are injected.
-Service instances are disposed at the end of the scope (usually, a browser request)</p>
+<p>Transient lifetime service objects are created each time when they are injected. Service instances are disposed at the end of the scope (usually, a browser request)</p>
   <h3 id="scoped">Scoped</h3>
-<p>Scoped lifetime service objects are created once per a scope (usually, a browser request).
-Service instances are disposed at the end of the scope (usually, a browser request).</p>
+<p>Scoped lifetime service objects are created once per a scope (usually, a browser request). Service instances are disposed at the end of the scope (usually, a browser request).</p>
   <h3 id="singleton">Singleton</h3>
-<p>Singleton lifetime service objects are created for the first time when the are requested.
-Service instances are disposed at application shutdown.</p>
-  <h3 id="transient-1">Transient</h3>
+<p>Singleton lifetime service objects are created for the first time when the are requested. Service instances are disposed at application shutdown. Transient</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1455,47 +1423,36 @@ Service instances are disposed at application shutdown.</p>
   <h3 id="view-injection">View Injection</h3>
   <h3 id="best-practices-in-di">Best Practices in DI</h3>
   <h3 id="global-state-in-services">Global state in services</h3>
-<p>Avoid using static classes to store some data globally for all users / all requests.
-You may use Singleton services for simple scenarios / simple amount of data. In this case, prefer
-ConcurrentDictionary instead of Dictionary, which better handles concurrent access via multiple
-threads.
-Alternatively, prefer to use Distributed Cache / Redis for any significant amount of data or complex
-scenarios.</p>
+<p>Avoid using static classes to store some data globally for all users / all requests. You may use Singleton services for simple scenarios / simple amount of data. In this case, prefer ConcurrentDictionary instead of Dictionary, which better handles concurrent access via multiple threads. Alternatively, prefer to use Distributed Cache / Redis for any significant amount of data or complex scenarios.</p>
   <h3 id="request-state-in-services">Request state in services</h3>
-<p>Don&#39;t use scoped services to share data among services within the same request, because they are
-NOT thread-safe.
-Use HttpContext.Items instead.</p>
+<p>Don&#39;t use scoped services to share data among services within the same request, because they are NOT thread-safe. Use HttpContext.Items instead.</p>
   <h3 id="service-locator-pattern">Service Locator Pattern</h3>
-<p>Avoid using service locator pattern, without creating a child scope, because it will be harder to know
-about dependencies of a class.
-For example, don&#39;t invoke GetService() in the default scope that is created when a new request is
-received.
-But you can use the IServiceScopeFactory.ServiceProvider. GetService() within a child scope.</p>
+<p>Avoid using service locator pattern, without creating a child scope, because it will be harder to know about dependencies of a class. For example, don&#39;t invoke GetService() in the default scope that is created when a new request is received. But you can use the IServiceScopeFactory.ServiceProvider. GetService() within a child scope.</p>
   <h3 id="calling-dispose-method">Calling Dispose() method</h3>
-<p>Don&#39;t invoke the Dispose() method manually for the services injected via DI.
-The IoC container automatically invoke Dispose(), at the end of its scope.</p>
+<p>Don&#39;t invoke the Dispose() method manually for the services injected via DI. The IoC container automatically invoke Dispose(), at the end of its scope.</p>
   <h3 id="captive-dependencies">Captive Dependencies</h3>
-<p>Don&#39;t inject scoped or transient services in singleton services.
-Because, in this case, transient or scoped services act as singleton services, inside of singleton
-service.</p>
+<p>Don&#39;t inject scoped or transient services in singleton services. Because, in this case, transient or scoped services act as singleton services, inside of singleton service.</p>
   <h3 id="storing-reference-of-service-instance">Storing reference of service instance</h3>
-<p>Don&#39;t hold the reference of a resolved service object.
-It may cause memory leaks and you may have access to a disposed service object.</p>
+<p>Don&#39;t hold the reference of a resolved service object. It may cause memory leaks and you may have access to a disposed service object.</p>
   <h3 id="autofac-1">Autofac</h3>
 <ul>
   <li>Autofac is another IoC container library for .Net Core.</li>
   <li>Means, both are tightly-coupled.</li>
   <li>Microsoft.Extensions.DependencyInjection [vs] Autofac</li>
-  <li>https://autofac.readthedocs.io/en/latest/getting-started/index.html
-Microsoft.Extensions.DependencyInjection</li>
+  <li>https://autofac.readthedocs.io/en/latest/getting-started/index.html</li>
+</ul>
+  <h3 id="microsoftextensionsdependencyinjection">Microsoft.Extensions.DependencyInjection</h3>
+<ul>
   <li>Built-in IoC container in asp.net core</li>
   <li>Lifetimes: Transient, Scoped, Singleton</li>
   <li>Metadata for services: Not supported</li>
-  <li>Decorators: Not supported
-Autofac</li>
+  <li>Decorators: Not supported</li>
+</ul>
+  <h3 id="autofac-2">Autofac</h3>
+<ul>
   <li>Alternative to the Microsoft.Extensions</li>
   <li>Lifetimes: InstancePerDependency, InstancePerLifetimeScope, SingleInstance,
-      InstancePerOwned, InstancePerMatchingLifetimeScope</li>
+InstancePerOwned, InstancePerMatchingLifetimeScope</li>
   <li>Metadata for services: Supported</li>
   <li>Decorators: Supported</li>
 </ul>
@@ -1556,19 +1513,15 @@ Autofac</li>
         </li>
       
         <li class="toc-item">
-          <a href="#code" class="toc-link">Code</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#explanation" class="toc-link">Explanation</a>
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices" class="toc-link">Best Practices</a>
+          <a href="#best-practices" class="toc-link toc-sub">Best Practices</a>
         </li>
       
         <li class="toc-item">
-          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+          <a href="#key-points-to-remember" class="toc-link toc-sub">Key Points to Remember</a>
         </li>
       
         <li class="toc-item">
@@ -1576,15 +1529,15 @@ Autofac</li>
         </li>
       
         <li class="toc-item">
+          <a href="#inversion-of-control-ioc-shifting-responsibility" class="toc-link">Inversion of Control (IoC): Shifting Responsibility</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#dependency-injection-di-the-practical-tool" class="toc-link">Dependency Injection (DI): The Practical Tool</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#benefits-of-dip-ioc-and-di" class="toc-link">Benefits of DIP, IoC, and DI</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#code-1" class="toc-link">Code</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#code-2" class="toc-link">Code</a>
         </li>
       
         <li class="toc-item">
@@ -1604,7 +1557,7 @@ Autofac</li>
         </li>
       
         <li class="toc-item">
-          <a href="#key-points" class="toc-link">Key Points</a>
+          <a href="#key-points" class="toc-link toc-sub">Key Points</a>
         </li>
       
         <li class="toc-item">
@@ -1624,15 +1577,47 @@ Autofac</li>
         </li>
       
         <li class="toc-item">
+          <a href="#dependency-injection-techniques-in-aspnet-core" class="toc-link">Dependency Injection Techniques in ASP.NET Core</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#choosing-the-right-injection-technique" class="toc-link">Choosing the Right Injection Technique</a>
         </li>
       
         <li class="toc-item">
-          <a href="#key-points-to-remember-1" class="toc-link">Key Points to Remember</a>
+          <a href="#key-points-to-remember-1" class="toc-link toc-sub">Key Points to Remember</a>
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices-of-di" class="toc-link">Best Practices of DI</a>
+          <a href="#best-practices-of-di" class="toc-link toc-sub">Best Practices of DI</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#1-constructor-injection-as-the-default" class="toc-link toc-sub">1. Constructor Injection as the Default</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#4-register-dependencies-at-the-composition-root" class="toc-link toc-sub">4. Register Dependencies at the Composition Root</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#5-choose-the-appropriate-service-lifetime" class="toc-link toc-sub">5. Choose the Appropriate Service Lifetime</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#6-avoid-captive-dependencies" class="toc-link toc-sub">6. Avoid Captive Dependencies</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#7-use-decorators-to-add-cross-cutting-concerns" class="toc-link toc-sub">7. Use Decorators to Add Cross-Cutting Concerns</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#8-leverage-options-pattern-for-configuration" class="toc-link toc-sub">8. Leverage Options Pattern for Configuration</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#10-dont-overuse-di" class="toc-link toc-sub">10. Don&#39;t Overuse DI</a>
         </li>
       
         <li class="toc-item">
@@ -1644,7 +1629,15 @@ Autofac</li>
         </li>
       
         <li class="toc-item">
+          <a href="#integrating-autofac-with-aspnet-core" class="toc-link">Integrating Autofac with ASP.NET Core</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#autofac-registration-methods" class="toc-link">Autofac Registration Methods</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#notes-1" class="toc-link">Notes</a>
         </li>
       
         <li class="toc-item">
@@ -1652,7 +1645,7 @@ Autofac</li>
         </li>
       
         <li class="toc-item">
-          <a href="#code-3" class="toc-link">Code</a>
+          <a href="#how-service-scopes-work-in-aspnet-core" class="toc-link">How Service Scopes Work in ASP.NET Core</a>
         </li>
       
         <li class="toc-item">
@@ -1672,7 +1665,7 @@ Autofac</li>
         </li>
       
         <li class="toc-item">
-          <a href="#key-points-to-remember-2" class="toc-link">Key Points to Remember</a>
+          <a href="#key-points-to-remember-2" class="toc-link toc-sub">Key Points to Remember</a>
         </li>
       
         <li class="toc-item">
@@ -1688,7 +1681,19 @@ Autofac</li>
         </li>
       
         <li class="toc-item">
+          <a href="#service-lifetimes-in-aspnet-core-di" class="toc-link">Service Lifetimes in ASP.NET Core DI</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#autofac-a-powerful-ioc-container" class="toc-link">Autofac: A Powerful IoC Container</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#autofac-registration" class="toc-link">Autofac Registration</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#interview-tips" class="toc-link">Interview Tips</a>
         </li>
       
         <li class="toc-item">

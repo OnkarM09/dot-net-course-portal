@@ -6,7 +6,7 @@
   "is_cheatsheet": true,
   "total_pages": 4,
   "total_raw_chars": 1515,
-  "total_repaired_chars": 1545,
+  "total_repaired_chars": 1511,
   "pages": [
     {
       "page_number": 1,
@@ -16,42 +16,37 @@
         {
           "text": "Asp.Net Core – True Ultimate Guide",
           "rawText": "Asp.Net Core – True Ultimate Guide",
-          "x": 72.024,
-          "y": 753.96,
-          "fontSize": 15.96,
-          "fontName": "g_d43_f2"
+          "startX": 72,
+          "y": 754,
+          "isBold": true
         },
         {
           "text": "Section 22 – Error Handling – Cheat Sheet",
           "rawText": "Section 22 – Error Handling – Cheat Sheet",
-          "x": 72.024,
-          "y": 725.98,
-          "fontSize": 15.96,
-          "fontName": "g_d43_f4"
+          "startX": 72,
+          "y": 726,
+          "isBold": true
         },
         {
           "text": "Exception Handling Middleware",
           "rawText": "Exception Handling Middleware",
-          "x": 72.024,
-          "y": 677.38,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f4"
+          "startX": 72,
+          "y": 677,
+          "isBold": true
         },
         {
           "text": "Handles all errors occurred in filter pipeline (including model binding, controllers and filters).",
           "rawText": "Handles all errors occurred in filter pipeline (including model binding, controllers and filters).",
-          "x": 72.024,
-          "y": 654.94,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 72,
+          "y": 655,
+          "isBold": false
         },
         {
           "text": "Should be added to the application pipeline, before RoutingMiddleware.",
           "rawText": "Should be added to the application pipeline, before RoutingMiddleware.",
-          "x": 72.024,
-          "y": 632.38,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 72,
+          "y": 632,
+          "isBold": false
         }
       ],
       "blocks": [
@@ -86,7 +81,7 @@
             "Handles all errors occurred in filter pipeline (including model binding, controllers and filters).",
             "Should be added to the application pipeline, before RoutingMiddleware."
           ],
-          "text": "Handles all errors occurred in filter pipeline (including model binding, controllers and filters).\nShould be added to the application pipeline, before RoutingMiddleware."
+          "text": "Handles all errors occurred in filter pipeline (including model binding, controllers and filters). Should be added to the application pipeline, before RoutingMiddleware."
         }
       ],
       "char_count_raw": 277,
@@ -95,172 +90,152 @@
     {
       "page_number": 2,
       "raw_text": "Custom Exception Handling Middleware\npublic class ExceptionHandlingMiddleware\n{\nprivate readonly RequestDelegate _next; //Stores reference of subsequent middleware\npublic ExceptionHandlingMiddleware(RequestDelegate next)\n{\n_next = next;\n}\npublic async Task InvokeAsync(HttpContext context)\n{\ntry\n{\nawait _next(context);\n}\ncatch(Exception ex)\n{\n…\n}\n}\n}\n",
-      "repaired_text": "Custom Exception Handling Middleware\npublic class ExceptionHandlingMiddleware\n{\n private readonly RequestDelegate _next; //Stores reference of subsequent middleware\n public ExceptionHandlingMiddleware(RequestDelegate next)\n {\n  _next = next;\n }\n public async Task InvokeAsync(HttpContext context)\n {\n  try\n  {\n  await _next(context);\n  }\n  catch(Exception ex)\n  {\n  …\n  }\n }\n}",
+      "repaired_text": "Custom Exception Handling Middleware\npublic class ExceptionHandlingMiddleware\n{\nprivate readonly RequestDelegate _next; //Stores reference of subsequent middleware\npublic ExceptionHandlingMiddleware(RequestDelegate next)\n{\n_next = next;\n}\npublic async Task InvokeAsync(HttpContext context)\n{\ntry\n{\nawait _next(context);\n}\ncatch(Exception ex)\n{\n…\n}\n}\n}",
       "lines": [
         {
           "text": "Custom Exception Handling Middleware",
           "rawText": "Custom Exception Handling Middleware",
-          "x": 72.024,
-          "y": 759.48,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f4"
+          "startX": 72,
+          "y": 759,
+          "isBold": true
         },
         {
           "text": "public class ExceptionHandlingMiddleware",
           "rawText": "public class ExceptionHandlingMiddleware",
-          "x": 72.024,
-          "y": 737.02,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 72,
+          "y": 737,
+          "isBold": false
         },
         {
           "text": "{",
           "rawText": "{",
-          "x": 72.024,
-          "y": 714.46,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 72,
+          "y": 714,
+          "isBold": false
         },
         {
-          "text": " private readonly RequestDelegate _next; //Stores reference of subsequent middleware",
+          "text": "private readonly RequestDelegate _next; //Stores reference of subsequent middleware",
           "rawText": "private readonly RequestDelegate _next; //Stores reference of subsequent middleware",
-          "x": 77.064,
-          "y": 692.02,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 77,
+          "y": 692,
+          "isBold": false
         },
         {
-          "text": " public ExceptionHandlingMiddleware(RequestDelegate next)",
+          "text": "public ExceptionHandlingMiddleware(RequestDelegate next)",
           "rawText": "public ExceptionHandlingMiddleware(RequestDelegate next)",
-          "x": 77.064,
-          "y": 647.02,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 77,
+          "y": 647,
+          "isBold": false
         },
         {
-          "text": " {",
+          "text": "{",
           "rawText": "{",
-          "x": 77.064,
-          "y": 624.46,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 77,
+          "y": 624,
+          "isBold": false
         },
         {
-          "text": "  _next = next;",
+          "text": "_next = next;",
           "rawText": "_next = next;",
-          "x": 82.104,
-          "y": 602.02,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
-        },
-        {
-          "text": " }",
-          "rawText": "}",
-          "x": 77.064,
-          "y": 579.58,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
-        },
-        {
-          "text": " public async Task InvokeAsync(HttpContext context)",
-          "rawText": "public async Task InvokeAsync(HttpContext context)",
-          "x": 77.064,
-          "y": 556.99,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
-        },
-        {
-          "text": " {",
-          "rawText": "{",
-          "x": 77.064,
-          "y": 534.55,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
-        },
-        {
-          "text": "  try",
-          "rawText": "try",
-          "x": 82.104,
-          "y": 511.99,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
-        },
-        {
-          "text": "  {",
-          "rawText": "{",
-          "x": 82.104,
-          "y": 489.55,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
-        },
-        {
-          "text": "  await _next(context);",
-          "rawText": "await _next(context);",
-          "x": 87.024,
-          "y": 467.11,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
-        },
-        {
-          "text": "  }",
-          "rawText": "}",
-          "x": 82.104,
-          "y": 444.55,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
-        },
-        {
-          "text": "  catch(Exception ex)",
-          "rawText": "catch(Exception ex)",
-          "x": 82.104,
-          "y": 422.11,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
-        },
-        {
-          "text": "  {",
-          "rawText": "{",
-          "x": 82.104,
-          "y": 399.55,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
-        },
-        {
-          "text": "  …",
-          "rawText": "…",
-          "x": 87.024,
-          "y": 377.09,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f6"
-        },
-        {
-          "text": "  }",
-          "rawText": "}",
-          "x": 82.104,
-          "y": 354.53,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
-        },
-        {
-          "text": " }",
-          "rawText": "}",
-          "x": 77.064,
-          "y": 332.09,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 82,
+          "y": 602,
+          "isBold": false
         },
         {
           "text": "}",
           "rawText": "}",
-          "x": 72.024,
-          "y": 309.65,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 77,
+          "y": 580,
+          "isBold": false
+        },
+        {
+          "text": "public async Task InvokeAsync(HttpContext context)",
+          "rawText": "public async Task InvokeAsync(HttpContext context)",
+          "startX": 77,
+          "y": 557,
+          "isBold": false
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "startX": 77,
+          "y": 535,
+          "isBold": false
+        },
+        {
+          "text": "try",
+          "rawText": "try",
+          "startX": 82,
+          "y": 512,
+          "isBold": false
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "startX": 82,
+          "y": 490,
+          "isBold": false
+        },
+        {
+          "text": "await _next(context);",
+          "rawText": "await _next(context);",
+          "startX": 87,
+          "y": 467,
+          "isBold": false
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "startX": 82,
+          "y": 445,
+          "isBold": false
+        },
+        {
+          "text": "catch(Exception ex)",
+          "rawText": "catch(Exception ex)",
+          "startX": 82,
+          "y": 422,
+          "isBold": false
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "startX": 82,
+          "y": 400,
+          "isBold": false
+        },
+        {
+          "text": "…",
+          "rawText": "…",
+          "startX": 87,
+          "y": 377,
+          "isBold": true
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "startX": 82,
+          "y": 355,
+          "isBold": false
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "startX": 77,
+          "y": 332,
+          "isBold": false
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "startX": 72,
+          "y": 310,
+          "isBold": false
         }
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "prose",
           "page": 2,
           "lines": [
             "Custom Exception Handling Middleware"
@@ -273,178 +248,160 @@
           "lines": [
             "public class ExceptionHandlingMiddleware",
             "{",
-            " private readonly RequestDelegate _next; //Stores reference of subsequent middleware",
-            " public ExceptionHandlingMiddleware(RequestDelegate next)",
-            " {",
-            "  _next = next;",
-            " }",
-            " public async Task InvokeAsync(HttpContext context)",
-            " {",
-            "  try",
-            "  {",
-            "  await _next(context);",
-            "  }",
-            "  catch(Exception ex)",
-            "  {",
-            "  …",
-            "  }",
-            " }",
+            "private readonly RequestDelegate _next; //Stores reference of subsequent middleware",
+            "public ExceptionHandlingMiddleware(RequestDelegate next)",
+            "{",
+            "_next = next;",
+            "}",
+            "public async Task InvokeAsync(HttpContext context)",
+            "{",
+            "try",
+            "{",
+            "await _next(context);",
+            "}",
+            "catch(Exception ex)",
+            "{",
+            "…",
+            "}",
+            "}",
             "}"
           ],
-          "text": "public class ExceptionHandlingMiddleware\n{\n private readonly RequestDelegate _next; //Stores reference of subsequent middleware\n public ExceptionHandlingMiddleware(RequestDelegate next)\n {\n  _next = next;\n }\n public async Task InvokeAsync(HttpContext context)\n {\n  try\n  {\n  await _next(context);\n  }\n  catch(Exception ex)\n  {\n  …\n  }\n }\n}"
+          "text": "public class ExceptionHandlingMiddleware\n{\nprivate readonly RequestDelegate _next; //Stores reference of subsequent middleware\npublic ExceptionHandlingMiddleware(RequestDelegate next)\n{\n_next = next;\n}\npublic async Task InvokeAsync(HttpContext context)\n{\ntry\n{\nawait _next(context);\n}\ncatch(Exception ex)\n{\n…\n}\n}\n}"
         }
       ],
       "char_count_raw": 352,
-      "char_count_repaired": 376
+      "char_count_repaired": 351
     },
     {
       "page_number": 3,
       "raw_text": "Custom Exceptions\nA custom exception class is an exception class that inherits from System.Exception class &\nrepresents a domain-specific exception\nUsed to represent the domain-specific errors stand-out of system-related (.NET) related exceptions.\nCustom Exception class\npublic class CustomException : Exception\n{\npublic CustomException() : base()\n{\n}\npublic CustomException(string? message) : base(message)\n{\n}\npublic CustomException(string? message, Exception? innerException) : base(message,\ninnerException)\n{\n}\n}\n",
-      "repaired_text": "Custom Exceptions\nA custom exception class is an exception class that inherits from System.Exception class &\nrepresents a domain-specific exception\nUsed to represent the domain-specific errors stand-out of system-related (.NET) related exceptions.\nCustom Exception class\npublic class CustomException : Exception\n{\n public CustomException() : base()\n {\n }\n public CustomException(string? message) : base(message)\n {\n }\n public CustomException(string? message, Exception? innerException) : base(message,\ninnerException)\n {\n }\n}",
+      "repaired_text": "Custom Exceptions\nA custom exception class is an exception class that inherits from System.Exception class &\nrepresents a domain-specific exception\nUsed to represent the domain-specific errors stand-out of system-related (.NET) related exceptions.\nCustom Exception class\npublic class CustomException : Exception\n{\npublic CustomException() : base()\n{\n}\npublic CustomException(string? message) : base(message)\n{\n}\npublic CustomException(string? message, Exception? innerException) : base(message,\ninnerException)\n{\n}\n}",
       "lines": [
         {
           "text": "Custom Exceptions",
           "rawText": "Custom Exceptions",
-          "x": 72.024,
-          "y": 759.48,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f4"
+          "startX": 72,
+          "y": 759,
+          "isBold": true
         },
         {
           "text": "A custom exception class is an exception class that inherits from System.Exception class &",
           "rawText": "A custom exception class is an exception class that inherits from System.Exception class &",
-          "x": 72.024,
-          "y": 737.02,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 72,
+          "y": 737,
+          "isBold": false
         },
         {
           "text": "represents a domain-specific exception",
           "rawText": "represents a domain-specific exception",
-          "x": 72.024,
-          "y": 722.5,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 72,
+          "y": 723,
+          "isBold": false
         },
         {
           "text": "Used to represent the domain-specific errors stand-out of system-related (.NET) related exceptions.",
           "rawText": "Used to represent the domain-specific errors stand-out of system-related (.NET) related exceptions.",
-          "x": 72.024,
-          "y": 699.94,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 72,
+          "y": 700,
+          "isBold": false
         },
         {
           "text": "Custom Exception class",
           "rawText": "Custom Exception class",
-          "x": 72.024,
-          "y": 432.91,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f4"
+          "startX": 72,
+          "y": 433,
+          "isBold": true
         },
         {
           "text": "public class CustomException : Exception",
           "rawText": "public class CustomException : Exception",
-          "x": 72.024,
-          "y": 410.47,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 72,
+          "y": 410,
+          "isBold": false
         },
         {
           "text": "{",
           "rawText": "{",
-          "x": 72.024,
-          "y": 387.89,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 72,
+          "y": 388,
+          "isBold": false
         },
         {
-          "text": " public CustomException() : base()",
+          "text": "public CustomException() : base()",
           "rawText": "public CustomException() : base()",
-          "x": 77.064,
-          "y": 365.45,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 77,
+          "y": 365,
+          "isBold": false
         },
         {
-          "text": " {",
+          "text": "{",
           "rawText": "{",
-          "x": 77.064,
-          "y": 342.89,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
-        },
-        {
-          "text": " }",
-          "rawText": "}",
-          "x": 77.064,
-          "y": 320.45,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
-        },
-        {
-          "text": " public CustomException(string? message) : base(message)",
-          "rawText": "public CustomException(string? message) : base(message)",
-          "x": 77.064,
-          "y": 275.45,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
-        },
-        {
-          "text": " {",
-          "rawText": "{",
-          "x": 77.064,
-          "y": 253.01,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
-        },
-        {
-          "text": " }",
-          "rawText": "}",
-          "x": 77.064,
-          "y": 230.45,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
-        },
-        {
-          "text": " public CustomException(string? message, Exception? innerException) : base(message,",
-          "rawText": "public CustomException(string? message, Exception? innerException) : base(message,",
-          "x": 77.064,
-          "y": 185.42,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
-        },
-        {
-          "text": "innerException)",
-          "rawText": "innerException)",
-          "x": 72.024,
-          "y": 171.02,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
-        },
-        {
-          "text": " {",
-          "rawText": "{",
-          "x": 77.064,
-          "y": 148.46,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
-        },
-        {
-          "text": " }",
-          "rawText": "}",
-          "x": 77.064,
-          "y": 126.02,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 77,
+          "y": 343,
+          "isBold": false
         },
         {
           "text": "}",
           "rawText": "}",
-          "x": 72.024,
-          "y": 103.46,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 77,
+          "y": 320,
+          "isBold": false
+        },
+        {
+          "text": "public CustomException(string? message) : base(message)",
+          "rawText": "public CustomException(string? message) : base(message)",
+          "startX": 77,
+          "y": 275,
+          "isBold": false
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "startX": 77,
+          "y": 253,
+          "isBold": false
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "startX": 77,
+          "y": 230,
+          "isBold": false
+        },
+        {
+          "text": "public CustomException(string? message, Exception? innerException) : base(message,",
+          "rawText": "public CustomException(string? message, Exception? innerException) : base(message,",
+          "startX": 77,
+          "y": 185,
+          "isBold": false
+        },
+        {
+          "text": "innerException)",
+          "rawText": "innerException)",
+          "startX": 72,
+          "y": 171,
+          "isBold": false
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "startX": 77,
+          "y": 148,
+          "isBold": false
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "startX": 77,
+          "y": 126,
+          "isBold": false
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "startX": 72,
+          "y": 103,
+          "isBold": false
         }
       ],
       "blocks": [
@@ -462,17 +419,10 @@
           "lines": [
             "A custom exception class is an exception class that inherits from System.Exception class &",
             "represents a domain-specific exception",
-            "Used to represent the domain-specific errors stand-out of system-related (.NET) related exceptions."
-          ],
-          "text": "A custom exception class is an exception class that inherits from System.Exception class &\nrepresents a domain-specific exception\nUsed to represent the domain-specific errors stand-out of system-related (.NET) related exceptions."
-        },
-        {
-          "type": "heading",
-          "page": 3,
-          "lines": [
+            "Used to represent the domain-specific errors stand-out of system-related (.NET) related exceptions.",
             "Custom Exception class"
           ],
-          "text": "Custom Exception class"
+          "text": "A custom exception class is an exception class that inherits from System.Exception class & represents a domain-specific exception Used to represent the domain-specific errors stand-out of system-related (.NET) related exceptions. Custom Exception class"
         },
         {
           "type": "code",
@@ -480,23 +430,23 @@
           "lines": [
             "public class CustomException : Exception",
             "{",
-            " public CustomException() : base()",
-            " {",
-            " }",
-            " public CustomException(string? message) : base(message)",
-            " {",
-            " }",
-            " public CustomException(string? message, Exception? innerException) : base(message,",
+            "public CustomException() : base()",
+            "{",
+            "}",
+            "public CustomException(string? message) : base(message)",
+            "{",
+            "}",
+            "public CustomException(string? message, Exception? innerException) : base(message,",
             "innerException)",
-            " {",
-            " }",
+            "{",
+            "}",
             "}"
           ],
-          "text": "public class CustomException : Exception\n{\n public CustomException() : base()\n {\n }\n public CustomException(string? message) : base(message)\n {\n }\n public CustomException(string? message, Exception? innerException) : base(message,\ninnerException)\n {\n }\n}"
+          "text": "public class CustomException : Exception\n{\npublic CustomException() : base()\n{\n}\npublic CustomException(string? message) : base(message)\n{\n}\npublic CustomException(string? message, Exception? innerException) : base(message,\ninnerException)\n{\n}\n}"
         }
       ],
       "char_count_raw": 517,
-      "char_count_repaired": 525
+      "char_count_repaired": 516
     },
     {
       "page_number": 4,
@@ -506,50 +456,44 @@
         {
           "text": "UseExceptionHandler()",
           "rawText": "UseExceptionHandler()",
-          "x": 72.024,
-          "y": 737.02,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f4"
+          "startX": 72,
+          "y": 737,
+          "isBold": true
         },
         {
           "text": "The built-in UseExceptionHandler() middleware redirects to the specified route path, when an",
           "rawText": "The built-in UseExceptionHandler() middleware redirects to the specified route path, when an",
-          "x": 72.024,
-          "y": 714.46,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 72,
+          "y": 714,
+          "isBold": false
         },
         {
           "text": "unhandled exception occurs during the application execution.",
           "rawText": "unhandled exception occurs during the application execution.",
-          "x": 72.024,
-          "y": 699.94,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 72,
+          "y": 700,
+          "isBold": false
         },
         {
           "text": "Can be used as an alternative to custom exception handling middleware.",
           "rawText": "Can be used as an alternative to custom exception handling middleware.",
-          "x": 72.024,
-          "y": 677.5,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 72,
+          "y": 678,
+          "isBold": false
         },
         {
           "text": "Catches and logs unhandled exceptions.",
           "rawText": "Catches and logs unhandled exceptions.",
-          "x": 72.024,
-          "y": 554.11,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 72,
+          "y": 554,
+          "isBold": false
         },
         {
           "text": "Re-executes the request in an alternative pipeline using the specified route path.",
           "rawText": "Re-executes the request in an alternative pipeline using the specified route path.",
-          "x": 72.024,
-          "y": 531.55,
-          "fontSize": 11.04,
-          "fontName": "g_d43_f1"
+          "startX": 72,
+          "y": 532,
+          "isBold": false
         }
       ],
       "blocks": [
@@ -571,7 +515,7 @@
             "Catches and logs unhandled exceptions.",
             "Re-executes the request in an alternative pipeline using the specified route path."
           ],
-          "text": "The built-in UseExceptionHandler() middleware redirects to the specified route path, when an\nunhandled exception occurs during the application execution.\nCan be used as an alternative to custom exception handling middleware.\nCatches and logs unhandled exceptions.\nRe-executes the request in an alternative pipeline using the specified route path."
+          "text": "The built-in UseExceptionHandler() middleware redirects to the specified route path, when an unhandled exception occurs during the application execution. Can be used as an alternative to custom exception handling middleware. Catches and logs unhandled exceptions. Re-executes the request in an alternative pipeline using the specified route path."
         }
       ],
       "char_count_raw": 369,

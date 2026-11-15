@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -376,12 +386,12 @@
         <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
           <a href="../index.html">Curriculum</a>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
           <span class="breadcrumb-current" aria-current="page">Section 24</span>
         </nav>
         <div class="section-meta-row">
-          <span class="module-badge">Module 5</span>
+          <span class="module-badge">Module 6</span>
           <span class="read-time-badge">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             8 PDF Pages
@@ -398,51 +408,50 @@
 
       <!-- Body Content -->
       <article class="docs-content">
-        <p>Clean Architecture in ASP.NET Core
-Clean Architecture, also known as Onion Architecture, is a software design principle that emphasizes
-separation of concerns, testability, and maintainability. It achieves this by organizing your
-application into layers, with each layer having a specific responsibility and dependency direction.</p>
+        
+<h2 id="clean-architecture-in-aspnet-core">Clean Architecture in ASP.NET Core</h2>
+<p>Clean Architecture, also known as Onion Architecture, is a software design principle that emphasizes separation of concerns, testability, and maintainability. It achieves this by organizing your application into layers, with each layer having a specific responsibility and dependency direction.</p>
 
 <h2 id="core-layers">Core Layers</h2>
 <ul>
   <li>1. Domain Layer (Core)</li>
   <li>Purpose: The heart of your application, containing your business rules and domain
-           models.</li>
+models.</li>
   <li>Contents:</li>
   <li>Entities: Represent the core concepts of your domain (e.g., Person, Order,
-                 Product).</li>
+Product).</li>
   <li>Value Objects: Immutable objects representing concepts like Money,
-                 Address, or EmailAddress.</li>
+Address, or EmailAddress.</li>
   <li>Domain Services: Encapsulate complex business logic or operations that
-                 involve multiple entities.</li>
+involve multiple entities.</li>
   <li>Interfaces (Contracts): Define the contracts for repositories and other
-                 dependencies.</li>
+dependencies.</li>
   <li>Dependencies: None. The domain layer is independent of any external
-           infrastructure or frameworks.</li>
+infrastructure or frameworks.</li>
   <li>2. Application Layer</li>
   <li>Purpose: Orchestrates the use cases of your application.</li>
   <li>Contents:</li>
   <li>Use Cases (Application Services): Implement the high-level use cases or
-                 operations of your system (e.g., CreatePerson, GetPersonById).</li>
+operations of your system (e.g., CreatePerson, GetPersonById).</li>
   <li>DTOs (Data Transfer Objects): Represent data structures used for
-                 communication between layers.</li>
+communication between layers.</li>
   <li>Interfaces (Contracts): Define the contracts for infrastructure services (e.g.,
-                 repositories, email services).</li>
+repositories, email services).</li>
   <li>Dependencies: Depends on the Domain Layer.</li>
   <li>3. Infrastructure Layer</li>
   <li>Purpose: Implements the technical details of how your application interacts with
-           external systems (databases, file systems, email services, etc.).</li>
+external systems (databases, file systems, email services, etc.).</li>
   <li>Contents:</li>
   <li>Repositories: Implement the data access logic for your entities.</li>
   <li>Services: Implement the interfaces defined in the application layer for
-                 interacting with external systems (e.g., EmailService, FileStorageService).</li>
+interacting with external systems (e.g., EmailService, FileStorageService).</li>
   <li>Dependencies: Depends on the Application Layer and any external libraries or
-           frameworks needed for infrastructure tasks.</li>
+frameworks needed for infrastructure tasks.</li>
   <li>4. Presentation Layer (UI)</li>
   <li>Purpose: Handles user interaction and presentation logic.</li>
   <li>Contents:</li>
   <li>Controllers: Handle HTTP requests, interact with use cases, and return views
-                 or API responses.</li>
+or API responses.</li>
   <li>Views: Render the user interface.</li>
   <li>View Models: Shape data for presentation in views.</li>
   <li>Dependencies: Depends on the Application Layer.</li>
@@ -450,18 +459,18 @@ application into layers, with each layer having a specific responsibility and de
   <li>Purpose: Ensures the correctness of your application&#39;s behavior.</li>
   <li>Contents:</li>
   <li>Unit Tests: Test individual units of code (e.g., domain models, services) in
-                 isolation.</li>
+isolation.</li>
   <li>Integration Tests: Test the interaction between multiple components.</li>
   <li>End-to-End Tests: Test the entire application flow from the user&#39;s
-                 perspective.</li>
+perspective.</li>
 </ul>
 <p>Dependency Direction:</p>
 <ul>
   <li>Inner Layers to Outer Layers: Dependencies flow from the inner layers (Domain) to the
-      outer layers (Presentation).</li>
+outer layers (Presentation).</li>
   <li>Abstraction: Outer layers depend on abstractions (interfaces) defined in the inner layers.
-      This allows you to easily swap implementations in the outer layers without affecting the core
-      business logic.</li>
+This allows you to easily swap implementations in the outer layers without affecting the core
+business logic.</li>
 </ul>
 
 <h2 id="sample-code-implementation-persons-records-management">Sample Code Implementation (Persons Records Management)</h2>
@@ -479,83 +488,83 @@ application into layers, with each layer having a specific responsibility and de
 )
 public class Person
 {
-  public Guid PersonId { get; set; }
-  public string Name { get; set; }
-  // ... other properties
+public Guid PersonId { get; set; }
+public string Name { get; set; }
+// ... other properties
 }
 public interface IPersonsRepository
 {
-  Task&lt;Person&gt; AddPerson(Person person);
-  Task&lt;List&lt;Person&gt;&gt; GetAllPersons();
-  // ... other CRUD operations ...
+Task&lt;Person&gt; AddPerson(Person person);
+Task&lt;List&lt;Person&gt;&gt; GetAllPersons();
+// ... other CRUD operations ...
 }
 // Application Layer
 public class PersonDto { /* ... */ } // DTO for transferring person data
 public interface IPersonsService
 {
-  Task&lt;PersonDto&gt; CreatePerson(PersonDto personDto);
-  Task&lt;List&lt;PersonDto&gt;&gt; GetAllPersons();
-  // ... other operations ...
+Task&lt;PersonDto&gt; CreatePerson(PersonDto personDto);
+Task&lt;List&lt;PersonDto&gt;&gt; GetAllPersons();
+// ... other operations ...
 }
 public class PersonsService : IPersonsService
 {
-  private readonly IPersonsRepository _personsRepository;
-  public PersonsService(IPersonsRepository personsRepository)
-  {
-   _personsRepository = personsRepository;
-  }
-  public async Task&lt;PersonDto&gt; CreatePerson(PersonDto personDto)
-  {
-   // Validation, mapping, etc.
-   var person = new Person { /* ... map from DTO ... */ };
-   var createdPerson = await _personsRepository.AddPerson(person);
-   return createdPerson.ToDto(); // Map back to DTO
-  }
-  // ... other methods ...
+private readonly IPersonsRepository _personsRepository;
+public PersonsService(IPersonsRepository personsRepository)
+{
+_personsRepository = personsRepository;
+}
+public async Task&lt;PersonDto&gt; CreatePerson(PersonDto personDto)
+{
+// Validation, mapping, etc.
+var person = new Person { /* ... map from DTO ... */ };
+var createdPerson = await _personsRepository.AddPerson(person);
+return createdPerson.ToDto(); // Map back to DTO
+}
+// ... other methods ...
 }
 // Infrastructure Layer
 public class PersonsRepository : IPersonsRepository
 {
-  private readonly MyDbContext _dbContext;
-  public PersonsRepository(MyDbContext dbContext)
-  {
-   _dbContext = dbContext;
-  }
-  public async Task&lt;Person&gt; AddPerson(Person person)
-  {
-   _dbContext.Persons.Add(person);
-   await _dbContext.SaveChangesAsync();
-   return person;
-  }
-  // ... other methods ...
+private readonly MyDbContext _dbContext;
+public PersonsRepository(MyDbContext dbContext)
+{
+_dbContext = dbContext;
+}
+public async Task&lt;Person&gt; AddPerson(Person person)
+{
+_dbContext.Persons.Add(person);
+await _dbContext.SaveChangesAsync();
+return person;
+}
+// ... other methods ...
 }
 // Presentation Layer (UI) - Controller
 public class PersonsController : Controller
 {
-  private readonly IPersonsService _personsService;
-  public PersonsController(IPersonsService personsService)
-  {
-   _personsService = personsService;
-  }
-  [HttpPost]
-  public async Task&lt;IActionResult&gt; Create(PersonDto personDto)
-  {
-   if (!ModelState.IsValid)
-   {
-     return BadRequest(ModelState);
-   }
-   var createdPerson = await _personsService.CreatePerson(personDto);
-   return CreatedAtAction(nameof(GetPersonById), new { id = createdPerson.PersonId },
+private readonly IPersonsService _personsService;
+public PersonsController(IPersonsService personsService)
+{
+_personsService = personsService;
+}
+[HttpPost]
+public async Task&lt;IActionResult&gt; Create(PersonDto personDto)
+{
+if (!ModelState.IsValid)
+{
+return BadRequest(ModelState);
+}
+var createdPerson = await _personsService.CreatePerson(personDto);
+return CreatedAtAction(nameof(GetPersonById), new { id = createdPerson.PersonId },
 createdPerson);
-  }
-  // ... other actions ...
+}
+// ... other actions ...
 }</code></pre>
     </div>
   <p>Explanation:</p>
 <ul>
   <li>The Domain layer defines the core Person entity and the IPersonsRepository interface.</li>
   <li>The Application layer defines the IPersonsService interface and the PersonsService
-      implementation that uses the repository to perform CRUD operations.</li>
+implementation that uses the repository to perform CRUD operations.</li>
   <li>The Infrastructure layer contains the PersonsRepository that implements the repository</li>
 </ul>
 
@@ -567,10 +576,12 @@ createdPerson);
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">interface and interacts with the database.
-   • The Presentation layer has the PersonsController that handles requests, uses the</code></pre>
+      <pre><code class="language-csharp">interface and interacts with the database.</code></pre>
     </div>
-  <p>PersonsService, and returns appropriate responses.</p>
+  <ul>
+  <li>The Presentation layer has the PersonsController that handles requests, uses the
+PersonsService, and returns appropriate responses.</li>
+</ul>
 
 <h2 id="notes">Notes</h2>
 <ul>
@@ -580,20 +591,21 @@ createdPerson);
   <li>Testability: Each layer can be tested in isolation using mocks or stubs for its dependencies.</li>
   <li>Maintainability: Changes to one layer have minimal impact on other layers.</li>
   <li>Flexibility: You can easily swap out implementations in the outer layers (e.g., change the
-      database provider) without affecting the core business logic.</li>
+database provider) without affecting the core business logic.</li>
 </ul>
 
-<h2 id="key-points-to-remember">Key points to remember</h2>
-<p>Clean Architecture in ASP.NET Core</p>
+<h3 id="key-points-to-remember">Key points to remember</h3>
+
+<h2 id="clean-architecture-in-aspnet-core-1">Clean Architecture in ASP.NET Core</h2>
 <ul>
   <li>Separation of Concerns: Decouples the different parts of your application into well-defined
-      layers.</li>
+layers.</li>
   <li>Dependency Inversion Principle (DIP): Inner layers define abstractions (interfaces), outer
-      layers depend on these abstractions, leading to loose coupling.</li>
+layers depend on these abstractions, leading to loose coupling.</li>
   <li>Testability: Each layer can be tested in isolation using mocks or stubs.</li>
   <li>Maintainability: Easier to modify and extend the application as requirements evolve.</li>
   <li>Flexibility: You can swap out implementations in outer layers without affecting the core
-      business logic.</li>
+business logic.</li>
 </ul>
 
 <h2 id="layers">Layers</h2>
@@ -609,7 +621,7 @@ createdPerson);
   <li>Depends on the Domain layer.</li>
   <li>3. Infrastructure:</li>
   <li>Contains implementations of repositories, services for interacting with external
-           systems (e.g., email, database).</li>
+systems (e.g., email, database).</li>
   <li>Depends on the Application layer and external libraries/frameworks.</li>
   <li>4. Presentation (UI):</li>
   <li>Contains controllers, views, and view models.</li>
@@ -626,28 +638,28 @@ createdPerson);
   <li>Testability: Each layer is easily testable in isolation.</li>
   <li>Flexibility: Swapping implementations in outer layers doesn&#39;t affect the core.</li>
   <li>Focus on Business Logic: The domain layer is at the center, emphasizing the core of your
-      application.</li>
+application.</li>
 </ul>
 
 <h2 id="interview-tips">Interview Tips</h2>
 <ul>
   <li>Explain the Layers: Be able to clearly explain the purpose of each layer and how they
-      interact.</li>
+interact.</li>
   <li>Dependency Direction: Emphasize that dependencies flow inwards towards the Domain
-      layer.</li>
+layer.</li>
   <li>Abstractions: Highlight the importance of using interfaces to achieve loose coupling.</li>
   <li>Real-World Scenarios: Discuss how you&#39;ve used or would use Clean Architecture in a project.</li>
   <li>Benefits: Articulate the advantages of Clean Architecture in terms of maintainability,
-      testability, and flexibility.</li>
+testability, and flexibility.</li>
 </ul>
 <p>Remember:</p>
 <ul>
   <li>Trade-offs: Clean Architecture adds some complexity, so consider if it&#39;s appropriate for your
-      project&#39;s size and requirements.</li>
+project&#39;s size and requirements.</li>
   <li>Focus on the Domain: The domain layer should be the most important and stable part of
-      your application.</li>
+your application.</li>
   <li>Continuous Refactoring: As your application evolves, continuously refactor to maintain the
-      separation of concerns and keep your code clean.</li>
+separation of concerns and keep your code clean.</li>
 </ul>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
@@ -655,10 +667,7 @@ createdPerson);
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
   <h3 id="overview-of-clean-architecture">Overview of Clean Architecture</h3>
-<p>Instead of &quot;business logic&quot; depend on &quot;data access logic&quot;, this dependency is inverted; that means,
-the &quot;data access logic&quot; depend on &quot;business logic&quot;.
-Benefit: The business logic is highly clean-separated, independent of data storage and UI, unittestable
-.</p>
+<p>Instead of &quot;business logic&quot; depend on &quot;data access logic&quot;, this dependency is inverted; that means, the &quot;data access logic&quot; depend on &quot;business logic&quot;. Benefit: The business logic is highly clean-separated, independent of data storage and UI, unit- testable.</p>
   <h3 id="traditional-three-tier-n-tier-architecture">Traditional Three-Tier / N-Tier Architecture</h3>
 <ol>
   <li>User Interface (UI)</li>
@@ -670,33 +679,34 @@ Benefit: The business logic is highly clean-separated, independent of data stora
   <h3 id="ui">UI</h3>
 <ol>
   <li>Controllers, Views, View Models</li>
-  <li>Filters, Middleware
-Core</li>
+  <li>Filters, Middleware</li>
+</ol>
+  <h3 id="core">Core</h3>
+<ol>
   <li>Business Logic Services</li>
   <li>Business Logic Interfaces</li>
-  <li>Data Transfer Objects (DTO)
-Domain</li>
-  <li>Repository Interfaces</li>
-  <li>Entity Classes
-Infrastructure</li>
-  <li><code>DbContext</code>, Repositories</li>
-  <li>External API Calls
-Clean Architecture
-Changing external system
-Allows you to change external systems (external APIs / third party services) easily, without affecting
-the application core.</li>
+  <li>Data Transfer Objects (DTO)</li>
 </ol>
+  <h3 id="domain">Domain</h3>
+<ol>
+  <li>Repository Interfaces</li>
+  <li>Entity Classes</li>
+</ol>
+  <h3 id="infrastructure">Infrastructure</h3>
+<ol>
+  <li><code>DbContext</code>, Repositories</li>
+  <li>External API Calls</li>
+</ol>
+  <h3 id="clean-architecture-1">Clean Architecture</h3>
+  <h3 id="changing-external-system">Changing external system</h3>
+<p>Allows you to change external systems (external APIs / third party services) easily, without affecting the application core.</p>
   <h3 id="scalable">Scalable</h3>
 <p>You can easily scale-up or scale-out, without really affecting overall architecture of the application.</p>
   <h3 id="database-independent">Database independent</h3>
-<p>The application core doesn&#39;t depend on specific databases; so you can change it any time, without
-affecting the application core.</p>
+<p>The application core doesn&#39;t depend on specific databases; so you can change it any time, without affecting the application core.</p>
   <h3 id="testable">Testable</h3>
-<p>The application core doesn&#39;t depend on any other external APIs or repositories; so that you can write
-unit tests against business logic services easily by mocking essential repositories.
-Clean architecture is earlier named as &quot;Hexagonal architecture&quot;, &quot;Onion architecture&quot;, &quot;Domain-
-Driven Design&quot;, &quot;Vertical Slice Architecture&quot;. Over time, it is popular as &quot;clean architecture&quot;.</p>
-  <h3 id="clean-architecture-1">Clean Architecture</h3>
+<p>The application core doesn&#39;t depend on any other external APIs or repositories; so that you can write unit tests against business logic services easily by mocking essential repositories. Clean architecture is earlier named as &quot;Hexagonal architecture&quot;, &quot;Onion architecture&quot;, &quot;Domain- Driven Design&quot;, &quot;Vertical Slice Architecture&quot;. Over time, it is popular as &quot;clean architecture&quot;.</p>
+  <h3 id="clean-architecture-2">Clean Architecture</h3>
 </section>
 
       </article>
@@ -742,6 +752,10 @@ Driven Design&quot;, &quot;Vertical Slice Architecture&quot;. Over time, it is p
       <ul class="toc-list">
         
         <li class="toc-item">
+          <a href="#clean-architecture-in-aspnet-core" class="toc-link">Clean Architecture in ASP.NET Core</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#core-layers" class="toc-link">Core Layers</a>
         </li>
       
@@ -754,7 +768,11 @@ Driven Design&quot;, &quot;Vertical Slice Architecture&quot;. Over time, it is p
         </li>
       
         <li class="toc-item">
-          <a href="#key-points-to-remember" class="toc-link">Key points to remember</a>
+          <a href="#key-points-to-remember" class="toc-link toc-sub">Key points to remember</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#clean-architecture-in-aspnet-core-1" class="toc-link">Clean Architecture in ASP.NET Core</a>
         </li>
       
         <li class="toc-item">

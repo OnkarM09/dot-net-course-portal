@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -376,12 +386,12 @@
         <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
           <a href="../index.html">Curriculum</a>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
           <span class="breadcrumb-current" aria-current="page">Section 25</span>
         </nav>
         <div class="section-meta-row">
-          <span class="module-badge">Module 5</span>
+          <span class="module-badge">Module 6</span>
           <span class="read-time-badge">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             6 PDF Pages
@@ -398,21 +408,20 @@
 
       <!-- Body Content -->
       <article class="docs-content">
-        <p>ASP.NET Core Identity &amp; Authorization
-ASP.NET Core Identity is a robust and flexible membership system that enables you to add
-authentication and authorization features to your web applications. It provides essential building
-blocks for managing user accounts, passwords, roles, claims, tokens, and more.</p>
+        
+<h2 id="aspnet-core-identity-authorization">ASP.NET Core Identity &amp; Authorization</h2>
+<p>ASP.NET Core Identity is a robust and flexible membership system that enables you to add authentication and authorization features to your web applications. It provides essential building blocks for managing user accounts, passwords, roles, claims, tokens, and more.</p>
 
 <h2 id="purpose-and-when-to-use">Purpose and When to Use</h2>
 <ul>
   <li>User Authentication: Verify user identities and control access to protected resources.</li>
   <li>User Management: Handle user registration, login, logout, password reset, and profile
-      management.</li>
+management.</li>
   <li>Role-Based Authorization: Restrict access to specific actions or features based on user roles.</li>
   <li>Claims-Based Authorization: Make authorization decisions based on claims (attributes)
-      associated with a user.</li>
+associated with a user.</li>
   <li>External Login Providers: Integrate with external authentication providers (Google,
-      Facebook, etc.).</li>
+Facebook, etc.).</li>
   <li>Two-Factor Authentication (2FA): Add an extra layer of security to your login process.</li>
 </ul>
 
@@ -420,11 +429,11 @@ blocks for managing user accounts, passwords, roles, claims, tokens, and more.</
 <ul>
   <li>Identity Models:</li>
   <li>ApplicationUser: Extends the IdentityUser class to represent your application&#39;s
-           users. It can include additional properties like PersonName (in your example).</li>
+users. It can include additional properties like PersonName (in your example).</li>
   <li>ApplicationRole: Extends the IdentityRole class to define roles within your
-           application.</li>
+application.</li>
   <li>UserManager&lt;TUser&gt;: A core service for managing user accounts (creating, deleting,
-      finding, updating).</li>
+finding, updating).</li>
   <li>SignInManager&lt;TUser&gt;: Handles user sign-in and sign-out operations.</li>
   <li>RoleManager&lt;TRole&gt;: Manages roles and their assignments to users.</li>
 </ul>
@@ -433,7 +442,7 @@ blocks for managing user accounts, passwords, roles, claims, tokens, and more.</
 <p>AccountController:</p>
 <ul>
   <li>Constructor: The constructor injects the UserManager, SignInManager, and RoleManager
-      services.</li>
+services.</li>
   <li>Register (GET): Displays the registration form.</li>
   <li>Register (POST):</li>
   <li>1. Model Validation: Checks if the submitted RegisterDTO is valid.</li>
@@ -444,75 +453,76 @@ blocks for managing user accounts, passwords, roles, claims, tokens, and more.</
   <li>4. Sign-In: Signs the user in upon successful registration.</li>
   <li>5. Redirect: Redirects to the PersonsController.Index action.</li>
   <li>6. Error Handling: If user creation fails, adds errors to the ModelState and re-renders
-           the Register view.</li>
+the Register view.</li>
   <li>Login (GET): Displays the login form.</li>
   <li>Login (POST):</li>
   <li>1. Model Validation: Checks if the submitted LoginDTO is valid.</li>
   <li>2. Sign-In Attempt: Attempts to sign in the user using
-           _signInManager.PasswordSignInAsync.</li>
+_signInManager.PasswordSignInAsync.</li>
   <li>3. Redirect (if successful):</li>
   <li>Redirects to the Admin area&#39;s Home/Index if the user is an admin.</li>
   <li>Redirects to the ReturnUrl (if provided and valid) or to
-                 PersonsController.Index otherwise.</li>
+PersonsController.Index otherwise.</li>
   <li>4. Error Handling: If sign-in fails, adds an error to the ModelState and re-renders the
-           Login view.</li>
+Login view.</li>
   <li>Logout:</li>
   <li>[Authorize]: Ensures the user is authenticated before accessing this action.</li>
   <li>Signs the user out: Uses _signInManager.SignOutAsync.</li>
   <li>Redirect: Redirects to PersonsController.Index.</li>
   <li>IsEmailAlreadyRegistered:</li>
-  <li>[AllowAnonymous]: Allows anonymous users to access this action (useful for clientside
-validation).</li>
+  <li>[AllowAnonymous]: Allows anonymous users to access this action (useful for client-
+side validation).</li>
   <li>Checks for Existing User: Uses _userManager.FindByEmailAsync to see if a user with
-           the given email already exists.</li>
+the given email already exists.</li>
   <li>Returns JSON: Returns true if the email is available (no user found) and false
-           otherwise.</li>
+otherwise.</li>
 </ul>
 <p><code>Program.cs</code>:</p>
 <ul>
   <li>AddControllersWithViews(): Enables MVC controllers and views.</li>
   <li>AddIdentity&lt;ApplicationUser, ApplicationRole&gt;: Configures ASP.NET Core Identity with
-      your custom user and role types.</li>
-  <li>ptions.Password: Sets password complexity requirements.</li>
+your custom user and role types.</li>
+  <li>options.Password: Sets password complexity requirements.</li>
   <li>AddEntityFrameworkStores&lt;ApplicationDbContext&gt;: Configures EF Core to store Identity
-      data in your ApplicationDbContext.</li>
+data in your ApplicationDbContext.</li>
   <li>AddDefaultTokenProviders(): Adds default token providers for features like password reset
-      and two-factor authentication.</li>
+and two-factor authentication.</li>
   <li>AddUserStore, AddRoleStore: Configures specific stores for user and role data.</li>
   <li>AddAuthorization(): Sets up authorization policies.</li>
   <li>FallbackPolicy: Default policy applied if no specific policy is specified.</li>
   <li>AddPolicy(&quot;NotAuthorized&quot;, ...): Custom policy to allow only unauthenticated users.</li>
   <li>ConfigureApplicationCookie(): Customizes the cookie authentication options, setting the
-      login path.</li>
+login path.</li>
   <li>AddHttpLogging(): Enables HTTP logging with specified fields.</li>
 </ul>
 <p>Notes:</p>
 <ul>
   <li>IdentityUser and IdentityRole: Extend these base classes for your custom user and role
-      models.</li>
+models.</li>
   <li>UserManager, SignInManager, RoleManager: Core services for managing users, sign-in/out,
-      and roles.</li>
+and roles.</li>
   <li>[Authorize]: Attribute to restrict access to authenticated users.</li>
   <li>[AllowAnonymous]: Attribute to allow anonymous access.</li>
   <li>Authorization Policies: Use AddAuthorization to define custom policies.</li>
   <li>Password Complexity: Configure password requirements in AddIdentity.</li>
-  <li>Tag Helpers: In views, use tag helpers like asp-controller, asp-action, asp-for, and aspvalidation
--for.</li>
+  <li>Tag Helpers: In views, use tag helpers like asp-controller, asp-action, asp-for, and asp-
+validation-for.</li>
   <li>Client-Side Validation: You can enhance user experience by adding client-side validation
-      using JavaScript libraries.</li>
+using JavaScript libraries.</li>
   <li>ReturnUrl: Used to redirect users back to their original destination after logging in.</li>
   <li>Remote Validation: Allows for server-side validation of user input on the client-side using
-      AJAX.</li>
+AJAX.</li>
   <li>Areas: Organize large applications into logical areas, each with its own set of controllers,
-      views, and models.</li>
+views, and models.</li>
   <li>[Area] Attribute: Use to associate controllers with specific areas.</li>
   <li>HTTPS: Enable HTTPS in production for secure communication.</li>
   <li>XSRF (Cross-Site Request Forgery) Protection: Use [ValidateAntiForgeryToken] and tag
-      helpers in forms to prevent CSRF attacks.</li>
+helpers in forms to prevent CSRF attacks.</li>
 </ul>
 
-<h2 id="key-points-to-remember">Key Points to Remember</h2>
-<p>ASP.NET Core Identity</p>
+<h3 id="key-points-to-remember">Key Points to Remember</h3>
+
+<h2 id="aspnet-core-identity">ASP.NET Core Identity</h2>
 <ul>
   <li>Purpose: Robust membership system for user authentication and authorization.</li>
   <li>Key Features:</li>
@@ -520,8 +530,11 @@ validation).</li>
   <li>Password management (hashing, reset)</li>
   <li>Role-based and claims-based authorization</li>
   <li>External login providers (Google, Facebook, etc.)</li>
-  <li>Two-factor authentication (2FA)
-Identity Models</li>
+  <li>Two-factor authentication (2FA)</li>
+</ul>
+
+<h2 id="identity-models">Identity Models</h2>
+<ul>
   <li>ApplicationUser: Extends IdentityUser to represent your app&#39;s users.</li>
   <li>ApplicationRole: Extends IdentityRole to define roles in your app.</li>
 </ul>
@@ -536,35 +549,35 @@ Identity Models</li>
 <h2 id="views-and-controllers">Views and Controllers</h2>
 <ul>
   <li>Login and Logout Buttons: Use asp-controller and asp-action tag helpers to create
-      login/logout links.</li>
+login/logout links.</li>
   <li>Active Nav Link: Use a custom tag helper or CSS classes to highlight the active navigation
-      link.</li>
+link.</li>
   <li>Remote Validation: Use [Remote] attribute on model properties for server-side validation
-      during form input.</li>
+during form input.</li>
   <li>Conventional Routing: Use route attributes ([Route]) to define routes for actions like
-      Register and Login.</li>
+Register and Login.</li>
 </ul>
 
 <h2 id="security">Security</h2>
 <ul>
   <li>Password Complexity: Configure password requirements in AddIdentity (e.g., length, special
-      characters).</li>
+characters).</li>
   <li>Authorization Policies: Use [Authorize] and Authorize(policyName) to protect actions and
-      define custom policies.</li>
+define custom policies.</li>
   <li>ReturnUrl: In login forms, use ReturnUrl to redirect users back to their original destination.</li>
   <li>HTTPS: Always enable HTTPS in production to encrypt sensitive data.</li>
   <li>XSRF (Cross-Site Request Forgery) Protection:</li>
   <li>Use [ValidateAntiForgeryToken] in actions and @Html.AntiForgeryToken() in forms
-           to prevent CSRF attacks.</li>
+to prevent CSRF attacks.</li>
 </ul>
 
 <h2 id="additional-concepts">Additional Concepts</h2>
 <ul>
   <li>User Roles: Assign users to roles to control access to features.</li>
   <li>Areas: Organize large applications into logical areas, each with its own set of controllers and
-      views.</li>
+views.</li>
   <li>Claims-Based Authorization: Make authorization decisions based on claims associated with
-      the user.</li>
+the user.</li>
 </ul>
 
 <h2 id="code-snippets">Code Snippets</h2>
@@ -581,22 +594,46 @@ Identity Models</li>
         </button>
       </div>
       <pre><code class="language-csharp">ApplicationUser user = new ApplicationUser() { /* ... */ };
-IdentityResult result = await _userManager.CreateAsync(user, registerDTO.Password);
-   • Signing in a user:
-var result = await _signInManager.PasswordSignInAsync(loginDTO.Email, loginDTO.Password,
-isPersistent: false, lockoutOnFailure: false);
-   • Checking user roles:
-if (await _userManager.IsInRoleAsync(user, &quot;Admin&quot;)) { /* ... */ }</code></pre>
+IdentityResult result = await _userManager.CreateAsync(user, registerDTO.Password);</code></pre>
+    </div>
+  <ul>
+  <li>Signing in a user:</li>
+</ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">var result = await _signInManager.PasswordSignInAsync(loginDTO.Email, loginDTO.Password,
+isPersistent: false, lockoutOnFailure: false);</code></pre>
+    </div>
+  <ul>
+  <li>Checking user roles:</li>
+</ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">if (await _userManager.IsInRoleAsync(user, &quot;Admin&quot;)) { /* ... */ }</code></pre>
     </div>
   <p>Interview Tips</p>
 <ul>
   <li>Concepts: Explain authentication vs. authorization, role-based vs. claims-based
-      authorization.</li>
+authorization.</li>
   <li>Implementation: Demonstrate how you would set up user registration, login, and logout.</li>
   <li>Security: Emphasize the importance of security best practices (HTTPS, XSRF protection,
-      password hashing).</li>
+password hashing).</li>
   <li>Customization: Discuss how you would customize Identity (e.g., adding user profile fields,
-      creating custom authorization policies).</li>
+creating custom authorization policies).</li>
 </ul>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
@@ -604,13 +641,7 @@ if (await _userManager.IsInRoleAsync(user, &quot;Admin&quot;)) { /* ... */ }</co
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
   <h3 id="introduction-to-identity">Introduction to Identity</h3>
-<p>It is an API that manages users, passwords, profile data, roles, tokens, email confirmation, external
-logins etc.
-It is by default built on top of EntityFrameworkCore; you can also create custom data stores.
-IdentityUser&lt;T&gt;
-Acts as a base class for ApplicationUser class that acts as model class to store user details.
-You can add additional properties to the ApplicationUser class.
-Built-in Properties:</p>
+<p>It is an API that manages users, passwords, profile data, roles, tokens, email confirmation, external logins etc. It is by default built on top of EntityFrameworkCore; you can also create custom data stores. IdentityUser&lt;T&gt; Acts as a base class for ApplicationUser class that acts as model class to store user details. You can add additional properties to the ApplicationUser class. Built-in Properties:</p>
 <ol>
   <li>Id</li>
   <li>UserName</li>
@@ -618,21 +649,15 @@ Built-in Properties:</p>
   <li>Email</li>
   <li>PhoneNumber</li>
 </ol>
-<p>IdentityRole&lt;T&gt;
-Acts as a base class for ApplicationRole class that acts as model class to store role details. Eg:
-&quot;admin&quot;
-You can add additional properties to the ApplicationRole class.
-Built-in Properties:</p>
+<p>IdentityRole&lt;T&gt; Acts as a base class for ApplicationRole class that acts as model class to store role details. Eg: &quot;admin&quot; You can add additional properties to the ApplicationRole class. Built-in Properties:</p>
 <ol>
   <li>Id</li>
-  <li>Name
-Register View</li>
+  <li>Name</li>
 </ol>
+  <h3 id="register-view">Register View</h3>
   <h3 id="managers">Managers</h3>
   <h3 id="usermanager">UserManager</h3>
-<p>Provides business logic methods for managing users.
-It provides methods for creating, searching, updating and deleting users.
-Methods:</p>
+<p>Provides business logic methods for managing users. It provides methods for creating, searching, updating and deleting users. Methods:</p>
 <ul>
   <li>CreateAsync()</li>
   <li>DeleteAsync()</li>
@@ -642,14 +667,7 @@ Methods:</p>
   <li>FindByNameAsync()</li>
 </ul>
   <h3 id="signinmanager">SignInManager</h3>
-<p>Provides business logic methods for sign-in and sign-in functionality of the users.
-It provides methods for creating, searching, updating and deleting users.
-Methods:</p>
-  <h3 id="signinasync">SignInAsync()</h3>
-  <h3 id="passwordsigninasync">PasswordSignInAsync()</h3>
-  <h3 id="signoutasync">SignOutAsync()</h3>
-  <h3 id="issignedin">IsSignedIn()</h3>
-  <h3 id="password-complexity-configuration">Password Complexity Configuration</h3>
+<p>Provides business logic methods for sign-in and sign-in functionality of the users. It provides methods for creating, searching, updating and deleting users. Methods: SignInAsync() PasswordSignInAsync() SignOutAsync() IsSignedIn() Password Complexity Configuration</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -660,15 +678,15 @@ Methods:</p>
         </button>
       </div>
       <pre><code class="language-csharp">services.AddIdentity&lt;ApplicationUser, ApplicationRole&gt;(options =&gt; {
- options.Password.RequiredLength = 6; //number of characters required in password
- options.Password.RequireNonAlphanumeric = true; ) //is non-alphanumeric characters (symbols
+options.Password.RequiredLength = 6; //number of characters required in password
+options.Password.RequireNonAlphanumeric = true; ) //is non-alphanumeric characters (symbols
 required in password
- options.Password.RequireUppercase = true; //is at least one upper case character required in
+options.Password.RequireUppercase = true; //is at least one upper case character required in
 password
- options.Password.RequireLowercase = true; //is at least one lower case character required in
+options.Password.RequireLowercase = true; //is at least one lower case character required in
 password
- options.Password.RequireDigit = true; //is at least one digit required in password
- options.Password.RequiredUniqueChars = 1; //number of distinct characters required in password
+options.Password.RequireDigit = true; //is at least one digit required in password
+options.Password.RequiredUniqueChars = 1; //number of distinct characters required in password
 })</code></pre>
     </div>
   <p>.AddEntityFrameworkStores&lt;ApplicationDbContext&gt;()</p>
@@ -683,11 +701,10 @@ password
       </div>
       <pre><code class="language-csharp">.AddDefaultTokenProviders()</code></pre>
     </div>
-  <p>.AddUserStore&lt;UserStore&lt;ApplicationUser, ApplicationRole, ApplicationDbContext, Guid&gt;&gt;()
-.AddRoleStore&lt;RoleStore&lt;ApplicationRole, ApplicationDbContext, Guid&gt;&gt;();</p>
+  <p>.AddUserStore&lt;UserStore&lt;ApplicationUser, ApplicationRole, ApplicationDbContext, Guid&gt;&gt;() .AddRoleStore&lt;RoleStore&lt;ApplicationRole, ApplicationDbContext, Guid&gt;&gt;();</p>
   <h3 id="loginlogout-buttons">Login/Logout Buttons</h3>
   <h3 id="login-view">Login View</h3>
-  <h3 id="authorization-policy">Authorization Policy</h3>
+<p>Authorization Policy</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -699,13 +716,13 @@ password
       </div>
       <pre><code class="language-csharp">services.AddAuthorization(options =&gt;
 {
- var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
- options.FallbackPolicy = policy;
+var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+options.FallbackPolicy = policy;
 });</code></pre>
     </div>
-    <h3 id="returnurl">ReturnUrl</h3>
+  <p>ReturnUrl</p>
   <h3 id="remote-validation">Remote Validation</h3>
-  <h3 id="model-class">Model class</h3>
+<p>Model class</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -717,16 +734,11 @@ password
       </div>
       <pre><code class="language-csharp">public class ModelClassName
 {
- [Remote(action: &quot;action name&quot;, controller: &quot;controller name&quot;, ErrorMessage = &quot;error message&quot;)]
- public type PropertyName { get; set; }
+[Remote(action: &quot;action name&quot;, controller: &quot;controller name&quot;, ErrorMessage = &quot;error message&quot;)]
+public type PropertyName { get; set; }
 }</code></pre>
     </div>
-  <p>Conventional Routing</p>
-<p>Conventional routing is a type of routing system in asp.net core that defines route templates applied</p>
-<ul>
-  <li>n all controllers in the entire application.</li>
-</ul>
-<p>You can override this using attribute routing on a specific action method.</p>
+  <p>Conventional Routing Conventional routing is a type of routing system in asp.net core that defines route templates applied on all controllers in the entire application. You can override this using attribute routing on a specific action method.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -737,25 +749,18 @@ password
         </button>
       </div>
       <pre><code class="language-csharp">endpoints.MapControllerRoute(
- name: &quot;default&quot;,
- pattern: &quot;{controller=Persons}/{action=Index}/{id?}&quot;
+name: &quot;default&quot;,
+pattern: &quot;{controller=Persons}/{action=Index}/{id?}&quot;
 );</code></pre>
     </div>
     <h3 id="areas">Areas</h3>
-<p>Area is a group of related controllers, views and models that are related to specific module or
-specific user.</p>
+<p>Area is a group of related controllers, views and models that are related to specific module or specific user.</p>
   <h3 id="user-roles">User Roles</h3>
   <h3 id="role-based-authentication">Role Based Authentication</h3>
-<p>User-role defines type of the user that has access to specific resources of the application.
-Examples: Administrator role, Customer role etc.</p>
-  <h3 id="https">HTTPS</h3>
+<p>User-role defines type of the user that has access to specific resources of the application. Examples: Administrator role, Customer role etc.</p>
+<p>HTTPS</p>
   <h3 id="xsrf">XSRF</h3>
-<p>XSRF (Cross Site Request Forgery - CSRF) is a process of making a request to a web server from
-another domain, using an existing authentication of the same web server.
-Eg: attacker.com creates a form that sends malicious request to original.com.
-Attacker&#39;s request without AntiForgeryToken
-Attacker&#39;s request</p>
-<p>Legit request [No attacker.com]</p>
+<p>XSRF (Cross Site Request Forgery - CSRF) is a process of making a request to a web server from another domain, using an existing authentication of the same web server. Eg: attacker.com creates a form that sends malicious request to original.com. Attacker&#39;s request without AntiForgeryToken Attacker&#39;s request Legit request [No attacker.com]</p>
 </section>
 
       </article>
@@ -801,6 +806,10 @@ Attacker&#39;s request</p>
       <ul class="toc-list">
         
         <li class="toc-item">
+          <a href="#aspnet-core-identity-authorization" class="toc-link">ASP.NET Core Identity &amp; Authorization</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#purpose-and-when-to-use" class="toc-link">Purpose and When to Use</a>
         </li>
       
@@ -813,7 +822,15 @@ Attacker&#39;s request</p>
         </li>
       
         <li class="toc-item">
-          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+          <a href="#key-points-to-remember" class="toc-link toc-sub">Key Points to Remember</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#aspnet-core-identity" class="toc-link">ASP.NET Core Identity</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#identity-models" class="toc-link">Identity Models</a>
         </li>
       
         <li class="toc-item">

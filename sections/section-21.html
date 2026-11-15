@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -376,12 +386,12 @@
         <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
           <a href="../index.html">Curriculum</a>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
           <span class="breadcrumb-current" aria-current="page">Section 21</span>
         </nav>
         <div class="section-meta-row">
-          <span class="module-badge">Module 5</span>
+          <span class="module-badge">Module 6</span>
           <span class="read-time-badge">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             26 PDF Pages
@@ -398,10 +408,9 @@
 
       <!-- Body Content -->
       <article class="docs-content">
-        <p>Filters in ASP.NET Core MVC
-Filters are powerful components in ASP.NET Core MVC that allow you to intercept and execute code
-before, after, or even around the execution of your controller actions or Razor Pages. They provide a
-clean and modular way to implement cross-cutting concerns like:</p>
+        
+<h2 id="filters-in-aspnet-core-mvc">Filters in ASP.NET Core MVC</h2>
+<p>Filters are powerful components in ASP.NET Core MVC that allow you to intercept and execute code before, after, or even around the execution of your controller actions or Razor Pages. They provide a clean and modular way to implement cross-cutting concerns like:</p>
 <ul>
   <li>Authentication: Verifying user identities before granting access to certain actions.</li>
   <li>Authorization: Checking if a user is authorized to perform a specific action.</li>
@@ -414,58 +423,55 @@ clean and modular way to implement cross-cutting concerns like:</p>
 <h2 id="purpose-of-filters">Purpose of Filters</h2>
 <ul>
   <li>Encapsulation: Filters encapsulate reusable logic that can be applied to multiple actions or
-      controllers, reducing code duplication and promoting maintainability.</li>
+controllers, reducing code duplication and promoting maintainability.</li>
   <li>Clean Separation: They help keep your controller actions focused on their core responsibility
-      of handling requests and generating responses, while delegating cross-cutting concerns to
-      filters.</li>
+of handling requests and generating responses, while delegating cross-cutting concerns to
+filters.</li>
   <li>Extensibility: ASP.NET Core MVC provides a framework for creating custom filters tailored to
-      your application&#39;s specific needs.</li>
+your application&#39;s specific needs.</li>
 </ul>
 
-<h2 id="best-practices">Best Practices</h2>
+<h3 id="best-practices">Best Practices</h3>
 <ul>
   <li>Choose the Right Filter Type: Select the appropriate filter type (action, authorization,
-      resource, exception, result) based on the desired interception point and the kind of logic you
-      want to implement.</li>
+resource, exception, result) based on the desired interception point and the kind of logic you
+want to implement.</li>
   <li>Dependency Injection (DI): Leverage DI to inject services and dependencies into your filters,
-      ensuring loose coupling and testability.</li>
+ensuring loose coupling and testability.</li>
   <li>Keep Filters Small and Focused: Each filter should have a single, well-defined responsibility.
-      Avoid putting too much logic into a single filter.</li>
+Avoid putting too much logic into a single filter.</li>
   <li>Consider Performance: Be mindful of the potential performance impact of filters, especially
-      if you have many filters or complex logic within them.</li>
+if you have many filters or complex logic within them.</li>
   <li>Order Matters: The order in which filters are executed is important. Understand the default
-      order and how to customize it using the Order property if necessary.</li>
+order and how to customize it using the Order property if necessary.</li>
 </ul>
 
 <h2 id="action-filters">Action Filters</h2>
-<p>Action filters, implemented using the IActionFilter interface, are invoked before and after an action
-method executes. They provide hooks where you can:</p>
+<p>Action filters, implemented using the IActionFilter interface, are invoked before and after an action method executes. They provide hooks where you can:</p>
 <ul>
   <li>Pre-Action Logic (OnActionExecuting):</li>
   <li>Inspect and modify the action arguments or the ActionExecutingContext object.</li>
   <li>Short-circuit the action execution (e.g., by setting the Result property of the
-           context).</li>
+context).</li>
   <li>Post-Action Logic (OnActionExecuted):</li>
   <li>Inspect and modify the action result or the ActionExecutedContext object.</li>
   <li>Log information about the action&#39;s execution.</li>
 </ul>
 
 <h2 id="viewdata-in-action-filters">ViewData in Action Filters</h2>
-<p>While not as common as using strongly typed models or view models, you can use the ViewData
-dictionary within action filters to pass additional data to your views.</p>
+<p>While not as common as using strongly typed models or view models, you can use the ViewData dictionary within action filters to pass additional data to your views.</p>
 <ul>
   <li>Setting Values: In the OnActionExecuting method, you can add data to the ViewData
-      dictionary using context.Controller.ViewData[&quot;key&quot;] = value.</li>
+dictionary using context.Controller.ViewData[&quot;key&quot;] = value.</li>
   <li>Accessing in Views: This data will then be available in the corresponding view.</li>
 </ul>
 
 <h2 id="serilog-structured-logging-in-filters">Serilog Structured Logging in Filters</h2>
-<p>Serilog, with its emphasis on structured logging, integrates seamlessly with filters, allowing you to
-capture valuable contextual information about the action&#39;s execution.</p>
+<p>Serilog, with its emphasis on structured logging, integrates seamlessly with filters, allowing you to capture valuable contextual information about the action&#39;s execution.</p>
 <ul>
   <li>Inject ILogger: Use dependency injection to get an ILogger instance in your filter.</li>
   <li>Log Messages: Use _logger.LogInformation, _logger.LogWarning, etc., to log messages with
-      structured data (key-value pairs).</li>
+structured data (key-value pairs).</li>
 </ul>
 
 <h2 id="code-explanation">Code Explanation</h2>
@@ -482,44 +488,44 @@ capture valuable contextual information about the action&#39;s execution.</p>
 )
 public class PersonsListActionFilter : IActionFilter
 {
-  private readonly ILogger&lt;PersonsListActionFilter&gt; _logger; // Injected logger
-  public PersonsListActionFilter(ILogger&lt;PersonsListActionFilter&gt; logger)
-  {
-   _logger = logger;
-  }
-  public void OnActionExecuted(ActionExecutedContext context)
-  {
-   _logger.LogInformation(&quot;PersonsListActionFilter.OnActionExecuted method&quot;);
-  }
-  public void OnActionExecuting(ActionExecutingContext context)
-  {
-   _logger.LogInformation(&quot;PersonsListActionFilter.OnActionExecuting method&quot;);
-  }
+private readonly ILogger&lt;PersonsListActionFilter&gt; _logger; // Injected logger
+public PersonsListActionFilter(ILogger&lt;PersonsListActionFilter&gt; logger)
+{
+_logger = logger;
+}
+public void OnActionExecuted(ActionExecutedContext context)
+{
+_logger.LogInformation(&quot;PersonsListActionFilter.OnActionExecuted method&quot;);
+}
+public void OnActionExecuting(ActionExecutingContext context)
+{
+_logger.LogInformation(&quot;PersonsListActionFilter.OnActionExecuting method&quot;);
+}
 }
 In this action filter:</code></pre>
     </div>
-  <p>1. ILogger Injection: The constructor receives an ILogger instance through dependency
-      injection. The generic type parameter PersonsListActionFilter specifies the category name
-      for the logger, allowing for targeted configuration.</p>
-<ul>
+  <ul>
+  <li>1. ILogger Injection: The constructor receives an ILogger instance through dependency
+injection. The generic type parameter PersonsListActionFilter specifies the category name
+for the logger, allowing for targeted configuration.</li>
   <li>2. OnActionExecuting and OnActionExecuted:</li>
   <li>These methods are called before and after the action method executes, respectively.</li>
   <li>In this simple example, they just log informational messages using the injected
-           logger.</li>
+logger.</li>
 </ul>
 
 <h2 id="applying-the-filter">Applying the Filter</h2>
 <p>You can apply this filter in a few ways:</p>
 <ul>
   <li>Globally: Register the filter in <code>Program.cs</code> (or <code>Startup.cs</code>) to apply it to all controllers and
-      actions in your application.</li>
+actions in your application.</li>
   <li>Controller-Level: Apply the [PersonsListActionFilter] attribute to your controller class to
-      apply it to all actions within that controller.</li>
+apply it to all actions within that controller.</li>
   <li>Action-Level: Apply the [PersonsListActionFilter] attribute to specific action methods to filter
-      only those actions.</li>
+only those actions.</li>
 </ul>
 
-<h2 id="example-usage">Example Usage</h2>
+<h3 id="example-usage">Example Usage</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -544,13 +550,10 @@ In this action filter:</code></pre>
       </div>
       <pre><code class="language-csharp">public class PersonsController : Controller
 {
-  // ... your actions ...
+// ... your actions ...
 }</code></pre>
     </div>
-  <p>In this scenario, the PersonsListActionFilter will be executed before and after every action method
-within the PersonsController.
-Remember that you can enhance this action filter by adding more meaningful logic to the
-OnActionExecuting and OnActionExecuted methods, such as:</p>
+  <p>In this scenario, the PersonsListActionFilter will be executed before and after every action method within the PersonsController. Remember that you can enhance this action filter by adding more meaningful logic to the OnActionExecuting and OnActionExecuted methods, such as:</p>
 <ul>
   <li>OnActionExecuting:</li>
   <li>Checking authorization or authentication.</li>
@@ -563,33 +566,27 @@ OnActionExecuting and OnActionExecuted methods, such as:</p>
 </ul>
 
 <h2 id="filter-arguments">Filter Arguments</h2>
-<p>Filters often require additional data or configuration to perform their tasks effectively. You can
-provide this information through filter arguments.</p>
+<p>Filters often require additional data or configuration to perform their tasks effectively. You can provide this information through filter arguments.</p>
 <ul>
   <li>How to Pass Arguments:</li>
   <li>When applying a filter using the [TypeFilter] or [ServiceFilter] attributes, you can
-           specify an Arguments property, which takes an array of objects.</li>
-  <li>Example:
-[TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { &quot;My-Key-From-Action&quot;,
-&quot;My-Value-From-Action&quot;, 1 })]
-In this example, the ResponseHeaderActionFilter receives three arguments: a key, a value, and an
-order number.</li>
+specify an Arguments property, which takes an array of objects.</li>
+  <li>Example:</li>
 </ul>
+<p>[TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { &quot;My-Key-From-Action&quot;, &quot;My-Value-From-Action&quot;, 1 })] In this example, the ResponseHeaderActionFilter receives three arguments: a key, a value, and an order number.</p>
 
 <h2 id="global-filters">Global Filters</h2>
-<p>Global filters are applied to all controllers and actions in your ASP.NET Core MVC application. They
-are useful for implementing cross-cutting concerns that need to be enforced consistently throughout
-your application.</p>
+<p>Global filters are applied to all controllers and actions in your ASP.NET Core MVC application. They are useful for implementing cross-cutting concerns that need to be enforced consistently throughout your application.</p>
 <ul>
   <li>How to Register Global Filters:</li>
   <li>In <code>Program.cs</code> (or <code>Startup.cs</code> in older versions), add your filter to the Filters collection
-           within the MvcOptions configuration:</li>
+within the MvcOptions configuration:</li>
   <li>builder.Services.AddControllersWithViews(options =&gt; {</li>
   <li>// ...
-   •</li>
+•</li>
   <li>// Registering a global filter</li>
-  <li>ptions.Filters.Add(new ResponseHeaderActionFilter(logger, &quot;My-Key-From-Global&quot;, &quot;My-
-      Value-From-Global&quot;, 2));</li>
+  <li>options.Filters.Add(new ResponseHeaderActionFilter(logger, &quot;My-Key-From-Global&quot;, &quot;My-
+Value-From-Global&quot;, 2));</li>
 </ul>
 
     <div class="code-block">
@@ -600,24 +597,21 @@ your application.</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">• Example:</code></pre>
+      <pre><code class="language-csharp"></code></pre>
     </div>
   <ul>
-  <li>A global authorization filter that requires users to be authenticated for all actions</li>
-</ul>
-<p>except those explicitly marked with [AllowAnonymous].</p>
-<ul>
+  <li>Example:</li>
+  <li>A global authorization filter that requires users to be authenticated for all actions
+except those explicitly marked with [AllowAnonymous].</li>
   <li>A global exception filter that logs all unhandled exceptions.</li>
 </ul>
-<p>Custom Order of Filters: Controlling Execution Sequence</p>
-<p>By default, ASP.NET Core executes filters in a predefined order. However, you can customize this</p>
-<ul>
-  <li>rder to suit your application&#39;s needs.</li>
-</ul>
+
+<h2 id="custom-order-of-filters-controlling-execution-sequence">Custom Order of Filters: Controlling Execution Sequence</h2>
+<p>By default, ASP.NET Core executes filters in a predefined order. However, you can customize this order to suit your application&#39;s needs.</p>
 <ul>
   <li>Order Property:</li>
   <li>Both the [TypeFilter] and [ServiceFilter] attributes have an Order property that you
-           can use to specify the execution order of your filter.</li>
+can use to specify the execution order of your filter.</li>
   <li>Filters with lower Order values are executed first.</li>
   <li>IOrderedFilter Interface:</li>
   <li>For more fine-grained control over filter ordering, implement the IOrderedFilter</li>
@@ -631,10 +625,12 @@ your application.</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">interface in your filter class.
-        o This interface requires you to implement the Order property, which returns an</code></pre>
+      <pre><code class="language-csharp">interface in your filter class.</code></pre>
     </div>
-  <p>integer value representing the filter&#39;s order.</p>
+  <ul>
+  <li>This interface requires you to implement the Order property, which returns an
+integer value representing the filter&#39;s order.</li>
+</ul>
 
 <h2 id="code-explanation-1">Code Explanation</h2>
 <p>Let&#39;s break down the relevant parts of your code:</p>
@@ -652,44 +648,41 @@ your application.</p>
       <pre><code class="language-csharp">// ...
 public void OnActionExecuting(ActionExecutingContext context)
 {
-  // ...
-  if (context.ActionArguments.ContainsKey(&quot;searchBy&quot;))
-  {
-   string? searchBy = Convert.ToString(context.ActionArguments[&quot;searchBy&quot;]);
-   if (!string.IsNullOrEmpty(searchBy))
-   {
-     // ... (validation logic to ensure &#39;searchBy&#39; is valid) ...
-   }
-  }
+// ...
+if (context.ActionArguments.ContainsKey(&quot;searchBy&quot;))
+{
+string? searchBy = Convert.ToString(context.ActionArguments[&quot;searchBy&quot;]);
+if (!string.IsNullOrEmpty(searchBy))
+{
+// ... (validation logic to ensure &#39;searchBy&#39; is valid) ...
+}
+}
 }
 public void OnActionExecuted(ActionExecutedContext context)
 {
-  // ...
-  // Accessing arguments passed to the action method using HttpContext.Items
-  IDictionary&lt;string, object?&gt;? parameters = (IDictionary&lt;string,
+// ...
+// Accessing arguments passed to the action method using HttpContext.Items
+IDictionary&lt;string, object?&gt;? parameters = (IDictionary&lt;string,
 object?&gt;?)context.HttpContext.Items[&quot;arguments&quot;];
-  if (parameters != null)
-  {
+if (parameters != null)
+{
 // ... (logic to populate ViewData with the action arguments
 )
-  }
-  // ... (populating ViewBag.SearchFields) ...
 }
-   • OnActionExecuting:</code></pre>
+// ... (populating ViewBag.SearchFields) ...
+}</code></pre>
     </div>
   <ul>
-  <li>It stores the ActionArguments (parameters passed to the action) in</li>
-</ul>
-<p>HttpContext.Items so they can be accessed later in OnActionExecuted.</p>
-<ul>
+  <li>OnActionExecuting:</li>
+  <li>It stores the ActionArguments (parameters passed to the action) in
+HttpContext.Items so they can be accessed later in OnActionExecuted.</li>
   <li>It also validates the searchBy parameter to ensure it&#39;s one of the allowed values.</li>
   <li>OnActionExecuted:</li>
   <li>Retrieves the action arguments from HttpContext.Items.</li>
   <li>Populates ViewData with the values of the action arguments (if present).</li>
   <li>Sets up ViewBag.SearchFields with a dictionary of search options.</li>
 </ul>
-
-<h2 id="responseheaderactionfilter">ResponseHeaderActionFilter</h2>
+<p>ResponseHeaderActionFilter</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -701,12 +694,12 @@ object?&gt;?)context.HttpContext.Items[&quot;arguments&quot;];
       </div>
       <pre><code class="language-csharp">public class ResponseHeaderActionFilter : IActionFilter, IOrderedFilter
 {
-  // ...
-  public int Order { get; } // Implementing IOrderedFilter
-  public ResponseHeaderActionFilter(ILogger&lt;ResponseHeaderActionFilter&gt; logger, string key, string
+// ...
+public int Order { get; } // Implementing IOrderedFilter
+public ResponseHeaderActionFilter(ILogger&lt;ResponseHeaderActionFilter&gt; logger, string key, string
 }</code></pre>
     </div>
-  <p>value, int order)</p>
+  <p>Value, int order)</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -717,19 +710,17 @@ object?&gt;?)context.HttpContext.Items[&quot;arguments&quot;];
         </button>
       </div>
       <pre><code class="language-csharp">{
-   // ...
-   Order = order; // Set the order of the filter
-  }
+// ...
+Order = order; // Set the order of the filter
+}
 // ... (OnActionExecuting and OnActionExecuted methods
 )</code></pre>
     </div>
   <ul>
-  <li>IOrderedFilter Implementation: This filter implements IOrderedFilter, allowing you to</li>
-</ul>
-<p>explicitly control its execution order.</p>
-<ul>
+  <li>IOrderedFilter Implementation: This filter implements IOrderedFilter, allowing you to
+explicitly control its execution order.</li>
   <li>Order Property: The Order property is set in the constructor and determines the filter&#39;s
-      position in the execution sequence.</li>
+position in the execution sequence.</li>
 </ul>
 
 <h2 id="personscontroller">PersonsController</h2>
@@ -744,8 +735,7 @@ object?&gt;?)context.HttpContext.Items[&quot;arguments&quot;];
       </div>
       <pre><code class="language-csharp">[Route(&quot;[controller]&quot;)]</code></pre>
     </div>
-  <p>[TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { &quot;My-Key-From-
-Controller&quot;, &quot;My-Value-From-Controller&quot;, 3 }, Order = 3)]</p>
+  <p>[TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { &quot;My-Key-From- Controller&quot;, &quot;My-Value-From-Controller&quot;, 3 }, Order = 3)]</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -757,25 +747,35 @@ Controller&quot;, &quot;My-Value-From-Controller&quot;, 3 }, Order = 3)]</p>
       </div>
       <pre><code class="language-csharp">public class PersonsController : Controller
 {
-  // ...
-  [Route(&quot;[action]&quot;)]
-  [Route(&quot;/&quot;)]
-  [TypeFilter(typeof(PersonsListActionFilter), Order = 4)] // Applied to Index action with Order = 4
-  [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { &quot;MyKey-
+// ...
+[Route(&quot;[action]&quot;)]
+[Route(&quot;/&quot;)]
+[TypeFilter(typeof(PersonsListActionFilter), Order = 4)] // Applied to Index action with Order = 4
+[TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { &quot;MyKey-
 FromAction&quot;, &quot;MyValue-From-Action&quot;, 1 }, Order = 1)]
-  public async Task&lt;IActionResult&gt; Index(string searchBy, string? searchString, string sortBy =
+public async Task&lt;IActionResult&gt; Index(string searchBy, string? searchString, string sortBy =
 nameof(PersonResponse.PersonName), SortOrderOptions sortOrder = SortOrderOptions.ASC)
-  {
-   // ...
-  }
-  // ... (other actions) ...
+{
+// ...
+}
+// ... (other actions) ...
 }</code></pre>
     </div>
   <ul>
   <li>Controller-level filter: The ResponseHeaderActionFilter is applied at the controller level with</li>
 </ul>
-<p>Order = 3. It will be executed for all actions in this controller.</p>
-<ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">Order = 3. It will be executed for all actions in this controller.</code></pre>
+    </div>
+  <ul>
   <li>Action-level filters: The Index action has two filters applied:</li>
   <li>PersonsListActionFilter with Order = 4.</li>
   <li>Another instance of ResponseHeaderActionFilter with Order = 1.</li>
@@ -783,59 +783,57 @@ nameof(PersonResponse.PersonName), SortOrderOptions sortOrder = SortOrderOptions
 
 <h2 id="filter-execution-order">Filter Execution Order</h2>
 <p>For the Index action, the filters will be executed in the following order:</p>
+<ol>
+  <li>ResponseHeaderActionFilter (from action, Order = 1)</li>
+  <li>ResponseHeaderActionFilter (from controller, Order = 3)</li>
+  <li>PersonsListActionFilter (Order = 4)</li>
+</ol>
+
+<h2 id="notes">Notes</h2>
 <ul>
-  <li>1. ResponseHeaderActionFilter (from action, Order = 1)</li>
-  <li>2. ResponseHeaderActionFilter (from controller, Order = 3)</li>
-  <li>3. PersonsListActionFilter (Order = 4)
-Notes</li>
   <li>ActionArguments vs. ViewData:</li>
   <li>ActionArguments represent the original input parameters to the action method.</li>
   <li>ViewData is used to pass data from the controller (or filters) to the view.</li>
   <li>HttpContext.Items: This dictionary is a useful way to pass data between different
-      middleware components or filters within the same request.</li>
+middleware components or filters within the same request.</li>
   <li>Serilog: Use structured logging to capture valuable context information in your filters (e.g.,
-      action name, parameter values).</li>
+action name, parameter values).</li>
   <li>Testability: Write unit tests for your filters to ensure they behave correctly in isolation.</li>
 </ul>
 
 <h2 id="asynchronous-filters">Asynchronous Filters</h2>
-<p>In the realm of modern web development, asynchronous operations (e.g., database calls, API
-requests) are prevalent. ASP.NET Core MVC filters support asynchronous execution through the
-IAsyncActionFilter and IAsyncResultFilter interfaces. These interfaces allow you to perform
-asynchronous tasks within your filter logic, making your code more efficient and responsive.</p>
+<p>In the realm of modern web development, asynchronous operations (e.g., database calls, API requests) are prevalent. ASP.NET Core MVC filters support asynchronous execution through the IAsyncActionFilter and IAsyncResultFilter interfaces. These interfaces allow you to perform asynchronous tasks within your filter logic, making your code more efficient and responsive.</p>
 <ul>
   <li>IAsyncActionFilter:</li>
   <li>Methods:</li>
   <li>OnActionExecutionAsync(ActionExecutingContext context,
-                 ActionExecutionDelegate next)</li>
+ActionExecutionDelegate next)</li>
   <li>Purpose: Intercepts the action execution pipeline asynchronously.</li>
   <li>Notes:</li>
   <li>The next delegate now returns a Task that represents the execution of the
-                 rest of the filter pipeline and the action method.</li>
+rest of the filter pipeline and the action method.</li>
   <li>You can await this task to wait for the subsequent operations to complete.</li>
   <li>You can perform asynchronous tasks within the filter&#39;s logic and await their
-                 completion before or after calling next.</li>
+completion before or after calling next.</li>
   <li>IAsyncResultFilter:</li>
   <li>Methods:</li>
   <li>OnResultExecutionAsync(ResultExecutingContext context,
-                 ResultExecutionDelegate next)</li>
+ResultExecutionDelegate next)</li>
   <li>Purpose: Intercepts the result execution pipeline asynchronously.</li>
   <li>Notes:</li>
   <li>Similar to IAsyncActionFilter, but it operates on the action result rather than
-                 the action itself.</li>
+the action itself.</li>
   <li>You can use it for asynchronous tasks related to transforming or modifying
-                 the result before it&#39;s sent to the client.</li>
+the result before it&#39;s sent to the client.</li>
 </ul>
 
 <h2 id="short-circuiting-action-filters">Short-Circuiting Action Filters</h2>
-<p>Short-circuiting is a technique where an action filter can decide to terminate the filter pipeline early
-and directly return a result without invoking the action method or any subsequent filters. This can be
-useful for:</p>
+<p>Short-circuiting is a technique where an action filter can decide to terminate the filter pipeline early and directly return a result without invoking the action method or any subsequent filters. This can be useful for:</p>
 <ul>
   <li>Validation: If model validation fails, you can short-circuit and return a validation error
-      response immediately.</li>
-  <li>Authentication/Authorization: If a user isn&#39;t authenticated or authorized, you can shortcircuit
-and return an appropriate response.</li>
+response immediately.</li>
+  <li>Authentication/Authorization: If a user isn&#39;t authenticated or authorized, you can short-
+circuit and return an appropriate response.</li>
   <li>Caching: If a cached response is available, you can short-circuit and return it directly.</li>
   <li>How to Short-Circuit:</li>
   <li>In an IActionFilter, set the context.Result property to an <code>IActionResult</code>.</li>
@@ -858,43 +856,43 @@ public class PersonCreateAndEditPostActionFilter : IAsyncActionFilter
 {
 // ... (_countriesService injection
 )
-  public async Task OnActionExecutionAsync(ActionExecutingContext context,
+public async Task OnActionExecutionAsync(ActionExecutingContext context,
 ActionExecutionDelegate next)
-  {
+{
 // ... (potential before logic, not shown in this example
 )
-   if (context.Controller is PersonsController personsController)
-   {
-     if (!personsController.ModelState.IsValid)
-     {
-      // ... (Prepare countries for ViewBag) ...
-      // ... (Populate ViewBag.Errors with validation errors) ...
-      var personRequest = context.ActionArguments[&quot;personRequest&quot;];
-      context.Result = personsController.View(personRequest); // Short-circuit
-     }
-     else
-     {
-      await next(); // Continue the pipeline if model is valid
-     }
-   }
-   else
-   {
-     await next();
-   }
+if (context.Controller is PersonsController personsController)
+{
+if (!personsController.ModelState.IsValid)
+{
+// ... (Prepare countries for ViewBag) ...
+// ... (Populate ViewBag.Errors with validation errors) ...
+var personRequest = context.ActionArguments[&quot;personRequest&quot;];
+context.Result = personsController.View(personRequest); // Short-circuit
+}
+else
+{
+await next(); // Continue the pipeline if model is valid
+}
+}
+else
+{
+await next();
+}
 // ... (potential after logic, not shown in this example
 )
-  }
+}
 }</code></pre>
     </div>
   <p>In this code:</p>
 <ol>
   <li>IAsyncActionFilter Implementation: The filter implements the IAsyncActionFilter interface
-      for asynchronous operation.</li>
+for asynchronous operation.</li>
   <li>OnActionExecutionAsync: This method is called asynchronously during the action execution
-      pipeline.</li>
+pipeline.</li>
   <li>Controller Check: It checks if the controller is of type PersonsController.</li>
   <li>Model State Validation: If the ModelState is invalid, it prepares the necessary data for the
-      view (ViewBag.Countries, ViewBag.Errors) and short-circuits the pipeline by setting</li>
+view (ViewBag.Countries, ViewBag.Errors) and short-circuits the pipeline by setting</li>
 </ol>
 
     <div class="code-block">
@@ -905,80 +903,76 @@ ActionExecutionDelegate next)
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">context.Result to the View result with the original request data (personRequest).
-   5. Continue Pipeline: If the model state is valid or the controller is not PersonsController, it</code></pre>
+      <pre><code class="language-csharp">context.Result to the View result with the original request data (personRequest).</code></pre>
     </div>
-  <p>calls await next() to proceed with the action method and subsequent filters.</p>
+  <ol>
+  <li>Continue Pipeline: If the model state is valid or the controller is not PersonsController, it
+calls await next() to proceed with the action method and subsequent filters.</li>
+</ol>
 
-<h2 id="notes">Notes</h2>
+<h2 id="notes-1">Notes</h2>
 <ul>
   <li>Async Filters: Use IAsyncActionFilter or IAsyncResultFilter when you need to perform
-      asynchronous tasks within your filters.</li>
+asynchronous tasks within your filters.</li>
   <li>Short-Circuiting: Use context.Result or context.Cancel to terminate the filter pipeline early if
-      certain conditions are met.</li>
+certain conditions are met.</li>
   <li>HttpContext.Items: This is a useful dictionary for passing data between middleware
-      components or filters within the same request.</li>
+components or filters within the same request.</li>
   <li>ActionArguments vs. ViewData:</li>
   <li>ActionArguments are the original input parameters passed to the action.</li>
   <li>ViewData is used to pass additional data from the controller or filters to the view.</li>
-  <li>Testing: Remember to write unit tests for your filters, including scenarios that test shortcircuiting
-behavior.</li>
+  <li>Testing: Remember to write unit tests for your filters, including scenarios that test short-
+circuiting behavior.</li>
 </ul>
 
 <h2 id="result-filters">Result Filters</h2>
-<p>Result filters, implemented by the IResultFilter or IAsyncResultFilter interfaces, are triggered just
-before and after the execution of an action result (the <code>IActionResult</code> returned by the action method).
-They give you the opportunity to:</p>
+<p>Result filters, implemented by the IResultFilter or IAsyncResultFilter interfaces, are triggered just before and after the execution of an action result (the <code>IActionResult</code> returned by the action method). They give you the opportunity to:</p>
 <ul>
   <li>Inspect and Modify the Result: You can examine and potentially modify the result before it
-      is sent to the client. This is useful for adding headers, transforming the result&#39;s content, or
-      making other adjustments based on specific conditions.</li>
+is sent to the client. This is useful for adding headers, transforming the result&#39;s content, or
+making other adjustments based on specific conditions.</li>
   <li>Perform Post-Processing: After the result has been executed (sent to the client), you can
-      carry out tasks like logging or cleaning up resources.</li>
+carry out tasks like logging or cleaning up resources.</li>
   <li>IResultFilter:</li>
   <li>Methods: OnResultExecuting(ResultExecutingContext context) (before),
-           OnResultExecuted(ResultExecutedContext context) (after)</li>
+OnResultExecuted(ResultExecutedContext context) (after)</li>
   <li>Synchronous execution: Best suited for synchronous operations on the result.</li>
   <li>IAsyncResultFilter:</li>
   <li>Methods: OnResultExecutionAsync(ResultExecutingContext context,
-           ResultExecutionDelegate next)</li>
+ResultExecutionDelegate next)</li>
   <li>Asynchronous execution: Enables asynchronous operations on the result using
-           await.</li>
+await.</li>
 </ul>
 
 <h2 id="resource-filters">Resource Filters</h2>
-<p>Resource filters, implementing IResourceFilter or IAsyncResourceFilter, are executed before and
-after model binding and action execution. They are ideal for tasks related to resource access and
-management.</p>
+<p>Resource filters, implementing IResourceFilter or IAsyncResourceFilter, are executed before and after model binding and action execution. They are ideal for tasks related to resource access and management.</p>
 <ul>
   <li>Methods:</li>
   <li>IResourceFilter: OnResourceExecuting(ResourceExecutingContext context),
-           OnResourceExecuted(ResourceExecutedContext context)</li>
+OnResourceExecuted(ResourceExecutedContext context)</li>
   <li>IAsyncResourceFilter: OnResourceExecutionAsync(ResourceExecutingContext
-           context, ResourceExecutionDelegate next)</li>
+context, ResourceExecutionDelegate next)</li>
   <li>Common Use Cases:</li>
   <li>Caching: Implement caching logic to avoid unnecessary action execution.</li>
   <li>Performance Monitoring: Measure the execution time of actions.</li>
   <li>Resource Cleanup: Release resources acquired during action execution.</li>
 </ul>
-<p>Authorization Filters: Guarding Your Actions
-Authorization filters, implementing the IAuthorizationFilter interface, are responsible for
-determining whether a user is allowed to access a particular action method. They run before model
-binding and action execution.</p>
+
+<h2 id="authorization-filters-guarding-your-actions">Authorization Filters: Guarding Your Actions</h2>
+<p>Authorization filters, implementing the IAuthorizationFilter interface, are responsible for determining whether a user is allowed to access a particular action method. They run before model binding and action execution.</p>
 <ul>
   <li>Method: OnAuthorization(AuthorizationFilterContext context)</li>
   <li>Purpose: Check authentication and authorization policies.</li>
   <li>Short-Circuiting: If authorization fails, you typically set context.Result to an appropriate
-      result (e.g., 401 Unauthorized or a redirect to the login page).</li>
+result (e.g., 401 Unauthorized or a redirect to the login page).</li>
 </ul>
 
 <h2 id="exception-filters">Exception Filters</h2>
-<p>Exception filters, implemented through the IExceptionFilter interface, handle exceptions thrown
-during the execution of action methods or other filters.</p>
+<p>Exception filters, implemented through the IExceptionFilter interface, handle exceptions thrown during the execution of action methods or other filters.</p>
 <ul>
   <li>Method: OnException(ExceptionContext context)</li>
   <li>Purpose: Log exceptions, create custom error responses, or perform other error-handling
-      tasks.</li>
+tasks.</li>
   <li>Short-Circuiting: By setting context.ExceptionHandled = true and providing a new</li>
 </ul>
 
@@ -992,20 +986,20 @@ during the execution of action methods or other filters.</p>
       </div>
       <pre><code class="language-csharp">context.Result, you can prevent the exception from propagating further and control the</code></pre>
     </div>
-  <p>error response sent to the client.</p>
+  <p>Error response sent to the client.</p>
 
 <h2 id="impact-of-short-circuiting">Impact of Short-Circuiting</h2>
 <ul>
   <li>Action Filters: Short-circuiting an action filter prevents the action method and any
-      subsequent action filters from executing. Control is transferred directly to the result
-      execution pipeline.</li>
+subsequent action filters from executing. Control is transferred directly to the result
+execution pipeline.</li>
   <li>Result Filters: Short-circuiting a result filter bypasses the execution of any subsequent result
-      filters. Control is returned to the previous filter or the MVC framework.</li>
+filters. Control is returned to the previous filter or the MVC framework.</li>
   <li>Resource Filters: Short-circuiting a resource filter prevents the action method, action filters,
-      and result filters from executing. The response is generated based on the <code>IActionResult</code> set in
-      the context.Result.</li>
+and result filters from executing. The response is generated based on the <code>IActionResult</code> set in
+the context.Result.</li>
   <li>Authorization Filters: Short-circuiting an authorization filter prevents all subsequent steps in
-      the pipeline, including model binding, action execution, and result execution.</li>
+the pipeline, including model binding, action execution, and result execution.</li>
 </ul>
 
 <h2 id="code-explanation-2">Code Explanation</h2>
@@ -1013,54 +1007,49 @@ during the execution of action methods or other filters.</p>
 <ul>
   <li>1. TokenAuthorizationFilter:</li>
   <li>An authorization filter that checks for the presence and validity of an &quot;Auth-Key&quot;
-           cookie.</li>
+cookie.</li>
   <li>If the cookie is missing or invalid, it short-circuits the pipeline and returns a 401
-           Unauthorized status code.</li>
+Unauthorized status code.</li>
   <li>2. HandleExceptionFilter:</li>
   <li>An exception filter that logs errors and, in development environments, returns a
-           ContentResult with the exception message and a 500 Internal Server Error status
-           code.</li>
+ContentResult with the exception message and a 500 Internal Server Error status
+code.</li>
   <li>3. FeatureDisabledResourceFilter:</li>
   <li>A resource filter that checks if a feature is disabled.</li>
   <li>If disabled, it short-circuits the pipeline and returns a 501 Not Implemented status
-           code.</li>
+code.</li>
   <li>4. PersonsListResultFilter:</li>
   <li>A result filter that adds a &quot;Last-Modified&quot; header to the response after the action
-           result has been executed.</li>
+result has been executed.</li>
   <li>5. TokenResultFilter:</li>
   <li>A result filter that appends an &quot;Auth-Key&quot; cookie to the response before it is sent to
-           the client.</li>
+the client.</li>
 </ul>
 
-<h2 id="notes-1">Notes</h2>
+<h2 id="notes-2">Notes</h2>
 <ul>
   <li>Filter Types: Understand the different filter types and when to use each one.</li>
   <li>Async Filters: Use async filters for asynchronous operations within your filter logic.</li>
   <li>Short-Circuiting: Use this technique to control the filter pipeline and return early responses.</li>
   <li>Order of Execution: Be aware of the default filter execution order and how to customize it
-      using the Order property or IOrderedFilter.</li>
+using the Order property or IOrderedFilter.</li>
   <li>Dependency Injection: Utilize DI to inject services and dependencies into your filters.</li>
 </ul>
 
 <h2 id="ialwaysrunresultfilter">IAlwaysRunResultFilter</h2>
-<p>The IAlwaysRunResultFilter interface inherits from the standard IResultFilter interface and
-introduces a crucial distinction: its methods (OnResultExecuting and OnResultExecuted) are
-guaranteed to execute even if another filter in the pipeline short-circuits the result. This makes it an
-indispensable tool for scenarios where you need to perform actions or modifications on the
-response regardless of whether the action method or other filters completed successfully.
-Notes:</p>
+<p>The IAlwaysRunResultFilter interface inherits from the standard IResultFilter interface and introduces a crucial distinction: its methods (OnResultExecuting and OnResultExecuted) are guaranteed to execute even if another filter in the pipeline short-circuits the result. This makes it an indispensable tool for scenarios where you need to perform actions or modifications on the response regardless of whether the action method or other filters completed successfully. Notes:</p>
 <ul>
   <li>Inheritance: IAlwaysRunResultFilter extends IResultFilter, inheriting its two methods:</li>
   <li>OnResultExecuting(ResultExecutingContext context): Called before the action result
-           is executed.</li>
+is executed.</li>
   <li>OnResultExecuted(ResultExecutedContext context): Called after the action result has
-           been executed.</li>
+been executed.</li>
   <li>Guaranteed Execution:</li>
   <li>The core feature of IAlwaysRunResultFilter is that its methods are always invoked,
-           even if:</li>
+even if:</li>
   <li>An exception occurs in the action method or a previous filter.</li>
   <li>Another filter short-circuits the pipeline by setting context.Cancel = true and
-                 providing a new context.Result.</li>
+providing a new context.Result.</li>
   <li>The action method itself returns a result that short-circuits the pipeline (e.g.,</li>
 </ul>
 
@@ -1072,18 +1061,16 @@ Notes:</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">return new EmptyResult();).
-   • Use Cases:</code></pre>
+      <pre><code class="language-csharp">return new EmptyResult();).</code></pre>
     </div>
   <ul>
-  <li>Logging: Log the final outcome of the request, including any exceptions or shortcircuited</li>
-</ul>
-<p>results.</p>
-<ul>
+  <li>Use Cases:</li>
+  <li>Logging: Log the final outcome of the request, including any exceptions or short-
+circuited results.</li>
   <li>Response Modification: Apply modifications to the response headers or content,
-           even if the action was not executed.</li>
+even if the action was not executed.</li>
   <li>Cleanup: Perform essential cleanup tasks or release resources, regardless of the
-           action&#39;s success or failure.</li>
+action&#39;s success or failure.</li>
 </ul>
 
 <h2 id="code-explanation-3">Code Explanation</h2>
@@ -1101,21 +1088,21 @@ public class PersonAlwaysRunResultFilter : IAlwaysRunResultFilter
 {
 // (You might inject dependencies here if needed
 )
-  public void OnResultExecuted(ResultExecutedContext context)
-  {
+public void OnResultExecuted(ResultExecutedContext context)
+{
 // Logic to execute after the result has been executed (sent to the client
 )
-  }
-  public void OnResultExecuting(ResultExecutingContext context)
-  {
-   // Logic to execute before the result is executed
-  }
+}
+public void OnResultExecuting(ResultExecutingContext context)
+{
+// Logic to execute before the result is executed
+}
 }</code></pre>
     </div>
   <ul>
-  <li>Empty Implementation: In this example, the OnResultExecuted and OnResultExecuting</li>
+  <li>Empty Implementation: In this example, the OnResultExecuted and OnResultExecuting
+methods are empty. You would replace these placeholders with your actual filter logic.</li>
 </ul>
-<p>methods are empty. You would replace these placeholders with your actual filter logic.</p>
 
 <h2 id="applying-the-filter-1">Applying the Filter</h2>
 
@@ -1132,9 +1119,7 @@ public class PersonAlwaysRunResultFilter : IAlwaysRunResultFilter
 [HttpPost]
 [Route(&quot;[action]/{personID}&quot;)]</code></pre>
     </div>
-  <p>[TypeFilter(typeof(PersonCreateAndEditPostActionFilter))]
-[TypeFilter(typeof(TokenAuthorizationFilter))]
-[TypeFilter(typeof(PersonAlwaysRunResultFilter))]</p>
+  <p>[TypeFilter(typeof(PersonCreateAndEditPostActionFilter))] [TypeFilter(typeof(TokenAuthorizationFilter))] [TypeFilter(typeof(PersonAlwaysRunResultFilter))]</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1147,57 +1132,54 @@ public class PersonAlwaysRunResultFilter : IAlwaysRunResultFilter
       <pre><code class="language-csharp">// Apply the filter
 public async Task&lt;IActionResult&gt; Edit(PersonUpdateRequest personRequest)
 {
- // ...
+// ...
 }</code></pre>
     </div>
-  <p>The PersonAlwaysRunResultFilter is applied to the Edit (POST) action method using the [TypeFilter]
-attribute.</p>
+  <p>The PersonAlwaysRunResultFilter is applied to the Edit (POST) action method using the [TypeFilter] attribute.</p>
 
-<h2 id="example-scenarios">Example Scenarios</h2>
+<h3 id="example-scenarios">Example Scenarios</h3>
 <ol>
   <li>Logging the Final Response: Even if an exception occurs within the action method or a
-      previous filter, the OnResultExecuted method of PersonAlwaysRunResultFilter will still be
-      called, allowing you to log the final status code and any error details.</li>
+previous filter, the OnResultExecuted method of PersonAlwaysRunResultFilter will still be
+called, allowing you to log the final status code and any error details.</li>
   <li>Adding Headers: You could use OnResultExecuting to add custom headers to the response,
-      ensuring they are included even if the action is short-circuited.</li>
+ensuring they are included even if the action is short-circuited.</li>
   <li>Resource Cleanup: If your action acquires resources (e.g., database connections, file
-      handles), you can use OnResultExecuted to release them reliably, even if an exception
-      occurs.</li>
+handles), you can use OnResultExecuted to release them reliably, even if an exception
+occurs.</li>
 </ol>
 
 <h2 id="caveats">Caveats</h2>
 <ul>
   <li>Can&#39;t Change the Result: While IAlwaysRunResultFilter guarantees execution, it cannot
-      change the <code>IActionResult</code> once it has been set by another filter or the action method itself.
-      Its primary purpose is to observe or modify the response or perform cleanup tasks.</li>
+change the <code>IActionResult</code> once it has been set by another filter or the action method itself.
+Its primary purpose is to observe or modify the response or perform cleanup tasks.</li>
   <li>Order: IAlwaysRunResultFilter is executed at the very end of the result filter pipeline, after
-      all other result filters, regardless of their specified order.</li>
+all other result filters, regardless of their specified order.</li>
 </ul>
 
 <h2 id="filter-overrides">Filter Overrides</h2>
-<p>In ASP.NET Core MVC, filter overrides empower you to selectively disable or alter the behavior of
-filters on a per-action or per-controller basis. This granular control is essential for situations where
-you need to:</p>
+<p>In ASP.NET Core MVC, filter overrides empower you to selectively disable or alter the behavior of filters on a per-action or per-controller basis. This granular control is essential for situations where you need to:</p>
 <ul>
   <li>Bypass a Filter: Skip the execution of a specific filter for a particular action or controller.</li>
   <li>Modify Filter Behavior: Change the arguments or settings of a filter for a specific action or
-      controller.</li>
+controller.</li>
 </ul>
 
 <h2 id="key-mechanisms-for-filter-overrides">Key Mechanisms for Filter Overrides</h2>
 <ul>
   <li>1. [NonAction] Attribute:</li>
   <li>Purpose: Prevents a method from being treated as an action method by the MVC
-           framework. This effectively bypasses all filters (action filters, result filters, etc.) that
-           would otherwise be applied to the method.</li>
+framework. This effectively bypasses all filters (action filters, result filters, etc.) that
+would otherwise be applied to the method.</li>
   <li>Usage: Apply this attribute to methods within your controller that you don&#39;t want to
-           be considered action methods.</li>
+be considered action methods.</li>
   <li>2. [SkipFilter] Attribute (Custom):</li>
   <li>Purpose: A custom attribute that allows you to skip the execution of a specific filter
-           or a group of filters for a particular action or controller.</li>
+or a group of filters for a particular action or controller.</li>
   <li>Implementation: In your code example, the SkipFilter attribute implements the
-           IFilterMetadata interface, which is a marker interface used to identify filter
-           attributes.</li>
+IFilterMetadata interface, which is a marker interface used to identify filter
+attributes.</li>
   <li>3. Overriding Filter Arguments:</li>
   <li>Purpose: Modify the arguments passed to a filter for a specific action or controller.</li>
   <li>Mechanism: When applying the filter attribute, provide the updated arguments.</li>
@@ -1220,8 +1202,7 @@ public class SkipFilter : Attribute, IFilterMetadata
 {
 }</code></pre>
     </div>
-  <p>This simple attribute acts as a marker that you can apply to actions or controllers to indicate that you
-want to skip specific filters.</p>
+  <p>This simple attribute acts as a marker that you can apply to actions or controllers to indicate that you want to skip specific filters.</p>
 
 <h2 id="personalwaysrunresultfilter-with-override-logic">PersonAlwaysRunResultFilter with Override Logic</h2>
 
@@ -1236,19 +1217,19 @@ want to skip specific filters.</p>
       <pre><code class="language-csharp">// PersonAlwaysRunResultFilter.cs
 public void OnResultExecuting(ResultExecutingContext context)
 {
-  if (context.Filters.OfType&lt;SkipFilter&gt;().Any())
-  {
-   return; // Skip this filter if the SkipFilter attribute is present
-  }
-  // ... Your filter logic here ...
+if (context.Filters.OfType&lt;SkipFilter&gt;().Any())
+{
+return; // Skip this filter if the SkipFilter attribute is present
+}
+// ... Your filter logic here ...
 }
 In this modified filter:</code></pre>
     </div>
-  <p>1. Check for SkipFilter: The OnResultExecuting method checks if the context.Filters collection
-      contains any instances of the SkipFilter attribute.</p>
-<ol>
+  <ol>
+  <li>Check for SkipFilter: The OnResultExecuting method checks if the context.Filters collection
+contains any instances of the SkipFilter attribute.</li>
   <li>Skip if Present: If SkipFilter is found, the filter&#39;s logic is bypassed by simply returning from
-      the method.</li>
+the method.</li>
   <li>Execute Otherwise: If SkipFilter is not present, the filter proceeds with its normal execution.</li>
 </ol>
 
@@ -1276,51 +1257,44 @@ In this modified filter:</code></pre>
       </div>
       <pre><code class="language-csharp">public IActionResult SomeAction()
 {
-  // ...
+// ...
 }</code></pre>
     </div>
-  <p>By applying the SkipFilter attribute to an action method, you instruct any filters that check for this
-attribute (like the modified PersonAlwaysRunResultFilter) to bypass their logic for that specific
-action.</p>
+  <p>By applying the SkipFilter attribute to an action method, you instruct any filters that check for this attribute (like the modified PersonAlwaysRunResultFilter) to bypass their logic for that specific action.</p>
 
-<h2 id="notes-2">Notes</h2>
+<h2 id="notes-3">Notes</h2>
 <ul>
   <li>[NonAction]: Use to completely exclude a method from being treated as an action.</li>
   <li>Custom Attributes: Create custom attributes like SkipFilter to provide more fine-grained
-      control over filter execution.</li>
+control over filter execution.</li>
   <li>Override Arguments: Modify filter behavior by providing different arguments when applying
-      the filter attribute.</li>
+the filter attribute.</li>
   <li>Flexibility: Filter overrides allow you to adapt your filter pipeline to specific actions or
-      controllers, enhancing your control and customization options.</li>
+controllers, enhancing your control and customization options.</li>
 </ul>
 
 <h2 id="service-filters">Service Filters</h2>
-<p>Service filters, applied using the [ServiceFilter] attribute, offer a powerful mechanism for injecting
-dependencies directly into your filters. This is essential when your filters require access to services
-like loggers, configuration settings, or data repositories to perform their tasks effectively.</p>
+<p>Service filters, applied using the [ServiceFilter] attribute, offer a powerful mechanism for injecting dependencies directly into your filters. This is essential when your filters require access to services like loggers, configuration settings, or data repositories to perform their tasks effectively.</p>
 <ul>
   <li>[ServiceFilter] Attribute:</li>
   <li>Purpose: Instructs ASP.NET Core MVC to resolve the filter instance from the
-           dependency injection (DI) container.</li>
+dependency injection (DI) container.</li>
   <li>Usage: Apply this attribute to controllers or actions, specifying the type of the filter
-           you want to inject.</li>
+you want to inject.</li>
   <li>Benefits:</li>
   <li>Promotes loose coupling and testability by allowing filters to receive their
-                 dependencies through constructor injection.</li>
+dependencies through constructor injection.</li>
   <li>Enables you to manage filter lifetimes (transient, scoped, singleton) using
-                 the DI container.</li>
+the DI container.</li>
 </ul>
-<p>Filter Attribute Classes: Encapsulating Filter Metadata</p>
-<p>Filter attribute classes serve as a convenient way to package metadata about a filter and apply it</p>
-<p>declaratively to controllers or actions. They typically inherit from the Attribute class and implement</p>
-<ul>
-  <li>ne or more filter interfaces (e.g., IActionFilter, IAuthorizationFilter, etc.).</li>
-</ul>
+
+<h2 id="filter-attribute-classes-encapsulating-filter-metadata">Filter Attribute Classes: Encapsulating Filter Metadata</h2>
+<p>Filter attribute classes serve as a convenient way to package metadata about a filter and apply it declaratively to controllers or actions. They typically inherit from the Attribute class and implement one or more filter interfaces (e.g., IActionFilter, IAuthorizationFilter, etc.).</p>
 <ul>
   <li>Purpose:</li>
   <li>Provide a concise and readable way to apply filters.</li>
   <li>Encapsulate filter-specific settings or configurations within the attribute&#39;s
-           properties.</li>
+properties.</li>
   <li>Example:</li>
 </ul>
 
@@ -1336,19 +1310,17 @@ like loggers, configuration settings, or data repositories to perform their task
 {
 // Filter properties (e.g., configuration settings
 )
-  public string SomeSetting { get; set; }
-  // ... implementation of IActionFilter methods ...
+public string SomeSetting { get; set; }
+// ... implementation of IActionFilter methods ...
 }</code></pre>
     </div>
-  <p>IFilterFactory Interface
-The IFilterFactory interface allows you to create filter instances dynamically at runtime, offering
-flexibility and customization beyond what&#39;s possible with simple attribute classes.</p>
+  <p>IFilterFactory Interface The IFilterFactory interface allows you to create filter instances dynamically at runtime, offering flexibility and customization beyond what&#39;s possible with simple attribute classes.</p>
 <ul>
   <li>IsReusable Property: Indicates whether the created filter instance can be reused across
-      multiple requests (if true) or should be a new instance for each request (if false).</li>
+multiple requests (if true) or should be a new instance for each request (if false).</li>
   <li>CreateInstance(IServiceProvider serviceProvider) Method: This method is responsible for
-      creating the actual filter instance. It receives an IServiceProvider which you can use to
-      resolve dependencies from the DI container.</li>
+creating the actual filter instance. It receives an IServiceProvider which you can use to
+resolve dependencies from the DI container.</li>
 </ul>
 
 <h2 id="code-explanation-5">Code Explanation</h2>
@@ -1357,9 +1329,9 @@ flexibility and customization beyond what&#39;s possible with simple attribute c
 <h2 id="personslistactionfilter-1">PersonsListActionFilter</h2>
 <ul>
   <li>This is a standard action filter (IActionFilter) that performs some logic before and after the
-      action method executes.</li>
+action method executes.</li>
   <li>It utilizes an ILogger (injected through the constructor) for logging and modifies the
-      ViewData in the OnActionExecuted method.</li>
+ViewData in the OnActionExecuted method.</li>
 </ul>
 
 <h2 id="responseheaderfilterfactoryattribute-and-responseheaderactionfilter">ResponseHeaderFilterFactoryAttribute and ResponseHeaderActionFilter</h2>
@@ -1367,17 +1339,17 @@ flexibility and customization beyond what&#39;s possible with simple attribute c
   <li>ResponseHeaderFilterFactoryAttribute:</li>
   <li>Implements the IFilterFactory interface.</li>
   <li>IsReusable is set to false, meaning a new filter instance will be created for each
-           request.</li>
+request.</li>
   <li>The CreateInstance method:</li>
   <li>1. Resolves the ResponseHeaderActionFilter from the DI container.</li>
   <li>2. Sets the Key, Value, and Order properties of the filter based on the
-                 attribute&#39;s constructor arguments.</li>
+attribute&#39;s constructor arguments.</li>
   <li>3. Returns the configured filter instance.</li>
   <li>ResponseHeaderActionFilter:</li>
   <li>An async action filter (IAsyncActionFilter) that adds a custom header to the response
-           after the action method executes.</li>
+after the action method executes.</li>
   <li>Its Key, Value, and Order properties are set by the
-           ResponseHeaderFilterFactoryAttribute.</li>
+ResponseHeaderFilterFactoryAttribute.</li>
 </ul>
 
 <h2 id="personscontroller-filter-application">PersonsController (Filter Application)</h2>
@@ -1393,11 +1365,7 @@ flexibility and customization beyond what&#39;s possible with simple attribute c
       <pre><code class="language-csharp">[Route(&quot;[action]&quot;)]
 [Route(&quot;/&quot;)]</code></pre>
     </div>
-  <p>[ServiceFilter(typeof(PersonsListActionFilter), Order = 4)]
-[ResponseHeaderFilterFactory(&quot;MyKey-FromAction&quot;, &quot;MyValue-FromAction&quot;, 1)] // Using the filter
-factory
-[TypeFilter(typeof(PersonsListResultFilter))]
-[SkipFilter]</p>
+  <p>[ServiceFilter(typeof(PersonsListActionFilter), Order = 4)] [ResponseHeaderFilterFactory(&quot;MyKey-FromAction&quot;, &quot;MyValue-FromAction&quot;, 1)] // Using the filter factory [TypeFilter(typeof(PersonsListResultFilter))] [SkipFilter]</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1410,37 +1378,35 @@ factory
       <pre><code class="language-csharp">public async Task&lt;IActionResult&gt; Index(string searchBy, string? searchString, string sortBy =
 nameof(PersonResponse.PersonName), SortOrderOptions sortOrder = SortOrderOptions.ASC)
 {
-  // ...
+// ...
 }
 In the Index action:</code></pre>
     </div>
   <ul>
-  <li>[ServiceFilter(typeof(PersonsListActionFilter))]: Applies the PersonsListActionFilter, resolving</li>
-</ul>
-<p>it from the DI container.</p>
-<ul>
+  <li>[ServiceFilter(typeof(PersonsListActionFilter))]: Applies the PersonsListActionFilter, resolving
+it from the DI container.</li>
   <li>[ResponseHeaderFilterFactory(...)]: Uses the filter factory to create and apply an instance of
-      ResponseHeaderActionFilter with the specified arguments.</li>
+ResponseHeaderActionFilter with the specified arguments.</li>
   <li>[SkipFilter]: This custom attribute is used to skip specific filters that check for its presence (as
-      demonstrated in a previous example).</li>
+demonstrated in a previous example).</li>
 </ul>
 
-<h2 id="notes-3">Notes</h2>
+<h2 id="notes-4">Notes</h2>
 <ul>
   <li>ServiceFilter: Use for filters that require dependencies from the DI container.</li>
   <li>Filter Attribute Classes: A convenient way to encapsulate filter metadata and apply filters
-      declaratively.</li>
+declaratively.</li>
   <li>IFilterFactory: Enables dynamic filter creation and customization.</li>
   <li>IsReusable: Control whether filter instances are reused or created anew for each request.</li>
   <li>CreateInstance: Implement this method to create and configure your filter instances.</li>
 </ul>
 
-<h2 id="key-points-to-remember">Key Points to Remember</h2>
+<h3 id="key-points-to-remember">Key Points to Remember</h3>
 
 <h2 id="filters-core-concepts">Filters - Core Concepts</h2>
 <ul>
   <li>Purpose: Intercept and execute code before, after, or around controller actions or Razor
-      Pages.</li>
+Pages.</li>
   <li>Benefits:</li>
   <li>Modularize cross-cutting concerns (auth, logging, caching, etc.)</li>
   <li>Clean separation of concerns</li>
@@ -1459,7 +1425,7 @@ In the Index action:</code></pre>
   <li>IActionFilter, IAsyncResultFilter: Intercept action execution (sync and async).</li>
   <li>IAuthorizationFilter: Perform authorization checks.</li>
   <li>IResourceFilter, IAsyncResourceFilter: Manage resource access and lifecycle (sync and
-      async).</li>
+async).</li>
   <li>IExceptionFilter: Handle exceptions gracefully.</li>
   <li>IResultFilter, IAsyncResultFilter: Work with the action result (sync and async).</li>
   <li>IAlwaysRunResultFilter: Guaranteed execution, even if other filters short-circuit.</li>
@@ -1486,10 +1452,10 @@ In the Index action:</code></pre>
   <li>Result Filters: Set context.Cancel = true and provide a new context.Result.</li>
   <li>Resource Filters: Set context.Result to bypass action execution and result filters.</li>
   <li>Authorization Filters: Set context.Result to bypass the entire pipeline (including model
-      binding).</li>
+binding).</li>
 </ul>
 
-<h2 id="best-practices-1">Best Practices</h2>
+<h3 id="best-practices-1">Best Practices</h3>
 <ul>
   <li>Choose the Right Filter: Select the appropriate filter type for your needs.</li>
   <li>Dependency Injection: Use DI to inject services into your filters.</li>
@@ -1503,7 +1469,7 @@ In the Index action:</code></pre>
   <li>Explain Filter Types: Clearly articulate the purpose and use cases for each filter type.</li>
   <li>Short-Circuiting: Demonstrate how and when to use short-circuiting effectively.</li>
   <li>Custom Filters: Be prepared to discuss scenarios where you would create custom filters and
-      how you would implement them.</li>
+how you would implement them.</li>
   <li>Filter Ordering: Explain the default order and how to customize it if needed.</li>
   <li>Best Practices: Showcase your knowledge of filter best practices and common pitfalls.</li>
 </ul>
@@ -1513,34 +1479,28 @@ In the Index action:</code></pre>
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
   <h3 id="filters">Filters</h3>
-<p>Filters are the code blocks that execute before / after specific stages in &quot;Filter Pipeline&quot;.
-Filters perform specific tasks such as authorization, caching, exeption handling etc.</p>
+<p>Filters are the code blocks that execute before / after specific stages in &quot;Filter Pipeline&quot;. Filters perform specific tasks such as authorization, caching, exeption handling etc.</p>
   <h3 id="filter-pipeline">Filter Pipeline</h3>
   <h3 id="overview-of-types-of-filters">Overview of Types of Filters</h3>
   <h3 id="authorization-filter">Authorization Filter</h3>
 <p>Determines whether the user is authorized to access the action method.</p>
   <h3 id="resource-filter">Resource Filter</h3>
-  <h3 id="invoking-custom-model-binder-explicitly">Invoking custom model binder explicitly</h3>
-<p>Caching the response.</p>
+<p>Invoking custom model binder explicitly Caching the response.</p>
   <h3 id="action-filter">Action Filter</h3>
-<p>Manipulating &amp; validating the action method parameters.
-Manipulating the ViewData.
-Overriding the <code>IActionResult</code> provided by action method.</p>
+<p>Manipulating &amp; validating the action method parameters. Manipulating the ViewData. Overriding the <code>IActionResult</code> provided by action method.</p>
   <h3 id="exception-filter">Exception Filter</h3>
 <p>Handling unhandled exception that occur in model binding, action filters or action methods.</p>
   <h3 id="result-filter">Result Filter</h3>
-<p>Preventing <code>IActionResult</code> from execution.
-Adding last-moment changes to response (such as adding response headers).</p>
+<p>Preventing <code>IActionResult</code> from execution. Adding last-moment changes to response (such as adding response headers).</p>
   <h3 id="action-filter-1">Action Filter</h3>
   <h3 id="when-it-runs">When it runs</h3>
-<p>Runs immediately before and after an action method executes.
-&#39;OnActionExecuting&#39; method</p>
+<p>Runs immediately before and after an action method executes. &#39;OnActionExecuting&#39; method</p>
 <ul>
   <li>It can access the action method parameters, read them &amp; do necessary manipulations on
-      them.</li>
+them.</li>
   <li>It can validate action method parameters.</li>
   <li>It can short-circuit the action (prevent action method from execution) and return a different
-      <code>IActionResult</code>.
+<code>IActionResult</code>.
 &#39;OnActionExecuted&#39; method</li>
   <li>It can manipulate the ViewData.</li>
   <li>It can change the result returned from the action method.</li>
@@ -1548,9 +1508,7 @@ Adding last-moment changes to response (such as adding response headers).</p>
   <h3 id="filter-arguments-1">Filter Arguments</h3>
   <h3 id="global-filters-1">Global Filters</h3>
   <h3 id="filter-scopes">Filter Scopes</h3>
-<p>What are global filters?
-Global filters are applied to all action methods of all controllers in the project.
-How to add global filters in <code>Program.cs</code>?</p>
+<p>What are global filters? Global filters are applied to all action methods of all controllers in the project. How to add global filters in <code>Program.cs</code>?</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1561,17 +1519,16 @@ How to add global filters in <code>Program.cs</code>?</p>
         </button>
       </div>
       <pre><code class="language-csharp">builder.Services.AddControllersWithViews(options =&gt; {
- options.Filters.Add&lt;FilterClassName&gt;(); //add by type
- //or
- options.Filters.Add(new FilterClassName()); //add filter instance
+options.Filters.Add&lt;FilterClassName&gt;(); //add by type
+//or
+options.Filters.Add(new FilterClassName()); //add filter instance
 });</code></pre>
     </div>
-    <h3 id="default-order-of-filter-execution">Default Order of Filter Execution</h3>
-  <h3 id="custom-order-of-filters">Custom Order of Filters</h3>
+  <p>Default Order of Filter Execution Custom Order of Filters</p>
   <h3 id="iorderedfilter">IOrderedFilter</h3>
   <h3 id="example">Example</h3>
   <h3 id="iorderedfilter-1">IOrderedFilter</h3>
-  <h3 id="action-filter-with-iorderedfilter">Action filter with IOrderedFilter</h3>
+<p>Action filter with IOrderedFilter</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1583,23 +1540,22 @@ How to add global filters in <code>Program.cs</code>?</p>
       </div>
       <pre><code class="language-csharp">public class FilterClassName : IActionFilter, IOrderedFilter
 {
- public int Order { get; set; } //Defines sequence of execution
- public FilterClassName(int order)
- {
-  Order = order;
- }
- public void OnActionExecuting(ActionExecutingContext context)
- {
-  //TO DO: before logic here
- }
- public void OnActionExecuted(ActionExecutedContext context)
- {
-  //TO DO: after logic here
- }
+public int Order { get; set; } //Defines sequence of execution
+public FilterClassName(int order)
+{
+Order = order;
+}
+public void OnActionExecuting(ActionExecutingContext context)
+{
+//TO DO: before logic here
+}
+public void OnActionExecuted(ActionExecutedContext context)
+{
+//TO DO: after logic here
+}
 }</code></pre>
     </div>
-  <p>Async Filters</p>
-  <h3 id="asynchronous-action-filter">Asynchronous Action Filter</h3>
+  <p>Async Filters Asynchronous Action Filter</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1611,31 +1567,30 @@ How to add global filters in <code>Program.cs</code>?</p>
       </div>
       <pre><code class="language-csharp">public class FilterClassName : IAsyncActionFilter, IOrderedFilter
 {
- public int Order { get; set; } //Defines sequence of execution
- public FilterClassName(int order)
- {
-  Order = order;
- }
- public async Task OnActionExecutionAsync(ActionExecutingContext context,
+public int Order { get; set; } //Defines sequence of execution
+public FilterClassName(int order)
+{
+Order = order;
+}
+public async Task OnActionExecutionAsync(ActionExecutingContext context,
 ActionExecutionDelegate next)
- {
-  //TO DO: before logic here
-  await next();
-  //TO DO: after logic here
- }
+{
+//TO DO: before logic here
+await next();
+//TO DO: after logic here
+}
 }</code></pre>
     </div>
     <h3 id="short-circuiting-filters">Short-circuiting Filters</h3>
   <h3 id="action-filters-1">Action Filters</h3>
   <h3 id="when-it-runs-1">When it runs</h3>
-<p>Runs immediately before and after an action method executes.
-&#39;OnActionExecuting&#39; method</p>
+<p>Runs immediately before and after an action method executes. &#39;OnActionExecuting&#39; method</p>
 <ul>
   <li>It can access the action method parameters, read them &amp; do necessary manipulations on
-      them.</li>
+them.</li>
   <li>It can validate action method parameters.</li>
   <li>It can short-circuit the action (prevent action method from execution) and return a different
-      <code>IActionResult</code>.
+<code>IActionResult</code>.
 &#39;OnActionExecuted&#39; method</li>
   <li>It can manipulate the ViewData.</li>
   <li>It can change the result returned from the action method.</li>
@@ -1652,7 +1607,7 @@ ActionExecutionDelegate next)
       </div>
       <pre><code class="language-csharp">return the error response to the browser.</code></pre>
     </div>
-    <h3 id="short-circuiting-action-filter">Short-Circuiting Action Filter</h3>
+  <p>Short-Circuiting Action Filter</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1667,14 +1622,14 @@ ActionExecutionDelegate next)
 public int Order { get; set; } //Defines sequence of execution
 public FilterClassName(int order)
 {
- Order = order;
+Order = order;
 }
 public async Task OnActionExecutionAsync(ActionExecutingContext context,
 ActionExecutionDelegate next)
 {
- //TO DO: before logic here
- context.Result = some_action_result; //you can return any type of IActionResult
- //Not calling next(). So it leads remaining filters &amp; action method short-circuited.
+//TO DO: before logic here
+context.Result = some_action_result; //you can return any type of IActionResult
+//Not calling next(). So it leads remaining filters &amp; action method short-circuited.
 }
 }</code></pre>
     </div>
@@ -1686,16 +1641,16 @@ ActionExecutionDelegate next)
   <li>It can access the <code>IActionResult</code> returned by the action method.
 &#39;OnResultExecuting&#39; method</li>
   <li>It can continue executing the <code>IActionResult</code> normally, by not assigning &quot;Result&quot; property of
-      the context.</li>
+the context.</li>
   <li>It can short-circuit the action (prevent <code>IActionResult</code> from execution) and return a different
-      <code>IActionResult</code>.
+<code>IActionResult</code>.
 &#39;OnResultExecuted&#39; method</li>
   <li>It can manipulate the last-moment changes in the response, such as adding necessary
-      response headers.</li>
+response headers.</li>
   <li>It should not throw exceptions because, exceptions raised in result filters would not be
-      caught by the exception filter.</li>
+caught by the exception filter.</li>
 </ul>
-  <h3 id="synchronous-result-filter">Synchronous Result Filter</h3>
+<p>Synchronous Result Filter</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1707,22 +1662,22 @@ ActionExecutionDelegate next)
       </div>
       <pre><code class="language-csharp">public class FilterClassName : IResultFilter, IOrderedFilter
 {
- public int Order { get; set; } //Defines sequence of execution
- public FilterClassName(int order)
- {
-  Order = order;
- }
- public void OnResultExecuting(ResultExecutingContext context)
- {
-  //TO DO: before logic here
- }
- public void OnResultExecuted(ResultExecutedContext context)
- {
-  //TO DO: after logic here
- }
+public int Order { get; set; } //Defines sequence of execution
+public FilterClassName(int order)
+{
+Order = order;
+}
+public void OnResultExecuting(ResultExecutingContext context)
+{
+//TO DO: before logic here
+}
+public void OnResultExecuted(ResultExecutedContext context)
+{
+//TO DO: after logic here
+}
 }</code></pre>
     </div>
-    <h3 id="asynchronous-result-filter">Asynchronous Result Filter</h3>
+  <p>Asynchronous Result Filter</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1734,36 +1689,34 @@ ActionExecutionDelegate next)
       </div>
       <pre><code class="language-csharp">public class FilterClassName : IAsyncResultFilter, IOrderedFilter
 {
- public int Order { get; set; } //Defines sequence of execution
- public FilterClassName(int order)
- {
-  Order = order;
- }
- public async Task OnResultExecutionAsync(ResultExecutingContext context,
+public int Order { get; set; } //Defines sequence of execution
+public FilterClassName(int order)
+{
+Order = order;
+}
+public async Task OnResultExecutionAsync(ResultExecutingContext context,
 ResultExecutionDelegate next)
- {
- //TO DO: before logic here
- await next();
- //TO DO: after logic here
- }
+{
+//TO DO: before logic here
+await next();
+//TO DO: after logic here
+}
 }</code></pre>
     </div>
   <p>Resource Filter</p>
   <h3 id="when-it-runs-3">When it runs</h3>
-<p>Runs immediately after Authorize Filter and after Result Filter executes.
-&#39;OnResourceExecuting&#39; method</p>
+<p>Runs immediately after Authorize Filter and after Result Filter executes. &#39;OnResourceExecuting&#39; method</p>
 <ul>
   <li>It can do some work before model binding. Eg: Adding metrics to an action method.</li>
   <li>It can change the way how model binding works (invoking a custom model binder explicitly).</li>
   <li>It can short-circuit the action (prevent <code>IActionResult</code> from execution) and return a different
-      <code>IActionResult</code>.</li>
+<code>IActionResult</code>.</li>
 </ul>
-<p>Eg: Short-circuit if an unsupported content type is requested.
-&#39;OnResourceExecuted&#39; method</p>
+<p>Eg: Short-circuit if an unsupported content type is requested. &#39;OnResourceExecuted&#39; method</p>
 <ul>
   <li>It can read the response body and store it in cache.</li>
 </ul>
-  <h3 id="synchronous-resource-filter">Synchronous Resource Filter</h3>
+<p>Synchronous Resource Filter</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1775,22 +1728,22 @@ ResultExecutionDelegate next)
       </div>
       <pre><code class="language-csharp">public class FilterClassName : IResourceFilter, IOrderedFilter
 {
- public int Order { get; set; } //Defines sequence of execution
- public FilterClassName(int order)
- {
-  Order = order;
- }
- public void OnResourceExecuting(ResourceExecutingContext context)
- {
-  //TO DO: before logic here
- }
- public void OnResourceExecuted(ResourceExecutedContext context)
- {
-  //TO DO: after logic here
- }
+public int Order { get; set; } //Defines sequence of execution
+public FilterClassName(int order)
+{
+Order = order;
+}
+public void OnResourceExecuting(ResourceExecutingContext context)
+{
+//TO DO: before logic here
+}
+public void OnResourceExecuted(ResourceExecutedContext context)
+{
+//TO DO: after logic here
+}
 }</code></pre>
     </div>
-    <h3 id="asynchronous-resource-filter">Asynchronous Resource Filter</h3>
+  <p>Asynchronous Resource Filter</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1802,31 +1755,30 @@ ResultExecutionDelegate next)
       </div>
       <pre><code class="language-csharp">public class FilterClassName : IAsyncResourceFilter, IOrderedFilter
 {
- public int Order { get; set; } //Defines sequence of execution
- public FilterClassName(int order)
- {
-  Order = order;
- }
- public async Task OnResourceExecutionAsync(ResourceExecutingContext context,
+public int Order { get; set; } //Defines sequence of execution
+public FilterClassName(int order)
+{
+Order = order;
+}
+public async Task OnResourceExecutionAsync(ResourceExecutingContext context,
 ResourceExecutionDelegate next)
- {
-  //TO DO: before logic here
-  await next();
-  //TO DO: after logic here
- }
+{
+//TO DO: before logic here
+await next();
+//TO DO: after logic here
+}
 }</code></pre>
     </div>
   <p>Authorization Filter</p>
   <h3 id="authorization-filters">Authorization Filters</h3>
-<p>Runs before any other filters in the filter pipeline.
-&#39;OnAuthorize&#39; method</p>
+<p>Runs before any other filters in the filter pipeline. &#39;OnAuthorize&#39; method</p>
 <ul>
   <li>Determines whether the user is authorized for the request.</li>
   <li>Short-circuits the pipeline if the request is NOT authorized.</li>
   <li>Don&#39;t throw exceptions in OnAuthorize method, as they will not be handled by exception
-      filters.</li>
+filters.</li>
 </ul>
-  <h3 id="synchronous-authorization-filter">Synchronous Authorization Filter</h3>
+<p>Synchronous Authorization Filter</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1838,10 +1790,10 @@ ResourceExecutionDelegate next)
       </div>
       <pre><code class="language-csharp">public class FilterClassName : IAuthorizationFilter
 {
- public void OnAuthorization(AuthorizationFilterContext context)
- {
-  //TO DO: authorization logic here
- }
+public void OnAuthorization(AuthorizationFilterContext context)
+{
+//TO DO: authorization logic here
+}
 }</code></pre>
     </div>
   <p>Asynchronous Authorization Filter</p>
@@ -1856,26 +1808,25 @@ ResourceExecutionDelegate next)
       </div>
       <pre><code class="language-csharp">public class FilterClassName : IAsyncAuthorizationFilter
 {
- public async Task OnAuthorizationAsync(AuthorizationFilterContext context)
- {
-  //TO DO: authorization logic here
- }
+public async Task OnAuthorizationAsync(AuthorizationFilterContext context)
+{
+//TO DO: authorization logic here
+}
 }</code></pre>
     </div>
     <h3 id="exception-filter-1">Exception Filter</h3>
   <h3 id="when-it-runs-4">When it runs</h3>
-<p>Runs when an exception is raised during the filter pipeline.
-&#39;OnException method</p>
+<p>Runs when an exception is raised during the filter pipeline. &#39;OnException method</p>
 <ul>
   <li>Handles unhandled exceptions that occur in controller creation, model binding, action filters
-      or action methods.</li>
+or action methods.</li>
   <li>Doesn&#39;t handle the unhandled exceptions that occur in authorization filters, resource filters,
-      result filters or <code>IActionResult</code> execution.</li>
+result filters or <code>IActionResult</code> execution.</li>
   <li>Recommended to be used only when you want a different error handling and generate
-      different result for specific controllers; otherwise, ErrorHandlingMiddleware is
-      recommended over Exception Filters.</li>
+different result for specific controllers; otherwise, ErrorHandlingMiddleware is
+recommended over Exception Filters.</li>
 </ul>
-  <h3 id="synchronous-exception-filter">Synchronous Exception Filter</h3>
+<p>Synchronous Exception Filter</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1887,14 +1838,14 @@ ResourceExecutionDelegate next)
       </div>
       <pre><code class="language-csharp">public class FilterClassName : IAsyncExceptionFilter
 {
- public async Task OnExceptionAsync(ExceptionFilterContext context)
- {
-  //TO DO: exception handling logic here, as follows
-  context.Result = some_action_result;
-  //or
-  context.ExceptionHandled = true;
-  return Task.CompletedTask;
- }
+public async Task OnExceptionAsync(ExceptionFilterContext context)
+{
+//TO DO: exception handling logic here, as follows
+context.Result = some_action_result;
+//or
+context.ExceptionHandled = true;
+return Task.CompletedTask;
+}
 }</code></pre>
     </div>
   <p>Asynchronous Exception Filter</p>
@@ -1909,40 +1860,20 @@ ResourceExecutionDelegate next)
       </div>
       <pre><code class="language-csharp">public class FilterClassName : IAsyncExceptionFilter
 {
- public async Task OnExceptionAsync(ExceptionFilterContext context)
- {
-  //TO DO: exception handling logic here, as follows
-  context.Result = some_action_result;
-  //or
-  context.ExceptionHandled = true;
-  return Task.CompletedTask;
- }
+public async Task OnExceptionAsync(ExceptionFilterContext context)
+{
+//TO DO: exception handling logic here, as follows
+context.Result = some_action_result;
+//or
+context.ExceptionHandled = true;
+return Task.CompletedTask;
+}
 }</code></pre>
     </div>
-    <h3 id="impact-of-short-circuiting-1">Impact of Short-Circuiting</h3>
-  <h3 id="short-circuiting-authorization-filter">Short-circuiting Authorization Filter</h3>
-  <h3 id="short-circuiting-resource-filter">Short-circuiting Resource Filter</h3>
-  <h3 id="short-circuiting-action-filter-1">Short-circuiting Action Filter</h3>
-  <h3 id="short-circuiting-exception-filter">Short-circuiting Exception Filter</h3>
+  <p>Impact of Short-Circuiting Short-circuiting Authorization Filter Short-circuiting Resource Filter Short-circuiting Action Filter Short-circuiting Exception Filter Short-circuiting Result Filter Short-circuiting the filters AlwaysRun Result Filter Short-circuiting Authorization Filter Short-circuiting Resource Filter Short-circuiting Action Filter Short-circuiting Exception Filter</p>
   <h3 id="short-circuiting-result-filter">Short-circuiting Result Filter</h3>
-  <h3 id="short-circuiting-the-filters">Short-circuiting the filters</h3>
-  <h3 id="alwaysrun-result-filter">AlwaysRun Result Filter</h3>
-  <h3 id="short-circuiting-authorization-filter-1">Short-circuiting Authorization Filter</h3>
-  <h3 id="short-circuiting-resource-filter-1">Short-circuiting Resource Filter</h3>
-  <h3 id="short-circuiting-action-filter-2">Short-circuiting Action Filter</h3>
-  <h3 id="short-circuiting-exception-filter-1">Short-circuiting Exception Filter</h3>
-  <h3 id="short-circuiting-result-filter-1">Short-circuiting Result Filter</h3>
   <h3 id="when-alwaysrunresultfilter-runs">When AlwaysRunResultFilter runs</h3>
-<p>Runs immediately before and after result filters.
-Result filters:
-Doesn&#39;t execute when authorization filter, resource filter or exception filter short-circuits.
-AlwaysRunResult filter:
-Execute always even when authorization filter, resource filter or exception filter short-circuits.
-&#39;OnResultExecuting&#39; method</p>
-  <h3 id="same-as-result-filter">Same as Result filter</h3>
-<p>&#39;OnResultExecuted&#39; method</p>
-  <h3 id="same-as-result-filter-1">Same as Result filter</h3>
-  <h3 id="synchronous-always-run-result-filter">Synchronous Always Run Result Filter</h3>
+<p>Runs immediately before and after result filters. Result filters: Doesn&#39;t execute when authorization filter, resource filter or exception filter short-circuits. AlwaysRunResult filter: Execute always even when authorization filter, resource filter or exception filter short-circuits. &#39;OnResultExecuting&#39; method Same as Result filter &#39;OnResultExecuted&#39; method Same as Result filter Synchronous Always Run Result Filter</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1954,14 +1885,14 @@ Execute always even when authorization filter, resource filter or exception filt
       </div>
       <pre><code class="language-csharp">public class FilterClassName : IAlwaysRunResultFilter
 {
- public void OnResultExecuting(ResultExecutingContext context)
- {
-  //TO DO: before logic here
- }
- public void OnResultExecuted(ResultExecutedContext context)
- {
-  //TO DO: after logic here
- }
+public void OnResultExecuting(ResultExecutingContext context)
+{
+//TO DO: before logic here
+}
+public void OnResultExecuted(ResultExecutedContext context)
+{
+//TO DO: after logic here
+}
 }</code></pre>
     </div>
   <p>Asynchronous Always Run Result Filter</p>
@@ -1976,13 +1907,13 @@ Execute always even when authorization filter, resource filter or exception filt
       </div>
       <pre><code class="language-csharp">public class FilterClassName : IAsyncAlwaysRunResultFilter
 {
- public async Task OnResultExecutionAsync(ResultExecutingContext context,
+public async Task OnResultExecutionAsync(ResultExecutingContext context,
 ResultExecutionDelegate next)
- {
- //TO DO: before logic here
- await next();
- //TO DO: after logic here
- }
+{
+//TO DO: before logic here
+await next();
+//TO DO: after logic here
+}
 }</code></pre>
     </div>
     <h3 id="filter-overrides-2">Filter Overrides</h3>
@@ -1998,12 +1929,12 @@ ResultExecutionDelegate next)
       </div>
       <pre><code class="language-csharp">public class ControllerName : Controller
 {
- public IActionResult Action1() //requirement: The filter SHOULD execute
- {
- }
- public IActionResult Action2() //requirement: The filter SHOULD NOT execute. But how??
- {
- }
+public IActionResult Action1() //requirement: The filter SHOULD execute
+{
+}
+public IActionResult Action2() //requirement: The filter SHOULD NOT execute. But how??
+{
+}
 }</code></pre>
     </div>
   <p>Attribute to be applied to desired action method</p>
@@ -2020,8 +1951,7 @@ ResultExecutionDelegate next)
 {
 }</code></pre>
     </div>
-  <p>Action method
-[SkipFilter]</p>
+  <p>Action method [SkipFilter]</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2047,23 +1977,22 @@ ResultExecutionDelegate next)
       </div>
       <pre><code class="language-csharp">public class FilterClassName : IActionFilter //or any other filter interface
 {
- public void OnActionExecuting(ActionExecutingContext context)
- {
-  //get list of filters applied to the current working action method
-  if (context.Filters.OfType&lt;SkipResultFilter&gt;().Any())
-  {
-  return;
-  }
-  //TO DO: before logic here
- }
- public void OnActionExecuted(ActionExecutedContext context)
- {
-  //TO DO: after logic here
- }
+public void OnActionExecuting(ActionExecutingContext context)
+{
+//get list of filters applied to the current working action method
+if (context.Filters.OfType&lt;SkipResultFilter&gt;().Any())
+{
+return;
+}
+//TO DO: before logic here
+}
+public void OnActionExecuted(ActionExecutedContext context)
+{
+//TO DO: after logic here
+}
 }</code></pre>
     </div>
-  <p>It skips execution of code of a filter, for specific action methods.
-[ServiceFilter]</p>
+  <p>It skips execution of code of a filter, for specific action methods. [ServiceFilter]</p>
   <h3 id="common-purpose">Common purpose</h3>
 <p>Both are used to apply a filter a controller or action method.</p>
   <h3 id="type-filter-attribute">Type Filter Attribute</h3>
@@ -2090,7 +2019,7 @@ ResultExecutionDelegate next)
       </div>
       <pre><code class="language-csharp">public IActionResult ActionMethod()
 {
- …
+…
 }</code></pre>
     </div>
   <p>Service Filter Attribute</p>
@@ -2117,19 +2046,19 @@ ResultExecutionDelegate next)
       </div>
       <pre><code class="language-csharp">public IActionResult ActionMethod()
 {
- …
+…
 }</code></pre>
     </div>
   <p>Type Filter</p>
 <ul>
   <li>Can supply arguments to the filter.</li>
   <li>Filter instances are created by using Microsoft.Extensions.DependencyInjection.
-      ObjectFactory.</li>
+ObjectFactory.</li>
   <li>They&#39;re NOT created using DI (Dependency Injection).</li>
   <li>The lifetime of filter instances is by default transient (a new filter instance gets created every
-      time when it is invoked).</li>
+time when it is invoked).</li>
   <li>But optionally, you can re-use the same instance of filter class across multiple requests, by
-      setting a property called TypeFilterAttribute.IsReusable to &#39;true&#39;.</li>
+setting a property called TypeFilterAttribute.IsReusable to &#39;true&#39;.</li>
   <li>Filter classes NEED NOT be registered (added) to the IoC container.</li>
   <li>Filter classes CAN inject services using both constructor injection or method injection.</li>
 </ul>
@@ -2138,16 +2067,14 @@ ResultExecutionDelegate next)
   <li>Can&#39;t supply arguments to the filter.</li>
   <li>Filter instances are created by using ServiceProvider (using DI).</li>
   <li>The lifetime of filter instances is the actual lifetime of the filter class added in the IoC
-      container.</li>
+container.</li>
   <li>Eg: If the filter class is added to the IoC container with AddScoped() method, then its
-      instances are scoped.</li>
+instances are scoped.</li>
   <li>Filter class SHOULD be registered (added) to the IoC container, much like any other service.</li>
   <li>Filter classes CAN inject services using both constructor injection or method injection.</li>
 </ul>
   <h3 id="filter-attribtute-classes">Filter attribtute classes</h3>
-<p>IActionFilter [vs] ActionFilterAttribute
-[versus]
-Action filter that implements &#39;IActionFilter&#39;</p>
+<p>IActionFilter [vs] ActionFilterAttribute [versus] Action filter that implements &#39;IActionFilter&#39;</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2159,7 +2086,7 @@ Action filter that implements &#39;IActionFilter&#39;</p>
       </div>
       <pre><code class="language-csharp">public class FilterClassName : IActionFilter, IOrderedFilter
 {
- //supports constructor DI
+//supports constructor DI
 }</code></pre>
     </div>
   <p>Action filter that inherits &#39;ActionFilterAttribute&#39;</p>
@@ -2174,7 +2101,7 @@ Action filter that implements &#39;IActionFilter&#39;</p>
       </div>
       <pre><code class="language-csharp">public class FilterClassName : ActionFilterAttribute
 {
- //doesn&#39;t support constructor DI
+//doesn&#39;t support constructor DI
 }</code></pre>
     </div>
   <p>Filter interfaces:</p>
@@ -2206,16 +2133,16 @@ Filter attributes:</li>
       </div>
       <pre><code class="language-csharp">public class FilterClassName : IActionFilter, IOrderedFilter
 {
- public int Order { get; set; }
- public FilterClassName(IService service, type arg)
- {
- }
- public void OnActionExecuting(ActionExecutingContext context)
- {
- }
- public void OnActionExecuted(ActionExecutedContext context)
- {
- }
+public int Order { get; set; }
+public FilterClassName(IService service, type arg)
+{
+}
+public void OnActionExecuting(ActionExecutingContext context)
+{
+}
+public void OnActionExecuted(ActionExecutedContext context)
+{
+}
 }
 [TypeFilter(typeof(FilterClassName),
 Arguments = new object[] { arg1, … })]</code></pre>
@@ -2232,20 +2159,20 @@ Arguments = new object[] { arg1, … })]</code></pre>
       </div>
       <pre><code class="language-csharp">public class FilterClassName : ActionFilterAttribute
 {
- public FilterClassName(type arg)
- {
- }
- public override void OnActionExecuting(ActionExecutingContext context)
- {
- }
- public override void OnActionExecuted(ActionExecutedContext context)
- {
- }
+public FilterClassName(type arg)
+{
+}
+public override void OnActionExecuting(ActionExecutingContext context)
+{
+}
+public override void OnActionExecuted(ActionExecutedContext context)
+{
+}
 }</code></pre>
     </div>
   <p>[FilterClassName(arg1, … )]</p>
   <h3 id="internal-definitions-of-iactionfilter-and-actionfilterattribute">Internal definitions of IActionFilter and ActionFilterAttribute</h3>
-  <h3 id="iactionfilter">IActionFilter</h3>
+<p>IActionFilter</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2257,14 +2184,14 @@ Arguments = new object[] { arg1, … })]</code></pre>
       </div>
       <pre><code class="language-csharp">namespace Microsoft.AspNetCore.Mvc.Filters
 {
- public interface IActionFilter : IFilterMetadata
- {
-  void OnActionExecuting(ActionExecutingContext context);
-  void OnActionExecuted(ActionExecutedContext context);
- }
+public interface IActionFilter : IFilterMetadata
+{
+void OnActionExecuting(ActionExecutingContext context);
+void OnActionExecuted(ActionExecutedContext context);
+}
 }</code></pre>
     </div>
-    <h3 id="actionfilterattribute">ActionFilterAttribute</h3>
+  <p>ActionFilterAttribute</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2276,47 +2203,46 @@ Arguments = new object[] { arg1, … })]</code></pre>
       </div>
       <pre><code class="language-csharp">namespace Microsoft.AspNetCore.Mvc.Filters
 {
- public class ActionFilterAttribute : Attribute, IActionFilter, IAsyncActionFilter, IOrderedFilter,
+public class ActionFilterAttribute : Attribute, IActionFilter, IAsyncActionFilter, IOrderedFilter,
 IResultFilter, IAsyncResultFilter
- {
-  public virtual void OnActionExecuting(ActionExecutingContext context) { }
-  public virtual void OnActionExecuted(ActionExecutedContext context) { }
-  public virtual void OnResultExecuting(ActionExecutingContext context) { }
-  public virtual void OnResultExecuted(ActionExecutedContext context) { }
-  public virtual Task OnActionExecutionAsync(ActionExecutingContext context,
+{
+public virtual void OnActionExecuting(ActionExecutingContext context) { }
+public virtual void OnActionExecuted(ActionExecutedContext context) { }
+public virtual void OnResultExecuting(ActionExecutingContext context) { }
+public virtual void OnResultExecuted(ActionExecutedContext context) { }
+public virtual Task OnActionExecutionAsync(ActionExecutingContext context,
 ActionExecutionDelegate next) { }
-  public virtual Task OnResultExecutionAsync(ResultExecutingContext context,
+public virtual Task OnResultExecutionAsync(ResultExecutingContext context,
 ResultExecutionDelegate next) { }
-  public int Order { get; set; }
- }
+public int Order { get; set; }
+}
 }</code></pre>
     </div>
-  <p>Filter interface [vs] FilterAttribute class
-Filter interface [such as IActionFilter, IResultFilter etc.]</p>
+  <p>Filter interface [vs] FilterAttribute class Filter interface [such as IActionFilter, IResultFilter etc.]</p>
 <ul>
   <li>Filter class MUST implement all methods - both &quot;Executing&quot; and &quot;Executed&quot; methods.</li>
   <li>Filter class CAN have DI with either constructor injection or method injection.</li>
   <li>Doesn&#39;t implement &quot;Attribute&quot; class.</li>
   <li>Filter should be applied to controller or action methods by using [ServiceFilter] or
-      [TypeFilter] attributes; otherwise can be applied as global filter in the <code>Program.cs</code>.</li>
+[TypeFilter] attributes; otherwise can be applied as global filter in the <code>Program.cs</code>.</li>
 </ul>
 <p>Eg: [TypeFilter(typeof(FilterClassName))] //lengthy</p>
 <ul>
   <li>Filter class can receive arguments only through constructor parameters; but only with
-      [TypeFilter] attribute; not with [ServiceFilter] attribute.</li>
+[TypeFilter] attribute; not with [ServiceFilter] attribute.</li>
 </ul>
 <p>FilterAttribute class [such as ActionFilterAttribute etc.]</p>
 <ul>
   <li>Filter class MAY override desired (either or both methods - &quot;Executing&quot; and &quot;Executed&quot;)
-      methods.</li>
+methods.</li>
   <li>Filter class CAN&#39;T have DI with neither constructor injection nor method injection.</li>
   <li>FilterAttribute class [such as ActionFilterAttribute etc.]</li>
   <li>Filter can be applied to controller or action methods by directly using the filter class name
-      itself (without using [ServiceFilter] or [TypeFilter] attributes); otherwise can be applied as
-      global filter in the <code>Program.cs</code>.</li>
+itself (without using [ServiceFilter] or [TypeFilter] attributes); otherwise can be applied as
+global filter in the <code>Program.cs</code>.</li>
   <li>Eg: [FilterClassName] //simple</li>
   <li>Filter class can receive arguments either through constructor parameters or filter class&#39;s
-      properties.</li>
+properties.</li>
 </ul>
   <h3 id="ifilterfactory">IFilterFactory</h3>
 <p>Filter factory that inherits &#39;IFilterFactory&#39;</p>
@@ -2332,23 +2258,22 @@ Filter interface [such as IActionFilter, IResultFilter etc.]</p>
       <pre><code class="language-csharp">public class FilterClassNameAttribute : Attribute,
 IFilterFactory
 {
- public type Prop1 { get; set; }
- public FilterClassName(type arg1, type arg2)
- {
-  this.Prop1 = arg1; this.Prop2 = arg2;
- }
- public IFilterMetadata CreateInstance(IServiceProvider serviceProvider)
- {
-  FilterClassName filter = serviceProvider.GetRequiredService&lt;FilterClassName&gt;(); //instantiate the
+public type Prop1 { get; set; }
+public FilterClassName(type arg1, type arg2)
+{
+this.Prop1 = arg1; this.Prop2 = arg2;
+}
+public IFilterMetadata CreateInstance(IServiceProvider serviceProvider)
+{
+FilterClassName filter = serviceProvider.GetRequiredService&lt;FilterClassName&gt;(); //instantiate the
 filter
-  filter.Property1 = Prop1;
-  …
-  return filter;
- }
+filter.Property1 = Prop1;
+…
+return filter;
+}
 }</code></pre>
     </div>
-  <p>[FilterClassName(arg1, arg2, … )]</p>
-<p>Action filter that inherits &#39;ActionFilterAttribute&#39;</p>
+  <p>[FilterClassName(arg1, arg2, … )] Action filter that inherits &#39;ActionFilterAttribute&#39;</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2360,19 +2285,18 @@ filter
       </div>
       <pre><code class="language-csharp">public class FilterClassName : ActionFilterAttribute
 {
- public FilterClassName(type arg1, type arg2)
- {
- }
- public override void OnActionExecuting(ActionExecutingContext context)
- {
- }
- public override void OnActionExecuted(ActionExecutedContext context)
- {
- }
+public FilterClassName(type arg1, type arg2)
+{
+}
+public override void OnActionExecuting(ActionExecutingContext context)
+{
+}
+public override void OnActionExecuted(ActionExecutedContext context)
+{
+}
 }</code></pre>
     </div>
-  <p>[FilterClassName(arg1, arg2, … )]</p>
-  <h3 id="ifilterfactory-1">IFilterFactory</h3>
+  <p>[FilterClassName(arg1, arg2, … )] IFilterFactory</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2384,45 +2308,34 @@ filter
       </div>
       <pre><code class="language-csharp">namespace Microsoft.AspNetCore.Mvc.Filters
 {
- public interface IFilterFactory : IFilterMetadata
- {
-  IFilterMetadata CreateInstance(IServiceProvider serviceProvider);
-  bool IsReusable { get; }
- }
+public interface IFilterFactory : IFilterMetadata
+{
+IFilterMetadata CreateInstance(IServiceProvider serviceProvider);
+bool IsReusable { get; }
+}
 }</code></pre>
     </div>
   <p>FilterAttribute class [such as ActionFilterAttribute etc.]</p>
 <ul>
   <li>Filter CAN be applied as an attribute to the controller or action method. Eg:
-      [FilterClassName]</li>
+[FilterClassName]</li>
   <li>Filter class CAN&#39;T have DI with neither constructor injection nor method injection.</li>
   <li>Filter class CAN receive arguments either through constructor parameters or filter class&#39;s
-      properties.</li>
+properties.</li>
 </ul>
-  <h3 id="ifilterfactory-2">IFilterFactory</h3>
+  <h3 id="ifilterfactory-1">IFilterFactory</h3>
 <ul>
   <li>Filter CAN be applied as an attribute to the controller or action method. Eg:
-      [FilterClassName]</li>
+[FilterClassName]</li>
   <li>Filter class CAN have DI with either constructor injection or method injection.</li>
   <li>Filter class CAN receive arguments only through filter class&#39;s properties, if it is instantiated
-      through ServiceProvider (using DI).</li>
+through ServiceProvider (using DI).</li>
 </ul>
-<p>Alternatively, if you don&#39;t need to inject services using DI in the filter class; you can instantiate the
-filter class with &#39;new&#39; keyword, in the CreateInstance() method of IFilterFactory; then the filter class
-can receive arguments either as constructor parameters or properties.
-Filters [vs] Middleware</p>
+<p>Alternatively, if you don&#39;t need to inject services using DI in the filter class; you can instantiate the filter class with &#39;new&#39; keyword, in the CreateInstance() method of IFilterFactory; then the filter class can receive arguments either as constructor parameters or properties. Filters [vs] Middleware</p>
   <h3 id="middleware">Middleware</h3>
-<p>Middleware pipeline is a superset of Filter pipeline, which contains the full-set of all middlewares
-added to the ApplicationBuilder in the application&#39;s startup code (<code>Program.cs</code>).
-Middleware pipeline execute for all requests.
-Middleware handles application-level functionality such as Logging, HTTPS redirection, Performance
-profiling, Exception handling, Static files, Authentication etc., by accessing low-level abstractions
-such as HttpContext.</p>
+<p>Middleware pipeline is a superset of Filter pipeline, which contains the full-set of all middlewares added to the ApplicationBuilder in the application&#39;s startup code (<code>Program.cs</code>). Middleware pipeline execute for all requests. Middleware handles application-level functionality such as Logging, HTTPS redirection, Performance profiling, Exception handling, Static files, Authentication etc., by accessing low-level abstractions such as HttpContext.</p>
   <h3 id="filter">Filter</h3>
-<p>Filter pipeline is a subset of Middleware pipeline which executes under &quot;EndPoint Middleware&quot;.
-In addition, filter pipeline executes for requests that reach &quot;EndPoint Middleware&quot;.
-Filters handle MVC-specific functionality such as manipulating or accessing ViewData, ViewBag,
-ModleState, Action result, Action parameters etc.</p>
+<p>Filter pipeline is a subset of Middleware pipeline which executes under &quot;EndPoint Middleware&quot;. In addition, filter pipeline executes for requests that reach &quot;EndPoint Middleware&quot;. Filters handle MVC-specific functionality such as manipulating or accessing ViewData, ViewBag, ModleState, Action result, Action parameters etc.</p>
   <h3 id="middleware-pipeline">Middleware Pipeline</h3>
 </section>
 
@@ -2469,11 +2382,15 @@ ModleState, Action result, Action parameters etc.</p>
       <ul class="toc-list">
         
         <li class="toc-item">
+          <a href="#filters-in-aspnet-core-mvc" class="toc-link">Filters in ASP.NET Core MVC</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#purpose-of-filters" class="toc-link">Purpose of Filters</a>
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices" class="toc-link">Best Practices</a>
+          <a href="#best-practices" class="toc-link toc-sub">Best Practices</a>
         </li>
       
         <li class="toc-item">
@@ -2497,7 +2414,7 @@ ModleState, Action result, Action parameters etc.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#example-usage" class="toc-link">Example Usage</a>
+          <a href="#example-usage" class="toc-link toc-sub">Example Usage</a>
         </li>
       
         <li class="toc-item">
@@ -2509,15 +2426,15 @@ ModleState, Action result, Action parameters etc.</p>
         </li>
       
         <li class="toc-item">
+          <a href="#custom-order-of-filters-controlling-execution-sequence" class="toc-link">Custom Order of Filters: Controlling Execution Sequence</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#code-explanation-1" class="toc-link">Code Explanation</a>
         </li>
       
         <li class="toc-item">
           <a href="#personslistactionfilter" class="toc-link">PersonsListActionFilter</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#responseheaderactionfilter" class="toc-link">ResponseHeaderActionFilter</a>
         </li>
       
         <li class="toc-item">
@@ -2529,6 +2446,10 @@ ModleState, Action result, Action parameters etc.</p>
         </li>
       
         <li class="toc-item">
+          <a href="#notes" class="toc-link">Notes</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#asynchronous-filters" class="toc-link">Asynchronous Filters</a>
         </li>
       
@@ -2537,7 +2458,7 @@ ModleState, Action result, Action parameters etc.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#notes" class="toc-link">Notes</a>
+          <a href="#notes-1" class="toc-link">Notes</a>
         </li>
       
         <li class="toc-item">
@@ -2546,6 +2467,10 @@ ModleState, Action result, Action parameters etc.</p>
       
         <li class="toc-item">
           <a href="#resource-filters" class="toc-link">Resource Filters</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#authorization-filters-guarding-your-actions" class="toc-link">Authorization Filters: Guarding Your Actions</a>
         </li>
       
         <li class="toc-item">
@@ -2561,7 +2486,7 @@ ModleState, Action result, Action parameters etc.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#notes-1" class="toc-link">Notes</a>
+          <a href="#notes-2" class="toc-link">Notes</a>
         </li>
       
         <li class="toc-item">
@@ -2577,7 +2502,7 @@ ModleState, Action result, Action parameters etc.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#example-scenarios" class="toc-link">Example Scenarios</a>
+          <a href="#example-scenarios" class="toc-link toc-sub">Example Scenarios</a>
         </li>
       
         <li class="toc-item">
@@ -2609,11 +2534,15 @@ ModleState, Action result, Action parameters etc.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#notes-2" class="toc-link">Notes</a>
+          <a href="#notes-3" class="toc-link">Notes</a>
         </li>
       
         <li class="toc-item">
           <a href="#service-filters" class="toc-link">Service Filters</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#filter-attribute-classes-encapsulating-filter-metadata" class="toc-link">Filter Attribute Classes: Encapsulating Filter Metadata</a>
         </li>
       
         <li class="toc-item">
@@ -2633,11 +2562,11 @@ ModleState, Action result, Action parameters etc.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#notes-3" class="toc-link">Notes</a>
+          <a href="#notes-4" class="toc-link">Notes</a>
         </li>
       
         <li class="toc-item">
-          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+          <a href="#key-points-to-remember" class="toc-link toc-sub">Key Points to Remember</a>
         </li>
       
         <li class="toc-item">
@@ -2661,7 +2590,7 @@ ModleState, Action result, Action parameters etc.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices-1" class="toc-link">Best Practices</a>
+          <a href="#best-practices-1" class="toc-link toc-sub">Best Practices</a>
         </li>
       
         <li class="toc-item">

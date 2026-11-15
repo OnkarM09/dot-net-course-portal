@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -403,11 +413,11 @@
 <p>Overview:</p>
 <ul>
   <li>HTTP (Hypertext Transfer Protocol) is a protocol used for transmitting hypertext (e.g., HTML)
-      over the internet.</li>
+over the internet.</li>
   <li>It operates on a client-server model, where the client (usually a web browser) makes
-      requests to a server, which then responds with the requested resources or error messages.</li>
+requests to a server, which then responds with the requested resources or error messages.</li>
   <li>Stateless Protocol: Each HTTP request is independent of others; the server does not retain
-      information from previous requests.</li>
+information from previous requests.</li>
 </ul>
 <p>Request/Response Model:</p>
 <ul>
@@ -419,8 +429,8 @@
 <p>Definition:</p>
 <ul>
   <li>An HTTP server is software that handles HTTP requests from clients and serves back
-      responses. It processes incoming requests, executes the necessary logic (e.g., accessing a
-      database, generating HTML), and returns the appropriate response.</li>
+responses. It processes incoming requests, executes the necessary logic (e.g., accessing a
+database, generating HTML), and returns the appropriate response.</li>
 </ul>
 <p>Examples:</p>
 <ul>
@@ -430,7 +440,7 @@
 <ul>
   <li>Kestrel is a cross-platform web server included with ASP.NET Core.</li>
   <li>It is lightweight, high-performance, and suitable for running both internal and public-facing
-      web applications.</li>
+web applications.</li>
 </ul>
 
 <h2 id="request-and-response-flow-with-kestrel">Request and Response Flow with Kestrel</h2>
@@ -439,13 +449,13 @@
   <li>The client (e.g., web browser) sends an HTTP request to the server.</li>
   <li>2. Kestrel Receives Request:</li>
   <li>Kestrel receives the request and passes it through the ASP.NET Core middleware
-           pipeline.</li>
+pipeline.</li>
   <li>3. Request Processing:</li>
   <li>Middleware components process the request and eventually pass it to the
-           application’s request handling logic.</li>
+application’s request handling logic.</li>
   <li>4. Generate Response:</li>
   <li>The application generates an HTTP response and sends it back through the
-           middleware pipeline.</li>
+middleware pipeline.</li>
   <li>5. Kestrel Sends Response:</li>
   <li>Kestrel sends the HTTP response back to the client.</li>
 </ul>
@@ -453,9 +463,9 @@
 <h2 id="how-browsers-use-http">How Browsers Use HTTP</h2>
 <ul>
   <li>Browsers use HTTP to request resources such as HTML documents, images, CSS files, and
-      JavaScript files from servers.</li>
+JavaScript files from servers.</li>
   <li>When a user enters a URL or clicks a link, the browser sends an HTTP request to the server,
-      which then responds with the requested resource.</li>
+which then responds with the requested resource.</li>
 </ul>
 
 <h2 id="observing-http-requests-and-responses-in-chrome-dev-tools">Observing HTTP Requests and Responses in Chrome Dev Tools</h2>
@@ -478,12 +488,9 @@
   <li>Headers: Key-value pairs providing information about the response.</li>
   <li>Body: Optional, contains the actual data (e.g., HTML, JSON).</li>
 </ul>
-<p>Example:
-HTTP/1.1 200 OK
-Content-Type: text/html
-Content-Length: 137
-&lt;html&gt;
-&lt;body&gt;</p>
+
+<h3 id="example">Example</h3>
+<p>HTTP/1.1 200 OK Content-Type: text/html Content-Length: 137 &lt;html&gt; &lt;body&gt;</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -495,9 +502,7 @@ Content-Length: 137
       </div>
       <pre><code class="language-razor">&lt;h1&gt;Hello, World!&lt;/h1&gt;</code></pre>
     </div>
-  <p>&lt;/body&gt;
-&lt;/html&gt;
-Commonly Used Response Headers:</p>
+  <p>&lt;/body&gt; &lt;/html&gt; Commonly Used Response Headers:</p>
 <ul>
   <li>Content-Type: Specifies the media type of the resource.</li>
   <li>Content-Length: The size of the response body in bytes.</li>
@@ -509,7 +514,7 @@ Commonly Used Response Headers:</p>
 <h2 id="default-response-headers-in-kestrel">Default Response Headers in Kestrel</h2>
 <ul>
   <li>Content-Type: Typically defaults to text/html or application/json depending on the content
-      being served.</li>
+being served.</li>
   <li>Server: Indicates the server software (e.g., Kestrel).</li>
   <li>Date: The date and time when the response was generated.</li>
 </ul>
@@ -518,7 +523,7 @@ Commonly Used Response Headers:</p>
 <p>Overview:</p>
 <ul>
   <li>Status codes are issued by the server in response to the client&#39;s request to indicate the result
-      of the request.</li>
+of the request.</li>
   <li>Categories include:</li>
   <li>1xx Informational: Request received, continuing process.</li>
   <li>2xx Success: The request was successfully received, understood, and accepted.</li>
@@ -531,18 +536,19 @@ Commonly Used Response Headers:</p>
   <li>200 OK: The request succeeded.</li>
   <li>201 Created: The request succeeded and a new resource was created.</li>
   <li>204 No Content: The server successfully processed the request, but is not returning any
-      content.</li>
+content.</li>
   <li>400 Bad Request: The server could not understand the request due to invalid syntax.</li>
   <li>401 Unauthorized: Authentication is required.</li>
   <li>403 Forbidden: The client does not have access rights to the content.</li>
   <li>404 Not Found: The server cannot find the requested resource.</li>
   <li>500 Internal Server Error: The server encountered an unexpected condition.</li>
   <li>502 Bad Gateway: The server was acting as a gateway or proxy and received an invalid
-      response from the upstream server.</li>
+response from the upstream server.</li>
   <li>503 Service Unavailable: The server is not ready to handle the request.</li>
 </ul>
-<p>Setting Status Codes and Response Headers in ASP.NET Core
-Example Code 1:</p>
+
+<h2 id="setting-status-codes-and-response-headers-in-aspnet-core">Setting Status Codes and Response Headers in ASP.NET Core</h2>
+<p>Example Code 1:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -556,11 +562,11 @@ Example Code 1:</p>
 var app = builder.Build();
 app.Run(async (HttpContext context) =&gt;
 {
-  context.Response.Headers[&quot;MyKey&quot;] = &quot;my value&quot;;
-  context.Response.Headers[&quot;Server&quot;] = &quot;My server&quot;;
-  context.Response.Headers[&quot;Content-Type&quot;] = &quot;text/html&quot;;
-  await context.Response.WriteAsync(&quot;&lt;h1&gt;Hello&lt;/h1&gt;&quot;);
-  await context.Response.WriteAsync(&quot;&lt;h2&gt;World&lt;/h2&gt;&quot;);
+context.Response.Headers[&quot;MyKey&quot;] = &quot;my value&quot;;
+context.Response.Headers[&quot;Server&quot;] = &quot;My server&quot;;
+context.Response.Headers[&quot;Content-Type&quot;] = &quot;text/html&quot;;
+await context.Response.WriteAsync(&quot;&lt;h1&gt;Hello&lt;/h1&gt;&quot;);
+await context.Response.WriteAsync(&quot;&lt;h2&gt;World&lt;/h2&gt;&quot;);
 });
 app.Run();</code></pre>
     </div>
@@ -569,14 +575,13 @@ app.Run();</code></pre>
   <li>context.Response.Headers[&quot;MyKey&quot;] = &quot;my value&quot;;: Adds a custom header to the response.</li>
   <li>context.Response.Headers[&quot;Server&quot;] = &quot;My server&quot;;: Modifies the Server header.</li>
   <li>context.Response.Headers[&quot;Content-Type&quot;] = &quot;text/html&quot;;: Sets the Content-Type header to
-      text/html.</li>
+text/html.</li>
   <li>await context.Response.WriteAsync(&quot;&lt;h1&gt;Hello&lt;/h1&gt;&quot;);: Writes the first part of the
-      response body.</li>
+response body.</li>
   <li>await context.Response.WriteAsync(&quot;&lt;h2&gt;World&lt;/h2&gt;&quot;);: Writes the second part of the
-      response body.</li>
+response body.</li>
 </ul>
-<p>Example Code 2:
-csharpCopy codevar builder = WebApplication.CreateBuilder(args);</p>
+<p>Example Code 2: csharpCopy codevar builder = WebApplication.CreateBuilder(args);</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -589,16 +594,16 @@ csharpCopy codevar builder = WebApplication.CreateBuilder(args);</p>
       <pre><code class="language-csharp">var app = builder.Build();
 app.Run(async (HttpContext context) =&gt;
 {
-  if (1 == 1)
-  {
-   context.Response.StatusCode = 200;
-  }
-  else
-  {
-   context.Response.StatusCode = 400;
-  }
-  await context.Response.WriteAsync(&quot;Hello&quot;);
-  await context.Response.WriteAsync(&quot; World&quot;);
+if (1 == 1)
+{
+context.Response.StatusCode = 200;
+}
+else
+{
+context.Response.StatusCode = 400;
+}
+await context.Response.WriteAsync(&quot;Hello&quot;);
+await context.Response.WriteAsync(&quot; World&quot;);
 });
 app.Run();</code></pre>
     </div>
@@ -606,52 +611,49 @@ app.Run();</code></pre>
 <ul>
   <li>context.Response.StatusCode = 200;: Sets the status code to 200 OK.</li>
   <li>context.Response.StatusCode = 400;: Sets the status code to 400 Bad Request (this line
-      won&#39;t be executed due to the condition).</li>
+won&#39;t be executed due to the condition).</li>
   <li>await context.Response.WriteAsync(&quot;Hello&quot;);: Writes the first part of the response body.</li>
   <li>await context.Response.WriteAsync(&quot; World&quot;);: Writes the second part of the response
-      body.</li>
+body.</li>
 </ul>
 
 <h2 id="summary">Summary</h2>
 <ul>
   <li>HTTP Protocol: A fundamental protocol for web communication, following a
-      request/response model and operating statelessly.</li>
+request/response model and operating statelessly.</li>
   <li>HTTP Server: Software that processes HTTP requests and responses, such as Kestrel.</li>
   <li>Request/Response Flow: From client request to server response, involving middleware
-      processing in Kestrel.</li>
+processing in Kestrel.</li>
   <li>Browser Usage: Browsers request resources via HTTP, which are then processed and
-      rendered.</li>
+rendered.</li>
   <li>Dev Tools: Chrome Dev Tools can inspect HTTP traffic in detail.</li>
   <li>Message Format: HTTP requests and responses consist of a start line, headers, and an
-      optional body.</li>
+optional body.</li>
   <li>Headers: Key-value pairs providing additional information about requests and responses.</li>
   <li>Status Codes: Indicate the result of HTTP requests, categorized into informational, success,
-      redirection, client error, and server error codes.</li>
+redirection, client error, and server error codes.</li>
   <li>Setting Status Codes and Headers: ASP.NET Core allows customization of responses using
-      code, enabling setting of status codes and headers as demonstrated.</li>
+code, enabling setting of status codes and headers as demonstrated.</li>
 </ul>
 
 <h2 id="http-requests">HTTP Requests</h2>
-<p>In the world of web applications, an HTTP request is a client&#39;s way of saying, &quot;Hey server, I need
-something.&quot; This &quot;something&quot; could be a web page, an image, data from a database, or the result of
-some server-side calculation. The client, typically a web browser, sends this request to the server,
-which processes it and returns a response.</p>
+<p>In the world of web applications, an HTTP request is a client&#39;s way of saying, &quot;Hey server, I need something.&quot; This &quot;something&quot; could be a web page, an image, data from a database, or the result of some server-side calculation. The client, typically a web browser, sends this request to the server, which processes it and returns a response.</p>
 
 <h2 id="anatomy-of-an-http-request">Anatomy of an HTTP Request</h2>
 <p>An HTTP request consists of several parts:</p>
 <ul>
   <li>1. Start Line: This is the first line of the request, and it contains three crucial pieces of
-      information:</li>
+information:</li>
   <li>Method: This indicates the action the client wants the server to perform. Common
-           methods include:</li>
+methods include:</li>
   <li>GET: Retrieve data from the server.</li>
   <li>POST: Submit data to the server (e.g., form data).</li>
   <li>PUT: Update an existing resource on the server.</li>
   <li>DELETE: Remove a resource from the server.</li>
   <li>Request URI (Uniform Resource Identifier): This is the path to the resource on the
-           server that the client is requesting.</li>
+server that the client is requesting.</li>
   <li>HTTP Version: This specifies the version of the HTTP protocol being used (e.g.,
-           HTTP/1.1 or HTTP/2).</li>
+HTTP/1.1 or HTTP/2).</li>
   <li>2. Headers: These provide additional information about the request, such as:</li>
   <li>User-Agent: The client&#39;s browser or application.</li>
   <li>Accept: The types of content the client can understand (e.g., HTML, JSON).</li>
@@ -660,18 +662,17 @@ which processes it and returns a response.</p>
   <li>Authorization: Credentials for authentication (if required).</li>
   <li>3. Empty Line: This separates the headers from the body of the request.</li>
   <li>4. Body (Optional): This part of the request contains data that the client is sending to the
-      server. For example, a POST request might include form data or JSON data.</li>
+server. For example, a POST request might include form data or JSON data.</li>
 </ul>
-<p>Query Strings: Passing Parameters in URLs</p>
-<p>A query string is a way to pass parameters to a server within the URL itself. It starts with a question
-mark (?) and follows the path in the URL. Each parameter is a key-value pair, separated by an equals
-sign (=), and multiple parameters are separated by ampersands (&amp;).
-Example:
-https://example.com/products?category=electronics&amp;brand=apple
-In this example, category=electronics and brand=apple are parameters being passed to the server.
-The Request Object in ASP.NET Core
-ASP.NET Core provides a HttpRequest object that gives you access to all the information within an
-incoming request. This object has properties like:</p>
+
+<h2 id="query-strings-passing-parameters-in-urls">Query Strings: Passing Parameters in URLs</h2>
+<p>A query string is a way to pass parameters to a server within the URL itself. It starts with a question mark (?) and follows the path in the URL. Each parameter is a key-value pair, separated by an equals sign (=), and multiple parameters are separated by ampersands (&amp;).</p>
+
+<h3 id="example-1">Example</h3>
+<p>https://example.com/products?category=electronics&amp;brand=apple In this example, category=electronics and brand=apple are parameters being passed to the server.</p>
+
+<h2 id="the-request-object-in-aspnet-core">The Request Object in ASP.NET Core</h2>
+<p>ASP.NET Core provides a HttpRequest object that gives you access to all the information within an incoming request. This object has properties like:</p>
 <ul>
   <li>Method: The HTTP method (GET, POST, etc.).</li>
   <li>Path: The URI path requested by the client.</li>
@@ -693,17 +694,17 @@ incoming request. This object has properties like:</p>
 var app = builder.Build();
 app.Run(async (HttpContext context) =&gt;
 {
-  string path = context.Request.Path;
-  string method = context.Request.Method;
-  context.Response.Headers[&quot;Content-type&quot;] = &quot;text/html&quot;;
-  await context.Response.WriteAsync($&quot;&lt;p&gt;{path}&lt;/p&gt;&quot;);
-  await context.Response.WriteAsync($&quot;&lt;p&gt;{method}&lt;/p&gt;&quot;);
+string path = context.Request.Path;
+string method = context.Request.Method;
+context.Response.Headers[&quot;Content-type&quot;] = &quot;text/html&quot;;
+await context.Response.WriteAsync($&quot;&lt;p&gt;{path}&lt;/p&gt;&quot;);
+await context.Response.WriteAsync($&quot;&lt;p&gt;{method}&lt;/p&gt;&quot;);
 });
 app.Run();
 This code defines a simple middleware component (using app.Run) that:</code></pre>
     </div>
-  <p>1. Extracts the Path and Method from the Request object.</p>
-<ol>
+  <ol>
+  <li>Extracts the Path and Method from the Request object.</li>
   <li>Sets the Content-type response header to text/html.</li>
   <li>Writes the extracted path and method into the response body as HTML paragraphs.</li>
 </ol>
@@ -719,25 +720,26 @@ This code defines a simple middleware component (using app.Run) that:</code></pr
       </div>
       <pre><code class="language-csharp">app.Run(async (HttpContext context) =&gt;
 {
-  context.Response.Headers[&quot;Content-type&quot;] = &quot;text/html&quot;;
-  if (context.Request.Method == &quot;GET&quot;)
-  {
-   if (context.Request.Query.ContainsKey(&quot;id&quot;))
-   {
-     string id = context.Request.Query[&quot;id&quot;];
-     await context.Response.WriteAsync($&quot;&lt;p&gt;{id}&lt;/p&gt;&quot;);
-   }
-  }
+context.Response.Headers[&quot;Content-type&quot;] = &quot;text/html&quot;;
+if (context.Request.Method == &quot;GET&quot;)
+{
+if (context.Request.Query.ContainsKey(&quot;id&quot;))
+{
+string id = context.Request.Query[&quot;id&quot;];
+await context.Response.WriteAsync($&quot;&lt;p&gt;{id}&lt;/p&gt;&quot;);
+}
+}
 });
 This code focuses on GET requests:</code></pre>
     </div>
-  <p>1. It sets the Content-type response header.</p>
-<ol>
+  <ol>
+  <li>It sets the Content-type response header.</li>
   <li>It checks if the request method is GET.</li>
   <li>If so, it checks if a query parameter named &quot;id&quot; exists.</li>
   <li>If found, it extracts the value of the &quot;id&quot; parameter and displays it.</li>
 </ol>
-<p>Code 3: Extracting the User-Agent Header</p>
+
+<h2 id="code-3-extracting-the-user-agent-header">Code 3: Extracting the User-Agent Header</h2>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -749,28 +751,22 @@ This code focuses on GET requests:</code></pre>
       </div>
       <pre><code class="language-csharp">app.Run(async (HttpContext context) =&gt;
 {
-  context.Response.Headers[&quot;Content-type&quot;] = &quot;text/html&quot;;
-  if (context.Request.Headers.ContainsKey(&quot;User-Agent&quot;))
-  {
-   string userAgent = context.Request.Headers[&quot;User-Agent&quot;];
-   await context.Response.WriteAsync($&quot;&lt;p&gt;{userAgent}&lt;/p&gt;&quot;);
-  }
+context.Response.Headers[&quot;Content-type&quot;] = &quot;text/html&quot;;
+if (context.Request.Headers.ContainsKey(&quot;User-Agent&quot;))
+{
+string userAgent = context.Request.Headers[&quot;User-Agent&quot;];
+await context.Response.WriteAsync($&quot;&lt;p&gt;{userAgent}&lt;/p&gt;&quot;);
+}
 });
 This code:</code></pre>
     </div>
-  <p>1. Sets the Content-type response header.</p>
-<ol>
+  <ol>
+  <li>Sets the Content-type response header.</li>
   <li>Checks if the User-Agent header is present in the request.</li>
   <li>If found, it extracts the value of the User-Agent header and displays it, indicating the client&#39;s
-      browser or application.</li>
+browser or application.</li>
 </ol>
-<p>Summary about HTTP Request:
-HTTP requests are the messages sent from clients (like web browsers) to servers to request
-resources or actions. They consist of a start line (method, URI, HTTP version), headers (additional
-information), an empty line, and an optional body containing data. Query strings are used to pass
-parameters within URLs.
-ASP.NET Core provides the HttpRequest object to access request details. The example codes
-demonstrated:</p>
+<p>Summary about HTTP Request: HTTP requests are the messages sent from clients (like web browsers) to servers to request resources or actions. They consist of a start line (method, URI, HTTP version), headers (additional information), an empty line, and an optional body containing data. Query strings are used to pass parameters within URLs. ASP.NET Core provides the HttpRequest object to access request details. The example codes demonstrated:</p>
 <ol>
   <li>Displaying the requested path and HTTP method.</li>
   <li>Handling GET requests and extracting query parameter values.</li>
@@ -778,48 +774,40 @@ demonstrated:</p>
 </ol>
 
 <h2 id="http-methods">HTTP Methods</h2>
-<p>GET: Retrieving Data</p>
-<p>The GET method is primarily designed for fetching data from a server. Think of it as asking the server
-for a specific resource, like a webpage, an image, or some data from a database. Here&#39;s what
-characterizes GET requests:</p>
+
+<h2 id="get-retrieving-data">GET: Retrieving Data</h2>
+<p>The GET method is primarily designed for fetching data from a server. Think of it as asking the server for a specific resource, like a webpage, an image, or some data from a database. Here&#39;s what characterizes GET requests:</p>
 <ol>
   <li>Data in the URL: Parameters are appended to the URL as a query string. This makes the
-      request parameters visible in the browser&#39;s address bar.</li>
+request parameters visible in the browser&#39;s address bar.</li>
   <li>Limited Data Size: The size of data that can be sent in a GET request is restricted due to
-      limitations in URL lengths (browsers and servers might have different limits).</li>
+limitations in URL lengths (browsers and servers might have different limits).</li>
   <li>Idempotent: GET requests are considered idempotent. This means you can make the same
-      GET request multiple times, and it should have the same effect as making it once (assuming
-      the underlying data hasn&#39;t changed).</li>
+GET request multiple times, and it should have the same effect as making it once (assuming
+the underlying data hasn&#39;t changed).</li>
   <li>Caching: GET requests can be cached, meaning that if a client requests the same resource
-      again, the browser might serve the previously retrieved response from its cache, improving
-      performance.</li>
+again, the browser might serve the previously retrieved response from its cache, improving
+performance.</li>
   <li>Security: GET requests are generally less secure than POST requests because the data is
-      visible in the URL. Avoid using GET for sensitive information like passwords or credit card
-      numbers.</li>
+visible in the URL. Avoid using GET for sensitive information like passwords or credit card
+numbers.</li>
 </ol>
-<p>Example GET Request:
-GET /products?category=electronics&amp;brand=apple HTTP/1.1
-Host: example.com
-POST: Submitting Data
-The POST method is primarily used for submitting data to the server for processing. This data is
-typically included in the body of the request and is not visible in the URL. Here&#39;s how POST requests
-differ from GET:</p>
+<p>Example GET Request: GET /products?category=electronics&amp;brand=apple HTTP/1.1 Host: example.com</p>
+
+<h2 id="post-submitting-data">POST: Submitting Data</h2>
+<p>The POST method is primarily used for submitting data to the server for processing. This data is typically included in the body of the request and is not visible in the URL. Here&#39;s how POST requests differ from GET:</p>
 <ol>
   <li>Data in the Body: Data is sent in the request body, making it more suitable for sending large
-      amounts of data or sensitive information.</li>
+amounts of data or sensitive information.</li>
   <li>Not Idempotent: POST requests are not idempotent. Repeated POST requests might result
-      in different outcomes (e.g., creating multiple resources or triggering actions multiple times).</li>
+in different outcomes (e.g., creating multiple resources or triggering actions multiple times).</li>
   <li>Not Cachable: POST requests are generally not cached, as they often result in changes on
-      the server.</li>
+the server.</li>
   <li>Security: POST requests are considered more secure than GET requests because the data is
-      not exposed in the URL. However, they are still susceptible to attacks like cross-site request
-      forgery (CSRF), which requires additional security measures.</li>
+not exposed in the URL. However, they are still susceptible to attacks like cross-site request
+forgery (CSRF), which requires additional security measures.</li>
 </ol>
-<p>Example POST Request:
-POST /login HTTP/1.1
-Host: example.com</p>
-<p>Content-Type: application/x-www-form-urlencoded
-username=john&amp;password=secret</p>
+<p>Example POST Request: POST /login HTTP/1.1 Host: example.com Content-Type: application/x-www-form-urlencoded username=john&amp;password=secret</p>
 
 <h2 id="choosing-between-get-and-post">Choosing Between GET and POST</h2>
 <ul>
@@ -834,20 +822,18 @@ username=john&amp;password=secret</p>
 </ul>
 
 <h2 id="postman">Postman</h2>
-<p>Postman is a versatile API development and testing tool. It allows you to easily craft HTTP requests,
-send them to your ASP.NET Core application (or any API), and inspect the responses. It&#39;s a fantastic
-way to debug, experiment, and explore your API endpoints.</p>
+<p>Postman is a versatile API development and testing tool. It allows you to easily craft HTTP requests, send them to your ASP.NET Core application (or any API), and inspect the responses. It&#39;s a fantastic way to debug, experiment, and explore your API endpoints.</p>
 
 <h2 id="installation">Installation</h2>
 <ol>
   <li>Download: Head to the official Postman website (https://www.postman.com/downloads/)
-      and download the version suitable for your operating system (Windows, macOS, Linux).</li>
+and download the version suitable for your operating system (Windows, macOS, Linux).</li>
   <li>Install: Follow the on-screen instructions to install Postman. The process is usually
-      straightforward.</li>
+straightforward.</li>
 </ol>
-<p>Usage: Making Requests to Your ASP.NET Core App
-Let&#39;s say your ASP.NET Core application is running locally at https://localhost:7070 and has an
-endpoint /api/products. Here&#39;s how to use Postman:</p>
+
+<h2 id="usage-making-requests-to-your-aspnet-core-app">Usage: Making Requests to Your ASP.NET Core App</h2>
+<p>Let&#39;s say your ASP.NET Core application is running locally at https://localhost:7070 and has an endpoint /api/products. Here&#39;s how to use Postman:</p>
 <ul>
   <li>1. Launch Postman: Open the Postman application.</li>
   <li>2. Create a New Request:</li>
@@ -855,32 +841,35 @@ endpoint /api/products. Here&#39;s how to use Postman:</p>
   <li>Choose &quot;Request&quot; from the options.</li>
   <li>3. Set the Request Method and URL:</li>
   <li>In the request builder, select the appropriate HTTP method (GET, POST, PUT,
-           DELETE, etc.) from the dropdown.</li>
+DELETE, etc.) from the dropdown.</li>
   <li>Enter the full URL of your ASP.NET Core endpoint (e.g.,
-           https://localhost:7070/api/products) in the address bar.</li>
+https://localhost:7070/api/products) in the address bar.</li>
   <li>4. (Optional) Add Headers:</li>
   <li>If your endpoint requires specific headers (like Content-Type), click on the &quot;Headers&quot;
-           tab and add them as key-value pairs.</li>
+tab and add them as key-value pairs.</li>
   <li>5. (Optional) Add Request Body:</li>
   <li>If you are sending data with the request (e.g., JSON data for a POST request), click on
-           the &quot;Body&quot; tab.</li>
+the &quot;Body&quot; tab.</li>
   <li>Choose the format (e.g., &quot;raw&quot; for JSON) and enter your data.</li>
   <li>6. Send the Request:</li>
   <li>Click the &quot;Send&quot; button.</li>
   <li>7. Inspect the Response:</li>
   <li>The response from your ASP.NET Core application will appear in the lower part of
-           Postman. You&#39;ll see:</li>
+Postman. You&#39;ll see:</li>
   <li>The status code (200 OK, 404 Not Found, etc.)</li>
   <li>Response headers</li>
-  <li>The response body (if any)
-Summary
-HTTP (Hypertext Transfer Protocol):</li>
+  <li>The response body (if any)</li>
+</ul>
+
+<h2 id="summary-1">Summary</h2>
+<p>HTTP (Hypertext Transfer Protocol):</p>
+<ul>
   <li>Foundation of the Web: HTTP is the protocol that powers the World Wide Web. It defines
-      how clients (browsers, apps) and servers communicate.</li>
+how clients (browsers, apps) and servers communicate.</li>
   <li>Request-Response Cycle: Communication follows a request-response model. The client
-      sends a request, and the server sends back a response.</li>
+sends a request, and the server sends back a response.</li>
   <li>Stateless: HTTP is stateless, meaning each request is independent. Servers don&#39;t inherently
-      remember past interactions.</li>
+remember past interactions.</li>
   <li>Methods: HTTP methods define actions (GET, POST, PUT, DELETE, etc.).</li>
   <li>Versions: HTTP/1.1 and HTTP/2 are the most commonly used versions.</li>
 </ul>
@@ -899,9 +888,9 @@ HTTP (Hypertext Transfer Protocol):</li>
 <ul>
   <li>Purpose: Server&#39;s reply to a request.</li>
   <li>Structure: Start line (version, status code, reason phrase), headers, empty line, optional
-      body.</li>
+body.</li>
   <li>Status Codes: Three-digit codes indicate the outcome (200 OK, 404 Not Found, 500 Internal
-      Server Error).</li>
+Server Error).</li>
   <li>Headers: Provide metadata about the response (content type, length, caching).</li>
   <li>Body: Contains the requested data (HTML, JSON, etc.) or error messages.</li>
 </ul>
@@ -911,57 +900,29 @@ HTTP (Hypertext Transfer Protocol):</li>
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
   <h3 id="introduction-to-http">Introduction to HTTP</h3>
-<p>HTTP is an application-protocol that defines set of rules to send request from browser to server and
-send response from server to browser.
-Initially developed by Tim Berners Lee, later standardized by IETF (Internet Engineering Task Force)
-and W3C (World Wide Web Consortium)</p>
+<p>HTTP is an application-protocol that defines set of rules to send request from browser to server and send response from server to browser. Initially developed by Tim Berners Lee, later standardized by IETF (Internet Engineering Task Force) and W3C (World Wide Web Consortium)</p>
   <h3 id="http-response">HTTP Response</h3>
   <h3 id="response-start-line">Response Start Line</h3>
-<p>Includes HTTP version, status code and status description.
-HTTP Version: 1/1 | 2 | 3
-Status Code: 101 | 200 | 302 | 400 | 401 | 404 | 500
-Status Description: Switching Protocols | OK | Found | Bad Request | Unauthorized | Not Found |</p>
-  <h3 id="internal-server-error">Internal Server Error</h3>
+<p>Includes HTTP version, status code and status description. HTTP Version: 1/1 | 2 | 3 Status Code: 101 | 200 | 302 | 400 | 401 | 404 | 500 Status Description: Switching Protocols | OK | Found | Bad Request | Unauthorized | Not Found | Internal Server Error</p>
   <h3 id="http-response-status-codes">HTTP Response Status Codes</h3>
-<p>1xx | Informational
-101 Switching Protocols
-2xx | Success
-200 OK
-3xx | Redirection
-302 Found
-304 Not Modified
-4xx | Client error
-400 Bad Request
-401 Unauthorized
-404 Not Found
-5xx | Server error
-500 Internal Server Error</p>
+<p>1xx | Informational 101 Switching Protocols 2xx | Success 200 OK 3xx | Redirection 302 Found 304 Not Modified 4xx | Client error 400 Bad Request 401 Unauthorized 404 Not Found 5xx | Server error 500 Internal Server Error</p>
   <h3 id="http-response-headers">HTTP Response Headers</h3>
   <h3 id="date">Date</h3>
 <p>Date and time of the response. e.g: Tue, 15 Nov 1994 08:12:31 GMT</p>
   <h3 id="server">Server</h3>
-<p>Name of the server.
-e.g: Server=Kestrel</p>
+<p>Name of the server. e.g: Server=Kestrel</p>
   <h3 id="content-type">Content-Type</h3>
-<p>MIME type of response body.
-e.g: text/plain, text/html, application/json, application/xml etc.</p>
+<p>MIME type of response body. e.g: text/plain, text/html, application/json, application/xml etc.</p>
   <h3 id="content-length">Content-Length</h3>
-<p>Length (bytes) of response body.
-e.g: 100</p>
+<p>Length (bytes) of response body. e.g: 100</p>
   <h3 id="cache-control">Cache-Control</h3>
-<p>Indicates number of seconds that the response can be cached at the browser.
-e.g: max-age=60</p>
+<p>Indicates number of seconds that the response can be cached at the browser. e.g: max-age=60</p>
   <h3 id="set-cookie">Set-Cookie</h3>
-<p>Contains cookies to send to browser.
-e.g: x=10</p>
+<p>Contains cookies to send to browser. e.g: x=10</p>
   <h3 id="access-control-allow-origin">Access-Control-Allow-Origin</h3>
-  <h3 id="used-to-enable-cors-cross-origin-resource-sharing">Used to enable CORS (Cross-Origin-Resource-Sharing)</h3>
-<p>e.g: Access-Control-Allow-Origin: http://www.example.com</p>
+<p>Used to enable CORS (Cross-Origin-Resource-Sharing) e.g: Access-Control-Allow-Origin: http://www.example.com</p>
   <h3 id="location">Location</h3>
-<p>Contains url to redirect.
-e.g: http://www.example-redirect.com
-Further reading: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers</p>
-  <h3 id="http-request">HTTP Request</h3>
+<p>Contains url to redirect. e.g: http://www.example-redirect.com Further reading: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers HTTP Request</p>
   <h3 id="http-request-with-query-string">HTTP Request - with Query String</h3>
   <h3 id="http-request-headers">HTTP Request Headers</h3>
   <h3 id="accept">Accept</h3>
@@ -969,24 +930,17 @@ Further reading: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers</p>
   <h3 id="accept-language">Accept-Language</h3>
 <p>Represents natural language of response content to be accepted by the client. e.g: en-US</p>
   <h3 id="content-type-1">Content-Type</h3>
-<p>MIME type of request body.
-Eg: text/x-www-form-urlencoded, application/json, application/xml, multipart/form-data</p>
+<p>MIME type of request body. Eg: text/x-www-form-urlencoded, application/json, application/xml, multipart/form-data</p>
   <h3 id="content-length-1">Content-Length</h3>
-<p>Length (bytes) of request body.
-e.g: 100</p>
+<p>Length (bytes) of request body. e.g: 100</p>
   <h3 id="date-1">Date</h3>
-<p>Date and time of request.
-Eg: Tue, 15 Nov 1994 08:12:31 GMT</p>
+<p>Date and time of request. Eg: Tue, 15 Nov 1994 08:12:31 GMT</p>
   <h3 id="host">Host</h3>
-<p>Server domain name.
-Eg: www.example.com</p>
+<p>Server domain name. Eg: www.example.com</p>
   <h3 id="user-agent">User-Agent</h3>
-<p>Browser (client) details.
-Eg: Mozilla/5.0 Firefox/12.0</p>
+<p>Browser (client) details. Eg: Mozilla/5.0 Firefox/12.0</p>
   <h3 id="cookie">Cookie</h3>
-<p>Contains cookies to send to server.
-Eg: x=100
-Further reading: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers</p>
+<p>Contains cookies to send to server. Eg: x=100 Further reading: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers</p>
   <h3 id="http-request-methods">HTTP Request Methods</h3>
   <h3 id="get">GET</h3>
 <p>Requests to retrieve information (page, entity object or a static file).</p>
@@ -997,9 +951,7 @@ Further reading: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers</p>
   <h3 id="patch">Patch</h3>
 <p>Sends an entity object to server; generally updates few properties (partial-update) it in the database.</p>
   <h3 id="delete">Delete</h3>
-<p>Requests to delete an entity in the database.
-HTTP Get [vs] Post
-Get:</p>
+<p>Requests to delete an entity in the database. HTTP Get [vs] Post Get:</p>
 <ul>
   <li>Used to retrieve data from server.</li>
   <li>Parameters will be in the request url (as query string only).</li>
@@ -1084,11 +1036,19 @@ Get:</p>
         </li>
       
         <li class="toc-item">
+          <a href="#example" class="toc-link toc-sub">Example</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#default-response-headers-in-kestrel" class="toc-link">Default Response Headers in Kestrel</a>
         </li>
       
         <li class="toc-item">
           <a href="#http-status-codes" class="toc-link">HTTP Status Codes</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#setting-status-codes-and-response-headers-in-aspnet-core" class="toc-link">Setting Status Codes and Response Headers in ASP.NET Core</a>
         </li>
       
         <li class="toc-item">
@@ -1104,7 +1064,31 @@ Get:</p>
         </li>
       
         <li class="toc-item">
+          <a href="#query-strings-passing-parameters-in-urls" class="toc-link">Query Strings: Passing Parameters in URLs</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#example-1" class="toc-link toc-sub">Example</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#the-request-object-in-aspnet-core" class="toc-link">The Request Object in ASP.NET Core</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-3-extracting-the-user-agent-header" class="toc-link">Code 3: Extracting the User-Agent Header</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#http-methods" class="toc-link">HTTP Methods</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#get-retrieving-data" class="toc-link">GET: Retrieving Data</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#post-submitting-data" class="toc-link">POST: Submitting Data</a>
         </li>
       
         <li class="toc-item">
@@ -1117,6 +1101,14 @@ Get:</p>
       
         <li class="toc-item">
           <a href="#installation" class="toc-link">Installation</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#usage-making-requests-to-your-aspnet-core-app" class="toc-link">Usage: Making Requests to Your ASP.NET Core App</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#summary-1" class="toc-link">Summary</a>
         </li>
       
         <li class="toc-item">

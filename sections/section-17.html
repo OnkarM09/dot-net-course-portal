@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -400,19 +410,17 @@
       <article class="docs-content">
         
 <h2 id="tag-helpers">Tag Helpers</h2>
-<p>Tag helpers are a feature in ASP.NET Core MVC that allow you to extend HTML elements with serverside
-capabilities. They are C# classes that modify the behavior and output of HTML elements during
-the rendering process.</p>
+<p>Tag helpers are a feature in ASP.NET Core MVC that allow you to extend HTML elements with server- side capabilities. They are C# classes that modify the behavior and output of HTML elements during the rendering process.</p>
 
 <h2 id="benefits-of-tag-helpers">Benefits of Tag Helpers</h2>
 <ul>
   <li>HTML-Friendly Syntax: Tag helpers look like standard HTML elements, making them easier
-      to read and write than traditional HTML helpers.</li>
+to read and write than traditional HTML helpers.</li>
   <li>Strong Typing: Tag helpers offer compile-time type safety and IntelliSense support, catching
-      errors early in development.</li>
+errors early in development.</li>
   <li>Code Reuse: They can be easily reused across different views and projects.</li>
   <li>Reduced Server Roundtrips: Tag helpers execute on the server, allowing you to perform
-      complex logic and data binding before the page is sent to the client.</li>
+complex logic and data binding before the page is sent to the client.</li>
   <li>Extensibility: You can create your own custom tag helpers to meet specific needs.</li>
 </ul>
 
@@ -425,13 +433,13 @@ the rendering process.</p>
   <li>Custom Elements: Build reusable custom UI components.</li>
 </ul>
 
-<h2 id="best-practices">Best Practices</h2>
+<h3 id="best-practices">Best Practices</h3>
 <ul>
   <li>Namespace Management: Keep tag helper namespaces organized (e.g., @addTagHelper *,
-      Microsoft.AspNetCore.Mvc.TagHelpers).</li>
+Microsoft.AspNetCore.Mvc.TagHelpers).</li>
   <li>Readability: Keep tag helper attributes concise and self-explanatory.</li>
   <li>Performance: Be mindful of the number of tag helpers used in a view, as they can impact
-      rendering performance.</li>
+rendering performance.</li>
   <li>Testing: Write unit tests for your custom tag helpers to ensure their correct behavior.</li>
 </ul>
 
@@ -439,9 +447,9 @@ the rendering process.</p>
 <ul>
   <li>Overusing Tag Helpers: Use them for appropriate tasks, not for every HTML element.</li>
   <li>Excessive Nesting: Avoid deeply nested tag helpers, as it can make your code difficult to
-      read.</li>
+read.</li>
   <li>Mixing Tag Helpers and HTML Helpers: Try to use either tag helpers or HTML helpers
-      consistently within a view to maintain a cleaner code structure.</li>
+consistently within a view to maintain a cleaner code structure.</li>
 </ul>
 
 <h2 id="important-tag-helpers-with-examples">Important Tag Helpers with Examples</h2>
@@ -461,8 +469,6 @@ the rendering process.</p>
     </div>
   <ul>
   <li>Generates a link to the Index action method in the HomeController.</li>
-</ul>
-<ul>
   <li>Automatically handles routing and URL generation.</li>
   <li>2. Form Tag Helper (<code>&lt;form&gt;</code>):</li>
 </ul>
@@ -476,12 +482,10 @@ the rendering process.</p>
         </button>
       </div>
       <pre><code class="language-razor">&lt;form asp-controller=&quot;Products&quot; asp-action=&quot;Create&quot; method=&quot;post&quot;&gt;
-        &lt;/form&gt;</code></pre>
+&lt;/form&gt;</code></pre>
     </div>
   <ul>
   <li>Creates a form that submits data to the Create action in the ProductsController.</li>
-</ul>
-<ul>
   <li>Handles anti-forgery tokens automatically for better security.</li>
   <li>3. Input Tag Helper (<code>&lt;input&gt;</code>):</li>
 </ul>
@@ -498,10 +502,8 @@ the rendering process.</p>
     </div>
   <ul>
   <li>Binds the input field to the ProductName property of your model.</li>
-</ul>
-<ul>
   <li>Automatically sets the input type (e.g., text, email, password) based on the property
-           type.</li>
+type.</li>
   <li>4. Select Tag Helper (&lt;select&gt;):</li>
 </ul>
 
@@ -517,8 +519,6 @@ the rendering process.</p>
     </div>
   <ul>
   <li>Creates a dropdown list bound to the CategoryId property.</li>
-</ul>
-<ul>
   <li>asp-items takes a collection of items to populate the dropdown.</li>
   <li>5. Label Tag Helper (&lt;label&gt;):</li>
 </ul>
@@ -534,21 +534,19 @@ the rendering process.</p>
       <pre><code class="language-razor">&lt;label asp-for=&quot;ProductName&quot;&gt;&lt;/label&gt;</code></pre>
     </div>
   <ul>
-  <li>Generates a label for the ProductName input field, automatically setting the for</li>
-</ul>
-<p>attribute to match the input&#39;s ID.</p>
-<ul>
+  <li>Generates a label for the ProductName input field, automatically setting the for
+attribute to match the input&#39;s ID.</li>
   <li>6. Cache Tag Helper (&lt;cache&gt;):
-           &lt;cache expires-after=&quot;@TimeSpan.FromMinutes(10)&quot;&gt;
-             Content to cache
-           &lt;/cache&gt;</li>
+&lt;cache expires-after=&quot;@TimeSpan.FromMinutes(10)&quot;&gt;
+Content to cache
+&lt;/cache&gt;</li>
   <li>Caches the enclosed content for the specified duration.</li>
   <li>Improves performance for content that doesn&#39;t change frequently.</li>
   <li>7. Environment Tag Helper (&lt;environment&gt;):
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;~/css/site.css&quot; asp-append-version=&quot;true&quot; /&gt;</li>
+&lt;link rel=&quot;stylesheet&quot; href=&quot;~/css/site.css&quot; asp-append-version=&quot;true&quot; /&gt;</li>
   <li>The asp-append-version attribute automatically adds a version query string to the
-           URL in non-development environments, which helps with cache busting when you
-           deploy updates.</li>
+URL in non-development environments, which helps with cache busting when you
+deploy updates.</li>
 </ul>
 
 <h2 id="controllers">Controllers</h2>
@@ -558,10 +556,10 @@ the rendering process.</p>
   <li>Purpose: Displays a list or table of entities (e.g., persons).</li>
   <li>Logic:</li>
   <li>1. Retrieves data from the PersonsService using methods like
-                 GetFilteredPersons and GetSortedPersons.</li>
+GetFilteredPersons and GetSortedPersons.</li>
   <li>2. Populates ViewBag with:</li>
   <li>SearchFields: A dictionary of searchable fields and their display
-                      names.</li>
+names.</li>
   <li>CurrentSearchBy: The currently selected search field.</li>
   <li>CurrentSearchString: The current search term.</li>
   <li>CurrentSortBy: The current sorting field.</li>
@@ -573,46 +571,46 @@ the rendering process.</p>
   <li>Logic:</li>
   <li>GET:</li>
   <li>1. Retrieves a list of countries from CountriesService for populating the
-                      &quot;Country&quot; dropdown in the form.</li>
+&quot;Country&quot; dropdown in the form.</li>
   <li>2. Returns the Create view.</li>
   <li>POST:</li>
   <li>1. Receives PersonAddRequest via model binding.</li>
   <li>2. Validates the model state.</li>
   <li>3. If valid, calls _personsService.AddPerson to create the new person
-                      and redirects to the Index action.</li>
+and redirects to the Index action.</li>
   <li>4. If invalid, repopulates ViewBag.Countries and ViewBag.Errors and
-                      returns the Create view with error messages.</li>
+returns the Create view with error messages.</li>
   <li>Edit (Update):</li>
   <li>HTTP Verbs: GET (Display form), POST (Process submission)</li>
   <li>Purpose: Updates an existing entity.</li>
   <li>Logic:</li>
   <li>GET:</li>
   <li>1. Retrieves the person to edit using
-                      _personsService.GetPersonByPersonID.</li>
+_personsService.GetPersonByPersonID.</li>
   <li>2. Retrieves a list of countries from CountriesService for the
-                      dropdown.</li>
+dropdown.</li>
   <li>3. Returns the Edit view with the person&#39;s data in a
-                      PersonUpdateRequest.</li>
+PersonUpdateRequest.</li>
   <li>POST:</li>
   <li>1. Receives PersonUpdateRequest via model binding.</li>
   <li>2. Validates the model state.</li>
   <li>3. If valid, calls _personsService.UpdatePerson and redirects to the
-                      Index action.</li>
+Index action.</li>
   <li>4. If invalid, repopulates ViewBag.Countries and ViewBag.Errors and
-                      returns the Edit view with error messages.</li>
+returns the Edit view with error messages.</li>
   <li>Delete (Delete):</li>
   <li>HTTP Verbs: GET (Display confirmation), POST (Perform deletion)</li>
   <li>Purpose: Deletes an existing entity.</li>
   <li>Logic:</li>
   <li>GET:</li>
   <li>1. Retrieves the person to delete using
-                      _personsService.GetPersonByPersonID.</li>
+_personsService.GetPersonByPersonID.</li>
   <li>2. Returns the Delete view to confirm the deletion.</li>
   <li>POST:</li>
   <li>1. Receives PersonUpdateRequest (containing the PersonID) via model
-                      binding.</li>
+binding.</li>
   <li>2. Calls _personsService.DeletePerson and redirects to the Index
-                      action.</li>
+action.</li>
 </ul>
 
 <h2 id="views">Views</h2>
@@ -634,39 +632,37 @@ the rendering process.</p>
 </ul>
 
 <h2 id="client-side-validations">Client-Side Validations</h2>
-<p>Client-side validations are enabled in these views through the inclusion of jQuery, jQuery Validate,
-and jQuery Unobtrusive Validation libraries in the @section scripts block. These libraries work
-together to provide:</p>
+<p>Client-side validations are enabled in these views through the inclusion of jQuery, jQuery Validate, and jQuery Unobtrusive Validation libraries in the @section scripts block. These libraries work together to provide:</p>
 <ul>
   <li>Instant Feedback: Validation messages appear immediately when the user interacts with the
-      form fields.</li>
+form fields.</li>
   <li>Reduced Server Load: Validations are performed on the client-side, reducing the number of
-      round trips to the server.</li>
+round trips to the server.</li>
 </ul>
 
 <h2 id="httppost-action-method-submission-process">HttpPost Action Method Submission Process</h2>
 <ul>
   <li>1. Form Submission: The user fills out the form and clicks the submit button.</li>
   <li>2. Client-Side Validation (Optional): If enabled, JavaScript validation checks are performed
-      before the form is submitted to the server. If there are errors, they are displayed
-      immediately, and the submission is prevented.</li>
+before the form is submitted to the server. If there are errors, they are displayed
+immediately, and the submission is prevented.</li>
   <li>3. Request Sent to Server: If there are no client-side errors, the form data is sent to the server
-      via a POST request.</li>
+via a POST request.</li>
   <li>4. Model Binding: ASP.NET Core&#39;s model binding system extracts the form data and attempts
-      to create a model object (PersonAddRequest or PersonUpdateRequest) based on the form
-      field names.</li>
+to create a model object (PersonAddRequest or PersonUpdateRequest) based on the form
+field names.</li>
   <li>5. Model Validation: Data annotations and custom validation rules are applied to the model
-      object. If errors are found, they are added to the ModelState object.</li>
+object. If errors are found, they are added to the ModelState object.</li>
   <li>6. Controller Action Logic:</li>
   <li>If ModelState.IsValid is true, the action performs the appropriate CRUD operation
-           (create, update, delete) using the service layer.</li>
+(create, update, delete) using the service layer.</li>
   <li>If ModelState.IsValid is false, the action typically returns the view again,
-           repopulating the form with the user&#39;s input and displaying error messages.</li>
+repopulating the form with the user&#39;s input and displaying error messages.</li>
   <li>7. Redirect (Optional): After a successful POST request, the action often redirects to another
-      page (e.g., the &quot;Index&quot; view) to prevent accidental re-submissions.</li>
+page (e.g., the &quot;Index&quot; view) to prevent accidental re-submissions.</li>
 </ul>
 
-<h2 id="key-points-to-remember">Key Points to Remember</h2>
+<h3 id="key-points-to-remember">Key Points to Remember</h3>
 
 <h2 id="tag-helpers-1">Tag Helpers</h2>
 <ul>
@@ -690,7 +686,7 @@ together to provide:</p>
 
 <h2 id="index-read">Index (Read)</h2>
 <ul>
-  <li>a (Anchor): Create links to Create, Edit, and Delete actions.</li>
+  <li><code>a</code> (Anchor): Create links to Create, Edit, and Delete actions.</li>
 </ul>
 
     <div class="code-block">
@@ -702,8 +698,8 @@ together to provide:</p>
         </button>
       </div>
       <pre><code class="language-razor">&lt;a asp-action=&quot;Create&quot;&gt;Create&lt;/a&gt;
-      &lt;a asp-action=&quot;Edit&quot; asp-route-id=&quot;@item.Id&quot;&gt;Edit&lt;/a&gt;
-      &lt;a asp-action=&quot;Delete&quot; asp-route-id=&quot;@item.Id&quot;&gt;Delete&lt;/a&gt;</code></pre>
+&lt;a asp-action=&quot;Edit&quot; asp-route-id=&quot;@item.Id&quot;&gt;Edit&lt;/a&gt;
+&lt;a asp-action=&quot;Delete&quot; asp-route-id=&quot;@item.Id&quot;&gt;Delete&lt;/a&gt;</code></pre>
     </div>
   <ul>
   <li>form (Form): Create a form for filtering or searching.</li>
@@ -718,9 +714,9 @@ together to provide:</p>
         </button>
       </div>
       <pre><code class="language-razor">&lt;form asp-action=&quot;Index&quot; method=&quot;get&quot;&gt;
-       &lt;input type=&quot;text&quot; name=&quot;searchString&quot; /&gt;
-       &lt;button type=&quot;submit&quot;&gt;Search&lt;/button&gt;
-      &lt;/form&gt;</code></pre>
+&lt;input type=&quot;text&quot; name=&quot;searchString&quot; /&gt;
+&lt;button type=&quot;submit&quot;&gt;Search&lt;/button&gt;
+&lt;/form&gt;</code></pre>
     </div>
   <p>Create &amp; Edit</p>
 <ul>
@@ -736,7 +732,7 @@ together to provide:</p>
         </button>
       </div>
       <pre><code class="language-razor">&lt;form asp-action=&quot;Create&quot; method=&quot;post&quot;&gt;
-      &lt;/form&gt;</code></pre>
+&lt;/form&gt;</code></pre>
     </div>
   <ul>
   <li>input, textarea, select: Bind to model properties.</li>
@@ -821,21 +817,21 @@ together to provide:</p>
         </button>
       </div>
       <pre><code class="language-razor">&lt;form asp-action=&quot;Delete&quot; asp-route-id=&quot;@Model.Id&quot; method=&quot;post&quot;&gt;
-       &lt;button type=&quot;submit&quot;&gt;Delete&lt;/button&gt;
-      &lt;/form&gt;</code></pre>
+&lt;button type=&quot;submit&quot;&gt;Delete&lt;/button&gt;
+&lt;/form&gt;</code></pre>
     </div>
   <p>Key</p>
 <ul>
   <li>Understanding: Explain the benefits of tag helpers over traditional HTML helpers.</li>
   <li>Usage: Demonstrate how to use common tag helpers in CRUD scenarios.</li>
   <li>Model Binding and Validation: Show how to use tag helpers to bind to models and display
-      validation errors.</li>
+validation errors.</li>
   <li>Best Practices: Discuss how to write clean, maintainable, and reusable code with tag
-      helpers.</li>
+helpers.</li>
   <li>Performance Considerations: Explain how tag helpers can impact performance and how to
-      mitigate potential issues (e.g., caching).</li>
+mitigate potential issues (e.g., caching).</li>
   <li>Security: Emphasize the importance of input validation and output encoding to prevent XSS
-      vulnerabilities.</li>
+vulnerabilities.</li>
 </ul>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
@@ -843,8 +839,7 @@ together to provide:</p>
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
   <h3 id="tag-helpers-2">Tag Helpers</h3>
-<p>Tag helpers are the classes that can be invoked as an html tag or html attribute.
-They generate a html tag or adds values into attributes of existing html tags.</p>
+<p>Tag helpers are the classes that can be invoked as an html tag or html attribute. They generate a html tag or adds values into attributes of existing html tags.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -868,16 +863,12 @@ Tag Helpers for <code>&lt;input&gt;</code>, &lt;textarea&gt;, &lt;label&gt;</li>
   <li>asp-for
 Tag Helpers for &lt;select&gt;</li>
   <li>asp-for</li>
-  <li>asp-items
-Binding
-The form tags such as <code>&lt;input&gt;</code>, &lt;label&gt;, &lt;textarea&gt;, &lt;select&gt; can be bound with specific model
-properties.</li>
+  <li>asp-items</li>
 </ul>
-<p>It applies model property name to &quot;name&quot; and &quot;id&quot; attributes of <code>&lt;input&gt;</code> tag.</p>
+  <h3 id="binding">Binding</h3>
+<p>The form tags such as <code>&lt;input&gt;</code>, &lt;label&gt;, &lt;textarea&gt;, &lt;select&gt; can be bound with specific model properties. It applies model property name to &quot;name&quot; and &quot;id&quot; attributes of <code>&lt;input&gt;</code> tag.</p>
   <h3 id="url-generation">Url Generation</h3>
-<p>Route URLs&#39; will be re-generated for <code>&lt;a&gt;</code> and <code>&lt;form&gt;</code> tags;
-It generates the url as &quot;controller/action&quot; pattern.
-Tag Helpers for &lt;img&gt;</p>
+<p>Route URLs&#39; will be re-generated for <code>&lt;a&gt;</code> and <code>&lt;form&gt;</code> tags; It generates the url as &quot;controller/action&quot; pattern. Tag Helpers for &lt;img&gt;</p>
 <ul>
   <li>asp-append-version
 Tag Helpers for <span></li>
@@ -904,8 +895,7 @@ will be converted as:
 &lt;form action=&quot;~/ControllerName/ActionName&quot;&gt;
 &lt;/form&gt;</code></pre>
     </div>
-  <p>asp-controller and asp-action
-Generates route url for the specified action method with &quot;controller/action&quot; route pattern.</p>
+  <p>Asp-controller and asp-action Generates route url for the specified action method with &quot;controller/action&quot; route pattern.</p>
 <p>Tag Helpers for <code>&lt;a&gt;</code></p>
 
     <div class="code-block">
@@ -920,9 +910,7 @@ Generates route url for the specified action method with &quot;controller/action
 will be converted as:
 &lt;a href=&quot;~/ControllerName/ActionName&quot;&gt; &lt;/a&gt;</code></pre>
     </div>
-  <p>asp-controller and asp-action
-Generates route url for the specified action method with &quot;controller/action&quot; route pattern.
-Tag Helpers for <code>&lt;a&gt;</code> and <code>&lt;form&gt;</code></p>
+  <p>Asp-controller and asp-action Generates route url for the specified action method with &quot;controller/action&quot; route pattern. Tag Helpers for <code>&lt;a&gt;</code> and <code>&lt;form&gt;</code></p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -936,9 +924,7 @@ Tag Helpers for <code>&lt;a&gt;</code> and <code>&lt;form&gt;</code></p>
 will be converted as:
 &lt;a href=&quot;~/ControllerName/ActionName/value-of-parameter&quot;&gt; &lt;/a&gt;</code></pre>
     </div>
-  <p>asp-route-x
-Specifies value for a route parameter, which can be a part of the route url.
-Tag Helpers for <code>&lt;input&gt;</code>, &lt;textarea&gt;, &lt;select&gt;</p>
+  <p>Asp-route-x Specifies value for a route parameter, which can be a part of the route url. Tag Helpers for <code>&lt;input&gt;</code>, &lt;textarea&gt;, &lt;select&gt;</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -950,13 +936,10 @@ Tag Helpers for <code>&lt;input&gt;</code>, &lt;textarea&gt;, &lt;select&gt;</p>
       </div>
       <pre><code class="language-razor">&lt;input asp-for=&quot;ModelProperty&quot; /&gt;
 will be converted as:
-&lt;input type=&quot;text&quot; name=&quot;ModelProperty&quot; id=&quot;ModelProperty&quot; value=&quot;ModelValue&quot; data-valrule</code></pre>
+&lt;input type=&quot;text&quot; name=&quot;ModelProperty&quot; id=&quot;ModelProperty&quot; value=&quot;ModelValue&quot; data-val-
+rule=&quot;ErrorMessage&quot; /&gt;</code></pre>
     </div>
-  <p>=&quot;ErrorMessage&quot; /&gt;
-asp-for
-Generates &quot;type&quot;, &quot;name&quot;, &quot;id&quot;, &quot;data-validation&quot; attributes for the <code>&lt;input&gt;</code>, &lt;textarea&gt;, &lt;select&gt;
-tags.
-Tag Helpers for &lt;label&gt;</p>
+  <p>Asp-for Generates &quot;type&quot;, &quot;name&quot;, &quot;id&quot;, &quot;data-validation&quot; attributes for the <code>&lt;input&gt;</code>, &lt;textarea&gt;, &lt;select&gt; tags. Tag Helpers for &lt;label&gt;</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -970,8 +953,7 @@ Tag Helpers for &lt;label&gt;</p>
 will be converted as:
 &lt;label for=&quot;ModelProperty&quot;&gt; &lt;/label&gt;</code></pre>
     </div>
-  <p>asp-for
-Generates &quot;for&quot; attribute for the &lt;label&gt;.</p>
+  <p>Asp-for Generates &quot;for&quot; attribute for the &lt;label&gt;.</p>
   <h3 id="client-side-validations-1">Client Side Validations</h3>
   <h3 id="data-annotations-on-model-properties">Data annotations on model properties</h3>
 
@@ -998,12 +980,7 @@ publicDataTypePropertyName { get; set; }</code></pre>
       </div>
       <pre><code class="language-razor">&lt;input data-val=&quot;true&quot; data-required=&quot;ErrorMessage&quot; /&gt;</code></pre>
     </div>
-  <p>Import jQuery Validation Scripts
-https://cdnjs.cloudflare.com/ajax/libs/ jquery/3.6.0/jquery.min.js
-https://cdnjs.cloudflare.com/ajax/libs/ jquery-validate/1.19.3/jquery.validate.min.js
-https://cdnjs.cloudflare.com/ajax/libs/ jquery-validation-unobtrusive/3.2.12/
-jquery.validate.unobtrusive.min.js
-Tag Helpers for &lt;img&gt;</p>
+  <p>Import jQuery Validation Scripts https://cdnjs.cloudflare.com/ajax/libs/ jquery/3.6.0/jquery.min.js https://cdnjs.cloudflare.com/ajax/libs/ jquery-validate/1.19.3/jquery.validate.min.js https://cdnjs.cloudflare.com/ajax/libs/ jquery-validation-unobtrusive/3.2.12/ jquery.validate.unobtrusive.min.js Tag Helpers for &lt;img&gt;</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1016,23 +993,20 @@ Tag Helpers for &lt;img&gt;</p>
       <pre><code class="language-razor">&lt;img src=&quot;~/FilePath&quot; asp-append-version=&quot;true&quot; /&gt;
 &lt;img src=&quot;/FilePath?v=HashOfImageFile&quot; /&gt;</code></pre>
     </div>
-  <p>asp-append-version</p>
+  <p>Asp-append-version</p>
 <ul>
   <li>Generates SHA512 hash of the image file as query string parameter appended to the file
-      path.</li>
+path.</li>
   <li>It REGENERATES a new hash every time when the file is changed on the server. If the same
-      file is requested multiple times, file hash will NOT be regenerated.</li>
+file is requested multiple times, file hash will NOT be regenerated.</li>
 </ul>
-<p>Tag Helpers for &lt;script&gt;
-&lt;script src=&quot;CDNUrl&quot; asp-fallback-src=&quot;~/LocalUrl&quot; asp-fallback-test=&quot;object&quot;&gt; &lt;/script&gt;
-&lt;script src=&quot;CDNUrl&quot;&gt; &lt;/script&gt;
-&lt;script&gt; object || document.write(&quot;&lt;script src=&#39;/LocalUrl&#39;&gt;&lt;/script&gt;&quot;); &lt;/script&gt;
-asp-fallback-src</p>
+<p>Tag Helpers for &lt;script&gt; &lt;script src=&quot;CDNUrl&quot; asp-fallback-src=&quot;~/LocalUrl&quot; asp-fallback-test=&quot;object&quot;&gt; &lt;/script&gt; &lt;script src=&quot;CDNUrl&quot;&gt; &lt;/script&gt; &lt;script&gt; object || document.write(&quot;&lt;script src=&#39;/LocalUrl&#39;&gt;&lt;/script&gt;&quot;); &lt;/script&gt;</p>
+  <h3 id="asp-fallback-src">asp-fallback-src</h3>
 <ul>
   <li>It makes a request to the specified CDNUrl at the &quot;src&quot; attribute.</li>
   <li>It checks the value of the specified object at the &quot;asp-fallback-test&quot; tag helper.</li>
   <li>If its value is null or undefined (means, the script file at CDNUrl is not loaded), then it makes
-      another request to the LocalUrl through another script tag.</li>
+another request to the LocalUrl through another script tag.</li>
 </ul>
 </section>
 
@@ -1091,7 +1065,7 @@ asp-fallback-src</p>
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices" class="toc-link">Best Practices</a>
+          <a href="#best-practices" class="toc-link toc-sub">Best Practices</a>
         </li>
       
         <li class="toc-item">
@@ -1119,7 +1093,7 @@ asp-fallback-src</p>
         </li>
       
         <li class="toc-item">
-          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+          <a href="#key-points-to-remember" class="toc-link toc-sub">Key Points to Remember</a>
         </li>
       
         <li class="toc-item">

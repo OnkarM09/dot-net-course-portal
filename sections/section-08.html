@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -400,48 +410,47 @@
       <article class="docs-content">
         
 <h2 id="mvc-architecture">MVC Architecture</h2>
-<p>Model-View-Controller (MVC) is a design pattern that organizes your application into three distinct
-components, each with a specific responsibility:</p>
+<p>Model-View-Controller (MVC) is a design pattern that organizes your application into three distinct components, each with a specific responsibility:</p>
 <ul>
   <li>1. Model:</li>
   <li>Represents the data and business logic of your application.</li>
   <li>Encapsulates data access, validation rules, and any core business operations.</li>
   <li>Types of Models:</li>
   <li>Business Model (Domain Model): Represents the real-world entities and
-                 relationships of your application domain (e.g., Product, Customer, Order).</li>
+relationships of your application domain (e.g., Product, Customer, Order).</li>
   <li>View Model: A tailored model specifically designed to provide data to a
-                 view. It might aggregate data from multiple business models or contain
-                 properties for UI-specific concerns.</li>
+view. It might aggregate data from multiple business models or contain
+properties for UI-specific concerns.</li>
   <li>2. View:</li>
   <li>Renders the user interface (UI) based on the data provided by the controller.</li>
   <li>Typically, views are HTML templates with embedded server-side code (Razor syntax
-           in ASP.NET Core) that dynamically generate the content.</li>
+in ASP.NET Core) that dynamically generate the content.</li>
   <li>3. Controller:</li>
   <li>Acts as the intermediary between the model and the view.</li>
   <li>Receives user input (from requests), interacts with the model to perform actions or
-           retrieve data, and then selects the appropriate view to present the results.</li>
+retrieve data, and then selects the appropriate view to present the results.</li>
 </ul>
 
 <h2 id="execution-flow-of-a-request-in-mvc">Execution Flow of a Request in MVC</h2>
 <ul>
   <li>1. Routing: The incoming request is processed by the routing middleware, which determines
-      the appropriate controller and action method to handle it based on the URL pattern and
-      HTTP method.</li>
+the appropriate controller and action method to handle it based on the URL pattern and
+HTTP method.</li>
   <li>2. Model Binding: If the action method has parameters, the model binder extracts data from
-      the request (query string, route values, form data, body) and attempts to convert it into the
-      types expected by the parameters.</li>
+the request (query string, route values, form data, body) and attempts to convert it into the
+types expected by the parameters.</li>
   <li>3. Model Validation: The model binder validates the bound data using data annotations and
-      any custom validation logic you&#39;ve implemented. If validation fails, errors are added to the
-      ModelState object.</li>
+any custom validation logic you&#39;ve implemented. If validation fails, errors are added to the
+ModelState object.</li>
   <li>4. Controller Action Execution: If the model is valid, the controller action method executes its
-      logic, which might involve:</li>
+logic, which might involve:</li>
   <li>Interacting with business models to retrieve or update data.</li>
   <li>Performing calculations or other business operations.</li>
   <li>Preparing a view model to pass data to the view.</li>
   <li>5. View Selection: The controller selects the appropriate view to render and passes the view
-      model to it.</li>
+model to it.</li>
   <li>6. View Rendering: The view engine (Razor) generates the HTML output based on the view
-      template and the data in the view model.</li>
+template and the data in the view model.</li>
   <li>7. Response: The rendered HTML is sent back to the client as the HTTP response.</li>
 </ul>
 
@@ -462,45 +471,38 @@ components, each with a specific responsibility:</p>
   <li>View:</li>
   <li>Renders the user interface based on the data provided by the controller.</li>
   <li>Uses Razor syntax to combine HTML markup with C# code for dynamic content
-           generation.</li>
+generation.</li>
 </ul>
 
 <h2 id="benefits-and-goals-of-mvc">Benefits and Goals of MVC</h2>
 <ul>
   <li>Separation of Concerns (SoC): The clear division of responsibilities makes code more
-      organized, maintainable, and testable.</li>
+organized, maintainable, and testable.</li>
   <li>Testability: Individual components (models, views, controllers) can be tested in isolation.</li>
   <li>Reusability: Views and models can be reused in different contexts.</li>
   <li>Parallel Development: Different team members can work on different parts of the
-      application simultaneously.</li>
+application simultaneously.</li>
   <li>Maintainability: Changes to one component are less likely to affect others.</li>
   <li>Extensibility: New features can be added more easily due to the modular structure.</li>
   <li>Scalability: MVC architecture lends itself well to scaling as the application grows.</li>
 </ul>
-<p>The MVC pattern provides a structured and organized approach to building complex web
-applications, facilitating collaboration, code reusability, and long-term maintainability.
-Understanding these core concepts will make you a more effective ASP.NET Core developer.</p>
+<p>The MVC pattern provides a structured and organized approach to building complex web applications, facilitating collaboration, code reusability, and long-term maintainability. Understanding these core concepts will make you a more effective ASP.NET Core developer.</p>
 
 <h2 id="views">Views</h2>
-<p>In ASP.NET Core MVC, views are responsible for rendering the user interface (UI) that your
-application presents to the user. They are typically HTML templates with embedded Razor syntax,
-which is a powerful templating engine that allows you to seamlessly blend HTML markup with C#
-code.</p>
+<p>In ASP.NET Core MVC, views are responsible for rendering the user interface (UI) that your application presents to the user. They are typically HTML templates with embedded Razor syntax, which is a powerful templating engine that allows you to seamlessly blend HTML markup with C# code.</p>
 
 <h2 id="notes">Notes</h2>
 <ul>
   <li>Dynamic Content: Views can generate dynamic content based on data passed to them from
-      the controller (the model). This allows you to display information fetched from databases,
-      user inputs, and other sources.</li>
+the controller (the model). This allows you to display information fetched from databases,
+user inputs, and other sources.</li>
   <li>Razor Syntax: Views use Razor syntax, which starts with @ symbols, to embed C# code
-      within the HTML. This code can perform tasks like looping through data collections,
-      conditional rendering, and accessing model properties.</li>
+within the HTML. This code can perform tasks like looping through data collections,
+conditional rendering, and accessing model properties.</li>
 </ul>
 
 <h2 id="addcontrollerswithviews-method">AddControllersWithViews() Method</h2>
-<p>This extension method is used to register the necessary services for MVC (models, views, controllers)
-with the dependency injection container. It&#39;s a shortcut for adding multiple services at once,
-including:</p>
+<p>This extension method is used to register the necessary services for MVC (models, views, controllers) with the dependency injection container. It&#39;s a shortcut for adding multiple services at once, including:</p>
 <ul>
   <li>Controller Discovery: Automatically discovers controller classes in your project.</li>
   <li>View Engine: Configures Razor as the view engine.</li>
@@ -509,23 +511,20 @@ including:</p>
 </ul>
 
 <h2 id="viewresult">ViewResult</h2>
-<p>The ViewResult class is an action result type in ASP.NET Core MVC that represents a view to be
-rendered. When a controller action returns a ViewResult, the MVC framework locates the
-corresponding view file, passes the model data (if any) to it, and renders the view&#39;s content as HTML.</p>
+<p>The ViewResult class is an action result type in ASP.NET Core MVC that represents a view to be rendered. When a controller action returns a ViewResult, the MVC framework locates the corresponding view file, passes the model data (if any) to it, and renders the view&#39;s content as HTML.</p>
 
 <h2 id="default-view-locations">Default View Locations</h2>
 <p>ASP.NET Core MVC follows a convention for determining where to find view files:</p>
 <ul>
   <li>By Convention: By default, the view engine looks for views in the
-      Views/[ControllerName]/[ActionName].cshtml path. For example, the Index action method
-      in the HomeController would look for a view file at Views/Home/Index.cshtml.</li>
+Views/[ControllerName]/[ActionName].cshtml path. For example, the Index action method
+in the HomeController would look for a view file at Views/Home/Index.cshtml.</li>
   <li>Overriding with ViewName: You can explicitly specify the view name using the ViewName
-      property of the ViewResult or the View() helper method.</li>
+property of the ViewResult or the View() helper method.</li>
   <li>Shared Views: Shared views are stored in the Views/Shared folder and can be used by
-      multiple controllers.</li>
+multiple controllers.</li>
 </ul>
-
-<h2 id="code">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -542,34 +541,24 @@ builder.Services.AddControllersWithViews(); // Enables MVC features
 [Route(&quot;home&quot;)]
 public IActionResult Index()
 {
-  return View(); // Renders Views/Home/Index.cshtml
+return View(); // Renders Views/Home/Index.cshtml
 }
 // Views/Home/Index.cshtml</code></pre>
     </div>
-  <p>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-   &lt;title&gt;Asp.Net Core App&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;</p>
-
-<h2 id="welcome">Welcome</h2>
-<p>&lt;/body&gt;
-&lt;/html&gt;</p>
+  <p>&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;Asp.Net Core App&lt;/title&gt; &lt;/head&gt; &lt;body&gt; Welcome &lt;/body&gt; &lt;/html&gt;</p>
 <ol>
   <li>Enabling MVC: The AddControllersWithViews() method configures the application for MVC,
-      including view support.</li>
+including view support.</li>
   <li>Controller Action: The Index action method in HomeController returns a ViewResult without
-      specifying a view name.</li>
+specifying a view name.</li>
   <li>View Location: Since no view name is explicitly provided, the MVC framework follows the
-      convention and looks for the view at Views/Home/Index.cshtml.</li>
+convention and looks for the view at Views/Home/Index.cshtml.</li>
   <li>View Content: The Index.cshtml view contains simple HTML that will be rendered as the
-      response.</li>
+response.</li>
 </ol>
 
 <h2 id="razor-view-engine">Razor View Engine</h2>
-<p>Razor is the default view engine in ASP.NET Core MVC. It provides a concise and elegant way to
-create dynamic web pages by combining C# code with HTML markup.</p>
+<p>Razor is the default view engine in ASP.NET Core MVC. It provides a concise and elegant way to create dynamic web pages by combining C# code with HTML markup.</p>
 
 <h2 id="key-razor-syntax-elements">Key Razor Syntax Elements</h2>
 <ul>
@@ -588,8 +577,11 @@ create dynamic web pages by combining C# code with HTML markup.</p>
   <li>Purpose: Output raw text without HTML encoding.</li>
   <li>Use Cases:</li>
   <li>Displaying plain text, HTML snippets, or values that might contain HTML
-                 characters
-Control Flow in Razor Views</li>
+characters</li>
+</ul>
+
+<h2 id="control-flow-in-razor-views">Control Flow in Razor Views</h2>
+<ul>
   <li>1. @if, @else, @elseif:</li>
   <li>Purpose: Conditional rendering of HTML blocks based on C# conditions.</li>
   <li>Example:</li>
@@ -605,20 +597,18 @@ Control Flow in Razor Views</li>
       </div>
       <pre><code class="language-csharp">@if (person.DateOfBirth.HasValue)
 {
-  &lt;p&gt;Age: @(Math.Round((DateTime.Now - person.DateOfBirth).Value.TotalDays / 365.25)) years
+&lt;p&gt;Age: @(Math.Round((DateTime.Now - person.DateOfBirth).Value.TotalDays / 365.25)) years
 old&lt;/p&gt;
 }
 else
 {
-  &lt;p&gt;Date of birth is unknown&lt;/p&gt;
-}
-   2. @switch:</code></pre>
+&lt;p&gt;Date of birth is unknown&lt;/p&gt;
+}</code></pre>
     </div>
   <ul>
-  <li>Purpose: Choose one of several blocks of code to execute based on the value of an</li>
-</ul>
-<p>expression.</p>
-<ul>
+  <li>2. @switch:</li>
+  <li>Purpose: Choose one of several blocks of code to execute based on the value of an
+expression.</li>
   <li>Example:</li>
 </ul>
 
@@ -632,21 +622,19 @@ else
       </div>
       <pre><code class="language-csharp">@switch (person.PersonGender)
 {
-  case Gender.Male:
-   &lt;p&gt;November 19 is International Men&#39;s Day&lt;/p&gt;
-   break;
-  case Gender.Female:
-   &lt;p&gt;March 8 is International Women&#39;s Day&lt;/p&gt;
-   break;
-  // ... other cases ...
-}
-   3. @foreach:</code></pre>
+case Gender.Male:
+&lt;p&gt;November 19 is International Men&#39;s Day&lt;/p&gt;
+break;
+case Gender.Female:
+&lt;p&gt;March 8 is International Women&#39;s Day&lt;/p&gt;
+break;
+// ... other cases ...
+}</code></pre>
     </div>
   <ul>
-  <li>Purpose: Iterate over a collection (e.g., a list or array) and render HTML for each</li>
-</ul>
-<p>item.</p>
-<ul>
+  <li>3. @foreach:</li>
+  <li>Purpose: Iterate over a collection (e.g., a list or array) and render HTML for each
+item.</li>
   <li>Example:</li>
 </ul>
 
@@ -660,7 +648,7 @@ else
       </div>
       <pre><code class="language-csharp">@foreach (var person in people)
 {
-  &lt;div&gt;@person.Name, @person.PersonGender&lt;/div&gt;
+&lt;div&gt;@person.Name, @person.PersonGender&lt;/div&gt;
 }</code></pre>
     </div>
   <ul>
@@ -679,46 +667,43 @@ else
       </div>
       <pre><code class="language-csharp">@for (int i = 0; i &lt; 5; i++)
 {
-  &lt;p&gt;Iteration: @i&lt;/p&gt;
+&lt;p&gt;Iteration: @i&lt;/p&gt;
 }</code></pre>
     </div>
   <p>Notes</p>
 <ul>
   <li>Razor Syntax: Familiarize yourself with Razor syntax (code blocks, expressions, literals) for
-      embedding C# code in your views.</li>
+embedding C# code in your views.</li>
   <li>Control Flow: Understand how to use if, else, switch, foreach, and for to control the flow of
-      logic and create dynamic views.</li>
+logic and create dynamic views.</li>
   <li>Model Binding: Views often work with models passed from the controller. Use Razor
-      expressions to access and display model properties.</li>
+expressions to access and display model properties.</li>
 </ul>
 
 <h2 id="local-functions-in-razor-views">Local Functions in Razor Views</h2>
-<p>Local functions are C# functions defined within the scope of a Razor code block (a code block
-enclosed in @{ ... }). They allow you to encapsulate reusable logic directly in your views, making your
-view code more modular, organized, and easier to read.</p>
+<p>Local functions are C# functions defined within the scope of a Razor code block (a code block enclosed in @{ ... }). They allow you to encapsulate reusable logic directly in your views, making your view code more modular, organized, and easier to read.</p>
 
 <h2 id="syntax-and-features">Syntax and Features</h2>
 <ul>
   <li>Declaration: Local functions are declared using the standard C# method syntax, typically
-      within an @functions { ... } block.</li>
+within an @functions { ... } block.</li>
   <li>Scope: They can only be called within the code block or section where they are defined.</li>
   <li>Parameters and Return Types: Local functions can take parameters and return values, just
-      like regular C# methods.</li>
+like regular C# methods.</li>
   <li>Accessibility: They are implicitly private to the view.</li>
   <li>Access to View Data: Local functions can access variables and model properties declared
-      within the same code block.</li>
+within the same code block.</li>
 </ul>
 <p>Why Use Local Functions?</p>
 <ul>
   <li>Encapsulation: Group related logic into self-contained functions, improving code readability.</li>
   <li>Readability: Break down complex code into smaller, more manageable chunks.</li>
   <li>Reusability: Call local functions multiple times within the same view, avoiding code
-      duplication.</li>
+duplication.</li>
   <li>Cleaner Views: Reduce the amount of inline C# code scattered throughout your HTML
-      markup.</li>
+markup.</li>
 </ul>
-
-<h2 id="code-1">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -730,47 +715,30 @@ view code more modular, organized, and easier to read.</p>
       </div>
       <pre><code class="language-csharp">@using ViewsExample.Models
 @{
-  string appTitle = &quot;Asp.Net Core Demo App&quot;;
-  List&lt;Person&gt; people = new List&lt;Person&gt;()
-  {
+string appTitle = &quot;Asp.Net Core Demo App&quot;;
+List&lt;Person&gt; people = new List&lt;Person&gt;()
+{
 // ... (person data
 )
-  };
+};
 }
 @functions {
-  double? GetAge(DateTime? dateOfBirth)
-  {
-   if (dateOfBirth is not null)
-   {
-     return Math.Round((DateTime.Now - dateOfBirth.Value).TotalDays / 365.25);
-   }
-   else
-   {
-     return null;
-   }
-  }
-  int x = 10; // Example of a local variable
+double? GetAge(DateTime? dateOfBirth)
+{
+if (dateOfBirth is not null)
+{
+return Math.Round((DateTime.Now - dateOfBirth.Value).TotalDays / 365.25);
+}
+else
+{
+return null;
+}
+}
+int x = 10; // Example of a local variable
+string Name { get; set; } = &quot;Hello name&quot;; // Example of a local property
 }</code></pre>
     </div>
-  <p>string Name { get; set; } = &quot;Hello name&quot;; // Example of a local property</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp"></code></pre>
-    </div>
-  <p>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-   &lt;title&gt;@appTitle&lt;/title&gt;
-   &lt;meta charset=&quot;utf-8&quot; /&gt;
-  &lt;/head&gt;
-  &lt;body&gt;</p>
+  <p>&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;@appTitle&lt;/title&gt; &lt;meta charset=&quot;utf-8&quot; /&gt; &lt;/head&gt; &lt;body&gt;</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -781,56 +749,51 @@ view code more modular, organized, and easier to read.</p>
         </button>
       </div>
       <pre><code class="language-razor">&lt;h1&gt;Welcome to @Name&lt;/h1&gt;
-   @for (int i = 0; i &lt; 2; i++)
-   {
-     Person person = people[i];
-     &lt;div&gt;
-      @person.Name
-      &lt;span&gt;, &lt;/span&gt;
-      &lt;span&gt;@person.PersonGender&lt;/span&gt;
-      @if (person.DateOfBirth != null)
-      {
-        &lt;span&gt;@person.DateOfBirth.Value.ToString(&quot;MM/dd/yyyy&quot;)&lt;/span&gt;
-        &lt;span&gt;@GetAge(person.DateOfBirth) years old&lt;/span&gt;
-      }
-     &lt;/div&gt;
-   }</code></pre>
+@for (int i = 0; i &lt; 2; i++)
+{
+Person person = people[i];
+&lt;div&gt;
+@person.Name
+&lt;span&gt;, &lt;/span&gt;
+&lt;span&gt;@person.PersonGender&lt;/span&gt;
+@if (person.DateOfBirth != null)
+{
+&lt;span&gt;@person.DateOfBirth.Value.ToString(&quot;MM/dd/yyyy&quot;)&lt;/span&gt;
+&lt;span&gt;@GetAge(person.DateOfBirth) years old&lt;/span&gt;
+}
+&lt;/div&gt;
+}</code></pre>
     </div>
-  <p>&lt;/body&gt;
-&lt;/html&gt;
-In this code:</p>
+  <p>&lt;/body&gt; &lt;/html&gt; In this code:</p>
 <ol>
   <li>Local Function: GetAge(DateTime? dateOfBirth) calculates the age of a person based on
-      their date of birth.</li>
+their date of birth.</li>
   <li>Local Variable: int x = 10; This is not used in the view but demonstrates how to declare local
-      variables within a Razor code block.</li>
+variables within a Razor code block.</li>
   <li>Local Property: string Name { get; set; } = &quot;Hello name&quot;; This is used to set the title of the
-      page.</li>
+page.</li>
 </ol>
-<p>The GetAge function is called within the @foreach loop to display the age of each person if their
-date of birth is available.</p>
+<p>The GetAge function is called within the @foreach loop to display the age of each person if their date of birth is available.</p>
 
 <h2 id="important-considerations">Important Considerations</h2>
 <ul>
   <li>Overuse: Avoid overusing local functions. They&#39;re great for encapsulation, but too many can
-      make your views harder to follow.</li>
+make your views harder to follow.</li>
   <li>Alternatives: Consider helper methods or view components for more complex or reusable
-      logic.</li>
+logic.</li>
 </ul>
-<p>Html.Raw()
-In Razor views, the default behavior is to automatically encode HTML content to prevent potential
-security vulnerabilities like cross-site scripting (XSS) attacks. However, sometimes you have
-legitimate HTML content (e.g., from a rich text editor or a trusted source) that you want to render
-as-is, without encoding. This is where Html.Raw() comes in.</p>
+
+<h2 id="htmlraw">Html.Raw()</h2>
+<p>In Razor views, the default behavior is to automatically encode HTML content to prevent potential security vulnerabilities like cross-site scripting (XSS) attacks. However, sometimes you have legitimate HTML content (e.g., from a rich text editor or a trusted source) that you want to render as-is, without encoding. This is where Html.Raw() comes in.</p>
 
 <h2 id="purpose">Purpose</h2>
 <ul>
   <li>Bypass HTML Encoding: Html.Raw() prevents Razor from encoding the HTML content you
-      provide, allowing it to be rendered directly in the browser.</li>
+provide, allowing it to be rendered directly in the browser.</li>
   <li>Displaying Trusted HTML: Use it when you trust the source of the HTML content and want
-      to preserve its formatting and structure.</li>
+to preserve its formatting and structure.</li>
   <li>Dynamic Content Generation: Html.Raw() can be used to dynamically insert HTML
-      fragments into your views based on data or logic.</li>
+fragments into your views based on data or logic.</li>
 </ul>
 
 <h2 id="syntax">Syntax</h2>
@@ -845,20 +808,18 @@ as-is, without encoding. This is where Html.Raw() comes in.</p>
       </div>
       <pre><code class="language-csharp">@Html.Raw(htmlContent)</code></pre>
     </div>
-  <p>where htmlContent is a string variable or expression containing the HTML you want to render
-without encoding.</p>
+  <p>Where htmlContent is a string variable or expression containing the HTML you want to render without encoding.</p>
 
 <h2 id="important-considerations-1">Important Considerations</h2>
 <ul>
   <li>Security Risk: Use Html.Raw() with extreme caution. If the htmlContent originates from
-      user input or an untrusted source, it could lead to XSS vulnerabilities. Always sanitize and
-      validate user-generated content before rendering it with Html.Raw().</li>
+user input or an untrusted source, it could lead to XSS vulnerabilities. Always sanitize and
+validate user-generated content before rendering it with Html.Raw().</li>
   <li>Content Security Policy (CSP): Consider implementing a CSP to further mitigate XSS risks. A
-      CSP defines a set of rules that govern how the browser handles external scripts, styles, and
-      other resources.</li>
+CSP defines a set of rules that govern how the browser handles external scripts, styles, and
+other resources.</li>
 </ul>
-
-<h2 id="code-2">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -869,15 +830,11 @@ without encoding.</p>
         </button>
       </div>
       <pre><code class="language-csharp">@{
-  // ... (other variables and logic) ...
-  string alertMessage = $&quot;&lt;script&gt;alert(&#39;{people.Count} people found&#39;)&lt;/script&gt;&quot;;
+// ... (other variables and logic) ...
+string alertMessage = $&quot;&lt;script&gt;alert(&#39;{people.Count} people found&#39;)&lt;/script&gt;&quot;;
 }</code></pre>
     </div>
-  <p>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;/head&gt;
-&lt;body&gt;</p>
+  <p>&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;/head&gt; &lt;body&gt;</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -888,44 +845,42 @@ without encoding.</p>
         </button>
       </div>
       <pre><code class="language-csharp">@Html.Raw(alertMessage)
-  &lt;h1&gt;Welcome&lt;/h1&gt;
-  @for (int i = 0; i &lt; 2; i++)
-  {
-   // ... (rest of the view code) ...
-  }</code></pre>
+&lt;h1&gt;Welcome&lt;/h1&gt;
+@for (int i = 0; i &lt; 2; i++)
+{
+// ... (rest of the view code) ...
+}</code></pre>
     </div>
-  <p>&lt;/body&gt;
-&lt;/html&gt;
-In this code:</p>
+  <p>&lt;/body&gt; &lt;/html&gt; In this code:</p>
 <ol>
   <li>Raw HTML String: The variable alertMessage contains a string of HTML that includes a
-      &lt;script&gt; tag intended to display an alert message with the number of people found.</li>
+&lt;script&gt; tag intended to display an alert message with the number of people found.</li>
   <li>Html.Raw() Usage: The @Html.Raw(alertMessage) line tells Razor to render the contents of
-      alertMessage directly into the HTML output without encoding. This will result in the
-      following HTML in the output:
-&lt;script&gt;alert(&#39;3 people found&#39;)&lt;/script&gt;</li>
+alertMessage directly into the HTML output without encoding. This will result in the
+following HTML in the output:</li>
+</ol>
+<p>&lt;script&gt;alert(&#39;3 people found&#39;)&lt;/script&gt;</p>
+<ol>
   <li>Client-Side Execution: When the browser parses this HTML, it will execute the JavaScript
-      code inside the &lt;script&gt; tag, triggering an alert box.</li>
+code inside the &lt;script&gt; tag, triggering an alert box.</li>
   <li>No sanitization: In this example, since the number of people is not user input, there is no
-      risk of XSS attack. However, if the content of the alert message is coming from user input, it
-      is essential to santize it before displaying it to prevent XSS attacks.</li>
+risk of XSS attack. However, if the content of the alert message is coming from user input, it
+is essential to santize it before displaying it to prevent XSS attacks.</li>
 </ol>
 
 <h2 id="notes-1">Notes</h2>
 <ul>
   <li>Trust but Verify: Only use Html.Raw() when you&#39;re absolutely sure the content is safe and
-      from a trusted source.</li>
+from a trusted source.</li>
   <li>Security Risks: Be aware of the potential for XSS vulnerabilities when rendering raw HTML.</li>
   <li>Alternative Approaches: If you need to inject dynamic HTML content, consider safer
-      alternatives like partial views or view components.</li>
+alternatives like partial views or view components.</li>
   <li>Content Security Policy (CSP): Implement a CSP to add an extra layer of protection against
-      XSS attacks.</li>
+XSS attacks.</li>
 </ul>
 
 <h2 id="viewdata-and-viewbag">ViewData and ViewBag</h2>
-<p>Both ViewData and ViewBag are mechanisms in ASP.NET Core MVC for passing data from your
-controller actions to your views. While they serve the same purpose, they differ in their
-implementation and syntax.</p>
+<p>Both ViewData and ViewBag are mechanisms in ASP.NET Core MVC for passing data from your controller actions to your views. While they serve the same purpose, they differ in their implementation and syntax.</p>
 <ul>
   <li>ViewData (Dictionary-Based):</li>
   <li>It&#39;s a dictionary-like object (ViewDataDictionary) that stores key-value pairs.</li>
@@ -943,7 +898,7 @@ implementation and syntax.</p>
 <ul>
   <li>Controllers: You set values in the controller action and they are passed to the view.</li>
   <li>Views: You retrieve values from the ViewData dictionary or the ViewBag dynamic object in
-      the view to render content.</li>
+the view to render content.</li>
 </ul>
 <p>Code of ViewData:</p>
 
@@ -962,9 +917,7 @@ ViewData[&quot;people&quot;] = people;
 // Index.cshtml (View
 )</code></pre>
     </div>
-  <p>&lt;title&gt;@ViewData[&quot;appTitle&quot;]&lt;/title&gt;
-List&lt;Person&gt;? people = (List&lt;Person&gt;?)ViewData[&quot;people&quot;];
-Code of ViewBag:</p>
+  <p>&lt;title&gt;@ViewData[&quot;appTitle&quot;]&lt;/title&gt; List&lt;Person&gt;? people = (List&lt;Person&gt;?)ViewData[&quot;people&quot;]; Code of ViewBag:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -993,65 +946,61 @@ ViewBag.people = people;
       </div>
       <pre><code class="language-csharp">@foreach (Person person in ViewBag.people)</code></pre>
     </div>
-  <p>Best Practices</p>
+  <h3>Best Practices</h3>
 <ul>
   <li>Choose One: It&#39;s generally recommended to pick either ViewData or ViewBag and use it
-      consistently throughout your project to maintain a clear and unified approach.</li>
+consistently throughout your project to maintain a clear and unified approach.</li>
   <li>Strong Typing with View Models: While ViewData and ViewBag offer flexibility, they lack
-      compile-time type safety. For larger applications, prefer strongly typed view models to pass
-      data to views.</li>
+compile-time type safety. For larger applications, prefer strongly typed view models to pass
+data to views.</li>
   <li>Limited Scope: Understand that ViewData and ViewBag data exists only for the duration of
-      the current request and response cycle. It&#39;s not meant for persisting data between requests.</li>
+the current request and response cycle. It&#39;s not meant for persisting data between requests.</li>
   <li>Meaningful Keys: Use descriptive and meaningful keys for your data to improve code
-      readability.</li>
+readability.</li>
 </ul>
 
 <h2 id="things-to-avoid">Things to Avoid</h2>
 <ul>
   <li>Overuse: Don&#39;t overstuff ViewData or ViewBag with excessive data. Keep it concise and
-      focused on the specific information needed by the view.</li>
+focused on the specific information needed by the view.</li>
   <li>Magic Strings: Avoid hardcoding strings for keys. Use constants or enums for better
-      maintainability.</li>
+maintainability.</li>
   <li>Sensitive Data: Never pass sensitive data like passwords or authentication tokens through
-      ViewData or ViewBag.</li>
+ViewData or ViewBag.</li>
 </ul>
 
 <h2 id="strongly-typed-views">Strongly Typed Views</h2>
-<p>In ASP.NET Core MVC, a strongly typed view is a view that is associated with a specific model class.
-This means that the view has direct access to the properties and methods of that model, providing
-compile-time type checking and IntelliSense support within the view.
-The @model Directive
-The @model directive is used at the top of a view to specify the model type for that view. For
-example, @model Person indicates that the view expects to work with data of the Person class.</p>
+<p>In ASP.NET Core MVC, a strongly typed view is a view that is associated with a specific model class. This means that the view has direct access to the properties and methods of that model, providing compile-time type checking and IntelliSense support within the view. The @model Directive The @model directive is used at the top of a view to specify the model type for that view. For example, @model Person indicates that the view expects to work with data of the Person class.</p>
 
 <h2 id="when-to-use-strongly-typed-views">When to Use Strongly Typed Views</h2>
 <ul>
   <li>Complex Data: When your view needs to display or interact with complex data structures
-      that have multiple properties or relationships.</li>
+that have multiple properties or relationships.</li>
   <li>Type Safety: When you want to catch type-related errors during development, rather than
-      at runtime.</li>
+at runtime.</li>
   <li>IntelliSense: When you want the full power of Visual Studio&#39;s IntelliSense to help you code
-      faster and with fewer errors.</li>
+faster and with fewer errors.</li>
   <li>Refactoring: When you need to change the model, strongly typed views make it easier to
-      update the corresponding views automatically.</li>
+update the corresponding views automatically.</li>
 </ul>
 
-<h2 id="best-practices">Best Practices</h2>
+<h3 id="best-practices">Best Practices</h3>
 <ul>
   <li>Use View Models: Instead of directly passing your business models to views, create
-      specialized view models tailored to the data needed by each view. This helps keep your
-      views clean and focused.</li>
+specialized view models tailored to the data needed by each view. This helps keep your
+views clean and focused.</li>
   <li>Naming Conventions: Follow standard naming conventions for your view models (e.g.,
-      ProductViewModel, OrderDetailsViewModel).</li>
+ProductViewModel, OrderDetailsViewModel).</li>
   <li>Keep Views Simple: Views should primarily focus on presentation logic. Avoid complex
-      business logic within views.</li>
+business logic within views.</li>
   <li>Partial Views: Leverage partial views for reusable components, passing view models to them
-      as needed.</li>
+as needed.</li>
   <li>Leverage Tag Helpers: Explore the use of Tag Helpers, which provide a more HTML-friendly
-      way to interact with your models in views.</li>
+way to interact with your models in views.</li>
 </ul>
-<p>Code:
-Controller (HomeController.cs)</p>
+<p>Code:</p>
+
+<h2 id="controller-homecontrollercs">Controller (HomeController.cs)</h2>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1066,26 +1015,27 @@ Controller (HomeController.cs)</p>
 [Route(&quot;/&quot;)]
 public IActionResult Index()
 {
-  List&lt;Person&gt; people = new List&lt;Person&gt;()
-  {
-   new Person() { Name = &quot;John&quot;, DateOfBirth = DateTime.Parse(&quot;2000-05-06&quot;), PersonGender =
+List&lt;Person&gt; people = new List&lt;Person&gt;()
+{
+new Person() { Name = &quot;John&quot;, DateOfBirth = DateTime.Parse(&quot;2000-05-06&quot;), PersonGender =
 Gender.Male},
-   new Person() { Name = &quot;Linda&quot;, DateOfBirth = DateTime.Parse(&quot;2005-01-09&quot;), PersonGender =
+new Person() { Name = &quot;Linda&quot;, DateOfBirth = DateTime.Parse(&quot;2005-01-09&quot;), PersonGender =
 Gender.Female},
-   new Person() { Name = &quot;Susan&quot;, DateOfBirth = null, PersonGender = Gender.Other}
-  };
-  return View(&quot;Index&quot;, people); // Pass the &#39;people&#39; list as the model
+new Person() { Name = &quot;Susan&quot;, DateOfBirth = null, PersonGender = Gender.Other}
+};
+return View(&quot;Index&quot;, people); // Pass the &#39;people&#39; list as the model
 }
 [Route(&quot;person-details/{name}&quot;)]
 public IActionResult Details(string? name)
 {
-  // ... (Retrieve the person based on the name) ...
-  Person? matchingPerson = people.Where(temp =&gt; temp.Name == name).FirstOrDefault();
-  return View(matchingPerson); // Pass a single &#39;Person&#39; object as the model
+// ... (Retrieve the person based on the name) ...
+Person? matchingPerson = people.Where(temp =&gt; temp.Name == name).FirstOrDefault();
+return View(matchingPerson); // Pass a single &#39;Person&#39; object as the model
 }</code></pre>
     </div>
-  <p>Both action methods pass the model(s) to the view using return View(model).
-View (Index.cshtml)</p>
+  <p>Both action methods pass the model(s) to the view using return View(model).</p>
+
+<h2 id="view-indexcshtml">View (Index.cshtml)</h2>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1098,12 +1048,7 @@ View (Index.cshtml)</p>
       <pre><code class="language-csharp">@using ViewsExample.Models
 @model IEnumerable&lt;Person&gt; // Indicates that the model is a collection of Person objects</code></pre>
     </div>
-  <p>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;@ViewBag.appTitle&lt;/title&gt;
-  &lt;/head&gt;
-&lt;body&gt;</p>
+  <p>&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;@ViewBag.appTitle&lt;/title&gt; &lt;/head&gt; &lt;body&gt;</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1114,34 +1059,31 @@ View (Index.cshtml)</p>
         </button>
       </div>
       <pre><code class="language-razor">&lt;div class=&quot;page-content&quot;&gt;
-  &lt;h1&gt;Persons&lt;/h1&gt;
-  @foreach (Person person in Model)
-  {
-   &lt;div class=&quot;box float-left w-50&quot;&gt;
-     &lt;h3&gt;@person.Name&lt;/h3&gt;
-     &lt;table class=&quot;table w-100&quot;&gt;
-      &lt;tbody&gt;
-      &lt;tr&gt;
-        &lt;td&gt;Gender&lt;/td&gt;
-        &lt;td&gt;@person.PersonGender&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;Date of Birth&lt;/td&gt;
-        &lt;td&gt;@person.DateOfBirth?.ToString(&quot;MM/dd/yyyy&quot;)&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;/tbody&gt;
-     &lt;/table&gt;
-     &lt;a href=&quot;/person-details/@person.Name&quot;&gt;Details&lt;/a&gt;
-   &lt;/div&gt;
-  }
-  &lt;/div&gt;</code></pre>
+&lt;h1&gt;Persons&lt;/h1&gt;
+@foreach (Person person in Model)
+{
+&lt;div class=&quot;box float-left w-50&quot;&gt;
+&lt;h3&gt;@person.Name&lt;/h3&gt;
+&lt;table class=&quot;table w-100&quot;&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Gender&lt;/td&gt;
+&lt;td&gt;@person.PersonGender&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Date of Birth&lt;/td&gt;
+&lt;td&gt;@person.DateOfBirth?.ToString(&quot;MM/dd/yyyy&quot;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;a href=&quot;/person-details/@person.Name&quot;&gt;Details&lt;/a&gt;
+&lt;/div&gt;
+}
+&lt;/div&gt;</code></pre>
     </div>
-  <p>&lt;/body&gt;
-&lt;/html&gt;
-This view iterates over the Model (which is a list of Person objects) using a foreach loop. Inside the
-loop, it accesses the properties of each Person object directly (e.g., @person.Name,
-@person.PersonGender) thanks to strong typing.
-View (Details.cshtml)</p>
+  <p>&lt;/body&gt; &lt;/html&gt; This view iterates over the Model (which is a list of Person objects) using a foreach loop. Inside the loop, it accesses the properties of each Person object directly (e.g., @person.Name, @person.PersonGender) thanks to strong typing.</p>
+
+<h2 id="view-detailscshtml">View (Details.cshtml)</h2>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1154,12 +1096,7 @@ View (Details.cshtml)</p>
       <pre><code class="language-csharp">@using ViewsExample.Models
 @model Person // Indicates that the model is a single Person object</code></pre>
     </div>
-  <p>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;Person Details&lt;/title&gt;
-  &lt;/head&gt;
-&lt;body&gt;</p>
+  <p>&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;Person Details&lt;/title&gt; &lt;/head&gt; &lt;body&gt;</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1170,10 +1107,10 @@ View (Details.cshtml)</p>
         </button>
       </div>
       <pre><code class="language-razor">&lt;div class=&quot;page-content&quot;&gt;
-   &lt;h1&gt;Person Details&lt;/h1&gt;
-   &lt;div class=&quot;box&quot;&gt;
-     &lt;h3&gt;@Model.Name&lt;/h3&gt;
-     &lt;table class=&quot;table w-100&quot;&gt;</code></pre>
+&lt;h1&gt;Person Details&lt;/h1&gt;
+&lt;div class=&quot;box&quot;&gt;
+&lt;h3&gt;@Model.Name&lt;/h3&gt;
+&lt;table class=&quot;table w-100&quot;&gt;</code></pre>
     </div>
   <p>&lt;tbody&gt;</p>
 
@@ -1186,13 +1123,13 @@ View (Details.cshtml)</p>
         </button>
       </div>
       <pre><code class="language-razor">&lt;tr&gt;
-        &lt;td&gt;Gender&lt;/td&gt;
-        &lt;td&gt;@Model.PersonGender&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;Date of Birth&lt;/td&gt;
-        &lt;td&gt;@Model.DateOfBirth?.ToString(&quot;MM/dd/yyyy&quot;)&lt;/td&gt;
-      &lt;/tr&gt;</code></pre>
+&lt;td&gt;Gender&lt;/td&gt;
+&lt;td&gt;@Model.PersonGender&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Date of Birth&lt;/td&gt;
+&lt;td&gt;@Model.DateOfBirth?.ToString(&quot;MM/dd/yyyy&quot;)&lt;/td&gt;
+&lt;/tr&gt;</code></pre>
     </div>
   <p>&lt;/tbody&gt;</p>
 
@@ -1205,45 +1142,39 @@ View (Details.cshtml)</p>
         </button>
       </div>
       <pre><code class="language-razor">&lt;/table&gt;
-   &lt;/div&gt;
-   &lt;a href=&quot;/home&quot;&gt;Back to persons&lt;/a&gt;
-  &lt;/div&gt;</code></pre>
+&lt;/div&gt;
+&lt;a href=&quot;/home&quot;&gt;Back to persons&lt;/a&gt;
+&lt;/div&gt;</code></pre>
     </div>
-  <p>&lt;/body&gt;
-&lt;/html&gt;
-This view displays the details of a single Person object. Notice that you can directly access properties
-like @Model.Name without any casting or dictionary lookups.</p>
+  <p>&lt;/body&gt; &lt;/html&gt; This view displays the details of a single Person object. Notice that you can directly access properties like @Model.Name without any casting or dictionary lookups.</p>
 
 <h2 id="strongly-typed-views-with-multiple-models">Strongly Typed Views with Multiple Models</h2>
-<p>When your view requires data from more than one model class, the most common and
-recommended approach is to create a view model. A view model is a custom class that encapsulates
-all the data necessary for a specific view, aggregating properties from multiple models or providing
-additional properties tailored for the view&#39;s presentation needs.
-Why Use View Models?</p>
+<p>When your view requires data from more than one model class, the most common and recommended approach is to create a view model. A view model is a custom class that encapsulates all the data necessary for a specific view, aggregating properties from multiple models or providing additional properties tailored for the view&#39;s presentation needs. Why Use View Models?</p>
 <ul>
   <li>Encapsulation: Keeps your view logic organized and prevents your views from becoming
-      tightly coupled to your underlying business models.</li>
+tightly coupled to your underlying business models.</li>
   <li>Flexibility: Allows you to combine data from different sources (multiple models,
-      configuration settings, etc.) into a single object for the view.</li>
+configuration settings, etc.) into a single object for the view.</li>
   <li>Type Safety: Strongly typed views with view models offer compile-time type checking and
-      IntelliSense, improving development efficiency.</li>
+IntelliSense, improving development efficiency.</li>
   <li>Data Shaping: You can create properties in the view model specifically designed for how you
-      want to display data in the view, such as formatted strings or calculated values.</li>
+want to display data in the view, such as formatted strings or calculated values.</li>
 </ul>
 
 <h2 id="creating-and-using-view-models">Creating and Using View Models</h2>
 <ol>
   <li>Define the View Model: Create a new class in your Models folder to represent the view
-      model. This class will have properties to hold the data from the various models your view
-      needs.</li>
+model. This class will have properties to hold the data from the various models your view
+needs.</li>
   <li>Populate in the Controller: In your controller action, retrieve the data from your different
-      models and use them to create an instance of your view model.</li>
+models and use them to create an instance of your view model.</li>
   <li>Pass to the View: Pass the populated view model object to the view using the View method.</li>
   <li>Access in the View: In your view, use the @model directive at the top to specify the type of
-      your view model. You can then access the view model&#39;s properties using
-      Model.&lt;PropertyName&gt;.</li>
+your view model. You can then access the view model&#39;s properties using
+Model.&lt;PropertyName&gt;.</li>
 </ol>
-<p>Code Example: PersonAndProductWrapperModel</p>
+
+<h2 id="code-example-personandproductwrappermodel">Code Example: PersonAndProductWrapperModel</h2>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1257,21 +1188,21 @@ Why Use View Models?</p>
 )
 public class PersonAndProductWrapperModel
 {
-  public Person PersonData { get; set; }
-  public Product ProductData { get; set; }
+public Person PersonData { get; set; }
+public Product ProductData { get; set; }
 }
 // HomeController.cs (Controller
 )
 public IActionResult SomeAction()
 {
-  Person person = GetPersonData(); // Fetch person data
-  Product product = GetProductData(); // Fetch product data
-  var viewModel = new PersonAndProductWrapperModel
-  {
-   PersonData = person,
-   ProductData = product
-  };
-  return View(viewModel);
+Person person = GetPersonData(); // Fetch person data
+Product product = GetProductData(); // Fetch product data
+var viewModel = new PersonAndProductWrapperModel
+{
+PersonData = person,
+ProductData = product
+};
+return View(viewModel);
 }</code></pre>
     </div>
   <p>View (PersonAndProduct.cshtml)</p>
@@ -1287,11 +1218,7 @@ public IActionResult SomeAction()
       <pre><code class="language-csharp">@using ViewsExample.Models
 @model PersonAndProductWrapperModel</code></pre>
     </div>
-  <p>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;/head&gt;
-&lt;body&gt;</p>
+  <p>&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;/head&gt; &lt;body&gt;</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1302,10 +1229,10 @@ public IActionResult SomeAction()
         </button>
       </div>
       <pre><code class="language-razor">&lt;div class=&quot;page-content&quot;&gt;
-   &lt;h1&gt;Person and Product&lt;/h1&gt;
-   &lt;div class=&quot;box w-100&quot;&gt;
-     &lt;h3&gt;Person&lt;/h3&gt;
-     &lt;table class=&quot;table w-50&quot;&gt;</code></pre>
+&lt;h1&gt;Person and Product&lt;/h1&gt;
+&lt;div class=&quot;box w-100&quot;&gt;
+&lt;h3&gt;Person&lt;/h3&gt;
+&lt;table class=&quot;table w-50&quot;&gt;</code></pre>
     </div>
   <p>&lt;tbody&gt;</p>
 
@@ -1318,13 +1245,13 @@ public IActionResult SomeAction()
         </button>
       </div>
       <pre><code class="language-razor">&lt;tr&gt;
-      &lt;td&gt;Person Name&lt;/td&gt;
-      &lt;td&gt;@Model.PersonData.Name&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-      &lt;td&gt;Gender&lt;/td&gt;
-      &lt;td&gt;@Model.PersonData.PersonGender&lt;/td&gt;
-      &lt;/tr&gt;</code></pre>
+&lt;td&gt;Person Name&lt;/td&gt;
+&lt;td&gt;@Model.PersonData.Name&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Gender&lt;/td&gt;
+&lt;td&gt;@Model.PersonData.PersonGender&lt;/td&gt;
+&lt;/tr&gt;</code></pre>
     </div>
   <p>&lt;/tbody&gt;</p>
 
@@ -1337,10 +1264,10 @@ public IActionResult SomeAction()
         </button>
       </div>
       <pre><code class="language-razor">&lt;/table&gt;
-   &lt;/div&gt;
-   &lt;div class=&quot;box w-100&quot;&gt;
-     &lt;h3&gt;Product&lt;/h3&gt;
-     &lt;table class=&quot;table w-50&quot;&gt;</code></pre>
+&lt;/div&gt;
+&lt;div class=&quot;box w-100&quot;&gt;
+&lt;h3&gt;Product&lt;/h3&gt;
+&lt;table class=&quot;table w-50&quot;&gt;</code></pre>
     </div>
   <p>&lt;tbody&gt;</p>
 
@@ -1353,13 +1280,13 @@ public IActionResult SomeAction()
         </button>
       </div>
       <pre><code class="language-razor">&lt;tr&gt;
-      &lt;td&gt;Product Id&lt;/td&gt;
-      &lt;td&gt;@Model.ProductData.ProductId&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-      &lt;td&gt;Product Name&lt;/td&gt;
-      &lt;td&gt;@Model.ProductData.ProductName&lt;/td&gt;
-      &lt;/tr&gt;</code></pre>
+&lt;td&gt;Product Id&lt;/td&gt;
+&lt;td&gt;@Model.ProductData.ProductId&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Product Name&lt;/td&gt;
+&lt;td&gt;@Model.ProductData.ProductName&lt;/td&gt;
+&lt;/tr&gt;</code></pre>
     </div>
   <p>&lt;/tbody&gt;</p>
 
@@ -1372,53 +1299,47 @@ public IActionResult SomeAction()
         </button>
       </div>
       <pre><code class="language-razor">&lt;/table&gt;
-   &lt;/div&gt;
-  &lt;/div&gt;</code></pre>
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
-  <p>&lt;/body&gt;
-&lt;/html&gt;
-Key Points:</p>
+  <p>&lt;/body&gt; &lt;/html&gt; Key Points:</p>
 <ul>
   <li>Organization: View models help keep your views focused on presentation and your
-      controllers focused on data retrieval and processing.</li>
+controllers focused on data retrieval and processing.</li>
   <li>Maintainability: When your underlying models change, you only need to update your view
-      model, not every view that uses that data.</li>
+model, not every view that uses that data.</li>
   <li>Flexibility: You can include additional properties in your view model that aren&#39;t part of your
-      original models. This could be formatting options, computed values, or flags for controlling
-      the view&#39;s behavior.</li>
+original models. This could be formatting options, computed values, or flags for controlling
+the view&#39;s behavior.</li>
 </ul>
-<p>_ViewImports.cshtml
-The _ViewImports.cshtml file is a special file in ASP.NET Core MVC that allows you to centralize
-common directives and settings that apply to multiple views within your application. This file
-typically resides in the Views folder at the root of your project, but you can also place it within
-subfolders to apply the settings to views within those specific folders.
-What Can You Put in _ViewImports.cshtml?</p>
+
+<h2 id="_viewimportscshtml">_ViewImports.cshtml</h2>
+<p>The _ViewImports.cshtml file is a special file in ASP.NET Core MVC that allows you to centralize common directives and settings that apply to multiple views within your application. This file typically resides in the Views folder at the root of your project, but you can also place it within subfolders to apply the settings to views within those specific folders. What Can You Put in _ViewImports.cshtml?</p>
 <ul>
   <li>@using Directives: Import namespaces that you frequently use in your views. This
-      eliminates the need to include these directives in every individual view.</li>
+eliminates the need to include these directives in every individual view.</li>
   <li>@addTagHelper Directives: Make Tag Helpers available to your views. Tag Helpers are
-      server-side code snippets that generate or modify HTML elements in a more intuitive way
-      than traditional Razor syntax.</li>
+server-side code snippets that generate or modify HTML elements in a more intuitive way
+than traditional Razor syntax.</li>
   <li>@inject Directives: Inject services into your views, making them accessible for use in your
-      Razor code.</li>
+Razor code.</li>
   <li>@model Directive (Optional): Specify a default model type for all views in the directory or
-      subdirectories (not recommended for complex projects).</li>
+subdirectories (not recommended for complex projects).</li>
   <li>@layout Directive (Optional): Set a default layout for all views in the directory or
-      subdirectories.</li>
+subdirectories.</li>
 </ul>
 
 <h2 id="how-it-works">How It Works</h2>
-<p>When your application processes a request for a view, it looks for a _ViewImports.cshtml file in the
-following order:</p>
+<p>When your application processes a request for a view, it looks for a _ViewImports.cshtml file in the following order:</p>
 <ol>
   <li>The same directory as the view: If found, the directives and settings in this file are applied.</li>
   <li>Parent directories: It then checks the parent directory of the view, and so on, up to the root
-      Views folder.</li>
+Views folder.</li>
   <li>Root Views folder: Finally, it checks the _ViewImports.cshtml file in the root Views folder.</li>
 </ol>
-<p>Directives in a child folder&#39;s _ViewImports.cshtml file can override settings inherited from parent
-directories.
-Code Example: _ViewImports.cshtml</p>
+<p>Directives in a child folder&#39;s _ViewImports.cshtml file can override settings inherited from parent directories.</p>
+
+<h2 id="code-example-_viewimportscshtml">Code Example: _ViewImports.cshtml</h2>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1437,7 +1358,7 @@ Code Example: _ViewImports.cshtml</p>
   <li>Reduced Redundancy: Avoid repeating the same directives in multiple views.</li>
   <li>Consistent Configuration: Easily apply common settings across your views.</li>
   <li>Improved Readability: Keep your individual view files cleaner and more focused on their
-      specific content.</li>
+specific content.</li>
 </ul>
 <p>Code of View:</p>
 
@@ -1451,12 +1372,7 @@ Code Example: _ViewImports.cshtml</p>
       </div>
       <pre><code class="language-csharp">@model YourProject.Models.Product</code></pre>
     </div>
-  <p>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;Product Details&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;</p>
+  <p>&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;Product Details&lt;/title&gt; &lt;/head&gt; &lt;body&gt;</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1468,68 +1384,55 @@ Code Example: _ViewImports.cshtml</p>
       </div>
       <pre><code class="language-razor">&lt;h1&gt;@Model.Name&lt;/h1&gt;</code></pre>
     </div>
-  <p>&lt;/body&gt;
-&lt;/html&gt;</p>
-<p>In this example, the @model directive is not required in the view because it&#39;s already specified in the
-_ViewImports.cshtml file. Similarly, you don&#39;t need to include the @using directive for your model&#39;s
-namespace.</p>
+  <p>&lt;/body&gt; &lt;/html&gt; In this example, the @model directive is not required in the view because it&#39;s already specified in the _ViewImports.cshtml file. Similarly, you don&#39;t need to include the @using directive for your model&#39;s namespace.</p>
 
 <h2 id="important-considerations-2">Important Considerations</h2>
 <ul>
   <li>Scoping: Directives in _ViewImports.cshtml are scoped to the directory and its
-      subdirectories.</li>
+subdirectories.</li>
   <li>Overriding: Settings in a child folder&#39;s _ViewImports.cshtml file override those in parent
-      folders.</li>
+folders.</li>
   <li>Flexibility: Use multiple _ViewImports.cshtml files in different folders to manage settings at
-      a more granular level.</li>
+a more granular level.</li>
 </ul>
 
-<h2 id="key-points-to-remember">Key Points to Remember</h2>
+<h3 id="key-points-to-remember">Key Points to Remember</h3>
 <ul>
   <li>Centralization: Use _ViewImports.cshtml to centralize common view directives and settings.</li>
   <li>DRY Principle: Adhere to the Don&#39;t Repeat Yourself (DRY) principle by avoiding redundant
-      code.</li>
+code.</li>
   <li>Scoping and Overriding: Understand how the cascading nature of _ViewImports.cshtml files
-      works.</li>
+works.</li>
 </ul>
 
 <h2 id="shared-views">Shared Views</h2>
-<p>In ASP.NET Core MVC, a shared view is a view file (.cshtml) that is not tied to a specific controller or
-action. These views typically reside in the Views/Shared folder and are designed to be reused across
-different controllers or even multiple projects.
-Why Use Shared Views?</p>
+<p>In ASP.NET Core MVC, a shared view is a view file (.cshtml) that is not tied to a specific controller or action. These views typically reside in the Views/Shared folder and are designed to be reused across different controllers or even multiple projects. Why Use Shared Views?</p>
 <ul>
   <li>Reduce Duplication: Avoid writing the same code repeatedly for common UI elements
-      across your application.</li>
+across your application.</li>
   <li>Consistent UI: Maintain a unified look and feel across different pages and sections of your
-      site.</li>
+site.</li>
   <li>Simplified Maintenance: Update the shared view once, and the changes automatically apply
-      to all views that use it.</li>
+to all views that use it.</li>
 </ul>
 
 <h2 id="how-shared-views-work">How Shared Views Work</h2>
 <ul>
   <li>1. Location: By default, ASP.NET Core MVC looks for shared views in the Views/Shared folder.
-      You can also create subfolders within Views/Shared to further organize your shared views.</li>
+You can also create subfolders within Views/Shared to further organize your shared views.</li>
   <li>2. Naming: Name your shared views in a way that reflects their purpose or content. Common
-      examples include:</li>
+examples include:</li>
   <li>_Layout.cshtml: The main layout for your application&#39;s pages.</li>
   <li>_PartialName.cshtml: Smaller, reusable components (partial views) that can be
-           embedded in other views.</li>
+embedded in other views.</li>
   <li>3. Rendering: You can render a shared view using the following approaches:</li>
   <li>PartialView(): Renders a partial view.</li>
   <li>View(): Can be used to render a shared view directly, but it&#39;s more common to use
-           PartialView() for partial views and reserve View() for full pages.</li>
+PartialView() for partial views and reserve View() for full pages.</li>
 </ul>
-<p>Code Example: Shared View All.cshtml
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;All Products&lt;/title&gt;
-  &lt;meta charset=&quot;UTF-8&quot; /&gt;
-  &lt;link href=&quot;~/StyleSheet.css&quot; rel=&quot;stylesheet&quot; /&gt;
-&lt;/head&gt;
-&lt;body&gt;</p>
+
+<h2 id="code-example-shared-view-allcshtml">Code Example: Shared View All.cshtml</h2>
+<p>&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;All Products&lt;/title&gt; &lt;meta charset=&quot;UTF-8&quot; /&gt; &lt;link href=&quot;~/StyleSheet.css&quot; rel=&quot;stylesheet&quot; /&gt; &lt;/head&gt; &lt;body&gt;</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1540,14 +1443,12 @@ Why Use Shared Views?</p>
         </button>
       </div>
       <pre><code class="language-razor">&lt;div class=&quot;page-content&quot;&gt;
-   &lt;h1&gt;All Products&lt;/h1&gt;
-   &lt;/div&gt;</code></pre>
+&lt;h1&gt;All Products&lt;/h1&gt;
+&lt;/div&gt;</code></pre>
     </div>
-  <p>&lt;/body&gt;
-&lt;/html&gt;
-This shared view (All.cshtml) can be reused by multiple controllers to display the &quot;All Products&quot; page
-with the same structure and styling.</p>
-<p>Code Example: Controllers Using the Shared View</p>
+  <p>&lt;/body&gt; &lt;/html&gt; This shared view (All.cshtml) can be reused by multiple controllers to display the &quot;All Products&quot; page with the same structure and styling.</p>
+
+<h2 id="code-example-controllers-using-the-shared-view">Code Example: Controllers Using the Shared View</h2>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1561,71 +1462,88 @@ with the same structure and styling.</p>
 [Route(&quot;home/all-products&quot;)]
 public IActionResult All()
 {
-  return View(); // Will look for Views/Home/All.cshtml first, then Views/Shared/All.cshtml
+return View(); // Will look for Views/Home/All.cshtml first, then Views/Shared/All.cshtml
 }
 // ProductsController.cs
 [Route(&quot;products/all&quot;)]
 public IActionResult All()
 {
-  return View(); // Will look for Views/Products/All.cshtml first, then Views/Shared/All.cshtml
+return View(); // Will look for Views/Products/All.cshtml first, then Views/Shared/All.cshtml
 }</code></pre>
     </div>
-  <p>In both HomeController and ProductsController, the All action method returns a ViewResult.
-ASP.NET Core will first look for a view named All.cshtml within the specific controller&#39;s view folder
-(e.g., Views/Home or Views/Products). If it doesn&#39;t find it there, it will look for it in the Views/Shared
-folder.</p>
+  <p>In both HomeController and ProductsController, the All action method returns a ViewResult. ASP.NET Core will first look for a view named All.cshtml within the specific controller&#39;s view folder (e.g., Views/Home or Views/Products). If it doesn&#39;t find it there, it will look for it in the Views/Shared folder.</p>
 
 <h2 id="important-considerations-3">Important Considerations</h2>
 <ul>
   <li>Naming Convention: Prefix the names of partial views with an underscore (e.g.,
-      _ProductCard.cshtml) to distinguish them from full views.</li>
+_ProductCard.cshtml) to distinguish them from full views.</li>
   <li>Data Passing: Use view models to pass data to shared views, ensuring that the view has
-      access to all the information it needs to render correctly.</li>
+access to all the information it needs to render correctly.</li>
   <li>Flexibility: You can override shared views within specific controllers if you need to customize
-      them for a particular use case.</li>
+them for a particular use case.</li>
 </ul>
-<p>Shared views are a cornerstone of maintainable and scalable ASP.NET Core MVC applications. By
-leveraging their reusability, you can significantly streamline your development process and ensure a
-consistent user experience across your website or application.</p>
+<p>Shared views are a cornerstone of maintainable and scalable ASP.NET Core MVC applications. By leveraging their reusability, you can significantly streamline your development process and ensure a consistent user experience across your website or application.</p>
 
-<h2 id="key-points-to-remember-1">Key Points to Remember</h2>
+<h3 id="key-points-to-remember-1">Key Points to Remember</h3>
+
+<h3 id="1-views">1. Views</h3>
 <ul>
-  <li>1. Views</li>
   <li>Purpose: Render the user interface (UI) of your MVC application.</li>
   <li>Razor View Engine: Default engine for combining HTML markup with C# code.</li>
   <li>View File Location: Typically found in the Views folder, organized by controller.</li>
   <li>View Selection: Controllers return ViewResult or other action results to render views.</li>
   <li>Model Binding: Views often receive data from controllers (the model) for dynamic
-      rendering.</li>
-  <li>2. Razor Syntax Essentials</li>
+rendering.</li>
+</ul>
+
+<h3 id="2-razor-syntax-essentials">2. Razor Syntax Essentials</h3>
+<ul>
   <li>Code Blocks (@{...}): For multi-line C# code.</li>
   <li>Expressions (@variable or @method()): Embed C# expressions.</li>
   <li>Literals (@: or &lt;text&gt;): Output raw text (no HTML encoding).</li>
   <li>Control Flow: Use @if, @else, @switch, @foreach, @for for conditional and iterative logic.</li>
   <li>Comments: @*...*@ for server-side comments.</li>
-  <li>3. Local Functions</li>
+</ul>
+
+<h3 id="3-local-functions">3. Local Functions</h3>
+<ul>
   <li>Purpose: Encapsulate reusable C# functions within Razor views.</li>
   <li>Syntax: Define within @functions { ... }.</li>
   <li>Benefits: Improved organization, readability, and reusability within a view.</li>
-  <li>4. Html.Raw()</li>
+</ul>
+
+<h3 id="4-htmlraw">4. Html.Raw()</h3>
+<ul>
   <li>Purpose: Renders raw HTML content without encoding.</li>
   <li>Warning: Use with caution due to potential XSS vulnerabilities.</li>
   <li>Alternatives: Consider partial views or view components for dynamic HTML generation.</li>
-  <li>5. ViewData and ViewBag</li>
+</ul>
+
+<h3 id="5-viewdata-and-viewbag">5. ViewData and ViewBag</h3>
+<ul>
   <li>Purpose: Pass data from controllers to views.</li>
   <li>ViewData: Dictionary-based (ViewData[&quot;key&quot;]).</li>
   <li>ViewBag: Dynamic wrapper around ViewData (ViewBag.key).</li>
   <li>Recommendation: Prefer strongly typed views or view models for better type safety and
-      maintainability.</li>
-  <li>6. Strongly Typed Views</li>
+maintainability.</li>
+</ul>
+
+<h3 id="6-strongly-typed-views">6. Strongly Typed Views</h3>
+<ul>
   <li>Purpose: Associate a view with a specific model class using the @model directive.</li>
   <li>Benefits: Type safety, IntelliSense, and improved maintainability.</li>
   <li>View Models: Combine data from multiple models into a single view model class.</li>
-  <li>7. _ViewImports.cshtml</li>
+</ul>
+
+<h3 id="7-_viewimportscshtml">7. _ViewImports.cshtml</h3>
+<ul>
   <li>Purpose: Centralize common @using, @addTagHelper, @inject, and other directives.</li>
   <li>Location: In the root Views folder or subfolders.</li>
   <li>Benefits: Reduce redundancy, ensure consistency, and improve readability.</li>
-  <li>8. Shared Views</li>
+</ul>
+
+<h3 id="8-shared-views">8. Shared Views</h3>
+<ul>
   <li>Purpose: Reusable view components stored in the Views/Shared folder.</li>
   <li>Types:</li>
   <li>Layout Pages: Define the overall page structure.</li>
@@ -1635,13 +1553,13 @@ consistent user experience across your website or application.</p>
 <p>Interview Tips:</p>
 <ul>
   <li>Razor Syntax: Be ready to write examples of different Razor syntax elements and explain
-      their use cases.</li>
+their use cases.</li>
   <li>View Logic: Discuss when it&#39;s appropriate to use local functions or view models in your
-      views.</li>
+views.</li>
   <li>Security: Emphasize the importance of security (input validation, avoiding Html.Raw() for
-      untrusted content) when working with views.</li>
+untrusted content) when working with views.</li>
   <li>Best Practices: Demonstrate your knowledge of using view models, shared views, and
-      _ViewImports.cshtml for cleaner and more maintainable code.</li>
+_ViewImports.cshtml for cleaner and more maintainable code.</li>
 </ul>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
@@ -1649,8 +1567,7 @@ consistent user experience across your website or application.</p>
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
   <h3 id="model-view-controller-mvc-pattern">Model-View-Controller (MVC) Pattern</h3>
-<p>&quot;Model-View-Controller&quot; (MVC) is an architectural pattern that separates application code into three
-main components: Models, Views and Controllers.</p>
+<p>&quot;Model-View-Controller&quot; (MVC) is an architectural pattern that separates application code into three main components: Models, Views and Controllers.</p>
 <ol>
   <li>Controller invokes Business Model.</li>
   <li>Controller creates object of View Model.</li>
@@ -1693,21 +1610,20 @@ main components: Models, Views and Controllers.</p>
   <li>Unit testing each individual component is easier.</li>
 </ul>
   <h3 id="views-1">Views</h3>
-<p>View is a web page (.cshtml) that is responsible for containing presentation logic that merges data
-along with static design code (HTML).</p>
+<p>View is a web page (.cshtml) that is responsible for containing presentation logic that merges data along with static design code (HTML).</p>
 <ul>
   <li>Controller creates an object of ViewModel and fills data in its properties.</li>
   <li>Controller selects an appropriate view and invokes the same view &amp; supplies object of
-      ViewModel to the View.</li>
+ViewModel to the View.</li>
   <li>View access the ViewModel.</li>
   <li>View contains HTML markup with Razor markup (C# code in view to render dynamic
-      content).</li>
+content).</li>
   <li>Razor is the view engine that defines syntax to write C# code in the view. @ is the syntax of
-      Razor syntax.</li>
+Razor syntax.</li>
   <li>View is NOT supposed to have lots of C# code. Any code written in the view should relate to
-      presenting the content (presentation logic).</li>
+presenting the content (presentation logic).</li>
   <li>View should neither directly call the business model, nor call the controller&#39;s action
-      methods. But it can send requests to controllers.</li>
+methods. But it can send requests to controllers.</li>
 </ul>
   <h3 id="razor-view-engine-1">Razor View Engine</h3>
   <h3 id="razor-code-block">Razor Code Block</h3>
@@ -1721,18 +1637,12 @@ along with static design code (HTML).</p>
         </button>
       </div>
       <pre><code class="language-csharp">@{
- C# / html code here
+C# / html code here
 }</code></pre>
     </div>
-  <p>Razor code block is a C# code block that contains one or more lines of C# code that can contain any
-statements and local functions.</p>
+  <p>Razor code block is a C# code block that contains one or more lines of C# code that can contain any statements and local functions.</p>
   <h3 id="razor-expressions">Razor Expressions</h3>
-<p>@Expression</p>
-<ul>
-  <li>r--</li>
-</ul>
-<p>@(Expression)</p>
-<p>Razor expression is a C# expression (accessing a field, property or method call) that returns a value.</p>
+<p>@Expression --or-- @(Expression) Razor expression is a C# expression (accessing a field, property or method call) that returns a value.</p>
   <h3 id="razor-if">Razor - If</h3>
 
     <div class="code-block">
@@ -1744,7 +1654,7 @@ statements and local functions.</p>
         </button>
       </div>
       <pre><code class="language-csharp">@if (condition) {
- C# / html code here
+C# / html code here
 }</code></pre>
     </div>
   <p>Razor - if…else</p>
@@ -1758,10 +1668,10 @@ statements and local functions.</p>
         </button>
       </div>
       <pre><code class="language-csharp">@if (condition) {
- C# / html code here
+C# / html code here
 }
 else {
- C# / html code here
+C# / html code here
 }</code></pre>
     </div>
   <p>Else…if and nested-if also supported.</p>
@@ -1776,9 +1686,9 @@ else {
         </button>
       </div>
       <pre><code class="language-csharp">@switch (variable) {
- case value1: C# / html code here; break;
- case value2: C# / html code here; break;
- default: C# / html code here; break;
+case value1: C# / html code here; break;
+case value2: C# / html code here; break;
+default: C# / html code here; break;
 }</code></pre>
     </div>
   <p>Razor - foreach</p>
@@ -1792,10 +1702,10 @@ else {
         </button>
       </div>
       <pre><code class="language-csharp">@foreach (var variable in collection ) {
- C# / html code here
+C# / html code here
 }</code></pre>
     </div>
-    <h3 id="razor-for">Razor - for</h3>
+  <p>Razor - for</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1806,7 +1716,7 @@ else {
         </button>
       </div>
       <pre><code class="language-csharp">@for (initialization; condition; iteration) {
- C# / html code here
+C# / html code here
 }</code></pre>
     </div>
   <p>Razor - Literal</p>
@@ -1823,8 +1733,7 @@ else {
 @: static text
 }</code></pre>
     </div>
-  <p>Razor - Literal
-&lt;text&gt;static text&lt;/text&gt;</p>
+  <p>Razor - Literal &lt;text&gt;static text&lt;/text&gt;</p>
   <h3 id="razor-local-functions">Razor - Local Functions</h3>
 
     <div class="code-block">
@@ -1837,16 +1746,14 @@ else {
       </div>
       <pre><code class="language-csharp">@{
 return_type method_name(arguments) {
- C# / html code here
+C# / html code here
 }
 }</code></pre>
     </div>
   <p>The local functions are callable within the same view.</p>
-  <h3 id="razor-members">Razor - Members</h3>
+<p>Razor - Members</p>
   <h3 id="razor-methods-properties-fields">Razor - Methods, Properties, Fields</h3>
-<p>@functions {
-return_type method_name(arguments) {
- C# / html code here</p>
+<p>@functions { return_type method_name(arguments) { C# / html code here</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1858,7 +1765,7 @@ return_type method_name(arguments) {
       </div>
       <pre><code class="language-csharp">data_type field_name;</code></pre>
     </div>
-  <p>data_type property_name</p>
+  <p>Data_type property_name</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1869,12 +1776,12 @@ return_type method_name(arguments) {
         </button>
       </div>
       <pre><code class="language-csharp">{
- set { … }
- get { … }
+set { … }
+get { … }
 }</code></pre>
     </div>
-  <p>The members of razor view can be accessible within the same view.
-Html.Raw( )</p>
+  <p>The members of razor view can be accessible within the same view.</p>
+  <h3 id="htmlraw-1">Html.Raw( )</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1889,14 +1796,10 @@ string variable = &quot;html code&quot;;
 }
 @Html.Raw(variable) //prints the html markup without encoding (converting html tags into plain</code></pre>
     </div>
-  <p>text)</p>
+  <p>Text)</p>
   <h3 id="viewdata">ViewData</h3>
-<p>ViewData is a dictionary object that is automatically created up on receiving a request and will be
-automatically deleted before sending response to the client.
-It is mainly used to send data from controller to view.</p>
-<p>ViewData is a property of Microsoft.AspNetCore.Mvc.Controller class and
-Microsoft.AspNetCore.Mvc.Razor.RazorPage class.
-It is of Microsoft.AspNet.Mvc.ViewFeatures.ViewDataDictionary type.</p>
+<p>ViewData is a dictionary object that is automatically created up on receiving a request and will be automatically deleted before sending response to the client. It is mainly used to send data from controller to view.</p>
+<p>ViewData is a property of Microsoft.AspNetCore.Mvc.Controller class and Microsoft.AspNetCore.Mvc.Razor.RazorPage class. It is of Microsoft.AspNet.Mvc.ViewFeatures.ViewDataDictionary type.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1910,14 +1813,12 @@ It is of Microsoft.AspNet.Mvc.ViewFeatures.ViewDataDictionary type.</p>
 {
 public abstract class Controller : ControllerBase
 {
- public ViewDataDictionary ViewData { get; set; }
+public ViewDataDictionary ViewData { get; set; }
 }
 }</code></pre>
     </div>
   <ul>
   <li>It is derived from IDictionary&lt;KeyValuePair&lt;string, object&gt;&gt; type.</li>
-</ul>
-<ul>
   <li>That means, it acts as a dictionary of key/value pairs.</li>
   <li>Key is of string type.</li>
   <li>Value is of object type.</li>
@@ -1931,11 +1832,8 @@ public abstract class Controller : ControllerBase
   <li>Clear() //Clears (removes) all elements.</li>
 </ul>
   <h3 id="viewbag">ViewBag</h3>
-<p>ViewBag is a property of Controller and View, that is used to access the ViewData easily.
-ViewBag is &#39;dynamic&#39; type.</p>
-<p>ViewBag is a property of Microsoft.AspNetCore.Mvc.Controller class and
-Microsoft.AspNetCore.Mvc.Razor.RazorPageBase class.
-It is of dynamic type.</p>
+<p>ViewBag is a property of Controller and View, that is used to access the ViewData easily. ViewBag is &#39;dynamic&#39; type.</p>
+<p>ViewBag is a property of Microsoft.AspNetCore.Mvc.Controller class and Microsoft.AspNetCore.Mvc.Razor.RazorPageBase class. It is of dynamic type.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1949,30 +1847,19 @@ It is of dynamic type.</p>
 {
 public abstract class Controller : ControllerBase
 {
- public dynamic ViewBag { get; set; }
+public dynamic ViewBag { get; set; }
 }
 }</code></pre>
     </div>
-  <p>The &#39;dynamic&#39; type similar to &#39;var&#39; keyword.
-But, it checks the data type and at run time, rather than at compilation time.
-If you try to access a non-existing property in the ViewBag, it returns null.
-[string Key] //Gets or sets an element.
-Benefits of &#39;ViewBag&#39; over ViewData
-ViewBag&#39;s syntax is easier to access its properties than ViewData.
-Eg: ViewBag.property [vs] ViewData[&quot;key&quot;]
-You need NOT type-cast the values while reading it.
-Eg: ViewBag.object_name.property
-[vs]
-(ViewData[&quot;key&quot;] as ClassName).Property</p>
+  <p>The &#39;dynamic&#39; type similar to &#39;var&#39; keyword. But, it checks the data type and at run time, rather than at compilation time. If you try to access a non-existing property in the ViewBag, it returns null. [string Key] //Gets or sets an element. Benefits of &#39;ViewBag&#39; over ViewData ViewBag&#39;s syntax is easier to access its properties than ViewData. Eg: ViewBag.property [vs] ViewData[&quot;key&quot;] You need NOT type-cast the values while reading it. Eg: ViewBag.object_name.property [vs] (ViewData[&quot;key&quot;] as ClassName).Property</p>
   <h3 id="strongly-typed-views-1">Strongly Typed Views</h3>
-<p>Strongly Typed View is a view that is bound to a specified model class.
-It is mainly used to access the model object / model collection easily in the view.</p>
+<p>Strongly Typed View is a view that is bound to a specified model class. It is mainly used to access the model object / model collection easily in the view.</p>
   <h3 id="benefits-of-strongly-typed-views">Benefits of Strongly Typed Views</h3>
 <ul>
   <li>You will get Intellisense while accessing model properties in strongly typed views, since the
-      type of model class was mentioned at @model directive.</li>
-  <li>Property names are compile-time checked; and shown as errors in case of misspelled / nonexisting
-properties in strongly typed views.</li>
+type of model class was mentioned at @model directive.</li>
+  <li>Property names are compile-time checked; and shown as errors in case of misspelled / non-
+existing properties in strongly typed views.</li>
   <li>You will have only one model per one view in strongly typed views.</li>
   <li>Easy to identify which model is being accessed in the view.</li>
 </ul>
@@ -1980,18 +1867,15 @@ properties in strongly typed views.</li>
 <ul>
   <li>return View( ); //View name is the same name as the current action method.</li>
   <li>return View(object Model ); //View name is the same name as the current action method &amp;
-      the view can be a strongly-typed view to receive the supplied model object.</li>
+the view can be a strongly-typed view to receive the supplied model object.</li>
   <li>return View(string ViewName); //View name is explicitly specified.</li>
   <li>return View(string ViewName, object Model ); //View name is explicitly specified &amp; the view
-      can be a strongly-typed view to receive the supplied model object.</li>
+can be a strongly-typed view to receive the supplied model object.</li>
 </ul>
   <h3 id="strongly-typed-views-2">Strongly Typed Views</h3>
-<p>Strongly Typed View can be bound to a single model directly.
-But that model class can have reference to objects of other model classes.
-ViewImports.cshtml
-ViewImports.cshtml is a special file in the &quot;Views&quot; folder or its subfolder, which executes
-automatically before execution of a view.
-It is mainly used to import common namespaces that are to imported in a view.</p>
+<p>Strongly Typed View can be bound to a single model directly. But that model class can have reference to objects of other model classes.</p>
+  <h3 id="viewimportscshtml">ViewImports.cshtml</h3>
+<p>ViewImports.cshtml is a special file in the &quot;Views&quot; folder or its subfolder, which executes automatically before execution of a view. It is mainly used to import common namespaces that are to imported in a view.</p>
 
     <div class="diagram-container">
       <div class="diagram-title">
@@ -2001,10 +1885,8 @@ It is mainly used to import common namespaces that are to imported in a view.</p
       <pre class="diagram-pre">[Vector Diagram / Illustrated Schema (Operator count: 161)]</pre>
     </div>
     <h3 id="shared-views-1">Shared Views</h3>
-<p>Shared views are placed in &quot;Shared&quot; folder in &quot;Views&quot; folder.
-They are accessible from any controller, if the view is NOT present in the &quot;Views\ControllerName&quot;
-folder.</p>
-  <h3 id="view-resolution">View Resolution</h3>
+<p>Shared views are placed in &quot;Shared&quot; folder in &quot;Views&quot; folder. They are accessible from any controller, if the view is NOT present in the &quot;Views\ControllerName&quot; folder.</p>
+<p>View Resolution</p>
 </section>
 
       </article>
@@ -2086,19 +1968,15 @@ folder.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#code" class="toc-link">Code</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#welcome" class="toc-link">Welcome</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#razor-view-engine" class="toc-link">Razor View Engine</a>
         </li>
       
         <li class="toc-item">
           <a href="#key-razor-syntax-elements" class="toc-link">Key Razor Syntax Elements</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#control-flow-in-razor-views" class="toc-link">Control Flow in Razor Views</a>
         </li>
       
         <li class="toc-item">
@@ -2110,11 +1988,11 @@ folder.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#code-1" class="toc-link">Code</a>
+          <a href="#important-considerations" class="toc-link">Important Considerations</a>
         </li>
       
         <li class="toc-item">
-          <a href="#important-considerations" class="toc-link">Important Considerations</a>
+          <a href="#htmlraw" class="toc-link">Html.Raw()</a>
         </li>
       
         <li class="toc-item">
@@ -2127,10 +2005,6 @@ folder.</p>
       
         <li class="toc-item">
           <a href="#important-considerations-1" class="toc-link">Important Considerations</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#code-2" class="toc-link">Code</a>
         </li>
       
         <li class="toc-item">
@@ -2158,7 +2032,19 @@ folder.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices" class="toc-link">Best Practices</a>
+          <a href="#best-practices" class="toc-link toc-sub">Best Practices</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#controller-homecontrollercs" class="toc-link">Controller (HomeController.cs)</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#view-indexcshtml" class="toc-link">View (Index.cshtml)</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#view-detailscshtml" class="toc-link">View (Details.cshtml)</a>
         </li>
       
         <li class="toc-item">
@@ -2170,7 +2056,19 @@ folder.</p>
         </li>
       
         <li class="toc-item">
+          <a href="#code-example-personandproductwrappermodel" class="toc-link">Code Example: PersonAndProductWrapperModel</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#_viewimportscshtml" class="toc-link">_ViewImports.cshtml</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#how-it-works" class="toc-link">How It Works</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-example-_viewimportscshtml" class="toc-link">Code Example: _ViewImports.cshtml</a>
         </li>
       
         <li class="toc-item">
@@ -2178,7 +2076,7 @@ folder.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+          <a href="#key-points-to-remember" class="toc-link toc-sub">Key Points to Remember</a>
         </li>
       
         <li class="toc-item">
@@ -2190,11 +2088,51 @@ folder.</p>
         </li>
       
         <li class="toc-item">
+          <a href="#code-example-shared-view-allcshtml" class="toc-link">Code Example: Shared View All.cshtml</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-example-controllers-using-the-shared-view" class="toc-link">Code Example: Controllers Using the Shared View</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#important-considerations-3" class="toc-link">Important Considerations</a>
         </li>
       
         <li class="toc-item">
-          <a href="#key-points-to-remember-1" class="toc-link">Key Points to Remember</a>
+          <a href="#key-points-to-remember-1" class="toc-link toc-sub">Key Points to Remember</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#1-views" class="toc-link toc-sub">1. Views</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#2-razor-syntax-essentials" class="toc-link toc-sub">2. Razor Syntax Essentials</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#3-local-functions" class="toc-link toc-sub">3. Local Functions</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#4-htmlraw" class="toc-link toc-sub">4. Html.Raw()</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#5-viewdata-and-viewbag" class="toc-link toc-sub">5. ViewData and ViewBag</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#6-strongly-typed-views" class="toc-link toc-sub">6. Strongly Typed Views</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#7-_viewimportscshtml" class="toc-link toc-sub">7. _ViewImports.cshtml</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#8-shared-views" class="toc-link toc-sub">8. Shared Views</a>
         </li>
       
         <li class="toc-item">

@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -400,21 +410,17 @@
       <article class="docs-content">
         
 <h2 id="middleware">Middleware</h2>
-<p>At its core, middleware in ASP.NET Core is a series of components that form a pipeline through
-which every HTTP request and response flows. Each middleware component can:</p>
+<p>At its core, middleware in ASP.NET Core is a series of components that form a pipeline through which every HTTP request and response flows. Each middleware component can:</p>
 <ol>
   <li>Examine the incoming request.</li>
   <li>Modify the request or response (if needed).</li>
   <li>Invoke the next middleware in the pipeline or short-circuit the process and generate a
-      response itself.</li>
+response itself.</li>
 </ol>
-<p>This pipeline allows you to modularize your application&#39;s logic and add features like authentication,
-logging, error handling, routing, and more in a clean and maintainable way.</p>
+<p>This pipeline allows you to modularize your application&#39;s logic and add features like authentication, logging, error handling, routing, and more in a clean and maintainable way.</p>
 
 <h2 id="middleware-chain-request-pipeline">Middleware Chain (Request Pipeline)</h2>
-<p>Imagine the request pipeline as a series of connected pipes. Each piece of middleware is like a valve
-in this pipeline, allowing you to control the flow of information and apply specific operations at
-different stages. The order you register your middleware matters, as they are executed sequentially.</p>
+<p>Imagine the request pipeline as a series of connected pipes. Each piece of middleware is like a valve in this pipeline, allowing you to control the flow of information and apply specific operations at different stages. The order you register your middleware matters, as they are executed sequentially.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -426,23 +432,22 @@ different stages. The order you register your middleware matters, as they are ex
       </div>
       <pre><code class="language-csharp">app.Use vs. app.Run</code></pre>
     </div>
-  <p>These two methods are fundamental for adding middleware to your pipeline, but they have key
-differences:</p>
+  <p>These two methods are fundamental for adding middleware to your pipeline, but they have key differences:</p>
 <ul>
   <li>app.Use(async (context, next) =&gt; { ... })</li>
   <li>Non-Terminal Middleware: This type of middleware typically performs some action
-           and then calls the next delegate to pass control to the next middleware in the
-           pipeline.</li>
+and then calls the next delegate to pass control to the next middleware in the
+pipeline.</li>
   <li>Can Modify Request/Response: It can change the request or response before
-           passing it along.</li>
+passing it along.</li>
   <li>Examples: Authentication, logging, custom headers, etc.</li>
   <li>app.Run(async (context) =&gt; { ... })</li>
   <li>Terminal Middleware: This middleware doesn&#39;t call next; it ends the pipeline and
-           generates the response itself.</li>
+generates the response itself.</li>
   <li>Often Used for the Final Response: It&#39;s commonly used for handling requests that
-           don&#39;t need further processing (e.g., returning a simple message).</li>
+don&#39;t need further processing (e.g., returning a simple message).</li>
   <li>Can&#39;t Modify Request: Since it&#39;s the end of the line, it cannot modify the request
-           before passing it on.</li>
+before passing it on.</li>
 </ul>
 <p>Code 1: The Consequence of Multiple app.Run Calls</p>
 
@@ -455,17 +460,16 @@ differences:</p>
         </button>
       </div>
       <pre><code class="language-csharp">app.Run(async (HttpContext context) =&gt; {
-  await context.Response.WriteAsync(&quot;Hello&quot;);
+await context.Response.WriteAsync(&quot;Hello&quot;);
 });
 app.Run(async (HttpContext context) =&gt; {
-  await context.Response.WriteAsync(&quot;Hello again&quot;);
+await context.Response.WriteAsync(&quot;Hello again&quot;);
 });
 app.Run();</code></pre>
     </div>
-  <p>In this code, only the first app.Run middleware will be executed. It terminates the pipeline by writing
-&quot;Hello&quot; to the response, and the subsequent app.Run (which would write &quot;Hello again&quot;) never gets a
-chance to run.
-Code 2: Chaining Middleware with app.Use and app.Run</p>
+  <p>In this code, only the first app.Run middleware will be executed. It terminates the pipeline by writing &quot;Hello&quot; to the response, and the subsequent app.Run (which would write &quot;Hello again&quot;) never gets a chance to run.</p>
+
+<h2 id="code-2-chaining-middleware-with-appuse-and-apprun">Code 2: Chaining Middleware with app.Use and app.Run</h2>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -477,36 +481,36 @@ Code 2: Chaining Middleware with app.Use and app.Run</p>
       </div>
       <pre><code class="language-csharp">//middlware 1
 app.Use(async (context, next) =&gt; {
-  await context.Response.WriteAsync(&quot;Hello &quot;);
-  await next(context);
+await context.Response.WriteAsync(&quot;Hello &quot;);
+await next(context);
 });
 //middleware 2
 app.Use(async (context, next) =&gt; {
-  await context.Response.WriteAsync(&quot;Hello again &quot;);
-  await next(context);
+await context.Response.WriteAsync(&quot;Hello again &quot;);
+await next(context);
 });
 //middleware 3
 app.Run(async (HttpContext context) =&gt; {
-  await context.Response.WriteAsync(&quot;Hello again&quot;);
+await context.Response.WriteAsync(&quot;Hello again&quot;);
 });</code></pre>
     </div>
   <p>This code demonstrates a correct way to chain middleware.</p>
 <ol>
   <li>The first app.Use writes &quot;Hello &quot; to the response and then calls next to pass control to the
-      next middleware.</li>
+next middleware.</li>
   <li>The second app.Use writes &quot;Hello again &quot; and also calls next.</li>
   <li>The final app.Run (which is terminal) writes &quot;Hello again&quot; and ends the pipeline. The result
-      would be output of &quot;Hello Hello again Hello again&quot;.</li>
+would be output of &quot;Hello Hello again Hello again&quot;.</li>
 </ol>
 
-<h2 id="key-points-to-remember">Key Points to Remember</h2>
+<h3 id="key-points-to-remember">Key Points to Remember</h3>
 <ul>
   <li>Middleware Order is Crucial: The order in which you register middleware matters, as they
-      are executed in sequence.</li>
+are executed in sequence.</li>
   <li>Use app.Use for Non-Terminal Actions: Use it for tasks like authentication, logging, or
-      modifying headers/bodies.</li>
+modifying headers/bodies.</li>
   <li>Use app.Run to Terminate the Pipeline: Employ it when you want to generate the final
-      response.</li>
+response.</li>
   <li>Short-Circuiting: Middleware can choose to short-circuit the pipeline (not call next) and</li>
 </ul>
 
@@ -521,21 +525,19 @@ app.Run(async (HttpContext context) =&gt; {
       <pre><code class="language-csharp">return a response early if needed.
 Custom Middleware in ASP.NET Cor</code></pre>
     </div>
-  <p>While ASP.NET Core provides a plethora of built-in middleware components, sometimes you need to
-create your own to address specific requirements unique to your application. Custom middleware
-allows you to:</p>
+  <p>While ASP.NET Core provides a plethora of built-in middleware components, sometimes you need to create your own to address specific requirements unique to your application. Custom middleware allows you to:</p>
 <ul>
   <li>Encapsulate logic: Bundle related operations (e.g., logging, security checks, custom headers)
-      into a reusable component.</li>
+into a reusable component.</li>
   <li>Customize behavior: Tailor the request/response pipeline to precisely match your
-      application&#39;s needs.</li>
+application&#39;s needs.</li>
   <li>Improve code organization: Keep your middleware code clean and maintainable.</li>
 </ul>
 
 <h2 id="anatomy-of-a-custom-middleware-class">Anatomy of a Custom Middleware Class</h2>
 <ul>
   <li>1. Implement IMiddleware: This interface requires a single method: InvokeAsync(HttpContext
-      context, RequestDelegate next). This is the heart of your middleware&#39;s logic.</li>
+context, RequestDelegate next). This is the heart of your middleware&#39;s logic.</li>
   <li>2. InvokeAsync or Invoke Method:</li>
   <li>context: The HttpContext provides access to the request and response objects.</li>
   <li>next: The RequestDelegate allows you to call the next middleware in the pipeline.</li>
@@ -555,35 +557,33 @@ allows you to:</p>
       <pre><code class="language-csharp">// MyCustomMiddleware.cs
 namespace MiddlewareExample.CustomMiddleware
 {
-  public class MyCustomMiddleware : IMiddleware
-  {
-   public async Task InvokeAsync(HttpContext context, RequestDelegate next)
-   {
-     await context.Response.WriteAsync(&quot;My Custom Middleware - Starts\n&quot;);
-     await next(context);
-     await context.Response.WriteAsync(&quot;My Custom Middleware - Ends\n&quot;);
-   }
-  }
-  // Extension method for easy registration
-  public static class CustomMiddlewareExtension
-  {
-   public static IApplicationBuilder UseMyCustomMiddleware(this IApplicationBuilder app)
-   {
-     return app.UseMiddleware&lt;MyCustomMiddleware&gt;();
-   }
-  }
+public class MyCustomMiddleware : IMiddleware
+{
+public async Task InvokeAsync(HttpContext context, RequestDelegate next)
+{
+await context.Response.WriteAsync(&quot;My Custom Middleware - Starts\n&quot;);
+await next(context);
+await context.Response.WriteAsync(&quot;My Custom Middleware - Ends\n&quot;);
 }
-   • MyCustomMiddleware Class: This class implements IMiddleware. Its InvokeAsync method:</code></pre>
+}
+// Extension method for easy registration
+public static class CustomMiddlewareExtension
+{
+public static IApplicationBuilder UseMyCustomMiddleware(this IApplicationBuilder app)
+{
+return app.UseMiddleware&lt;MyCustomMiddleware&gt;();
+}
+}
+}</code></pre>
     </div>
   <ul>
+  <li>MyCustomMiddleware Class: This class implements IMiddleware. Its InvokeAsync method:</li>
   <li>Writes &quot;My Custom Middleware - Starts&quot; to the response.</li>
-</ul>
-<ul>
   <li>Calls next(context) to invoke the next middleware in the pipeline.</li>
   <li>Writes &quot;My Custom Middleware - Ends&quot; to the response after the next middleware
-           has finished.</li>
+has finished.</li>
   <li>CustomMiddlewareExtension Class: This provides a convenient extension method
-      UseMyCustomMiddleware to register your middleware in the Startup.Configure method.</li>
+UseMyCustomMiddleware to register your middleware in the Startup.Configure method.</li>
 </ul>
 
     <div class="code-block">
@@ -600,54 +600,44 @@ using MiddlewareExample.CustomMiddleware;
 // ...
 builder.Services.AddTransient&lt;MyCustomMiddleware&gt;(); // Register as transient
 app.Use(async (HttpContext context, RequestDelegate next) =&gt; {
-  await context.Response.WriteAsync(&quot;From Midleware 1\n&quot;);
-  await next(context);
+await context.Response.WriteAsync(&quot;From Midleware 1\n&quot;);
+await next(context);
 });
 app.UseMyCustomMiddleware(); // Use the extension method
 app.Run(async (HttpContext context) =&gt; {
-  await context.Response.WriteAsync(&quot;From Middleware 3\n&quot;);
+await context.Response.WriteAsync(&quot;From Middleware 3\n&quot;);
 });</code></pre>
     </div>
   <p>How It Works</p>
 <ol>
   <li>Registration: You register MyCustomMiddleware as a transient service so that ASP.NET Core
-      can create instances of it when needed.</li>
+can create instances of it when needed.</li>
   <li>Pipeline Integration: The app.UseMyCustomMiddleware() extension method seamlessly
-      adds your middleware to the pipeline.</li>
+adds your middleware to the pipeline.</li>
   <li>Execution Order: Middleware components are executed in the order they are added to the
-      pipeline. In this case, the order would be Middleware 1, MyCustomMiddleware, then
-      Middleware 3.</li>
+pipeline. In this case, the order would be Middleware 1, MyCustomMiddleware, then
+Middleware 3.</li>
 </ol>
 
 <h2 id="output">Output</h2>
-<p>When you run the application, you&#39;ll see the following output in your browser:</p>
-
-<h2 id="from-midleware-1">From Midleware 1</h2>
-
-<h2 id="my-custom-middleware-starts">My Custom Middleware - Starts</h2>
-
-<h2 id="from-middleware-3">From Middleware 3</h2>
-
-<h2 id="my-custom-middleware-ends">My Custom Middleware - Ends</h2>
-<p>This clearly demonstrates the flow of execution through the middleware chain.</p>
+<p>When you run the application, you&#39;ll see the following output in your browser: From Midleware 1 My Custom Middleware - Starts From Middleware 3 My Custom Middleware - Ends This clearly demonstrates the flow of execution through the middleware chain.</p>
 
 <h2 id="custom-conventional-middleware">Custom Conventional Middleware</h2>
-<p>ASP.NET Core middleware comes in two flavors: conventional and factory-based. Conventional
-middleware, as shown in your example, is a simple yet powerful way to encapsulate custom logic for
-processing HTTP requests and responses.</p>
+<p>ASP.NET Core middleware comes in two flavors: conventional and factory-based. Conventional middleware, as shown in your example, is a simple yet powerful way to encapsulate custom logic for processing HTTP requests and responses.</p>
 
 <h2 id="key-characteristics">Key Characteristics</h2>
 <ul>
   <li>Class-Based: Conventional middleware is implemented as a class.</li>
   <li>Constructor Injection: It receives dependencies (if any) through its constructor.</li>
   <li>Invoke Method: This is the heart of the middleware, containing the logic that handles each
-      request.</li>
+request.</li>
   <li>RequestDelegate: The Invoke method takes a RequestDelegate parameter (_next in your
-      example). This delegate represents the next middleware in the pipeline.</li>
+example). This delegate represents the next middleware in the pipeline.</li>
   <li>Flexibility: You have full control over the request and response objects within the Invoke
-      method.</li>
+method.</li>
 </ul>
-<p>Code Breakdown: HelloCustomMiddleware</p>
+
+<h2 id="code-breakdown-hellocustommiddleware">Code Breakdown: HelloCustomMiddleware</h2>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -660,50 +650,51 @@ processing HTTP requests and responses.</p>
       <pre><code class="language-csharp">// HelloCustomMiddleware.cs
 public class HelloCustomMiddleware
 {
-  private readonly RequestDelegate _next;
-  public HelloCustomMiddleware(RequestDelegate next)
-  {
-   _next = next;
-  }
-  public async Task Invoke(HttpContext httpContext)
-  {
-   if (httpContext.Request.Query.ContainsKey(&quot;firstname&quot;) &amp;&amp;
-     httpContext.Request.Query.ContainsKey(&quot;lastname&quot;))
-   {
-     string fullName = httpContext.Request.Query[&quot;firstname&quot;] + &quot; &quot; +
+private readonly RequestDelegate _next;
+public HelloCustomMiddleware(RequestDelegate next)
+{
+_next = next;
+}
+public async Task Invoke(HttpContext httpContext)
+{
+if (httpContext.Request.Query.ContainsKey(&quot;firstname&quot;) &amp;&amp;
+httpContext.Request.Query.ContainsKey(&quot;lastname&quot;))
+{
+string fullName = httpContext.Request.Query[&quot;firstname&quot;] + &quot; &quot; +
 httpContext.Request.Query[&quot;lastname&quot;];
-     await httpContext.Response.WriteAsync(fullName);
-   }
-   await _next(httpContext);
-  }
+await httpContext.Response.WriteAsync(fullName);
+}
+await _next(httpContext);
+}
 }
 // Extension method for easy registration
 public static class HelloCustomModdleExtensions
 {
-  public static IApplicationBuilder UseHelloCustomMiddleware(this IApplicationBuilder builder)
-  {
-   return builder.UseMiddleware&lt;HelloCustomMiddleware&gt;();
-  }
+public static IApplicationBuilder UseHelloCustomMiddleware(this IApplicationBuilder builder)
+{
+return builder.UseMiddleware&lt;HelloCustomMiddleware&gt;();
+}
 }
 Let&#39;s analyze each part:</code></pre>
     </div>
-  <p>1. Constructor: The constructor receives the RequestDelegate, which is stored for later use to
-      invoke the next middleware in the pipeline.</p>
-<ul>
+  <ul>
+  <li>1. Constructor: The constructor receives the RequestDelegate, which is stored for later use to
+invoke the next middleware in the pipeline.</li>
   <li>2. Invoke Method:</li>
   <li>It checks if the query string contains both &quot;firstname&quot; and &quot;lastname&quot; parameters.</li>
   <li>If so, it combines the values into a fullName string and writes it to the response.</li>
   <li>Crucially: It calls await _next(httpContext); to continue the middleware chain. This
-           line ensures that the request is passed on to subsequent middleware components,
-           even if a full name is generated.</li>
+line ensures that the request is passed on to subsequent middleware components,
+even if a full name is generated.</li>
   <li>By design, any code after this line, such as the comment &quot;//after logic&quot;, would not
-           execute for requests containing both &quot;firstname&quot; and &quot;lastname&quot;, as the await
-           _next(httpContext); line immediately transfers control to the next middleware in the
-           pipeline.</li>
+execute for requests containing both &quot;firstname&quot; and &quot;lastname&quot;, as the await
+_next(httpContext); line immediately transfers control to the next middleware in the
+pipeline.</li>
   <li>3. UseHelloCustomMiddleware Extension: This extension method simplifies the registration
-      process by hiding the details of instantiating and using your custom middleware class.</li>
+process by hiding the details of instantiating and using your custom middleware class.</li>
 </ul>
-<p><code>Program.cs</code> (or <code>Startup.cs</code>): Using the Middleware</p>
+
+<h2 id="programcs-or-startupcs-using-the-middleware">Program.cs (or Startup.cs): Using the Middleware</h2>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -719,21 +710,21 @@ app.UseHelloCustomMiddleware();
 // ...
 How It Works</code></pre>
     </div>
-  <p>1. When a request arrives, ASP.NET Core traverses the middleware pipeline.</p>
-<ol>
+  <ol>
+  <li>When a request arrives, ASP.NET Core traverses the middleware pipeline.</li>
   <li>It reaches HelloCustomMiddleware, which checks for the specific query parameters.</li>
   <li>If the parameters are present, the middleware generates a personalized greeting.</li>
   <li>Regardless of whether it generates the greeting, the middleware calls next(context) to pass
-      the request along to the next middleware component in the pipeline.</li>
+the request along to the next middleware component in the pipeline.</li>
 </ol>
 
-<h2 id="key-points">Key Points</h2>
+<h3 id="key-points">Key Points</h3>
 <ul>
   <li>Simplicity: Conventional middleware is easy to write and understand.</li>
   <li>Control: You have fine-grained control over how the request is processed and how the
-      response is generated.</li>
+response is generated.</li>
   <li>Extension Methods: Use extension methods to make middleware registration clean and
-      readable.</li>
+readable.</li>
 </ul>
 
 <h2 id="the-ideal-order-of-middleware-pipeline">The Ideal Order of Middleware Pipeline</h2>
@@ -741,7 +732,7 @@ How It Works</code></pre>
   <li>1. Exception/Error Handling:</li>
   <li>Purpose: Catches and handles exceptions that occur anywhere in the pipeline.</li>
   <li>Examples: UseExceptionHandler, UseDeveloperExceptionPage (for development
-           environments).</li>
+environments).</li>
   <li>2. HTTPS Redirection:</li>
   <li>Purpose: Redirects HTTP requests to HTTPS for security.</li>
   <li>Example: UseHttpsRedirection.</li>
@@ -759,38 +750,37 @@ How It Works</code></pre>
   <li>Example: UseAuthentication.</li>
   <li>7. Authorization:</li>
   <li>Purpose: Determines whether a user is allowed to access a particular resource or
-           perform a certain action.</li>
+perform a certain action.</li>
   <li>Example: UseAuthorization.</li>
   <li>8. Custom Middleware:</li>
   <li>Purpose: Your application-specific middleware components to handle tasks like
-           logging, feature flags, etc.</li>
+logging, feature flags, etc.</li>
 </ul>
 
 <h2 id="reasoning-behind-the-order">Reasoning Behind the Order</h2>
 <ul>
   <li>Early Exception Handling: Catching exceptions early prevents them from propagating and
-      causing further issues down the pipeline.</li>
+causing further issues down the pipeline.</li>
   <li>Security First: HTTPS redirection, authentication, and authorization are essential for securing
-      your application.</li>
+your application.</li>
   <li>Performance Optimization: Static files, response caching, and compression are placed early
-      to optimize the response generation process.</li>
+to optimize the response generation process.</li>
   <li>Routing as a Foundation: Routing determines how requests are handled by your
-      application&#39;s core logic.</li>
+application&#39;s core logic.</li>
   <li>CORS for Flexibility: CORS allows your application to be consumed by a wider range of
-      clients.</li>
+clients.</li>
   <li>Custom Middleware: Your custom middleware can be placed strategically within the
-      pipeline to apply logic at the appropriate stage.</li>
+pipeline to apply logic at the appropriate stage.</li>
 </ul>
 
 <h2 id="flexibility-and-exceptions">Flexibility and Exceptions</h2>
-<p>While this is the general recommended order, there might be exceptions based on your application&#39;s
-specific needs. For instance:</p>
+<p>While this is the general recommended order, there might be exceptions based on your application&#39;s specific needs. For instance:</p>
 <ul>
   <li>Health Checks: You might want to place health check middleware very early in the pipeline
-      to quickly determine the application&#39;s status without executing other middleware
-      components.</li>
+to quickly determine the application&#39;s status without executing other middleware
+components.</li>
   <li>Specialized Middleware: Some middleware components may have specific ordering
-      requirements documented by their providers.</li>
+requirements documented by their providers.</li>
 </ul>
 <p>Example (<code>Program.cs</code> or <code>Startup.cs</code>):</p>
 
@@ -806,7 +796,7 @@ specific needs. For instance:</p>
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
-  app.UseDeveloperExceptionPage();
+app.UseDeveloperExceptionPage();
 }
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -816,21 +806,13 @@ app.UseAuthorization();
 // ... your custom middleware ...
 app.UseEndpoints(endpoints =&gt;
 {
-  endpoints.MapControllers(); // Or MapRazorPages(), MapGet(), etc.
+endpoints.MapControllers(); // Or MapRazorPages(), MapGet(), etc.
 });</code></pre>
     </div>
-  <p>By adhering to this recommended order, you&#39;ll create a well-structured and efficient ASP.NET Core
-application that&#39;s easier to maintain, debug, and secure.</p>
+  <p>By adhering to this recommended order, you&#39;ll create a well-structured and efficient ASP.NET Core application that&#39;s easier to maintain, debug, and secure.</p>
 
 <h2 id="usewhen">UseWhen()</h2>
-<p>UseWhen() is a powerful extension method in ASP.NET Core&#39;s IApplicationBuilder interface. It allows</p>
-<p>you to conditionally add middleware to your request pipeline based on a predicate (a condition).</p>
-<p>This means you can create dynamic pipelines where specific middleware components are executed</p>
-<ul>
-  <li>nly when certain conditions are met.</li>
-</ul>
-
-<h2 id="syntax">Syntax</h2>
+<p>UseWhen() is a powerful extension method in ASP.NET Core&#39;s IApplicationBuilder interface. It allows you to conditionally add middleware to your request pipeline based on a predicate (a condition). This means you can create dynamic pipelines where specific middleware components are executed only when certain conditions are met. Syntax</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -841,16 +823,14 @@ application that&#39;s easier to maintain, debug, and secure.</p>
         </button>
       </div>
       <pre><code class="language-csharp">app.UseWhen(
-  context =&gt; /* Your condition here */,
-  app =&gt; /* Middleware configuration for the branch */
+context =&gt; /* Your condition here */,
+app =&gt; /* Middleware configuration for the branch */
 );</code></pre>
     </div>
   <ul>
   <li>context: The HttpContext object representing the current request.</li>
-</ul>
-<ul>
   <li>Predicate (Condition): A function that takes the HttpContext and returns true if the
-      middleware branch should be executed, false otherwise.</li>
+middleware branch should be executed, false otherwise.</li>
   <li>Middleware Configuration: An action that configures the middleware components that</li>
 </ul>
 
@@ -864,20 +844,18 @@ application that&#39;s easier to maintain, debug, and secure.</p>
       </div>
       <pre><code class="language-csharp">should be executed if the condition is true. This is where you use app.Use(), app.Run(), or</code></pre>
     </div>
-  <ul>
-  <li>ther middleware registration methods.</li>
-</ul>
+  <p>Other middleware registration methods.</p>
 
 <h2 id="how-usewhen-works">How UseWhen() Works</h2>
 <ol>
   <li>Predicate Evaluation: When a request comes in, the UseWhen() method first evaluates the
-      predicate function against the HttpContext.</li>
+predicate function against the HttpContext.</li>
   <li>Branching (if true): If the predicate returns true, the middleware branch specified in the
-      configuration action is executed. The request flows through this branch, potentially
-      undergoing modifications or generating a response.</li>
+configuration action is executed. The request flows through this branch, potentially
+undergoing modifications or generating a response.</li>
   <li>Rejoining the Main Pipeline: After the branch is executed (or skipped if the predicate was
-      false), the request flow rejoins the main pipeline, continuing with the next middleware
-      components registered after the UseWhen() call.</li>
+false), the request flow rejoins the main pipeline, continuing with the next middleware
+components registered after the UseWhen() call.</li>
 </ol>
 <p>Code Example: Explained</p>
 
@@ -890,56 +868,58 @@ application that&#39;s easier to maintain, debug, and secure.</p>
         </button>
       </div>
       <pre><code class="language-csharp">app.UseWhen(
-  context =&gt; context.Request.Query.ContainsKey(&quot;username&quot;),
-  app =&gt; {
-   app.Use(async (context, next) =&gt;
-   {
-     await context.Response.WriteAsync(&quot;Hello from Middleware branch&quot;);
-     await next();
-   });
-  });
+context =&gt; context.Request.Query.ContainsKey(&quot;username&quot;),
+app =&gt; {
+app.Use(async (context, next) =&gt;
+{
+await context.Response.WriteAsync(&quot;Hello from Middleware branch&quot;);
+await next();
+});
+});
 app.Run(async context =&gt;
 {
-  await context.Response.WriteAsync(&quot;Hello from middleware at main chain&quot;);
+await context.Response.WriteAsync(&quot;Hello from middleware at main chain&quot;);
 });</code></pre>
     </div>
   <ul>
-  <li>Condition: The predicate context.Request.Query.ContainsKey(&quot;username&quot;) checks if the</li>
-</ul>
-<p>query string contains a parameter named &quot;username&quot;.</p>
-<ul>
+  <li>Condition: The predicate context.Request.Query.ContainsKey(&quot;username&quot;) checks if the
+query string contains a parameter named &quot;username&quot;.</li>
   <li>Branch Middleware: If the &quot;username&quot; parameter is present, the branch middleware is
-      executed. It writes &quot;Hello from Middleware branch&quot; to the response and then calls next to
-      allow the rest of the pipeline to continue.</li>
+executed. It writes &quot;Hello from Middleware branch&quot; to the response and then calls next to
+allow the rest of the pipeline to continue.</li>
   <li>Main Pipeline: The final app.Run middleware is part of the main pipeline. It writes &quot;Hello
-      from middleware at main chain&quot; to the response.</li>
+from middleware at main chain&quot; to the response.</li>
 </ul>
 
 <h2 id="output-1">Output</h2>
 <ul>
   <li>If the request contains the &quot;username&quot; query parameter (e.g., /path?username=John), the
-      output will be:</li>
+output will be:</li>
   <li>Hello from Middleware branch
 Hello from middleware at main chain</li>
-  <li>If the request does not contain the &quot;username&quot; parameter (e.g., /path), the output will be:
-Hello from middleware at main chain
-When to Use UseWhen()</li>
-  <li>Conditional Features: Enable or disable certain features based on the request (e.g., logging
-      only for certain users, applying caching rules based on query parameters).</li>
-  <li>Dynamic Pipelines: Create pipelines that adapt to different requests (e.g., different
-      authentication middleware for specific routes).</li>
-  <li>A/B Testing: Route a subset of users through alternative middleware branches for
-      experimentation.</li>
-  <li>Debugging and Diagnostics: Apply diagnostic middleware only in development
-      environments.</li>
+  <li>If the request does not contain the &quot;username&quot; parameter (e.g., /path), the output will be:</li>
 </ul>
-<p>Key Points to Remember:
-Conceptual Understanding:</p>
+<p>Hello from middleware at main chain</p>
+
+<h2 id="when-to-use-usewhen">When to Use UseWhen()</h2>
+<ul>
+  <li>Conditional Features: Enable or disable certain features based on the request (e.g., logging
+only for certain users, applying caching rules based on query parameters).</li>
+  <li>Dynamic Pipelines: Create pipelines that adapt to different requests (e.g., different
+authentication middleware for specific routes).</li>
+  <li>A/B Testing: Route a subset of users through alternative middleware branches for
+experimentation.</li>
+  <li>Debugging and Diagnostics: Apply diagnostic middleware only in development
+environments.</li>
+</ul>
+
+<h3 id="key-points-to-remember-1">Key Points to Remember</h3>
+<p>Conceptual Understanding:</p>
 <ul>
   <li>1. The Pipeline: Middleware forms a pipeline for HTTP requests and responses. Each
-      component can inspect, modify, or terminate the flow.</li>
+component can inspect, modify, or terminate the flow.</li>
   <li>2. Order Matters: Middleware is executed in the order it&#39;s registered. Think carefully about the
-      sequence.</li>
+sequence.</li>
   <li>3. Types of Middleware:</li>
   <li>Built-in: ASP.NET Core offers middleware for authentication, routing, static files, etc.</li>
   <li>Custom: You can create your own to add specific logic to your app.</li>
@@ -955,8 +935,8 @@ Conceptual Understanding:</p>
       </div>
       <pre><code class="language-csharp">app.Use vs. app.Run:</code></pre>
     </div>
-  <p>1. app.Use: For non-terminal middleware. It calls next to pass control to the next component.</p>
-<ol>
+  <ol>
+  <li>app.Use: For non-terminal middleware. It calls next to pass control to the next component.</li>
   <li>app.Run: For terminal middleware. It ends the pipeline and generates a response.</li>
 </ol>
 <p>Custom Middleware:</p>
@@ -965,7 +945,7 @@ Conceptual Understanding:</p>
   <li>Conventional: Class-based, using the Invoke method and constructor injection.</li>
   <li>Factory-Based: Uses a delegate to create the middleware instance.</li>
   <li>2. Benefits: Encapsulates logic, improves code organization, and allows you to tailor your
-      application&#39;s behavior.</li>
+application&#39;s behavior.</li>
 </ul>
 <p>Recommended Order: (Not strict, but a good guideline)</p>
 <ul>
@@ -982,7 +962,7 @@ Bonus Points:</li>
   <li>Short-Circuiting: Middleware can choose not to call next and return a response early.</li>
   <li>UseWhen: Conditionally add middleware branches based on request criteria.</li>
   <li>Middleware Ordering Flexibility: Understand the reasons behind the recommended order,
-      but also know when to deviate from it based on your application&#39;s specific requirements.</li>
+but also know when to deviate from it based on your application&#39;s specific requirements.</li>
 </ul>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
@@ -990,11 +970,7 @@ Bonus Points:</li>
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
   <h3 id="introduction-to-middleware">Introduction to Middleware</h3>
-<p>Middleware is a component that is assembled into the application pipeline to handle requests and
-responses.
-Middlewares are chained one-after-other and execute in the same sequence how they&#39;re added.
-Middleware can be a request delegate (anonymous method or lambda expression) [or] a class.</p>
-  <h3 id="middleware-run">Middleware - Run</h3>
+<p>Middleware is a component that is assembled into the application pipeline to handle requests and responses. Middlewares are chained one-after-other and execute in the same sequence how they&#39;re added. Middleware can be a request delegate (anonymous method or lambda expression) [or] a class. Middleware - Run</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1010,8 +986,7 @@ app.Run(async (HttpContext context) =&gt;
 //code
 });</code></pre>
     </div>
-  <p>The extension method called “Run” is used to execute a terminating / short-circuiting middleware
-that doesn’t forward the request to the next middleware.</p>
+  <p>The extension method called “Run” is used to execute a terminating / short-circuiting middleware that doesn’t forward the request to the next middleware.</p>
   <h3 id="middleware-chain">Middleware Chain</h3>
 
     <div class="code-block">
@@ -1025,16 +1000,14 @@ that doesn’t forward the request to the next middleware.</p>
       <pre><code class="language-csharp">app.Use( )
 app.Use(async (HttpContext context, RequestDelegate next) =&gt;
 {
- //before logic
- await next(context);
- //after logic
+//before logic
+await next(context);
+//after logic
 });</code></pre>
     </div>
-  <p>The extension method called “Use” is used to execute a non-terminating / short-circuiting
-middleware that may / may not forward the request to the next middleware.</p>
+  <p>The extension method called “Use” is used to execute a non-terminating / short-circuiting middleware that may / may not forward the request to the next middleware.</p>
   <h3 id="middleware-class">Middleware Class</h3>
-<p>Middleware class is used to separate the middleware logic from a lambda expression to a separate /
-reusable class.</p>
+<p>Middleware class is used to separate the middleware logic from a lambda expression to a separate / reusable class.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1046,12 +1019,12 @@ reusable class.</p>
       </div>
       <pre><code class="language-csharp">class MiddlewareClassName : IMiddleware
 {
- public async Task InvokeAsync(HttpContext context, RequestDelegate next)
- {
-  //before logic
-  await next(context);
-  //after logic
- }
+public async Task InvokeAsync(HttpContext context, RequestDelegate next)
+{
+//before logic
+await next(context);
+//after logic
+}
 }
 app.UseMiddleware&lt;MiddlewareClassName&gt;();</code></pre>
     </div>
@@ -1067,12 +1040,12 @@ app.UseMiddleware&lt;MiddlewareClassName&gt;();</code></pre>
       </div>
       <pre><code class="language-csharp">class MiddlewareClassName : IMiddleware
 {
- public async Task InvokeAsync(HttpContext context,RequestDelegate next)
- {
-  //before logic
-  await next(context);
-  //after logic
- }
+public async Task InvokeAsync(HttpContext context,RequestDelegate next)
+{
+//before logic
+await next(context);
+//after logic
+}
 });</code></pre>
     </div>
   <p>Middleware extension method is used to invoke the middleware with a single method call.</p>
@@ -1087,10 +1060,10 @@ app.UseMiddleware&lt;MiddlewareClassName&gt;();</code></pre>
       </div>
       <pre><code class="language-csharp">static class ClassName
 {
- public static IApplicationBuilder ExtensionMethodName(this IApplicationBuilder app)
- {
-  return app.UseMiddleware&lt;MiddlewareClassName&gt;();
- }
+public static IApplicationBuilder ExtensionMethodName(this IApplicationBuilder app)
+{
+return app.UseMiddleware&lt;MiddlewareClassName&gt;();
+}
 }
 app.ExtensionMethodName();</code></pre>
     </div>
@@ -1106,24 +1079,24 @@ app.ExtensionMethodName();</code></pre>
       </div>
       <pre><code class="language-csharp">class MiddlewareClassName
 {
- private readonly RequestDelegate _next;
- public MiddlewareClassName(RequestDelegate next)
- {
-  _next = next;
- }
- public async Task InvokeAsync(HttpContext context)
- {
- //before logic
- await _next(context);
- //after logic
- }
+private readonly RequestDelegate _next;
+public MiddlewareClassName(RequestDelegate next)
+{
+_next = next;
+}
+public async Task InvokeAsync(HttpContext context)
+{
+//before logic
+await _next(context);
+//after logic
+}
 });
 static class ClassName
 {
- public static IApplicationBuilder ExtensionMethodName(this IApplicationBuilder app)
- {
- return app.UseMiddleware&lt;MiddlewareClassName&gt;();
- }
+public static IApplicationBuilder ExtensionMethodName(this IApplicationBuilder app)
+{
+return app.UseMiddleware&lt;MiddlewareClassName&gt;();
+}
 }
 app.ExtensionMethodName();</code></pre>
     </div>
@@ -1162,15 +1135,14 @@ app.Run();</code></pre>
       </div>
       <pre><code class="language-csharp">app.UseWhen( )
 app.UseWhen(
- context =&gt; { return boolean; },
- app =&gt;
- {
-  //add your middlewares
- }
+context =&gt; { return boolean; },
+app =&gt;
+{
+//add your middlewares
+}
 );</code></pre>
     </div>
-  <p>The extension method called “UseWhen” is used to execute a branch of middleware only when the
-specified condition is true.</p>
+  <p>The extension method called “UseWhen” is used to execute a branch of middleware only when the specified condition is true.</p>
 </section>
 
       </article>
@@ -1224,7 +1196,11 @@ specified condition is true.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+          <a href="#code-2-chaining-middleware-with-appuse-and-apprun" class="toc-link">Code 2: Chaining Middleware with app.Use and app.Run</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-points-to-remember" class="toc-link toc-sub">Key Points to Remember</a>
         </li>
       
         <li class="toc-item">
@@ -1240,22 +1216,6 @@ specified condition is true.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#from-midleware-1" class="toc-link">From Midleware 1</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#my-custom-middleware-starts" class="toc-link">My Custom Middleware - Starts</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#from-middleware-3" class="toc-link">From Middleware 3</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#my-custom-middleware-ends" class="toc-link">My Custom Middleware - Ends</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#custom-conventional-middleware" class="toc-link">Custom Conventional Middleware</a>
         </li>
       
@@ -1264,7 +1224,15 @@ specified condition is true.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#key-points" class="toc-link">Key Points</a>
+          <a href="#code-breakdown-hellocustommiddleware" class="toc-link">Code Breakdown: HelloCustomMiddleware</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#programcs-or-startupcs-using-the-middleware" class="toc-link">Program.cs (or Startup.cs): Using the Middleware</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-points" class="toc-link toc-sub">Key Points</a>
         </li>
       
         <li class="toc-item">
@@ -1284,15 +1252,19 @@ specified condition is true.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#syntax" class="toc-link">Syntax</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#how-usewhen-works" class="toc-link">How UseWhen() Works</a>
         </li>
       
         <li class="toc-item">
           <a href="#output-1" class="toc-link">Output</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#when-to-use-usewhen" class="toc-link">When to Use UseWhen()</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-points-to-remember-1" class="toc-link toc-sub">Key Points to Remember</a>
         </li>
       
         <li class="toc-item">

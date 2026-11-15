@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -398,42 +408,41 @@
 
       <!-- Body Content -->
       <article class="docs-content">
-        <p>ASP.NET Core Configuration
-Configuration is the cornerstone of any application, providing essential settings and values that drive
-its behavior. ASP.NET Core&#39;s configuration system is flexible and extensible, allowing you to retrieve
-configuration data from various sources and prioritize them according to your needs.</p>
+        
+<h2 id="aspnet-core-configuration">ASP.NET Core Configuration</h2>
+<p>Configuration is the cornerstone of any application, providing essential settings and values that drive its behavior. ASP.NET Core&#39;s configuration system is flexible and extensible, allowing you to retrieve configuration data from various sources and prioritize them according to your needs.</p>
 
 <h2 id="core-concepts">Core Concepts</h2>
 <ul>
   <li>Configuration Providers: These components read configuration data from different sources
-      and populate a central configuration store.</li>
+and populate a central configuration store.</li>
   <li>Configuration Sources: The actual locations or mechanisms where your configuration data
-      resides (e.g., files, environment variables, command-line arguments).</li>
+resides (e.g., files, environment variables, command-line arguments).</li>
   <li>Key-Value Pairs: Configuration data is stored as key-value pairs, where the key is a string
-      identifier, and the value is the configuration data (string, number, boolean, etc.).</li>
+identifier, and the value is the configuration data (string, number, boolean, etc.).</li>
 </ul>
 
 <h2 id="common-configuration-sources">Common Configuration Sources</h2>
 <ul>
   <li>1. Files (JSON, XML, INI):</li>
   <li>Purpose: Storing configuration data in structured files. JSON is the default and most
-           common format in ASP.NET Core.</li>
+common format in ASP.NET Core.</li>
   <li>Pros: Easy to read and edit, supports hierarchical structure.</li>
   <li>Cons: Might not be suitable for storing secrets or highly sensitive data.</li>
   <li>2. Environment Variables:</li>
   <li>Purpose: Reading configuration values from environment variables.</li>
   <li>Pros: Ideal for environment-specific settings (e.g., database connection strings) and
-           secrets.</li>
+secrets.</li>
   <li>Cons: Can be difficult to manage for complex configurations or large numbers of
-           settings.</li>
+settings.</li>
   <li>3. Command-Line Arguments:</li>
   <li>Purpose: Overriding configuration values when running the application from the
-           command line.</li>
+command line.</li>
   <li>Pros: Provides flexibility for dynamic configuration on the fly.</li>
   <li>Cons: Might not be suitable for storing complex or sensitive data.</li>
   <li>4. In-Memory .NET Objects:</li>
   <li>Purpose: Storing configuration data in a dictionary or custom objects directly in your
-           code.</li>
+code.</li>
   <li>Pros: Flexibility for dynamic or programmatic configuration scenarios.</li>
   <li>Cons: Not persistent, less suitable for managing a large number of settings.</li>
   <li>5. Azure Key Vault:</li>
@@ -442,12 +451,12 @@ configuration data from various sources and prioritize them according to your ne
   <li>Cons: Requires Azure subscription and setup.</li>
   <li>6. Azure App Configuration:</li>
   <li>Purpose: A powerful cloud-based service for managing feature flags and
-           configuration settings.</li>
+configuration settings.</li>
   <li>Pros: Feature flag management, centralized configuration, dynamic updates.</li>
   <li>Cons: Requires Azure subscription and setup.</li>
   <li>7. User Secrets (Development):</li>
   <li>Purpose: Storing sensitive data (e.g., API keys) during development without
-           committing them to source control.</li>
+committing them to source control.</li>
   <li>Pros: Secure and convenient for local development.</li>
   <li>Cons: Not intended for production environments.</li>
 </ul>
@@ -470,7 +479,7 @@ configuration.AddJsonFile($&quot;appsettings.{env.EnvironmentName}.json&quot;, o
 reloadOnChange: true);
 configuration.AddEnvironmentVariables();</code></pre>
     </div>
-  <p>configuration.AddUserSecrets&lt;Program&gt;(); // For development secrets</p>
+  <p>Configuration.AddUserSecrets&lt;Program&gt;(); // For development secrets</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -486,7 +495,7 @@ configuration.AddEnvironmentVariables();</code></pre>
   <li>AddJsonFile: Loads configuration from JSON files.</li>
   <li>AddEnvironmentVariables: Loads configuration from environment variables.</li>
   <li>AddUserSecrets&lt;Program&gt;(): Loads configuration from the user secrets store (for
-      development).</li>
+development).</li>
 </ol>
 
 <h2 id="when-to-use-which-configuration-source">When to Use Which Configuration Source</h2>
@@ -494,39 +503,36 @@ configuration.AddEnvironmentVariables();</code></pre>
   <li><code>appsettings.json</code>: For default settings, base configurations, non-sensitive data.</li>
   <li>appsettings.{Environment}.json: For environment-specific overrides.</li>
   <li>Environment Variables: For environment-specific settings, sensitive data (API keys,
-      connection strings).</li>
+connection strings).</li>
   <li>Command-Line Arguments: For overriding settings during development or deployment.</li>
   <li>User Secrets: For sensitive data during local development.</li>
   <li>Azure Key Vault: For storing secrets and other sensitive data securely in production.</li>
   <li>Azure App Configuration: For dynamic configuration updates, feature flags, and centralized
-      management.</li>
+management.</li>
 </ul>
 
-<h2 id="best-practices">Best Practices</h2>
+<h3 id="best-practices">Best Practices</h3>
 <ul>
   <li>Layered Configuration: Use multiple sources with a well-defined order of precedence to
-      keep your configuration organized and flexible.</li>
+keep your configuration organized and flexible.</li>
   <li>Environment-Specific Settings: Separate sensitive and environment-specific settings into
-      appropriate files.</li>
+appropriate files.</li>
   <li>Secrets Management: Use Azure Key Vault or other secure mechanisms to store sensitive
-      data.</li>
+data.</li>
   <li>Strong Typing: Create strongly typed configuration classes using the Options pattern
-      (IOptions&lt;T&gt;) for improved type safety and easier access to your settings in code.</li>
+(IOptions&lt;T&gt;) for improved type safety and easier access to your settings in code.</li>
   <li>Validation: Validate your configuration values during startup to catch errors early.</li>
   <li>Logging: Log configuration-related events to help with troubleshooting and debugging.</li>
 </ul>
 
 <h2 id="iconfiguration">IConfiguration</h2>
-<p>In ASP.NET Core, the IConfiguration interface is the heart of the configuration system. It represents a
-set of key-value pairs that can be loaded from various sources (JSON files, environment variables,
-etc.). This interface provides a unified way to access your application&#39;s settings, regardless of where
-they are stored.</p>
+<p>In ASP.NET Core, the IConfiguration interface is the heart of the configuration system. It represents a set of key-value pairs that can be loaded from various sources (JSON files, environment variables, etc.). This interface provides a unified way to access your application&#39;s settings, regardless of where they are stored.</p>
 
 <h2 id="key-methods-properties-and-indexers">Key Methods, Properties, and Indexers</h2>
 <ul>
   <li>1. GetSection(string key):</li>
   <li>Purpose: Retrieves a specific section of the configuration as an
-           IConfigurationSection. Sections allow you to group related settings.</li>
+IConfigurationSection. Sections allow you to group related settings.</li>
   <li>Example:</li>
 </ul>
 
@@ -538,13 +544,11 @@ they are stored.</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">var connectionStrings = configuration.GetSection(&quot;ConnectionStrings&quot;);
-   2. GetValue&lt;T&gt;(string key):</code></pre>
+      <pre><code class="language-csharp">var connectionStrings = configuration.GetSection(&quot;ConnectionStrings&quot;);</code></pre>
     </div>
   <ul>
+  <li>2. GetValue&lt;T&gt;(string key):</li>
   <li>Purpose: Retrieves a configuration value as a specified type T.</li>
-</ul>
-<ul>
   <li>Example:</li>
 </ul>
 
@@ -556,14 +560,12 @@ they are stored.</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">var port = configuration.GetValue&lt;int&gt;(&quot;Server:Port&quot;);
-   3. GetConnectionString(string name):</code></pre>
+      <pre><code class="language-csharp">var port = configuration.GetValue&lt;int&gt;(&quot;Server:Port&quot;);</code></pre>
     </div>
   <ul>
-  <li>Purpose: Retrieves a connection string from the &quot;ConnectionStrings&quot; section of the</li>
-</ul>
-<p>configuration.</p>
-<ul>
+  <li>3. GetConnectionString(string name):</li>
+  <li>Purpose: Retrieves a connection string from the &quot;ConnectionStrings&quot; section of the
+configuration.</li>
   <li>Example:</li>
 </ul>
 
@@ -575,14 +577,12 @@ they are stored.</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">var connectionString = configuration.GetConnectionString(&quot;DefaultConnection&quot;);
-   4. GetChildren():</code></pre>
+      <pre><code class="language-csharp">var connectionString = configuration.GetConnectionString(&quot;DefaultConnection&quot;);</code></pre>
     </div>
   <ul>
-  <li>Purpose: Returns an enumerable collection of IConfigurationSection objects</li>
-</ul>
-<p>representing the immediate children of the current section.</p>
-<ul>
+  <li>4. GetChildren():</li>
+  <li>Purpose: Returns an enumerable collection of IConfigurationSection objects
+representing the immediate children of the current section.</li>
   <li>Example:</li>
 </ul>
 
@@ -594,13 +594,11 @@ they are stored.</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">var sections = configuration.GetSection(&quot;Logging&quot;).GetChildren();
-   5. Indexer (this[string key]):</code></pre>
+      <pre><code class="language-csharp">var sections = configuration.GetSection(&quot;Logging&quot;).GetChildren();</code></pre>
     </div>
   <ul>
+  <li>5. Indexer (this[string key]):</li>
   <li>Purpose: Retrieves a configuration value as a string.</li>
-</ul>
-<ul>
   <li>Example:</li>
 </ul>
 
@@ -630,51 +628,63 @@ they are stored.</p>
       </div>
       <pre><code class="language-csharp">public class HomeController : Controller
 {
-  private readonly IConfiguration _configuration; // Field to store IConfiguration
-  public HomeController(IConfiguration configuration)
-  {
-   _configuration = configuration;
-  }
-  public IActionResult Index()
-  {
-   var myKeyValue = _configuration[&quot;MyKey&quot;]; // Access configuration value
-   return View();
-  }
-}
-   • In Services:
-public class EmailService : IEmailService
+private readonly IConfiguration _configuration; // Field to store IConfiguration
+public HomeController(IConfiguration configuration)
 {
-  private readonly IConfiguration _configuration;
-  public EmailService(IConfiguration configuration)
-  {
-   _configuration = configuration;
-  }
-  public void SendEmail(string to, string subject, string body)
-  {
-   var smtpServer = _configuration[&quot;Email:SmtpServer&quot;]; // Use configuration for email settings
-// ... (email sending logic
-)
-  }
+_configuration = configuration;
+}
+public IActionResult Index()
+{
+var myKeyValue = _configuration[&quot;MyKey&quot;]; // Access configuration value
+return View();
+}
 }</code></pre>
     </div>
-  <p>In both cases, the IConfiguration is injected through the constructor using ASP.NET Core&#39;s
-dependency injection.</p>
+  <ul>
+  <li>In Services:</li>
+</ul>
 
-<h2 id="best-practices-1">Best Practices</h2>
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">public class EmailService : IEmailService
+{
+private readonly IConfiguration _configuration;
+public EmailService(IConfiguration configuration)
+{
+_configuration = configuration;
+}
+public void SendEmail(string to, string subject, string body)
+{
+var smtpServer = _configuration[&quot;Email:SmtpServer&quot;]; // Use configuration for email settings
+// ... (email sending logic
+)
+}
+}</code></pre>
+    </div>
+  <p>In both cases, the IConfiguration is injected through the constructor using ASP.NET Core&#39;s dependency injection.</p>
+
+<h3 id="best-practices-1">Best Practices</h3>
 <ul>
   <li>Strongly Typed Configuration: Use the Options pattern (IOptions&lt;T&gt;) to map your
-      configuration values to strongly typed objects for easier access and type safety.</li>
+configuration values to strongly typed objects for easier access and type safety.</li>
   <li>Environment-Specific Settings: Use appsettings.{Environment}.json files to store
-      configuration values that vary depending on the environment (Development, Production,
-      etc.).</li>
+configuration values that vary depending on the environment (Development, Production,
+etc.).</li>
   <li>Secret Management: Store sensitive information (e.g., passwords, API keys) in Azure Key
-      Vault or other secure storage mechanisms.</li>
+Vault or other secure storage mechanisms.</li>
   <li>Layered Configuration: Combine multiple configuration sources (files, environment
-      variables, etc.) with a well-defined order of precedence.</li>
+variables, etc.) with a well-defined order of precedence.</li>
   <li>Reload On Change: Consider using reloadOnChange: true in your configuration providers to
-      automatically reload configuration changes without restarting the application.</li>
+automatically reload configuration changes without restarting the application.</li>
 </ul>
-<p>Example: Options Pattern</p>
+
+<h3 id="example-options-pattern">Example: Options Pattern</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -687,8 +697,8 @@ dependency injection.</p>
       <pre><code class="language-csharp">// MyOptions.cs
 public class MyOptions
 {
-  public string Option1 { get; set; }
-  public int Option2 { get; set; }
+public string Option1 { get; set; }
+public int Option2 { get; set; }
 }
 // Program.cs (or Startup.cs
 )
@@ -696,30 +706,22 @@ builder.Services.Configure&lt;MyOptions&gt;(builder.Configuration.GetSection(&qu
 // MyService.cs
 public class MyService : IMyService
 {
-  private readonly IOptions&lt;MyOptions&gt; _options;
-  public MyService(IOptions&lt;MyOptions&gt; options)
-  {
-   _options = options;
-  }
-  public void DoSomething()
-  {
-   var option1Value = _options.Value.Option1;
-   // ...
-  }
+private readonly IOptions&lt;MyOptions&gt; _options;
+public MyService(IOptions&lt;MyOptions&gt; options)
+{
+_options = options;
+}
+public void DoSomething()
+{
+var option1Value = _options.Value.Option1;
+// ...
+}
 }</code></pre>
     </div>
-  <p>In this example, the MyOptions class represents a section of your configuration. The
-IOptions&lt;MyOptions&gt; interface provides a strongly typed way to access those settings within your
-services.
-By following these best practices and leveraging the power of IConfiguration, you can build robust
-and adaptable ASP.NET Core applications with well-organized and easily manageable configuration
-settings.</p>
+  <p>In this example, the MyOptions class represents a section of your configuration. The IOptions&lt;MyOptions&gt; interface provides a strongly typed way to access those settings within your services. By following these best practices and leveraging the power of IConfiguration, you can build robust and adaptable ASP.NET Core applications with well-organized and easily manageable configuration settings.</p>
 
 <h2 id="hierarchical-configuration">Hierarchical Configuration</h2>
-<p>In ASP.NET Core, you can organize your configuration settings into a hierarchical structure using
-JSON, XML, or INI files. This hierarchical structure allows you to group related settings under sections
-and subsections, making your configuration more readable, maintainable, and scalable.
-JSON-Based Hierarchical Configuration (<code>appsettings.json</code>):</p>
+<p>In ASP.NET Core, you can organize your configuration settings into a hierarchical structure using JSON, XML, or INI files. This hierarchical structure allows you to group related settings under sections and subsections, making your configuration more readable, maintainable, and scalable. JSON-Based Hierarchical Configuration (<code>appsettings.json</code>):</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -730,39 +732,36 @@ JSON-Based Hierarchical Configuration (<code>appsettings.json</code>):</p>
         </button>
       </div>
       <pre><code class="language-csharp">{
- &quot;ConnectionStrings&quot;: {
-  &quot;DefaultConnection&quot;:
+&quot;ConnectionStrings&quot;: {
+&quot;DefaultConnection&quot;:
 &quot;Server=(localdb)\\mssqllocaldb;Database=MyDatabase;Trusted_Connection=True;&quot;
- },
- &quot;Logging&quot;: {
-  &quot;LogLevel&quot;: {
-  &quot;Default&quot;: &quot;Information&quot;,
-  &quot;Microsoft.AspNetCore&quot;: &quot;Warning&quot;
-  }
- },
- &quot;Inventory&quot;: {
-  &quot;StockAlertThreshold&quot;: 20,
-  &quot;WarehouseLocations&quot;: [
-  &quot;New York&quot;,
-  &quot;London&quot;,
-  &quot;Tokyo&quot;
-  ]
- }
+},
+&quot;Logging&quot;: {
+&quot;LogLevel&quot;: {
+&quot;Default&quot;: &quot;Information&quot;,
+&quot;Microsoft.AspNetCore&quot;: &quot;Warning&quot;
+}
+},
+&quot;Inventory&quot;: {
+&quot;StockAlertThreshold&quot;: 20,
+&quot;WarehouseLocations&quot;: [
+&quot;New York&quot;,
+&quot;London&quot;,
+&quot;Tokyo&quot;
+]
+}
 }
 In this example:</code></pre>
     </div>
   <ul>
-  <li>Sections: The top-level keys (ConnectionStrings, Logging, Inventory) define sections within</li>
-</ul>
-<p>the configuration.</p>
-<ul>
+  <li>Sections: The top-level keys (ConnectionStrings, Logging, Inventory) define sections within
+the configuration.</li>
   <li>Nested Sections: The Logging section further contains a nested LogLevel section.</li>
   <li>Arrays: The WarehouseLocations setting is an array of strings within the Inventory section.</li>
 </ul>
 
 <h2 id="accessing-hierarchical-configuration-with-iconfiguration">Accessing Hierarchical Configuration with IConfiguration</h2>
-<p>The IConfiguration interface provides methods to easily navigate and retrieve values from this
-hierarchical structure.</p>
+<p>The IConfiguration interface provides methods to easily navigate and retrieve values from this hierarchical structure.</p>
 <ul>
   <li>GetSection(string key):</li>
   <li>Returns an IConfigurationSection object representing the specified section.</li>
@@ -770,13 +769,12 @@ hierarchical structure.</p>
   <li>GetValue&lt;T&gt;(string key):</li>
   <li>Retrieves a configuration value as the specified type T.</li>
   <li>The key can include the entire path to the value, using colons (:) to separate
-           sections.</li>
+sections.</li>
   <li>Indexer (this[string key]):</li>
   <li>Retrieves a configuration value as a string.</li>
   <li>Works like the GetValue&lt;string&gt;() method.</li>
 </ul>
-
-<h2 id="code-examples">Code Examples</h2>
+<p>Code Examples</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -794,22 +792,23 @@ var stockAlertThreshold = inventorySection.GetValue&lt;int&gt;(&quot;StockAlertT
 // Get an array
 var warehouseLocations = inventorySection.GetSection(&quot;WarehouseLocations&quot;).Get&lt;string[]&gt;();</code></pre>
     </div>
-  <p>Best Practices</p>
+  <h3>Best Practices</h3>
 <ul>
   <li>Clear Structure: Organize your settings into logical sections and subsections for better
-      readability and maintainability.</li>
+readability and maintainability.</li>
   <li>Consistent Naming: Use meaningful and consistent naming conventions for your
-      configuration keys.</li>
+configuration keys.</li>
   <li>Strong Typing with Options Pattern: Use the Options pattern (IOptions&lt;T&gt;) to map your
-      configuration sections to strongly typed classes, which provides type safety and makes your
-      code easier to work with.</li>
+configuration sections to strongly typed classes, which provides type safety and makes your
+code easier to work with.</li>
   <li>Environment Variables: Consider using environment variables for settings that may vary
-      across environments (e.g., ASPNETCORE_ENVIRONMENT).</li>
+across environments (e.g., ASPNETCORE_ENVIRONMENT).</li>
   <li>Secret Management: Never store sensitive information (passwords, API keys) directly in
-      configuration files. Use Azure Key Vault, Secret Manager, or other secure mechanisms to
-      manage secrets.</li>
+configuration files. Use Azure Key Vault, Secret Manager, or other secure mechanisms to
+manage secrets.</li>
 </ul>
-<p>Example: Options Pattern</p>
+
+<h3 id="example-options-pattern-1">Example: Options Pattern</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -822,8 +821,8 @@ var warehouseLocations = inventorySection.GetSection(&quot;WarehouseLocations&qu
       <pre><code class="language-csharp">// InventoryOptions.cs
 public class InventoryOptions
 {
-  public int StockAlertThreshold { get; set; }
-  public string[] WarehouseLocations { get; set; }
+public int StockAlertThreshold { get; set; }
+public string[] WarehouseLocations { get; set; }
 }
 // Program.cs (or Startup.cs
 )
@@ -831,49 +830,45 @@ builder.Services.Configure&lt;InventoryOptions&gt;(builder.Configuration.GetSect
 // In your service or controller
 public class InventoryService : IInventoryService
 {
-  private readonly InventoryOptions _options;
-  public InventoryService(IOptions&lt;InventoryOptions&gt; options)
-  {
-   _options = options.Value;
-  }
-  // ... use _options.StockAlertThreshold and _options.WarehouseLocations
+private readonly InventoryOptions _options;
+public InventoryService(IOptions&lt;InventoryOptions&gt; options)
+{
+_options = options.Value;
+}
+// ... use _options.StockAlertThreshold and _options.WarehouseLocations
 }</code></pre>
     </div>
   
 <h2 id="options-pattern">Options Pattern</h2>
-<p>The Options pattern is a design pattern in ASP.NET Core that enables you to access configuration
-values in a strongly typed manner. Instead of retrieving configuration values as strings and manually
-converting them to the appropriate types, you define POCO (Plain Old CLR Object) classes that
-represent the structure of your configuration sections. These classes, known as &quot;options&quot; classes,
-make your configuration code more readable, maintainable, and less error-prone.</p>
+<p>The Options pattern is a design pattern in ASP.NET Core that enables you to access configuration values in a strongly typed manner. Instead of retrieving configuration values as strings and manually converting them to the appropriate types, you define POCO (Plain Old CLR Object) classes that represent the structure of your configuration sections. These classes, known as &quot;options&quot; classes, make your configuration code more readable, maintainable, and less error-prone.</p>
 
 <h2 id="benefits-of-the-options-pattern">Benefits of the Options Pattern</h2>
 <ul>
   <li>Strongly Typed Access: Access your configuration values directly as properties of your
-      options classes, eliminating the need for manual type conversions and reducing the risk of
-      runtime errors.</li>
+options classes, eliminating the need for manual type conversions and reducing the risk of
+runtime errors.</li>
   <li>IntelliSense Support: Get code completion and type checking in your IDE when working with
-      your configuration settings.</li>
+your configuration settings.</li>
   <li>Validation: You can easily add validation logic to your options classes to ensure that
-      configuration values are valid.</li>
+configuration values are valid.</li>
   <li>Clean Separation: Keep your configuration settings separate from your business logic,
-      improving the overall organization of your code.</li>
+improving the overall organization of your code.</li>
 </ul>
 
 <h2 id="when-to-use-the-options-pattern">When to Use the Options Pattern</h2>
 <ul>
   <li>Related Settings: When you have groups of related configuration settings that logically
-      belong together (e.g., database connection settings, email settings, feature flags).</li>
-  <li>Strongly Typed Access: When you want to work with your configuration values in a typesafe
-manner.</li>
+belong together (e.g., database connection settings, email settings, feature flags).</li>
+  <li>Strongly Typed Access: When you want to work with your configuration values in a type-
+safe manner.</li>
   <li>Validation: When you want to add validation logic to ensure your configuration values are
-      valid.</li>
+valid.</li>
 </ul>
 
 <h2 id="how-to-implement-the-options-pattern">How to Implement the Options Pattern</h2>
 <ol>
   <li>Create an Options Class: Define a class that mirrors the structure of your configuration
-      section. Make sure the property names match the keys in your configuration file.</li>
+section. Make sure the property names match the keys in your configuration file.</li>
 </ol>
 
     <div class="code-block">
@@ -886,16 +881,16 @@ manner.</li>
       </div>
       <pre><code class="language-csharp">public class EmailOptions
 {
-  public string SmtpServer { get; set; } = string.Empty;
-  public int SmtpPort { get; set; } = 25;
-  public string SenderEmail { get; set; } = string.Empty;
-  public string SenderPassword { get; set; } = string.Empty;
+public string SmtpServer { get; set; } = string.Empty;
+public int SmtpPort { get; set; } = 25;
+public string SenderEmail { get; set; } = string.Empty;
+public string SenderPassword { get; set; } = string.Empty;
 }</code></pre>
     </div>
-  <p>2. Register the Options: In your <code>Program.cs</code> (or <code>Startup.cs</code> in older versions), register your</p>
-<ul>
-  <li>ptions class using the Configure&lt;T&gt; extension method on IServiceCollection:</li>
-</ul>
+  <ol>
+  <li>Register the Options: In your <code>Program.cs</code> (or <code>Startup.cs</code> in older versions), register your
+options class using the Configure&lt;T&gt; extension method on IServiceCollection:</li>
+</ol>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -907,11 +902,10 @@ manner.</li>
       </div>
       <pre><code class="language-csharp">builder.Services.Configure&lt;EmailOptions&gt;(builder.Configuration.GetSection(&quot;Email&quot;));</code></pre>
     </div>
-  <p>This tells the DI container to bind the settings in the Email section of your configuration to an
-instance of EmailOptions.</p>
+  <p>This tells the DI container to bind the settings in the Email section of your configuration to an instance of EmailOptions.</p>
 <ol>
   <li>Inject IOptions&lt;T&gt;: Inject the IOptions&lt;T&gt; interface into your controllers or services to
-      access the bound options:</li>
+access the bound options:</li>
 </ol>
 
     <div class="code-block">
@@ -924,24 +918,25 @@ instance of EmailOptions.</p>
       </div>
       <pre><code class="language-csharp">public class EmailService : IEmailService
 {
-  private readonly EmailOptions _options;
-  public EmailService(IOptions&lt;EmailOptions&gt; options)
-  {
-   _options = options.Value;
-  }
-  // ... use _options.SmtpServer, _options.SmtpPort, etc. ...
+private readonly EmailOptions _options;
+public EmailService(IOptions&lt;EmailOptions&gt; options)
+{
+_options = options.Value;
+}
+// ... use _options.SmtpServer, _options.SmtpPort, etc. ...
 }</code></pre>
     </div>
   <p>Related Methods for Configuration Access</p>
 <ul>
   <li>ConfigurationBinder.Get&lt;T&gt;(IConfiguration configuration): Binds and returns the entire
-      configuration section to a strongly typed object of type T.</li>
+configuration section to a strongly typed object of type T.</li>
   <li>ConfigurationBinder.Get(IConfiguration configuration, Type type): Binds and returns the
-      entire configuration section to an object of the specified type.</li>
+entire configuration section to an object of the specified type.</li>
   <li>ConfigurationBinder.Bind(IConfiguration configuration, object instance): Binds the
-      configuration to an existing object instance.</li>
+configuration to an existing object instance.</li>
 </ul>
-<p>Example: Options Pattern with GetSection and Bind</p>
+
+<h3 id="example-options-pattern-with-getsection-and-bind">Example: Options Pattern with GetSection and Bind</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -957,43 +952,36 @@ var emailOptions = new EmailOptions();
 builder.Configuration.GetSection(&quot;Email&quot;).Bind(emailOptions);
 builder.Services.AddSingleton(emailOptions); // Add the bound object as a singleton</code></pre>
     </div>
-  <p>Environment-Specific Configuration Files
-ASP.NET Core allows you to create configuration files that are specific to different environments. By
-convention, these files are named appsettings.{Environment}.json, where {Environment} is replaced
-with the name of the environment (e.g., appsettings.Development.json,
-appsettings.Production.json).
-Purpose:</p>
+  <p>Environment-Specific Configuration Files ASP.NET Core allows you to create configuration files that are specific to different environments. By convention, these files are named appsettings.{Environment}.json, where {Environment} is replaced with the name of the environment (e.g., appsettings.Development.json, appsettings.Production.json). Purpose:</p>
 <ul>
   <li>Environment-Specific Settings: These files store configuration values that are unique to each
-      environment. This could include database connection strings, API keys, logging levels, or
-      feature flags.</li>
+environment. This could include database connection strings, API keys, logging levels, or
+feature flags.</li>
   <li>Customization: You can tailor your application&#39;s behavior for development, testing, staging,
-      and production environments without having to manually modify configuration settings
-      every time you deploy.</li>
+and production environments without having to manually modify configuration settings
+every time you deploy.</li>
 </ul>
-<p>Order of Precedence:
-ASP.NET Core loads configuration from multiple sources, and the order in which they are loaded
-determines which values take precedence in case of conflicts. The general order of precedence
-(from highest to lowest) is:</p>
+<p>Order of Precedence: ASP.NET Core loads configuration from multiple sources, and the order in which they are loaded determines which values take precedence in case of conflicts. The general order of precedence (from highest to lowest) is:</p>
 <ol>
   <li>Command-Line Arguments: Any configuration values specified as command-line arguments
-      when you run your application (e.g., dotnet run --Logging:LogLevel:Default=Debug) override
-      all other sources.</li>
+when you run your application (e.g., dotnet run --Logging:LogLevel:Default=Debug) override
+all other sources.</li>
   <li>Environment Variables: Configuration values set as environment variables on your system
-      take precedence over values in configuration files. ASP.NET Core automatically maps
-      environment variables to configuration keys using a convention. For example, the
-      environment variable ConnectionStrings__DefaultConnection would map to the
-      configuration key ConnectionStrings:DefaultConnection.</li>
+take precedence over values in configuration files. ASP.NET Core automatically maps
+environment variables to configuration keys using a convention. For example, the
+environment variable ConnectionStrings__DefaultConnection would map to the
+configuration key ConnectionStrings:DefaultConnection.</li>
   <li>User Secrets (Development Only): If you&#39;re in the Development environment, values from
-      the user secrets store (secrets.json) override those from <code>appsettings.json</code> and
-      appsettings.Development.json. This is useful for storing sensitive information during
-      development.</li>
+the user secrets store (secrets.json) override those from <code>appsettings.json</code> and
+appsettings.Development.json. This is useful for storing sensitive information during
+development.</li>
   <li>appsettings.{Environment}.json: If present, settings from this file override values from the
-      base <code>appsettings.json</code> file. This allows you to customize settings for specific environments.</li>
+base <code>appsettings.json</code> file. This allows you to customize settings for specific environments.</li>
   <li><code>appsettings.json</code>: This is the base configuration file that is always loaded. It contains the
-      default settings for your application.</li>
+default settings for your application.</li>
 </ol>
-<p>Example: Overriding Connection Strings</p>
+
+<h3 id="example-overriding-connection-strings">Example: Overriding Connection Strings</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1005,22 +993,20 @@ determines which values take precedence in case of conflicts. The general order 
       </div>
       <pre><code class="language-csharp">// appsettings.json
 {
- &quot;ConnectionStrings&quot;: {
-  &quot;DefaultConnection&quot;:
+&quot;ConnectionStrings&quot;: {
+&quot;DefaultConnection&quot;:
 &quot;Server=(localdb)\\mssqllocaldb;Database=MyDatabaseDev;Trusted_Connection=True;&quot;
- }
+}
 }
 // appsettings.Production.json
 {
- &quot;ConnectionStrings&quot;: {
-  &quot;DefaultConnection&quot;: &quot;Server=myprodserver;Database=MyDatabaseProd;User
+&quot;ConnectionStrings&quot;: {
+&quot;DefaultConnection&quot;: &quot;Server=myprodserver;Database=MyDatabaseProd;User
 Id=myuser;Password=mypassword;&quot;
- }
+}
 }</code></pre>
     </div>
-  <p>If the ASPNETCORE_ENVIRONMENT variable is set to &quot;Production&quot;, the connection string from
-appsettings.Production.json will be used.
-Code Example: GetSection() and GetValue()</p>
+  <p>If the ASPNETCORE_ENVIRONMENT variable is set to &quot;Production&quot;, the connection string from appsettings.Production.json will be used. Code Example: GetSection() and GetValue()</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1034,59 +1020,98 @@ Code Example: GetSection() and GetValue()</p>
 var logLevel = _configuration.GetValue&lt;string&gt;(&quot;Logging:LogLevel:Default&quot;);</code></pre>
     </div>
   <ul>
-  <li>GetConnectionString(&quot;DefaultConnection&quot;) is a convenience method to fetch a connection</li>
-</ul>
-<p>string specifically from the ConnectionStrings section.</p>
-<ul>
+  <li>GetConnectionString(&quot;DefaultConnection&quot;) is a convenience method to fetch a connection
+string specifically from the ConnectionStrings section.</li>
   <li>GetValue&lt;string&gt;() retrieves values from specific configuration sections or keys.</li>
 </ul>
 
-<h2 id="best-practices-2">Best Practices</h2>
+<h3 id="best-practices-2">Best Practices</h3>
 <ul>
   <li>Logical Structure: Organize your settings into sections and subsections to make your
-      configuration files easy to read and understand.</li>
+configuration files easy to read and understand.</li>
   <li>Consistent Naming: Use consistent naming conventions for your configuration keys (e.g.,
-      kebab-case, snake_case).</li>
+kebab-case, snake_case).</li>
   <li>Environment Variables for Sensitive Data: Store sensitive information like API keys and
-      connection strings in environment variables or Azure Key Vault, not in configuration files
-      that might be committed to source control.</li>
+connection strings in environment variables or Azure Key Vault, not in configuration files
+that might be committed to source control.</li>
   <li>User Secrets for Development: Use user secrets to store sensitive data during development
-      without exposing it in your code repository.</li>
+without exposing it in your code repository.</li>
   <li>Order Matters: Be mindful of the order of precedence when adding configuration sources.
-      Place the most important or specific overrides later in the process.</li>
+Place the most important or specific overrides later in the process.</li>
   <li>Validation: Consider validating your configuration during application startup to ensure that
-      all required settings are present and have valid values.</li>
+all required settings are present and have valid values.</li>
 </ul>
-<p>Secrets Management in ASP.NET Core
-In the world of web development, you&#39;ll often need to work with sensitive information like API keys,
-database connection strings, or passwords. Hardcoding these values directly into your source code is
-a security risk. That&#39;s where Secrets Manager comes into play.
-Secrets Manager: Your Digital Vault
-Secrets Manager is a tool that provides secure storage and management for your application&#39;s
-secrets. It keeps your sensitive data out of your source code and makes it easier to manage and
-rotate secrets without redeploying your application.
-User Secrets: Keeping Development Secrets Safe
-User Secrets is a developer-friendly feature of Secrets Manager specifically designed for local
-development environments. It allows you to store secrets for a particular project on your local
-machine without having to commit them to source control, keeping them out of your code
-repository.</p>
+
+<h2 id="secrets-management-in-aspnet-core">Secrets Management in ASP.NET Core</h2>
+<p>In the world of web development, you&#39;ll often need to work with sensitive information like API keys, database connection strings, or passwords. Hardcoding these values directly into your source code is a security risk. That&#39;s where Secrets Manager comes into play.</p>
+
+<h2 id="secrets-manager-your-digital-vault">Secrets Manager: Your Digital Vault</h2>
+<p>Secrets Manager is a tool that provides secure storage and management for your application&#39;s secrets. It keeps your sensitive data out of your source code and makes it easier to manage and rotate secrets without redeploying your application.</p>
+
+<h2 id="user-secrets-keeping-development-secrets-safe">User Secrets: Keeping Development Secrets Safe</h2>
+<p>User Secrets is a developer-friendly feature of Secrets Manager specifically designed for local development environments. It allows you to store secrets for a particular project on your local machine without having to commit them to source control, keeping them out of your code repository.</p>
 
 <h2 id="how-to-set-user-secrets-using-the-dotnet-command">How to Set User Secrets Using the dotnet Command</h2>
 <ol>
-  <li>Initialize: If you haven&#39;t already, initialize user secrets for your project:
-dotnet user-secrets init
-This command adds a UserSecretsId property to your project&#39;s .csproj file, which links the project to
-a user secrets store.</li>
-  <li>Set a Secret: Use the set command to store a secret:
-dotnet user-secrets set &quot;MySecretName&quot; &quot;MySecretValue&quot;
-Replace &quot;MySecretName&quot; with the desired key and &quot;MySecretValue&quot; with the actual secret value.</li>
-  <li>List Secrets (Optional):
-dotnet user-secrets list
-This command lists all the secrets you&#39;ve stored for the project.</li>
-  <li>Remove a Secret (Optional):
-dotnet user-secrets remove &quot;MySecretName&quot;
-Accessing User Secrets in Your Code</li>
+  <li>Initialize: If you haven&#39;t already, initialize user secrets for your project:</li>
 </ol>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">CLI</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-bash">dotnet user-secrets init</code></pre>
+    </div>
+  <p>This command adds a UserSecretsId property to your project&#39;s .csproj file, which links the project to a user secrets store.</p>
+<ol>
+  <li>Set a Secret: Use the set command to store a secret:</li>
+</ol>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">CLI</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-bash">dotnet user-secrets set &quot;MySecretName&quot; &quot;MySecretValue&quot;</code></pre>
+    </div>
+  <p>Replace &quot;MySecretName&quot; with the desired key and &quot;MySecretValue&quot; with the actual secret value.</p>
+<ol>
+  <li>List Secrets (Optional):</li>
+</ol>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">CLI</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-bash">dotnet user-secrets list</code></pre>
+    </div>
+  <p>This command lists all the secrets you&#39;ve stored for the project.</p>
+<ol>
+  <li>Remove a Secret (Optional):</li>
+</ol>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">CLI</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-bash">dotnet user-secrets remove &quot;MySecretName&quot;</code></pre>
+    </div>
+  <p>Accessing User Secrets in Your Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1101,13 +1126,10 @@ var configuration = builder.Configuration;
 // In Program.cs (or Startup.cs):
 if (builder.Environment.IsDevelopment())
 {
-  configuration.AddUserSecrets&lt;Program&gt;();
+configuration.AddUserSecrets&lt;Program&gt;();
 }</code></pre>
     </div>
-  <p>This will add a configuration source that can read user secrets, but only when the environment is set
-to &quot;Development&quot;.
-Then, to access a user secret, you can use the same techniques you would for any other
-configuration value:</p>
+  <p>This will add a configuration source that can read user secrets, but only when the environment is set to &quot;Development&quot;. Then, to access a user secret, you can use the same techniques you would for any other configuration value:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1122,15 +1144,16 @@ configuration value:</p>
   <p>Best Practices for Secrets Management</p>
 <ul>
   <li>Never Hardcode Secrets: Always store sensitive information in a secure store like Secrets
-      Manager.</li>
+Manager.</li>
   <li>Least Privilege: Grant your application the minimum necessary permissions to access
-      secrets.</li>
+secrets.</li>
   <li>Rotate Secrets Regularly: Regularly change your secrets to minimize the risk of exposure.</li>
   <li>Separate Environments: Use different secrets for different environments (development,
-      staging, production).</li>
+staging, production).</li>
   <li>Automation: Consider automating the process of secret rotation to enhance security.</li>
 </ul>
-<p>Example: Storing an API Key as a User Secret</p>
+
+<h3 id="example-storing-an-api-key-as-a-user-secret">Example: Storing an API Key as a User Secret</h3>
 <ol>
   <li>Initialize: dotnet user-secrets init</li>
   <li>Set Secret: dotnet user-secrets set &quot;StripeApiKey&quot; &quot;sk_test_1234567890&quot;
@@ -1150,75 +1173,57 @@ Accessing in Your Code (Example):</li>
   <p>Caveats</p>
 <ul>
   <li>Development Only: User secrets are intended for development environments and should
-      not be used in production.</li>
+not be used in production.</li>
   <li>Local Storage: User secrets are stored in a JSON file on your local machine. Ensure this file is
-      protected.</li>
+protected.</li>
 </ul>
 
 <h2 id="set-configuration-values-from-environment-variables">Set Configuration Values from Environment Variables</h2>
 <ul>
   <li>Flexibility: You can dynamically change your application&#39;s settings without modifying code or
-      configuration files.</li>
+configuration files.</li>
   <li>Security: Environment variables are a secure way to store sensitive information like API keys,
-      connection strings, or passwords without embedding them in your code.</li>
+connection strings, or passwords without embedding them in your code.</li>
   <li>Deployment Environments: Different environments (development, staging, production)
-      often require distinct configuration values. Environment variables can be easily set and
-      managed per environment.</li>
+often require distinct configuration values. Environment variables can be easily set and
+managed per environment.</li>
   <li>Automation: This approach lends itself well to automation scripts for deployment and
-      configuration.</li>
+configuration.</li>
 </ul>
 
 <h2 id="how-it-works">How It Works</h2>
 <ol>
   <li>Environment Variable Prefix: ASP.NET Core&#39;s configuration system recognizes environment
-      variables that start with a specific prefix, by default, ASPNETCORE_. This allows you to
-      namespace your environment variables to avoid conflicts with other variables on your
-      system.</li>
+variables that start with a specific prefix, by default, ASPNETCORE_. This allows you to
+namespace your environment variables to avoid conflicts with other variables on your
+system.</li>
   <li>Key Mapping: The part of the environment variable name after the prefix is used as the
-      configuration key. For example, the environment variable
-      ASPNETCORE_Logging__LogLevel__Default will map to the configuration key
-      Logging:LogLevel:Default. Double underscores (__) are used to represent colons (:) in the
-      hierarchy.</li>
+configuration key. For example, the environment variable
+ASPNETCORE_Logging__LogLevel__Default will map to the configuration key
+Logging:LogLevel:Default. Double underscores (__) are used to represent colons (:) in the
+hierarchy.</li>
   <li>Configuration Provider: ASP.NET Core has a built-in configuration provider called
-      EnvironmentVariablesConfigurationProvider that automatically reads these environment
-      variables and adds them to the configuration system.</li>
+EnvironmentVariablesConfigurationProvider that automatically reads these environment
+variables and adds them to the configuration system.</li>
 </ol>
 
 <h2 id="setting-environment-variables-from-the-command-line">Setting Environment Variables from the Command Line</h2>
 
 <h2 id="powershell-windows-macos-linux">PowerShell (Windows, macOS, Linux)</h2>
-<p>$env:ASPNETCORE_MyKey = &quot;myvalue&quot; # Simple key-value
-$env:ASPNETCORE_Logging__LogLevel__Default = &quot;Debug&quot; # Hierarchical key
-In PowerShell, use the $env: prefix to set environment variables within the current session.</p>
+<p>$env:ASPNETCORE_MyKey = &quot;myvalue&quot; # Simple key-value $env:ASPNETCORE_Logging__LogLevel__Default = &quot;Debug&quot; # Hierarchical key In PowerShell, use the $env: prefix to set environment variables within the current session. Command Prompt (Windows) set ASPNETCORE_MyKey=myvalue # Simple key-value set ASPNETCORE_Logging__LogLevel__Default=Debug # Hierarchical key Bash (macOS, Linux) export ASPNETCORE_MyKey=&quot;myvalue&quot; # Simple key-value export ASPNETCORE_Logging__LogLevel__Default=&quot;Debug&quot; # Hierarchical key</p>
 
-<h2 id="command-prompt-windows">Command Prompt (Windows)</h2>
-<p>set ASPNETCORE_MyKey=myvalue # Simple key-value
-set ASPNETCORE_Logging__LogLevel__Default=Debug # Hierarchical key</p>
-
-<h2 id="bash-macos-linux">Bash (macOS, Linux)</h2>
-<p>export ASPNETCORE_MyKey=&quot;myvalue&quot; # Simple key-value
-export ASPNETCORE_Logging__LogLevel__Default=&quot;Debug&quot; # Hierarchical key
-Example: Setting a Database Connection String
-Let&#39;s say you want to set your database connection string using an environment variable. Here&#39;s how
-you would do it:</p>
+<h3 id="example-setting-a-database-connection-string">Example: Setting a Database Connection String</h3>
+<p>Let&#39;s say you want to set your database connection string using an environment variable. Here&#39;s how you would do it:</p>
 <ol>
   <li>Set the Environment Variable:
-      # In PowerShell
-      $env:ASPNETCORE_ConnectionStrings__DefaultConnection =
-      &quot;Server=myServer;Database=myDb;Trusted_Connection=True;&quot;</li>
+# In PowerShell
+$env:ASPNETCORE_ConnectionStrings__DefaultConnection =
+&quot;Server=myServer;Database=myDb;Trusted_Connection=True;&quot;</li>
 </ol>
-<p># In Command Prompt (Windows)
-      set
-      ASPNETCORE_ConnectionStrings__DefaultConnection=&quot;Server=myServer;Database=myDb;T
-      rusted_Connection=True;&quot;
-      # In Bash (macOS/Linux)
-           export
-           ASPNETCORE_ConnectionStrings__DefaultConnection=&quot;Server=myServer;Database=
-           myDb;Trusted_Connection=True;&quot;
-Note the double underscores (__) used to represent the colon (:) in the configuration path.</p>
+<p># In Command Prompt (Windows) set ASPNETCORE_ConnectionStrings__DefaultConnection=&quot;Server=myServer;Database=myDb;T rusted_Connection=True;&quot; # In Bash (macOS/Linux) export ASPNETCORE_ConnectionStrings__DefaultConnection=&quot;Server=myServer;Database= myDb;Trusted_Connection=True;&quot; Note the double underscores (__) used to represent the colon (:) in the configuration path.</p>
 <ol>
   <li>Access in Your Code: You can then retrieve this connection string in your ASP.NET Core
-      application using:</li>
+application using:</li>
 </ol>
 
     <div class="code-block">
@@ -1235,60 +1240,51 @@ Note the double underscores (__) used to represent the colon (:) in the configur
 <ul>
   <li>Prefix: Remember to use the ASPNETCORE_ prefix for your environment variables.</li>
   <li>Key Mapping: Double underscores (__) in the environment variable name are translated to
-      colons (:) in the configuration key.</li>
+colons (:) in the configuration key.</li>
   <li>Override: Environment variable values will override those set in <code>appsettings.json</code> or
-      appsettings.{Environment}.json.</li>
+appsettings.{Environment}.json.</li>
   <li>Sensitive Data: This is an excellent way to manage sensitive data without exposing it in your
-      code or configuration files.</li>
+code or configuration files.</li>
   <li>Deployment: Make sure to set the appropriate environment variables on your production
-      server before deploying your application.</li>
+server before deploying your application.</li>
 </ul>
 
 <h2 id="the-mechanics-of-environment-variable-configuration">The Mechanics of Environment Variable Configuration</h2>
 <ul>
   <li>1. Environment Variable Prefix: ASP.NET Core&#39;s configuration system recognizes environment
-      variables that start with a specific prefix. By default, this prefix is ASPNETCORE_. You can
-      customize this prefix if needed. This prefix helps to namespace your environment variables
-      and avoid conflicts with other variables on your system.</li>
+variables that start with a specific prefix. By default, this prefix is ASPNETCORE_. You can
+customize this prefix if needed. This prefix helps to namespace your environment variables
+and avoid conflicts with other variables on your system.</li>
   <li>2. Key Mapping: The part of the environment variable name after the prefix is used as the
-      configuration key. A double underscore (__) is used to represent a colon (:) in the
-      hierarchical structure of your configuration. For example:</li>
+configuration key. A double underscore (__) is used to represent a colon (:) in the
+hierarchical structure of your configuration. For example:</li>
   <li>Environment Variable: ASPNETCORE_Logging__LogLevel__Default</li>
   <li>Configuration Key: Logging:LogLevel:Default</li>
   <li>3. Configuration Provider: ASP.NET Core includes a built-in configuration provider called
-      EnvironmentVariablesConfigurationProvider. This provider automatically reads environment
-      variables that match the prefix and adds them to the application&#39;s configuration. The values
-      from environment variables override any matching values found in <code>appsettings.json</code> or
-      environment-specific configuration files.</li>
+EnvironmentVariablesConfigurationProvider. This provider automatically reads environment
+variables that match the prefix and adds them to the application&#39;s configuration. The values
+from environment variables override any matching values found in <code>appsettings.json</code> or
+environment-specific configuration files.</li>
 </ul>
 
 <h2 id="setting-environment-variables-from-the-command-line-1">Setting Environment Variables from the Command Line</h2>
 
 <h2 id="powershell-windows-macos-linux-1">PowerShell (Windows, macOS, Linux)</h2>
-<p>$env:ASPNETCORE_MyKey = &quot;myvalue&quot; # Simple key-value
-$env:ASPNETCORE_Logging__LogLevel__Default = &quot;Debug&quot; # Hierarchical key</p>
+<p>$env:ASPNETCORE_MyKey = &quot;myvalue&quot; # Simple key-value $env:ASPNETCORE_Logging__LogLevel__Default = &quot;Debug&quot; # Hierarchical key Command Prompt (Windows) set ASPNETCORE_MyKey=myvalue # Simple key-value set ASPNETCORE_Logging__LogLevel__Default=Debug # Hierarchical key Bash (macOS, Linux) export ASPNETCORE_MyKey=&quot;myvalue&quot; # Simple key-value export ASPNETCORE_Logging__LogLevel__Default=&quot;Debug&quot; # Hierarchical key</p>
 
-<h2 id="command-prompt-windows-1">Command Prompt (Windows)</h2>
-<p>set ASPNETCORE_MyKey=myvalue # Simple key-value
-set ASPNETCORE_Logging__LogLevel__Default=Debug # Hierarchical key</p>
-
-<h2 id="bash-macos-linux-1">Bash (macOS, Linux)</h2>
-<p>export ASPNETCORE_MyKey=&quot;myvalue&quot; # Simple key-value
-export ASPNETCORE_Logging__LogLevel__Default=&quot;Debug&quot; # Hierarchical key</p>
-<p>Example: Setting a Database Connection String
-Let&#39;s say you want to set your database connection string using an environment variable. Here&#39;s how
-you would do it:</p>
+<h3 id="example-setting-a-database-connection-string-1">Example: Setting a Database Connection String</h3>
+<p>Let&#39;s say you want to set your database connection string using an environment variable. Here&#39;s how you would do it:</p>
 <ol>
   <li>Set the Environment Variable:
-   # In PowerShell or Bash
-   $env:ASPNETCORE_ConnectionStrings__DefaultConnection =
-   &quot;Server=myServer;Database=myDb;User Id=myuser;Password=mypassword;&quot;</li>
+# In PowerShell or Bash
+$env:ASPNETCORE_ConnectionStrings__DefaultConnection =
+&quot;Server=myServer;Database=myDb;User Id=myuser;Password=mypassword;&quot;</li>
   <li># In Command Prompt (Windows)
-           set
-           ASPNETCORE_ConnectionStrings__DefaultConnection=&quot;Server=myServer;Database=
-           myDb;User Id=myuser;Password=mypassword;&quot;</li>
+set
+ASPNETCORE_ConnectionStrings__DefaultConnection=&quot;Server=myServer;Database=
+myDb;User Id=myuser;Password=mypassword;&quot;</li>
   <li>Access in Your Code: You can then retrieve this connection string in your ASP.NET Core
-      application as usual:</li>
+application as usual:</li>
 </ol>
 
     <div class="code-block">
@@ -1304,32 +1300,31 @@ you would do it:</p>
   <p>Important Considerations</p>
 <ul>
   <li>Prefix Customization: You can change the default ASPNETCORE_ prefix using the
-      AddEnvironmentVariables method. For example,
-      configuration.AddEnvironmentVariables(&quot;CUSTOM_PREFIX_&quot;);</li>
+AddEnvironmentVariables method. For example,
+configuration.AddEnvironmentVariables(&quot;CUSTOM_PREFIX_&quot;);</li>
   <li>Case Sensitivity: On Linux and macOS, environment variable names are case-sensitive.</li>
   <li>Deployment: When deploying your application, ensure that the appropriate environment
-      variables are set on the target server.</li>
+variables are set on the target server.</li>
   <li>Security: While environment variables are more secure than hardcoding values, they might
-      not be suitable for extremely sensitive secrets. In those cases, consider using a dedicated
-      secret management solution like Azure Key Vault or HashiCorp Vault.</li>
+not be suitable for extremely sensitive secrets. In those cases, consider using a dedicated
+secret management solution like Azure Key Vault or HashiCorp Vault.</li>
 </ul>
 
 <h2 id="custom-json-files">Custom JSON Files</h2>
-<p>While ASP.NET Core natively supports <code>appsettings.json</code> and environment-specific variations, there
-are scenarios where using custom JSON files for configuration might be advantageous:</p>
+<p>While ASP.NET Core natively supports <code>appsettings.json</code> and environment-specific variations, there are scenarios where using custom JSON files for configuration might be advantageous:</p>
 <ul>
   <li>Modularity: You can organize settings into multiple files based on functional areas or
-      components, making your configuration more manageable and easier to navigate.</li>
+components, making your configuration more manageable and easier to navigate.</li>
   <li>Customization: You can load custom JSON files conditionally, based on specific requirements
-      or runtime decisions.</li>
+or runtime decisions.</li>
   <li>Separation of Concerns: This approach allows you to keep default settings in
-      <code>appsettings.json</code> while maintaining custom settings separately.</li>
+<code>appsettings.json</code> while maintaining custom settings separately.</li>
 </ul>
 
 <h2 id="adding-custom-json-files-as-configuration-sources">Adding Custom JSON Files as Configuration Sources</h2>
 <ol>
   <li>Create the File: Create a JSON file with your custom configuration settings. Let&#39;s call it
-      customsettings.json:</li>
+customsettings.json:</li>
 </ol>
 
     <div class="code-block">
@@ -1341,18 +1336,20 @@ are scenarios where using custom JSON files for configuration might be advantage
         </button>
       </div>
       <pre><code class="language-json">{
- &quot;CustomSettings&quot;: {
-  &quot;APIKey&quot;: &quot;your_api_key&quot;,
-  &quot;FeatureEnabled&quot;: true,
-  &quot;NotificationSettings&quot;: {
-  &quot;EmailEnabled&quot;: true,
-  &quot;SMSEnabled&quot;: false
-  }
- }
+&quot;CustomSettings&quot;: {
+&quot;APIKey&quot;: &quot;your_api_key&quot;,
+&quot;FeatureEnabled&quot;: true,
+&quot;NotificationSettings&quot;: {
+&quot;EmailEnabled&quot;: true,
+&quot;SMSEnabled&quot;: false
+}
+}
 }</code></pre>
     </div>
-  <p>2. Add to Configuration: In your <code>Program.cs</code>, use the AddJsonFile extension method to include
-      your custom JSON file:</p>
+  <ol>
+  <li>Add to Configuration: In your <code>Program.cs</code>, use the AddJsonFile extension method to include
+your custom JSON file:</li>
+</ol>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1368,13 +1365,15 @@ var configuration = builder.Configuration;
 // Add the custom JSON file:
 configuration.AddJsonFile(&quot;customsettings.json&quot;, optional: true, reloadOnChange: true);
 var app = builder.Build();
-// ... (rest of the application) ...
-   • optional: true: Set this to true if the file might not exist (e.g., in certain environments).
-   • reloadOnChange: true: Enables automatic reloading of the configuration if the file changes.
-Accessing Custom Configuration Values</code></pre>
+// ... (rest of the application) ...</code></pre>
     </div>
-  <p>You can access values from your custom JSON file using the same mechanisms as you would for
-<code>appsettings.json</code>:</p>
+  <ul>
+  <li>optional: true: Set this to true if the file might not exist (e.g., in certain environments).</li>
+  <li>reloadOnChange: true: Enables automatic reloading of the configuration if the file changes.</li>
+</ul>
+
+<h2 id="accessing-custom-configuration-values">Accessing Custom Configuration Values</h2>
+<p>You can access values from your custom JSON file using the same mechanisms as you would for <code>appsettings.json</code>:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1391,21 +1390,22 @@ var featureEnabled = configuration.GetValue&lt;bool&gt;(&quot;CustomSettings:Fea
 var notificationSettings =
 configuration.GetSection(&quot;CustomSettings:NotificationSettings&quot;).Get&lt;NotificationSettings&gt;();</code></pre>
     </div>
-  <p>Best Practices</p>
+  <h3>Best Practices</h3>
 <ul>
   <li>Naming: Choose descriptive and meaningful names for your custom JSON files.</li>
   <li>Organization: Structure your custom configuration files with sections and subsections to
-      enhance readability and maintainability.</li>
+enhance readability and maintainability.</li>
   <li>Environment-Specific Overlays: Create environment-specific versions of your custom files
-      (e.g., customsettings.Development.json) to override settings in different environments.</li>
+(e.g., customsettings.Development.json) to override settings in different environments.</li>
   <li>Secrets Management: Store sensitive information (API keys, passwords) in a secure store
-      like Azure Key Vault or User Secrets.</li>
+like Azure Key Vault or User Secrets.</li>
   <li>Error Handling: Handle potential errors, such as missing or invalid configuration files,
-      gracefully.</li>
+gracefully.</li>
   <li>Strong Typing with Options: Strongly recommend using Options Pattern for type safety and
-      better code structure.</li>
+better code structure.</li>
 </ul>
-<p>Example: Options Pattern with Custom JSON File</p>
+
+<h3 id="example-options-pattern-with-custom-json-file">Example: Options Pattern with Custom JSON File</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1419,9 +1419,9 @@ configuration.GetSection(&quot;CustomSettings:NotificationSettings&quot;).Get&lt
 )
 public class CustomSettings
 {
-  public string APIKey { get; set; }
-  public bool FeatureEnabled { get; set; }
-  public NotificationSettings NotificationSettings { get; set; }
+public string APIKey { get; set; }
+public bool FeatureEnabled { get; set; }
+public NotificationSettings NotificationSettings { get; set; }
 }
 // ... (other options classes if needed) ...
 // Program.cs
@@ -1429,37 +1429,35 @@ builder.Services.Configure&lt;CustomSettings&gt;(configuration.GetSection(&quot;
 // In your controller or service
 public class MyController : Controller
 {
-  private readonly CustomSettings _settings;
-  public MyController(IOptions&lt;CustomSettings&gt; settings)
-  {
-   _settings = settings.Value;
-  }
+private readonly CustomSettings _settings;
+public MyController(IOptions&lt;CustomSettings&gt; settings)
+{
+_settings = settings.Value;
+}
 }</code></pre>
     </div>
   
 <h2 id="httpclient">HttpClient</h2>
-<p>The HttpClient class is a powerful and versatile tool in the .NET ecosystem for interacting with webbased
-resources over the HTTP protocol. You use it to send requests (GET, POST, PUT, DELETE, etc.)
-to APIs and retrieve responses containing data in various formats (JSON, XML, HTML).</p>
+<p>The HttpClient class is a powerful and versatile tool in the .NET ecosystem for interacting with web- based resources over the HTTP protocol. You use it to send requests (GET, POST, PUT, DELETE, etc.) to APIs and retrieve responses containing data in various formats (JSON, XML, HTML).</p>
 
 <h2 id="key-features-of-httpclient">Key Features of HttpClient</h2>
 <ul>
   <li>Sending Requests: Craft and send HTTP requests to any URL.</li>
   <li>Receiving Responses: Process the server&#39;s response (status code, headers, body content).</li>
   <li>Async Operations: Designed for asynchronous programming, allowing your application to
-      perform other tasks while waiting for network responses.</li>
+perform other tasks while waiting for network responses.</li>
   <li>Customization: Configure request headers, timeouts, authentication, and more.</li>
 </ul>
-<p>Using HttpClient in ASP.NET Core
-While you can create and manage HttpClient instances directly, ASP.NET Core offers a more robust
-approach through the IHttpClientFactory interface. The factory handles the following for you:</p>
+
+<h2 id="using-httpclient-in-aspnet-core">Using HttpClient in ASP.NET Core</h2>
+<p>While you can create and manage HttpClient instances directly, ASP.NET Core offers a more robust approach through the IHttpClientFactory interface. The factory handles the following for you:</p>
 <ul>
   <li>Connection Pooling: Manages a pool of HTTP connections, optimizing performance and
-      preventing socket exhaustion.</li>
+preventing socket exhaustion.</li>
   <li>Lifetime Management: Ensures proper disposal of HttpClient instances to avoid resource
-      leaks.</li>
+leaks.</li>
   <li>Named Clients: Lets you define and configure named clients for different APIs, each with its
-      own settings (base address, headers, etc.).</li>
+own settings (base address, headers, etc.).</li>
 </ul>
 
 <h2 id="integrating-httpclient-with-your-stock-app">Integrating HttpClient with Your Stock App</h2>
@@ -1468,19 +1466,19 @@ approach through the IHttpClientFactory interface. The factory handles the follo
   <li>1. FinnhubService:</li>
   <li>Injection: The constructor injects IHttpClientFactory to create HttpClient instances.</li>
   <li>Request Building: The GetStockPriceQuote method constructs an
-           HttpRequestMessage object, specifying the URL (including the Finnhub API token)
-           and the HTTP method (GET).</li>
+HttpRequestMessage object, specifying the URL (including the Finnhub API token)
+and the HTTP method (GET).</li>
   <li>Sending the Request: It uses httpClient.SendAsync to send the request
-           asynchronously.</li>
+asynchronously.</li>
   <li>Response Processing: It reads the response content as a stream and deserializes the
-           JSON data into a dictionary.</li>
+JSON data into a dictionary.</li>
   <li>Error Handling: It checks for errors in the response and throws exceptions
-           accordingly.</li>
+accordingly.</li>
   <li>2. HomeController:</li>
   <li>Injection: It injects both the FinnhubService and IOptions&lt;TradingOptions&gt; for
-           configuration.</li>
+configuration.</li>
   <li>Data Fetching: The Index action calls _finnhubService.GetStockPriceQuote to get
-           stock data.</li>
+stock data.</li>
   <li>Model Creation: It maps the retrieved data to a Stock model object.</li>
   <li>View Rendering: The Stock model is passed to the view for display.</li>
 </ul>
@@ -1488,44 +1486,44 @@ approach through the IHttpClientFactory interface. The factory handles the follo
 <h2 id="code-breakdown">Code Breakdown</h2>
 <ul>
   <li>IFinnhubService: Defines an interface for the Finnhub service, allowing for different
-      implementations if needed.</li>
+implementations if needed.</li>
   <li>FinnhubService: Implements the interface and uses HttpClient to interact with the Finnhub
-      API.</li>
+API.</li>
   <li>TradingOptions: A class to hold configuration options for the default stock symbol (read
-      from <code>appsettings.json</code>).</li>
+from <code>appsettings.json</code>).</li>
   <li>Stock: A model class to represent the stock data.</li>
   <li>HomeController: The controller that fetches stock data and renders the view.</li>
 </ul>
 
-<h2 id="best-practices-3">Best Practices</h2>
+<h3 id="best-practices-3">Best Practices</h3>
 <ul>
   <li>IHttpClientFactory: Always use IHttpClientFactory instead of directly creating HttpClient
-      instances to benefit from connection pooling and proper lifetime management.</li>
+instances to benefit from connection pooling and proper lifetime management.</li>
   <li>Named Clients: For multiple APIs, use named clients
-      (_httpClientFactory.CreateClient(&quot;name&quot;);) to configure different settings for each API.</li>
+(_httpClientFactory.CreateClient(&quot;name&quot;);) to configure different settings for each API.</li>
   <li>Error Handling: Handle exceptions that might occur during HTTP requests, such as network
-      errors or invalid responses.</li>
+errors or invalid responses.</li>
   <li>Resilience: Consider using Polly or other libraries to implement retries and circuit breaker
-      patterns for increased resilience in the face of transient errors.</li>
+patterns for increased resilience in the face of transient errors.</li>
 </ul>
 
-<h2 id="key-points-to-remember">Key Points to Remember</h2>
+<h3 id="key-points-to-remember">Key Points to Remember</h3>
 <ul>
   <li>Purpose: Provide named configurations to tailor your app&#39;s behavior for different scenarios
-      (development, staging, production, etc.).</li>
+(development, staging, production, etc.).</li>
   <li>Environment Variable:</li>
   <li>ASPNETCORE_ENVIRONMENT is the key environment variable.</li>
   <li>Its value determines the active environment.</li>
   <li>Setting the Environment:</li>
   <li><code>launchSettings.json</code> (Development): Set within the environmentVariables section of
-           a profile.</li>
+a profile.</li>
   <li>System Environment Variables: Set directly on your machine (persistent).</li>
   <li>Command Line: Use --environment or -e flag when running the app (e.g., dotnet run
-           --environment Staging).</li>
+--environment Staging).</li>
   <li>Azure App Service: In the Azure portal, under Configuration &gt; Application settings.</li>
   <li>IWebHostEnvironment Interface:</li>
   <li>Use it in your code to access environment information (e.g., EnvironmentName,
-           WebRootPath).</li>
+WebRootPath).</li>
   <li>Inject it into your controllers or middleware:</li>
 </ul>
 
@@ -1538,21 +1536,19 @@ approach through the IHttpClientFactory interface. The factory handles the follo
         </button>
       </div>
       <pre><code class="language-csharp">private readonly IWebHostEnvironment _env;
-                 public MyController(IWebHostEnvironment env)
-                 {
-                  _env = env;
-                 }
-   • Environment-Specific Configuration:</code></pre>
+public MyController(IWebHostEnvironment env)
+{
+_env = env;
+}</code></pre>
     </div>
   <ul>
+  <li>Environment-Specific Configuration:</li>
   <li>Create files like appsettings.Development.json, appsettings.Staging.json, etc.</li>
-</ul>
-<ul>
   <li>ASP.NET Core automatically loads the appropriate file based on the environment.</li>
   <li>Override base settings in <code>appsettings.json</code>.</li>
   <li>Conditional Configuration (In <code>Program.cs</code>):</li>
   <li>Use if (app.Environment.IsDevelopment()) or similar methods to apply settings or
-           middleware based on the environment.</li>
+middleware based on the environment.</li>
 </ul>
 
     <div class="code-block">
@@ -1564,22 +1560,20 @@ approach through the IHttpClientFactory interface. The factory handles the follo
         </button>
       </div>
       <pre><code class="language-csharp">if (app.Environment.IsDevelopment())
-                 {
-                  app.UseDeveloperExceptionPage();
-                 }
-   • Default Environments:</code></pre>
+{
+app.UseDeveloperExceptionPage();
+}</code></pre>
     </div>
   <ul>
+  <li>Default Environments:</li>
   <li>Development: Default for local development.</li>
-</ul>
-<ul>
   <li>Staging: Typically used for pre-production testing.</li>
   <li>Production: The live environment.</li>
   <li>Custom Environments: You can define and use your own environment names.</li>
   <li>Best Practices:</li>
   <li>Separate Configurations: Keep environment-specific settings in separate files.</li>
   <li>Tailor Middleware: Use different middleware pipelines for different environments
-           (e.g., enable DeveloperExceptionPage only in development).</li>
+(e.g., enable DeveloperExceptionPage only in development).</li>
   <li>Logging: Adjust logging levels based on the environment.</li>
   <li>Feature Flags: Use environment variables to toggle features on/off.</li>
 </ul>
@@ -1587,13 +1581,13 @@ approach through the IHttpClientFactory interface. The factory handles the follo
 <h2 id="interview-tips">Interview Tips</h2>
 <ul>
   <li>Explain the Why: Be able to articulate the reasons for using environments (configuration,
-      security, flexibility).</li>
+security, flexibility).</li>
   <li>Configuration: Show how you would use appsettings.{Environment}.json files to manage
-      environment-specific settings.</li>
+environment-specific settings.</li>
   <li>Middleware: Explain how you would customize middleware pipelines based on the
-      environment.</li>
+environment.</li>
   <li>Deployment: Discuss how you would set the environment variable when deploying to
-      different servers.</li>
+different servers.</li>
 </ul>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
@@ -1601,10 +1595,7 @@ approach through the IHttpClientFactory interface. The factory handles the follo
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
   <h3 id="configuration-settings">Configuration Settings</h3>
-<p>Configuration (or configuration settings) are the constant key/value pairs that are set at a common
-location and can be read from anywhere in the same application.
-Examples: connection strings, Client ID &amp; API keys to make REST-API calls, Domain names, Constant
-email addresses etc.</p>
+<p>Configuration (or configuration settings) are the constant key/value pairs that are set at a common location and can be read from anywhere in the same application. Examples: connection strings, Client ID &amp; API keys to make REST-API calls, Domain names, Constant email addresses etc.</p>
   <h3 id="configuration-sources">Configuration Sources</h3>
 <ol>
   <li><code>appsettings.json</code></li>
@@ -1627,12 +1618,7 @@ in <code>Program.cs</code>:</li>
       <pre><code class="language-csharp">app.Configuration</code></pre>
     </div>
     <h3 id="iconfiguration-1">IConfiguration</h3>
-<p>[string key]
-Gets or sets configuration value at the specified key.
-GetValue&lt;T&gt;(string key, object defaultValue)
-Gets the configuration value at the specified key; returns the default value if the key doesn&#39;t exists.</p>
-  <h3 id="iconfiguration-in-controller">IConfiguration in Controller</h3>
-<p>in Controller and other classes</p>
+<p>[string key] Gets or sets configuration value at the specified key. GetValue&lt;T&gt;(string key, object defaultValue) Gets the configuration value at the specified key; returns the default value if the key doesn&#39;t exists. IConfiguration in Controller in Controller and other classes</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1646,15 +1632,15 @@ Gets the configuration value at the specified key; returns the default value if 
 using Microsoft.Extensions.Configuration;
 public class ControllerName : Controller
 {
- private readonly IConfiguration _configuration;
- public ControllerName(IConfiguration configuration)
- {
- _configuration = configuration;
- }
+private readonly IConfiguration _configuration;
+public ControllerName(IConfiguration configuration)
+{
+_configuration = configuration;
+}
 }</code></pre>
     </div>
-    <h3 id="hierarchical-configuration-1">Hierarchical Configuration</h3>
-<p>in <code>appsettings.json</code></p>
+  <p>Hierarchical Configuration</p>
+  <h3 id="in-appsettingsjson">in appsettings.json</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1667,30 +1653,22 @@ public class ControllerName : Controller
       <pre><code class="language-json">{
 &quot;MasterKey&quot;:
 {
- &quot;Key1&quot;: &quot;value&quot;
- &quot;Key2&quot;: &quot;value&quot;
+&quot;Key1&quot;: &quot;value&quot;
+&quot;Key2&quot;: &quot;value&quot;
 }
 }</code></pre>
     </div>
-  <p>to read configuration
-Configuration[&quot;MasterKey:Key1&quot;]
-IConfiguration.GetSection(string key)
-Returns an IConfigurationSection based on the specified key.</p>
+  <p>To read configuration Configuration[&quot;MasterKey:Key1&quot;]</p>
+  <h3 id="iconfigurationgetsectionstring-key">IConfiguration.GetSection(string key)</h3>
+<p>Returns an IConfigurationSection based on the specified key.</p>
   <h3 id="options-pattern-1">Options Pattern</h3>
-<p>Options pattern uses custom classes to specify what configuration settings are to be loaded into
-properties.</p>
-<p>Examples: Reading the specific connections strings out of many configuration settings.
-The option class should be a non-abstract class with a public parameterless constructor.
-Public read-write properties are bound.
-Fields are not bound.
-IConfiguration.GetSection(string key)
-Returns an IConfigurationSection based on the specified key.
-IConfiguration.Bind(object instance) and IConfiguration.Get&lt;T&gt;()
-Binds (loads) configuration key/value pairs into a new object of the specified type.</p>
+<p>Options pattern uses custom classes to specify what configuration settings are to be loaded into properties.</p>
+<p>Examples: Reading the specific connections strings out of many configuration settings. The option class should be a non-abstract class with a public parameterless constructor. Public read-write properties are bound. Fields are not bound.</p>
+  <h3 id="iconfigurationgetsectionstring-key-1">IConfiguration.GetSection(string key)</h3>
+<p>Returns an IConfigurationSection based on the specified key. IConfiguration.Bind(object instance) and IConfiguration.Get&lt;T&gt;() Binds (loads) configuration key/value pairs into a new object of the specified type.</p>
   <h3 id="configuration-as-service">Configuration as Service</h3>
   <h3 id="inject-configuration-as-service">Inject Configuration as Service</h3>
-  <h3 id="add-configuration-as-service">Add Configuration as Service</h3>
-<p>in <code>Program.cs</code>:</p>
+<p>Add Configuration as Service in <code>Program.cs</code>:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1716,33 +1694,45 @@ Binds (loads) configuration key/value pairs into a new object of the specified t
 using Microsoft.Extensions.Options;
 public class ControllerName : Controller
 {
- private readonly Model _options;
- public ControllerName(IOptions&lt;Model&gt; options)
- {
- _options = options.Value;
- }
+private readonly Model _options;
+public ControllerName(IOptions&lt;Model&gt; options)
+{
+_options = options.Value;
+}
 }</code></pre>
     </div>
-  <p>Environment Specific Configuration</p>
-  <h3 id="order-of-precedence-of-configuration-sources">Order of Precedence of Configuration Sources</h3>
+  <p>Environment Specific Configuration Order of Precedence of Configuration Sources</p>
   <h3 id="secrets-manager">Secrets Manager</h3>
-<p>The &#39;secrets manager &#39; stores the user secrets (sensitive configuration data) in a separate location on
-the developer machine.
-Enable Secrets Manager in &quot;Windows PowerShell&quot; / &quot;Developer PowerShell in VS&quot;
-dotnet user-secrets init
+<p>The &#39;secrets manager &#39; stores the user secrets (sensitive configuration data) in a separate location on the developer machine. Enable Secrets Manager in &quot;Windows PowerShell&quot; / &quot;Developer PowerShell in VS&quot;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">CLI</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-bash">dotnet user-secrets init
 dotnet user-secrets set &quot;Key&quot; &quot;Value&quot;
-dotnet user-secrets list</p>
-  <h3 id="environment-variables-configuration">Environment Variables Configuration</h3>
-<p>You can set configuration values as in-process environment variables.</p>
-  <h3 id="set-configuration-as-environment-variables">Set Configuration as Environment Variables</h3>
-<p>in &quot;Windows PowerShell&quot; / &quot;Developer PowerShell in VS&quot;:
-$Env:ParentKey__ChildKey=&quot;value&quot;
-dotnet run --no-launch-profile
-It is one of the most secured way of setting-up sensitive values in configuration.
-__ (underscore and underscore) is the separator between parent key and child key.</p>
+dotnet user-secrets list</code></pre>
+    </div>
+    <h3 id="environment-variables-configuration">Environment Variables Configuration</h3>
+<p>You can set configuration values as in-process environment variables. Set Configuration as Environment Variables in &quot;Windows PowerShell&quot; / &quot;Developer PowerShell in VS&quot;: $Env:ParentKey__ChildKey=&quot;value&quot;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">CLI</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-bash">dotnet run --no-launch-profile</code></pre>
+    </div>
+  <p>It is one of the most secured way of setting-up sensitive values in configuration. __ (underscore and underscore) is the separator between parent key and child key.</p>
   <h3 id="custom-json-configuration">Custom Json Configuration</h3>
-  <h3 id="add-custom-json-file-as-configuration-source">Add Custom Json file as Configuration Source</h3>
-<p>in <code>Program.cs</code>:</p>
+<p>Add Custom Json file as Configuration Source in <code>Program.cs</code>:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1753,23 +1743,20 @@ __ (underscore and underscore) is the separator between parent key and child key
         </button>
       </div>
       <pre><code class="language-csharp">builder.Host.ConfigureAppConfiguration( (hostingContext, config) =&gt; {
-  config.AddJsonFile(&quot;filename.json&quot;, optional: true, reloadOnChange: true);
+config.AddJsonFile(&quot;filename.json&quot;, optional: true, reloadOnChange: true);
 });</code></pre>
     </div>
-  <p>Http Client
-HttpClient is a class for sending HTTP requests to a specific HTTP resource (using its URL) and
-receiving HTTP responses from the same.
-Examples: Making a request to a third-party weather API, ChatGPT etc.</p>
+  <p>Http Client HttpClient is a class for sending HTTP requests to a specific HTTP resource (using its URL) and receiving HTTP responses from the same. Examples: Making a request to a third-party weather API, ChatGPT etc.</p>
   <h3 id="ihttpclientfactory">IHttpClientFactory</h3>
-<p>IHttpClientFactory is an interface that provides a method called CreateClient() that creates a new
-instance of HttpClient class and also automatically disposes the same instance (closes the
-connection) immediately after usage.</p>
+<p>IHttpClientFactory is an interface that provides a method called CreateClient() that creates a new instance of HttpClient class and also automatically disposes the same instance (closes the connection) immediately after usage.</p>
   <h3 id="httpclient-1">HttpClient</h3>
   <h3 id="properties">Properties</h3>
 <ul>
   <li>BaseAddress</li>
-  <li>DefaultRequestHeaders
-Methods</li>
+  <li>DefaultRequestHeaders</li>
+</ul>
+  <h3 id="methods">Methods</h3>
+<ul>
   <li>GetAsync()</li>
   <li>PostAsync()</li>
   <li>PutAsync()</li>
@@ -1820,6 +1807,10 @@ Methods</li>
       <ul class="toc-list">
         
         <li class="toc-item">
+          <a href="#aspnet-core-configuration" class="toc-link">ASP.NET Core Configuration</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#core-concepts" class="toc-link">Core Concepts</a>
         </li>
       
@@ -1832,7 +1823,7 @@ Methods</li>
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices" class="toc-link">Best Practices</a>
+          <a href="#best-practices" class="toc-link toc-sub">Best Practices</a>
         </li>
       
         <li class="toc-item">
@@ -1848,7 +1839,11 @@ Methods</li>
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices-1" class="toc-link">Best Practices</a>
+          <a href="#best-practices-1" class="toc-link toc-sub">Best Practices</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#example-options-pattern" class="toc-link toc-sub">Example: Options Pattern</a>
         </li>
       
         <li class="toc-item">
@@ -1860,7 +1855,7 @@ Methods</li>
         </li>
       
         <li class="toc-item">
-          <a href="#code-examples" class="toc-link">Code Examples</a>
+          <a href="#example-options-pattern-1" class="toc-link toc-sub">Example: Options Pattern</a>
         </li>
       
         <li class="toc-item">
@@ -1880,11 +1875,35 @@ Methods</li>
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices-2" class="toc-link">Best Practices</a>
+          <a href="#example-options-pattern-with-getsection-and-bind" class="toc-link toc-sub">Example: Options Pattern with GetSection and Bind</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#example-overriding-connection-strings" class="toc-link toc-sub">Example: Overriding Connection Strings</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#best-practices-2" class="toc-link toc-sub">Best Practices</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#secrets-management-in-aspnet-core" class="toc-link">Secrets Management in ASP.NET Core</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#secrets-manager-your-digital-vault" class="toc-link">Secrets Manager: Your Digital Vault</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#user-secrets-keeping-development-secrets-safe" class="toc-link">User Secrets: Keeping Development Secrets Safe</a>
         </li>
       
         <li class="toc-item">
           <a href="#how-to-set-user-secrets-using-the-dotnet-command" class="toc-link">How to Set User Secrets Using the dotnet Command</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#example-storing-an-api-key-as-a-user-secret" class="toc-link toc-sub">Example: Storing an API Key as a User Secret</a>
         </li>
       
         <li class="toc-item">
@@ -1904,11 +1923,7 @@ Methods</li>
         </li>
       
         <li class="toc-item">
-          <a href="#command-prompt-windows" class="toc-link">Command Prompt (Windows)</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#bash-macos-linux" class="toc-link">Bash (macOS, Linux)</a>
+          <a href="#example-setting-a-database-connection-string" class="toc-link toc-sub">Example: Setting a Database Connection String</a>
         </li>
       
         <li class="toc-item">
@@ -1924,11 +1939,7 @@ Methods</li>
         </li>
       
         <li class="toc-item">
-          <a href="#command-prompt-windows-1" class="toc-link">Command Prompt (Windows)</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#bash-macos-linux-1" class="toc-link">Bash (macOS, Linux)</a>
+          <a href="#example-setting-a-database-connection-string-1" class="toc-link toc-sub">Example: Setting a Database Connection String</a>
         </li>
       
         <li class="toc-item">
@@ -1940,11 +1951,23 @@ Methods</li>
         </li>
       
         <li class="toc-item">
+          <a href="#accessing-custom-configuration-values" class="toc-link">Accessing Custom Configuration Values</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#example-options-pattern-with-custom-json-file" class="toc-link toc-sub">Example: Options Pattern with Custom JSON File</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#httpclient" class="toc-link">HttpClient</a>
         </li>
       
         <li class="toc-item">
           <a href="#key-features-of-httpclient" class="toc-link">Key Features of HttpClient</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#using-httpclient-in-aspnet-core" class="toc-link">Using HttpClient in ASP.NET Core</a>
         </li>
       
         <li class="toc-item">
@@ -1956,11 +1979,11 @@ Methods</li>
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices-3" class="toc-link">Best Practices</a>
+          <a href="#best-practices-3" class="toc-link toc-sub">Best Practices</a>
         </li>
       
         <li class="toc-item">
-          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+          <a href="#key-points-to-remember" class="toc-link toc-sub">Key Points to Remember</a>
         </li>
       
         <li class="toc-item">

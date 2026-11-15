@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -400,9 +410,7 @@
       <article class="docs-content">
         
 <h2 id="view-components">View Components</h2>
-<p>View Components are self-contained, reusable UI building blocks in ASP.NET Core MVC. They are
-designed to encapsulate rendering logic that&#39;s more complex than what you&#39;d typically put in a
-partial view but doesn&#39;t warrant the complexity of a full controller and view.</p>
+<p>View Components are self-contained, reusable UI building blocks in ASP.NET Core MVC. They are designed to encapsulate rendering logic that&#39;s more complex than what you&#39;d typically put in a partial view but doesn&#39;t warrant the complexity of a full controller and view.</p>
 
 <h2 id="purpose">Purpose</h2>
 <ul>
@@ -410,57 +418,56 @@ partial view but doesn&#39;t warrant the complexity of a full controller and vie
   <li>Reusability: Use View Components across multiple views to avoid code duplication.</li>
   <li>Testability: Easier to unit test View Components due to their self-contained nature.</li>
   <li>Rendering Logic: Ideal for dynamic widgets, navigation menus, login forms, shopping cart
-      summaries, or any UI element that involves fetching data or performing logic before
-      rendering.</li>
+summaries, or any UI element that involves fetching data or performing logic before
+rendering.</li>
 </ul>
 
-<h2 id="best-practices">Best Practices</h2>
+<h3 id="best-practices">Best Practices</h3>
 <ul>
   <li>Naming: View Component classes should end with the suffix ViewComponent (e.g.,
-      ProductListViewComponent).</li>
+ProductListViewComponent).</li>
   <li>Structure: Place View Components in the ViewComponents folder. The associated view file
-      should be placed in Views/Shared/Components/{ViewComponent Name}/{View
-      Name}.cshtml.</li>
+should be placed in Views/Shared/Components/{ViewComponent Name}/{View
+Name}.cshtml.</li>
   <li>Data: Pass data to the View Component using a strongly typed model or view model.</li>
   <li>Asynchronous: Use asynchronous methods (InvokeAsync) to avoid blocking threads when
-      performing data access or other I/O operations.</li>
+performing data access or other I/O operations.</li>
   <li>Simplicity: Keep the View Component&#39;s logic focused on rendering the UI element. Avoid
-      complex business logic within the component.</li>
+complex business logic within the component.</li>
 </ul>
 
 <h2 id="things-to-avoid">Things to Avoid</h2>
 <ul>
   <li>Overuse: Don&#39;t use View Components for simple UI elements that can be handled by partial
-      views.</li>
+views.</li>
   <li>Tight Coupling: Avoid tightly coupling View Components to specific controllers or actions.
-      Make them reusable across different parts of your application.</li>
+Make them reusable across different parts of your application.</li>
   <li>Complex Logic: View Components should not be responsible for handling business logic.
-      Instead, delegate that to your models or services.</li>
+Instead, delegate that to your models or services.</li>
   <li>Direct Database Access: Avoid directly accessing your database from within a View
-      Component. Use services for data access.</li>
+Component. Use services for data access.</li>
 </ul>
 
 <h2 id="when-to-use-view-components">When to Use View Components</h2>
 <ul>
   <li>Complex UI Elements: When a UI element requires more complex rendering logic than a
-      simple partial view.</li>
+simple partial view.</li>
   <li>Data-Driven Elements: When you need to fetch data or perform some computation before
-      rendering the UI element.</li>
+rendering the UI element.</li>
   <li>Reusable Widgets: When you want to create a reusable widget that can be used in different
-      parts of your application.</li>
+parts of your application.</li>
 </ul>
 
 <h2 id="how-to-implement-view-components">How to Implement View Components</h2>
 <ol>
   <li>Create a View Component Class: Derive from ViewComponent and implement an Invoke or
-      InvokeAsync method.</li>
+InvokeAsync method.</li>
   <li>Create a View: Create a Razor view file (.cshtml) within the
-      Views/Shared/Components/{ViewComponent Name} folder.</li>
+Views/Shared/Components/{ViewComponent Name} folder.</li>
   <li>Invoke in Your View: Use the @await Component.InvokeAsync(&quot;ViewComponent Name&quot;,
-      arguments) helper in your main view to render the View Component.</li>
+arguments) helper in your main view to render the View Component.</li>
 </ol>
-
-<h2 id="code">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -474,22 +481,22 @@ partial view but doesn&#39;t warrant the complexity of a full controller and vie
 )
 public class GridViewComponent : ViewComponent
 {
-  public async Task&lt;IViewComponentResult&gt; InvokeAsync()
-  {
+public async Task&lt;IViewComponentResult&gt; InvokeAsync()
+{
 // Data for the view component (could come from a database, service, etc.
 )
-   PersonGridModel model = new PersonGridModel()
-   {
-     GridTitle = &quot;Persons List&quot;,
-     Persons = new List&lt;Person&gt;()
-     {
-      new Person() { PersonName = &quot;John&quot;, JobTitle = &quot;Manager&quot; },
-      // more people
-     }
-   };
-   // ViewBag is not ideal; prefer using a strongly typed model
-   ViewData[&quot;Grid&quot;] = model;
-   return View(&quot;Sample&quot;); // This will look for the view in
+PersonGridModel model = new PersonGridModel()
+{
+GridTitle = &quot;Persons List&quot;,
+Persons = new List&lt;Person&gt;()
+{
+new Person() { PersonName = &quot;John&quot;, JobTitle = &quot;Manager&quot; },
+// more people
+}
+};
+// ViewBag is not ideal; prefer using a strongly typed model
+ViewData[&quot;Grid&quot;] = model;
+return View(&quot;Sample&quot;); // This will look for the view in
 }
 }</code></pre>
     </div>
@@ -518,15 +525,13 @@ public class GridViewComponent : ViewComponent
       </div>
       <pre><code class="language-csharp">// Views/Home/About.cshtml</code></pre>
     </div>
-  <p>@await Component.InvokeAsync(&quot;Grid&quot;)
-&lt;vc:grid&gt;&lt;/vc:grid&gt; // alternative syntax (not preferred, as it is not strongly typed)
-Explanation:</p>
+  <p>@await Component.InvokeAsync(&quot;Grid&quot;) &lt;vc:grid&gt;&lt;/vc:grid&gt; // alternative syntax (not preferred, as it is not strongly typed) Explanation:</p>
 <ul>
   <li>The GridViewComponent class is a view component that fetches a list of people and passes it
-      to the &quot;Sample&quot; partial view along with a grid title using ViewBag.</li>
+to the &quot;Sample&quot; partial view along with a grid title using ViewBag.</li>
   <li>Views/Home/Index.cshtml and Views/Home/About.cshtml invoke the Grid view component
-      using @await Component.InvokeAsync(&quot;Grid&quot;) (or, less ideally, the vc:grid tag helper),
-      rendering the person list in a grid format.</li>
+using @await Component.InvokeAsync(&quot;Grid&quot;) (or, less ideally, the vc:grid tag helper),
+rendering the person list in a grid format.</li>
 </ul>
 
 <h2 id="notes">Notes</h2>
@@ -534,7 +539,7 @@ Explanation:</p>
   <li>Purpose: Encapsulate complex, reusable UI rendering logic.</li>
   <li>Naming: ViewComponent classes end with ViewComponent.</li>
   <li>Location: ViewComponents folder for classes, Views/Shared/Components/{ViewComponent
-      Name} for views.</li>
+Name} for views.</li>
   <li>Data Passing: Use strongly typed models or view models (preferable over ViewBag).</li>
   <li>Rendering: @await Component.InvokeAsync(&quot;ViewComponent Name&quot;, arguments)</li>
 </ul>
@@ -552,36 +557,33 @@ Explanation:</p>
       </div>
       <pre><code class="language-csharp">class using the @model directive. This model class, often referred to as a &quot;view model,&quot; provides a</code></pre>
     </div>
-  <p>structured way to pass data from the view component to its corresponding view. The primary
-benefit is enhanced type safety and improved code maintainability.</p>
+  <p>Structured way to pass data from the view component to its corresponding view. The primary benefit is enhanced type safety and improved code maintainability.</p>
 
 <h2 id="benefits-of-strongly-typed-view-components">Benefits of Strongly Typed View Components</h2>
 <ul>
   <li>Type Safety: Catches errors during development due to mismatched data types or property
-      names, as the Razor engine enforces type checking based on your model class.</li>
+names, as the Razor engine enforces type checking based on your model class.</li>
   <li>IntelliSense: Enhances productivity by providing code completion and suggestions for model
-      properties directly within the Razor view. This leads to fewer typos and faster development.</li>
+properties directly within the Razor view. This leads to fewer typos and faster development.</li>
   <li>Refactoring: Simplifies the process of updating views when your model changes. Since the
-      view is strongly typed, renaming or modifying properties in the model will automatically
-      update the references in the view.</li>
+view is strongly typed, renaming or modifying properties in the model will automatically
+update the references in the view.</li>
   <li>Clarity and Readability: Makes your code more self-documenting by clearly defining the
-      data structure expected by the view component.</li>
+data structure expected by the view component.</li>
 </ul>
 
 <h2 id="how-to-implement-strongly-typed-view-components">How to Implement Strongly Typed View Components</h2>
 <ol>
   <li>Create a View Model: Define a class that represents the data you want to pass to your view
-      component. This class should contain all the necessary properties that the view component
-      will use to render its output.</li>
+component. This class should contain all the necessary properties that the view component
+will use to render its output.</li>
   <li>Use @model in the View: In your view component&#39;s Razor view file (e.g., Default.cshtml),
-      use the @model directive to specify the view model class.</li>
+use the @model directive to specify the view model class.</li>
   <li>Return the Model from InvokeAsync: In your view component&#39;s InvokeAsync method,
-      create an instance of your view model, populate it with the required data, and return it
-      using View(model).</li>
+create an instance of your view model, populate it with the required data, and return it
+using View(model).</li>
 </ol>
-
-<h2 id="code-1">Code</h2>
-<p>PersonGridModel.cs (View Model)</p>
+<p>Code PersonGridModel.cs (View Model)</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -593,12 +595,13 @@ benefit is enhanced type safety and improved code maintainability.</p>
       </div>
       <pre><code class="language-csharp">public class PersonGridModel
 {
-  public string GridTitle { get; set; }
-  public List&lt;Person&gt; Persons { get; set; }
+public string GridTitle { get; set; }
+public List&lt;Person&gt; Persons { get; set; }
 }</code></pre>
     </div>
-  <p>This model will be used to represent the data passed from the view component to the view.
-GridViewComponent.cs</p>
+  <p>This model will be used to represent the data passed from the view component to the view.</p>
+
+<h2 id="gridviewcomponentcs">GridViewComponent.cs</h2>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -611,24 +614,24 @@ GridViewComponent.cs</p>
       <pre><code class="language-csharp">// ViewComponent
 public class GridViewComponent : ViewComponent
 {
-  public async Task&lt;IViewComponentResult&gt; InvokeAsync()
-  {
-   PersonGridModel personGridModel = new PersonGridModel()
-   {
-     GridTitle = &quot;Persons List&quot;,
-     Persons = new List&lt;Person&gt;() {
-      new Person() { PersonName = &quot;John&quot;, JobTitle = &quot;Manager&quot; },
-      new Person() { PersonName = &quot;Jones&quot;, JobTitle = &quot;Asst. Manager&quot; },
-      new Person() { PersonName = &quot;William&quot;, JobTitle = &quot;Clerk&quot; },
-     }
-   };
-   return View(&quot;Sample&quot;, personGridModel);
-  }
+public async Task&lt;IViewComponentResult&gt; InvokeAsync()
+{
+PersonGridModel personGridModel = new PersonGridModel()
+{
+GridTitle = &quot;Persons List&quot;,
+Persons = new List&lt;Person&gt;() {
+new Person() { PersonName = &quot;John&quot;, JobTitle = &quot;Manager&quot; },
+new Person() { PersonName = &quot;Jones&quot;, JobTitle = &quot;Asst. Manager&quot; },
+new Person() { PersonName = &quot;William&quot;, JobTitle = &quot;Clerk&quot; },
+}
+};
+return View(&quot;Sample&quot;, personGridModel);
+}
 }</code></pre>
     </div>
-  <p>The method now creates a PersonGridModel object, populates it, and passes it as the second
-argument of the View() method.
-Views/Shared/Components/Grid/Sample.cshtml</p>
+  <p>The method now creates a PersonGridModel object, populates it, and passes it as the second argument of the View() method.</p>
+
+<h2 id="viewssharedcomponentsgridsamplecshtml">Views/Shared/Components/Grid/Sample.cshtml</h2>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -640,8 +643,8 @@ Views/Shared/Components/Grid/Sample.cshtml</p>
       </div>
       <pre><code class="language-csharp">@model PersonGridModel
 &lt;div class=&quot;box&quot;&gt;
-  &lt;h3&gt;@Model.GridTitle&lt;/h3&gt;
-  &lt;table class=&quot;table w-100&quot;&gt;</code></pre>
+&lt;h3&gt;@Model.GridTitle&lt;/h3&gt;
+&lt;table class=&quot;table w-100&quot;&gt;</code></pre>
     </div>
   <p>&lt;thead&gt;</p>
 
@@ -654,12 +657,11 @@ Views/Shared/Components/Grid/Sample.cshtml</p>
         </button>
       </div>
       <pre><code class="language-razor">&lt;tr&gt;
-      &lt;th&gt;Sl. No&lt;/th&gt;
-      &lt;th&gt;Name&lt;/th&gt;
-     &lt;/tr&gt;</code></pre>
+&lt;th&gt;Sl. No&lt;/th&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;/tr&gt;</code></pre>
     </div>
-  <p>&lt;/thead&gt;
-   &lt;tbody&gt;</p>
+  <p>&lt;/thead&gt; &lt;tbody&gt;</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -670,12 +672,12 @@ Views/Shared/Components/Grid/Sample.cshtml</p>
         </button>
       </div>
       <pre><code class="language-csharp">@foreach (Person person in Model.Persons)
-     {
-      &lt;tr&gt;
-        &lt;td&gt;@person.PersonName&lt;/td&gt;
-        &lt;td&gt;@person.JobTitle&lt;/td&gt;
-      &lt;/tr&gt;
-     }</code></pre>
+{
+&lt;tr&gt;
+&lt;td&gt;@person.PersonName&lt;/td&gt;
+&lt;td&gt;@person.JobTitle&lt;/td&gt;
+&lt;/tr&gt;
+}</code></pre>
     </div>
   <p>&lt;/tbody&gt;</p>
 
@@ -691,47 +693,38 @@ Views/Shared/Components/Grid/Sample.cshtml</p>
 &lt;/div&gt;</code></pre>
     </div>
   <ul>
-  <li>@model PersonGridModel: This specifies that the view is strongly typed and expects an</li>
-  <li>bject of type PersonGridModel.</li>
-</ul>
-<ul>
+  <li>@model PersonGridModel: This specifies that the view is strongly typed and expects an
+object of type PersonGridModel.</li>
   <li>Accessing Properties: The view directly accesses properties of the Model object like
-      Model.GridTitle and Model.Persons.</li>
+Model.GridTitle and Model.Persons.</li>
 </ul>
 
 <h2 id="notes-1">Notes</h2>
 <ul>
   <li>Strongly Typed: Use @model in the view component&#39;s view file to specify the view model
-      type.</li>
+type.</li>
   <li>Pass the Model: Pass an instance of your view model class when returning the view from the
-      InvokeAsync method: return View(&quot;ViewName&quot;, model);</li>
+InvokeAsync method: return View(&quot;ViewName&quot;, model);</li>
   <li>Naming: View components should be named with the suffix &quot;ViewComponent&quot; (e.g.,
-      ProductListViewComponent).</li>
+ProductListViewComponent).</li>
   <li>Location: View component classes go in a ViewComponents folder, and their associated
-      views go in Views/Shared/Components/{ViewComponent Name}/.</li>
+views go in Views/Shared/Components/{ViewComponent Name}/.</li>
 </ul>
 
 <h2 id="view-components-with-parameters">View Components with Parameters</h2>
-<p>While view components can function without parameters, passing parameters to them significantly</p>
-<p>enhances their flexibility and reusability. Parameters allow you to customize the behavior and</p>
-<ul>
-  <li>utput of a view component based on data provided by the calling view or controller. This makes</li>
-</ul>
-<p>view components more dynamic and adaptable to different scenarios within your application.</p>
+<p>While view components can function without parameters, passing parameters to them significantly enhances their flexibility and reusability. Parameters allow you to customize the behavior and output of a view component based on data provided by the calling view or controller. This makes view components more dynamic and adaptable to different scenarios within your application.</p>
 
 <h2 id="how-to-pass-parameters-to-view-components">How to Pass Parameters to View Components</h2>
 <ol>
   <li>Define Parameters in InvokeAsync: In your view component class, define the parameters
-      that you want to receive within the InvokeAsync (or Invoke) method. These parameters will
-      become part of the method&#39;s signature.</li>
+that you want to receive within the InvokeAsync (or Invoke) method. These parameters will
+become part of the method&#39;s signature.</li>
   <li>Pass Arguments When Invoking: When invoking the view component using @await
-      Component.InvokeAsync(&quot;ViewComponent Name&quot;, arguments) or the &lt;vc:grid&gt; tag helper,
-      pass an anonymous object containing the parameter values. The property names in the
-      anonymous object must match the parameter names in the InvokeAsync method.</li>
+Component.InvokeAsync(&quot;ViewComponent Name&quot;, arguments) or the &lt;vc:grid&gt; tag helper,
+pass an anonymous object containing the parameter values. The property names in the
+anonymous object must match the parameter names in the InvokeAsync method.</li>
 </ol>
-
-<h2 id="code-2">Code</h2>
-<p>GridViewComponent.cs</p>
+<p>Code GridViewComponent.cs</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -743,15 +736,15 @@ Views/Shared/Components/Grid/Sample.cshtml</p>
       </div>
       <pre><code class="language-csharp">public class GridViewComponent : ViewComponent
 {
-  public async Task&lt;IViewComponentResult&gt; InvokeAsync(PersonGridModel grid)
-  {
-   return View(&quot;Sample&quot;, grid);
-  }
+public async Task&lt;IViewComponentResult&gt; InvokeAsync(PersonGridModel grid)
+{
+return View(&quot;Sample&quot;, grid);
+}
 }</code></pre>
     </div>
-  <p>Parameter: The InvokeAsync method now takes a parameter of type PersonGridModel. This means
-the view component expects to receive a model containing grid data when it&#39;s invoked.
-Views/Home/Index.cshtml</p>
+  <p>Parameter: The InvokeAsync method now takes a parameter of type PersonGridModel. This means the view component expects to receive a model containing grid data when it&#39;s invoked.</p>
+
+<h2 id="viewshomeindexcshtml">Views/Home/Index.cshtml</h2>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -762,7 +755,7 @@ Views/Home/Index.cshtml</p>
         </button>
       </div>
       <pre><code class="language-csharp">@{
-  PersonGridModel personGridModel = new PersonGridModel() { /* ... (data initialization) ... */ };
+PersonGridModel personGridModel = new PersonGridModel() { /* ... (data initialization) ... */ };
 }</code></pre>
     </div>
   <p>@await Component.InvokeAsync(&quot;Grid&quot;, new { grid = personGridModel })</p>
@@ -776,14 +769,13 @@ Views/Home/Index.cshtml</p>
         </button>
       </div>
       <pre><code class="language-csharp">@{
-  PersonGridModel personGridModel2 = new PersonGridModel() { /* ... (different data initialization)
+PersonGridModel personGridModel2 = new PersonGridModel() { /* ... (different data initialization)
 ... */ };
 }</code></pre>
     </div>
-  <p>@await Component.InvokeAsync(&quot;Grid&quot;, new { grid = personGridModel2 })
-Two instances of PersonGridModel are created and passed as an argument to the view component
-when invoking it.
-Views/Home/About.cshtml</p>
+  <p>@await Component.InvokeAsync(&quot;Grid&quot;, new { grid = personGridModel2 }) Two instances of PersonGridModel are created and passed as an argument to the view component when invoking it.</p>
+
+<h2 id="viewshomeaboutcshtml">Views/Home/About.cshtml</h2>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -794,58 +786,54 @@ Views/Home/About.cshtml</p>
         </button>
       </div>
       <pre><code class="language-csharp">@{
-  PersonGridModel personGridModel = new PersonGridModel() { /* ... (data initialization) ... */ };
+PersonGridModel personGridModel = new PersonGridModel() { /* ... (data initialization) ... */ };
 }</code></pre>
     </div>
   <p>&lt;vc:grid grid=&quot;personGridModel&quot;&gt;&lt;/vc:grid&gt;</p>
 <ul>
   <li>Tag Helper Usage: The &lt;vc:grid&gt; tag helper is used here to invoke the view component. The
-      grid attribute is set to the personGridModel, passing the model data to the view component.</li>
+grid attribute is set to the personGridModel, passing the model data to the view component.</li>
 </ul>
 
 <h2 id="benefits-of-strongly-typed-view-components-with-parameters">Benefits of Strongly Typed View Components with Parameters</h2>
 <ul>
   <li>Type Safety: Ensures that you pass the correct data types to the view component,
-      preventing runtime errors due to type mismatches.</li>
+preventing runtime errors due to type mismatches.</li>
   <li>IntelliSense: You get code completion suggestions for parameter names and model
-      properties, making development faster and more efficient.</li>
+properties, making development faster and more efficient.</li>
   <li>Flexibility: Customize the view component&#39;s behavior based on the provided parameters,
-      making it more adaptable to different scenarios.</li>
+making it more adaptable to different scenarios.</li>
   <li>Maintainability: Easier to refactor and modify the view component and its usage in your
-      views.</li>
+views.</li>
 </ul>
 
 <h2 id="notes-2">Notes</h2>
 <ul>
   <li>Define Parameters: Clearly define the parameters your view component expects in its
-      InvokeAsync method.</li>
+InvokeAsync method.</li>
   <li>Pass Parameters: When invoking the view component, pass an anonymous object with
-      properties matching the parameter names and types.</li>
+properties matching the parameter names and types.</li>
   <li>Strongly Typed: Use a view model (like PersonGridModel) to pass structured data to your
-      view component and benefit from type safety and IntelliSense.</li>
+view component and benefit from type safety and IntelliSense.</li>
 </ul>
 
 <h2 id="viewcomponentresult">ViewComponentResult</h2>
-<p>While view components are primarily invoked from within views, the ViewComponentResult class
-allows you to directly return a rendered view component from a controller action. This provides a
-powerful way to integrate view components with your MVC controller logic and leverage their
-reusable rendering capabilities.</p>
+<p>While view components are primarily invoked from within views, the ViewComponentResult class allows you to directly return a rendered view component from a controller action. This provides a powerful way to integrate view components with your MVC controller logic and leverage their reusable rendering capabilities.</p>
 
 <h2 id="purpose-1">Purpose</h2>
 <ul>
   <li>Dynamic View Component Loading: Use ViewComponentResult to load view components
-      on demand based on the controller&#39;s logic or data. This is particularly useful for rendering
-      complex UI elements that depend on specific data or conditions.</li>
+on demand based on the controller&#39;s logic or data. This is particularly useful for rendering
+complex UI elements that depend on specific data or conditions.</li>
   <li>Separation of Concerns: Keep your controller actions focused on handling requests and data
-      retrieval, while delegating the rendering of specific UI components to view components.</li>
+retrieval, while delegating the rendering of specific UI components to view components.</li>
   <li>API-like Endpoints: Create API-like endpoints that return HTML fragments (view
-      components) instead of JSON or XML data. This can be helpful for building hybrid
-      applications where you need to combine server-side rendering with client-side JavaScript.</li>
+components) instead of JSON or XML data. This can be helpful for building hybrid
+applications where you need to combine server-side rendering with client-side JavaScript.</li>
 </ul>
 
 <h2 id="creating-a-viewcomponentresult">Creating a ViewComponentResult</h2>
-<p>In your controller actions, you can return a ViewComponentResult using the ViewComponent()
-helper method:</p>
+<p>In your controller actions, you can return a ViewComponentResult using the ViewComponent() helper method:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -858,15 +846,12 @@ helper method:</p>
       <pre><code class="language-csharp">return ViewComponent(&quot;ViewComponent Name&quot;, arguments);</code></pre>
     </div>
   <ul>
-  <li>ViewComponent Name: The name of the view component you want to invoke. This should</li>
-</ul>
-<p>match the class name of your view component (without the &quot;ViewComponent&quot; suffix).</p>
-<ul>
+  <li>ViewComponent Name: The name of the view component you want to invoke. This should
+match the class name of your view component (without the &quot;ViewComponent&quot; suffix).</li>
   <li>arguments (Optional): An anonymous object containing the parameters you want to pass to
-      the view component&#39;s InvokeAsync method.</li>
+the view component&#39;s InvokeAsync method.</li>
 </ul>
-
-<h2 id="code-3">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -881,38 +866,38 @@ helper method:</p>
 [Route(&quot;friends-list&quot;)]
 public IActionResult LoadFriendsList()
 {
-  PersonGridModel personGridModel = new PersonGridModel()
-  {
-   GridTitle = &quot;Friends&quot;,
-   Persons = new List&lt;Person&gt;()
-   {
-     // ... (list of friends) ...
-   }
-  };
-  return ViewComponent(&quot;Grid&quot;, new { grid = personGridModel });
+PersonGridModel personGridModel = new PersonGridModel()
+{
+GridTitle = &quot;Friends&quot;,
+Persons = new List&lt;Person&gt;()
+{
+// ... (list of friends) ...
+}
+};
+return ViewComponent(&quot;Grid&quot;, new { grid = personGridModel });
 }</code></pre>
     </div>
   <p>In this code:</p>
 <ul>
   <li>1. Data Preparation: The personGridModel object is created and populated with data for the
-      list of friends.</li>
+list of friends.</li>
   <li>2. ViewComponentResult: The ViewComponent() method is used to return a
-      ViewComponentResult. It takes two arguments:</li>
+ViewComponentResult. It takes two arguments:</li>
   <li>&quot;Grid&quot;: This indicates that we want to invoke the GridViewComponent.</li>
   <li>new { grid = personGridModel }: This anonymous object passes the
-           personGridModel as the grid parameter to the InvokeAsync method of the
-           GridViewComponent.</li>
+personGridModel as the grid parameter to the InvokeAsync method of the
+GridViewComponent.</li>
 </ul>
 
 <h2 id="how-it-works">How It Works</h2>
 <ol>
   <li>Request: A request to /friends-list triggers the LoadFriendsList action.</li>
   <li>View Component Invocation: The ViewComponentResult returned from the action causes
-      ASP.NET Core MVC to locate and invoke the GridViewComponent.</li>
+ASP.NET Core MVC to locate and invoke the GridViewComponent.</li>
   <li>View Component Execution: The InvokeAsync method within the GridViewComponent
-      receives the personGridModel and uses it to render the &quot;Sample&quot; partial view.</li>
+receives the personGridModel and uses it to render the &quot;Sample&quot; partial view.</li>
   <li>Response: The rendered output of the GridViewComponent (the HTML for the grid of
-      friends) is returned as the HTTP response.</li>
+friends) is returned as the HTTP response.</li>
 </ol>
 
 <h2 id="notes-3">Notes</h2>
@@ -921,13 +906,14 @@ public IActionResult LoadFriendsList()
   <li>Flexibility: Load view components dynamically based on controller logic.</li>
   <li>API-Style Endpoints: Useful for creating endpoints that return HTML fragments.</li>
   <li>Syntax: Use ViewComponent(&quot;ViewComponent Name&quot;, arguments) to create a
-      ViewComponentResult.</li>
+ViewComponentResult.</li>
   <li>Parameters: Pass parameters to the view component using an anonymous object.</li>
 </ul>
 
-<h2 id="key-points-to-remember">Key Points to Remember</h2>
+<h3 id="key-points-to-remember">Key Points to Remember</h3>
+
+<h3 id="1-view-components-modular-ui-components">1. View Components: Modular UI Components</h3>
 <ul>
-  <li>1. View Components: Modular UI Components</li>
   <li>Purpose: Encapsulate reusable UI rendering logic more complex than partial views.</li>
   <li>Benefits:</li>
   <li>Modularization and reusability</li>
@@ -936,32 +922,45 @@ public IActionResult LoadFriendsList()
   <li>Structure:</li>
   <li>Class: Inherits from ViewComponent (e.g., ProductListViewComponent).</li>
   <li>View: Razor file in Views/Shared/Components/{ViewComponent Name}/{View
-           Name}.cshtml.</li>
-  <li>2. Methods</li>
+Name}.cshtml.</li>
+</ul>
+
+<h3 id="2-methods">2. Methods</h3>
+<ul>
   <li>Invoke or InvokeAsync: The main method for your component&#39;s logic.</li>
   <li>Returns IViewComponentResult.</li>
   <li>Can take parameters for customization.</li>
   <li>Use async for asynchronous operations.</li>
-  <li>3. Invoking View Components</li>
+</ul>
+
+<h3 id="3-invoking-view-components">3. Invoking View Components</h3>
+<ul>
   <li>In Views:</li>
   <li>@await Component.InvokeAsync(&quot;ViewComponent Name&quot;, arguments)</li>
   <li>&lt;vc:view-component-name&gt;&lt;/vc:view-component-name&gt; (Tag Helper syntax, less
-           preferred)</li>
+preferred)</li>
   <li>In Controllers:</li>
   <li>return ViewComponent(&quot;ViewComponent Name&quot;, arguments);</li>
-  <li>4. Strongly Typed View Components</li>
+</ul>
+
+<h3 id="4-strongly-typed-view-components">4. Strongly Typed View Components</h3>
+<ul>
   <li>Purpose: Pass data to the view using a strongly typed model.</li>
   <li>Benefits: Type safety, IntelliSense, better maintainability.</li>
   <li>How to Use:</li>
   <li>1. Create a view model class.</li>
   <li>2. Use @model YourViewModel in the view component&#39;s view file.</li>
   <li>3. Return the view model from InvokeAsync: return View(model);</li>
-  <li>5. Passing Parameters</li>
+</ul>
+
+<h3 id="5-passing-parameters">5. Passing Parameters</h3>
+<ul>
   <li>InvokeAsync Parameters: Define parameters in the InvokeAsync method signature.</li>
   <li>Invocation Arguments: Pass arguments as an anonymous object when invoking the
-      component.</li>
+component.</li>
 </ul>
-<h3>Example</h3>
+
+<h3 id="example">Example</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -974,14 +973,15 @@ public IActionResult LoadFriendsList()
       <pre><code class="language-csharp">// ViewComponent
 public async Task&lt;IViewComponentResult&gt; InvokeAsync(int categoryId)
 {
-  var products = _productService.GetProductsByCategory(categoryId);
-  return View(products);
+var products = _productService.GetProductsByCategory(categoryId);
+return View(products);
 }
 // View</code></pre>
     </div>
   <p>@await Component.InvokeAsync(&quot;ProductList&quot;, new { categoryId = 5 })</p>
+
+<h3 id="7-best-practices">7. Best Practices</h3>
 <ul>
-  <li>7. Best Practices</li>
   <li>Naming: Use the suffix &quot;ViewComponent&quot; for class names.</li>
   <li>Folder Structure:</li>
   <li>View components in the ViewComponents folder.</li>
@@ -990,11 +990,17 @@ public async Task&lt;IViewComponentResult&gt; InvokeAsync(int categoryId)
   <li>Async Operations: Use InvokeAsync for asynchronous tasks.</li>
   <li>Limit Logic: Keep logic focused on UI rendering, not business operations.</li>
   <li>Avoid Direct Database Access: Use services for data access.</li>
-  <li>8. Things to Avoid</li>
+</ul>
+
+<h3 id="8-things-to-avoid">8. Things to Avoid</h3>
+<ul>
   <li>Overuse: Don&#39;t use for simple UI elements.</li>
   <li>Tight Coupling: Keep them independent of specific controllers.</li>
   <li>Complex Logic: Avoid extensive business logic within components.</li>
-  <li>9. When to Use</li>
+</ul>
+
+<h3 id="9-when-to-use">9. When to Use</h3>
+<ul>
   <li>Complex UI Elements: When a partial view is not enough.</li>
   <li>Data-Driven Elements: Dynamic content based on data/logic.</li>
   <li>Reusable Widgets: To create reusable UI components.</li>
@@ -1005,42 +1011,28 @@ public async Task&lt;IViewComponentResult&gt; InvokeAsync(int categoryId)
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
   <h3 id="view-components-1">View Components</h3>
-<p>View Component is a combination of a class (derived from Microsoft.AspNetCore.ViewComponent)
-that supplied data, and a partial view to render that data.</p>
+<p>View Component is a combination of a class (derived from Microsoft.AspNetCore.ViewComponent) that supplied data, and a partial view to render that data.</p>
   <h3 id="invoking-view-component">Invoking View Component</h3>
-<p>@await Component.InvokeAsync(&quot;view component name&quot;);</p>
-<ul>
-  <li>r--</li>
-</ul>
-<p>&lt;vc:view-component-name /&gt;</p>
+<p>@await Component.InvokeAsync(&quot;view component name&quot;); --or-- &lt;vc:view-component-name /&gt;</p>
   <h3 id="view-components-2">View Components</h3>
 <ul>
   <li>View component renders a chunk rather than a whole response.</li>
   <li>Includes the same separation-of-concerns and testability benefits found with a controller
-      and view.</li>
+and view.</li>
   <li>Should be either suffixed with the word &quot;ViewComponent&quot; or should have
-      [ViewComponent] attribute.</li>
+[ViewComponent] attribute.</li>
   <li>Optionally, it can inherit from System.AspNetCore.Mvc.ViewComponent.</li>
 </ul>
   <h3 id="view-components-with-viewdata">View Components with ViewData</h3>
 <p>The ViewComponent class can share ViewData object to the ViewComponent view.</p>
   <h3 id="strongly-typed-viewcomponent">Strongly Typed ViewComponent</h3>
-<p>Strongly Typed ViewComponent&#39;s view is tightly bound to a specified model class.
-So, it gets all the benefits of a strongly typed view.</p>
+<p>Strongly Typed ViewComponent&#39;s view is tightly bound to a specified model class. So, it gets all the benefits of a strongly typed view.</p>
   <h3 id="viewcomponents-with-parameters">ViewComponents with Parameters</h3>
-<p>You can supply one or more parameters to the view component class.
-The parameters are received by InvokeAsync method of the view component class.
-All the parameters of view component are mandatory (must supply a value).</p>
+<p>You can supply one or more parameters to the view component class. The parameters are received by InvokeAsync method of the view component class. All the parameters of view component are mandatory (must supply a value).</p>
   <h3 id="invoking-viewcomponent-with-parameters">Invoking ViewComponent with parameters</h3>
-<p>@await Component.InvokeAsync(&quot;view component name&quot;, new { param = value });</p>
-<ul>
-  <li>r --</li>
-</ul>
-<p>&lt;vc:view-component-name param=&quot;value&quot; /&gt;</p>
+<p>@await Component.InvokeAsync(&quot;view component name&quot;, new { param = value }); -- or -- &lt;vc:view-component-name param=&quot;value&quot; /&gt;</p>
   <h3 id="viewcomponentresult-1">ViewComponentResult</h3>
-<p>ViewComponent can represent the content of a view component .
-Generally useful to fetch view component&#39;s content into the browser, by making an asynchronous
-request (XMLHttpRequest / fetch request) from the browser.</p>
+<p>ViewComponent can represent the content of a view component . Generally useful to fetch view component&#39;s content into the browser, by making an asynchronous request (XMLHttpRequest / fetch request) from the browser.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1119,7 +1111,7 @@ return ViewComponent(&quot;view component name&quot;, new { param1 = value, para
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices" class="toc-link">Best Practices</a>
+          <a href="#best-practices" class="toc-link toc-sub">Best Practices</a>
         </li>
       
         <li class="toc-item">
@@ -1132,10 +1124,6 @@ return ViewComponent(&quot;view component name&quot;, new { param1 = value, para
       
         <li class="toc-item">
           <a href="#how-to-implement-view-components" class="toc-link">How to Implement View Components</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#code" class="toc-link">Code</a>
         </li>
       
         <li class="toc-item">
@@ -1155,7 +1143,11 @@ return ViewComponent(&quot;view component name&quot;, new { param1 = value, para
         </li>
       
         <li class="toc-item">
-          <a href="#code-1" class="toc-link">Code</a>
+          <a href="#gridviewcomponentcs" class="toc-link">GridViewComponent.cs</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#viewssharedcomponentsgridsamplecshtml" class="toc-link">Views/Shared/Components/Grid/Sample.cshtml</a>
         </li>
       
         <li class="toc-item">
@@ -1171,7 +1163,11 @@ return ViewComponent(&quot;view component name&quot;, new { param1 = value, para
         </li>
       
         <li class="toc-item">
-          <a href="#code-2" class="toc-link">Code</a>
+          <a href="#viewshomeindexcshtml" class="toc-link">Views/Home/Index.cshtml</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#viewshomeaboutcshtml" class="toc-link">Views/Home/About.cshtml</a>
         </li>
       
         <li class="toc-item">
@@ -1195,10 +1191,6 @@ return ViewComponent(&quot;view component name&quot;, new { param1 = value, para
         </li>
       
         <li class="toc-item">
-          <a href="#code-3" class="toc-link">Code</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#how-it-works" class="toc-link">How It Works</a>
         </li>
       
@@ -1207,7 +1199,43 @@ return ViewComponent(&quot;view component name&quot;, new { param1 = value, para
         </li>
       
         <li class="toc-item">
-          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+          <a href="#key-points-to-remember" class="toc-link toc-sub">Key Points to Remember</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#1-view-components-modular-ui-components" class="toc-link toc-sub">1. View Components: Modular UI Components</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#2-methods" class="toc-link toc-sub">2. Methods</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#3-invoking-view-components" class="toc-link toc-sub">3. Invoking View Components</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#4-strongly-typed-view-components" class="toc-link toc-sub">4. Strongly Typed View Components</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#5-passing-parameters" class="toc-link toc-sub">5. Passing Parameters</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#example" class="toc-link toc-sub">Example</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#7-best-practices" class="toc-link toc-sub">7. Best Practices</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#8-things-to-avoid" class="toc-link toc-sub">8. Things to Avoid</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#9-when-to-use" class="toc-link toc-sub">9. When to Use</a>
         </li>
       
         <li class="toc-item">

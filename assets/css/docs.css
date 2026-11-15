@@ -1216,7 +1216,7 @@ tr:hover td {
 
 .modules-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 1.5rem;
   align-items: stretch;
   margin-bottom: 3rem;
@@ -1229,10 +1229,8 @@ tr:hover td {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  height: 100%;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
   position: relative;
-  overflow: hidden;
 }
 .module-card:hover {
   border-color: var(--accent-primary);
@@ -1259,7 +1257,6 @@ tr:hover td {
   color: var(--text-muted);
   margin-bottom: 1.25rem;
   line-height: 1.5;
-  flex: 1;
 }
 
 .module-sec-list {
@@ -1270,23 +1267,6 @@ tr:hover td {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  max-height: 185px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border-strong) transparent;
-}
-.module-sec-list::-webkit-scrollbar {
-  width: 5px;
-}
-.module-sec-list::-webkit-scrollbar-track {
-  background: transparent;
-}
-.module-sec-list::-webkit-scrollbar-thumb {
-  background: var(--border-strong);
-  border-radius: 4px;
-}
-.module-sec-list::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-primary);
 }
 
 /* Feature / Capstone Module Card (Spans full width) */

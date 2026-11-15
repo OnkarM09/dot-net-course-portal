@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -398,8 +408,7 @@
 
       <!-- Body Content -->
       <article class="docs-content">
-        
-<h2 id="installing-visual-studio-community-and-logging-in">Installing Visual Studio Community and Logging In</h2>
+        <p>Installing Visual Studio Community and Logging In</p>
 <ul>
   <li>1. Download Visual Studio Community:</li>
   <li>Go to Visual Studio Downloads.</li>
@@ -407,7 +416,7 @@
   <li>2. Install Visual Studio Community:</li>
   <li>Run the downloaded installer.</li>
   <li>Choose the required workloads (for ASP.NET Core development, select &quot;.NET
-           desktop development&quot; and &quot;ASP.NET and web development&quot;).</li>
+desktop development&quot; and &quot;ASP.NET and web development&quot;).</li>
   <li>Click &quot;Install&quot; and wait for the installation to complete.</li>
   <li>3. Create a New Outlook.com Email:</li>
   <li>Go to Outlook Sign Up.</li>
@@ -431,15 +440,15 @@
   <li>Go to Tools &gt; Options.</li>
   <li>Navigate to Environment &gt; General.</li>
   <li>Select your preferred theme from the &quot;Color theme&quot; dropdown (e.g., Dark, Light,
-           Blue).</li>
+Blue).</li>
   <li>3. Word Wrap:</li>
   <li>Go to Tools &gt; Options.</li>
   <li>Navigate to Text Editor &gt; All Languages.</li>
   <li>Check the box for Word wrap.</li>
 </ul>
-<p>These steps should get you started with Visual Studio Community and help you configure the
-environment to suit your preferences.
-Creating a New ASP.NET Core Empty Project</p>
+<p>These steps should get you started with Visual Studio Community and help you configure the environment to suit your preferences.</p>
+
+<h2 id="creating-a-new-aspnet-core-empty-project">Creating a New ASP.NET Core Empty Project</h2>
 <ul>
   <li>1. Open Visual Studio Community:</li>
   <li>Launch Visual Studio.</li>
@@ -458,8 +467,7 @@ Creating a New ASP.NET Core Empty Project</p>
   <li>Uncheck Enable Docker.</li>
   <li>Click Create.</li>
 </ul>
-
-<h2 id="explanation-of-the-code-in-detail">Explanation of the Code in Detail</h2>
+<p>Explanation of the Code in Detail</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -472,23 +480,21 @@ Creating a New ASP.NET Core Empty Project</p>
       <pre><code class="language-csharp">var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 app.MapGet(&quot;/&quot;, () =&gt; &quot;Hello World!&quot;);
-app.Run();
-   1. var builder = WebApplication.CreateBuilder(args);</code></pre>
+app.Run();</code></pre>
     </div>
   <ul>
+  <li>1. var builder = WebApplication.CreateBuilder(args);</li>
   <li>Purpose: Initializes a new instance of the WebApplicationBuilder class.</li>
-</ul>
-<ul>
   <li>Details:</li>
   <li>WebApplication.CreateBuilder(args):</li>
   <li>CreateBuilder is a static method that initializes a
-                      WebApplicationBuilder instance.</li>
+WebApplicationBuilder instance.</li>
   <li>args represents command-line arguments passed to the application.</li>
   <li>The builder sets up the default configuration, logging, and
-                      dependency injection (DI) services.</li>
+dependency injection (DI) services.</li>
   <li>Configuration:</li>
   <li>Reads configuration settings from various sources (e.g.,
-                      <code>appsettings.json</code>, environment variables).</li>
+<code>appsettings.json</code>, environment variables).</li>
   <li>Logging:</li>
   <li>Configures default logging services.</li>
   <li>Dependency Injection:</li>
@@ -499,29 +505,29 @@ app.Run();
   <li>builder.Build():</li>
   <li>Finalizes the app&#39;s configuration and prepares it for running.</li>
   <li>Compiles all middleware components added during the build
-                      process.</li>
+process.</li>
   <li>Creates the WebApplication object that will handle HTTP requests.</li>
   <li>3. app.<code>MapGet</code>(&quot;/&quot;, () =&gt; &quot;Hello World!&quot;);</li>
   <li>Purpose: Sets up a route that maps HTTP GET requests to a specific path (in this
-           case, the root URL).</li>
+case, the root URL).</li>
   <li>Details:</li>
   <li>app.<code>MapGet</code>:</li>
   <li>A convenience method to define a route that matches GET requests.</li>
   <li>&quot;/&quot; specifies the root URL path.</li>
   <li>() =&gt; &quot;Hello World!&quot; is a lambda expression that defines the
-                      response to be returned when the route is accessed.</li>
+response to be returned when the route is accessed.</li>
   <li>The lambda returns a plain string &quot;Hello World!&quot; which is sent as the
-                      HTTP response body.</li>
+HTTP response body.</li>
   <li>4. app.Run();</li>
   <li>Purpose: Runs the application.</li>
   <li>Details:</li>
   <li>app.Run():</li>
   <li>Starts the Kestrel web server (or the configured server) and begins
-                      listening for incoming HTTP requests.</li>
+listening for incoming HTTP requests.</li>
   <li>This is a blocking call that keeps the application running until it is
-                      manually stopped (e.g., via Ctrl+C in the console).</li>
+manually stopped (e.g., via Ctrl+C in the console).</li>
   <li>The application is now live and will respond to requests based on
-                      the configured routes and middleware.</li>
+the configured routes and middleware.</li>
 </ul>
 
 <h2 id="summary">Summary</h2>
@@ -530,7 +536,7 @@ app.Run();
   <li>WebApplication.CreateBuilder(args) sets up the application with default settings.</li>
   <li>builder.Build() finalizes the configuration and prepares the application.</li>
   <li>app.<code>MapGet</code>(&quot;/&quot;, () =&gt; &quot;Hello World!&quot;) maps a GET request to the root URL and returns
-      &quot;Hello World!&quot; as a response.</li>
+&quot;Hello World!&quot; as a response.</li>
   <li>app.Run() starts the web server and runs the application, ready to handle incoming requests.</li>
 </ul>
 
@@ -558,7 +564,7 @@ app.Run();
 <p>Overview:</p>
 <ul>
   <li>A reverse proxy server forwards client requests to backend servers and returns the
-      responses to the clients.</li>
+responses to the clients.</li>
   <li>Common reverse proxy servers include Nginx, Apache, and IIS.</li>
 </ul>
 <p>Responsibilities:</p>
@@ -567,12 +573,12 @@ app.Run();
   <li>SSL Termination: Handles SSL/TLS encryption and decryption.</li>
   <li>Caching: Caches responses to improve performance.</li>
   <li>Security: Provides additional security features like request filtering, IP whitelisting, and rate
-      limiting.</li>
+limiting.</li>
 </ul>
 <p>Use Case:</p>
 <ul>
   <li>Used in front of Kestrel to enhance security, load balancing, and other enterprise-level
-      requirements.</li>
+requirements.</li>
 </ul>
 
 <h2 id="responsibilities-of-kestrel-and-reverse-proxy-servers">Responsibilities of Kestrel and Reverse Proxy Servers</h2>
@@ -588,49 +594,50 @@ app.Run();
   <li>Provides SSL termination, load balancing, and security features.</li>
   <li>Enhances the overall performance and security of the application.</li>
 </ul>
-<p>Explanation of ASP.NET Core Logs</p>
+
+<h2 id="explanation-of-aspnet-core-logs">Explanation of ASP.NET Core Logs</h2>
 <ul>
   <li>1. Application Start Log: Listening on Port
 info: Microsoft.Hosting.Lifetime[14]
-  Now listening on: http://localhost:5117</li>
+Now listening on: http://localhost:5117</li>
   <li>Category: Microsoft.Hosting.Lifetime</li>
   <li>Event ID: 14</li>
   <li>Message: Now listening on: http://localhost:5117</li>
   <li>Explanation:</li>
   <li>Indicates that the Kestrel server is now running and ready to accept HTTP requests
-           on the specified URL and port (http://localhost:5117).</li>
+on the specified URL and port (http://localhost:5117).</li>
   <li>This log is crucial for knowing where your application is accessible.</li>
   <li>2. Application Started Log
 info: Microsoft.Hosting.Lifetime[0]
-  Application started. Press Ctrl+C to shut down.</li>
+Application started. Press Ctrl+C to shut down.</li>
   <li>Category: Microsoft.Hosting.Lifetime</li>
   <li>Event ID: 0</li>
   <li>Message: Application started. Press Ctrl+C to shut down.</li>
   <li>Explanation:</li>
   <li>Confirms that the ASP.NET Core application has successfully started.</li>
   <li>Provides instructions for gracefully shutting down the application by pressing Ctrl+C
-           in the terminal or command prompt where the application is running.</li>
+in the terminal or command prompt where the application is running.</li>
   <li>3. Hosting Environment Log
 info: Microsoft.Hosting.Lifetime[0]
-  Hosting environment: Development</li>
+Hosting environment: Development</li>
   <li>Category: Microsoft.Hosting.Lifetime</li>
   <li>Event ID: 0</li>
   <li>Message: Hosting environment: Development</li>
   <li>Explanation:</li>
   <li>Specifies the current hosting environment of the application (in this case,
-           Development).</li>
+Development).</li>
   <li>The hosting environment can be Development, Staging, or Production, which affects
-           how the application behaves, particularly in terms of logging, error handling, and
-           configuration settings.</li>
+how the application behaves, particularly in terms of logging, error handling, and
+configuration settings.</li>
   <li>4. Content Root Path Log
 info: Microsoft.Hosting.Lifetime[0]
-  Content root path: c:\code\temp\MyFirstApp\MyFirstApp</li>
+Content root path: c:\code\temp\MyFirstApp\MyFirstApp</li>
   <li>Category: Microsoft.Hosting.Lifetime</li>
   <li>Event ID: 0</li>
   <li>Message: Content root path: c:\code\temp\MyFirstApp\MyFirstApp</li>
   <li>Explanation:</li>
   <li>Indicates the content root path of the application, which is the base path where the
-           application’s content files are located.</li>
+application’s content files are located.</li>
   <li>This path is used to locate static files, views, and other content.</li>
   <li>It helps in understanding where the application’s files are located in the file system.</li>
 </ul>
@@ -639,26 +646,22 @@ info: Microsoft.Hosting.Lifetime[0]
 <ul>
   <li>Now listening on: Informs you where the application is accessible.</li>
   <li>Application started: Confirms the successful start of the application and how to shut it
-      down.</li>
+down.</li>
   <li>Hosting environment: Indicates the environment (Development, Staging, Production) the
-      application is running in.</li>
+application is running in.</li>
   <li>Content root path: Shows the base path for the application&#39;s content files.</li>
 </ul>
-<p>These logs provide critical information about the state and configuration of your ASP.NET Core
-application, aiding in monitoring and troubleshooting.
-Detailed Notes for <code>launchSettings.json</code>
-<code>launchSettings.json</code> is a configuration file in ASP.NET Core projects used to define settings for how
-the application is launched during development. This includes settings for different environments,
-URLs, and other debugging options.
-Structure of <code>launchSettings.json</code></p>
+<p>These logs provide critical information about the state and configuration of your ASP.NET Core application, aiding in monitoring and troubleshooting. Detailed Notes for <code>launchSettings.json</code> <code>launchSettings.json</code> is a configuration file in ASP.NET Core projects used to define settings for how the application is launched during development. This includes settings for different environments, URLs, and other debugging options.</p>
+
+<h2 id="structure-of-launchsettingsjson">Structure of launchSettings.json</h2>
 <ul>
   <li>1. $schema</li>
   <li>Specifies the schema URL for <code>launchSettings.json</code>, which helps with validation and
-           IntelliSense support in IDEs like Visual Studio.
+IntelliSense support in IDEs like Visual Studio.
 &quot;$schema&quot;: &quot;http://json.schemastore.org/launchsettings.json&quot;</li>
   <li>2. iisSettings</li>
   <li>Configures settings specifically for IIS Express, a lightweight, self-contained version
-           of IIS optimized for developers.</li>
+of IIS optimized for developers.</li>
 </ul>
 
     <div class="code-block">
@@ -670,13 +673,13 @@ Structure of <code>launchSettings.json</code></p>
         </button>
       </div>
       <pre><code class="language-csharp">&quot;iisSettings&quot;: {
-    &quot;windowsAuthentication&quot;: false,
-    &quot;anonymousAuthentication&quot;: true,
-    &quot;iisExpress&quot;: {
-    &quot;applicationUrl&quot;: &quot;http://localhost:19872&quot;,
-    &quot;sslPort&quot;: 0
-    }
-   }</code></pre>
+&quot;windowsAuthentication&quot;: false,
+&quot;anonymousAuthentication&quot;: true,
+&quot;iisExpress&quot;: {
+&quot;applicationUrl&quot;: &quot;http://localhost:19872&quot;,
+&quot;sslPort&quot;: 0
+}
+}</code></pre>
     </div>
   <ul>
   <li>windowsAuthentication: Enables or disables Windows Authentication.</li>
@@ -686,7 +689,7 @@ Structure of <code>launchSettings.json</code></p>
   <li>sslPort: The port number for HTTPS. If 0, HTTPS is disabled.</li>
   <li>3. profiles</li>
   <li>Defines different profiles for launching the application. Each profile can have unique
-           settings.</li>
+settings.</li>
 </ul>
 
     <div class="code-block">
@@ -698,47 +701,43 @@ Structure of <code>launchSettings.json</code></p>
         </button>
       </div>
       <pre><code class="language-csharp">&quot;profiles&quot;: {
-    &quot;http&quot;: {
-    &quot;commandName&quot;: &quot;Project&quot;,
-    &quot;dotnetRunMessages&quot;: true,
-    &quot;launchBrowser&quot;: true,
-    &quot;applicationUrl&quot;: &quot;http://localhost:5117&quot;,
-    &quot;environmentVariables&quot;: {
-     &quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot;
-    }
-    },
-    &quot;IIS Express&quot;: {
-    &quot;commandName&quot;: &quot;IISExpress&quot;,
-    &quot;launchBrowser&quot;: true,
-    &quot;environmentVariables&quot;: {
-     &quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot;
-    }
-    }
-   }
-        o http profile:</code></pre>
+&quot;http&quot;: {
+&quot;commandName&quot;: &quot;Project&quot;,
+&quot;dotnetRunMessages&quot;: true,
+&quot;launchBrowser&quot;: true,
+&quot;applicationUrl&quot;: &quot;http://localhost:5117&quot;,
+&quot;environmentVariables&quot;: {
+&quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot;
+}
+},
+&quot;IIS Express&quot;: {
+&quot;commandName&quot;: &quot;IISExpress&quot;,
+&quot;launchBrowser&quot;: true,
+&quot;environmentVariables&quot;: {
+&quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot;
+}
+}
+}</code></pre>
     </div>
   <ul>
-  <li>commandName: Specifies how the application should be launched. Project</li>
-</ul>
-<p>means it will use dotnet run.</p>
-<ul>
+  <li>http profile:</li>
+  <li>commandName: Specifies how the application should be launched. Project
+means it will use dotnet run.</li>
   <li>dotnetRunMessages: If true, enables detailed messages from dotnet run.</li>
   <li>launchBrowser: If true, launches the default web browser when the
-                 application starts.</li>
+application starts.</li>
   <li>applicationUrl: The URL for the application when launched directly (e.g.,
-                 http://localhost:5117).</li>
+http://localhost:5117).</li>
   <li>environmentVariables: Sets environment variables for the application. Here,
-                 ASPNETCORE_ENVIRONMENT is set to Development.</li>
+ASPNETCORE_ENVIRONMENT is set to Development.</li>
   <li>IIS Express profile:</li>
   <li>commandName: IISExpress means it will launch using IIS Express.</li>
   <li>launchBrowser: If true, launches the default web browser when the
-                 application starts.</li>
+application starts.</li>
   <li>environmentVariables: Sets environment variables, with
-                 ASPNETCORE_ENVIRONMENT set to Development.</li>
+ASPNETCORE_ENVIRONMENT set to Development.</li>
 </ul>
-<p>Example <code>launchSettings.json</code> Code
-jsonCopy code{
- &quot;$schema&quot;: &quot;http://json.schemastore.org/launchsettings.json&quot;,</p>
+<p>Example <code>launchSettings.json</code> Code jsonCopy code{ &quot;$schema&quot;: &quot;http://json.schemastore.org/launchsettings.json&quot;,</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -749,31 +748,31 @@ jsonCopy code{
         </button>
       </div>
       <pre><code class="language-csharp">&quot;iisSettings&quot;: {
-  &quot;windowsAuthentication&quot;: false,
-  &quot;anonymousAuthentication&quot;: true,
-  &quot;iisExpress&quot;: {
-  &quot;applicationUrl&quot;: &quot;http://localhost:19872&quot;,
-  &quot;sslPort&quot;: 0
-  }
- },
- &quot;profiles&quot;: {
-  &quot;http&quot;: {
-  &quot;commandName&quot;: &quot;Project&quot;,
-  &quot;dotnetRunMessages&quot;: true,
-  &quot;launchBrowser&quot;: true,
-  &quot;applicationUrl&quot;: &quot;http://localhost:5117&quot;,
-  &quot;environmentVariables&quot;: {
-   &quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot;
-  }
-  },
-  &quot;IIS Express&quot;: {
-  &quot;commandName&quot;: &quot;IISExpress&quot;,
-  &quot;launchBrowser&quot;: true,
-  &quot;environmentVariables&quot;: {
-   &quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot;
-  }
-  }
- }</code></pre>
+&quot;windowsAuthentication&quot;: false,
+&quot;anonymousAuthentication&quot;: true,
+&quot;iisExpress&quot;: {
+&quot;applicationUrl&quot;: &quot;http://localhost:19872&quot;,
+&quot;sslPort&quot;: 0
+}
+},
+&quot;profiles&quot;: {
+&quot;http&quot;: {
+&quot;commandName&quot;: &quot;Project&quot;,
+&quot;dotnetRunMessages&quot;: true,
+&quot;launchBrowser&quot;: true,
+&quot;applicationUrl&quot;: &quot;http://localhost:5117&quot;,
+&quot;environmentVariables&quot;: {
+&quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot;
+}
+},
+&quot;IIS Express&quot;: {
+&quot;commandName&quot;: &quot;IISExpress&quot;,
+&quot;launchBrowser&quot;: true,
+&quot;environmentVariables&quot;: {
+&quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot;
+}
+}
+}</code></pre>
     </div>
   <p>Explanation of the Example</p>
 <ul>
@@ -801,19 +800,17 @@ jsonCopy code{
 <h2 id="summary-2">Summary</h2>
 <ul>
   <li><code>launchSettings.json</code> configures how an ASP.NET Core application is launched during
-      development.</li>
+development.</li>
   <li>It can define multiple profiles, each with its own settings for URLs, environment variables,
-      and launch options.</li>
+and launch options.</li>
   <li>The iisSettings section configures IIS Express settings, while the profiles section defines
-      different launch profiles for the application.</li>
+different launch profiles for the application.</li>
 </ul>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
 <section class="cheatsheet-section" aria-labelledby="cheat-sheet-quick-reference">
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
-  <h3 id="kestrel-and-other-servers">Kestrel and Other Servers</h3>
-  <h3 id="application-servers">Application Servers</h3>
 <ul>
   <li>Kestrel
 Reverse Proxy Servers</li>
@@ -882,15 +879,11 @@ IIS express</li>
       <ul class="toc-list">
         
         <li class="toc-item">
-          <a href="#installing-visual-studio-community-and-logging-in" class="toc-link">Installing Visual Studio Community and Logging In</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#common-settings-in-visual-studio" class="toc-link">Common Settings in Visual Studio</a>
         </li>
       
         <li class="toc-item">
-          <a href="#explanation-of-the-code-in-detail" class="toc-link">Explanation of the Code in Detail</a>
+          <a href="#creating-a-new-aspnet-core-empty-project" class="toc-link">Creating a New ASP.NET Core Empty Project</a>
         </li>
       
         <li class="toc-item">
@@ -914,7 +907,15 @@ IIS express</li>
         </li>
       
         <li class="toc-item">
+          <a href="#explanation-of-aspnet-core-logs" class="toc-link">Explanation of ASP.NET Core Logs</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#summary-1" class="toc-link">Summary</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#structure-of-launchsettingsjson" class="toc-link">Structure of launchSettings.json</a>
         </li>
       
         <li class="toc-item">

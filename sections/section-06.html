@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -403,42 +413,39 @@
 <p>At its heart, routing is the mechanism that ASP.NET Core uses to match incoming HTTP requests to</p>
 
 <h2 id="controllers-and-action-methods">Controllers and Action Methods</h2>
-<p>In the Model-View-Controller (MVC) architectural pattern, controllers serve as the orchestrators of
-your web application. They handle incoming HTTP requests, interact with the model (your data
-layer), and select the appropriate view to render the response back to the user.</p>
+<p>In the Model-View-Controller (MVC) architectural pattern, controllers serve as the orchestrators of your web application. They handle incoming HTTP requests, interact with the model (your data layer), and select the appropriate view to render the response back to the user.</p>
 <ul>
   <li>Controllers: Classes that group related action methods and typically reside in the Controllers
-      folder in your project.</li>
+folder in your project.</li>
   <li>Action Methods: Public methods within a controller that handle specific requests (e.g.,
-      displaying a page, processing form data).</li>
+displaying a page, processing form data).</li>
 </ul>
 
 <h2 id="purpose">Purpose</h2>
 <ul>
   <li>Organize Logic: Controllers provide a logical grouping for actions that work on the same type
-      of data or functionality.</li>
+of data or functionality.</li>
   <li>Handle Requests: They are responsible for processing requests, retrieving necessary data,
-      and preparing a response.</li>
+and preparing a response.</li>
   <li>Select Views: Controllers often choose the appropriate view to render, passing data (the
-      model) to the view for presentation.</li>
+model) to the view for presentation.</li>
 </ul>
 
 <h2 id="syntax-and-conventions">Syntax and Conventions</h2>
 <ul>
   <li>Class Naming: Controller class names should end with &quot;Controller&quot; (e.g., HomeController,
-      ProductsController).</li>
+ProductsController).</li>
   <li>Inheritance: Controllers inherit from the Controller base class (or ControllerBase for API
-      controllers).</li>
+controllers).</li>
   <li>Action Method Naming: Action methods can have any valid C# method name.</li>
   <li>Return Types: Action methods can return various types, including:</li>
   <li><code>IActionResult</code>: A common interface that allows you to return different result types
-           (views, content, redirects, etc.).</li>
+(views, content, redirects, etc.).</li>
   <li>string, int, etc.: For API controllers, you might return raw data.</li>
 </ul>
 
 <h2 id="attribute-routing">Attribute Routing</h2>
-<p>Attribute routing allows you to define routes directly on your controller classes and action methods
-using attributes:</p>
+<p>Attribute routing allows you to define routes directly on your controller classes and action methods using attributes:</p>
 <ul>
   <li>[Route] Attribute: Specifies the base route template for the controller or action.</li>
   <li>[HttpGet], [HttpPost], etc.: Indicate the HTTP method(s) the action should handle.</li>
@@ -447,15 +454,14 @@ using attributes:</p>
 <h2 id="controller-responsibilities">Controller Responsibilities</h2>
 <ul>
   <li>Request Handling: Process incoming requests and extract relevant data (from route
-      parameters, query strings, or the request body).</li>
+parameters, query strings, or the request body).</li>
   <li>Model Interaction: Retrieve data from your model (database, services) or update the model
-      based on the request.</li>
+based on the request.</li>
   <li>View Selection: Determine which view should be rendered and provide the necessary model
-      data to the view.</li>
+data to the view.</li>
   <li>Error Handling: Handle errors gracefully and return appropriate responses.</li>
 </ul>
-
-<h2 id="code">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -468,26 +474,26 @@ using attributes:</p>
       <pre><code class="language-csharp">// HomeController.cs
 namespace ControllersExample.Controllers
 {
-  [Controller] // Marks the class as a controller
-  public class HomeController
-  {
-   [Route(&quot;home&quot;)] // Routes for this action
-   [Route(&quot;/&quot;)]
-   public string Index()
-   {
-     return &quot;Hello from Index&quot;;
-   }
-   [Route(&quot;about&quot;)]
-   public string About()
-   {
-     return &quot;Hello from About&quot;;
-   }
-   [Route(&quot;contact-us/{mobile:regex(^\\d{10}$)}&quot;)] // Route with constraint
-   public string Contact()
-   {
-     return &quot;Hello from Contact&quot;;
-   }
-  }
+[Controller] // Marks the class as a controller
+public class HomeController
+{
+[Route(&quot;home&quot;)] // Routes for this action
+[Route(&quot;/&quot;)]
+public string Index()
+{
+return &quot;Hello from Index&quot;;
+}
+[Route(&quot;about&quot;)]
+public string About()
+{
+return &quot;Hello from About&quot;;
+}
+[Route(&quot;contact-us/{mobile:regex(^\\d{10}$)}&quot;)] // Route with constraint
+public string Contact()
+{
+return &quot;Hello from Contact&quot;;
+}
+}
 }
 // Program.cs (or Startup.cs
 )
@@ -500,46 +506,40 @@ app.Run();</code></pre>
     </div>
   <ul>
   <li>HomeController: This is your controller class.</li>
-</ul>
-<ul>
   <li>Index, About, Contact: These are action methods within the controller, each with a
-      corresponding route.</li>
+corresponding route.</li>
   <li>[Route] Attributes: Define the routes for each action method.</li>
   <li>[Controller] Attribute: Marks the class as a controller, making it discoverable by the
-      framework.</li>
+framework.</li>
   <li>builder.Services.AddControllers();: Registers MVC services and makes controllers available
-      for dependency injection.</li>
+for dependency injection.</li>
   <li>app.MapControllers();: Connects the routing system to your controllers, enabling them to
-      handle requests.</li>
+handle requests.</li>
 </ul>
 
 <h2 id="contentresult">ContentResult</h2>
-<p>In the realm of ASP.NET Core MVC, action methods often return different types of results: views
-(HTML), JSON data, or file streams. The ContentResult class caters to a specific need: returning raw
-content directly to the client, without the overhead of rendering a full view. This content could be
-plain text, XML, JSON, CSV, or any other format you specify.
-Why Use ContentResult?</p>
+<p>In the realm of ASP.NET Core MVC, action methods often return different types of results: views (HTML), JSON data, or file streams. The ContentResult class caters to a specific need: returning raw content directly to the client, without the overhead of rendering a full view. This content could be plain text, XML, JSON, CSV, or any other format you specify. Why Use ContentResult?</p>
 <ul>
   <li>Flexibility: You have complete control over the content you send and the Content-Type
-      header, allowing you to tailor the response to specific client requirements.</li>
+header, allowing you to tailor the response to specific client requirements.</li>
   <li>Lightweight: ContentResult is efficient because it doesn&#39;t involve complex view rendering.</li>
   <li>Directness: Ideal for scenarios where you want to return simple text messages, API
-      responses, or custom content formats.</li>
+responses, or custom content formats.</li>
 </ul>
 <p>The ContentResult class provides the following key properties to shape your response:</p>
 <ul>
   <li>1. Content: This is where you set the actual content that you want to send back to the client. It
-      could be a simple string, a serialized object, or any data you want to transmit.</li>
+could be a simple string, a serialized object, or any data you want to transmit.</li>
   <li>2. ContentType: This property is crucial. It specifies the MIME type (Multipurpose Internet Mail
-      Extensions) of the content. The MIME type tells the client how to interpret the data you are
-      sending. Here are some common examples:</li>
+Extensions) of the content. The MIME type tells the client how to interpret the data you are
+sending. Here are some common examples:</li>
   <li>text/plain: Plain text</li>
   <li>text/html: HTML content</li>
   <li>application/json: JSON data</li>
   <li>text/csv: CSV data</li>
   <li>application/xml: XML data</li>
   <li>3. StatusCode (Optional): You can optionally set the HTTP status code of the response (e.g.,
-      200 OK, 404 Not Found). If not specified, it defaults to 200 OK.</li>
+200 OK, 404 Not Found). If not specified, it defaults to 200 OK.</li>
 </ul>
 
 <h2 id="creating-a-contentresult">Creating a ContentResult</h2>
@@ -557,11 +557,14 @@ Why Use ContentResult?</p>
         </button>
       </div>
       <pre><code class="language-csharp">return new ContentResult()
-   {
-}</code></pre>
+{
+Content = &quot;Hello from Index&quot;,
+ContentType = &quot;text/plain&quot;
+};</code></pre>
     </div>
-  <p>Content = &quot;Hello from Index&quot;,
-    ContentType = &quot;text/plain&quot;</p>
+  <ol>
+  <li>Using the Content() Helper Method:</li>
+</ol>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -571,13 +574,9 @@ Why Use ContentResult?</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">2. Using the Content() Helper Method:
-return Content(&quot;Hello from Index&quot;, &quot;text/plain&quot;);</code></pre>
+      <pre><code class="language-csharp">return Content(&quot;Hello from Index&quot;, &quot;text/plain&quot;);</code></pre>
     </div>
-  <p>The Content() method is a shortcut provided by the Controller base class to conveniently create a
-ContentResult.</p>
-
-<h2 id="code-1">Code</h2>
+  <p>The Content() method is a shortcut provided by the Controller base class to conveniently create a ContentResult. Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -593,42 +592,37 @@ ContentResult.</p>
 [Route(&quot;/&quot;)]
 public ContentResult Index()
 {
-  return Content(&quot;&lt;h1&gt;Welcome&lt;/h1&gt; &lt;h2&gt;Hello from Index&lt;/h2&gt;&quot;, &quot;text/html&quot;);
+return Content(&quot;&lt;h1&gt;Welcome&lt;/h1&gt; &lt;h2&gt;Hello from Index&lt;/h2&gt;&quot;, &quot;text/html&quot;);
 }
 In this modified Index action:</code></pre>
     </div>
-  <p>1. HTML Content: The content being returned is an HTML string containing heading tags.</p>
-<ol>
+  <ol>
+  <li>HTML Content: The content being returned is an HTML string containing heading tags.</li>
   <li>Content Type: The ContentType is set to &quot;text/html&quot;, instructing the browser to render the
-      response as HTML.</li>
+response as HTML.</li>
   <li>Client Experience: When a user navigates to the /home or / route, they will see a webpage
-      with a formatted heading &quot;Welcome&quot; and a subheading &quot;Hello from Index.&quot;
+with a formatted heading &quot;Welcome&quot; and a subheading &quot;Hello from Index.&quot;
 While returning raw strings directly from action methods is often convenient, using ContentResult
 gives you explicit control over the ContentType header, which is vital for ensuring the client correctly
 interprets the response data.</li>
 </ol>
 
 <h2 id="jsonresult">JsonResult</h2>
-<p>The JsonResult class in ASP.NET Core MVC is your go-to tool when you need to return structured
-data in JSON (JavaScript Object Notation) format from your controller actions. JSON has become the
-de facto standard for data exchange in web APIs and modern web applications due to its simplicity,
-readability, and wide support across platforms and languages.
-Why Use JsonResult?</p>
+<p>The JsonResult class in ASP.NET Core MVC is your go-to tool when you need to return structured data in JSON (JavaScript Object Notation) format from your controller actions. JSON has become the de facto standard for data exchange in web APIs and modern web applications due to its simplicity, readability, and wide support across platforms and languages. Why Use JsonResult?</p>
 <ul>
   <li>Standardized Format: JSON is a well-established format for representing structured data,
-      making it ideal for communication between web applications and APIs.</li>
+making it ideal for communication between web applications and APIs.</li>
   <li>Serialization: ASP.NET Core seamlessly serializes your objects into JSON, saving you from
-      manual formatting.</li>
+manual formatting.</li>
   <li>Content Type: JsonResult automatically sets the Content-Type header to application/json,
-      ensuring that the client (e.g., a browser or another application) correctly interprets the
-      response.</li>
+ensuring that the client (e.g., a browser or another application) correctly interprets the
+response.</li>
   <li>API-Friendly: Perfect for building RESTful APIs or returning data for client-side JavaScript to
-      consume.</li>
+consume.</li>
 </ul>
 
 <h2 id="creating-a-jsonresult">Creating a JsonResult</h2>
-<p>Similar to ContentResult, you have a couple of convenient ways to create a JsonResult in your action
-methods:</p>
+<p>Similar to ContentResult, you have a couple of convenient ways to create a JsonResult in your action methods:</p>
 <ol>
   <li>Instantiating JsonResult:</li>
 </ol>
@@ -643,8 +637,7 @@ methods:</p>
       </div>
       <pre><code class="language-csharp">return new JsonResult(person);</code></pre>
     </div>
-  <p>Here, you pass the object (e.g., person) that you want to serialize into JSON directly to the
-JsonResult constructor.</p>
+  <p>Here, you pass the object (e.g., person) that you want to serialize into JSON directly to the JsonResult constructor.</p>
 <ol>
   <li>Using the Json() Helper Method:</li>
 </ol>
@@ -659,10 +652,7 @@ JsonResult constructor.</p>
       </div>
       <pre><code class="language-csharp">return Json(person);</code></pre>
     </div>
-  <p>The Json() method is a shorthand provided by the Controller base class, making it even easier to
-create a JsonResult.</p>
-
-<h2 id="code-2">Code</h2>
+  <p>The Json() method is a shorthand provided by the Controller base class, making it even easier to create a JsonResult. Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -689,24 +679,23 @@ public JsonResult Person()
         </button>
       </div>
       <pre><code class="language-csharp">{
-  {
-   Id = Guid.NewGuid(),
-   FirstName = &quot;James&quot;,
-   LastName = &quot;Smith&quot;,
-   Age = 25
-  };
-  return Json(person);
+{
+Id = Guid.NewGuid(),
+FirstName = &quot;James&quot;,
+LastName = &quot;Smith&quot;,
+Age = 25
+};
+return Json(person);
 }
 In this modified Person action:</code></pre>
     </div>
-  <p>1. Person Object: A Person object is created with some sample data (including a unique ID).</p>
-<ol>
+  <ol>
+  <li>Person Object: A Person object is created with some sample data (including a unique ID).</li>
   <li>JSON Serialization: The Json(person) call serializes the person object into a JSON string.</li>
   <li>Response: The resulting JSON string is returned as a JsonResult, with the Content-Type
-      header automatically set to application/json.</li>
+header automatically set to application/json.</li>
 </ol>
-<p>Output:
-The response sent to the client would look like this:</p>
+<p>Output: The response sent to the client would look like this:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -717,24 +706,19 @@ The response sent to the client would look like this:</p>
         </button>
       </div>
       <pre><code class="language-json">{
-  &quot;id&quot;: &quot;123e4567-e89b-12d3-a456-426614174000&quot;,
-  &quot;firstName&quot;: &quot;James&quot;,
-  &quot;lastName&quot;: &quot;Smith&quot;,
-  &quot;age&quot;: 25
+&quot;id&quot;: &quot;123e4567-e89b-12d3-a456-426614174000&quot;,
+&quot;firstName&quot;: &quot;James&quot;,
+&quot;lastName&quot;: &quot;Smith&quot;,
+&quot;age&quot;: 25
 }</code></pre>
     </div>
-  <p>File Results</p>
-<p>In ASP.NET Core MVC, file results are action results designed to serve files to the client. They are</p>
-<p>particularly useful when you want your application to deliver files like PDFs, images, documents, or</p>
-<ul>
-  <li>ther binary content.</li>
-</ul>
+  <p>File Results In ASP.NET Core MVC, file results are action results designed to serve files to the client. They are particularly useful when you want your application to deliver files like PDFs, images, documents, or other binary content.</p>
 
 <h2 id="types-of-file-results">Types of File Results</h2>
 <ul>
   <li>1. VirtualFileResult:</li>
   <li>Purpose: Serves a file from the application&#39;s web root directory (wwwroot by
-           default) or a virtual path.</li>
+default) or a virtual path.</li>
   <li>Parameters:</li>
   <li>virtualPath: The path to the file within the web root or the virtual path.</li>
   <li>contentType: The MIME type of the file (e.g., application/pdf).</li>
@@ -752,23 +736,21 @@ The response sent to the client would look like this:</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">virtual paths.
-   2. PhysicalFileResult:</code></pre>
+      <pre><code class="language-csharp">virtual paths.</code></pre>
     </div>
   <ul>
+  <li>2. PhysicalFileResult:</li>
   <li>Purpose: Serves a file from an absolute file path on the server&#39;s file system.</li>
-</ul>
-<ul>
   <li>Parameters:</li>
   <li>physicalPath: The absolute path to the file.</li>
   <li>contentType: The MIME type of the file.</li>
   <li>Usage:</li>
   <li>return new PhysicalFileResult(@&quot;c:\aspnetcore\sample.pdf&quot;,
-                 &quot;application/pdf&quot;);</li>
+&quot;application/pdf&quot;);</li>
   <li>return PhysicalFile(@&quot;c:\aspnetcore\sample.pdf&quot;, &quot;application/pdf&quot;);
-                 (Shorthand version)</li>
+(Shorthand version)</li>
   <li>Benefits: Allows serving files from locations outside the web root, but requires
-           careful handling due to potential security risks.</li>
+careful handling due to potential security risks.</li>
   <li>3. FileContentResult:</li>
   <li>Purpose: Serves a file from an in-memory byte array.</li>
   <li>Parameters:</li>
@@ -779,10 +761,9 @@ The response sent to the client would look like this:</p>
   <li>return new FileContentResult(bytes, &quot;application/pdf&quot;);</li>
   <li>return File(bytes, &quot;application/pdf&quot;); (Shorthand version)</li>
   <li>Benefits: Useful for dynamically generated files or when you don&#39;t want to expose
-           the file&#39;s actual path.</li>
+the file&#39;s actual path.</li>
 </ul>
-
-<h2 id="code-3">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -796,50 +777,44 @@ The response sent to the client would look like this:</p>
 [Route(&quot;file-download&quot;)]
 public VirtualFileResult FileDownload()
 {
-  return File(&quot;/sample.pdf&quot;, &quot;application/pdf&quot;); // Serves from wwwroot
+return File(&quot;/sample.pdf&quot;, &quot;application/pdf&quot;); // Serves from wwwroot
 }
 [Route(&quot;file-download2&quot;)]
 public PhysicalFileResult FileDownload2()
 {
-  return PhysicalFile(@&quot;c:\aspnetcore\sample.pdf&quot;, &quot;application/pdf&quot;); // Full path
+return PhysicalFile(@&quot;c:\aspnetcore\sample.pdf&quot;, &quot;application/pdf&quot;); // Full path
 }
 [Route(&quot;file-download3&quot;)]
 public FileContentResult FileDownload3()
 {
-  byte[] bytes = System.IO.File.ReadAllBytes(@&quot;c:\aspnetcore\sample.pdf&quot;);
-  return File(bytes, &quot;application/pdf&quot;); // In-memory bytes
+byte[] bytes = System.IO.File.ReadAllBytes(@&quot;c:\aspnetcore\sample.pdf&quot;);
+return File(bytes, &quot;application/pdf&quot;); // In-memory bytes
 }</code></pre>
     </div>
   
 <h2 id="key-considerations">Key Considerations</h2>
 <ul>
   <li>Security: Be extremely cautious when using PhysicalFileResult to prevent unauthorized
-      access to your server&#39;s file system. Validate paths rigorously and avoid exposing sensitive
-      information.</li>
+access to your server&#39;s file system. Validate paths rigorously and avoid exposing sensitive
+information.</li>
   <li>Performance: Consider caching file results to improve performance, especially for larger files
-      or frequently requested content.</li>
+or frequently requested content.</li>
   <li>Content Disposition: Use the FileDownloadName property of the file result to suggest a
-      filename for the browser when the user downloads the file.</li>
+filename for the browser when the user downloads the file.</li>
 </ul>
 
 <h2 id="choosing-the-right-file-result">Choosing the Right File Result</h2>
 <ul>
   <li>VirtualFileResult: When the file resides within your web root and you don&#39;t need to expose
-      its absolute path.</li>
+its absolute path.</li>
   <li>PhysicalFileResult: When you need to serve a file from an arbitrary location on the server&#39;s
-      file system (use with caution).</li>
+file system (use with caution).</li>
   <li>FileContentResult: When you have the file content in memory (e.g., dynamically generated)
-      or when you don&#39;t want to reveal the file&#39;s actual path.</li>
+or when you don&#39;t want to reveal the file&#39;s actual path.</li>
 </ul>
 
 <h2 id="iactionresult">IActionResult</h2>
-<p>The <code>IActionResult</code> interface is a core concept in ASP.NET Core MVC. It serves as the return type for
-action methods in your controllers, providing flexibility and enabling you to return different types of
-responses depending on the context of the request.
-Essentially, it&#39;s a contract that defines a single method:
-Task ExecuteResultAsync(ActionContext context);
-This method is responsible for executing the specific logic associated with the action result,
-generating the appropriate HTTP response that&#39;s sent back to the client.</p>
+<p>The <code>IActionResult</code> interface is a core concept in ASP.NET Core MVC. It serves as the return type for action methods in your controllers, providing flexibility and enabling you to return different types of responses depending on the context of the request. Essentially, it&#39;s a contract that defines a single method: Task ExecuteResultAsync(ActionContext context); This method is responsible for executing the specific logic associated with the action result, generating the appropriate HTTP response that&#39;s sent back to the client.</p>
 
 <h2 id="action-result-types">Action Result Types</h2>
 <p>Here&#39;s a breakdown of some of the most important action result types derived from <code>IActionResult</code>:</p>
@@ -849,7 +824,7 @@ generating the appropriate HTTP response that&#39;s sent back to the client.</p>
   <li>EmptyResult: Represents an empty response (204 No Content).</li>
   <li>Example: return new EmptyResult();</li>
   <li>FileResult: Used to send files to the client (PDF, images, etc.). This is a base class for several
-      more specific file result types.</li>
+more specific file result types.</li>
   <li>VirtualFileResult: Serves a file from the web root or a virtual path.</li>
   <li>PhysicalFileResult: Serves a file from a physical path on the server.</li>
   <li>FileContentResult: Serves a file from an in-memory byte array.</li>
@@ -869,8 +844,7 @@ generating the appropriate HTTP response that&#39;s sent back to the client.</p>
   <li>NotFoundResult: Shorthand for returning a 404 Not Found response.</li>
   <li>OkResult: Shorthand for returning a 200 OK response.</li>
 </ul>
-
-<h2 id="code-4">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -884,42 +858,38 @@ generating the appropriate HTTP response that&#39;s sent back to the client.</p>
 [Route(&quot;book&quot;)]
 public IActionResult Index()
 {
-  // Book id should be applied
-  if (!Request.Query.ContainsKey(&quot;bookid&quot;))
-  {
-   Response.StatusCode = 400; // Setting status code manually
-   return Content(&quot;Book id is not supplied&quot;);
-  }
-  // ... other validation checks ...
-  // If all checks pass
-  return File(&quot;/sample.pdf&quot;, &quot;application/pdf&quot;);
+// Book id should be applied
+if (!Request.Query.ContainsKey(&quot;bookid&quot;))
+{
+Response.StatusCode = 400; // Setting status code manually
+return Content(&quot;Book id is not supplied&quot;);
 }
-In this action method:
-   1. Validation: The code performs several validation checks on the bookid query parameter:</code></pre>
+// ... other validation checks ...
+// If all checks pass
+return File(&quot;/sample.pdf&quot;, &quot;application/pdf&quot;);
+}
+In this action method:</code></pre>
     </div>
   <ul>
+  <li>1. Validation: The code performs several validation checks on the bookid query parameter:</li>
   <li>It checks if the parameter exists.</li>
-</ul>
-<ul>
   <li>It checks if the parameter value is not null or empty.</li>
   <li>It checks if the parameter value is within a valid range (1-1000).</li>
   <li>It checks if the isloggedin query parameter is true.</li>
   <li>2. Error Responses: If any validation fails, a ContentResult is returned with an appropriate
-      error message and a 400 Bad Request or 401 Unauthorized status code.</li>
+error message and a 400 Bad Request or 401 Unauthorized status code.</li>
   <li>3. Successful Response: If all validation passes, a FileResult is returned, serving the sample.pdf
-      file from the web root.</li>
+file from the web root.</li>
 </ul>
 
 <h2 id="notes">Notes</h2>
 <ul>
   <li>Flexibility: <code>IActionResult</code> allows you to return different types of responses based on the logic
-      in your action.</li>
+in your action.</li>
 </ul>
 
 <h2 id="status-code-results">Status Code Results</h2>
-<p>In web communication, it&#39;s crucial to inform the client about the outcome of their request. Status
-codes provide a standardized way to convey this information. ASP.NET Core MVC offers a range of
-action results designed specifically to return these status codes along with optional messages.</p>
+<p>In web communication, it&#39;s crucial to inform the client about the outcome of their request. Status codes provide a standardized way to convey this information. ASP.NET Core MVC offers a range of action results designed specifically to return these status codes along with optional messages.</p>
 
 <h2 id="common-status-code-results">Common Status Code Results</h2>
 <ul>
@@ -928,7 +898,7 @@ action results designed specifically to return these status codes along with opt
   <li>NotFoundResult: Indicates that the requested resource was not found (HTTP 404).</li>
   <li>UnauthorizedResult: Indicates that the request requires authentication (HTTP 401).</li>
   <li>ForbiddenResult: Indicates that the user is not authorized to access the resource (HTTP
-      403).</li>
+403).</li>
   <li>StatusCodeResult: Allows you to return any arbitrary HTTP status code.</li>
 </ul>
 
@@ -946,19 +916,42 @@ action results designed specifically to return these status codes along with opt
         </button>
       </div>
       <pre><code class="language-csharp">return new BadRequestResult(); // Returns HTTP 400
-return new NotFoundResult(); // Returns HTTP 404
-   2. Helper Methods:
-return BadRequest(); // Returns HTTP 400
+return new NotFoundResult(); // Returns HTTP 404</code></pre>
+    </div>
+  <ol>
+  <li>Helper Methods:</li>
+</ol>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">return BadRequest(); // Returns HTTP 400
 return NotFound(); // Returns HTTP 404
 return Unauthorized(); // Returns HTTP 401
-return StatusCode(403); // Returns HTTP 403
-   3. With Messages:
-return BadRequest(&quot;Invalid input data&quot;);
+return StatusCode(403); // Returns HTTP 403</code></pre>
+    </div>
+  <ol>
+  <li>With Messages:</li>
+</ol>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">return BadRequest(&quot;Invalid input data&quot;);
 return NotFound(&quot;Resource not found&quot;);</code></pre>
     </div>
   <p>These helper methods are more concise and expressive than directly instantiating the result objects.</p>
-
-<h2 id="code-5">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -972,30 +965,29 @@ return NotFound(&quot;Resource not found&quot;);</code></pre>
 [Route(&quot;book&quot;)]
 public IActionResult Index()
 {
-  // ... (validation checks similar to the previous example) ...
-  if (bookId &lt;= 0)
-  {
-   return BadRequest(&quot;Book id can&#39;t be less than or equal to zero&quot;);
-  }
-  // Note the use of NotFound here
-  if (bookId &gt; 1000)
-  {
-   return NotFound(&quot;Book id can&#39;t be greater than 1000&quot;);
-  }
-  if (Convert.ToBoolean(Request.Query[&quot;isloggedin&quot;]) == false)
-  {
-   return StatusCode(401); // Customizable status code
-  }
-  return File(&quot;/sample.pdf&quot;, &quot;application/json&quot;);
+// ... (validation checks similar to the previous example) ...
+if (bookId &lt;= 0)
+{
+return BadRequest(&quot;Book id can&#39;t be less than or equal to zero&quot;);
+}
+// Note the use of NotFound here
+if (bookId &gt; 1000)
+{
+return NotFound(&quot;Book id can&#39;t be greater than 1000&quot;);
+}
+if (Convert.ToBoolean(Request.Query[&quot;isloggedin&quot;]) == false)
+{
+return StatusCode(401); // Customizable status code
+}
+return File(&quot;/sample.pdf&quot;, &quot;application/json&quot;);
 }</code></pre>
     </div>
-  <p>In this refined example, the validation logic remains the same. However, we&#39;ve made the following
-changes:</p>
+  <p>In this refined example, the validation logic remains the same. However, we&#39;ve made the following changes:</p>
 <ul>
   <li>1. Specific Status Codes:</li>
   <li>We use BadRequest() for invalid input (e.g., bookId less than or equal to zero).</li>
   <li>We use NotFound() when the bookId is out of the valid range (greater than 1000), as
-           it could imply the requested book doesn&#39;t exist.</li>
+it could imply the requested book doesn&#39;t exist.</li>
   <li>2. Customizable Status Code:</li>
   <li>For the authentication failure case (isloggedin is false), we use StatusCode(401) to</li>
 </ul>
@@ -1015,21 +1007,19 @@ changes:</p>
 <h2 id="notes-1">Notes</h2>
 <ul>
   <li>Inform the Client: Status codes are essential for communicating the outcome of a request to
-      the client.</li>
+the client.</li>
   <li>Standard Codes: Use the standard HTTP status codes whenever possible for consistency and
-      interoperability.</li>
+interoperability.</li>
   <li>Helper Methods: Leverage the helper methods (BadRequest, NotFound, etc.) for cleaner
-      and more expressive code.</li>
+and more expressive code.</li>
   <li>Customization: The StatusCode result allows you to return any HTTP status code you need,
-      but use it judiciously.</li>
+but use it judiciously.</li>
   <li>Beyond Validation: Status codes are not just for validation; use them to signal the result of
-      any action in your API.</li>
+any action in your API.</li>
 </ul>
 
 <h2 id="redirect-results">Redirect Results</h2>
-<p>Redirect results are action results in ASP.NET Core MVC that instruct the client&#39;s browser to navigate
-to a new URL. This is commonly used after actions like form submissions, logins, or other operations
-where you want to transition the user to a different page.</p>
+<p>Redirect results are action results in ASP.NET Core MVC that instruct the client&#39;s browser to navigate to a new URL. This is commonly used after actions like form submissions, logins, or other operations where you want to transition the user to a different page.</p>
 
 <h2 id="types-of-redirect-results">Types of Redirect Results</h2>
 <ul>
@@ -1038,8 +1028,8 @@ where you want to transition the user to a different page.</p>
   <li>Parameters:</li>
   <li>url: The URL to redirect to.</li>
   <li>permanent: A boolean indicating whether the redirect is permanent (301
-                 Moved Permanently) or temporary (302 Found). Defaults to false
-                 (temporary).</li>
+Moved Permanently) or temporary (302 Found). Defaults to false
+(temporary).</li>
   <li>Usage:</li>
   <li>return Redirect(&quot;/home&quot;); (Temporary)</li>
   <li>return RedirectPermanent(&quot;/home&quot;); (Permanent)</li>
@@ -1048,22 +1038,22 @@ where you want to transition the user to a different page.</p>
   <li>Parameters:</li>
   <li>actionName: The name of the action method.</li>
   <li>controllerName: The name of the controller (optional, defaults to the
-                 current controller).</li>
+current controller).</li>
   <li>routeValues: An object containing route values to pass to the action
-                 (optional).</li>
+(optional).</li>
   <li>permanent: A boolean indicating whether the redirect is permanent (301) or
-                 temporary (302).</li>
+temporary (302).</li>
   <li>Usage:</li>
   <li>return RedirectToAction(&quot;Index&quot;); (Temporary, same controller)</li>
   <li>return RedirectToAction(&quot;Details&quot;, &quot;Products&quot;, new { id = 123 }); (Temporary,
-                 with route values)</li>
+with route values)</li>
   <li>return RedirectToActionPermanent(&quot;About&quot;); (Permanent)</li>
   <li>3. LocalRedirectResult:</li>
   <li>Purpose: Redirects to a local URL within the same application.</li>
   <li>Parameters:</li>
   <li>localUrl: The local URL to redirect to.</li>
   <li>permanent: A boolean indicating whether the redirect is permanent (301) or
-                 temporary (302).</li>
+temporary (302).</li>
   <li>Usage:</li>
   <li>return LocalRedirect(&quot;/products/details/456&quot;); (Temporary)</li>
   <li>return LocalRedirectPermanent(&quot;/about&quot;); (Permanent)
@@ -1082,33 +1072,33 @@ Code</li>
 [Route(&quot;bookstore&quot;)]
 public IActionResult Index()
 {
-  // ... validation logic (same as previous example) ...
-  // Conditional Redirects
-  if (someConditionIsTrue)
-  {
-   return RedirectToAction(&quot;Books&quot;, &quot;Store&quot;, new { id = bookId }); // Temporary, to a different
+// ... validation logic (same as previous example) ...
+// Conditional Redirects
+if (someConditionIsTrue)
+{
+return RedirectToAction(&quot;Books&quot;, &quot;Store&quot;, new { id = bookId }); // Temporary, to a different
 action
-  }
-  else
-  {
-   return LocalRedirectPermanent($&quot;store/books/{bookId}&quot;); // Permanent, local redirect
-  }
-  // ... other redirect examples ...
+}
+else
+{
+return LocalRedirectPermanent($&quot;store/books/{bookId}&quot;); // Permanent, local redirect
+}
+// ... other redirect examples ...
 }</code></pre>
     </div>
   <p>Explanation of Redirect Types</p>
 <ul>
   <li>302 Found (RedirectResult or RedirectToActionResult with permanent: false):</li>
   <li>The standard temporary redirect. Tells the browser to fetch the new resource, but
-           future requests should still use the original URL.</li>
+future requests should still use the original URL.</li>
   <li>301 Moved Permanently (RedirectResult, RedirectToActionResult, or LocalRedirectResult
-      with permanent: true):</li>
+with permanent: true):</li>
   <li>Indicates the resource has been permanently moved. The browser should update its
-           bookmarks/links and future requests should use the new URL.</li>
+bookmarks/links and future requests should use the new URL.</li>
   <li>LocalRedirectResult:</li>
   <li>Specifically for redirects within the same application. Helps prevent open redirects,
-           where a malicious actor could trick your site into redirecting to an external, harmful
-           site.</li>
+where a malicious actor could trick your site into redirecting to an external, harmful
+site.</li>
 </ul>
 
 <h2 id="choosing-the-right-redirect">Choosing the Right Redirect</h2>
@@ -1124,19 +1114,21 @@ action
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">internal URLs.
-   • Temporary vs. Permanent: Use 301 for permanent moves, 302 for temporary ones (e.g.,
-      after form submission).</code></pre>
+      <pre><code class="language-csharp">internal URLs.</code></pre>
     </div>
   <ul>
+  <li>Temporary vs. Permanent: Use 301 for permanent moves, 302 for temporary ones (e.g.,
+after form submission).</li>
   <li>Action-Specific: Use RedirectToActionResult when you want to redirect to a specific action
-      within your application.</li>
+within your application.</li>
   <li>Safety: Prefer LocalRedirectResult over RedirectResult for internal redirects to protect
-      against open redirect attacks.</li>
+against open redirect attacks.</li>
 </ul>
-<p>Key Points to Remember:</p>
+
+<h3 id="key-points-to-remember">Key Points to Remember</h3>
+
+<h3 id="1-controllers">1. Controllers</h3>
 <ul>
-  <li>1. Controllers</li>
   <li>Purpose:</li>
   <li>Handle HTTP requests.</li>
   <li>Interact with the model (data layer).</li>
@@ -1145,7 +1137,10 @@ action
   <li>Inheritance: Inherit from Controller (or ControllerBase for APIs).</li>
   <li>Action Methods: Public methods within controllers that handle specific requests.</li>
   <li>Attribute Routing: Use [Route], [HttpGet], [HttpPost], etc., to define routes.</li>
-  <li>2. <code>IActionResult</code></li>
+</ul>
+
+<h3 id="2-iactionresult">2. IActionResult</h3>
+<ul>
   <li>Purpose: Flexible return type for action methods, enabling various response types.</li>
   <li>Types:</li>
   <li>Content-Based:</li>
@@ -1159,7 +1154,7 @@ action
   <li>Status Codes:</li>
   <li>StatusCodeResult: Any arbitrary HTTP status code.</li>
   <li>BadRequestResult, NotFoundResult, UnauthorizedResult, etc.: Specific
-                 status codes.</li>
+status codes.</li>
   <li>Views:</li>
   <li>ViewResult: Render a full view.</li>
   <li>PartialViewResult: Render a partial view.</li>
@@ -1169,9 +1164,9 @@ action
 <ul>
   <li>Understand MVC: Be able to explain the roles of models, views, and controllers.</li>
   <li>Choosing Action Results: Explain why you would choose one action result type over another
-      based on the desired outcome.</li>
+based on the desired outcome.</li>
   <li>Status Codes: Know the common HTTP status codes and their meanings (200 OK, 404 Not
-      Found, etc.).</li>
+Found, etc.).</li>
   <li>Attribute Routing: Demonstrate your ability to define routes using attributes.</li>
 </ul>
 
@@ -1180,9 +1175,7 @@ action
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
   <h3 id="introduction-to-controllers">Introduction to Controllers</h3>
-<p>Controller is a class that is used to group-up a set of actions (or action methods ).
-Action methods do perform certain operation when a request is received &amp; returns the result
-(response).</p>
+<p>Controller is a class that is used to group-up a set of actions (or action methods ). Action methods do perform certain operation when a request is received &amp; returns the result (response).</p>
   <h3 id="creating-controllers">Creating Controllers</h3>
 <p>Controllers should be either or both:</p>
 <ul>
@@ -1202,14 +1195,12 @@ Action methods do perform certain operation when a request is received &amp; ret
       <pre><code class="language-csharp">[Controller]
 class ClassNameController
 {
- //action methods here
+//action methods here
 }
 Optional:</code></pre>
     </div>
   <ul>
   <li>Is a public class.</li>
-</ul>
-<ul>
   <li>Inherited from Microsoft.AspNetCore.Mvc.Controller.</li>
 </ul>
 <p>Enable &#39;routing&#39; in controllers</p>
@@ -1225,8 +1216,7 @@ Optional:</code></pre>
       <pre><code class="language-csharp">AddControllers( )
 builder.Services.AddControllers();</code></pre>
     </div>
-  <p>Adds all controllers as services in the IServiceCollection.
-So that, they can be accesed when a specific endpoint needs it.</p>
+  <p>Adds all controllers as services in the IServiceCollection. So that, they can be accesed when a specific endpoint needs it.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1239,25 +1229,18 @@ So that, they can be accesed when a specific endpoint needs it.</p>
       <pre><code class="language-csharp">MapControllers()
 app.MapControllers();</code></pre>
     </div>
-  <p>Adds all action methods as endpoints.
-So that, no need of using UseEndPoints() method for adding action methods as end points.</p>
+  <p>Adds all action methods as endpoints. So that, no need of using UseEndPoints() method for adding action methods as end points.</p>
   <h3 id="responsibilities-of-controllers">Responsibilities of Controllers</h3>
   <h3 id="reading-requests">Reading requests</h3>
-<p>Extracting data values from request such as query string parameters, request body, request cookies,
-request headers etc.</p>
+<p>Extracting data values from request such as query string parameters, request body, request cookies, request headers etc.</p>
   <h3 id="invoking-models">Invoking models</h3>
-<p>Calling business logic methods.
-Generally business operations are available as &#39;services&#39;.</p>
+<p>Calling business logic methods. Generally business operations are available as &#39;services&#39;.</p>
   <h3 id="validation">Validation</h3>
-<p>Validate incoming request details (query string parameters, request body, request cookies, request
-headers etc.)</p>
+<p>Validate incoming request details (query string parameters, request body, request cookies, request headers etc.)</p>
   <h3 id="preparing-response">Preparing Response</h3>
-<p>Choosing what kind of response has to be sent to the client &amp; also preparing the response (action
-result ).</p>
+<p>Choosing what kind of response has to be sent to the client &amp; also preparing the response (action result ).</p>
   <h3 id="contentresult-1">ContentResult</h3>
-<p>ContentResult can represent any type of response, based on the specified MIME type.
-MIME type represents type of the content such as text/plain, text/html, application/json,
-application, xml, application/pdf etc.</p>
+<p>ContentResult can represent any type of response, based on the specified MIME type. MIME type represents type of the content such as text/plain, text/html, application/json, application, xml, application/pdf etc.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1281,9 +1264,7 @@ application, xml, application/pdf etc.</p>
       </div>
       <pre><code class="language-csharp">return Content(&quot;content&quot;, &quot;content type&quot;);</code></pre>
     </div>
-  <p>JsonResult
-JsonResult can represent an object in JavaScript Object Notation (JSON) format.
-Eg: { &quot;firstName&quot;: &quot;James&quot;, &quot;lastName&quot;: &quot;Smith&quot;, &quot;age&quot;: 25 }</p>
+  <p>JsonResult JsonResult can represent an object in JavaScript Object Notation (JSON) format. Eg: { &quot;firstName&quot;: &quot;James&quot;, &quot;lastName&quot;: &quot;Smith&quot;, &quot;age&quot;: 25 }</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1308,9 +1289,7 @@ Eg: { &quot;firstName&quot;: &quot;James&quot;, &quot;lastName&quot;: &quot;Smit
       <pre><code class="language-csharp">return Json(your_object);</code></pre>
     </div>
     <h3 id="file-results">File Results</h3>
-<p>File result sends the content of a file as response.
-Eg: pdf file, txt file, exe file, zip file etc.</p>
-  <h3 id="virtualfileresult">VirtualFileResult</h3>
+<p>File result sends the content of a file as response. Eg: pdf file, txt file, exe file, zip file etc. VirtualFileResult</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1324,11 +1303,9 @@ Eg: pdf file, txt file, exe file, zip file etc.</p>
 //or
 return File(&quot;file relative path&quot;, &quot;content type&quot;);</code></pre>
     </div>
-  <p>Represents a file within the WebRoot (&#39;wwwroot&#39; by default) folder.
-Used when the file is present in the WebRoot folder.</p>
+  <p>Represents a file within the WebRoot (&#39;wwwroot&#39; by default) folder. Used when the file is present in the WebRoot folder.</p>
   <h3 id="physicalfileresult">PhysicalFileResult</h3>
-<p>Represents a file that is not necessarily part of the project folder.
-Used when the file is present outside the WebRoot folder.</p>
+<p>Represents a file that is not necessarily part of the project folder. Used when the file is present outside the WebRoot folder.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1343,8 +1320,7 @@ Used when the file is present outside the WebRoot folder.</p>
 return PhysicalFile(&quot;file absolute path&quot;, &quot;content type&quot;);</code></pre>
     </div>
     <h3 id="filecontentresult">FileContentResult</h3>
-<p>Represents a file from the byte[ ].
-Used when a part of the file or byte[ ] from other data source has to be sent as response.</p>
+<p>Represents a file from the byte[ ]. Used when a part of the file or byte[ ] from other data source has to be sent as response.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1358,15 +1334,9 @@ Used when a part of the file or byte[ ] from other data source has to be sent as
 //or
 return File(byte_array, &quot;content type&quot;);</code></pre>
     </div>
-  <p><code>IActionResult</code>
-It is the parent interface for all action result classes such as ContentResult, JsonResult,
-RedirectResult, StatusCodeResult, ViewResult etc.
-By mentioning the return type as <code>IActionResult</code>, you can return either of the subtypes of</p>
-  <h3 id="iactionresult-1">IActionResult</h3>
+  <p><code>IActionResult</code> It is the parent interface for all action result classes such as ContentResult, JsonResult, RedirectResult, StatusCodeResult, ViewResult etc. By mentioning the return type as <code>IActionResult</code>, you can return either of the subtypes of <code>IActionResult</code></p>
   <h3 id="status-code-results-1">Status Code Results</h3>
-<p>Status code result sends an empty response with specified status code.
-Eg: 200, 400, 401, 404, 500 etc.</p>
-  <h3 id="statuscoderesult">StatusCodeResult</h3>
+<p>Status code result sends an empty response with specified status code. Eg: 200, 400, 401, 404, 500 etc. StatusCodeResult</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1429,8 +1399,8 @@ Eg: 200, 400, 401, 404, 500 etc.</p>
         </button>
       </div>
       <pre><code class="language-csharp">return new StatusCodeResult(status_code);
-      //or
-      return StatusCode(status_code);</code></pre>
+//or
+return StatusCode(status_code);</code></pre>
     </div>
     <h3 id="unauthoriziedresult">UnauthoriziedResult</h3>
 <ul>
@@ -1447,8 +1417,8 @@ Eg: 200, 400, 401, 404, 500 etc.</p>
         </button>
       </div>
       <pre><code class="language-csharp">return new UnauthorizedResult();
-      //or
-      return Unauthorized();</code></pre>
+//or
+return Unauthorized();</code></pre>
     </div>
   <p>BadRequestResult</p>
 <ul>
@@ -1465,8 +1435,8 @@ Eg: 200, 400, 401, 404, 500 etc.</p>
         </button>
       </div>
       <pre><code class="language-csharp">return new BadRequestResult();
-      //or
-      return BadRequest();</code></pre>
+//or
+return BadRequest();</code></pre>
     </div>
   <p>NotFoundResult</p>
 <ul>
@@ -1483,14 +1453,11 @@ Eg: 200, 400, 401, 404, 500 etc.</p>
         </button>
       </div>
       <pre><code class="language-csharp">return new NotFoundResult();
-      //or
-      return NotFound();</code></pre>
+//or
+return NotFound();</code></pre>
     </div>
     <h3 id="redirect-results-1">Redirect Results</h3>
-<p>Redirect result sends either HTTP 302 or 301 response to the browser, in order to redirect to a
-specific action or url.
-Eg: redirecting from &#39;action1&#39; to &#39;action2&#39;.</p>
-  <h3 id="redirecttoactionresult">RedirectToActionResult</h3>
+<p>Redirect result sends either HTTP 302 or 301 response to the browser, in order to redirect to a specific action or url. Eg: redirecting from &#39;action1&#39; to &#39;action2&#39;. RedirectToActionResult</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1526,10 +1493,7 @@ Eg: redirecting from &#39;action1&#39; to &#39;action2&#39;.</p>
       </div>
       <pre><code class="language-csharp">return new RedirectResult(&quot;url&quot;, permanent);</code></pre>
     </div>
-  <p>RedirectToActionResult
-Represents response for redirecting from the current action method to another action method,
-based on action name and controller name.
-302 - Found</p>
+  <p>RedirectToActionResult Represents response for redirecting from the current action method to another action method, based on action name and controller name. 302 - Found</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1557,10 +1521,7 @@ return RedirectToAction(&quot;action&quot;, &quot;controller&quot;, new { route_
 //or
 return RedirectToActionPermanent(&quot;action&quot;, &quot;controller&quot;, new { route_values });</code></pre>
     </div>
-  <p>LocalRedirectResult
-Represents response for redirecting from the current action method to another action method,
-based on the specified url.
-302 - Found</p>
+  <p>LocalRedirectResult Represents response for redirecting from the current action method to another action method, based on the specified url. 302 - Found</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1588,10 +1549,7 @@ return LocalRedirect(&quot;url);</code></pre>
 //or
 return LocalRedirectPermanent(&quot;url&quot;);</code></pre>
     </div>
-  <p>RedirectResult
-Represents response for redirecting from the current action method to any other url (either within
-the same web application or other web application).
-302 - Found</p>
+  <p>RedirectResult Represents response for redirecting from the current action method to any other url (either within the same web application or other web application). 302 - Found</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1688,19 +1646,11 @@ return RedirectPermanent(&quot;url&quot;);</code></pre>
         </li>
       
         <li class="toc-item">
-          <a href="#code" class="toc-link">Code</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#contentresult" class="toc-link">ContentResult</a>
         </li>
       
         <li class="toc-item">
           <a href="#creating-a-contentresult" class="toc-link">Creating a ContentResult</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#code-1" class="toc-link">Code</a>
         </li>
       
         <li class="toc-item">
@@ -1712,15 +1662,7 @@ return RedirectPermanent(&quot;url&quot;);</code></pre>
         </li>
       
         <li class="toc-item">
-          <a href="#code-2" class="toc-link">Code</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#types-of-file-results" class="toc-link">Types of File Results</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#code-3" class="toc-link">Code</a>
         </li>
       
         <li class="toc-item">
@@ -1740,10 +1682,6 @@ return RedirectPermanent(&quot;url&quot;);</code></pre>
         </li>
       
         <li class="toc-item">
-          <a href="#code-4" class="toc-link">Code</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#notes" class="toc-link">Notes</a>
         </li>
       
@@ -1760,10 +1698,6 @@ return RedirectPermanent(&quot;url&quot;);</code></pre>
         </li>
       
         <li class="toc-item">
-          <a href="#code-5" class="toc-link">Code</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#notes-1" class="toc-link">Notes</a>
         </li>
       
@@ -1777,6 +1711,18 @@ return RedirectPermanent(&quot;url&quot;);</code></pre>
       
         <li class="toc-item">
           <a href="#choosing-the-right-redirect" class="toc-link">Choosing the Right Redirect</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-points-to-remember" class="toc-link toc-sub">Key Points to Remember</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#1-controllers" class="toc-link toc-sub">1. Controllers</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#2-iactionresult" class="toc-link toc-sub">2. IActionResult</a>
         </li>
       
         <li class="toc-item">

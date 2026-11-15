@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -400,13 +410,9 @@
       <article class="docs-content">
         
 <h2 id="routing">Routing</h2>
-<p>At its heart, routing is the mechanism that ASP.NET Core uses to match incoming HTTP requests to</p>
-<p>specific endpoints (e.g., controller actions, Razor Pages, or minimal API handlers) within your</p>
-<p>application. This allows you to define clean and meaningful URLs that clearly indicate the resources</p>
-<ul>
-  <li>r actions being requested.</li>
-</ul>
-<p>How Routing Works in ASP.NET Core</p>
+<p>At its heart, routing is the mechanism that ASP.NET Core uses to match incoming HTTP requests to specific endpoints (e.g., controller actions, Razor Pages, or minimal API handlers) within your application. This allows you to define clean and meaningful URLs that clearly indicate the resources or actions being requested.</p>
+
+<h2 id="how-routing-works-in-aspnet-core">How Routing Works in ASP.NET Core</h2>
 <ul>
   <li>1. Endpoint Registration: You define endpoints (routes) within your application, specifying:</li>
   <li>The URL pattern (e.g., /products, /api/orders/{id}).</li>
@@ -418,36 +424,38 @@
   <li>It compares the URL against your registered endpoints to find the best match.</li>
   <li>3. Endpoint Execution (Middleware):</li>
   <li>The <code>UseEndpoints</code> middleware component is added to the pipeline, following
-           <code>UseRouting</code>.</li>
+<code>UseRouting</code>.</li>
   <li>If <code>UseRouting</code> found a matching endpoint, <code>UseEndpoints</code> executes the code (the
-           RequestDelegate) associated with that endpoint.</li>
+RequestDelegate) associated with that endpoint.</li>
 </ul>
-<p><code>UseRouting</code> vs. <code>UseEndpoints</code></p>
+
+<h2 id="userouting-vs-useendpoints">UseRouting vs. UseEndpoints</h2>
 <ul>
   <li><code>UseRouting</code>:</li>
   <li>It&#39;s responsible for route matching - finding the right endpoint for a given request.</li>
   <li>It adds route data to the HttpContext, which subsequent middleware can use to
-           make decisions.</li>
+make decisions.</li>
   <li>It must come before <code>UseEndpoints</code>.</li>
   <li><code>UseEndpoints</code>:</li>
   <li>It&#39;s responsible for endpoint execution - invoking the code (the delegate) associated
-           with the matched endpoint.</li>
+with the matched endpoint.</li>
   <li>It also lets you configure the endpoints (e.g., define policies, filters) using lambda
-           expressions.</li>
+expressions.</li>
 </ul>
-<p>Map* Methods: Creating Endpoints
-ASP.NET Core provides a family of Map* extension methods on the IEndpointRouteBuilder interface
-that simplify endpoint creation:</p>
+
+<h2 id="map-methods-creating-endpoints">Map* Methods: Creating Endpoints</h2>
+<p>ASP.NET Core provides a family of Map* extension methods on the IEndpointRouteBuilder interface that simplify endpoint creation:</p>
 <ul>
   <li><code>MapGet</code>: Creates an endpoint that only handles GET requests.</li>
   <li><code>MapPost</code>: Creates an endpoint that only handles POST requests.</li>
   <li><code>MapPut</code>, <code>MapDelete</code>: Create endpoints for PUT and DELETE requests, respectively.</li>
   <li>MapMethods: Creates an endpoint that handles multiple HTTP methods.</li>
   <li>MapControllerRoute, MapAreaControllerRoute: Used for configuring MVC/Razor Pages
-      controllers.</li>
+controllers.</li>
   <li>MapFallbackToFile: Used to specify a default file to serve when no other endpoint matches.</li>
 </ul>
-<p>Code: Detailed Explanation</p>
+
+<h2 id="code-detailed-explanation">Code: Detailed Explanation</h2>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -462,45 +470,43 @@ app.UseRouting();
 //creating endpoints
 app.UseEndpoints(endpoints =&gt;
 {
-  //add your endpoints here
-  endpoints.MapGet(&quot;map1&quot;, async (context) =&gt; {
-   await context.Response.WriteAsync(&quot;In Map 1&quot;);
-  });
-  endpoints.MapPost(&quot;map2&quot;, async (context) =&gt; {
-   await context.Response.WriteAsync(&quot;In Map 2&quot;);
-  });
+//add your endpoints here
+endpoints.MapGet(&quot;map1&quot;, async (context) =&gt; {
+await context.Response.WriteAsync(&quot;In Map 1&quot;);
+});
+endpoints.MapPost(&quot;map2&quot;, async (context) =&gt; {
+await context.Response.WriteAsync(&quot;In Map 2&quot;);
+});
 });
 app.Run(async context =&gt; {
-  await context.Response.WriteAsync($&quot;Request received at {context.Request.Path}&quot;);
-});
-   1. app.UseRouting();: This line activates routing middleware. It sets up the machinery to</code></pre>
+await context.Response.WriteAsync($&quot;Request received at {context.Request.Path}&quot;);
+});</code></pre>
     </div>
-  <p>analyze incoming requests and match them against your defined endpoints.</p>
-<ul>
+  <ul>
+  <li>1. app.<code>UseRouting</code>();: This line activates routing middleware. It sets up the machinery to
+analyze incoming requests and match them against your defined endpoints.</li>
   <li>2. app.<code>UseEndpoints</code>(endpoints =&gt; { ... });: This lambda expression configures the endpoints of
-      your application:</li>
+your application:</li>
   <li>endpoints.<code>MapGet</code>(&quot;map1&quot;, ...);: Registers a GET endpoint that responds to the path
-           &quot;/map1&quot; with the text &quot;In Map 1&quot;.</li>
+&quot;/map1&quot; with the text &quot;In Map 1&quot;.</li>
   <li>endpoints.<code>MapPost</code>(&quot;map2&quot;, ...);: Registers a POST endpoint for the path &quot;/map2&quot;,
-           responding with &quot;In Map 2&quot;.</li>
+responding with &quot;In Map 2&quot;.</li>
   <li>3. app.Run(async context =&gt; { ... });: This is a fallback terminal middleware. If no other
-      endpoint matches the request (e.g., if you visit &quot;/map3&quot;), it will execute this code, writing
-      the requested path to the response.</li>
+endpoint matches the request (e.g., if you visit &quot;/map3&quot;), it will execute this code, writing
+the requested path to the response.</li>
 </ul>
 
 <h2 id="getendpoint">GetEndpoint()</h2>
-<p>In ASP.NET Core, the GetEndpoint() method is a powerful tool for retrieving information about the
-specific endpoint that was selected to handle an incoming HTTP request. This method is an
-extension method available on the HttpContext object.</p>
+<p>In ASP.NET Core, the GetEndpoint() method is a powerful tool for retrieving information about the specific endpoint that was selected to handle an incoming HTTP request. This method is an extension method available on the HttpContext object.</p>
 <ul>
   <li>Purpose: It allows you to access details about the matched endpoint, such as its display
-      name, route pattern, metadata, and more.</li>
+name, route pattern, metadata, and more.</li>
   <li>When to Use It: You typically use GetEndpoint() within middleware components to make
-      decisions based on the selected endpoint or to extract information that&#39;s relevant to your
-      custom logic.</li>
+decisions based on the selected endpoint or to extract information that&#39;s relevant to your
+custom logic.</li>
   <li>Middleware Placement: The GetEndpoint() method will return a valid Endpoint object only
-      after the <code>UseRouting</code> middleware has executed and successfully matched the request to an
-      endpoint.</li>
+after the <code>UseRouting</code> middleware has executed and successfully matched the request to an
+endpoint.</li>
 </ul>
 <p>Code:</p>
 
@@ -517,93 +523,89 @@ var app = builder.Build();
 // Middleware 1: Before Routing
 app.Use(async (context, next) =&gt;
 {
-  Microsoft.AspNetCore.Http.Endpoint? endPoint = context.GetEndpoint();
-  if (endPoint != null)
-  {
-   await context.Response.WriteAsync($&quot;Endpoint: {endPoint.DisplayName}\n&quot;);
-  }
-  await next(context);
+Microsoft.AspNetCore.Http.Endpoint? endPoint = context.GetEndpoint();
+if (endPoint != null)
+{
+await context.Response.WriteAsync($&quot;Endpoint: {endPoint.DisplayName}\n&quot;);
+}
+await next(context);
 });
 // Enable Routing Middleware
 app.UseRouting();
 // Middleware 2: After Routing
 app.Use(async (context, next) =&gt;
 {
-  Microsoft.AspNetCore.Http.Endpoint? endPoint = context.GetEndpoint();
-  if (endPoint != null)
-  {
-   await context.Response.WriteAsync($&quot;Endpoint: {endPoint.DisplayName}\n&quot;);
-  }
-  await next(context);
+Microsoft.AspNetCore.Http.Endpoint? endPoint = context.GetEndpoint();
+if (endPoint != null)
+{
+await context.Response.WriteAsync($&quot;Endpoint: {endPoint.DisplayName}\n&quot;);
+}
+await next(context);
 });
 // Creating Endpoints
 app.UseEndpoints(endpoints =&gt;
 {
-  endpoints.MapGet(&quot;map1&quot;, async (context) =&gt;
-  {
-   await context.Response.WriteAsync(&quot;In Map 1&quot;);
-  });
-  endpoints.MapPost(&quot;map2&quot;, async (context) =&gt;
-  {
-   await context.Response.WriteAsync(&quot;In Map 2&quot;);
-  });
+endpoints.MapGet(&quot;map1&quot;, async (context) =&gt;
+{
+await context.Response.WriteAsync(&quot;In Map 1&quot;);
+});
+endpoints.MapPost(&quot;map2&quot;, async (context) =&gt;
+{
+await context.Response.WriteAsync(&quot;In Map 2&quot;);
+});
 });
 // Fallback Middleware
 app.Run(async context =&gt;
 {
-  await context.Response.WriteAsync($&quot;Request received at {context.Request.Path}&quot;);
+await context.Response.WriteAsync($&quot;Request received at {context.Request.Path}&quot;);
 });
 app.Run();
-Let&#39;s analyze the code step-by-step:
-   1. Middleware 1 (Before Routing):</code></pre>
+Let&#39;s analyze the code step-by-step:</code></pre>
     </div>
   <ul>
-  <li>Here, GetEndpoint() will return null because routing hasn&#39;t happened yet. The</li>
-</ul>
-<p>request hasn&#39;t been matched to any specific endpoint.</p>
-<ul>
+  <li>1. Middleware 1 (Before Routing):</li>
+  <li>Here, GetEndpoint() will return null because routing hasn&#39;t happened yet. The
+request hasn&#39;t been matched to any specific endpoint.</li>
   <li>2. app.<code>UseRouting</code>();</li>
   <li>This enables the routing middleware, which is responsible for matching the request
-           to an endpoint.</li>
+to an endpoint.</li>
   <li>3. Middleware 2 (After Routing):</li>
   <li>Now, GetEndpoint() will return the matched endpoint object (if a match was found).
-           You can access its DisplayName (or other properties) to get information about the
-           selected endpoint.</li>
+You can access its DisplayName (or other properties) to get information about the
+selected endpoint.</li>
   <li>For a GET request to &quot;/map1&quot;, the display name would be &quot;map1&quot;.</li>
   <li>For a POST request to &quot;/map2&quot;, the display name would be &quot;map2&quot;.</li>
   <li>For any other path, the display name would be null (since the fallback middleware handles
-      those cases).</li>
+those cases).</li>
   <li>4. Endpoint Creation:</li>
   <li>The app.<code>UseEndpoints</code> section defines your endpoints (routes).</li>
   <li>5. Fallback Middleware:</li>
   <li>This middleware handles requests that didn&#39;t match any defined endpoints. It simply
-           writes the requested path to the response.</li>
+writes the requested path to the response.</li>
 </ul>
 
 <h2 id="route-parameters">Route Parameters</h2>
-<p>Route parameters are placeholders within your URL patterns that capture values from incoming
-requests. These values can then be used within your endpoint handlers to customize the response or
-perform specific actions.</p>
+<p>Route parameters are placeholders within your URL patterns that capture values from incoming requests. These values can then be used within your endpoint handlers to customize the response or perform specific actions.</p>
 
 <h2 id="types-of-route-parameters">Types of Route Parameters</h2>
 <ul>
   <li>1. Required Parameters:</li>
   <li>Syntax: Enclosed in curly braces {}.</li>
   <li>Behavior: Must be provided in the URL for the route to match. If not present, the
-           request won&#39;t match this endpoint.</li>
+request won&#39;t match this endpoint.</li>
   <li>Example: /products/{id} (The id parameter is required).</li>
   <li>2. Optional Parameters:</li>
   <li>Syntax: Enclosed in curly braces {} and followed by a question mark ?.</li>
   <li>Behavior: Can be omitted from the URL. If not present, the parameter&#39;s value will be
-           null.</li>
+null.</li>
   <li>Example: /products/details/{id?} (The id parameter is optional).</li>
   <li>3. Parameters with Default Values:</li>
   <li>Syntax: Enclosed in curly braces {}, followed by an equals sign =, and then the
-           default value.</li>
+default value.</li>
   <li>Behavior: If not provided in the URL, the parameter will take the specified default
-           value.</li>
-  <li>Example: /employee/profile/{EmployeeName=john} (The EmployeeName
-           parameter defaults to &quot;john&quot;).</li>
+value.</li>
+  <li>Example: /employee/profile/{EmployeeName=} (The EmployeeName
+parameter defaults to &quot;&quot;).</li>
 </ul>
 <p>Code:</p>
 
@@ -618,44 +620,44 @@ perform specific actions.</p>
       <pre><code class="language-csharp">// ... (UseRouting and other middleware) ...
 app.UseEndpoints(endpoints =&gt;
 {
-  // Required Parameters
-  endpoints.Map(&quot;files/{filename}.{extension}&quot;, async context =&gt;
-  {
-   string? fileName = Convert.ToString(context.Request.RouteValues[&quot;filename&quot;]);
-   string? extension = Convert.ToString(context.Request.RouteValues[&quot;extension&quot;]);
-   await context.Response.WriteAsync($&quot;In files - {fileName} - {extension}&quot;);
-  });
-  // Default Parameter
-  endpoints.Map(&quot;employee/profile/{EmployeeName=john}&quot;, async context =&gt;
-  {
-   string? employeeName = Convert.ToString(context.Request.RouteValues[&quot;employeename&quot;]);
-   await context.Response.WriteAsync($&quot;In Employee profile - {employeeName}&quot;);
-  });
-  // Optional Parameter
-  endpoints.Map(&quot;products/details/{id?}&quot;, async context =&gt; {
-   if (context.Request.RouteValues.ContainsKey(&quot;id&quot;))
-   {
-     int id = Convert.ToInt32(context.Request.RouteValues[&quot;id&quot;]);
-     await context.Response.WriteAsync($&quot;Products details - {id}&quot;);
-   }
-   else
-   {
-     await context.Response.WriteAsync($&quot;Products details - id is not supplied&quot;);
-   }
-  });
+// Required Parameters
+endpoints.Map(&quot;files/{filename}.{extension}&quot;, async context =&gt;
+{
+string? fileName = Convert.ToString(context.Request.RouteValues[&quot;filename&quot;]);
+string? extension = Convert.ToString(context.Request.RouteValues[&quot;extension&quot;]);
+await context.Response.WriteAsync($&quot;In files - {fileName} - {extension}&quot;);
+});
+// Default Parameter
+endpoints.Map(&quot;employee/profile/{EmployeeName=}&quot;, async context =&gt;
+{
+string? employeeName = Convert.ToString(context.Request.RouteValues[&quot;employeename&quot;]);
+await context.Response.WriteAsync($&quot;In Employee profile - {employeeName}&quot;);
+});
+// Optional Parameter
+endpoints.Map(&quot;products/details/{id?}&quot;, async context =&gt; {
+if (context.Request.RouteValues.ContainsKey(&quot;id&quot;))
+{
+int id = Convert.ToInt32(context.Request.RouteValues[&quot;id&quot;]);
+await context.Response.WriteAsync($&quot;Products details - {id}&quot;);
+}
+else
+{
+await context.Response.WriteAsync($&quot;Products details - id is not supplied&quot;);
+}
+});
 });
 // ... (Fallback middleware) ...</code></pre>
     </div>
   <ul>
   <li>1. Required Parameters Example:</li>
   <li>The route files/{filename}.{extension} expects both filename and extension to be
-           present in the URL (e.g., /files/sample.txt).</li>
+present in the URL (e.g., /files/sample.txt).</li>
   <li>The endpoint handler extracts these values from context.Request.RouteValues and
-           uses them in the response.</li>
+uses them in the response.</li>
   <li>2. Default Parameter Example:</li>
-  <li>The route employee/profile/{EmployeeName=john} has a default value for
-           EmployeeName.</li>
-  <li>If you visit /employee/profile, the response will be &quot;In Employee profile - john&quot;.</li>
+  <li>The route employee/profile/{EmployeeName=} has a default value for
+EmployeeName.</li>
+  <li>If you visit /employee/profile, the response will be &quot;In Employee profile - &quot;.</li>
   <li>If you visit /employee/profile/john, the response will be &quot;In Employee profile - john&quot;.</li>
   <li>3. Optional Parameter Example:</li>
   <li>The route products/details/{id?} allows the id parameter to be omitted.</li>
@@ -664,14 +666,11 @@ app.UseEndpoints(endpoints =&gt;
 </ul>
 
 <h2 id="route-constraints">Route Constraints</h2>
-<p>Route constraints are an essential tool in ASP.NET Core routing that allows you to add extra
-validation to your route parameters. They define rules that restrict the values a parameter can
-accept, helping you filter out invalid requests before they reach your endpoint handlers.
-Why Use Route Constraints?</p>
+<p>Route constraints are an essential tool in ASP.NET Core routing that allows you to add extra validation to your route parameters. They define rules that restrict the values a parameter can accept, helping you filter out invalid requests before they reach your endpoint handlers. Why Use Route Constraints?</p>
 <ul>
   <li>Enhanced Validation: Ensure that only requests with valid parameter values are handled.</li>
   <li>Improved Security: Prevent malicious input by rejecting requests with potentially harmful
-      values.</li>
+values.</li>
   <li>Cleaner Code: Avoid cluttering your endpoint handlers with validation logic.</li>
   <li>Explicit Routing: Make your routes more self-documenting and easier to understand.</li>
 </ul>
@@ -683,16 +682,15 @@ Why Use Route Constraints?</p>
   <li>bool: Requires the parameter value to be a boolean (true or false).</li>
   <li>datetime: Requires the parameter value to be a valid date and time string.</li>
   <li>decimal, double, float, long: Require the parameter value to be of the specified numeric
-      type.</li>
+type.</li>
   <li>guid: Requires the parameter value to be a valid GUID (Globally Unique Identifier).</li>
   <li>alpha: Requires the parameter value to consist only of alphabetic characters (a-z, A-Z).</li>
   <li>regex: Requires the parameter value to match a regular expression pattern.</li>
   <li>length: Requires the parameter value to have a specific length or within a specified range.</li>
   <li>min, max, range: Require the parameter value to be greater than or equal to the minimum
-      (min), less than or equal to the maximum (max), or within a specific range (range).</li>
+(min), less than or equal to the maximum (max), or within a specific range (range).</li>
 </ul>
-
-<h2 id="code">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -705,74 +703,69 @@ Why Use Route Constraints?</p>
       <pre><code class="language-csharp">// ... (UseRouting and other middleware) ...
 app.UseEndpoints(endpoints =&gt;
 {
-  // ... (other endpoints) ...
-  // Alphabetic and Length Constraint
-  endpoints.Map(&quot;employee/profile/{EmployeeName:length(4,7):alpha=john}&quot;, async context =&gt;
-  {
-   // ...
-  });
-  // Integer, Range, and Optional Constraint
-  endpoints.Map(&quot;products/details/{id:int:range(1,1000)?}&quot;, async context =&gt; {
-   // ...
-  });
-  // DateTime Constraint
-  endpoints.Map(&quot;daily-digest-report/{reportdate:datetime}&quot;, async context =&gt;
-  {
-   // ...
-  });
-  // GUID Constraint
-  endpoints.Map(&quot;cities/{cityid:guid}&quot;, async context =&gt;
-  {
-   // ...
-  });
-  // Int, Min, Regex Constraint
-  endpoints.Map(&quot;sales-report/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}&quot;, async
-context =&gt;
-  {
-   // ...
-  });
+// ... (other endpoints) ...
+// Alphabetic and Length Constraint
+endpoints.Map(&quot;employee/profile/{EmployeeName:length(4,7):alpha=}&quot;, async context =&gt;
+{
+// ...
 });
-// ... (Fallback middleware) ...
-   1. Alphabetic and Length Constraint:</code></pre>
+// Integer, Range, and Optional Constraint
+endpoints.Map(&quot;products/details/{id:int:range(1,1000)?}&quot;, async context =&gt; {
+// ...
+});
+// DateTime Constraint
+endpoints.Map(&quot;daily-digest-report/{reportdate:datetime}&quot;, async context =&gt;
+{
+// ...
+});
+// GUID Constraint
+endpoints.Map(&quot;cities/{cityid:guid}&quot;, async context =&gt;
+{
+// ...
+});
+// Int, Min, Regex Constraint
+endpoints.Map(&quot;sales-report/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}&quot;, async
+context =&gt;
+{
+// ...
+});
+});
+// ... (Fallback middleware) ...</code></pre>
     </div>
-  <p>/employee/profile/{EmployeeName:length(4,7):alpha=john}: Ensures EmployeeName is 4-
-      7 characters long and consists only of alphabetic characters. If not supplied, it defaults to
-      &quot;john&quot;.</p>
-<ol>
+  <ol>
+  <li>Alphabetic and Length Constraint:
+/employee/profile/{EmployeeName:length(4,7):alpha=}: Ensures EmployeeName is 4-
+7 characters long and consists only of alphabetic characters. If not supplied, it defaults to
+&quot;&quot;.</li>
   <li>Integer, Range, and Optional Constraint: /products/details/{id:int:range(1,1000)?}: Requires
-      id to be an integer between 1 and 1000. The question mark makes it optional.</li>
+id to be an integer between 1 and 1000. The question mark makes it optional.</li>
   <li>DateTime Constraint: /daily-digest-report/{reportdate:datetime}: Requires reportdate to be
-      a valid date-time string.</li>
+a valid date-time string.</li>
   <li>GUID Constraint: /cities/{cityid:guid}: Requires cityid to be a valid GUID.</li>
-  <li>Integer, Min, and Regex Constraint: /salesreport
-/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}: Requires year to be an
-      integer greater than or equal to 1900, and month to be one of the specified values (apr, jul,
-      oct, jan).</li>
+  <li>Integer, Min, and Regex Constraint: /sales-
+report/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}: Requires year to be an
+integer greater than or equal to 1900, and month to be one of the specified values (apr, jul,
+oct, jan).</li>
 </ol>
 
 <h2 id="custom-route-constraint-classes">Custom Route Constraint Classes</h2>
-<p>While ASP.NET Core offers a variety of built-in route constraints, sometimes your application</p>
-<p>requires more specialized validation rules. Custom route constraint classes allow you to define your</p>
-<ul>
-  <li>wn criteria for determining whether a parameter value is valid.</li>
-</ul>
+<p>While ASP.NET Core offers a variety of built-in route constraints, sometimes your application requires more specialized validation rules. Custom route constraint classes allow you to define your own criteria for determining whether a parameter value is valid.</p>
 
 <h2 id="key-requirements">Key Requirements</h2>
 <ul>
   <li>1. Implement IRouteConstraint: Create a class that implements the IRouteConstraint interface.</li>
   <li>2. Match Method: Implement the Match method, which will contain your custom validation
-      logic. This method receives several parameters:</li>
+logic. This method receives several parameters:</li>
   <li>httpContext: The current HttpContext.</li>
   <li>route: The IRouter object associated with the route.</li>
   <li>routeKey: The name of the route parameter being validated.</li>
   <li>values: A dictionary containing the route values.</li>
   <li>routeDirection: Indicates whether the route is being matched for an incoming
-           request or for generating a URL.</li>
+request or for generating a URL.</li>
   <li>3. Return true or false: The Match method must return true if the parameter value is valid
-      according to your constraint, and false otherwise.</li>
+according to your constraint, and false otherwise.</li>
 </ul>
-
-<h2 id="code-1">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -785,36 +778,36 @@ context =&gt;
       <pre><code class="language-csharp">// MonthsCustomConstraint.cs
 public class MonthsCustomConstraint : IRouteConstraint
 {
-  public bool Match(HttpContext? httpContext, IRouter? route, string routeKey,
+public bool Match(HttpContext? httpContext, IRouter? route, string routeKey,
 RouteValueDictionary values, RouteDirection routeDirection)
-  {
-   // Check if the parameter value exists
-   if (!values.ContainsKey(routeKey))
-   {
-     return false; // Not a match
-   }
-   Regex regex = new Regex(&quot;^(apr|jul|oct|jan)$&quot;);
-   string? monthValue = Convert.ToString(values[routeKey]);
-   if (regex.IsMatch(monthValue))
-   {
-     return true; // It&#39;s a match
-   }
-   return false; // Not a match
-  }
+{
+// Check if the parameter value exists
+if (!values.ContainsKey(routeKey))
+{
+return false; // Not a match
+}
+Regex regex = new Regex(&quot;^(apr|jul|oct|jan)$&quot;);
+string? monthValue = Convert.ToString(values[routeKey]);
+if (regex.IsMatch(monthValue))
+{
+return true; // It&#39;s a match
+}
+return false; // Not a match
+}
 }
 Let&#39;s break this down:</code></pre>
     </div>
-  <p>1. Implementation of IRouteConstraint: The MonthsCustomConstraint class clearly
-      implements this interface, signaling that it&#39;s a custom route constraint.</p>
-<ul>
+  <ul>
+  <li>1. Implementation of IRouteConstraint: The MonthsCustomConstraint class clearly
+implements this interface, signaling that it&#39;s a custom route constraint.</li>
   <li>2. Match Method:</li>
   <li>It first checks if the values dictionary contains the route parameter being validated
-           (routeKey). If not, it&#39;s an immediate mismatch, and false is returned.</li>
+(routeKey). If not, it&#39;s an immediate mismatch, and false is returned.</li>
   <li>A regular expression (^(apr|jul|oct|jan)$) is used to define the valid month values.</li>
   <li>The value associated with the routeKey is retrieved from the values dictionary and
-           converted to a string.</li>
+converted to a string.</li>
   <li>The Regex.IsMatch method tests whether the retrieved value matches the allowed
-           month pattern.</li>
+month pattern.</li>
   <li>Returns true if the value matches, and false otherwise.</li>
 </ul>
 
@@ -831,59 +824,57 @@ Let&#39;s break this down:</code></pre>
       <pre><code class="language-csharp">// ... (in your endpoint configuration) ...
 endpoints.Map(&quot;sales-report/{year:int:min(1900)}/{month:months}&quot;, async context =&gt;
 {
-  // ... your endpoint handler logic ...
+// ... your endpoint handler logic ...
 });</code></pre>
     </div>
   <ul>
-  <li>Notice the :months constraint after the month parameter. This indicates that the value for</li>
+  <li>Notice the :months constraint after the month parameter. This indicates that the value for
+month should be validated against the MonthsCustomConstraint class.</li>
 </ul>
-<p>month should be validated against the MonthsCustomConstraint class.</p>
 
 <h2 id="endpoint-selection">Endpoint Selection</h2>
-<p>When a request arrives at your ASP.NET Core application, the routing middleware (<code>UseRouting</code>)
-analyzes the URL and HTTP method. It then compares this information against the collection of
-endpoints you&#39;ve defined using methods like <code>MapGet</code>, <code>MapPost</code>, etc. The goal is to find the most
-suitable endpoint to handle the request.
-However, what happens when multiple endpoints seem like potential matches? ASP.NET Core
-employs a well-defined algorithm to determine the winning endpoint.</p>
+<p>When a request arrives at your ASP.NET Core application, the routing middleware (<code>UseRouting</code>) analyzes the URL and HTTP method. It then compares this information against the collection of endpoints you&#39;ve defined using methods like <code>MapGet</code>, <code>MapPost</code>, etc. The goal is to find the most suitable endpoint to handle the request. However, what happens when multiple endpoints seem like potential matches? ASP.NET Core employs a well-defined algorithm to determine the winning endpoint.</p>
 
 <h2 id="endpoint-selection-algorithm">Endpoint Selection Algorithm</h2>
 <ul>
   <li>1. Precedence:</li>
   <li>Explicit Matches: Endpoints defined with more specific patterns (e.g.,
-           /products/{id}) take precedence over those with broader patterns (e.g., /products).</li>
+/products/{id}) take precedence over those with broader patterns (e.g., /products).</li>
   <li>Order of Registration: If multiple endpoints with equally specific patterns could
-           match, the endpoint that was registered first wins.</li>
+match, the endpoint that was registered first wins.</li>
   <li>2. HTTP Method:</li>
   <li>Exact Match: If the request method (GET, POST, etc.) exactly matches the method
-           specified for an endpoint, that endpoint is preferred.</li>
+specified for an endpoint, that endpoint is preferred.</li>
   <li>3. Route Constraints:</li>
   <li>More Specific Constraints: Endpoints with more restrictive route constraints (e.g.,
-           id:int:range(1,100) vs. id:int) are favored.</li>
+id:int:range(1,100) vs. id:int) are favored.</li>
   <li>4. Catch-All (Fallback):</li>
   <li>If no other endpoint matches, and you have a catch-all endpoint (defined using
-           MapFallback), it will be selected.</li>
+MapFallback), it will be selected.</li>
 </ul>
-<p>Order of Precedence: A Visual Summary</p>
+
+<h2 id="order-of-precedence-a-visual-summary">Order of Precedence: A Visual Summary</h2>
+<ol>
+  <li>Explicit Match with Exact HTTP Method and More Specific Route Constraints</li>
+  <li>Explicit Match with Exact HTTP Method and Less Specific Route Constraints</li>
+  <li>Explicit Match with Any HTTP Method and More Specific Route Constraints</li>
+  <li>Explicit Match with Any HTTP Method and Less Specific Route Constraints</li>
+  <li>Order of Registration (if specificity is equal)</li>
+  <li>Catch-All Endpoint (if no other match is found)</li>
+</ol>
+
+<h2 id="practical-implications-and-tips">Practical Implications and Tips</h2>
 <ul>
-  <li>1. Explicit Match with Exact HTTP Method and More Specific Route Constraints</li>
-  <li>2. Explicit Match with Exact HTTP Method and Less Specific Route Constraints</li>
-  <li>3. Explicit Match with Any HTTP Method and More Specific Route Constraints</li>
-  <li>4. Explicit Match with Any HTTP Method and Less Specific Route Constraints</li>
-  <li>5. Order of Registration (if specificity is equal)</li>
-  <li>6. Catch-All Endpoint (if no other match is found)
-Practical Implications and Tips</li>
   <li>Mind Your Order: Be mindful of the order in which you register your endpoints, especially if
-      they have similar patterns.</li>
+they have similar patterns.</li>
   <li>Specificity Wins: Define your routes as specifically as possible to avoid ambiguity.</li>
   <li>Route Constraints: Use route constraints to narrow down the valid values for parameters.</li>
   <li>Catch-All with Caution: Catch-all endpoints can be useful, but use them sparingly to avoid
-      unintended matches.</li>
+unintended matches.</li>
   <li>Endpoint Metadata: Explore the Endpoint object&#39;s metadata for insights into why a
-      particular endpoint was selected.</li>
+particular endpoint was selected.</li>
 </ul>
-
-<h2 id="code-2">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -895,55 +886,49 @@ Practical Implications and Tips</li>
       </div>
       <pre><code class="language-csharp">app.UseEndpoints(endpoints =&gt;
 {
-  endpoints.MapGet(&quot;/products/{id:int}&quot;, GetProductById); // Most specific
-  endpoints.MapGet(&quot;/products&quot;, GetAllProducts); // Less specific
-  endpoints.MapGet(&quot;/{path?}&quot;, CatchAllHandler); // Catch-all
+endpoints.MapGet(&quot;/products/{id:int}&quot;, GetProductById); // Most specific
+endpoints.MapGet(&quot;/products&quot;, GetAllProducts); // Less specific
+endpoints.MapGet(&quot;/{path?}&quot;, CatchAllHandler); // Catch-all
 });
 In this example:</code></pre>
     </div>
   <ul>
   <li>/products/123 will match the first endpoint (GetProductById).</li>
-</ul>
-<ul>
   <li>/products will match the second endpoint (GetAllProducts).</li>
   <li>/anything-else will match the catch-all endpoint (CatchAllHandler).</li>
 </ul>
 
 <h2 id="resolving-ambiguity">Resolving Ambiguity</h2>
-<p>If the routing system cannot definitively determine the best match, you&#39;ll encounter an
-AmbiguousMatchException. This exception signals that you need to refine your route definitions or
-registration order to eliminate the conflict.
-Static Files in ASP.NET Core
-Static files are the assets that make up the visual presentation and functionality of your web
-application:</p>
+<p>If the routing system cannot definitively determine the best match, you&#39;ll encounter an AmbiguousMatchException. This exception signals that you need to refine your route definitions or registration order to eliminate the conflict.</p>
+
+<h2 id="static-files-in-aspnet-core">Static Files in ASP.NET Core</h2>
+<p>Static files are the assets that make up the visual presentation and functionality of your web application:</p>
 <ul>
   <li>HTML Files: The structure of your web pages.</li>
   <li>CSS Stylesheets: The styling and appearance of your content.</li>
   <li>JavaScript Files: The interactive elements and logic of your application.</li>
   <li>Images: Visual elements that enhance the user experience.</li>
 </ul>
-<p>ASP.NET Core provides the UseStaticFiles() middleware component to efficiently serve these static
-files directly to the browser without requiring any server-side processing.
-WebRoot: The Default Location
-The WebRoot property in ASP.NET Core specifies the default directory from which static files are
-served. By default, this directory is named &quot;wwwroot&quot; and is located at the root of your project.
-However, you can customize this location if needed.
-UseStaticFiles() Middleware: Enabling Static File Serving</p>
+<p>ASP.NET Core provides the UseStaticFiles() middleware component to efficiently serve these static files directly to the browser without requiring any server-side processing.</p>
+
+<h2 id="webroot-the-default-location">WebRoot: The Default Location</h2>
+<p>The WebRoot property in ASP.NET Core specifies the default directory from which static files are served. By default, this directory is named &quot;wwwroot&quot; and is located at the root of your project. However, you can customize this location if needed.</p>
+
+<h2 id="usestaticfiles-middleware-enabling-static-file-serving">UseStaticFiles() Middleware: Enabling Static File Serving</h2>
 <ul>
   <li>Basic Usage: Calling app.UseStaticFiles(); with no arguments will serve static files from the
-      default WebRoot directory.</li>
+default WebRoot directory.</li>
   <li>Customization: You can customize the behavior of UseStaticFiles() by passing a
-      StaticFileOptions object:</li>
+StaticFileOptions object:</li>
   <li>FileProvider: Specify a different file provider (e.g., PhysicalFileProvider) to serve files
-           from a custom location.</li>
+from a custom location.</li>
   <li>RequestPath: Configure the base URL path for your static files (e.g., /static).</li>
   <li>ContentTypeProvider: Customize how content types are determined for different file
-           extensions.</li>
+extensions.</li>
   <li>OnPrepareResponse: Perform additional actions on the response before it&#39;s sent to
-           the client.</li>
+the client.</li>
 </ul>
-
-<h2 id="code-3">Code</h2>
+<p>Code</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -957,7 +942,7 @@ UseStaticFiles() Middleware: Enabling Static File Serving</p>
 // ...
 var builder = WebApplication.CreateBuilder(new WebApplicationOptions()
 {
-  WebRootPath = &quot;myroot&quot;
+WebRootPath = &quot;myroot&quot;
 });
 var app = builder.Build();
 // Serve from the specified WebRoot (&quot;myroot&quot; in this case
@@ -966,53 +951,52 @@ app.UseStaticFiles();
 // Serve from a custom directory (&quot;mywebroot&quot;) located within the project&#39;s ContentRootPath
 app.UseStaticFiles(new StaticFileOptions()
 {
-  FileProvider = new PhysicalFileProvider(
-   Path.Combine(builder.Environment.ContentRootPath, &quot;mywebroot&quot;)
-  )
+FileProvider = new PhysicalFileProvider(
+Path.Combine(builder.Environment.ContentRootPath, &quot;mywebroot&quot;)
+)
 });
 // ... (rest of your middleware and endpoints) ...
-Explanation
-   1. Custom WebRoot: The WebRootPath property in WebApplicationOptions is set to &quot;myroot&quot;,
-      making &quot;myroot&quot; the default location for static files served by the first app.UseStaticFiles().
-   2. Default Static Files: The initial app.UseStaticFiles(); call serves files directly from the</code></pre>
+Explanation</code></pre>
     </div>
-  <p>&quot;myroot&quot; directory. For instance, a request to /styles.css would look for a file named
-      styles.css within &quot;myroot&quot;.</p>
-<ol>
+  <ol>
+  <li>Custom WebRoot: The WebRootPath property in WebApplicationOptions is set to &quot;myroot&quot;,
+making &quot;myroot&quot; the default location for static files served by the first app.UseStaticFiles().</li>
+  <li>Default Static Files: The initial app.UseStaticFiles(); call serves files directly from the
+&quot;myroot&quot; directory. For instance, a request to /styles.css would look for a file named
+styles.css within &quot;myroot&quot;.</li>
   <li>Custom Static Files Location: The second app.UseStaticFiles call configures a
-      PhysicalFileProvider to serve files from a custom location: &quot;mywebroot&quot;. This directory is
-      located within the application&#39;s ContentRootPath (the project&#39;s root folder).</li>
+PhysicalFileProvider to serve files from a custom location: &quot;mywebroot&quot;. This directory is
+located within the application&#39;s ContentRootPath (the project&#39;s root folder).</li>
 </ol>
 
 <h2 id="important-considerations">Important Considerations</h2>
 <ul>
   <li>Security: Always be cautious about the files you expose as static content. Avoid placing
-      sensitive information in your WebRoot or custom directories.</li>
+sensitive information in your WebRoot or custom directories.</li>
   <li>Performance: Consider using caching and compression techniques to optimize the delivery
-      of static files.</li>
+of static files.</li>
   <li>Content Security Policy (CSP): Implement a CSP to mitigate cross-site scripting (XSS) attacks
-      that could exploit your static files.</li>
+that could exploit your static files.</li>
 </ul>
-<p>By effectively managing your static files and utilizing the UseStaticFiles() middleware, you can
-enhance your ASP.NET Core application&#39;s performance and user experience.</p>
+<p>By effectively managing your static files and utilizing the UseStaticFiles() middleware, you can enhance your ASP.NET Core application&#39;s performance and user experience.</p>
 <p>KeyPoints to remember:</p>
 
 <h2 id="routing-1">Routing</h2>
 <ul>
   <li>Purpose: Matches incoming HTTP requests to specific endpoints (controllers, Razor Pages,
-      minimal APIs) in your application.</li>
+minimal APIs) in your application.</li>
   <li>Middleware: <code>UseRouting</code> and <code>UseEndpoints</code> are essential middleware components for
-      routing.</li>
+routing.</li>
   <li><code>UseRouting</code>: Analyzes the request URL and matches it to an endpoint.</li>
   <li><code>UseEndpoints</code>: Executes the matched endpoint&#39;s code.</li>
   <li>Map* Methods: Used to define endpoints for different HTTP methods (e.g., <code>MapGet</code>,
-      <code>MapPost</code>, MapControllerRoute).</li>
+<code>MapPost</code>, MapControllerRoute).</li>
 </ul>
 
 <h2 id="endpoint-selection-order">Endpoint Selection Order</h2>
 <ul>
   <li>Specificity: More specific routes (with more parameters or constraints) take precedence
-      over less specific ones.</li>
+over less specific ones.</li>
   <li>Registration Order: If multiple routes are equally specific, the one registered first wins.</li>
   <li>HTTP Method: Routes with an exact method match are preferred.</li>
   <li>Route Constraints: Routes with more restrictive constraints are favored.</li>
@@ -1044,17 +1028,17 @@ enhance your ASP.NET Core application&#39;s performance and user experience.</p>
   <li>WebRoot: The default directory from which static files are served (usually &quot;wwwroot&quot;).</li>
   <li>UseStaticFiles(): Middleware for serving static files (HTML, CSS, JavaScript, images).</li>
   <li>Customization: Use StaticFileOptions to change the file provider, request path, or other
-      settings.</li>
+settings.</li>
 </ul>
 
 <h2 id="key-interview-tips">Key Interview Tips</h2>
 <ul>
   <li>Explain the Flow: Clearly articulate how a request flows through the routing middleware and
-      how endpoints are selected.</li>
+how endpoints are selected.</li>
   <li>Code Examples: Be prepared to write code snippets demonstrating endpoint registration,
-      parameter usage, and constraint application.</li>
+parameter usage, and constraint application.</li>
   <li>Troubleshooting: Explain how you would diagnose and fix common routing issues (e.g., 404
-      errors, ambiguous matches).</li>
+errors, ambiguous matches).</li>
   <li>Best Practices: Discuss how to design clean, maintainable, and secure routes.</li>
 </ul>
 
@@ -1063,8 +1047,7 @@ enhance your ASP.NET Core application&#39;s performance and user experience.</p>
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
   <h3 id="introduction-to-routing">Introduction to Routing</h3>
-<p>Routing is a process of matching incoming HTTP requests by checking the HTTP method and url; and
-then invoking corresponding endpoints.</p>
+<p>Routing is a process of matching incoming HTTP requests by checking the HTTP method and url; and then invoking corresponding endpoints.</p>
   <h3 id="routing-userouting-and-useendpoints">Routing - UseRouting and UseEndPoints</h3>
 
     <div class="code-block">
@@ -1078,8 +1061,7 @@ then invoking corresponding endpoints.</p>
       <pre><code class="language-csharp">UseRouting( )
 app.UseRouting();</code></pre>
     </div>
-  <p>Enables routing and selects an appropriate end point based on the url path and HTTP method.</p>
-  <h3 id="useendpoints">UseEndPoints( )</h3>
+  <p>Enables routing and selects an appropriate end point based on the url path and HTTP method. UseEndPoints( )</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1099,7 +1081,7 @@ Executes the appropriate endpoint based on the endpoint selected by the above Us
 method.
 }</code></pre>
     </div>
-    <h3 id="map-mapget-mappost">Map, MapGet, MapPost</h3>
+  <p>Map, <code>MapGet</code>, <code>MapPost</code></p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1147,8 +1129,7 @@ endpoints.MapPost(&quot;path&quot;, async (HttpContext context) =&gt;
 //code
 });</code></pre>
     </div>
-  <p>Executes the endpoint when a HTTP POST request&#39;s url path begins with the specified path.</p>
-  <h3 id="getendpoint-2">GetEndpoint( )</h3>
+  <p>Executes the endpoint when a HTTP POST request&#39;s url path begins with the specified path. GetEndpoint( )</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1160,80 +1141,49 @@ endpoints.MapPost(&quot;path&quot;, async (HttpContext context) =&gt;
       </div>
       <pre><code class="language-csharp">context.GetEndpoint();</code></pre>
     </div>
-  <p>Returns an instance of Microsoft.AspNetCore.Http.Endpoint type, which represents an endpoint.
-That instance contains two important properties: DisplayName, RequestDelegate.</p>
+  <p>Returns an instance of Microsoft.AspNetCore.Http.Endpoint type, which represents an endpoint. That instance contains two important properties: DisplayName, RequestDelegate.</p>
   <h3 id="route-parameters-2">Route Parameters</h3>
-<p>&quot;{parameter}&quot;
-A route parameter can match with any value.</p>
+<p>&quot;{parameter}&quot; A route parameter can match with any value.</p>
   <h3 id="default-route-parameters">Default Route Parameters</h3>
-<p>&quot;{parameter=default_value}&quot;
-A route parameter with default value matches with any value.
-It also matches with empty value. In this case, the default value will be considered into the
-parameter.</p>
+<p>&quot;{parameter=default_value}&quot; A route parameter with default value matches with any value. It also matches with empty value. In this case, the default value will be considered into the parameter.</p>
   <h3 id="optional-route-parameters">Optional Route Parameters</h3>
-<p>&quot;{parameter?}&quot;
-&quot;?&quot; indicates an optional parameter.
-That means, it matches with a value or empty value also.</p>
+<p>&quot;{parameter?}&quot; &quot;?&quot; indicates an optional parameter. That means, it matches with a value or empty value also.</p>
   <h3 id="route-constraints-2">Route Constraints</h3>
-<p>Route Parameter with Constraint:
-&quot;{parameter:constraint}&quot;
-A route parameter that has a constraint can match with a value that satisfies the given constraint.</p>
+<p>Route Parameter with Constraint: &quot;{parameter:constraint}&quot; A route parameter that has a constraint can match with a value that satisfies the given constraint.</p>
   <h3 id="multiple-constraints">Multiple Constraints</h3>
-<p>&quot;{parameter:constraint1:constraint2}&quot;
-A route parameter can have more than one constraint, separated with colon ( : ).
-int
-Matches with any integer.
-Eg: {id:int} matches with 123456789, -123456789
-bool
-Matches with true or false. Case-insensitive.
-Eg: {active:bool} matches with true, false, TRUE, FALSE</p>
-<p>datetime
-Matches a valid DateTime value with formats &quot;yyyy-MM-dd hh:mm:ss tt&quot; and &quot;MM/dd/yyyy
-hh:mm:ss tt&quot;.
-Eg: {id:datetime} matches with 2030-01-01%2011:59%20pm</p>
-<p>decimal
-Matches with a valid decimal value.
-Eg: {price:decimal} matches with 49.99, -1, 0.01
-long
-Matches a valid long value.
-Eg: {id:long} matches with 123456789, -123456789
-guid
-Matches with a valid Guid value (Globally Unique Identifier - A hexadecimal number that is
-universally unique).
-Eg: {id:guid} matches with 123E4567-E89B-12D3-A456-426652340000
-minlength(value)
-Matches with a string that has at least specified number of characters.
-Eg: {username:minlength(4)} matches with John, Allen, William
-maxlength(value)
-Matches with a string that has less than or equal to the specified number of characters.
-Eg: {username:maxlength(7)} matches with John, Allen, William
-length(min,max)
-Matches with a string that has number of characters between given minimum and maximum length
-(both numbers including).
-Eg: {username:length(4, 7)} matches with John, Allen, William</p>
-<p>length(value)
-Matches with a string that has exactly specified number of characters.
-Eg: {tin:length(9)} matches with 987654321
-min(value)
-Matches with an integer value greater than or equal to the specified value.
-Eg: {age:min(18)} matches with 18, 19, 100
-max(value)
-Matches with an integer value less than or equal to the specified value.
-Eg: {age:max(100)} matches with -1, 1, 18, 100
-range(min,max)
-Matches with an integer value between the specified minimum and maximum values (both numbers
-including).
-Eg: {age:range(18,100)} matches with 18, 19, 99, 100
-alpha
-Matches with a string that contains only alphabets (A-Z) and (a-z).
-Eg: {username:alpha} matches with rick, william
-regex(expression)
-Matches with a string that matches with the specified regular expression.
-Eg 1: {age:regex(^[0-9]{2}$)} matches with any two-digit number, such as 10, 11, 98, 99
-Eg 2: {age:regex(^\d{3}-\d{3}$)} matches with any three-digit number, then hyphen, and then threedigit
-number, such as 123-456</p>
+<p>&quot;{parameter:constraint1:constraint2}&quot; A route parameter can have more than one constraint, separated with colon ( : ).</p>
+  <h3 id="int">int</h3>
+<p>Matches with any integer. Eg: {id:int} matches with 123456789, -123456789</p>
+  <h3 id="bool">bool</h3>
+<p>Matches with true or false. Case-insensitive. Eg: {active:bool} matches with true, false, TRUE, FALSE</p>
+  <h3 id="datetime">datetime</h3>
+<p>Matches a valid DateTime value with formats &quot;yyyy-MM-dd hh:mm:ss tt&quot; and &quot;MM/dd/yyyy hh:mm:ss tt&quot;. Eg: {id:datetime} matches with 2030-01-01%2011:59%20pm</p>
+  <h3 id="decimal">decimal</h3>
+<p>Matches with a valid decimal value. Eg: {price:decimal} matches with 49.99, -1, 0.01</p>
+  <h3 id="long">long</h3>
+<p>Matches a valid long value. Eg: {id:long} matches with 123456789, -123456789</p>
+  <h3 id="guid">guid</h3>
+<p>Matches with a valid Guid value (Globally Unique Identifier - A hexadecimal number that is universally unique). Eg: {id:guid} matches with 123E4567-E89B-12D3-A456-426652340000</p>
+  <h3 id="minlengthvalue">minlength(value)</h3>
+<p>Matches with a string that has at least specified number of characters. Eg: {username:minlength(4)} matches with John, Allen, William</p>
+  <h3 id="maxlengthvalue">maxlength(value)</h3>
+<p>Matches with a string that has less than or equal to the specified number of characters. Eg: {username:maxlength(7)} matches with John, Allen, William</p>
+  <h3 id="lengthminmax">length(min,max)</h3>
+<p>Matches with a string that has number of characters between given minimum and maximum length (both numbers including). Eg: {username:length(4, 7)} matches with John, Allen, William</p>
+  <h3 id="lengthvalue">length(value)</h3>
+<p>Matches with a string that has exactly specified number of characters. Eg: {tin:length(9)} matches with 987654321</p>
+  <h3 id="minvalue">min(value)</h3>
+<p>Matches with an integer value greater than or equal to the specified value. Eg: {age:min(18)} matches with 18, 19, 100</p>
+  <h3 id="maxvalue">max(value)</h3>
+<p>Matches with an integer value less than or equal to the specified value. Eg: {age:max(100)} matches with -1, 1, 18, 100</p>
+  <h3 id="rangeminmax">range(min,max)</h3>
+<p>Matches with an integer value between the specified minimum and maximum values (both numbers including). Eg: {age:range(18,100)} matches with 18, 19, 99, 100</p>
+  <h3 id="alpha">alpha</h3>
+<p>Matches with a string that contains only alphabets (A-Z) and (a-z). Eg: {username:alpha} matches with rick, william</p>
+  <h3 id="regexexpression">regex(expression)</h3>
+<p>Matches with a string that matches with the specified regular expression. Eg 1: {age:regex(^[0-9]{2}$)} matches with any two-digit number, such as 10, 11, 98, 99 Eg 2: {age:regex(^\d{3}-\d{3}$)} matches with any three-digit number, then hyphen, and then three- digit number, such as 123-456</p>
   <h3 id="custom-route-constraint-classes-1">Custom Route Constraint Classes</h3>
-  <h3 id="custom-route-constraint-class">Custom Route Constraint Class</h3>
+<p>Custom Route Constraint Class</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1245,28 +1195,19 @@ number, such as 123-456</p>
       </div>
       <pre><code class="language-csharp">public class ClassName : IRouteConstraint
 {
- public bool Match(HttpContext? HttpContext, IRouter? route, string routeKey,
+public bool Match(HttpContext? HttpContext, IRouter? route, string routeKey,
 RouteValueDictionary values, RouteDirection routeDirection)
- {
-  //return true or false
- }
+{
+//return true or false
+}
 }
 builder.Services.AddRouting(options =&gt;
 {
- options.ConstraintMap.Add(&quot;name&quot;, typeof(ClassName));
+options.ConstraintMap.Add(&quot;name&quot;, typeof(ClassName));
 }); //adding the custom constraint to routing</code></pre>
     </div>
     <h3 id="endpoint-selection-order-1">Endpoint Selection Order</h3>
-  <h3 id="top-is-highest-precedence-will-be-evaluated-first">Top is highest precedence (will be evaluated first)</h3>
-<p>1: URL template with more segments.
-Eg: &quot;a/b/c/d&quot; is higher than &quot;a/b/c&quot;.
-2: URL template with literal text has more precedence than a parameter segment.
-Eg: &quot;a/b&quot; is higher than &quot;a/{parameter}&quot;.
-3: URL template that has a parameter segment with constraints has more precedence than a
-parameter segment without constraints.
-Eg: &quot;a/b:int&quot; is higher than &quot;a/b&quot;.
-4: Catch-all parameters (**).
-Eg: &quot;a/{b}&quot; is higher than &quot;a/**&quot;.</p>
+<p>Top is highest precedence (will be evaluated first) 1: URL template with more segments. Eg: &quot;a/b/c/d&quot; is higher than &quot;a/b/c&quot;. 2: URL template with literal text has more precedence than a parameter segment. Eg: &quot;a/b&quot; is higher than &quot;a/{parameter}&quot;. 3: URL template that has a parameter segment with constraints has more precedence than a parameter segment without constraints. Eg: &quot;a/b:int&quot; is higher than &quot;a/b&quot;. 4: Catch-all parameters (**). Eg: &quot;a/{b}&quot; is higher than &quot;a/**&quot;.</p>
   <h3 id="webroot">WebRoot</h3>
 </section>
 
@@ -1317,6 +1258,22 @@ Eg: &quot;a/{b}&quot; is higher than &quot;a/**&quot;.</p>
         </li>
       
         <li class="toc-item">
+          <a href="#how-routing-works-in-aspnet-core" class="toc-link">How Routing Works in ASP.NET Core</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#userouting-vs-useendpoints" class="toc-link">UseRouting vs. UseEndpoints</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#map-methods-creating-endpoints" class="toc-link">Map* Methods: Creating Endpoints</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#code-detailed-explanation" class="toc-link">Code: Detailed Explanation</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#getendpoint" class="toc-link">GetEndpoint()</a>
         </li>
       
@@ -1337,19 +1294,11 @@ Eg: &quot;a/{b}&quot; is higher than &quot;a/**&quot;.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#code" class="toc-link">Code</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#custom-route-constraint-classes" class="toc-link">Custom Route Constraint Classes</a>
         </li>
       
         <li class="toc-item">
           <a href="#key-requirements" class="toc-link">Key Requirements</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#code-1" class="toc-link">Code</a>
         </li>
       
         <li class="toc-item">
@@ -1365,7 +1314,11 @@ Eg: &quot;a/{b}&quot; is higher than &quot;a/**&quot;.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#code-2" class="toc-link">Code</a>
+          <a href="#order-of-precedence-a-visual-summary" class="toc-link">Order of Precedence: A Visual Summary</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#practical-implications-and-tips" class="toc-link">Practical Implications and Tips</a>
         </li>
       
         <li class="toc-item">
@@ -1373,7 +1326,15 @@ Eg: &quot;a/{b}&quot; is higher than &quot;a/**&quot;.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#code-3" class="toc-link">Code</a>
+          <a href="#static-files-in-aspnet-core" class="toc-link">Static Files in ASP.NET Core</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#webroot-the-default-location" class="toc-link">WebRoot: The Default Location</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#usestaticfiles-middleware-enabling-static-file-serving" class="toc-link">UseStaticFiles() Middleware: Enabling Static File Serving</a>
         </li>
       
         <li class="toc-item">

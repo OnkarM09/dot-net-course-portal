@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -376,7 +386,7 @@
         <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
           <a href="../index.html">Curriculum</a>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
           <span class="breadcrumb-current" aria-current="page">Section 16</span>
         </nav>
@@ -403,22 +413,22 @@
 <ul>
   <li>Read (Index Action):</li>
   <li>Typically, the Index action method in your controller will be responsible for handling
-           the &quot;read&quot; operation. It retrieves data from a service layer (your business logic),
-           processes it if needed, and passes it to a view for display.</li>
+the &quot;read&quot; operation. It retrieves data from a service layer (your business logic),
+processes it if needed, and passes it to a view for display.</li>
   <li>Common tasks in the Index action:</li>
   <li>Fetching a list of items from the database.</li>
   <li>Applying filtering or sorting based on query parameters or user input.</li>
   <li>Preparing a view model to package the data for the view.</li>
   <li>Return type: Typically an <code>IActionResult</code>, often returning a ViewResult that renders
-           the &quot;Index&quot; view.</li>
+the &quot;Index&quot; view.</li>
   <li>Create (Create Actions):</li>
   <li>The Create action typically has two versions:</li>
   <li>HttpGet (Displaying the Form): This action simply returns the &quot;Create&quot; view,
-                 which contains a form for the user to fill in.</li>
+which contains a form for the user to fill in.</li>
   <li>HttpPost (Processing the Form Submission): This action receives the form
-                 data (usually via model binding), validates it, and if valid, passes it to the
-                 service layer to create the new entity in the database. Then, it typically
-                 redirects to the &quot;Index&quot; action to display the updated list of items.</li>
+data (usually via model binding), validates it, and if valid, passes it to the
+service layer to create the new entity in the database. Then, it typically
+redirects to the &quot;Index&quot; action to display the updated list of items.</li>
 </ul>
 
 <h2 id="views-for-read-and-create-operations">Views for Read and Create Operations</h2>
@@ -427,71 +437,70 @@
   <li>Displays a list or table of items fetched from the database.</li>
   <li>May include filtering and sorting options to allow users to customize the view.</li>
   <li>Could use partial views to break down complex UI elements (e.g., a partial view for
-           each item in the list).</li>
+each item in the list).</li>
   <li>Should be strongly typed to a view model (e.g., IEnumerable&lt;PersonResponse&gt; in
-           your code) for type safety and maintainability.</li>
+your code) for type safety and maintainability.</li>
   <li>Create (Create View):</li>
   <li>Renders a form for collecting data to create a new item.</li>
   <li>Uses tag helpers (<code>&lt;form&gt;</code>, <code>&lt;input&gt;</code>, &lt;select&gt;, etc.) or HTML helpers to generate the
-           form elements.</li>
+form elements.</li>
   <li>Includes validation attributes on form fields to provide immediate feedback to the
-           user.</li>
+user.</li>
   <li>Should be strongly typed to the appropriate model class (e.g., PersonAddRequest in
-           your code) to take advantage of model binding and validation.</li>
+your code) to take advantage of model binding and validation.</li>
 </ul>
 
 <h2 id="implementing-sorting-and-search-in-views">Implementing Sorting and Search in Views</h2>
-<p>Your code example already demonstrates sorting and searching functionality in the
-Persons/Index.cshtml view:</p>
+<p>Your code example already demonstrates sorting and searching functionality in the Persons/Index.cshtml view:</p>
 <ul>
   <li>1. Sorting:</li>
   <li>It uses ViewBag to pass sorting information (current sort column and order) to the
-           view.</li>
+view.</li>
   <li>A partial view (_GridColumnHeader) is used to render each table column header as a
-           link, which, when clicked, triggers a sort action.</li>
+link, which, when clicked, triggers a sort action.</li>
   <li>The query string parameters (sortBy and sortOrder) are used to control the sorting
-           logic on both the client and server sides.</li>
+logic on both the client and server sides.</li>
   <li>2. Searching:</li>
   <li>ViewBag is also used to pass search fields and the current search criteria to the view.</li>
   <li>A form with a dropdown (searchBy) and a text input (searchString) allows users to
-           filter the results.</li>
+filter the results.</li>
   <li>The search parameters are submitted to the Index action, which then calls the
-           service&#39;s GetFilteredPersons method to retrieve the filtered results.</li>
+service&#39;s GetFilteredPersons method to retrieve the filtered results.</li>
 </ul>
 
-<h2 id="best-practices">Best Practices</h2>
+<h3 id="best-practices">Best Practices</h3>
 <ul>
   <li>Strongly Typed Views: Always use strongly typed views and view models for type safety and
-      maintainability.</li>
+maintainability.</li>
   <li>Separation of Concerns: Keep your views focused on presentation logic and delegate data
-      access and manipulation to your controllers and services.</li>
+access and manipulation to your controllers and services.</li>
   <li>Partial Views: Use partial views to create reusable UI components, especially for complex
-      lists or grids.</li>
+lists or grids.</li>
   <li>Tag Helpers: Utilize tag helpers to simplify form generation and interaction with models in
-      your views.</li>
+your views.</li>
   <li>Validation: Implement validation in your models using data annotations and custom
-      validation attributes.</li>
+validation attributes.</li>
   <li>Error Handling: Handle potential errors gracefully and provide informative error messages to
-      the user.</li>
+the user.</li>
   <li>Client-Side Enhancement: Use JavaScript to enhance the user experience with features like
-      client-side validation, AJAX-based filtering/sorting, and dynamic updates.</li>
+client-side validation, AJAX-based filtering/sorting, and dynamic updates.</li>
 </ul>
 
 <h2 id="things-to-avoid">Things to Avoid</h2>
 <ul>
   <li>Complex Logic in Views: Avoid complex business logic in your views. Keep them simple and
-      focused on presentation.</li>
+focused on presentation.</li>
   <li>Tight Coupling: Don&#39;t tightly couple your views to specific controllers or models. Strive for
-      reusability.</li>
+reusability.</li>
   <li>Overuse of ViewBag or ViewData: Prefer strongly typed models for passing data to your
-      views.</li>
+views.</li>
   <li>Hardcoding Strings: Avoid hardcoding strings like column names or sorting options. Use
-      constants or enums for better maintainability.</li>
+constants or enums for better maintainability.</li>
   <li>Neglecting Security: Always validate and sanitize user input, especially in search
-      functionality, to prevent vulnerabilities.</li>
+functionality, to prevent vulnerabilities.</li>
 </ul>
 
-<h2 id="key-points-to-remember">Key points to remember</h2>
+<h3 id="key-points-to-remember">Key points to remember</h3>
 
 <h2 id="controllers">Controllers</h2>
 <ul>
@@ -503,32 +512,32 @@ Persons/Index.cshtml view:</p>
   <li>Index: Display a list of items (Read).</li>
   <li>Details/{id}: Show details of a single item (Read).</li>
   <li>Create: Display a form for creating a new item (Get) and process the form
-           submission (Post).</li>
+submission (Post).</li>
   <li>Edit/{id}: Display a form for editing an existing item (Get) and process the form
-           submission (Post).</li>
+submission (Post).</li>
   <li>Delete/{id}: Delete an item.</li>
   <li>Model Binding: Use parameters and attributes ([FromQuery], [FromRoute], [FromBody]) to
-      bind data from the request.</li>
+bind data from the request.</li>
   <li>Validation:</li>
   <li>Use data annotations in your models (e.g., [Required], [StringLength]).</li>
   <li>Check ModelState.IsValid in actions and handle invalid input.</li>
   <li>Redirects:</li>
   <li>Use RedirectToAction, RedirectToRoute, or Redirect after successful POST requests
-           (Create/Edit/Delete) to prevent duplicate submissions.</li>
+(Create/Edit/Delete) to prevent duplicate submissions.</li>
   <li>Use LocalRedirect for redirects within your application.</li>
   <li>Error Handling: Return appropriate status codes (e.g., 400 Bad Request, 404 Not Found) for
-      errors.</li>
+errors.</li>
 </ul>
 
 <h2 id="views">Views</h2>
 <ul>
   <li>Purpose: Render the user interface (UI) for each action.</li>
   <li>Razor View Engine: Use Razor syntax (@Model, @Html, etc.) to embed C# code in your
-      views.</li>
+views.</li>
   <li>Strongly Typed Views: Use the @model directive to bind a view to a specific model class
-      (view model).</li>
+(view model).</li>
   <li>Displaying Data: Use Razor syntax to access and display model properties (e.g.,
-      @Model.Name).</li>
+@Model.Name).</li>
   <li>Forms: Use tag helpers or HTML helpers to create forms for Create and Edit actions.</li>
   <li>Validation: Display validation error messages using @Html.ValidationSummary() and</li>
 </ul>
@@ -545,22 +554,22 @@ Persons/Index.cshtml view:</p>
     </div>
   <ul>
   <li>Partial Views: Use partial views (_PartialName.cshtml) for reusable UI components (e.g., a
-      list item template).</li>
+list item template).</li>
   <li>Layouts: Use _Layout.cshtml to define the common structure for your pages.</li>
   <li>_ViewImports.cshtml: Centralize common @using and @addTagHelper directives.</li>
   <li>Sorting and Filtering:</li>
   <li>Use query string parameters (e.g., ?sort=name_desc) to control sorting and filtering
-           on the server-side.</li>
+on the server-side.</li>
   <li>Optionally use JavaScript for client-side filtering or sorting.</li>
 </ul>
 
 <h2 id="additional-tips">Additional Tips</h2>
 <ul>
   <li>Separate Concerns: Keep your controllers focused on handling requests and your views
-      focused on presentation.</li>
+focused on presentation.</li>
   <li>Use Services: Delegate data access and business logic to separate service classes.</li>
   <li>DTO (Data Transfer Objects): Use DTOs to transfer data between your controllers and
-      services.</li>
+services.</li>
   <li>Asynchronous Actions: Use async and await for actions that involve I/O operations.</li>
   <li>Security: Always validate and sanitize user input.</li>
 </ul>
@@ -569,12 +578,12 @@ Persons/Index.cshtml view:</p>
 <ul>
   <li>Understanding of MVC: Explain the roles of controllers and views and how they interact.</li>
   <li>Model Binding &amp; Validation: Show proficiency in using model binding and validation
-      attributes.</li>
+attributes.</li>
   <li>View Logic: Demonstrate how to write clear and concise Razor code in your views.</li>
   <li>Error Handling &amp; Redirects: Explain how to handle errors gracefully and prevent duplicate
-      form submissions.</li>
+form submissions.</li>
   <li>Best Practices: Discuss how to follow the best practices mentioned above to write clean and
-      maintainable code.</li>
+maintainable code.</li>
 </ul>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
@@ -582,9 +591,7 @@ Persons/Index.cshtml view:</p>
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
   <h3 id="route-tokens">Route Tokens</h3>
-<p>The route tokens [controller], [action] can be used to apply common-patterned routes for all action
-methods.</p>
-  <h3 id="the-route-of-controller-acts-as-a-prefix-for-the-route-of-actions">The route of controller acts as a prefix for the route of actions</h3>
+<p>The route tokens [controller], [action] can be used to apply common-patterned routes for all action methods. The route of controller acts as a prefix for the route of actions</p>
   <h3 id="attribute-routing">Attribute Routing</h3>
 
     <div class="code-block">
@@ -656,7 +663,7 @@ The route of controller acts as a prefix for the route of actions.
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices" class="toc-link">Best Practices</a>
+          <a href="#best-practices" class="toc-link toc-sub">Best Practices</a>
         </li>
       
         <li class="toc-item">
@@ -664,7 +671,7 @@ The route of controller acts as a prefix for the route of actions.
         </li>
       
         <li class="toc-item">
-          <a href="#key-points-to-remember" class="toc-link">Key points to remember</a>
+          <a href="#key-points-to-remember" class="toc-link toc-sub">Key points to remember</a>
         </li>
       
         <li class="toc-item">

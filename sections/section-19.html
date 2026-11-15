@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -376,7 +386,7 @@
         <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
           <a href="../index.html">Curriculum</a>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
           <span class="breadcrumb-current" aria-current="page">Section 19</span>
         </nav>
@@ -400,49 +410,22 @@
       <article class="docs-content">
         
 <h2 id="fluent-assertions">Fluent Assertions</h2>
-<p>Fluent Assertions is a .NET library that supercharges your unit tests by providing a more fluent,
-natural language syntax for assertions. Instead of using traditional, sometimes cryptic assertions like
-Assert.Equal or Assert.True, you write assertions that closely resemble how you would express
-expectations in plain English.</p>
+<p>Fluent Assertions is a .NET library that supercharges your unit tests by providing a more fluent, natural language syntax for assertions. Instead of using traditional, sometimes cryptic assertions like Assert.Equal or Assert.True, you write assertions that closely resemble how you would express expectations in plain English.</p>
 
 <h2 id="benefits-of-fluent-assertions">Benefits of Fluent Assertions</h2>
 <ul>
   <li>Readability: Tests become more self-explanatory and easier to understand, even for
-      developers who are not familiar with the codebase.</li>
+developers who are not familiar with the codebase.</li>
   <li>Maintainability: Changes to the underlying code often result in more understandable test
-      failures due to the descriptive nature of the assertions.</li>
+failures due to the descriptive nature of the assertions.</li>
   <li>Rich API: Offers a vast collection of assertion methods covering various scenarios
-      (collections, strings, exceptions, and more), making it easier to write comprehensive tests.</li>
+(collections, strings, exceptions, and more), making it easier to write comprehensive tests.</li>
   <li>Extensibility: Allows you to create custom assertions for specific needs.</li>
 </ul>
 
 <h2 id="important-fluent-assertions-methods-with-examples">Important Fluent Assertions Methods with Examples</h2>
 <ul>
-  <li>Basic Assertions:
-           result.Should().Be(5); // result should be equal to 5
-           result.Should().NotBe(10); // result should not be equal to 10
-           result.Should().BeTrue(); // result should be true
-           result.Should().BeFalse(); // result should be false
-           result.Should().BeNull(); // result should be null
-           result.Should().NotBeNull(); // result should not be null</li>
-  <li>Collection Assertions:
-           list.Should().HaveCount(3); // list should have 3 elements
-           list.Should().Contain(&quot;apple&quot;); // list should contain &quot;apple&quot;
-           list.Should().OnlyContain(x =&gt; x &gt; 0); // all elements in list should be greater than 0</li>
-</ul>
-<p>list.Should().BeEquivalentTo(new[] { 1, 2, 3 }); // lists should contain the same
-           elements (order doesn&#39;t matter)</p>
-<ul>
-  <li>String Assertions:
-           name.Should().StartWith(&quot;John&quot;); // name should start with &quot;John&quot;
-           name.Should().EndWith(&quot;Doe&quot;); // name should end with &quot;Doe&quot;
-           name.Should().Contain(&quot;Middle&quot;); // name should contain &quot;Middle&quot;
-           name.Should().MatchRegex(@&quot;\d{3}-\d{3}-\d{4}&quot;); // name should match a phone
-           number pattern</li>
-  <li>Exception Assertions:
-           Action act = () =&gt; someMethod();
-           act.Should().Throw&lt;ArgumentException&gt;(); // should throw ArgumentException
-           act.Should().Throw&lt;Exception&gt;()</li>
+  <li>Basic Assertions:</li>
 </ul>
 
     <div class="code-block">
@@ -453,9 +436,67 @@ expectations in plain English.</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">.WithMessage(&quot;Invalid operation&quot;); // should throw an exception with a specific</code></pre>
+      <pre><code class="language-csharp">result.Should().Be(5); // result should be equal to 5
+result.Should().NotBe(10); // result should not be equal to 10
+result.Should().BeTrue(); // result should be true
+result.Should().BeFalse(); // result should be false
+result.Should().BeNull(); // result should be null
+result.Should().NotBeNull(); // result should not be null</code></pre>
     </div>
-  <p>message</p>
+  <ul>
+  <li>Collection Assertions:</li>
+</ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">list.Should().HaveCount(3); // list should have 3 elements
+list.Should().Contain(&quot;apple&quot;); // list should contain &quot;apple&quot;
+list.Should().OnlyContain(x =&gt; x &gt; 0); // all elements in list should be greater than 0
+list.Should().BeEquivalentTo(new[] { 1, 2, 3 }); // lists should contain the same</code></pre>
+    </div>
+  <p>Elements (order doesn&#39;t matter)</p>
+<ul>
+  <li>String Assertions:</li>
+</ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">name.Should().StartWith(&quot;John&quot;); // name should start with &quot;John&quot;
+name.Should().EndWith(&quot;Doe&quot;); // name should end with &quot;Doe&quot;
+name.Should().Contain(&quot;Middle&quot;); // name should contain &quot;Middle&quot;
+name.Should().MatchRegex(@&quot;\d{3}-\d{3}-\d{4}&quot;); // name should match a phone</code></pre>
+    </div>
+  <p>Number pattern</p>
+<ul>
+  <li>Exception Assertions:
+Action act = () =&gt; someMethod();</li>
+</ul>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">act.Should().Throw&lt;ArgumentException&gt;(); // should throw ArgumentException
+act.Should().Throw&lt;Exception&gt;()
+.WithMessage(&quot;Invalid operation&quot;); // should throw an exception with a specific</code></pre>
+    </div>
+  <p>Message</p>
 <ul>
   <li>Type Assertions:</li>
 </ul>
@@ -468,34 +509,28 @@ expectations in plain English.</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">object obj = new Person();</code></pre>
+      <pre><code class="language-csharp">object obj = new Person();
+obj.Should().BeOfType&lt;Person&gt;(); // obj should be of type Person
+obj.Should().BeAssignableTo&lt;object&gt;(); // obj should be assignable to object</code></pre>
     </div>
-  <ul>
-  <li>bj.Should().BeOfType&lt;Person&gt;(); // obj should be of type Person</li>
-  <li>bj.Should().BeAssignableTo&lt;object&gt;(); // obj should be assignable to object</li>
-</ul>
-
-<h2 id="autofixture">AutoFixture</h2>
-<p>AutoFixture is another powerful library that helps with unit testing by automatically generating test
-data for your classes. It saves you time and effort in creating complex objects for your tests,
-especially when dealing with objects that have many properties or nested objects.</p>
+  <p>AutoFixture AutoFixture is another powerful library that helps with unit testing by automatically generating test data for your classes. It saves you time and effort in creating complex objects for your tests, especially when dealing with objects that have many properties or nested objects.</p>
 
 <h2 id="benefits-of-autofixture">Benefits of AutoFixture</h2>
 <ul>
   <li>Test Data Generation: Easily create instances of your classes with sensible default values for
-      properties.</li>
+properties.</li>
   <li>Customization: You can customize the generated data to fit specific test scenarios.</li>
   <li>Reduced Boilerplate: Eliminates the need to manually create test data for each test.</li>
 </ul>
-<p>Integrating AutoFixture with xUnit in ASP.NET Core</p>
+
+<h2 id="integrating-autofixture-with-xunit-in-aspnet-core">Integrating AutoFixture with xUnit in ASP.NET Core</h2>
 <ol>
   <li>Install Package: Add the AutoFixture.Xunit2 NuGet package to your test project.</li>
   <li>Use the [AutoData] Attribute: Decorate your test methods with [AutoData]. AutoFixture will
-      automatically generate instances of the required types and pass them as arguments to your
-      test methods.</li>
+automatically generate instances of the required types and pass them as arguments to your
+test methods.</li>
 </ol>
-
-<h2 id="example-with-autofixture">Example with AutoFixture</h2>
+<p>Example with AutoFixture</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -507,35 +542,24 @@ especially when dealing with objects that have many properties or nested objects
       </div>
       <pre><code class="language-csharp">public class PersonControllerTests
 {
-  [Theory, AutoData] // AutoFixture will create a Person instance for the test
-  public void CreatePerson_ValidPerson_ReturnsOk(Person person, Mock&lt;IPersonsService&gt;
+[Theory, AutoData] // AutoFixture will create a Person instance for the test
+public void CreatePerson_ValidPerson_ReturnsOk(Person person, Mock&lt;IPersonsService&gt;
 mockPersonsService)
-  {
+{
 // ... (rest of your test
 )
-  }
+}
 }</code></pre>
     </div>
-  <p>Mocking
-In unit testing, the goal is to test a specific unit of code (like a service class) in isolation from its
-dependencies. This helps you focus on the logic of the unit you&#39;re testing without worrying about
-external factors like database interactions or network calls. Mocking is a technique that enables this
-isolation.
-Mocking involves creating substitute objects (mocks) that simulate the behavior of real
-dependencies. These mocks can be programmed to return specific data, throw exceptions, or track
-how they are used. This allows you to create controlled test scenarios and verify that your code
-interacts correctly with its dependencies.</p>
+  <p>Mocking In unit testing, the goal is to test a specific unit of code (like a service class) in isolation from its dependencies. This helps you focus on the logic of the unit you&#39;re testing without worrying about external factors like database interactions or network calls. Mocking is a technique that enables this isolation. Mocking involves creating substitute objects (mocks) that simulate the behavior of real dependencies. These mocks can be programmed to return specific data, throw exceptions, or track how they are used. This allows you to create controlled test scenarios and verify that your code interacts correctly with its dependencies.</p>
 
 <h2 id="moq">Moq</h2>
-<p>Moq is a popular and intuitive mocking framework for .NET. It provides a fluent API to create mock</p>
-<ul>
-  <li>bjects easily.</li>
-</ul>
+<p>Moq is a popular and intuitive mocking framework for .NET. It provides a fluent API to create mock objects easily.</p>
 
 <h2 id="how-mocking-works-internally-with-moq">How Mocking Works Internally (with Moq)</h2>
 <ol>
   <li>Create a Mock: You start by creating a mock object for the interface of the dependency you
-      want to replace.</li>
+want to replace.</li>
 </ol>
 
     <div class="code-block">
@@ -548,10 +572,12 @@ interacts correctly with its dependencies.</p>
       </div>
       <pre><code class="language-csharp">var mockPersonRepository = new Mock&lt;IPersonsRepository&gt;();</code></pre>
     </div>
-  <p>2. Set Up Behavior: You configure how the mock should behave when its methods are called.
-      This typically involves specifying the return values, throwing exceptions, or verifying the
-      arguments passed to the methods.
-mockPersonRepository.Setup(repo =&gt; repo.GetAllPersons())</p>
+  <ol>
+  <li>Set Up Behavior: You configure how the mock should behave when its methods are called.
+This typically involves specifying the return values, throwing exceptions, or verifying the
+arguments passed to the methods.
+mockPersonRepository.Setup(repo =&gt; repo.GetAllPersons())</li>
+</ol>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -563,13 +589,13 @@ mockPersonRepository.Setup(repo =&gt; repo.GetAllPersons())</p>
       </div>
       <pre><code class="language-csharp">.ReturnsAsync(new List&lt;Person&gt; { /* your test data */ });</code></pre>
     </div>
-  <p>3. Inject the Mock: You inject the mock object into the class you&#39;re testing, either through
-      constructor injection or property injection.</p>
-<ol>
+  <ol>
+  <li>Inject the Mock: You inject the mock object into the class you&#39;re testing, either through
+constructor injection or property injection.</li>
   <li>Exercise Your Code: You call the methods of the class under test, which will interact with the
-      mock object instead of the real dependency.</li>
+mock object instead of the real dependency.</li>
   <li>Verify Interactions: You use Moq&#39;s verification features to check if the mock&#39;s methods were
-      called as expected and with the correct parameters.</li>
+called as expected and with the correct parameters.</li>
 </ol>
 <p>Code:</p>
 
@@ -583,26 +609,25 @@ mockPersonRepository.Setup(repo =&gt; repo.GetAllPersons())</p>
       </div>
       <pre><code class="language-csharp">// PersonsServiceTest.cs (Constructor
 )
-      public PersonsServiceTest(ITestOutputHelper testOutputHelper)
-      {
-       _fixture = new Fixture(); // AutoFixture for test data generation
-       _personRepositoryMock = new Mock&lt;IPersonsRepository&gt;();
-       _personsRepository = _personRepositoryMock.Object; // Get the mock object
-       // Create a mock DbContext using EntityFrameworkCoreMock
-       var dbContextMock = new DbContextMock&lt;ApplicationDbContext&gt;(
-         new DbContextOptionsBuilder&lt;ApplicationDbContext&gt;().Options
-       );
-       // Mock the Countries DbSet with initial data
-       dbContextMock.CreateDbSetMock(temp =&gt; temp.Countries, new List&lt;Country&gt; { });
-       // Mock the Persons DbSet with initial data
-       dbContextMock.CreateDbSetMock(temp =&gt; temp.Persons, new List&lt;Person&gt; { });
-       //Create services based on mocked DbContext object
-       _countriesService = new CountriesService(dbContextMock.Object);
-       _personService = new PersonsService(_personsRepository); // Pass the mocked repository
+public PersonsServiceTest(ITestOutputHelper testOutputHelper)
+{
+_fixture = new Fixture(); // AutoFixture for test data generation
+_personRepositoryMock = new Mock&lt;IPersonsRepository&gt;();
+_personsRepository = _personRepositoryMock.Object; // Get the mock object
+// Create a mock DbContext using EntityFrameworkCoreMock
+var dbContextMock = new DbContextMock&lt;ApplicationDbContext&gt;(
+new DbContextOptionsBuilder&lt;ApplicationDbContext&gt;().Options
+);
+// Mock the Countries DbSet with initial data
+dbContextMock.CreateDbSetMock(temp =&gt; temp.Countries, new List&lt;Country&gt; { });
+// Mock the Persons DbSet with initial data
+dbContextMock.CreateDbSetMock(temp =&gt; temp.Persons, new List&lt;Person&gt; { });
+//Create services based on mocked DbContext object
+_countriesService = new CountriesService(dbContextMock.Object);
+_personService = new PersonsService(_personsRepository); // Pass the mocked repository
 }</code></pre>
     </div>
-  <p>to your service
-       _testOutputHelper = testOutputHelper;</p>
+  <p>To your service _testOutputHelper = testOutputHelper;</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -614,12 +639,12 @@ mockPersonRepository.Setup(repo =&gt; repo.GetAllPersons())</p>
       </div>
       <pre><code class="language-csharp">This code:</code></pre>
     </div>
-  <p>1. Creates mock objects for the IPersonsRepository interface and the ApplicationDbContext
-      class.</p>
-<ol>
+  <ol>
+  <li>Creates mock objects for the IPersonsRepository interface and the ApplicationDbContext
+class.</li>
   <li>Uses EntityFrameworkCoreMock to configure mock DbSet objects.</li>
   <li>Initializes your services, passing the mock repository (_personsRepository) to your
-      PersonsService.</li>
+PersonsService.</li>
 </ol>
 
     <div class="code-block">
@@ -645,77 +670,71 @@ mockPersonRepository.Setup(repo =&gt; repo.GetAllPersons())</p>
       <pre><code class="language-csharp">.Setup(temp =&gt; temp.AddPerson(It.IsAny&lt;Person&gt;()))
 .ReturnsAsync(person);</code></pre>
     </div>
-  <p>This code configures the mock repository to return the person object whenever the AddPerson
-method is called with any Person object.</p>
+  <p>This code configures the mock repository to return the person object whenever the AddPerson method is called with any Person object.</p>
 
-<h2 id="best-practices">Best Practices</h2>
+<h3 id="best-practices">Best Practices</h3>
 <ul>
-  <li>Focus on Behavior: Mock only the interactions you need to control in your test. Avoid overmocking
-.</li>
+  <li>Focus on Behavior: Mock only the interactions you need to control in your test. Avoid over-
+mocking.</li>
   <li>Loose Coupling: Design your classes with dependency injection in mind, making it easy to
-      swap out real dependencies for mocks.</li>
+swap out real dependencies for mocks.</li>
   <li>Verification (Optional): Use Verify to ensure that your code interacts with the mock as
-      expected.</li>
+expected.</li>
   <li>Readability: Strive for clear and expressive setup and verification code.</li>
 </ul>
 
 <h2 id="things-to-avoid">Things to Avoid</h2>
 <ul>
   <li>Mocking Everything: Don&#39;t mock classes that you are testing directly. The goal is to isolate
-      the unit under test, not eliminate all dependencies.</li>
+the unit under test, not eliminate all dependencies.</li>
   <li>Excessive Setup: Avoid overly complex setups that obscure the intent of your tests.</li>
   <li>Verifying Implementation Details: Focus on verifying behavior, not specific implementation
-      details.</li>
+details.</li>
 </ul>
 
 <h2 id="integration-tests">Integration Tests</h2>
-<p>While unit tests focus on individual units in isolation, integration tests examine how different parts</p>
-<ul>
-  <li>f your application work together. In ASP.NET Core MVC, this typically involves testing the</li>
-</ul>
-<p>interaction between controllers, views, services, and sometimes even external dependencies like</p>
-<p>databases or APIs.</p>
+<p>While unit tests focus on individual units in isolation, integration tests examine how different parts of your application work together. In ASP.NET Core MVC, this typically involves testing the interaction between controllers, views, services, and sometimes even external dependencies like databases or APIs.</p>
 
 <h2 id="why-integration-tests-matter">Why Integration Tests Matter</h2>
 <ul>
   <li>Real-World Scenarios: Integration tests simulate real user interactions, revealing potential
-      issues that might not be caught by unit tests.</li>
+issues that might not be caught by unit tests.</li>
   <li>End-to-End Testing: They help you verify that the entire flow of a request, from routing to
-      model binding, validation, service calls, and view rendering, works correctly.</li>
+model binding, validation, service calls, and view rendering, works correctly.</li>
   <li>Database Interaction Testing: Integration tests can test how your application interacts with
-      a real (or in-memory) database, ensuring data persistence and retrieval are accurate.</li>
+a real (or in-memory) database, ensuring data persistence and retrieval are accurate.</li>
   <li>Confidence in Deployment: A strong suite of integration tests boosts your confidence when
-      deploying your application, reducing the likelihood of unexpected errors in production.</li>
+deploying your application, reducing the likelihood of unexpected errors in production.</li>
 </ul>
 
 <h2 id="key-elements-of-integration-tests-with-xunit">Key Elements of Integration Tests with xUnit</h2>
 <ul>
   <li>Test Server: You create a test server instance using a custom WebApplicationFactory, which
-      allows you to simulate your application&#39;s behavior in a test environment.</li>
+allows you to simulate your application&#39;s behavior in a test environment.</li>
   <li>HTTP Client: You use an HttpClient to send HTTP requests to the test server, mimicking how
-      a real client (like a browser) would interact with your application.</li>
+a real client (like a browser) would interact with your application.</li>
   <li>Assertions: Use assertions (e.g., from FluentAssertions or xUnit&#39;s built-in assertions) to
-      validate the responses received from the server.</li>
+validate the responses received from the server.</li>
 </ul>
 
-<h2 id="best-practices-1">Best Practices</h2>
+<h3 id="best-practices-1">Best Practices</h3>
 <ul>
   <li>Focus on Integration: Test the interactions between components, not the isolated behavior
-      of individual units.</li>
+of individual units.</li>
   <li>Database:</li>
   <li>In-Memory: Use an in-memory database (e.g., UseInMemoryDatabase) for faster
-           tests and data isolation.</li>
+tests and data isolation.</li>
   <li>Real Database (Optional): For more realistic testing, use a test database with a
-           separate schema or dataset.</li>
+separate schema or dataset.</li>
   <li>Test Environment: Configure your test server to use a &quot;Test&quot; environment to avoid
-      accidentally affecting your development or production databases.</li>
+accidentally affecting your development or production databases.</li>
   <li>Clean Up: If you&#39;re using a real database, ensure you clean up the test data after each test or
-      test class to maintain data consistency.</li>
+test class to maintain data consistency.</li>
   <li>Avoid External Dependencies: If your application relies on external APIs or services, consider
-      mocking or stubbing them for integration tests to avoid network dependencies and keep
-      tests fast and reliable.</li>
+mocking or stubbing them for integration tests to avoid network dependencies and keep
+tests fast and reliable.</li>
   <li>Clear Test Names: Use descriptive names that explain the purpose and expected behavior of
-      each test.</li>
+each test.</li>
 </ul>
 
 <h2 id="code">Code</h2>
@@ -731,10 +750,10 @@ method is called with any Person object.</p>
       </div>
       <pre><code class="language-csharp">public class CustomWebApplicationFactory : WebApplicationFactory&lt;Program&gt;
 {
-  protected override 1. github.com
+protected override 1. github.com
 }</code></pre>
     </div>
-  <p>github.com</p>
+  <p>Github.com</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -746,39 +765,39 @@ method is called with any Person object.</p>
       </div>
       <pre><code class="language-csharp">{
 void ConfigureWebHost(IWebHostBuilder builder)
-  {
-   base.ConfigureWebHost(builder);
-   builder.UseEnvironment(&quot;Test&quot;); 1. www.nuget.org
+{
+base.ConfigureWebHost(builder);
+builder.UseEnvironment(&quot;Test&quot;); 1. www.nuget.org
 www.nuget.org
 // Set the environment to &quot;Test&quot;
-   builder.ConfigureServices(services =&gt; {
-     // Replace the default DbContext configuration with an in-memory database
-     var descriptor = services.SingleOrDefault(temp =&gt; temp.ServiceType ==
+builder.ConfigureServices(services =&gt; {
+// Replace the default DbContext configuration with an in-memory database
+var descriptor = services.SingleOrDefault(temp =&gt; temp.ServiceType ==
 typeof(DbContextOptions&lt;ApplicationDbContext&gt;));
-     if (descriptor != null)
-     {
-      services.Remove(descriptor); 1. github.com
+if (descriptor != null)
+{
+services.Remove(descriptor); 1. github.com
 MIT github.com
-     }
-     services.AddDbContext&lt;ApplicationDbContext&gt;(options =&gt;
-     {
-      options.UseInMemoryDatabase(&quot;DatbaseForTesting&quot;); 1. github.com
+}
+services.AddDbContext&lt;ApplicationDbContext&gt;(options =&gt;
+{
+options.UseInMemoryDatabase(&quot;DatbaseForTesting&quot;); 1. github.com
 github.com
-     });
-   });
-  }
+});
+});
+}
 }
 This class sets up a customized WebApplicationFactory for your integration tests:</code></pre>
     </div>
-  <p>1. Inherits from WebApplicationFactory&lt;Program&gt;: This base class provides the core
-      functionality for creating a test server instance.</p>
-<ol>
+  <ol>
+  <li>Inherits from WebApplicationFactory&lt;Program&gt;: This base class provides the core
+functionality for creating a test server instance.</li>
   <li>ConfigureWebHost Override: You override this method to customize the configuration of
-      the test server.</li>
+the test server.</li>
   <li>UseEnvironment(&quot;Test&quot;): Sets the ASPNETCORE_ENVIRONMENT variable to &quot;Test&quot;, ensuring
-      that the application loads any test-specific configuration settings from appsettings.Test.json.</li>
+that the application loads any test-specific configuration settings from appsettings.Test.json.</li>
   <li>ConfigureServices: Replaces the default database context configuration with an in-memory
-      database provider for testing.</li>
+database provider for testing.</li>
 </ol>
 <p>PersonsControllerIntegrationTest:</p>
 
@@ -792,32 +811,32 @@ This class sets up a customized WebApplicationFactory for your integration tests
       </div>
       <pre><code class="language-csharp">public class PersonsControllerIntegrationTest : IClassFixture&lt;CustomWebApplicationFactory&gt;
 {
-  private readonly HttpClient _client; 1. github.com
+private readonly HttpClient _client; 1. github.com
 github.com
-  // Constructor injection of the custom factory
-  public PersonsControllerIntegrationTest(CustomWebApplicationFactory factory)
-  {
-   _client = factory.CreateClient(); // Create an HttpClient to interact with the test server
-  }
-  #region Index
-  [Fact]
-  public async Task Index_ToReturnView()
-  {
-   // Act: Send a GET request to the &quot;/Persons/Index&quot; endpoint
-   HttpResponseMessage response = await _client.GetAsync(&quot;/Persons/Index&quot;);
-   // Assert:
+// Constructor injection of the custom factory
+public PersonsControllerIntegrationTest(CustomWebApplicationFactory factory)
+{
+_client = factory.CreateClient(); // Create an HttpClient to interact with the test server
+}
+#region Index
+[Fact]
+public async Task Index_ToReturnView()
+{
+// Act: Send a GET request to the &quot;/Persons/Index&quot; endpoint
+HttpResponseMessage response = await _client.GetAsync(&quot;/Persons/Index&quot;);
+// Assert:
 // 1. Check if the response was successful (status code 2xx
 )
-   response.Should().BeSuccessful();
-   // 2. Read the response content as a string
-   string responseBody = await response.Content.ReadAsStringAsync();
-   // 3. Parse the HTML content using HtmlAgilityPack
-   HtmlDocument html = new HtmlDocument();
-   html.LoadHtml(responseBody);
-   var document = html.DocumentNode;
-   // 4. Assert that the response contains a table with the class &quot;persons&quot;
-   document.QuerySelectorAll(&quot;table.persons&quot;).Should().NotBeNull();
-  }
+response.Should().BeSuccessful();
+// 2. Read the response content as a string
+string responseBody = await response.Content.ReadAsStringAsync();
+// 3. Parse the HTML content using HtmlAgilityPack
+HtmlDocument html = new HtmlDocument();
+html.LoadHtml(responseBody);
+var document = html.DocumentNode;
+// 4. Assert that the response contains a table with the class &quot;persons&quot;
+document.QuerySelectorAll(&quot;table.persons&quot;).Should().NotBeNull();
+}
 }</code></pre>
     </div>
   <p>#endregion</p>
@@ -835,33 +854,34 @@ github.com
   <p>This test class uses the custom CustomWebApplicationFactory to create a test server instance.</p>
 <ul>
   <li>1. IClassFixture&lt;CustomWebApplicationFactory&gt;: This interface tells xUnit to create a single
-      instance of CustomWebApplicationFactory and share it among all tests in this class. This
-      ensures that the test server is created only once, improving performance.</li>
+instance of CustomWebApplicationFactory and share it among all tests in this class. This
+ensures that the test server is created only once, improving performance.</li>
   <li>2. Constructor Injection: The constructor receives the factory and uses it to create an
-      HttpClient that can send requests to the test server.</li>
+HttpClient that can send requests to the test server.</li>
   <li>3. Index_ToReturnView Test:</li>
   <li>Act: Sends a GET request to the Persons/Index endpoint.</li>
   <li>Assert:</li>
   <li>Checks if the response status code indicates success (2xx).</li>
   <li>Parses the HTML response body using HtmlAgilityPack.</li>
   <li>Asserts that the response contains a <code>&lt;table&gt;</code> element with the class
-                 &quot;persons&quot;. This verifies that the Index view is rendering correctly.</li>
+&quot;persons&quot;. This verifies that the Index view is rendering correctly.</li>
 </ul>
 
 <h2 id="notes">Notes</h2>
 <ul>
   <li>Purpose: Integration tests verify interactions between components, not isolated unit
-      behavior.</li>
+behavior.</li>
   <li>Test Server: Use WebApplicationFactory to create a test server instance.</li>
   <li>In-Memory Database: Use an in-memory database for testing to isolate data and improve
-      speed.</li>
+speed.</li>
   <li>Test Environment: Set the environment to &quot;Test&quot; for test-specific configurations.</li>
   <li>Clean Up: Ensure proper cleanup of test data (especially if using a real database).</li>
   <li>Mocking: Consider mocking external dependencies for faster and more reliable tests.</li>
 </ul>
 
-<h2 id="key-points-to-remember">Key Points to Remember</h2>
-<p>xUnit Advanced Topics</p>
+<h3 id="key-points-to-remember">Key Points to Remember</h3>
+
+<h2 id="xunit-advanced-topics">xUnit Advanced Topics</h2>
 <ul>
   <li>[Theory] and [InlineData]:</li>
   <li>[Theory] marks a test method that should be executed with multiple data sets.</li>
@@ -881,16 +901,16 @@ github.com
   <li>Setup(expression): Configures how a mock method should behave.</li>
   <li>Returns(value) or ReturnsAsync(value): Specifies the return value.</li>
   <li>Throws(exception) or ThrowsAsync(exception): Simulates an exception being
-           thrown.</li>
+thrown.</li>
   <li>Verify(expression, times): Ensures a method was called the expected number of
-           times.</li>
+times.</li>
   <li>Best Practices:</li>
   <li>Mock only what&#39;s necessary.</li>
   <li>Design for dependency injection.</li>
   <li>Use clear and expressive setup and verification code.</li>
 </ul>
 
-<h2 id="autofixture-1">AutoFixture</h2>
+<h2 id="autofixture">AutoFixture</h2>
 <ul>
   <li>Purpose: Automatically generates test data for your classes.</li>
   <li>Key Features:</li>
@@ -913,7 +933,7 @@ github.com
 <ul>
   <li>Purpose: Repositories handle data access logic (interaction with the database).</li>
   <li>Interfaces: Define interfaces (e.g., IPersonsRepository) to abstract data access and facilitate
-      mocking.</li>
+mocking.</li>
   <li>Unit Tests:</li>
   <li>Focus on testing the repository&#39;s logic in isolation.</li>
   <li>Use mocks for database interactions.</li>
@@ -933,12 +953,12 @@ github.com
 <h2 id="integration-tests-1">Integration Tests</h2>
 <ul>
   <li>Purpose: Test how multiple components (controllers, views, services, and sometimes even a
-      real database) work together.</li>
+real database) work together.</li>
   <li>WebApplicationFactory: Create a test server instance to simulate real requests.</li>
   <li>HttpClient: Use an HTTP client to send requests to the test server.</li>
   <li>In-Memory Database: Often use an in-memory database for testing.</li>
   <li>Test Environment: Set the ASPNETCORE_ENVIRONMENT to &quot;Test&quot; for test-specific
-      configuration.</li>
+configuration.</li>
 </ul>
 
 <h2 id="interview-tips">Interview Tips</h2>
@@ -947,7 +967,7 @@ github.com
   <li>Code Examples: Be prepared to write or analyze code snippets showcasing these concepts.</li>
   <li>Best Practices: Discuss the best practices for each topic and common pitfalls to avoid.</li>
   <li>Real-World Scenarios: Connect these concepts to real-world testing challenges and how you
-      would solve them.</li>
+would solve them.</li>
 </ul>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
@@ -966,21 +986,16 @@ github.com
   <h3 id="repeatable">Repeatable</h3>
 <p>(Tests can run repeatedly but should give same result, if no changes in the actual source code)</p>
   <h3 id="timely">Timely</h3>
-<p>(Time taken for writing a test case should not take longer time, than then time taken for writing the
-code that is being tested)</p>
+<p>(Time taken for writing a test case should not take longer time, than then time taken for writing the code that is being tested)</p>
   <h3 id="mocking-the-dbcontext">Mocking the DbContext</h3>
   <h3 id="test-double">Test Double</h3>
-<p>A &quot;test double&quot; is an object that look and behave like their production equivalent objects.
-A &quot;test double&quot; is an object that look and behave like their production equivalent objects.</p>
+<p>A &quot;test double&quot; is an object that look and behave like their production equivalent objects. A &quot;test double&quot; is an object that look and behave like their production equivalent objects.</p>
   <h3 id="fake">Fake</h3>
 <p>An object that providers an alternative (dummy) implementation of an interface</p>
   <h3 id="mock">Mock</h3>
-<p>An object on which you fix specific return value for each individual method or property, without
-actual / full implementation of it.</p>
+<p>An object on which you fix specific return value for each individual method or property, without actual / full implementation of it.</p>
   <h3 id="mocking-the-dbcontext-1">Mocking the DbContext</h3>
-  <h3 id="install-package-moq">Install-Package Moq</h3>
-<p>Install-Package EntityFrameworkCoreMock.Moq</p>
-<p>Mocking the <code>DbContext</code>:</p>
+<p>Install-Package Moq Install-Package EntityFrameworkCoreMock.Moq Mocking the <code>DbContext</code>:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -993,8 +1008,7 @@ actual / full implementation of it.</p>
       <pre><code class="language-csharp">var dbContextOptions = new DbContextOptionsBuilder&lt;DbContextClassName&gt;().Options;
 //mock the DbContext</code></pre>
     </div>
-  <p>DbContextMock&lt;DbContextClass&gt; dbContextMock = new
-DbContextMock&lt;DbContextClass&gt;(dbContextOptions);</p>
+  <p>DbContextMock&lt;DbContextClass&gt; dbContextMock = new DbContextMock&lt;DbContextClass&gt;(dbContextOptions);</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1010,10 +1024,7 @@ var dbSetMock = dbContextMock.CreateDbSetMock(temp =&gt; temp.DbSetName, initial
 //create service instance with mocked DbContext
 var service = newServiceClass(dbContextMock.Object);</code></pre>
     </div>
-  <p>AutoFixture
-AutoFixture generates objects of the specified classes and their properties with some fake values
-based their data types.</p>
-  <h3 id="normal-object-creation">Normal object creation</h3>
+  <p>AutoFixture AutoFixture generates objects of the specified classes and their properties with some fake values based their data types. Normal object creation</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1028,12 +1039,9 @@ Property1 = value,
 Property2 = value
 }</code></pre>
     </div>
-  <p>With AutoFixture
-Fixture.Create&lt;ModelClass&gt;(); //initializes all properties of the specified model class with dummy
-values</p>
-  <h3 id="autofixture-2">AutoFixture</h3>
-  <h3 id="install-package-autofixture">Install-Package AutoFixture</h3>
-<p>Working with AutoFixture:</p>
+  <p>With AutoFixture Fixture.Create&lt;ModelClass&gt;(); //initializes all properties of the specified model class with dummy values</p>
+  <h3 id="autofixture-1">AutoFixture</h3>
+<p>Install-Package AutoFixture Working with AutoFixture:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1052,10 +1060,7 @@ var obj2 = fixture.Build&lt;ModelClass&gt;()
 .With(temp =&gt; temp.Property2, value)
 .Create();</code></pre>
     </div>
-  <p>Fluent Assertions
-Fluent Assertions are a set of extension methods to make the assertions in unit testing more
-readable and human-friendly.</p>
-  <h3 id="install-package-fluentassertions">Install-Package FluentAssertions</h3>
+  <p>Fluent Assertions Fluent Assertions are a set of extension methods to make the assertions in unit testing more readable and human-friendly. Install-Package FluentAssertions</p>
   <h3 id="assert">Assert</h3>
 
     <div class="code-block">
@@ -1084,8 +1089,7 @@ Assert.Empty(actual);
 Assert.NotEmpty(actual);
 //Null or empty</code></pre>
     </div>
-  <p>Assert.True(string.IsNullOrEmpty(actual)); //string
-Assert.True(actual == null || actual.Length == 0); //collection</p>
+  <p>Assert.True(string.IsNullOrEmpty(actual)); //string Assert.True(actual == null || actual.Length == 0); //collection</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1097,8 +1101,7 @@ Assert.True(actual == null || actual.Length == 0); //collection</p>
       </div>
       <pre><code class="language-csharp">//Should not be null or empty</code></pre>
     </div>
-  <p>Assert.False (string.IsNullOrEmpty(actual)); //string
-Assert.False(actual == null || actual.Length == 0); //collection</p>
+  <p>Assert.False (string.IsNullOrEmpty(actual)); //string Assert.False(actual == null || actual.Length == 0); //collection</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1188,8 +1191,17 @@ actual.Should().BeEquivalentTo(expected);
 )
 actual.Should().BeNotEquivalentTo(expected);</code></pre>
     </div>
-  <p>Fluent Assertions - Collections:
-actualCollection.Should().BeEmpty();
+  <p>Fluent Assertions - Collections:</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">actualCollection.Should().BeEmpty();
 actualCollection.Should().NotBeEmpty();
 actualCollection.Should().HaveCount(expectedCount);
 actualCollection.Should().NotHaveCount(expectedCount);
@@ -1208,33 +1220,20 @@ actualCollection.Should().BeInDescendingOrder(temp =&gt; temp.Property);
 actualCollection.Should().NotBeInAscendingOrder(temp =&gt; temp.Property);
 actualCollection.Should().NotBeInDescendingOrder(temp =&gt; temp.Property);
 delegateObj.Should().Throw&lt;ExceptionType&gt;();
-delegateObj.Should().NotThrow&lt;ExceptionType&gt;();</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">await delegateObj.Should().ThrowAsync&lt;ExceptionType&gt;();
+delegateObj.Should().NotThrow&lt;ExceptionType&gt;();
+await delegateObj.Should().ThrowAsync&lt;ExceptionType&gt;();
 await delegateObj.Should().NotThrowAsync&lt;ExceptionType&gt;();</code></pre>
     </div>
-  <p>Repository
-Repository (or Repository Pattern) is an abstraction between Data Access Layer (EF <code>DbContext</code>) and
-business logic layer (Service) of the application.</p>
+  <p>Repository Repository (or Repository Pattern) is an abstraction between Data Access Layer (EF <code>DbContext</code>) and business logic layer (Service) of the application.</p>
   <h3 id="unit-testing">Unit Testing</h3>
   <h3 id="benefits-of-repository-pattern">Benefits of Repository Pattern</h3>
-<p>Loosely-coupled business logic (service) &amp; data access.
-(You can independently develop them).</p>
+<p>Loosely-coupled business logic (service) &amp; data access. (You can independently develop them).</p>
   <h3 id="changing-data-store">Changing data store</h3>
 <p>(You can create alternative repository implementation for another data store, when needed).</p>
   <h3 id="unit-testing-1">Unit Testing</h3>
 <p>(Mocking the repository is much easier (and preferred) than mocking <code>DbContext</code>).</p>
   <h3 id="mocking-the-repository">Mocking the Repository</h3>
-  <h3 id="install-package-moq-1">Install-Package Moq</h3>
-<p>Mocking the Repository:</p>
+<p>Install-Package Moq Mocking the Repository:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1252,8 +1251,7 @@ repositoryMock.Setup(temp =&gt; temp.MethodName(It.Any&lt;ParameterType&gt;()))
 //create service instance with mocked repository
 var service = newServiceClass(repositoryMock.Object);</code></pre>
     </div>
-  <p>Mock&lt;IPersonsRepository&gt;
-Used to mock the methods of IPersonsRepository.</p>
+  <p>Mock&lt;IPersonsRepository&gt; Used to mock the methods of IPersonsRepository.</p>
   <h3 id="ipersonsrepository">IPersonsRepository</h3>
 <p>Represents the mocked object that was created by Mock&lt;T&gt;.</p>
   <h3 id="unit-testing-the-controller">Unit Testing the Controller</h3>
@@ -1271,14 +1269,13 @@ Used to mock the methods of IPersonsRepository.</p>
 ControllerName controller = new ControllerName();
 //Act
 IActionResult result = controller.ActionMethod();
-//Assert</code></pre>
-    </div>
-  <p>result.Should().BeAssignableTo&lt;ActionResultType&gt;(); //checking type of action result
+//Assert
+result.Should().BeAssignableTo&lt;ActionResultType&gt;(); //checking type of action result
 result.ViewData.Model.Should().BeAssignableTo&lt;ExpectedType&gt;(); //checking type of model
-result.ViewData.Model.Should().Be(expectedValue); //you can also use any other assertion</p>
-  <h3 id="efcore-in-memory-provider">EFCore In-Memory Provider</h3>
-<p>Install-Package Microsoft.EntityFrameworkCore.InMemory
-Using In-memory provider:</p>
+result.ViewData.Model.Should().Be(expectedValue); //you can also use any other assertion</code></pre>
+    </div>
+    <h3 id="efcore-in-memory-provider">EFCore In-Memory Provider</h3>
+<p>Install-Package Microsoft.EntityFrameworkCore.InMemory Using In-memory provider:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1310,10 +1307,10 @@ WebApplicationFactory factory = new WebApplicationFactory();
 HttpClient client = factory.CreateClient();
 //Send request client
 HttpResponseMessage response = await client.GetAsync(&quot;url&quot;);
-//Assert</code></pre>
+//Assert
+result.Should().BeSuccessful(); //Response status code should be 200 to 299</code></pre>
     </div>
-  <p>result.Should().BeSuccessful(); //Response status code should be 200 to 299</p>
-</section>
+  </section>
 
       </article>
 
@@ -1370,15 +1367,11 @@ HttpResponseMessage response = await client.GetAsync(&quot;url&quot;);
         </li>
       
         <li class="toc-item">
-          <a href="#autofixture" class="toc-link">AutoFixture</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#benefits-of-autofixture" class="toc-link">Benefits of AutoFixture</a>
         </li>
       
         <li class="toc-item">
-          <a href="#example-with-autofixture" class="toc-link">Example with AutoFixture</a>
+          <a href="#integrating-autofixture-with-xunit-in-aspnet-core" class="toc-link">Integrating AutoFixture with xUnit in ASP.NET Core</a>
         </li>
       
         <li class="toc-item">
@@ -1390,7 +1383,7 @@ HttpResponseMessage response = await client.GetAsync(&quot;url&quot;);
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices" class="toc-link">Best Practices</a>
+          <a href="#best-practices" class="toc-link toc-sub">Best Practices</a>
         </li>
       
         <li class="toc-item">
@@ -1410,7 +1403,7 @@ HttpResponseMessage response = await client.GetAsync(&quot;url&quot;);
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices-1" class="toc-link">Best Practices</a>
+          <a href="#best-practices-1" class="toc-link toc-sub">Best Practices</a>
         </li>
       
         <li class="toc-item">
@@ -1422,7 +1415,11 @@ HttpResponseMessage response = await client.GetAsync(&quot;url&quot;);
         </li>
       
         <li class="toc-item">
-          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+          <a href="#key-points-to-remember" class="toc-link toc-sub">Key Points to Remember</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#xunit-advanced-topics" class="toc-link">xUnit Advanced Topics</a>
         </li>
       
         <li class="toc-item">
@@ -1430,7 +1427,7 @@ HttpResponseMessage response = await client.GetAsync(&quot;url&quot;);
         </li>
       
         <li class="toc-item">
-          <a href="#autofixture-1" class="toc-link">AutoFixture</a>
+          <a href="#autofixture" class="toc-link">AutoFixture</a>
         </li>
       
         <li class="toc-item">

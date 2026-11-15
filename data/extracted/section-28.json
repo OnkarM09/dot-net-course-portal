@@ -6,220 +6,194 @@
   "is_cheatsheet": false,
   "total_pages": 5,
   "total_raw_chars": 4509,
-  "total_repaired_chars": 4651,
+  "total_repaired_chars": 4504,
   "pages": [
     {
       "page_number": 1,
       "raw_text": "ASP.NET Core - True Ultimate Guide\nSection 28: Angular and CORS - Notes\nCORS in ASP.NET Core Web API\nCross-Origin Resource Sharing (CORS) is a feature that allows or restricts resources on a web server\nbased on the origin of the request. In the context of an Angular application running on\nlocalhost:4200, you'll need to configure CORS in your ASP.NET Core Web API to allow requests from\nthis origin.\nOverview of CORS\nCORS enables web servers to specify which origins are allowed to access their resources. Proper\nCORS configuration ensures that your API can be accessed securely by client applications hosted on\ndifferent origins.\nConfiguring CORS in ASP.NET Core Using Program.cs\nIn the latest ASP.NET Core versions, configuration is typically done in Program.cs rather than\nStartup.cs. Here’s how you can set up CORS in Program.cs.\n1. Install Required Package\nNo additional package is needed as CORS support is built into ASP.NET Core.\n2. Configure CORS in Program.cs\nAdd CORS services and middleware in your Program.cs file.\nExample Configuration:\nvar builder = WebApplication.CreateBuilder(args);\n// Add services to the container.\nbuilder.Services.AddControllers();\n// Add CORS services and configure policies\nbuilder.Services.AddCors(options =>\n{\noptions.AddPolicy(\"AllowAngularLocalhost\",\n",
-      "repaired_text": "ASP.NET Core - True Ultimate Guide\nSection 28: Angular and CORS - Notes\nCORS in ASP.NET Core Web API\nCross-Origin Resource Sharing (CORS) is a feature that allows or restricts resources on a web server\nbased on the origin of the request. In the context of an Angular application running on\nlocalhost:4200, you'll need to configure CORS in your ASP.NET Core Web API to allow requests from\nthis origin.\nOverview of CORS\nCORS enables web servers to specify which origins are allowed to access their resources. Proper\nCORS configuration ensures that your API can be accessed securely by client applications hosted on\ndifferent origins.\nConfiguring CORS in ASP.NET Core Using Program.cs\nIn the latest ASP.NET Core versions, configuration is typically done in Program.cs rather than\nStartup.cs. Here’s how you can set up CORS in Program.cs.\n1. Install Required Package\nNo additional package is needed as CORS support is built into ASP.NET Core.\n2. Configure CORS in Program.cs\nAdd CORS services and middleware in your Program.cs file.\nExample Configuration:\nvar builder = WebApplication.CreateBuilder(args);\n// Add services to the container.\nbuilder.Services.AddControllers();\n// Add CORS services and configure policies\nbuilder.Services.AddCors(options =>\n{\n  options.AddPolicy(\"AllowAngularLocalhost\",",
+      "repaired_text": "ASP.NET Core - True Ultimate Guide\nSection 28: Angular and CORS - Notes\nCORS in ASP.NET Core Web API\nCross-Origin Resource Sharing (CORS) is a feature that allows or restricts resources on a web server\nbased on the origin of the request. In the context of an Angular application running on\nlocalhost:4200, you'll need to configure CORS in your ASP.NET Core Web API to allow requests from\nthis origin.\nOverview of CORS\nCORS enables web servers to specify which origins are allowed to access their resources. Proper\nCORS configuration ensures that your API can be accessed securely by client applications hosted on\ndifferent origins.\nConfiguring CORS in ASP.NET Core Using Program.cs\nIn the latest ASP.NET Core versions, configuration is typically done in Program.cs rather than\nStartup.cs. Here’s how you can set up CORS in Program.cs.\n1. Install Required Package\nNo additional package is needed as CORS support is built into ASP.NET Core.\n2. Configure CORS in Program.cs\nAdd CORS services and middleware in your Program.cs file.\nExample Configuration:\nvar builder = WebApplication.CreateBuilder(args);\n// Add services to the container.\nbuilder.Services.AddControllers();\n// Add CORS services and configure policies\nbuilder.Services.AddCors(options =>\n{\noptions.AddPolicy(\"AllowAngularLocalhost\",",
       "lines": [
         {
           "text": "ASP.NET Core - True Ultimate Guide",
           "rawText": "ASP.NET Core - True Ultimate Guide",
-          "x": 72.024,
-          "y": 742.66,
-          "fontSize": 15.96,
-          "fontName": "g_d54_f1"
+          "startX": 72,
+          "y": 743,
+          "isBold": true
         },
         {
           "text": "Section 28: Angular and CORS - Notes",
           "rawText": "Section 28: Angular and CORS - Notes",
-          "x": 72.024,
-          "y": 722.38,
-          "fontSize": 12.96,
-          "fontName": "g_d54_f1"
+          "startX": 72,
+          "y": 722,
+          "isBold": true
         },
         {
           "text": "CORS in ASP.NET Core Web API",
           "rawText": "CORS in ASP.NET Core Web API",
-          "x": 72.024,
-          "y": 684.82,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f3"
+          "startX": 72,
+          "y": 685,
+          "isBold": true
         },
         {
           "text": "Cross-Origin Resource Sharing (CORS) is a feature that allows or restricts resources on a web server",
           "rawText": "Cross-Origin Resource Sharing (CORS) is a feature that allows or restricts resources on a web server",
-          "x": 72.024,
-          "y": 662.26,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f3"
+          "startX": 72,
+          "y": 662,
+          "isBold": false
         },
         {
           "text": "based on the origin of the request. In the context of an Angular application running on",
           "rawText": "based on the origin of the request. In the context of an Angular application running on",
-          "x": 72.024,
-          "y": 647.74,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 648,
+          "isBold": false
         },
         {
           "text": "localhost:4200, you'll need to configure CORS in your ASP.NET Core Web API to allow requests from",
           "rawText": "localhost:4200, you'll need to configure CORS in your ASP.NET Core Web API to allow requests from",
-          "x": 72.024,
-          "y": 633.34,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 633,
+          "isBold": false
         },
         {
           "text": "this origin.",
           "rawText": "this origin.",
-          "x": 72.024,
-          "y": 618.82,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 619,
+          "isBold": false
         },
         {
           "text": "Overview of CORS",
           "rawText": "Overview of CORS",
-          "x": 72.024,
-          "y": 573.79,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f3"
+          "startX": 72,
+          "y": 574,
+          "isBold": true
         },
         {
           "text": "CORS enables web servers to specify which origins are allowed to access their resources. Proper",
           "rawText": "CORS enables web servers to specify which origins are allowed to access their resources. Proper",
-          "x": 72.024,
-          "y": 551.35,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 551,
+          "isBold": false
         },
         {
           "text": "CORS configuration ensures that your API can be accessed securely by client applications hosted on",
           "rawText": "CORS configuration ensures that your API can be accessed securely by client applications hosted on",
-          "x": 72.024,
-          "y": 536.83,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 537,
+          "isBold": false
         },
         {
           "text": "different origins.",
           "rawText": "different origins.",
-          "x": 72.024,
-          "y": 522.31,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 522,
+          "isBold": false
         },
         {
           "text": "Configuring CORS in ASP.NET Core Using Program.cs",
           "rawText": "Configuring CORS in ASP.NET Core Using Program.cs",
-          "x": 72.024,
-          "y": 477.31,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f3"
+          "startX": 72,
+          "y": 477,
+          "isBold": true
         },
         {
           "text": "In the latest ASP.NET Core versions, configuration is typically done in Program.cs rather than",
           "rawText": "In the latest ASP.NET Core versions, configuration is typically done in Program.cs rather than",
-          "x": 72.024,
-          "y": 454.87,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 455,
+          "isBold": false
         },
         {
           "text": "Startup.cs. Here’s how you can set up CORS in Program.cs.",
           "rawText": "Startup.cs. Here’s how you can set up CORS in Program.cs.",
-          "x": 72.024,
-          "y": 440.35,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 440,
+          "isBold": false
         },
         {
           "text": "1. Install Required Package",
           "rawText": "1. Install Required Package",
-          "x": 72.024,
-          "y": 395.33,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f3"
+          "startX": 72,
+          "y": 395,
+          "isBold": true
         },
         {
           "text": "No additional package is needed as CORS support is built into ASP.NET Core.",
           "rawText": "No additional package is needed as CORS support is built into ASP.NET Core.",
-          "x": 72.024,
-          "y": 372.89,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 373,
+          "isBold": false
         },
         {
           "text": "2. Configure CORS in Program.cs",
           "rawText": "2. Configure CORS in Program.cs",
-          "x": 72.024,
-          "y": 327.89,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f3"
+          "startX": 72,
+          "y": 328,
+          "isBold": true
         },
         {
           "text": "Add CORS services and middleware in your Program.cs file.",
           "rawText": "Add CORS services and middleware in your Program.cs file.",
-          "x": 72.024,
-          "y": 305.45,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 305,
+          "isBold": false
         },
         {
           "text": "Example Configuration:",
           "rawText": "Example Configuration:",
-          "x": 72.024,
-          "y": 282.89,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f3"
+          "startX": 72,
+          "y": 283,
+          "isBold": false
         },
         {
           "text": "var builder = WebApplication.CreateBuilder(args);",
           "rawText": "var builder = WebApplication.CreateBuilder(args);",
-          "x": 72.024,
-          "y": 260.45,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 260,
+          "isBold": false
         },
         {
           "text": "// Add services to the container.",
           "rawText": "// Add services to the container.",
-          "x": 72.024,
-          "y": 215.42,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 215,
+          "isBold": false
         },
         {
           "text": "builder.Services.AddControllers();",
           "rawText": "builder.Services.AddControllers();",
-          "x": 72.024,
-          "y": 192.86,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 193,
+          "isBold": false
         },
         {
           "text": "// Add CORS services and configure policies",
           "rawText": "// Add CORS services and configure policies",
-          "x": 72.024,
-          "y": 147.98,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 148,
+          "isBold": false
         },
         {
           "text": "builder.Services.AddCors(options =>",
           "rawText": "builder.Services.AddCors(options =>",
-          "x": 72.024,
-          "y": 125.42,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 125,
+          "isBold": false
         },
         {
           "text": "{",
           "rawText": "{",
-          "x": 72.024,
-          "y": 102.98,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 103,
+          "isBold": false
         },
         {
-          "text": "  options.AddPolicy(\"AllowAngularLocalhost\",",
+          "text": "options.AddPolicy(\"AllowAngularLocalhost\",",
           "rawText": "options.AddPolicy(\"AllowAngularLocalhost\",",
-          "x": 81.984,
-          "y": 80.424,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 82,
+          "y": 80,
+          "isBold": false
         }
       ],
       "blocks": [
@@ -240,16 +214,23 @@
           "text": "Section 28: Angular and CORS - Notes"
         },
         {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "CORS in ASP.NET Core Web API"
+          ],
+          "text": "CORS in ASP.NET Core Web API"
+        },
+        {
           "type": "prose",
           "page": 1,
           "lines": [
-            "CORS in ASP.NET Core Web API",
             "Cross-Origin Resource Sharing (CORS) is a feature that allows or restricts resources on a web server",
             "based on the origin of the request. In the context of an Angular application running on",
             "localhost:4200, you'll need to configure CORS in your ASP.NET Core Web API to allow requests from",
             "this origin."
           ],
-          "text": "CORS in ASP.NET Core Web API\nCross-Origin Resource Sharing (CORS) is a feature that allows or restricts resources on a web server\nbased on the origin of the request. In the context of an Angular application running on\nlocalhost:4200, you'll need to configure CORS in your ASP.NET Core Web API to allow requests from\nthis origin."
+          "text": "Cross-Origin Resource Sharing (CORS) is a feature that allows or restricts resources on a web server based on the origin of the request. In the context of an Angular application running on localhost:4200, you'll need to configure CORS in your ASP.NET Core Web API to allow requests from this origin."
         },
         {
           "type": "heading",
@@ -265,38 +246,59 @@
           "lines": [
             "CORS enables web servers to specify which origins are allowed to access their resources. Proper",
             "CORS configuration ensures that your API can be accessed securely by client applications hosted on",
-            "different origins.",
-            "Configuring CORS in ASP.NET Core Using Program.cs",
-            "In the latest ASP.NET Core versions, configuration is typically done in Program.cs rather than",
-            "Startup.cs. Here’s how you can set up CORS in Program.cs."
+            "different origins."
           ],
-          "text": "CORS enables web servers to specify which origins are allowed to access their resources. Proper\nCORS configuration ensures that your API can be accessed securely by client applications hosted on\ndifferent origins.\nConfiguring CORS in ASP.NET Core Using Program.cs\nIn the latest ASP.NET Core versions, configuration is typically done in Program.cs rather than\nStartup.cs. Here’s how you can set up CORS in Program.cs."
+          "text": "CORS enables web servers to specify which origins are allowed to access their resources. Proper CORS configuration ensures that your API can be accessed securely by client applications hosted on different origins."
         },
         {
-          "type": "list_item",
+          "type": "heading",
           "page": 1,
           "lines": [
-            "1. Install Required Package",
-            "No additional package is needed as CORS support is built into ASP.NET Core."
+            "Configuring CORS in ASP.NET Core Using Program.cs"
           ],
-          "text": "1. Install Required Package\nNo additional package is needed as CORS support is built into ASP.NET Core."
-        },
-        {
-          "type": "list_item",
-          "page": 1,
-          "lines": [
-            "2. Configure CORS in Program.cs",
-            "Add CORS services and middleware in your Program.cs file."
-          ],
-          "text": "2. Configure CORS in Program.cs\nAdd CORS services and middleware in your Program.cs file."
+          "text": "Configuring CORS in ASP.NET Core Using Program.cs"
         },
         {
           "type": "prose",
           "page": 1,
           "lines": [
+            "In the latest ASP.NET Core versions, configuration is typically done in Program.cs rather than",
+            "Startup.cs. Here’s how you can set up CORS in Program.cs."
+          ],
+          "text": "In the latest ASP.NET Core versions, configuration is typically done in Program.cs rather than Startup.cs. Here’s how you can set up CORS in Program.cs."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "1. Install Required Package"
+          ],
+          "text": "1. Install Required Package"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "No additional package is needed as CORS support is built into ASP.NET Core."
+          ],
+          "text": "No additional package is needed as CORS support is built into ASP.NET Core."
+        },
+        {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "2. Configure CORS in Program.cs"
+          ],
+          "text": "2. Configure CORS in Program.cs"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
+            "Add CORS services and middleware in your Program.cs file.",
             "Example Configuration:"
           ],
-          "text": "Example Configuration:"
+          "text": "Add CORS services and middleware in your Program.cs file. Example Configuration:"
         },
         {
           "type": "code",
@@ -308,226 +310,200 @@
             "// Add CORS services and configure policies",
             "builder.Services.AddCors(options =>",
             "{",
-            "  options.AddPolicy(\"AllowAngularLocalhost\","
+            "options.AddPolicy(\"AllowAngularLocalhost\","
           ],
-          "text": "var builder = WebApplication.CreateBuilder(args);\n// Add services to the container.\nbuilder.Services.AddControllers();\n// Add CORS services and configure policies\nbuilder.Services.AddCors(options =>\n{\n  options.AddPolicy(\"AllowAngularLocalhost\","
+          "text": "var builder = WebApplication.CreateBuilder(args);\n// Add services to the container.\nbuilder.Services.AddControllers();\n// Add CORS services and configure policies\nbuilder.Services.AddCors(options =>\n{\noptions.AddPolicy(\"AllowAngularLocalhost\","
         }
       ],
       "char_count_raw": 1296,
-      "char_count_repaired": 1297
+      "char_count_repaired": 1295
     },
     {
       "page_number": 2,
       "raw_text": "builder =>\n{\nbuilder.WithOrigins(\"http://localhost:4200\") // Allow Angular's localhost\n.AllowAnyMethod() // Allow any HTTP method (GET, POST, etc.)\n.AllowAnyHeader(); // Allow any headers\n});\n});\nvar app = builder.Build();\n// Configure the HTTP request pipeline.\nif (app.Environment.IsDevelopment())\n{\napp.UseDeveloperExceptionPage();\n}\nelse\n{\napp.UseExceptionHandler(\"/Home/Error\");\napp.UseHsts();\n}\napp.UseHttpsRedirection();\napp.UseStaticFiles();\napp.UseRouting();\napp.UseAuthorization();\n// Use CORS policy\napp.UseCors(\"AllowAngularLocalhost\");\napp.UseEndpoints(endpoints =>\n{\n",
-      "repaired_text": "   builder =>\n   {\n     builder.WithOrigins(\"http://localhost:4200\") // Allow Angular's localhost\n       .AllowAnyMethod() // Allow any HTTP method (GET, POST, etc.)\n       .AllowAnyHeader(); // Allow any headers\n   });\n});\nvar app = builder.Build();\n// Configure the HTTP request pipeline.\nif (app.Environment.IsDevelopment())\n{\n  app.UseDeveloperExceptionPage();\n}\nelse\n{\n  app.UseExceptionHandler(\"/Home/Error\");\n  app.UseHsts();\n}\napp.UseHttpsRedirection();\napp.UseStaticFiles();\napp.UseRouting();\napp.UseAuthorization();\n// Use CORS policy\napp.UseCors(\"AllowAngularLocalhost\");\napp.UseEndpoints(endpoints =>\n{",
+      "repaired_text": "builder =>\n{\nbuilder.WithOrigins(\"http://localhost:4200\") // Allow Angular's localhost\n.AllowAnyMethod() // Allow any HTTP method (GET, POST, etc.)\n.AllowAnyHeader(); // Allow any headers\n});\n});\nvar app = builder.Build();\n// Configure the HTTP request pipeline.\nif (app.Environment.IsDevelopment())\n{\napp.UseDeveloperExceptionPage();\n}\nelse\n{\napp.UseExceptionHandler(\"/Home/Error\");\napp.UseHsts();\n}\napp.UseHttpsRedirection();\napp.UseStaticFiles();\napp.UseRouting();\napp.UseAuthorization();\n// Use CORS policy\napp.UseCors(\"AllowAngularLocalhost\");\napp.UseEndpoints(endpoints =>\n{",
       "lines": [
         {
-          "text": "   builder =>",
+          "text": "builder =>",
           "rawText": "builder =>",
-          "x": 92.064,
-          "y": 759.48,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 92,
+          "y": 759,
+          "isBold": false
         },
         {
-          "text": "   {",
+          "text": "{",
           "rawText": "{",
-          "x": 92.064,
-          "y": 737.02,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 92,
+          "y": 737,
+          "isBold": false
         },
         {
-          "text": "     builder.WithOrigins(\"http://localhost:4200\") // Allow Angular's localhost",
+          "text": "builder.WithOrigins(\"http://localhost:4200\") // Allow Angular's localhost",
           "rawText": "builder.WithOrigins(\"http://localhost:4200\") // Allow Angular's localhost",
-          "x": 102.02,
-          "y": 714.46,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 102,
+          "y": 714,
+          "isBold": false
         },
         {
-          "text": "       .AllowAnyMethod() // Allow any HTTP method (GET, POST, etc.)",
+          "text": ".AllowAnyMethod() // Allow any HTTP method (GET, POST, etc.)",
           "rawText": ".AllowAnyMethod() // Allow any HTTP method (GET, POST, etc.)",
-          "x": 119.42,
-          "y": 692.02,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 119,
+          "y": 692,
+          "isBold": false
         },
         {
-          "text": "       .AllowAnyHeader(); // Allow any headers",
+          "text": ".AllowAnyHeader(); // Allow any headers",
           "rawText": ".AllowAnyHeader(); // Allow any headers",
-          "x": 119.42,
-          "y": 669.46,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
-        },
-        {
-          "text": "   });",
-          "rawText": "});",
-          "x": 92.064,
-          "y": 647.02,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 119,
+          "y": 669,
+          "isBold": false
         },
         {
           "text": "});",
           "rawText": "});",
-          "x": 72.024,
-          "y": 624.46,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 92,
+          "y": 647,
+          "isBold": false
+        },
+        {
+          "text": "});",
+          "rawText": "});",
+          "startX": 72,
+          "y": 624,
+          "isBold": false
         },
         {
           "text": "var app = builder.Build();",
           "rawText": "var app = builder.Build();",
-          "x": 72.024,
-          "y": 579.58,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 580,
+          "isBold": false
         },
         {
           "text": "// Configure the HTTP request pipeline.",
           "rawText": "// Configure the HTTP request pipeline.",
-          "x": 72.024,
-          "y": 534.55,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 535,
+          "isBold": false
         },
         {
           "text": "if (app.Environment.IsDevelopment())",
           "rawText": "if (app.Environment.IsDevelopment())",
-          "x": 72.024,
-          "y": 511.99,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 512,
+          "isBold": false
         },
         {
           "text": "{",
           "rawText": "{",
-          "x": 72.024,
-          "y": 489.55,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 490,
+          "isBold": false
         },
         {
-          "text": "  app.UseDeveloperExceptionPage();",
+          "text": "app.UseDeveloperExceptionPage();",
           "rawText": "app.UseDeveloperExceptionPage();",
-          "x": 82.104,
-          "y": 467.11,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 82,
+          "y": 467,
+          "isBold": false
         },
         {
           "text": "}",
           "rawText": "}",
-          "x": 72.024,
-          "y": 444.55,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 445,
+          "isBold": false
         },
         {
           "text": "else",
           "rawText": "else",
-          "x": 72.024,
-          "y": 422.11,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 422,
+          "isBold": false
         },
         {
           "text": "{",
           "rawText": "{",
-          "x": 72.024,
-          "y": 399.55,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 400,
+          "isBold": false
         },
         {
-          "text": "  app.UseExceptionHandler(\"/Home/Error\");",
+          "text": "app.UseExceptionHandler(\"/Home/Error\");",
           "rawText": "app.UseExceptionHandler(\"/Home/Error\");",
-          "x": 82.104,
-          "y": 377.09,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 82,
+          "y": 377,
+          "isBold": false
         },
         {
-          "text": "  app.UseHsts();",
+          "text": "app.UseHsts();",
           "rawText": "app.UseHsts();",
-          "x": 82.104,
-          "y": 354.53,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 82,
+          "y": 355,
+          "isBold": false
         },
         {
           "text": "}",
           "rawText": "}",
-          "x": 72.024,
-          "y": 332.09,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 332,
+          "isBold": false
         },
         {
           "text": "app.UseHttpsRedirection();",
           "rawText": "app.UseHttpsRedirection();",
-          "x": 72.024,
-          "y": 287.09,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 287,
+          "isBold": false
         },
         {
           "text": "app.UseStaticFiles();",
           "rawText": "app.UseStaticFiles();",
-          "x": 72.024,
-          "y": 264.65,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 265,
+          "isBold": false
         },
         {
           "text": "app.UseRouting();",
           "rawText": "app.UseRouting();",
-          "x": 72.024,
-          "y": 242.09,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 242,
+          "isBold": false
         },
         {
           "text": "app.UseAuthorization();",
           "rawText": "app.UseAuthorization();",
-          "x": 72.024,
-          "y": 219.65,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 220,
+          "isBold": false
         },
         {
           "text": "// Use CORS policy",
           "rawText": "// Use CORS policy",
-          "x": 72.024,
-          "y": 174.62,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 175,
+          "isBold": false
         },
         {
           "text": "app.UseCors(\"AllowAngularLocalhost\");",
           "rawText": "app.UseCors(\"AllowAngularLocalhost\");",
-          "x": 72.024,
-          "y": 152.18,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 152,
+          "isBold": false
         },
         {
           "text": "app.UseEndpoints(endpoints =>",
           "rawText": "app.UseEndpoints(endpoints =>",
-          "x": 72.024,
-          "y": 107.18,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 107,
+          "isBold": false
         },
         {
           "text": "{",
           "rawText": "{",
-          "x": 72.024,
-          "y": 84.624,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 85,
+          "isBold": false
         }
       ],
       "blocks": [
@@ -535,30 +511,30 @@
           "type": "prose",
           "page": 2,
           "lines": [
-            "   builder =>"
+            "builder =>"
           ],
-          "text": "   builder =>"
+          "text": "builder =>"
         },
         {
           "type": "code",
           "page": 2,
           "lines": [
-            "   {",
-            "     builder.WithOrigins(\"http://localhost:4200\") // Allow Angular's localhost",
-            "       .AllowAnyMethod() // Allow any HTTP method (GET, POST, etc.)",
-            "       .AllowAnyHeader(); // Allow any headers",
-            "   });",
+            "{",
+            "builder.WithOrigins(\"http://localhost:4200\") // Allow Angular's localhost",
+            ".AllowAnyMethod() // Allow any HTTP method (GET, POST, etc.)",
+            ".AllowAnyHeader(); // Allow any headers",
+            "});",
             "});",
             "var app = builder.Build();",
             "// Configure the HTTP request pipeline.",
             "if (app.Environment.IsDevelopment())",
             "{",
-            "  app.UseDeveloperExceptionPage();",
+            "app.UseDeveloperExceptionPage();",
             "}",
             "else",
             "{",
-            "  app.UseExceptionHandler(\"/Home/Error\");",
-            "  app.UseHsts();",
+            "app.UseExceptionHandler(\"/Home/Error\");",
+            "app.UseHsts();",
             "}",
             "app.UseHttpsRedirection();",
             "app.UseStaticFiles();",
@@ -569,200 +545,177 @@
             "app.UseEndpoints(endpoints =>",
             "{"
           ],
-          "text": "   {\n     builder.WithOrigins(\"http://localhost:4200\") // Allow Angular's localhost\n       .AllowAnyMethod() // Allow any HTTP method (GET, POST, etc.)\n       .AllowAnyHeader(); // Allow any headers\n   });\n});\nvar app = builder.Build();\n// Configure the HTTP request pipeline.\nif (app.Environment.IsDevelopment())\n{\n  app.UseDeveloperExceptionPage();\n}\nelse\n{\n  app.UseExceptionHandler(\"/Home/Error\");\n  app.UseHsts();\n}\napp.UseHttpsRedirection();\napp.UseStaticFiles();\napp.UseRouting();\napp.UseAuthorization();\n// Use CORS policy\napp.UseCors(\"AllowAngularLocalhost\");\napp.UseEndpoints(endpoints =>\n{"
+          "text": "{\nbuilder.WithOrigins(\"http://localhost:4200\") // Allow Angular's localhost\n.AllowAnyMethod() // Allow any HTTP method (GET, POST, etc.)\n.AllowAnyHeader(); // Allow any headers\n});\n});\nvar app = builder.Build();\n// Configure the HTTP request pipeline.\nif (app.Environment.IsDevelopment())\n{\napp.UseDeveloperExceptionPage();\n}\nelse\n{\napp.UseExceptionHandler(\"/Home/Error\");\napp.UseHsts();\n}\napp.UseHttpsRedirection();\napp.UseStaticFiles();\napp.UseRouting();\napp.UseAuthorization();\n// Use CORS policy\napp.UseCors(\"AllowAngularLocalhost\");\napp.UseEndpoints(endpoints =>\n{"
         }
       ],
       "char_count_raw": 581,
-      "char_count_repaired": 614
+      "char_count_repaired": 580
     },
     {
       "page_number": 3,
       "raw_text": "endpoints.MapControllers();\n});\napp.Run();\n3. Understanding the Configuration\n• AddCors Method: Registers CORS services and defines policies.\n• AddPolicy Method: Creates a CORS policy named \"AllowAngularLocalhost\". This policy\nallows requests from http://localhost:4200, permits any HTTP methods, and accepts any\nheaders.\n• UseCors Method: Applies the defined CORS policy. It must be called before UseRouting or\nUseEndpoints.\n4. More Detailed CORS Policies\nIf you need more restrictive CORS policies, you can adjust the configuration.\nExample of a Restrictive CORS Policy:\nbuilder.Services.AddCors(options =>\n{\noptions.AddPolicy(\"RestrictedPolicy\",\nbuilder =>\n{\nbuilder.WithOrigins(\"https://specificdomain.com\") // Allow only specific domain\n.WithMethods(\"GET\", \"POST\") // Allow only GET and POST methods\n.WithHeaders(\"Authorization\", \"Content-Type\"); // Allow specific headers\n});\n});\n",
-      "repaired_text": "  endpoints.MapControllers();\n});\napp.Run();\n3. Understanding the Configuration\n   • AddCors Method: Registers CORS services and defines policies.\n   • AddPolicy Method: Creates a CORS policy named \"AllowAngularLocalhost\". This policy\n      allows requests from http://localhost:4200, permits any HTTP methods, and accepts any\n      headers.\n   • UseCors Method: Applies the defined CORS policy. It must be called before UseRouting or\n      UseEndpoints.\n4. More Detailed CORS Policies\nIf you need more restrictive CORS policies, you can adjust the configuration.\nExample of a Restrictive CORS Policy:\nbuilder.Services.AddCors(options =>\n{\n  options.AddPolicy(\"RestrictedPolicy\",\n   builder =>\n   {\n     builder.WithOrigins(\"https://specificdomain.com\") // Allow only specific domain\n       .WithMethods(\"GET\", \"POST\") // Allow only GET and POST methods\n       .WithHeaders(\"Authorization\", \"Content-Type\"); // Allow specific headers\n   });\n});",
+      "repaired_text": "endpoints.MapControllers();\n});\napp.Run();\n3. Understanding the Configuration\n• AddCors Method: Registers CORS services and defines policies.\n• AddPolicy Method: Creates a CORS policy named \"AllowAngularLocalhost\". This policy\nallows requests from http://localhost:4200, permits any HTTP methods, and accepts any\nheaders.\n• UseCors Method: Applies the defined CORS policy. It must be called before UseRouting or\nUseEndpoints.\n4. More Detailed CORS Policies\nIf you need more restrictive CORS policies, you can adjust the configuration.\nExample of a Restrictive CORS Policy:\nbuilder.Services.AddCors(options =>\n{\noptions.AddPolicy(\"RestrictedPolicy\",\nbuilder =>\n{\nbuilder.WithOrigins(\"https://specificdomain.com\") // Allow only specific domain\n.WithMethods(\"GET\", \"POST\") // Allow only GET and POST methods\n.WithHeaders(\"Authorization\", \"Content-Type\"); // Allow specific headers\n});\n});",
       "lines": [
         {
-          "text": "  endpoints.MapControllers();",
+          "text": "endpoints.MapControllers();",
           "rawText": "endpoints.MapControllers();",
-          "x": 82.104,
-          "y": 759.48,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 82,
+          "y": 759,
+          "isBold": false
         },
         {
           "text": "});",
           "rawText": "});",
-          "x": 72.024,
-          "y": 737.02,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 737,
+          "isBold": false
         },
         {
           "text": "app.Run();",
           "rawText": "app.Run();",
-          "x": 72.024,
-          "y": 692.02,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 692,
+          "isBold": false
         },
         {
           "text": "3. Understanding the Configuration",
           "rawText": "3. Understanding the Configuration",
-          "x": 72.024,
-          "y": 647.02,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f3"
+          "startX": 72,
+          "y": 647,
+          "isBold": true
         },
         {
-          "text": "   • AddCors Method: Registers CORS services and defines policies.",
+          "text": "• AddCors Method: Registers CORS services and defines policies.",
           "rawText": "• AddCors Method: Registers CORS services and defines policies.",
-          "x": 90.024,
-          "y": 624.46,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f5"
+          "startX": 90,
+          "y": 624,
+          "isBold": false
         },
         {
-          "text": "   • AddPolicy Method: Creates a CORS policy named \"AllowAngularLocalhost\". This policy",
+          "text": "• AddPolicy Method: Creates a CORS policy named \"AllowAngularLocalhost\". This policy",
           "rawText": "• AddPolicy Method: Creates a CORS policy named \"AllowAngularLocalhost\". This policy",
-          "x": 90.024,
-          "y": 602.02,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f5"
+          "startX": 90,
+          "y": 602,
+          "isBold": false
         },
         {
-          "text": "      allows requests from http://localhost:4200, permits any HTTP methods, and accepts any",
+          "text": "allows requests from http://localhost:4200, permits any HTTP methods, and accepts any",
           "rawText": "allows requests from http://localhost:4200, permits any HTTP methods, and accepts any",
-          "x": 108.02,
-          "y": 587.5,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 108,
+          "y": 588,
+          "isBold": false
         },
         {
-          "text": "      headers.",
+          "text": "headers.",
           "rawText": "headers.",
-          "x": 108.02,
-          "y": 573.07,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 108,
+          "y": 573,
+          "isBold": false
         },
         {
-          "text": "   • UseCors Method: Applies the defined CORS policy. It must be called before UseRouting or",
+          "text": "• UseCors Method: Applies the defined CORS policy. It must be called before UseRouting or",
           "rawText": "• UseCors Method: Applies the defined CORS policy. It must be called before UseRouting or",
-          "x": 90.024,
-          "y": 550.51,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f5"
+          "startX": 90,
+          "y": 551,
+          "isBold": false
         },
         {
-          "text": "      UseEndpoints.",
+          "text": "UseEndpoints.",
           "rawText": "UseEndpoints.",
-          "x": 108.02,
-          "y": 535.99,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 108,
+          "y": 536,
+          "isBold": false
         },
         {
           "text": "4. More Detailed CORS Policies",
           "rawText": "4. More Detailed CORS Policies",
-          "x": 72.024,
-          "y": 491.11,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f3"
+          "startX": 72,
+          "y": 491,
+          "isBold": true
         },
         {
           "text": "If you need more restrictive CORS policies, you can adjust the configuration.",
           "rawText": "If you need more restrictive CORS policies, you can adjust the configuration.",
-          "x": 72.024,
-          "y": 468.55,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 469,
+          "isBold": false
         },
         {
           "text": "Example of a Restrictive CORS Policy:",
           "rawText": "Example of a Restrictive CORS Policy:",
-          "x": 72.024,
-          "y": 446.11,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f3"
+          "startX": 72,
+          "y": 446,
+          "isBold": false
         },
         {
           "text": "builder.Services.AddCors(options =>",
           "rawText": "builder.Services.AddCors(options =>",
-          "x": 72.024,
-          "y": 423.55,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 424,
+          "isBold": false
         },
         {
           "text": "{",
           "rawText": "{",
-          "x": 72.024,
-          "y": 401.11,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 401,
+          "isBold": false
         },
         {
-          "text": "  options.AddPolicy(\"RestrictedPolicy\",",
+          "text": "options.AddPolicy(\"RestrictedPolicy\",",
           "rawText": "options.AddPolicy(\"RestrictedPolicy\",",
-          "x": 81.984,
-          "y": 378.53,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 82,
+          "y": 379,
+          "isBold": false
         },
         {
-          "text": "   builder =>",
+          "text": "builder =>",
           "rawText": "builder =>",
-          "x": 92.064,
-          "y": 356.09,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 92,
+          "y": 356,
+          "isBold": false
         },
         {
-          "text": "   {",
+          "text": "{",
           "rawText": "{",
-          "x": 92.064,
-          "y": 333.65,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 92,
+          "y": 334,
+          "isBold": false
         },
         {
-          "text": "     builder.WithOrigins(\"https://specificdomain.com\") // Allow only specific domain",
+          "text": "builder.WithOrigins(\"https://specificdomain.com\") // Allow only specific domain",
           "rawText": "builder.WithOrigins(\"https://specificdomain.com\") // Allow only specific domain",
-          "x": 102.02,
-          "y": 311.09,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 102,
+          "y": 311,
+          "isBold": false
         },
         {
-          "text": "       .WithMethods(\"GET\", \"POST\") // Allow only GET and POST methods",
+          "text": ".WithMethods(\"GET\", \"POST\") // Allow only GET and POST methods",
           "rawText": ".WithMethods(\"GET\", \"POST\") // Allow only GET and POST methods",
-          "x": 119.42,
-          "y": 288.65,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 119,
+          "y": 289,
+          "isBold": false
         },
         {
-          "text": "       .WithHeaders(\"Authorization\", \"Content-Type\"); // Allow specific headers",
+          "text": ".WithHeaders(\"Authorization\", \"Content-Type\"); // Allow specific headers",
           "rawText": ".WithHeaders(\"Authorization\", \"Content-Type\"); // Allow specific headers",
-          "x": 119.42,
-          "y": 266.09,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
-        },
-        {
-          "text": "   });",
-          "rawText": "});",
-          "x": 92.064,
-          "y": 243.65,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 119,
+          "y": 266,
+          "isBold": false
         },
         {
           "text": "});",
           "rawText": "});",
-          "x": 72.024,
-          "y": 221.09,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 92,
+          "y": 244,
+          "isBold": false
+        },
+        {
+          "text": "});",
+          "rawText": "});",
+          "startX": 72,
+          "y": 221,
+          "isBold": false
         }
       ],
       "blocks": [
@@ -770,14 +723,14 @@
           "type": "code",
           "page": 3,
           "lines": [
-            "  endpoints.MapControllers();",
+            "endpoints.MapControllers();",
             "});",
             "app.Run();"
           ],
-          "text": "  endpoints.MapControllers();\n});\napp.Run();"
+          "text": "endpoints.MapControllers();\n});\napp.Run();"
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 3,
           "lines": [
             "3. Understanding the Configuration"
@@ -788,45 +741,45 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • AddCors Method: Registers CORS services and defines policies."
+            "• AddCors Method: Registers CORS services and defines policies."
           ],
-          "text": "   • AddCors Method: Registers CORS services and defines policies."
+          "text": "• AddCors Method: Registers CORS services and defines policies."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • AddPolicy Method: Creates a CORS policy named \"AllowAngularLocalhost\". This policy",
-            "      allows requests from http://localhost:4200, permits any HTTP methods, and accepts any",
-            "      headers."
+            "• AddPolicy Method: Creates a CORS policy named \"AllowAngularLocalhost\". This policy",
+            "allows requests from http://localhost:4200, permits any HTTP methods, and accepts any",
+            "headers."
           ],
-          "text": "   • AddPolicy Method: Creates a CORS policy named \"AllowAngularLocalhost\". This policy\n      allows requests from http://localhost:4200, permits any HTTP methods, and accepts any\n      headers."
+          "text": "• AddPolicy Method: Creates a CORS policy named \"AllowAngularLocalhost\". This policy\nallows requests from http://localhost:4200, permits any HTTP methods, and accepts any\nheaders."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • UseCors Method: Applies the defined CORS policy. It must be called before UseRouting or",
-            "      UseEndpoints."
+            "• UseCors Method: Applies the defined CORS policy. It must be called before UseRouting or",
+            "UseEndpoints."
           ],
-          "text": "   • UseCors Method: Applies the defined CORS policy. It must be called before UseRouting or\n      UseEndpoints."
+          "text": "• UseCors Method: Applies the defined CORS policy. It must be called before UseRouting or\nUseEndpoints."
         },
         {
-          "type": "list_item",
+          "type": "heading",
           "page": 3,
           "lines": [
-            "4. More Detailed CORS Policies",
-            "If you need more restrictive CORS policies, you can adjust the configuration."
+            "4. More Detailed CORS Policies"
           ],
-          "text": "4. More Detailed CORS Policies\nIf you need more restrictive CORS policies, you can adjust the configuration."
+          "text": "4. More Detailed CORS Policies"
         },
         {
           "type": "prose",
           "page": 3,
           "lines": [
+            "If you need more restrictive CORS policies, you can adjust the configuration.",
             "Example of a Restrictive CORS Policy:"
           ],
-          "text": "Example of a Restrictive CORS Policy:"
+          "text": "If you need more restrictive CORS policies, you can adjust the configuration. Example of a Restrictive CORS Policy:"
         },
         {
           "type": "code",
@@ -834,241 +787,214 @@
           "lines": [
             "builder.Services.AddCors(options =>",
             "{",
-            "  options.AddPolicy(\"RestrictedPolicy\",",
-            "   builder =>",
-            "   {",
-            "     builder.WithOrigins(\"https://specificdomain.com\") // Allow only specific domain",
-            "       .WithMethods(\"GET\", \"POST\") // Allow only GET and POST methods",
-            "       .WithHeaders(\"Authorization\", \"Content-Type\"); // Allow specific headers",
-            "   });",
+            "options.AddPolicy(\"RestrictedPolicy\",",
+            "builder =>",
+            "{",
+            "builder.WithOrigins(\"https://specificdomain.com\") // Allow only specific domain",
+            ".WithMethods(\"GET\", \"POST\") // Allow only GET and POST methods",
+            ".WithHeaders(\"Authorization\", \"Content-Type\"); // Allow specific headers",
+            "});",
             "});"
           ],
-          "text": "builder.Services.AddCors(options =>\n{\n  options.AddPolicy(\"RestrictedPolicy\",\n   builder =>\n   {\n     builder.WithOrigins(\"https://specificdomain.com\") // Allow only specific domain\n       .WithMethods(\"GET\", \"POST\") // Allow only GET and POST methods\n       .WithHeaders(\"Authorization\", \"Content-Type\"); // Allow specific headers\n   });\n});"
+          "text": "builder.Services.AddCors(options =>\n{\noptions.AddPolicy(\"RestrictedPolicy\",\nbuilder =>\n{\nbuilder.WithOrigins(\"https://specificdomain.com\") // Allow only specific domain\n.WithMethods(\"GET\", \"POST\") // Allow only GET and POST methods\n.WithHeaders(\"Authorization\", \"Content-Type\"); // Allow specific headers\n});\n});"
         }
       ],
       "char_count_raw": 886,
-      "char_count_repaired": 944
+      "char_count_repaired": 885
     },
     {
       "page_number": 4,
       "raw_text": "Testing CORS Configuration\nTo verify CORS configuration, ensure that your Angular application is running on\nhttp://localhost:4200 and make requests to your ASP.NET Core Web API. Check the network\nrequests in your browser’s developer tools to ensure that the CORS headers are correctly set.\nExample Request:\nUsing Angular’s HttpClient to make a request:\nimport { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\n@Injectable({\nprovidedIn: 'root'\n})\nexport class ApiService {\nprivate apiUrl = 'https://localhost:5001/api/products';\nconstructor(private http: HttpClient) { }\ngetProducts() {\nreturn this.http.get(this.apiUrl);\n}\n}\nExample Angular Component:\nimport { Component, OnInit } from '@angular/core';\nimport { ApiService } from './api.service';\n@Component({\nselector: 'app-product-list',\ntemplateUrl: './product-list.component.html'\n})\nexport class ProductListComponent implements OnInit {\nproducts: any[] = [];\n",
-      "repaired_text": "Testing CORS Configuration\nTo verify CORS configuration, ensure that your Angular application is running on\nhttp://localhost:4200 and make requests to your ASP.NET Core Web API. Check the network\nrequests in your browser’s developer tools to ensure that the CORS headers are correctly set.\nExample Request:\nUsing Angular’s HttpClient to make a request:\nimport { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\n@Injectable({\n providedIn: 'root'\n})\nexport class ApiService {\n private apiUrl = 'https://localhost:5001/api/products';\n constructor(private http: HttpClient) { }\n getProducts() {\n  return this.http.get(this.apiUrl);\n }\n}\nExample Angular Component:\nimport { Component, OnInit } from '@angular/core';\nimport { ApiService } from './api.service';\n@Component({\n selector: 'app-product-list',\n templateUrl: './product-list.component.html'\n})\nexport class ProductListComponent implements OnInit {\n products: any[] = [];",
+      "repaired_text": "Testing CORS Configuration\nTo verify CORS configuration, ensure that your Angular application is running on\nhttp://localhost:4200 and make requests to your ASP.NET Core Web API. Check the network\nrequests in your browser’s developer tools to ensure that the CORS headers are correctly set.\nExample Request:\nUsing Angular’s HttpClient to make a request:\nimport { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\n@Injectable({\nprovidedIn: 'root'\n})\nexport class ApiService {\nprivate apiUrl = 'https://localhost:5001/api/products';\nconstructor(private http: HttpClient) { }\ngetProducts() {\nreturn this.http.get(this.apiUrl);\n}\n}\nExample Angular Component:\nimport { Component, OnInit } from '@angular/core';\nimport { ApiService } from './api.service';\n@Component({\nselector: 'app-product-list',\ntemplateUrl: './product-list.component.html'\n})\nexport class ProductListComponent implements OnInit {\nproducts: any[] = [];",
       "lines": [
         {
           "text": "Testing CORS Configuration",
           "rawText": "Testing CORS Configuration",
-          "x": 72.024,
-          "y": 759.48,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f3"
+          "startX": 72,
+          "y": 759,
+          "isBold": true
         },
         {
           "text": "To verify CORS configuration, ensure that your Angular application is running on",
           "rawText": "To verify CORS configuration, ensure that your Angular application is running on",
-          "x": 72.024,
-          "y": 737.02,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 737,
+          "isBold": false
         },
         {
           "text": "http://localhost:4200 and make requests to your ASP.NET Core Web API. Check the network",
           "rawText": "http://localhost:4200 and make requests to your ASP.NET Core Web API. Check the network",
-          "x": 72.024,
-          "y": 722.5,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 723,
+          "isBold": false
         },
         {
           "text": "requests in your browser’s developer tools to ensure that the CORS headers are correctly set.",
           "rawText": "requests in your browser’s developer tools to ensure that the CORS headers are correctly set.",
-          "x": 72.024,
-          "y": 707.98,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f4"
+          "startX": 72,
+          "y": 708,
+          "isBold": true
         },
         {
           "text": "Example Request:",
           "rawText": "Example Request:",
-          "x": 72.024,
-          "y": 685.54,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f3"
+          "startX": 72,
+          "y": 686,
+          "isBold": false
         },
         {
           "text": "Using Angular’s HttpClient to make a request:",
           "rawText": "Using Angular’s HttpClient to make a request:",
-          "x": 72.024,
-          "y": 662.98,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f4"
+          "startX": 72,
+          "y": 663,
+          "isBold": true
         },
         {
           "text": "import { HttpClient } from '@angular/common/http';",
           "rawText": "import { HttpClient } from '@angular/common/http';",
-          "x": 72.024,
-          "y": 640.54,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 641,
+          "isBold": false
         },
         {
           "text": "import { Injectable } from '@angular/core';",
           "rawText": "import { Injectable } from '@angular/core';",
-          "x": 72.024,
-          "y": 617.98,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 618,
+          "isBold": false
         },
         {
           "text": "@Injectable({",
           "rawText": "@Injectable({",
-          "x": 72.024,
-          "y": 573.07,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 573,
+          "isBold": false
         },
         {
-          "text": " providedIn: 'root'",
+          "text": "providedIn: 'root'",
           "rawText": "providedIn: 'root'",
-          "x": 77.064,
-          "y": 550.51,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 77,
+          "y": 551,
+          "isBold": false
         },
         {
           "text": "})",
           "rawText": "})",
-          "x": 72.024,
-          "y": 528.07,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 528,
+          "isBold": false
         },
         {
           "text": "export class ApiService {",
           "rawText": "export class ApiService {",
-          "x": 72.024,
-          "y": 505.51,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 506,
+          "isBold": false
         },
         {
-          "text": " private apiUrl = 'https://localhost:5001/api/products';",
+          "text": "private apiUrl = 'https://localhost:5001/api/products';",
           "rawText": "private apiUrl = 'https://localhost:5001/api/products';",
-          "x": 77.064,
-          "y": 483.07,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 77,
+          "y": 483,
+          "isBold": false
         },
         {
-          "text": " constructor(private http: HttpClient) { }",
+          "text": "constructor(private http: HttpClient) { }",
           "rawText": "constructor(private http: HttpClient) { }",
-          "x": 77.064,
-          "y": 438.07,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 77,
+          "y": 438,
+          "isBold": false
         },
         {
-          "text": " getProducts() {",
+          "text": "getProducts() {",
           "rawText": "getProducts() {",
-          "x": 77.064,
-          "y": 393.05,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 77,
+          "y": 393,
+          "isBold": false
         },
         {
-          "text": "  return this.http.get(this.apiUrl);",
+          "text": "return this.http.get(this.apiUrl);",
           "rawText": "return this.http.get(this.apiUrl);",
-          "x": 82.104,
-          "y": 370.61,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
-        },
-        {
-          "text": " }",
-          "rawText": "}",
-          "x": 77.064,
-          "y": 348.05,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 82,
+          "y": 371,
+          "isBold": false
         },
         {
           "text": "}",
           "rawText": "}",
-          "x": 72.024,
-          "y": 325.61,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 77,
+          "y": 348,
+          "isBold": false
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "startX": 72,
+          "y": 326,
+          "isBold": false
         },
         {
           "text": "Example Angular Component:",
           "rawText": "Example Angular Component:",
-          "x": 72.024,
-          "y": 303.05,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f3"
+          "startX": 72,
+          "y": 303,
+          "isBold": false
         },
         {
           "text": "import { Component, OnInit } from '@angular/core';",
           "rawText": "import { Component, OnInit } from '@angular/core';",
-          "x": 72.024,
-          "y": 280.61,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 281,
+          "isBold": false
         },
         {
           "text": "import { ApiService } from './api.service';",
           "rawText": "import { ApiService } from './api.service';",
-          "x": 72.024,
-          "y": 258.17,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 258,
+          "isBold": false
         },
         {
           "text": "@Component({",
           "rawText": "@Component({",
-          "x": 72.024,
-          "y": 213.14,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 213,
+          "isBold": false
         },
         {
-          "text": " selector: 'app-product-list',",
+          "text": "selector: 'app-product-list',",
           "rawText": "selector: 'app-product-list',",
-          "x": 77.064,
-          "y": 190.58,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 77,
+          "y": 191,
+          "isBold": false
         },
         {
-          "text": " templateUrl: './product-list.component.html'",
+          "text": "templateUrl: './product-list.component.html'",
           "rawText": "templateUrl: './product-list.component.html'",
-          "x": 77.064,
-          "y": 168.14,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 77,
+          "y": 168,
+          "isBold": false
         },
         {
           "text": "})",
           "rawText": "})",
-          "x": 72.024,
-          "y": 145.58,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 146,
+          "isBold": false
         },
         {
           "text": "export class ProductListComponent implements OnInit {",
           "rawText": "export class ProductListComponent implements OnInit {",
-          "x": 72.024,
-          "y": 123.14,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 72,
+          "y": 123,
+          "isBold": false
         },
         {
-          "text": " products: any[] = [];",
+          "text": "products: any[] = [];",
           "rawText": "products: any[] = [];",
-          "x": 77.064,
-          "y": 100.7,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 77,
+          "y": 101,
+          "isBold": false
         }
       ],
       "blocks": [
@@ -1092,217 +1018,191 @@
             "import { HttpClient } from '@angular/common/http';",
             "import { Injectable } from '@angular/core';",
             "@Injectable({",
-            " providedIn: 'root'",
+            "providedIn: 'root'",
             "})",
             "export class ApiService {"
           ],
-          "text": "To verify CORS configuration, ensure that your Angular application is running on\nhttp://localhost:4200 and make requests to your ASP.NET Core Web API. Check the network\nrequests in your browser’s developer tools to ensure that the CORS headers are correctly set.\nExample Request:\nUsing Angular’s HttpClient to make a request:\nimport { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\n@Injectable({\n providedIn: 'root'\n})\nexport class ApiService {"
+          "text": "To verify CORS configuration, ensure that your Angular application is running on http://localhost:4200 and make requests to your ASP.NET Core Web API. Check the network requests in your browser’s developer tools to ensure that the CORS headers are correctly set. Example Request: Using Angular’s HttpClient to make a request: import { HttpClient } from '@angular/common/http'; import { Injectable } from '@angular/core'; @Injectable({ providedIn: 'root' }) export class ApiService {"
         },
         {
           "type": "code",
           "page": 4,
           "lines": [
-            " private apiUrl = 'https://localhost:5001/api/products';",
-            " constructor(private http: HttpClient) { }",
-            " getProducts() {",
-            "  return this.http.get(this.apiUrl);",
-            " }",
+            "private apiUrl = 'https://localhost:5001/api/products';",
+            "constructor(private http: HttpClient) { }",
+            "getProducts() {",
+            "return this.http.get(this.apiUrl);",
+            "}",
             "}",
             "Example Angular Component:",
             "import { Component, OnInit } from '@angular/core';",
             "import { ApiService } from './api.service';",
             "@Component({",
-            " selector: 'app-product-list',",
-            " templateUrl: './product-list.component.html'",
+            "selector: 'app-product-list',",
+            "templateUrl: './product-list.component.html'",
             "})",
             "export class ProductListComponent implements OnInit {",
-            " products: any[] = [];"
+            "products: any[] = [];"
           ],
-          "text": " private apiUrl = 'https://localhost:5001/api/products';\n constructor(private http: HttpClient) { }\n getProducts() {\n  return this.http.get(this.apiUrl);\n }\n}\nExample Angular Component:\nimport { Component, OnInit } from '@angular/core';\nimport { ApiService } from './api.service';\n@Component({\n selector: 'app-product-list',\n templateUrl: './product-list.component.html'\n})\nexport class ProductListComponent implements OnInit {\n products: any[] = [];"
+          "text": "private apiUrl = 'https://localhost:5001/api/products';\nconstructor(private http: HttpClient) { }\ngetProducts() {\nreturn this.http.get(this.apiUrl);\n}\n}\nExample Angular Component:\nimport { Component, OnInit } from '@angular/core';\nimport { ApiService } from './api.service';\n@Component({\nselector: 'app-product-list',\ntemplateUrl: './product-list.component.html'\n})\nexport class ProductListComponent implements OnInit {\nproducts: any[] = [];"
         }
       ],
       "char_count_raw": 952,
-      "char_count_repaired": 961
+      "char_count_repaired": 951
     },
     {
       "page_number": 5,
       "raw_text": "constructor(private apiService: ApiService) { }\nngOnInit() {\nthis.apiService.getProducts().subscribe(data => {\nthis.products = data;\n});\n}\n}\nExplanation of Code\n• CORS Policy: Defines rules for cross-origin requests.\n• Origins: Specifies allowed domains (e.g., localhost:4200).\n• Methods: Allows or restricts HTTP methods.\n• Headers: Specifies which headers are permitted.\nKey Points to Remember\n1. CORS: Controls cross-origin requests to your API from different domains.\n2. Configuration: Set up CORS in Program.cs using AddCors and UseCors methods.\n3. Origins: Allow specific domains like localhost:4200 to access your API.\n4. Testing: Use browser developer tools to verify the presence and correctness of CORS\nheaders.\n5. Policies: Customize CORS policies based on your application's needs.\n",
-      "repaired_text": " constructor(private apiService: ApiService) { }\n ngOnInit() {\n  this.apiService.getProducts().subscribe(data => {\n  this.products = data;\n  });\n }\n}\nExplanation of Code\n   • CORS Policy: Defines rules for cross-origin requests.\n   • Origins: Specifies allowed domains (e.g., localhost:4200).\n   • Methods: Allows or restricts HTTP methods.\n   • Headers: Specifies which headers are permitted.\nKey Points to Remember\n   1. CORS: Controls cross-origin requests to your API from different domains.\n   2. Configuration: Set up CORS in Program.cs using AddCors and UseCors methods.\n   3. Origins: Allow specific domains like localhost:4200 to access your API.\n   4. Testing: Use browser developer tools to verify the presence and correctness of CORS\n      headers.\n   5. Policies: Customize CORS policies based on your application's needs.",
+      "repaired_text": "constructor(private apiService: ApiService) { }\nngOnInit() {\nthis.apiService.getProducts().subscribe(data => {\nthis.products = data;\n});\n}\n}\nExplanation of Code\n• CORS Policy: Defines rules for cross-origin requests.\n• Origins: Specifies allowed domains (e.g., localhost:4200).\n• Methods: Allows or restricts HTTP methods.\n• Headers: Specifies which headers are permitted.\nKey Points to Remember\n1. CORS: Controls cross-origin requests to your API from different domains.\n2. Configuration: Set up CORS in Program.cs using AddCors and UseCors methods.\n3. Origins: Allow specific domains like localhost:4200 to access your API.\n4. Testing: Use browser developer tools to verify the presence and correctness of CORS\nheaders.\n5. Policies: Customize CORS policies based on your application's needs.",
       "lines": [
         {
-          "text": " constructor(private apiService: ApiService) { }",
+          "text": "constructor(private apiService: ApiService) { }",
           "rawText": "constructor(private apiService: ApiService) { }",
-          "x": 77.064,
-          "y": 759.48,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 77,
+          "y": 759,
+          "isBold": false
         },
         {
-          "text": " ngOnInit() {",
+          "text": "ngOnInit() {",
           "rawText": "ngOnInit() {",
-          "x": 77.064,
-          "y": 714.46,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 77,
+          "y": 714,
+          "isBold": false
         },
         {
-          "text": "  this.apiService.getProducts().subscribe(data => {",
+          "text": "this.apiService.getProducts().subscribe(data => {",
           "rawText": "this.apiService.getProducts().subscribe(data => {",
-          "x": 82.104,
-          "y": 692.02,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 82,
+          "y": 692,
+          "isBold": false
         },
         {
-          "text": "  this.products = data;",
+          "text": "this.products = data;",
           "rawText": "this.products = data;",
-          "x": 87.024,
-          "y": 669.46,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 87,
+          "y": 669,
+          "isBold": false
         },
         {
-          "text": "  });",
+          "text": "});",
           "rawText": "});",
-          "x": 82.104,
-          "y": 647.02,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
-        },
-        {
-          "text": " }",
-          "rawText": "}",
-          "x": 77.064,
-          "y": 624.46,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 82,
+          "y": 647,
+          "isBold": false
         },
         {
           "text": "}",
           "rawText": "}",
-          "x": 72.024,
-          "y": 602.02,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 77,
+          "y": 624,
+          "isBold": false
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "startX": 72,
+          "y": 602,
+          "isBold": false
         },
         {
           "text": "Explanation of Code",
           "rawText": "Explanation of Code",
-          "x": 72.024,
-          "y": 556.99,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f3"
+          "startX": 72,
+          "y": 557,
+          "isBold": true
         },
         {
-          "text": "   • CORS Policy: Defines rules for cross-origin requests.",
+          "text": "• CORS Policy: Defines rules for cross-origin requests.",
           "rawText": "• CORS Policy: Defines rules for cross-origin requests.",
-          "x": 90.024,
-          "y": 534.55,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f5"
+          "startX": 90,
+          "y": 535,
+          "isBold": false
         },
         {
-          "text": "   • Origins: Specifies allowed domains (e.g., localhost:4200).",
+          "text": "• Origins: Specifies allowed domains (e.g., localhost:4200).",
           "rawText": "• Origins: Specifies allowed domains (e.g., localhost:4200).",
-          "x": 90.024,
-          "y": 511.99,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f5"
+          "startX": 90,
+          "y": 512,
+          "isBold": false
         },
         {
-          "text": "   • Methods: Allows or restricts HTTP methods.",
+          "text": "• Methods: Allows or restricts HTTP methods.",
           "rawText": "• Methods: Allows or restricts HTTP methods.",
-          "x": 90.024,
-          "y": 489.55,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f5"
+          "startX": 90,
+          "y": 490,
+          "isBold": false
         },
         {
-          "text": "   • Headers: Specifies which headers are permitted.",
+          "text": "• Headers: Specifies which headers are permitted.",
           "rawText": "• Headers: Specifies which headers are permitted.",
-          "x": 90.024,
-          "y": 467.11,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f5"
+          "startX": 90,
+          "y": 467,
+          "isBold": false
         },
         {
           "text": "Key Points to Remember",
           "rawText": "Key Points to Remember",
-          "x": 72.024,
-          "y": 422.11,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f3"
+          "startX": 72,
+          "y": 422,
+          "isBold": true
         },
         {
-          "text": "   1. CORS: Controls cross-origin requests to your API from different domains.",
+          "text": "1. CORS: Controls cross-origin requests to your API from different domains.",
           "rawText": "1. CORS: Controls cross-origin requests to your API from different domains.",
-          "x": 90.024,
-          "y": 399.55,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 90,
+          "y": 400,
+          "isBold": false
         },
         {
-          "text": "   2. Configuration: Set up CORS in Program.cs using AddCors and UseCors methods.",
+          "text": "2. Configuration: Set up CORS in Program.cs using AddCors and UseCors methods.",
           "rawText": "2. Configuration: Set up CORS in Program.cs using AddCors and UseCors methods.",
-          "x": 90.024,
-          "y": 377.09,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 90,
+          "y": 377,
+          "isBold": false
         },
         {
-          "text": "   3. Origins: Allow specific domains like localhost:4200 to access your API.",
+          "text": "3. Origins: Allow specific domains like localhost:4200 to access your API.",
           "rawText": "3. Origins: Allow specific domains like localhost:4200 to access your API.",
-          "x": 90.024,
-          "y": 354.53,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 90,
+          "y": 355,
+          "isBold": false
         },
         {
-          "text": "   4. Testing: Use browser developer tools to verify the presence and correctness of CORS",
+          "text": "4. Testing: Use browser developer tools to verify the presence and correctness of CORS",
           "rawText": "4. Testing: Use browser developer tools to verify the presence and correctness of CORS",
-          "x": 90.024,
-          "y": 332.09,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 90,
+          "y": 332,
+          "isBold": false
         },
         {
-          "text": "      headers.",
+          "text": "headers.",
           "rawText": "headers.",
-          "x": 108.02,
-          "y": 317.57,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 108,
+          "y": 318,
+          "isBold": false
         },
         {
-          "text": "   5. Policies: Customize CORS policies based on your application's needs.",
+          "text": "5. Policies: Customize CORS policies based on your application's needs.",
           "rawText": "5. Policies: Customize CORS policies based on your application's needs.",
-          "x": 90.024,
-          "y": 295.13,
-          "fontSize": 11.04,
-          "fontName": "g_d54_f2"
+          "startX": 90,
+          "y": 295,
+          "isBold": false
         }
       ],
       "blocks": [
         {
-          "type": "prose",
-          "page": 5,
-          "lines": [
-            " constructor(private apiService: ApiService) { }",
-            " ngOnInit() {",
-            "  this.apiService.getProducts().subscribe(data => {",
-            "  this.products = data;"
-          ],
-          "text": " constructor(private apiService: ApiService) { }\n ngOnInit() {\n  this.apiService.getProducts().subscribe(data => {\n  this.products = data;"
-        },
-        {
           "type": "code",
           "page": 5,
           "lines": [
-            "  });",
-            " }",
+            "constructor(private apiService: ApiService) { }",
+            "ngOnInit() {",
+            "this.apiService.getProducts().subscribe(data => {",
+            "this.products = data;",
+            "});",
+            "}",
             "}"
           ],
-          "text": "  });\n }\n}"
+          "text": "constructor(private apiService: ApiService) { }\nngOnInit() {\nthis.apiService.getProducts().subscribe(data => {\nthis.products = data;\n});\n}\n}"
         },
         {
           "type": "prose",
@@ -1316,33 +1216,33 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • CORS Policy: Defines rules for cross-origin requests."
+            "• CORS Policy: Defines rules for cross-origin requests."
           ],
-          "text": "   • CORS Policy: Defines rules for cross-origin requests."
+          "text": "• CORS Policy: Defines rules for cross-origin requests."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Origins: Specifies allowed domains (e.g., localhost:4200)."
+            "• Origins: Specifies allowed domains (e.g., localhost:4200)."
           ],
-          "text": "   • Origins: Specifies allowed domains (e.g., localhost:4200)."
+          "text": "• Origins: Specifies allowed domains (e.g., localhost:4200)."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Methods: Allows or restricts HTTP methods."
+            "• Methods: Allows or restricts HTTP methods."
           ],
-          "text": "   • Methods: Allows or restricts HTTP methods."
+          "text": "• Methods: Allows or restricts HTTP methods."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Headers: Specifies which headers are permitted."
+            "• Headers: Specifies which headers are permitted."
           ],
-          "text": "   • Headers: Specifies which headers are permitted."
+          "text": "• Headers: Specifies which headers are permitted."
         },
         {
           "type": "heading",
@@ -1356,46 +1256,46 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   1. CORS: Controls cross-origin requests to your API from different domains."
+            "1. CORS: Controls cross-origin requests to your API from different domains."
           ],
-          "text": "   1. CORS: Controls cross-origin requests to your API from different domains."
+          "text": "1. CORS: Controls cross-origin requests to your API from different domains."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   2. Configuration: Set up CORS in Program.cs using AddCors and UseCors methods."
+            "2. Configuration: Set up CORS in Program.cs using AddCors and UseCors methods."
           ],
-          "text": "   2. Configuration: Set up CORS in Program.cs using AddCors and UseCors methods."
+          "text": "2. Configuration: Set up CORS in Program.cs using AddCors and UseCors methods."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   3. Origins: Allow specific domains like localhost:4200 to access your API."
+            "3. Origins: Allow specific domains like localhost:4200 to access your API."
           ],
-          "text": "   3. Origins: Allow specific domains like localhost:4200 to access your API."
+          "text": "3. Origins: Allow specific domains like localhost:4200 to access your API."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   4. Testing: Use browser developer tools to verify the presence and correctness of CORS",
-            "      headers."
+            "4. Testing: Use browser developer tools to verify the presence and correctness of CORS",
+            "headers."
           ],
-          "text": "   4. Testing: Use browser developer tools to verify the presence and correctness of CORS\n      headers."
+          "text": "4. Testing: Use browser developer tools to verify the presence and correctness of CORS\nheaders."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   5. Policies: Customize CORS policies based on your application's needs."
+            "5. Policies: Customize CORS policies based on your application's needs."
           ],
-          "text": "   5. Policies: Customize CORS policies based on your application's needs."
+          "text": "5. Policies: Customize CORS policies based on your application's needs."
         }
       ],
       "char_count_raw": 794,
-      "char_count_repaired": 835
+      "char_count_repaired": 793
     }
   ],
   "title": "Angular and CORS"

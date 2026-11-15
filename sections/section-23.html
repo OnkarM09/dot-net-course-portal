@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -376,12 +386,12 @@
         <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
           <a href="../index.html">Curriculum</a>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
           <span class="breadcrumb-current" aria-current="page">Section 23</span>
         </nav>
         <div class="section-meta-row">
-          <span class="module-badge">Module 5</span>
+          <span class="module-badge">Module 6</span>
           <span class="read-time-badge">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             4 PDF Pages
@@ -410,14 +420,14 @@
   <li>Encourage adding new features without changing existing code.</li>
   <li>3. Liskov Substitution Principle (LSP)</li>
   <li>Objects of a derived class should be substitutable for objects of the base class
-           without affecting the correctness of the program.</li>
+without affecting the correctness of the program.</li>
   <li>Ensures that inheritance relationships are used appropriately.</li>
   <li>4. Interface Segregation Principle (ISP)</li>
   <li>Clients should not be forced to depend on interfaces they do not use.</li>
   <li>Promotes smaller, more focused interfaces.</li>
   <li>5. Dependency Inversion Principle (DIP)</li>
   <li>High-level modules should not depend on low-level modules. Both should depend
-           on abstractions.</li>
+on abstractions.</li>
   <li>Abstractions should not depend on details. Details should depend on abstractions.</li>
   <li>Encourages loose coupling and flexibility.</li>
 </ul>
@@ -426,7 +436,7 @@
 <ul>
   <li>Maintainability: Makes your code easier to understand, modify, and extend.</li>
   <li>Testability: Promotes writing unit tests by encouraging loose coupling and dependency
-      injection.</li>
+injection.</li>
   <li>Flexibility: Makes your code adaptable to changes in requirements.</li>
   <li>Reusability: Encourages the creation of reusable components.</li>
 </ul>
@@ -435,15 +445,15 @@
 <ul>
   <li>Understanding: Be able to explain each principle clearly and concisely.</li>
   <li>Examples: Provide real-world or code examples that demonstrate how to apply each
-      principle.</li>
+principle.</li>
   <li>Benefits: Articulate the advantages of adhering to SOLID principles.</li>
   <li>Trade-offs: Acknowledge that there might be trade-offs and complexities in applying these
-      principles in certain situations.</li>
+principles in certain situations.</li>
   <li>Practical Application: Discuss how you have used or would use SOLID principles in your own
-      projects.</li>
+projects.</li>
 </ul>
 
-<h2 id="example-code-conceptual">Example Code (Conceptual)</h2>
+<h3 id="example-code-conceptual">Example Code (Conceptual)</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -457,17 +467,17 @@
 )
 public class ProductService
 {
-  // Handles product-related logic, like adding or retrieving products.
+// Handles product-related logic, like adding or retrieving products.
 }
 public class OrderService
 {
-  // Handles order-related logic, like creating or processing orders.
+// Handles order-related logic, like creating or processing orders.
 }
 // OCP (Open/Closed Principle
 )
 public interface IPaymentProcessor
 {
-  void ProcessPayment(PaymentDetails details);
+void ProcessPayment(PaymentDetails details);
 }
 public class CreditCardPaymentProcessor : IPaymentProcessor { /* ... */ }
 public class PayPalPaymentProcessor : IPaymentProcessor { /* ... */ }
@@ -475,53 +485,53 @@ public class PayPalPaymentProcessor : IPaymentProcessor { /* ... */ }
 )
 public class Rectangle
 {
-  public virtual int Width { get; set; }
-  public virtual int Height { get; set; }
-  // ...
+public virtual int Width { get; set; }
+public virtual int Height { get; set; }
+// ...
 }
 public class Square : Rectangle
 // Violates LSP
 {
-  public override int Width
-  {
-   get =&gt; base.Width;
-   set
-   {
-     base.Width = value;
-     base.Height = value; // Setting width also sets height
-   }
-  }
-  public override int Height
-  {
-   get =&gt; base.Height;
-   set
-   {
-     base.Height = value;
-     base.Width = value; // Setting height also sets width
-   }
-  }
+public override int Width
+{
+get =&gt; base.Width;
+set
+{
+base.Width = value;
+base.Height = value; // Setting width also sets height
+}
+}
+public override int Height
+{
+get =&gt; base.Height;
+set
+{
+base.Height = value;
+base.Width = value; // Setting height also sets width
+}
+}
 }
 // ISP (Interface Segregation Principle
 )
 public interface IPrinter
 {
-  void Print();
+void Print();
 }
 public interface IScanner
 {
-  void Scan();
+void Scan();
 }
 public class PrintScanMachine : IPrinter, IScanner { /* ... */ }
 // DIP (Dependency Inversion Principle
 )
 public class OrderProcessor
 {
-  private readonly IPaymentProcessor _paymentProcessor;
-  public OrderProcessor(IPaymentProcessor paymentProcessor)
-  {
-   _paymentProcessor = paymentProcessor;
-  }
-  // ...
+private readonly IPaymentProcessor _paymentProcessor;
+public OrderProcessor(IPaymentProcessor paymentProcessor)
+{
+_paymentProcessor = paymentProcessor;
+}
+// ...
 }</code></pre>
     </div>
   
@@ -530,9 +540,7 @@ public class OrderProcessor
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
   <h3 id="overview-of-solid-principles">Overview of SOLID Principles</h3>
-<p>&quot;SOLID&quot; is a set of five design patterns, whose main focus is to create loosely coupled, flexible,
-maintainable code.
-Broad goal of SOLID Principles: Reduce dependencies of various classes / modules of the application.</p>
+<p>&quot;SOLID&quot; is a set of five design patterns, whose main focus is to create loosely coupled, flexible, maintainable code. Broad goal of SOLID Principles: Reduce dependencies of various classes / modules of the application.</p>
   <h3 id="single-responsibility-principle-srp">Single Responsibility Principle (SRP)</h3>
 <p>A software module or class should have one-and-only reason to change.</p>
   <h3 id="liskov-substitution-principle-lsp">Liskov Substitution Principle (LSP)</h3>
@@ -542,11 +550,10 @@ Broad goal of SOLID Principles: Reduce dependencies of various classes / modules
   <h3 id="interface-segregation-principle-isp">Interface Segregation Principle (ISP)</h3>
 <p>No client class should be forced to depend on methods it does not use.</p>
   <h3 id="dependency-inversion-principle-dip">Dependency Inversion Principle (DIP)</h3>
-<p>High-level modules should not depend on low-level modules. Both should depend upon
-abstractions.</p>
+<p>High-level modules should not depend on low-level modules. Both should depend upon abstractions.</p>
   <h3 id="dependency-inversion-principle-dip-1">Dependency Inversion Principle (DIP)</h3>
   <h3 id="direct-dependency">Direct Dependency</h3>
-  <h3 id="controller-client">Controller (Client)</h3>
+<p>Controller (Client)</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -558,15 +565,15 @@ abstractions.</p>
       </div>
       <pre><code class="language-csharp">public class MyController : Controller
 {
- private readonly MyService _service;
- public MyController()
- {
-  _service = new MyService(); //direct
- }
- public IActionResult ActionMethod()
- {
-  _service.ServiceMethod();
- }
+private readonly MyService _service;
+public MyController()
+{
+_service = new MyService(); //direct
+}
+public IActionResult ActionMethod()
+{
+_service.ServiceMethod();
+}
 }</code></pre>
     </div>
   <p>Service (Dependency)</p>
@@ -581,10 +588,10 @@ abstractions.</p>
       </div>
       <pre><code class="language-csharp">public class MyService
 {
- public void ServiceMethod()
- {
-  …
- }
+public void ServiceMethod()
+{
+…
+}
 }</code></pre>
     </div>
     <h3 id="dependency-problem">Dependency Problem</h3>
@@ -592,7 +599,7 @@ abstractions.</p>
   <li>Higher-level modules depend on lower-level modules.</li>
   <li>Means, both are tightly-coupled.</li>
   <li>The developer of higher-level module SHOULD WAIT until the completion of development of
-      lower-level module.</li>
+lower-level module.</li>
   <li>Requires much code changes in to interchange an alternative lower-level module.</li>
   <li>Any changes made in the lower-level module effects changes in the higher-level module.</li>
   <li>Difficult to test a single module without effecting / testing the other module.</li>
@@ -600,15 +607,15 @@ abstractions.</p>
   <h3 id="dependency-inversion-principle">Dependency Inversion Principle</h3>
 <ul>
   <li>Dependency Inversion Principle (DIP) is a design principle (guideline), which is a solution for
-      the dependency problem.</li>
+the dependency problem.</li>
   <li>&quot;The higher-level modules (clients) SHOULD NOT depend on low-level modules
-      (dependencies).</li>
+(dependencies).</li>
   <li>Both should depend on abstractions (interfaces or abstract class).&quot;</li>
   <li>&quot;Abstractions should not depend on details (both client and dependency).</li>
   <li>Details (both client and dependency) should depend on abstractions.&quot;</li>
 </ul>
   <h3 id="dependency-injection">Dependency Injection</h3>
-  <h3 id="constructor-injection">Constructor Injection</h3>
+<p>Constructor Injection</p>
   <h3 id="method-injection">Method Injection</h3>
   <h3 id="single-responsibility-principle-srp-1">Single Responsibility Principle (SRP)</h3>
 <ul>
@@ -620,38 +627,23 @@ abstractions.</p>
   <li>But instead, it call a method of another class that reads configuration settings.</li>
 </ul>
   <h3 id="interfaces">Interfaces</h3>
-<p>Create alternative implementation of the class by implementing the same interface.
-Benefit: Makes the class independent of other classes, in terms of its purpose / functionality.
-So that, the classes become easier to design, write, debug, maintain and test.
-Eg:</p>
+<p>Create alternative implementation of the class by implementing the same interface. Benefit: Makes the class independent of other classes, in terms of its purpose / functionality. So that, the classes become easier to design, write, debug, maintain and test. Eg:</p>
   <h3 id="interface-segregation-principle-isp-1">Interface Segregation Principle (ISP)</h3>
 <ul>
   <li>No client class should be forced to depend on methods it doesn&#39;t use.</li>
   <li>We should prefer to make many smaller interfaces rather than one single big interface.</li>
   <li>The client classes may choose one or more interfaces to implement.</li>
   <li>Benefit: Makes it easy to create alternative implementation for a specific functionality,
-      rather than recreating entire class.</li>
+rather than recreating entire class.</li>
 </ul>
-<p>Eg:
-Assume, a class has two methods: GetPersons() and AddPerson().
-Instead of creating both methods in a single interface, create them as two different interfaces:</p>
-  <h3 id="ipersongetter-ipersonadder">IPersonGetter, IPersonAdder</h3>
+<p>Eg: Assume, a class has two methods: GetPersons() and AddPerson(). Instead of creating both methods in a single interface, create them as two different interfaces: IPersonGetter, IPersonAdder</p>
 <ol>
   <li>interface IPersonsGetter (methods to get persons data)</li>
-  <li>interface IPersonsAdder(methods to create person)
-Open/Closed Principle (OCP)
-A class is closed for modifications; but open for extension.</li>
+  <li>interface IPersonsAdder(methods to create person)</li>
 </ol>
-<p>You should treat each class as readonly for development means; unless for bug-fixing.
-If you want to extend / modify the functionality of an existing class; you need to recreate it as a
-separate &amp; alternative implementation; rather than modifying existing code of the class.</p>
-<p>Eg:
-Assume, a class has a method: GetPersons().
-The new requirement is to get list of sorted persons.
-Instead of modifying existing GetPersons() method, you need to create an alternative class that gets
-sorted persons list.
-Benefit: Not modifying existing code of a class doesn&#39;t introduce new bugs; and keeps the existing
-unit tests stay relavant and needs no changes.</p>
+  <h3 id="openclosed-principle-ocp">Open/Closed Principle (OCP)</h3>
+<p>A class is closed for modifications; but open for extension. You should treat each class as readonly for development means; unless for bug-fixing. If you want to extend / modify the functionality of an existing class; you need to recreate it as a separate &amp; alternative implementation; rather than modifying existing code of the class.</p>
+<p>Eg: Assume, a class has a method: GetPersons(). The new requirement is to get list of sorted persons. Instead of modifying existing GetPersons() method, you need to create an alternative class that gets sorted persons list. Benefit: Not modifying existing code of a class doesn&#39;t introduce new bugs; and keeps the existing unit tests stay relavant and needs no changes.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -664,12 +656,11 @@ unit tests stay relavant and needs no changes.</p>
       <pre><code class="language-csharp">class PersonGetter : IPersonGetter (GetPersons() method retrieves list of persons)
 class SortedPersonGetter : IPersonGetter (GetPersons() method retrieves sorted list of persons)</code></pre>
     </div>
-  <p>Interfaces
-Create alternative implementation of the class by implementing the same interface.</p>
+  <p>Interfaces Create alternative implementation of the class by implementing the same interface.</p>
   <h3 id="inheritance">Inheritance</h3>
 <p>Create a child class of the existing class and override the required methods that needs changes.</p>
   <h3 id="liskov-substitution-principle-lsp-1">Liskov Substitution Principle (LSP)</h3>
-  <h3 id="parent-class">Parent Class</h3>
+<p>Parent Class</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -681,14 +672,14 @@ Create alternative implementation of the class by implementing the same interfac
       </div>
       <pre><code class="language-csharp">public class ParentClass
 {
- public virtual int Calculate(int? a, int? b)
- {
-  //if &#39;a&#39; or &#39;b&#39; is null, throw ArgumentNullException
-  //return sum of &#39;a&#39; and &#39;b&#39;
- }
+public virtual int Calculate(int? a, int? b)
+{
+//if &#39;a&#39; or &#39;b&#39; is null, throw ArgumentNullException
+//return sum of &#39;a&#39; and &#39;b&#39;
+}
 }</code></pre>
     </div>
-    <h3 id="child-class">Child Class</h3>
+  <p>Child Class</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -700,36 +691,20 @@ Create alternative implementation of the class by implementing the same interfac
       </div>
       <pre><code class="language-csharp">public class ChildClass : ParentClass
 {
- public override int Calculate(int? a, int b)
- {
-  //if &#39;a&#39; or &#39;b&#39; is null, throw ArgumentNullException
-  //if &#39;a&#39; or &#39;b&#39; is negative, throw ArgumentException
-  //return product of &#39;a&#39; and &#39;b&#39;
- }
+public override int Calculate(int? a, int b)
+{
+//if &#39;a&#39; or &#39;b&#39; is null, throw ArgumentNullException
+//if &#39;a&#39; or &#39;b&#39; is negative, throw ArgumentException
+//return product of &#39;a&#39; and &#39;b&#39;
+}
 }</code></pre>
     </div>
-  <p>[Violates LSP]
-Functions that use references of base classes must be able to use objects of derived classes without
-breaking / changing its functionality.
-The child classes that override methods of base class, should provide same behavior.</p>
+  <p>[Violates LSP] Functions that use references of base classes must be able to use objects of derived classes without breaking / changing its functionality. The child classes that override methods of base class, should provide same behavior.</p>
   <h3 id="using-object-of-parent-class">Using object of parent class</h3>
-<p>ParentClass variable = new ParentClass();
-variable.Method(); //executes ParentClass.Method</p>
+<p>ParentClass variable = new ParentClass(); variable.Method(); //executes ParentClass.Method</p>
   <h3 id="using-object-of-child-class">Using object of child class</h3>
-<p>ParentClass variable = new ChildClass();
-variable.Method(); //executes ChildClass.Method
-[Both methods should offer same functionality]
-Functions that use references of base classes must be able to use objects of derived classes without
-breaking / changing its functionality.
-The child classes that override methods of base class, should provide same behavior.
-If a derived class overrides a method of base class; then the method of derived class should provide
-same behavior:
-With same input, it should provide same output (return value).</p>
-<p>The child class&#39;s method should not introduce (throw) any new exceptions than what were thrown in
-the base implementation.
-The child class&#39;s method should not implement stricter rules than base class&#39;s implementation.
-Benefit: Prevents code to break - if by mistake or wantedly, someone has replaced the derived class
-with its base class (or even vice versa), as its behavior doesn&#39;t change.</p>
+<p>ParentClass variable = new ChildClass(); variable.Method(); //executes ChildClass.Method [Both methods should offer same functionality] Functions that use references of base classes must be able to use objects of derived classes without breaking / changing its functionality. The child classes that override methods of base class, should provide same behavior. If a derived class overrides a method of base class; then the method of derived class should provide same behavior: With same input, it should provide same output (return value).</p>
+<p>The child class&#39;s method should not introduce (throw) any new exceptions than what were thrown in the base implementation. The child class&#39;s method should not implement stricter rules than base class&#39;s implementation. Benefit: Prevents code to break - if by mistake or wantedly, someone has replaced the derived class with its base class (or even vice versa), as its behavior doesn&#39;t change.</p>
 </section>
 
       </article>
@@ -787,7 +762,7 @@ with its base class (or even vice versa), as its behavior doesn&#39;t change.</p
         </li>
       
         <li class="toc-item">
-          <a href="#example-code-conceptual" class="toc-link">Example Code (Conceptual)</a>
+          <a href="#example-code-conceptual" class="toc-link toc-sub">Example Code (Conceptual)</a>
         </li>
       
         <li class="toc-item">

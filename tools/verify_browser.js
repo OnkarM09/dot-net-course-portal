@@ -132,14 +132,14 @@ async (page) => {
 
   // --- PART 3: HOMEPAGE VERIFICATIONS ---
 
-  // 1. Structure Verification (7 Module Cards, 30 Directory Rows)
+  // 1. Structure Verification (8 Module Cards, 30 Directory Rows)
   const homeStructure = await page.evaluate(() => {
     const cards = document.querySelectorAll('.module-card');
     const rows = document.querySelectorAll('#directoryTableBody tr');
     return {
       module_cards_count: cards.length,
       directory_rows_count: rows.length,
-      pass: cards.length === 7 && rows.length === 30
+      pass: cards.length === 8 && rows.length === 30
     };
   });
   report.features.homepage_structure = homeStructure;

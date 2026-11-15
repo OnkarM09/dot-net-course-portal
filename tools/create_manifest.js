@@ -32,26 +32,32 @@ const MODULES = [
   },
   {
     module_number: 5,
-    title: 'Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture',
-    description: 'xUnit unit testing, Moq, CRUD operations, Entity Framework Core, action/result filters, logging, error handling, SOLID, Clean Architecture, and ASP.NET Core Identity',
-    sections: ['15', '16', '18', '19', '20', '21', '22', '23', '24', '25']
+    title: 'Testing (xUnit), CRUD Operations & EF Core',
+    description: 'xUnit unit testing, Moq test doubles, CRUD operations, Entity Framework Core, and DB migrations',
+    sections: ['15', '16', '18', '19']
   },
   {
     module_number: 6,
+    title: 'Enterprise Architecture, Filters, Logging & Identity',
+    description: 'Action/result filters, Serilog logging, error handling, SOLID principles, Clean Architecture, and ASP.NET Core Identity',
+    sections: ['20', '21', '22', '23', '24', '25']
+  },
+  {
+    module_number: 7,
     title: 'RESTful Web APIs, Swagger, Versioning & Angular Integration',
     description: 'RESTful API principles, conventions, content negotiation, OpenAPI/Swagger documentation, API versioning, and Angular integration with CORS',
     sections: ['26', '27', '28']
   },
   {
-    module_number: 7,
-    title: 'API Security (JWT) & Minimal APIs',
-    description: 'JWT authentication & authorization, claims-based security, and high-performance Minimal APIs',
+    module_number: 8,
+    title: 'API Security (JWT) & Modern Minimal APIs',
+    description: 'JWT authentication & authorization, claims-based security, endpoint filters, and high-performance Minimal APIs',
     sections: ['29', '30']
   }
 ];
 
 function buildManifest() {
-  console.log('--- Phase C: Content Classification and 7-Module Mapping ---');
+  console.log('--- Phase C: Content Classification and 8-Module Mapping ---');
 
   const sourceMap = JSON.parse(fs.readFileSync(SOURCE_MAP_FILE, 'utf8'));
 
@@ -111,7 +117,7 @@ function buildManifest() {
 
   const manifest = {
     total_sections: 30,
-    total_modules: 7,
+    total_modules: 8,
     generated_at: new Date().toISOString(),
     modules: MODULES.map(m => ({
       module_number: m.module_number,

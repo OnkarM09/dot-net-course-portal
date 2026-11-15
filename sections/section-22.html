@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -376,12 +386,12 @@
         <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
           <a href="../index.html">Curriculum</a>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
           <span class="breadcrumb-current" aria-current="page">Section 22</span>
         </nav>
         <div class="section-meta-row">
-          <span class="module-badge">Module 5</span>
+          <span class="module-badge">Module 6</span>
           <span class="read-time-badge">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             7 PDF Pages
@@ -398,47 +408,42 @@
 
       <!-- Body Content -->
       <article class="docs-content">
-        <p>Error Handling in ASP.NET Core MVC
-Error handling is a crucial aspect of building robust and user-friendly web applications. In ASP.NET
-Core MVC, it involves gracefully handling exceptions, providing informative feedback to users, and
-ensuring the application continues to function smoothly even when unexpected errors occur.</p>
+        
+<h2 id="error-handling-in-aspnet-core-mvc">Error Handling in ASP.NET Core MVC</h2>
+<p>Error handling is a crucial aspect of building robust and user-friendly web applications. In ASP.NET Core MVC, it involves gracefully handling exceptions, providing informative feedback to users, and ensuring the application continues to function smoothly even when unexpected errors occur.</p>
 
 <h2 id="exception-handling-middleware">Exception Handling Middleware</h2>
-<p>Exception handling middleware is a type of custom middleware in ASP.NET Core that catches
-exceptions thrown during the request processing pipeline. This middleware allows you to:</p>
+<p>Exception handling middleware is a type of custom middleware in ASP.NET Core that catches exceptions thrown during the request processing pipeline. This middleware allows you to:</p>
 <ul>
   <li>Centralize Error Handling: Implement a single point where you can catch and handle
-      exceptions from different parts of your application.</li>
+exceptions from different parts of your application.</li>
   <li>Custom Error Responses: Generate appropriate error responses (HTML pages, JSON
-      messages) for different types of exceptions.</li>
+messages) for different types of exceptions.</li>
   <li>Logging: Log exceptions and their details for troubleshooting and analysis.</li>
 </ul>
 
 <h2 id="custom-exceptions">Custom Exceptions</h2>
-<p>In some scenarios, you might want to define your own custom exceptions to represent specific error
-conditions in your application. This allows you to:</p>
+<p>In some scenarios, you might want to define your own custom exceptions to represent specific error conditions in your application. This allows you to:</p>
 <ul>
   <li>Provide Context: Include additional information in the exception object that helps you
-      understand the root cause of the error.</li>
+understand the root cause of the error.</li>
   <li>Categorization: Differentiate between different types of errors based on their exception
-      types.</li>
+types.</li>
   <li>Error Handling Logic: Implement custom logic in your exception handling middleware to
-      respond to specific custom exceptions differently.</li>
+respond to specific custom exceptions differently.</li>
 </ul>
 
 <h2 id="useexceptionhandler-middleware">UseExceptionHandler Middleware</h2>
-<p>The UseExceptionHandler middleware is a built-in middleware component in ASP.NET Core that
-handles unhandled exceptions in your application. It provides a centralized way to control the error
-response sent to the client.</p>
+<p>The UseExceptionHandler middleware is a built-in middleware component in ASP.NET Core that handles unhandled exceptions in your application. It provides a centralized way to control the error response sent to the client.</p>
 <ul>
   <li>Custom Error Pages: You can configure UseExceptionHandler to redirect to a specific error
-      page or endpoint (e.g., /Error) when an exception occurs. This allows you to present a userfriendly
-error message or provide additional information to help users understand what
-      happened.</li>
+page or endpoint (e.g., /Error) when an exception occurs. This allows you to present a user-
+friendly error message or provide additional information to help users understand what
+happened.</li>
   <li>Development vs. Production: In development environments, you often use
-      UseDeveloperExceptionPage to display a detailed error page with stack traces and other
-      diagnostic information. In production, you should use UseExceptionHandler to hide those
-      sensitive details and provide a more generic error message.</li>
+UseDeveloperExceptionPage to display a detailed error page with stack traces and other
+diagnostic information. In production, you should use UseExceptionHandler to hide those
+sensitive details and provide a more generic error message.</li>
 </ul>
 
 <h2 id="code-example">Code Example</h2>
@@ -454,75 +459,74 @@ error message or provide additional information to help users understand what
       <pre><code class="language-csharp">// ExceptionHandlingMiddleware.cs
 public class ExceptionHandlingMiddleware
 {
-  private readonly RequestDelegate _next;
-  private readonly ILogger&lt;ExceptionHandlingMiddleware&gt; _logger;
+private readonly RequestDelegate _next;
+private readonly ILogger&lt;ExceptionHandlingMiddleware&gt; _logger;
 // Injected logger
-  private readonly IDiagnosticContext _diagnosticContext; // For enriching Serilog logs
-  // Constructor injection
-  public ExceptionHandlingMiddleware(RequestDelegate next,
+private readonly IDiagnosticContext _diagnosticContext; // For enriching Serilog logs
+// Constructor injection
+public ExceptionHandlingMiddleware(RequestDelegate next,
 ILogger&lt;ExceptionHandlingMiddleware&gt; logger, IDiagnosticContext diagnosticContext)
-  {
-   _next = next; // Represents the next middleware in the pipeline
-   _logger = logger;
-   _diagnosticContext = diagnosticContext;
-  }
-  public async Task Invoke(HttpContext httpContext)
-  {
-   try
-   {
-     await _next(httpContext);
-     // Invoke the next middleware
-   }
-   catch (Exception ex)
-   {
-     // Log the inner exception if present, otherwise log the original exception
-     if (ex.InnerException != null)
-     {
-      _logger.LogError(&quot;{ExceptionType} {ExceptionMessage}&quot;,
+{
+_next = next; // Represents the next middleware in the pipeline
+_logger = logger;
+_diagnosticContext = diagnosticContext;
+}
+public async Task Invoke(HttpContext httpContext)
+{
+try
+{
+await _next(httpContext);
+// Invoke the next middleware
+}
+catch (Exception ex)
+{
+// Log the inner exception if present, otherwise log the original exception
+if (ex.InnerException != null)
+{
+_logger.LogError(&quot;{ExceptionType} {ExceptionMessage}&quot;,
 ex.InnerException.GetType().ToString(), ex.InnerException.Message);
-     }
-     else
-     {
-      _logger.LogError(&quot;{ExceptionType} {ExceptionMessage}&quot;, ex.GetType().ToString(),
+}
+else
+{
+_logger.LogError(&quot;{ExceptionType} {ExceptionMessage}&quot;, ex.GetType().ToString(),
 ex.Message);
-     }
-     // (Optional) You can customize the error response here
+}
+// (Optional) You can customize the error response here
 // httpContext.Response.StatusCode = 500
 ;
 // await httpContext.Response.WriteAsync(&quot;Error occurred&quot;
 );
-     throw; ) // Re-throw the exception for further handling (e.g., by UseExceptionHandler
-   }
-  }
+throw; ) // Re-throw the exception for further handling (e.g., by UseExceptionHandler
+}
+}
 }
 // Extension method for easy registration
 public static class ExceptionHandlingMiddlewareExtensions
 {
-  public static IApplicationBuilder UseExceptionHandlingMiddleware(this IApplicationBuilder
+public static IApplicationBuilder UseExceptionHandlingMiddleware(this IApplicationBuilder
 builder)
-  {
-   return builder.UseMiddleware&lt;ExceptionHandlingMiddleware&gt;();
-  }
+{
+return builder.UseMiddleware&lt;ExceptionHandlingMiddleware&gt;();
+}
 }</code></pre>
     </div>
   <ul>
   <li>Purpose: This custom middleware catches exceptions and logs them using Serilog.</li>
-</ul>
-<ul>
   <li>Constructor Injection: It receives the RequestDelegate (_next), an ILogger, and an
-      IDiagnosticContext (used for adding contextual information to Serilog logs) through
-      constructor injection.</li>
+IDiagnosticContext (used for adding contextual information to Serilog logs) through
+constructor injection.</li>
   <li>Invoke Method:</li>
   <li>1. await _next(httpContext);: Invokes the next middleware in the pipeline.</li>
   <li>2. try-catch Block: Catches any exceptions thrown during the execution of subsequent
-           middleware or the action method.</li>
+middleware or the action method.</li>
   <li>3. Logging: Logs the exception details using Serilog, including the exception type and
-           message. If there&#39;s an inner exception, it logs that instead.</li>
+message. If there&#39;s an inner exception, it logs that instead.</li>
   <li>4. Re-throwing: The throw; statement re-throws the exception, allowing it to be
-           handled further up the pipeline, potentially by the UseExceptionHandler
-           middleware.</li>
+handled further up the pipeline, potentially by the UseExceptionHandler
+middleware.</li>
 </ul>
-<p><code>Program.cs</code></p>
+
+<h2 id="programcs">Program.cs</h2>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -536,41 +540,41 @@ builder)
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
-  app.UseDeveloperExceptionPage(); // Detailed error page in development
+app.UseDeveloperExceptionPage(); // Detailed error page in development
 }
 else
 {
-  app.UseExceptionHandler(&quot;/Error&quot;); // Redirect to a custom error page in other environments
-  app.UseExceptionHandlingMiddleware(); // Use the custom exception handling middleware
+app.UseExceptionHandler(&quot;/Error&quot;); // Redirect to a custom error page in other environments
+app.UseExceptionHandlingMiddleware(); // Use the custom exception handling middleware
 }
-// ... (other middleware and routing) ...
-   • UseDeveloperExceptionPage(): This middleware is enabled only in the Development</code></pre>
+// ... (other middleware and routing) ...</code></pre>
     </div>
-  <p>environment to provide detailed error information for debugging.</p>
-<ul>
+  <ul>
+  <li>UseDeveloperExceptionPage(): This middleware is enabled only in the Development
+environment to provide detailed error information for debugging.</li>
   <li>UseExceptionHandler(&quot;/Error&quot;): In non-development environments, this middleware
-      redirects to the &quot;/Error&quot; endpoint (which you&#39;ll need to define in your controllers) when an
-      unhandled exception occurs.</li>
+redirects to the &quot;/Error&quot; endpoint (which you&#39;ll need to define in your controllers) when an
+unhandled exception occurs.</li>
   <li>UseExceptionHandlingMiddleware(): This registers your custom exception handling
-      middleware, which will catch and log exceptions before they reach UseExceptionHandler.</li>
+middleware, which will catch and log exceptions before they reach UseExceptionHandler.</li>
 </ul>
 
 <h2 id="notes">Notes</h2>
 <ul>
   <li>Centralized Error Handling: Use exception handling middleware or UseExceptionHandler to
-      create a single point for managing exceptions.</li>
+create a single point for managing exceptions.</li>
   <li>Environment-Specific Behavior: Provide detailed error information in development, but use
-      generic error pages in production for security.</li>
+generic error pages in production for security.</li>
   <li>Custom Exceptions: Consider creating custom exceptions to convey specific error conditions
-      in your application.</li>
+in your application.</li>
   <li>Logging: Always log exceptions and their details for troubleshooting and analysis.</li>
   <li>User-Friendly Error Messages: Provide clear and informative error messages to users,
-      guiding them on how to resolve the issue.</li>
+guiding them on how to resolve the issue.</li>
   <li>Testing: Write unit tests for your exception handling middleware and custom exception
-      classes to ensure they work as expected.</li>
+classes to ensure they work as expected.</li>
 </ul>
 
-<h2 id="key-points-to-remember">Key Points to Remember</h2>
+<h3 id="key-points-to-remember">Key Points to Remember</h3>
 
 <h2 id="goals">Goals</h2>
 <ul>
@@ -599,27 +603,27 @@ else
   <li>Can be used to trigger specific error handling logic.</li>
 </ul>
 
-<h2 id="best-practices">Best Practices</h2>
+<h3 id="best-practices">Best Practices</h3>
 <ul>
   <li>Centralized Handling: Use exception handling middleware or UseExceptionHandler to
-      manage exceptions in one place.</li>
+manage exceptions in one place.</li>
   <li>Environment-Specific Errors:</li>
   <li>Development: Use UseDeveloperExceptionPage for detailed errors.</li>
   <li>Production: Use UseExceptionHandler for generic error pages, avoid exposing
-           sensitive details.</li>
+sensitive details.</li>
   <li>Custom Exceptions: Create custom exceptions for specific error scenarios.</li>
   <li>Logging: Always log exceptions with relevant details for troubleshooting.</li>
   <li>User-Friendly Messages: Provide clear and helpful error messages to users.</li>
   <li>HTTP Status Codes: Use appropriate status codes to indicate the type of error (e.g., 400 Bad
-      Request, 404 Not Found, 500 Internal Server Error).</li>
+Request, 404 Not Found, 500 Internal Server Error).</li>
 </ul>
 
 <h2 id="interview-tips">Interview Tips</h2>
 <ul>
   <li>Explain the Flow: Articulate how exceptions are handled in ASP.NET Core MVC and the role
-      of middleware.</li>
+of middleware.</li>
   <li>Custom Middleware: Discuss scenarios where you would create custom exception handling
-      middleware.</li>
+middleware.</li>
   <li>Custom Exceptions: Explain when and how to create custom exception classes.</li>
   <li>Security: Emphasize the importance of protecting sensitive information in error responses.</li>
   <li>User Experience: Highlight the need for user-friendly error messages.</li>
@@ -630,9 +634,8 @@ else
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
   <h3 id="exception-handling-middleware-1">Exception Handling Middleware</h3>
-<p>Handles all errors occurred in filter pipeline (including model binding, controllers and filters).
-Should be added to the application pipeline, before RoutingMiddleware.</p>
-  <h3 id="custom-exception-handling-middleware">Custom Exception Handling Middleware</h3>
+<p>Handles all errors occurred in filter pipeline (including model binding, controllers and filters). Should be added to the application pipeline, before RoutingMiddleware.</p>
+<p>Custom Exception Handling Middleware</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -644,29 +647,26 @@ Should be added to the application pipeline, before RoutingMiddleware.</p>
       </div>
       <pre><code class="language-csharp">public class ExceptionHandlingMiddleware
 {
- private readonly RequestDelegate _next; //Stores reference of subsequent middleware
- public ExceptionHandlingMiddleware(RequestDelegate next)
- {
-  _next = next;
- }
- public async Task InvokeAsync(HttpContext context)
- {
-  try
-  {
-  await _next(context);
-  }
-  catch(Exception ex)
-  {
-  …
-  }
- }
+private readonly RequestDelegate _next; //Stores reference of subsequent middleware
+public ExceptionHandlingMiddleware(RequestDelegate next)
+{
+_next = next;
+}
+public async Task InvokeAsync(HttpContext context)
+{
+try
+{
+await _next(context);
+}
+catch(Exception ex)
+{
+…
+}
+}
 }</code></pre>
     </div>
     <h3 id="custom-exceptions-1">Custom Exceptions</h3>
-<p>A custom exception class is an exception class that inherits from System.Exception class &amp;
-represents a domain-specific exception
-Used to represent the domain-specific errors stand-out of system-related (.NET) related exceptions.</p>
-  <h3 id="custom-exception-class">Custom Exception class</h3>
+<p>A custom exception class is an exception class that inherits from System.Exception class &amp; represents a domain-specific exception Used to represent the domain-specific errors stand-out of system-related (.NET) related exceptions. Custom Exception class</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -678,24 +678,20 @@ Used to represent the domain-specific errors stand-out of system-related (.NET) 
       </div>
       <pre><code class="language-csharp">public class CustomException : Exception
 {
- public CustomException() : base()
- {
- }
- public CustomException(string? message) : base(message)
- {
- }
- public CustomException(string? message, Exception? innerException) : base(message,
+public CustomException() : base()
+{
+}
+public CustomException(string? message) : base(message)
+{
+}
+public CustomException(string? message, Exception? innerException) : base(message,
 innerException)
- {
- }
+{
+}
 }</code></pre>
     </div>
     <h3 id="useexceptionhandler">UseExceptionHandler()</h3>
-<p>The built-in UseExceptionHandler() middleware redirects to the specified route path, when an
-unhandled exception occurs during the application execution.
-Can be used as an alternative to custom exception handling middleware.
-Catches and logs unhandled exceptions.
-Re-executes the request in an alternative pipeline using the specified route path.</p>
+<p>The built-in UseExceptionHandler() middleware redirects to the specified route path, when an unhandled exception occurs during the application execution. Can be used as an alternative to custom exception handling middleware. Catches and logs unhandled exceptions. Re-executes the request in an alternative pipeline using the specified route path.</p>
 </section>
 
       </article>
@@ -741,6 +737,10 @@ Re-executes the request in an alternative pipeline using the specified route pat
       <ul class="toc-list">
         
         <li class="toc-item">
+          <a href="#error-handling-in-aspnet-core-mvc" class="toc-link">Error Handling in ASP.NET Core MVC</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#exception-handling-middleware" class="toc-link">Exception Handling Middleware</a>
         </li>
       
@@ -757,11 +757,15 @@ Re-executes the request in an alternative pipeline using the specified route pat
         </li>
       
         <li class="toc-item">
+          <a href="#programcs" class="toc-link">Program.cs</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#notes" class="toc-link">Notes</a>
         </li>
       
         <li class="toc-item">
-          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+          <a href="#key-points-to-remember" class="toc-link toc-sub">Key Points to Remember</a>
         </li>
       
         <li class="toc-item">
@@ -773,7 +777,7 @@ Re-executes the request in an alternative pipeline using the specified route pat
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices" class="toc-link">Best Practices</a>
+          <a href="#best-practices" class="toc-link toc-sub">Best Practices</a>
         </li>
       
         <li class="toc-item">

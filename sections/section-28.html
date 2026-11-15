@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -376,12 +386,12 @@
         <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
           <a href="../index.html">Curriculum</a>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
           <span class="breadcrumb-current" aria-current="page">Section 28</span>
         </nav>
         <div class="section-meta-row">
-          <span class="module-badge">Module 6</span>
+          <span class="module-badge">Module 7</span>
           <span class="read-time-badge">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             5 PDF Pages
@@ -398,26 +408,21 @@
 
       <!-- Body Content -->
       <article class="docs-content">
-        <p>CORS in ASP.NET Core Web API
-Cross-Origin Resource Sharing (CORS) is a feature that allows or restricts resources on a web server
-based on the origin of the request. In the context of an Angular application running on
-localhost:4200, you&#39;ll need to configure CORS in your ASP.NET Core Web API to allow requests from
-this origin.</p>
+        
+<h2 id="cors-in-aspnet-core-web-api">CORS in ASP.NET Core Web API</h2>
+<p>Cross-Origin Resource Sharing (CORS) is a feature that allows or restricts resources on a web server based on the origin of the request. In the context of an Angular application running on localhost:4200, you&#39;ll need to configure CORS in your ASP.NET Core Web API to allow requests from this origin.</p>
 
 <h2 id="overview-of-cors">Overview of CORS</h2>
-<p>CORS enables web servers to specify which origins are allowed to access their resources. Proper
-CORS configuration ensures that your API can be accessed securely by client applications hosted on
-different origins.
-Configuring CORS in ASP.NET Core Using <code>Program.cs</code>
-In the latest ASP.NET Core versions, configuration is typically done in <code>Program.cs</code> rather than
-<code>Startup.cs</code>. Here’s how you can set up CORS in <code>Program.cs</code>.</p>
-<ol>
-  <li>Install Required Package
-No additional package is needed as CORS support is built into ASP.NET Core.</li>
-  <li>Configure CORS in <code>Program.cs</code>
-Add CORS services and middleware in your <code>Program.cs</code> file.</li>
-</ol>
-<p>Example Configuration:</p>
+<p>CORS enables web servers to specify which origins are allowed to access their resources. Proper CORS configuration ensures that your API can be accessed securely by client applications hosted on different origins.</p>
+
+<h2 id="configuring-cors-in-aspnet-core-using-programcs">Configuring CORS in ASP.NET Core Using Program.cs</h2>
+<p>In the latest ASP.NET Core versions, configuration is typically done in <code>Program.cs</code> rather than <code>Startup.cs</code>. Here’s how you can set up CORS in <code>Program.cs</code>.</p>
+
+<h3 id="1-install-required-package">1. Install Required Package</h3>
+<p>No additional package is needed as CORS support is built into ASP.NET Core.</p>
+
+<h3 id="2-configure-cors-in-programcs">2. Configure CORS in Program.cs</h3>
+<p>Add CORS services and middleware in your <code>Program.cs</code> file. Example Configuration:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -433,10 +438,10 @@ builder.Services.AddControllers();
 // Add CORS services and configure policies
 builder.Services.AddCors(options =&gt;
 {
-  options.AddPolicy(&quot;AllowAngularLocalhost&quot;,
+options.AddPolicy(&quot;AllowAngularLocalhost&quot;,
 }</code></pre>
     </div>
-  <p>builder =&gt;</p>
+  <p>Builder =&gt;</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -447,22 +452,22 @@ builder.Services.AddCors(options =&gt;
         </button>
       </div>
       <pre><code class="language-csharp">{
-   {
-     builder.WithOrigins(&quot;http://localhost:4200&quot;) // Allow Angular&#39;s localhost
-       .AllowAnyMethod() ) // Allow any HTTP method (GET, POST, etc.
-       .AllowAnyHeader(); // Allow any headers
-   });
+{
+builder.WithOrigins(&quot;http://localhost:4200&quot;) // Allow Angular&#39;s localhost
+.AllowAnyMethod() ) // Allow any HTTP method (GET, POST, etc.
+.AllowAnyHeader(); // Allow any headers
+});
 });
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-  app.UseDeveloperExceptionPage();
+app.UseDeveloperExceptionPage();
 }
 else
 {
-  app.UseExceptionHandler(&quot;/Home/Error&quot;);
-  app.UseHsts();
+app.UseExceptionHandler(&quot;/Home/Error&quot;);
+app.UseHsts();
 }
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -472,22 +477,22 @@ app.UseAuthorization();
 app.UseCors(&quot;AllowAngularLocalhost&quot;);
 app.UseEndpoints(endpoints =&gt;
 {
-  endpoints.MapControllers();
+endpoints.MapControllers();
 });
 app.Run();</code></pre>
     </div>
-  <p>3. Understanding the Configuration</p>
-<ul>
+  <ul>
+  <li>3. Understanding the Configuration</li>
   <li>AddCors Method: Registers CORS services and defines policies.</li>
   <li>AddPolicy Method: Creates a CORS policy named &quot;AllowAngularLocalhost&quot;. This policy
-      allows requests from http://localhost:4200, permits any HTTP methods, and accepts any
-      headers.</li>
+allows requests from http://localhost:4200, permits any HTTP methods, and accepts any
+headers.</li>
   <li>UseCors Method: Applies the defined CORS policy. It must be called before <code>UseRouting</code> or
-      <code>UseEndpoints</code>.</li>
-  <li>4. More Detailed CORS Policies
-If you need more restrictive CORS policies, you can adjust the configuration.</li>
+<code>UseEndpoints</code>.</li>
 </ul>
-<p>Example of a Restrictive CORS Policy:</p>
+
+<h3 id="4-more-detailed-cors-policies">4. More Detailed CORS Policies</h3>
+<p>If you need more restrictive CORS policies, you can adjust the configuration. Example of a Restrictive CORS Policy:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -499,28 +504,18 @@ If you need more restrictive CORS policies, you can adjust the configuration.</l
       </div>
       <pre><code class="language-csharp">builder.Services.AddCors(options =&gt;
 {
-  options.AddPolicy(&quot;RestrictedPolicy&quot;,
-   builder =&gt;
-   {
-     builder.WithOrigins(&quot;https://specificdomain.com&quot;) // Allow only specific domain
-       .WithMethods(&quot;GET&quot;, &quot;POST&quot;) // Allow only GET and POST methods
-       .WithHeaders(&quot;Authorization&quot;, &quot;Content-Type&quot;); // Allow specific headers
-   });
+options.AddPolicy(&quot;RestrictedPolicy&quot;,
+builder =&gt;
+{
+builder.WithOrigins(&quot;https://specificdomain.com&quot;) // Allow only specific domain
+.WithMethods(&quot;GET&quot;, &quot;POST&quot;) // Allow only GET and POST methods
+.WithHeaders(&quot;Authorization&quot;, &quot;Content-Type&quot;); // Allow specific headers
+});
 });</code></pre>
     </div>
   
 <h2 id="testing-cors-configuration">Testing CORS Configuration</h2>
-<p>To verify CORS configuration, ensure that your Angular application is running on
-http://localhost:4200 and make requests to your ASP.NET Core Web API. Check the network
-requests in your browser’s developer tools to ensure that the CORS headers are correctly set.
-Example Request:
-Using Angular’s HttpClient to make a request:
-import { HttpClient } from &#39;@angular/common/http&#39;;
-import { Injectable } from &#39;@angular/core&#39;;
-@Injectable({
- providedIn: &#39;root&#39;
-})
-export class ApiService {</p>
+<p>To verify CORS configuration, ensure that your Angular application is running on http://localhost:4200 and make requests to your ASP.NET Core Web API. Check the network requests in your browser’s developer tools to ensure that the CORS headers are correctly set. Example Request: Using Angular’s HttpClient to make a request: import { HttpClient } from &#39;@angular/common/http&#39;; import { Injectable } from &#39;@angular/core&#39;; @Injectable({ providedIn: &#39;root&#39; }) export class ApiService {</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -531,35 +526,26 @@ export class ApiService {</p>
         </button>
       </div>
       <pre><code class="language-typescript">private apiUrl = &#39;https: ; //localhost:5001/api/products&#39;
- constructor(private http: HttpClient) { }
- getProducts() {
-  return this.http.get(this.apiUrl);
- }
+constructor(private http: HttpClient) { }
+getProducts() {
+return this.http.get(this.apiUrl);
+}
 }
 Example Angular Component:
 import { Component, OnInit } from &#39;@angular/core&#39;;
 import { ApiService } from &#39;./api.service&#39;;
 @Component({
- selector: &#39;app-product-list&#39;,
- templateUrl: &#39;./product-list.component.html&#39;
+selector: &#39;app-product-list&#39;,
+templateUrl: &#39;./product-list.component.html&#39;
 })
 export class ProductListComponent implements OnInit {
- products: any[] = [];</code></pre>
-    </div>
-  <p>constructor(private apiService: ApiService) { }
- ngOnInit() {
-  this.apiService.getProducts().subscribe(data =&gt; {
-  this.products = data;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp"></code></pre>
+products: any[] = [];
+constructor(private apiService: ApiService) { }
+ngOnInit() {
+this.apiService.getProducts().subscribe(data =&gt; {
+this.products = data;
+});
+}</code></pre>
     </div>
   <p>Explanation of Code</p>
 <ul>
@@ -569,13 +555,13 @@ export class ProductListComponent implements OnInit {
   <li>Headers: Specifies which headers are permitted.</li>
 </ul>
 
-<h2 id="key-points-to-remember">Key Points to Remember</h2>
+<h3 id="key-points-to-remember">Key Points to Remember</h3>
 <ol>
   <li>CORS: Controls cross-origin requests to your API from different domains.</li>
   <li>Configuration: Set up CORS in <code>Program.cs</code> using AddCors and UseCors methods.</li>
   <li>Origins: Allow specific domains like localhost:4200 to access your API.</li>
   <li>Testing: Use browser developer tools to verify the presence and correctness of CORS
-      headers.</li>
+headers.</li>
   <li>Policies: Customize CORS policies based on your application&#39;s needs.</li>
 </ol>
 
@@ -584,19 +570,13 @@ export class ProductListComponent implements OnInit {
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
   <h3 id="angular">Angular</h3>
-<p>Angular is a TypeScript-based, free and open-source web application framework that is used to
-create dynamic, single-page web applications that run on the browser.</p>
+<p>Angular is a TypeScript-based, free and open-source web application framework that is used to create dynamic, single-page web applications that run on the browser.</p>
   <h3 id="cors">CORS</h3>
-<p>CORS (Cross-Origin Resource Sharing) is a security feature implemented by web browsers to allow or
-deny a web page from making requests to a different domain than the one that served the web
-page.</p>
+<p>CORS (Cross-Origin Resource Sharing) is a security feature implemented by web browsers to allow or deny a web page from making requests to a different domain than the one that served the web page.</p>
 <p>How CORS works?</p>
   <h3 id="preflight-request">Preflight Request</h3>
-<p>It is an HTTP OPTIONS request that is sent by the browser to the Web API server before the actual
-request is made.
-The preflight request is used to determine whether the Web API server is willing to accept the actual
-request.</p>
-  <h3 id="clean-architecture">Clean Architecture</h3>
+<p>It is an HTTP OPTIONS request that is sent by the browser to the Web API server before the actual request is made. The preflight request is used to determine whether the Web API server is willing to accept the actual request.</p>
+<p>Clean Architecture</p>
 </section>
 
       </article>
@@ -642,7 +622,27 @@ request.</p>
       <ul class="toc-list">
         
         <li class="toc-item">
+          <a href="#cors-in-aspnet-core-web-api" class="toc-link">CORS in ASP.NET Core Web API</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#overview-of-cors" class="toc-link">Overview of CORS</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#configuring-cors-in-aspnet-core-using-programcs" class="toc-link">Configuring CORS in ASP.NET Core Using Program.cs</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#1-install-required-package" class="toc-link toc-sub">1. Install Required Package</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#2-configure-cors-in-programcs" class="toc-link toc-sub">2. Configure CORS in Program.cs</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#4-more-detailed-cors-policies" class="toc-link toc-sub">4. More Detailed CORS Policies</a>
         </li>
       
         <li class="toc-item">
@@ -650,7 +650,7 @@ request.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+          <a href="#key-points-to-remember" class="toc-link toc-sub">Key Points to Remember</a>
         </li>
       
         <li class="toc-item">

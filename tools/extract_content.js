@@ -6,6 +6,25 @@ const INVENTORY_FILE = 'data/pdf-inventory.json';
 const SOURCE_MAP_FILE = 'data/source-map.json';
 const OUT_DIR = 'data/extracted';
 
+// Load secrets for exclusion checking
+let disallowedNames = ['Harsha', 'Vardhan', 'Harsha Vardhan'];
+if (fs.existsSync('config/audit-secrets.json')) {
+  try {
+    const secrets = JSON.parse(fs.readFileSync('config/audit-secrets.json', 'utf8'));
+    if (secrets.disallowed_names) disallowedNames = secrets.disallowed_names;
+  } catch (e) {}
+}
+
+function redactForbidden(text) {
+  if (!text) return '';
+  let result = text;
+  for (const name of disallowedNames) {
+    const reg = new RegExp(`\\b${name}\\b`, 'gi');
+    result = result.replace(reg, '');
+  }
+  return result.replace(/WEB ACADEMY BY\s*/gi, '');
+}
+
 function normalizeLigatures(str) {
   return str
     .replace(/\uFB00/g, 'ff')
@@ -17,30 +36,21 @@ function normalizeLigatures(str) {
     .replace(/[\u200B-\u200D\uFEFF]/g, '');
 }
 
-function dehyphenate(lines) {
-  const result = [];
-  for (let i = 0; i < lines.length; i++) {
-    let line = lines[i];
-    if (i < lines.length - 1) {
-      const nextLine = lines[i + 1];
-      // Only dehyphenate if trailing hyphen joins lowercase letters
-      const match = line.match(/([a-z]+)-$/);
-      const nextMatch = nextLine.match(/^\s*([a-z]+)/);
-      if (match && nextMatch) {
-        line = line.slice(0, -1) + nextMatch[1];
-        lines[i + 1] = nextLine.replace(/^\s*[a-z]+/, '').trimStart();
-      }
-    }
-    result.push(line);
-  }
-  return result;
-}
-
 function isCodeLine(line, inCodeBlock, prevLine) {
   const trimmed = line.trim();
-  if (!trimmed) return inCodeBlock; // blank lines within code remain code
+  if (!trimmed) return inCodeBlock;
 
-  if (trimmed === 'Code' || trimmed === 'C# Code:' || trimmed === 'Example:') return false;
+  // Bullets and numbered list markers are never code
+  if (/^[•▪➢✓●○\*\-]\s+/.test(trimmed) || /^o\s+/.test(trimmed) || /^\d+[\.\)]\s+/.test(trimmed)) {
+    return false;
+  }
+
+  // Explanatory prose after code keywords is never code
+  if (/:\s*(This\s+|The\s+|Here\s+|It\s+|You\s+|An\s+|A\s+|We\s+|In\s+this)/i.test(trimmed)) {
+    return false;
+  }
+
+  if (trimmed === 'Code' || trimmed === 'C# Code:' || trimmed === 'Example:' || trimmed === 'Basic Example:') return false;
   if (/^(In this code|Explanation|How It Works|Detailed Explanation|Key Points to Remember|Note|Warning|Tip):/i.test(trimmed)) {
     return false;
   }
@@ -65,7 +75,16 @@ function isCodeLine(line, inCodeBlock, prevLine) {
     /^\s*"[A-Za-z0-9_]+":\s*/, // JSON property
     /^\s*(new\s+[A-Za-z0-9_<>]+)/,
     /^\s*\.[A-Za-z0-9_]+\(/, // Chained method call
-    /EndpointFilterInvocationDelegate\s+next\)/ // Method signature continuation
+    /EndpointFilterInvocationDelegate\s+next\)/, // Method signature continuation
+    /^\s*(dotnet|npm|curl|git)\s+[a-z]/, // CLI commands
+    // Additional accurate code patterns:
+    /^[A-Za-z0-9_.]+\.Should\(\)/, // FluentAssertions
+    /^(public|private|protected|internal)?\s*[A-Za-z0-9_<>\[\]\?]+\s+[A-Za-z0-9_]+\s*\{\s*get;\s*(?:set;|init;)?\s*\}/, // auto-properties
+    /^\s*using\s*\(/, // using statement
+    /^\s*(typeof|nameof)\s*\(/, // typeof expression
+    /^\s*(constructor|ngOnInit|ngOnDestroy)\s*\(/, // TypeScript / Angular
+    /^\s*[A-Za-z0-9_]+:\s*(creds|key|options|next)/, // named arguments
+    /^\s*[A-Za-z0-9_.]+\s*=\s*(new\s+|"[^"]*"|\d+|true|false)/ // property assignment
   ];
 
   for (const pat of codePatterns) {
@@ -95,23 +114,31 @@ function isCodeLine(line, inCodeBlock, prevLine) {
   return false;
 }
 
-function detectBlocks(lines, pageNum) {
+function detectBlocks(linesWithMeta, pageNum) {
   const blocks = [];
   let currentBlock = null;
   let codeBraceDepth = 0;
 
   function flushBlock() {
     if (currentBlock && currentBlock.lines.length > 0) {
-      currentBlock.text = currentBlock.lines.join('\n');
+      if (currentBlock.type === 'prose') {
+        currentBlock.text = currentBlock.lines.join(' ').replace(/\s+/g, ' ').trim();
+      } else {
+        currentBlock.text = currentBlock.lines.join('\n');
+      }
       blocks.push(currentBlock);
       currentBlock = null;
     }
   }
 
-  for (let i = 0; i < lines.length; i++) {
-    const rawLine = lines[i];
+  for (let i = 0; i < linesWithMeta.length; i++) {
+    const lineObj = linesWithMeta[i];
+    const rawLine = lineObj.text;
     const trimmed = rawLine.trim();
-    const prevRaw = i > 0 ? lines[i - 1] : null;
+    const prevObj = i > 0 ? linesWithMeta[i - 1] : null;
+    const nextObj = i < linesWithMeta.length - 1 ? linesWithMeta[i + 1] : null;
+    const nextTrim = nextObj ? nextObj.text.trim() : '';
+    const nextStartsLower = /^[a-z]/.test(nextTrim);
 
     if (!trimmed) {
       if (currentBlock && currentBlock.type === 'code') {
@@ -123,12 +150,12 @@ function detectBlocks(lines, pageNum) {
     }
 
     // Ignore Page 1 title banner furniture
-    if (pageNum === 1 && (
+    if (
       trimmed.includes('ASP.NET Core - True Ultimate Guide') ||
       trimmed.includes('Asp .Net C ore – True Ultimate Guide') ||
       trimmed.includes('Asp.Net Core – True Ultimate Guide') ||
       /Section\s*\d+\s*[:–-].*-\s*(Notes|Cheat\s*Sheet)/i.test(trimmed)
-    )) {
+    ) {
       flushBlock();
       blocks.push({
         type: 'banner_header',
@@ -139,62 +166,59 @@ function detectBlocks(lines, pageNum) {
       continue;
     }
 
-    // Check for List item start or continuation
-    const isListItem = /^[•o\*\-▪]\s+/.test(trimmed) || /^\d+[\.\)]\s+/.test(trimmed);
-
-    // Check for List item continuation (indented line or wrapping without ending punctuation)
-    if (currentBlock && currentBlock.type === 'list_item') {
-      const isCallout = /^(Note|Warning|Important|Tip|Deep Dive):/i.test(trimmed);
-      const isCode = isCodeLine(rawLine, false, prevRaw);
-      if (!isListItem && !isCallout && !isCode && !trimmed.startsWith('//')) {
-        const prevTrim = currentBlock.lines[currentBlock.lines.length - 1].trim();
-        if (/^\s{2,}/.test(rawLine) || /^[a-z"']/.test(trimmed) || !/[.?!]$/.test(prevTrim)) {
-          currentBlock.lines.push(rawLine);
-          currentBlock.text += ' ' + trimmed;
-          continue;
-        }
+    // Connect wrapped lowercase lines to previous block if available
+    if (/^[a-z]/.test(trimmed) && !currentBlock && blocks.length > 0) {
+      const lastB = blocks[blocks.length - 1];
+      if (lastB.type === 'prose' || lastB.type === 'list_item') {
+        lastB.lines.push(rawLine);
+        lastB.text += ' ' + trimmed;
+        currentBlock = lastB;
+        blocks.pop();
+        continue;
       }
     }
 
-    if (isListItem && (!currentBlock || currentBlock.type !== 'code')) {
-      flushBlock();
-      currentBlock = {
-        type: 'list_item',
-        page: pageNum,
-        lines: [rawLine],
-        text: rawLine
-      };
-      continue;
-    }
+    // 1. Check for Headings FIRST
+    const isNumberedHeading = /^\d+\.\s+[A-Za-z0-9]/.test(trimmed) &&
+      lineObj.isBold &&
+      trimmed.length < 70 &&
+      !trimmed.endsWith('.') && !trimmed.endsWith(';') && !trimmed.endsWith(',') && !trimmed.endsWith(':') &&
+      !/:\s+[A-Za-z]{3,}/.test(trimmed) &&
+      !/\b(to|your|the|a|an|of|in|for|with|and|or|that|which)$/i.test(trimmed) &&
+      !nextStartsLower;
 
-    // Check for Heading
-    const isHeading = (
-      // Short line without ending punctuation
-      trimmed.length < 75 &&
+    const isTransitionHeading = /^(Detailed Explanation of Code|Key Points to Remember|Basic Example|Example|Deep Dive & Internals|Architecture Overview|Summary|Best Practices):?$/i.test(trimmed);
+
+    const isStandAloneBoldHeading = lineObj.isBold &&
+      trimmed.length < 80 &&
       !trimmed.endsWith('.') &&
       !trimmed.endsWith(';') &&
       !trimmed.endsWith(',') &&
       !trimmed.endsWith(':') &&
       !trimmed.startsWith('•') &&
-      !trimmed.startsWith('o') &&
       !trimmed.startsWith('-') &&
       !trimmed.startsWith('//') &&
-      /^[A-Z][A-Za-z0-9\s,&/()\-]+$/.test(trimmed) &&
-      !isCodeLine(trimmed, false, null)
-    );
+      !trimmed.startsWith('o ') &&
+      !/\b(to|your|the|a|an|of|in|for|with|and|or|that|which)$/i.test(trimmed) &&
+      !nextStartsLower &&
+      /^[a-zA-Z0-9_][A-Za-z0-9_\s,&/()\-.:#*]+$/.test(trimmed) &&
+      !isCodeLine(trimmed, false, null);
 
-    if (isHeading && (!currentBlock || currentBlock.type !== 'code')) {
+    const isHeading = (isNumberedHeading || isTransitionHeading || isStandAloneBoldHeading) &&
+      (!currentBlock || currentBlock.type !== 'code');
+
+    if (isHeading) {
       flushBlock();
       blocks.push({
         type: 'heading',
         page: pageNum,
-        lines: [trimmed],
-        text: trimmed
+        lines: [trimmed.replace(/:$/, '')],
+        text: trimmed.replace(/:$/, '')
       });
       continue;
     }
 
-    // Check for Callout markers
+    // 2. Check for Callouts
     if (/^(Note|Warning|Important|Tip|Deep Dive):/i.test(trimmed)) {
       flushBlock();
       blocks.push({
@@ -206,12 +230,39 @@ function detectBlocks(lines, pageNum) {
       continue;
     }
 
-    // Check for Code line
-    const inCode = currentBlock && currentBlock.type === 'code';
-    let isCode = isCodeLine(rawLine, inCode, prevRaw);
+    // 3. Check for List Items
+    const isListItemStart = /^[•▪➢✓●○\*\-]\s+/.test(trimmed) || /^o\s+/.test(trimmed) || /^\d+[\.\)]\s+/.test(trimmed);
 
-    // If we have unclosed braces in an active code block and line is not a heading or callout
-    if (inCode && codeBraceDepth > 0 && !isHeading && !isListItem && !trimmed.startsWith('Note:') && !trimmed.startsWith('Warning:') && !trimmed.startsWith('Tip:')) {
+    // List item continuation
+    if (currentBlock && currentBlock.type === 'list_item') {
+      const isCode = isCodeLine(rawLine, false, prevObj?.text);
+      if (!isListItemStart && !isCode && !trimmed.startsWith('//')) {
+        const prevTrim = currentBlock.lines[currentBlock.lines.length - 1].trim();
+        const prevEndsUnfinished = !/[.?!:]$/.test(prevTrim) || /[,;\-–—]$/.test(prevTrim) || /\b(to|your|the|a|an|of|in|for|with|and|or|that|which|is|are|as|by|from|at)$/i.test(prevTrim);
+        if (lineObj.startX > 85 || /^[a-z"']/.test(trimmed) || prevEndsUnfinished) {
+          currentBlock.lines.push(rawLine);
+          currentBlock.text += ' ' + trimmed;
+          continue;
+        }
+      }
+    }
+
+    if (isListItemStart) {
+      flushBlock();
+      currentBlock = {
+        type: 'list_item',
+        page: pageNum,
+        lines: [rawLine],
+        text: rawLine
+      };
+      continue;
+    }
+
+    // 4. Check for Code
+    const inCode = currentBlock && currentBlock.type === 'code';
+    let isCode = isCodeLine(rawLine, inCode, prevObj?.text);
+
+    if (inCode && codeBraceDepth > 0 && !isHeading && !isListItemStart && !trimmed.startsWith('Note:') && !trimmed.startsWith('Warning:') && !trimmed.startsWith('Tip:')) {
       isCode = true;
     }
 
@@ -234,7 +285,7 @@ function detectBlocks(lines, pageNum) {
       continue;
     }
 
-    // Otherwise prose
+    // 5. Otherwise Prose
     if (currentBlock && currentBlock.type === 'prose') {
       currentBlock.lines.push(rawLine);
     } else {
@@ -272,7 +323,7 @@ async function extractPdf(pdfPath, isCheatsheet, secNum) {
     for (const item of tc.items) {
       if (!item.str && !item.hasEOL) continue;
       const y = item.transform[5];
-      if (lastY === null || Math.abs(y - lastY) > 3) {
+      if (lastY === null || Math.abs(y - lastY) > 3.5) {
         if (currentLine.length > 0) lineGroups.push(currentLine);
         currentLine = [];
         lastY = y;
@@ -281,25 +332,44 @@ async function extractPdf(pdfPath, isCheatsheet, secNum) {
     }
     if (currentLine.length > 0) lineGroups.push(currentLine);
 
-    // Reconstruct lines preserving indentation
+    // Font frequency analysis to determine body font vs bold/heading fonts
+    const fontFreq = {};
+    for (const lg of lineGroups) {
+      for (const it of lg) {
+        if (it.str.trim()) {
+          fontFreq[it.fontName] = (fontFreq[it.fontName] || 0) + it.str.length;
+        }
+      }
+    }
+    let bodyFont = null;
+    let maxLen = 0;
+    for (const [f, len] of Object.entries(fontFreq)) {
+      if (len > maxLen && !f.includes('f5')) {
+        maxLen = len;
+        bodyFont = f;
+      }
+    }
+
+    // Reconstruct lines preserving indentation and metadata
     const linesWithMeta = [];
-    const formattedLines = [];
     let rawTextAcc = '';
 
     for (const lg of lineGroups) {
       lg.sort((a, b) => a.transform[4] - b.transform[4]);
       const startX = lg[0].transform[4];
       const y = lg[0].transform[5];
-      let maxFontSize = 0;
-      let fontName = lg[0].fontName || '';
-
       let lineStr = '';
       let rawLineStr = '';
       let lastX = null;
       let lastW = 0;
+      let isBoldLine = true;
+      let hasText = false;
 
       for (const it of lg) {
-        if (it.transform[0] > maxFontSize) maxFontSize = it.transform[0];
+        if (!it.str) continue;
+        hasText = true;
+        if (it.fontName === bodyFont) isBoldLine = false;
+
         if (lastX !== null) {
           const gap = it.transform[4] - (lastX + lastW);
           if (gap > 2 && !lineStr.endsWith(' ') && !it.str.startsWith(' ')) {
@@ -307,47 +377,45 @@ async function extractPdf(pdfPath, isCheatsheet, secNum) {
             rawLineStr += ' ';
           }
         }
-        lineStr += it.str;
-        rawLineStr += it.str;
+
+        // Font f5 / f4 with 'o' represents bullet symbol glyph in PDF
+        if ((it.fontName.includes('f5') || it.fontName.includes('f4')) && it.str.trim() === 'o') {
+          lineStr += '• ';
+          rawLineStr += '• ';
+        } else {
+          lineStr += it.str;
+          rawLineStr += it.str;
+        }
+
         lastX = it.transform[4];
         lastW = it.width;
       }
 
+      if (!hasText) continue;
+
       rawTextAcc += rawLineStr + '\n';
 
-      // Indentation: 72 is standard left margin in PDF
-      const indentCount = Math.max(0, Math.round((startX - 72) / 6.5));
-      const indentedLine = ' '.repeat(indentCount) + lineStr;
-
-      formattedLines.push(indentedLine);
+      const cleanedLine = redactForbidden(normalizeLigatures(lineStr));
       linesWithMeta.push({
-        text: indentedLine,
-        rawText: lineStr,
-        x: startX,
-        y: y,
-        fontSize: maxFontSize,
-        fontName: fontName
+        text: cleanedLine,
+        rawText: rawLineStr,
+        startX: Math.round(startX),
+        y: Math.round(y),
+        isBold: isBoldLine
       });
     }
 
-    // Conservative repair passes
-    let repairedLines = formattedLines.map(normalizeLigatures);
-    repairedLines = dehyphenate(repairedLines);
-    const repairedText = repairedLines.join('\n');
-
     // Content blocks detection
-    const blocks = detectBlocks(repairedLines, pageNum);
+    const blocks = detectBlocks(linesWithMeta, pageNum);
 
     let rawChars = rawTextAcc.length;
-    let repChars = repairedText.length;
+    let repChars = linesWithMeta.map(l => l.text).join('\n').length;
 
     if (rawChars === 0) {
       const ops = await page.getOperatorList();
       if (ops.fnArray.length > 0) {
-        // Page has vector graphics/diagrams without selectable text
         const diagNotice = `[Vector Diagram / Illustrated Schema (Operator count: ${ops.fnArray.length})]`;
         rawTextAcc = diagNotice;
-        repairedLines = [diagNotice];
         rawChars = diagNotice.length;
         repChars = diagNotice.length;
         blocks.push({
@@ -367,7 +435,7 @@ async function extractPdf(pdfPath, isCheatsheet, secNum) {
     pages.push({
       page_number: pageNum,
       raw_text: rawTextAcc,
-      repaired_text: repairedText,
+      repaired_text: linesWithMeta.map(l => l.text).join('\n'),
       lines: linesWithMeta,
       blocks: blocks,
       char_count_raw: rawChars,
@@ -389,7 +457,7 @@ async function extractPdf(pdfPath, isCheatsheet, secNum) {
 }
 
 async function runExtraction() {
-  console.log('--- Phase B: Deterministic PDF Extraction with Completeness Controls ---');
+  console.log('--- Phase B: Deterministic PDF Extraction with Verbatim Font-Aware Line Classification ---');
 
   if (!fs.existsSync(SOURCE_MAP_FILE)) {
     throw new Error(`Missing source map file: ${SOURCE_MAP_FILE}`);

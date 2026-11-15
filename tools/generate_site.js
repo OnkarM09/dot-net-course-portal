@@ -101,7 +101,15 @@ function formatProseText(text) {
 function renderListBlock(items) {
   if (!items || items.length === 0) return '';
   const cleanedItems = items
-    .map(it => redactForbidden(it).replace(/^([•o\*\-▪\s]|&bull;)+/, '').trim())
+    .map(it => {
+      let clean = redactForbidden(it).trim();
+      clean = clean.replace(/^([•▪➢✓●○\*\-]|o|&bull;)\s+/, '').trim();
+      clean = clean.replace(/^[•▪➢✓●○]\s*/, '').trim();
+      if (/^[a-z]\s+\(/.test(clean)) {
+        clean = `<code>${clean.charAt(0)}</code>` + clean.slice(1);
+      }
+      return clean;
+    })
     .filter(Boolean);
   if (cleanedItems.length === 0) return '';
 
@@ -117,43 +125,23 @@ function renderListBlock(items) {
 }
 
 function renderProseBlock(text) {
-  const clean = redactForbidden(text).trim();
+  let clean = redactForbidden(text).trim();
   if (!clean) return '';
 
-  // Skip duplicated cheatsheet title
-  if (/^Section\s*\d+\s*[-–—].*Cheat\s*Sheet/i.test(clean)) {
+  // Skip duplicated banner or cheatsheet title
+  if (/^Section\s*\d+\s*[-–—].*Cheat\s*Sheet/i.test(clean) ||
+      /ASP\.NET Core - True Ultimate Guide/i.test(clean)) {
     return '';
   }
 
   // Promote recurring transitions into h3 subheadings
-  if (/^(Detailed Explanation of Code|Key Points to Remember|Basic Example:|Example:|Deep Dive & Internals|Architecture Overview)$/i.test(clean)) {
+  if (/^(Detailed Explanation of Code|Key Points to Remember|Basic Example|Example|Deep Dive & Internals|Architecture Overview|Summary|Best Practices):?$/i.test(clean)) {
     return `<h3>${escapeHtml(clean.replace(/:$/, ''))}</h3>\n`;
   }
 
-  // If prose lines start with bullets (•, o, ▪, -)
-  const lines = clean.split('\n').map(l => l.trim()).filter(Boolean);
-  if (lines.length > 0 && lines.every(l => /^[•o\*\-▪]/.test(l))) {
-    return renderListBlock(lines);
-  }
-
-  if (lines.length > 1 && lines.some(l => /^[•o\*\-▪]/.test(l))) {
-    let out = '';
-    let curListItems = [];
-    for (const line of lines) {
-      if (/^[•o\*\-▪]/.test(line)) {
-        curListItems.push(line);
-      } else {
-        if (curListItems.length > 0) {
-          out += renderListBlock(curListItems);
-          curListItems = [];
-        }
-        out += `<p>${formatProseText(line)}</p>\n`;
-      }
-    }
-    if (curListItems.length > 0) {
-      out += renderListBlock(curListItems);
-    }
-    return out;
+  // Capitalize opening letter if lowercase (unless URL)
+  if (/^[a-z]/.test(clean) && !clean.startsWith('http://') && !clean.startsWith('https://')) {
+    clean = clean.charAt(0).toUpperCase() + clean.slice(1);
   }
 
   return `<p>${formatProseText(clean)}</p>\n`;
@@ -235,10 +223,27 @@ function generateArticleContent(secJson, cheatJson, searchEntries, secNum, secTi
     });
   });
 
-  // Merge consecutive code blocks and consecutive list items
+  // Merge consecutive code blocks, list items, and continuation prose
   const mergedBlocks = [];
   let curCode = null;
   let curList = null;
+  let curProse = null;
+
+  function flushAcc() {
+    if (curCode) {
+      curCode.text = curCode.lines.join('\n');
+      mergedBlocks.push(curCode);
+      curCode = null;
+    }
+    if (curList) {
+      mergedBlocks.push(curList);
+      curList = null;
+    }
+    if (curProse) {
+      mergedBlocks.push(curProse);
+      curProse = null;
+    }
+  }
 
   for (const b of allBlocks) {
     if (b.type === 'banner_header') {
@@ -246,10 +251,8 @@ function generateArticleContent(secJson, cheatJson, searchEntries, secNum, secTi
     }
 
     if (b.type === 'code') {
-      if (curList) {
-        mergedBlocks.push(curList);
-        curList = null;
-      }
+      if (curList) { mergedBlocks.push(curList); curList = null; }
+      if (curProse) { mergedBlocks.push(curProse); curProse = null; }
       if (!curCode) {
         curCode = { type: 'code', lines: [...b.lines], pageNum: b.pageNum };
       } else {
@@ -265,6 +268,7 @@ function generateArticleContent(secJson, cheatJson, searchEntries, secNum, secTi
     }
 
     if (b.type === 'list_item') {
+      if (curProse) { mergedBlocks.push(curProse); curProse = null; }
       if (!curList) {
         curList = { type: 'list', items: [b.text], pageNum: b.pageNum };
       } else {
@@ -278,16 +282,44 @@ function generateArticleContent(secJson, cheatJson, searchEntries, secNum, secTi
       curList = null;
     }
 
+    if (b.type === 'prose') {
+      const nextTrim = b.text.trim();
+      const startsLower = /^[a-z]/.test(nextTrim);
+
+      if (curList && startsLower) {
+        curList.items[curList.items.length - 1] += ' ' + nextTrim;
+        continue;
+      }
+
+      if (curList) {
+        mergedBlocks.push(curList);
+        curList = null;
+      }
+
+      if (!curProse) {
+        curProse = { type: 'prose', text: b.text, pageNum: b.pageNum };
+      } else {
+        const prevTrim = curProse.text.trim();
+        const endsUnfinished = !/[.?!:]$/.test(prevTrim) || /[,;\-–—]$/.test(prevTrim) || /\b(to|your|the|a|an|of|in|for|with|and|or|that|which|is|are|as|by|from|at)$/i.test(prevTrim);
+        if (endsUnfinished || startsLower) {
+          curProse.text += ' ' + nextTrim;
+        } else {
+          mergedBlocks.push(curProse);
+          curProse = { type: 'prose', text: b.text, pageNum: b.pageNum };
+        }
+      }
+      continue;
+    }
+
+    if (curProse) {
+      mergedBlocks.push(curProse);
+      curProse = null;
+    }
+
     mergedBlocks.push(b);
   }
 
-  if (curCode) {
-    curCode.text = curCode.lines.join('\n');
-    mergedBlocks.push(curCode);
-  }
-  if (curList) {
-    mergedBlocks.push(curList);
-  }
+  flushAcc();
 
   // Render merged blocks
   for (const b of mergedBlocks) {
@@ -296,7 +328,12 @@ function generateArticleContent(secJson, cheatJson, searchEntries, secNum, secTi
       if (!headingText) continue;
 
       const slug = getUniqueSlug(headingText);
-      tocItems.push({ id: slug, title: headingText, level: 2 });
+      const isSubheading = /^\d+\./.test(headingText) ||
+        /^(Detailed Explanation|Key Points|Basic Example|Example|Architecture Overview|Best Practices)/i.test(headingText);
+      const tag = isSubheading ? 'h3' : 'h2';
+      const level = isSubheading ? 3 : 2;
+
+      tocItems.push({ id: slug, title: headingText, level: level });
 
       searchEntries.push({
         id: `${secNum}-${slug}`,
@@ -309,7 +346,7 @@ function generateArticleContent(secJson, cheatJson, searchEntries, secNum, secTi
         snippet: `Section ${secNum} topic: ${headingText}`
       });
 
-      html += `\n<h2 id="${slug}">${escapeHtml(headingText)}</h2>\n`;
+      html += `\n<${tag} id="${slug}">${escapeHtml(headingText)}</${tag}>\n`;
     } else if (b.type === 'code') {
       html += renderCodeBlock(b.text);
     } else if (b.type === 'list') {
@@ -368,15 +405,30 @@ function generateArticleContent(secJson, cheatJson, searchEntries, secNum, secTi
     const mergedCheatBlocks = [];
     let curCheatCode = null;
     let curCheatList = null;
+    let curCheatProse = null;
+
+    function flushCheatAcc() {
+      if (curCheatCode) {
+        curCheatCode.text = curCheatCode.lines.join('\n');
+        mergedCheatBlocks.push(curCheatCode);
+        curCheatCode = null;
+      }
+      if (curCheatList) {
+        mergedCheatBlocks.push(curCheatList);
+        curCheatList = null;
+      }
+      if (curCheatProse) {
+        mergedCheatBlocks.push(curCheatProse);
+        curCheatProse = null;
+      }
+    }
 
     for (const cb of allCheatBlocks) {
       if (cb.type === 'banner_header') continue;
 
       if (cb.type === 'code') {
-        if (curCheatList) {
-          mergedCheatBlocks.push(curCheatList);
-          curCheatList = null;
-        }
+        if (curCheatList) { mergedCheatBlocks.push(curCheatList); curCheatList = null; }
+        if (curCheatProse) { mergedCheatBlocks.push(curCheatProse); curCheatProse = null; }
         if (!curCheatCode) {
           curCheatCode = { type: 'code', lines: [...cb.lines], pageNum: cb.pageNum };
         } else {
@@ -392,6 +444,7 @@ function generateArticleContent(secJson, cheatJson, searchEntries, secNum, secTi
       }
 
       if (cb.type === 'list_item') {
+        if (curCheatProse) { mergedCheatBlocks.push(curCheatProse); curCheatProse = null; }
         if (!curCheatList) {
           curCheatList = { type: 'list', items: [cb.text], pageNum: cb.pageNum };
         } else {
@@ -405,16 +458,44 @@ function generateArticleContent(secJson, cheatJson, searchEntries, secNum, secTi
         curCheatList = null;
       }
 
+      if (cb.type === 'prose') {
+        const nextTrim = cb.text.trim();
+        const startsLower = /^[a-z]/.test(nextTrim);
+
+        if (curCheatList && startsLower) {
+          curCheatList.items[curCheatList.items.length - 1] += ' ' + nextTrim;
+          continue;
+        }
+
+        if (curCheatList) {
+          mergedCheatBlocks.push(curCheatList);
+          curCheatList = null;
+        }
+
+        if (!curCheatProse) {
+          curCheatProse = { type: 'prose', text: cb.text, pageNum: cb.pageNum };
+        } else {
+          const prevTrim = curCheatProse.text.trim();
+          const endsUnfinished = !/[.?!:]$/.test(prevTrim) || /[,;\-–—]$/.test(prevTrim) || /\b(to|your|the|a|an|of|in|for|with|and|or|that|which|is|are|as|by|from|at)$/i.test(prevTrim);
+          if (endsUnfinished || startsLower) {
+            curCheatProse.text += ' ' + nextTrim;
+          } else {
+            mergedCheatBlocks.push(curCheatProse);
+            curCheatProse = { type: 'prose', text: cb.text, pageNum: cb.pageNum };
+          }
+        }
+        continue;
+      }
+
+      if (curCheatProse) {
+        mergedCheatBlocks.push(curCheatProse);
+        curCheatProse = null;
+      }
+
       mergedCheatBlocks.push(cb);
     }
 
-    if (curCheatCode) {
-      curCheatCode.text = curCheatCode.lines.join('\n');
-      mergedCheatBlocks.push(curCheatCode);
-    }
-    if (curCheatList) {
-      mergedCheatBlocks.push(curCheatList);
-    }
+    flushCheatAcc();
 
     // Render merged cheatsheet blocks
     for (const cb of mergedCheatBlocks) {
@@ -783,8 +864,9 @@ async function generateAll() {
     3: { bg: 'rgba(168, 85, 247, 0.12)', color: '#c084fc', border: 'rgba(168, 85, 247, 0.35)' },
     4: { bg: 'rgba(79, 70, 229, 0.12)', color: '#818cf8', border: 'rgba(79, 70, 229, 0.35)' },
     5: { bg: 'rgba(6, 182, 212, 0.12)', color: '#22d3ee', border: 'rgba(6, 182, 212, 0.35)' },
-    6: { bg: 'rgba(217, 70, 239, 0.12)', color: '#e879f9', border: 'rgba(217, 70, 239, 0.35)' },
-    7: { bg: 'rgba(244, 63, 94, 0.12)', color: '#fb7185', border: 'rgba(244, 63, 94, 0.35)' }
+    6: { bg: 'rgba(16, 185, 129, 0.12)', color: '#34d399', border: 'rgba(16, 185, 129, 0.35)' },
+    7: { bg: 'rgba(217, 70, 239, 0.12)', color: '#e879f9', border: 'rgba(217, 70, 239, 0.35)' },
+    8: { bg: 'rgba(244, 63, 94, 0.12)', color: '#fb7185', border: 'rgba(244, 63, 94, 0.35)' }
   };
 
   let moduleCardsHtml = '';
@@ -807,28 +889,7 @@ async function generateAll() {
       `;
     }
 
-    const isFeatured = (mod.module_number === manifest.modules.length);
-    if (isFeatured) {
-      moduleCardsHtml += `
-      <div class="module-card module-card-featured">
-        <div class="module-card-content-left">
-          <div class="module-card-header">
-            <span class="module-badge" style="background: ${badge.bg}; color: ${badge.color}; border: 1px solid ${badge.border};">
-              Module ${mod.module_number}
-            </span>
-            <span class="tag-pill">${modSections.length} Sections</span>
-            <span class="tag-pill" style="border-color: var(--accent-primary); color: var(--accent-primary);">Capstone &amp; Modern APIs</span>
-          </div>
-          <h3 class="module-card-title">${escapeHtml(mod.title)}</h3>
-          <p class="module-card-desc">${escapeHtml(mod.description)}</p>
-        </div>
-        <ul class="module-sec-list">
-          ${secListItems}
-        </ul>
-      </div>
-      `;
-    } else {
-      moduleCardsHtml += `
+    moduleCardsHtml += `
       <div class="module-card">
         <div class="module-card-header">
           <span class="module-badge" style="background: ${badge.bg}; color: ${badge.color}; border: 1px solid ${badge.border};">
@@ -842,8 +903,7 @@ async function generateAll() {
           ${secListItems}
         </ul>
       </div>
-      `;
-    }
+    `;
   }
 
   // Directory table rows

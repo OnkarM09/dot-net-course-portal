@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -398,35 +408,44 @@
 
       <!-- Body Content -->
       <article class="docs-content">
-        <p>ASP.NET Core Environments
-In ASP.NET Core, environments are named configurations that allow you to tailor your application&#39;s
-behavior to different deployment scenarios. This helps you manage settings, configurations, and
-middleware pipelines that are specific to development, testing, staging, or production environments.</p>
+        
+<h2 id="aspnet-core-environments">ASP.NET Core Environments</h2>
+<p>In ASP.NET Core, environments are named configurations that allow you to tailor your application&#39;s behavior to different deployment scenarios. This helps you manage settings, configurations, and middleware pipelines that are specific to development, testing, staging, or production environments.</p>
 
 <h2 id="common-environments">Common Environments</h2>
 <ul>
   <li>Development: Your local development environment. It&#39;s where you build and test your
-      application.</li>
+application.</li>
   <li>Staging: A pre-production environment that closely mirrors your production setup. You use
-      it for final testing and validation.</li>
+it for final testing and validation.</li>
   <li>Production: Your live environment where users interact with your application.</li>
 </ul>
 
 <h2 id="setting-the-environment">Setting the Environment</h2>
-<p>ASP.NET Core reads the environment from the ASPNETCORE_ENVIRONMENT environment variable
-when your application starts. The value of this variable determines the active environment.</p>
+<p>ASP.NET Core reads the environment from the ASPNETCORE_ENVIRONMENT environment variable when your application starts. The value of this variable determines the active environment.</p>
 
 <h2 id="how-to-set-the-environment">How to Set the Environment</h2>
 <ul>
   <li><code>launchSettings.json</code>: For Visual Studio, you can set the ASPNETCORE_ENVIRONMENT
-      variable in the <code>launchSettings.json</code> file within your project&#39;s Properties folder.</li>
+variable in the <code>launchSettings.json</code> file within your project&#39;s Properties folder.</li>
   <li>Environment Variables: Set the ASPNETCORE_ENVIRONMENT variable directly in your
-      system&#39;s environment variables.</li>
+system&#39;s environment variables.</li>
   <li>Command Line: When running your application from the command line, you can set the
-      environment variable using the --environment or -e flag:Bash
-dotnet run --environment Staging</li>
+environment variable using the --environment or -e flag:Bash</li>
 </ul>
-<p>Using Environments in <code>Program.cs</code></p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">CLI</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-bash">dotnet run --environment Staging</code></pre>
+    </div>
+  
+<h2 id="using-environments-in-programcs">Using Environments in Program.cs</h2>
 <ol>
   <li>Retrieving the Environment:</li>
 </ol>
@@ -445,7 +464,7 @@ var environment = builder.Environment;</code></pre>
   <p>The environment object gives you access to the current environment&#39;s name and other properties.</p>
 <ol>
   <li>Conditional Configuration: You can use conditional logic based on the environment name to
-      configure different settings or middleware.</li>
+configure different settings or middleware.</li>
 </ol>
 <p>C#</p>
 
@@ -459,38 +478,36 @@ var environment = builder.Environment;</code></pre>
       </div>
       <pre><code class="language-csharp">if (app.Environment.IsDevelopment())
 {
-  app.UseDeveloperExceptionPage(); // Use a detailed error page in development
+app.UseDeveloperExceptionPage(); // Use a detailed error page in development
 }
 else
 {
-  app.UseExceptionHandler(&quot;/Error&quot;); // Use a generic error page in production
-}
-   3. Environment-Specific Configuration Files:</code></pre>
+app.UseExceptionHandler(&quot;/Error&quot;); // Use a generic error page in production
+}</code></pre>
     </div>
   <ul>
-  <li>You can create environment-specific configuration files like</li>
-</ul>
-<p>appsettings.Development.json, appsettings.Staging.json, and</p>
-<p>appsettings.Production.json.</p>
-<ul>
+  <li>3. Environment-Specific Configuration Files:</li>
+  <li>You can create environment-specific configuration files like
+appsettings.Development.json, appsettings.Staging.json, and
+appsettings.Production.json.</li>
   <li>ASP.NET Core automatically loads the appropriate configuration file based on the
-           current environment.</li>
+current environment.</li>
   <li>Use these files to store settings that vary between environments, such as database
-           connection strings or API keys.</li>
+connection strings or API keys.</li>
   <li>These files override the settings in the <code>appsettings.json</code>.</li>
 </ul>
 
-<h2 id="best-practices">Best Practices</h2>
+<h3 id="best-practices">Best Practices</h3>
 <ul>
   <li>Environment-Specific Configuration: Separate your configuration into environment-specific
-      files to avoid exposing sensitive data (like production database credentials) in your
-      development environment.</li>
+files to avoid exposing sensitive data (like production database credentials) in your
+development environment.</li>
   <li>Middleware Pipelines: Tailor your middleware pipelines for each environment. For example,
-      use UseDeveloperExceptionPage in development but UseExceptionHandler in production.</li>
+use UseDeveloperExceptionPage in development but UseExceptionHandler in production.</li>
   <li>Logging: Configure different logging levels and targets for different environments (e.g., more
-      verbose logging in development).</li>
+verbose logging in development).</li>
   <li>Feature Flags: Use environment variables or configuration values to toggle features on or off
-      depending on the environment.</li>
+depending on the environment.</li>
 </ul>
 <p>Example (<code>Program.cs</code>)</p>
 
@@ -506,15 +523,15 @@ else
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
-  // Development-specific configuration
+// Development-specific configuration
 }
 else if (app.Environment.IsStaging())
 {
-  // Staging-specific configuration
+// Staging-specific configuration
 }
 else // Production
 {
-  // Production-specific configuration
+// Production-specific configuration
 }
 // ... Rest of your application setup ...</code></pre>
     </div>
@@ -523,16 +540,14 @@ else // Production
 <ul>
   <li>Flexibility: Environments allow you to easily adapt your application to different scenarios.</li>
   <li>Configuration: Use environment-specific configuration files (appsettings.{Environment}.json)
-      for organization.</li>
+for organization.</li>
   <li>Middleware: Customize middleware pipelines based on the environment.</li>
   <li>Best Practices: Follow the best practices mentioned above to ensure a smooth deployment
-      process and optimal behavior in each environment.</li>
+process and optimal behavior in each environment.</li>
 </ul>
-<p>Understanding <code>launchSettings.json</code>
-This file is primarily used by Visual Studio to configure how your ASP.NET Core application launches
-during development. It contains settings for different profiles (e.g., IIS Express, ProjectName) and
-provides a convenient way to set environment variables without modifying your system&#39;s global
-environment variables.</p>
+
+<h2 id="understanding-launchsettingsjson">Understanding launchSettings.json</h2>
+<p>This file is primarily used by Visual Studio to configure how your ASP.NET Core application launches during development. It contains settings for different profiles (e.g., IIS Express, ProjectName) and provides a convenient way to set environment variables without modifying your system&#39;s global environment variables.</p>
 
 <h2 id="location">Location</h2>
 <p>You&#39;ll find <code>launchSettings.json</code> in the Properties folder within your project&#39;s root directory.</p>
@@ -548,31 +563,30 @@ environment variables.</p>
         </button>
       </div>
       <pre><code class="language-json">{
- &quot;iisSettings&quot;: { ... }, ) // Settings for IIS Express (if used
- &quot;profiles&quot;: {
-  &quot;IIS Express&quot;: { ... }, // Configuration for IIS Express profile
-  &quot;YourProjectName&quot;: { // Configuration for running the project directly
-  &quot;commandName&quot;: &quot;Project&quot;,
-  &quot;dotnetRunMessages&quot;: &quot;true&quot;,
-  &quot;launchBrowser&quot;: true,
-  &quot;applicationUrl&quot;: &quot;https://localhost:7272;http://localhost:5248&quot;, // URLs to launch
-  &quot;environmentVariables&quot;: {
-   &quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot; // Setting the environment
-  }
-  }
- }
+&quot;iisSettings&quot;: { ... }, ) // Settings for IIS Express (if used
+&quot;profiles&quot;: {
+&quot;IIS Express&quot;: { ... }, // Configuration for IIS Express profile
+&quot;YourProjectName&quot;: { // Configuration for running the project directly
+&quot;commandName&quot;: &quot;Project&quot;,
+&quot;dotnetRunMessages&quot;: &quot;true&quot;,
+&quot;launchBrowser&quot;: true,
+&quot;applicationUrl&quot;: &quot;https://localhost:7272;http://localhost:5248&quot;, // URLs to launch
+&quot;environmentVariables&quot;: {
+&quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot; // Setting the environment
+}
+}
+}
 }</code></pre>
     </div>
-  <p>Setting the ASPNETCORE_ENVIRONMENT Variable
-Within the environmentVariables section of the desired profile (e.g., &quot;YourProjectName&quot;), you can
-set the ASPNETCORE_ENVIRONMENT variable to one of the standard values:</p>
+  <p>Setting the ASPNETCORE_ENVIRONMENT Variable Within the environmentVariables section of the desired profile (e.g., &quot;YourProjectName&quot;), you can set the ASPNETCORE_ENVIRONMENT variable to one of the standard values:</p>
 <ul>
   <li>Development: For local development and debugging.</li>
   <li>Staging: For pre-production testing.</li>
   <li>Production: For the live environment.</li>
 </ul>
-<p>You can also use a custom environment name if needed.
-Example: Setting the Development Environment</p>
+<p>You can also use a custom environment name if needed.</p>
+
+<h3 id="example-setting-the-development-environment">Example: Setting the Development Environment</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -583,34 +597,28 @@ Example: Setting the Development Environment</p>
         </button>
       </div>
       <pre><code class="language-csharp">&quot;environmentVariables&quot;: {
- &quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot;
+&quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;Development&quot;
 }</code></pre>
     </div>
-  <p>How It Works
-When you launch your application from Visual Studio using a specific profile, the
-environmentVariables settings are applied to the running process. This ensures that your application
-reads the correct value for ASPNETCORE_ENVIRONMENT, which in turn influences which
-configuration settings are loaded (from <code>appsettings.json</code>, appsettings.Development.json, etc.) and
-which middleware pipelines are used.</p>
+  <p>How It Works When you launch your application from Visual Studio using a specific profile, the environmentVariables settings are applied to the running process. This ensures that your application reads the correct value for ASPNETCORE_ENVIRONMENT, which in turn influences which configuration settings are loaded (from <code>appsettings.json</code>, appsettings.Development.json, etc.) and which middleware pipelines are used.</p>
 
 <h2 id="important-considerations">Important Considerations</h2>
 <ul>
   <li>Environment-Specific Configuration Files: Remember that you&#39;ll still need to create
-      environment-specific configuration files (e.g., appsettings.Development.json) to store
-      settings that vary between environments. <code>launchSettings.json</code> only sets the environment
-      variable.</li>
+environment-specific configuration files (e.g., appsettings.Development.json) to store
+settings that vary between environments. <code>launchSettings.json</code> only sets the environment
+variable.</li>
   <li>Local Development: The <code>launchSettings.json</code> file is primarily for local development with
-      Visual Studio. When you deploy your application to a server, you&#39;ll typically set the
-      ASPNETCORE_ENVIRONMENT variable through the hosting environment&#39;s configuration
-      (e.g., in the web server&#39;s configuration file or environment variables).</li>
+Visual Studio. When you deploy your application to a server, you&#39;ll typically set the
+ASPNETCORE_ENVIRONMENT variable through the hosting environment&#39;s configuration
+(e.g., in the web server&#39;s configuration file or environment variables).</li>
   <li>Multiple Profiles: <code>launchSettings.json</code> can contain multiple profiles, each with its own set of
-      environment variables. This allows you to easily switch between different configurations
-      during development.</li>
+environment variables. This allows you to easily switch between different configurations
+during development.</li>
 </ul>
 
 <h2 id="developer-exception-page">Developer Exception Page</h2>
-<p>The Developer Exception Page is a powerful tool in ASP.NET Core for diagnosing exceptions during
-development. It provides a detailed view of the exception, including:</p>
+<p>The Developer Exception Page is a powerful tool in ASP.NET Core for diagnosing exceptions during development. It provides a detailed view of the exception, including:</p>
 <ul>
   <li>Stack trace</li>
   <li>Request details (headers, query string, cookies)</li>
@@ -622,25 +630,24 @@ This information is invaluable for identifying and fixing issues quickly.</li>
 <h2 id="environment-specific-behavior">Environment-Specific Behavior</h2>
 <ul>
   <li>Development: The Developer Exception Page is enabled by default in the Development
-      environment. This makes sense because during development, you want as much information
-      as possible to help you troubleshoot.</li>
+environment. This makes sense because during development, you want as much information
+as possible to help you troubleshoot.</li>
   <li>Production and Other Environments: In production or other non-development
-      environments, this page is typically disabled due to security concerns. Exposing detailed
-      exception information to the public could reveal vulnerabilities or sensitive details about
-      your application&#39;s internal workings.</li>
+environments, this page is typically disabled due to security concerns. Exposing detailed
+exception information to the public could reveal vulnerabilities or sensitive details about
+your application&#39;s internal workings.</li>
 </ul>
-<p>IWebHostEnvironment Interface: Accessing Environment Information</p>
-<p>The IWebHostEnvironment interface gives you access to information about the hosting environment</p>
-<ul>
-  <li>f your ASP.NET Core application. It includes properties like:</li>
-</ul>
+
+<h2 id="iwebhostenvironment-interface-accessing-environment-information">IWebHostEnvironment Interface: Accessing Environment Information</h2>
+<p>The IWebHostEnvironment interface gives you access to information about the hosting environment of your ASP.NET Core application. It includes properties like:</p>
 <ul>
   <li>EnvironmentName: The name of the current environment (Development, Staging,
-      Production, or a custom name).</li>
+Production, or a custom name).</li>
   <li>WebRootPath: The path to the application&#39;s web root directory.</li>
   <li>ContentRootPath: The path to the application&#39;s content root directory.</li>
 </ul>
-<p>Using IWebHostEnvironment and app.Environment</p>
+
+<h2 id="using-iwebhostenvironment-and-appenvironment">Using IWebHostEnvironment and app.Environment</h2>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -653,22 +660,20 @@ This information is invaluable for identifying and fixing issues quickly.</li>
       <pre><code class="language-csharp">// HomeController.cs
 public class HomeController : Controller
 {
-  private readonly IWebHostEnvironment _webHostEnvironment; // Injected
-  public HomeController(IWebHostEnvironment webHostEnvironment)
-  {
-   _webHostEnvironment = webHostEnvironment;
-  }
-  [Route(&quot;/&quot;)]
-  public IActionResult Index()
-  {
-   ViewBag.CurrentEnviornment = _webHostEnvironment.EnvironmentName;
-   return View();
-  }
+private readonly IWebHostEnvironment _webHostEnvironment; // Injected
+public HomeController(IWebHostEnvironment webHostEnvironment)
+{
+_webHostEnvironment = webHostEnvironment;
+}
+[Route(&quot;/&quot;)]
+public IActionResult Index()
+{
+ViewBag.CurrentEnviornment = _webHostEnvironment.EnvironmentName;
+return View();
+}
 }</code></pre>
     </div>
-  <p>In this code, the IWebHostEnvironment is injected into the HomeController. The current
-environment name (_webHostEnvironment.EnvironmentName) is then assigned to
-ViewBag.CurrentEnvironment and sent to the view to display.</p>
+  <p>In this code, the IWebHostEnvironment is injected into the HomeController. The current environment name (_webHostEnvironment.EnvironmentName) is then assigned to ViewBag.CurrentEnvironment and sent to the view to display.</p>
 
 <h2 id="enabling-the-developer-exception-page-in-specific-environments">Enabling the Developer Exception Page in Specific Environments</h2>
 
@@ -684,11 +689,10 @@ ViewBag.CurrentEnvironment and sent to the view to display.</p>
 if (app.Environment.IsDevelopment() || app.Environment.IsStaging() ||
 app.Environment.IsEnvironment(&quot;Beta&quot;))
 {
-  app.UseDeveloperExceptionPage();
+app.UseDeveloperExceptionPage();
 }</code></pre>
     </div>
-  <p>In this code snippet, the Developer Exception Page is only enabled if the environment is
-Development, Staging, or a custom environment named &quot;Beta&quot;. You can use</p>
+  <p>In this code snippet, the Developer Exception Page is only enabled if the environment is Development, Staging, or a custom environment named &quot;Beta&quot;. You can use</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -701,47 +705,38 @@ Development, Staging, or a custom environment named &quot;Beta&quot;. You can us
       <pre><code class="language-csharp">app.Environment.IsDevelopment() etc. because they are just shorthands for
 app.Environment.EnvironmentName == &quot;Development&quot;. This can be helpful in scenarios where you</code></pre>
     </div>
-  <p>want to include staging in your development processes.</p>
+  <p>Want to include staging in your development processes.</p>
 
 <h2 id="notes-1">Notes</h2>
 <ul>
   <li>Purpose: The Developer Exception Page provides detailed error information during
-      development.</li>
+development.</li>
   <li>Environments: It&#39;s enabled by default in Development, but you can customize its behavior
-      based on other environments.</li>
+based on other environments.</li>
   <li>IWebHostEnvironment: Use this interface to access environment information within your
-      controllers or middleware.</li>
+controllers or middleware.</li>
   <li>Security: Always disable the Developer Exception Page in production to avoid exposing
-      sensitive details.</li>
+sensitive details.</li>
   <li>Custom Error Pages: For production, use app.UseExceptionHandler to create custom error
-      pages that provide a user-friendly message without revealing internal information.</li>
+pages that provide a user-friendly message without revealing internal information.</li>
 </ul>
-<p>&lt;environment&gt; Tag Helper
-The &lt;environment&gt; tag helper is a versatile tool that allows you to include or exclude specific
-content in your views depending on the current environment your ASP.NET Core application is
-running in.
-This is particularly useful for scenarios where you want to:</p>
+<p>&lt;environment&gt; Tag Helper The &lt;environment&gt; tag helper is a versatile tool that allows you to include or exclude specific content in your views depending on the current environment your ASP.NET Core application is running in. This is particularly useful for scenarios where you want to:</p>
 <ul>
   <li>Include Development Resources: Load unminified CSS or JavaScript files during
-      development to facilitate debugging and testing.</li>
+development to facilitate debugging and testing.</li>
   <li>Optimize for Production: Load minified and bundled assets in production to improve
-      performance.</li>
+performance.</li>
   <li>Display Environment-Specific Content: Show different messages, warnings, or features
-      based on the environment.</li>
+based on the environment.</li>
 </ul>
 
 <h2 id="syntax">Syntax</h2>
-<p>&lt;environment include=&quot;Environment1,Environment2,...&quot;&gt;
-  Content to render if the environment matches any of the included environments
-&lt;/environment&gt;
-&lt;environment exclude=&quot;Environment1,Environment2,...&quot;&gt;
-  Content to render if the environment does NOT match any of the excluded environments</p>
-<p>&lt;/environment&gt;</p>
+<p>&lt;environment include=&quot;Environment1,Environment2,...&quot;&gt; Content to render if the environment matches any of the included environments &lt;/environment&gt; &lt;environment exclude=&quot;Environment1,Environment2,...&quot;&gt; Content to render if the environment does NOT match any of the excluded environments &lt;/environment&gt;</p>
 <ul>
   <li>include: A comma-separated list of environment names for which the content should be
-      rendered.</li>
+rendered.</li>
   <li>exclude: A comma-separated list of environment names for which the content should not be
-      rendered.</li>
+rendered.</li>
 </ul>
 
 <h2 id="environment-names">Environment Names</h2>
@@ -753,19 +748,13 @@ This is particularly useful for scenarios where you want to:</p>
 <h2 id="how-it-works">How It Works</h2>
 <ol>
   <li>Environment Check: The &lt;environment&gt; tag helper reads the value of the
-      ASPNETCORE_ENVIRONMENT environment variable to determine the current environment.</li>
+ASPNETCORE_ENVIRONMENT environment variable to determine the current environment.</li>
   <li>Conditional Rendering: Based on the include or exclude attributes and the current
-      environment, it either renders or skips the content within the tag helper.</li>
+environment, it either renders or skips the content within the tag helper.</li>
 </ol>
 
 <h2 id="code-examples">Code Examples</h2>
-<p>&lt;environment include=&quot;Development&quot;&gt;
-  &lt;link rel=&quot;stylesheet&quot; href=&quot;~/css/site.css&quot; /&gt;
-&lt;/environment&gt;
-&lt;environment exclude=&quot;Development&quot;&gt;
-  &lt;link rel=&quot;stylesheet&quot; href=&quot;~/css/site.min.css&quot; /&gt;
-&lt;/environment&gt;
-In this example:</p>
+<p>&lt;environment include=&quot;Development&quot;&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;~/css/site.css&quot; /&gt; &lt;/environment&gt; &lt;environment exclude=&quot;Development&quot;&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;~/css/site.min.css&quot; /&gt; &lt;/environment&gt; In this example:</p>
 <ul>
   <li>The unminified site.css file is loaded only in the Development environment.</li>
   <li>The minified site.min.css file is loaded in all other environments.</li>
@@ -774,43 +763,46 @@ In this example:</p>
 <h2 id="notes-2">Notes</h2>
 <ul>
   <li>Flexibility: Easily adapt your views to different environments without complex conditional
-      logic.</li>
+logic.</li>
   <li>Performance Optimization: Serve optimized assets in production while retaining flexibility in
-      development.</li>
+development.</li>
   <li>Environment-Specific Content: Display warnings, messages, or debug tools only when
-      needed.</li>
+needed.</li>
 </ul>
 
-<h2 id="best-practices-1">Best Practices</h2>
+<h3 id="best-practices-1">Best Practices</h3>
 <ul>
   <li>Use for Static Assets: Primarily leverage the &lt;environment&gt; tag helper for including or
-      excluding static files (CSS, JavaScript) based on the environment.</li>
+excluding static files (CSS, JavaScript) based on the environment.</li>
   <li>Avoid Complex Logic: Keep the content within &lt;environment&gt; tags relatively simple. If you
-      need more complex logic, consider using a partial view or a view component.</li>
+need more complex logic, consider using a partial view or a view component.</li>
   <li>Custom Environments: If you need more than the standard environments, define and use
-      your own.</li>
+your own.</li>
 </ul>
 
 <h2 id="set-the-environment-from-the-terminal">Set the Environment from the Terminal</h2>
 <ul>
   <li>Flexibility: Setting the environment variable directly from the terminal allows you to easily
-      switch between different environments (development, staging, production) without
-      modifying configuration files or IDE settings.</li>
+switch between different environments (development, staging, production) without
+modifying configuration files or IDE settings.</li>
   <li>Automation: This approach is easily scriptable, enabling you to automate deployment
-      processes and seamlessly change configurations for different environments.</li>
+processes and seamlessly change configurations for different environments.</li>
   <li>Non-Windows Environments: If you&#39;re working on macOS or Linux, the terminal is the
-      primary way to manage environment variables.</li>
+primary way to manage environment variables.</li>
 </ul>
-<p>Setting ASPNETCORE_ENVIRONMENT in PowerShell</p>
+
+<h2 id="setting-aspnetcore_environment-in-powershell">Setting ASPNETCORE_ENVIRONMENT in PowerShell</h2>
 <ul>
-  <li>Windows, macOS, Linux:
-$env:ASPNETCORE_ENVIRONMENT = &quot;Development&quot; # Set to Development
-$env:ASPNETCORE_ENVIRONMENT = &quot;Production&quot; # Set to Production</li>
-  <li>Scope: In PowerShell, environment variables set with $env: are typically limited to the
-      current session. To make them persistent, you need to modify the system or user
-      environment variables (see below).</li>
+  <li>Windows, macOS, Linux:</li>
 </ul>
-<p>Setting ASPNETCORE_ENVIRONMENT in Command Prompt</p>
+<p>$env:ASPNETCORE_ENVIRONMENT = &quot;Development&quot; # Set to Development $env:ASPNETCORE_ENVIRONMENT = &quot;Production&quot; # Set to Production</p>
+<ul>
+  <li>Scope: In PowerShell, environment variables set with $env: are typically limited to the
+current session. To make them persistent, you need to modify the system or user
+environment variables (see below).</li>
+</ul>
+
+<h2 id="setting-aspnetcore_environment-in-command-prompt">Setting ASPNETCORE_ENVIRONMENT in Command Prompt</h2>
 <ul>
   <li>Windows:
 set ASPNETCORE_ENVIRONMENT=Development # Set to Development
@@ -820,61 +812,91 @@ command prompt session. To make them persistent, use the /M switch:
 setx ASPNETCORE_ENVIRONMENT Development /M # Set for the user account (persistent)</li>
   <li>macOS and Linux (bash):
 export ASPNETCORE_ENVIRONMENT=Development # Set to Development
-export ASPNETCORE_ENVIRONMENT=Production # Set to Production
-Making Environment Variables Persistent</li>
+export ASPNETCORE_ENVIRONMENT=Production # Set to Production</li>
+</ul>
+
+<h2 id="making-environment-variables-persistent">Making Environment Variables Persistent</h2>
+<ul>
   <li>Windows (System Properties):</li>
   <li>1. Right-click on &quot;This PC&quot; and select &quot;Properties&quot;.</li>
   <li>2. Click on &quot;Advanced system settings&quot;.</li>
   <li>3. Click the &quot;Environment Variables&quot; button.</li>
   <li>4. Under &quot;System variables&quot; (or &quot;User variables&quot; for a specific user), click &quot;New&quot;.</li>
   <li>5. Enter ASPNETCORE_ENVIRONMENT as the variable name and the desired
-           environment as the value.</li>
+environment as the value.</li>
   <li>macOS and Linux (Shell Configuration Files):</li>
   <li>Edit your shell&#39;s configuration file (.bashrc, .zshrc, etc.) and add the following line
-           (replacing Development with your desired environment):Bash
+(replacing Development with your desired environment):Bash
 export ASPNETCORE_ENVIRONMENT=Development</li>
   <li>After saving the file, run source ~/.bashrc (or the appropriate command for your
-           shell) to reload the configuration.</li>
+shell) to reload the configuration.</li>
 </ul>
 
 <h2 id="important-considerations-1">Important Considerations</h2>
 <ul>
   <li>Overriding: When multiple ways of setting the environment are used, the most specific one
-      takes precedence. For example, a value set in the terminal will override the value in
-      <code>launchSettings.json</code>.</li>
+takes precedence. For example, a value set in the terminal will override the value in
+<code>launchSettings.json</code>.</li>
   <li>Case-Sensitivity (Linux/macOS): Environment variable names are case-sensitive on Linux
-      and macOS. Be sure to use the correct capitalization (ASPNETCORE_ENVIRONMENT).</li>
+and macOS. Be sure to use the correct capitalization (ASPNETCORE_ENVIRONMENT).</li>
   <li>Environment-Specific Configuration Files: Even after setting the environment variable,
-      ensure you have the corresponding appsettings.{Environment}.json files in your project to
-      load the correct settings for that environment.</li>
+ensure you have the corresponding appsettings.{Environment}.json files in your project to
+load the correct settings for that environment.</li>
 </ul>
-<p>Example: Running Your App with Different Environments
-# PowerShell
-$env:ASPNETCORE_ENVIRONMENT = &quot;Development&quot;
-dotnet run
-# Command Prompt (Windows)
-set ASPNETCORE_ENVIRONMENT=Production
-dotnet run
-# bash (macOS/Linux)
-export ASPNETCORE_ENVIRONMENT=Staging
-dotnet run</p>
 
-<h2 id="key-points-to-remember">Key Points to Remember</h2>
+<h3 id="example-running-your-app-with-different-environments">Example: Running Your App with Different Environments</h3>
+<p># PowerShell $env:ASPNETCORE_ENVIRONMENT = &quot;Development&quot;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">CLI</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-bash">dotnet run</code></pre>
+    </div>
+  <p># Command Prompt (Windows) set ASPNETCORE_ENVIRONMENT=Production</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">CLI</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-bash">dotnet run</code></pre>
+    </div>
+  <p># bash (macOS/Linux) export ASPNETCORE_ENVIRONMENT=Staging</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">CLI</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-bash">dotnet run</code></pre>
+    </div>
+  <h3>Key Points to Remember</h3>
 <ul>
   <li>Purpose: Provide named configurations to tailor your app&#39;s behavior for different scenarios
-      (development, staging, production, etc.).</li>
+(development, staging, production, etc.).</li>
   <li>Environment Variable:</li>
   <li>ASPNETCORE_ENVIRONMENT is the key environment variable.</li>
   <li>Its value determines the active environment.</li>
   <li>Setting the Environment:</li>
   <li><code>launchSettings.json</code> (Development): Set within the environmentVariables section of
-           a profile.</li>
+a profile.</li>
   <li>System Environment Variables: Set directly on your machine (persistent).</li>
   <li>Command Line: Use --environment or -e flag when running the app (e.g., dotnet run
-           --environment Staging).</li>
+--environment Staging).</li>
   <li>IWebHostEnvironment Interface:</li>
   <li>Use it in your code to access environment information (e.g., EnvironmentName,
-           WebRootPath).</li>
+WebRootPath).</li>
   <li>Inject it into your controllers or middleware:</li>
 </ul>
 
@@ -887,21 +909,19 @@ dotnet run</p>
         </button>
       </div>
       <pre><code class="language-csharp">private readonly IWebHostEnvironment _env;
-           public MyController(IWebHostEnvironment env)
-           {
-             _env = env;
-           }
-   • Environment-Specific Configuration:</code></pre>
+public MyController(IWebHostEnvironment env)
+{
+_env = env;
+}</code></pre>
     </div>
   <ul>
+  <li>Environment-Specific Configuration:</li>
   <li>Create files like appsettings.Development.json, appsettings.Staging.json, etc.</li>
-</ul>
-<ul>
   <li>ASP.NET Core automatically loads the appropriate file based on the environment.</li>
   <li>Override base settings in <code>appsettings.json</code>.</li>
   <li>Conditional Configuration (In <code>Program.cs</code>):</li>
   <li>Use if (app.Environment.IsDevelopment()) or similar methods to apply settings or
-           middleware based on the environment.</li>
+middleware based on the environment.</li>
 </ul>
 
     <div class="code-block">
@@ -913,22 +933,20 @@ dotnet run</p>
         </button>
       </div>
       <pre><code class="language-csharp">if (app.Environment.IsDevelopment())
-                 {
-                  app.UseDeveloperExceptionPage();
-                 }
-   • Default Environments:</code></pre>
+{
+app.UseDeveloperExceptionPage();
+}</code></pre>
     </div>
   <ul>
+  <li>Default Environments:</li>
   <li>Development: Default for local development.</li>
-</ul>
-<ul>
   <li>Staging: Typically used for pre-production testing.</li>
   <li>Production: The live environment.</li>
   <li>Custom Environments: You can define and use your own environment names.</li>
   <li>Best Practices:</li>
   <li>Separate Configurations: Keep environment-specific settings in separate files.</li>
   <li>Tailor Middleware: Use different middleware pipelines for different environments
-           (e.g., enable DeveloperExceptionPage only in development).</li>
+(e.g., enable DeveloperExceptionPage only in development).</li>
   <li>Logging: Adjust logging levels based on the environment.</li>
   <li>Feature Flags: Use environment variables to toggle features on/off.</li>
 </ul>
@@ -936,13 +954,13 @@ dotnet run</p>
 <h2 id="interview-tips">Interview Tips</h2>
 <ul>
   <li>Explain the Why: Be able to articulate the reasons for using environments (configuration,
-      security, flexibility).</li>
+security, flexibility).</li>
   <li>Configuration: Show how you would use appsettings.{Environment}.json files to manage
-      environment-specific settings.</li>
+environment-specific settings.</li>
   <li>Middleware: Explain how you would customize middleware pipelines based on the
-      environment.</li>
+environment.</li>
   <li>Deployment: Discuss how you would set the environment variable when deploying to
-      different servers.</li>
+different servers.</li>
 </ul>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
@@ -952,17 +970,13 @@ dotnet run</p>
   <h3 id="introduction-to-environments">Introduction to Environments</h3>
 <p>An environment represents is a system in which the application is deployed and executed.</p>
   <h3 id="development">Development</h3>
-<p>The environment, where the developer makes changes in the code, commits code to the source
-control.</p>
+<p>The environment, where the developer makes changes in the code, commits code to the source control.</p>
   <h3 id="staging">Staging</h3>
-<p>The environment, where the application runs on a server, from which other developers and quality
-controllers access the application.</p>
+<p>The environment, where the application runs on a server, from which other developers and quality controllers access the application.</p>
   <h3 id="production">Production</h3>
-<p>The environment, where the real end-users access the application.
-Shortly, it&#39;s where the application &quot;live&quot; to the audience.</p>
+<p>The environment, where the real end-users access the application. Shortly, it&#39;s where the application &quot;live&quot; to the audience.</p>
   <h3 id="environment-setting">Environment Setting</h3>
-<p>Set Environment in <code>launchSettings.json</code>
-in <code>launchSettings.json</code></p>
+<p>Set Environment in <code>launchSettings.json</code> in <code>launchSettings.json</code></p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -975,14 +989,14 @@ in <code>launchSettings.json</code></p>
       <pre><code class="language-json">{
 &quot;profiles&quot;:
 {
- &quot;profileName&quot;:
- {
- &quot;environmentVariables&quot;:
- {
-  &quot;DOTNET_ENVIRONMENT&quot;: &quot;EnvironmentNameHere&quot;,
-  &quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;EnvironmentNameHere&quot;
- }
- }
+&quot;profileName&quot;:
+{
+&quot;environmentVariables&quot;:
+{
+&quot;DOTNET_ENVIRONMENT&quot;: &quot;EnvironmentNameHere&quot;,
+&quot;ASPNETCORE_ENVIRONMENT&quot;: &quot;EnvironmentNameHere&quot;
+}
+}
 }
 }</code></pre>
     </div>
@@ -1000,8 +1014,7 @@ in <code>launchSettings.json</code></p>
     </div>
   <p>IWebHostEnvironment</p>
   <h3 id="environmentname">EnvironmentName</h3>
-<p>Gets or sets name of the environment.
-By default it reads the value from either DOTNET_ENVIRONMENT or ASPNETCORE_ENVIRONMENT.</p>
+<p>Gets or sets name of the environment. By default it reads the value from either DOTNET_ENVIRONMENT or ASPNETCORE_ENVIRONMENT.</p>
   <h3 id="contentrootpath">ContentRootPath</h3>
 <p>Gets or sets absolute path of the application folder.</p>
   <h3 id="isdevelopment">IsDevelopment()</h3>
@@ -1012,7 +1025,7 @@ By default it reads the value from either DOTNET_ENVIRONMENT or ASPNETCORE_ENVIR
 <p>Returns Boolean true, if the current environment name is &quot;Production&quot;.</p>
   <h3 id="isenvironmentstring-environmentname">IsEnvironment(string environmentName)</h3>
 <p>Returns Boolean true, if the current environment name matches with the specified environment.</p>
-  <h3 id="access-environment-in-controller-and-other-classes">Access Environment in Controller and other classes</h3>
+<p>Access Environment in Controller and other classes</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1029,13 +1042,11 @@ public class ControllerName : Controller
 private readonly IWebHostEnvironment _webHost;
 public ControllerName(IWebHostEnvironment webHost)
 {
- _webHost = webHost;
+_webHost = webHost;
 }
 }</code></pre>
     </div>
-  <p>Developer Exception Page</p>
-  <h3 id="enable-developer-exception-page">Enable developer exception page</h3>
-<p>in <code>Program.cs</code></p>
+  <p>Developer Exception Page Enable developer exception page in <code>Program.cs</code></p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1050,25 +1061,24 @@ public ControllerName(IWebHostEnvironment webHost)
 app.UseDeveloperExceptionPage();
 }</code></pre>
     </div>
-  <p>Process-Level Environment
-The environment variables are stored &amp; accessible within the same process only.</p>
-  <h3 id="setting-environment-variables-in-process">Setting Environment Variables in Process</h3>
-<p>in &quot;Windows PowerShell&quot; / &quot;Developer PowerShell in VS&quot;
-$Env:Environment=&quot;EnvironmentName&quot;
-dotnet run --no-launch-profile
-&lt;environment&gt; tag helper
-include
-&lt;environment include=&quot;Environment1,Environment2&quot;&gt;
- html content here
-&lt;/environment&gt;
-It renders the content only when the current environment name matches with either of the
-specified environment names in the &quot;include&quot; property.
-exclude
-&lt;environment exclude=&quot;Environment1,Environment2&quot;&gt;
- html content here
-&lt;/environment&gt;
-It renders the content only when the current environment name doesn&#39;t match with either of the
-specified environment names in the &quot;exclude&quot; property.</p>
+  <p>Process-Level Environment The environment variables are stored &amp; accessible within the same process only.</p>
+<p>Setting Environment Variables in Process in &quot;Windows PowerShell&quot; / &quot;Developer PowerShell in VS&quot; $Env:Environment=&quot;EnvironmentName&quot;</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">CLI</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-bash">dotnet run --no-launch-profile</code></pre>
+    </div>
+  <p>&lt;environment&gt; tag helper</p>
+  <h3 id="include">include</h3>
+<p>&lt;environment include=&quot;Environment1,Environment2&quot;&gt; html content here &lt;/environment&gt; It renders the content only when the current environment name matches with either of the specified environment names in the &quot;include&quot; property.</p>
+  <h3 id="exclude">exclude</h3>
+<p>&lt;environment exclude=&quot;Environment1,Environment2&quot;&gt; html content here &lt;/environment&gt; It renders the content only when the current environment name doesn&#39;t match with either of the specified environment names in the &quot;exclude&quot; property.</p>
 </section>
 
       </article>
@@ -1114,6 +1124,10 @@ specified environment names in the &quot;exclude&quot; property.</p>
       <ul class="toc-list">
         
         <li class="toc-item">
+          <a href="#aspnet-core-environments" class="toc-link">ASP.NET Core Environments</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#common-environments" class="toc-link">Common Environments</a>
         </li>
       
@@ -1126,11 +1140,19 @@ specified environment names in the &quot;exclude&quot; property.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices" class="toc-link">Best Practices</a>
+          <a href="#using-environments-in-programcs" class="toc-link">Using Environments in Program.cs</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#best-practices" class="toc-link toc-sub">Best Practices</a>
         </li>
       
         <li class="toc-item">
           <a href="#notes" class="toc-link">Notes</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#understanding-launchsettingsjson" class="toc-link">Understanding launchSettings.json</a>
         </li>
       
         <li class="toc-item">
@@ -1139,6 +1161,10 @@ specified environment names in the &quot;exclude&quot; property.</p>
       
         <li class="toc-item">
           <a href="#structure" class="toc-link">Structure</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#example-setting-the-development-environment" class="toc-link toc-sub">Example: Setting the Development Environment</a>
         </li>
       
         <li class="toc-item">
@@ -1151,6 +1177,14 @@ specified environment names in the &quot;exclude&quot; property.</p>
       
         <li class="toc-item">
           <a href="#environment-specific-behavior" class="toc-link">Environment-Specific Behavior</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#iwebhostenvironment-interface-accessing-environment-information" class="toc-link">IWebHostEnvironment Interface: Accessing Environment Information</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#using-iwebhostenvironment-and-appenvironment" class="toc-link">Using IWebHostEnvironment and app.Environment</a>
         </li>
       
         <li class="toc-item">
@@ -1182,7 +1216,7 @@ specified environment names in the &quot;exclude&quot; property.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices-1" class="toc-link">Best Practices</a>
+          <a href="#best-practices-1" class="toc-link toc-sub">Best Practices</a>
         </li>
       
         <li class="toc-item">
@@ -1190,11 +1224,23 @@ specified environment names in the &quot;exclude&quot; property.</p>
         </li>
       
         <li class="toc-item">
+          <a href="#setting-aspnetcore_environment-in-powershell" class="toc-link">Setting ASPNETCORE_ENVIRONMENT in PowerShell</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#setting-aspnetcore_environment-in-command-prompt" class="toc-link">Setting ASPNETCORE_ENVIRONMENT in Command Prompt</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#making-environment-variables-persistent" class="toc-link">Making Environment Variables Persistent</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#important-considerations-1" class="toc-link">Important Considerations</a>
         </li>
       
         <li class="toc-item">
-          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+          <a href="#example-running-your-app-with-different-environments" class="toc-link toc-sub">Example: Running Your App with Different Environments</a>
         </li>
       
         <li class="toc-item">

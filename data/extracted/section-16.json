@@ -6,244 +6,215 @@
   "is_cheatsheet": false,
   "total_pages": 5,
   "total_raw_chars": 7494,
-  "total_repaired_chars": 8346,
+  "total_repaired_chars": 7489,
   "pages": [
     {
       "page_number": 1,
       "raw_text": "ASP.NET Core - True Ultimate Guide\nSection 16: CRUD Operations - Notes\nControllers for Read and Create Operations\n• Read (Index Action):\no Typically, the Index action method in your controller will be responsible for handling\nthe \"read\" operation. It retrieves data from a service layer (your business logic),\nprocesses it if needed, and passes it to a view for display.\no Common tasks in the Index action:\n▪ Fetching a list of items from the database.\n▪ Applying filtering or sorting based on query parameters or user input.\n▪ Preparing a view model to package the data for the view.\no Return type: Typically an IActionResult, often returning a ViewResult that renders\nthe \"Index\" view.\n• Create (Create Actions):\no The Create action typically has two versions:\n▪ HttpGet (Displaying the Form): This action simply returns the \"Create\" view,\nwhich contains a form for the user to fill in.\n▪ HttpPost (Processing the Form Submission): This action receives the form\ndata (usually via model binding), validates it, and if valid, passes it to the\nservice layer to create the new entity in the database. Then, it typically\nredirects to the \"Index\" action to display the updated list of items.\nViews for Read and Create Operations\n• Read (Index View):\no Displays a list or table of items fetched from the database.\no May include filtering and sorting options to allow users to customize the view.\no Could use partial views to break down complex UI elements (e.g., a partial view for\neach item in the list).\no Should be strongly typed to a view model (e.g., IEnumerable<PersonResponse> in\nyour code) for type safety and maintainability.\n",
-      "repaired_text": "ASP.NET Core - True Ultimate Guide\nSection 16: CRUD Operations - Notes\nControllers for Read and Create Operations\n   • Read (Index Action):\n        o Typically, the Index action method in your controller will be responsible for handling\n           the \"read\" operation. It retrieves data from a service layer (your business logic),\n           processes it if needed, and passes it to a view for display.\n        o Common tasks in the Index action:\n              ▪ Fetching a list of items from the database.\n              ▪ Applying filtering or sorting based on query parameters or user input.\n              ▪ Preparing a view model to package the data for the view.\n        o Return type: Typically an IActionResult, often returning a ViewResult that renders\n           the \"Index\" view.\n   • Create (Create Actions):\n        o The Create action typically has two versions:\n              ▪ HttpGet (Displaying the Form): This action simply returns the \"Create\" view,\n                 which contains a form for the user to fill in.\n              ▪ HttpPost (Processing the Form Submission): This action receives the form\n                 data (usually via model binding), validates it, and if valid, passes it to the\n                 service layer to create the new entity in the database. Then, it typically\n                 redirects to the \"Index\" action to display the updated list of items.\nViews for Read and Create Operations\n   • Read (Index View):\n        o Displays a list or table of items fetched from the database.\n        o May include filtering and sorting options to allow users to customize the view.\n        o Could use partial views to break down complex UI elements (e.g., a partial view for\n           each item in the list).\n        o Should be strongly typed to a view model (e.g., IEnumerable<PersonResponse> in\n           your code) for type safety and maintainability.",
+      "repaired_text": "ASP.NET Core - True Ultimate Guide\nSection 16: CRUD Operations - Notes\nControllers for Read and Create Operations\n• Read (Index Action):\no Typically, the Index action method in your controller will be responsible for handling\nthe \"read\" operation. It retrieves data from a service layer (your business logic),\nprocesses it if needed, and passes it to a view for display.\no Common tasks in the Index action:\n▪ Fetching a list of items from the database.\n▪ Applying filtering or sorting based on query parameters or user input.\n▪ Preparing a view model to package the data for the view.\no Return type: Typically an IActionResult, often returning a ViewResult that renders\nthe \"Index\" view.\n• Create (Create Actions):\no The Create action typically has two versions:\n▪ HttpGet (Displaying the Form): This action simply returns the \"Create\" view,\nwhich contains a form for the user to fill in.\n▪ HttpPost (Processing the Form Submission): This action receives the form\ndata (usually via model binding), validates it, and if valid, passes it to the\nservice layer to create the new entity in the database. Then, it typically\nredirects to the \"Index\" action to display the updated list of items.\nViews for Read and Create Operations\n• Read (Index View):\no Displays a list or table of items fetched from the database.\no May include filtering and sorting options to allow users to customize the view.\no Could use partial views to break down complex UI elements (e.g., a partial view for\neach item in the list).\no Should be strongly typed to a view model (e.g., IEnumerable<PersonResponse> in\nyour code) for type safety and maintainability.",
       "lines": [
         {
           "text": "ASP.NET Core - True Ultimate Guide",
           "rawText": "ASP.NET Core - True Ultimate Guide",
-          "x": 72.024,
-          "y": 742.66,
-          "fontSize": 15.96,
-          "fontName": "g_d30_f1"
+          "startX": 72,
+          "y": 743,
+          "isBold": true
         },
         {
           "text": "Section 16: CRUD Operations - Notes",
           "rawText": "Section 16: CRUD Operations - Notes",
-          "x": 72.024,
-          "y": 722.38,
-          "fontSize": 12.96,
-          "fontName": "g_d30_f1"
+          "startX": 72,
+          "y": 722,
+          "isBold": true
         },
         {
           "text": "Controllers for Read and Create Operations",
           "rawText": "Controllers for Read and Create Operations",
-          "x": 72.024,
-          "y": 684.82,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f3"
+          "startX": 72,
+          "y": 685,
+          "isBold": true
         },
         {
-          "text": "   • Read (Index Action):",
+          "text": "• Read (Index Action):",
           "rawText": "• Read (Index Action):",
-          "x": 90.024,
-          "y": 662.26,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 662,
+          "isBold": true
         },
         {
-          "text": "        o Typically, the Index action method in your controller will be responsible for handling",
+          "text": "o Typically, the Index action method in your controller will be responsible for handling",
           "rawText": "o Typically, the Index action method in your controller will be responsible for handling",
-          "x": 126.02,
-          "y": 639.82,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 640,
+          "isBold": false
         },
         {
-          "text": "           the \"read\" operation. It retrieves data from a service layer (your business logic),",
+          "text": "the \"read\" operation. It retrieves data from a service layer (your business logic),",
           "rawText": "the \"read\" operation. It retrieves data from a service layer (your business logic),",
-          "x": 144.02,
-          "y": 625.3,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 144,
+          "y": 625,
+          "isBold": false
         },
         {
-          "text": "           processes it if needed, and passes it to a view for display.",
+          "text": "processes it if needed, and passes it to a view for display.",
           "rawText": "processes it if needed, and passes it to a view for display.",
-          "x": 144.02,
-          "y": 610.78,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 144,
+          "y": 611,
+          "isBold": false
         },
         {
-          "text": "        o Common tasks in the Index action:",
+          "text": "o Common tasks in the Index action:",
           "rawText": "o Common tasks in the Index action:",
-          "x": 126.02,
-          "y": 588.34,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 588,
+          "isBold": false
         },
         {
-          "text": "              ▪ Fetching a list of items from the database.",
+          "text": "▪ Fetching a list of items from the database.",
           "rawText": "▪ Fetching a list of items from the database.",
-          "x": 162.02,
-          "y": 565.75,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f7"
+          "startX": 162,
+          "y": 566,
+          "isBold": false
         },
         {
-          "text": "              ▪ Applying filtering or sorting based on query parameters or user input.",
+          "text": "▪ Applying filtering or sorting based on query parameters or user input.",
           "rawText": "▪ Applying filtering or sorting based on query parameters or user input.",
-          "x": 162.02,
-          "y": 543.31,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f7"
+          "startX": 162,
+          "y": 543,
+          "isBold": false
         },
         {
-          "text": "              ▪ Preparing a view model to package the data for the view.",
+          "text": "▪ Preparing a view model to package the data for the view.",
           "rawText": "▪ Preparing a view model to package the data for the view.",
-          "x": 162.02,
-          "y": 520.87,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f7"
+          "startX": 162,
+          "y": 521,
+          "isBold": false
         },
         {
-          "text": "        o Return type: Typically an IActionResult, often returning a ViewResult that renders",
+          "text": "o Return type: Typically an IActionResult, often returning a ViewResult that renders",
           "rawText": "o Return type: Typically an IActionResult, often returning a ViewResult that renders",
-          "x": 126.02,
-          "y": 498.31,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 498,
+          "isBold": false
         },
         {
-          "text": "           the \"Index\" view.",
+          "text": "the \"Index\" view.",
           "rawText": "the \"Index\" view.",
-          "x": 144.02,
-          "y": 483.79,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 144,
+          "y": 484,
+          "isBold": false
         },
         {
-          "text": "   • Create (Create Actions):",
+          "text": "• Create (Create Actions):",
           "rawText": "• Create (Create Actions):",
-          "x": 90.024,
-          "y": 438.79,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 439,
+          "isBold": true
         },
         {
-          "text": "        o The Create action typically has two versions:",
+          "text": "o The Create action typically has two versions:",
           "rawText": "o The Create action typically has two versions:",
-          "x": 126.02,
-          "y": 416.35,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 416,
+          "isBold": false
         },
         {
-          "text": "              ▪ HttpGet (Displaying the Form): This action simply returns the \"Create\" view,",
+          "text": "▪ HttpGet (Displaying the Form): This action simply returns the \"Create\" view,",
           "rawText": "▪ HttpGet (Displaying the Form): This action simply returns the \"Create\" view,",
-          "x": 162.02,
-          "y": 393.89,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f7"
+          "startX": 162,
+          "y": 394,
+          "isBold": false
         },
         {
-          "text": "                 which contains a form for the user to fill in.",
+          "text": "which contains a form for the user to fill in.",
           "rawText": "which contains a form for the user to fill in.",
-          "x": 180.02,
-          "y": 379.37,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 180,
+          "y": 379,
+          "isBold": false
         },
         {
-          "text": "              ▪ HttpPost (Processing the Form Submission): This action receives the form",
+          "text": "▪ HttpPost (Processing the Form Submission): This action receives the form",
           "rawText": "▪ HttpPost (Processing the Form Submission): This action receives the form",
-          "x": 162.02,
-          "y": 356.81,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f7"
+          "startX": 162,
+          "y": 357,
+          "isBold": false
         },
         {
-          "text": "                 data (usually via model binding), validates it, and if valid, passes it to the",
+          "text": "data (usually via model binding), validates it, and if valid, passes it to the",
           "rawText": "data (usually via model binding), validates it, and if valid, passes it to the",
-          "x": 180.02,
-          "y": 342.41,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 180,
+          "y": 342,
+          "isBold": false
         },
         {
-          "text": "                 service layer to create the new entity in the database. Then, it typically",
+          "text": "service layer to create the new entity in the database. Then, it typically",
           "rawText": "service layer to create the new entity in the database. Then, it typically",
-          "x": 180.02,
-          "y": 327.89,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 180,
+          "y": 328,
+          "isBold": false
         },
         {
-          "text": "                 redirects to the \"Index\" action to display the updated list of items.",
+          "text": "redirects to the \"Index\" action to display the updated list of items.",
           "rawText": "redirects to the \"Index\" action to display the updated list of items.",
-          "x": 180.02,
-          "y": 313.37,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 180,
+          "y": 313,
+          "isBold": false
         },
         {
           "text": "Views for Read and Create Operations",
           "rawText": "Views for Read and Create Operations",
-          "x": 72.024,
-          "y": 245.93,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f3"
+          "startX": 72,
+          "y": 246,
+          "isBold": true
         },
         {
-          "text": "   • Read (Index View):",
+          "text": "• Read (Index View):",
           "rawText": "• Read (Index View):",
-          "x": 90.024,
-          "y": 223.37,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 223,
+          "isBold": true
         },
         {
-          "text": "        o Displays a list or table of items fetched from the database.",
+          "text": "o Displays a list or table of items fetched from the database.",
           "rawText": "o Displays a list or table of items fetched from the database.",
-          "x": 126.02,
-          "y": 200.9,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 201,
+          "isBold": false
         },
         {
-          "text": "        o May include filtering and sorting options to allow users to customize the view.",
+          "text": "o May include filtering and sorting options to allow users to customize the view.",
           "rawText": "o May include filtering and sorting options to allow users to customize the view.",
-          "x": 126.02,
-          "y": 178.46,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 178,
+          "isBold": false
         },
         {
-          "text": "        o Could use partial views to break down complex UI elements (e.g., a partial view for",
+          "text": "o Could use partial views to break down complex UI elements (e.g., a partial view for",
           "rawText": "o Could use partial views to break down complex UI elements (e.g., a partial view for",
-          "x": 126.02,
-          "y": 155.9,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 156,
+          "isBold": false
         },
         {
-          "text": "           each item in the list).",
+          "text": "each item in the list).",
           "rawText": "each item in the list).",
-          "x": 144.02,
-          "y": 141.38,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 144,
+          "y": 141,
+          "isBold": false
         },
         {
-          "text": "        o Should be strongly typed to a view model (e.g., IEnumerable<PersonResponse> in",
+          "text": "o Should be strongly typed to a view model (e.g., IEnumerable<PersonResponse> in",
           "rawText": "o Should be strongly typed to a view model (e.g., IEnumerable<PersonResponse> in",
-          "x": 126.02,
-          "y": 118.94,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 119,
+          "isBold": false
         },
         {
-          "text": "           your code) for type safety and maintainability.",
+          "text": "your code) for type safety and maintainability.",
           "rawText": "your code) for type safety and maintainability.",
-          "x": 144.02,
-          "y": 104.42,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 144,
+          "y": 104,
+          "isBold": false
         }
       ],
       "blocks": [
@@ -275,96 +246,96 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Read (Index Action):"
+            "• Read (Index Action):"
           ],
-          "text": "   • Read (Index Action):"
+          "text": "• Read (Index Action):"
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Typically, the Index action method in your controller will be responsible for handling",
-            "           the \"read\" operation. It retrieves data from a service layer (your business logic),",
-            "           processes it if needed, and passes it to a view for display."
+            "o Typically, the Index action method in your controller will be responsible for handling",
+            "the \"read\" operation. It retrieves data from a service layer (your business logic),",
+            "processes it if needed, and passes it to a view for display."
           ],
-          "text": "        o Typically, the Index action method in your controller will be responsible for handling\n           the \"read\" operation. It retrieves data from a service layer (your business logic),\n           processes it if needed, and passes it to a view for display."
+          "text": "o Typically, the Index action method in your controller will be responsible for handling\nthe \"read\" operation. It retrieves data from a service layer (your business logic),\nprocesses it if needed, and passes it to a view for display."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Common tasks in the Index action:"
+            "o Common tasks in the Index action:"
           ],
-          "text": "        o Common tasks in the Index action:"
+          "text": "o Common tasks in the Index action:"
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "              ▪ Fetching a list of items from the database."
+            "▪ Fetching a list of items from the database."
           ],
-          "text": "              ▪ Fetching a list of items from the database."
+          "text": "▪ Fetching a list of items from the database."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "              ▪ Applying filtering or sorting based on query parameters or user input."
+            "▪ Applying filtering or sorting based on query parameters or user input."
           ],
-          "text": "              ▪ Applying filtering or sorting based on query parameters or user input."
+          "text": "▪ Applying filtering or sorting based on query parameters or user input."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "              ▪ Preparing a view model to package the data for the view."
+            "▪ Preparing a view model to package the data for the view."
           ],
-          "text": "              ▪ Preparing a view model to package the data for the view."
+          "text": "▪ Preparing a view model to package the data for the view."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Return type: Typically an IActionResult, often returning a ViewResult that renders",
-            "           the \"Index\" view."
+            "o Return type: Typically an IActionResult, often returning a ViewResult that renders",
+            "the \"Index\" view."
           ],
-          "text": "        o Return type: Typically an IActionResult, often returning a ViewResult that renders\n           the \"Index\" view."
+          "text": "o Return type: Typically an IActionResult, often returning a ViewResult that renders\nthe \"Index\" view."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Create (Create Actions):"
+            "• Create (Create Actions):"
           ],
-          "text": "   • Create (Create Actions):"
+          "text": "• Create (Create Actions):"
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o The Create action typically has two versions:"
+            "o The Create action typically has two versions:"
           ],
-          "text": "        o The Create action typically has two versions:"
+          "text": "o The Create action typically has two versions:"
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "              ▪ HttpGet (Displaying the Form): This action simply returns the \"Create\" view,",
-            "                 which contains a form for the user to fill in."
+            "▪ HttpGet (Displaying the Form): This action simply returns the \"Create\" view,",
+            "which contains a form for the user to fill in."
           ],
-          "text": "              ▪ HttpGet (Displaying the Form): This action simply returns the \"Create\" view,\n                 which contains a form for the user to fill in."
+          "text": "▪ HttpGet (Displaying the Form): This action simply returns the \"Create\" view,\nwhich contains a form for the user to fill in."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "              ▪ HttpPost (Processing the Form Submission): This action receives the form",
-            "                 data (usually via model binding), validates it, and if valid, passes it to the",
-            "                 service layer to create the new entity in the database. Then, it typically",
-            "                 redirects to the \"Index\" action to display the updated list of items."
+            "▪ HttpPost (Processing the Form Submission): This action receives the form",
+            "data (usually via model binding), validates it, and if valid, passes it to the",
+            "service layer to create the new entity in the database. Then, it typically",
+            "redirects to the \"Index\" action to display the updated list of items."
           ],
-          "text": "              ▪ HttpPost (Processing the Form Submission): This action receives the form\n                 data (usually via model binding), validates it, and if valid, passes it to the\n                 service layer to create the new entity in the database. Then, it typically\n                 redirects to the \"Index\" action to display the updated list of items."
+          "text": "▪ HttpPost (Processing the Form Submission): This action receives the form\ndata (usually via model binding), validates it, and if valid, passes it to the\nservice layer to create the new entity in the database. Then, it typically\nredirects to the \"Index\" action to display the updated list of items."
         },
         {
           "type": "heading",
@@ -378,284 +349,255 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Read (Index View):"
+            "• Read (Index View):"
           ],
-          "text": "   • Read (Index View):"
+          "text": "• Read (Index View):"
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Displays a list or table of items fetched from the database."
+            "o Displays a list or table of items fetched from the database."
           ],
-          "text": "        o Displays a list or table of items fetched from the database."
+          "text": "o Displays a list or table of items fetched from the database."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o May include filtering and sorting options to allow users to customize the view."
+            "o May include filtering and sorting options to allow users to customize the view."
           ],
-          "text": "        o May include filtering and sorting options to allow users to customize the view."
+          "text": "o May include filtering and sorting options to allow users to customize the view."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Could use partial views to break down complex UI elements (e.g., a partial view for",
-            "           each item in the list)."
+            "o Could use partial views to break down complex UI elements (e.g., a partial view for",
+            "each item in the list)."
           ],
-          "text": "        o Could use partial views to break down complex UI elements (e.g., a partial view for\n           each item in the list)."
+          "text": "o Could use partial views to break down complex UI elements (e.g., a partial view for\neach item in the list)."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Should be strongly typed to a view model (e.g., IEnumerable<PersonResponse> in",
-            "           your code) for type safety and maintainability."
+            "o Should be strongly typed to a view model (e.g., IEnumerable<PersonResponse> in",
+            "your code) for type safety and maintainability."
           ],
-          "text": "        o Should be strongly typed to a view model (e.g., IEnumerable<PersonResponse> in\n           your code) for type safety and maintainability."
+          "text": "o Should be strongly typed to a view model (e.g., IEnumerable<PersonResponse> in\nyour code) for type safety and maintainability."
         }
       ],
       "char_count_raw": 1630,
-      "char_count_repaired": 1895
+      "char_count_repaired": 1629
     },
     {
       "page_number": 2,
       "raw_text": "• Create (Create View):\no Renders a form for collecting data to create a new item.\no Uses tag helpers (<form>, <input>, <select>, etc.) or HTML helpers to generate the\nform elements.\no Includes validation attributes on form fields to provide immediate feedback to the\nuser.\no Should be strongly typed to the appropriate model class (e.g., PersonAddRequest in\nyour code) to take advantage of model binding and validation.\nImplementing Sorting and Search in Views\nYour code example already demonstrates sorting and searching functionality in the\nPersons/Index.cshtml view:\n1. Sorting:\no It uses ViewBag to pass sorting information (current sort column and order) to the\nview.\no A partial view (_GridColumnHeader) is used to render each table column header as a\nlink, which, when clicked, triggers a sort action.\no The query string parameters (sortBy and sortOrder) are used to control the sorting\nlogic on both the client and server sides.\n2. Searching:\no ViewBag is also used to pass search fields and the current search criteria to the view.\no A form with a dropdown (searchBy) and a text input (searchString) allows users to\nfilter the results.\no The search parameters are submitted to the Index action, which then calls the\nservice's GetFilteredPersons method to retrieve the filtered results.\nBest Practices\n• Strongly Typed Views: Always use strongly typed views and view models for type safety and\nmaintainability.\n• Separation of Concerns: Keep your views focused on presentation logic and delegate data\naccess and manipulation to your controllers and services.\n",
-      "repaired_text": "   • Create (Create View):\n        o Renders a form for collecting data to create a new item.\n        o Uses tag helpers (<form>, <input>, <select>, etc.) or HTML helpers to generate the\n           form elements.\n        o Includes validation attributes on form fields to provide immediate feedback to the\n           user.\n        o Should be strongly typed to the appropriate model class (e.g., PersonAddRequest in\n           your code) to take advantage of model binding and validation.\nImplementing Sorting and Search in Views\nYour code example already demonstrates sorting and searching functionality in the\nPersons/Index.cshtml view:\n   1. Sorting:\n        o It uses ViewBag to pass sorting information (current sort column and order) to the\n           view.\n        o A partial view (_GridColumnHeader) is used to render each table column header as a\n           link, which, when clicked, triggers a sort action.\n        o The query string parameters (sortBy and sortOrder) are used to control the sorting\n           logic on both the client and server sides.\n   2. Searching:\n        o ViewBag is also used to pass search fields and the current search criteria to the view.\n        o A form with a dropdown (searchBy) and a text input (searchString) allows users to\n           filter the results.\n        o The search parameters are submitted to the Index action, which then calls the\n           service's GetFilteredPersons method to retrieve the filtered results.\nBest Practices\n   • Strongly Typed Views: Always use strongly typed views and view models for type safety and\n      maintainability.\n   • Separation of Concerns: Keep your views focused on presentation logic and delegate data\n      access and manipulation to your controllers and services.",
+      "repaired_text": "• Create (Create View):\no Renders a form for collecting data to create a new item.\no Uses tag helpers (<form>, <input>, <select>, etc.) or HTML helpers to generate the\nform elements.\no Includes validation attributes on form fields to provide immediate feedback to the\nuser.\no Should be strongly typed to the appropriate model class (e.g., PersonAddRequest in\nyour code) to take advantage of model binding and validation.\nImplementing Sorting and Search in Views\nYour code example already demonstrates sorting and searching functionality in the\nPersons/Index.cshtml view:\n1. Sorting:\no It uses ViewBag to pass sorting information (current sort column and order) to the\nview.\no A partial view (_GridColumnHeader) is used to render each table column header as a\nlink, which, when clicked, triggers a sort action.\no The query string parameters (sortBy and sortOrder) are used to control the sorting\nlogic on both the client and server sides.\n2. Searching:\no ViewBag is also used to pass search fields and the current search criteria to the view.\no A form with a dropdown (searchBy) and a text input (searchString) allows users to\nfilter the results.\no The search parameters are submitted to the Index action, which then calls the\nservice's GetFilteredPersons method to retrieve the filtered results.\nBest Practices\n• Strongly Typed Views: Always use strongly typed views and view models for type safety and\nmaintainability.\n• Separation of Concerns: Keep your views focused on presentation logic and delegate data\naccess and manipulation to your controllers and services.",
       "lines": [
         {
-          "text": "   • Create (Create View):",
+          "text": "• Create (Create View):",
           "rawText": "• Create (Create View):",
-          "x": 90.024,
-          "y": 759.48,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 759,
+          "isBold": true
         },
         {
-          "text": "        o Renders a form for collecting data to create a new item.",
+          "text": "o Renders a form for collecting data to create a new item.",
           "rawText": "o Renders a form for collecting data to create a new item.",
-          "x": 126.02,
-          "y": 737.02,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 737,
+          "isBold": false
         },
         {
-          "text": "        o Uses tag helpers (<form>, <input>, <select>, etc.) or HTML helpers to generate the",
+          "text": "o Uses tag helpers (<form>, <input>, <select>, etc.) or HTML helpers to generate the",
           "rawText": "o Uses tag helpers (<form>, <input>, <select>, etc.) or HTML helpers to generate the",
-          "x": 126.02,
-          "y": 714.46,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 714,
+          "isBold": false
         },
         {
-          "text": "           form elements.",
+          "text": "form elements.",
           "rawText": "form elements.",
-          "x": 144.02,
-          "y": 699.94,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 144,
+          "y": 700,
+          "isBold": false
         },
         {
-          "text": "        o Includes validation attributes on form fields to provide immediate feedback to the",
+          "text": "o Includes validation attributes on form fields to provide immediate feedback to the",
           "rawText": "o Includes validation attributes on form fields to provide immediate feedback to the",
-          "x": 126.02,
-          "y": 677.5,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 678,
+          "isBold": false
         },
         {
-          "text": "           user.",
+          "text": "user.",
           "rawText": "user.",
-          "x": 144.02,
-          "y": 662.98,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 144,
+          "y": 663,
+          "isBold": false
         },
         {
-          "text": "        o Should be strongly typed to the appropriate model class (e.g., PersonAddRequest in",
+          "text": "o Should be strongly typed to the appropriate model class (e.g., PersonAddRequest in",
           "rawText": "o Should be strongly typed to the appropriate model class (e.g., PersonAddRequest in",
-          "x": 126.02,
-          "y": 640.54,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 641,
+          "isBold": false
         },
         {
-          "text": "           your code) to take advantage of model binding and validation.",
+          "text": "your code) to take advantage of model binding and validation.",
           "rawText": "your code) to take advantage of model binding and validation.",
-          "x": 144.02,
-          "y": 626.02,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 144,
+          "y": 626,
+          "isBold": false
         },
         {
           "text": "Implementing Sorting and Search in Views",
           "rawText": "Implementing Sorting and Search in Views",
-          "x": 72.024,
-          "y": 558.55,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f3"
+          "startX": 72,
+          "y": 559,
+          "isBold": true
         },
         {
           "text": "Your code example already demonstrates sorting and searching functionality in the",
           "rawText": "Your code example already demonstrates sorting and searching functionality in the",
-          "x": 72.024,
-          "y": 535.99,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 72,
+          "y": 536,
+          "isBold": false
         },
         {
           "text": "Persons/Index.cshtml view:",
           "rawText": "Persons/Index.cshtml view:",
-          "x": 72.024,
-          "y": 521.59,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 72,
+          "y": 522,
+          "isBold": false
         },
         {
-          "text": "   1. Sorting:",
+          "text": "1. Sorting:",
           "rawText": "1. Sorting:",
-          "x": 90.024,
-          "y": 499.03,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 90,
+          "y": 499,
+          "isBold": false
         },
         {
-          "text": "        o It uses ViewBag to pass sorting information (current sort column and order) to the",
+          "text": "o It uses ViewBag to pass sorting information (current sort column and order) to the",
           "rawText": "o It uses ViewBag to pass sorting information (current sort column and order) to the",
-          "x": 126.02,
-          "y": 476.59,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 477,
+          "isBold": false
         },
         {
-          "text": "           view.",
+          "text": "view.",
           "rawText": "view.",
-          "x": 144.02,
-          "y": 462.07,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 144,
+          "y": 462,
+          "isBold": false
         },
         {
-          "text": "        o A partial view (_GridColumnHeader) is used to render each table column header as a",
+          "text": "o A partial view (_GridColumnHeader) is used to render each table column header as a",
           "rawText": "o A partial view (_GridColumnHeader) is used to render each table column header as a",
-          "x": 126.02,
-          "y": 439.63,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 440,
+          "isBold": false
         },
         {
-          "text": "           link, which, when clicked, triggers a sort action.",
+          "text": "link, which, when clicked, triggers a sort action.",
           "rawText": "link, which, when clicked, triggers a sort action.",
-          "x": 144.02,
-          "y": 425.11,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 144,
+          "y": 425,
+          "isBold": false
         },
         {
-          "text": "        o The query string parameters (sortBy and sortOrder) are used to control the sorting",
+          "text": "o The query string parameters (sortBy and sortOrder) are used to control the sorting",
           "rawText": "o The query string parameters (sortBy and sortOrder) are used to control the sorting",
-          "x": 126.02,
-          "y": 402.55,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 403,
+          "isBold": false
         },
         {
-          "text": "           logic on both the client and server sides.",
+          "text": "logic on both the client and server sides.",
           "rawText": "logic on both the client and server sides.",
-          "x": 144.02,
-          "y": 388.13,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 144,
+          "y": 388,
+          "isBold": false
         },
         {
-          "text": "   2. Searching:",
+          "text": "2. Searching:",
           "rawText": "2. Searching:",
-          "x": 90.024,
-          "y": 343.13,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 90,
+          "y": 343,
+          "isBold": false
         },
         {
-          "text": "        o ViewBag is also used to pass search fields and the current search criteria to the view.",
+          "text": "o ViewBag is also used to pass search fields and the current search criteria to the view.",
           "rawText": "o ViewBag is also used to pass search fields and the current search criteria to the view.",
-          "x": 126.02,
-          "y": 320.57,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 321,
+          "isBold": false
         },
         {
-          "text": "        o A form with a dropdown (searchBy) and a text input (searchString) allows users to",
+          "text": "o A form with a dropdown (searchBy) and a text input (searchString) allows users to",
           "rawText": "o A form with a dropdown (searchBy) and a text input (searchString) allows users to",
-          "x": 126.02,
-          "y": 298.13,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 298,
+          "isBold": false
         },
         {
-          "text": "           filter the results.",
+          "text": "filter the results.",
           "rawText": "filter the results.",
-          "x": 144.02,
-          "y": 283.61,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 144,
+          "y": 284,
+          "isBold": false
         },
         {
-          "text": "        o The search parameters are submitted to the Index action, which then calls the",
+          "text": "o The search parameters are submitted to the Index action, which then calls the",
           "rawText": "o The search parameters are submitted to the Index action, which then calls the",
-          "x": 126.02,
-          "y": 261.17,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 261,
+          "isBold": false
         },
         {
-          "text": "           service's GetFilteredPersons method to retrieve the filtered results.",
+          "text": "service's GetFilteredPersons method to retrieve the filtered results.",
           "rawText": "service's GetFilteredPersons method to retrieve the filtered results.",
-          "x": 144.02,
-          "y": 246.65,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 144,
+          "y": 247,
+          "isBold": false
         },
         {
           "text": "Best Practices",
           "rawText": "Best Practices",
-          "x": 72.024,
-          "y": 179.18,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f3"
+          "startX": 72,
+          "y": 179,
+          "isBold": true
         },
         {
-          "text": "   • Strongly Typed Views: Always use strongly typed views and view models for type safety and",
+          "text": "• Strongly Typed Views: Always use strongly typed views and view models for type safety and",
           "rawText": "• Strongly Typed Views: Always use strongly typed views and view models for type safety and",
-          "x": 90.024,
-          "y": 156.62,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 157,
+          "isBold": false
         },
         {
-          "text": "      maintainability.",
+          "text": "maintainability.",
           "rawText": "maintainability.",
-          "x": 108.02,
-          "y": 142.22,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 142,
+          "isBold": false
         },
         {
-          "text": "   • Separation of Concerns: Keep your views focused on presentation logic and delegate data",
+          "text": "• Separation of Concerns: Keep your views focused on presentation logic and delegate data",
           "rawText": "• Separation of Concerns: Keep your views focused on presentation logic and delegate data",
-          "x": 90.024,
-          "y": 119.66,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 120,
+          "isBold": false
         },
         {
-          "text": "      access and manipulation to your controllers and services.",
+          "text": "access and manipulation to your controllers and services.",
           "rawText": "access and manipulation to your controllers and services.",
-          "x": 108.02,
-          "y": 105.14,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 105,
+          "isBold": false
         }
       ],
       "blocks": [
@@ -663,44 +605,44 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • Create (Create View):"
+            "• Create (Create View):"
           ],
-          "text": "   • Create (Create View):"
+          "text": "• Create (Create View):"
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o Renders a form for collecting data to create a new item."
+            "o Renders a form for collecting data to create a new item."
           ],
-          "text": "        o Renders a form for collecting data to create a new item."
+          "text": "o Renders a form for collecting data to create a new item."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o Uses tag helpers (<form>, <input>, <select>, etc.) or HTML helpers to generate the",
-            "           form elements."
+            "o Uses tag helpers (<form>, <input>, <select>, etc.) or HTML helpers to generate the",
+            "form elements."
           ],
-          "text": "        o Uses tag helpers (<form>, <input>, <select>, etc.) or HTML helpers to generate the\n           form elements."
+          "text": "o Uses tag helpers (<form>, <input>, <select>, etc.) or HTML helpers to generate the\nform elements."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o Includes validation attributes on form fields to provide immediate feedback to the",
-            "           user."
+            "o Includes validation attributes on form fields to provide immediate feedback to the",
+            "user."
           ],
-          "text": "        o Includes validation attributes on form fields to provide immediate feedback to the\n           user."
+          "text": "o Includes validation attributes on form fields to provide immediate feedback to the\nuser."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o Should be strongly typed to the appropriate model class (e.g., PersonAddRequest in",
-            "           your code) to take advantage of model binding and validation."
+            "o Should be strongly typed to the appropriate model class (e.g., PersonAddRequest in",
+            "your code) to take advantage of model binding and validation."
           ],
-          "text": "        o Should be strongly typed to the appropriate model class (e.g., PersonAddRequest in\n           your code) to take advantage of model binding and validation."
+          "text": "o Should be strongly typed to the appropriate model class (e.g., PersonAddRequest in\nyour code) to take advantage of model binding and validation."
         },
         {
           "type": "heading",
@@ -717,76 +659,76 @@
             "Your code example already demonstrates sorting and searching functionality in the",
             "Persons/Index.cshtml view:"
           ],
-          "text": "Your code example already demonstrates sorting and searching functionality in the\nPersons/Index.cshtml view:"
+          "text": "Your code example already demonstrates sorting and searching functionality in the Persons/Index.cshtml view:"
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   1. Sorting:"
+            "1. Sorting:"
           ],
-          "text": "   1. Sorting:"
+          "text": "1. Sorting:"
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o It uses ViewBag to pass sorting information (current sort column and order) to the",
-            "           view."
+            "o It uses ViewBag to pass sorting information (current sort column and order) to the",
+            "view."
           ],
-          "text": "        o It uses ViewBag to pass sorting information (current sort column and order) to the\n           view."
+          "text": "o It uses ViewBag to pass sorting information (current sort column and order) to the\nview."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o A partial view (_GridColumnHeader) is used to render each table column header as a",
-            "           link, which, when clicked, triggers a sort action."
+            "o A partial view (_GridColumnHeader) is used to render each table column header as a",
+            "link, which, when clicked, triggers a sort action."
           ],
-          "text": "        o A partial view (_GridColumnHeader) is used to render each table column header as a\n           link, which, when clicked, triggers a sort action."
+          "text": "o A partial view (_GridColumnHeader) is used to render each table column header as a\nlink, which, when clicked, triggers a sort action."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o The query string parameters (sortBy and sortOrder) are used to control the sorting",
-            "           logic on both the client and server sides."
+            "o The query string parameters (sortBy and sortOrder) are used to control the sorting",
+            "logic on both the client and server sides."
           ],
-          "text": "        o The query string parameters (sortBy and sortOrder) are used to control the sorting\n           logic on both the client and server sides."
+          "text": "o The query string parameters (sortBy and sortOrder) are used to control the sorting\nlogic on both the client and server sides."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   2. Searching:"
+            "2. Searching:"
           ],
-          "text": "   2. Searching:"
+          "text": "2. Searching:"
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o ViewBag is also used to pass search fields and the current search criteria to the view."
+            "o ViewBag is also used to pass search fields and the current search criteria to the view."
           ],
-          "text": "        o ViewBag is also used to pass search fields and the current search criteria to the view."
+          "text": "o ViewBag is also used to pass search fields and the current search criteria to the view."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o A form with a dropdown (searchBy) and a text input (searchString) allows users to",
-            "           filter the results."
+            "o A form with a dropdown (searchBy) and a text input (searchString) allows users to",
+            "filter the results."
           ],
-          "text": "        o A form with a dropdown (searchBy) and a text input (searchString) allows users to\n           filter the results."
+          "text": "o A form with a dropdown (searchBy) and a text input (searchString) allows users to\nfilter the results."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o The search parameters are submitted to the Index action, which then calls the",
-            "           service's GetFilteredPersons method to retrieve the filtered results."
+            "o The search parameters are submitted to the Index action, which then calls the",
+            "service's GetFilteredPersons method to retrieve the filtered results."
           ],
-          "text": "        o The search parameters are submitted to the Index action, which then calls the\n           service's GetFilteredPersons method to retrieve the filtered results."
+          "text": "o The search parameters are submitted to the Index action, which then calls the\nservice's GetFilteredPersons method to retrieve the filtered results."
         },
         {
           "type": "heading",
@@ -800,260 +742,231 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • Strongly Typed Views: Always use strongly typed views and view models for type safety and",
-            "      maintainability."
+            "• Strongly Typed Views: Always use strongly typed views and view models for type safety and",
+            "maintainability."
           ],
-          "text": "   • Strongly Typed Views: Always use strongly typed views and view models for type safety and\n      maintainability."
+          "text": "• Strongly Typed Views: Always use strongly typed views and view models for type safety and\nmaintainability."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • Separation of Concerns: Keep your views focused on presentation logic and delegate data",
-            "      access and manipulation to your controllers and services."
+            "• Separation of Concerns: Keep your views focused on presentation logic and delegate data",
+            "access and manipulation to your controllers and services."
           ],
-          "text": "   • Separation of Concerns: Keep your views focused on presentation logic and delegate data\n      access and manipulation to your controllers and services."
+          "text": "• Separation of Concerns: Keep your views focused on presentation logic and delegate data\naccess and manipulation to your controllers and services."
         }
       ],
       "char_count_raw": 1568,
-      "char_count_repaired": 1762
+      "char_count_repaired": 1567
     },
     {
       "page_number": 3,
       "raw_text": "• Partial Views: Use partial views to create reusable UI components, especially for complex\nlists or grids.\n• Tag Helpers: Utilize tag helpers to simplify form generation and interaction with models in\nyour views.\n• Validation: Implement validation in your models using data annotations and custom\nvalidation attributes.\n• Error Handling: Handle potential errors gracefully and provide informative error messages to\nthe user.\n• Client-Side Enhancement: Use JavaScript to enhance the user experience with features like\nclient-side validation, AJAX-based filtering/sorting, and dynamic updates.\nThings to Avoid\n• Complex Logic in Views: Avoid complex business logic in your views. Keep them simple and\nfocused on presentation.\n• Tight Coupling: Don't tightly couple your views to specific controllers or models. Strive for\nreusability.\n• Overuse of ViewBag or ViewData: Prefer strongly typed models for passing data to your\nviews.\n• Hardcoding Strings: Avoid hardcoding strings like column names or sorting options. Use\nconstants or enums for better maintainability.\n• Neglecting Security: Always validate and sanitize user input, especially in search\nfunctionality, to prevent vulnerabilities.\nKey points to remember\nControllers\n• Purpose:\no Handle HTTP requests (GET, POST, PUT, DELETE).\no Interact with services to perform CRUD operations on data.\no Select and return views with data.\n• Typical Actions:\no Index: Display a list of items (Read).\n",
-      "repaired_text": "   • Partial Views: Use partial views to create reusable UI components, especially for complex\n      lists or grids.\n   • Tag Helpers: Utilize tag helpers to simplify form generation and interaction with models in\n      your views.\n   • Validation: Implement validation in your models using data annotations and custom\n      validation attributes.\n   • Error Handling: Handle potential errors gracefully and provide informative error messages to\n      the user.\n   • Client-Side Enhancement: Use JavaScript to enhance the user experience with features like\n      client-side validation, AJAX-based filtering/sorting, and dynamic updates.\nThings to Avoid\n   • Complex Logic in Views: Avoid complex business logic in your views. Keep them simple and\n      focused on presentation.\n   • Tight Coupling: Don't tightly couple your views to specific controllers or models. Strive for\n      reusability.\n   • Overuse of ViewBag or ViewData: Prefer strongly typed models for passing data to your\n      views.\n   • Hardcoding Strings: Avoid hardcoding strings like column names or sorting options. Use\n      constants or enums for better maintainability.\n   • Neglecting Security: Always validate and sanitize user input, especially in search\n      functionality, to prevent vulnerabilities.\nKey points to remember\nControllers\n   • Purpose:\n        o Handle HTTP requests (GET, POST, PUT, DELETE).\n        o Interact with services to perform CRUD operations on data.\n        o Select and return views with data.\n   • Typical Actions:\n        o Index: Display a list of items (Read).",
+      "repaired_text": "• Partial Views: Use partial views to create reusable UI components, especially for complex\nlists or grids.\n• Tag Helpers: Utilize tag helpers to simplify form generation and interaction with models in\nyour views.\n• Validation: Implement validation in your models using data annotations and custom\nvalidation attributes.\n• Error Handling: Handle potential errors gracefully and provide informative error messages to\nthe user.\n• Client-Side Enhancement: Use JavaScript to enhance the user experience with features like\nclient-side validation, AJAX-based filtering/sorting, and dynamic updates.\nThings to Avoid\n• Complex Logic in Views: Avoid complex business logic in your views. Keep them simple and\nfocused on presentation.\n• Tight Coupling: Don't tightly couple your views to specific controllers or models. Strive for\nreusability.\n• Overuse of ViewBag or ViewData: Prefer strongly typed models for passing data to your\nviews.\n• Hardcoding Strings: Avoid hardcoding strings like column names or sorting options. Use\nconstants or enums for better maintainability.\n• Neglecting Security: Always validate and sanitize user input, especially in search\nfunctionality, to prevent vulnerabilities.\nKey points to remember\nControllers\n• Purpose:\no Handle HTTP requests (GET, POST, PUT, DELETE).\no Interact with services to perform CRUD operations on data.\no Select and return views with data.\n• Typical Actions:\no Index: Display a list of items (Read).",
       "lines": [
         {
-          "text": "   • Partial Views: Use partial views to create reusable UI components, especially for complex",
+          "text": "• Partial Views: Use partial views to create reusable UI components, especially for complex",
           "rawText": "• Partial Views: Use partial views to create reusable UI components, especially for complex",
-          "x": 90.024,
-          "y": 759.48,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 759,
+          "isBold": false
         },
         {
-          "text": "      lists or grids.",
+          "text": "lists or grids.",
           "rawText": "lists or grids.",
-          "x": 108.02,
-          "y": 744.94,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 745,
+          "isBold": false
         },
         {
-          "text": "   • Tag Helpers: Utilize tag helpers to simplify form generation and interaction with models in",
+          "text": "• Tag Helpers: Utilize tag helpers to simplify form generation and interaction with models in",
           "rawText": "• Tag Helpers: Utilize tag helpers to simplify form generation and interaction with models in",
-          "x": 90.024,
-          "y": 722.5,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 723,
+          "isBold": false
         },
         {
-          "text": "      your views.",
+          "text": "your views.",
           "rawText": "your views.",
-          "x": 108.02,
-          "y": 707.98,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 708,
+          "isBold": false
         },
         {
-          "text": "   • Validation: Implement validation in your models using data annotations and custom",
+          "text": "• Validation: Implement validation in your models using data annotations and custom",
           "rawText": "• Validation: Implement validation in your models using data annotations and custom",
-          "x": 90.024,
-          "y": 685.54,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 686,
+          "isBold": false
         },
         {
-          "text": "      validation attributes.",
+          "text": "validation attributes.",
           "rawText": "validation attributes.",
-          "x": 108.02,
-          "y": 671.02,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 671,
+          "isBold": false
         },
         {
-          "text": "   • Error Handling: Handle potential errors gracefully and provide informative error messages to",
+          "text": "• Error Handling: Handle potential errors gracefully and provide informative error messages to",
           "rawText": "• Error Handling: Handle potential errors gracefully and provide informative error messages to",
-          "x": 90.024,
-          "y": 648.46,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 648,
+          "isBold": false
         },
         {
-          "text": "      the user.",
+          "text": "the user.",
           "rawText": "the user.",
-          "x": 108.02,
-          "y": 634.06,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 634,
+          "isBold": false
         },
         {
-          "text": "   • Client-Side Enhancement: Use JavaScript to enhance the user experience with features like",
+          "text": "• Client-Side Enhancement: Use JavaScript to enhance the user experience with features like",
           "rawText": "• Client-Side Enhancement: Use JavaScript to enhance the user experience with features like",
-          "x": 90.024,
-          "y": 611.5,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 612,
+          "isBold": false
         },
         {
-          "text": "      client-side validation, AJAX-based filtering/sorting, and dynamic updates.",
+          "text": "client-side validation, AJAX-based filtering/sorting, and dynamic updates.",
           "rawText": "client-side validation, AJAX-based filtering/sorting, and dynamic updates.",
-          "x": 108.02,
-          "y": 597.1,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 597,
+          "isBold": false
         },
         {
           "text": "Things to Avoid",
           "rawText": "Things to Avoid",
-          "x": 72.024,
-          "y": 552.07,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f3"
+          "startX": 72,
+          "y": 552,
+          "isBold": true
         },
         {
-          "text": "   • Complex Logic in Views: Avoid complex business logic in your views. Keep them simple and",
+          "text": "• Complex Logic in Views: Avoid complex business logic in your views. Keep them simple and",
           "rawText": "• Complex Logic in Views: Avoid complex business logic in your views. Keep them simple and",
-          "x": 90.024,
-          "y": 529.51,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 530,
+          "isBold": false
         },
         {
-          "text": "      focused on presentation.",
+          "text": "focused on presentation.",
           "rawText": "focused on presentation.",
-          "x": 108.02,
-          "y": 515.11,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 515,
+          "isBold": false
         },
         {
-          "text": "   • Tight Coupling: Don't tightly couple your views to specific controllers or models. Strive for",
+          "text": "• Tight Coupling: Don't tightly couple your views to specific controllers or models. Strive for",
           "rawText": "• Tight Coupling: Don't tightly couple your views to specific controllers or models. Strive for",
-          "x": 90.024,
-          "y": 492.55,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 493,
+          "isBold": false
         },
         {
-          "text": "      reusability.",
+          "text": "reusability.",
           "rawText": "reusability.",
-          "x": 108.02,
-          "y": 478.03,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 478,
+          "isBold": false
         },
         {
-          "text": "   • Overuse of ViewBag or ViewData: Prefer strongly typed models for passing data to your",
+          "text": "• Overuse of ViewBag or ViewData: Prefer strongly typed models for passing data to your",
           "rawText": "• Overuse of ViewBag or ViewData: Prefer strongly typed models for passing data to your",
-          "x": 90.024,
-          "y": 455.59,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 456,
+          "isBold": false
         },
         {
-          "text": "      views.",
+          "text": "views.",
           "rawText": "views.",
-          "x": 108.02,
-          "y": 441.07,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 441,
+          "isBold": false
         },
         {
-          "text": "   • Hardcoding Strings: Avoid hardcoding strings like column names or sorting options. Use",
+          "text": "• Hardcoding Strings: Avoid hardcoding strings like column names or sorting options. Use",
           "rawText": "• Hardcoding Strings: Avoid hardcoding strings like column names or sorting options. Use",
-          "x": 90.024,
-          "y": 418.63,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 419,
+          "isBold": false
         },
         {
-          "text": "      constants or enums for better maintainability.",
+          "text": "constants or enums for better maintainability.",
           "rawText": "constants or enums for better maintainability.",
-          "x": 108.02,
-          "y": 404.11,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 404,
+          "isBold": false
         },
         {
-          "text": "   • Neglecting Security: Always validate and sanitize user input, especially in search",
+          "text": "• Neglecting Security: Always validate and sanitize user input, especially in search",
           "rawText": "• Neglecting Security: Always validate and sanitize user input, especially in search",
-          "x": 90.024,
-          "y": 381.65,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 382,
+          "isBold": false
         },
         {
-          "text": "      functionality, to prevent vulnerabilities.",
+          "text": "functionality, to prevent vulnerabilities.",
           "rawText": "functionality, to prevent vulnerabilities.",
-          "x": 108.02,
-          "y": 367.13,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 367,
+          "isBold": false
         },
         {
           "text": "Key points to remember",
           "rawText": "Key points to remember",
-          "x": 72.024,
-          "y": 277.13,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f3"
+          "startX": 72,
+          "y": 277,
+          "isBold": true
         },
         {
           "text": "Controllers",
           "rawText": "Controllers",
-          "x": 72.024,
-          "y": 254.69,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f3"
+          "startX": 72,
+          "y": 255,
+          "isBold": true
         },
         {
-          "text": "   • Purpose:",
+          "text": "• Purpose:",
           "rawText": "• Purpose:",
-          "x": 90.024,
-          "y": 232.13,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 232,
+          "isBold": true
         },
         {
-          "text": "        o Handle HTTP requests (GET, POST, PUT, DELETE).",
+          "text": "o Handle HTTP requests (GET, POST, PUT, DELETE).",
           "rawText": "o Handle HTTP requests (GET, POST, PUT, DELETE).",
-          "x": 126.02,
-          "y": 209.66,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 210,
+          "isBold": false
         },
         {
-          "text": "        o Interact with services to perform CRUD operations on data.",
+          "text": "o Interact with services to perform CRUD operations on data.",
           "rawText": "o Interact with services to perform CRUD operations on data.",
-          "x": 126.02,
-          "y": 187.1,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 187,
+          "isBold": false
         },
         {
-          "text": "        o Select and return views with data.",
+          "text": "o Select and return views with data.",
           "rawText": "o Select and return views with data.",
-          "x": 126.02,
-          "y": 164.66,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 165,
+          "isBold": false
         },
         {
-          "text": "   • Typical Actions:",
+          "text": "• Typical Actions:",
           "rawText": "• Typical Actions:",
-          "x": 90.024,
-          "y": 119.66,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 120,
+          "isBold": true
         },
         {
-          "text": "        o Index: Display a list of items (Read).",
+          "text": "o Index: Display a list of items (Read).",
           "rawText": "o Index: Display a list of items (Read).",
-          "x": 126.02,
-          "y": 97.224,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 97,
+          "isBold": false
         }
       ],
       "blocks": [
@@ -1061,46 +974,46 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Partial Views: Use partial views to create reusable UI components, especially for complex",
-            "      lists or grids."
+            "• Partial Views: Use partial views to create reusable UI components, especially for complex",
+            "lists or grids."
           ],
-          "text": "   • Partial Views: Use partial views to create reusable UI components, especially for complex\n      lists or grids."
+          "text": "• Partial Views: Use partial views to create reusable UI components, especially for complex\nlists or grids."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Tag Helpers: Utilize tag helpers to simplify form generation and interaction with models in",
-            "      your views."
+            "• Tag Helpers: Utilize tag helpers to simplify form generation and interaction with models in",
+            "your views."
           ],
-          "text": "   • Tag Helpers: Utilize tag helpers to simplify form generation and interaction with models in\n      your views."
+          "text": "• Tag Helpers: Utilize tag helpers to simplify form generation and interaction with models in\nyour views."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Validation: Implement validation in your models using data annotations and custom",
-            "      validation attributes."
+            "• Validation: Implement validation in your models using data annotations and custom",
+            "validation attributes."
           ],
-          "text": "   • Validation: Implement validation in your models using data annotations and custom\n      validation attributes."
+          "text": "• Validation: Implement validation in your models using data annotations and custom\nvalidation attributes."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Error Handling: Handle potential errors gracefully and provide informative error messages to",
-            "      the user."
+            "• Error Handling: Handle potential errors gracefully and provide informative error messages to",
+            "the user."
           ],
-          "text": "   • Error Handling: Handle potential errors gracefully and provide informative error messages to\n      the user."
+          "text": "• Error Handling: Handle potential errors gracefully and provide informative error messages to\nthe user."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Client-Side Enhancement: Use JavaScript to enhance the user experience with features like",
-            "      client-side validation, AJAX-based filtering/sorting, and dynamic updates."
+            "• Client-Side Enhancement: Use JavaScript to enhance the user experience with features like",
+            "client-side validation, AJAX-based filtering/sorting, and dynamic updates."
           ],
-          "text": "   • Client-Side Enhancement: Use JavaScript to enhance the user experience with features like\n      client-side validation, AJAX-based filtering/sorting, and dynamic updates."
+          "text": "• Client-Side Enhancement: Use JavaScript to enhance the user experience with features like\nclient-side validation, AJAX-based filtering/sorting, and dynamic updates."
         },
         {
           "type": "heading",
@@ -1114,46 +1027,46 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Complex Logic in Views: Avoid complex business logic in your views. Keep them simple and",
-            "      focused on presentation."
+            "• Complex Logic in Views: Avoid complex business logic in your views. Keep them simple and",
+            "focused on presentation."
           ],
-          "text": "   • Complex Logic in Views: Avoid complex business logic in your views. Keep them simple and\n      focused on presentation."
+          "text": "• Complex Logic in Views: Avoid complex business logic in your views. Keep them simple and\nfocused on presentation."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Tight Coupling: Don't tightly couple your views to specific controllers or models. Strive for",
-            "      reusability."
+            "• Tight Coupling: Don't tightly couple your views to specific controllers or models. Strive for",
+            "reusability."
           ],
-          "text": "   • Tight Coupling: Don't tightly couple your views to specific controllers or models. Strive for\n      reusability."
+          "text": "• Tight Coupling: Don't tightly couple your views to specific controllers or models. Strive for\nreusability."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Overuse of ViewBag or ViewData: Prefer strongly typed models for passing data to your",
-            "      views."
+            "• Overuse of ViewBag or ViewData: Prefer strongly typed models for passing data to your",
+            "views."
           ],
-          "text": "   • Overuse of ViewBag or ViewData: Prefer strongly typed models for passing data to your\n      views."
+          "text": "• Overuse of ViewBag or ViewData: Prefer strongly typed models for passing data to your\nviews."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Hardcoding Strings: Avoid hardcoding strings like column names or sorting options. Use",
-            "      constants or enums for better maintainability."
+            "• Hardcoding Strings: Avoid hardcoding strings like column names or sorting options. Use",
+            "constants or enums for better maintainability."
           ],
-          "text": "   • Hardcoding Strings: Avoid hardcoding strings like column names or sorting options. Use\n      constants or enums for better maintainability."
+          "text": "• Hardcoding Strings: Avoid hardcoding strings like column names or sorting options. Use\nconstants or enums for better maintainability."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Neglecting Security: Always validate and sanitize user input, especially in search",
-            "      functionality, to prevent vulnerabilities."
+            "• Neglecting Security: Always validate and sanitize user input, especially in search",
+            "functionality, to prevent vulnerabilities."
           ],
-          "text": "   • Neglecting Security: Always validate and sanitize user input, especially in search\n      functionality, to prevent vulnerabilities."
+          "text": "• Neglecting Security: Always validate and sanitize user input, especially in search\nfunctionality, to prevent vulnerabilities."
         },
         {
           "type": "heading",
@@ -1175,282 +1088,254 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Purpose:"
+            "• Purpose:"
           ],
-          "text": "   • Purpose:"
+          "text": "• Purpose:"
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "        o Handle HTTP requests (GET, POST, PUT, DELETE)."
+            "o Handle HTTP requests (GET, POST, PUT, DELETE)."
           ],
-          "text": "        o Handle HTTP requests (GET, POST, PUT, DELETE)."
+          "text": "o Handle HTTP requests (GET, POST, PUT, DELETE)."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "        o Interact with services to perform CRUD operations on data."
+            "o Interact with services to perform CRUD operations on data."
           ],
-          "text": "        o Interact with services to perform CRUD operations on data."
+          "text": "o Interact with services to perform CRUD operations on data."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "        o Select and return views with data."
+            "o Select and return views with data."
           ],
-          "text": "        o Select and return views with data."
+          "text": "o Select and return views with data."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Typical Actions:"
+            "• Typical Actions:"
           ],
-          "text": "   • Typical Actions:"
+          "text": "• Typical Actions:"
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "        o Index: Display a list of items (Read)."
+            "o Index: Display a list of items (Read)."
           ],
-          "text": "        o Index: Display a list of items (Read)."
+          "text": "o Index: Display a list of items (Read)."
         }
       ],
       "char_count_raw": 1446,
-      "char_count_repaired": 1573
+      "char_count_repaired": 1445
     },
     {
       "page_number": 4,
       "raw_text": "o Details/{id}: Show details of a single item (Read).\no Create: Display a form for creating a new item (Get) and process the form\nsubmission (Post).\no Edit/{id}: Display a form for editing an existing item (Get) and process the form\nsubmission (Post).\no Delete/{id}: Delete an item.\n• Model Binding: Use parameters and attributes ([FromQuery], [FromRoute], [FromBody]) to\nbind data from the request.\n• Validation:\no Use data annotations in your models (e.g., [Required], [StringLength]).\no Check ModelState.IsValid in actions and handle invalid input.\n• Redirects:\no Use RedirectToAction, RedirectToRoute, or Redirect after successful POST requests\n(Create/Edit/Delete) to prevent duplicate submissions.\no Use LocalRedirect for redirects within your application.\n• Error Handling: Return appropriate status codes (e.g., 400 Bad Request, 404 Not Found) for\nerrors.\nViews\n• Purpose: Render the user interface (UI) for each action.\n• Razor View Engine: Use Razor syntax (@Model, @Html, etc.) to embed C# code in your\nviews.\n• Strongly Typed Views: Use the @model directive to bind a view to a specific model class\n(view model).\n• Displaying Data: Use Razor syntax to access and display model properties (e.g.,\n@Model.Name).\n• Forms: Use tag helpers or HTML helpers to create forms for Create and Edit actions.\n• Validation: Display validation error messages using @Html.ValidationSummary() and\n@Html.ValidationMessageFor().\n",
-      "repaired_text": "        o Details/{id}: Show details of a single item (Read).\n        o Create: Display a form for creating a new item (Get) and process the form\n           submission (Post).\n        o Edit/{id}: Display a form for editing an existing item (Get) and process the form\n           submission (Post).\n        o Delete/{id}: Delete an item.\n   • Model Binding: Use parameters and attributes ([FromQuery], [FromRoute], [FromBody]) to\n      bind data from the request.\n   • Validation:\n        o Use data annotations in your models (e.g., [Required], [StringLength]).\n        o Check ModelState.IsValid in actions and handle invalid input.\n   • Redirects:\n        o Use RedirectToAction, RedirectToRoute, or Redirect after successful POST requests\n           (Create/Edit/Delete) to prevent duplicate submissions.\n        o Use LocalRedirect for redirects within your application.\n   • Error Handling: Return appropriate status codes (e.g., 400 Bad Request, 404 Not Found) for\n      errors.\nViews\n   • Purpose: Render the user interface (UI) for each action.\n   • Razor View Engine: Use Razor syntax (@Model, @Html, etc.) to embed C# code in your\n      views.\n   • Strongly Typed Views: Use the @model directive to bind a view to a specific model class\n      (view model).\n   • Displaying Data: Use Razor syntax to access and display model properties (e.g.,\n      @Model.Name).\n   • Forms: Use tag helpers or HTML helpers to create forms for Create and Edit actions.\n   • Validation: Display validation error messages using @Html.ValidationSummary() and\n      @Html.ValidationMessageFor().",
+      "repaired_text": "o Details/{id}: Show details of a single item (Read).\no Create: Display a form for creating a new item (Get) and process the form\nsubmission (Post).\no Edit/{id}: Display a form for editing an existing item (Get) and process the form\nsubmission (Post).\no Delete/{id}: Delete an item.\n• Model Binding: Use parameters and attributes ([FromQuery], [FromRoute], [FromBody]) to\nbind data from the request.\n• Validation:\no Use data annotations in your models (e.g., [Required], [StringLength]).\no Check ModelState.IsValid in actions and handle invalid input.\n• Redirects:\no Use RedirectToAction, RedirectToRoute, or Redirect after successful POST requests\n(Create/Edit/Delete) to prevent duplicate submissions.\no Use LocalRedirect for redirects within your application.\n• Error Handling: Return appropriate status codes (e.g., 400 Bad Request, 404 Not Found) for\nerrors.\nViews\n• Purpose: Render the user interface (UI) for each action.\n• Razor View Engine: Use Razor syntax (@Model, @Html, etc.) to embed C# code in your\nviews.\n• Strongly Typed Views: Use the @model directive to bind a view to a specific model class\n(view model).\n• Displaying Data: Use Razor syntax to access and display model properties (e.g.,\n@Model.Name).\n• Forms: Use tag helpers or HTML helpers to create forms for Create and Edit actions.\n• Validation: Display validation error messages using @Html.ValidationSummary() and\n@Html.ValidationMessageFor().",
       "lines": [
         {
-          "text": "        o Details/{id}: Show details of a single item (Read).",
+          "text": "o Details/{id}: Show details of a single item (Read).",
           "rawText": "o Details/{id}: Show details of a single item (Read).",
-          "x": 126.02,
-          "y": 759.48,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 759,
+          "isBold": false
         },
         {
-          "text": "        o Create: Display a form for creating a new item (Get) and process the form",
+          "text": "o Create: Display a form for creating a new item (Get) and process the form",
           "rawText": "o Create: Display a form for creating a new item (Get) and process the form",
-          "x": 126.02,
-          "y": 737.02,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 737,
+          "isBold": false
         },
         {
-          "text": "           submission (Post).",
+          "text": "submission (Post).",
           "rawText": "submission (Post).",
-          "x": 144.02,
-          "y": 722.5,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 144,
+          "y": 723,
+          "isBold": false
         },
         {
-          "text": "        o Edit/{id}: Display a form for editing an existing item (Get) and process the form",
+          "text": "o Edit/{id}: Display a form for editing an existing item (Get) and process the form",
           "rawText": "o Edit/{id}: Display a form for editing an existing item (Get) and process the form",
-          "x": 126.02,
-          "y": 699.94,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 700,
+          "isBold": false
         },
         {
-          "text": "           submission (Post).",
+          "text": "submission (Post).",
           "rawText": "submission (Post).",
-          "x": 144.02,
-          "y": 685.54,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 144,
+          "y": 686,
+          "isBold": false
         },
         {
-          "text": "        o Delete/{id}: Delete an item.",
+          "text": "o Delete/{id}: Delete an item.",
           "rawText": "o Delete/{id}: Delete an item.",
-          "x": 126.02,
-          "y": 662.98,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 663,
+          "isBold": false
         },
         {
-          "text": "   • Model Binding: Use parameters and attributes ([FromQuery], [FromRoute], [FromBody]) to",
+          "text": "• Model Binding: Use parameters and attributes ([FromQuery], [FromRoute], [FromBody]) to",
           "rawText": "• Model Binding: Use parameters and attributes ([FromQuery], [FromRoute], [FromBody]) to",
-          "x": 90.024,
-          "y": 617.98,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 618,
+          "isBold": false
         },
         {
-          "text": "      bind data from the request.",
+          "text": "bind data from the request.",
           "rawText": "bind data from the request.",
-          "x": 108.02,
-          "y": 603.58,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 604,
+          "isBold": false
         },
         {
-          "text": "   • Validation:",
+          "text": "• Validation:",
           "rawText": "• Validation:",
-          "x": 90.024,
-          "y": 558.55,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 559,
+          "isBold": true
         },
         {
-          "text": "        o Use data annotations in your models (e.g., [Required], [StringLength]).",
+          "text": "o Use data annotations in your models (e.g., [Required], [StringLength]).",
           "rawText": "o Use data annotations in your models (e.g., [Required], [StringLength]).",
-          "x": 126.02,
-          "y": 535.99,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 536,
+          "isBold": false
         },
         {
-          "text": "        o Check ModelState.IsValid in actions and handle invalid input.",
+          "text": "o Check ModelState.IsValid in actions and handle invalid input.",
           "rawText": "o Check ModelState.IsValid in actions and handle invalid input.",
-          "x": 126.02,
-          "y": 513.55,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 514,
+          "isBold": false
         },
         {
-          "text": "   • Redirects:",
+          "text": "• Redirects:",
           "rawText": "• Redirects:",
-          "x": 90.024,
-          "y": 468.55,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 469,
+          "isBold": true
         },
         {
-          "text": "        o Use RedirectToAction, RedirectToRoute, or Redirect after successful POST requests",
+          "text": "o Use RedirectToAction, RedirectToRoute, or Redirect after successful POST requests",
           "rawText": "o Use RedirectToAction, RedirectToRoute, or Redirect after successful POST requests",
-          "x": 126.02,
-          "y": 446.11,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 446,
+          "isBold": false
         },
         {
-          "text": "           (Create/Edit/Delete) to prevent duplicate submissions.",
+          "text": "(Create/Edit/Delete) to prevent duplicate submissions.",
           "rawText": "(Create/Edit/Delete) to prevent duplicate submissions.",
-          "x": 144.02,
-          "y": 431.59,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 144,
+          "y": 432,
+          "isBold": false
         },
         {
-          "text": "        o Use LocalRedirect for redirects within your application.",
+          "text": "o Use LocalRedirect for redirects within your application.",
           "rawText": "o Use LocalRedirect for redirects within your application.",
-          "x": 126.02,
-          "y": 409.03,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 409,
+          "isBold": false
         },
         {
-          "text": "   • Error Handling: Return appropriate status codes (e.g., 400 Bad Request, 404 Not Found) for",
+          "text": "• Error Handling: Return appropriate status codes (e.g., 400 Bad Request, 404 Not Found) for",
           "rawText": "• Error Handling: Return appropriate status codes (e.g., 400 Bad Request, 404 Not Found) for",
-          "x": 90.024,
-          "y": 364.13,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 364,
+          "isBold": false
         },
         {
-          "text": "      errors.",
+          "text": "errors.",
           "rawText": "errors.",
-          "x": 108.02,
-          "y": 349.61,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 350,
+          "isBold": false
         },
         {
           "text": "Views",
           "rawText": "Views",
-          "x": 72.024,
-          "y": 304.61,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f3"
+          "startX": 72,
+          "y": 305,
+          "isBold": true
         },
         {
-          "text": "   • Purpose: Render the user interface (UI) for each action.",
+          "text": "• Purpose: Render the user interface (UI) for each action.",
           "rawText": "• Purpose: Render the user interface (UI) for each action.",
-          "x": 90.024,
-          "y": 282.17,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 282,
+          "isBold": false
         },
         {
-          "text": "   • Razor View Engine: Use Razor syntax (@Model, @Html, etc.) to embed C# code in your",
+          "text": "• Razor View Engine: Use Razor syntax (@Model, @Html, etc.) to embed C# code in your",
           "rawText": "• Razor View Engine: Use Razor syntax (@Model, @Html, etc.) to embed C# code in your",
-          "x": 90.024,
-          "y": 259.61,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 260,
+          "isBold": false
         },
         {
-          "text": "      views.",
+          "text": "views.",
           "rawText": "views.",
-          "x": 108.02,
-          "y": 245.09,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 245,
+          "isBold": false
         },
         {
-          "text": "   • Strongly Typed Views: Use the @model directive to bind a view to a specific model class",
+          "text": "• Strongly Typed Views: Use the @model directive to bind a view to a specific model class",
           "rawText": "• Strongly Typed Views: Use the @model directive to bind a view to a specific model class",
-          "x": 90.024,
-          "y": 222.65,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 223,
+          "isBold": false
         },
         {
-          "text": "      (view model).",
+          "text": "(view model).",
           "rawText": "(view model).",
-          "x": 108.02,
-          "y": 208.1,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 208,
+          "isBold": false
         },
         {
-          "text": "   • Displaying Data: Use Razor syntax to access and display model properties (e.g.,",
+          "text": "• Displaying Data: Use Razor syntax to access and display model properties (e.g.,",
           "rawText": "• Displaying Data: Use Razor syntax to access and display model properties (e.g.,",
-          "x": 90.024,
-          "y": 185.66,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 186,
+          "isBold": false
         },
         {
-          "text": "      @Model.Name).",
+          "text": "@Model.Name).",
           "rawText": "@Model.Name).",
-          "x": 108.02,
-          "y": 171.14,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 171,
+          "isBold": false
         },
         {
-          "text": "   • Forms: Use tag helpers or HTML helpers to create forms for Create and Edit actions.",
+          "text": "• Forms: Use tag helpers or HTML helpers to create forms for Create and Edit actions.",
           "rawText": "• Forms: Use tag helpers or HTML helpers to create forms for Create and Edit actions.",
-          "x": 90.024,
-          "y": 148.7,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 149,
+          "isBold": false
         },
         {
-          "text": "   • Validation: Display validation error messages using @Html.ValidationSummary() and",
+          "text": "• Validation: Display validation error messages using @Html.ValidationSummary() and",
           "rawText": "• Validation: Display validation error messages using @Html.ValidationSummary() and",
-          "x": 90.024,
-          "y": 126.14,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 126,
+          "isBold": false
         },
         {
-          "text": "      @Html.ValidationMessageFor().",
+          "text": "@Html.ValidationMessageFor().",
           "rawText": "@Html.ValidationMessageFor().",
-          "x": 108.02,
-          "y": 111.62,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 112,
+          "isBold": false
         }
       ],
       "blocks": [
@@ -1458,102 +1343,102 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "        o Details/{id}: Show details of a single item (Read)."
+            "o Details/{id}: Show details of a single item (Read)."
           ],
-          "text": "        o Details/{id}: Show details of a single item (Read)."
+          "text": "o Details/{id}: Show details of a single item (Read)."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "        o Create: Display a form for creating a new item (Get) and process the form",
-            "           submission (Post)."
+            "o Create: Display a form for creating a new item (Get) and process the form",
+            "submission (Post)."
           ],
-          "text": "        o Create: Display a form for creating a new item (Get) and process the form\n           submission (Post)."
+          "text": "o Create: Display a form for creating a new item (Get) and process the form\nsubmission (Post)."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "        o Edit/{id}: Display a form for editing an existing item (Get) and process the form",
-            "           submission (Post)."
+            "o Edit/{id}: Display a form for editing an existing item (Get) and process the form",
+            "submission (Post)."
           ],
-          "text": "        o Edit/{id}: Display a form for editing an existing item (Get) and process the form\n           submission (Post)."
+          "text": "o Edit/{id}: Display a form for editing an existing item (Get) and process the form\nsubmission (Post)."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "        o Delete/{id}: Delete an item."
+            "o Delete/{id}: Delete an item."
           ],
-          "text": "        o Delete/{id}: Delete an item."
+          "text": "o Delete/{id}: Delete an item."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Model Binding: Use parameters and attributes ([FromQuery], [FromRoute], [FromBody]) to",
-            "      bind data from the request."
+            "• Model Binding: Use parameters and attributes ([FromQuery], [FromRoute], [FromBody]) to",
+            "bind data from the request."
           ],
-          "text": "   • Model Binding: Use parameters and attributes ([FromQuery], [FromRoute], [FromBody]) to\n      bind data from the request."
+          "text": "• Model Binding: Use parameters and attributes ([FromQuery], [FromRoute], [FromBody]) to\nbind data from the request."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Validation:"
+            "• Validation:"
           ],
-          "text": "   • Validation:"
+          "text": "• Validation:"
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "        o Use data annotations in your models (e.g., [Required], [StringLength])."
+            "o Use data annotations in your models (e.g., [Required], [StringLength])."
           ],
-          "text": "        o Use data annotations in your models (e.g., [Required], [StringLength])."
+          "text": "o Use data annotations in your models (e.g., [Required], [StringLength])."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "        o Check ModelState.IsValid in actions and handle invalid input."
+            "o Check ModelState.IsValid in actions and handle invalid input."
           ],
-          "text": "        o Check ModelState.IsValid in actions and handle invalid input."
+          "text": "o Check ModelState.IsValid in actions and handle invalid input."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Redirects:"
+            "• Redirects:"
           ],
-          "text": "   • Redirects:"
+          "text": "• Redirects:"
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "        o Use RedirectToAction, RedirectToRoute, or Redirect after successful POST requests",
-            "           (Create/Edit/Delete) to prevent duplicate submissions."
+            "o Use RedirectToAction, RedirectToRoute, or Redirect after successful POST requests",
+            "(Create/Edit/Delete) to prevent duplicate submissions."
           ],
-          "text": "        o Use RedirectToAction, RedirectToRoute, or Redirect after successful POST requests\n           (Create/Edit/Delete) to prevent duplicate submissions."
+          "text": "o Use RedirectToAction, RedirectToRoute, or Redirect after successful POST requests\n(Create/Edit/Delete) to prevent duplicate submissions."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "        o Use LocalRedirect for redirects within your application."
+            "o Use LocalRedirect for redirects within your application."
           ],
-          "text": "        o Use LocalRedirect for redirects within your application."
+          "text": "o Use LocalRedirect for redirects within your application."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Error Handling: Return appropriate status codes (e.g., 400 Bad Request, 404 Not Found) for",
-            "      errors."
+            "• Error Handling: Return appropriate status codes (e.g., 400 Bad Request, 404 Not Found) for",
+            "errors."
           ],
-          "text": "   • Error Handling: Return appropriate status codes (e.g., 400 Bad Request, 404 Not Found) for\n      errors."
+          "text": "• Error Handling: Return appropriate status codes (e.g., 400 Bad Request, 404 Not Found) for\nerrors."
         },
         {
           "type": "heading",
@@ -1567,269 +1452,244 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Purpose: Render the user interface (UI) for each action."
+            "• Purpose: Render the user interface (UI) for each action."
           ],
-          "text": "   • Purpose: Render the user interface (UI) for each action."
+          "text": "• Purpose: Render the user interface (UI) for each action."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Razor View Engine: Use Razor syntax (@Model, @Html, etc.) to embed C# code in your",
-            "      views."
+            "• Razor View Engine: Use Razor syntax (@Model, @Html, etc.) to embed C# code in your",
+            "views."
           ],
-          "text": "   • Razor View Engine: Use Razor syntax (@Model, @Html, etc.) to embed C# code in your\n      views."
+          "text": "• Razor View Engine: Use Razor syntax (@Model, @Html, etc.) to embed C# code in your\nviews."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Strongly Typed Views: Use the @model directive to bind a view to a specific model class",
-            "      (view model)."
+            "• Strongly Typed Views: Use the @model directive to bind a view to a specific model class",
+            "(view model)."
           ],
-          "text": "   • Strongly Typed Views: Use the @model directive to bind a view to a specific model class\n      (view model)."
+          "text": "• Strongly Typed Views: Use the @model directive to bind a view to a specific model class\n(view model)."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Displaying Data: Use Razor syntax to access and display model properties (e.g.,",
-            "      @Model.Name)."
+            "• Displaying Data: Use Razor syntax to access and display model properties (e.g.,",
+            "@Model.Name)."
           ],
-          "text": "   • Displaying Data: Use Razor syntax to access and display model properties (e.g.,\n      @Model.Name)."
+          "text": "• Displaying Data: Use Razor syntax to access and display model properties (e.g.,\n@Model.Name)."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Forms: Use tag helpers or HTML helpers to create forms for Create and Edit actions."
+            "• Forms: Use tag helpers or HTML helpers to create forms for Create and Edit actions."
           ],
-          "text": "   • Forms: Use tag helpers or HTML helpers to create forms for Create and Edit actions."
+          "text": "• Forms: Use tag helpers or HTML helpers to create forms for Create and Edit actions."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Validation: Display validation error messages using @Html.ValidationSummary() and"
+            "• Validation: Display validation error messages using @Html.ValidationSummary() and"
           ],
-          "text": "   • Validation: Display validation error messages using @Html.ValidationSummary() and"
+          "text": "• Validation: Display validation error messages using @Html.ValidationSummary() and"
         },
         {
           "type": "code",
           "page": 4,
           "lines": [
-            "      @Html.ValidationMessageFor()."
+            "@Html.ValidationMessageFor()."
           ],
-          "text": "      @Html.ValidationMessageFor()."
+          "text": "@Html.ValidationMessageFor()."
         }
       ],
       "char_count_raw": 1421,
-      "char_count_repaired": 1583
+      "char_count_repaired": 1420
     },
     {
       "page_number": 5,
       "raw_text": "• Partial Views: Use partial views (_PartialName.cshtml) for reusable UI components (e.g., a\nlist item template).\n• Layouts: Use _Layout.cshtml to define the common structure for your pages.\n• _ViewImports.cshtml: Centralize common @using and @addTagHelper directives.\n• Sorting and Filtering:\no Use query string parameters (e.g., ?sort=name_desc) to control sorting and filtering\non the server-side.\no Optionally use JavaScript for client-side filtering or sorting.\nAdditional Tips\n• Separate Concerns: Keep your controllers focused on handling requests and your views\nfocused on presentation.\n• Use Services: Delegate data access and business logic to separate service classes.\n• DTO (Data Transfer Objects): Use DTOs to transfer data between your controllers and\nservices.\n• Asynchronous Actions: Use async and await for actions that involve I/O operations.\n• Security: Always validate and sanitize user input.\nInterview Focus Areas\n• Understanding of MVC: Explain the roles of controllers and views and how they interact.\n• Model Binding & Validation: Show proficiency in using model binding and validation\nattributes.\n• View Logic: Demonstrate how to write clear and concise Razor code in your views.\n• Error Handling & Redirects: Explain how to handle errors gracefully and prevent duplicate\nform submissions.\n• Best Practices: Discuss how to follow the best practices mentioned above to write clean and\nmaintainable code.\n",
-      "repaired_text": "   • Partial Views: Use partial views (_PartialName.cshtml) for reusable UI components (e.g., a\n      list item template).\n   • Layouts: Use _Layout.cshtml to define the common structure for your pages.\n   • _ViewImports.cshtml: Centralize common @using and @addTagHelper directives.\n   • Sorting and Filtering:\n        o Use query string parameters (e.g., ?sort=name_desc) to control sorting and filtering\n           on the server-side.\n        o Optionally use JavaScript for client-side filtering or sorting.\nAdditional Tips\n   • Separate Concerns: Keep your controllers focused on handling requests and your views\n      focused on presentation.\n   • Use Services: Delegate data access and business logic to separate service classes.\n   • DTO (Data Transfer Objects): Use DTOs to transfer data between your controllers and\n      services.\n   • Asynchronous Actions: Use async and await for actions that involve I/O operations.\n   • Security: Always validate and sanitize user input.\nInterview Focus Areas\n   • Understanding of MVC: Explain the roles of controllers and views and how they interact.\n   • Model Binding & Validation: Show proficiency in using model binding and validation\n      attributes.\n   • View Logic: Demonstrate how to write clear and concise Razor code in your views.\n   • Error Handling & Redirects: Explain how to handle errors gracefully and prevent duplicate\n      form submissions.\n   • Best Practices: Discuss how to follow the best practices mentioned above to write clean and\n      maintainable code.",
+      "repaired_text": "• Partial Views: Use partial views (_PartialName.cshtml) for reusable UI components (e.g., a\nlist item template).\n• Layouts: Use _Layout.cshtml to define the common structure for your pages.\n• _ViewImports.cshtml: Centralize common @using and @addTagHelper directives.\n• Sorting and Filtering:\no Use query string parameters (e.g., ?sort=name_desc) to control sorting and filtering\non the server-side.\no Optionally use JavaScript for client-side filtering or sorting.\nAdditional Tips\n• Separate Concerns: Keep your controllers focused on handling requests and your views\nfocused on presentation.\n• Use Services: Delegate data access and business logic to separate service classes.\n• DTO (Data Transfer Objects): Use DTOs to transfer data between your controllers and\nservices.\n• Asynchronous Actions: Use async and await for actions that involve I/O operations.\n• Security: Always validate and sanitize user input.\nInterview Focus Areas\n• Understanding of MVC: Explain the roles of controllers and views and how they interact.\n• Model Binding & Validation: Show proficiency in using model binding and validation\nattributes.\n• View Logic: Demonstrate how to write clear and concise Razor code in your views.\n• Error Handling & Redirects: Explain how to handle errors gracefully and prevent duplicate\nform submissions.\n• Best Practices: Discuss how to follow the best practices mentioned above to write clean and\nmaintainable code.",
       "lines": [
         {
-          "text": "   • Partial Views: Use partial views (_PartialName.cshtml) for reusable UI components (e.g., a",
+          "text": "• Partial Views: Use partial views (_PartialName.cshtml) for reusable UI components (e.g., a",
           "rawText": "• Partial Views: Use partial views (_PartialName.cshtml) for reusable UI components (e.g., a",
-          "x": 90.024,
-          "y": 759.48,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 759,
+          "isBold": false
         },
         {
-          "text": "      list item template).",
+          "text": "list item template).",
           "rawText": "list item template).",
-          "x": 108.02,
-          "y": 744.94,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 745,
+          "isBold": false
         },
         {
-          "text": "   • Layouts: Use _Layout.cshtml to define the common structure for your pages.",
+          "text": "• Layouts: Use _Layout.cshtml to define the common structure for your pages.",
           "rawText": "• Layouts: Use _Layout.cshtml to define the common structure for your pages.",
-          "x": 90.024,
-          "y": 722.5,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 723,
+          "isBold": false
         },
         {
-          "text": "   • _ViewImports.cshtml: Centralize common @using and @addTagHelper directives.",
+          "text": "• _ViewImports.cshtml: Centralize common @using and @addTagHelper directives.",
           "rawText": "• _ViewImports.cshtml: Centralize common @using and @addTagHelper directives.",
-          "x": 90.024,
-          "y": 699.94,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 700,
+          "isBold": false
         },
         {
-          "text": "   • Sorting and Filtering:",
+          "text": "• Sorting and Filtering:",
           "rawText": "• Sorting and Filtering:",
-          "x": 90.024,
-          "y": 677.5,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 678,
+          "isBold": true
         },
         {
-          "text": "        o Use query string parameters (e.g., ?sort=name_desc) to control sorting and filtering",
+          "text": "o Use query string parameters (e.g., ?sort=name_desc) to control sorting and filtering",
           "rawText": "o Use query string parameters (e.g., ?sort=name_desc) to control sorting and filtering",
-          "x": 126.02,
-          "y": 655.06,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 655,
+          "isBold": false
         },
         {
-          "text": "           on the server-side.",
+          "text": "on the server-side.",
           "rawText": "on the server-side.",
-          "x": 144.02,
-          "y": 640.54,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 144,
+          "y": 641,
+          "isBold": false
         },
         {
-          "text": "        o Optionally use JavaScript for client-side filtering or sorting.",
+          "text": "o Optionally use JavaScript for client-side filtering or sorting.",
           "rawText": "o Optionally use JavaScript for client-side filtering or sorting.",
-          "x": 126.02,
-          "y": 617.98,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f6"
+          "startX": 126,
+          "y": 618,
+          "isBold": false
         },
         {
           "text": "Additional Tips",
           "rawText": "Additional Tips",
-          "x": 72.024,
-          "y": 573.07,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f3"
+          "startX": 72,
+          "y": 573,
+          "isBold": true
         },
         {
-          "text": "   • Separate Concerns: Keep your controllers focused on handling requests and your views",
+          "text": "• Separate Concerns: Keep your controllers focused on handling requests and your views",
           "rawText": "• Separate Concerns: Keep your controllers focused on handling requests and your views",
-          "x": 90.024,
-          "y": 550.51,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 551,
+          "isBold": false
         },
         {
-          "text": "      focused on presentation.",
+          "text": "focused on presentation.",
           "rawText": "focused on presentation.",
-          "x": 108.02,
-          "y": 535.99,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 536,
+          "isBold": false
         },
         {
-          "text": "   • Use Services: Delegate data access and business logic to separate service classes.",
+          "text": "• Use Services: Delegate data access and business logic to separate service classes.",
           "rawText": "• Use Services: Delegate data access and business logic to separate service classes.",
-          "x": 90.024,
-          "y": 513.55,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 514,
+          "isBold": false
         },
         {
-          "text": "   • DTO (Data Transfer Objects): Use DTOs to transfer data between your controllers and",
+          "text": "• DTO (Data Transfer Objects): Use DTOs to transfer data between your controllers and",
           "rawText": "• DTO (Data Transfer Objects): Use DTOs to transfer data between your controllers and",
-          "x": 90.024,
-          "y": 491.11,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 491,
+          "isBold": false
         },
         {
-          "text": "      services.",
+          "text": "services.",
           "rawText": "services.",
-          "x": 108.02,
-          "y": 476.59,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 477,
+          "isBold": false
         },
         {
-          "text": "   • Asynchronous Actions: Use async and await for actions that involve I/O operations.",
+          "text": "• Asynchronous Actions: Use async and await for actions that involve I/O operations.",
           "rawText": "• Asynchronous Actions: Use async and await for actions that involve I/O operations.",
-          "x": 90.024,
-          "y": 454.03,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 454,
+          "isBold": false
         },
         {
-          "text": "   • Security: Always validate and sanitize user input.",
+          "text": "• Security: Always validate and sanitize user input.",
           "rawText": "• Security: Always validate and sanitize user input.",
-          "x": 90.024,
-          "y": 431.59,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 432,
+          "isBold": false
         },
         {
           "text": "Interview Focus Areas",
           "rawText": "Interview Focus Areas",
-          "x": 72.024,
-          "y": 386.57,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f3"
+          "startX": 72,
+          "y": 387,
+          "isBold": true
         },
         {
-          "text": "   • Understanding of MVC: Explain the roles of controllers and views and how they interact.",
+          "text": "• Understanding of MVC: Explain the roles of controllers and views and how they interact.",
           "rawText": "• Understanding of MVC: Explain the roles of controllers and views and how they interact.",
-          "x": 90.024,
-          "y": 364.13,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 364,
+          "isBold": false
         },
         {
-          "text": "   • Model Binding & Validation: Show proficiency in using model binding and validation",
+          "text": "• Model Binding & Validation: Show proficiency in using model binding and validation",
           "rawText": "• Model Binding & Validation: Show proficiency in using model binding and validation",
-          "x": 90.024,
-          "y": 341.57,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 342,
+          "isBold": false
         },
         {
-          "text": "      attributes.",
+          "text": "attributes.",
           "rawText": "attributes.",
-          "x": 108.02,
-          "y": 327.05,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 327,
+          "isBold": false
         },
         {
-          "text": "   • View Logic: Demonstrate how to write clear and concise Razor code in your views.",
+          "text": "• View Logic: Demonstrate how to write clear and concise Razor code in your views.",
           "rawText": "• View Logic: Demonstrate how to write clear and concise Razor code in your views.",
-          "x": 90.024,
-          "y": 304.61,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 305,
+          "isBold": false
         },
         {
-          "text": "   • Error Handling & Redirects: Explain how to handle errors gracefully and prevent duplicate",
+          "text": "• Error Handling & Redirects: Explain how to handle errors gracefully and prevent duplicate",
           "rawText": "• Error Handling & Redirects: Explain how to handle errors gracefully and prevent duplicate",
-          "x": 90.024,
-          "y": 282.17,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 282,
+          "isBold": false
         },
         {
-          "text": "      form submissions.",
+          "text": "form submissions.",
           "rawText": "form submissions.",
-          "x": 108.02,
-          "y": 267.65,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 268,
+          "isBold": false
         },
         {
-          "text": "   • Best Practices: Discuss how to follow the best practices mentioned above to write clean and",
+          "text": "• Best Practices: Discuss how to follow the best practices mentioned above to write clean and",
           "rawText": "• Best Practices: Discuss how to follow the best practices mentioned above to write clean and",
-          "x": 90.024,
-          "y": 245.09,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f4"
+          "startX": 90,
+          "y": 245,
+          "isBold": false
         },
         {
-          "text": "      maintainable code.",
+          "text": "maintainable code.",
           "rawText": "maintainable code.",
-          "x": 108.02,
-          "y": 230.69,
-          "fontSize": 11.04,
-          "fontName": "g_d30_f2"
+          "startX": 108,
+          "y": 231,
+          "isBold": false
         }
       ],
       "blocks": [
@@ -1837,51 +1697,51 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Partial Views: Use partial views (_PartialName.cshtml) for reusable UI components (e.g., a",
-            "      list item template)."
+            "• Partial Views: Use partial views (_PartialName.cshtml) for reusable UI components (e.g., a",
+            "list item template)."
           ],
-          "text": "   • Partial Views: Use partial views (_PartialName.cshtml) for reusable UI components (e.g., a\n      list item template)."
+          "text": "• Partial Views: Use partial views (_PartialName.cshtml) for reusable UI components (e.g., a\nlist item template)."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Layouts: Use _Layout.cshtml to define the common structure for your pages."
+            "• Layouts: Use _Layout.cshtml to define the common structure for your pages."
           ],
-          "text": "   • Layouts: Use _Layout.cshtml to define the common structure for your pages."
+          "text": "• Layouts: Use _Layout.cshtml to define the common structure for your pages."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • _ViewImports.cshtml: Centralize common @using and @addTagHelper directives."
+            "• _ViewImports.cshtml: Centralize common @using and @addTagHelper directives."
           ],
-          "text": "   • _ViewImports.cshtml: Centralize common @using and @addTagHelper directives."
+          "text": "• _ViewImports.cshtml: Centralize common @using and @addTagHelper directives."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Sorting and Filtering:"
+            "• Sorting and Filtering:"
           ],
-          "text": "   • Sorting and Filtering:"
+          "text": "• Sorting and Filtering:"
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "        o Use query string parameters (e.g., ?sort=name_desc) to control sorting and filtering",
-            "           on the server-side."
+            "o Use query string parameters (e.g., ?sort=name_desc) to control sorting and filtering",
+            "on the server-side."
           ],
-          "text": "        o Use query string parameters (e.g., ?sort=name_desc) to control sorting and filtering\n           on the server-side."
+          "text": "o Use query string parameters (e.g., ?sort=name_desc) to control sorting and filtering\non the server-side."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "        o Optionally use JavaScript for client-side filtering or sorting."
+            "o Optionally use JavaScript for client-side filtering or sorting."
           ],
-          "text": "        o Optionally use JavaScript for client-side filtering or sorting."
+          "text": "o Optionally use JavaScript for client-side filtering or sorting."
         },
         {
           "type": "heading",
@@ -1895,43 +1755,43 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Separate Concerns: Keep your controllers focused on handling requests and your views",
-            "      focused on presentation."
+            "• Separate Concerns: Keep your controllers focused on handling requests and your views",
+            "focused on presentation."
           ],
-          "text": "   • Separate Concerns: Keep your controllers focused on handling requests and your views\n      focused on presentation."
+          "text": "• Separate Concerns: Keep your controllers focused on handling requests and your views\nfocused on presentation."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Use Services: Delegate data access and business logic to separate service classes."
+            "• Use Services: Delegate data access and business logic to separate service classes."
           ],
-          "text": "   • Use Services: Delegate data access and business logic to separate service classes."
+          "text": "• Use Services: Delegate data access and business logic to separate service classes."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • DTO (Data Transfer Objects): Use DTOs to transfer data between your controllers and",
-            "      services."
+            "• DTO (Data Transfer Objects): Use DTOs to transfer data between your controllers and",
+            "services."
           ],
-          "text": "   • DTO (Data Transfer Objects): Use DTOs to transfer data between your controllers and\n      services."
+          "text": "• DTO (Data Transfer Objects): Use DTOs to transfer data between your controllers and\nservices."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Asynchronous Actions: Use async and await for actions that involve I/O operations."
+            "• Asynchronous Actions: Use async and await for actions that involve I/O operations."
           ],
-          "text": "   • Asynchronous Actions: Use async and await for actions that involve I/O operations."
+          "text": "• Asynchronous Actions: Use async and await for actions that involve I/O operations."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Security: Always validate and sanitize user input."
+            "• Security: Always validate and sanitize user input."
           ],
-          "text": "   • Security: Always validate and sanitize user input."
+          "text": "• Security: Always validate and sanitize user input."
         },
         {
           "type": "heading",
@@ -1945,48 +1805,48 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Understanding of MVC: Explain the roles of controllers and views and how they interact."
+            "• Understanding of MVC: Explain the roles of controllers and views and how they interact."
           ],
-          "text": "   • Understanding of MVC: Explain the roles of controllers and views and how they interact."
+          "text": "• Understanding of MVC: Explain the roles of controllers and views and how they interact."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Model Binding & Validation: Show proficiency in using model binding and validation",
-            "      attributes."
+            "• Model Binding & Validation: Show proficiency in using model binding and validation",
+            "attributes."
           ],
-          "text": "   • Model Binding & Validation: Show proficiency in using model binding and validation\n      attributes."
+          "text": "• Model Binding & Validation: Show proficiency in using model binding and validation\nattributes."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • View Logic: Demonstrate how to write clear and concise Razor code in your views."
+            "• View Logic: Demonstrate how to write clear and concise Razor code in your views."
           ],
-          "text": "   • View Logic: Demonstrate how to write clear and concise Razor code in your views."
+          "text": "• View Logic: Demonstrate how to write clear and concise Razor code in your views."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Error Handling & Redirects: Explain how to handle errors gracefully and prevent duplicate",
-            "      form submissions."
+            "• Error Handling & Redirects: Explain how to handle errors gracefully and prevent duplicate",
+            "form submissions."
           ],
-          "text": "   • Error Handling & Redirects: Explain how to handle errors gracefully and prevent duplicate\n      form submissions."
+          "text": "• Error Handling & Redirects: Explain how to handle errors gracefully and prevent duplicate\nform submissions."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Best Practices: Discuss how to follow the best practices mentioned above to write clean and",
-            "      maintainable code."
+            "• Best Practices: Discuss how to follow the best practices mentioned above to write clean and",
+            "maintainable code."
           ],
-          "text": "   • Best Practices: Discuss how to follow the best practices mentioned above to write clean and\n      maintainable code."
+          "text": "• Best Practices: Discuss how to follow the best practices mentioned above to write clean and\nmaintainable code."
         }
       ],
       "char_count_raw": 1429,
-      "char_count_repaired": 1533
+      "char_count_repaired": 1428
     }
   ],
   "title": "CRUD Operations"

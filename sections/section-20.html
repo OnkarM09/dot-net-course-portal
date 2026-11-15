@@ -229,8 +229,8 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
-          <span style="font-size: 0.68rem; opacity: 0.7;">10</span>
+          <span>Module 5: Testing (xUnit), CRUD Operations &amp; EF Core</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">4</span>
         </div>
         <ul class="sidebar-nav-list">
           
@@ -262,6 +262,16 @@
           </a>
         </li>
       
+        </ul>
+      </div>
+    
+      <div class="sidebar-group">
+        <div class="sidebar-group-title">
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
+          <span style="font-size: 0.68rem; opacity: 0.7;">6</span>
+        </div>
+        <ul class="sidebar-nav-list">
+          
         <li class="sidebar-nav-item">
           <a href="section-20.html" class="sidebar-link active" aria-current="page">
             <span class="sidebar-sec-num">20</span>
@@ -309,7 +319,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 6: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
+          <span>Module 7: RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">3</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -340,7 +350,7 @@
     
       <div class="sidebar-group">
         <div class="sidebar-group-title">
-          <span>Module 7: API Security (JWT) &amp; Minimal APIs</span>
+          <span>Module 8: API Security (JWT) &amp; Modern Minimal APIs</span>
           <span style="font-size: 0.68rem; opacity: 0.7;">2</span>
         </div>
         <ul class="sidebar-nav-list">
@@ -376,12 +386,12 @@
         <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
           <a href="../index.html">Curriculum</a>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
-          <span>Module 5: Testing (xUnit), CRUD, EF Core, Filters &amp; Clean Architecture</span>
+          <span>Module 6: Enterprise Architecture, Filters, Logging &amp; Identity</span>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
           <span class="breadcrumb-current" aria-current="page">Section 20</span>
         </nav>
         <div class="section-meta-row">
-          <span class="module-badge">Module 5</span>
+          <span class="module-badge">Module 6</span>
           <span class="read-time-badge">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             9 PDF Pages
@@ -398,49 +408,56 @@
 
       <!-- Body Content -->
       <article class="docs-content">
-        <p>Logging in ASP.NET Core
-Logging is an indispensable tool for monitoring, troubleshooting, and gaining insights into your
-ASP.NET Core application&#39;s behavior. It serves as a window into your application&#39;s runtime events,
-allowing you to track everything from routine operations to critical errors.</p>
+        
+<h2 id="logging-in-aspnet-core">Logging in ASP.NET Core</h2>
+<p>Logging is an indispensable tool for monitoring, troubleshooting, and gaining insights into your ASP.NET Core application&#39;s behavior. It serves as a window into your application&#39;s runtime events, allowing you to track everything from routine operations to critical errors.</p>
 
 <h2 id="ilogger">ILogger</h2>
-<p>At the core of ASP.NET Core&#39;s logging infrastructure is the ILogger interface. It provides a
-standardized way to emit log messages, warnings, errors, and other diagnostic information from
-your application code. Let&#39;s explore its key aspects:</p>
+<p>At the core of ASP.NET Core&#39;s logging infrastructure is the ILogger interface. It provides a standardized way to emit log messages, warnings, errors, and other diagnostic information from your application code. Let&#39;s explore its key aspects:</p>
+
+<h3 id="1-abstraction">1. Abstraction</h3>
 <ul>
-  <li>1. Abstraction</li>
   <li>Flexibility: ILogger is an interface, meaning you can plug in various logging providers (e.g.,
-      console, file, database, cloud-based services) without changing your application code.</li>
+console, file, database, cloud-based services) without changing your application code.</li>
   <li>Adaptability: This abstraction layer allows you to switch logging providers or modify their
-      configurations seamlessly, adapting to different deployment environments or monitoring
-      needs.</li>
-  <li>2. Log Levels</li>
+configurations seamlessly, adapting to different deployment environments or monitoring
+needs.</li>
+</ul>
+
+<h3 id="2-log-levels">2. Log Levels</h3>
+<ul>
   <li>Severity Categories: ILogger supports a hierarchy of log levels, representing the severity of
-      log events:</li>
+log events:</li>
   <li>Trace: Very fine-grained, detailed diagnostic events. Usually only enabled during
-           development or for in-depth troubleshooting.</li>
+development or for in-depth troubleshooting.</li>
   <li>Debug: Debugging information that&#39;s less verbose than trace-level logs.</li>
   <li>Information: Informational messages about normal application behavior.</li>
   <li>Warning: Events that might indicate potential issues but don&#39;t necessarily disrupt
-           the application.</li>
+the application.</li>
   <li>Error: Errors or exceptions that have occurred and might impact the user
-           experience.</li>
+experience.</li>
   <li>Critical: Critical errors or failures that require immediate attention.</li>
   <li>Filtering: You can configure logging providers to filter out log messages based on their level.
-      This helps control the amount of log data generated, ensuring that only relevant information
-      is recorded.</li>
-  <li>3. Structured Logging</li>
+This helps control the amount of log data generated, ensuring that only relevant information
+is recorded.</li>
+</ul>
+
+<h3 id="3-structured-logging">3. Structured Logging</h3>
+<ul>
   <li>Beyond Plain Text: Structured logging goes beyond simple text messages by incorporating
-      key-value pairs (properties) into your log events.</li>
+key-value pairs (properties) into your log events.</li>
   <li>Enhanced Analysis: This structure makes it significantly easier to filter, search, and analyze
-      log data using tools like Seq or Elasticsearch.</li>
+log data using tools like Seq or Elasticsearch.</li>
   <li>Example: Instead of logging &quot;User &#39;JohnDoe&#39; logged in&quot;, you can log an event with
-      properties:</li>
+properties:</li>
   <li>EventName: &quot;UserLogin&quot;</li>
   <li>UserName: &quot;JohnDoe&quot;</li>
-  <li>4. Dependency Injection</li>
+</ul>
+
+<h3 id="4-dependency-injection">4. Dependency Injection</h3>
+<ul>
   <li>Seamless Access: You typically acquire an ILogger instance using dependency injection. This
-      allows the DI container to provide the correct implementation based on your configuration.</li>
+allows the DI container to provide the correct implementation based on your configuration.</li>
   <li>Controller Example:</li>
 </ul>
 
@@ -453,26 +470,26 @@ your application code. Let&#39;s explore its key aspects:</p>
         </button>
       </div>
       <pre><code class="language-csharp">public class PersonsController : Controller
-           {
-             private readonly ILogger&lt;PersonsController&gt; _logger; // Injected logger
-             public PersonsController(ILogger&lt;PersonsController&gt; logger)
-             {
-              _logger = logger;
-             }
-           }</code></pre>
+{
+private readonly ILogger&lt;PersonsController&gt; _logger; // Injected logger
+public PersonsController(ILogger&lt;PersonsController&gt; logger)
+{
+_logger = logger;
+}
+}</code></pre>
     </div>
   <ul>
-  <li>Generic Type Argument: The generic type parameter (e.g., ILogger&lt;PersonsController&gt;)</li>
+  <li>Generic Type Argument: The generic type parameter (e.g., ILogger&lt;PersonsController&gt;)
+specifies the category name for the logger, which is often the class name where the logger is
+being used. This allows you to configure logging levels and filtering rules for specific parts of
+your application.</li>
 </ul>
-<p>specifies the category name for the logger, which is often the class name where the logger is</p>
-<p>being used. This allows you to configure logging levels and filtering rules for specific parts of</p>
-<p>your application.</p>
 
 <h2 id="logging-configuration">Logging Configuration</h2>
 <ul>
   <li><code>appsettings.json</code>: The default configuration file where you specify your logging preferences.</li>
   <li>LogLevel Section: Within the Logging section, you control the minimum log levels for
-      different categories and providers.</li>
+different categories and providers.</li>
 </ul>
 
     <div class="code-block">
@@ -484,20 +501,20 @@ your application code. Let&#39;s explore its key aspects:</p>
         </button>
       </div>
       <pre><code class="language-csharp">// appsettings.json
-           {
-            &quot;Logging&quot;: {
-             &quot;LogLevel&quot;: {
-             &quot;Default&quot;: &quot;Information&quot;, // Default log level for most categories
-             &quot;Microsoft.AspNetCore&quot;: &quot;Warning&quot; // More specific setting for ASP.NET Core
-           logs
-             }
-            }
-           }</code></pre>
+{
+&quot;Logging&quot;: {
+&quot;LogLevel&quot;: {
+&quot;Default&quot;: &quot;Information&quot;, // Default log level for most categories
+&quot;Microsoft.AspNetCore&quot;: &quot;Warning&quot; // More specific setting for ASP.NET Core
+logs
+}
+}
+}</code></pre>
     </div>
   <ul>
-  <li>Filtering: Use the Filter section to define more granular rules for excluding or including</li>
+  <li>Filtering: Use the Filter section to define more granular rules for excluding or including
+specific categories or log levels.</li>
 </ul>
-<p>specific categories or log levels.</p>
 
 <h2 id="logging-providers">Logging Providers</h2>
 <ul>
@@ -505,31 +522,30 @@ your application code. Let&#39;s explore its key aspects:</p>
   <li>Console: Logs to the console.</li>
   <li>Debug: Logs to the Visual Studio debugger output window.</li>
   <li>EventSource: Logs structured events for consumption by Event Tracing for Windows
-           (ETW).</li>
+(ETW).</li>
   <li>EventLog (Windows only): Logs to the Windows Event Log.</li>
   <li>Third-Party Providers:</li>
   <li>Serilog: A highly recommended option for its powerful structured logging
-           capabilities and extensive collection of sinks (output targets).</li>
+capabilities and extensive collection of sinks (output targets).</li>
   <li>NLog, log4net: Other well-established logging frameworks.</li>
 </ul>
 
 <h2 id="http-logging">HTTP Logging</h2>
-<p>ASP.NET Core provides built-in middleware for logging HTTP requests and responses. This is useful
-for:</p>
+<p>ASP.NET Core provides built-in middleware for logging HTTP requests and responses. This is useful for:</p>
 <ul>
   <li>Troubleshooting: Tracking the flow of requests and responses.</li>
   <li>Performance Analysis: Identifying slow requests or bottlenecks.</li>
   <li>Security Audits: Logging request details for security analysis.</li>
   <li>UseHttpLogging() Middleware:</li>
   <li>Purpose: Adds middleware to the pipeline to log HTTP request and response
-           information.</li>
+information.</li>
   <li>Placement: Add this middleware early in your <code>Program.cs</code> to capture all subsequent
-           requests.</li>
+requests.</li>
   <li>HttpLoggingOptions:</li>
   <li>Purpose: Allows you to customize what gets logged.</li>
   <li>Key Options:</li>
   <li>LoggingFields: Control which fields are logged (e.g., request path, method,
-                 status code, headers).</li>
+status code, headers).</li>
   <li>RequestHeaders, ResponseHeaders: Specify which headers to include.</li>
 </ul>
 <p>Code Example: <code>Program.cs</code></p>
@@ -543,15 +559,15 @@ for:</p>
         </button>
       </div>
       <pre><code class="language-csharp">if (builder.Environment.IsDevelopment())
-      {
-       app.UseDeveloperExceptionPage();
-      }
-      app.UseHttpLogging(); // Enable HTTP logging
-      // ... other middleware and routing ...
-   • UseDeveloperExceptionPage(): This middleware is used in development environments to</code></pre>
+{
+app.UseDeveloperExceptionPage();
+}
+app.UseHttpLogging(); // Enable HTTP logging
+// ... other middleware and routing ...</code></pre>
     </div>
-  <p>display a detailed error page when exceptions occur.</p>
-<ul>
+  <ul>
+  <li>UseDeveloperExceptionPage(): This middleware is used in development environments to
+display a detailed error page when exceptions occur.</li>
   <li>UseHttpLogging(): This middleware enables basic HTTP logging.</li>
 </ul>
 
@@ -559,15 +575,18 @@ for:</p>
 <p>In your PersonsController:</p>
 <ul>
   <li>ILogger&lt;PersonsController&gt; _logger: The controller receives an ILogger instance through
-      constructor injection. The generic type PersonsController sets the category name for the
-      logger, allowing you to configure logging behavior specifically for this controller.
-<code>appsettings.json</code></li>
+constructor injection. The generic type PersonsController sets the category name for the
+logger, allowing you to configure logging behavior specifically for this controller.</li>
+</ul>
+
+<h2 id="appsettingsjson">appsettings.json</h2>
+<ul>
   <li>LogLevel Configuration:</li>
   <li>&quot;Default&quot;: &quot;Information&quot;: Sets the default log level for most categories to
-           Information.</li>
+Information.</li>
   <li>&quot;Microsoft.AspNetCore&quot;: &quot;Warning&quot;: Sets the log level for ASP.NET Core-related logs
-           to Warning (meaning only warnings and more severe events will be logged for this
-           category).</li>
+to Warning (meaning only warnings and more severe events will be logged for this
+category).</li>
 </ul>
 
 <h2 id="notes">Notes</h2>
@@ -582,28 +601,28 @@ for:</p>
 </ul>
 
 <h2 id="http-logging-1">HTTP Logging</h2>
-<p>ASP.NET Core offers built-in middleware to capture and record the intricacies of HTTP requests and
-responses. This treasure trove of information aids in:</p>
+<p>ASP.NET Core offers built-in middleware to capture and record the intricacies of HTTP requests and responses. This treasure trove of information aids in:</p>
 <ul>
   <li>Troubleshooting: Tracing the path of requests and responses, unraveling potential issues
-      and bottlenecks.</li>
+and bottlenecks.</li>
   <li>Performance Analysis: Pinpointing sluggish requests or performance hurdles.</li>
   <li>Security Scrutiny: Preserving request details for meticulous security audits and threat
-      detection.</li>
+detection.</li>
   <li>UseHttpLogging() Middleware:</li>
   <li>Function: Injects middleware into the pipeline to capture and log HTTP request and
-           response specifics.</li>
+response specifics.</li>
   <li>Strategic Placement: Incorporate this middleware early in your <code>Program.cs</code> to
-           comprehensively capture all incoming requests and their corresponding responses.</li>
+comprehensively capture all incoming requests and their corresponding responses.</li>
   <li>HttpLoggingOptions:</li>
   <li>Customization Power: A gateway to fine-tuning your HTTP logging experience.</li>
   <li>Key Options:</li>
   <li>LoggingFields: Precisely control which data points are logged (e.g., request
-                 path, method, status code, headers).</li>
+path, method, status code, headers).</li>
   <li>RequestHeaders, ResponseHeaders: Dictate which specific headers are
-                 included in the logs.</li>
+included in the logs.</li>
 </ul>
-<p>Code Walkthrough: <code>Program.cs</code></p>
+
+<h2 id="code-walkthrough-programcs">Code Walkthrough: Program.cs</h2>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -617,11 +636,11 @@ responses. This treasure trove of information aids in:</p>
 // ...
 builder.Host.UseSerilog((HostBuilderContext context, IServiceProvider services, LoggerConfiguration
 loggerConfiguration) =&gt; {
-  loggerConfiguration
-  .ReadFrom.Configuration(context.Configuration) 1. github.com
+loggerConfiguration
+.ReadFrom.Configuration(context.Configuration) 1. github.com
 github.com
 // Extracts logging configuration from appsettings.json
-  .ReadFrom.Services(services); // Injects services (like IWebHostEnvironment) into Serilog&#39;s context
+.ReadFrom.Services(services); // Injects services (like IWebHostEnvironment) into Serilog&#39;s context
 for enriching logs
 } );
 // ...
@@ -629,49 +648,55 @@ var app = builder.Build();
 app.UseSerilogRequestLogging(); // Enable Serilog&#39;s request logging middleware
 if (builder.Environment.IsDevelopment())
 {
-  app.UseDeveloperExceptionPage();
+app.UseDeveloperExceptionPage();
 }
 app.UseHttpLogging(); // Enable basic HTTP logging
-// ...
-   • UseSerilog() (Host Level): Configures Serilog as the logging provider for the application,
-      reading settings from appsettings.json and injecting services.
-   • UseSerilogRequestLogging(): Enables Serilog&#39;s request logging middleware to capture</code></pre>
+// ...</code></pre>
     </div>
-  <p>detailed information about HTTP requests.</p>
-<ul>
+  <ul>
+  <li>UseSerilog() (Host Level): Configures Serilog as the logging provider for the application,
+reading settings from <code>appsettings.json</code> and injecting services.</li>
+  <li>UseSerilogRequestLogging(): Enables Serilog&#39;s request logging middleware to capture
+detailed information about HTTP requests.</li>
   <li>UseDeveloperExceptionPage(): This middleware is tailored for development environments,
-      presenting a detailed error page when exceptions arise, facilitating efficient debugging.</li>
+presenting a detailed error page when exceptions arise, facilitating efficient debugging.</li>
   <li>UseHttpLogging(): Activates basic HTTP logging functionality.</li>
 </ul>
-<p>Controller: Leveraging the Injected Logger
-In your PersonsController:</p>
+
+<h2 id="controller-leveraging-the-injected-logger">Controller: Leveraging the Injected Logger</h2>
+<p>In your PersonsController:</p>
 <ul>
   <li>ILogger&lt;PersonsController&gt; _logger;: An instance of ILogger is gracefully injected into the
-      controller via its constructor. The type parameter PersonsController designates the category
-      for log messages emitted from this controller, enabling tailored configuration.
-<code>appsettings.json</code></li>
-  <li>LogLevel Configuration:</li>
-  <li>&quot;Default&quot;: &quot;Information&quot;: Establishes the baseline log level as &quot;Information&quot; for the
-           majority of categories.</li>
-  <li>&quot;Microsoft.AspNetCore&quot;: &quot;Warning&quot;: Fine-tunes the log level for ASP.NET Corerelated
-messages to &quot;Warning,&quot; capturing only warnings and events of higher
-           severity for this category.</li>
+controller via its constructor. The type parameter PersonsController designates the category
+for log messages emitted from this controller, enabling tailored configuration.</li>
 </ul>
 
-<h2 id="key-points-to-remember">Key Points to Remember</h2>
-<p>Logging in ASP.NET Core</p>
+<h2 id="appsettingsjson-1">appsettings.json</h2>
+<ul>
+  <li>LogLevel Configuration:</li>
+  <li>&quot;Default&quot;: &quot;Information&quot;: Establishes the baseline log level as &quot;Information&quot; for the
+majority of categories.</li>
+  <li>&quot;Microsoft.AspNetCore&quot;: &quot;Warning&quot;: Fine-tunes the log level for ASP.NET Core-
+related messages to &quot;Warning,&quot; capturing only warnings and events of higher
+severity for this category.</li>
+</ul>
+
+<h3 id="key-points-to-remember">Key Points to Remember</h3>
+
+<h2 id="logging-in-aspnet-core-1">Logging in ASP.NET Core</h2>
 <ul>
   <li>ILogger Interface: The foundation for structured logging in ASP.NET Core. Provides methods
-      for logging messages at different levels (Trace, Debug, Information, Warning, Error, Critical).</li>
+for logging messages at different levels (Trace, Debug, Information, Warning, Error, Critical).</li>
   <li>Dependency Injection: Obtain ILogger instances through constructor injection in your
-      classes (controllers, services, etc.).</li>
+classes (controllers, services, etc.).</li>
   <li>Configuration: Control log levels and filtering rules in <code>appsettings.json</code> (or other
-      configuration sources).</li>
+configuration sources).</li>
   <li>Logging Providers:</li>
   <li>Built-in: Console, Debug, EventSource, EventLog (Windows only).</li>
   <li>Third-party: Serilog, NLog, log4net.</li>
 </ul>
-<p>Serilog: Structured Logging Powerhouse</p>
+
+<h2 id="serilog-structured-logging-powerhouse">Serilog: Structured Logging Powerhouse</h2>
 <ul>
   <li>Benefits:</li>
   <li>Structured Logging: Log events as key-value pairs for easier searching and filtering.</li>
@@ -680,7 +705,7 @@ messages to &quot;Warning,&quot; capturing only warnings and events of higher
   <li>Sinks: Destinations for your logs (console, file, database, Seq, etc.).</li>
   <li>Enrichers: Add context to your log events (e.g., user ID, machine name).</li>
   <li>IDiagnosticContext: Attach temporary properties to log events (e.g., transaction
-           IDs).</li>
+IDs).</li>
   <li>Serilog Timings: Measure and log the duration of operations.</li>
 </ul>
 
@@ -706,12 +731,15 @@ messages to &quot;Warning,&quot; capturing only warnings and events of higher
         </button>
       </div>
       <pre><code class="language-csharp">builder.Host.UseSerilog((ctx, services, config) =&gt; config
-  .ReadFrom.Configuration(ctx.Configuration)
-  .ReadFrom.Services(services));
-   • Logging in a Controller:
-_logger.LogInformation(&quot;User {UserName} logged in&quot;, user.UserName);</code></pre>
+.ReadFrom.Configuration(ctx.Configuration)
+.ReadFrom.Services(services));</code></pre>
     </div>
-  <p>Best Practices</p>
+  <ul>
+  <li>Logging in a Controller:</li>
+</ul>
+<p>_logger.LogInformation(&quot;User {UserName} logged in&quot;, user.UserName);</p>
+
+<h3 id="best-practices">Best Practices</h3>
 <ul>
   <li>Choose Wisely: Select the right logging provider(s) for your needs.</li>
   <li>Configure Sensibly: Adjust log levels based on the environment.</li>
@@ -727,7 +755,7 @@ _logger.LogInformation(&quot;User {UserName} logged in&quot;, user.UserName);</c
   <li>Structured Logging: Highlight the advantages of structured logging over plain text logging.</li>
   <li>Serilog: Showcase your knowledge of Serilog&#39;s features and sinks.</li>
   <li>Best Practices: Discuss the importance of proper configuration, security considerations, and
-      performance optimization in logging.</li>
+performance optimization in logging.</li>
 </ul>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
@@ -735,26 +763,19 @@ _logger.LogInformation(&quot;User {UserName} logged in&quot;, user.UserName);</c
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
   <h3 id="logging">Logging</h3>
-<p>Logging is the process of recording run-time actions as they happen in real-time.
-Helps us to understand the failures and performance bottlenecks of the application.</p>
+<p>Logging is the process of recording run-time actions as they happen in real-time. Helps us to understand the failures and performance bottlenecks of the application.</p>
   <h3 id="ilogger-1">ILogger</h3>
   <h3 id="debug">Debug</h3>
-<p>ILogger.LogDebug(&quot;log_message&quot;);
-Logs that provide details &amp; values of variables for debugging purpose.</p>
+<p>ILogger.LogDebug(&quot;log_message&quot;); Logs that provide details &amp; values of variables for debugging purpose.</p>
   <h3 id="information">Information</h3>
-<p>ILogger.LogInformation(&quot;log_message&quot;);
-Logs that track the general flow of the application execution.</p>
+<p>ILogger.LogInformation(&quot;log_message&quot;); Logs that track the general flow of the application execution.</p>
   <h3 id="warning">Warning</h3>
-<p>ILogger.LogWarning(&quot;log_message&quot;);
-Logs that highlight an abnormal or unexpected event.</p>
+<p>ILogger.LogWarning(&quot;log_message&quot;); Logs that highlight an abnormal or unexpected event.</p>
   <h3 id="error">Error</h3>
-<p>ILogger.LogError(&quot;log_message&quot;);
-Logs to indicate that flow of execution is stopped due to a failure.</p>
+<p>ILogger.LogError(&quot;log_message&quot;); Logs to indicate that flow of execution is stopped due to a failure.</p>
   <h3 id="critical">Critical</h3>
-<p>ILogger.LogCritical(&quot;log_message&quot;);
-Logs to indicate an unrecoverable application crash.</p>
-  <h3 id="logging-configuration-1">Logging Configuration</h3>
-<p><code>appsettings.json</code></p>
+<p>ILogger.LogCritical(&quot;log_message&quot;); Logs to indicate an unrecoverable application crash. Logging Configuration</p>
+  <h3 id="appsettingsjson-2">appsettings.json</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -766,10 +787,10 @@ Logs to indicate an unrecoverable application crash.</p>
       </div>
       <pre><code class="language-json">{
 &quot;Logging&quot;: {
- &quot;LogLevel&quot;: {
- &quot;Default&quot;: &quot;Debug | Information | Warning | Error| Critical&quot;
- &quot;Microsoft.AspNetCore&quot;: &quot;Debug | Information | Warning | Error | Critical&quot;
- }
+&quot;LogLevel&quot;: {
+&quot;Default&quot;: &quot;Debug | Information | Warning | Error| Critical&quot;
+&quot;Microsoft.AspNetCore&quot;: &quot;Debug | Information | Warning | Error | Critical&quot;
+}
 }
 }</code></pre>
     </div>
@@ -790,14 +811,11 @@ public class ControllerName : Controller
 private readonly ILogger&lt;ClassName&gt; _logger;
 public ControllerName(ILogger&lt;ClassName&gt; logger)
 {
- _logger = logger;
+_logger = logger;
 }
 }</code></pre>
     </div>
-  <p>Logging Providers
-Logging provider specifies where to store / display logs.
-The built-in logging providers in asp.net core doesn&#39;t support file / database logging providers.
-in <code>Program.cs</code>:</p>
+  <p>Logging Providers Logging provider specifies where to store / display logs. The built-in logging providers in asp.net core doesn&#39;t support file / database logging providers. in <code>Program.cs</code>:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -809,15 +827,14 @@ in <code>Program.cs</code>:</p>
       </div>
       <pre><code class="language-csharp">builder.Host.ConfigureLogging(logging =&gt;
 {
- logging.ClearProviders();
- logging.AddConsole();
- logging.AddDebug();
- logging.AddEventLog();
+logging.ClearProviders();
+logging.AddConsole();
+logging.AddDebug();
+logging.AddEventLog();
 });</code></pre>
     </div>
     <h3 id="http-logging-2">HTTP Logging</h3>
-<p>Logs details all HTTP requests and responses.
-You need to set a value of &quot;HttpLoggingFields&quot; enum to set specify desired details.</p>
+<p>Logs details all HTTP requests and responses. You need to set a value of &quot;HttpLoggingFields&quot; enum to set specify desired details.</p>
   <h3 id="http-logging-options">HTTP Logging Options</h3>
 <p>&quot;HttpLoggingFields&quot; enum:</p>
   <h3 id="requestmethod">RequestMethod</h3>
@@ -833,24 +850,23 @@ You need to set a value of &quot;HttpLoggingFields&quot; enum to set specify des
   <h3 id="requestheaders">RequestHeaders</h3>
 <p>Headers of request. Eg: Connection: keep-alive</p>
   <h3 id="requestpropertiesandheaders">RequestPropertiesAndHeaders</h3>
-  <h3 id="includes-all-of-above-default">Includes all of above (default)</h3>
+<p>Includes all of above (default)</p>
   <h3 id="requestbody">RequestBody</h3>
 <p>Entire request body. [has performance drawbacks; not recommended]</p>
   <h3 id="request">Request</h3>
-  <h3 id="includes-all-of-above">Includes all of above</h3>
-<p>&quot;HttpLoggingFields&quot; enum</p>
+<p>Includes all of above &quot;HttpLoggingFields&quot; enum</p>
   <h3 id="responsestatuscode">ResponseStatusCode</h3>
 <p>Status code of response. Eg: 200</p>
   <h3 id="responseheaders">ResponseHeaders</h3>
 <p>Headers of response. Eg: Content-Length: 20</p>
   <h3 id="responsepropertiesandheaders">ResponsePropertiesAndHeaders</h3>
-  <h3 id="includes-all-of-above-default-1">Includes all of above (default)</h3>
+<p>Includes all of above (default)</p>
   <h3 id="responsebody">ResponseBody</h3>
 <p>Entire response body. [has performance drawbacks; not recommended]</p>
   <h3 id="response">Response</h3>
-  <h3 id="includes-all-of-above-1">Includes all of above</h3>
+<p>Includes all of above</p>
   <h3 id="all">All</h3>
-  <h3 id="includes-all-from-request-and-response">Includes all from request and response</h3>
+<p>Includes all from request and response</p>
   <h3 id="http-logging-options-1">HTTP Logging Options</h3>
 <p><code>Program.cs</code>:</p>
 
@@ -864,15 +880,12 @@ You need to set a value of &quot;HttpLoggingFields&quot; enum to set specify des
       </div>
       <pre><code class="language-csharp">builder.Serices.AddHttpLogging(options =&gt;
 {
- options.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.YourOption;
+options.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.YourOption;
 });</code></pre>
     </div>
-  <p>Serilog
-Serilog is a structured logging library for Asp.Net Core.
-Supports variety of logging destinations, referred as &quot;Sinks&quot; - starts with Console, Azure, DataDog,
-ElasticSearch, Amazon CloudWatch, Email and Seq.</p>
-  <h3 id="serilog-configuration">Serilog - Configuration</h3>
-<p><code>appsettings.json</code></p>
+  <p>Serilog Serilog is a structured logging library for Asp.Net Core. Supports variety of logging destinations, referred as &quot;Sinks&quot; - starts with Console, Azure, DataDog, ElasticSearch, Amazon CloudWatch, Email and Seq.</p>
+<p>Serilog - Configuration</p>
+  <h3 id="appsettingsjson-3">appsettings.json</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -884,16 +897,16 @@ ElasticSearch, Amazon CloudWatch, Email and Seq.</p>
       </div>
       <pre><code class="language-json">{
 &quot;Serilog&quot;: {
- &quot;Using&quot;: [
-  &quot;Serilog.Sinks.YourSinkHere&quot;
- ],
- &quot;MinimumLevel&quot;: &quot;Debug | Information | Warning | Error | Critical&quot;,
- &quot;WriteTo&quot;: [
- {
-  &quot;Name&quot;: &quot;YourSinkHere&quot;,
-  &quot;Args&quot;: &quot;YourArguments&quot;
- }
- ]
+&quot;Using&quot;: [
+&quot;Serilog.Sinks.YourSinkHere&quot;
+],
+&quot;MinimumLevel&quot;: &quot;Debug | Information | Warning | Error | Critical&quot;,
+&quot;WriteTo&quot;: [
+{
+&quot;Name&quot;: &quot;YourSinkHere&quot;,
+&quot;Args&quot;: &quot;YourArguments&quot;
+}
+]
 }
 }</code></pre>
     </div>
@@ -911,28 +924,15 @@ ElasticSearch, Amazon CloudWatch, Email and Seq.</p>
       <pre><code class="language-csharp">builder.Host.UseSerilog(HostBuilderContext context,
 IServiceProvider services, LoggerConfiguration configuration) =&gt;
 {
- configuration
- .ReadFrom.Configuration(context.Configuration) //read configuration settings from built-in
-}</code></pre>
+configuration
+.ReadFrom.Configuration(context.Configuration) //read configuration settings from built-in
+IConfiguration
+.ReadFrom.Services(services); //read services from built-in IServiceProvider
+});</code></pre>
     </div>
-  <p>IConfiguration
- .ReadFrom.Services(services); //read services from built-in IServiceProvider</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp"></code></pre>
-    </div>
-  <p>Serilog - File Sink
-The &quot;Serilog.Sinks.File&quot; logs into a specified file.
-You can configure the filename, rolling interval, file size limit etc., using configuration settings.</p>
-<p>Serilog - &quot;File Sink&quot; Configuration
-<code>appsettings.json</code></p>
+  <p>Serilog - File Sink The &quot;Serilog.Sinks.File&quot; logs into a specified file. You can configure the filename, rolling interval, file size limit etc., using configuration settings.</p>
+<p>Serilog - &quot;File Sink&quot; Configuration</p>
+  <h3 id="appsettingsjson-4">appsettings.json</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -944,25 +944,23 @@ You can configure the filename, rolling interval, file size limit etc., using co
       </div>
       <pre><code class="language-json">{
 &quot;Serilog&quot;: {
-  &quot;Using&quot;: [ &quot;Serilog.Sinks.File&quot; ],
-  &quot;MinimumLevel&quot;: &quot;Debug | Information | Warning | Error | Critical&quot;,
-  &quot;WriteTo&quot;: [
-  {
-  &quot;Name&quot;: &quot;File&quot;,
-  &quot;Args&quot;: [
-   &quot;path&quot;: &quot;folder/filename.ext&quot;,
-   &quot;rollingInterval&quot;: &quot;Minute | Hour | Day | Month | Year | Infinite&quot;,
-  ]
-  }
- ]
- }
+&quot;Using&quot;: [ &quot;Serilog.Sinks.File&quot; ],
+&quot;MinimumLevel&quot;: &quot;Debug | Information | Warning | Error | Critical&quot;,
+&quot;WriteTo&quot;: [
+{
+&quot;Name&quot;: &quot;File&quot;,
+&quot;Args&quot;: [
+&quot;path&quot;: &quot;folder/filename.ext&quot;,
+&quot;rollingInterval&quot;: &quot;Minute | Hour | Day | Month | Year | Infinite&quot;,
+]
+}
+]
+}
 }</code></pre>
     </div>
-  <p>Serilog - Database Sink
-The &quot;Serilog.Sinks.MSSqlServer&quot; logs into a specified SQL Server database.
-You can configure the connection string using configuration settings.</p>
-<p>Serilog - &#39;MSSqlServer&#39; Sink Configuration
-<code>appsettings.json</code></p>
+  <p>Serilog - Database Sink The &quot;Serilog.Sinks.MSSqlServer&quot; logs into a specified SQL Server database. You can configure the connection string using configuration settings.</p>
+<p>Serilog - &#39;MSSqlServer&#39; Sink Configuration</p>
+  <h3 id="appsettingsjson-5">appsettings.json</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -973,26 +971,24 @@ You can configure the connection string using configuration settings.</p>
         </button>
       </div>
       <pre><code class="language-json">{
- &quot;Serilog&quot;: {
-  &quot;Using&quot;: [ &quot;Serilog.Sinks.MSSqlServer&quot; ],
-  &quot;MinimumLevel&quot;: &quot;Debug | Information | Warning | Error | Critical&quot;,
-  &quot;WriteTo&quot;: [
-  {
-  &quot;Name&quot;: &quot;MSSqlServer&quot;,
-  &quot;Args&quot;: [
-   &quot;connectionString&quot;: &quot;your_connection_string_here&quot;,
-   &quot;tableName&quot;: &quot;table_name&quot;,
-  ]
-  }
- ]
- }
+&quot;Serilog&quot;: {
+&quot;Using&quot;: [ &quot;Serilog.Sinks.MSSqlServer&quot; ],
+&quot;MinimumLevel&quot;: &quot;Debug | Information | Warning | Error | Critical&quot;,
+&quot;WriteTo&quot;: [
+{
+&quot;Name&quot;: &quot;MSSqlServer&quot;,
+&quot;Args&quot;: [
+&quot;connectionString&quot;: &quot;your_connection_string_here&quot;,
+&quot;tableName&quot;: &quot;table_name&quot;,
+]
+}
+]
+}
 }</code></pre>
     </div>
-  <p>Serilog - Seq Sink
-The &quot;Serilog.Sinks.Seq&quot; is a real-time search and analysis server for structured application log data.
-Seq server can run on Windows, Linux or Docker.</p>
-<p>Serilog - &#39;Seq&#39; Sink - Configuration
-<code>appsettings.json</code></p>
+  <p>Serilog - Seq Sink The &quot;Serilog.Sinks.Seq&quot; is a real-time search and analysis server for structured application log data. Seq server can run on Windows, Linux or Docker.</p>
+<p>Serilog - &#39;Seq&#39; Sink - Configuration</p>
+  <h3 id="appsettingsjson-6">appsettings.json</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1003,33 +999,27 @@ Seq server can run on Windows, Linux or Docker.</p>
         </button>
       </div>
       <pre><code class="language-json">{
- &quot;Serilog&quot;: {
-  &quot;Using&quot;: [ &quot;Serilog.Sinks.Seq&quot; ],
-  &quot;MinimumLevel&quot;: &quot;Debug | Information | Warning | Error | Critical&quot;,
-  &quot;WriteTo&quot;: [
-  {
-   &quot;Name&quot;: &quot;Seq&quot;,
-   &quot;Args&quot;: [
-    &quot;serverUrl&quot;: &quot;http://localhost:5341&quot;
-   ]
-  }
-  ]
- }
+&quot;Serilog&quot;: {
+&quot;Using&quot;: [ &quot;Serilog.Sinks.Seq&quot; ],
+&quot;MinimumLevel&quot;: &quot;Debug | Information | Warning | Error | Critical&quot;,
+&quot;WriteTo&quot;: [
+{
+&quot;Name&quot;: &quot;Seq&quot;,
+&quot;Args&quot;: [
+&quot;serverUrl&quot;: &quot;http://localhost:5341&quot;
+]
+}
+]
+}
 }</code></pre>
     </div>
-  <p>Serilog - RequestId
-&quot;RequestId&quot; is the unique number (guid) of each individual requests, used to identify to which
-request the log belongs to.
-RequestId is &quot;TraceIdentifier&quot; internally, that is generated by Asp.Net Core.</p>
+  <p>Serilog - RequestId &quot;RequestId&quot; is the unique number (guid) of each individual requests, used to identify to which request the log belongs to. RequestId is &quot;TraceIdentifier&quot; internally, that is generated by Asp.Net Core.</p>
   <h3 id="serilog-enrichers">Serilog - Enrichers</h3>
-<p>Enrichers are additional details that are added to LogContext; so they&#39;re stored in logs.
-Eg: MachineName[or]Custom Properties.</p>
+<p>Enrichers are additional details that are added to LogContext; so they&#39;re stored in logs. Eg: MachineName[or]Custom Properties.</p>
   <h3 id="serilog-idiagnosticcontext">Serilog - IDiagnosticContext</h3>
-<p>Diagnostic context allows you to add additional enrichment properties to the context; and all those
-properties are logged at once in the final &quot;log completion event&quot; of the request.</p>
+<p>Diagnostic context allows you to add additional enrichment properties to the context; and all those properties are logged at once in the final &quot;log completion event&quot; of the request.</p>
   <h3 id="serilog-timings">Serilog Timings</h3>
-<p>&quot;SerilogTimings&quot; package records timing of a piece of your soure code, indicating how much time
-taken for executing it.</p>
+<p>&quot;SerilogTimings&quot; package records timing of a piece of your soure code, indicating how much time taken for executing it.</p>
 </section>
 
       </article>
@@ -1075,7 +1065,27 @@ taken for executing it.</p>
       <ul class="toc-list">
         
         <li class="toc-item">
+          <a href="#logging-in-aspnet-core" class="toc-link">Logging in ASP.NET Core</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#ilogger" class="toc-link">ILogger</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#1-abstraction" class="toc-link toc-sub">1. Abstraction</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#2-log-levels" class="toc-link toc-sub">2. Log Levels</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#3-structured-logging" class="toc-link toc-sub">3. Structured Logging</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#4-dependency-injection" class="toc-link toc-sub">4. Dependency Injection</a>
         </li>
       
         <li class="toc-item">
@@ -1095,6 +1105,10 @@ taken for executing it.</p>
         </li>
       
         <li class="toc-item">
+          <a href="#appsettingsjson" class="toc-link">appsettings.json</a>
+        </li>
+      
+        <li class="toc-item">
           <a href="#notes" class="toc-link">Notes</a>
         </li>
       
@@ -1103,7 +1117,27 @@ taken for executing it.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
+          <a href="#code-walkthrough-programcs" class="toc-link">Code Walkthrough: Program.cs</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#controller-leveraging-the-injected-logger" class="toc-link">Controller: Leveraging the Injected Logger</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#appsettingsjson-1" class="toc-link">appsettings.json</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#key-points-to-remember" class="toc-link toc-sub">Key Points to Remember</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#logging-in-aspnet-core-1" class="toc-link">Logging in ASP.NET Core</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#serilog-structured-logging-powerhouse" class="toc-link">Serilog: Structured Logging Powerhouse</a>
         </li>
       
         <li class="toc-item">
@@ -1112,6 +1146,10 @@ taken for executing it.</p>
       
         <li class="toc-item">
           <a href="#code-snippets" class="toc-link">Code Snippets</a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="#best-practices" class="toc-link toc-sub">Best Practices</a>
         </li>
       
         <li class="toc-item">

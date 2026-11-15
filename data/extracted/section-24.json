@@ -5,261 +5,230 @@
   "normalized_section": "24",
   "is_cheatsheet": false,
   "total_pages": 8,
-  "total_raw_chars": 8967,
-  "total_repaired_chars": 9972,
+  "total_raw_chars": 8995,
+  "total_repaired_chars": 8987,
   "pages": [
     {
       "page_number": 1,
-      "raw_text": "ASP.NET Core - True Ultimate Guide\nSection 24: Clean Architecture - Notes\nClean Architecture in ASP.NET Core\nClean Architecture, also known as Onion Architecture, is a software design principle that emphasizes\nseparation of concerns, testability, and maintainability. It achieves this by organizing your\napplication into layers, with each layer having a specific responsibility and dependency direction.\nCore Layers\n1. Domain Layer (Core)\no Purpose: The heart of your application, containing your business rules and domain\nmodels.\no Contents:\n▪ Entities: Represent the core concepts of your domain (e.g., Person, Order,\nProduct).\n▪ Value Objects: Immutable objects representing concepts like Money,\nAddress, or EmailAddress.\n▪ Domain Services: Encapsulate complex business logic or operations that\ninvolve multiple entities.\n▪ Interfaces (Contracts): Define the contracts for repositories and other\ndependencies.\no Dependencies: None. The domain layer is independent of any external\ninfrastructure or frameworks.\n2. Application Layer\no Purpose: Orchestrates the use cases of your application.\no Contents:\n▪ Use Cases (Application Services): Implement the high-level use cases or\noperations of your system (e.g., CreatePerson, GetPersonById).\n▪ DTOs (Data Transfer Objects): Represent data structures used for\ncommunication between layers.\n▪ Interfaces (Contracts): Define the contracts for infrastructure services (e.g.,\nrepositories, email services).\no Dependencies: Depends on the Domain Layer.\n",
-      "repaired_text": "ASP.NET Core - True Ultimate Guide\nSection 24: Clean Architecture - Notes\nClean Architecture in ASP.NET Core\nClean Architecture, also known as Onion Architecture, is a software design principle that emphasizes\nseparation of concerns, testability, and maintainability. It achieves this by organizing your\napplication into layers, with each layer having a specific responsibility and dependency direction.\nCore Layers\n   1. Domain Layer (Core)\n        o Purpose: The heart of your application, containing your business rules and domain\n           models.\n        o Contents:\n              ▪ Entities: Represent the core concepts of your domain (e.g., Person, Order,\n                 Product).\n              ▪ Value Objects: Immutable objects representing concepts like Money,\n                 Address, or EmailAddress.\n              ▪ Domain Services: Encapsulate complex business logic or operations that\n                 involve multiple entities.\n              ▪ Interfaces (Contracts): Define the contracts for repositories and other\n                 dependencies.\n        o Dependencies: None. The domain layer is independent of any external\n           infrastructure or frameworks.\n   2. Application Layer\n        o Purpose: Orchestrates the use cases of your application.\n        o Contents:\n              ▪ Use Cases (Application Services): Implement the high-level use cases or\n                 operations of your system (e.g., CreatePerson, GetPersonById).\n              ▪ DTOs (Data Transfer Objects): Represent data structures used for\n                 communication between layers.\n              ▪ Interfaces (Contracts): Define the contracts for infrastructure services (e.g.,\n                 repositories, email services).\n        o Dependencies: Depends on the Domain Layer.",
+      "raw_text": "ASP.NET Core - True Ultimate Guide\nSection 24: Clean Architecture - Notes\nClean Architecture in ASP.NET Core\nClean Architecture, also known as Onion Architecture, is a software design principle that emphasizes\nseparation of concerns, testability, and maintainability. It achieves this by organizing your\napplication into layers, with each layer having a specific responsibility and dependency direction.\nCore Layers\n1. Domain Layer (Core)\n•  Purpose: The heart of your application, containing your business rules and domain\nmodels.\n•  Contents:\n▪ Entities: Represent the core concepts of your domain (e.g., Person, Order,\nProduct).\n▪ Value Objects: Immutable objects representing concepts like Money,\nAddress, or EmailAddress.\n▪ Domain Services: Encapsulate complex business logic or operations that\ninvolve multiple entities.\n▪ Interfaces (Contracts): Define the contracts for repositories and other\ndependencies.\n•  Dependencies: None. The domain layer is independent of any external\ninfrastructure or frameworks.\n2. Application Layer\n•  Purpose: Orchestrates the use cases of your application.\n•  Contents:\n▪ Use Cases (Application Services): Implement the high-level use cases or\noperations of your system (e.g., CreatePerson, GetPersonById).\n▪ DTOs (Data Transfer Objects): Represent data structures used for\ncommunication between layers.\n▪ Interfaces (Contracts): Define the contracts for infrastructure services (e.g.,\nrepositories, email services).\n•  Dependencies: Depends on the Domain Layer.\n",
+      "repaired_text": "ASP.NET Core - True Ultimate Guide\nSection 24: Clean Architecture - Notes\nClean Architecture in ASP.NET Core\nClean Architecture, also known as Onion Architecture, is a software design principle that emphasizes\nseparation of concerns, testability, and maintainability. It achieves this by organizing your\napplication into layers, with each layer having a specific responsibility and dependency direction.\nCore Layers\n1. Domain Layer (Core)\n•  Purpose: The heart of your application, containing your business rules and domain\nmodels.\n•  Contents:\n▪ Entities: Represent the core concepts of your domain (e.g., Person, Order,\nProduct).\n▪ Value Objects: Immutable objects representing concepts like Money,\nAddress, or EmailAddress.\n▪ Domain Services: Encapsulate complex business logic or operations that\ninvolve multiple entities.\n▪ Interfaces (Contracts): Define the contracts for repositories and other\ndependencies.\n•  Dependencies: None. The domain layer is independent of any external\ninfrastructure or frameworks.\n2. Application Layer\n•  Purpose: Orchestrates the use cases of your application.\n•  Contents:\n▪ Use Cases (Application Services): Implement the high-level use cases or\noperations of your system (e.g., CreatePerson, GetPersonById).\n▪ DTOs (Data Transfer Objects): Represent data structures used for\ncommunication between layers.\n▪ Interfaces (Contracts): Define the contracts for infrastructure services (e.g.,\nrepositories, email services).\n•  Dependencies: Depends on the Domain Layer.",
       "lines": [
         {
           "text": "ASP.NET Core - True Ultimate Guide",
           "rawText": "ASP.NET Core - True Ultimate Guide",
-          "x": 72.024,
-          "y": 742.66,
-          "fontSize": 15.96,
-          "fontName": "g_d46_f1"
+          "startX": 72,
+          "y": 743,
+          "isBold": true
         },
         {
           "text": "Section 24: Clean Architecture - Notes",
           "rawText": "Section 24: Clean Architecture - Notes",
-          "x": 72.024,
-          "y": 722.38,
-          "fontSize": 12.96,
-          "fontName": "g_d46_f1"
+          "startX": 72,
+          "y": 722,
+          "isBold": true
         },
         {
           "text": "Clean Architecture in ASP.NET Core",
           "rawText": "Clean Architecture in ASP.NET Core",
-          "x": 72.024,
-          "y": 684.82,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f3"
+          "startX": 72,
+          "y": 685,
+          "isBold": true
         },
         {
           "text": "Clean Architecture, also known as Onion Architecture, is a software design principle that emphasizes",
           "rawText": "Clean Architecture, also known as Onion Architecture, is a software design principle that emphasizes",
-          "x": 72.024,
-          "y": 662.26,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 662,
+          "isBold": false
         },
         {
           "text": "separation of concerns, testability, and maintainability. It achieves this by organizing your",
           "rawText": "separation of concerns, testability, and maintainability. It achieves this by organizing your",
-          "x": 72.024,
-          "y": 647.74,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 648,
+          "isBold": false
         },
         {
           "text": "application into layers, with each layer having a specific responsibility and dependency direction.",
           "rawText": "application into layers, with each layer having a specific responsibility and dependency direction.",
-          "x": 72.024,
-          "y": 633.34,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 633,
+          "isBold": false
         },
         {
           "text": "Core Layers",
           "rawText": "Core Layers",
-          "x": 72.024,
-          "y": 588.34,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f3"
+          "startX": 72,
+          "y": 588,
+          "isBold": true
         },
         {
-          "text": "   1. Domain Layer (Core)",
+          "text": "1. Domain Layer (Core)",
           "rawText": "1. Domain Layer (Core)",
-          "x": 90.024,
-          "y": 565.75,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 90,
+          "y": 566,
+          "isBold": false
         },
         {
-          "text": "        o Purpose: The heart of your application, containing your business rules and domain",
-          "rawText": "o Purpose: The heart of your application, containing your business rules and domain",
-          "x": 126.02,
-          "y": 543.31,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Purpose: The heart of your application, containing your business rules and domain",
+          "rawText": "•  Purpose: The heart of your application, containing your business rules and domain",
+          "startX": 126,
+          "y": 543,
+          "isBold": false
         },
         {
-          "text": "           models.",
+          "text": "models.",
           "rawText": "models.",
-          "x": 144.02,
-          "y": 528.79,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 144,
+          "y": 529,
+          "isBold": false
         },
         {
-          "text": "        o Contents:",
-          "rawText": "o Contents:",
-          "x": 126.02,
-          "y": 506.35,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Contents:",
+          "rawText": "•  Contents:",
+          "startX": 126,
+          "y": 506,
+          "isBold": true
         },
         {
-          "text": "              ▪ Entities: Represent the core concepts of your domain (e.g., Person, Order,",
+          "text": "▪ Entities: Represent the core concepts of your domain (e.g., Person, Order,",
           "rawText": "▪ Entities: Represent the core concepts of your domain (e.g., Person, Order,",
-          "x": 162.02,
-          "y": 483.79,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f6"
+          "startX": 162,
+          "y": 484,
+          "isBold": false
         },
         {
-          "text": "                 Product).",
+          "text": "Product).",
           "rawText": "Product).",
-          "x": 180.02,
-          "y": 469.39,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 180,
+          "y": 469,
+          "isBold": false
         },
         {
-          "text": "              ▪ Value Objects: Immutable objects representing concepts like Money,",
+          "text": "▪ Value Objects: Immutable objects representing concepts like Money,",
           "rawText": "▪ Value Objects: Immutable objects representing concepts like Money,",
-          "x": 162.02,
-          "y": 446.83,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f6"
+          "startX": 162,
+          "y": 447,
+          "isBold": false
         },
         {
-          "text": "                 Address, or EmailAddress.",
+          "text": "Address, or EmailAddress.",
           "rawText": "Address, or EmailAddress.",
-          "x": 180.02,
-          "y": 432.31,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 180,
+          "y": 432,
+          "isBold": false
         },
         {
-          "text": "              ▪ Domain Services: Encapsulate complex business logic or operations that",
+          "text": "▪ Domain Services: Encapsulate complex business logic or operations that",
           "rawText": "▪ Domain Services: Encapsulate complex business logic or operations that",
-          "x": 162.02,
-          "y": 409.87,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f6"
+          "startX": 162,
+          "y": 410,
+          "isBold": false
         },
         {
-          "text": "                 involve multiple entities.",
+          "text": "involve multiple entities.",
           "rawText": "involve multiple entities.",
-          "x": 180.02,
-          "y": 395.33,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 180,
+          "y": 395,
+          "isBold": false
         },
         {
-          "text": "              ▪ Interfaces (Contracts): Define the contracts for repositories and other",
+          "text": "▪ Interfaces (Contracts): Define the contracts for repositories and other",
           "rawText": "▪ Interfaces (Contracts): Define the contracts for repositories and other",
-          "x": 162.02,
-          "y": 372.89,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f6"
+          "startX": 162,
+          "y": 373,
+          "isBold": false
         },
         {
-          "text": "                 dependencies.",
+          "text": "dependencies.",
           "rawText": "dependencies.",
-          "x": 180.02,
-          "y": 358.37,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 180,
+          "y": 358,
+          "isBold": false
         },
         {
-          "text": "        o Dependencies: None. The domain layer is independent of any external",
-          "rawText": "o Dependencies: None. The domain layer is independent of any external",
-          "x": 126.02,
-          "y": 335.93,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Dependencies: None. The domain layer is independent of any external",
+          "rawText": "•  Dependencies: None. The domain layer is independent of any external",
+          "startX": 126,
+          "y": 336,
+          "isBold": false
         },
         {
-          "text": "           infrastructure or frameworks.",
+          "text": "infrastructure or frameworks.",
           "rawText": "infrastructure or frameworks.",
-          "x": 144.02,
-          "y": 321.41,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 144,
+          "y": 321,
+          "isBold": false
         },
         {
-          "text": "   2. Application Layer",
+          "text": "2. Application Layer",
           "rawText": "2. Application Layer",
-          "x": 90.024,
-          "y": 276.41,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 90,
+          "y": 276,
+          "isBold": false
         },
         {
-          "text": "        o Purpose: Orchestrates the use cases of your application.",
-          "rawText": "o Purpose: Orchestrates the use cases of your application.",
-          "x": 126.02,
-          "y": 253.97,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Purpose: Orchestrates the use cases of your application.",
+          "rawText": "•  Purpose: Orchestrates the use cases of your application.",
+          "startX": 126,
+          "y": 254,
+          "isBold": false
         },
         {
-          "text": "        o Contents:",
-          "rawText": "o Contents:",
-          "x": 126.02,
-          "y": 231.41,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Contents:",
+          "rawText": "•  Contents:",
+          "startX": 126,
+          "y": 231,
+          "isBold": true
         },
         {
-          "text": "              ▪ Use Cases (Application Services): Implement the high-level use cases or",
+          "text": "▪ Use Cases (Application Services): Implement the high-level use cases or",
           "rawText": "▪ Use Cases (Application Services): Implement the high-level use cases or",
-          "x": 162.02,
-          "y": 208.94,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f6"
+          "startX": 162,
+          "y": 209,
+          "isBold": false
         },
         {
-          "text": "                 operations of your system (e.g., CreatePerson, GetPersonById).",
+          "text": "operations of your system (e.g., CreatePerson, GetPersonById).",
           "rawText": "operations of your system (e.g., CreatePerson, GetPersonById).",
-          "x": 180.02,
-          "y": 194.42,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 180,
+          "y": 194,
+          "isBold": false
         },
         {
-          "text": "              ▪ DTOs (Data Transfer Objects): Represent data structures used for",
+          "text": "▪ DTOs (Data Transfer Objects): Represent data structures used for",
           "rawText": "▪ DTOs (Data Transfer Objects): Represent data structures used for",
-          "x": 162.02,
-          "y": 171.98,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f6"
+          "startX": 162,
+          "y": 172,
+          "isBold": false
         },
         {
-          "text": "                 communication between layers.",
+          "text": "communication between layers.",
           "rawText": "communication between layers.",
-          "x": 180.02,
-          "y": 157.46,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 180,
+          "y": 157,
+          "isBold": false
         },
         {
-          "text": "              ▪ Interfaces (Contracts): Define the contracts for infrastructure services (e.g.,",
+          "text": "▪ Interfaces (Contracts): Define the contracts for infrastructure services (e.g.,",
           "rawText": "▪ Interfaces (Contracts): Define the contracts for infrastructure services (e.g.,",
-          "x": 162.02,
-          "y": 134.9,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f6"
+          "startX": 162,
+          "y": 135,
+          "isBold": false
         },
         {
-          "text": "                 repositories, email services).",
+          "text": "repositories, email services).",
           "rawText": "repositories, email services).",
-          "x": 180.02,
-          "y": 120.5,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 180,
+          "y": 121,
+          "isBold": false
         },
         {
-          "text": "        o Dependencies: Depends on the Domain Layer.",
-          "rawText": "o Dependencies: Depends on the Domain Layer.",
-          "x": 126.02,
-          "y": 97.944,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Dependencies: Depends on the Domain Layer.",
+          "rawText": "•  Dependencies: Depends on the Domain Layer.",
+          "startX": 126,
+          "y": 98,
+          "isBold": false
         }
       ],
       "blocks": [
@@ -280,15 +249,22 @@
           "text": "Section 24: Clean Architecture - Notes"
         },
         {
+          "type": "heading",
+          "page": 1,
+          "lines": [
+            "Clean Architecture in ASP.NET Core"
+          ],
+          "text": "Clean Architecture in ASP.NET Core"
+        },
+        {
           "type": "prose",
           "page": 1,
           "lines": [
-            "Clean Architecture in ASP.NET Core",
             "Clean Architecture, also known as Onion Architecture, is a software design principle that emphasizes",
             "separation of concerns, testability, and maintainability. It achieves this by organizing your",
             "application into layers, with each layer having a specific responsibility and dependency direction."
           ],
-          "text": "Clean Architecture in ASP.NET Core\nClean Architecture, also known as Onion Architecture, is a software design principle that emphasizes\nseparation of concerns, testability, and maintainability. It achieves this by organizing your\napplication into layers, with each layer having a specific responsibility and dependency direction."
+          "text": "Clean Architecture, also known as Onion Architecture, is a software design principle that emphasizes separation of concerns, testability, and maintainability. It achieves this by organizing your application into layers, with each layer having a specific responsibility and dependency direction."
         },
         {
           "type": "heading",
@@ -302,387 +278,356 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   1. Domain Layer (Core)"
+            "1. Domain Layer (Core)"
           ],
-          "text": "   1. Domain Layer (Core)"
+          "text": "1. Domain Layer (Core)"
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Purpose: The heart of your application, containing your business rules and domain",
-            "           models."
+            "•  Purpose: The heart of your application, containing your business rules and domain",
+            "models."
           ],
-          "text": "        o Purpose: The heart of your application, containing your business rules and domain\n           models."
+          "text": "•  Purpose: The heart of your application, containing your business rules and domain\nmodels."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Contents:"
+            "•  Contents:"
           ],
-          "text": "        o Contents:"
+          "text": "•  Contents:"
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "              ▪ Entities: Represent the core concepts of your domain (e.g., Person, Order,",
-            "                 Product)."
+            "▪ Entities: Represent the core concepts of your domain (e.g., Person, Order,",
+            "Product)."
           ],
-          "text": "              ▪ Entities: Represent the core concepts of your domain (e.g., Person, Order,\n                 Product)."
+          "text": "▪ Entities: Represent the core concepts of your domain (e.g., Person, Order,\nProduct)."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "              ▪ Value Objects: Immutable objects representing concepts like Money,",
-            "                 Address, or EmailAddress."
+            "▪ Value Objects: Immutable objects representing concepts like Money,",
+            "Address, or EmailAddress."
           ],
-          "text": "              ▪ Value Objects: Immutable objects representing concepts like Money,\n                 Address, or EmailAddress."
+          "text": "▪ Value Objects: Immutable objects representing concepts like Money,\nAddress, or EmailAddress."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "              ▪ Domain Services: Encapsulate complex business logic or operations that",
-            "                 involve multiple entities."
+            "▪ Domain Services: Encapsulate complex business logic or operations that",
+            "involve multiple entities."
           ],
-          "text": "              ▪ Domain Services: Encapsulate complex business logic or operations that\n                 involve multiple entities."
+          "text": "▪ Domain Services: Encapsulate complex business logic or operations that\ninvolve multiple entities."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "              ▪ Interfaces (Contracts): Define the contracts for repositories and other",
-            "                 dependencies."
+            "▪ Interfaces (Contracts): Define the contracts for repositories and other",
+            "dependencies."
           ],
-          "text": "              ▪ Interfaces (Contracts): Define the contracts for repositories and other\n                 dependencies."
+          "text": "▪ Interfaces (Contracts): Define the contracts for repositories and other\ndependencies."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Dependencies: None. The domain layer is independent of any external",
-            "           infrastructure or frameworks."
+            "•  Dependencies: None. The domain layer is independent of any external",
+            "infrastructure or frameworks."
           ],
-          "text": "        o Dependencies: None. The domain layer is independent of any external\n           infrastructure or frameworks."
+          "text": "•  Dependencies: None. The domain layer is independent of any external\ninfrastructure or frameworks."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   2. Application Layer"
+            "2. Application Layer"
           ],
-          "text": "   2. Application Layer"
+          "text": "2. Application Layer"
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Purpose: Orchestrates the use cases of your application."
+            "•  Purpose: Orchestrates the use cases of your application."
           ],
-          "text": "        o Purpose: Orchestrates the use cases of your application."
+          "text": "•  Purpose: Orchestrates the use cases of your application."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Contents:"
+            "•  Contents:"
           ],
-          "text": "        o Contents:"
+          "text": "•  Contents:"
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "              ▪ Use Cases (Application Services): Implement the high-level use cases or",
-            "                 operations of your system (e.g., CreatePerson, GetPersonById)."
+            "▪ Use Cases (Application Services): Implement the high-level use cases or",
+            "operations of your system (e.g., CreatePerson, GetPersonById)."
           ],
-          "text": "              ▪ Use Cases (Application Services): Implement the high-level use cases or\n                 operations of your system (e.g., CreatePerson, GetPersonById)."
+          "text": "▪ Use Cases (Application Services): Implement the high-level use cases or\noperations of your system (e.g., CreatePerson, GetPersonById)."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "              ▪ DTOs (Data Transfer Objects): Represent data structures used for",
-            "                 communication between layers."
+            "▪ DTOs (Data Transfer Objects): Represent data structures used for",
+            "communication between layers."
           ],
-          "text": "              ▪ DTOs (Data Transfer Objects): Represent data structures used for\n                 communication between layers."
+          "text": "▪ DTOs (Data Transfer Objects): Represent data structures used for\ncommunication between layers."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "              ▪ Interfaces (Contracts): Define the contracts for infrastructure services (e.g.,",
-            "                 repositories, email services)."
+            "▪ Interfaces (Contracts): Define the contracts for infrastructure services (e.g.,",
+            "repositories, email services)."
           ],
-          "text": "              ▪ Interfaces (Contracts): Define the contracts for infrastructure services (e.g.,\n                 repositories, email services)."
+          "text": "▪ Interfaces (Contracts): Define the contracts for infrastructure services (e.g.,\nrepositories, email services)."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Dependencies: Depends on the Domain Layer."
+            "•  Dependencies: Depends on the Domain Layer."
           ],
-          "text": "        o Dependencies: Depends on the Domain Layer."
+          "text": "•  Dependencies: Depends on the Domain Layer."
         }
       ],
-      "char_count_raw": 1497,
-      "char_count_repaired": 1789
+      "char_count_raw": 1503,
+      "char_count_repaired": 1502
     },
     {
       "page_number": 2,
-      "raw_text": "3. Infrastructure Layer\no Purpose: Implements the technical details of how your application interacts with\nexternal systems (databases, file systems, email services, etc.).\no Contents:\n▪ Repositories: Implement the data access logic for your entities.\n▪ Services: Implement the interfaces defined in the application layer for\ninteracting with external systems (e.g., EmailService, FileStorageService).\no Dependencies: Depends on the Application Layer and any external libraries or\nframeworks needed for infrastructure tasks.\n4. Presentation Layer (UI)\no Purpose: Handles user interaction and presentation logic.\no Contents:\n▪ Controllers: Handle HTTP requests, interact with use cases, and return views\nor API responses.\n▪ Views: Render the user interface.\n▪ View Models: Shape data for presentation in views.\no Dependencies: Depends on the Application Layer.\n5. Tests\no Purpose: Ensures the correctness of your application's behavior.\no Contents:\n▪ Unit Tests: Test individual units of code (e.g., domain models, services) in\nisolation.\n▪ Integration Tests: Test the interaction between multiple components.\n▪ End-to-End Tests: Test the entire application flow from the user's\nperspective.\nDependency Direction:\n• Inner Layers to Outer Layers: Dependencies flow from the inner layers (Domain) to the\nouter layers (Presentation).\n• Abstraction: Outer layers depend on abstractions (interfaces) defined in the inner layers.\nThis allows you to easily swap implementations in the outer layers without affecting the core\nbusiness logic.\n",
-      "repaired_text": "   3. Infrastructure Layer\n        o Purpose: Implements the technical details of how your application interacts with\n           external systems (databases, file systems, email services, etc.).\n        o Contents:\n              ▪ Repositories: Implement the data access logic for your entities.\n              ▪ Services: Implement the interfaces defined in the application layer for\n                 interacting with external systems (e.g., EmailService, FileStorageService).\n        o Dependencies: Depends on the Application Layer and any external libraries or\n           frameworks needed for infrastructure tasks.\n   4. Presentation Layer (UI)\n        o Purpose: Handles user interaction and presentation logic.\n        o Contents:\n              ▪ Controllers: Handle HTTP requests, interact with use cases, and return views\n                 or API responses.\n              ▪ Views: Render the user interface.\n              ▪ View Models: Shape data for presentation in views.\n        o Dependencies: Depends on the Application Layer.\n   5. Tests\n        o Purpose: Ensures the correctness of your application's behavior.\n        o Contents:\n              ▪ Unit Tests: Test individual units of code (e.g., domain models, services) in\n                 isolation.\n              ▪ Integration Tests: Test the interaction between multiple components.\n              ▪ End-to-End Tests: Test the entire application flow from the user's\n                 perspective.\nDependency Direction:\n   • Inner Layers to Outer Layers: Dependencies flow from the inner layers (Domain) to the\n      outer layers (Presentation).\n   • Abstraction: Outer layers depend on abstractions (interfaces) defined in the inner layers.\n      This allows you to easily swap implementations in the outer layers without affecting the core\n      business logic.",
+      "raw_text": "3. Infrastructure Layer\n•  Purpose: Implements the technical details of how your application interacts with\nexternal systems (databases, file systems, email services, etc.).\n•  Contents:\n▪ Repositories: Implement the data access logic for your entities.\n▪ Services: Implement the interfaces defined in the application layer for\ninteracting with external systems (e.g., EmailService, FileStorageService).\n•  Dependencies: Depends on the Application Layer and any external libraries or\nframeworks needed for infrastructure tasks.\n4. Presentation Layer (UI)\n•  Purpose: Handles user interaction and presentation logic.\n•  Contents:\n▪ Controllers: Handle HTTP requests, interact with use cases, and return views\nor API responses.\n▪ Views: Render the user interface.\n▪ View Models: Shape data for presentation in views.\n•  Dependencies: Depends on the Application Layer.\n5. Tests\n•  Purpose: Ensures the correctness of your application's behavior.\n•  Contents:\n▪ Unit Tests: Test individual units of code (e.g., domain models, services) in\nisolation.\n▪ Integration Tests: Test the interaction between multiple components.\n▪ End-to-End Tests: Test the entire application flow from the user's\nperspective.\nDependency Direction:\n• Inner Layers to Outer Layers: Dependencies flow from the inner layers (Domain) to the\nouter layers (Presentation).\n• Abstraction: Outer layers depend on abstractions (interfaces) defined in the inner layers.\nThis allows you to easily swap implementations in the outer layers without affecting the core\nbusiness logic.\n",
+      "repaired_text": "3. Infrastructure Layer\n•  Purpose: Implements the technical details of how your application interacts with\nexternal systems (databases, file systems, email services, etc.).\n•  Contents:\n▪ Repositories: Implement the data access logic for your entities.\n▪ Services: Implement the interfaces defined in the application layer for\ninteracting with external systems (e.g., EmailService, FileStorageService).\n•  Dependencies: Depends on the Application Layer and any external libraries or\nframeworks needed for infrastructure tasks.\n4. Presentation Layer (UI)\n•  Purpose: Handles user interaction and presentation logic.\n•  Contents:\n▪ Controllers: Handle HTTP requests, interact with use cases, and return views\nor API responses.\n▪ Views: Render the user interface.\n▪ View Models: Shape data for presentation in views.\n•  Dependencies: Depends on the Application Layer.\n5. Tests\n•  Purpose: Ensures the correctness of your application's behavior.\n•  Contents:\n▪ Unit Tests: Test individual units of code (e.g., domain models, services) in\nisolation.\n▪ Integration Tests: Test the interaction between multiple components.\n▪ End-to-End Tests: Test the entire application flow from the user's\nperspective.\nDependency Direction:\n• Inner Layers to Outer Layers: Dependencies flow from the inner layers (Domain) to the\nouter layers (Presentation).\n• Abstraction: Outer layers depend on abstractions (interfaces) defined in the inner layers.\nThis allows you to easily swap implementations in the outer layers without affecting the core\nbusiness logic.",
       "lines": [
         {
-          "text": "   3. Infrastructure Layer",
+          "text": "3. Infrastructure Layer",
           "rawText": "3. Infrastructure Layer",
-          "x": 90.024,
-          "y": 759.48,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 90,
+          "y": 759,
+          "isBold": false
         },
         {
-          "text": "        o Purpose: Implements the technical details of how your application interacts with",
-          "rawText": "o Purpose: Implements the technical details of how your application interacts with",
-          "x": 126.02,
-          "y": 737.02,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Purpose: Implements the technical details of how your application interacts with",
+          "rawText": "•  Purpose: Implements the technical details of how your application interacts with",
+          "startX": 126,
+          "y": 737,
+          "isBold": false
         },
         {
-          "text": "           external systems (databases, file systems, email services, etc.).",
+          "text": "external systems (databases, file systems, email services, etc.).",
           "rawText": "external systems (databases, file systems, email services, etc.).",
-          "x": 144.02,
-          "y": 722.5,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 144,
+          "y": 723,
+          "isBold": false
         },
         {
-          "text": "        o Contents:",
-          "rawText": "o Contents:",
-          "x": 126.02,
-          "y": 699.94,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Contents:",
+          "rawText": "•  Contents:",
+          "startX": 126,
+          "y": 700,
+          "isBold": true
         },
         {
-          "text": "              ▪ Repositories: Implement the data access logic for your entities.",
+          "text": "▪ Repositories: Implement the data access logic for your entities.",
           "rawText": "▪ Repositories: Implement the data access logic for your entities.",
-          "x": 162.02,
-          "y": 677.5,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f6"
+          "startX": 162,
+          "y": 678,
+          "isBold": false
         },
         {
-          "text": "              ▪ Services: Implement the interfaces defined in the application layer for",
+          "text": "▪ Services: Implement the interfaces defined in the application layer for",
           "rawText": "▪ Services: Implement the interfaces defined in the application layer for",
-          "x": 162.02,
-          "y": 655.06,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f6"
+          "startX": 162,
+          "y": 655,
+          "isBold": false
         },
         {
-          "text": "                 interacting with external systems (e.g., EmailService, FileStorageService).",
+          "text": "interacting with external systems (e.g., EmailService, FileStorageService).",
           "rawText": "interacting with external systems (e.g., EmailService, FileStorageService).",
-          "x": 180.02,
-          "y": 640.54,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 180,
+          "y": 641,
+          "isBold": false
         },
         {
-          "text": "        o Dependencies: Depends on the Application Layer and any external libraries or",
-          "rawText": "o Dependencies: Depends on the Application Layer and any external libraries or",
-          "x": 126.02,
-          "y": 617.98,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Dependencies: Depends on the Application Layer and any external libraries or",
+          "rawText": "•  Dependencies: Depends on the Application Layer and any external libraries or",
+          "startX": 126,
+          "y": 618,
+          "isBold": false
         },
         {
-          "text": "           frameworks needed for infrastructure tasks.",
+          "text": "frameworks needed for infrastructure tasks.",
           "rawText": "frameworks needed for infrastructure tasks.",
-          "x": 144.02,
-          "y": 603.58,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 144,
+          "y": 604,
+          "isBold": false
         },
         {
-          "text": "   4. Presentation Layer (UI)",
+          "text": "4. Presentation Layer (UI)",
           "rawText": "4. Presentation Layer (UI)",
-          "x": 90.024,
-          "y": 558.55,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 90,
+          "y": 559,
+          "isBold": false
         },
         {
-          "text": "        o Purpose: Handles user interaction and presentation logic.",
-          "rawText": "o Purpose: Handles user interaction and presentation logic.",
-          "x": 126.02,
-          "y": 535.99,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Purpose: Handles user interaction and presentation logic.",
+          "rawText": "•  Purpose: Handles user interaction and presentation logic.",
+          "startX": 126,
+          "y": 536,
+          "isBold": false
         },
         {
-          "text": "        o Contents:",
-          "rawText": "o Contents:",
-          "x": 126.02,
-          "y": 513.55,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Contents:",
+          "rawText": "•  Contents:",
+          "startX": 126,
+          "y": 514,
+          "isBold": true
         },
         {
-          "text": "              ▪ Controllers: Handle HTTP requests, interact with use cases, and return views",
+          "text": "▪ Controllers: Handle HTTP requests, interact with use cases, and return views",
           "rawText": "▪ Controllers: Handle HTTP requests, interact with use cases, and return views",
-          "x": 162.02,
-          "y": 491.11,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f6"
+          "startX": 162,
+          "y": 491,
+          "isBold": false
         },
         {
-          "text": "                 or API responses.",
+          "text": "or API responses.",
           "rawText": "or API responses.",
-          "x": 180.02,
-          "y": 476.59,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 180,
+          "y": 477,
+          "isBold": false
         },
         {
-          "text": "              ▪ Views: Render the user interface.",
+          "text": "▪ Views: Render the user interface.",
           "rawText": "▪ Views: Render the user interface.",
-          "x": 162.02,
-          "y": 454.03,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f6"
+          "startX": 162,
+          "y": 454,
+          "isBold": false
         },
         {
-          "text": "              ▪ View Models: Shape data for presentation in views.",
+          "text": "▪ View Models: Shape data for presentation in views.",
           "rawText": "▪ View Models: Shape data for presentation in views.",
-          "x": 162.02,
-          "y": 431.59,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f6"
+          "startX": 162,
+          "y": 432,
+          "isBold": false
         },
         {
-          "text": "        o Dependencies: Depends on the Application Layer.",
-          "rawText": "o Dependencies: Depends on the Application Layer.",
-          "x": 126.02,
-          "y": 409.03,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Dependencies: Depends on the Application Layer.",
+          "rawText": "•  Dependencies: Depends on the Application Layer.",
+          "startX": 126,
+          "y": 409,
+          "isBold": false
         },
         {
-          "text": "   5. Tests",
+          "text": "5. Tests",
           "rawText": "5. Tests",
-          "x": 90.024,
-          "y": 364.13,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 90,
+          "y": 364,
+          "isBold": false
         },
         {
-          "text": "        o Purpose: Ensures the correctness of your application's behavior.",
-          "rawText": "o Purpose: Ensures the correctness of your application's behavior.",
-          "x": 126.02,
-          "y": 341.57,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Purpose: Ensures the correctness of your application's behavior.",
+          "rawText": "•  Purpose: Ensures the correctness of your application's behavior.",
+          "startX": 126,
+          "y": 342,
+          "isBold": false
         },
         {
-          "text": "        o Contents:",
-          "rawText": "o Contents:",
-          "x": 126.02,
-          "y": 319.13,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Contents:",
+          "rawText": "•  Contents:",
+          "startX": 126,
+          "y": 319,
+          "isBold": true
         },
         {
-          "text": "              ▪ Unit Tests: Test individual units of code (e.g., domain models, services) in",
+          "text": "▪ Unit Tests: Test individual units of code (e.g., domain models, services) in",
           "rawText": "▪ Unit Tests: Test individual units of code (e.g., domain models, services) in",
-          "x": 162.02,
-          "y": 296.57,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f6"
+          "startX": 162,
+          "y": 297,
+          "isBold": false
         },
         {
-          "text": "                 isolation.",
+          "text": "isolation.",
           "rawText": "isolation.",
-          "x": 180.02,
-          "y": 282.17,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 180,
+          "y": 282,
+          "isBold": false
         },
         {
-          "text": "              ▪ Integration Tests: Test the interaction between multiple components.",
+          "text": "▪ Integration Tests: Test the interaction between multiple components.",
           "rawText": "▪ Integration Tests: Test the interaction between multiple components.",
-          "x": 162.02,
-          "y": 259.61,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f6"
+          "startX": 162,
+          "y": 260,
+          "isBold": false
         },
         {
-          "text": "              ▪ End-to-End Tests: Test the entire application flow from the user's",
+          "text": "▪ End-to-End Tests: Test the entire application flow from the user's",
           "rawText": "▪ End-to-End Tests: Test the entire application flow from the user's",
-          "x": 162.02,
-          "y": 237.17,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f6"
+          "startX": 162,
+          "y": 237,
+          "isBold": false
         },
         {
-          "text": "                 perspective.",
+          "text": "perspective.",
           "rawText": "perspective.",
-          "x": 180.02,
-          "y": 222.65,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 180,
+          "y": 223,
+          "isBold": false
         },
         {
           "text": "Dependency Direction:",
           "rawText": "Dependency Direction:",
-          "x": 72.024,
-          "y": 177.62,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f3"
+          "startX": 72,
+          "y": 178,
+          "isBold": true
         },
         {
-          "text": "   • Inner Layers to Outer Layers: Dependencies flow from the inner layers (Domain) to the",
+          "text": "• Inner Layers to Outer Layers: Dependencies flow from the inner layers (Domain) to the",
           "rawText": "• Inner Layers to Outer Layers: Dependencies flow from the inner layers (Domain) to the",
-          "x": 90.024,
-          "y": 155.18,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 155,
+          "isBold": false
         },
         {
-          "text": "      outer layers (Presentation).",
+          "text": "outer layers (Presentation).",
           "rawText": "outer layers (Presentation).",
-          "x": 108.02,
-          "y": 140.66,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 108,
+          "y": 141,
+          "isBold": false
         },
         {
-          "text": "   • Abstraction: Outer layers depend on abstractions (interfaces) defined in the inner layers.",
+          "text": "• Abstraction: Outer layers depend on abstractions (interfaces) defined in the inner layers.",
           "rawText": "• Abstraction: Outer layers depend on abstractions (interfaces) defined in the inner layers.",
-          "x": 90.024,
-          "y": 118.22,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 118,
+          "isBold": false
         },
         {
-          "text": "      This allows you to easily swap implementations in the outer layers without affecting the core",
+          "text": "This allows you to easily swap implementations in the outer layers without affecting the core",
           "rawText": "This allows you to easily swap implementations in the outer layers without affecting the core",
-          "x": 108.02,
-          "y": 103.7,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 108,
+          "y": 104,
+          "isBold": false
         },
         {
-          "text": "      business logic.",
+          "text": "business logic.",
           "rawText": "business logic.",
-          "x": 108.02,
-          "y": 89.184,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 108,
+          "y": 89,
+          "isBold": false
         }
       ],
       "blocks": [
@@ -690,159 +635,159 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   3. Infrastructure Layer"
+            "3. Infrastructure Layer"
           ],
-          "text": "   3. Infrastructure Layer"
+          "text": "3. Infrastructure Layer"
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o Purpose: Implements the technical details of how your application interacts with",
-            "           external systems (databases, file systems, email services, etc.)."
+            "•  Purpose: Implements the technical details of how your application interacts with",
+            "external systems (databases, file systems, email services, etc.)."
           ],
-          "text": "        o Purpose: Implements the technical details of how your application interacts with\n           external systems (databases, file systems, email services, etc.)."
+          "text": "•  Purpose: Implements the technical details of how your application interacts with\nexternal systems (databases, file systems, email services, etc.)."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o Contents:"
+            "•  Contents:"
           ],
-          "text": "        o Contents:"
+          "text": "•  Contents:"
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "              ▪ Repositories: Implement the data access logic for your entities."
+            "▪ Repositories: Implement the data access logic for your entities."
           ],
-          "text": "              ▪ Repositories: Implement the data access logic for your entities."
+          "text": "▪ Repositories: Implement the data access logic for your entities."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "              ▪ Services: Implement the interfaces defined in the application layer for",
-            "                 interacting with external systems (e.g., EmailService, FileStorageService)."
+            "▪ Services: Implement the interfaces defined in the application layer for",
+            "interacting with external systems (e.g., EmailService, FileStorageService)."
           ],
-          "text": "              ▪ Services: Implement the interfaces defined in the application layer for\n                 interacting with external systems (e.g., EmailService, FileStorageService)."
+          "text": "▪ Services: Implement the interfaces defined in the application layer for\ninteracting with external systems (e.g., EmailService, FileStorageService)."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o Dependencies: Depends on the Application Layer and any external libraries or",
-            "           frameworks needed for infrastructure tasks."
+            "•  Dependencies: Depends on the Application Layer and any external libraries or",
+            "frameworks needed for infrastructure tasks."
           ],
-          "text": "        o Dependencies: Depends on the Application Layer and any external libraries or\n           frameworks needed for infrastructure tasks."
+          "text": "•  Dependencies: Depends on the Application Layer and any external libraries or\nframeworks needed for infrastructure tasks."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   4. Presentation Layer (UI)"
+            "4. Presentation Layer (UI)"
           ],
-          "text": "   4. Presentation Layer (UI)"
+          "text": "4. Presentation Layer (UI)"
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o Purpose: Handles user interaction and presentation logic."
+            "•  Purpose: Handles user interaction and presentation logic."
           ],
-          "text": "        o Purpose: Handles user interaction and presentation logic."
+          "text": "•  Purpose: Handles user interaction and presentation logic."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o Contents:"
+            "•  Contents:"
           ],
-          "text": "        o Contents:"
+          "text": "•  Contents:"
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "              ▪ Controllers: Handle HTTP requests, interact with use cases, and return views",
-            "                 or API responses."
+            "▪ Controllers: Handle HTTP requests, interact with use cases, and return views",
+            "or API responses."
           ],
-          "text": "              ▪ Controllers: Handle HTTP requests, interact with use cases, and return views\n                 or API responses."
+          "text": "▪ Controllers: Handle HTTP requests, interact with use cases, and return views\nor API responses."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "              ▪ Views: Render the user interface."
+            "▪ Views: Render the user interface."
           ],
-          "text": "              ▪ Views: Render the user interface."
+          "text": "▪ Views: Render the user interface."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "              ▪ View Models: Shape data for presentation in views."
+            "▪ View Models: Shape data for presentation in views."
           ],
-          "text": "              ▪ View Models: Shape data for presentation in views."
+          "text": "▪ View Models: Shape data for presentation in views."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o Dependencies: Depends on the Application Layer."
+            "•  Dependencies: Depends on the Application Layer."
           ],
-          "text": "        o Dependencies: Depends on the Application Layer."
+          "text": "•  Dependencies: Depends on the Application Layer."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   5. Tests"
+            "5. Tests"
           ],
-          "text": "   5. Tests"
+          "text": "5. Tests"
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o Purpose: Ensures the correctness of your application's behavior."
+            "•  Purpose: Ensures the correctness of your application's behavior."
           ],
-          "text": "        o Purpose: Ensures the correctness of your application's behavior."
+          "text": "•  Purpose: Ensures the correctness of your application's behavior."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o Contents:"
+            "•  Contents:"
           ],
-          "text": "        o Contents:"
+          "text": "•  Contents:"
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "              ▪ Unit Tests: Test individual units of code (e.g., domain models, services) in",
-            "                 isolation."
+            "▪ Unit Tests: Test individual units of code (e.g., domain models, services) in",
+            "isolation."
           ],
-          "text": "              ▪ Unit Tests: Test individual units of code (e.g., domain models, services) in\n                 isolation."
+          "text": "▪ Unit Tests: Test individual units of code (e.g., domain models, services) in\nisolation."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "              ▪ Integration Tests: Test the interaction between multiple components."
+            "▪ Integration Tests: Test the interaction between multiple components."
           ],
-          "text": "              ▪ Integration Tests: Test the interaction between multiple components."
+          "text": "▪ Integration Tests: Test the interaction between multiple components."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "              ▪ End-to-End Tests: Test the entire application flow from the user's",
-            "                 perspective."
+            "▪ End-to-End Tests: Test the entire application flow from the user's",
+            "perspective."
           ],
-          "text": "              ▪ End-to-End Tests: Test the entire application flow from the user's\n                 perspective."
+          "text": "▪ End-to-End Tests: Test the entire application flow from the user's\nperspective."
         },
         {
           "type": "prose",
@@ -856,229 +801,204 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • Inner Layers to Outer Layers: Dependencies flow from the inner layers (Domain) to the",
-            "      outer layers (Presentation)."
+            "• Inner Layers to Outer Layers: Dependencies flow from the inner layers (Domain) to the",
+            "outer layers (Presentation)."
           ],
-          "text": "   • Inner Layers to Outer Layers: Dependencies flow from the inner layers (Domain) to the\n      outer layers (Presentation)."
+          "text": "• Inner Layers to Outer Layers: Dependencies flow from the inner layers (Domain) to the\nouter layers (Presentation)."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • Abstraction: Outer layers depend on abstractions (interfaces) defined in the inner layers.",
-            "      This allows you to easily swap implementations in the outer layers without affecting the core",
-            "      business logic."
+            "• Abstraction: Outer layers depend on abstractions (interfaces) defined in the inner layers.",
+            "This allows you to easily swap implementations in the outer layers without affecting the core",
+            "business logic."
           ],
-          "text": "   • Abstraction: Outer layers depend on abstractions (interfaces) defined in the inner layers.\n      This allows you to easily swap implementations in the outer layers without affecting the core\n      business logic."
+          "text": "• Abstraction: Outer layers depend on abstractions (interfaces) defined in the inner layers.\nThis allows you to easily swap implementations in the outer layers without affecting the core\nbusiness logic."
         }
       ],
-      "char_count_raw": 1533,
-      "char_count_repaired": 1831
+      "char_count_raw": 1541,
+      "char_count_repaired": 1540
     },
     {
       "page_number": 3,
       "raw_text": "Sample Code Implementation (Persons Records Management)\nLet's illustrate Clean Architecture using a simplified example of managing person records.\n// Domain Layer (Core)\npublic class Person\n{\npublic Guid PersonId { get; set; }\npublic string Name { get; set; }\n// ... other properties\n}\npublic interface IPersonsRepository\n{\nTask<Person> AddPerson(Person person);\nTask<List<Person>> GetAllPersons();\n// ... other CRUD operations ...\n}\n// Application Layer\npublic class PersonDto { /* ... */ } // DTO for transferring person data\npublic interface IPersonsService\n{\nTask<PersonDto> CreatePerson(PersonDto personDto);\nTask<List<PersonDto>> GetAllPersons();\n// ... other operations ...\n}\npublic class PersonsService : IPersonsService\n{\n",
-      "repaired_text": "Sample Code Implementation (Persons Records Management)\nLet's illustrate Clean Architecture using a simplified example of managing person records.\n// Domain Layer (Core)\npublic class Person\n{\n  public Guid PersonId { get; set; }\n  public string Name { get; set; }\n  // ... other properties\n}\npublic interface IPersonsRepository\n{\n  Task<Person> AddPerson(Person person);\n  Task<List<Person>> GetAllPersons();\n  // ... other CRUD operations ...\n}\n// Application Layer\npublic class PersonDto { /* ... */ } // DTO for transferring person data\npublic interface IPersonsService\n{\n  Task<PersonDto> CreatePerson(PersonDto personDto);\n  Task<List<PersonDto>> GetAllPersons();\n  // ... other operations ...\n}\npublic class PersonsService : IPersonsService\n{",
+      "repaired_text": "Sample Code Implementation (Persons Records Management)\nLet's illustrate Clean Architecture using a simplified example of managing person records.\n// Domain Layer (Core)\npublic class Person\n{\npublic Guid PersonId { get; set; }\npublic string Name { get; set; }\n// ... other properties\n}\npublic interface IPersonsRepository\n{\nTask<Person> AddPerson(Person person);\nTask<List<Person>> GetAllPersons();\n// ... other CRUD operations ...\n}\n// Application Layer\npublic class PersonDto { /* ... */ } // DTO for transferring person data\npublic interface IPersonsService\n{\nTask<PersonDto> CreatePerson(PersonDto personDto);\nTask<List<PersonDto>> GetAllPersons();\n// ... other operations ...\n}\npublic class PersonsService : IPersonsService\n{",
       "lines": [
         {
           "text": "Sample Code Implementation (Persons Records Management)",
           "rawText": "Sample Code Implementation (Persons Records Management)",
-          "x": 72.024,
-          "y": 714.46,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f3"
+          "startX": 72,
+          "y": 714,
+          "isBold": true
         },
         {
           "text": "Let's illustrate Clean Architecture using a simplified example of managing person records.",
           "rawText": "Let's illustrate Clean Architecture using a simplified example of managing person records.",
-          "x": 72.024,
-          "y": 692.02,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 692,
+          "isBold": false
         },
         {
           "text": "// Domain Layer (Core)",
           "rawText": "// Domain Layer (Core)",
-          "x": 72.024,
-          "y": 669.46,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 669,
+          "isBold": false
         },
         {
           "text": "public class Person",
           "rawText": "public class Person",
-          "x": 72.024,
-          "y": 647.02,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 647,
+          "isBold": false
         },
         {
           "text": "{",
           "rawText": "{",
-          "x": 72.024,
-          "y": 624.46,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 624,
+          "isBold": false
         },
         {
-          "text": "  public Guid PersonId { get; set; }",
+          "text": "public Guid PersonId { get; set; }",
           "rawText": "public Guid PersonId { get; set; }",
-          "x": 82.104,
-          "y": 602.02,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 82,
+          "y": 602,
+          "isBold": false
         },
         {
-          "text": "  public string Name { get; set; }",
+          "text": "public string Name { get; set; }",
           "rawText": "public string Name { get; set; }",
-          "x": 82.104,
-          "y": 579.58,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 82,
+          "y": 580,
+          "isBold": false
         },
         {
-          "text": "  // ... other properties",
+          "text": "// ... other properties",
           "rawText": "// ... other properties",
-          "x": 81.984,
-          "y": 556.99,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 82,
+          "y": 557,
+          "isBold": false
         },
         {
           "text": "}",
           "rawText": "}",
-          "x": 72.024,
-          "y": 534.55,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 535,
+          "isBold": false
         },
         {
           "text": "public interface IPersonsRepository",
           "rawText": "public interface IPersonsRepository",
-          "x": 72.024,
-          "y": 489.55,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 490,
+          "isBold": false
         },
         {
           "text": "{",
           "rawText": "{",
-          "x": 72.024,
-          "y": 467.11,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 467,
+          "isBold": false
         },
         {
-          "text": "  Task<Person> AddPerson(Person person);",
+          "text": "Task<Person> AddPerson(Person person);",
           "rawText": "Task<Person> AddPerson(Person person);",
-          "x": 82.104,
-          "y": 444.55,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 82,
+          "y": 445,
+          "isBold": false
         },
         {
-          "text": "  Task<List<Person>> GetAllPersons();",
+          "text": "Task<List<Person>> GetAllPersons();",
           "rawText": "Task<List<Person>> GetAllPersons();",
-          "x": 82.104,
-          "y": 422.11,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 82,
+          "y": 422,
+          "isBold": false
         },
         {
-          "text": "  // ... other CRUD operations ...",
+          "text": "// ... other CRUD operations ...",
           "rawText": "// ... other CRUD operations ...",
-          "x": 81.984,
-          "y": 399.55,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 82,
+          "y": 400,
+          "isBold": false
         },
         {
           "text": "}",
           "rawText": "}",
-          "x": 72.024,
-          "y": 377.09,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 377,
+          "isBold": false
         },
         {
           "text": "// Application Layer",
           "rawText": "// Application Layer",
-          "x": 72.024,
-          "y": 332.09,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 332,
+          "isBold": false
         },
         {
           "text": "public class PersonDto { /* ... */ } // DTO for transferring person data",
           "rawText": "public class PersonDto { /* ... */ } // DTO for transferring person data",
-          "x": 72.024,
-          "y": 309.65,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 310,
+          "isBold": false
         },
         {
           "text": "public interface IPersonsService",
           "rawText": "public interface IPersonsService",
-          "x": 72.024,
-          "y": 264.65,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 265,
+          "isBold": false
         },
         {
           "text": "{",
           "rawText": "{",
-          "x": 72.024,
-          "y": 242.09,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 242,
+          "isBold": false
         },
         {
-          "text": "  Task<PersonDto> CreatePerson(PersonDto personDto);",
+          "text": "Task<PersonDto> CreatePerson(PersonDto personDto);",
           "rawText": "Task<PersonDto> CreatePerson(PersonDto personDto);",
-          "x": 82.104,
-          "y": 219.65,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 82,
+          "y": 220,
+          "isBold": false
         },
         {
-          "text": "  Task<List<PersonDto>> GetAllPersons();",
+          "text": "Task<List<PersonDto>> GetAllPersons();",
           "rawText": "Task<List<PersonDto>> GetAllPersons();",
-          "x": 82.104,
-          "y": 197.06,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 82,
+          "y": 197,
+          "isBold": false
         },
         {
-          "text": "  // ... other operations ...",
+          "text": "// ... other operations ...",
           "rawText": "// ... other operations ...",
-          "x": 81.984,
-          "y": 174.62,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 82,
+          "y": 175,
+          "isBold": false
         },
         {
           "text": "}",
           "rawText": "}",
-          "x": 72.024,
-          "y": 152.18,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 152,
+          "isBold": false
         },
         {
           "text": "public class PersonsService : IPersonsService",
           "rawText": "public class PersonsService : IPersonsService",
-          "x": 72.024,
-          "y": 107.18,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 107,
+          "isBold": false
         },
         {
           "text": "{",
           "rawText": "{",
-          "x": 72.024,
-          "y": 84.624,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 85,
+          "isBold": false
         }
       ],
       "blocks": [
@@ -1105,237 +1025,212 @@
             "// Domain Layer (Core)",
             "public class Person",
             "{",
-            "  public Guid PersonId { get; set; }",
-            "  public string Name { get; set; }",
-            "  // ... other properties",
+            "public Guid PersonId { get; set; }",
+            "public string Name { get; set; }",
+            "// ... other properties",
             "}",
             "public interface IPersonsRepository",
             "{",
-            "  Task<Person> AddPerson(Person person);",
-            "  Task<List<Person>> GetAllPersons();",
-            "  // ... other CRUD operations ...",
+            "Task<Person> AddPerson(Person person);",
+            "Task<List<Person>> GetAllPersons();",
+            "// ... other CRUD operations ...",
             "}",
             "// Application Layer",
             "public class PersonDto { /* ... */ } // DTO for transferring person data",
             "public interface IPersonsService",
             "{",
-            "  Task<PersonDto> CreatePerson(PersonDto personDto);",
-            "  Task<List<PersonDto>> GetAllPersons();",
-            "  // ... other operations ...",
+            "Task<PersonDto> CreatePerson(PersonDto personDto);",
+            "Task<List<PersonDto>> GetAllPersons();",
+            "// ... other operations ...",
             "}",
             "public class PersonsService : IPersonsService",
             "{"
           ],
-          "text": "// Domain Layer (Core)\npublic class Person\n{\n  public Guid PersonId { get; set; }\n  public string Name { get; set; }\n  // ... other properties\n}\npublic interface IPersonsRepository\n{\n  Task<Person> AddPerson(Person person);\n  Task<List<Person>> GetAllPersons();\n  // ... other CRUD operations ...\n}\n// Application Layer\npublic class PersonDto { /* ... */ } // DTO for transferring person data\npublic interface IPersonsService\n{\n  Task<PersonDto> CreatePerson(PersonDto personDto);\n  Task<List<PersonDto>> GetAllPersons();\n  // ... other operations ...\n}\npublic class PersonsService : IPersonsService\n{"
+          "text": "// Domain Layer (Core)\npublic class Person\n{\npublic Guid PersonId { get; set; }\npublic string Name { get; set; }\n// ... other properties\n}\npublic interface IPersonsRepository\n{\nTask<Person> AddPerson(Person person);\nTask<List<Person>> GetAllPersons();\n// ... other CRUD operations ...\n}\n// Application Layer\npublic class PersonDto { /* ... */ } // DTO for transferring person data\npublic interface IPersonsService\n{\nTask<PersonDto> CreatePerson(PersonDto personDto);\nTask<List<PersonDto>> GetAllPersons();\n// ... other operations ...\n}\npublic class PersonsService : IPersonsService\n{"
         }
       ],
       "char_count_raw": 731,
-      "char_count_repaired": 748
+      "char_count_repaired": 730
     },
     {
       "page_number": 4,
       "raw_text": "private readonly IPersonsRepository _personsRepository;\npublic PersonsService(IPersonsRepository personsRepository)\n{\n_personsRepository = personsRepository;\n}\npublic async Task<PersonDto> CreatePerson(PersonDto personDto)\n{\n// Validation, mapping, etc.\nvar person = new Person { /* ... map from DTO ... */ };\nvar createdPerson = await _personsRepository.AddPerson(person);\nreturn createdPerson.ToDto(); // Map back to DTO\n}\n// ... other methods ...\n}\n// Infrastructure Layer\npublic class PersonsRepository : IPersonsRepository\n{\nprivate readonly MyDbContext _dbContext;\npublic PersonsRepository(MyDbContext dbContext)\n{\n_dbContext = dbContext;\n}\npublic async Task<Person> AddPerson(Person person)\n{\n_dbContext.Persons.Add(person);\n",
-      "repaired_text": "  private readonly IPersonsRepository _personsRepository;\n  public PersonsService(IPersonsRepository personsRepository)\n  {\n   _personsRepository = personsRepository;\n  }\n  public async Task<PersonDto> CreatePerson(PersonDto personDto)\n  {\n   // Validation, mapping, etc.\n   var person = new Person { /* ... map from DTO ... */ };\n   var createdPerson = await _personsRepository.AddPerson(person);\n   return createdPerson.ToDto(); // Map back to DTO\n  }\n  // ... other methods ...\n}\n// Infrastructure Layer\npublic class PersonsRepository : IPersonsRepository\n{\n  private readonly MyDbContext _dbContext;\n  public PersonsRepository(MyDbContext dbContext)\n  {\n   _dbContext = dbContext;\n  }\n  public async Task<Person> AddPerson(Person person)\n  {\n   _dbContext.Persons.Add(person);",
+      "repaired_text": "private readonly IPersonsRepository _personsRepository;\npublic PersonsService(IPersonsRepository personsRepository)\n{\n_personsRepository = personsRepository;\n}\npublic async Task<PersonDto> CreatePerson(PersonDto personDto)\n{\n// Validation, mapping, etc.\nvar person = new Person { /* ... map from DTO ... */ };\nvar createdPerson = await _personsRepository.AddPerson(person);\nreturn createdPerson.ToDto(); // Map back to DTO\n}\n// ... other methods ...\n}\n// Infrastructure Layer\npublic class PersonsRepository : IPersonsRepository\n{\nprivate readonly MyDbContext _dbContext;\npublic PersonsRepository(MyDbContext dbContext)\n{\n_dbContext = dbContext;\n}\npublic async Task<Person> AddPerson(Person person)\n{\n_dbContext.Persons.Add(person);",
       "lines": [
         {
-          "text": "  private readonly IPersonsRepository _personsRepository;",
+          "text": "private readonly IPersonsRepository _personsRepository;",
           "rawText": "private readonly IPersonsRepository _personsRepository;",
-          "x": 82.104,
-          "y": 759.48,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 82,
+          "y": 759,
+          "isBold": false
         },
         {
-          "text": "  public PersonsService(IPersonsRepository personsRepository)",
+          "text": "public PersonsService(IPersonsRepository personsRepository)",
           "rawText": "public PersonsService(IPersonsRepository personsRepository)",
-          "x": 82.104,
-          "y": 714.46,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "  {",
-          "rawText": "{",
-          "x": 82.104,
-          "y": 692.02,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "   _personsRepository = personsRepository;",
-          "rawText": "_personsRepository = personsRepository;",
-          "x": 91.944,
-          "y": 669.46,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "  }",
-          "rawText": "}",
-          "x": 82.104,
-          "y": 647.02,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "  public async Task<PersonDto> CreatePerson(PersonDto personDto)",
-          "rawText": "public async Task<PersonDto> CreatePerson(PersonDto personDto)",
-          "x": 82.104,
-          "y": 602.02,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "  {",
-          "rawText": "{",
-          "x": 82.104,
-          "y": 579.58,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "   // Validation, mapping, etc.",
-          "rawText": "// Validation, mapping, etc.",
-          "x": 91.944,
-          "y": 556.99,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "   var person = new Person { /* ... map from DTO ... */ };",
-          "rawText": "var person = new Person { /* ... map from DTO ... */ };",
-          "x": 91.944,
-          "y": 534.55,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "   var createdPerson = await _personsRepository.AddPerson(person);",
-          "rawText": "var createdPerson = await _personsRepository.AddPerson(person);",
-          "x": 91.944,
-          "y": 511.99,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "   return createdPerson.ToDto(); // Map back to DTO",
-          "rawText": "return createdPerson.ToDto(); // Map back to DTO",
-          "x": 92.064,
-          "y": 489.55,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "  }",
-          "rawText": "}",
-          "x": 82.104,
-          "y": 467.11,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "  // ... other methods ...",
-          "rawText": "// ... other methods ...",
-          "x": 81.984,
-          "y": 422.11,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "}",
-          "rawText": "}",
-          "x": 72.024,
-          "y": 399.55,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "// Infrastructure Layer",
-          "rawText": "// Infrastructure Layer",
-          "x": 72.024,
-          "y": 354.53,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "public class PersonsRepository : IPersonsRepository",
-          "rawText": "public class PersonsRepository : IPersonsRepository",
-          "x": 72.024,
-          "y": 332.09,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 82,
+          "y": 714,
+          "isBold": false
         },
         {
           "text": "{",
           "rawText": "{",
-          "x": 72.024,
-          "y": 309.65,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 82,
+          "y": 692,
+          "isBold": false
         },
         {
-          "text": "  private readonly MyDbContext _dbContext;",
-          "rawText": "private readonly MyDbContext _dbContext;",
-          "x": 82.104,
-          "y": 287.09,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "text": "_personsRepository = personsRepository;",
+          "rawText": "_personsRepository = personsRepository;",
+          "startX": 92,
+          "y": 669,
+          "isBold": false
         },
         {
-          "text": "  public PersonsRepository(MyDbContext dbContext)",
-          "rawText": "public PersonsRepository(MyDbContext dbContext)",
-          "x": 82.104,
-          "y": 242.09,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "  {",
-          "rawText": "{",
-          "x": 82.104,
-          "y": 219.65,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "   _dbContext = dbContext;",
-          "rawText": "_dbContext = dbContext;",
-          "x": 91.944,
-          "y": 197.06,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "  }",
+          "text": "}",
           "rawText": "}",
-          "x": 82.104,
-          "y": 174.62,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 82,
+          "y": 647,
+          "isBold": false
         },
         {
-          "text": "  public async Task<Person> AddPerson(Person person)",
-          "rawText": "public async Task<Person> AddPerson(Person person)",
-          "x": 82.104,
-          "y": 129.62,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "text": "public async Task<PersonDto> CreatePerson(PersonDto personDto)",
+          "rawText": "public async Task<PersonDto> CreatePerson(PersonDto personDto)",
+          "startX": 82,
+          "y": 602,
+          "isBold": false
         },
         {
-          "text": "  {",
+          "text": "{",
           "rawText": "{",
-          "x": 82.104,
-          "y": 107.18,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 82,
+          "y": 580,
+          "isBold": false
         },
         {
-          "text": "   _dbContext.Persons.Add(person);",
+          "text": "// Validation, mapping, etc.",
+          "rawText": "// Validation, mapping, etc.",
+          "startX": 92,
+          "y": 557,
+          "isBold": false
+        },
+        {
+          "text": "var person = new Person { /* ... map from DTO ... */ };",
+          "rawText": "var person = new Person { /* ... map from DTO ... */ };",
+          "startX": 92,
+          "y": 535,
+          "isBold": false
+        },
+        {
+          "text": "var createdPerson = await _personsRepository.AddPerson(person);",
+          "rawText": "var createdPerson = await _personsRepository.AddPerson(person);",
+          "startX": 92,
+          "y": 512,
+          "isBold": false
+        },
+        {
+          "text": "return createdPerson.ToDto(); // Map back to DTO",
+          "rawText": "return createdPerson.ToDto(); // Map back to DTO",
+          "startX": 92,
+          "y": 490,
+          "isBold": false
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "startX": 82,
+          "y": 467,
+          "isBold": false
+        },
+        {
+          "text": "// ... other methods ...",
+          "rawText": "// ... other methods ...",
+          "startX": 82,
+          "y": 422,
+          "isBold": false
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "startX": 72,
+          "y": 400,
+          "isBold": false
+        },
+        {
+          "text": "// Infrastructure Layer",
+          "rawText": "// Infrastructure Layer",
+          "startX": 72,
+          "y": 355,
+          "isBold": false
+        },
+        {
+          "text": "public class PersonsRepository : IPersonsRepository",
+          "rawText": "public class PersonsRepository : IPersonsRepository",
+          "startX": 72,
+          "y": 332,
+          "isBold": false
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "startX": 72,
+          "y": 310,
+          "isBold": false
+        },
+        {
+          "text": "private readonly MyDbContext _dbContext;",
+          "rawText": "private readonly MyDbContext _dbContext;",
+          "startX": 82,
+          "y": 287,
+          "isBold": false
+        },
+        {
+          "text": "public PersonsRepository(MyDbContext dbContext)",
+          "rawText": "public PersonsRepository(MyDbContext dbContext)",
+          "startX": 82,
+          "y": 242,
+          "isBold": false
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "startX": 82,
+          "y": 220,
+          "isBold": false
+        },
+        {
+          "text": "_dbContext = dbContext;",
+          "rawText": "_dbContext = dbContext;",
+          "startX": 92,
+          "y": 197,
+          "isBold": false
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "startX": 82,
+          "y": 175,
+          "isBold": false
+        },
+        {
+          "text": "public async Task<Person> AddPerson(Person person)",
+          "rawText": "public async Task<Person> AddPerson(Person person)",
+          "startX": 82,
+          "y": 130,
+          "isBold": false
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "startX": 82,
+          "y": 107,
+          "isBold": false
+        },
+        {
+          "text": "_dbContext.Persons.Add(person);",
           "rawText": "_dbContext.Persons.Add(person);",
-          "x": 91.944,
-          "y": 84.624,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 92,
+          "y": 85,
+          "isBold": false
         }
       ],
       "blocks": [
@@ -1343,250 +1238,224 @@
           "type": "code",
           "page": 4,
           "lines": [
-            "  private readonly IPersonsRepository _personsRepository;",
-            "  public PersonsService(IPersonsRepository personsRepository)",
-            "  {",
-            "   _personsRepository = personsRepository;",
-            "  }",
-            "  public async Task<PersonDto> CreatePerson(PersonDto personDto)",
-            "  {",
-            "   // Validation, mapping, etc.",
-            "   var person = new Person { /* ... map from DTO ... */ };",
-            "   var createdPerson = await _personsRepository.AddPerson(person);",
-            "   return createdPerson.ToDto(); // Map back to DTO",
-            "  }",
-            "  // ... other methods ...",
+            "private readonly IPersonsRepository _personsRepository;",
+            "public PersonsService(IPersonsRepository personsRepository)",
+            "{",
+            "_personsRepository = personsRepository;",
+            "}",
+            "public async Task<PersonDto> CreatePerson(PersonDto personDto)",
+            "{",
+            "// Validation, mapping, etc.",
+            "var person = new Person { /* ... map from DTO ... */ };",
+            "var createdPerson = await _personsRepository.AddPerson(person);",
+            "return createdPerson.ToDto(); // Map back to DTO",
+            "}",
+            "// ... other methods ...",
             "}",
             "// Infrastructure Layer",
             "public class PersonsRepository : IPersonsRepository",
             "{",
-            "  private readonly MyDbContext _dbContext;",
-            "  public PersonsRepository(MyDbContext dbContext)",
-            "  {",
-            "   _dbContext = dbContext;",
-            "  }",
-            "  public async Task<Person> AddPerson(Person person)",
-            "  {",
-            "   _dbContext.Persons.Add(person);"
+            "private readonly MyDbContext _dbContext;",
+            "public PersonsRepository(MyDbContext dbContext)",
+            "{",
+            "_dbContext = dbContext;",
+            "}",
+            "public async Task<Person> AddPerson(Person person)",
+            "{",
+            "_dbContext.Persons.Add(person);"
           ],
-          "text": "  private readonly IPersonsRepository _personsRepository;\n  public PersonsService(IPersonsRepository personsRepository)\n  {\n   _personsRepository = personsRepository;\n  }\n  public async Task<PersonDto> CreatePerson(PersonDto personDto)\n  {\n   // Validation, mapping, etc.\n   var person = new Person { /* ... map from DTO ... */ };\n   var createdPerson = await _personsRepository.AddPerson(person);\n   return createdPerson.ToDto(); // Map back to DTO\n  }\n  // ... other methods ...\n}\n// Infrastructure Layer\npublic class PersonsRepository : IPersonsRepository\n{\n  private readonly MyDbContext _dbContext;\n  public PersonsRepository(MyDbContext dbContext)\n  {\n   _dbContext = dbContext;\n  }\n  public async Task<Person> AddPerson(Person person)\n  {\n   _dbContext.Persons.Add(person);"
+          "text": "private readonly IPersonsRepository _personsRepository;\npublic PersonsService(IPersonsRepository personsRepository)\n{\n_personsRepository = personsRepository;\n}\npublic async Task<PersonDto> CreatePerson(PersonDto personDto)\n{\n// Validation, mapping, etc.\nvar person = new Person { /* ... map from DTO ... */ };\nvar createdPerson = await _personsRepository.AddPerson(person);\nreturn createdPerson.ToDto(); // Map back to DTO\n}\n// ... other methods ...\n}\n// Infrastructure Layer\npublic class PersonsRepository : IPersonsRepository\n{\nprivate readonly MyDbContext _dbContext;\npublic PersonsRepository(MyDbContext dbContext)\n{\n_dbContext = dbContext;\n}\npublic async Task<Person> AddPerson(Person person)\n{\n_dbContext.Persons.Add(person);"
         }
       ],
       "char_count_raw": 732,
-      "char_count_repaired": 780
+      "char_count_repaired": 731
     },
     {
       "page_number": 5,
       "raw_text": "await _dbContext.SaveChangesAsync();\nreturn person;\n}\n// ... other methods ...\n}\n// Presentation Layer (UI) - Controller\npublic class PersonsController : Controller\n{\nprivate readonly IPersonsService _personsService;\npublic PersonsController(IPersonsService personsService)\n{\n_personsService = personsService;\n}\n[HttpPost]\npublic async Task<IActionResult> Create(PersonDto personDto)\n{\nif (!ModelState.IsValid)\n{\nreturn BadRequest(ModelState);\n}\nvar createdPerson = await _personsService.CreatePerson(personDto);\nreturn CreatedAtAction(nameof(GetPersonById), new { id = createdPerson.PersonId },\ncreatedPerson);\n}\n// ... other actions ...\n}\n",
-      "repaired_text": "   await _dbContext.SaveChangesAsync();\n   return person;\n  }\n  // ... other methods ...\n}\n// Presentation Layer (UI) - Controller\npublic class PersonsController : Controller\n{\n  private readonly IPersonsService _personsService;\n  public PersonsController(IPersonsService personsService)\n  {\n   _personsService = personsService;\n  }\n  [HttpPost]\n  public async Task<IActionResult> Create(PersonDto personDto)\n  {\n   if (!ModelState.IsValid)\n   {\n     return BadRequest(ModelState);\n   }\n   var createdPerson = await _personsService.CreatePerson(personDto);\n   return CreatedAtAction(nameof(GetPersonById), new { id = createdPerson.PersonId },\ncreatedPerson);\n  }\n  // ... other actions ...\n}",
+      "repaired_text": "await _dbContext.SaveChangesAsync();\nreturn person;\n}\n// ... other methods ...\n}\n// Presentation Layer (UI) - Controller\npublic class PersonsController : Controller\n{\nprivate readonly IPersonsService _personsService;\npublic PersonsController(IPersonsService personsService)\n{\n_personsService = personsService;\n}\n[HttpPost]\npublic async Task<IActionResult> Create(PersonDto personDto)\n{\nif (!ModelState.IsValid)\n{\nreturn BadRequest(ModelState);\n}\nvar createdPerson = await _personsService.CreatePerson(personDto);\nreturn CreatedAtAction(nameof(GetPersonById), new { id = createdPerson.PersonId },\ncreatedPerson);\n}\n// ... other actions ...\n}",
       "lines": [
         {
-          "text": "   await _dbContext.SaveChangesAsync();",
+          "text": "await _dbContext.SaveChangesAsync();",
           "rawText": "await _dbContext.SaveChangesAsync();",
-          "x": 92.064,
-          "y": 759.48,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 92,
+          "y": 759,
+          "isBold": false
         },
         {
-          "text": "   return person;",
+          "text": "return person;",
           "rawText": "return person;",
-          "x": 92.064,
-          "y": 737.02,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "  }",
-          "rawText": "}",
-          "x": 82.104,
-          "y": 714.46,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "  // ... other methods ...",
-          "rawText": "// ... other methods ...",
-          "x": 81.984,
-          "y": 669.46,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 92,
+          "y": 737,
+          "isBold": false
         },
         {
           "text": "}",
           "rawText": "}",
-          "x": 72.024,
-          "y": 647.02,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 82,
+          "y": 714,
+          "isBold": false
+        },
+        {
+          "text": "// ... other methods ...",
+          "rawText": "// ... other methods ...",
+          "startX": 82,
+          "y": 669,
+          "isBold": false
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "startX": 72,
+          "y": 647,
+          "isBold": false
         },
         {
           "text": "// Presentation Layer (UI) - Controller",
           "rawText": "// Presentation Layer (UI) - Controller",
-          "x": 72.024,
-          "y": 602.02,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 602,
+          "isBold": false
         },
         {
           "text": "public class PersonsController : Controller",
           "rawText": "public class PersonsController : Controller",
-          "x": 72.024,
-          "y": 579.58,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 580,
+          "isBold": false
         },
         {
           "text": "{",
           "rawText": "{",
-          "x": 72.024,
-          "y": 556.99,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 72,
+          "y": 557,
+          "isBold": false
         },
         {
-          "text": "  private readonly IPersonsService _personsService;",
+          "text": "private readonly IPersonsService _personsService;",
           "rawText": "private readonly IPersonsService _personsService;",
-          "x": 82.104,
-          "y": 534.55,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 82,
+          "y": 535,
+          "isBold": false
         },
         {
-          "text": "  public PersonsController(IPersonsService personsService)",
+          "text": "public PersonsController(IPersonsService personsService)",
           "rawText": "public PersonsController(IPersonsService personsService)",
-          "x": 82.104,
-          "y": 489.55,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 82,
+          "y": 490,
+          "isBold": false
         },
         {
-          "text": "  {",
+          "text": "{",
           "rawText": "{",
-          "x": 82.104,
-          "y": 467.11,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 82,
+          "y": 467,
+          "isBold": false
         },
         {
-          "text": "   _personsService = personsService;",
+          "text": "_personsService = personsService;",
           "rawText": "_personsService = personsService;",
-          "x": 91.944,
-          "y": 444.55,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "  }",
-          "rawText": "}",
-          "x": 82.104,
-          "y": 422.11,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "  [HttpPost]",
-          "rawText": "[HttpPost]",
-          "x": 82.104,
-          "y": 377.09,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "  public async Task<IActionResult> Create(PersonDto personDto)",
-          "rawText": "public async Task<IActionResult> Create(PersonDto personDto)",
-          "x": 82.104,
-          "y": 354.53,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "  {",
-          "rawText": "{",
-          "x": 82.104,
-          "y": 332.09,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "   if (!ModelState.IsValid)",
-          "rawText": "if (!ModelState.IsValid)",
-          "x": 92.064,
-          "y": 309.65,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "   {",
-          "rawText": "{",
-          "x": 92.064,
-          "y": 287.09,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "     return BadRequest(ModelState);",
-          "rawText": "return BadRequest(ModelState);",
-          "x": 102.02,
-          "y": 264.65,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "   }",
-          "rawText": "}",
-          "x": 92.064,
-          "y": 242.09,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "   var createdPerson = await _personsService.CreatePerson(personDto);",
-          "rawText": "var createdPerson = await _personsService.CreatePerson(personDto);",
-          "x": 91.944,
-          "y": 219.65,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "   return CreatedAtAction(nameof(GetPersonById), new { id = createdPerson.PersonId },",
-          "rawText": "return CreatedAtAction(nameof(GetPersonById), new { id = createdPerson.PersonId },",
-          "x": 92.064,
-          "y": 197.06,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "createdPerson);",
-          "rawText": "createdPerson);",
-          "x": 72.024,
-          "y": 182.66,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "  }",
-          "rawText": "}",
-          "x": 82.104,
-          "y": 160.1,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
-        },
-        {
-          "text": "  // ... other actions ...",
-          "rawText": "// ... other actions ...",
-          "x": 81.984,
-          "y": 115.1,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 92,
+          "y": 445,
+          "isBold": false
         },
         {
           "text": "}",
           "rawText": "}",
-          "x": 72.024,
-          "y": 92.664,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 82,
+          "y": 422,
+          "isBold": false
+        },
+        {
+          "text": "[HttpPost]",
+          "rawText": "[HttpPost]",
+          "startX": 82,
+          "y": 377,
+          "isBold": false
+        },
+        {
+          "text": "public async Task<IActionResult> Create(PersonDto personDto)",
+          "rawText": "public async Task<IActionResult> Create(PersonDto personDto)",
+          "startX": 82,
+          "y": 355,
+          "isBold": false
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "startX": 82,
+          "y": 332,
+          "isBold": false
+        },
+        {
+          "text": "if (!ModelState.IsValid)",
+          "rawText": "if (!ModelState.IsValid)",
+          "startX": 92,
+          "y": 310,
+          "isBold": false
+        },
+        {
+          "text": "{",
+          "rawText": "{",
+          "startX": 92,
+          "y": 287,
+          "isBold": false
+        },
+        {
+          "text": "return BadRequest(ModelState);",
+          "rawText": "return BadRequest(ModelState);",
+          "startX": 102,
+          "y": 265,
+          "isBold": false
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "startX": 92,
+          "y": 242,
+          "isBold": false
+        },
+        {
+          "text": "var createdPerson = await _personsService.CreatePerson(personDto);",
+          "rawText": "var createdPerson = await _personsService.CreatePerson(personDto);",
+          "startX": 92,
+          "y": 220,
+          "isBold": false
+        },
+        {
+          "text": "return CreatedAtAction(nameof(GetPersonById), new { id = createdPerson.PersonId },",
+          "rawText": "return CreatedAtAction(nameof(GetPersonById), new { id = createdPerson.PersonId },",
+          "startX": 92,
+          "y": 197,
+          "isBold": false
+        },
+        {
+          "text": "createdPerson);",
+          "rawText": "createdPerson);",
+          "startX": 72,
+          "y": 183,
+          "isBold": false
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "startX": 82,
+          "y": 160,
+          "isBold": false
+        },
+        {
+          "text": "// ... other actions ...",
+          "rawText": "// ... other actions ...",
+          "startX": 82,
+          "y": 115,
+          "isBold": false
+        },
+        {
+          "text": "}",
+          "rawText": "}",
+          "startX": 72,
+          "y": 93,
+          "isBold": false
         }
       ],
       "blocks": [
@@ -1594,251 +1463,225 @@
           "type": "code",
           "page": 5,
           "lines": [
-            "   await _dbContext.SaveChangesAsync();",
-            "   return person;",
-            "  }",
-            "  // ... other methods ...",
+            "await _dbContext.SaveChangesAsync();",
+            "return person;",
+            "}",
+            "// ... other methods ...",
             "}",
             "// Presentation Layer (UI) - Controller",
             "public class PersonsController : Controller",
             "{",
-            "  private readonly IPersonsService _personsService;",
-            "  public PersonsController(IPersonsService personsService)",
-            "  {",
-            "   _personsService = personsService;",
-            "  }",
-            "  [HttpPost]",
-            "  public async Task<IActionResult> Create(PersonDto personDto)",
-            "  {",
-            "   if (!ModelState.IsValid)",
-            "   {",
-            "     return BadRequest(ModelState);",
-            "   }",
-            "   var createdPerson = await _personsService.CreatePerson(personDto);",
-            "   return CreatedAtAction(nameof(GetPersonById), new { id = createdPerson.PersonId },",
+            "private readonly IPersonsService _personsService;",
+            "public PersonsController(IPersonsService personsService)",
+            "{",
+            "_personsService = personsService;",
+            "}",
+            "[HttpPost]",
+            "public async Task<IActionResult> Create(PersonDto personDto)",
+            "{",
+            "if (!ModelState.IsValid)",
+            "{",
+            "return BadRequest(ModelState);",
+            "}",
+            "var createdPerson = await _personsService.CreatePerson(personDto);",
+            "return CreatedAtAction(nameof(GetPersonById), new { id = createdPerson.PersonId },",
             "createdPerson);",
-            "  }",
-            "  // ... other actions ...",
+            "}",
+            "// ... other actions ...",
             "}"
           ],
-          "text": "   await _dbContext.SaveChangesAsync();\n   return person;\n  }\n  // ... other methods ...\n}\n// Presentation Layer (UI) - Controller\npublic class PersonsController : Controller\n{\n  private readonly IPersonsService _personsService;\n  public PersonsController(IPersonsService personsService)\n  {\n   _personsService = personsService;\n  }\n  [HttpPost]\n  public async Task<IActionResult> Create(PersonDto personDto)\n  {\n   if (!ModelState.IsValid)\n   {\n     return BadRequest(ModelState);\n   }\n   var createdPerson = await _personsService.CreatePerson(personDto);\n   return CreatedAtAction(nameof(GetPersonById), new { id = createdPerson.PersonId },\ncreatedPerson);\n  }\n  // ... other actions ...\n}"
+          "text": "await _dbContext.SaveChangesAsync();\nreturn person;\n}\n// ... other methods ...\n}\n// Presentation Layer (UI) - Controller\npublic class PersonsController : Controller\n{\nprivate readonly IPersonsService _personsService;\npublic PersonsController(IPersonsService personsService)\n{\n_personsService = personsService;\n}\n[HttpPost]\npublic async Task<IActionResult> Create(PersonDto personDto)\n{\nif (!ModelState.IsValid)\n{\nreturn BadRequest(ModelState);\n}\nvar createdPerson = await _personsService.CreatePerson(personDto);\nreturn CreatedAtAction(nameof(GetPersonById), new { id = createdPerson.PersonId },\ncreatedPerson);\n}\n// ... other actions ...\n}"
         }
       ],
       "char_count_raw": 641,
-      "char_count_repaired": 691
+      "char_count_repaired": 640
     },
     {
       "page_number": 6,
       "raw_text": "Explanation:\n• The Domain layer defines the core Person entity and the IPersonsRepository interface.\n• The Application layer defines the IPersonsService interface and the PersonsService\nimplementation that uses the repository to perform CRUD operations.\n• The Infrastructure layer contains the PersonsRepository that implements the repository\ninterface and interacts with the database.\n• The Presentation layer has the PersonsController that handles requests, uses the\nPersonsService, and returns appropriate responses.\nNotes\n• Separation of Concerns: Each layer has a distinct responsibility.\n• Dependency Direction: Dependencies flow inwards, towards the Domain layer.\n• Abstractions: Outer layers depend on abstractions (interfaces) defined in inner layers.\n• Testability: Each layer can be tested in isolation using mocks or stubs for its dependencies.\n• Maintainability: Changes to one layer have minimal impact on other layers.\n• Flexibility: You can easily swap out implementations in the outer layers (e.g., change the\ndatabase provider) without affecting the core business logic.\nKey points to remember\nClean Architecture in ASP.NET Core\n• Separation of Concerns: Decouples the different parts of your application into well-defined\nlayers.\n• Dependency Inversion Principle (DIP): Inner layers define abstractions (interfaces), outer\nlayers depend on these abstractions, leading to loose coupling.\n• Testability: Each layer can be tested in isolation using mocks or stubs.\n• Maintainability: Easier to modify and extend the application as requirements evolve.\n• Flexibility: You can swap out implementations in outer layers without affecting the core\nbusiness logic.\n",
-      "repaired_text": "Explanation:\n   • The Domain layer defines the core Person entity and the IPersonsRepository interface.\n   • The Application layer defines the IPersonsService interface and the PersonsService\n      implementation that uses the repository to perform CRUD operations.\n   • The Infrastructure layer contains the PersonsRepository that implements the repository\n      interface and interacts with the database.\n   • The Presentation layer has the PersonsController that handles requests, uses the\n      PersonsService, and returns appropriate responses.\nNotes\n   • Separation of Concerns: Each layer has a distinct responsibility.\n   • Dependency Direction: Dependencies flow inwards, towards the Domain layer.\n   • Abstractions: Outer layers depend on abstractions (interfaces) defined in inner layers.\n   • Testability: Each layer can be tested in isolation using mocks or stubs for its dependencies.\n   • Maintainability: Changes to one layer have minimal impact on other layers.\n   • Flexibility: You can easily swap out implementations in the outer layers (e.g., change the\n      database provider) without affecting the core business logic.\nKey points to remember\nClean Architecture in ASP.NET Core\n   • Separation of Concerns: Decouples the different parts of your application into well-defined\n      layers.\n   • Dependency Inversion Principle (DIP): Inner layers define abstractions (interfaces), outer\n      layers depend on these abstractions, leading to loose coupling.\n   • Testability: Each layer can be tested in isolation using mocks or stubs.\n   • Maintainability: Easier to modify and extend the application as requirements evolve.\n   • Flexibility: You can swap out implementations in outer layers without affecting the core\n      business logic.",
+      "repaired_text": "Explanation:\n• The Domain layer defines the core Person entity and the IPersonsRepository interface.\n• The Application layer defines the IPersonsService interface and the PersonsService\nimplementation that uses the repository to perform CRUD operations.\n• The Infrastructure layer contains the PersonsRepository that implements the repository\ninterface and interacts with the database.\n• The Presentation layer has the PersonsController that handles requests, uses the\nPersonsService, and returns appropriate responses.\nNotes\n• Separation of Concerns: Each layer has a distinct responsibility.\n• Dependency Direction: Dependencies flow inwards, towards the Domain layer.\n• Abstractions: Outer layers depend on abstractions (interfaces) defined in inner layers.\n• Testability: Each layer can be tested in isolation using mocks or stubs for its dependencies.\n• Maintainability: Changes to one layer have minimal impact on other layers.\n• Flexibility: You can easily swap out implementations in the outer layers (e.g., change the\ndatabase provider) without affecting the core business logic.\nKey points to remember\nClean Architecture in ASP.NET Core\n• Separation of Concerns: Decouples the different parts of your application into well-defined\nlayers.\n• Dependency Inversion Principle (DIP): Inner layers define abstractions (interfaces), outer\nlayers depend on these abstractions, leading to loose coupling.\n• Testability: Each layer can be tested in isolation using mocks or stubs.\n• Maintainability: Easier to modify and extend the application as requirements evolve.\n• Flexibility: You can swap out implementations in outer layers without affecting the core\nbusiness logic.",
       "lines": [
         {
           "text": "Explanation:",
           "rawText": "Explanation:",
-          "x": 72.024,
-          "y": 737.02,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f3"
+          "startX": 72,
+          "y": 737,
+          "isBold": true
         },
         {
-          "text": "   • The Domain layer defines the core Person entity and the IPersonsRepository interface.",
+          "text": "• The Domain layer defines the core Person entity and the IPersonsRepository interface.",
           "rawText": "• The Domain layer defines the core Person entity and the IPersonsRepository interface.",
-          "x": 90.024,
-          "y": 714.46,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 714,
+          "isBold": false
         },
         {
-          "text": "   • The Application layer defines the IPersonsService interface and the PersonsService",
+          "text": "• The Application layer defines the IPersonsService interface and the PersonsService",
           "rawText": "• The Application layer defines the IPersonsService interface and the PersonsService",
-          "x": 90.024,
-          "y": 692.02,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 692,
+          "isBold": false
         },
         {
-          "text": "      implementation that uses the repository to perform CRUD operations.",
+          "text": "implementation that uses the repository to perform CRUD operations.",
           "rawText": "implementation that uses the repository to perform CRUD operations.",
-          "x": 108.02,
-          "y": 677.5,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 108,
+          "y": 678,
+          "isBold": false
         },
         {
-          "text": "   • The Infrastructure layer contains the PersonsRepository that implements the repository",
+          "text": "• The Infrastructure layer contains the PersonsRepository that implements the repository",
           "rawText": "• The Infrastructure layer contains the PersonsRepository that implements the repository",
-          "x": 90.024,
-          "y": 655.06,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 655,
+          "isBold": false
         },
         {
-          "text": "      interface and interacts with the database.",
+          "text": "interface and interacts with the database.",
           "rawText": "interface and interacts with the database.",
-          "x": 108.02,
-          "y": 640.54,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 108,
+          "y": 641,
+          "isBold": false
         },
         {
-          "text": "   • The Presentation layer has the PersonsController that handles requests, uses the",
+          "text": "• The Presentation layer has the PersonsController that handles requests, uses the",
           "rawText": "• The Presentation layer has the PersonsController that handles requests, uses the",
-          "x": 90.024,
-          "y": 617.98,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 618,
+          "isBold": false
         },
         {
-          "text": "      PersonsService, and returns appropriate responses.",
+          "text": "PersonsService, and returns appropriate responses.",
           "rawText": "PersonsService, and returns appropriate responses.",
-          "x": 108.02,
-          "y": 603.58,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 108,
+          "y": 604,
+          "isBold": false
         },
         {
           "text": "Notes",
           "rawText": "Notes",
-          "x": 72.024,
-          "y": 558.55,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f3"
+          "startX": 72,
+          "y": 559,
+          "isBold": true
         },
         {
-          "text": "   • Separation of Concerns: Each layer has a distinct responsibility.",
+          "text": "• Separation of Concerns: Each layer has a distinct responsibility.",
           "rawText": "• Separation of Concerns: Each layer has a distinct responsibility.",
-          "x": 90.024,
-          "y": 535.99,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 536,
+          "isBold": false
         },
         {
-          "text": "   • Dependency Direction: Dependencies flow inwards, towards the Domain layer.",
+          "text": "• Dependency Direction: Dependencies flow inwards, towards the Domain layer.",
           "rawText": "• Dependency Direction: Dependencies flow inwards, towards the Domain layer.",
-          "x": 90.024,
-          "y": 513.55,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 514,
+          "isBold": false
         },
         {
-          "text": "   • Abstractions: Outer layers depend on abstractions (interfaces) defined in inner layers.",
+          "text": "• Abstractions: Outer layers depend on abstractions (interfaces) defined in inner layers.",
           "rawText": "• Abstractions: Outer layers depend on abstractions (interfaces) defined in inner layers.",
-          "x": 90.024,
-          "y": 491.11,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 491,
+          "isBold": false
         },
         {
-          "text": "   • Testability: Each layer can be tested in isolation using mocks or stubs for its dependencies.",
+          "text": "• Testability: Each layer can be tested in isolation using mocks or stubs for its dependencies.",
           "rawText": "• Testability: Each layer can be tested in isolation using mocks or stubs for its dependencies.",
-          "x": 90.024,
-          "y": 468.55,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 469,
+          "isBold": false
         },
         {
-          "text": "   • Maintainability: Changes to one layer have minimal impact on other layers.",
+          "text": "• Maintainability: Changes to one layer have minimal impact on other layers.",
           "rawText": "• Maintainability: Changes to one layer have minimal impact on other layers.",
-          "x": 90.024,
-          "y": 446.11,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 446,
+          "isBold": false
         },
         {
-          "text": "   • Flexibility: You can easily swap out implementations in the outer layers (e.g., change the",
+          "text": "• Flexibility: You can easily swap out implementations in the outer layers (e.g., change the",
           "rawText": "• Flexibility: You can easily swap out implementations in the outer layers (e.g., change the",
-          "x": 90.024,
-          "y": 423.55,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 424,
+          "isBold": false
         },
         {
-          "text": "      database provider) without affecting the core business logic.",
+          "text": "database provider) without affecting the core business logic.",
           "rawText": "database provider) without affecting the core business logic.",
-          "x": 108.02,
-          "y": 409.03,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 108,
+          "y": 409,
+          "isBold": false
         },
         {
           "text": "Key points to remember",
           "rawText": "Key points to remember",
-          "x": 72.024,
-          "y": 319.13,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f3"
+          "startX": 72,
+          "y": 319,
+          "isBold": true
         },
         {
           "text": "Clean Architecture in ASP.NET Core",
           "rawText": "Clean Architecture in ASP.NET Core",
-          "x": 72.024,
-          "y": 296.57,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f3"
+          "startX": 72,
+          "y": 297,
+          "isBold": true
         },
         {
-          "text": "   • Separation of Concerns: Decouples the different parts of your application into well-defined",
+          "text": "• Separation of Concerns: Decouples the different parts of your application into well-defined",
           "rawText": "• Separation of Concerns: Decouples the different parts of your application into well-defined",
-          "x": 90.024,
-          "y": 274.13,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 274,
+          "isBold": false
         },
         {
-          "text": "      layers.",
+          "text": "layers.",
           "rawText": "layers.",
-          "x": 108.02,
-          "y": 259.61,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 108,
+          "y": 260,
+          "isBold": false
         },
         {
-          "text": "   • Dependency Inversion Principle (DIP): Inner layers define abstractions (interfaces), outer",
+          "text": "• Dependency Inversion Principle (DIP): Inner layers define abstractions (interfaces), outer",
           "rawText": "• Dependency Inversion Principle (DIP): Inner layers define abstractions (interfaces), outer",
-          "x": 90.024,
-          "y": 237.17,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 237,
+          "isBold": false
         },
         {
-          "text": "      layers depend on these abstractions, leading to loose coupling.",
+          "text": "layers depend on these abstractions, leading to loose coupling.",
           "rawText": "layers depend on these abstractions, leading to loose coupling.",
-          "x": 108.02,
-          "y": 222.65,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 108,
+          "y": 223,
+          "isBold": false
         },
         {
-          "text": "   • Testability: Each layer can be tested in isolation using mocks or stubs.",
+          "text": "• Testability: Each layer can be tested in isolation using mocks or stubs.",
           "rawText": "• Testability: Each layer can be tested in isolation using mocks or stubs.",
-          "x": 90.024,
-          "y": 200.18,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 200,
+          "isBold": false
         },
         {
-          "text": "   • Maintainability: Easier to modify and extend the application as requirements evolve.",
+          "text": "• Maintainability: Easier to modify and extend the application as requirements evolve.",
           "rawText": "• Maintainability: Easier to modify and extend the application as requirements evolve.",
-          "x": 90.024,
-          "y": 177.62,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 178,
+          "isBold": false
         },
         {
-          "text": "   • Flexibility: You can swap out implementations in outer layers without affecting the core",
+          "text": "• Flexibility: You can swap out implementations in outer layers without affecting the core",
           "rawText": "• Flexibility: You can swap out implementations in outer layers without affecting the core",
-          "x": 90.024,
-          "y": 155.18,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 155,
+          "isBold": false
         },
         {
-          "text": "      business logic.",
+          "text": "business logic.",
           "rawText": "business logic.",
-          "x": 108.02,
-          "y": 140.66,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 108,
+          "y": 141,
+          "isBold": false
         }
       ],
       "blocks": [
@@ -1854,43 +1697,43 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • The Domain layer defines the core Person entity and the IPersonsRepository interface."
+            "• The Domain layer defines the core Person entity and the IPersonsRepository interface."
           ],
-          "text": "   • The Domain layer defines the core Person entity and the IPersonsRepository interface."
+          "text": "• The Domain layer defines the core Person entity and the IPersonsRepository interface."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • The Application layer defines the IPersonsService interface and the PersonsService",
-            "      implementation that uses the repository to perform CRUD operations."
+            "• The Application layer defines the IPersonsService interface and the PersonsService",
+            "implementation that uses the repository to perform CRUD operations."
           ],
-          "text": "   • The Application layer defines the IPersonsService interface and the PersonsService\n      implementation that uses the repository to perform CRUD operations."
+          "text": "• The Application layer defines the IPersonsService interface and the PersonsService\nimplementation that uses the repository to perform CRUD operations."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • The Infrastructure layer contains the PersonsRepository that implements the repository"
+            "• The Infrastructure layer contains the PersonsRepository that implements the repository"
           ],
-          "text": "   • The Infrastructure layer contains the PersonsRepository that implements the repository"
+          "text": "• The Infrastructure layer contains the PersonsRepository that implements the repository"
         },
         {
           "type": "code",
           "page": 6,
           "lines": [
-            "      interface and interacts with the database.",
-            "   • The Presentation layer has the PersonsController that handles requests, uses the"
+            "interface and interacts with the database."
           ],
-          "text": "      interface and interacts with the database.\n   • The Presentation layer has the PersonsController that handles requests, uses the"
+          "text": "interface and interacts with the database."
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 6,
           "lines": [
-            "      PersonsService, and returns appropriate responses."
+            "• The Presentation layer has the PersonsController that handles requests, uses the",
+            "PersonsService, and returns appropriate responses."
           ],
-          "text": "      PersonsService, and returns appropriate responses."
+          "text": "• The Presentation layer has the PersonsController that handles requests, uses the\nPersonsService, and returns appropriate responses."
         },
         {
           "type": "heading",
@@ -1904,50 +1747,50 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Separation of Concerns: Each layer has a distinct responsibility."
+            "• Separation of Concerns: Each layer has a distinct responsibility."
           ],
-          "text": "   • Separation of Concerns: Each layer has a distinct responsibility."
+          "text": "• Separation of Concerns: Each layer has a distinct responsibility."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Dependency Direction: Dependencies flow inwards, towards the Domain layer."
+            "• Dependency Direction: Dependencies flow inwards, towards the Domain layer."
           ],
-          "text": "   • Dependency Direction: Dependencies flow inwards, towards the Domain layer."
+          "text": "• Dependency Direction: Dependencies flow inwards, towards the Domain layer."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Abstractions: Outer layers depend on abstractions (interfaces) defined in inner layers."
+            "• Abstractions: Outer layers depend on abstractions (interfaces) defined in inner layers."
           ],
-          "text": "   • Abstractions: Outer layers depend on abstractions (interfaces) defined in inner layers."
+          "text": "• Abstractions: Outer layers depend on abstractions (interfaces) defined in inner layers."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Testability: Each layer can be tested in isolation using mocks or stubs for its dependencies."
+            "• Testability: Each layer can be tested in isolation using mocks or stubs for its dependencies."
           ],
-          "text": "   • Testability: Each layer can be tested in isolation using mocks or stubs for its dependencies."
+          "text": "• Testability: Each layer can be tested in isolation using mocks or stubs for its dependencies."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Maintainability: Changes to one layer have minimal impact on other layers."
+            "• Maintainability: Changes to one layer have minimal impact on other layers."
           ],
-          "text": "   • Maintainability: Changes to one layer have minimal impact on other layers."
+          "text": "• Maintainability: Changes to one layer have minimal impact on other layers."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Flexibility: You can easily swap out implementations in the outer layers (e.g., change the",
-            "      database provider) without affecting the core business logic."
+            "• Flexibility: You can easily swap out implementations in the outer layers (e.g., change the",
+            "database provider) without affecting the core business logic."
           ],
-          "text": "   • Flexibility: You can easily swap out implementations in the outer layers (e.g., change the\n      database provider) without affecting the core business logic."
+          "text": "• Flexibility: You can easily swap out implementations in the outer layers (e.g., change the\ndatabase provider) without affecting the core business logic."
         },
         {
           "type": "heading",
@@ -1958,7 +1801,7 @@
           "text": "Key points to remember"
         },
         {
-          "type": "prose",
+          "type": "heading",
           "page": 6,
           "lines": [
             "Clean Architecture in ASP.NET Core"
@@ -1969,269 +1812,242 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Separation of Concerns: Decouples the different parts of your application into well-defined",
-            "      layers."
+            "• Separation of Concerns: Decouples the different parts of your application into well-defined",
+            "layers."
           ],
-          "text": "   • Separation of Concerns: Decouples the different parts of your application into well-defined\n      layers."
+          "text": "• Separation of Concerns: Decouples the different parts of your application into well-defined\nlayers."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Dependency Inversion Principle (DIP): Inner layers define abstractions (interfaces), outer",
-            "      layers depend on these abstractions, leading to loose coupling."
+            "• Dependency Inversion Principle (DIP): Inner layers define abstractions (interfaces), outer",
+            "layers depend on these abstractions, leading to loose coupling."
           ],
-          "text": "   • Dependency Inversion Principle (DIP): Inner layers define abstractions (interfaces), outer\n      layers depend on these abstractions, leading to loose coupling."
+          "text": "• Dependency Inversion Principle (DIP): Inner layers define abstractions (interfaces), outer\nlayers depend on these abstractions, leading to loose coupling."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Testability: Each layer can be tested in isolation using mocks or stubs."
+            "• Testability: Each layer can be tested in isolation using mocks or stubs."
           ],
-          "text": "   • Testability: Each layer can be tested in isolation using mocks or stubs."
+          "text": "• Testability: Each layer can be tested in isolation using mocks or stubs."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Maintainability: Easier to modify and extend the application as requirements evolve."
+            "• Maintainability: Easier to modify and extend the application as requirements evolve."
           ],
-          "text": "   • Maintainability: Easier to modify and extend the application as requirements evolve."
+          "text": "• Maintainability: Easier to modify and extend the application as requirements evolve."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Flexibility: You can swap out implementations in outer layers without affecting the core",
-            "      business logic."
+            "• Flexibility: You can swap out implementations in outer layers without affecting the core",
+            "business logic."
           ],
-          "text": "   • Flexibility: You can swap out implementations in outer layers without affecting the core\n      business logic."
+          "text": "• Flexibility: You can swap out implementations in outer layers without affecting the core\nbusiness logic."
         }
       ],
       "char_count_raw": 1675,
-      "char_count_repaired": 1761
+      "char_count_repaired": 1674
     },
     {
       "page_number": 7,
-      "raw_text": "Layers\n1. Domain (Core):\no Contains entities, value objects, and domain services.\no Defines interfaces for repositories and other dependencies.\no No external dependencies.\n2. Application:\no Contains use cases (application services) that orchestrate business logic.\no Defines DTOs (Data Transfer Objects) for communication between layers.\no Defines interfaces for infrastructure services (e.g., repositories).\no Depends on the Domain layer.\n3. Infrastructure:\no Contains implementations of repositories, services for interacting with external\nsystems (e.g., email, database).\no Depends on the Application layer and external libraries/frameworks.\n4. Presentation (UI):\no Contains controllers, views, and view models.\no Handles user interaction and presentation logic.\no Depends on the Application layer.\n5. Tests:\no Contains unit tests, integration tests, and end-to-end tests.\no Ensures the correctness of each layer and the entire application.\nBenefits\n• Improved Maintainability: Changes are isolated to specific layers.\n• Testability: Each layer is easily testable in isolation.\n• Flexibility: Swapping implementations in outer layers doesn't affect the core.\n• Focus on Business Logic: The domain layer is at the center, emphasizing the core of your\napplication.\n",
-      "repaired_text": "Layers\n   1. Domain (Core):\n        o Contains entities, value objects, and domain services.\n        o Defines interfaces for repositories and other dependencies.\n        o No external dependencies.\n   2. Application:\n        o Contains use cases (application services) that orchestrate business logic.\n        o Defines DTOs (Data Transfer Objects) for communication between layers.\n        o Defines interfaces for infrastructure services (e.g., repositories).\n        o Depends on the Domain layer.\n   3. Infrastructure:\n        o Contains implementations of repositories, services for interacting with external\n           systems (e.g., email, database).\n        o Depends on the Application layer and external libraries/frameworks.\n   4. Presentation (UI):\n        o Contains controllers, views, and view models.\n        o Handles user interaction and presentation logic.\n        o Depends on the Application layer.\n   5. Tests:\n        o Contains unit tests, integration tests, and end-to-end tests.\n        o Ensures the correctness of each layer and the entire application.\nBenefits\n   • Improved Maintainability: Changes are isolated to specific layers.\n   • Testability: Each layer is easily testable in isolation.\n   • Flexibility: Swapping implementations in outer layers doesn't affect the core.\n   • Focus on Business Logic: The domain layer is at the center, emphasizing the core of your\n      application.",
+      "raw_text": "Layers\n1. Domain (Core):\n•  Contains entities, value objects, and domain services.\n•  Defines interfaces for repositories and other dependencies.\n•  No external dependencies.\n2. Application:\n•  Contains use cases (application services) that orchestrate business logic.\n•  Defines DTOs (Data Transfer Objects) for communication between layers.\n•  Defines interfaces for infrastructure services (e.g., repositories).\n•  Depends on the Domain layer.\n3. Infrastructure:\n•  Contains implementations of repositories, services for interacting with external\nsystems (e.g., email, database).\n•  Depends on the Application layer and external libraries/frameworks.\n4. Presentation (UI):\n•  Contains controllers, views, and view models.\n•  Handles user interaction and presentation logic.\n•  Depends on the Application layer.\n5. Tests:\n•  Contains unit tests, integration tests, and end-to-end tests.\n•  Ensures the correctness of each layer and the entire application.\nBenefits\n• Improved Maintainability: Changes are isolated to specific layers.\n• Testability: Each layer is easily testable in isolation.\n• Flexibility: Swapping implementations in outer layers doesn't affect the core.\n• Focus on Business Logic: The domain layer is at the center, emphasizing the core of your\napplication.\n",
+      "repaired_text": "Layers\n1. Domain (Core):\n•  Contains entities, value objects, and domain services.\n•  Defines interfaces for repositories and other dependencies.\n•  No external dependencies.\n2. Application:\n•  Contains use cases (application services) that orchestrate business logic.\n•  Defines DTOs (Data Transfer Objects) for communication between layers.\n•  Defines interfaces for infrastructure services (e.g., repositories).\n•  Depends on the Domain layer.\n3. Infrastructure:\n•  Contains implementations of repositories, services for interacting with external\nsystems (e.g., email, database).\n•  Depends on the Application layer and external libraries/frameworks.\n4. Presentation (UI):\n•  Contains controllers, views, and view models.\n•  Handles user interaction and presentation logic.\n•  Depends on the Application layer.\n5. Tests:\n•  Contains unit tests, integration tests, and end-to-end tests.\n•  Ensures the correctness of each layer and the entire application.\nBenefits\n• Improved Maintainability: Changes are isolated to specific layers.\n• Testability: Each layer is easily testable in isolation.\n• Flexibility: Swapping implementations in outer layers doesn't affect the core.\n• Focus on Business Logic: The domain layer is at the center, emphasizing the core of your\napplication.",
       "lines": [
         {
           "text": "Layers",
           "rawText": "Layers",
-          "x": 72.024,
-          "y": 759.48,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f3"
+          "startX": 72,
+          "y": 759,
+          "isBold": true
         },
         {
-          "text": "   1. Domain (Core):",
+          "text": "1. Domain (Core):",
           "rawText": "1. Domain (Core):",
-          "x": 90.024,
-          "y": 737.02,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 90,
+          "y": 737,
+          "isBold": false
         },
         {
-          "text": "        o Contains entities, value objects, and domain services.",
-          "rawText": "o Contains entities, value objects, and domain services.",
-          "x": 126.02,
-          "y": 714.46,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Contains entities, value objects, and domain services.",
+          "rawText": "•  Contains entities, value objects, and domain services.",
+          "startX": 126,
+          "y": 714,
+          "isBold": false
         },
         {
-          "text": "        o Defines interfaces for repositories and other dependencies.",
-          "rawText": "o Defines interfaces for repositories and other dependencies.",
-          "x": 126.02,
-          "y": 692.02,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Defines interfaces for repositories and other dependencies.",
+          "rawText": "•  Defines interfaces for repositories and other dependencies.",
+          "startX": 126,
+          "y": 692,
+          "isBold": false
         },
         {
-          "text": "        o No external dependencies.",
-          "rawText": "o No external dependencies.",
-          "x": 126.02,
-          "y": 669.46,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  No external dependencies.",
+          "rawText": "•  No external dependencies.",
+          "startX": 126,
+          "y": 669,
+          "isBold": true
         },
         {
-          "text": "   2. Application:",
+          "text": "2. Application:",
           "rawText": "2. Application:",
-          "x": 90.024,
-          "y": 647.02,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 90,
+          "y": 647,
+          "isBold": false
         },
         {
-          "text": "        o Contains use cases (application services) that orchestrate business logic.",
-          "rawText": "o Contains use cases (application services) that orchestrate business logic.",
-          "x": 126.02,
-          "y": 624.46,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Contains use cases (application services) that orchestrate business logic.",
+          "rawText": "•  Contains use cases (application services) that orchestrate business logic.",
+          "startX": 126,
+          "y": 624,
+          "isBold": false
         },
         {
-          "text": "        o Defines DTOs (Data Transfer Objects) for communication between layers.",
-          "rawText": "o Defines DTOs (Data Transfer Objects) for communication between layers.",
-          "x": 126.02,
-          "y": 602.02,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Defines DTOs (Data Transfer Objects) for communication between layers.",
+          "rawText": "•  Defines DTOs (Data Transfer Objects) for communication between layers.",
+          "startX": 126,
+          "y": 602,
+          "isBold": false
         },
         {
-          "text": "        o Defines interfaces for infrastructure services (e.g., repositories).",
-          "rawText": "o Defines interfaces for infrastructure services (e.g., repositories).",
-          "x": 126.02,
-          "y": 579.58,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Defines interfaces for infrastructure services (e.g., repositories).",
+          "rawText": "•  Defines interfaces for infrastructure services (e.g., repositories).",
+          "startX": 126,
+          "y": 580,
+          "isBold": false
         },
         {
-          "text": "        o Depends on the Domain layer.",
-          "rawText": "o Depends on the Domain layer.",
-          "x": 126.02,
-          "y": 556.99,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Depends on the Domain layer.",
+          "rawText": "•  Depends on the Domain layer.",
+          "startX": 126,
+          "y": 557,
+          "isBold": true
         },
         {
-          "text": "   3. Infrastructure:",
+          "text": "3. Infrastructure:",
           "rawText": "3. Infrastructure:",
-          "x": 90.024,
-          "y": 534.55,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 90,
+          "y": 535,
+          "isBold": false
         },
         {
-          "text": "        o Contains implementations of repositories, services for interacting with external",
-          "rawText": "o Contains implementations of repositories, services for interacting with external",
-          "x": 126.02,
-          "y": 511.99,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Contains implementations of repositories, services for interacting with external",
+          "rawText": "•  Contains implementations of repositories, services for interacting with external",
+          "startX": 126,
+          "y": 512,
+          "isBold": false
         },
         {
-          "text": "           systems (e.g., email, database).",
+          "text": "systems (e.g., email, database).",
           "rawText": "systems (e.g., email, database).",
-          "x": 144.02,
-          "y": 497.59,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 144,
+          "y": 498,
+          "isBold": false
         },
         {
-          "text": "        o Depends on the Application layer and external libraries/frameworks.",
-          "rawText": "o Depends on the Application layer and external libraries/frameworks.",
-          "x": 126.02,
-          "y": 475.03,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Depends on the Application layer and external libraries/frameworks.",
+          "rawText": "•  Depends on the Application layer and external libraries/frameworks.",
+          "startX": 126,
+          "y": 475,
+          "isBold": true
         },
         {
-          "text": "   4. Presentation (UI):",
+          "text": "4. Presentation (UI):",
           "rawText": "4. Presentation (UI):",
-          "x": 90.024,
-          "y": 452.59,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 90,
+          "y": 453,
+          "isBold": false
         },
         {
-          "text": "        o Contains controllers, views, and view models.",
-          "rawText": "o Contains controllers, views, and view models.",
-          "x": 126.02,
-          "y": 430.03,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Contains controllers, views, and view models.",
+          "rawText": "•  Contains controllers, views, and view models.",
+          "startX": 126,
+          "y": 430,
+          "isBold": false
         },
         {
-          "text": "        o Handles user interaction and presentation logic.",
-          "rawText": "o Handles user interaction and presentation logic.",
-          "x": 126.02,
-          "y": 407.59,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Handles user interaction and presentation logic.",
+          "rawText": "•  Handles user interaction and presentation logic.",
+          "startX": 126,
+          "y": 408,
+          "isBold": false
         },
         {
-          "text": "        o Depends on the Application layer.",
-          "rawText": "o Depends on the Application layer.",
-          "x": 126.02,
-          "y": 385.01,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Depends on the Application layer.",
+          "rawText": "•  Depends on the Application layer.",
+          "startX": 126,
+          "y": 385,
+          "isBold": true
         },
         {
-          "text": "   5. Tests:",
+          "text": "5. Tests:",
           "rawText": "5. Tests:",
-          "x": 90.024,
-          "y": 362.57,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 90,
+          "y": 363,
+          "isBold": false
         },
         {
-          "text": "        o Contains unit tests, integration tests, and end-to-end tests.",
-          "rawText": "o Contains unit tests, integration tests, and end-to-end tests.",
-          "x": 126.02,
-          "y": 340.13,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Contains unit tests, integration tests, and end-to-end tests.",
+          "rawText": "•  Contains unit tests, integration tests, and end-to-end tests.",
+          "startX": 126,
+          "y": 340,
+          "isBold": false
         },
         {
-          "text": "        o Ensures the correctness of each layer and the entire application.",
-          "rawText": "o Ensures the correctness of each layer and the entire application.",
-          "x": 126.02,
-          "y": 317.57,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f5"
+          "text": "•  Ensures the correctness of each layer and the entire application.",
+          "rawText": "•  Ensures the correctness of each layer and the entire application.",
+          "startX": 126,
+          "y": 318,
+          "isBold": false
         },
         {
           "text": "Benefits",
           "rawText": "Benefits",
-          "x": 72.024,
-          "y": 272.57,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f3"
+          "startX": 72,
+          "y": 273,
+          "isBold": true
         },
         {
-          "text": "   • Improved Maintainability: Changes are isolated to specific layers.",
+          "text": "• Improved Maintainability: Changes are isolated to specific layers.",
           "rawText": "• Improved Maintainability: Changes are isolated to specific layers.",
-          "x": 90.024,
-          "y": 250.13,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 250,
+          "isBold": false
         },
         {
-          "text": "   • Testability: Each layer is easily testable in isolation.",
+          "text": "• Testability: Each layer is easily testable in isolation.",
           "rawText": "• Testability: Each layer is easily testable in isolation.",
-          "x": 90.024,
-          "y": 227.69,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 228,
+          "isBold": false
         },
         {
-          "text": "   • Flexibility: Swapping implementations in outer layers doesn't affect the core.",
+          "text": "• Flexibility: Swapping implementations in outer layers doesn't affect the core.",
           "rawText": "• Flexibility: Swapping implementations in outer layers doesn't affect the core.",
-          "x": 90.024,
-          "y": 205.1,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 205,
+          "isBold": false
         },
         {
-          "text": "   • Focus on Business Logic: The domain layer is at the center, emphasizing the core of your",
+          "text": "• Focus on Business Logic: The domain layer is at the center, emphasizing the core of your",
           "rawText": "• Focus on Business Logic: The domain layer is at the center, emphasizing the core of your",
-          "x": 90.024,
-          "y": 182.66,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 183,
+          "isBold": false
         },
         {
-          "text": "      application.",
+          "text": "application.",
           "rawText": "application.",
-          "x": 108.02,
-          "y": 168.14,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 108,
+          "y": 168,
+          "isBold": false
         }
       ],
       "blocks": [
@@ -2247,154 +2063,154 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   1. Domain (Core):"
+            "1. Domain (Core):"
           ],
-          "text": "   1. Domain (Core):"
+          "text": "1. Domain (Core):"
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o Contains entities, value objects, and domain services."
+            "•  Contains entities, value objects, and domain services."
           ],
-          "text": "        o Contains entities, value objects, and domain services."
+          "text": "•  Contains entities, value objects, and domain services."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o Defines interfaces for repositories and other dependencies."
+            "•  Defines interfaces for repositories and other dependencies."
           ],
-          "text": "        o Defines interfaces for repositories and other dependencies."
+          "text": "•  Defines interfaces for repositories and other dependencies."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o No external dependencies."
+            "•  No external dependencies."
           ],
-          "text": "        o No external dependencies."
+          "text": "•  No external dependencies."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   2. Application:"
+            "2. Application:"
           ],
-          "text": "   2. Application:"
+          "text": "2. Application:"
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o Contains use cases (application services) that orchestrate business logic."
+            "•  Contains use cases (application services) that orchestrate business logic."
           ],
-          "text": "        o Contains use cases (application services) that orchestrate business logic."
+          "text": "•  Contains use cases (application services) that orchestrate business logic."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o Defines DTOs (Data Transfer Objects) for communication between layers."
+            "•  Defines DTOs (Data Transfer Objects) for communication between layers."
           ],
-          "text": "        o Defines DTOs (Data Transfer Objects) for communication between layers."
+          "text": "•  Defines DTOs (Data Transfer Objects) for communication between layers."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o Defines interfaces for infrastructure services (e.g., repositories)."
+            "•  Defines interfaces for infrastructure services (e.g., repositories)."
           ],
-          "text": "        o Defines interfaces for infrastructure services (e.g., repositories)."
+          "text": "•  Defines interfaces for infrastructure services (e.g., repositories)."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o Depends on the Domain layer."
+            "•  Depends on the Domain layer."
           ],
-          "text": "        o Depends on the Domain layer."
+          "text": "•  Depends on the Domain layer."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   3. Infrastructure:"
+            "3. Infrastructure:"
           ],
-          "text": "   3. Infrastructure:"
+          "text": "3. Infrastructure:"
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o Contains implementations of repositories, services for interacting with external",
-            "           systems (e.g., email, database)."
+            "•  Contains implementations of repositories, services for interacting with external",
+            "systems (e.g., email, database)."
           ],
-          "text": "        o Contains implementations of repositories, services for interacting with external\n           systems (e.g., email, database)."
+          "text": "•  Contains implementations of repositories, services for interacting with external\nsystems (e.g., email, database)."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o Depends on the Application layer and external libraries/frameworks."
+            "•  Depends on the Application layer and external libraries/frameworks."
           ],
-          "text": "        o Depends on the Application layer and external libraries/frameworks."
+          "text": "•  Depends on the Application layer and external libraries/frameworks."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   4. Presentation (UI):"
+            "4. Presentation (UI):"
           ],
-          "text": "   4. Presentation (UI):"
+          "text": "4. Presentation (UI):"
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o Contains controllers, views, and view models."
+            "•  Contains controllers, views, and view models."
           ],
-          "text": "        o Contains controllers, views, and view models."
+          "text": "•  Contains controllers, views, and view models."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o Handles user interaction and presentation logic."
+            "•  Handles user interaction and presentation logic."
           ],
-          "text": "        o Handles user interaction and presentation logic."
+          "text": "•  Handles user interaction and presentation logic."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o Depends on the Application layer."
+            "•  Depends on the Application layer."
           ],
-          "text": "        o Depends on the Application layer."
+          "text": "•  Depends on the Application layer."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   5. Tests:"
+            "5. Tests:"
           ],
-          "text": "   5. Tests:"
+          "text": "5. Tests:"
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o Contains unit tests, integration tests, and end-to-end tests."
+            "•  Contains unit tests, integration tests, and end-to-end tests."
           ],
-          "text": "        o Contains unit tests, integration tests, and end-to-end tests."
+          "text": "•  Contains unit tests, integration tests, and end-to-end tests."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o Ensures the correctness of each layer and the entire application."
+            "•  Ensures the correctness of each layer and the entire application."
           ],
-          "text": "        o Ensures the correctness of each layer and the entire application."
+          "text": "•  Ensures the correctness of each layer and the entire application."
         },
         {
           "type": "heading",
@@ -2408,171 +2224,155 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Improved Maintainability: Changes are isolated to specific layers."
+            "• Improved Maintainability: Changes are isolated to specific layers."
           ],
-          "text": "   • Improved Maintainability: Changes are isolated to specific layers."
+          "text": "• Improved Maintainability: Changes are isolated to specific layers."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Testability: Each layer is easily testable in isolation."
+            "• Testability: Each layer is easily testable in isolation."
           ],
-          "text": "   • Testability: Each layer is easily testable in isolation."
+          "text": "• Testability: Each layer is easily testable in isolation."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Flexibility: Swapping implementations in outer layers doesn't affect the core."
+            "• Flexibility: Swapping implementations in outer layers doesn't affect the core."
           ],
-          "text": "   • Flexibility: Swapping implementations in outer layers doesn't affect the core."
+          "text": "• Flexibility: Swapping implementations in outer layers doesn't affect the core."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Focus on Business Logic: The domain layer is at the center, emphasizing the core of your",
-            "      application."
+            "• Focus on Business Logic: The domain layer is at the center, emphasizing the core of your",
+            "application."
           ],
-          "text": "   • Focus on Business Logic: The domain layer is at the center, emphasizing the core of your\n      application."
+          "text": "• Focus on Business Logic: The domain layer is at the center, emphasizing the core of your\napplication."
         }
       ],
-      "char_count_raw": 1266,
-      "char_count_repaired": 1421
+      "char_count_raw": 1280,
+      "char_count_repaired": 1279
     },
     {
       "page_number": 8,
       "raw_text": "Interview Tips\n• Explain the Layers: Be able to clearly explain the purpose of each layer and how they\ninteract.\n• Dependency Direction: Emphasize that dependencies flow inwards towards the Domain\nlayer.\n• Abstractions: Highlight the importance of using interfaces to achieve loose coupling.\n• Real-World Scenarios: Discuss how you've used or would use Clean Architecture in a project.\n• Benefits: Articulate the advantages of Clean Architecture in terms of maintainability,\ntestability, and flexibility.\nRemember:\n• Trade-offs: Clean Architecture adds some complexity, so consider if it's appropriate for your\nproject's size and requirements.\n• Focus on the Domain: The domain layer should be the most important and stable part of\nyour application.\n• Continuous Refactoring: As your application evolves, continuously refactor to maintain the\nseparation of concerns and keep your code clean.\n",
-      "repaired_text": "Interview Tips\n   • Explain the Layers: Be able to clearly explain the purpose of each layer and how they\n      interact.\n   • Dependency Direction: Emphasize that dependencies flow inwards towards the Domain\n      layer.\n   • Abstractions: Highlight the importance of using interfaces to achieve loose coupling.\n   • Real-World Scenarios: Discuss how you've used or would use Clean Architecture in a project.\n   • Benefits: Articulate the advantages of Clean Architecture in terms of maintainability,\n      testability, and flexibility.\nRemember:\n   • Trade-offs: Clean Architecture adds some complexity, so consider if it's appropriate for your\n      project's size and requirements.\n   • Focus on the Domain: The domain layer should be the most important and stable part of\n      your application.\n   • Continuous Refactoring: As your application evolves, continuously refactor to maintain the\n      separation of concerns and keep your code clean.",
+      "repaired_text": "Interview Tips\n• Explain the Layers: Be able to clearly explain the purpose of each layer and how they\ninteract.\n• Dependency Direction: Emphasize that dependencies flow inwards towards the Domain\nlayer.\n• Abstractions: Highlight the importance of using interfaces to achieve loose coupling.\n• Real-World Scenarios: Discuss how you've used or would use Clean Architecture in a project.\n• Benefits: Articulate the advantages of Clean Architecture in terms of maintainability,\ntestability, and flexibility.\nRemember:\n• Trade-offs: Clean Architecture adds some complexity, so consider if it's appropriate for your\nproject's size and requirements.\n• Focus on the Domain: The domain layer should be the most important and stable part of\nyour application.\n• Continuous Refactoring: As your application evolves, continuously refactor to maintain the\nseparation of concerns and keep your code clean.",
       "lines": [
         {
           "text": "Interview Tips",
           "rawText": "Interview Tips",
-          "x": 72.024,
-          "y": 759.48,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f3"
+          "startX": 72,
+          "y": 759,
+          "isBold": true
         },
         {
-          "text": "   • Explain the Layers: Be able to clearly explain the purpose of each layer and how they",
+          "text": "• Explain the Layers: Be able to clearly explain the purpose of each layer and how they",
           "rawText": "• Explain the Layers: Be able to clearly explain the purpose of each layer and how they",
-          "x": 90.024,
-          "y": 737.02,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 737,
+          "isBold": false
         },
         {
-          "text": "      interact.",
+          "text": "interact.",
           "rawText": "interact.",
-          "x": 108.02,
-          "y": 722.5,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 108,
+          "y": 723,
+          "isBold": false
         },
         {
-          "text": "   • Dependency Direction: Emphasize that dependencies flow inwards towards the Domain",
+          "text": "• Dependency Direction: Emphasize that dependencies flow inwards towards the Domain",
           "rawText": "• Dependency Direction: Emphasize that dependencies flow inwards towards the Domain",
-          "x": 90.024,
-          "y": 699.94,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 700,
+          "isBold": false
         },
         {
-          "text": "      layer.",
+          "text": "layer.",
           "rawText": "layer.",
-          "x": 108.02,
-          "y": 685.54,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 108,
+          "y": 686,
+          "isBold": false
         },
         {
-          "text": "   • Abstractions: Highlight the importance of using interfaces to achieve loose coupling.",
+          "text": "• Abstractions: Highlight the importance of using interfaces to achieve loose coupling.",
           "rawText": "• Abstractions: Highlight the importance of using interfaces to achieve loose coupling.",
-          "x": 90.024,
-          "y": 662.98,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 663,
+          "isBold": false
         },
         {
-          "text": "   • Real-World Scenarios: Discuss how you've used or would use Clean Architecture in a project.",
+          "text": "• Real-World Scenarios: Discuss how you've used or would use Clean Architecture in a project.",
           "rawText": "• Real-World Scenarios: Discuss how you've used or would use Clean Architecture in a project.",
-          "x": 90.024,
-          "y": 640.54,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 641,
+          "isBold": false
         },
         {
-          "text": "   • Benefits: Articulate the advantages of Clean Architecture in terms of maintainability,",
+          "text": "• Benefits: Articulate the advantages of Clean Architecture in terms of maintainability,",
           "rawText": "• Benefits: Articulate the advantages of Clean Architecture in terms of maintainability,",
-          "x": 90.024,
-          "y": 617.98,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 618,
+          "isBold": false
         },
         {
-          "text": "      testability, and flexibility.",
+          "text": "testability, and flexibility.",
           "rawText": "testability, and flexibility.",
-          "x": 108.02,
-          "y": 603.58,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 108,
+          "y": 604,
+          "isBold": false
         },
         {
           "text": "Remember:",
           "rawText": "Remember:",
-          "x": 72.024,
-          "y": 558.55,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f3"
+          "startX": 72,
+          "y": 559,
+          "isBold": true
         },
         {
-          "text": "   • Trade-offs: Clean Architecture adds some complexity, so consider if it's appropriate for your",
+          "text": "• Trade-offs: Clean Architecture adds some complexity, so consider if it's appropriate for your",
           "rawText": "• Trade-offs: Clean Architecture adds some complexity, so consider if it's appropriate for your",
-          "x": 90.024,
-          "y": 535.99,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 536,
+          "isBold": false
         },
         {
-          "text": "      project's size and requirements.",
+          "text": "project's size and requirements.",
           "rawText": "project's size and requirements.",
-          "x": 108.02,
-          "y": 521.59,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 108,
+          "y": 522,
+          "isBold": false
         },
         {
-          "text": "   • Focus on the Domain: The domain layer should be the most important and stable part of",
+          "text": "• Focus on the Domain: The domain layer should be the most important and stable part of",
           "rawText": "• Focus on the Domain: The domain layer should be the most important and stable part of",
-          "x": 90.024,
-          "y": 499.03,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 499,
+          "isBold": false
         },
         {
-          "text": "      your application.",
+          "text": "your application.",
           "rawText": "your application.",
-          "x": 108.02,
-          "y": 484.51,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 108,
+          "y": 485,
+          "isBold": false
         },
         {
-          "text": "   • Continuous Refactoring: As your application evolves, continuously refactor to maintain the",
+          "text": "• Continuous Refactoring: As your application evolves, continuously refactor to maintain the",
           "rawText": "• Continuous Refactoring: As your application evolves, continuously refactor to maintain the",
-          "x": 90.024,
-          "y": 462.07,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f7"
+          "startX": 90,
+          "y": 462,
+          "isBold": false
         },
         {
-          "text": "      separation of concerns and keep your code clean.",
+          "text": "separation of concerns and keep your code clean.",
           "rawText": "separation of concerns and keep your code clean.",
-          "x": 108.02,
-          "y": 447.55,
-          "fontSize": 11.04,
-          "fontName": "g_d46_f2"
+          "startX": 108,
+          "y": 448,
+          "isBold": false
         }
       ],
       "blocks": [
@@ -2588,44 +2388,44 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Explain the Layers: Be able to clearly explain the purpose of each layer and how they",
-            "      interact."
+            "• Explain the Layers: Be able to clearly explain the purpose of each layer and how they",
+            "interact."
           ],
-          "text": "   • Explain the Layers: Be able to clearly explain the purpose of each layer and how they\n      interact."
+          "text": "• Explain the Layers: Be able to clearly explain the purpose of each layer and how they\ninteract."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Dependency Direction: Emphasize that dependencies flow inwards towards the Domain",
-            "      layer."
+            "• Dependency Direction: Emphasize that dependencies flow inwards towards the Domain",
+            "layer."
           ],
-          "text": "   • Dependency Direction: Emphasize that dependencies flow inwards towards the Domain\n      layer."
+          "text": "• Dependency Direction: Emphasize that dependencies flow inwards towards the Domain\nlayer."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Abstractions: Highlight the importance of using interfaces to achieve loose coupling."
+            "• Abstractions: Highlight the importance of using interfaces to achieve loose coupling."
           ],
-          "text": "   • Abstractions: Highlight the importance of using interfaces to achieve loose coupling."
+          "text": "• Abstractions: Highlight the importance of using interfaces to achieve loose coupling."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Real-World Scenarios: Discuss how you've used or would use Clean Architecture in a project."
+            "• Real-World Scenarios: Discuss how you've used or would use Clean Architecture in a project."
           ],
-          "text": "   • Real-World Scenarios: Discuss how you've used or would use Clean Architecture in a project."
+          "text": "• Real-World Scenarios: Discuss how you've used or would use Clean Architecture in a project."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Benefits: Articulate the advantages of Clean Architecture in terms of maintainability,",
-            "      testability, and flexibility."
+            "• Benefits: Articulate the advantages of Clean Architecture in terms of maintainability,",
+            "testability, and flexibility."
           ],
-          "text": "   • Benefits: Articulate the advantages of Clean Architecture in terms of maintainability,\n      testability, and flexibility."
+          "text": "• Benefits: Articulate the advantages of Clean Architecture in terms of maintainability,\ntestability, and flexibility."
         },
         {
           "type": "prose",
@@ -2639,32 +2439,32 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Trade-offs: Clean Architecture adds some complexity, so consider if it's appropriate for your",
-            "      project's size and requirements."
+            "• Trade-offs: Clean Architecture adds some complexity, so consider if it's appropriate for your",
+            "project's size and requirements."
           ],
-          "text": "   • Trade-offs: Clean Architecture adds some complexity, so consider if it's appropriate for your\n      project's size and requirements."
+          "text": "• Trade-offs: Clean Architecture adds some complexity, so consider if it's appropriate for your\nproject's size and requirements."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Focus on the Domain: The domain layer should be the most important and stable part of",
-            "      your application."
+            "• Focus on the Domain: The domain layer should be the most important and stable part of",
+            "your application."
           ],
-          "text": "   • Focus on the Domain: The domain layer should be the most important and stable part of\n      your application."
+          "text": "• Focus on the Domain: The domain layer should be the most important and stable part of\nyour application."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Continuous Refactoring: As your application evolves, continuously refactor to maintain the",
-            "      separation of concerns and keep your code clean."
+            "• Continuous Refactoring: As your application evolves, continuously refactor to maintain the",
+            "separation of concerns and keep your code clean."
           ],
-          "text": "   • Continuous Refactoring: As your application evolves, continuously refactor to maintain the\n      separation of concerns and keep your code clean."
+          "text": "• Continuous Refactoring: As your application evolves, continuously refactor to maintain the\nseparation of concerns and keep your code clean."
         }
       ],
       "char_count_raw": 892,
-      "char_count_repaired": 951
+      "char_count_repaired": 891
     }
   ],
   "title": "Clean Architecture"
