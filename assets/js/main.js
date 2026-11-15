@@ -1,6 +1,7 @@
 /**
  * ASP.NET Core Masterclass Documentation Portal - Main Script
  * Offline-First, Zero Build Step, WCAG 2.2 Accessible
+ * Production UI/UX Architecture: State Persistence, Theme Sync, Interactive Filter Pills
  */
 
 (function () {
@@ -10,6 +11,7 @@
   const STORAGE_KEY_THEME = 'dotnet_docs_theme';
   const STORAGE_KEY_SIDEBAR = 'dotnet_sidebar_collapsed';
   const STORAGE_KEY_COMPLETED = 'dotnet_completed_sections';
+  const STORAGE_KEY_LAST_VISITED = 'dotnet_last_visited';
 
   // Helper for polite live-region announcements
   function announceLive(message) {
@@ -91,7 +93,7 @@
     });
   }
 
-  // Initialize theme immediately to avoid flash
+  // Initialize theme immediately
   applyTheme(getPreferredTheme());
 
   // 4. Section Completion Tracking
@@ -105,7 +107,9 @@
   }
 
   function saveCompletedSections(list) {
-    localStorage.setItem(STORAGE_KEY_COMPLETED, JSON.stringify(list));
+    try {
+      localStorage.setItem(STORAGE_KEY_COMPLETED, JSON.stringify(list));
+    } catch {}
   }
 
   function updateCompletionUI() {
@@ -144,6 +148,34 @@
     if (completedStat) {
       completedStat.textContent = completedList.length;
     }
+
+    // Update module card progress bars on homepage
+    const moduleCards = document.querySelectorAll('.module-card[data-module-id]');
+    moduleCards.forEach(card => {
+      const modId = card.getAttribute('data-module-id');
+      const secItems = card.querySelectorAll('.module-sec-item');
+      let modCompletedCount = 0;
+      secItems.forEach(item => {
+        const secNumSpan = item.querySelector('.sidebar-sec-num');
+        if (secNumSpan) {
+          const num = secNumSpan.textContent.replace(/^Sec\s*/i, '').trim();
+          if (completedList.includes(num.padStart(2, '0'))) {
+            modCompletedCount++;
+          }
+        }
+      });
+
+      const fill = card.querySelector('.module-card-progress-fill');
+      const progressText = card.querySelector('.module-card-progress span');
+      const total = secItems.length;
+      if (fill && total > 0) {
+        const pct = Math.round((modCompletedCount / total) * 100);
+        fill.style.width = `${pct}%`;
+      }
+      if (progressText && total > 0) {
+        progressText.textContent = `${modCompletedCount}/${total} Done`;
+      }
+    });
   }
 
   function toggleSectionCompletion() {
@@ -167,7 +199,179 @@
     announceLive(nowComplete ? `Section ${secId} marked as completed.` : `Section ${secId} marked as incomplete.`);
   }
 
-  // 5. Offline Multi-Language Syntax Highlighter
+  // 5. Last Visited Section Tracker
+  function recordLastVisitedSection() {
+    const secMatch = window.location.pathname.match(/section-(\d+)\.html/i);
+    if (!secMatch) return;
+
+    const secNum = secMatch[1].padStart(2, '0');
+    const h1 = document.querySelector('.section-banner h1, h1');
+    const pageTitle = h1 ? h1.textContent.replace(/^Section\s*\d+:\s*/i, '').trim() : `Section ${secNum}`;
+    const modBadge = document.querySelector('.section-meta-row .module-badge')?.textContent || 'Curriculum';
+
+    try {
+      localStorage.setItem(STORAGE_KEY_LAST_VISITED, JSON.stringify({
+        sectionNum: secNum,
+        title: pageTitle,
+        module: modBadge,
+        url: `section-${secNum}.html`,
+        timestamp: Date.now()
+      }));
+    } catch {}
+  }
+
+  // 6. Continue Learning Initializer on Homepage
+  function initContinueLearning() {
+    const container = document.getElementById('continueLearningSection');
+    if (!container) return;
+
+    let lastVisited = null;
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY_LAST_VISITED);
+      if (raw) lastVisited = JSON.parse(raw);
+    } catch {}
+
+    const completedList = getCompletedSections();
+    const completedPercent = Math.round((completedList.length / 30) * 100);
+
+    if (lastVisited && lastVisited.sectionNum && lastVisited.url) {
+      container.innerHTML = `
+        <div class="continue-card">
+          <div class="continue-card-left">
+            <div class="continue-pill-row">
+              <span class="continue-eyebrow">
+                <span class="pulse-dot"></span> RESUME LEARNING
+              </span>
+              <span class="continue-meta">${escapeCodeHtml(lastVisited.module || 'Masterclass Curriculum')}</span>
+            </div>
+            <h3 class="continue-title">Section ${escapeCodeHtml(lastVisited.sectionNum)}: ${escapeCodeHtml(lastVisited.title)}</h3>
+            <p class="continue-sub">Pick up right where you left off. Continue mastering ASP.NET Core with verbatim course notes and cheat sheets.</p>
+            <div class="continue-progress-row">
+              <div class="progress-bar-bg" title="${completedPercent}% completed">
+                <div class="progress-bar-fill" style="width: ${completedPercent}%;"></div>
+              </div>
+              <span class="progress-label">${completedList.length} of 30 Sections Completed (${completedPercent}%)</span>
+            </div>
+          </div>
+          <div class="continue-card-right">
+            <a href="sections/${lastVisited.url}" class="continue-action-btn">
+              <span>Resume Section ${escapeCodeHtml(lastVisited.sectionNum)}</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      `;
+    } else {
+      // New visitor welcome state
+      container.innerHTML = `
+        <div class="continue-card new-visitor">
+          <div class="continue-card-left">
+            <div class="continue-pill-row">
+              <span class="continue-eyebrow">
+                <span class="pulse-dot"></span> RECOMMENDED STARTING POINT
+              </span>
+              <span class="continue-meta">Module 1 &bull; Foundations &amp; HTTP</span>
+            </div>
+            <h3 class="continue-title">Section 01: Introduction &amp; Course Architecture</h3>
+            <p class="continue-sub">Master the HTTP request processing pipeline, Kestrel web server internals, middleware chaining, and endpoint routing.</p>
+            <div class="continue-progress-row">
+              <span class="progress-badge">30 In-Depth Sections</span>
+              <span class="progress-badge">8 Core Modules</span>
+              <span class="progress-badge">700+ Notes Pages</span>
+              <span class="progress-badge">100% Offline Static</span>
+            </div>
+          </div>
+          <div class="continue-card-right">
+            <a href="sections/section-01.html" class="continue-action-btn">
+              <span>Start Section 01</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  // 7. Interactive Curriculum Explorer (Module Filter Pills + Search)
+  function initCurriculumExplorer() {
+    const pillsContainer = document.getElementById('moduleFilterPills');
+    const searchInput = document.getElementById('directoryFilter');
+    const tableBody = document.getElementById('directoryTableBody');
+    const emptyState = document.getElementById('directoryEmptyState');
+    const emptyTerm = document.getElementById('directoryEmptyTerm');
+    const resetBtn = document.getElementById('resetDirectoryFilterBtn');
+
+    if (!tableBody) return;
+
+    let currentModule = 'all';
+
+    function filterRows() {
+      const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+      const rows = tableBody.querySelectorAll('tr[data-module-num]');
+      let visibleCount = 0;
+
+      rows.forEach(row => {
+        const rowMod = row.getAttribute('data-module-num');
+        const text = row.textContent.toLowerCase();
+
+        const matchesMod = currentModule === 'all' || rowMod === currentModule;
+        const matchesQuery = !query || text.includes(query);
+
+        if (matchesMod && matchesQuery) {
+          row.style.display = '';
+          visibleCount++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      if (emptyState) {
+        emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+        if (emptyTerm) {
+          if (query && currentModule !== 'all') {
+            emptyTerm.textContent = `matching "${query}" in Module ${currentModule}`;
+          } else if (query) {
+            emptyTerm.textContent = `matching "${query}"`;
+          } else if (currentModule !== 'all') {
+            emptyTerm.textContent = `in Module ${currentModule}`;
+          } else {
+            emptyTerm.textContent = '';
+          }
+        }
+      }
+    }
+
+    if (pillsContainer) {
+      pillsContainer.addEventListener('click', (e) => {
+        const btn = e.target.closest('.filter-pill');
+        if (!btn) return;
+
+        pillsContainer.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        currentModule = btn.getAttribute('data-mod') || 'all';
+        filterRows();
+      });
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', filterRows);
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        currentModule = 'all';
+        if (pillsContainer) {
+          pillsContainer.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+          const allBtn = pillsContainer.querySelector('[data-mod="all"]');
+          if (allBtn) allBtn.classList.add('active');
+        }
+        filterRows();
+      });
+    }
+  }
+
+  // 8. Offline Multi-Language Syntax Highlighter
   function escapeCodeHtml(str) {
     return str
       .replace(/&/g, '&amp;')
@@ -233,8 +437,12 @@
     });
   }
 
+  // 9. Document Ready Initialization
   document.addEventListener('DOMContentLoaded', () => {
     initSidebarState();
+    recordLastVisitedSection();
+    initContinueLearning();
+    initCurriculumExplorer();
     updateCompletionUI();
     highlightCodeBlocks();
 
@@ -420,27 +628,6 @@
         }
       });
     });
-
-    // Homepage Directory Filter
-    const dirFilter = document.getElementById('directoryFilter');
-    if (dirFilter) {
-      dirFilter.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase().trim();
-        const rows = document.querySelectorAll('#directoryTableBody tr');
-        let visibleCount = 0;
-        rows.forEach(row => {
-          const text = row.textContent.toLowerCase();
-          const matches = text.includes(query);
-          row.style.display = matches ? '' : 'none';
-          if (matches) visibleCount++;
-        });
-
-        const emptyMsg = document.getElementById('directoryEmptyState');
-        if (emptyMsg) {
-          emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
-        }
-      });
-    }
 
     // Header elevation on scroll
     const header = document.querySelector('.top-header');

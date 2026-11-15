@@ -587,6 +587,24 @@ function buildSidebar(manifest, activeSecStr, isRoot = false) {
 function buildHeader(isRoot = false) {
   const prefix = isRoot ? '' : '../';
   const homeLink = isRoot ? 'index.html' : '../index.html';
+  const currAnchor = isRoot ? '#curriculum-explorer' : '../index.html#curriculum-explorer';
+  const modsAnchor = isRoot ? '#modules-section' : '../index.html#modules-section';
+
+  const brandIconSvg = `
+    <svg width="24" height="24" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="brandGradDotNet" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#512bd4" />
+          <stop offset="60%" stop-color="#6d28d9" />
+          <stop offset="100%" stop-color="#7c3aed" />
+        </linearGradient>
+      </defs>
+      <rect width="128" height="128" rx="28" fill="url(#brandGradDotNet)" />
+      <circle cx="28" cy="78" r="7" fill="#ffffff" />
+      <circle cx="28" cy="78" r="4" fill="#a78bfa" />
+      <text x="38" y="82" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="900" fill="#ffffff" letter-spacing="-1.5">NET</text>
+    </svg>
+  `;
 
   if (isRoot) {
     return `
@@ -595,15 +613,20 @@ function buildHeader(isRoot = false) {
     <div class="header-left">
       <a href="index.html" class="brand-link" aria-label="ASP.NET Core Masterclass Documentation Portal">
         <span class="brand-icon">
-          <svg width="22" height="22" viewBox="0 0 128 128" fill="none" aria-hidden="true">
-            <rect width="128" height="128" rx="28" fill="url(#brandGradDotNet)" />
-            <circle cx="28" cy="78" r="7" fill="#ffffff" />
-            <text x="38" y="82" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="900" fill="#ffffff" letter-spacing="-1.5">NET</text>
-          </svg>
+          ${brandIconSvg}
         </span>
         <span class="brand-text">ASP.NET Core Masterclass</span>
       </a>
       <span class="version-pill">.NET 8 / LTS</span>
+
+      <nav class="header-nav-links" aria-label="Header Navigation">
+        <a href="#curriculum-explorer" class="header-nav-link">Curriculum</a>
+        <a href="#modules-section" class="header-nav-link">Modules</a>
+        <a href="https://github.com/OnkarM09/dot-net-course-portal" class="header-nav-link" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+          <span>GitHub</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+      </nav>
     </div>
 
     <div class="header-right">
@@ -636,23 +659,23 @@ function buildHeader(isRoot = false) {
       </button>
       <a href="${homeLink}" class="brand-link" aria-label="ASP.NET Core Masterclass Documentation Portal">
         <span class="brand-icon">
-          <svg width="22" height="22" viewBox="0 0 128 128" fill="none" aria-hidden="true">
-            <rect width="128" height="128" rx="28" fill="url(#brandGradDotNet)" />
-            <circle cx="28" cy="78" r="7" fill="#ffffff" />
-            <text x="38" y="82" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="900" fill="#ffffff" letter-spacing="-1.5">NET</text>
-          </svg>
+          ${brandIconSvg}
         </span>
         <span class="brand-text">ASP.NET Core Masterclass</span>
       </a>
       <span class="version-pill">.NET 8 / LTS</span>
+
+      <nav class="header-nav-links" aria-label="Header Navigation">
+        <a href="${currAnchor}" class="header-nav-link">Curriculum</a>
+        <a href="${modsAnchor}" class="header-nav-link">Modules</a>
+        <a href="https://github.com/OnkarM09/dot-net-course-portal" class="header-nav-link" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+          <span>GitHub</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+      </nav>
     </div>
 
     <div class="header-right">
-      <a href="${homeLink}" class="index-home-btn" title="Back to Curriculum Dashboard">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-        <span class="home-text">Curriculum</span>
-      </a>
-
       <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
         <span class="search-icon" aria-hidden="true">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -724,19 +747,30 @@ async function generateAll() {
     }
 
     // Build Prev/Next nav
+    // Build balanced Prev/Next nav
     let prevHtml = prevSec ? `
       <a href="${prevSec.html_filename}" class="nav-card prev" aria-label="Previous Section: Sec ${prevSec.normalized_section} - ${escapeHtml(prevSec.title)}">
         <span class="nav-direction">&larr; Previous Section</span>
         <span class="nav-title">Sec ${prevSec.normalized_section}: ${escapeHtml(prevSec.title)}</span>
       </a>
-    ` : '';
+    ` : `
+      <a href="../index.html#curriculum-explorer" class="nav-card prev" aria-label="Curriculum Directory">
+        <span class="nav-direction">&larr; Overview</span>
+        <span class="nav-title">Curriculum Directory</span>
+      </a>
+    `;
 
     let nextHtml = nextSec ? `
       <a href="${nextSec.html_filename}" class="nav-card next" aria-label="Next Section: Sec ${nextSec.normalized_section} - ${escapeHtml(nextSec.title)}">
         <span class="nav-direction">Next Section &rarr;</span>
         <span class="nav-title">Sec ${nextSec.normalized_section}: ${escapeHtml(nextSec.title)}</span>
       </a>
-    ` : '';
+    ` : `
+      <a href="../index.html" class="nav-card next" aria-label="Course Completed - Return to Home">
+        <span class="nav-direction">Completed &rarr;</span>
+        <span class="nav-title">Return to Portal Home</span>
+      </a>
+    `;
 
     const fullPageHtml = `<!DOCTYPE html>
 <html lang="en" data-theme="dark">
@@ -877,31 +911,52 @@ async function generateAll() {
     for (const sec of modSections) {
       secListItems += `
         <li class="module-sec-item">
-          <a href="sections/${sec.html_filename}">
+          <a href="sections/${sec.html_filename}" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec ${sec.normalized_section}</span>
-            <span>${escapeHtml(sec.title)}</span>
+            <span class="module-sec-item-title">${escapeHtml(sec.title)}</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            ${sec.page_count} pgs
-          </span>
+          <div class="module-sec-meta">
+            ${sec.has_cheatsheet ? '<span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>' : ''}
+            <span>${sec.page_count} pgs</span>
+          </div>
         </li>
       `;
     }
 
+    const firstSecFile = modSections[0] ? modSections[0].html_filename : 'section-01.html';
+
     moduleCardsHtml += `
-      <div class="module-card">
+      <div class="module-card" data-module-id="${mod.module_number}">
         <div class="module-card-header">
           <span class="module-badge" style="background: ${badge.bg}; color: ${badge.color}; border: 1px solid ${badge.border};">
             Module ${mod.module_number}
           </span>
-          <span class="tag-pill">${modSections.length} Sections</span>
+          <span class="module-sec-count-badge">${modSections.length} Sections</span>
         </div>
-        <h3 class="module-card-title">${escapeHtml(mod.title)}</h3>
-        <p class="module-card-desc">${escapeHtml(mod.description)}</p>
-        <ul class="module-sec-list">
-          ${secListItems}
-        </ul>
+        
+        <div class="module-card-body">
+          <h3 class="module-card-title">${escapeHtml(mod.title)}</h3>
+          <p class="module-card-desc">${escapeHtml(mod.description)}</p>
+        </div>
+
+        <div class="module-card-sections">
+          <div class="module-card-sections-label">Curriculum Sections:</div>
+          <ul class="module-sec-list">
+            ${secListItems}
+          </ul>
+        </div>
+
+        <div class="module-card-footer">
+          <div class="module-card-progress">
+            <div class="module-card-progress-bar">
+              <div class="module-card-progress-fill"></div>
+            </div>
+            <span>0/${modSections.length} Done</span>
+          </div>
+          <a href="sections/${firstSecFile}" class="module-card-action">
+            <span>Explore Module ${mod.module_number}</span> &rarr;
+          </a>
+        </div>
       </div>
     `;
   }
@@ -910,19 +965,19 @@ async function generateAll() {
   let dirRowsHtml = '';
   for (const sec of manifest.sections) {
     dirRowsHtml += `
-      <tr data-section-num="${sec.normalized_section}">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec ${sec.normalized_section}</td>
+      <tr data-section-num="${sec.normalized_section}" data-module-num="${sec.module_number}">
+        <td class="directory-sec-num">Sec ${sec.normalized_section}</td>
         <td>
-          <a href="sections/${sec.html_filename}" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/${sec.html_filename}" class="directory-sec-title">
             ${escapeHtml(sec.title)}
           </a>
         </td>
         <td><span class="tag-pill">Mod ${sec.module_number}</span></td>
-        <td>${sec.page_count}</td>
-        <td>${sec.has_cheatsheet ? '✓ Included' : '—'}</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>${sec.page_count} pgs</td>
+        <td>${sec.has_cheatsheet ? '<span class="sec-cs-badge">⚡ Included</span>' : '<span style="color: var(--text-dim);">—</span>'}</td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/${sec.html_filename}" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/${sec.html_filename}" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
@@ -949,50 +1004,79 @@ async function generateAll() {
   <!-- Main Hero & Dashboard -->
   <main id="main-content" tabindex="-1">
     <section class="portal-hero">
-      <h1>ASP.NET Core Masterclass Documentation</h1>
+      <div class="hero-badge">
+        <span class="badge-dot"></span> .NET 8 LTS &bull; Production Architecture Masterclass
+      </div>
+      <h1>Master ASP.NET Core. Build Production-Ready Applications.</h1>
       <p class="portal-hero-lead">
-        Comprehensive, 100% offline-first community documentation portal covering ASP.NET Core MVC, RESTful Web APIs,
-        Minimal APIs, Entity Framework Core, xUnit Testing, Security, and Clean Architecture across all 30 curriculum sections.
+        Your structured learning resource for mastering C#, ASP.NET Core, application architecture, APIs, databases, and modern .NET development.
       </p>
 
-      <div style="margin-bottom: 2.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-        <button class="search-trigger-btn" style="padding: 10px 20px; font-size: 1rem; border-radius: 10px; background: var(--bg-surface-elevated); border-color: var(--accent-primary);" type="button">
-          <span class="search-icon" aria-hidden="true">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          </span>
-          <span>Open Global Search</span>
-          <kbd class="kbd-shortcut">Ctrl+K</kbd>
-        </button>
-        <a href="sections/section-01.html" class="hero-cta-btn">
-          Start Section 01: Introduction &rarr;
+      <div class="hero-cta-group">
+        <a href="sections/section-01.html" class="hero-cta-primary">
+          <span>Start Learning</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+        <a href="#curriculum-explorer" class="hero-cta-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          <span>Explore Curriculum</span>
         </a>
       </div>
 
-      <!-- Quick Stats -->
-      <div class="portal-stats-row">
-        <div class="stat-card">
-          <div class="stat-number">7</div>
-          <div class="stat-label">Core Modules</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">30</div>
-          <div class="stat-label">Curriculum Sections</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">700+</div>
-          <div class="stat-label">Pages of Notes &amp; Cheatsheets</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number" id="completedSectionsCount">0</div>
-          <div class="stat-label">Sections Completed</div>
-        </div>
+      <div class="hero-chips-row">
+        <span class="hero-chip">⚡ Minimal APIs</span>
+        <span class="hero-chip">🏛️ Clean Architecture</span>
+        <span class="hero-chip">🗄️ EF Core &amp; Migrations</span>
+        <span class="hero-chip">🧪 xUnit &amp; Moq</span>
+        <span class="hero-chip">🔐 JWT &amp; Identity</span>
+        <span class="hero-chip">🔄 Middleware Pipeline</span>
+        <span class="hero-chip">📦 100% Offline Static</span>
       </div>
     </section>
 
+    <!-- Continue Learning Section (Populated dynamically) -->
+    <section class="continue-learning-section" id="continueLearningSection" aria-label="Continue Learning"></section>
+
+    <!-- Quick Stats -->
+    <div class="portal-stats-row">
+      <div class="stat-card">
+        <div class="stat-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+        </div>
+        <div class="stat-number">8</div>
+        <div class="stat-label">Core Modules</div>
+        <div class="stat-sub">Architectural Progression</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        </div>
+        <div class="stat-number">30</div>
+        <div class="stat-label">Curriculum Sections</div>
+        <div class="stat-sub">Deep-Dive Reference</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        </div>
+        <div class="stat-number">700+</div>
+        <div class="stat-label">Pages of Notes</div>
+        <div class="stat-sub">Verbatim Notes &amp; Matrices</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </div>
+        <div class="stat-number"><span id="completedSectionsCount">0</span>/30</div>
+        <div class="stat-label">Sections Completed</div>
+        <div class="stat-sub">Synced Locally</div>
+      </div>
+    </div>
+
     <!-- Modules Grid Section -->
-    <section class="modules-section" style="max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem;">
+    <section class="modules-section" id="modules-section" style="max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem;">
       <h2 class="section-group-heading">Curriculum Architecture</h2>
-      <p class="section-group-sub">Organized into seven comprehensive architectural tiers from basic HTTP to enterprise security and Minimal APIs.</p>
+      <p class="section-group-sub">Organized into eight comprehensive architectural tiers from basic HTTP to enterprise security and Minimal APIs.</p>
 
       <div class="modules-grid">
         ${moduleCardsHtml}
@@ -1000,14 +1084,33 @@ async function generateAll() {
     </section>
 
     <!-- Masterclass Directory Section -->
-    <section style="max-width: 1200px; margin: 3rem auto; padding: 0 1.5rem;">
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+    <section class="directory-section" id="curriculum-explorer">
+      <div class="directory-filter-row">
         <div>
-          <h2 style="font-size: 1.5rem; color: var(--text-main); margin-bottom: 0.3rem;">Complete Masterclass Directory</h2>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">Full searchable directory of all thirty sections with page counts and cheatsheet availability.</p>
+          <h2 class="section-group-heading" style="font-size: 1.6rem; margin-bottom: 0.25rem;">Complete Masterclass Directory</h2>
+          <p class="section-group-sub" style="margin-bottom: 0;">Full searchable directory of all thirty sections with page counts, cheat sheets, and completion status.</p>
         </div>
-        <div style="width: 320px; max-width: 100%;">
-          <input type="text" id="directoryFilter" class="sidebar-filter-input" placeholder="Filter sections by title or module..." style="width: 100%; padding: 8px 12px; border-radius: 6px; background: var(--bg-surface); border: 1px solid var(--border-subtle); color: var(--text-main);" aria-label="Filter masterclass directory" />
+        <div class="directory-search-box">
+          <span class="directory-search-icon" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </span>
+          <input type="text" id="directoryFilter" class="directory-search-input" placeholder="Search sections by title, topic..." aria-label="Search masterclass directory" />
+        </div>
+      </div>
+
+      <!-- Module Filter Pills -->
+      <div class="filter-pills-container">
+        <div class="filter-pills-label">Filter by Architectural Module:</div>
+        <div class="filter-pills-bar" id="moduleFilterPills" role="toolbar" aria-label="Filter sections by module">
+          <button type="button" class="filter-pill active" data-mod="all">All Modules (30)</button>
+          <button type="button" class="filter-pill" data-mod="1">Mod 1: Foundations (5)</button>
+          <button type="button" class="filter-pill" data-mod="2">Mod 2: Controllers (2)</button>
+          <button type="button" class="filter-pill" data-mod="3">Mod 3: Views &amp; UI (5)</button>
+          <button type="button" class="filter-pill" data-mod="4">Mod 4: DI &amp; Config (3)</button>
+          <button type="button" class="filter-pill" data-mod="5">Mod 5: Testing &amp; EF Core (4)</button>
+          <button type="button" class="filter-pill" data-mod="6">Mod 6: Architecture (6)</button>
+          <button type="button" class="filter-pill" data-mod="7">Mod 7: Web APIs (3)</button>
+          <button type="button" class="filter-pill" data-mod="8">Mod 8: Minimal APIs (2)</button>
         </div>
       </div>
 
@@ -1030,16 +1133,20 @@ async function generateAll() {
           </tbody>
         </table>
       </div>
-      <div id="directoryEmptyState" style="display: none; padding: 2rem; text-align: center; color: var(--text-muted);">
-        No sections match your filter criteria.
+
+      <div id="directoryEmptyState" class="directory-empty-state">
+        <div class="empty-state-icon">🔍</div>
+        <div class="empty-state-title">No sections found <span id="directoryEmptyTerm"></span></div>
+        <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.25rem;">Try adjusting your keyword search or select "All Modules" above.</p>
+        <button type="button" id="resetDirectoryFilterBtn" class="empty-state-btn">Reset All Filters</button>
       </div>
     </section>
   </main>
 
   <!-- Global Footer -->
-  <footer style="margin-top: 4rem; padding: 2rem 1.5rem; border-top: 1px solid var(--border-subtle); background: var(--bg-surface); color: var(--text-muted); font-size: 0.85rem; text-align: center;" role="contentinfo">
-    <p>ASP.NET Core Masterclass — 100% Offline Static Reference Documentation Portal.</p>
-    <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-dim);">Created as an open community learning companion. No external build step or CDNs required.</p>
+  <footer style="margin-top: 4rem; padding: 2.5rem 1.5rem; border-top: 1px solid var(--border-subtle); background: var(--bg-surface); color: var(--text-muted); font-size: 0.85rem; text-align: center;" role="contentinfo">
+    <p style="font-weight: 600; color: var(--text-main); margin-bottom: 0.35rem;">ASP.NET Core Masterclass &mdash; 100% Offline Static Reference Documentation Portal</p>
+    <p style="font-size: 0.8rem; color: var(--text-dim);">Created as an open community learning companion. Built with pure HTML5, modern CSS, and vanilla JS. Zero build step or external CDNs required.</p>
   </footer>
 
   <!-- Scripts -->

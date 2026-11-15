@@ -132,19 +132,58 @@ async (page) => {
 
   // --- PART 3: HOMEPAGE VERIFICATIONS ---
 
-  // 1. Structure Verification (8 Module Cards, 30 Directory Rows)
+  // 1. Structure Verification (Hero headline, CTAs, 8 Module Cards, 30 Directory Rows, Continue Learning)
   const homeStructure = await page.evaluate(() => {
+    const h1Text = document.querySelector('h1')?.textContent?.trim();
+    const primaryCta = document.querySelector('.hero-cta-primary');
+    const secondaryCta = document.querySelector('.hero-cta-secondary');
+    const continueCard = document.querySelector('#continueLearningSection .continue-card');
     const cards = document.querySelectorAll('.module-card');
     const rows = document.querySelectorAll('#directoryTableBody tr');
+    const filterPills = document.querySelectorAll('#moduleFilterPills .filter-pill');
+
+    const headlineMatch = h1Text === 'Master ASP.NET Core. Build Production-Ready Applications.';
+    const ctasPresent = !!primaryCta && !!secondaryCta;
+    const continuePresent = !!continueCard;
+
     return {
+      headline: h1Text,
+      headline_match: headlineMatch,
+      ctas_present: ctasPresent,
+      continue_present: continuePresent,
       module_cards_count: cards.length,
       directory_rows_count: rows.length,
-      pass: cards.length === 8 && rows.length === 30
+      filter_pills_count: filterPills.length,
+      pass: headlineMatch && ctasPresent && continuePresent && cards.length === 8 && rows.length === 30 && filterPills.length === 9
     };
   });
   report.features.homepage_structure = homeStructure;
 
-  // 2. Directory Filter: matching, empty state, reset
+  // 2. Module Filter Pills Test
+  const pillFilterResult = await page.evaluate(() => {
+    const mod1Pill = document.querySelector('.filter-pill[data-mod="1"]');
+    const allPill = document.querySelector('.filter-pill[data-mod="all"]');
+    const rows = document.querySelectorAll('#directoryTableBody tr');
+
+    // Click Mod 1 Pill
+    mod1Pill.click();
+    const mod1Visible = Array.from(rows).filter(r => r.style.display !== 'none').length;
+    const isPillActive = mod1Pill.classList.contains('active');
+
+    // Click All Pill
+    allPill.click();
+    const allVisible = Array.from(rows).filter(r => r.style.display !== 'none').length;
+
+    return {
+      mod1_visible: mod1Visible,
+      is_pill_active: isPillActive,
+      all_visible: allVisible,
+      pass: mod1Visible === 5 && isPillActive && allVisible === 30
+    };
+  });
+  report.features.module_filter_pills = pillFilterResult;
+
+  // 3. Directory Filter: matching, empty state, reset
   const filterResult = await page.evaluate(() => {
     const input = document.getElementById('directoryFilter');
     const rows = document.querySelectorAll('#directoryTableBody tr');
@@ -207,28 +246,16 @@ async (page) => {
   });
   report.features.theme_toggle = themeResult;
 
-  // 4. Multi-Button Search (Header + Hero) and All 7 Required Queries
+  // 4. Global Search Trigger & All 7 Required Queries
   const searchResult = await page.evaluate(() => {
-    const triggers = document.querySelectorAll('.search-trigger-btn');
-    const headerBtn = triggers[0];
-    const heroBtn = triggers[1];
+    const headerBtn = document.querySelector('.search-trigger-btn');
 
-    // Test Hero trigger
-    heroBtn.click();
+    // Test Header trigger
+    headerBtn.click();
     let backdrop = document.getElementById('searchModalBackdrop');
     let input = document.getElementById('searchModalInput');
     let closeBtn = document.getElementById('searchCloseBtn');
     let container = document.getElementById('searchResultsContainer');
-
-    const heroOpened = backdrop && backdrop.classList.contains('open');
-    if (closeBtn) closeBtn.click();
-
-    // Test Header trigger
-    headerBtn.click();
-    backdrop = document.getElementById('searchModalBackdrop');
-    input = document.getElementById('searchModalInput');
-    closeBtn = document.getElementById('searchCloseBtn');
-    container = document.getElementById('searchResultsContainer');
 
     const headerOpened = backdrop && backdrop.classList.contains('open');
 
@@ -251,7 +278,6 @@ async (page) => {
     if (closeBtn) closeBtn.click();
 
     return {
-      hero_trigger_works: heroOpened,
       header_trigger_works: headerOpened,
       query_results: queryResults,
       all_queries_hit: Object.values(queryResults).every(r => r.hits > 0)
@@ -280,6 +306,20 @@ async (page) => {
 
   // --- PART 4: SECTION PAGE FEATURES & NAVIGATION ---
   await page.goto(`${BASE_URL}/sections/section-01.html`, { waitUntil: 'domcontentloaded' });
+
+  // 0. Verify Balanced Bottom Navigation on Section 01 (No empty left space)
+  const bottomNavCheck = await page.evaluate(() => {
+    const cards = document.querySelectorAll('.bottom-nav .nav-card');
+    const prev = document.querySelector('.bottom-nav .nav-card.prev');
+    const next = document.querySelector('.bottom-nav .nav-card.next');
+    return {
+      count: cards.length,
+      has_prev: !!prev,
+      has_next: !!next,
+      pass: cards.length === 2 && !!prev && !!next
+    };
+  });
+  report.features.section_bottom_nav_balance = bottomNavCheck;
 
   // 1. Previous / Next Navigation
   await page.evaluate(() => {

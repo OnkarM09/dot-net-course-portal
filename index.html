@@ -18,15 +18,34 @@
     <div class="header-left">
       <a href="index.html" class="brand-link" aria-label="ASP.NET Core Masterclass Documentation Portal">
         <span class="brand-icon">
-          <svg width="22" height="22" viewBox="0 0 128 128" fill="none" aria-hidden="true">
-            <rect width="128" height="128" rx="28" fill="url(#brandGradDotNet)" />
-            <circle cx="28" cy="78" r="7" fill="#ffffff" />
-            <text x="38" y="82" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="900" fill="#ffffff" letter-spacing="-1.5">NET</text>
-          </svg>
+          
+    <svg width="24" height="24" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="brandGradDotNet" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#512bd4" />
+          <stop offset="60%" stop-color="#6d28d9" />
+          <stop offset="100%" stop-color="#7c3aed" />
+        </linearGradient>
+      </defs>
+      <rect width="128" height="128" rx="28" fill="url(#brandGradDotNet)" />
+      <circle cx="28" cy="78" r="7" fill="#ffffff" />
+      <circle cx="28" cy="78" r="4" fill="#a78bfa" />
+      <text x="38" y="82" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="900" fill="#ffffff" letter-spacing="-1.5">NET</text>
+    </svg>
+  
         </span>
         <span class="brand-text">ASP.NET Core Masterclass</span>
       </a>
       <span class="version-pill">.NET 8 / LTS</span>
+
+      <nav class="header-nav-links" aria-label="Header Navigation">
+        <a href="#curriculum-explorer" class="header-nav-link">Curriculum</a>
+        <a href="#modules-section" class="header-nav-link">Modules</a>
+        <a href="https://github.com/OnkarM09/dot-net-course-portal" class="header-nav-link" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+          <span>GitHub</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+      </nav>
     </div>
 
     <div class="header-right">
@@ -48,507 +67,707 @@
   <!-- Main Hero & Dashboard -->
   <main id="main-content" tabindex="-1">
     <section class="portal-hero">
-      <h1>ASP.NET Core Masterclass Documentation</h1>
+      <div class="hero-badge">
+        <span class="badge-dot"></span> .NET 8 LTS &bull; Production Architecture Masterclass
+      </div>
+      <h1>Master ASP.NET Core. Build Production-Ready Applications.</h1>
       <p class="portal-hero-lead">
-        Comprehensive, 100% offline-first community documentation portal covering ASP.NET Core MVC, RESTful Web APIs,
-        Minimal APIs, Entity Framework Core, xUnit Testing, Security, and Clean Architecture across all 30 curriculum sections.
+        Your structured learning resource for mastering C#, ASP.NET Core, application architecture, APIs, databases, and modern .NET development.
       </p>
 
-      <div style="margin-bottom: 2.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-        <button class="search-trigger-btn" style="padding: 10px 20px; font-size: 1rem; border-radius: 10px; background: var(--bg-surface-elevated); border-color: var(--accent-primary);" type="button">
-          <span class="search-icon" aria-hidden="true">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          </span>
-          <span>Open Global Search</span>
-          <kbd class="kbd-shortcut">Ctrl+K</kbd>
-        </button>
-        <a href="sections/section-01.html" class="hero-cta-btn">
-          Start Section 01: Introduction &rarr;
+      <div class="hero-cta-group">
+        <a href="sections/section-01.html" class="hero-cta-primary">
+          <span>Start Learning</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+        <a href="#curriculum-explorer" class="hero-cta-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          <span>Explore Curriculum</span>
         </a>
       </div>
 
-      <!-- Quick Stats -->
-      <div class="portal-stats-row">
-        <div class="stat-card">
-          <div class="stat-number">7</div>
-          <div class="stat-label">Core Modules</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">30</div>
-          <div class="stat-label">Curriculum Sections</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">700+</div>
-          <div class="stat-label">Pages of Notes &amp; Cheatsheets</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number" id="completedSectionsCount">0</div>
-          <div class="stat-label">Sections Completed</div>
-        </div>
+      <div class="hero-chips-row">
+        <span class="hero-chip">⚡ Minimal APIs</span>
+        <span class="hero-chip">🏛️ Clean Architecture</span>
+        <span class="hero-chip">🗄️ EF Core &amp; Migrations</span>
+        <span class="hero-chip">🧪 xUnit &amp; Moq</span>
+        <span class="hero-chip">🔐 JWT &amp; Identity</span>
+        <span class="hero-chip">🔄 Middleware Pipeline</span>
+        <span class="hero-chip">📦 100% Offline Static</span>
       </div>
     </section>
 
+    <!-- Continue Learning Section (Populated dynamically) -->
+    <section class="continue-learning-section" id="continueLearningSection" aria-label="Continue Learning"></section>
+
+    <!-- Quick Stats -->
+    <div class="portal-stats-row">
+      <div class="stat-card">
+        <div class="stat-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+        </div>
+        <div class="stat-number">8</div>
+        <div class="stat-label">Core Modules</div>
+        <div class="stat-sub">Architectural Progression</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        </div>
+        <div class="stat-number">30</div>
+        <div class="stat-label">Curriculum Sections</div>
+        <div class="stat-sub">Deep-Dive Reference</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        </div>
+        <div class="stat-number">700+</div>
+        <div class="stat-label">Pages of Notes</div>
+        <div class="stat-sub">Verbatim Notes &amp; Matrices</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </div>
+        <div class="stat-number"><span id="completedSectionsCount">0</span>/30</div>
+        <div class="stat-label">Sections Completed</div>
+        <div class="stat-sub">Synced Locally</div>
+      </div>
+    </div>
+
     <!-- Modules Grid Section -->
-    <section class="modules-section" style="max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem;">
+    <section class="modules-section" id="modules-section" style="max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem;">
       <h2 class="section-group-heading">Curriculum Architecture</h2>
-      <p class="section-group-sub">Organized into seven comprehensive architectural tiers from basic HTTP to enterprise security and Minimal APIs.</p>
+      <p class="section-group-sub">Organized into eight comprehensive architectural tiers from basic HTTP to enterprise security and Minimal APIs.</p>
 
       <div class="modules-grid">
         
-      <div class="module-card">
+      <div class="module-card" data-module-id="1">
         <div class="module-card-header">
           <span class="module-badge" style="background: rgba(99, 102, 241, 0.12); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.35);">
             Module 1
           </span>
-          <span class="tag-pill">5 Sections</span>
+          <span class="module-sec-count-badge">5 Sections</span>
         </div>
-        <h3 class="module-card-title">Foundations, HTTP, Middleware &amp; Routing</h3>
-        <p class="module-card-desc">.NET web architecture, HTTP lifecycle, Kestrel, middleware pipeline, and endpoint routing/constraints</p>
-        <ul class="module-sec-list">
-          
+        
+        <div class="module-card-body">
+          <h3 class="module-card-title">Foundations, HTTP, Middleware &amp; Routing</h3>
+          <p class="module-card-desc">.NET web architecture, HTTP lifecycle, Kestrel, middleware pipeline, and endpoint routing/constraints</p>
+        </div>
+
+        <div class="module-card-sections">
+          <div class="module-card-sections-label">Curriculum Sections:</div>
+          <ul class="module-sec-list">
+            
         <li class="module-sec-item">
-          <a href="sections/section-01.html">
+          <a href="sections/section-01.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 01</span>
-            <span>Introduction</span>
+            <span class="module-sec-item-title">Introduction</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            2 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>2 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-02.html">
+          <a href="sections/section-02.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 02</span>
-            <span>Getting Started</span>
+            <span class="module-sec-item-title">Getting Started</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            12 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>12 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-03.html">
+          <a href="sections/section-03.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 03</span>
-            <span>HTTP</span>
+            <span class="module-sec-item-title">HTTP</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            14 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>14 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-04.html">
+          <a href="sections/section-04.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 04</span>
-            <span>Middleware</span>
+            <span class="module-sec-item-title">Middleware</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            14 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>14 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-05.html">
+          <a href="sections/section-05.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 05</span>
-            <span>Routing</span>
+            <span class="module-sec-item-title">Routing</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            18 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>18 pgs</span>
+          </div>
         </li>
       
-        </ul>
+          </ul>
+        </div>
+
+        <div class="module-card-footer">
+          <div class="module-card-progress">
+            <div class="module-card-progress-bar">
+              <div class="module-card-progress-fill"></div>
+            </div>
+            <span>0/5 Done</span>
+          </div>
+          <a href="sections/section-01.html" class="module-card-action">
+            <span>Explore Module 1</span> &rarr;
+          </a>
+        </div>
       </div>
     
-      <div class="module-card">
+      <div class="module-card" data-module-id="2">
         <div class="module-card-header">
           <span class="module-badge" style="background: rgba(139, 92, 246, 0.12); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.35);">
             Module 2
           </span>
-          <span class="tag-pill">2 Sections</span>
+          <span class="module-sec-count-badge">2 Sections</span>
         </div>
-        <h3 class="module-card-title">Controllers, Model Binding &amp; Validation</h3>
-        <p class="module-card-desc">Controllers, IActionResult, ActionResult&lt;T&gt;, binding sources, and validation rules</p>
-        <ul class="module-sec-list">
-          
+        
+        <div class="module-card-body">
+          <h3 class="module-card-title">Controllers, Model Binding &amp; Validation</h3>
+          <p class="module-card-desc">Controllers, IActionResult, ActionResult&lt;T&gt;, binding sources, and validation rules</p>
+        </div>
+
+        <div class="module-card-sections">
+          <div class="module-card-sections-label">Curriculum Sections:</div>
+          <ul class="module-sec-list">
+            
         <li class="module-sec-item">
-          <a href="sections/section-06.html">
+          <a href="sections/section-06.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 06</span>
-            <span>Controllers &amp; IActionResult</span>
+            <span class="module-sec-item-title">Controllers &amp; IActionResult</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            19 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>19 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-07.html">
+          <a href="sections/section-07.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 07</span>
-            <span>Model Binding and Validations</span>
+            <span class="module-sec-item-title">Model Binding and Validations</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            31 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>31 pgs</span>
+          </div>
         </li>
       
-        </ul>
+          </ul>
+        </div>
+
+        <div class="module-card-footer">
+          <div class="module-card-progress">
+            <div class="module-card-progress-bar">
+              <div class="module-card-progress-fill"></div>
+            </div>
+            <span>0/2 Done</span>
+          </div>
+          <a href="sections/section-06.html" class="module-card-action">
+            <span>Explore Module 2</span> &rarr;
+          </a>
+        </div>
       </div>
     
-      <div class="module-card">
+      <div class="module-card" data-module-id="3">
         <div class="module-card-header">
           <span class="module-badge" style="background: rgba(168, 85, 247, 0.12); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.35);">
             Module 3
           </span>
-          <span class="tag-pill">5 Sections</span>
+          <span class="module-sec-count-badge">5 Sections</span>
         </div>
-        <h3 class="module-card-title">Razor Views, Partial Views, View Components &amp; Tag Helpers</h3>
-        <p class="module-card-desc">Razor syntax, layout views, partial views, view components, and custom tag helpers</p>
-        <ul class="module-sec-list">
-          
+        
+        <div class="module-card-body">
+          <h3 class="module-card-title">Razor Views, Partial Views, View Components &amp; Tag Helpers</h3>
+          <p class="module-card-desc">Razor syntax, layout views, partial views, view components, and custom tag helpers</p>
+        </div>
+
+        <div class="module-card-sections">
+          <div class="module-card-sections-label">Curriculum Sections:</div>
+          <ul class="module-sec-list">
+            
         <li class="module-sec-item">
-          <a href="sections/section-08.html">
+          <a href="sections/section-08.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 08</span>
-            <span>Razor Views</span>
+            <span class="module-sec-item-title">Razor Views</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            29 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>29 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-09.html">
+          <a href="sections/section-09.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 09</span>
-            <span>Layout Views</span>
+            <span class="module-sec-item-title">Layout Views</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            15 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>15 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-10.html">
+          <a href="sections/section-10.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 10</span>
-            <span>Partial Views</span>
+            <span class="module-sec-item-title">Partial Views</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            10 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>10 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-11.html">
+          <a href="sections/section-11.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 11</span>
-            <span>View Components</span>
+            <span class="module-sec-item-title">View Components</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            13 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>13 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-17.html">
+          <a href="sections/section-17.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 17</span>
-            <span>Tag Helpers</span>
+            <span class="module-sec-item-title">Tag Helpers</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            9 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>9 pgs</span>
+          </div>
         </li>
       
-        </ul>
+          </ul>
+        </div>
+
+        <div class="module-card-footer">
+          <div class="module-card-progress">
+            <div class="module-card-progress-bar">
+              <div class="module-card-progress-fill"></div>
+            </div>
+            <span>0/5 Done</span>
+          </div>
+          <a href="sections/section-08.html" class="module-card-action">
+            <span>Explore Module 3</span> &rarr;
+          </a>
+        </div>
       </div>
     
-      <div class="module-card">
+      <div class="module-card" data-module-id="4">
         <div class="module-card-header">
           <span class="module-badge" style="background: rgba(79, 70, 229, 0.12); color: #818cf8; border: 1px solid rgba(79, 70, 229, 0.35);">
             Module 4
           </span>
-          <span class="tag-pill">3 Sections</span>
+          <span class="module-sec-count-badge">3 Sections</span>
         </div>
-        <h3 class="module-card-title">Dependency Injection, Environments &amp; Configuration</h3>
-        <p class="module-card-desc">IoC containers, service lifetimes, multi-environment setups, appsettings configuration, and options pattern</p>
-        <ul class="module-sec-list">
-          
+        
+        <div class="module-card-body">
+          <h3 class="module-card-title">Dependency Injection, Environments &amp; Configuration</h3>
+          <p class="module-card-desc">IoC containers, service lifetimes, multi-environment setups, appsettings configuration, and options pattern</p>
+        </div>
+
+        <div class="module-card-sections">
+          <div class="module-card-sections-label">Curriculum Sections:</div>
+          <ul class="module-sec-list">
+            
         <li class="module-sec-item">
-          <a href="sections/section-12.html">
+          <a href="sections/section-12.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 12</span>
-            <span>Dependency Injection</span>
+            <span class="module-sec-item-title">Dependency Injection</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            22 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>22 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-13.html">
+          <a href="sections/section-13.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 13</span>
-            <span>Environments</span>
+            <span class="module-sec-item-title">Environments</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            14 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>14 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-14.html">
+          <a href="sections/section-14.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 14</span>
-            <span>Configuration</span>
+            <span class="module-sec-item-title">Configuration</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            28 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>28 pgs</span>
+          </div>
         </li>
       
-        </ul>
+          </ul>
+        </div>
+
+        <div class="module-card-footer">
+          <div class="module-card-progress">
+            <div class="module-card-progress-bar">
+              <div class="module-card-progress-fill"></div>
+            </div>
+            <span>0/3 Done</span>
+          </div>
+          <a href="sections/section-12.html" class="module-card-action">
+            <span>Explore Module 4</span> &rarr;
+          </a>
+        </div>
       </div>
     
-      <div class="module-card">
+      <div class="module-card" data-module-id="5">
         <div class="module-card-header">
           <span class="module-badge" style="background: rgba(6, 182, 212, 0.12); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.35);">
             Module 5
           </span>
-          <span class="tag-pill">4 Sections</span>
+          <span class="module-sec-count-badge">4 Sections</span>
         </div>
-        <h3 class="module-card-title">Testing (xUnit), CRUD Operations &amp; EF Core</h3>
-        <p class="module-card-desc">xUnit unit testing, Moq test doubles, CRUD operations, Entity Framework Core, and DB migrations</p>
-        <ul class="module-sec-list">
-          
+        
+        <div class="module-card-body">
+          <h3 class="module-card-title">Testing (xUnit), CRUD Operations &amp; EF Core</h3>
+          <p class="module-card-desc">xUnit unit testing, Moq test doubles, CRUD operations, Entity Framework Core, and DB migrations</p>
+        </div>
+
+        <div class="module-card-sections">
+          <div class="module-card-sections-label">Curriculum Sections:</div>
+          <ul class="module-sec-list">
+            
         <li class="module-sec-item">
-          <a href="sections/section-15.html">
+          <a href="sections/section-15.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 15</span>
-            <span>xUnit</span>
+            <span class="module-sec-item-title">xUnit</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            12 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>12 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-16.html">
+          <a href="sections/section-16.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 16</span>
-            <span>CRUD Operations</span>
+            <span class="module-sec-item-title">CRUD Operations</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            5 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>5 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-18.html">
+          <a href="sections/section-18.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 18</span>
-            <span>EntityFrameworkCore</span>
+            <span class="module-sec-item-title">EntityFrameworkCore</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            36 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>36 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-19.html">
+          <a href="sections/section-19.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 19</span>
-            <span>Unit Testing - Advanced</span>
+            <span class="module-sec-item-title">Unit Testing - Advanced</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            13 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>13 pgs</span>
+          </div>
         </li>
       
-        </ul>
+          </ul>
+        </div>
+
+        <div class="module-card-footer">
+          <div class="module-card-progress">
+            <div class="module-card-progress-bar">
+              <div class="module-card-progress-fill"></div>
+            </div>
+            <span>0/4 Done</span>
+          </div>
+          <a href="sections/section-15.html" class="module-card-action">
+            <span>Explore Module 5</span> &rarr;
+          </a>
+        </div>
       </div>
     
-      <div class="module-card">
+      <div class="module-card" data-module-id="6">
         <div class="module-card-header">
           <span class="module-badge" style="background: rgba(16, 185, 129, 0.12); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35);">
             Module 6
           </span>
-          <span class="tag-pill">6 Sections</span>
+          <span class="module-sec-count-badge">6 Sections</span>
         </div>
-        <h3 class="module-card-title">Enterprise Architecture, Filters, Logging &amp; Identity</h3>
-        <p class="module-card-desc">Action/result filters, Serilog logging, error handling, SOLID principles, Clean Architecture, and ASP.NET Core Identity</p>
-        <ul class="module-sec-list">
-          
+        
+        <div class="module-card-body">
+          <h3 class="module-card-title">Enterprise Architecture, Filters, Logging &amp; Identity</h3>
+          <p class="module-card-desc">Action/result filters, Serilog logging, error handling, SOLID principles, Clean Architecture, and ASP.NET Core Identity</p>
+        </div>
+
+        <div class="module-card-sections">
+          <div class="module-card-sections-label">Curriculum Sections:</div>
+          <ul class="module-sec-list">
+            
         <li class="module-sec-item">
-          <a href="sections/section-20.html">
+          <a href="sections/section-20.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 20</span>
-            <span>Logging</span>
+            <span class="module-sec-item-title">Logging</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            9 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>9 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-21.html">
+          <a href="sections/section-21.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 21</span>
-            <span>Filters</span>
+            <span class="module-sec-item-title">Filters</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            26 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>26 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-22.html">
+          <a href="sections/section-22.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 22</span>
-            <span>Error Handling</span>
+            <span class="module-sec-item-title">Error Handling</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            7 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>7 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-23.html">
+          <a href="sections/section-23.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 23</span>
-            <span>SOLID Principles</span>
+            <span class="module-sec-item-title">SOLID Principles</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            4 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>4 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-24.html">
+          <a href="sections/section-24.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 24</span>
-            <span>Clean Architecture</span>
+            <span class="module-sec-item-title">Clean Architecture</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            8 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>8 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-25.html">
+          <a href="sections/section-25.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 25</span>
-            <span>Identity and Authorization</span>
+            <span class="module-sec-item-title">Identity and Authorization</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            6 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>6 pgs</span>
+          </div>
         </li>
       
-        </ul>
+          </ul>
+        </div>
+
+        <div class="module-card-footer">
+          <div class="module-card-progress">
+            <div class="module-card-progress-bar">
+              <div class="module-card-progress-fill"></div>
+            </div>
+            <span>0/6 Done</span>
+          </div>
+          <a href="sections/section-20.html" class="module-card-action">
+            <span>Explore Module 6</span> &rarr;
+          </a>
+        </div>
       </div>
     
-      <div class="module-card">
+      <div class="module-card" data-module-id="7">
         <div class="module-card-header">
           <span class="module-badge" style="background: rgba(217, 70, 239, 0.12); color: #e879f9; border: 1px solid rgba(217, 70, 239, 0.35);">
             Module 7
           </span>
-          <span class="tag-pill">3 Sections</span>
+          <span class="module-sec-count-badge">3 Sections</span>
         </div>
-        <h3 class="module-card-title">RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</h3>
-        <p class="module-card-desc">RESTful API principles, conventions, content negotiation, OpenAPI/Swagger documentation, API versioning, and Angular integration with CORS</p>
-        <ul class="module-sec-list">
-          
+        
+        <div class="module-card-body">
+          <h3 class="module-card-title">RESTful Web APIs, Swagger, Versioning &amp; Angular Integration</h3>
+          <p class="module-card-desc">RESTful API principles, conventions, content negotiation, OpenAPI/Swagger documentation, API versioning, and Angular integration with CORS</p>
+        </div>
+
+        <div class="module-card-sections">
+          <div class="module-card-sections-label">Curriculum Sections:</div>
+          <ul class="module-sec-list">
+            
         <li class="module-sec-item">
-          <a href="sections/section-26.html">
+          <a href="sections/section-26.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 26</span>
-            <span>Web API</span>
+            <span class="module-sec-item-title">Web API</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            41 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>41 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-27.html">
+          <a href="sections/section-27.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 27</span>
-            <span>Swagger</span>
+            <span class="module-sec-item-title">Swagger</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            12 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>12 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-28.html">
+          <a href="sections/section-28.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 28</span>
-            <span>Angular and CORS</span>
+            <span class="module-sec-item-title">Angular and CORS</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            5 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>5 pgs</span>
+          </div>
         </li>
       
-        </ul>
+          </ul>
+        </div>
+
+        <div class="module-card-footer">
+          <div class="module-card-progress">
+            <div class="module-card-progress-bar">
+              <div class="module-card-progress-fill"></div>
+            </div>
+            <span>0/3 Done</span>
+          </div>
+          <a href="sections/section-26.html" class="module-card-action">
+            <span>Explore Module 7</span> &rarr;
+          </a>
+        </div>
       </div>
     
-      <div class="module-card">
+      <div class="module-card" data-module-id="8">
         <div class="module-card-header">
           <span class="module-badge" style="background: rgba(244, 63, 94, 0.12); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.35);">
             Module 8
           </span>
-          <span class="tag-pill">2 Sections</span>
+          <span class="module-sec-count-badge">2 Sections</span>
         </div>
-        <h3 class="module-card-title">API Security (JWT) &amp; Modern Minimal APIs</h3>
-        <p class="module-card-desc">JWT authentication &amp; authorization, claims-based security, endpoint filters, and high-performance Minimal APIs</p>
-        <ul class="module-sec-list">
-          
+        
+        <div class="module-card-body">
+          <h3 class="module-card-title">API Security (JWT) &amp; Modern Minimal APIs</h3>
+          <p class="module-card-desc">JWT authentication &amp; authorization, claims-based security, endpoint filters, and high-performance Minimal APIs</p>
+        </div>
+
+        <div class="module-card-sections">
+          <div class="module-card-sections-label">Curriculum Sections:</div>
+          <ul class="module-sec-list">
+            
         <li class="module-sec-item">
-          <a href="sections/section-29.html">
+          <a href="sections/section-29.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 29</span>
-            <span>JWT with Web API</span>
+            <span class="module-sec-item-title">JWT with Web API</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            21 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>21 pgs</span>
+          </div>
         </li>
       
         <li class="module-sec-item">
-          <a href="sections/section-30.html">
+          <a href="sections/section-30.html" class="module-sec-item-link">
             <span class="sidebar-sec-num">Sec 30</span>
-            <span>Minimal API</span>
+            <span class="module-sec-item-title">Minimal API</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            5 pgs
-          </span>
+          <div class="module-sec-meta">
+            <span class="sec-cs-badge" title="Cheat Sheet Matrix Included">⚡ CS</span>
+            <span>5 pgs</span>
+          </div>
         </li>
       
-        </ul>
+          </ul>
+        </div>
+
+        <div class="module-card-footer">
+          <div class="module-card-progress">
+            <div class="module-card-progress-bar">
+              <div class="module-card-progress-fill"></div>
+            </div>
+            <span>0/2 Done</span>
+          </div>
+          <a href="sections/section-29.html" class="module-card-action">
+            <span>Explore Module 8</span> &rarr;
+          </a>
+        </div>
       </div>
     
       </div>
     </section>
 
     <!-- Masterclass Directory Section -->
-    <section style="max-width: 1200px; margin: 3rem auto; padding: 0 1.5rem;">
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+    <section class="directory-section" id="curriculum-explorer">
+      <div class="directory-filter-row">
         <div>
-          <h2 style="font-size: 1.5rem; color: var(--text-main); margin-bottom: 0.3rem;">Complete Masterclass Directory</h2>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">Full searchable directory of all thirty sections with page counts and cheatsheet availability.</p>
+          <h2 class="section-group-heading" style="font-size: 1.6rem; margin-bottom: 0.25rem;">Complete Masterclass Directory</h2>
+          <p class="section-group-sub" style="margin-bottom: 0;">Full searchable directory of all thirty sections with page counts, cheat sheets, and completion status.</p>
         </div>
-        <div style="width: 320px; max-width: 100%;">
-          <input type="text" id="directoryFilter" class="sidebar-filter-input" placeholder="Filter sections by title or module..." style="width: 100%; padding: 8px 12px; border-radius: 6px; background: var(--bg-surface); border: 1px solid var(--border-subtle); color: var(--text-main);" aria-label="Filter masterclass directory" />
+        <div class="directory-search-box">
+          <span class="directory-search-icon" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </span>
+          <input type="text" id="directoryFilter" class="directory-search-input" placeholder="Search sections by title, topic..." aria-label="Search masterclass directory" />
+        </div>
+      </div>
+
+      <!-- Module Filter Pills -->
+      <div class="filter-pills-container">
+        <div class="filter-pills-label">Filter by Architectural Module:</div>
+        <div class="filter-pills-bar" id="moduleFilterPills" role="toolbar" aria-label="Filter sections by module">
+          <button type="button" class="filter-pill active" data-mod="all">All Modules (30)</button>
+          <button type="button" class="filter-pill" data-mod="1">Mod 1: Foundations (5)</button>
+          <button type="button" class="filter-pill" data-mod="2">Mod 2: Controllers (2)</button>
+          <button type="button" class="filter-pill" data-mod="3">Mod 3: Views &amp; UI (5)</button>
+          <button type="button" class="filter-pill" data-mod="4">Mod 4: DI &amp; Config (3)</button>
+          <button type="button" class="filter-pill" data-mod="5">Mod 5: Testing &amp; EF Core (4)</button>
+          <button type="button" class="filter-pill" data-mod="6">Mod 6: Architecture (6)</button>
+          <button type="button" class="filter-pill" data-mod="7">Mod 7: Web APIs (3)</button>
+          <button type="button" class="filter-pill" data-mod="8">Mod 8: Minimal APIs (2)</button>
         </div>
       </div>
 
@@ -568,541 +787,541 @@
           </thead>
           <tbody id="directoryTableBody">
             
-      <tr data-section-num="01">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 01</td>
+      <tr data-section-num="01" data-module-num="1">
+        <td class="directory-sec-num">Sec 01</td>
         <td>
-          <a href="sections/section-01.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-01.html" class="directory-sec-title">
             Introduction
           </a>
         </td>
         <td><span class="tag-pill">Mod 1</span></td>
-        <td>2</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>2 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-01.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-01.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="02">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 02</td>
+      <tr data-section-num="02" data-module-num="1">
+        <td class="directory-sec-num">Sec 02</td>
         <td>
-          <a href="sections/section-02.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-02.html" class="directory-sec-title">
             Getting Started
           </a>
         </td>
         <td><span class="tag-pill">Mod 1</span></td>
-        <td>12</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>12 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-02.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-02.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="03">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 03</td>
+      <tr data-section-num="03" data-module-num="1">
+        <td class="directory-sec-num">Sec 03</td>
         <td>
-          <a href="sections/section-03.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-03.html" class="directory-sec-title">
             HTTP
           </a>
         </td>
         <td><span class="tag-pill">Mod 1</span></td>
-        <td>14</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>14 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-03.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-03.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="04">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 04</td>
+      <tr data-section-num="04" data-module-num="1">
+        <td class="directory-sec-num">Sec 04</td>
         <td>
-          <a href="sections/section-04.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-04.html" class="directory-sec-title">
             Middleware
           </a>
         </td>
         <td><span class="tag-pill">Mod 1</span></td>
-        <td>14</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>14 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-04.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-04.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="05">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 05</td>
+      <tr data-section-num="05" data-module-num="1">
+        <td class="directory-sec-num">Sec 05</td>
         <td>
-          <a href="sections/section-05.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-05.html" class="directory-sec-title">
             Routing
           </a>
         </td>
         <td><span class="tag-pill">Mod 1</span></td>
-        <td>18</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>18 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-05.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-05.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="06">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 06</td>
+      <tr data-section-num="06" data-module-num="2">
+        <td class="directory-sec-num">Sec 06</td>
         <td>
-          <a href="sections/section-06.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-06.html" class="directory-sec-title">
             Controllers &amp; IActionResult
           </a>
         </td>
         <td><span class="tag-pill">Mod 2</span></td>
-        <td>19</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>19 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-06.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-06.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="07">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 07</td>
+      <tr data-section-num="07" data-module-num="2">
+        <td class="directory-sec-num">Sec 07</td>
         <td>
-          <a href="sections/section-07.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-07.html" class="directory-sec-title">
             Model Binding and Validations
           </a>
         </td>
         <td><span class="tag-pill">Mod 2</span></td>
-        <td>31</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>31 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-07.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-07.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="08">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 08</td>
+      <tr data-section-num="08" data-module-num="3">
+        <td class="directory-sec-num">Sec 08</td>
         <td>
-          <a href="sections/section-08.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-08.html" class="directory-sec-title">
             Razor Views
           </a>
         </td>
         <td><span class="tag-pill">Mod 3</span></td>
-        <td>29</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>29 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-08.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-08.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="09">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 09</td>
+      <tr data-section-num="09" data-module-num="3">
+        <td class="directory-sec-num">Sec 09</td>
         <td>
-          <a href="sections/section-09.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-09.html" class="directory-sec-title">
             Layout Views
           </a>
         </td>
         <td><span class="tag-pill">Mod 3</span></td>
-        <td>15</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>15 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-09.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-09.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="10">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 10</td>
+      <tr data-section-num="10" data-module-num="3">
+        <td class="directory-sec-num">Sec 10</td>
         <td>
-          <a href="sections/section-10.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-10.html" class="directory-sec-title">
             Partial Views
           </a>
         </td>
         <td><span class="tag-pill">Mod 3</span></td>
-        <td>10</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>10 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-10.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-10.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="11">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 11</td>
+      <tr data-section-num="11" data-module-num="3">
+        <td class="directory-sec-num">Sec 11</td>
         <td>
-          <a href="sections/section-11.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-11.html" class="directory-sec-title">
             View Components
           </a>
         </td>
         <td><span class="tag-pill">Mod 3</span></td>
-        <td>13</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>13 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-11.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-11.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="12">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 12</td>
+      <tr data-section-num="12" data-module-num="4">
+        <td class="directory-sec-num">Sec 12</td>
         <td>
-          <a href="sections/section-12.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-12.html" class="directory-sec-title">
             Dependency Injection
           </a>
         </td>
         <td><span class="tag-pill">Mod 4</span></td>
-        <td>22</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>22 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-12.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-12.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="13">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 13</td>
+      <tr data-section-num="13" data-module-num="4">
+        <td class="directory-sec-num">Sec 13</td>
         <td>
-          <a href="sections/section-13.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-13.html" class="directory-sec-title">
             Environments
           </a>
         </td>
         <td><span class="tag-pill">Mod 4</span></td>
-        <td>14</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>14 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-13.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-13.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="14">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 14</td>
+      <tr data-section-num="14" data-module-num="4">
+        <td class="directory-sec-num">Sec 14</td>
         <td>
-          <a href="sections/section-14.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-14.html" class="directory-sec-title">
             Configuration
           </a>
         </td>
         <td><span class="tag-pill">Mod 4</span></td>
-        <td>28</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>28 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-14.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-14.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="15">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 15</td>
+      <tr data-section-num="15" data-module-num="5">
+        <td class="directory-sec-num">Sec 15</td>
         <td>
-          <a href="sections/section-15.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-15.html" class="directory-sec-title">
             xUnit
           </a>
         </td>
         <td><span class="tag-pill">Mod 5</span></td>
-        <td>12</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>12 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-15.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-15.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="16">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 16</td>
+      <tr data-section-num="16" data-module-num="5">
+        <td class="directory-sec-num">Sec 16</td>
         <td>
-          <a href="sections/section-16.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-16.html" class="directory-sec-title">
             CRUD Operations
           </a>
         </td>
         <td><span class="tag-pill">Mod 5</span></td>
-        <td>5</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>5 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-16.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-16.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="17">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 17</td>
+      <tr data-section-num="17" data-module-num="3">
+        <td class="directory-sec-num">Sec 17</td>
         <td>
-          <a href="sections/section-17.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-17.html" class="directory-sec-title">
             Tag Helpers
           </a>
         </td>
         <td><span class="tag-pill">Mod 3</span></td>
-        <td>9</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>9 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-17.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-17.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="18">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 18</td>
+      <tr data-section-num="18" data-module-num="5">
+        <td class="directory-sec-num">Sec 18</td>
         <td>
-          <a href="sections/section-18.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-18.html" class="directory-sec-title">
             EntityFrameworkCore
           </a>
         </td>
         <td><span class="tag-pill">Mod 5</span></td>
-        <td>36</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>36 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-18.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-18.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="19">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 19</td>
+      <tr data-section-num="19" data-module-num="5">
+        <td class="directory-sec-num">Sec 19</td>
         <td>
-          <a href="sections/section-19.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-19.html" class="directory-sec-title">
             Unit Testing - Advanced
           </a>
         </td>
         <td><span class="tag-pill">Mod 5</span></td>
-        <td>13</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>13 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-19.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-19.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="20">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 20</td>
+      <tr data-section-num="20" data-module-num="6">
+        <td class="directory-sec-num">Sec 20</td>
         <td>
-          <a href="sections/section-20.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-20.html" class="directory-sec-title">
             Logging
           </a>
         </td>
         <td><span class="tag-pill">Mod 6</span></td>
-        <td>9</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>9 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-20.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-20.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="21">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 21</td>
+      <tr data-section-num="21" data-module-num="6">
+        <td class="directory-sec-num">Sec 21</td>
         <td>
-          <a href="sections/section-21.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-21.html" class="directory-sec-title">
             Filters
           </a>
         </td>
         <td><span class="tag-pill">Mod 6</span></td>
-        <td>26</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>26 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-21.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-21.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="22">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 22</td>
+      <tr data-section-num="22" data-module-num="6">
+        <td class="directory-sec-num">Sec 22</td>
         <td>
-          <a href="sections/section-22.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-22.html" class="directory-sec-title">
             Error Handling
           </a>
         </td>
         <td><span class="tag-pill">Mod 6</span></td>
-        <td>7</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>7 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-22.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-22.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="23">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 23</td>
+      <tr data-section-num="23" data-module-num="6">
+        <td class="directory-sec-num">Sec 23</td>
         <td>
-          <a href="sections/section-23.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-23.html" class="directory-sec-title">
             SOLID Principles
           </a>
         </td>
         <td><span class="tag-pill">Mod 6</span></td>
-        <td>4</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>4 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-23.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-23.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="24">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 24</td>
+      <tr data-section-num="24" data-module-num="6">
+        <td class="directory-sec-num">Sec 24</td>
         <td>
-          <a href="sections/section-24.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-24.html" class="directory-sec-title">
             Clean Architecture
           </a>
         </td>
         <td><span class="tag-pill">Mod 6</span></td>
-        <td>8</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>8 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-24.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-24.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="25">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 25</td>
+      <tr data-section-num="25" data-module-num="6">
+        <td class="directory-sec-num">Sec 25</td>
         <td>
-          <a href="sections/section-25.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-25.html" class="directory-sec-title">
             Identity and Authorization
           </a>
         </td>
         <td><span class="tag-pill">Mod 6</span></td>
-        <td>6</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>6 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-25.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-25.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="26">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 26</td>
+      <tr data-section-num="26" data-module-num="7">
+        <td class="directory-sec-num">Sec 26</td>
         <td>
-          <a href="sections/section-26.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-26.html" class="directory-sec-title">
             Web API
           </a>
         </td>
         <td><span class="tag-pill">Mod 7</span></td>
-        <td>41</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>41 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-26.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-26.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="27">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 27</td>
+      <tr data-section-num="27" data-module-num="7">
+        <td class="directory-sec-num">Sec 27</td>
         <td>
-          <a href="sections/section-27.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-27.html" class="directory-sec-title">
             Swagger
           </a>
         </td>
         <td><span class="tag-pill">Mod 7</span></td>
-        <td>12</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>12 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-27.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-27.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="28">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 28</td>
+      <tr data-section-num="28" data-module-num="7">
+        <td class="directory-sec-num">Sec 28</td>
         <td>
-          <a href="sections/section-28.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-28.html" class="directory-sec-title">
             Angular and CORS
           </a>
         </td>
         <td><span class="tag-pill">Mod 7</span></td>
-        <td>5</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>5 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-28.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-28.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="29">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 29</td>
+      <tr data-section-num="29" data-module-num="8">
+        <td class="directory-sec-num">Sec 29</td>
         <td>
-          <a href="sections/section-29.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-29.html" class="directory-sec-title">
             JWT with Web API
           </a>
         </td>
         <td><span class="tag-pill">Mod 8</span></td>
-        <td>21</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>21 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-29.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-29.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
       </tr>
     
-      <tr data-section-num="30">
-        <td style="font-family: monospace; font-weight: 700; color: var(--accent-primary);">Sec 30</td>
+      <tr data-section-num="30" data-module-num="8">
+        <td class="directory-sec-num">Sec 30</td>
         <td>
-          <a href="sections/section-30.html" style="font-weight: 600; color: var(--text-main); text-decoration: none;">
+          <a href="sections/section-30.html" class="directory-sec-title">
             Minimal API
           </a>
         </td>
         <td><span class="tag-pill">Mod 8</span></td>
-        <td>5</td>
-        <td>✓ Included</td>
-        <td><span class="completion-indicator tag-pill">Pending</span></td>
+        <td>5 pgs</td>
+        <td><span class="sec-cs-badge">⚡ Included</span></td>
+        <td><span class="completion-indicator">Pending</span></td>
         <td>
-          <a href="sections/section-30.html" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
+          <a href="sections/section-30.html" class="directory-read-btn">
             Read &rarr;
           </a>
         </td>
@@ -1111,16 +1330,20 @@
           </tbody>
         </table>
       </div>
-      <div id="directoryEmptyState" style="display: none; padding: 2rem; text-align: center; color: var(--text-muted);">
-        No sections match your filter criteria.
+
+      <div id="directoryEmptyState" class="directory-empty-state">
+        <div class="empty-state-icon">🔍</div>
+        <div class="empty-state-title">No sections found <span id="directoryEmptyTerm"></span></div>
+        <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.25rem;">Try adjusting your keyword search or select "All Modules" above.</p>
+        <button type="button" id="resetDirectoryFilterBtn" class="empty-state-btn">Reset All Filters</button>
       </div>
     </section>
   </main>
 
   <!-- Global Footer -->
-  <footer style="margin-top: 4rem; padding: 2rem 1.5rem; border-top: 1px solid var(--border-subtle); background: var(--bg-surface); color: var(--text-muted); font-size: 0.85rem; text-align: center;" role="contentinfo">
-    <p>ASP.NET Core Masterclass — 100% Offline Static Reference Documentation Portal.</p>
-    <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-dim);">Created as an open community learning companion. No external build step or CDNs required.</p>
+  <footer style="margin-top: 4rem; padding: 2.5rem 1.5rem; border-top: 1px solid var(--border-subtle); background: var(--bg-surface); color: var(--text-muted); font-size: 0.85rem; text-align: center;" role="contentinfo">
+    <p style="font-weight: 600; color: var(--text-main); margin-bottom: 0.35rem;">ASP.NET Core Masterclass &mdash; 100% Offline Static Reference Documentation Portal</p>
+    <p style="font-size: 0.8rem; color: var(--text-dim);">Created as an open community learning companion. Built with pure HTML5, modern CSS, and vanilla JS. Zero build step or external CDNs required.</p>
   </footer>
 
   <!-- Scripts -->

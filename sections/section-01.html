@@ -25,23 +25,37 @@
       </button>
       <a href="../index.html" class="brand-link" aria-label="ASP.NET Core Masterclass Documentation Portal">
         <span class="brand-icon">
-          <svg width="22" height="22" viewBox="0 0 128 128" fill="none" aria-hidden="true">
-            <rect width="128" height="128" rx="28" fill="url(#brandGradDotNet)" />
-            <circle cx="28" cy="78" r="7" fill="#ffffff" />
-            <text x="38" y="82" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="900" fill="#ffffff" letter-spacing="-1.5">NET</text>
-          </svg>
+          
+    <svg width="24" height="24" viewBox="0 0 128 128" fill="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="brandGradDotNet" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#512bd4" />
+          <stop offset="60%" stop-color="#6d28d9" />
+          <stop offset="100%" stop-color="#7c3aed" />
+        </linearGradient>
+      </defs>
+      <rect width="128" height="128" rx="28" fill="url(#brandGradDotNet)" />
+      <circle cx="28" cy="78" r="7" fill="#ffffff" />
+      <circle cx="28" cy="78" r="4" fill="#a78bfa" />
+      <text x="38" y="82" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="900" fill="#ffffff" letter-spacing="-1.5">NET</text>
+    </svg>
+  
         </span>
         <span class="brand-text">ASP.NET Core Masterclass</span>
       </a>
       <span class="version-pill">.NET 8 / LTS</span>
+
+      <nav class="header-nav-links" aria-label="Header Navigation">
+        <a href="../index.html#curriculum-explorer" class="header-nav-link">Curriculum</a>
+        <a href="../index.html#modules-section" class="header-nav-link">Modules</a>
+        <a href="https://github.com/OnkarM09/dot-net-course-portal" class="header-nav-link" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+          <span>GitHub</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+      </nav>
     </div>
 
     <div class="header-right">
-      <a href="../index.html" class="index-home-btn" title="Back to Curriculum Dashboard">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-        <span class="home-text">Curriculum</span>
-      </a>
-
       <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
         <span class="search-icon" aria-hidden="true">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -539,6 +553,11 @@
       <!-- Bottom Navigation Prev / Next -->
       <nav class="bottom-nav" aria-label="Previous and Next Section Navigation">
         
+      <a href="../index.html#curriculum-explorer" class="nav-card prev" aria-label="Curriculum Directory">
+        <span class="nav-direction">&larr; Overview</span>
+        <span class="nav-title">Curriculum Directory</span>
+      </a>
+    
         
       <a href="section-02.html" class="nav-card next" aria-label="Next Section: Sec 02 - Getting Started">
         <span class="nav-direction">Next Section &rarr;</span>
