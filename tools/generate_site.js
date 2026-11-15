@@ -807,7 +807,28 @@ async function generateAll() {
       `;
     }
 
-    moduleCardsHtml += `
+    const isFeatured = (mod.module_number === manifest.modules.length);
+    if (isFeatured) {
+      moduleCardsHtml += `
+      <div class="module-card module-card-featured">
+        <div class="module-card-content-left">
+          <div class="module-card-header">
+            <span class="module-badge" style="background: ${badge.bg}; color: ${badge.color}; border: 1px solid ${badge.border};">
+              Module ${mod.module_number}
+            </span>
+            <span class="tag-pill">${modSections.length} Sections</span>
+            <span class="tag-pill" style="border-color: var(--accent-primary); color: var(--accent-primary);">Capstone &amp; Modern APIs</span>
+          </div>
+          <h3 class="module-card-title">${escapeHtml(mod.title)}</h3>
+          <p class="module-card-desc">${escapeHtml(mod.description)}</p>
+        </div>
+        <ul class="module-sec-list">
+          ${secListItems}
+        </ul>
+      </div>
+      `;
+    } else {
+      moduleCardsHtml += `
       <div class="module-card">
         <div class="module-card-header">
           <span class="module-badge" style="background: ${badge.bg}; color: ${badge.color}; border: 1px solid ${badge.border};">
@@ -821,7 +842,8 @@ async function generateAll() {
           ${secListItems}
         </ul>
       </div>
-    `;
+      `;
+    }
   }
 
   // Directory table rows
