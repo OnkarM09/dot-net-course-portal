@@ -242,36 +242,22 @@
           "text": "JWT (JSON Web Token) is an open standard (RFC 7519) used for securely transmitting information\nbetween two parties as a JSON object. JWT is widely used for authentication and authorization\npurposes because it is stateless, compact, and easy to verify."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 1,
           "lines": [
-            "1. Structure of JWT"
-          ],
-          "text": "1. Structure of JWT"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "1. Structure of JWT",
             "A JWT token consists of three parts separated by periods:"
           ],
-          "text": "A JWT token consists of three parts separated by periods:"
+          "text": "1. Structure of JWT\nA JWT token consists of three parts separated by periods:"
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Header: Contains metadata about the token, including the type of token (JWT) and the"
-          ],
-          "text": "   • Header: Contains metadata about the token, including the type of token (JWT) and the"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • Header: Contains metadata about the token, including the type of token (JWT) and the",
             "      hashing algorithm (e.g., HMAC, SHA256)."
           ],
-          "text": "      hashing algorithm (e.g., HMAC, SHA256)."
+          "text": "   • Header: Contains metadata about the token, including the type of token (JWT) and the\n      hashing algorithm (e.g., HMAC, SHA256)."
         },
         {
           "type": "list_item",
@@ -285,17 +271,10 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Registered Claims: Predefined claims, e.g., iss (issuer), sub (subject), and exp"
-          ],
-          "text": "        o Registered Claims: Predefined claims, e.g., iss (issuer), sub (subject), and exp"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "        o Registered Claims: Predefined claims, e.g., iss (issuer), sub (subject), and exp",
             "           (expiration)."
           ],
-          "text": "           (expiration)."
+          "text": "        o Registered Claims: Predefined claims, e.g., iss (issuer), sub (subject), and exp\n           (expiration)."
         },
         {
           "type": "list_item",
@@ -309,17 +288,10 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Private Claims: Custom claims that are agreed upon between parties but are unique"
-          ],
-          "text": "        o Private Claims: Custom claims that are agreed upon between parties but are unique"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "        o Private Claims: Custom claims that are agreed upon between parties but are unique",
             "           to that transaction."
           ],
-          "text": "           to that transaction."
+          "text": "        o Private Claims: Custom claims that are agreed upon between parties but are unique\n           to that transaction."
         },
         {
           "type": "list_item",
@@ -341,12 +313,12 @@
           "text": "Example JWT:\neyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0Iiwicm9sZSI6ImFkbWluIiwiaWF0Ijox\nNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\nEach part of the JWT is Base64Url-encoded:"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 1,
           "lines": [
-            "1. Header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+            "   1. Header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
           ],
-          "text": "1. Header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+          "text": "   1. Header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
         },
         {
           "type": "list_item",
@@ -357,12 +329,12 @@
           "text": "   2. Payload: eyJ1c2VySWQiOiIxMjM0Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTE2MjM5MDIyfQ"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 1,
           "lines": [
-            "3. Signature: SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+            "   3. Signature: SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
           ],
-          "text": "3. Signature: SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+          "text": "   3. Signature: SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
         }
       ],
       "char_count_raw": 1418,
@@ -560,7 +532,7 @@
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 2,
           "lines": [
             "2. Steps for JWT Token Generation and Validation"
@@ -587,17 +559,10 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o It encodes the header and payload, and then hashes these using a secret key and the"
-          ],
-          "text": "        o It encodes the header and payload, and then hashes these using a secret key and the"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "        o It encodes the header and payload, and then hashes these using a secret key and the",
             "           algorithm specified in the header to create the signature."
           ],
-          "text": "           algorithm specified in the header to create the signature."
+          "text": "        o It encodes the header and payload, and then hashes these using a secret key and the\n           algorithm specified in the header to create the signature."
         },
         {
           "type": "list_item",
@@ -611,17 +576,10 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o After generation, the server sends the JWT token to the client (usually in the"
-          ],
-          "text": "        o After generation, the server sends the JWT token to the client (usually in the"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "        o After generation, the server sends the JWT token to the client (usually in the",
             "           response header)."
           ],
-          "text": "           response header)."
+          "text": "        o After generation, the server sends the JWT token to the client (usually in the\n           response header)."
         },
         {
           "type": "list_item",
@@ -643,33 +601,19 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o When a client makes an authenticated request, it sends the JWT in the Authorization"
-          ],
-          "text": "        o When a client makes an authenticated request, it sends the JWT in the Authorization"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "        o When a client makes an authenticated request, it sends the JWT in the Authorization",
             "           header as a Bearer token."
           ],
-          "text": "           header as a Bearer token."
+          "text": "        o When a client makes an authenticated request, it sends the JWT in the Authorization\n           header as a Bearer token."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o The server decodes the token, checks the signature, and validates claims like"
-          ],
-          "text": "        o The server decodes the token, checks the signature, and validates claims like"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "        o The server decodes the token, checks the signature, and validates claims like",
             "           expiration (exp)."
           ],
-          "text": "           expiration (exp)."
+          "text": "        o The server decodes the token, checks the signature, and validates claims like\n           expiration (exp)."
         },
         {
           "type": "list_item",
@@ -1015,17 +959,10 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Self-contained: Contains all necessary information about the user, like roles and"
-          ],
-          "text": "   • Self-contained: Contains all necessary information about the user, like roles and"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Self-contained: Contains all necessary information about the user, like roles and",
             "      permissions."
           ],
-          "text": "      permissions."
+          "text": "   • Self-contained: Contains all necessary information about the user, like roles and\n      permissions."
         },
         {
           "type": "list_item",
@@ -1054,81 +991,53 @@
           "text": "JWTs can be signed and sometimes encrypted to enhance security. The signing process is essential to\nensure that the token was not tampered with after it was created. Here’s a detailed breakdown of\nhow JWT tokens are generated and the algorithms used:"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 3,
           "lines": [
-            "1. JWT Algorithms"
-          ],
-          "text": "1. JWT Algorithms"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "1. JWT Algorithms",
             "The algorithm defines how the token’s header and payload will be signed. JWT supports several",
             "algorithms, but the most commonly used ones are:"
           ],
-          "text": "The algorithm defines how the token’s header and payload will be signed. JWT supports several\nalgorithms, but the most commonly used ones are:"
+          "text": "1. JWT Algorithms\nThe algorithm defines how the token’s header and payload will be signed. JWT supports several\nalgorithms, but the most commonly used ones are:"
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • HS256 (HMAC with SHA-256): Uses a secret key to create a hash of the header and payload."
-          ],
-          "text": "   • HS256 (HMAC with SHA-256): Uses a secret key to create a hash of the header and payload."
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • HS256 (HMAC with SHA-256): Uses a secret key to create a hash of the header and payload.",
             "      It’s symmetric, meaning the same secret key is used for both signing and verifying."
           ],
-          "text": "      It’s symmetric, meaning the same secret key is used for both signing and verifying."
+          "text": "   • HS256 (HMAC with SHA-256): Uses a secret key to create a hash of the header and payload.\n      It’s symmetric, meaning the same secret key is used for both signing and verifying."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • RS256 (RSA Signature with SHA-256): Uses a public-private key pair for signing and"
-          ],
-          "text": "   • RS256 (RSA Signature with SHA-256): Uses a public-private key pair for signing and"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • RS256 (RSA Signature with SHA-256): Uses a public-private key pair for signing and",
             "      verification. The private key signs the token, and the public key verifies it. This is asymmetric,",
             "      making it more secure for distributed applications, as you don’t need to share the private",
-            "      key.",
-            "The header of a JWT specifies the algorithm used, such as:"
+            "      key."
           ],
-          "text": "      verification. The private key signs the token, and the public key verifies it. This is asymmetric,\n      making it more secure for distributed applications, as you don’t need to share the private\n      key.\nThe header of a JWT specifies the algorithm used, such as:"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
-            "{"
-          ],
-          "text": "{"
+          "text": "   • RS256 (RSA Signature with SHA-256): Uses a public-private key pair for signing and\n      verification. The private key signs the token, and the public key verifies it. This is asymmetric,\n      making it more secure for distributed applications, as you don’t need to share the private\n      key."
         },
         {
           "type": "prose",
           "page": 3,
           "lines": [
-            " \"alg\": \"HS256\",",
-            " \"typ\": \"JWT\""
+            "The header of a JWT specifies the algorithm used, such as:"
           ],
-          "text": " \"alg\": \"HS256\",\n \"typ\": \"JWT\""
+          "text": "The header of a JWT specifies the algorithm used, such as:"
         },
         {
           "type": "code",
           "page": 3,
           "lines": [
+            "{",
+            " \"alg\": \"HS256\",",
+            " \"typ\": \"JWT\"",
             "}"
           ],
-          "text": "}"
+          "text": "{\n \"alg\": \"HS256\",\n \"typ\": \"JWT\"\n}"
         }
       ],
       "char_count_raw": 1498,
@@ -1382,20 +1291,13 @@
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 4,
           "lines": [
-            "2. Generating JWT Tokens"
-          ],
-          "text": "2. Generating JWT Tokens"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "2. Generating JWT Tokens",
             "To generate a JWT, the server:"
           ],
-          "text": "To generate a JWT, the server:"
+          "text": "2. Generating JWT Tokens\nTo generate a JWT, the server:"
         },
         {
           "type": "list_item",
@@ -1409,63 +1311,42 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   2. Creates a Payload: This can include registered claims like iss (issuer), exp (expiration),"
-          ],
-          "text": "   2. Creates a Payload: This can include registered claims like iss (issuer), exp (expiration),"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   2. Creates a Payload: This can include registered claims like iss (issuer), exp (expiration),",
             "      custom claims such as user_id, role, etc."
           ],
-          "text": "      custom claims such as user_id, role, etc."
+          "text": "   2. Creates a Payload: This can include registered claims like iss (issuer), exp (expiration),\n      custom claims such as user_id, role, etc."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   3. Signs the Token: Based on the algorithm specified in the header, the server signs the header"
+            "   3. Signs the Token: Based on the algorithm specified in the header, the server signs the header",
+            "      and payload."
           ],
-          "text": "   3. Signs the Token: Based on the algorithm specified in the header, the server signs the header"
+          "text": "   3. Signs the Token: Based on the algorithm specified in the header, the server signs the header\n      and payload."
         },
         {
           "type": "prose",
           "page": 4,
           "lines": [
-            "      and payload.",
             "Let’s break down each component in the process with an example.",
             "Example: Generating a JWT Using HS256",
             "Let’s consider a payload with a user_id and role.",
             "Payload:"
           ],
-          "text": "      and payload.\nLet’s break down each component in the process with an example.\nExample: Generating a JWT Using HS256\nLet’s consider a payload with a user_id and role.\nPayload:"
+          "text": "Let’s break down each component in the process with an example.\nExample: Generating a JWT Using HS256\nLet’s consider a payload with a user_id and role.\nPayload:"
         },
         {
           "type": "code",
           "page": 4,
           "lines": [
-            "{"
-          ],
-          "text": "{"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "{",
             " \"user_id\": \"12345\",",
             " \"role\": \"admin\",",
-            " \"exp\": 1704067199"
-          ],
-          "text": " \"user_id\": \"12345\",\n \"role\": \"admin\",\n \"exp\": 1704067199"
-        },
-        {
-          "type": "code",
-          "page": 4,
-          "lines": [
+            " \"exp\": 1704067199",
             "}"
           ],
-          "text": "}"
+          "text": "{\n \"user_id\": \"12345\",\n \"role\": \"admin\",\n \"exp\": 1704067199\n}"
         },
         {
           "type": "prose",
@@ -1495,18 +1376,18 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "        o Using the HS256 algorithm, the server signs the token using a secret key, say"
+            "        o Using the HS256 algorithm, the server signs the token using a secret key, say",
+            "           my_secret_key."
           ],
-          "text": "        o Using the HS256 algorithm, the server signs the token using a secret key, say"
+          "text": "        o Using the HS256 algorithm, the server signs the token using a secret key, say\n           my_secret_key."
         },
         {
           "type": "prose",
           "page": 4,
           "lines": [
-            "           my_secret_key.",
             "Signature Creation:"
           ],
-          "text": "           my_secret_key.\nSignature Creation:"
+          "text": "Signature Creation:"
         },
         {
           "type": "heading",
@@ -1750,20 +1631,13 @@
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 5,
           "lines": [
-            "3. Token Verification"
-          ],
-          "text": "3. Token Verification"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "3. Token Verification",
             "When the client presents this JWT to the server:"
           ],
-          "text": "When the client presents this JWT to the server:"
+          "text": "3. Token Verification\nWhen the client presents this JWT to the server:"
         },
         {
           "type": "list_item",
@@ -1828,29 +1702,15 @@
             "public string GenerateJwtToken(string userId, string role, string secretKey)",
             "{",
             "  var claims = new[]",
-            "  {"
-          ],
-          "text": "using System;\nusing System.IdentityModel.Tokens.Jwt;\nusing System.Security.Claims;\nusing Microsoft.IdentityModel.Tokens;\nusing System.Text;\npublic string GenerateJwtToken(string userId, string role, string secretKey)\n{\n  var claims = new[]\n  {"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "  {",
             "   new Claim(JwtRegisteredClaimNames.Sub, userId),",
             "   new Claim(\"role\", role),",
-            "   new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())"
-          ],
-          "text": "   new Claim(JwtRegisteredClaimNames.Sub, userId),\n   new Claim(\"role\", role),\n   new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())"
-        },
-        {
-          "type": "code",
-          "page": 5,
-          "lines": [
+            "   new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())",
             "  };",
             "  var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));",
             "  var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);"
           ],
-          "text": "  };\n  var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));\n  var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);"
+          "text": "using System;\nusing System.IdentityModel.Tokens.Jwt;\nusing System.Security.Claims;\nusing Microsoft.IdentityModel.Tokens;\nusing System.Text;\npublic string GenerateJwtToken(string userId, string role, string secretKey)\n{\n  var claims = new[]\n  {\n   new Claim(JwtRegisteredClaimNames.Sub, userId),\n   new Claim(\"role\", role),\n   new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())\n  };\n  var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));\n  var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);"
         }
       ],
       "char_count_raw": 1154,
@@ -2083,43 +1943,15 @@
           "type": "code",
           "page": 6,
           "lines": [
-            "  var token = new JwtSecurityToken("
-          ],
-          "text": "  var token = new JwtSecurityToken("
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "  var token = new JwtSecurityToken(",
             "   issuer: \"my_app\",",
             "   audience: \"my_app\",",
             "   claims: claims,",
             "   expires: DateTime.Now.AddMinutes(30),",
-            "   signingCredentials: creds);"
-          ],
-          "text": "   issuer: \"my_app\",\n   audience: \"my_app\",\n   claims: claims,\n   expires: DateTime.Now.AddMinutes(30),\n   signingCredentials: creds);"
-        },
-        {
-          "type": "code",
-          "page": 6,
-          "lines": [
+            "   signingCredentials: creds);",
             "  return new JwtSecurityTokenHandler().WriteToken(token);",
-            "}"
-          ],
-          "text": "  return new JwtSecurityTokenHandler().WriteToken(token);\n}"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
-            "Verifying a JWT:"
-          ],
-          "text": "Verifying a JWT:"
-        },
-        {
-          "type": "code",
-          "page": 6,
-          "lines": [
+            "}",
+            "Verifying a JWT:",
             "public ClaimsPrincipal ValidateJwtToken(string token, string secretKey)",
             "{",
             "  var tokenHandler = new JwtSecurityTokenHandler();",
@@ -2130,44 +1962,16 @@
             "   IssuerSigningKey = new SymmetricSecurityKey(key),",
             "   ValidateIssuer = false,",
             "   ValidateAudience = false",
-            "  };"
-          ],
-          "text": "public ClaimsPrincipal ValidateJwtToken(string token, string secretKey)\n{\n  var tokenHandler = new JwtSecurityTokenHandler();\n  var key = Encoding.UTF8.GetBytes(secretKey);\n  var validationParameters = new TokenValidationParameters\n  {\n   ValidateIssuerSigningKey = true,\n   IssuerSigningKey = new SymmetricSecurityKey(key),\n   ValidateIssuer = false,\n   ValidateAudience = false\n  };"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
-            "  try"
-          ],
-          "text": "  try"
-        },
-        {
-          "type": "code",
-          "page": 6,
-          "lines": [
+            "  };",
+            "  try",
             "  {",
             "   var principal = tokenHandler.ValidateToken(token, validationParameters, out _);",
             "   return principal;",
-            "  }"
-          ],
-          "text": "  {\n   var principal = tokenHandler.ValidateToken(token, validationParameters, out _);\n   return principal;\n  }"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
-            "  catch (Exception)"
-          ],
-          "text": "  catch (Exception)"
-        },
-        {
-          "type": "code",
-          "page": 6,
-          "lines": [
+            "  }",
+            "  catch (Exception)",
             "  {"
           ],
-          "text": "  {"
+          "text": "  var token = new JwtSecurityToken(\n   issuer: \"my_app\",\n   audience: \"my_app\",\n   claims: claims,\n   expires: DateTime.Now.AddMinutes(30),\n   signingCredentials: creds);\n  return new JwtSecurityTokenHandler().WriteToken(token);\n}\nVerifying a JWT:\npublic ClaimsPrincipal ValidateJwtToken(string token, string secretKey)\n{\n  var tokenHandler = new JwtSecurityTokenHandler();\n  var key = Encoding.UTF8.GetBytes(secretKey);\n  var validationParameters = new TokenValidationParameters\n  {\n   ValidateIssuerSigningKey = true,\n   IssuerSigningKey = new SymmetricSecurityKey(key),\n   ValidateIssuer = false,\n   ValidateAudience = false\n  };\n  try\n  {\n   var principal = tokenHandler.ValidateToken(token, validationParameters, out _);\n   return principal;\n  }\n  catch (Exception)\n  {"
         }
       ],
       "char_count_raw": 718,
@@ -2394,20 +2198,13 @@
           "lines": [
             "   return null; // Token is invalid or expired",
             "  }",
-            "}"
+            "}",
+            "In the above example:"
           ],
-          "text": "   return null; // Token is invalid or expired\n  }\n}"
+          "text": "   return null; // Token is invalid or expired\n  }\n}\nIn the above example:"
         },
         {
           "type": "prose",
-          "page": 7,
-          "lines": [
-            "In the above example:"
-          ],
-          "text": "In the above example:"
-        },
-        {
-          "type": "list_item",
           "page": 7,
           "lines": [
             "   • GenerateJwtToken creates a token for a user with a given role."
@@ -2418,17 +2215,10 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • ValidateJwtToken verifies the JWT’s signature and returns the claims if it’s valid, or null if it"
-          ],
-          "text": "   • ValidateJwtToken verifies the JWT’s signature and returns the claims if it’s valid, or null if it"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • ValidateJwtToken verifies the JWT’s signature and returns the claims if it’s valid, or null if it",
             "      isn’t."
           ],
-          "text": "      isn’t."
+          "text": "   • ValidateJwtToken verifies the JWT’s signature and returns the claims if it’s valid, or null if it\n      isn’t."
         },
         {
           "type": "heading",
@@ -2448,20 +2238,13 @@
           "text": "When working with JWTs, security and efficiency are essential. Here’s a guide to the best practices\nand common pitfalls to avoid:"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 7,
           "lines": [
-            "1. Best Practices"
-          ],
-          "text": "1. Best Practices"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "1. Best Practices",
             "a. Use Strong Secret Keys (for Symmetric Algorithms like HS256)"
           ],
-          "text": "a. Use Strong Secret Keys (for Symmetric Algorithms like HS256)"
+          "text": "1. Best Practices\na. Use Strong Secret Keys (for Symmetric Algorithms like HS256)"
         },
         {
           "type": "list_item",
@@ -2475,98 +2258,56 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Avoid using predictable or weak keys, as this would make it easier for attackers to forge"
-          ],
-          "text": "   • Avoid using predictable or weak keys, as this would make it easier for attackers to forge"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Avoid using predictable or weak keys, as this would make it easier for attackers to forge",
             "      tokens."
           ],
-          "text": "      tokens."
+          "text": "   • Avoid using predictable or weak keys, as this would make it easier for attackers to forge\n      tokens."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Rotate keys periodically to minimize the risk of token tampering."
-          ],
-          "text": "   • Rotate keys periodically to minimize the risk of token tampering."
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Rotate keys periodically to minimize the risk of token tampering.",
             "b. Use Asymmetric Algorithms (e.g., RS256) for Public Key Verification"
           ],
-          "text": "b. Use Asymmetric Algorithms (e.g., RS256) for Public Key Verification"
+          "text": "   • Rotate keys periodically to minimize the risk of token tampering.\nb. Use Asymmetric Algorithms (e.g., RS256) for Public Key Verification"
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • For distributed applications, using asymmetric signing algorithms like RS256 can be more"
-          ],
-          "text": "   • For distributed applications, using asymmetric signing algorithms like RS256 can be more"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • For distributed applications, using asymmetric signing algorithms like RS256 can be more",
             "      secure."
           ],
-          "text": "      secure."
+          "text": "   • For distributed applications, using asymmetric signing algorithms like RS256 can be more\n      secure."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • In RS256, the private key is used to sign the JWT, and the public key is used to verify it, so"
-          ],
-          "text": "   • In RS256, the private key is used to sign the JWT, and the public key is used to verify it, so"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • In RS256, the private key is used to sign the JWT, and the public key is used to verify it, so",
             "      you can share the public key with different services without exposing the private key.",
             "c. Limit the Claims in the JWT Payload"
           ],
-          "text": "      you can share the public key with different services without exposing the private key.\nc. Limit the Claims in the JWT Payload"
+          "text": "   • In RS256, the private key is used to sign the JWT, and the public key is used to verify it, so\n      you can share the public key with different services without exposing the private key.\nc. Limit the Claims in the JWT Payload"
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Only include essential information (such as user_id, role, and any custom claims required) in"
-          ],
-          "text": "   • Only include essential information (such as user_id, role, and any custom claims required) in"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Only include essential information (such as user_id, role, and any custom claims required) in",
             "      the payload to reduce token size and limit data exposure."
           ],
-          "text": "      the payload to reduce token size and limit data exposure."
+          "text": "   • Only include essential information (such as user_id, role, and any custom claims required) in\n      the payload to reduce token size and limit data exposure."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Avoid storing sensitive data in JWTs, as they are easily readable by anyone who has access to"
-          ],
-          "text": "   • Avoid storing sensitive data in JWTs, as they are easily readable by anyone who has access to"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Avoid storing sensitive data in JWTs, as they are easily readable by anyone who has access to",
             "      them."
           ],
-          "text": "      them."
+          "text": "   • Avoid storing sensitive data in JWTs, as they are easily readable by anyone who has access to\n      them."
         }
       ],
       "char_count_raw": 1403,
@@ -2783,164 +2524,94 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • JWTs should have short expiration times (exp claim) to minimize the window of opportunity"
-          ],
-          "text": "   • JWTs should have short expiration times (exp claim) to minimize the window of opportunity"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • JWTs should have short expiration times (exp claim) to minimize the window of opportunity",
             "      for attackers."
           ],
-          "text": "      for attackers."
+          "text": "   • JWTs should have short expiration times (exp claim) to minimize the window of opportunity\n      for attackers."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Set a reasonable token lifespan based on the application's security requirements. Typically,"
-          ],
-          "text": "   • Set a reasonable token lifespan based on the application's security requirements. Typically,"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Set a reasonable token lifespan based on the application's security requirements. Typically,",
             "      tokens are set to expire within minutes or hours for high-security apps.",
             "e. Implement Refresh Tokens for Long-Lived Sessions"
           ],
-          "text": "      tokens are set to expire within minutes or hours for high-security apps.\ne. Implement Refresh Tokens for Long-Lived Sessions"
+          "text": "   • Set a reasonable token lifespan based on the application's security requirements. Typically,\n      tokens are set to expire within minutes or hours for high-security apps.\ne. Implement Refresh Tokens for Long-Lived Sessions"
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Instead of making JWTs valid for extended periods, use short-lived tokens with refresh"
-          ],
-          "text": "   • Instead of making JWTs valid for extended periods, use short-lived tokens with refresh"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Instead of making JWTs valid for extended periods, use short-lived tokens with refresh",
             "      tokens to allow the user to obtain a new JWT without re-authenticating."
           ],
-          "text": "      tokens to allow the user to obtain a new JWT without re-authenticating."
+          "text": "   • Instead of making JWTs valid for extended periods, use short-lived tokens with refresh\n      tokens to allow the user to obtain a new JWT without re-authenticating."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Refresh tokens are stored securely on the client side (usually in HTTP-only cookies) and are"
-          ],
-          "text": "   • Refresh tokens are stored securely on the client side (usually in HTTP-only cookies) and are"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Refresh tokens are stored securely on the client side (usually in HTTP-only cookies) and are",
             "      only exchanged when a new JWT is needed.",
             "f. Store Tokens Securely"
           ],
-          "text": "      only exchanged when a new JWT is needed.\nf. Store Tokens Securely"
+          "text": "   • Refresh tokens are stored securely on the client side (usually in HTTP-only cookies) and are\n      only exchanged when a new JWT is needed.\nf. Store Tokens Securely"
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Store tokens in secure, HTTP-only cookies to protect them from client-side JavaScript access,"
-          ],
-          "text": "   • Store tokens in secure, HTTP-only cookies to protect them from client-side JavaScript access,"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Store tokens in secure, HTTP-only cookies to protect them from client-side JavaScript access,",
             "      reducing the risk of cross-site scripting (XSS) attacks."
           ],
-          "text": "      reducing the risk of cross-site scripting (XSS) attacks."
+          "text": "   • Store tokens in secure, HTTP-only cookies to protect them from client-side JavaScript access,\n      reducing the risk of cross-site scripting (XSS) attacks."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Avoid storing tokens in localStorage or sessionStorage if possible, as they are vulnerable to"
-          ],
-          "text": "   • Avoid storing tokens in localStorage or sessionStorage if possible, as they are vulnerable to"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Avoid storing tokens in localStorage or sessionStorage if possible, as they are vulnerable to",
             "      XSS attacks.",
             "g. Validate All Claims in the Token"
           ],
-          "text": "      XSS attacks.\ng. Validate All Claims in the Token"
+          "text": "   • Avoid storing tokens in localStorage or sessionStorage if possible, as they are vulnerable to\n      XSS attacks.\ng. Validate All Claims in the Token"
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Verify essential claims like iss (issuer) and aud (audience) to confirm the token was issued by"
-          ],
-          "text": "   • Verify essential claims like iss (issuer) and aud (audience) to confirm the token was issued by"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Verify essential claims like iss (issuer) and aud (audience) to confirm the token was issued by",
             "      your server and is intended for your application."
           ],
-          "text": "      your server and is intended for your application."
+          "text": "   • Verify essential claims like iss (issuer) and aud (audience) to confirm the token was issued by\n      your server and is intended for your application."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Always validate the exp (expiration) claim to ensure the token hasn’t expired."
-          ],
-          "text": "   • Always validate the exp (expiration) claim to ensure the token hasn’t expired."
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Always validate the exp (expiration) claim to ensure the token hasn’t expired.",
             "h. Monitor for JWT Revocation"
           ],
-          "text": "h. Monitor for JWT Revocation"
+          "text": "   • Always validate the exp (expiration) claim to ensure the token hasn’t expired.\nh. Monitor for JWT Revocation"
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Keep track of tokens that should be invalidated before they expire, such as when a user logs"
-          ],
-          "text": "   • Keep track of tokens that should be invalidated before they expire, such as when a user logs"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Keep track of tokens that should be invalidated before they expire, such as when a user logs",
             "      out or when tokens are compromised."
           ],
-          "text": "      out or when tokens are compromised."
+          "text": "   • Keep track of tokens that should be invalidated before they expire, such as when a user logs\n      out or when tokens are compromised."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • JWTs are stateless and, by default, cannot be revoked, so implementing a revocation list or"
-          ],
-          "text": "   • JWTs are stateless and, by default, cannot be revoked, so implementing a revocation list or"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • JWTs are stateless and, by default, cannot be revoked, so implementing a revocation list or",
             "      managing blacklists in a cache can help mitigate this."
           ],
-          "text": "      managing blacklists in a cache can help mitigate this."
+          "text": "   • JWTs are stateless and, by default, cannot be revoked, so implementing a revocation list or\n      managing blacklists in a cache can help mitigate this."
         }
       ],
       "char_count_raw": 1537,
@@ -3194,122 +2865,73 @@
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 9,
           "lines": [
-            "2. Common Pitfalls"
-          ],
-          "text": "2. Common Pitfalls"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "2. Common Pitfalls",
             "a. Overly Long Token Expiration Times"
           ],
-          "text": "a. Overly Long Token Expiration Times"
+          "text": "2. Common Pitfalls\na. Overly Long Token Expiration Times"
         },
         {
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • Avoid issuing tokens with excessively long lifespans, as this increases the risk if a token is"
-          ],
-          "text": "   • Avoid issuing tokens with excessively long lifespans, as this increases the risk if a token is"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   • Avoid issuing tokens with excessively long lifespans, as this increases the risk if a token is",
             "      compromised. Keep token expiration times short and utilize refresh tokens for long sessions.",
             "b. Including Sensitive Data in the Payload"
           ],
-          "text": "      compromised. Keep token expiration times short and utilize refresh tokens for long sessions.\nb. Including Sensitive Data in the Payload"
+          "text": "   • Avoid issuing tokens with excessively long lifespans, as this increases the risk if a token is\n      compromised. Keep token expiration times short and utilize refresh tokens for long sessions.\nb. Including Sensitive Data in the Payload"
         },
         {
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • Avoid putting sensitive information like passwords, credit card numbers, or private keys in"
-          ],
-          "text": "   • Avoid putting sensitive information like passwords, credit card numbers, or private keys in"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   • Avoid putting sensitive information like passwords, credit card numbers, or private keys in",
             "      the JWT payload. JWTs can be easily decoded without the secret key, exposing any",
             "      information inside the payload.",
             "c. Lack of Signature Validation"
           ],
-          "text": "      the JWT payload. JWTs can be easily decoded without the secret key, exposing any\n      information inside the payload.\nc. Lack of Signature Validation"
+          "text": "   • Avoid putting sensitive information like passwords, credit card numbers, or private keys in\n      the JWT payload. JWTs can be easily decoded without the secret key, exposing any\n      information inside the payload.\nc. Lack of Signature Validation"
         },
         {
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • Always verify the JWT’s signature to ensure it was issued by a trusted source. Skipping this"
-          ],
-          "text": "   • Always verify the JWT’s signature to ensure it was issued by a trusted source. Skipping this"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   • Always verify the JWT’s signature to ensure it was issued by a trusted source. Skipping this",
             "      step opens the application to forged tokens and security vulnerabilities.",
             "d. Using Weak Signing Algorithms"
           ],
-          "text": "      step opens the application to forged tokens and security vulnerabilities.\nd. Using Weak Signing Algorithms"
+          "text": "   • Always verify the JWT’s signature to ensure it was issued by a trusted source. Skipping this\n      step opens the application to forged tokens and security vulnerabilities.\nd. Using Weak Signing Algorithms"
         },
         {
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • Some algorithms (e.g., none) don’t sign the JWT at all, making it easy to modify and reissue."
-          ],
-          "text": "   • Some algorithms (e.g., none) don’t sign the JWT at all, making it easy to modify and reissue."
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   • Some algorithms (e.g., none) don’t sign the JWT at all, making it easy to modify and reissue.",
             "      Always use secure signing algorithms like HS256 or RS256.",
             "e. Not Using HTTPS"
           ],
-          "text": "      Always use secure signing algorithms like HS256 or RS256.\ne. Not Using HTTPS"
+          "text": "   • Some algorithms (e.g., none) don’t sign the JWT at all, making it easy to modify and reissue.\n      Always use secure signing algorithms like HS256 or RS256.\ne. Not Using HTTPS"
         },
         {
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • When transmitting JWTs over HTTP, the tokens can be intercepted. Always use HTTPS to"
-          ],
-          "text": "   • When transmitting JWTs over HTTP, the tokens can be intercepted. Always use HTTPS to"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   • When transmitting JWTs over HTTP, the tokens can be intercepted. Always use HTTPS to",
             "      encrypt token transmission, protecting against man-in-the-middle (MITM) attacks."
           ],
-          "text": "      encrypt token transmission, protecting against man-in-the-middle (MITM) attacks."
+          "text": "   • When transmitting JWTs over HTTP, the tokens can be intercepted. Always use HTTPS to\n      encrypt token transmission, protecting against man-in-the-middle (MITM) attacks."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 9,
           "lines": [
-            "3. Example Code: JWT Best Practices in ASP.NET Core"
-          ],
-          "text": "3. Example Code: JWT Best Practices in ASP.NET Core"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "3. Example Code: JWT Best Practices in ASP.NET Core",
             "In the following example, we generate and validate JWTs using HS256, set a short expiration time,",
             "and demonstrate the importance of HTTPS:"
           ],
-          "text": "In the following example, we generate and validate JWTs using HS256, set a short expiration time,\nand demonstrate the importance of HTTPS:"
+          "text": "3. Example Code: JWT Best Practices in ASP.NET Core\nIn the following example, we generate and validate JWTs using HS256, set a short expiration time,\nand demonstrate the importance of HTTPS:"
         },
         {
           "type": "code",
@@ -3559,54 +3181,26 @@
             "  public string GenerateToken(string userId, string role)",
             "  {",
             "   var claims = new[]",
-            "   {"
-          ],
-          "text": "  {\n   _secretKey = secretKey;\n   _expiryMinutes = expiryMinutes;\n  }\n  // Generate a short-lived JWT with minimal claims\n  public string GenerateToken(string userId, string role)\n  {\n   var claims = new[]\n   {"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   {",
             "     new Claim(JwtRegisteredClaimNames.Sub, userId),",
             "     new Claim(\"role\", role),",
-            "     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())"
-          ],
-          "text": "     new Claim(JwtRegisteredClaimNames.Sub, userId),\n     new Claim(\"role\", role),\n     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())"
-        },
-        {
-          "type": "code",
-          "page": 10,
-          "lines": [
+            "     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())",
             "   };",
             "   var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey));",
             "   var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);",
-            "   var token = new JwtSecurityToken("
-          ],
-          "text": "   };\n   var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey));\n   var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);\n   var token = new JwtSecurityToken("
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   var token = new JwtSecurityToken(",
             "     issuer: \"my_app\",",
             "     audience: \"my_app\",",
             "     claims: claims,",
             "     expires: DateTime.UtcNow.AddMinutes(_expiryMinutes),",
-            "     signingCredentials: creds);"
-          ],
-          "text": "     issuer: \"my_app\",\n     audience: \"my_app\",\n     claims: claims,\n     expires: DateTime.UtcNow.AddMinutes(_expiryMinutes),\n     signingCredentials: creds);"
-        },
-        {
-          "type": "code",
-          "page": 10,
-          "lines": [
+            "     signingCredentials: creds);",
             "   return new JwtSecurityTokenHandler().WriteToken(token);",
             "  }",
             "  // Validate the JWT by checking expiration, issuer, and signature",
             "  public ClaimsPrincipal ValidateToken(string token)",
             "  {"
           ],
-          "text": "   return new JwtSecurityTokenHandler().WriteToken(token);\n  }\n  // Validate the JWT by checking expiration, issuer, and signature\n  public ClaimsPrincipal ValidateToken(string token)\n  {"
+          "text": "  {\n   _secretKey = secretKey;\n   _expiryMinutes = expiryMinutes;\n  }\n  // Generate a short-lived JWT with minimal claims\n  public string GenerateToken(string userId, string role)\n  {\n   var claims = new[]\n   {\n     new Claim(JwtRegisteredClaimNames.Sub, userId),\n     new Claim(\"role\", role),\n     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())\n   };\n   var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey));\n   var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);\n   var token = new JwtSecurityToken(\n     issuer: \"my_app\",\n     audience: \"my_app\",\n     claims: claims,\n     expires: DateTime.UtcNow.AddMinutes(_expiryMinutes),\n     signingCredentials: creds);\n   return new JwtSecurityTokenHandler().WriteToken(token);\n  }\n  // Validate the JWT by checking expiration, issuer, and signature\n  public ClaimsPrincipal ValidateToken(string token)\n  {"
         }
       ],
       "char_count_raw": 821,
@@ -3850,47 +3444,19 @@
             "     ValidIssuer = \"my_app\",",
             "     ValidAudience = \"my_app\",",
             "     ClockSkew = TimeSpan.Zero",
-            "   };"
-          ],
-          "text": "   var tokenHandler = new JwtSecurityTokenHandler();\n   var key = Encoding.UTF8.GetBytes(_secretKey);\n   var validationParameters = new TokenValidationParameters\n   {\n     ValidateIssuerSigningKey = true,\n     IssuerSigningKey = new SymmetricSecurityKey(key),\n     ValidateIssuer = true,\n     ValidateAudience = true,\n     ValidIssuer = \"my_app\",\n     ValidAudience = \"my_app\",\n     ClockSkew = TimeSpan.Zero\n   };"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
-            "   try"
-          ],
-          "text": "   try"
-        },
-        {
-          "type": "code",
-          "page": 11,
-          "lines": [
+            "   };",
+            "   try",
             "   {",
             "     return tokenHandler.ValidateToken(token, validationParameters, out _);",
-            "   }"
-          ],
-          "text": "   {\n     return tokenHandler.ValidateToken(token, validationParameters, out _);\n   }"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
-            "   catch"
-          ],
-          "text": "   catch"
-        },
-        {
-          "type": "code",
-          "page": 11,
-          "lines": [
+            "   }",
+            "   catch",
             "   {",
             "     return null; // Invalid token",
             "   }",
             "  }",
             "}"
           ],
-          "text": "   {\n     return null; // Invalid token\n   }\n  }\n}"
+          "text": "   var tokenHandler = new JwtSecurityTokenHandler();\n   var key = Encoding.UTF8.GetBytes(_secretKey);\n   var validationParameters = new TokenValidationParameters\n   {\n     ValidateIssuerSigningKey = true,\n     IssuerSigningKey = new SymmetricSecurityKey(key),\n     ValidateIssuer = true,\n     ValidateAudience = true,\n     ValidIssuer = \"my_app\",\n     ValidAudience = \"my_app\",\n     ClockSkew = TimeSpan.Zero\n   };\n   try\n   {\n     return tokenHandler.ValidateToken(token, validationParameters, out _);\n   }\n   catch\n   {\n     return null; // Invalid token\n   }\n  }\n}"
         },
         {
           "type": "prose",
@@ -3904,33 +3470,19 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • GenerateToken method creates a JWT with a user ID and role, setting a short expiration"
-          ],
-          "text": "   • GenerateToken method creates a JWT with a user ID and role, setting a short expiration"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   • GenerateToken method creates a JWT with a user ID and role, setting a short expiration",
             "      time (expiryMinutes) and signing it using the HS256 algorithm."
           ],
-          "text": "      time (expiryMinutes) and signing it using the HS256 algorithm."
+          "text": "   • GenerateToken method creates a JWT with a user ID and role, setting a short expiration\n      time (expiryMinutes) and signing it using the HS256 algorithm."
         },
         {
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • ValidateToken method validates the token, checking the signature, issuer, and audience,"
-          ],
-          "text": "   • ValidateToken method validates the token, checking the signature, issuer, and audience,"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   • ValidateToken method validates the token, checking the signature, issuer, and audience,",
             "      which helps enforce claims and ensure secure token handling."
           ],
-          "text": "      which helps enforce claims and ensure secure token handling."
+          "text": "   • ValidateToken method validates the token, checking the signature, issuer, and audience,\n      which helps enforce claims and ensure secure token handling."
         }
       ],
       "char_count_raw": 805,
@@ -4104,59 +3656,52 @@
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 12,
           "lines": [
-            "4. Token Revocation Example"
+            "4. Token Revocation Example",
+            "You could store revoked tokens in a cache like Redis with an expiration equal to the token’s",
+            "expiration time, then check each token against this list when validating. Although this approach adds",
+            "state management, it effectively addresses early revocation requirements."
           ],
-          "text": "4. Token Revocation Example"
+          "text": "4. Token Revocation Example\nYou could store revoked tokens in a cache like Redis with an expiration equal to the token’s\nexpiration time, then check each token against this list when validating. Although this approach adds\nstate management, it effectively addresses early revocation requirements."
         },
         {
           "type": "prose",
           "page": 12,
           "lines": [
-            "You could store revoked tokens in a cache like Redis with an expiration equal to the token’s",
-            "expiration time, then check each token against this list when validating. Although this approach adds",
-            "state management, it effectively addresses early revocation requirements.",
             "JWT Authentication and Authorization with JWT in ASP.NET Core Web API",
             "This section provides a step-by-step guide on implementing JWT authentication and authorization in",
             "an ASP.NET Core Web API. This integration ensures that users can securely access resources based",
             "on their identity and roles."
           ],
-          "text": "You could store revoked tokens in a cache like Redis with an expiration equal to the token’s\nexpiration time, then check each token against this list when validating. Although this approach adds\nstate management, it effectively addresses early revocation requirements.\nJWT Authentication and Authorization with JWT in ASP.NET Core Web API\nThis section provides a step-by-step guide on implementing JWT authentication and authorization in\nan ASP.NET Core Web API. This integration ensures that users can securely access resources based\non their identity and roles."
+          "text": "JWT Authentication and Authorization with JWT in ASP.NET Core Web API\nThis section provides a step-by-step guide on implementing JWT authentication and authorization in\nan ASP.NET Core Web API. This integration ensures that users can securely access resources based\non their identity and roles."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 12,
           "lines": [
-            "1. Setting Up JWT Authentication in ASP.NET Core"
-          ],
-          "text": "1. Setting Up JWT Authentication in ASP.NET Core"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "1. Setting Up JWT Authentication in ASP.NET Core",
             "To enable JWT-based authentication, start by configuring the authentication service within the",
             "Startup.cs file (or Program.cs/AppSettings.json in newer versions of ASP.NET Core):",
             "Step 1: Install the Necessary NuGet Packages",
             "dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer",
             "Step 2: Add JWT Settings to appsettings.json",
-            "In your appsettings.json file, define the JWT options (such as Issuer, Audience, and SecretKey):",
-            "\"JwtSettings\": {",
-            " \"SecretKey\": \"Your_Secret_Key_Here\",",
-            " \"Issuer\": \"my_app\",",
-            " \"Audience\": \"my_app_audience\""
+            "In your appsettings.json file, define the JWT options (such as Issuer, Audience, and SecretKey):"
           ],
-          "text": "To enable JWT-based authentication, start by configuring the authentication service within the\nStartup.cs file (or Program.cs/AppSettings.json in newer versions of ASP.NET Core):\nStep 1: Install the Necessary NuGet Packages\ndotnet add package Microsoft.AspNetCore.Authentication.JwtBearer\nStep 2: Add JWT Settings to appsettings.json\nIn your appsettings.json file, define the JWT options (such as Issuer, Audience, and SecretKey):\n\"JwtSettings\": {\n \"SecretKey\": \"Your_Secret_Key_Here\",\n \"Issuer\": \"my_app\",\n \"Audience\": \"my_app_audience\""
+          "text": "1. Setting Up JWT Authentication in ASP.NET Core\nTo enable JWT-based authentication, start by configuring the authentication service within the\nStartup.cs file (or Program.cs/AppSettings.json in newer versions of ASP.NET Core):\nStep 1: Install the Necessary NuGet Packages\ndotnet add package Microsoft.AspNetCore.Authentication.JwtBearer\nStep 2: Add JWT Settings to appsettings.json\nIn your appsettings.json file, define the JWT options (such as Issuer, Audience, and SecretKey):"
         },
         {
           "type": "code",
           "page": 12,
           "lines": [
+            "\"JwtSettings\": {",
+            " \"SecretKey\": \"Your_Secret_Key_Here\",",
+            " \"Issuer\": \"my_app\",",
+            " \"Audience\": \"my_app_audience\"",
             "}"
           ],
-          "text": "}"
+          "text": "\"JwtSettings\": {\n \"SecretKey\": \"Your_Secret_Key_Here\",\n \"Issuer\": \"my_app\",\n \"Audience\": \"my_app_audience\"\n}"
         }
       ],
       "char_count_raw": 1178,
@@ -4412,41 +3957,13 @@
             "var builder = WebApplication.CreateBuilder(args);",
             "// Retrieve settings from appsettings.json",
             "var jwtSettings = builder.Configuration.GetSection(\"JwtSettings\");",
-            "var secretKey = jwtSettings.GetValue<string>(\"SecretKey\");"
-          ],
-          "text": "using Microsoft.AspNetCore.Authentication.JwtBearer;\nusing Microsoft.IdentityModel.Tokens;\nusing System.Text;\nvar builder = WebApplication.CreateBuilder(args);\n// Retrieve settings from appsettings.json\nvar jwtSettings = builder.Configuration.GetSection(\"JwtSettings\");\nvar secretKey = jwtSettings.GetValue<string>(\"SecretKey\");"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
-            "builder.Services.AddAuthentication(options =>"
-          ],
-          "text": "builder.Services.AddAuthentication(options =>"
-        },
-        {
-          "type": "code",
-          "page": 13,
-          "lines": [
+            "var secretKey = jwtSettings.GetValue<string>(\"SecretKey\");",
+            "builder.Services.AddAuthentication(options =>",
             "{",
             "  options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;",
             "  options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;",
-            "})"
-          ],
-          "text": "{\n  options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;\n  options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;\n})"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
-            ".AddJwtBearer(options =>"
-          ],
-          "text": ".AddJwtBearer(options =>"
-        },
-        {
-          "type": "code",
-          "page": 13,
-          "lines": [
+            "})",
+            ".AddJwtBearer(options =>",
             "{",
             "  options.TokenValidationParameters = new TokenValidationParameters",
             "  {",
@@ -4461,7 +3978,7 @@
             "});",
             "builder.Services.AddAuthorization();"
           ],
-          "text": "{\n  options.TokenValidationParameters = new TokenValidationParameters\n  {\n   ValidateIssuer = true,\n   ValidateAudience = true,\n   ValidateLifetime = true,\n   ValidateIssuerSigningKey = true,\n   ValidIssuer = jwtSettings.GetValue<string>(\"Issuer\"),\n   ValidAudience = jwtSettings.GetValue<string>(\"Audience\"),\n   IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))\n  };\n});\nbuilder.Services.AddAuthorization();"
+          "text": "using Microsoft.AspNetCore.Authentication.JwtBearer;\nusing Microsoft.IdentityModel.Tokens;\nusing System.Text;\nvar builder = WebApplication.CreateBuilder(args);\n// Retrieve settings from appsettings.json\nvar jwtSettings = builder.Configuration.GetSection(\"JwtSettings\");\nvar secretKey = jwtSettings.GetValue<string>(\"SecretKey\");\nbuilder.Services.AddAuthentication(options =>\n{\n  options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;\n  options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;\n})\n.AddJwtBearer(options =>\n{\n  options.TokenValidationParameters = new TokenValidationParameters\n  {\n   ValidateIssuer = true,\n   ValidateAudience = true,\n   ValidateLifetime = true,\n   ValidateIssuerSigningKey = true,\n   ValidIssuer = jwtSettings.GetValue<string>(\"Issuer\"),\n   ValidAudience = jwtSettings.GetValue<string>(\"Audience\"),\n   IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))\n  };\n});\nbuilder.Services.AddAuthorization();"
         }
       ],
       "char_count_raw": 1079,
@@ -4683,21 +4200,14 @@
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 14,
           "lines": [
-            "2. Protecting Endpoints with JWT Authorization"
-          ],
-          "text": "2. Protecting Endpoints with JWT Authorization"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "2. Protecting Endpoints with JWT Authorization",
             "After setting up authentication, you can protect specific endpoints by adding the [Authorize]",
             "attribute, which restricts access to authenticated users only."
           ],
-          "text": "After setting up authentication, you can protect specific endpoints by adding the [Authorize]\nattribute, which restricts access to authenticated users only."
+          "text": "2. Protecting Endpoints with JWT Authorization\nAfter setting up authentication, you can protect specific endpoints by adding the [Authorize]\nattribute, which restricts access to authenticated users only."
         },
         {
           "type": "heading",
@@ -4982,50 +4492,29 @@
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • The [Authorize] attribute ensures that the user must be authenticated to access"
-          ],
-          "text": "   • The [Authorize] attribute ensures that the user must be authenticated to access"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "   • The [Authorize] attribute ensures that the user must be authenticated to access",
             "      GetSecureInfo."
           ],
-          "text": "      GetSecureInfo."
+          "text": "   • The [Authorize] attribute ensures that the user must be authenticated to access\n      GetSecureInfo."
         },
         {
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • The [Authorize(Roles = \"Admin\")] attribute restricts access to users with the Admin role,"
-          ],
-          "text": "   • The [Authorize(Roles = \"Admin\")] attribute restricts access to users with the Admin role,"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "   • The [Authorize(Roles = \"Admin\")] attribute restricts access to users with the Admin role,",
             "      enforcing role-based authorization."
           ],
-          "text": "      enforcing role-based authorization."
+          "text": "   • The [Authorize(Roles = \"Admin\")] attribute restricts access to users with the Admin role,\n      enforcing role-based authorization."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 15,
           "lines": [
-            "3. Generating JWT Tokens for Users"
-          ],
-          "text": "3. Generating JWT Tokens for Users"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "3. Generating JWT Tokens for Users",
             "For authentication to work, you’ll need a way to issue JWT tokens. Typically, this is handled by an",
             "AuthController where users authenticate with credentials and receive a token upon successful login."
           ],
-          "text": "For authentication to work, you’ll need a way to issue JWT tokens. Typically, this is handled by an\nAuthController where users authenticate with credentials and receive a token upon successful login."
+          "text": "3. Generating JWT Tokens for Users\nFor authentication to work, you’ll need a way to issue JWT tokens. Typically, this is handled by an\nAuthController where users authenticate with credentials and receive a token upon successful login."
         },
         {
           "type": "heading",
@@ -5291,22 +4780,8 @@
           "page": 16,
           "lines": [
             "  {",
-            "   // Simplified example: In practice, you would validate against a user database"
-          ],
-          "text": "  {\n   // Simplified example: In practice, you would validate against a user database"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
-            "   if (model.Username == \"testuser\" && model.Password == \"password\")"
-          ],
-          "text": "   if (model.Username == \"testuser\" && model.Password == \"password\")"
-        },
-        {
-          "type": "code",
-          "page": 16,
-          "lines": [
+            "   // Simplified example: In practice, you would validate against a user database",
+            "   if (model.Username == \"testuser\" && model.Password == \"password\")",
             "   {",
             "     var token = GenerateJwtToken(model.Username);",
             "     return Ok(new { Token = token });",
@@ -5318,41 +4793,20 @@
             "   var jwtSettings = _configuration.GetSection(\"JwtSettings\");",
             "   var secretKey = jwtSettings.GetValue<string>(\"SecretKey\");",
             "   var claims = new[]",
-            "   {"
-          ],
-          "text": "   {\n     var token = GenerateJwtToken(model.Username);\n     return Ok(new { Token = token });\n   }\n   return Unauthorized(\"Invalid credentials\");\n  }\n  private string GenerateJwtToken(string username)\n  {\n   var jwtSettings = _configuration.GetSection(\"JwtSettings\");\n   var secretKey = jwtSettings.GetValue<string>(\"SecretKey\");\n   var claims = new[]\n   {"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   {",
             "     new Claim(JwtRegisteredClaimNames.Sub, username),",
             "     new Claim(\"role\", \"User\"),",
-            "     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())"
-          ],
-          "text": "     new Claim(JwtRegisteredClaimNames.Sub, username),\n     new Claim(\"role\", \"User\"),\n     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())"
-        },
-        {
-          "type": "code",
-          "page": 16,
-          "lines": [
+            "     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())",
             "   };",
             "   var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));",
             "   var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);",
-            "   var token = new JwtSecurityToken("
-          ],
-          "text": "   };\n   var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));\n   var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);\n   var token = new JwtSecurityToken("
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   var token = new JwtSecurityToken(",
             "     issuer: jwtSettings.GetValue<string>(\"Issuer\"),",
             "     audience: jwtSettings.GetValue<string>(\"Audience\"),",
             "     claims: claims,",
             "     expires: DateTime.UtcNow.AddMinutes(30),"
           ],
-          "text": "     issuer: jwtSettings.GetValue<string>(\"Issuer\"),\n     audience: jwtSettings.GetValue<string>(\"Audience\"),\n     claims: claims,\n     expires: DateTime.UtcNow.AddMinutes(30),"
+          "text": "  {\n   // Simplified example: In practice, you would validate against a user database\n   if (model.Username == \"testuser\" && model.Password == \"password\")\n   {\n     var token = GenerateJwtToken(model.Username);\n     return Ok(new { Token = token });\n   }\n   return Unauthorized(\"Invalid credentials\");\n  }\n  private string GenerateJwtToken(string username)\n  {\n   var jwtSettings = _configuration.GetSection(\"JwtSettings\");\n   var secretKey = jwtSettings.GetValue<string>(\"SecretKey\");\n   var claims = new[]\n   {\n     new Claim(JwtRegisteredClaimNames.Sub, username),\n     new Claim(\"role\", \"User\"),\n     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())\n   };\n   var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));\n   var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);\n   var token = new JwtSecurityToken(\n     issuer: jwtSettings.GetValue<string>(\"Issuer\"),\n     audience: jwtSettings.GetValue<string>(\"Audience\"),\n     claims: claims,\n     expires: DateTime.UtcNow.AddMinutes(30),"
         }
       ],
       "char_count_raw": 948,
@@ -5579,20 +5033,13 @@
           "lines": [
             "   return new JwtSecurityTokenHandler().WriteToken(token);",
             "  }",
-            "}"
+            "}",
+            "In this example:"
           ],
-          "text": "   return new JwtSecurityTokenHandler().WriteToken(token);\n  }\n}"
+          "text": "   return new JwtSecurityTokenHandler().WriteToken(token);\n  }\n}\nIn this example:"
         },
         {
           "type": "prose",
-          "page": 17,
-          "lines": [
-            "In this example:"
-          ],
-          "text": "In this example:"
-        },
-        {
-          "type": "list_item",
           "page": 17,
           "lines": [
             "   • The Login action checks credentials, and if they’re correct, calls GenerateJwtToken."
@@ -5611,17 +5058,10 @@
           "type": "list_item",
           "page": 17,
           "lines": [
-            "   • JwtSecurityTokenHandler.WriteToken(token) serializes the JWT, making it ready to send as a"
-          ],
-          "text": "   • JwtSecurityTokenHandler.WriteToken(token) serializes the JWT, making it ready to send as a"
-        },
-        {
-          "type": "prose",
-          "page": 17,
-          "lines": [
+            "   • JwtSecurityTokenHandler.WriteToken(token) serializes the JWT, making it ready to send as a",
             "      response."
           ],
-          "text": "      response."
+          "text": "   • JwtSecurityTokenHandler.WriteToken(token) serializes the JWT, making it ready to send as a\n      response."
         },
         {
           "type": "heading",
@@ -5643,41 +5083,20 @@
           "type": "list_item",
           "page": 17,
           "lines": [
-            "   2. Access Protected Endpoints by passing the JWT in the Authorization header with the prefix"
-          ],
-          "text": "   2. Access Protected Endpoints by passing the JWT in the Authorization header with the prefix"
-        },
-        {
-          "type": "prose",
-          "page": 17,
-          "lines": [
+            "   2. Access Protected Endpoints by passing the JWT in the Authorization header with the prefix",
             "      Bearer, as shown below:",
             "GET /api/SecureData/secure-info HTTP/1.1",
-            "Authorization: Bearer {JWT_TOKEN}"
-          ],
-          "text": "      Bearer, as shown below:\nGET /api/SecureData/secure-info HTTP/1.1\nAuthorization: Bearer {JWT_TOKEN}"
-        },
-        {
-          "type": "heading",
-          "page": 17,
-          "lines": [
-            "Refresh Tokens"
-          ],
-          "text": "Refresh Tokens"
-        },
-        {
-          "type": "prose",
-          "page": 17,
-          "lines": [
+            "Authorization: Bearer {JWT_TOKEN}",
+            "Refresh Tokens",
             "JWTs are often short-lived to minimize risks in case a token is compromised. However, short",
             "expiration times can cause frequent interruptions for users. Refresh tokens help maintain user",
             "sessions smoothly by allowing clients to request a new JWT without requiring the user to reauthenticate",
             "."
           ],
-          "text": "JWTs are often short-lived to minimize risks in case a token is compromised. However, short\nexpiration times can cause frequent interruptions for users. Refresh tokens help maintain user\nsessions smoothly by allowing clients to request a new JWT without requiring the user to reauthenticate\n."
+          "text": "   2. Access Protected Endpoints by passing the JWT in the Authorization header with the prefix\n      Bearer, as shown below:\nGET /api/SecureData/secure-info HTTP/1.1\nAuthorization: Bearer {JWT_TOKEN}\nRefresh Tokens\nJWTs are often short-lived to minimize risks in case a token is compromised. However, short\nexpiration times can cause frequent interruptions for users. Refresh tokens help maintain user\nsessions smoothly by allowing clients to request a new JWT without requiring the user to reauthenticate\n."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 17,
           "lines": [
             "1. What is a Refresh Token?"
@@ -5688,33 +5107,19 @@
           "type": "list_item",
           "page": 17,
           "lines": [
-            "   • A refresh token is a long-lived token issued alongside the JWT, allowing the client to request"
-          ],
-          "text": "   • A refresh token is a long-lived token issued alongside the JWT, allowing the client to request"
-        },
-        {
-          "type": "prose",
-          "page": 17,
-          "lines": [
+            "   • A refresh token is a long-lived token issued alongside the JWT, allowing the client to request",
             "      a new JWT when it expires."
           ],
-          "text": "      a new JWT when it expires."
+          "text": "   • A refresh token is a long-lived token issued alongside the JWT, allowing the client to request\n      a new JWT when it expires."
         },
         {
           "type": "list_item",
           "page": 17,
           "lines": [
-            "   • Unlike the JWT, which is sent on every request to the API, the refresh token is only sent to"
-          ],
-          "text": "   • Unlike the JWT, which is sent on every request to the API, the refresh token is only sent to"
-        },
-        {
-          "type": "prose",
-          "page": 17,
-          "lines": [
+            "   • Unlike the JWT, which is sent on every request to the API, the refresh token is only sent to",
             "      the authorization server when renewing the JWT."
           ],
-          "text": "      the authorization server when renewing the JWT."
+          "text": "   • Unlike the JWT, which is sent on every request to the API, the refresh token is only sent to\n      the authorization server when renewing the JWT."
         }
       ],
       "char_count_raw": 1311,
@@ -5968,36 +5373,22 @@
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 18,
           "lines": [
-            "2. How Refresh Tokens Work in JWT Authentication"
-          ],
-          "text": "2. How Refresh Tokens Work in JWT Authentication"
-        },
-        {
-          "type": "prose",
-          "page": 18,
-          "lines": [
+            "2. How Refresh Tokens Work in JWT Authentication",
             "Here’s a simplified flow:"
           ],
-          "text": "Here’s a simplified flow:"
+          "text": "2. How Refresh Tokens Work in JWT Authentication\nHere’s a simplified flow:"
         },
         {
           "type": "list_item",
           "page": 18,
           "lines": [
-            "   1. User Authenticates: Upon successful login, the server issues both a JWT and a refresh token"
-          ],
-          "text": "   1. User Authenticates: Upon successful login, the server issues both a JWT and a refresh token"
-        },
-        {
-          "type": "prose",
-          "page": 18,
-          "lines": [
+            "   1. User Authenticates: Upon successful login, the server issues both a JWT and a refresh token",
             "      to the client."
           ],
-          "text": "      to the client."
+          "text": "   1. User Authenticates: Upon successful login, the server issues both a JWT and a refresh token\n      to the client."
         },
         {
           "type": "list_item",
@@ -6019,33 +5410,19 @@
           "type": "list_item",
           "page": 18,
           "lines": [
-            "        o When the JWT expires, the client sends the refresh token to a secure endpoint to"
-          ],
-          "text": "        o When the JWT expires, the client sends the refresh token to a secure endpoint to"
-        },
-        {
-          "type": "prose",
-          "page": 18,
-          "lines": [
+            "        o When the JWT expires, the client sends the refresh token to a secure endpoint to",
             "           obtain a new JWT."
           ],
-          "text": "           obtain a new JWT."
+          "text": "        o When the JWT expires, the client sends the refresh token to a secure endpoint to\n           obtain a new JWT."
         },
         {
           "type": "list_item",
           "page": 18,
           "lines": [
-            "        o If the refresh token is valid, the server issues a new JWT and, optionally, a new"
-          ],
-          "text": "        o If the refresh token is valid, the server issues a new JWT and, optionally, a new"
-        },
-        {
-          "type": "prose",
-          "page": 18,
-          "lines": [
+            "        o If the refresh token is valid, the server issues a new JWT and, optionally, a new",
             "           refresh token."
           ],
-          "text": "           refresh token."
+          "text": "        o If the refresh token is valid, the server issues a new JWT and, optionally, a new\n           refresh token."
         },
         {
           "type": "list_item",
@@ -6056,20 +5433,13 @@
           "text": "   4. Logout: When a user logs out, the refresh token is invalidated to prevent further access."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 18,
           "lines": [
-            "3. Implementing Refresh Tokens in ASP.NET Core"
-          ],
-          "text": "3. Implementing Refresh Tokens in ASP.NET Core"
-        },
-        {
-          "type": "prose",
-          "page": 18,
-          "lines": [
+            "3. Implementing Refresh Tokens in ASP.NET Core",
             "To implement refresh tokens, you need:"
           ],
-          "text": "To implement refresh tokens, you need:"
+          "text": "3. Implementing Refresh Tokens in ASP.NET Core\nTo implement refresh tokens, you need:"
         },
         {
           "type": "list_item",
@@ -6392,22 +5762,8 @@
           "lines": [
             "      [HttpPost(\"login\")]",
             "      public IActionResult Login([FromBody] LoginModel model)",
-            "      {"
-          ],
-          "text": "      [HttpPost(\"login\")]\n      public IActionResult Login([FromBody] LoginModel model)\n      {"
-        },
-        {
-          "type": "prose",
-          "page": 19,
-          "lines": [
-            "       if (model.Username == \"testuser\" && model.Password == \"password\")"
-          ],
-          "text": "       if (model.Username == \"testuser\" && model.Password == \"password\")"
-        },
-        {
-          "type": "code",
-          "page": 19,
-          "lines": [
+            "      {",
+            "       if (model.Username == \"testuser\" && model.Password == \"password\")",
             "       {",
             "         var jwtToken = GenerateJwtToken(model.Username);",
             "         var refreshToken = GenerateRefreshToken();",
@@ -6418,7 +5774,7 @@
             "       return Unauthorized(\"Invalid credentials\");",
             "      }"
           ],
-          "text": "       {\n         var jwtToken = GenerateJwtToken(model.Username);\n         var refreshToken = GenerateRefreshToken();\n         // Store refreshToken in database associated with user\n         SaveRefreshTokenToDatabase(model.Username, refreshToken);\n         return Ok(new { Token = jwtToken, RefreshToken = refreshToken });\n       }\n       return Unauthorized(\"Invalid credentials\");\n      }"
+          "text": "      [HttpPost(\"login\")]\n      public IActionResult Login([FromBody] LoginModel model)\n      {\n       if (model.Username == \"testuser\" && model.Password == \"password\")\n       {\n         var jwtToken = GenerateJwtToken(model.Username);\n         var refreshToken = GenerateRefreshToken();\n         // Store refreshToken in database associated with user\n         SaveRefreshTokenToDatabase(model.Username, refreshToken);\n         return Ok(new { Token = jwtToken, RefreshToken = refreshToken });\n       }\n       return Unauthorized(\"Invalid credentials\");\n      }"
         },
         {
           "type": "prose",
@@ -6620,17 +5976,10 @@
       ],
       "blocks": [
         {
-          "type": "prose",
-          "page": 20,
-          "lines": [
-            "  if (savedToken == null || savedToken.IsRevoked || savedToken.ExpiryDate < DateTime.UtcNow)"
-          ],
-          "text": "  if (savedToken == null || savedToken.IsRevoked || savedToken.ExpiryDate < DateTime.UtcNow)"
-        },
-        {
           "type": "code",
           "page": 20,
           "lines": [
+            "  if (savedToken == null || savedToken.IsRevoked || savedToken.ExpiryDate < DateTime.UtcNow)",
             "  {",
             "   return Unauthorized(\"Invalid or expired refresh token.\");",
             "  }",
@@ -6640,20 +5989,13 @@
             "  // Update refresh token in the database",
             "  UpdateStoredRefreshToken(savedToken, newRefreshToken);",
             "  return Ok(new { Token = newJwtToken, RefreshToken = newRefreshToken });",
-            "}"
+            "}",
+            "In this endpoint:"
           ],
-          "text": "  {\n   return Unauthorized(\"Invalid or expired refresh token.\");\n  }\n  // Issue new JWT and refresh token\n  var newJwtToken = GenerateJwtToken(savedToken.UserId);\n  var newRefreshToken = GenerateRefreshToken();\n  // Update refresh token in the database\n  UpdateStoredRefreshToken(savedToken, newRefreshToken);\n  return Ok(new { Token = newJwtToken, RefreshToken = newRefreshToken });\n}"
+          "text": "  if (savedToken == null || savedToken.IsRevoked || savedToken.ExpiryDate < DateTime.UtcNow)\n  {\n   return Unauthorized(\"Invalid or expired refresh token.\");\n  }\n  // Issue new JWT and refresh token\n  var newJwtToken = GenerateJwtToken(savedToken.UserId);\n  var newRefreshToken = GenerateRefreshToken();\n  // Update refresh token in the database\n  UpdateStoredRefreshToken(savedToken, newRefreshToken);\n  return Ok(new { Token = newJwtToken, RefreshToken = newRefreshToken });\n}\nIn this endpoint:"
         },
         {
           "type": "prose",
-          "page": 20,
-          "lines": [
-            "In this endpoint:"
-          ],
-          "text": "In this endpoint:"
-        },
-        {
-          "type": "list_item",
           "page": 20,
           "lines": [
             "   • The refresh token is validated against the database."
@@ -6689,33 +6031,19 @@
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • Save Tokens: Store tokens in a secure database table with fields such as Token, UserId,"
-          ],
-          "text": "   • Save Tokens: Store tokens in a secure database table with fields such as Token, UserId,"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • Save Tokens: Store tokens in a secure database table with fields such as Token, UserId,",
             "      ExpiryDate, and IsRevoked."
           ],
-          "text": "      ExpiryDate, and IsRevoked."
+          "text": "   • Save Tokens: Store tokens in a secure database table with fields such as Token, UserId,\n      ExpiryDate, and IsRevoked."
         },
         {
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • Expire and Revoke: Set expiration dates for refresh tokens, and revoke tokens on logout to"
-          ],
-          "text": "   • Expire and Revoke: Set expiration dates for refresh tokens, and revoke tokens on logout to"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • Expire and Revoke: Set expiration dates for refresh tokens, and revoke tokens on logout to",
             "      prevent unauthorized access."
           ],
-          "text": "      prevent unauthorized access."
+          "text": "   • Expire and Revoke: Set expiration dates for refresh tokens, and revoke tokens on logout to\n      prevent unauthorized access."
         }
       ],
       "char_count_raw": 999,
@@ -6889,7 +6217,7 @@
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 21,
           "lines": [
             "4. Security Best Practices for Refresh Tokens"
@@ -6900,65 +6228,37 @@
           "type": "list_item",
           "page": 21,
           "lines": [
-            "   • Store Refresh Tokens Securely: Keep them in a secure HTTP-only cookie or local storage on"
-          ],
-          "text": "   • Store Refresh Tokens Securely: Keep them in a secure HTTP-only cookie or local storage on"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "   • Store Refresh Tokens Securely: Keep them in a secure HTTP-only cookie or local storage on",
             "      the client side."
           ],
-          "text": "      the client side."
+          "text": "   • Store Refresh Tokens Securely: Keep them in a secure HTTP-only cookie or local storage on\n      the client side."
         },
         {
           "type": "list_item",
           "page": 21,
           "lines": [
-            "   • Rotate Tokens: Issue a new refresh token each time a JWT is refreshed to reduce the risk of"
-          ],
-          "text": "   • Rotate Tokens: Issue a new refresh token each time a JWT is refreshed to reduce the risk of"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "   • Rotate Tokens: Issue a new refresh token each time a JWT is refreshed to reduce the risk of",
             "      token reuse."
           ],
-          "text": "      token reuse."
+          "text": "   • Rotate Tokens: Issue a new refresh token each time a JWT is refreshed to reduce the risk of\n      token reuse."
         },
         {
           "type": "list_item",
           "page": 21,
           "lines": [
-            "   • Limit Token Scope: Only allow the refresh token to request new JWTs, not access resources"
-          ],
-          "text": "   • Limit Token Scope: Only allow the refresh token to request new JWTs, not access resources"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "   • Limit Token Scope: Only allow the refresh token to request new JWTs, not access resources",
             "      directly."
           ],
-          "text": "      directly."
+          "text": "   • Limit Token Scope: Only allow the refresh token to request new JWTs, not access resources\n      directly."
         },
         {
           "type": "list_item",
           "page": 21,
           "lines": [
-            "   • Short Expiration for JWT: Keep JWTs short-lived, and use refresh tokens for session"
-          ],
-          "text": "   • Short Expiration for JWT: Keep JWTs short-lived, and use refresh tokens for session"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "   • Short Expiration for JWT: Keep JWTs short-lived, and use refresh tokens for session",
             "      persistence."
           ],
-          "text": "      persistence."
+          "text": "   • Short Expiration for JWT: Keep JWTs short-lived, and use refresh tokens for session\n      persistence."
         },
         {
           "type": "list_item",
@@ -6980,33 +6280,19 @@
           "type": "list_item",
           "page": 21,
           "lines": [
-            "   1. JWT Structure: Understand the structure (header, payload, signature) and how it ensures"
-          ],
-          "text": "   1. JWT Structure: Understand the structure (header, payload, signature) and how it ensures"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "   1. JWT Structure: Understand the structure (header, payload, signature) and how it ensures",
             "      data integrity."
           ],
-          "text": "      data integrity."
+          "text": "   1. JWT Structure: Understand the structure (header, payload, signature) and how it ensures\n      data integrity."
         },
         {
           "type": "list_item",
           "page": 21,
           "lines": [
-            "   2. Role of Refresh Tokens: Used to extend session duration without frequent reauthentication"
-          ],
-          "text": "   2. Role of Refresh Tokens: Used to extend session duration without frequent reauthentication"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "   2. Role of Refresh Tokens: Used to extend session duration without frequent reauthentication",
             "."
           ],
-          "text": "."
+          "text": "   2. Role of Refresh Tokens: Used to extend session duration without frequent reauthentication\n."
         },
         {
           "type": "list_item",
@@ -7020,33 +6306,19 @@
           "type": "list_item",
           "page": 21,
           "lines": [
-            "   4. Code Flow: Be familiar with code for generating JWTs, securing endpoints, and"
-          ],
-          "text": "   4. Code Flow: Be familiar with code for generating JWTs, securing endpoints, and"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "   4. Code Flow: Be familiar with code for generating JWTs, securing endpoints, and",
             "      implementing refresh logic."
           ],
-          "text": "      implementing refresh logic."
+          "text": "   4. Code Flow: Be familiar with code for generating JWTs, securing endpoints, and\n      implementing refresh logic."
         },
         {
           "type": "list_item",
           "page": 21,
           "lines": [
-            "   5. ASP.NET Core Integration: Master setup and configuration in ASP.NET Core, including"
-          ],
-          "text": "   5. ASP.NET Core Integration: Master setup and configuration in ASP.NET Core, including"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "   5. ASP.NET Core Integration: Master setup and configuration in ASP.NET Core, including",
             "      authentication, authorization, and token validation."
           ],
-          "text": "      authentication, authorization, and token validation."
+          "text": "   5. ASP.NET Core Integration: Master setup and configuration in ASP.NET Core, including\n      authentication, authorization, and token validation."
         }
       ],
       "char_count_raw": 1157,

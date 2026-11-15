@@ -279,47 +279,19 @@
             "  _next = next;",
             " }",
             " public async Task InvokeAsync(HttpContext context)",
-            " {"
-          ],
-          "text": "public class ExceptionHandlingMiddleware\n{\n private readonly RequestDelegate _next; //Stores reference of subsequent middleware\n public ExceptionHandlingMiddleware(RequestDelegate next)\n {\n  _next = next;\n }\n public async Task InvokeAsync(HttpContext context)\n {"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
-            "  try"
-          ],
-          "text": "  try"
-        },
-        {
-          "type": "code",
-          "page": 2,
-          "lines": [
+            " {",
+            "  try",
             "  {",
             "  await _next(context);",
             "  }",
             "  catch(Exception ex)",
-            "  {"
-          ],
-          "text": "  {\n  await _next(context);\n  }\n  catch(Exception ex)\n  {"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
-            "  …"
-          ],
-          "text": "  …"
-        },
-        {
-          "type": "code",
-          "page": 2,
-          "lines": [
+            "  {",
+            "  …",
             "  }",
             " }",
             "}"
           ],
-          "text": "  }\n }\n}"
+          "text": "public class ExceptionHandlingMiddleware\n{\n private readonly RequestDelegate _next; //Stores reference of subsequent middleware\n public ExceptionHandlingMiddleware(RequestDelegate next)\n {\n  _next = next;\n }\n public async Task InvokeAsync(HttpContext context)\n {\n  try\n  {\n  await _next(context);\n  }\n  catch(Exception ex)\n  {\n  …\n  }\n }\n}"
         }
       ],
       "char_count_raw": 352,
@@ -514,27 +486,13 @@
             " public CustomException(string? message) : base(message)",
             " {",
             " }",
-            " public CustomException(string? message, Exception? innerException) : base(message,"
-          ],
-          "text": "public class CustomException : Exception\n{\n public CustomException() : base()\n {\n }\n public CustomException(string? message) : base(message)\n {\n }\n public CustomException(string? message, Exception? innerException) : base(message,"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
-            "innerException)"
-          ],
-          "text": "innerException)"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
+            " public CustomException(string? message, Exception? innerException) : base(message,",
+            "innerException)",
             " {",
             " }",
             "}"
           ],
-          "text": " {\n }\n}"
+          "text": "public class CustomException : Exception\n{\n public CustomException() : base()\n {\n }\n public CustomException(string? message) : base(message)\n {\n }\n public CustomException(string? message, Exception? innerException) : base(message,\ninnerException)\n {\n }\n}"
         }
       ],
       "char_count_raw": 517,

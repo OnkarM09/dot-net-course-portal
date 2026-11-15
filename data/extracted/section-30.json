@@ -195,39 +195,25 @@
           "text": "Minimal APIs in ASP.NET Core\nMinimal APIs in ASP.NET Core allow you to create HTTP APIs with minimal code and configuration.\nThey simplify the process of building APIs by reducing the boilerplate code typically required with\ntraditional controller-based approaches."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 1,
           "lines": [
-            "1. Minimal API Overview"
-          ],
-          "text": "1. Minimal API Overview"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "1. Minimal API Overview",
             "Minimal APIs provide a streamlined way to define routes and handle HTTP requests directly in the",
             "Program.cs file, eliminating the need for controllers and action methods. This approach is especially",
             "useful for small, microservices, or applications where you want to reduce overhead."
           ],
-          "text": "Minimal APIs provide a streamlined way to define routes and handle HTTP requests directly in the\nProgram.cs file, eliminating the need for controllers and action methods. This approach is especially\nuseful for small, microservices, or applications where you want to reduce overhead."
+          "text": "1. Minimal API Overview\nMinimal APIs provide a streamlined way to define routes and handle HTTP requests directly in the\nProgram.cs file, eliminating the need for controllers and action methods. This approach is especially\nuseful for small, microservices, or applications where you want to reduce overhead."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 1,
           "lines": [
-            "2. Defining Minimal APIs"
-          ],
-          "text": "2. Defining Minimal APIs"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "2. Defining Minimal APIs",
             "Basic Example:",
             "Here’s how to set up a basic minimal API in Program.cs:"
           ],
-          "text": "Basic Example:\nHere’s how to set up a basic minimal API in Program.cs:"
+          "text": "2. Defining Minimal APIs\nBasic Example:\nHere’s how to set up a basic minimal API in Program.cs:"
         },
         {
           "type": "code",
@@ -493,21 +479,21 @@
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 2,
           "lines": [
-            "3. Route Parameters"
+            "3. Route Parameters",
+            "You can define route parameters to capture values from the URL and use them in your handlers."
           ],
-          "text": "3. Route Parameters"
+          "text": "3. Route Parameters\nYou can define route parameters to capture values from the URL and use them in your handlers."
         },
         {
           "type": "prose",
           "page": 2,
           "lines": [
-            "You can define route parameters to capture values from the URL and use them in your handlers.",
             "Example:"
           ],
-          "text": "You can define route parameters to capture values from the URL and use them in your handlers.\nExample:"
+          "text": "Example:"
         },
         {
           "type": "code",
@@ -527,22 +513,22 @@
           "text": "   • {name}: Captures the route parameter from the URL. If you access /greet/Alice, the handler\n      will return \"Hello, Alice!\"."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 2,
           "lines": [
-            "4. MapGroups"
+            "4. MapGroups",
+            "MapGroups is used to group related routes together. This can be helpful for organizing routes that",
+            "share a common prefix."
           ],
-          "text": "4. MapGroups"
+          "text": "4. MapGroups\nMapGroups is used to group related routes together. This can be helpful for organizing routes that\nshare a common prefix."
         },
         {
           "type": "prose",
           "page": 2,
           "lines": [
-            "MapGroups is used to group related routes together. This can be helpful for organizing routes that",
-            "share a common prefix.",
             "Example:"
           ],
-          "text": "MapGroups is used to group related routes together. This can be helpful for organizing routes that\nshare a common prefix.\nExample:"
+          "text": "Example:"
         },
         {
           "type": "code",
@@ -564,22 +550,22 @@
           "text": "   • MapGroup: Groups routes under the /api prefix. Routes are then mapped to endpoints such\n      as /api/products and /api/orders."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 2,
           "lines": [
-            "5. IResult"
+            "5. IResult",
+            "IResult represents the result of an HTTP request and can be used to return various types of",
+            "responses."
           ],
-          "text": "5. IResult"
+          "text": "5. IResult\nIResult represents the result of an HTTP request and can be used to return various types of\nresponses."
         },
         {
           "type": "prose",
           "page": 2,
           "lines": [
-            "IResult represents the result of an HTTP request and can be used to return various types of",
-            "responses.",
             "Example:"
           ],
-          "text": "IResult represents the result of an HTTP request and can be used to return various types of\nresponses.\nExample:"
+          "text": "Example:"
         },
         {
           "type": "code",
@@ -790,22 +776,22 @@
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 3,
           "lines": [
-            "6. Endpoint Filters"
+            "6. Endpoint Filters",
+            "Endpoint filters allow you to run custom logic before or after the request handler is executed. They",
+            "can be used for tasks like validation, logging, or authentication."
           ],
-          "text": "6. Endpoint Filters"
+          "text": "6. Endpoint Filters\nEndpoint filters allow you to run custom logic before or after the request handler is executed. They\ncan be used for tasks like validation, logging, or authentication."
         },
         {
           "type": "prose",
           "page": 3,
           "lines": [
-            "Endpoint filters allow you to run custom logic before or after the request handler is executed. They",
-            "can be used for tasks like validation, logging, or authentication.",
             "Example of a Simple Endpoint Filter:"
           ],
-          "text": "Endpoint filters allow you to run custom logic before or after the request handler is executed. They\ncan be used for tasks like validation, logging, or authentication.\nExample of a Simple Endpoint Filter:"
+          "text": "Example of a Simple Endpoint Filter:"
         },
         {
           "type": "code",
@@ -813,22 +799,8 @@
           "lines": [
             "public class LoggingFilter : IEndpointFilter",
             "{",
-            "  public Task<object?> InvokeAsync(EndpointFilterInvocationContext context,"
-          ],
-          "text": "public class LoggingFilter : IEndpointFilter\n{\n  public Task<object?> InvokeAsync(EndpointFilterInvocationContext context,"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
-            "EndpointFilterInvocationDelegate next)"
-          ],
-          "text": "EndpointFilterInvocationDelegate next)"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
+            "  public Task<object?> InvokeAsync(EndpointFilterInvocationContext context,",
+            "EndpointFilterInvocationDelegate next)",
             "  {",
             "   Console.WriteLine(\"Handling request...\");",
             "   return next(context);",
@@ -840,7 +812,7 @@
             " .AddEndpointFilter<LoggingFilter>();",
             "app.Run();"
           ],
-          "text": "  {\n   Console.WriteLine(\"Handling request...\");\n   return next(context);\n  }\n}\nvar builder = WebApplication.CreateBuilder(args);\nvar app = builder.Build();\napp.MapGet(\"/data\", () => \"Some data\")\n .AddEndpointFilter<LoggingFilter>();\napp.Run();"
+          "text": "public class LoggingFilter : IEndpointFilter\n{\n  public Task<object?> InvokeAsync(EndpointFilterInvocationContext context,\nEndpointFilterInvocationDelegate next)\n  {\n   Console.WriteLine(\"Handling request...\");\n   return next(context);\n  }\n}\nvar builder = WebApplication.CreateBuilder(args);\nvar app = builder.Build();\napp.MapGet(\"/data\", () => \"Some data\")\n .AddEndpointFilter<LoggingFilter>();\napp.Run();"
         },
         {
           "type": "prose",
@@ -1078,22 +1050,22 @@
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 4,
           "lines": [
-            "7. IEndpointFilter Interface"
+            "7. IEndpointFilter Interface",
+            "The IEndpointFilter interface is used to create custom filters that can be applied to endpoints. This",
+            "allows you to inject logic into the request processing pipeline."
           ],
-          "text": "7. IEndpointFilter Interface"
+          "text": "7. IEndpointFilter Interface\nThe IEndpointFilter interface is used to create custom filters that can be applied to endpoints. This\nallows you to inject logic into the request processing pipeline."
         },
         {
           "type": "prose",
           "page": 4,
           "lines": [
-            "The IEndpointFilter interface is used to create custom filters that can be applied to endpoints. This",
-            "allows you to inject logic into the request processing pipeline.",
             "Example of Custom Filter Implementation:"
           ],
-          "text": "The IEndpointFilter interface is used to create custom filters that can be applied to endpoints. This\nallows you to inject logic into the request processing pipeline.\nExample of Custom Filter Implementation:"
+          "text": "Example of Custom Filter Implementation:"
         },
         {
           "type": "code",
@@ -1101,22 +1073,8 @@
           "lines": [
             "public class CustomFilter : IEndpointFilter",
             "{",
-            "  public Task<object?> InvokeAsync(EndpointFilterInvocationContext context,"
-          ],
-          "text": "public class CustomFilter : IEndpointFilter\n{\n  public Task<object?> InvokeAsync(EndpointFilterInvocationContext context,"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
-            "EndpointFilterInvocationDelegate next)"
-          ],
-          "text": "EndpointFilterInvocationDelegate next)"
-        },
-        {
-          "type": "code",
-          "page": 4,
-          "lines": [
+            "  public Task<object?> InvokeAsync(EndpointFilterInvocationContext context,",
+            "EndpointFilterInvocationDelegate next)",
             "  {",
             "   // Custom logic before request handling",
             "   Console.WriteLine(\"Custom filter logic before handler.\");",
@@ -1128,7 +1086,7 @@
             "  }",
             "}"
           ],
-          "text": "  {\n   // Custom logic before request handling\n   Console.WriteLine(\"Custom filter logic before handler.\");\n   // Call the next filter or endpoint\n   var result = next(context);\n   // Custom logic after request handling\n   Console.WriteLine(\"Custom filter logic after handler.\");\n   return result;\n  }\n}"
+          "text": "public class CustomFilter : IEndpointFilter\n{\n  public Task<object?> InvokeAsync(EndpointFilterInvocationContext context,\nEndpointFilterInvocationDelegate next)\n  {\n   // Custom logic before request handling\n   Console.WriteLine(\"Custom filter logic before handler.\");\n   // Call the next filter or endpoint\n   var result = next(context);\n   // Custom logic after request handling\n   Console.WriteLine(\"Custom filter logic after handler.\");\n   return result;\n  }\n}"
         },
         {
           "type": "prose",
@@ -1142,17 +1100,10 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Minimal APIs: Provide a way to define routes and request handlers directly in Program.cs,"
-          ],
-          "text": "   • Minimal APIs: Provide a way to define routes and request handlers directly in Program.cs,"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • Minimal APIs: Provide a way to define routes and request handlers directly in Program.cs,",
             "      simplifying the API development process."
           ],
-          "text": "      simplifying the API development process."
+          "text": "   • Minimal APIs: Provide a way to define routes and request handlers directly in Program.cs,\n      simplifying the API development process."
         },
         {
           "type": "list_item",
@@ -1174,17 +1125,10 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • IResult: Represents HTTP responses and can be used to return various types of responses"
-          ],
-          "text": "   • IResult: Represents HTTP responses and can be used to return various types of responses"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • IResult: Represents HTTP responses and can be used to return various types of responses",
             "      (OK, NotFound, etc.)."
           ],
-          "text": "      (OK, NotFound, etc.)."
+          "text": "   • IResult: Represents HTTP responses and can be used to return various types of responses\n      (OK, NotFound, etc.)."
         },
         {
           "type": "list_item",
@@ -1289,17 +1233,10 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   1. Minimal APIs: Simplify API development with direct route and handler definitions in"
-          ],
-          "text": "   1. Minimal APIs: Simplify API development with direct route and handler definitions in"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   1. Minimal APIs: Simplify API development with direct route and handler definitions in",
             "      Program.cs."
           ],
-          "text": "      Program.cs."
+          "text": "   1. Minimal APIs: Simplify API development with direct route and handler definitions in\n      Program.cs."
         },
         {
           "type": "list_item",
@@ -1321,17 +1258,10 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   4. IResult: Return various HTTP responses using built-in methods like Results.Ok,"
-          ],
-          "text": "   4. IResult: Return various HTTP responses using built-in methods like Results.Ok,"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   4. IResult: Return various HTTP responses using built-in methods like Results.Ok,",
             "      Results.NotFound, etc."
           ],
-          "text": "      Results.NotFound, etc."
+          "text": "   4. IResult: Return various HTTP responses using built-in methods like Results.Ok,\n      Results.NotFound, etc."
         },
         {
           "type": "list_item",

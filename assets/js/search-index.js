@@ -1,6 +1,6 @@
 /**
  * Offline Search Index for ASP.NET Core Masterclass Documentation Portal
- * Auto-generated on 2026-11-14T19:41:54.270Z
+ * Auto-generated on 2026-11-15T05:19:08.032Z
  */
 window.SEARCH_INDEX = [
   {
@@ -285,62 +285,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 02 topic: Responsibilities of Kestrel and Reverse Proxy Servers"
   },
   {
-    "id": "02-1-application-start-log-listening-on-port",
-    "title": "1. Application Start Log: Listening on Port",
-    "sectionNum": "02",
-    "sectionTitle": "Section 02: Getting Started",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-02.html#1-application-start-log-listening-on-port",
-    "keywords": [
-      "1. Application Start Log: Listening on Port",
-      "Getting Started",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 02 topic: 1. Application Start Log: Listening on Port"
-  },
-  {
-    "id": "02-2-application-started-log",
-    "title": "2. Application Started Log",
-    "sectionNum": "02",
-    "sectionTitle": "Section 02: Getting Started",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-02.html#2-application-started-log",
-    "keywords": [
-      "2. Application Started Log",
-      "Getting Started",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 02 topic: 2. Application Started Log"
-  },
-  {
-    "id": "02-3-hosting-environment-log",
-    "title": "3. Hosting Environment Log",
-    "sectionNum": "02",
-    "sectionTitle": "Section 02: Getting Started",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-02.html#3-hosting-environment-log",
-    "keywords": [
-      "3. Hosting Environment Log",
-      "Getting Started",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 02 topic: 3. Hosting Environment Log"
-  },
-  {
-    "id": "02-4-content-root-path-log",
-    "title": "4. Content Root Path Log",
-    "sectionNum": "02",
-    "sectionTitle": "Section 02: Getting Started",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-02.html#4-content-root-path-log",
-    "keywords": [
-      "4. Content Root Path Log",
-      "Getting Started",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 02 topic: 4. Content Root Path Log"
-  },
-  {
     "id": "02-summary-1",
     "title": "Summary",
     "sectionNum": "02",
@@ -606,20 +550,6 @@ window.SEARCH_INDEX = [
       "Module 1: Foundations, HTTP, Middleware & Routing"
     ],
     "snippet": "Section 03 topic: Installation"
-  },
-  {
-    "id": "03-summary-1",
-    "title": "Summary",
-    "sectionNum": "03",
-    "sectionTitle": "Section 03: HTTP",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-03.html#summary-1",
-    "keywords": [
-      "Summary",
-      "HTTP",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 03 topic: Summary"
   },
   {
     "id": "03-cheat-sheet-quick-reference",
@@ -931,174 +861,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 04 topic: Output"
   },
   {
-    "id": "04-hello-from-middleware-at-main-chain",
-    "title": "Hello from middleware at main chain",
-    "sectionNum": "04",
-    "sectionTitle": "Section 04: Middleware",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-04.html#hello-from-middleware-at-main-chain",
-    "keywords": [
-      "Hello from middleware at main chain",
-      "Middleware",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 04 topic: Hello from middleware at main chain"
-  },
-  {
-    "id": "04-hello-from-middleware-at-main-chain-1",
-    "title": "Hello from middleware at main chain",
-    "sectionNum": "04",
-    "sectionTitle": "Section 04: Middleware",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-04.html#hello-from-middleware-at-main-chain-1",
-    "keywords": [
-      "Hello from middleware at main chain",
-      "Middleware",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 04 topic: Hello from middleware at main chain"
-  },
-  {
-    "id": "04-when-to-use-usewhen",
-    "title": "When to Use UseWhen()",
-    "sectionNum": "04",
-    "sectionTitle": "Section 04: Middleware",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-04.html#when-to-use-usewhen",
-    "keywords": [
-      "When to Use UseWhen()",
-      "Middleware",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 04 topic: When to Use UseWhen()"
-  },
-  {
-    "id": "04-1-exception-handling",
-    "title": "1. Exception Handling",
-    "sectionNum": "04",
-    "sectionTitle": "Section 04: Middleware",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-04.html#1-exception-handling",
-    "keywords": [
-      "1. Exception Handling",
-      "Middleware",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 04 topic: 1. Exception Handling"
-  },
-  {
-    "id": "04-2-https-redirection",
-    "title": "2. HTTPS Redirection",
-    "sectionNum": "04",
-    "sectionTitle": "Section 04: Middleware",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-04.html#2-https-redirection",
-    "keywords": [
-      "2. HTTPS Redirection",
-      "Middleware",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 04 topic: 2. HTTPS Redirection"
-  },
-  {
-    "id": "04-3-static-files",
-    "title": "3. Static Files",
-    "sectionNum": "04",
-    "sectionTitle": "Section 04: Middleware",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-04.html#3-static-files",
-    "keywords": [
-      "3. Static Files",
-      "Middleware",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 04 topic: 3. Static Files"
-  },
-  {
-    "id": "04-4-routing",
-    "title": "4. Routing",
-    "sectionNum": "04",
-    "sectionTitle": "Section 04: Middleware",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-04.html#4-routing",
-    "keywords": [
-      "4. Routing",
-      "Middleware",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 04 topic: 4. Routing"
-  },
-  {
-    "id": "04-5-cors",
-    "title": "5. CORS",
-    "sectionNum": "04",
-    "sectionTitle": "Section 04: Middleware",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-04.html#5-cors",
-    "keywords": [
-      "5. CORS",
-      "Middleware",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 04 topic: 5. CORS"
-  },
-  {
-    "id": "04-6-authentication",
-    "title": "6. Authentication",
-    "sectionNum": "04",
-    "sectionTitle": "Section 04: Middleware",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-04.html#6-authentication",
-    "keywords": [
-      "6. Authentication",
-      "Middleware",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 04 topic: 6. Authentication"
-  },
-  {
-    "id": "04-7-authorization",
-    "title": "7. Authorization",
-    "sectionNum": "04",
-    "sectionTitle": "Section 04: Middleware",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-04.html#7-authorization",
-    "keywords": [
-      "7. Authorization",
-      "Middleware",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 04 topic: 7. Authorization"
-  },
-  {
-    "id": "04-8-custom-middleware",
-    "title": "8. Custom Middleware",
-    "sectionNum": "04",
-    "sectionTitle": "Section 04: Middleware",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-04.html#8-custom-middleware",
-    "keywords": [
-      "8. Custom Middleware",
-      "Middleware",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 04 topic: 8. Custom Middleware"
-  },
-  {
-    "id": "04-9-mvcrazor-pagesminimal-apis",
-    "title": "9. MVC/Razor Pages/Minimal APIs",
-    "sectionNum": "04",
-    "sectionTitle": "Section 04: Middleware",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-04.html#9-mvcrazor-pagesminimal-apis",
-    "keywords": [
-      "9. MVC/Razor Pages/Minimal APIs",
-      "Middleware",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 04 topic: 9. MVC/Razor Pages/Minimal APIs"
-  },
-  {
     "id": "04-cheat-sheet-quick-reference",
     "title": "Middleware — Cheat Sheet & Quick Reference",
     "sectionNum": "04",
@@ -1226,20 +988,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 05 topic: Code"
   },
   {
-    "id": "05-5-integer-min-and-regex-constraint-salesreport",
-    "title": "5. Integer, Min, and Regex Constraint: /salesreport",
-    "sectionNum": "05",
-    "sectionTitle": "Section 05: Routing",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-05.html#5-integer-min-and-regex-constraint-salesreport",
-    "keywords": [
-      "5. Integer, Min, and Regex Constraint: /salesreport",
-      "Routing",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 05 topic: 5. Integer, Min, and Regex Constraint: /salesreport"
-  },
-  {
     "id": "05-custom-route-constraint-classes",
     "title": "Custom Route Constraint Classes",
     "sectionNum": "05",
@@ -1322,76 +1070,6 @@ window.SEARCH_INDEX = [
       "Module 1: Foundations, HTTP, Middleware & Routing"
     ],
     "snippet": "Section 05 topic: Endpoint Selection Algorithm"
-  },
-  {
-    "id": "05-3-explicit-match-with-any-http-method-and-more-specific-route-constraints",
-    "title": "3. Explicit Match with Any HTTP Method and More Specific Route Constraints",
-    "sectionNum": "05",
-    "sectionTitle": "Section 05: Routing",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-05.html#3-explicit-match-with-any-http-method-and-more-specific-route-constraints",
-    "keywords": [
-      "3. Explicit Match with Any HTTP Method and More Specific Route Constraints",
-      "Routing",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 05 topic: 3. Explicit Match with Any HTTP Method and More Specific Route Constraints"
-  },
-  {
-    "id": "05-4-explicit-match-with-any-http-method-and-less-specific-route-constraints",
-    "title": "4. Explicit Match with Any HTTP Method and Less Specific Route Constraints",
-    "sectionNum": "05",
-    "sectionTitle": "Section 05: Routing",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-05.html#4-explicit-match-with-any-http-method-and-less-specific-route-constraints",
-    "keywords": [
-      "4. Explicit Match with Any HTTP Method and Less Specific Route Constraints",
-      "Routing",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 05 topic: 4. Explicit Match with Any HTTP Method and Less Specific Route Constraints"
-  },
-  {
-    "id": "05-5-order-of-registration-if-specificity-is-equal",
-    "title": "5. Order of Registration (if specificity is equal)",
-    "sectionNum": "05",
-    "sectionTitle": "Section 05: Routing",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-05.html#5-order-of-registration-if-specificity-is-equal",
-    "keywords": [
-      "5. Order of Registration (if specificity is equal)",
-      "Routing",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 05 topic: 5. Order of Registration (if specificity is equal)"
-  },
-  {
-    "id": "05-6-catch-all-endpoint-if-no-other-match-is-found",
-    "title": "6. Catch-All Endpoint (if no other match is found)",
-    "sectionNum": "05",
-    "sectionTitle": "Section 05: Routing",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-05.html#6-catch-all-endpoint-if-no-other-match-is-found",
-    "keywords": [
-      "6. Catch-All Endpoint (if no other match is found)",
-      "Routing",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 05 topic: 6. Catch-All Endpoint (if no other match is found)"
-  },
-  {
-    "id": "05-practical-implications-and-tips",
-    "title": "Practical Implications and Tips",
-    "sectionNum": "05",
-    "sectionTitle": "Section 05: Routing",
-    "moduleTitle": "Module 1: Foundations, HTTP, Middleware & Routing",
-    "url": "section-05.html#practical-implications-and-tips",
-    "keywords": [
-      "Practical Implications and Tips",
-      "Routing",
-      "Module 1: Foundations, HTTP, Middleware & Routing"
-    ],
-    "snippet": "Section 05 topic: Practical Implications and Tips"
   },
   {
     "id": "05-code-2",
@@ -1969,20 +1647,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 06 topic: Types of Redirect Results"
   },
   {
-    "id": "06-code-6",
-    "title": "Code",
-    "sectionNum": "06",
-    "sectionTitle": "Section 06: Controllers & IActionResult",
-    "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-06.html#code-6",
-    "keywords": [
-      "Code",
-      "Controllers & IActionResult",
-      "Module 2: Controllers, Model Binding & Validation"
-    ],
-    "snippet": "Section 06 topic: Code"
-  },
-  {
     "id": "06-choosing-the-right-redirect",
     "title": "Choosing the Right Redirect",
     "sectionNum": "06",
@@ -1995,34 +1659,6 @@ window.SEARCH_INDEX = [
       "Module 2: Controllers, Model Binding & Validation"
     ],
     "snippet": "Section 06 topic: Choosing the Right Redirect"
-  },
-  {
-    "id": "06-1-controllers",
-    "title": "1. Controllers",
-    "sectionNum": "06",
-    "sectionTitle": "Section 06: Controllers & IActionResult",
-    "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-06.html#1-controllers",
-    "keywords": [
-      "1. Controllers",
-      "Controllers & IActionResult",
-      "Module 2: Controllers, Model Binding & Validation"
-    ],
-    "snippet": "Section 06 topic: 1. Controllers"
-  },
-  {
-    "id": "06-2-iactionresult",
-    "title": "2. IActionResult",
-    "sectionNum": "06",
-    "sectionTitle": "Section 06: Controllers & IActionResult",
-    "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-06.html#2-iactionresult",
-    "keywords": [
-      "2. IActionResult",
-      "Controllers & IActionResult",
-      "Module 2: Controllers, Model Binding & Validation"
-    ],
-    "snippet": "Section 06 topic: 2. IActionResult"
   },
   {
     "id": "06-key-interview-tips",
@@ -2180,20 +1816,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 07 topic: Code"
   },
   {
-    "id": "07-code-2",
-    "title": "Code",
-    "sectionNum": "07",
-    "sectionTitle": "Section 07: Model Binding and Validations",
-    "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#code-2",
-    "keywords": [
-      "Code",
-      "Model Binding and Validations",
-      "Module 2: Controllers, Model Binding & Validation"
-    ],
-    "snippet": "Section 07 topic: Code"
-  },
-  {
     "id": "07-notes",
     "title": "Notes",
     "sectionNum": "07",
@@ -2222,32 +1844,18 @@ window.SEARCH_INDEX = [
     "snippet": "Section 07 topic: Model Classes"
   },
   {
-    "id": "07-code-3",
+    "id": "07-code-2",
     "title": "Code",
     "sectionNum": "07",
     "sectionTitle": "Section 07: Model Binding and Validations",
     "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#code-3",
+    "url": "section-07.html#code-2",
     "keywords": [
       "Code",
       "Model Binding and Validations",
       "Module 2: Controllers, Model Binding & Validation"
     ],
     "snippet": "Section 07 topic: Code"
-  },
-  {
-    "id": "07-3-automatic-binding-when-a-request-like",
-    "title": "3. Automatic Binding: When a request like",
-    "sectionNum": "07",
-    "sectionTitle": "Section 07: Model Binding and Validations",
-    "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#3-automatic-binding-when-a-request-like",
-    "keywords": [
-      "3. Automatic Binding: When a request like",
-      "Model Binding and Validations",
-      "Module 2: Controllers, Model Binding & Validation"
-    ],
-    "snippet": "Section 07 topic: 3. Automatic Binding: When a request like"
   },
   {
     "id": "07-notes-1",
@@ -2376,32 +1984,18 @@ window.SEARCH_INDEX = [
     "snippet": "Section 07 topic: Model State in Controllers"
   },
   {
-    "id": "07-code-4",
+    "id": "07-code-3",
     "title": "Code",
     "sectionNum": "07",
     "sectionTitle": "Section 07: Model Binding and Validations",
     "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#code-4",
+    "url": "section-07.html#code-3",
     "keywords": [
       "Code",
       "Model Binding and Validations",
       "Module 2: Controllers, Model Binding & Validation"
     ],
     "snippet": "Section 07 topic: Code"
-  },
-  {
-    "id": "07-custom-validation-with-validationattribute",
-    "title": "Custom Validation with ValidationAttribute",
-    "sectionNum": "07",
-    "sectionTitle": "Section 07: Model Binding and Validations",
-    "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#custom-validation-with-validationattribute",
-    "keywords": [
-      "Custom Validation with ValidationAttribute",
-      "Model Binding and Validations",
-      "Module 2: Controllers, Model Binding & Validation"
-    ],
-    "snippet": "Section 07 topic: Custom Validation with ValidationAttribute"
   },
   {
     "id": "07-key-steps",
@@ -2418,12 +2012,12 @@ window.SEARCH_INDEX = [
     "snippet": "Section 07 topic: Key Steps"
   },
   {
-    "id": "07-code-5",
+    "id": "07-code-4",
     "title": "Code",
     "sectionNum": "07",
     "sectionTitle": "Section 07: Model Binding and Validations",
     "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#code-5",
+    "url": "section-07.html#code-4",
     "keywords": [
       "Code",
       "Model Binding and Validations",
@@ -2432,12 +2026,12 @@ window.SEARCH_INDEX = [
     "snippet": "Section 07 topic: Code"
   },
   {
-    "id": "07-code-6",
+    "id": "07-code-5",
     "title": "Code",
     "sectionNum": "07",
     "sectionTitle": "Section 07: Model Binding and Validations",
     "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#code-6",
+    "url": "section-07.html#code-5",
     "keywords": [
       "Code",
       "Model Binding and Validations",
@@ -2488,32 +2082,18 @@ window.SEARCH_INDEX = [
     "snippet": "Section 07 topic: When to Use IValidatableObject"
   },
   {
-    "id": "07-code-7",
+    "id": "07-code-6",
     "title": "Code",
     "sectionNum": "07",
     "sectionTitle": "Section 07: Model Binding and Validations",
     "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#code-7",
+    "url": "section-07.html#code-6",
     "keywords": [
       "Code",
       "Model Binding and Validations",
       "Module 2: Controllers, Model Binding & Validation"
     ],
     "snippet": "Section 07 topic: Code"
-  },
-  {
-    "id": "07-1-implementation-of-ivalidatableobject-the-person-class-now-implements",
-    "title": "1. Implementation of IValidatableObject: The Person class now implements",
-    "sectionNum": "07",
-    "sectionTitle": "Section 07: Model Binding and Validations",
-    "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#1-implementation-of-ivalidatableobject-the-person-class-now-implements",
-    "keywords": [
-      "1. Implementation of IValidatableObject: The Person class now implements",
-      "Model Binding and Validations",
-      "Module 2: Controllers, Model Binding & Validation"
-    ],
-    "snippet": "Section 07 topic: 1. Implementation of IValidatableObject: The Person class now implements"
   },
   {
     "id": "07-notes-4",
@@ -2530,12 +2110,12 @@ window.SEARCH_INDEX = [
     "snippet": "Section 07 topic: Notes"
   },
   {
-    "id": "07-code-8",
+    "id": "07-code-7",
     "title": "Code",
     "sectionNum": "07",
     "sectionTitle": "Section 07: Model Binding and Validations",
     "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#code-8",
+    "url": "section-07.html#code-7",
     "keywords": [
       "Code",
       "Model Binding and Validations",
@@ -2572,12 +2152,12 @@ window.SEARCH_INDEX = [
     "snippet": "Section 07 topic: How It Works"
   },
   {
-    "id": "07-code-9",
+    "id": "07-code-8",
     "title": "Code",
     "sectionNum": "07",
     "sectionTitle": "Section 07: Model Binding and Validations",
     "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#code-9",
+    "url": "section-07.html#code-8",
     "keywords": [
       "Code",
       "Model Binding and Validations",
@@ -2656,26 +2236,12 @@ window.SEARCH_INDEX = [
     "snippet": "Section 07 topic: Configuring Input Formatters"
   },
   {
-    "id": "07-2-additional-formatters-you-can-add-support-for-other-formatters-like",
-    "title": "2. Additional Formatters: You can add support for other formatters (like",
-    "sectionNum": "07",
-    "sectionTitle": "Section 07: Model Binding and Validations",
-    "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#2-additional-formatters-you-can-add-support-for-other-formatters-like",
-    "keywords": [
-      "2. Additional Formatters: You can add support for other formatters (like",
-      "Model Binding and Validations",
-      "Module 2: Controllers, Model Binding & Validation"
-    ],
-    "snippet": "Section 07 topic: 2. Additional Formatters: You can add support for other formatters (like"
-  },
-  {
-    "id": "07-code-10",
+    "id": "07-code-9",
     "title": "Code",
     "sectionNum": "07",
     "sectionTitle": "Section 07: Model Binding and Validations",
     "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#code-10",
+    "url": "section-07.html#code-9",
     "keywords": [
       "Code",
       "Model Binding and Validations",
@@ -2754,12 +2320,12 @@ window.SEARCH_INDEX = [
     "snippet": "Section 07 topic: Implementing IModelBinder"
   },
   {
-    "id": "07-code-11",
+    "id": "07-code-10",
     "title": "Code",
     "sectionNum": "07",
     "sectionTitle": "Section 07: Model Binding and Validations",
     "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#code-11",
+    "url": "section-07.html#code-10",
     "keywords": [
       "Code",
       "Model Binding and Validations",
@@ -2782,12 +2348,12 @@ window.SEARCH_INDEX = [
     "snippet": "Section 07 topic: Model Binder Providers"
   },
   {
-    "id": "07-code-12",
+    "id": "07-code-11",
     "title": "Code",
     "sectionNum": "07",
     "sectionTitle": "Section 07: Model Binding and Validations",
     "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#code-12",
+    "url": "section-07.html#code-11",
     "keywords": [
       "Code",
       "Model Binding and Validations",
@@ -2880,20 +2446,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 07 topic: Naming Conventions for Collection Binding"
   },
   {
-    "id": "07-code-13",
-    "title": "Code",
-    "sectionNum": "07",
-    "sectionTitle": "Section 07: Model Binding and Validations",
-    "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#code-13",
-    "keywords": [
-      "Code",
-      "Model Binding and Validations",
-      "Module 2: Controllers, Model Binding & Validation"
-    ],
-    "snippet": "Section 07 topic: Code"
-  },
-  {
     "id": "07-sample-request-data-postman-1",
     "title": "Sample Request Data (Postman)",
     "sectionNum": "07",
@@ -2950,12 +2502,12 @@ window.SEARCH_INDEX = [
     "snippet": "Section 07 topic: Notes"
   },
   {
-    "id": "07-code-14",
+    "id": "07-code-12",
     "title": "Code",
     "sectionNum": "07",
     "sectionTitle": "Section 07: Model Binding and Validations",
     "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#code-14",
+    "url": "section-07.html#code-12",
     "keywords": [
       "Code",
       "Model Binding and Validations",
@@ -3004,62 +2556,6 @@ window.SEARCH_INDEX = [
       "Module 2: Controllers, Model Binding & Validation"
     ],
     "snippet": "Section 07 topic: Key Points to Remember"
-  },
-  {
-    "id": "07-1-model-binding-bridging-http-and-c",
-    "title": "1. Model Binding: Bridging HTTP and C#",
-    "sectionNum": "07",
-    "sectionTitle": "Section 07: Model Binding and Validations",
-    "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#1-model-binding-bridging-http-and-c",
-    "keywords": [
-      "1. Model Binding: Bridging HTTP and C#",
-      "Model Binding and Validations",
-      "Module 2: Controllers, Model Binding & Validation"
-    ],
-    "snippet": "Section 07 topic: 1. Model Binding: Bridging HTTP and C#"
-  },
-  {
-    "id": "07-2-model-validation-ensuring-data-integrity",
-    "title": "2. Model Validation: Ensuring Data Integrity",
-    "sectionNum": "07",
-    "sectionTitle": "Section 07: Model Binding and Validations",
-    "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#2-model-validation-ensuring-data-integrity",
-    "keywords": [
-      "2. Model Validation: Ensuring Data Integrity",
-      "Model Binding and Validations",
-      "Module 2: Controllers, Model Binding & Validation"
-    ],
-    "snippet": "Section 07 topic: 2. Model Validation: Ensuring Data Integrity"
-  },
-  {
-    "id": "07-4-attributes-fine-tuning-model-binding-and-validation",
-    "title": "4. Attributes: Fine-Tuning Model Binding and Validation",
-    "sectionNum": "07",
-    "sectionTitle": "Section 07: Model Binding and Validations",
-    "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#4-attributes-fine-tuning-model-binding-and-validation",
-    "keywords": [
-      "4. Attributes: Fine-Tuning Model Binding and Validation",
-      "Model Binding and Validations",
-      "Module 2: Controllers, Model Binding & Validation"
-    ],
-    "snippet": "Section 07 topic: 4. Attributes: Fine-Tuning Model Binding and Validation"
-  },
-  {
-    "id": "07-5-custom-model-binders",
-    "title": "5. Custom Model Binders",
-    "sectionNum": "07",
-    "sectionTitle": "Section 07: Model Binding and Validations",
-    "moduleTitle": "Module 2: Controllers, Model Binding & Validation",
-    "url": "section-07.html#5-custom-model-binders",
-    "keywords": [
-      "5. Custom Model Binders",
-      "Model Binding and Validations",
-      "Module 2: Controllers, Model Binding & Validation"
-    ],
-    "snippet": "Section 07 topic: 5. Custom Model Binders"
   },
   {
     "id": "07-additional-tips",
@@ -3285,20 +2781,6 @@ window.SEARCH_INDEX = [
       "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
     ],
     "snippet": "Section 08 topic: Key Razor Syntax Elements"
-  },
-  {
-    "id": "08-control-flow-in-razor-views",
-    "title": "Control Flow in Razor Views",
-    "sectionNum": "08",
-    "sectionTitle": "Section 08: Razor Views",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-08.html#control-flow-in-razor-views",
-    "keywords": [
-      "Control Flow in Razor Views",
-      "Razor Views",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 08 topic: Control Flow in Razor Views"
   },
   {
     "id": "08-local-functions-in-razor-views",
@@ -3637,104 +3119,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 08 topic: Key Points to Remember"
   },
   {
-    "id": "08-1-views",
-    "title": "1. Views",
-    "sectionNum": "08",
-    "sectionTitle": "Section 08: Razor Views",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-08.html#1-views",
-    "keywords": [
-      "1. Views",
-      "Razor Views",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 08 topic: 1. Views"
-  },
-  {
-    "id": "08-2-razor-syntax-essentials",
-    "title": "2. Razor Syntax Essentials",
-    "sectionNum": "08",
-    "sectionTitle": "Section 08: Razor Views",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-08.html#2-razor-syntax-essentials",
-    "keywords": [
-      "2. Razor Syntax Essentials",
-      "Razor Views",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 08 topic: 2. Razor Syntax Essentials"
-  },
-  {
-    "id": "08-3-local-functions",
-    "title": "3. Local Functions",
-    "sectionNum": "08",
-    "sectionTitle": "Section 08: Razor Views",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-08.html#3-local-functions",
-    "keywords": [
-      "3. Local Functions",
-      "Razor Views",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 08 topic: 3. Local Functions"
-  },
-  {
-    "id": "08-4-htmlraw",
-    "title": "4. Html.Raw()",
-    "sectionNum": "08",
-    "sectionTitle": "Section 08: Razor Views",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-08.html#4-htmlraw",
-    "keywords": [
-      "4. Html.Raw()",
-      "Razor Views",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 08 topic: 4. Html.Raw()"
-  },
-  {
-    "id": "08-5-viewdata-and-viewbag",
-    "title": "5. ViewData and ViewBag",
-    "sectionNum": "08",
-    "sectionTitle": "Section 08: Razor Views",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-08.html#5-viewdata-and-viewbag",
-    "keywords": [
-      "5. ViewData and ViewBag",
-      "Razor Views",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 08 topic: 5. ViewData and ViewBag"
-  },
-  {
-    "id": "08-6-strongly-typed-views",
-    "title": "6. Strongly Typed Views",
-    "sectionNum": "08",
-    "sectionTitle": "Section 08: Razor Views",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-08.html#6-strongly-typed-views",
-    "keywords": [
-      "6. Strongly Typed Views",
-      "Razor Views",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 08 topic: 6. Strongly Typed Views"
-  },
-  {
-    "id": "08-8-shared-views",
-    "title": "8. Shared Views",
-    "sectionNum": "08",
-    "sectionTitle": "Section 08: Razor Views",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-08.html#8-shared-views",
-    "keywords": [
-      "8. Shared Views",
-      "Razor Views",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 08 topic: 8. Shared Views"
-  },
-  {
     "id": "08-cheat-sheet-quick-reference",
     "title": "Razor Views — Cheat Sheet & Quick Reference",
     "sectionNum": "08",
@@ -3974,20 +3358,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 09 topic: Key Concepts"
   },
   {
-    "id": "09-code-example-1",
-    "title": "Code Example",
-    "sectionNum": "09",
-    "sectionTitle": "Section 09: Layout Views",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-09.html#code-example-1",
-    "keywords": [
-      "Code Example",
-      "Layout Views",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 09 topic: Code Example"
-  },
-  {
     "id": "09-how-it-works-1",
     "title": "How It Works",
     "sectionNum": "09",
@@ -4199,20 +3569,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 10 topic: Notes"
   },
   {
-    "id": "10-code-example",
-    "title": "Code Example",
-    "sectionNum": "10",
-    "sectionTitle": "Section 10: Partial Views",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-10.html#code-example",
-    "keywords": [
-      "Code Example",
-      "Partial Views",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 10 topic: Code Example"
-  },
-  {
     "id": "10-notes-1",
     "title": "Notes",
     "sectionNum": "10",
@@ -4269,12 +3625,12 @@ window.SEARCH_INDEX = [
     "snippet": "Section 10 topic: How to Use Strongly Typed Partial Views"
   },
   {
-    "id": "10-code-example-1",
+    "id": "10-code-example",
     "title": "Code Example",
     "sectionNum": "10",
     "sectionTitle": "Section 10: Partial Views",
     "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-10.html#code-example-1",
+    "url": "section-10.html#code-example",
     "keywords": [
       "Code Example",
       "Partial Views",
@@ -4325,12 +3681,12 @@ window.SEARCH_INDEX = [
     "snippet": "Section 10 topic: Creating a PartialViewResult"
   },
   {
-    "id": "10-code-example-2",
+    "id": "10-code-example-1",
     "title": "Code Example",
     "sectionNum": "10",
     "sectionTitle": "Section 10: Partial Views",
     "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-10.html#code-example-2",
+    "url": "section-10.html#code-example-1",
     "keywords": [
       "Code Example",
       "Partial Views",
@@ -4353,20 +3709,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 10 topic: Key Points to Remember"
   },
   {
-    "id": "10-viewdata-in-partial-views",
-    "title": "ViewData in Partial Views",
-    "sectionNum": "10",
-    "sectionTitle": "Section 10: Partial Views",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-10.html#viewdata-in-partial-views",
-    "keywords": [
-      "ViewData in Partial Views",
-      "Partial Views",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 10 topic: ViewData in Partial Views"
-  },
-  {
     "id": "10-strongly-typed-partial-views-1",
     "title": "Strongly Typed Partial Views",
     "sectionNum": "10",
@@ -4379,20 +3721,6 @@ window.SEARCH_INDEX = [
       "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
     ],
     "snippet": "Section 10 topic: Strongly Typed Partial Views"
-  },
-  {
-    "id": "10-partialviewresult-1",
-    "title": "PartialViewResult",
-    "sectionNum": "10",
-    "sectionTitle": "Section 10: Partial Views",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-10.html#partialviewresult-1",
-    "keywords": [
-      "PartialViewResult",
-      "Partial Views",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 10 topic: PartialViewResult"
   },
   {
     "id": "10-cheat-sheet-quick-reference",
@@ -4506,20 +3834,6 @@ window.SEARCH_INDEX = [
       "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
     ],
     "snippet": "Section 11 topic: How to Implement View Components"
-  },
-  {
-    "id": "11-2-create-a-view-create-a-razor-view-file-cshtml-within-the",
-    "title": "2. Create a View: Create a Razor view file (.cshtml) within the",
-    "sectionNum": "11",
-    "sectionTitle": "Section 11: View Components",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-11.html#2-create-a-view-create-a-razor-view-file-cshtml-within-the",
-    "keywords": [
-      "2. Create a View: Create a Razor view file (.cshtml) within the",
-      "View Components",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 11 topic: 2. Create a View: Create a Razor view file (.cshtml) within the"
   },
   {
     "id": "11-code",
@@ -4746,20 +4060,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 11 topic: Code"
   },
   {
-    "id": "11-2-viewcomponentresult-the-viewcomponent-method-is-used-to-return-a",
-    "title": "2. ViewComponentResult: The ViewComponent() method is used to return a",
-    "sectionNum": "11",
-    "sectionTitle": "Section 11: View Components",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-11.html#2-viewcomponentresult-the-viewcomponent-method-is-used-to-return-a",
-    "keywords": [
-      "2. ViewComponentResult: The ViewComponent() method is used to return a",
-      "View Components",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 11 topic: 2. ViewComponentResult: The ViewComponent() method is used to return a"
-  },
-  {
     "id": "11-how-it-works",
     "title": "How It Works",
     "sectionNum": "11",
@@ -4800,118 +4100,6 @@ window.SEARCH_INDEX = [
       "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
     ],
     "snippet": "Section 11 topic: Key Points to Remember"
-  },
-  {
-    "id": "11-1-view-components-modular-ui-components",
-    "title": "1. View Components: Modular UI Components",
-    "sectionNum": "11",
-    "sectionTitle": "Section 11: View Components",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-11.html#1-view-components-modular-ui-components",
-    "keywords": [
-      "1. View Components: Modular UI Components",
-      "View Components",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 11 topic: 1. View Components: Modular UI Components"
-  },
-  {
-    "id": "11-2-methods",
-    "title": "2. Methods",
-    "sectionNum": "11",
-    "sectionTitle": "Section 11: View Components",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-11.html#2-methods",
-    "keywords": [
-      "2. Methods",
-      "View Components",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 11 topic: 2. Methods"
-  },
-  {
-    "id": "11-3-invoking-view-components",
-    "title": "3. Invoking View Components",
-    "sectionNum": "11",
-    "sectionTitle": "Section 11: View Components",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-11.html#3-invoking-view-components",
-    "keywords": [
-      "3. Invoking View Components",
-      "View Components",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 11 topic: 3. Invoking View Components"
-  },
-  {
-    "id": "11-4-strongly-typed-view-components",
-    "title": "4. Strongly Typed View Components",
-    "sectionNum": "11",
-    "sectionTitle": "Section 11: View Components",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-11.html#4-strongly-typed-view-components",
-    "keywords": [
-      "4. Strongly Typed View Components",
-      "View Components",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 11 topic: 4. Strongly Typed View Components"
-  },
-  {
-    "id": "11-5-passing-parameters",
-    "title": "5. Passing Parameters",
-    "sectionNum": "11",
-    "sectionTitle": "Section 11: View Components",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-11.html#5-passing-parameters",
-    "keywords": [
-      "5. Passing Parameters",
-      "View Components",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 11 topic: 5. Passing Parameters"
-  },
-  {
-    "id": "11-7-best-practices",
-    "title": "7. Best Practices",
-    "sectionNum": "11",
-    "sectionTitle": "Section 11: View Components",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-11.html#7-best-practices",
-    "keywords": [
-      "7. Best Practices",
-      "View Components",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 11 topic: 7. Best Practices"
-  },
-  {
-    "id": "11-8-things-to-avoid",
-    "title": "8. Things to Avoid",
-    "sectionNum": "11",
-    "sectionTitle": "Section 11: View Components",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-11.html#8-things-to-avoid",
-    "keywords": [
-      "8. Things to Avoid",
-      "View Components",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 11 topic: 8. Things to Avoid"
-  },
-  {
-    "id": "11-9-when-to-use",
-    "title": "9. When to Use",
-    "sectionNum": "11",
-    "sectionTitle": "Section 11: View Components",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-11.html#9-when-to-use",
-    "keywords": [
-      "9. When to Use",
-      "View Components",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 11 topic: 9. When to Use"
   },
   {
     "id": "11-cheat-sheet-quick-reference",
@@ -5265,104 +4453,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 12 topic: Best Practices of DI"
   },
   {
-    "id": "12-1-constructor-injection-as-the-default",
-    "title": "1. Constructor Injection as the Default",
-    "sectionNum": "12",
-    "sectionTitle": "Section 12: Dependency Injection",
-    "moduleTitle": "Module 4: Dependency Injection, Environments & Configuration",
-    "url": "section-12.html#1-constructor-injection-as-the-default",
-    "keywords": [
-      "1. Constructor Injection as the Default",
-      "Dependency Injection",
-      "Module 4: Dependency Injection, Environments & Configuration"
-    ],
-    "snippet": "Section 12 topic: 1. Constructor Injection as the Default"
-  },
-  {
-    "id": "12-4-register-dependencies-at-the-composition-root",
-    "title": "4. Register Dependencies at the Composition Root",
-    "sectionNum": "12",
-    "sectionTitle": "Section 12: Dependency Injection",
-    "moduleTitle": "Module 4: Dependency Injection, Environments & Configuration",
-    "url": "section-12.html#4-register-dependencies-at-the-composition-root",
-    "keywords": [
-      "4. Register Dependencies at the Composition Root",
-      "Dependency Injection",
-      "Module 4: Dependency Injection, Environments & Configuration"
-    ],
-    "snippet": "Section 12 topic: 4. Register Dependencies at the Composition Root"
-  },
-  {
-    "id": "12-5-choose-the-appropriate-service-lifetime",
-    "title": "5. Choose the Appropriate Service Lifetime",
-    "sectionNum": "12",
-    "sectionTitle": "Section 12: Dependency Injection",
-    "moduleTitle": "Module 4: Dependency Injection, Environments & Configuration",
-    "url": "section-12.html#5-choose-the-appropriate-service-lifetime",
-    "keywords": [
-      "5. Choose the Appropriate Service Lifetime",
-      "Dependency Injection",
-      "Module 4: Dependency Injection, Environments & Configuration"
-    ],
-    "snippet": "Section 12 topic: 5. Choose the Appropriate Service Lifetime"
-  },
-  {
-    "id": "12-6-avoid-captive-dependencies",
-    "title": "6. Avoid Captive Dependencies",
-    "sectionNum": "12",
-    "sectionTitle": "Section 12: Dependency Injection",
-    "moduleTitle": "Module 4: Dependency Injection, Environments & Configuration",
-    "url": "section-12.html#6-avoid-captive-dependencies",
-    "keywords": [
-      "6. Avoid Captive Dependencies",
-      "Dependency Injection",
-      "Module 4: Dependency Injection, Environments & Configuration"
-    ],
-    "snippet": "Section 12 topic: 6. Avoid Captive Dependencies"
-  },
-  {
-    "id": "12-7-use-decorators-to-add-cross-cutting-concerns",
-    "title": "7. Use Decorators to Add Cross-Cutting Concerns",
-    "sectionNum": "12",
-    "sectionTitle": "Section 12: Dependency Injection",
-    "moduleTitle": "Module 4: Dependency Injection, Environments & Configuration",
-    "url": "section-12.html#7-use-decorators-to-add-cross-cutting-concerns",
-    "keywords": [
-      "7. Use Decorators to Add Cross-Cutting Concerns",
-      "Dependency Injection",
-      "Module 4: Dependency Injection, Environments & Configuration"
-    ],
-    "snippet": "Section 12 topic: 7. Use Decorators to Add Cross-Cutting Concerns"
-  },
-  {
-    "id": "12-8-leverage-options-pattern-for-configuration",
-    "title": "8. Leverage Options Pattern for Configuration",
-    "sectionNum": "12",
-    "sectionTitle": "Section 12: Dependency Injection",
-    "moduleTitle": "Module 4: Dependency Injection, Environments & Configuration",
-    "url": "section-12.html#8-leverage-options-pattern-for-configuration",
-    "keywords": [
-      "8. Leverage Options Pattern for Configuration",
-      "Dependency Injection",
-      "Module 4: Dependency Injection, Environments & Configuration"
-    ],
-    "snippet": "Section 12 topic: 8. Leverage Options Pattern for Configuration"
-  },
-  {
-    "id": "12-10-dont-overuse-di",
-    "title": "10. Don't Overuse DI",
-    "sectionNum": "12",
-    "sectionTitle": "Section 12: Dependency Injection",
-    "moduleTitle": "Module 4: Dependency Injection, Environments & Configuration",
-    "url": "section-12.html#10-dont-overuse-di",
-    "keywords": [
-      "10. Don't Overuse DI",
-      "Dependency Injection",
-      "Module 4: Dependency Injection, Environments & Configuration"
-    ],
-    "snippet": "Section 12 topic: 10. Don't Overuse DI"
-  },
-  {
     "id": "12-autofac",
     "title": "Autofac",
     "sectionNum": "12",
@@ -5391,34 +4481,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 12 topic: Key Advantages of Autofac"
   },
   {
-    "id": "12-code-3",
-    "title": "Code",
-    "sectionNum": "12",
-    "sectionTitle": "Section 12: Dependency Injection",
-    "moduleTitle": "Module 4: Dependency Injection, Environments & Configuration",
-    "url": "section-12.html#code-3",
-    "keywords": [
-      "Code",
-      "Dependency Injection",
-      "Module 4: Dependency Injection, Environments & Configuration"
-    ],
-    "snippet": "Section 12 topic: Code"
-  },
-  {
-    "id": "12-register-citiesservice-as-scoped",
-    "title": "Register CitiesService as Scoped",
-    "sectionNum": "12",
-    "sectionTitle": "Section 12: Dependency Injection",
-    "moduleTitle": "Module 4: Dependency Injection, Environments & Configuration",
-    "url": "section-12.html#register-citiesservice-as-scoped",
-    "keywords": [
-      "Register CitiesService as Scoped",
-      "Dependency Injection",
-      "Module 4: Dependency Injection, Environments & Configuration"
-    ],
-    "snippet": "Section 12 topic: Register CitiesService as Scoped"
-  },
-  {
     "id": "12-autofac-registration-methods",
     "title": "Autofac Registration Methods",
     "sectionNum": "12",
@@ -5431,20 +4493,6 @@ window.SEARCH_INDEX = [
       "Module 4: Dependency Injection, Environments & Configuration"
     ],
     "snippet": "Section 12 topic: Autofac Registration Methods"
-  },
-  {
-    "id": "12-notes-1",
-    "title": "Notes",
-    "sectionNum": "12",
-    "sectionTitle": "Section 12: Dependency Injection",
-    "moduleTitle": "Module 4: Dependency Injection, Environments & Configuration",
-    "url": "section-12.html#notes-1",
-    "keywords": [
-      "Notes",
-      "Dependency Injection",
-      "Module 4: Dependency Injection, Environments & Configuration"
-    ],
-    "snippet": "Section 12 topic: Notes"
   },
   {
     "id": "12-service-scope",
@@ -5461,12 +4509,12 @@ window.SEARCH_INDEX = [
     "snippet": "Section 12 topic: Service Scope"
   },
   {
-    "id": "12-code-4",
+    "id": "12-code-3",
     "title": "Code",
     "sectionNum": "12",
     "sectionTitle": "Section 12: Dependency Injection",
     "moduleTitle": "Module 4: Dependency Injection, Environments & Configuration",
-    "url": "section-12.html#code-4",
+    "url": "section-12.html#code-3",
     "keywords": [
       "Code",
       "Dependency Injection",
@@ -5599,20 +4647,6 @@ window.SEARCH_INDEX = [
       "Module 4: Dependency Injection, Environments & Configuration"
     ],
     "snippet": "Section 12 topic: Autofac Registration"
-  },
-  {
-    "id": "12-interview-tips",
-    "title": "Interview Tips",
-    "sectionNum": "12",
-    "sectionTitle": "Section 12: Dependency Injection",
-    "moduleTitle": "Module 4: Dependency Injection, Environments & Configuration",
-    "url": "section-12.html#interview-tips",
-    "keywords": [
-      "Interview Tips",
-      "Dependency Injection",
-      "Module 4: Dependency Injection, Environments & Configuration"
-    ],
-    "snippet": "Section 12 topic: Interview Tips"
   },
   {
     "id": "12-cheat-sheet-quick-reference",
@@ -5854,20 +4888,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 13 topic: How It Works"
   },
   {
-    "id": "13-1-environment-check-the-environment-tag-helper-reads-the-value-of-the",
-    "title": "1. Environment Check: The <environment> tag helper reads the value of the",
-    "sectionNum": "13",
-    "sectionTitle": "Section 13: Environments",
-    "moduleTitle": "Module 4: Dependency Injection, Environments & Configuration",
-    "url": "section-13.html#1-environment-check-the-environment-tag-helper-reads-the-value-of-the",
-    "keywords": [
-      "1. Environment Check: The <environment> tag helper reads the value of the",
-      "Environments",
-      "Module 4: Dependency Injection, Environments & Configuration"
-    ],
-    "snippet": "Section 13 topic: 1. Environment Check: The <environment> tag helper reads the value of the"
-  },
-  {
     "id": "13-code-examples",
     "title": "Code Examples",
     "sectionNum": "13",
@@ -5922,34 +4942,6 @@ window.SEARCH_INDEX = [
       "Module 4: Dependency Injection, Environments & Configuration"
     ],
     "snippet": "Section 13 topic: Set the Environment from the Terminal"
-  },
-  {
-    "id": "13-making-environment-variables-persistent",
-    "title": "Making Environment Variables Persistent",
-    "sectionNum": "13",
-    "sectionTitle": "Section 13: Environments",
-    "moduleTitle": "Module 4: Dependency Injection, Environments & Configuration",
-    "url": "section-13.html#making-environment-variables-persistent",
-    "keywords": [
-      "Making Environment Variables Persistent",
-      "Environments",
-      "Module 4: Dependency Injection, Environments & Configuration"
-    ],
-    "snippet": "Section 13 topic: Making Environment Variables Persistent"
-  },
-  {
-    "id": "13-5-enter-aspnetcore_environment-as-the-variable-name-and-the-desired",
-    "title": "5. Enter ASPNETCORE_ENVIRONMENT as the variable name and the desired",
-    "sectionNum": "13",
-    "sectionTitle": "Section 13: Environments",
-    "moduleTitle": "Module 4: Dependency Injection, Environments & Configuration",
-    "url": "section-13.html#5-enter-aspnetcore_environment-as-the-variable-name-and-the-desired",
-    "keywords": [
-      "5. Enter ASPNETCORE_ENVIRONMENT as the variable name and the desired",
-      "Environments",
-      "Module 4: Dependency Injection, Environments & Configuration"
-    ],
-    "snippet": "Section 13 topic: 5. Enter ASPNETCORE_ENVIRONMENT as the variable name and the desired"
   },
   {
     "id": "13-important-considerations-1",
@@ -6261,48 +5253,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 14 topic: How to Set User Secrets Using the dotnet Command"
   },
   {
-    "id": "14-accessing-user-secrets-in-your-code",
-    "title": "Accessing User Secrets in Your Code",
-    "sectionNum": "14",
-    "sectionTitle": "Section 14: Configuration",
-    "moduleTitle": "Module 4: Dependency Injection, Environments & Configuration",
-    "url": "section-14.html#accessing-user-secrets-in-your-code",
-    "keywords": [
-      "Accessing User Secrets in Your Code",
-      "Configuration",
-      "Module 4: Dependency Injection, Environments & Configuration"
-    ],
-    "snippet": "Section 14 topic: Accessing User Secrets in Your Code"
-  },
-  {
-    "id": "14-1-initialize-dotnet-user-secrets-init",
-    "title": "1. Initialize: dotnet user-secrets init",
-    "sectionNum": "14",
-    "sectionTitle": "Section 14: Configuration",
-    "moduleTitle": "Module 4: Dependency Injection, Environments & Configuration",
-    "url": "section-14.html#1-initialize-dotnet-user-secrets-init",
-    "keywords": [
-      "1. Initialize: dotnet user-secrets init",
-      "Configuration",
-      "Module 4: Dependency Injection, Environments & Configuration"
-    ],
-    "snippet": "Section 14 topic: 1. Initialize: dotnet user-secrets init"
-  },
-  {
-    "id": "14-2-set-secret-dotnet-user-secrets-set-stripeapikey-sk_test_1234567890",
-    "title": "2. Set Secret: dotnet user-secrets set \"StripeApiKey\" \"sk_test_1234567890\"",
-    "sectionNum": "14",
-    "sectionTitle": "Section 14: Configuration",
-    "moduleTitle": "Module 4: Dependency Injection, Environments & Configuration",
-    "url": "section-14.html#2-set-secret-dotnet-user-secrets-set-stripeapikey-sk_test_1234567890",
-    "keywords": [
-      "2. Set Secret: dotnet user-secrets set \"StripeApiKey\" \"sk_test_1234567890\"",
-      "Configuration",
-      "Module 4: Dependency Injection, Environments & Configuration"
-    ],
-    "snippet": "Section 14 topic: 2. Set Secret: dotnet user-secrets set \"StripeApiKey\" \"sk_test_1234567890\""
-  },
-  {
     "id": "14-set-configuration-values-from-environment-variables",
     "title": "Set Configuration Values from Environment Variables",
     "sectionNum": "14",
@@ -6483,20 +5433,6 @@ window.SEARCH_INDEX = [
       "Module 4: Dependency Injection, Environments & Configuration"
     ],
     "snippet": "Section 14 topic: Adding Custom JSON Files as Configuration Sources"
-  },
-  {
-    "id": "14-accessing-custom-configuration-values",
-    "title": "Accessing Custom Configuration Values",
-    "sectionNum": "14",
-    "sectionTitle": "Section 14: Configuration",
-    "moduleTitle": "Module 4: Dependency Injection, Environments & Configuration",
-    "url": "section-14.html#accessing-custom-configuration-values",
-    "keywords": [
-      "Accessing Custom Configuration Values",
-      "Configuration",
-      "Module 4: Dependency Injection, Environments & Configuration"
-    ],
-    "snippet": "Section 14 topic: Accessing Custom Configuration Values"
   },
   {
     "id": "14-httpclient",
@@ -6878,20 +5814,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 15 topic: AAA (Arrange-Act-Assert) Pattern"
   },
   {
-    "id": "15-mocking",
-    "title": "Mocking",
-    "sectionNum": "15",
-    "sectionTitle": "Section 15: xUnit",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-15.html#mocking",
-    "keywords": [
-      "Mocking",
-      "xUnit",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 15 topic: Mocking"
-  },
-  {
     "id": "15-best-practices-1",
     "title": "Best Practices",
     "sectionNum": "15",
@@ -7216,20 +6138,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 17 topic: Important Tag Helpers with Examples"
   },
   {
-    "id": "17-content-to-cache",
-    "title": "Content to cache",
-    "sectionNum": "17",
-    "sectionTitle": "Section 17: Tag Helpers",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-17.html#content-to-cache",
-    "keywords": [
-      "Content to cache",
-      "Tag Helpers",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 17 topic: Content to cache"
-  },
-  {
     "id": "17-controllers",
     "title": "Controllers",
     "sectionNum": "17",
@@ -7242,174 +6150,6 @@ window.SEARCH_INDEX = [
       "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
     ],
     "snippet": "Section 17 topic: Controllers"
-  },
-  {
-    "id": "17-1-retrieves-data-from-the-personsservice-using-methods-like",
-    "title": "1. Retrieves data from the PersonsService using methods like",
-    "sectionNum": "17",
-    "sectionTitle": "Section 17: Tag Helpers",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-17.html#1-retrieves-data-from-the-personsservice-using-methods-like",
-    "keywords": [
-      "1. Retrieves data from the PersonsService using methods like",
-      "Tag Helpers",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 17 topic: 1. Retrieves data from the PersonsService using methods like"
-  },
-  {
-    "id": "17-1-retrieves-a-list-of-countries-from-countriesservice-for-populating-the",
-    "title": "1. Retrieves a list of countries from CountriesService for populating the",
-    "sectionNum": "17",
-    "sectionTitle": "Section 17: Tag Helpers",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-17.html#1-retrieves-a-list-of-countries-from-countriesservice-for-populating-the",
-    "keywords": [
-      "1. Retrieves a list of countries from CountriesService for populating the",
-      "Tag Helpers",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 17 topic: 1. Retrieves a list of countries from CountriesService for populating the"
-  },
-  {
-    "id": "17-3-if-valid-calls-_personsserviceaddperson-to-create-the-new-person",
-    "title": "3. If valid, calls _personsService.AddPerson to create the new person",
-    "sectionNum": "17",
-    "sectionTitle": "Section 17: Tag Helpers",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-17.html#3-if-valid-calls-_personsserviceaddperson-to-create-the-new-person",
-    "keywords": [
-      "3. If valid, calls _personsService.AddPerson to create the new person",
-      "Tag Helpers",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 17 topic: 3. If valid, calls _personsService.AddPerson to create the new person"
-  },
-  {
-    "id": "17-4-if-invalid-repopulates-viewbagcountries-and-viewbagerrors-and",
-    "title": "4. If invalid, repopulates ViewBag.Countries and ViewBag.Errors and",
-    "sectionNum": "17",
-    "sectionTitle": "Section 17: Tag Helpers",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-17.html#4-if-invalid-repopulates-viewbagcountries-and-viewbagerrors-and",
-    "keywords": [
-      "4. If invalid, repopulates ViewBag.Countries and ViewBag.Errors and",
-      "Tag Helpers",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 17 topic: 4. If invalid, repopulates ViewBag.Countries and ViewBag.Errors and"
-  },
-  {
-    "id": "17-1-retrieves-the-person-to-edit-using",
-    "title": "1. Retrieves the person to edit using",
-    "sectionNum": "17",
-    "sectionTitle": "Section 17: Tag Helpers",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-17.html#1-retrieves-the-person-to-edit-using",
-    "keywords": [
-      "1. Retrieves the person to edit using",
-      "Tag Helpers",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 17 topic: 1. Retrieves the person to edit using"
-  },
-  {
-    "id": "17-2-retrieves-a-list-of-countries-from-countriesservice-for-the",
-    "title": "2. Retrieves a list of countries from CountriesService for the",
-    "sectionNum": "17",
-    "sectionTitle": "Section 17: Tag Helpers",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-17.html#2-retrieves-a-list-of-countries-from-countriesservice-for-the",
-    "keywords": [
-      "2. Retrieves a list of countries from CountriesService for the",
-      "Tag Helpers",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 17 topic: 2. Retrieves a list of countries from CountriesService for the"
-  },
-  {
-    "id": "17-3-returns-the-edit-view-with-the-persons-data-in-a",
-    "title": "3. Returns the Edit view with the person's data in a",
-    "sectionNum": "17",
-    "sectionTitle": "Section 17: Tag Helpers",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-17.html#3-returns-the-edit-view-with-the-persons-data-in-a",
-    "keywords": [
-      "3. Returns the Edit view with the person's data in a",
-      "Tag Helpers",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 17 topic: 3. Returns the Edit view with the person's data in a"
-  },
-  {
-    "id": "17-3-if-valid-calls-_personsserviceupdateperson-and-redirects-to-the",
-    "title": "3. If valid, calls _personsService.UpdatePerson and redirects to the",
-    "sectionNum": "17",
-    "sectionTitle": "Section 17: Tag Helpers",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-17.html#3-if-valid-calls-_personsserviceupdateperson-and-redirects-to-the",
-    "keywords": [
-      "3. If valid, calls _personsService.UpdatePerson and redirects to the",
-      "Tag Helpers",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 17 topic: 3. If valid, calls _personsService.UpdatePerson and redirects to the"
-  },
-  {
-    "id": "17-4-if-invalid-repopulates-viewbagcountries-and-viewbagerrors-and-1",
-    "title": "4. If invalid, repopulates ViewBag.Countries and ViewBag.Errors and",
-    "sectionNum": "17",
-    "sectionTitle": "Section 17: Tag Helpers",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-17.html#4-if-invalid-repopulates-viewbagcountries-and-viewbagerrors-and-1",
-    "keywords": [
-      "4. If invalid, repopulates ViewBag.Countries and ViewBag.Errors and",
-      "Tag Helpers",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 17 topic: 4. If invalid, repopulates ViewBag.Countries and ViewBag.Errors and"
-  },
-  {
-    "id": "17-1-retrieves-the-person-to-delete-using",
-    "title": "1. Retrieves the person to delete using",
-    "sectionNum": "17",
-    "sectionTitle": "Section 17: Tag Helpers",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-17.html#1-retrieves-the-person-to-delete-using",
-    "keywords": [
-      "1. Retrieves the person to delete using",
-      "Tag Helpers",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 17 topic: 1. Retrieves the person to delete using"
-  },
-  {
-    "id": "17-1-receives-personupdaterequest-containing-the-personid-via-model",
-    "title": "1. Receives PersonUpdateRequest (containing the PersonID) via model",
-    "sectionNum": "17",
-    "sectionTitle": "Section 17: Tag Helpers",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-17.html#1-receives-personupdaterequest-containing-the-personid-via-model",
-    "keywords": [
-      "1. Receives PersonUpdateRequest (containing the PersonID) via model",
-      "Tag Helpers",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 17 topic: 1. Receives PersonUpdateRequest (containing the PersonID) via model"
-  },
-  {
-    "id": "17-2-calls-_personsservicedeleteperson-and-redirects-to-the-index",
-    "title": "2. Calls _personsService.DeletePerson and redirects to the Index",
-    "sectionNum": "17",
-    "sectionTitle": "Section 17: Tag Helpers",
-    "moduleTitle": "Module 3: Razor Views, Partial Views, View Components & Tag Helpers",
-    "url": "section-17.html#2-calls-_personsservicedeleteperson-and-redirects-to-the-index",
-    "keywords": [
-      "2. Calls _personsService.DeletePerson and redirects to the Index",
-      "Tag Helpers",
-      "Module 3: Razor Views, Partial Views, View Components & Tag Helpers"
-    ],
-    "snippet": "Section 17 topic: 2. Calls _personsService.DeletePerson and redirects to the Index"
   },
   {
     "id": "17-views",
@@ -7735,20 +6475,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 18 topic: SQL Server Connection String Format (Example)"
   },
   {
-    "id": "18-bash",
-    "title": "Bash",
-    "sectionNum": "18",
-    "sectionTitle": "Section 18: EntityFrameworkCore",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-18.html#bash",
-    "keywords": [
-      "Bash",
-      "EntityFrameworkCore",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 18 topic: Bash"
-  },
-  {
     "id": "18-injecting-and-using-the-connection-string-in-ef-core",
     "title": "Injecting and Using the Connection String in EF Core",
     "sectionNum": "18",
@@ -7903,48 +6629,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 18 topic: Using Code First Migrations with the Package Manager Console"
   },
   {
-    "id": "18-enable-migrations",
-    "title": "Enable-Migrations",
-    "sectionNum": "18",
-    "sectionTitle": "Section 18: EntityFrameworkCore",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-18.html#enable-migrations",
-    "keywords": [
-      "Enable-Migrations",
-      "EntityFrameworkCore",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 18 topic: Enable-Migrations"
-  },
-  {
-    "id": "18-get-migrations",
-    "title": "Get-Migrations",
-    "sectionNum": "18",
-    "sectionTitle": "Section 18: EntityFrameworkCore",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-18.html#get-migrations",
-    "keywords": [
-      "Get-Migrations",
-      "EntityFrameworkCore",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 18 topic: Get-Migrations"
-  },
-  {
-    "id": "18-update-database",
-    "title": "Update-Database",
-    "sectionNum": "18",
-    "sectionTitle": "Section 18: EntityFrameworkCore",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-18.html#update-database",
-    "keywords": [
-      "Update-Database",
-      "EntityFrameworkCore",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 18 topic: Update-Database"
-  },
-  {
     "id": "18-best-practices-2",
     "title": "Best Practices",
     "sectionNum": "18",
@@ -7971,48 +6655,6 @@ window.SEARCH_INDEX = [
       "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
     ],
     "snippet": "Section 18 topic: Controller Actions"
-  },
-  {
-    "id": "18-3-view-rendering-returns-the-index-view-passing-the-filtered-and-sorted",
-    "title": "3. View Rendering: Returns the Index view, passing the filtered and sorted",
-    "sectionNum": "18",
-    "sectionTitle": "Section 18: EntityFrameworkCore",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-18.html#3-view-rendering-returns-the-index-view-passing-the-filtered-and-sorted",
-    "keywords": [
-      "3. View Rendering: Returns the Index view, passing the filtered and sorted",
-      "EntityFrameworkCore",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 18 topic: 3. View Rendering: Returns the Index view, passing the filtered and sorted"
-  },
-  {
-    "id": "18-1-country-list-retrieval-fetches-countries-from-countriesservice-and",
-    "title": "1. Country List Retrieval: Fetches countries from CountriesService and",
-    "sectionNum": "18",
-    "sectionTitle": "Section 18: EntityFrameworkCore",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-18.html#1-country-list-retrieval-fetches-countries-from-countriesservice-and",
-    "keywords": [
-      "1. Country List Retrieval: Fetches countries from CountriesService and",
-      "EntityFrameworkCore",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 18 topic: 1. Country List Retrieval: Fetches countries from CountriesService and"
-  },
-  {
-    "id": "18-1-model-binding-binds-the-submitted-form-data-to-a-personaddrequest",
-    "title": "1. Model Binding: Binds the submitted form data to a PersonAddRequest",
-    "sectionNum": "18",
-    "sectionTitle": "Section 18: EntityFrameworkCore",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-18.html#1-model-binding-binds-the-submitted-form-data-to-a-personaddrequest",
-    "keywords": [
-      "1. Model Binding: Binds the submitted form data to a PersonAddRequest",
-      "EntityFrameworkCore",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 18 topic: 1. Model Binding: Binds the submitted form data to a PersonAddRequest"
   },
   {
     "id": "18-views",
@@ -8225,20 +6867,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 18 topic: LINQ Queries with Table Relations"
   },
   {
-    "id": "18-best-practices-4",
-    "title": "Best Practices",
-    "sectionNum": "18",
-    "sectionTitle": "Section 18: EntityFrameworkCore",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-18.html#best-practices-4",
-    "keywords": [
-      "Best Practices",
-      "EntityFrameworkCore",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 18 topic: Best Practices"
-  },
-  {
     "id": "18-things-to-avoid",
     "title": "Things to Avoid",
     "sectionNum": "18",
@@ -8281,12 +6909,12 @@ window.SEARCH_INDEX = [
     "snippet": "Section 18 topic: Controller Actions"
   },
   {
-    "id": "18-best-practices-5",
+    "id": "18-best-practices-4",
     "title": "Best Practices",
     "sectionNum": "18",
     "sectionTitle": "Section 18: EntityFrameworkCore",
     "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-18.html#best-practices-5",
+    "url": "section-18.html#best-practices-4",
     "keywords": [
       "Best Practices",
       "EntityFrameworkCore",
@@ -8309,12 +6937,12 @@ window.SEARCH_INDEX = [
     "snippet": "Section 18 topic: Notes About Rotativa"
   },
   {
-    "id": "18-best-practices-6",
+    "id": "18-best-practices-5",
     "title": "Best Practices",
     "sectionNum": "18",
     "sectionTitle": "Section 18: EntityFrameworkCore",
     "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-18.html#best-practices-6",
+    "url": "section-18.html#best-practices-5",
     "keywords": [
       "Best Practices",
       "EntityFrameworkCore",
@@ -8365,12 +6993,12 @@ window.SEARCH_INDEX = [
     "snippet": "Section 18 topic: Notes About CsvHelper"
   },
   {
-    "id": "18-best-practices-7",
+    "id": "18-best-practices-6",
     "title": "Best Practices",
     "sectionNum": "18",
     "sectionTitle": "Section 18: EntityFrameworkCore",
     "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-18.html#best-practices-7",
+    "url": "section-18.html#best-practices-6",
     "keywords": [
       "Best Practices",
       "EntityFrameworkCore",
@@ -8519,12 +7147,12 @@ window.SEARCH_INDEX = [
     "snippet": "Section 18 topic: Generating Files"
   },
   {
-    "id": "18-best-practices-8",
+    "id": "18-best-practices-7",
     "title": "Best Practices",
     "sectionNum": "18",
     "sectionTitle": "Section 18: EntityFrameworkCore",
     "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-18.html#best-practices-8",
+    "url": "section-18.html#best-practices-7",
     "keywords": [
       "Best Practices",
       "EntityFrameworkCore",
@@ -8955,62 +7583,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 20 topic: ILogger"
   },
   {
-    "id": "20-1-abstraction",
-    "title": "1. Abstraction",
-    "sectionNum": "20",
-    "sectionTitle": "Section 20: Logging",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-20.html#1-abstraction",
-    "keywords": [
-      "1. Abstraction",
-      "Logging",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 20 topic: 1. Abstraction"
-  },
-  {
-    "id": "20-2-log-levels",
-    "title": "2. Log Levels",
-    "sectionNum": "20",
-    "sectionTitle": "Section 20: Logging",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-20.html#2-log-levels",
-    "keywords": [
-      "2. Log Levels",
-      "Logging",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 20 topic: 2. Log Levels"
-  },
-  {
-    "id": "20-3-structured-logging",
-    "title": "3. Structured Logging",
-    "sectionNum": "20",
-    "sectionTitle": "Section 20: Logging",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-20.html#3-structured-logging",
-    "keywords": [
-      "3. Structured Logging",
-      "Logging",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 20 topic: 3. Structured Logging"
-  },
-  {
-    "id": "20-4-dependency-injection",
-    "title": "4. Dependency Injection",
-    "sectionNum": "20",
-    "sectionTitle": "Section 20: Logging",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-20.html#4-dependency-injection",
-    "keywords": [
-      "4. Dependency Injection",
-      "Logging",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 20 topic: 4. Dependency Injection"
-  },
-  {
     "id": "20-logging-configuration",
     "title": "Logging Configuration",
     "sectionNum": "20",
@@ -9135,20 +7707,6 @@ window.SEARCH_INDEX = [
       "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
     ],
     "snippet": "Section 20 topic: Code Snippets"
-  },
-  {
-    "id": "20-best-practices",
-    "title": "Best Practices",
-    "sectionNum": "20",
-    "sectionTitle": "Section 20: Logging",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-20.html#best-practices",
-    "keywords": [
-      "Best Practices",
-      "Logging",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 20 topic: Best Practices"
   },
   {
     "id": "20-interview-tips",
@@ -9404,62 +7962,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 21 topic: Filter Execution Order"
   },
   {
-    "id": "21-1-responseheaderactionfilter-from-action-order-1",
-    "title": "1. ResponseHeaderActionFilter (from action, Order = 1)",
-    "sectionNum": "21",
-    "sectionTitle": "Section 21: Filters",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-21.html#1-responseheaderactionfilter-from-action-order-1",
-    "keywords": [
-      "1. ResponseHeaderActionFilter (from action, Order = 1)",
-      "Filters",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 21 topic: 1. ResponseHeaderActionFilter (from action, Order = 1)"
-  },
-  {
-    "id": "21-2-responseheaderactionfilter-from-controller-order-3",
-    "title": "2. ResponseHeaderActionFilter (from controller, Order = 3)",
-    "sectionNum": "21",
-    "sectionTitle": "Section 21: Filters",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-21.html#2-responseheaderactionfilter-from-controller-order-3",
-    "keywords": [
-      "2. ResponseHeaderActionFilter (from controller, Order = 3)",
-      "Filters",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 21 topic: 2. ResponseHeaderActionFilter (from controller, Order = 3)"
-  },
-  {
-    "id": "21-3-personslistactionfilter-order-4",
-    "title": "3. PersonsListActionFilter (Order = 4)",
-    "sectionNum": "21",
-    "sectionTitle": "Section 21: Filters",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-21.html#3-personslistactionfilter-order-4",
-    "keywords": [
-      "3. PersonsListActionFilter (Order = 4)",
-      "Filters",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 21 topic: 3. PersonsListActionFilter (Order = 4)"
-  },
-  {
-    "id": "21-notes",
-    "title": "Notes",
-    "sectionNum": "21",
-    "sectionTitle": "Section 21: Filters",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-21.html#notes",
-    "keywords": [
-      "Notes",
-      "Filters",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 21 topic: Notes"
-  },
-  {
     "id": "21-asynchronous-filters",
     "title": "Asynchronous Filters",
     "sectionNum": "21",
@@ -9472,34 +7974,6 @@ window.SEARCH_INDEX = [
       "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
     ],
     "snippet": "Section 21 topic: Asynchronous Filters"
-  },
-  {
-    "id": "21-actionexecutiondelegate-next",
-    "title": "ActionExecutionDelegate next)",
-    "sectionNum": "21",
-    "sectionTitle": "Section 21: Filters",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-21.html#actionexecutiondelegate-next",
-    "keywords": [
-      "ActionExecutionDelegate next)",
-      "Filters",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 21 topic: ActionExecutionDelegate next)"
-  },
-  {
-    "id": "21-resultexecutiondelegate-next",
-    "title": "ResultExecutionDelegate next)",
-    "sectionNum": "21",
-    "sectionTitle": "Section 21: Filters",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-21.html#resultexecutiondelegate-next",
-    "keywords": [
-      "ResultExecutionDelegate next)",
-      "Filters",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 21 topic: ResultExecutionDelegate next)"
   },
   {
     "id": "21-short-circuiting-action-filters",
@@ -9516,12 +7990,12 @@ window.SEARCH_INDEX = [
     "snippet": "Section 21 topic: Short-Circuiting Action Filters"
   },
   {
-    "id": "21-notes-1",
+    "id": "21-notes",
     "title": "Notes",
     "sectionNum": "21",
     "sectionTitle": "Section 21: Filters",
     "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-21.html#notes-1",
+    "url": "section-21.html#notes",
     "keywords": [
       "Notes",
       "Filters",
@@ -9544,34 +8018,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 21 topic: Result Filters"
   },
   {
-    "id": "21-onresultexecutedresultexecutedcontext-context-after",
-    "title": "OnResultExecuted(ResultExecutedContext context) (after)",
-    "sectionNum": "21",
-    "sectionTitle": "Section 21: Filters",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-21.html#onresultexecutedresultexecutedcontext-context-after",
-    "keywords": [
-      "OnResultExecuted(ResultExecutedContext context) (after)",
-      "Filters",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 21 topic: OnResultExecuted(ResultExecutedContext context) (after)"
-  },
-  {
-    "id": "21-resultexecutiondelegate-next-1",
-    "title": "ResultExecutionDelegate next)",
-    "sectionNum": "21",
-    "sectionTitle": "Section 21: Filters",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-21.html#resultexecutiondelegate-next-1",
-    "keywords": [
-      "ResultExecutionDelegate next)",
-      "Filters",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 21 topic: ResultExecutionDelegate next)"
-  },
-  {
     "id": "21-resource-filters",
     "title": "Resource Filters",
     "sectionNum": "21",
@@ -9584,20 +8030,6 @@ window.SEARCH_INDEX = [
       "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
     ],
     "snippet": "Section 21 topic: Resource Filters"
-  },
-  {
-    "id": "21-onresourceexecutedresourceexecutedcontext-context",
-    "title": "OnResourceExecuted(ResourceExecutedContext context)",
-    "sectionNum": "21",
-    "sectionTitle": "Section 21: Filters",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-21.html#onresourceexecutedresourceexecutedcontext-context",
-    "keywords": [
-      "OnResourceExecuted(ResourceExecutedContext context)",
-      "Filters",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 21 topic: OnResourceExecuted(ResourceExecutedContext context)"
   },
   {
     "id": "21-exception-filters",
@@ -9642,12 +8074,12 @@ window.SEARCH_INDEX = [
     "snippet": "Section 21 topic: Code Explanation"
   },
   {
-    "id": "21-notes-2",
+    "id": "21-notes-1",
     "title": "Notes",
     "sectionNum": "21",
     "sectionTitle": "Section 21: Filters",
     "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-21.html#notes-2",
+    "url": "section-21.html#notes-1",
     "keywords": [
       "Notes",
       "Filters",
@@ -9810,12 +8242,12 @@ window.SEARCH_INDEX = [
     "snippet": "Section 21 topic: Applying the SkipFilter Attribute"
   },
   {
-    "id": "21-notes-3",
+    "id": "21-notes-2",
     "title": "Notes",
     "sectionNum": "21",
     "sectionTitle": "Section 21: Filters",
     "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-21.html#notes-3",
+    "url": "section-21.html#notes-2",
     "keywords": [
       "Notes",
       "Filters",
@@ -9880,20 +8312,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 21 topic: ResponseHeaderFilterFactoryAttribute and ResponseHeaderActionFilter"
   },
   {
-    "id": "21-2-sets-the-key-value-and-order-properties-of-the-filter-based-on-the",
-    "title": "2. Sets the Key, Value, and Order properties of the filter based on the",
-    "sectionNum": "21",
-    "sectionTitle": "Section 21: Filters",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-21.html#2-sets-the-key-value-and-order-properties-of-the-filter-based-on-the",
-    "keywords": [
-      "2. Sets the Key, Value, and Order properties of the filter based on the",
-      "Filters",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 21 topic: 2. Sets the Key, Value, and Order properties of the filter based on the"
-  },
-  {
     "id": "21-personscontroller-filter-application",
     "title": "PersonsController (Filter Application)",
     "sectionNum": "21",
@@ -9908,12 +8326,12 @@ window.SEARCH_INDEX = [
     "snippet": "Section 21 topic: PersonsController (Filter Application)"
   },
   {
-    "id": "21-notes-4",
+    "id": "21-notes-3",
     "title": "Notes",
     "sectionNum": "21",
     "sectionTitle": "Section 21: Filters",
     "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-21.html#notes-4",
+    "url": "section-21.html#notes-3",
     "keywords": [
       "Notes",
       "Filters",
@@ -10246,76 +8664,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 23 topic: SOLID Principles"
   },
   {
-    "id": "23-1-single-responsibility-principle-srp",
-    "title": "1. Single Responsibility Principle (SRP)",
-    "sectionNum": "23",
-    "sectionTitle": "Section 23: SOLID Principles",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-23.html#1-single-responsibility-principle-srp",
-    "keywords": [
-      "1. Single Responsibility Principle (SRP)",
-      "SOLID Principles",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 23 topic: 1. Single Responsibility Principle (SRP)"
-  },
-  {
-    "id": "23-2-openclosed-principle-ocp",
-    "title": "2. Open/Closed Principle (OCP)",
-    "sectionNum": "23",
-    "sectionTitle": "Section 23: SOLID Principles",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-23.html#2-openclosed-principle-ocp",
-    "keywords": [
-      "2. Open/Closed Principle (OCP)",
-      "SOLID Principles",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 23 topic: 2. Open/Closed Principle (OCP)"
-  },
-  {
-    "id": "23-3-liskov-substitution-principle-lsp",
-    "title": "3. Liskov Substitution Principle (LSP)",
-    "sectionNum": "23",
-    "sectionTitle": "Section 23: SOLID Principles",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-23.html#3-liskov-substitution-principle-lsp",
-    "keywords": [
-      "3. Liskov Substitution Principle (LSP)",
-      "SOLID Principles",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 23 topic: 3. Liskov Substitution Principle (LSP)"
-  },
-  {
-    "id": "23-4-interface-segregation-principle-isp",
-    "title": "4. Interface Segregation Principle (ISP)",
-    "sectionNum": "23",
-    "sectionTitle": "Section 23: SOLID Principles",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-23.html#4-interface-segregation-principle-isp",
-    "keywords": [
-      "4. Interface Segregation Principle (ISP)",
-      "SOLID Principles",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 23 topic: 4. Interface Segregation Principle (ISP)"
-  },
-  {
-    "id": "23-5-dependency-inversion-principle-dip",
-    "title": "5. Dependency Inversion Principle (DIP)",
-    "sectionNum": "23",
-    "sectionTitle": "Section 23: SOLID Principles",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-23.html#5-dependency-inversion-principle-dip",
-    "keywords": [
-      "5. Dependency Inversion Principle (DIP)",
-      "SOLID Principles",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 23 topic: 5. Dependency Inversion Principle (DIP)"
-  },
-  {
     "id": "23-benefits-of-solid-principles",
     "title": "Benefits of SOLID Principles",
     "sectionNum": "23",
@@ -10399,76 +8747,6 @@ window.SEARCH_INDEX = [
       "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
     ],
     "snippet": "Section 24 topic: Core Layers"
-  },
-  {
-    "id": "24-1-domain-layer-core",
-    "title": "1. Domain Layer (Core)",
-    "sectionNum": "24",
-    "sectionTitle": "Section 24: Clean Architecture",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-24.html#1-domain-layer-core",
-    "keywords": [
-      "1. Domain Layer (Core)",
-      "Clean Architecture",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 24 topic: 1. Domain Layer (Core)"
-  },
-  {
-    "id": "24-2-application-layer",
-    "title": "2. Application Layer",
-    "sectionNum": "24",
-    "sectionTitle": "Section 24: Clean Architecture",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-24.html#2-application-layer",
-    "keywords": [
-      "2. Application Layer",
-      "Clean Architecture",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 24 topic: 2. Application Layer"
-  },
-  {
-    "id": "24-3-infrastructure-layer",
-    "title": "3. Infrastructure Layer",
-    "sectionNum": "24",
-    "sectionTitle": "Section 24: Clean Architecture",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-24.html#3-infrastructure-layer",
-    "keywords": [
-      "3. Infrastructure Layer",
-      "Clean Architecture",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 24 topic: 3. Infrastructure Layer"
-  },
-  {
-    "id": "24-4-presentation-layer-ui",
-    "title": "4. Presentation Layer (UI)",
-    "sectionNum": "24",
-    "sectionTitle": "Section 24: Clean Architecture",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-24.html#4-presentation-layer-ui",
-    "keywords": [
-      "4. Presentation Layer (UI)",
-      "Clean Architecture",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 24 topic: 4. Presentation Layer (UI)"
-  },
-  {
-    "id": "24-5-tests",
-    "title": "5. Tests",
-    "sectionNum": "24",
-    "sectionTitle": "Section 24: Clean Architecture",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-24.html#5-tests",
-    "keywords": [
-      "5. Tests",
-      "Clean Architecture",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 24 topic: 5. Tests"
   },
   {
     "id": "24-sample-code-implementation-persons-records-management",
@@ -10626,20 +8904,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 25 topic: Detailed Code Explanation"
   },
   {
-    "id": "25-2-sign-in-attempt-attempts-to-sign-in-the-user-using",
-    "title": "2. Sign-In Attempt: Attempts to sign in the user using",
-    "sectionNum": "25",
-    "sectionTitle": "Section 25: Identity and Authorization",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-25.html#2-sign-in-attempt-attempts-to-sign-in-the-user-using",
-    "keywords": [
-      "2. Sign-In Attempt: Attempts to sign in the user using",
-      "Identity and Authorization",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 25 topic: 2. Sign-In Attempt: Attempts to sign in the user using"
-  },
-  {
     "id": "25-key-points-to-remember",
     "title": "Key Points to Remember",
     "sectionNum": "25",
@@ -10652,20 +8916,6 @@ window.SEARCH_INDEX = [
       "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
     ],
     "snippet": "Section 25 topic: Key Points to Remember"
-  },
-  {
-    "id": "25-identity-models",
-    "title": "Identity Models",
-    "sectionNum": "25",
-    "sectionTitle": "Section 25: Identity and Authorization",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-25.html#identity-models",
-    "keywords": [
-      "Identity Models",
-      "Identity and Authorization",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 25 topic: Identity Models"
   },
   {
     "id": "25-key-services",
@@ -10738,20 +8988,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 25 topic: Code Snippets"
   },
   {
-    "id": "25-interview-tips",
-    "title": "Interview Tips",
-    "sectionNum": "25",
-    "sectionTitle": "Section 25: Identity and Authorization",
-    "moduleTitle": "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture",
-    "url": "section-25.html#interview-tips",
-    "keywords": [
-      "Interview Tips",
-      "Identity and Authorization",
-      "Module 5: Testing (xUnit), CRUD, EF Core, Filters & Clean Architecture"
-    ],
-    "snippet": "Section 25 topic: Interview Tips"
-  },
-  {
     "id": "25-cheat-sheet-quick-reference",
     "title": "Identity and Authorization — Cheat Sheet & Quick Reference",
     "sectionNum": "25",
@@ -10781,48 +9017,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 26 covers Web API (41 pages) within Module 6."
   },
   {
-    "id": "26-1-understanding-web-api",
-    "title": "1. Understanding Web API",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#1-understanding-web-api",
-    "keywords": [
-      "1. Understanding Web API",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 1. Understanding Web API"
-  },
-  {
-    "id": "26-2-restful-architecture",
-    "title": "2. RESTful Architecture",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#2-restful-architecture",
-    "keywords": [
-      "2. RESTful Architecture",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 2. RESTful Architecture"
-  },
-  {
-    "id": "26-3-restful-constraints-in-web-api",
-    "title": "3. RESTful Constraints in Web API",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#3-restful-constraints-in-web-api",
-    "keywords": [
-      "3. RESTful Constraints in Web API",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 3. RESTful Constraints in Web API"
-  },
-  {
     "id": "26-get-apiproducts12345",
     "title": "GET /api/products/12345",
     "sectionNum": "26",
@@ -10835,34 +9029,6 @@ window.SEARCH_INDEX = [
       "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
     ],
     "snippet": "Section 26 topic: GET /api/products/12345"
-  },
-  {
-    "id": "26-4-implementing-a-simple-web-api-with-rest-principles",
-    "title": "4. Implementing a Simple Web API with REST Principles",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#4-implementing-a-simple-web-api-with-rest-principles",
-    "keywords": [
-      "4. Implementing a Simple Web API with REST Principles",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 4. Implementing a Simple Web API with REST Principles"
-  },
-  {
-    "id": "26-5-http-status-codes",
-    "title": "5. HTTP Status Codes",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#5-http-status-codes",
-    "keywords": [
-      "5. HTTP Status Codes",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 5. HTTP Status Codes"
   },
   {
     "id": "26-web-api-controllers",
@@ -10879,76 +9045,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 26 topic: Web API Controllers"
   },
   {
-    "id": "26-1-what-is-a-web-api-controller",
-    "title": "1. What is a Web API Controller?",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#1-what-is-a-web-api-controller",
-    "keywords": [
-      "1. What is a Web API Controller?",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 1. What is a Web API Controller?"
-  },
-  {
-    "id": "26-2-action-methods-in-web-api-controllers",
-    "title": "2. Action Methods in Web API Controllers",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#2-action-methods-in-web-api-controllers",
-    "keywords": [
-      "2. Action Methods in Web API Controllers",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 2. Action Methods in Web API Controllers"
-  },
-  {
-    "id": "26-3-attribute-routing",
-    "title": "3. Attribute Routing",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#3-attribute-routing",
-    "keywords": [
-      "3. Attribute Routing",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 3. Attribute Routing"
-  },
-  {
-    "id": "26-4-binding-data-to-controllers",
-    "title": "4. Binding Data to Controllers",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#4-binding-data-to-controllers",
-    "keywords": [
-      "4. Binding Data to Controllers",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 4. Binding Data to Controllers"
-  },
-  {
-    "id": "26-5-validation-in-web-api-controllers",
-    "title": "5. Validation in Web API Controllers",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#5-validation-in-web-api-controllers",
-    "keywords": [
-      "5. Validation in Web API Controllers",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 5. Validation in Web API Controllers"
-  },
-  {
     "id": "26-validating-in-the-controller",
     "title": "Validating in the Controller",
     "sectionNum": "26",
@@ -10961,90 +9057,6 @@ window.SEARCH_INDEX = [
       "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
     ],
     "snippet": "Section 26 topic: Validating in the Controller"
-  },
-  {
-    "id": "26-6-dependency-injection-in-web-api-controllers",
-    "title": "6. Dependency Injection in Web API Controllers",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#6-dependency-injection-in-web-api-controllers",
-    "keywords": [
-      "6. Dependency Injection in Web API Controllers",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 6. Dependency Injection in Web API Controllers"
-  },
-  {
-    "id": "26-1-overview-of-api-controllers",
-    "title": "1. Overview of API Controllers",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#1-overview-of-api-controllers",
-    "keywords": [
-      "1. Overview of API Controllers",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 1. Overview of API Controllers"
-  },
-  {
-    "id": "26-2-overview-of-mvc-controllers",
-    "title": "2. Overview of MVC Controllers",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#2-overview-of-mvc-controllers",
-    "keywords": [
-      "2. Overview of MVC Controllers",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 2. Overview of MVC Controllers"
-  },
-  {
-    "id": "26-3-differences-between-api-and-mvc-controllers",
-    "title": "3. Differences Between API and MVC Controllers",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#3-differences-between-api-and-mvc-controllers",
-    "keywords": [
-      "3. Differences Between API and MVC Controllers",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 3. Differences Between API and MVC Controllers"
-  },
-  {
-    "id": "26-6-automatic-model-validation-in-api-controllers",
-    "title": "6. Automatic Model Validation in API Controllers",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#6-automatic-model-validation-in-api-controllers",
-    "keywords": [
-      "6. Automatic Model Validation in API Controllers",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 6. Automatic Model Validation in API Controllers"
-  },
-  {
-    "id": "26-7-restful-api-vs-mvc",
-    "title": "7. RESTful API vs MVC",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#7-restful-api-vs-mvc",
-    "keywords": [
-      "7. RESTful API vs MVC",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 7. RESTful API vs MVC"
   },
   {
     "id": "26-entity-framework-core-with-web-api",
@@ -11061,62 +9073,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 26 topic: Entity Framework Core with Web API"
   },
   {
-    "id": "26-1-setup-ef-core-in-an-aspnet-core-web-api",
-    "title": "1. Setup EF Core in an ASP.NET Core Web API",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#1-setup-ef-core-in-an-aspnet-core-web-api",
-    "keywords": [
-      "1. Setup EF Core in an ASP.NET Core Web API",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 1. Setup EF Core in an ASP.NET Core Web API"
-  },
-  {
-    "id": "26-3-crud-operations-in-web-api-with-ef-core",
-    "title": "3. CRUD Operations in Web API with EF Core",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#3-crud-operations-in-web-api-with-ef-core",
-    "keywords": [
-      "3. CRUD Operations in Web API with EF Core",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 3. CRUD Operations in Web API with EF Core"
-  },
-  {
-    "id": "26-4-migration-creating-the-database",
-    "title": "4. Migration: Creating the Database",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#4-migration-creating-the-database",
-    "keywords": [
-      "4. Migration: Creating the Database",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 4. Migration: Creating the Database"
-  },
-  {
-    "id": "26-5-using-ef-core-in-production",
-    "title": "5. Using EF Core in Production",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#5-using-ef-core-in-production",
-    "keywords": [
-      "5. Using EF Core in Production",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 5. Using EF Core in Production"
-  },
-  {
     "id": "26-different-return-types-of-web-api-action-methods",
     "title": "Different Return Types of Web API Action Methods",
     "sectionNum": "26",
@@ -11129,132 +9085,6 @@ window.SEARCH_INDEX = [
       "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
     ],
     "snippet": "Section 26 topic: Different Return Types of Web API Action Methods"
-  },
-  {
-    "id": "26-1-void",
-    "title": "1. Void",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#1-void",
-    "keywords": [
-      "1. Void",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 1. Void"
-  },
-  {
-    "id": "26-2-primitive-types-eg-int-string-bool",
-    "title": "2. Primitive Types (e.g., int, string, bool)",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#2-primitive-types-eg-int-string-bool",
-    "keywords": [
-      "2. Primitive Types (e.g., int, string, bool)",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 2. Primitive Types (e.g., int, string, bool)"
-  },
-  {
-    "id": "26-3-ienumerablet-or-listt",
-    "title": "3. IEnumerable<T> or List<T>",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#3-ienumerablet-or-listt",
-    "keywords": [
-      "3. IEnumerable<T> or List<T>",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 3. IEnumerable<T> or List<T>"
-  },
-  {
-    "id": "26-4-object",
-    "title": "4. Object",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#4-object",
-    "keywords": [
-      "4. Object",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 4. Object"
-  },
-  {
-    "id": "26-5-task-taskt-asynchronous-methods",
-    "title": "5. Task / Task<T> (Asynchronous Methods)",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#5-task-taskt-asynchronous-methods",
-    "keywords": [
-      "5. Task / Task<T> (Asynchronous Methods)",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 5. Task / Task<T> (Asynchronous Methods)"
-  },
-  {
-    "id": "26-6-actionresultt",
-    "title": "6. ActionResult<T>",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#6-actionresultt",
-    "keywords": [
-      "6. ActionResult<T>",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 6. ActionResult<T>"
-  },
-  {
-    "id": "26-7-iactionresult",
-    "title": "7. IActionResult",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#7-iactionresult",
-    "keywords": [
-      "7. IActionResult",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 7. IActionResult"
-  },
-  {
-    "id": "26-8-custom-response-wrappers",
-    "title": "8. Custom Response Wrappers",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#8-custom-response-wrappers",
-    "keywords": [
-      "8. Custom Response Wrappers",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 8. Custom Response Wrappers"
-  },
-  {
-    "id": "26-9-fileresult-physicalfileresult",
-    "title": "9. FileResult / PhysicalFileResult",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#9-fileresult-physicalfileresult",
-    "keywords": [
-      "9. FileResult / PhysicalFileResult",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 9. FileResult / PhysicalFileResult"
   },
   {
     "id": "26-controllerbase",
@@ -11297,104 +9127,6 @@ window.SEARCH_INDEX = [
       "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
     ],
     "snippet": "Section 26 topic: Summary"
-  },
-  {
-    "id": "26-1-aspnet-core-web-api-and-restful-principles",
-    "title": "1. ASP.NET Core Web API and RESTful Principles",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#1-aspnet-core-web-api-and-restful-principles",
-    "keywords": [
-      "1. ASP.NET Core Web API and RESTful Principles",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 1. ASP.NET Core Web API and RESTful Principles"
-  },
-  {
-    "id": "26-2-web-api-controllers",
-    "title": "2. Web API Controllers",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#2-web-api-controllers",
-    "keywords": [
-      "2. Web API Controllers",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 2. Web API Controllers"
-  },
-  {
-    "id": "26-3-api-controllers-vs-mvc-controllers",
-    "title": "3. API Controllers vs MVC Controllers",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#3-api-controllers-vs-mvc-controllers",
-    "keywords": [
-      "3. API Controllers vs MVC Controllers",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 3. API Controllers vs MVC Controllers"
-  },
-  {
-    "id": "26-4-entity-framework-core-with-web-api",
-    "title": "4. Entity Framework Core with Web API",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#4-entity-framework-core-with-web-api",
-    "keywords": [
-      "4. Entity Framework Core with Web API",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 4. Entity Framework Core with Web API"
-  },
-  {
-    "id": "26-5-different-return-types-of-web-api-action-methods",
-    "title": "5. Different Return Types of Web API Action Methods",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#5-different-return-types-of-web-api-action-methods",
-    "keywords": [
-      "5. Different Return Types of Web API Action Methods",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 5. Different Return Types of Web API Action Methods"
-  },
-  {
-    "id": "26-6-iactionresult-vs-actionresultt",
-    "title": "6. IActionResult vs ActionResult<T>",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#6-iactionresult-vs-actionresultt",
-    "keywords": [
-      "6. IActionResult vs ActionResult<T>",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 6. IActionResult vs ActionResult<T>"
-  },
-  {
-    "id": "26-7-controllerbase",
-    "title": "7. ControllerBase",
-    "sectionNum": "26",
-    "sectionTitle": "Section 26: Web API",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-26.html#7-controllerbase",
-    "keywords": [
-      "7. ControllerBase",
-      "Web API",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 26 topic: 7. ControllerBase"
   },
   {
     "id": "26-key-points-to-remember",
@@ -11468,48 +9200,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 27 topic: Overview of Swagger / OpenAPI"
   },
   {
-    "id": "27-1-install-swagger-nuget-packages",
-    "title": "1. Install Swagger NuGet Packages",
-    "sectionNum": "27",
-    "sectionTitle": "Section 27: Swagger",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-27.html#1-install-swagger-nuget-packages",
-    "keywords": [
-      "1. Install Swagger NuGet Packages",
-      "Swagger",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 27 topic: 1. Install Swagger NuGet Packages"
-  },
-  {
-    "id": "27-2-configure-swagger-in-programcs",
-    "title": "2. Configure Swagger in Program.cs",
-    "sectionNum": "27",
-    "sectionTitle": "Section 27: Swagger",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-27.html#2-configure-swagger-in-programcs",
-    "keywords": [
-      "2. Configure Swagger in Program.cs",
-      "Swagger",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 27 topic: 2. Configure Swagger in Program.cs"
-  },
-  {
-    "id": "27-4-testing-the-api-documentation",
-    "title": "4. Testing the API Documentation",
-    "sectionNum": "27",
-    "sectionTitle": "Section 27: Swagger",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-27.html#4-testing-the-api-documentation",
-    "keywords": [
-      "4. Testing the API Documentation",
-      "Swagger",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 27 topic: 4. Testing the API Documentation"
-  },
-  {
     "id": "27-detailed-explanation-of-code",
     "title": "Detailed Explanation of Code",
     "sectionNum": "27",
@@ -11564,34 +9254,6 @@ window.SEARCH_INDEX = [
       "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
     ],
     "snippet": "Section 27 topic: How Content Negotiation Works"
-  },
-  {
-    "id": "27-1-json-formatter",
-    "title": "1. JSON Formatter",
-    "sectionNum": "27",
-    "sectionTitle": "Section 27: Swagger",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-27.html#1-json-formatter",
-    "keywords": [
-      "1. JSON Formatter",
-      "Swagger",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 27 topic: 1. JSON Formatter"
-  },
-  {
-    "id": "27-3-custom-formatters",
-    "title": "3. Custom Formatters",
-    "sectionNum": "27",
-    "sectionTitle": "Section 27: Swagger",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-27.html#3-custom-formatters",
-    "keywords": [
-      "3. Custom Formatters",
-      "Swagger",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 27 topic: 3. Custom Formatters"
   },
   {
     "id": "27-detailed-explanation-of-code-1",
@@ -11664,62 +9326,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 27 topic: Overview of API Versioning"
   },
   {
-    "id": "27-1-install-the-new-api-versioning-nuget-package",
-    "title": "1. Install the New API Versioning NuGet Package",
-    "sectionNum": "27",
-    "sectionTitle": "Section 27: Swagger",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-27.html#1-install-the-new-api-versioning-nuget-package",
-    "keywords": [
-      "1. Install the New API Versioning NuGet Package",
-      "Swagger",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 27 topic: 1. Install the New API Versioning NuGet Package"
-  },
-  {
-    "id": "27-2-configure-api-versioning-in-programcs",
-    "title": "2. Configure API Versioning in Program.cs",
-    "sectionNum": "27",
-    "sectionTitle": "Section 27: Swagger",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-27.html#2-configure-api-versioning-in-programcs",
-    "keywords": [
-      "2. Configure API Versioning in Program.cs",
-      "Swagger",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 27 topic: 2. Configure API Versioning in Program.cs"
-  },
-  {
-    "id": "27-3-define-api-versions-in-controllers",
-    "title": "3. Define API Versions in Controllers",
-    "sectionNum": "27",
-    "sectionTitle": "Section 27: Swagger",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-27.html#3-define-api-versions-in-controllers",
-    "keywords": [
-      "3. Define API Versions in Controllers",
-      "Swagger",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 27 topic: 3. Define API Versions in Controllers"
-  },
-  {
-    "id": "27-4-specify-api-versions-in-routes",
-    "title": "4. Specify API Versions in Routes",
-    "sectionNum": "27",
-    "sectionTitle": "Section 27: Swagger",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-27.html#4-specify-api-versions-in-routes",
-    "keywords": [
-      "4. Specify API Versions in Routes",
-      "Swagger",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 27 topic: 4. Specify API Versions in Routes"
-  },
-  {
     "id": "27-key-points-to-remember-1",
     "title": "Key Points to Remember",
     "sectionNum": "27",
@@ -11732,20 +9338,6 @@ window.SEARCH_INDEX = [
       "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
     ],
     "snippet": "Section 27 topic: Key Points to Remember"
-  },
-  {
-    "id": "27-2-new-package-use-aspversioningmvc-instead-of-the-deprecated",
-    "title": "2. New Package: Use Asp.Versioning.Mvc instead of the deprecated",
-    "sectionNum": "27",
-    "sectionTitle": "Section 27: Swagger",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-27.html#2-new-package-use-aspversioningmvc-instead-of-the-deprecated",
-    "keywords": [
-      "2. New Package: Use Asp.Versioning.Mvc instead of the deprecated",
-      "Swagger",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 27 topic: 2. New Package: Use Asp.Versioning.Mvc instead of the deprecated"
   },
   {
     "id": "27-cheat-sheet-quick-reference",
@@ -11789,48 +9381,6 @@ window.SEARCH_INDEX = [
       "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
     ],
     "snippet": "Section 28 topic: Overview of CORS"
-  },
-  {
-    "id": "28-1-install-required-package",
-    "title": "1. Install Required Package",
-    "sectionNum": "28",
-    "sectionTitle": "Section 28: Angular and CORS",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-28.html#1-install-required-package",
-    "keywords": [
-      "1. Install Required Package",
-      "Angular and CORS",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 28 topic: 1. Install Required Package"
-  },
-  {
-    "id": "28-2-configure-cors-in-programcs",
-    "title": "2. Configure CORS in Program.cs",
-    "sectionNum": "28",
-    "sectionTitle": "Section 28: Angular and CORS",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-28.html#2-configure-cors-in-programcs",
-    "keywords": [
-      "2. Configure CORS in Program.cs",
-      "Angular and CORS",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 28 topic: 2. Configure CORS in Program.cs"
-  },
-  {
-    "id": "28-4-more-detailed-cors-policies",
-    "title": "4. More Detailed CORS Policies",
-    "sectionNum": "28",
-    "sectionTitle": "Section 28: Angular and CORS",
-    "moduleTitle": "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration",
-    "url": "section-28.html#4-more-detailed-cors-policies",
-    "keywords": [
-      "4. More Detailed CORS Policies",
-      "Angular and CORS",
-      "Module 6: RESTful Web APIs, Swagger, Versioning & Angular Integration"
-    ],
-    "snippet": "Section 28 topic: 4. More Detailed CORS Policies"
   },
   {
     "id": "28-testing-cors-configuration",
@@ -11904,62 +9454,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 29 topic: JWT Tokens and How They Work Internally"
   },
   {
-    "id": "29-1-structure-of-jwt",
-    "title": "1. Structure of JWT",
-    "sectionNum": "29",
-    "sectionTitle": "Section 29: JWT with Web API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-29.html#1-structure-of-jwt",
-    "keywords": [
-      "1. Structure of JWT",
-      "JWT with Web API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 29 topic: 1. Structure of JWT"
-  },
-  {
-    "id": "29-1-header-eyjhbgcioijiuzi1niisinr5cci6ikpxvcj9",
-    "title": "1. Header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
-    "sectionNum": "29",
-    "sectionTitle": "Section 29: JWT with Web API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-29.html#1-header-eyjhbgcioijiuzi1niisinr5cci6ikpxvcj9",
-    "keywords": [
-      "1. Header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
-      "JWT with Web API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 29 topic: 1. Header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
-  },
-  {
-    "id": "29-3-signature-sflkxwrjsmekkf2qt4fwpmejf36pok6yjv_adqssw5c",
-    "title": "3. Signature: SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
-    "sectionNum": "29",
-    "sectionTitle": "Section 29: JWT with Web API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-29.html#3-signature-sflkxwrjsmekkf2qt4fwpmejf36pok6yjv_adqssw5c",
-    "keywords": [
-      "3. Signature: SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
-      "JWT with Web API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 29 topic: 3. Signature: SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
-  },
-  {
-    "id": "29-2-steps-for-jwt-token-generation-and-validation",
-    "title": "2. Steps for JWT Token Generation and Validation",
-    "sectionNum": "29",
-    "sectionTitle": "Section 29: JWT with Web API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-29.html#2-steps-for-jwt-token-generation-and-validation",
-    "keywords": [
-      "2. Steps for JWT Token Generation and Validation",
-      "JWT with Web API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 29 topic: 2. Steps for JWT Token Generation and Validation"
-  },
-  {
     "id": "29-example-flow",
     "title": "Example Flow",
     "sectionNum": "29",
@@ -12016,34 +9510,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 29 topic: JWT Algorithm & How Tokens Are Generated"
   },
   {
-    "id": "29-1-jwt-algorithms",
-    "title": "1. JWT Algorithms",
-    "sectionNum": "29",
-    "sectionTitle": "Section 29: JWT with Web API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-29.html#1-jwt-algorithms",
-    "keywords": [
-      "1. JWT Algorithms",
-      "JWT with Web API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 29 topic: 1. JWT Algorithms"
-  },
-  {
-    "id": "29-2-generating-jwt-tokens",
-    "title": "2. Generating JWT Tokens",
-    "sectionNum": "29",
-    "sectionTitle": "Section 29: JWT with Web API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-29.html#2-generating-jwt-tokens",
-    "keywords": [
-      "2. Generating JWT Tokens",
-      "JWT with Web API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 29 topic: 2. Generating JWT Tokens"
-  },
-  {
     "id": "29-hmacsha256",
     "title": "HMACSHA256(",
     "sectionNum": "29",
@@ -12056,20 +9522,6 @@ window.SEARCH_INDEX = [
       "Module 7: API Security (JWT) & Minimal APIs"
     ],
     "snippet": "Section 29 topic: HMACSHA256("
-  },
-  {
-    "id": "29-3-token-verification",
-    "title": "3. Token Verification",
-    "sectionNum": "29",
-    "sectionTitle": "Section 29: JWT with Web API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-29.html#3-token-verification",
-    "keywords": [
-      "3. Token Verification",
-      "JWT with Web API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 29 topic: 3. Token Verification"
   },
   {
     "id": "29-best-practices-and-common-pitfalls-of-jwt",
@@ -12086,90 +9538,6 @@ window.SEARCH_INDEX = [
     "snippet": "Section 29 topic: Best Practices and Common Pitfalls of JWT"
   },
   {
-    "id": "29-1-best-practices",
-    "title": "1. Best Practices",
-    "sectionNum": "29",
-    "sectionTitle": "Section 29: JWT with Web API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-29.html#1-best-practices",
-    "keywords": [
-      "1. Best Practices",
-      "JWT with Web API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 29 topic: 1. Best Practices"
-  },
-  {
-    "id": "29-2-common-pitfalls",
-    "title": "2. Common Pitfalls",
-    "sectionNum": "29",
-    "sectionTitle": "Section 29: JWT with Web API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-29.html#2-common-pitfalls",
-    "keywords": [
-      "2. Common Pitfalls",
-      "JWT with Web API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 29 topic: 2. Common Pitfalls"
-  },
-  {
-    "id": "29-3-example-code-jwt-best-practices-in-aspnet-core",
-    "title": "3. Example Code: JWT Best Practices in ASP.NET Core",
-    "sectionNum": "29",
-    "sectionTitle": "Section 29: JWT with Web API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-29.html#3-example-code-jwt-best-practices-in-aspnet-core",
-    "keywords": [
-      "3. Example Code: JWT Best Practices in ASP.NET Core",
-      "JWT with Web API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 29 topic: 3. Example Code: JWT Best Practices in ASP.NET Core"
-  },
-  {
-    "id": "29-4-token-revocation-example",
-    "title": "4. Token Revocation Example",
-    "sectionNum": "29",
-    "sectionTitle": "Section 29: JWT with Web API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-29.html#4-token-revocation-example",
-    "keywords": [
-      "4. Token Revocation Example",
-      "JWT with Web API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 29 topic: 4. Token Revocation Example"
-  },
-  {
-    "id": "29-1-setting-up-jwt-authentication-in-aspnet-core",
-    "title": "1. Setting Up JWT Authentication in ASP.NET Core",
-    "sectionNum": "29",
-    "sectionTitle": "Section 29: JWT with Web API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-29.html#1-setting-up-jwt-authentication-in-aspnet-core",
-    "keywords": [
-      "1. Setting Up JWT Authentication in ASP.NET Core",
-      "JWT with Web API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 29 topic: 1. Setting Up JWT Authentication in ASP.NET Core"
-  },
-  {
-    "id": "29-2-protecting-endpoints-with-jwt-authorization",
-    "title": "2. Protecting Endpoints with JWT Authorization",
-    "sectionNum": "29",
-    "sectionTitle": "Section 29: JWT with Web API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-29.html#2-protecting-endpoints-with-jwt-authorization",
-    "keywords": [
-      "2. Protecting Endpoints with JWT Authorization",
-      "JWT with Web API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 29 topic: 2. Protecting Endpoints with JWT Authorization"
-  },
-  {
     "id": "29-example-controller-with-secured-endpoints",
     "title": "Example Controller with Secured Endpoints",
     "sectionNum": "29",
@@ -12182,20 +9550,6 @@ window.SEARCH_INDEX = [
       "Module 7: API Security (JWT) & Minimal APIs"
     ],
     "snippet": "Section 29 topic: Example Controller with Secured Endpoints"
-  },
-  {
-    "id": "29-3-generating-jwt-tokens-for-users",
-    "title": "3. Generating JWT Tokens for Users",
-    "sectionNum": "29",
-    "sectionTitle": "Section 29: JWT with Web API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-29.html#3-generating-jwt-tokens-for-users",
-    "keywords": [
-      "3. Generating JWT Tokens for Users",
-      "JWT with Web API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 29 topic: 3. Generating JWT Tokens for Users"
   },
   {
     "id": "29-creating-an-authcontroller-for-login-and-token-generation",
@@ -12224,76 +9578,6 @@ window.SEARCH_INDEX = [
       "Module 7: API Security (JWT) & Minimal APIs"
     ],
     "snippet": "Section 29 topic: Testing JWT Authentication and Authorization"
-  },
-  {
-    "id": "29-refresh-tokens",
-    "title": "Refresh Tokens",
-    "sectionNum": "29",
-    "sectionTitle": "Section 29: JWT with Web API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-29.html#refresh-tokens",
-    "keywords": [
-      "Refresh Tokens",
-      "JWT with Web API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 29 topic: Refresh Tokens"
-  },
-  {
-    "id": "29-1-what-is-a-refresh-token",
-    "title": "1. What is a Refresh Token?",
-    "sectionNum": "29",
-    "sectionTitle": "Section 29: JWT with Web API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-29.html#1-what-is-a-refresh-token",
-    "keywords": [
-      "1. What is a Refresh Token?",
-      "JWT with Web API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 29 topic: 1. What is a Refresh Token?"
-  },
-  {
-    "id": "29-2-how-refresh-tokens-work-in-jwt-authentication",
-    "title": "2. How Refresh Tokens Work in JWT Authentication",
-    "sectionNum": "29",
-    "sectionTitle": "Section 29: JWT with Web API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-29.html#2-how-refresh-tokens-work-in-jwt-authentication",
-    "keywords": [
-      "2. How Refresh Tokens Work in JWT Authentication",
-      "JWT with Web API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 29 topic: 2. How Refresh Tokens Work in JWT Authentication"
-  },
-  {
-    "id": "29-3-implementing-refresh-tokens-in-aspnet-core",
-    "title": "3. Implementing Refresh Tokens in ASP.NET Core",
-    "sectionNum": "29",
-    "sectionTitle": "Section 29: JWT with Web API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-29.html#3-implementing-refresh-tokens-in-aspnet-core",
-    "keywords": [
-      "3. Implementing Refresh Tokens in ASP.NET Core",
-      "JWT with Web API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 29 topic: 3. Implementing Refresh Tokens in ASP.NET Core"
-  },
-  {
-    "id": "29-4-security-best-practices-for-refresh-tokens",
-    "title": "4. Security Best Practices for Refresh Tokens",
-    "sectionNum": "29",
-    "sectionTitle": "Section 29: JWT with Web API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-29.html#4-security-best-practices-for-refresh-tokens",
-    "keywords": [
-      "4. Security Best Practices for Refresh Tokens",
-      "JWT with Web API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 29 topic: 4. Security Best Practices for Refresh Tokens"
   },
   {
     "id": "29-key-points-to-remember-for-jwt-authentication-and-refresh-tokens",
@@ -12337,104 +9621,6 @@ window.SEARCH_INDEX = [
       "Section 30"
     ],
     "snippet": "Section 30 covers Minimal API (5 pages) within Module 7."
-  },
-  {
-    "id": "30-1-minimal-api-overview",
-    "title": "1. Minimal API Overview",
-    "sectionNum": "30",
-    "sectionTitle": "Section 30: Minimal API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-30.html#1-minimal-api-overview",
-    "keywords": [
-      "1. Minimal API Overview",
-      "Minimal API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 30 topic: 1. Minimal API Overview"
-  },
-  {
-    "id": "30-2-defining-minimal-apis",
-    "title": "2. Defining Minimal APIs",
-    "sectionNum": "30",
-    "sectionTitle": "Section 30: Minimal API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-30.html#2-defining-minimal-apis",
-    "keywords": [
-      "2. Defining Minimal APIs",
-      "Minimal API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 30 topic: 2. Defining Minimal APIs"
-  },
-  {
-    "id": "30-3-route-parameters",
-    "title": "3. Route Parameters",
-    "sectionNum": "30",
-    "sectionTitle": "Section 30: Minimal API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-30.html#3-route-parameters",
-    "keywords": [
-      "3. Route Parameters",
-      "Minimal API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 30 topic: 3. Route Parameters"
-  },
-  {
-    "id": "30-4-mapgroups",
-    "title": "4. MapGroups",
-    "sectionNum": "30",
-    "sectionTitle": "Section 30: Minimal API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-30.html#4-mapgroups",
-    "keywords": [
-      "4. MapGroups",
-      "Minimal API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 30 topic: 4. MapGroups"
-  },
-  {
-    "id": "30-5-iresult",
-    "title": "5. IResult",
-    "sectionNum": "30",
-    "sectionTitle": "Section 30: Minimal API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-30.html#5-iresult",
-    "keywords": [
-      "5. IResult",
-      "Minimal API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 30 topic: 5. IResult"
-  },
-  {
-    "id": "30-6-endpoint-filters",
-    "title": "6. Endpoint Filters",
-    "sectionNum": "30",
-    "sectionTitle": "Section 30: Minimal API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-30.html#6-endpoint-filters",
-    "keywords": [
-      "6. Endpoint Filters",
-      "Minimal API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 30 topic: 6. Endpoint Filters"
-  },
-  {
-    "id": "30-7-iendpointfilter-interface",
-    "title": "7. IEndpointFilter Interface",
-    "sectionNum": "30",
-    "sectionTitle": "Section 30: Minimal API",
-    "moduleTitle": "Module 7: API Security (JWT) & Minimal APIs",
-    "url": "section-30.html#7-iendpointfilter-interface",
-    "keywords": [
-      "7. IEndpointFilter Interface",
-      "Minimal API",
-      "Module 7: API Security (JWT) & Minimal APIs"
-    ],
-    "snippet": "Section 30 topic: 7. IEndpointFilter Interface"
   },
   {
     "id": "30-key-points-to-remember",

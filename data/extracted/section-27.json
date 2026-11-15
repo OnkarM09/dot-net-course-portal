@@ -295,39 +295,32 @@
           "text": "OpenAPI Specification (OAS) is a standard for defining RESTful APIs. It provides a way to describe\nthe endpoints, request/response formats, parameters, authentication methods, and more.\nSwagger tools are used to generate interactive documentation and client libraries based on the\nOpenAPI specification.\nSetting Up Swagger in ASP.NET Core"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 1,
           "lines": [
-            "1. Install Swagger NuGet Packages"
-          ],
-          "text": "1. Install Swagger NuGet Packages"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "1. Install Swagger NuGet Packages",
             "To use Swagger in an ASP.NET Core application, you need to install the Swashbuckle.AspNetCore",
             "NuGet package, which provides the Swagger generator and UI.",
             "dotnet add package Swashbuckle.AspNetCore"
           ],
-          "text": "To use Swagger in an ASP.NET Core application, you need to install the Swashbuckle.AspNetCore\nNuGet package, which provides the Swagger generator and UI.\ndotnet add package Swashbuckle.AspNetCore"
+          "text": "1. Install Swagger NuGet Packages\nTo use Swagger in an ASP.NET Core application, you need to install the Swashbuckle.AspNetCore\nNuGet package, which provides the Swagger generator and UI.\ndotnet add package Swashbuckle.AspNetCore"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 1,
           "lines": [
-            "2. Configure Swagger in Program.cs"
+            "2. Configure Swagger in Program.cs",
+            "In your Program.cs file, you need to add Swagger services and configure the Swagger middleware."
           ],
-          "text": "2. Configure Swagger in Program.cs"
+          "text": "2. Configure Swagger in Program.cs\nIn your Program.cs file, you need to add Swagger services and configure the Swagger middleware."
         },
         {
           "type": "prose",
           "page": 1,
           "lines": [
-            "In your Program.cs file, you need to add Swagger services and configure the Swagger middleware.",
             "ConfigureServices Method:"
           ],
-          "text": "In your Program.cs file, you need to add Swagger services and configure the Swagger middleware.\nConfigureServices Method:"
+          "text": "ConfigureServices Method:"
         },
         {
           "type": "code",
@@ -587,57 +580,15 @@
             "   // var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);",
             "   // c.IncludeXmlComments(xmlPath);",
             "  });",
-            "}"
-          ],
-          "text": "   // var xmlFile = $\"{Assembly.GetExecutingAssembly().GetName().Name}.xml\";\n   // var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);\n   // c.IncludeXmlComments(xmlPath);\n  });\n}"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
-            "Configure Method:"
-          ],
-          "text": "Configure Method:"
-        },
-        {
-          "type": "code",
-          "page": 2,
-          "lines": [
+            "}",
+            "Configure Method:",
             "public void Configure(IApplicationBuilder app, IWebHostEnvironment env)",
-            "{"
-          ],
-          "text": "public void Configure(IApplicationBuilder app, IWebHostEnvironment env)\n{"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
-            "  if (env.IsDevelopment())"
-          ],
-          "text": "  if (env.IsDevelopment())"
-        },
-        {
-          "type": "code",
-          "page": 2,
-          "lines": [
+            "{",
+            "  if (env.IsDevelopment())",
             "  {",
             "   app.UseDeveloperExceptionPage();",
-            "  }"
-          ],
-          "text": "  {\n   app.UseDeveloperExceptionPage();\n  }"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
-            "  else"
-          ],
-          "text": "  else"
-        },
-        {
-          "type": "code",
-          "page": 2,
-          "lines": [
+            "  }",
+            "  else",
             "  {",
             "   app.UseExceptionHandler(\"/Home/Error\");",
             "   app.UseHsts();",
@@ -654,7 +605,7 @@
             "   c.SwaggerEndpoint(\"/swagger/v1/swagger.json\", \"My API V1\");",
             "   c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root (optional)"
           ],
-          "text": "  {\n   app.UseExceptionHandler(\"/Home/Error\");\n   app.UseHsts();\n  }\n  app.UseHttpsRedirection();\n  app.UseStaticFiles();\n  app.UseRouting();\n  app.UseAuthorization();\n  // Use Swagger\n  app.UseSwagger();\n  // Use Swagger UI\n  app.UseSwaggerUI(c =>\n  {\n   c.SwaggerEndpoint(\"/swagger/v1/swagger.json\", \"My API V1\");\n   c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root (optional)"
+          "text": "   // var xmlFile = $\"{Assembly.GetExecutingAssembly().GetName().Name}.xml\";\n   // var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);\n   // c.IncludeXmlComments(xmlPath);\n  });\n}\nConfigure Method:\npublic void Configure(IApplicationBuilder app, IWebHostEnvironment env)\n{\n  if (env.IsDevelopment())\n  {\n   app.UseDeveloperExceptionPage();\n  }\n  else\n  {\n   app.UseExceptionHandler(\"/Home/Error\");\n   app.UseHsts();\n  }\n  app.UseHttpsRedirection();\n  app.UseStaticFiles();\n  app.UseRouting();\n  app.UseAuthorization();\n  // Use Swagger\n  app.UseSwagger();\n  // Use Swagger UI\n  app.UseSwaggerUI(c =>\n  {\n   c.SwaggerEndpoint(\"/swagger/v1/swagger.json\", \"My API V1\");\n   c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root (optional)"
         }
       ],
       "char_count_raw": 701,
@@ -868,24 +819,17 @@
       ],
       "blocks": [
         {
-          "type": "prose",
-          "page": 3,
-          "lines": [
-            "  });"
-          ],
-          "text": "  });"
-        },
-        {
           "type": "code",
           "page": 3,
           "lines": [
+            "  });",
             "  app.UseEndpoints(endpoints =>",
             "  {",
             "   endpoints.MapControllers();",
             "  });",
             "}"
           ],
-          "text": "  app.UseEndpoints(endpoints =>\n  {\n   endpoints.MapControllers();\n  });\n}"
+          "text": "  });\n  app.UseEndpoints(endpoints =>\n  {\n   endpoints.MapControllers();\n  });\n}"
         },
         {
           "type": "prose",
@@ -905,22 +849,15 @@
           "text": "3. XML Comments for Enhanced Documentation\nTo enhance the documentation, you can include XML comments. This requires enabling XML\ndocumentation in your project file and configuring Swagger to include these comments.\nProject File (.csproj):\n<PropertyGroup>\n  <GenerateDocumentationFile>true</GenerateDocumentationFile>\n  <NoWarn>1591</NoWarn> <!-- Suppress missing XML comment warnings -->\n</PropertyGroup>\nUpdate Swagger Configuration:\nc.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, \"MyApi.xml\"));"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 3,
           "lines": [
-            "4. Testing the API Documentation"
-          ],
-          "text": "4. Testing the API Documentation"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "4. Testing the API Documentation",
             "Once configured, run your application and navigate to the Swagger UI (usually at /swagger or the",
             "root if configured) to see the interactive API documentation. Swagger UI allows you to explore and",
             "test your API endpoints directly from the browser."
           ],
-          "text": "Once configured, run your application and navigate to the Swagger UI (usually at /swagger or the\nroot if configured) to see the interactive API documentation. Swagger UI allows you to explore and\ntest your API endpoints directly from the browser."
+          "text": "4. Testing the API Documentation\nOnce configured, run your application and navigate to the Swagger UI (usually at /swagger or the\nroot if configured) to see the interactive API documentation. Swagger UI allows you to explore and\ntest your API endpoints directly from the browser."
         },
         {
           "type": "heading",
@@ -934,33 +871,19 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • AddSwaggerGen Method: Registers the Swagger generator with default settings. You can"
-          ],
-          "text": "   • AddSwaggerGen Method: Registers the Swagger generator with default settings. You can"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • AddSwaggerGen Method: Registers the Swagger generator with default settings. You can",
             "      provide additional options such as custom filters or document settings."
           ],
-          "text": "      provide additional options such as custom filters or document settings."
+          "text": "   • AddSwaggerGen Method: Registers the Swagger generator with default settings. You can\n      provide additional options such as custom filters or document settings."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • SwaggerDoc Method: Defines a Swagger document with a title and version. You can create"
-          ],
-          "text": "   • SwaggerDoc Method: Defines a Swagger document with a title and version. You can create"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • SwaggerDoc Method: Defines a Swagger document with a title and version. You can create",
             "      multiple versions if needed."
           ],
-          "text": "      multiple versions if needed."
+          "text": "   • SwaggerDoc Method: Defines a Swagger document with a title and version. You can create\n      multiple versions if needed."
         }
       ],
       "char_count_raw": 1163,
@@ -1177,34 +1100,20 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • UseSwagger and UseSwaggerUI Methods: Middleware components to serve the Swagger"
-          ],
-          "text": "   • UseSwagger and UseSwaggerUI Methods: Middleware components to serve the Swagger"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • UseSwagger and UseSwaggerUI Methods: Middleware components to serve the Swagger",
             "      JSON endpoint and the interactive UI, respectively. SwaggerEndpoint specifies the path to",
             "      the Swagger JSON file."
           ],
-          "text": "      JSON endpoint and the interactive UI, respectively. SwaggerEndpoint specifies the path to\n      the Swagger JSON file."
+          "text": "   • UseSwagger and UseSwaggerUI Methods: Middleware components to serve the Swagger\n      JSON endpoint and the interactive UI, respectively. SwaggerEndpoint specifies the path to\n      the Swagger JSON file."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • XML Comments: Provides additional metadata for API methods and models, which is"
-          ],
-          "text": "   • XML Comments: Provides additional metadata for API methods and models, which is"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • XML Comments: Provides additional metadata for API methods and models, which is",
             "      displayed in Swagger UI."
           ],
-          "text": "      displayed in Swagger UI."
+          "text": "   • XML Comments: Provides additional metadata for API methods and models, which is\n      displayed in Swagger UI."
         },
         {
           "type": "heading",
@@ -1254,54 +1163,40 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   1. Client Request: The client sends an HTTP request with the Accept header specifying the"
-          ],
-          "text": "   1. Client Request: The client sends an HTTP request with the Accept header specifying the"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   1. Client Request: The client sends an HTTP request with the Accept header specifying the",
             "      desired media type (e.g., application/json, application/xml)."
           ],
-          "text": "      desired media type (e.g., application/json, application/xml)."
+          "text": "   1. Client Request: The client sends an HTTP request with the Accept header specifying the\n      desired media type (e.g., application/json, application/xml)."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   2. Server Response: The server uses formatters to serialize the response data into the specified"
+            "   2. Server Response: The server uses formatters to serialize the response data into the specified",
+            "      format. If the requested format is not supported or available, the server may return a",
+            "      default format or an error."
           ],
-          "text": "   2. Server Response: The server uses formatters to serialize the response data into the specified"
+          "text": "   2. Server Response: The server uses formatters to serialize the response data into the specified\n      format. If the requested format is not supported or available, the server may return a\n      default format or an error."
         },
         {
           "type": "prose",
           "page": 4,
           "lines": [
-            "      format. If the requested format is not supported or available, the server may return a",
-            "      default format or an error.",
             "Configuring Formatters in ASP.NET Core",
             "ASP.NET Core provides built-in formatters for JSON and XML. You can configure these formatters in",
             "the Program.cs file."
           ],
-          "text": "      format. If the requested format is not supported or available, the server may return a\n      default format or an error.\nConfiguring Formatters in ASP.NET Core\nASP.NET Core provides built-in formatters for JSON and XML. You can configure these formatters in\nthe Program.cs file."
+          "text": "Configuring Formatters in ASP.NET Core\nASP.NET Core provides built-in formatters for JSON and XML. You can configure these formatters in\nthe Program.cs file."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 4,
           "lines": [
-            "1. JSON Formatter"
-          ],
-          "text": "1. JSON Formatter"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "1. JSON Formatter",
             "By default, ASP.NET Core includes the JSON formatter via System.Text.Json. You can also use",
             "Newtonsoft.Json if you prefer."
           ],
-          "text": "By default, ASP.NET Core includes the JSON formatter via System.Text.Json. You can also use\nNewtonsoft.Json if you prefer."
+          "text": "1. JSON Formatter\nBy default, ASP.NET Core includes the JSON formatter via System.Text.Json. You can also use\nNewtonsoft.Json if you prefer."
         }
       ],
       "char_count_raw": 1564,
@@ -1494,65 +1389,37 @@
           "type": "code",
           "page": 5,
           "lines": [
-            "  services.AddControllers()"
-          ],
-          "text": "  services.AddControllers()"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
-            "   .AddJsonOptions(options =>"
-          ],
-          "text": "   .AddJsonOptions(options =>"
-        },
-        {
-          "type": "code",
-          "page": 5,
-          "lines": [
+            "  services.AddControllers()",
+            "   .AddJsonOptions(options =>",
             "   {",
             "     options.JsonSerializerOptions.PropertyNamingPolicy = null; // Disable camel casing",
-            "   });"
+            "   });",
+            "Example Configuration with Newtonsoft.Json:",
+            "First, install the Microsoft.AspNetCore.Mvc.NewtonsoftJson NuGet package:"
           ],
-          "text": "   {\n     options.JsonSerializerOptions.PropertyNamingPolicy = null; // Disable camel casing\n   });"
+          "text": "  services.AddControllers()\n   .AddJsonOptions(options =>\n   {\n     options.JsonSerializerOptions.PropertyNamingPolicy = null; // Disable camel casing\n   });\nExample Configuration with Newtonsoft.Json:\nFirst, install the Microsoft.AspNetCore.Mvc.NewtonsoftJson NuGet package:"
         },
         {
           "type": "prose",
           "page": 5,
           "lines": [
-            "Example Configuration with Newtonsoft.Json:",
-            "First, install the Microsoft.AspNetCore.Mvc.NewtonsoftJson NuGet package:",
             "dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson",
             "Then configure it in Program.cs:"
           ],
-          "text": "Example Configuration with Newtonsoft.Json:\nFirst, install the Microsoft.AspNetCore.Mvc.NewtonsoftJson NuGet package:\ndotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson\nThen configure it in Program.cs:"
+          "text": "dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson\nThen configure it in Program.cs:"
         },
         {
           "type": "code",
           "page": 5,
           "lines": [
-            "  services.AddControllers()"
-          ],
-          "text": "  services.AddControllers()"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
-            "   .AddNewtonsoftJson(options =>"
-          ],
-          "text": "   .AddNewtonsoftJson(options =>"
-        },
-        {
-          "type": "code",
-          "page": 5,
-          "lines": [
+            "  services.AddControllers()",
+            "   .AddNewtonsoftJson(options =>",
             "   {",
             "     options.SerializerSettings.ContractResolver = new",
             "CamelCasePropertyNamesContractResolver();",
             "   });"
           ],
-          "text": "   {\n     options.SerializerSettings.ContractResolver = new\nCamelCasePropertyNamesContractResolver();\n   });"
+          "text": "  services.AddControllers()\n   .AddNewtonsoftJson(options =>\n   {\n     options.SerializerSettings.ContractResolver = new\nCamelCasePropertyNamesContractResolver();\n   });"
         },
         {
           "type": "prose",
@@ -1568,17 +1435,10 @@
           "type": "code",
           "page": 5,
           "lines": [
-            "  services.AddControllers()"
-          ],
-          "text": "  services.AddControllers()"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "  services.AddControllers()",
             "   .AddXmlSerializerFormatters(); // Add XML formatter"
           ],
-          "text": "   .AddXmlSerializerFormatters(); // Add XML formatter"
+          "text": "  services.AddControllers()\n   .AddXmlSerializerFormatters(); // Add XML formatter"
         }
       ],
       "char_count_raw": 750,
@@ -1792,22 +1652,22 @@
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 6,
           "lines": [
-            "3. Custom Formatters"
+            "3. Custom Formatters",
+            "You can create custom formatters if you need to support additional formats."
           ],
-          "text": "3. Custom Formatters"
+          "text": "3. Custom Formatters\nYou can create custom formatters if you need to support additional formats."
         },
         {
           "type": "prose",
           "page": 6,
           "lines": [
-            "You can create custom formatters if you need to support additional formats.",
             "Example of a Custom Formatter:",
             "Create a custom OutputFormatter:"
           ],
-          "text": "You can create custom formatters if you need to support additional formats.\nExample of a Custom Formatter:\nCreate a custom OutputFormatter:"
+          "text": "Example of a Custom Formatter:\nCreate a custom OutputFormatter:"
         },
         {
           "type": "code",
@@ -1823,47 +1683,19 @@
             "  {",
             "   return context.ContentType.Equals(MediaTypeHeaderValue.Parse(\"application/custom-xml\"));",
             "  }",
-            "  public override Task WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding"
-          ],
-          "text": "public class CustomXmlOutputFormatter : TextOutputFormatter\n{\n  public CustomXmlOutputFormatter()\n  {\n   SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse(\"application/custom-xml\"));\n  }\n  public override bool CanWriteResult(OutputFormatterCanWriteContext context)\n  {\n   return context.ContentType.Equals(MediaTypeHeaderValue.Parse(\"application/custom-xml\"));\n  }\n  public override Task WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
-            "selectedEncoding)"
-          ],
-          "text": "selectedEncoding)"
-        },
-        {
-          "type": "code",
-          "page": 6,
-          "lines": [
+            "  public override Task WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding",
+            "selectedEncoding)",
             "  {",
             "   // Implement custom XML serialization logic here",
             "  }",
-            "}"
-          ],
-          "text": "  {\n   // Implement custom XML serialization logic here\n  }\n}"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
-            "Register the custom formatter:"
-          ],
-          "text": "Register the custom formatter:"
-        },
-        {
-          "type": "code",
-          "page": 6,
-          "lines": [
+            "}",
+            "Register the custom formatter:",
             "  services.AddControllers(options =>",
             "  {",
             "   options.OutputFormatters.Add(new CustomXmlOutputFormatter());",
             "  });"
           ],
-          "text": "  services.AddControllers(options =>\n  {\n   options.OutputFormatters.Add(new CustomXmlOutputFormatter());\n  });"
+          "text": "public class CustomXmlOutputFormatter : TextOutputFormatter\n{\n  public CustomXmlOutputFormatter()\n  {\n   SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse(\"application/custom-xml\"));\n  }\n  public override bool CanWriteResult(OutputFormatterCanWriteContext context)\n  {\n   return context.ContentType.Equals(MediaTypeHeaderValue.Parse(\"application/custom-xml\"));\n  }\n  public override Task WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding\nselectedEncoding)\n  {\n   // Implement custom XML serialization logic here\n  }\n}\nRegister the custom formatter:\n  services.AddControllers(options =>\n  {\n   options.OutputFormatters.Add(new CustomXmlOutputFormatter());\n  });"
         }
       ],
       "char_count_raw": 806,
@@ -2088,17 +1920,10 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • AddNewtonsoftJson: Adds support for JSON serialization using Newtonsoft.Json, allowing"
-          ],
-          "text": "   • AddNewtonsoftJson: Adds support for JSON serialization using Newtonsoft.Json, allowing"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • AddNewtonsoftJson: Adds support for JSON serialization using Newtonsoft.Json, allowing",
             "      for more advanced configuration."
           ],
-          "text": "      for more advanced configuration."
+          "text": "   • AddNewtonsoftJson: Adds support for JSON serialization using Newtonsoft.Json, allowing\n      for more advanced configuration."
         },
         {
           "type": "list_item",
@@ -2112,17 +1937,10 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Custom Formatters: Allow you to create formatters for unsupported media types or"
-          ],
-          "text": "   • Custom Formatters: Allow you to create formatters for unsupported media types or"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Custom Formatters: Allow you to create formatters for unsupported media types or",
             "      customize serialization logic."
           ],
-          "text": "      customize serialization logic."
+          "text": "   • Custom Formatters: Allow you to create formatters for unsupported media types or\n      customize serialization logic."
         },
         {
           "type": "heading",
@@ -2149,17 +1967,10 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Set the Accept header to application/json or application/xml in Postman and observe the"
-          ],
-          "text": "   • Set the Accept header to application/json or application/xml in Postman and observe the"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Set the Accept header to application/json or application/xml in Postman and observe the",
             "      response format."
           ],
-          "text": "      response format."
+          "text": "   • Set the Accept header to application/json or application/xml in Postman and observe the\n      response format."
         },
         {
           "type": "heading",
@@ -2173,17 +1984,10 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   1. Content Negotiation: Determines the format of the response based on the client's Accept"
-          ],
-          "text": "   1. Content Negotiation: Determines the format of the response based on the client's Accept"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   1. Content Negotiation: Determines the format of the response based on the client's Accept",
             "      header."
           ],
-          "text": "      header."
+          "text": "   1. Content Negotiation: Determines the format of the response based on the client's Accept\n      header."
         },
         {
           "type": "list_item",
@@ -2205,17 +2009,10 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   4. Configuration: Use AddJsonOptions, AddNewtonsoftJson, and AddXmlSerializerFormatters"
-          ],
-          "text": "   4. Configuration: Use AddJsonOptions, AddNewtonsoftJson, and AddXmlSerializerFormatters"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   4. Configuration: Use AddJsonOptions, AddNewtonsoftJson, and AddXmlSerializerFormatters",
             "      to configure formatters."
           ],
-          "text": "      to configure formatters."
+          "text": "   4. Configuration: Use AddJsonOptions, AddNewtonsoftJson, and AddXmlSerializerFormatters\n      to configure formatters."
         },
         {
           "type": "list_item",
@@ -2481,39 +2278,32 @@
           "text": "API versioning allows you to introduce new features or changes in your API without breaking existing\nclients. It helps maintain multiple versions of an API simultaneously.\nImplementing API Versioning with Asp.Versioning.Mvc"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 8,
           "lines": [
-            "1. Install the New API Versioning NuGet Package"
-          ],
-          "text": "1. Install the New API Versioning NuGet Package"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "1. Install the New API Versioning NuGet Package",
             "Install the Asp.Versioning.Mvc package to use the new API versioning library.",
             "dotnet add package Asp.Versioning.Mvc"
           ],
-          "text": "Install the Asp.Versioning.Mvc package to use the new API versioning library.\ndotnet add package Asp.Versioning.Mvc"
+          "text": "1. Install the New API Versioning NuGet Package\nInstall the Asp.Versioning.Mvc package to use the new API versioning library.\ndotnet add package Asp.Versioning.Mvc"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 8,
           "lines": [
-            "2. Configure API Versioning in Program.cs"
+            "2. Configure API Versioning in Program.cs",
+            "Add and configure the API versioning services using the new package in the ConfigureServices",
+            "method."
           ],
-          "text": "2. Configure API Versioning in Program.cs"
+          "text": "2. Configure API Versioning in Program.cs\nAdd and configure the API versioning services using the new package in the ConfigureServices\nmethod."
         },
         {
           "type": "prose",
           "page": 8,
           "lines": [
-            "Add and configure the API versioning services using the new package in the ConfigureServices",
-            "method.",
             "Example Configuration:"
           ],
-          "text": "Add and configure the API versioning services using the new package in the ConfigureServices\nmethod.\nExample Configuration:"
+          "text": "Example Configuration:"
         },
         {
           "type": "code",
@@ -2524,21 +2314,14 @@
             "  services.AddApiVersioning(options =>",
             "  {",
             "   options.ReportApiVersions = true; // Include API versions in response headers",
-            "   options.AssumeDefaultVersionWhenUnspecified = true; // Assume default version if none"
-          ],
-          "text": "  services.AddControllers();\n  // Add API versioning\n  services.AddApiVersioning(options =>\n  {\n   options.ReportApiVersions = true; // Include API versions in response headers\n   options.AssumeDefaultVersionWhenUnspecified = true; // Assume default version if none"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   options.AssumeDefaultVersionWhenUnspecified = true; // Assume default version if none",
             "specified",
             "   options.DefaultApiVersion = new ApiVersion(1, 0); // Set default API version",
             "   options.ApiVersionReader = new HeaderApiVersionReader(\"api-version\"); // Read version from",
             "header",
             "  });"
           ],
-          "text": "specified\n   options.DefaultApiVersion = new ApiVersion(1, 0); // Set default API version\n   options.ApiVersionReader = new HeaderApiVersionReader(\"api-version\"); // Read version from\nheader\n  });"
+          "text": "  services.AddControllers();\n  // Add API versioning\n  services.AddApiVersioning(options =>\n  {\n   options.ReportApiVersions = true; // Include API versions in response headers\n   options.AssumeDefaultVersionWhenUnspecified = true; // Assume default version if none\nspecified\n   options.DefaultApiVersion = new ApiVersion(1, 0); // Set default API version\n   options.ApiVersionReader = new HeaderApiVersionReader(\"api-version\"); // Read version from\nheader\n  });"
         }
       ],
       "char_count_raw": 1304,
@@ -2720,21 +2503,21 @@
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 9,
           "lines": [
-            "3. Define API Versions in Controllers"
+            "3. Define API Versions in Controllers",
+            "Use the [ApiVersion] attribute to specify which versions a controller or action method supports."
           ],
-          "text": "3. Define API Versions in Controllers"
+          "text": "3. Define API Versions in Controllers\nUse the [ApiVersion] attribute to specify which versions a controller or action method supports."
         },
         {
           "type": "prose",
           "page": 9,
           "lines": [
-            "Use the [ApiVersion] attribute to specify which versions a controller or action method supports.",
             "Example:"
           ],
-          "text": "Use the [ApiVersion] attribute to specify which versions a controller or action method supports.\nExample:"
+          "text": "Example:"
         },
         {
           "type": "code",
@@ -2744,42 +2527,14 @@
             "[Route(\"api/[controller]\")]",
             "public class ProductsController : ControllerBase",
             "{",
-            "  [HttpGet]"
-          ],
-          "text": "[ApiController]\n[Route(\"api/[controller]\")]\npublic class ProductsController : ControllerBase\n{\n  [HttpGet]"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
-            "  [ApiVersion(\"1.0\")]"
-          ],
-          "text": "  [ApiVersion(\"1.0\")]"
-        },
-        {
-          "type": "code",
-          "page": 9,
-          "lines": [
+            "  [HttpGet]",
+            "  [ApiVersion(\"1.0\")]",
             "  public IActionResult GetV1()",
             "  {",
             "   return Ok(\"API Version 1.0\");",
             "  }",
-            "  [HttpGet]"
-          ],
-          "text": "  public IActionResult GetV1()\n  {\n   return Ok(\"API Version 1.0\");\n  }\n  [HttpGet]"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
-            "  [ApiVersion(\"2.0\")]"
-          ],
-          "text": "  [ApiVersion(\"2.0\")]"
-        },
-        {
-          "type": "code",
-          "page": 9,
-          "lines": [
+            "  [HttpGet]",
+            "  [ApiVersion(\"2.0\")]",
             "  [Route(\"v2\")]",
             "  public IActionResult GetV2()",
             "  {",
@@ -2787,7 +2542,7 @@
             "  }",
             "}"
           ],
-          "text": "  [Route(\"v2\")]\n  public IActionResult GetV2()\n  {\n   return Ok(\"API Version 2.0\");\n  }\n}"
+          "text": "[ApiController]\n[Route(\"api/[controller]\")]\npublic class ProductsController : ControllerBase\n{\n  [HttpGet]\n  [ApiVersion(\"1.0\")]\n  public IActionResult GetV1()\n  {\n   return Ok(\"API Version 1.0\");\n  }\n  [HttpGet]\n  [ApiVersion(\"2.0\")]\n  [Route(\"v2\")]\n  public IActionResult GetV2()\n  {\n   return Ok(\"API Version 2.0\");\n  }\n}"
         }
       ],
       "char_count_raw": 441,
@@ -3025,21 +2780,21 @@
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 10,
           "lines": [
-            "4. Specify API Versions in Routes"
+            "4. Specify API Versions in Routes",
+            "You can include the API version in the route to differentiate between versions."
           ],
-          "text": "4. Specify API Versions in Routes"
+          "text": "4. Specify API Versions in Routes\nYou can include the API version in the route to differentiate between versions."
         },
         {
           "type": "prose",
           "page": 10,
           "lines": [
-            "You can include the API version in the route to differentiate between versions.",
             "Example:"
           ],
-          "text": "You can include the API version in the route to differentiate between versions.\nExample:"
+          "text": "Example:"
         },
         {
           "type": "code",
@@ -3330,23 +3085,9 @@
             "{",
             "  services.AddApiVersioning(options =>",
             "  {",
-            "   options.ApiVersionReader = new QueryStringApiVersionReader(\"api-version\"); // Read version"
-          ],
-          "text": "public void ConfigureServices(IServiceCollection services)\n{\n  services.AddApiVersioning(options =>\n  {\n   options.ApiVersionReader = new QueryStringApiVersionReader(\"api-version\"); // Read version"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   options.ApiVersionReader = new QueryStringApiVersionReader(\"api-version\"); // Read version",
             "from query string",
-            "  });"
-          ],
-          "text": "from query string\n  });"
-        },
-        {
-          "type": "code",
-          "page": 11,
-          "lines": [
+            "  });",
             "}",
             "[ApiController]",
             "[Route(\"api/products\")]",
@@ -3360,7 +3101,7 @@
             "  }",
             "}"
           ],
-          "text": "}\n[ApiController]\n[Route(\"api/products\")]\npublic class ProductsController : ControllerBase\n{\n  [HttpGet]\n  public IActionResult Get()\n  {\n   // Handle request for the specified API version\n   return Ok(\"API Versioned via Query String\");\n  }\n}"
+          "text": "public void ConfigureServices(IServiceCollection services)\n{\n  services.AddApiVersioning(options =>\n  {\n   options.ApiVersionReader = new QueryStringApiVersionReader(\"api-version\"); // Read version\nfrom query string\n  });\n}\n[ApiController]\n[Route(\"api/products\")]\npublic class ProductsController : ControllerBase\n{\n  [HttpGet]\n  public IActionResult Get()\n  {\n   // Handle request for the specified API version\n   return Ok(\"API Versioned via Query String\");\n  }\n}"
         },
         {
           "type": "prose",
@@ -3374,17 +3115,10 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • AddApiVersioning: Configures API versioning services, including options for default version,"
-          ],
-          "text": "   • AddApiVersioning: Configures API versioning services, including options for default version,"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   • AddApiVersioning: Configures API versioning services, including options for default version,",
             "      version reporting, and version readers."
           ],
-          "text": "      version reporting, and version readers."
+          "text": "   • AddApiVersioning: Configures API versioning services, including options for default version,\n      version reporting, and version readers."
         },
         {
           "type": "list_item",
@@ -3406,17 +3140,10 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • Version Readers: Methods to extract version information from request headers, URLs, or"
-          ],
-          "text": "   • Version Readers: Methods to extract version information from request headers, URLs, or"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   • Version Readers: Methods to extract version information from request headers, URLs, or",
             "      query strings."
           ],
-          "text": "      query strings."
+          "text": "   • Version Readers: Methods to extract version information from request headers, URLs, or\n      query strings."
         }
       ],
       "char_count_raw": 908,
@@ -3553,33 +3280,19 @@
           "type": "list_item",
           "page": 12,
           "lines": [
-            "   1. API Versioning: Allows multiple versions of an API to coexist and ensures backward"
-          ],
-          "text": "   1. API Versioning: Allows multiple versions of an API to coexist and ensures backward"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "   1. API Versioning: Allows multiple versions of an API to coexist and ensures backward",
             "      compatibility."
           ],
-          "text": "      compatibility."
+          "text": "   1. API Versioning: Allows multiple versions of an API to coexist and ensures backward\n      compatibility."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 12,
           "lines": [
-            "2. New Package: Use Asp.Versioning.Mvc instead of the deprecated"
-          ],
-          "text": "2. New Package: Use Asp.Versioning.Mvc instead of the deprecated"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "   2. New Package: Use Asp.Versioning.Mvc instead of the deprecated",
             "      Microsoft.AspNetCore.Mvc.Versioning."
           ],
-          "text": "      Microsoft.AspNetCore.Mvc.Versioning."
+          "text": "   2. New Package: Use Asp.Versioning.Mvc instead of the deprecated\n      Microsoft.AspNetCore.Mvc.Versioning."
         },
         {
           "type": "list_item",
@@ -3593,33 +3306,19 @@
           "type": "list_item",
           "page": 12,
           "lines": [
-            "   4. Versioning Methods: Use header, URL segment, or query string methods to handle API"
-          ],
-          "text": "   4. Versioning Methods: Use header, URL segment, or query string methods to handle API"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "   4. Versioning Methods: Use header, URL segment, or query string methods to handle API",
             "      versions."
           ],
-          "text": "      versions."
+          "text": "   4. Versioning Methods: Use header, URL segment, or query string methods to handle API\n      versions."
         },
         {
           "type": "list_item",
           "page": 12,
           "lines": [
-            "   5. Testing: Validate versioning using tools like Postman or curl to ensure proper version"
-          ],
-          "text": "   5. Testing: Validate versioning using tools like Postman or curl to ensure proper version"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "   5. Testing: Validate versioning using tools like Postman or curl to ensure proper version",
             "      handling."
           ],
-          "text": "      handling."
+          "text": "   5. Testing: Validate versioning using tools like Postman or curl to ensure proper version\n      handling."
         }
       ],
       "char_count_raw": 613,

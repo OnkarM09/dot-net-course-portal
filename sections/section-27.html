@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Section 27: Swagger — ASP.NET Core Masterclass</title>
+  <title>Section 27: Swagger &mdash; ASP.NET Core Masterclass</title>
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
   <link rel="alternate icon" href="../favicon.ico">
   <link rel="stylesheet" href="../assets/css/docs.css">
@@ -16,7 +16,9 @@
   <!-- Top Navigation Header -->
   <header class="top-header" role="banner">
     <div class="header-left">
-      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">☰</button>
+      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
       <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
         <span class="sidebar-toggle-text">« Collapse</span>
@@ -41,7 +43,9 @@
       </a>
 
       <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
-        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
         <span class="search-text">Search topics, syntax, concepts...</span>
         <kbd class="kbd-shortcut">Ctrl+K</kbd>
       </button>
@@ -367,15 +371,6 @@
         <span>» Expand Sidebar</span>
       </button>
 
-      <!-- Breadcrumbs -->
-      <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
-        <a href="../index.html">Course Index</a>
-        <span class="crumb-sep" aria-hidden="true">/</span>
-        <span>Module 6</span>
-        <span class="crumb-sep" aria-hidden="true">/</span>
-        <span style="color: var(--text-main); font-weight: 600;">Section 27</span>
-      </nav>
-
       <!-- Section Banner Header -->
       <header class="section-banner">
         <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
@@ -416,15 +411,15 @@ the endpoints, request/response formats, parameters, authentication methods, and
 Swagger tools are used to generate interactive documentation and client libraries based on the
 OpenAPI specification.
 Setting Up Swagger in ASP.NET Core</p>
-
-<h2 id="1-install-swagger-nuget-packages">1. Install Swagger NuGet Packages</h2>
-<p>To use Swagger in an ASP.NET Core application, you need to install the Swashbuckle.AspNetCore
+<ol>
+  <li>Install Swagger NuGet Packages
+To use Swagger in an ASP.NET Core application, you need to install the Swashbuckle.AspNetCore
 NuGet package, which provides the Swagger generator and UI.
-dotnet add package Swashbuckle.AspNetCore</p>
-
-<h2 id="2-configure-swagger-in-programcs">2. Configure Swagger in Program.cs</h2>
-<p>In your Program.cs file, you need to add Swagger services and configure the Swagger middleware.
-ConfigureServices Method:</p>
+dotnet add package Swashbuckle.AspNetCore</li>
+  <li>Configure Swagger in <code>Program.cs</code>
+In your <code>Program.cs</code> file, you need to add Swagger services and configure the Swagger middleware.</li>
+</ol>
+<p>ConfigureServices Method:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -448,47 +443,16 @@ ConfigureServices Method:</p>
 // c.IncludeXmlComments(xmlPath
 );
   });
-}</code></pre>
-    </div>
-  <p>Configure Method:</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+}
+Configure Method:
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
-}</code></pre>
-    </div>
-  <p>if (env.IsDevelopment())</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  if (env.IsDevelopment())
+  {
    app.UseDeveloperExceptionPage();
-  }</code></pre>
-    </div>
-  <p>else</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  }
+  else
+  {
    app.UseExceptionHandler(&quot;/Home/Error&quot;);
    app.UseHsts();
   }
@@ -503,22 +467,12 @@ ConfigureServices Method:</p>
   {
    c.SwaggerEndpoint(&quot;/swagger/v1/swagger.json&quot;, &quot;My API V1&quot;);
    c.RoutePrefix = string.Empty; ) // Set Swagger UI at the app&#39;s root (optional
-}</code></pre>
-    </div>
-  <p>});</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">app.UseEndpoints(endpoints =&gt;
+  });
+  app.UseEndpoints(endpoints =&gt;
   {
    endpoints.MapControllers();
-  });</code></pre>
+  });
+}</code></pre>
     </div>
   <p>3. XML Comments for Enhanced Documentation
 To enhance the documentation, you can include XML comments. This requires enabling XML
@@ -530,35 +484,32 @@ Project File (.csproj):
 &lt;/PropertyGroup&gt;
 Update Swagger Configuration:
 c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, &quot;MyApi.xml&quot;));</p>
-
-<h2 id="4-testing-the-api-documentation">4. Testing the API Documentation</h2>
-<p>Once configured, run your application and navigate to the Swagger UI (usually at /swagger or the
+<ol>
+  <li>Testing the API Documentation
+Once configured, run your application and navigate to the Swagger UI (usually at /swagger or the
 root if configured) to see the interactive API documentation. Swagger UI allows you to explore and
-test your API endpoints directly from the browser.</p>
+test your API endpoints directly from the browser.</li>
+</ol>
 
 <h2 id="detailed-explanation-of-code">Detailed Explanation of Code</h2>
 <ul>
-  <li>• AddSwaggerGen Method: Registers the Swagger generator with default settings. You can</li>
+  <li>AddSwaggerGen Method: Registers the Swagger generator with default settings. You can
+      provide additional options such as custom filters or document settings.</li>
+  <li>SwaggerDoc Method: Defines a Swagger document with a title and version. You can create
+      multiple versions if needed.</li>
+  <li>UseSwagger and UseSwaggerUI Methods: Middleware components to serve the Swagger
+      JSON endpoint and the interactive UI, respectively. SwaggerEndpoint specifies the path to
+      the Swagger JSON file.</li>
+  <li>XML Comments: Provides additional metadata for API methods and models, which is
+      displayed in Swagger UI.</li>
 </ul>
-<p>provide additional options such as custom filters or document settings.</p>
-<ul>
-  <li>• SwaggerDoc Method: Defines a Swagger document with a title and version. You can create</li>
-</ul>
-<p>multiple versions if needed.</p>
-<ul>
-  <li>• UseSwagger and UseSwaggerUI Methods: Middleware components to serve the Swagger</li>
-</ul>
-<p>JSON endpoint and the interactive UI, respectively. SwaggerEndpoint specifies the path to
-      the Swagger JSON file.</p>
-<ul>
-  <li>• XML Comments: Provides additional metadata for API methods and models, which is</li>
-</ul>
-<p>displayed in Swagger UI.</p>
 
 <h2 id="content-negotiation">Content Negotiation</h2>
-<p>Content negotiation is a mechanism in HTTP that allows clients and servers to agree on the format
-of the response data. In ASP.NET Core, content negotiation determines how the response should be
-formatted based on the client&#39;s request headers and available formatters.</p>
+<p>Content negotiation is a mechanism in HTTP that allows clients and servers to agree on the format</p>
+<ul>
+  <li>f the response data. In ASP.NET Core, content negotiation determines how the response should be</li>
+</ul>
+<p>formatted based on the client&#39;s request headers and available formatters.</p>
 
 <h2 id="overview-of-content-negotiation">Overview of Content Negotiation</h2>
 <p>When a client sends a request, it may specify the desired response format through the Accept
@@ -566,22 +517,21 @@ header. The server processes this header and selects the appropriate formatter t
 response data into the requested format (e.g., JSON, XML).</p>
 
 <h2 id="how-content-negotiation-works">How Content Negotiation Works</h2>
-<ul>
-  <li>1. Client Request: The client sends an HTTP request with the Accept header specifying the</li>
-</ul>
-<p>desired media type (e.g., application/json, application/xml).</p>
-<ul>
-  <li>2. Server Response: The server uses formatters to serialize the response data into the specified</li>
-</ul>
-<p>format. If the requested format is not supported or available, the server may return a
-      default format or an error.
-Configuring Formatters in ASP.NET Core
+<ol>
+  <li>Client Request: The client sends an HTTP request with the Accept header specifying the
+      desired media type (e.g., application/json, application/xml).</li>
+  <li>Server Response: The server uses formatters to serialize the response data into the specified
+      format. If the requested format is not supported or available, the server may return a
+      default format or an error.</li>
+</ol>
+<p>Configuring Formatters in ASP.NET Core
 ASP.NET Core provides built-in formatters for JSON and XML. You can configure these formatters in
-the Program.cs file.</p>
-
-<h2 id="1-json-formatter">1. JSON Formatter</h2>
-<p>By default, ASP.NET Core includes the JSON formatter via System.Text.Json. You can also use
-Newtonsoft.Json if you prefer.</p>
+the <code>Program.cs</code> file.</p>
+<ol>
+  <li>JSON Formatter
+By default, ASP.NET Core includes the JSON formatter via System.Text.Json. You can also use
+Newtonsoft.Json if you prefer.</li>
+</ol>
 <p>Example Configuration with System.Text.Json:</p>
 
     <div class="code-block">
@@ -592,26 +542,16 @@ Newtonsoft.Json if you prefer.</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">services.AddControllers()</code></pre>
-    </div>
-  <p>.AddJsonOptions(options =&gt;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+      <pre><code class="language-csharp">services.AddControllers()
+   .AddJsonOptions(options =&gt;
+   {
      options.JsonSerializerOptions.PropertyNamingPolicy = null; // Disable camel casing
-   });</code></pre>
+   });
+Example Configuration with Newtonsoft.Json:
+First, install the Microsoft.AspNetCore.Mvc.NewtonsoftJson NuGet package:</code></pre>
     </div>
-  <p>Example Configuration with Newtonsoft.Json:
-First, install the Microsoft.AspNetCore.Mvc.NewtonsoftJson NuGet package:
-dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson
-Then configure it in Program.cs:</p>
+  <p>dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson
+Then configure it in <code>Program.cs</code>:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -621,19 +561,9 @@ Then configure it in Program.cs:</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">services.AddControllers()</code></pre>
-    </div>
-  <p>.AddNewtonsoftJson(options =&gt;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+      <pre><code class="language-csharp">services.AddControllers()
+   .AddNewtonsoftJson(options =&gt;
+   {
      options.SerializerSettings.ContractResolver = new
 CamelCasePropertyNamesContractResolver();
    });</code></pre>
@@ -650,13 +580,14 @@ Example Configuration:</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">services.AddControllers()</code></pre>
+      <pre><code class="language-csharp">services.AddControllers()
+   .AddXmlSerializerFormatters(); // Add XML formatter</code></pre>
     </div>
-  <p>.AddXmlSerializerFormatters(); // Add XML formatter</p>
-
-<h2 id="3-custom-formatters">3. Custom Formatters</h2>
-<p>You can create custom formatters if you need to support additional formats.
-Example of a Custom Formatter:
+  <ol>
+  <li>Custom Formatters
+You can create custom formatters if you need to support additional formats.</li>
+</ol>
+<p>Example of a Custom Formatter:
 Create a custom OutputFormatter:</p>
 
     <div class="code-block">
@@ -678,33 +609,13 @@ Create a custom OutputFormatter:</p>
    return context.ContentType.Equals(MediaTypeHeaderValue.Parse(&quot;application/custom-xml&quot;));
   }
   public override Task WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding
-}</code></pre>
-    </div>
-  <p>selectedEncoding)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+selectedEncoding)
+  {
    // Implement custom XML serialization logic here
-  }</code></pre>
-    </div>
-  <p>Register the custom formatter:</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">services.AddControllers(options =&gt;
+  }
+}
+Register the custom formatter:
+  services.AddControllers(options =&gt;
   {
    options.OutputFormatters.Add(new CustomXmlOutputFormatter());
   });</code></pre>
@@ -712,15 +623,13 @@ Create a custom OutputFormatter:</p>
   
 <h2 id="detailed-explanation-of-code-1">Detailed Explanation of Code</h2>
 <ul>
-  <li>• AddJsonOptions: Configures JSON serialization settings, such as property naming policies.</li>
-  <li>• AddNewtonsoftJson: Adds support for JSON serialization using Newtonsoft.Json, allowing</li>
+  <li>AddJsonOptions: Configures JSON serialization settings, such as property naming policies.</li>
+  <li>AddNewtonsoftJson: Adds support for JSON serialization using Newtonsoft.Json, allowing
+      for more advanced configuration.</li>
+  <li>AddXmlSerializerFormatters: Enables XML serialization using the XML serializer.</li>
+  <li>Custom Formatters: Allow you to create formatters for unsupported media types or
+      customize serialization logic.</li>
 </ul>
-<p>for more advanced configuration.</p>
-<ul>
-  <li>• AddXmlSerializerFormatters: Enables XML serialization using the XML serializer.</li>
-  <li>• Custom Formatters: Allow you to create formatters for unsupported media types or</li>
-</ul>
-<p>customize serialization logic.</p>
 
 <h2 id="testing-content-negotiation">Testing Content Negotiation</h2>
 <p>You can test content negotiation by sending requests with different Accept headers using tools like
@@ -730,24 +639,20 @@ curl -H &quot;Accept: application/json&quot; https://localhost:5001/api/products
 curl -H &quot;Accept: application/xml&quot; https://localhost:5001/api/products
 Example Request with Postman:</p>
 <ul>
-  <li>• Set the Accept header to application/json or application/xml in Postman and observe the</li>
+  <li>Set the Accept header to application/json or application/xml in Postman and observe the
+      response format.</li>
 </ul>
-<p>response format.</p>
 
 <h2 id="key-points-to-remember">Key Points to Remember</h2>
-<ul>
-  <li>1. Content Negotiation: Determines the format of the response based on the client&#39;s Accept</li>
-</ul>
-<p>header.</p>
-<ul>
-  <li>2. Built-in Formatters: ASP.NET Core provides JSON and XML formatters out of the box.</li>
-  <li>3. Custom Formatters: You can create custom formatters to support additional media types.</li>
-  <li>4. Configuration: Use AddJsonOptions, AddNewtonsoftJson, and AddXmlSerializerFormatters</li>
-</ul>
-<p>to configure formatters.</p>
-<ul>
-  <li>5. Testing: Use tools like Postman or curl to test different response formats.</li>
-</ul>
+<ol>
+  <li>Content Negotiation: Determines the format of the response based on the client&#39;s Accept
+      header.</li>
+  <li>Built-in Formatters: ASP.NET Core provides JSON and XML formatters out of the box.</li>
+  <li>Custom Formatters: You can create custom formatters to support additional media types.</li>
+  <li>Configuration: Use AddJsonOptions, AddNewtonsoftJson, and AddXmlSerializerFormatters
+      to configure formatters.</li>
+  <li>Testing: Use tools like Postman or curl to test different response formats.</li>
+</ol>
 
 <h2 id="api-versions">API Versions</h2>
 <p>API versioning is crucial for managing changes in your API while keeping backward compatibility.
@@ -758,15 +663,15 @@ Asp.Versioning.Mvc package for implementing API versioning in ASP.NET Core.</p>
 <p>API versioning allows you to introduce new features or changes in your API without breaking existing
 clients. It helps maintain multiple versions of an API simultaneously.
 Implementing API Versioning with Asp.Versioning.Mvc</p>
-
-<h2 id="1-install-the-new-api-versioning-nuget-package">1. Install the New API Versioning NuGet Package</h2>
-<p>Install the Asp.Versioning.Mvc package to use the new API versioning library.
-dotnet add package Asp.Versioning.Mvc</p>
-
-<h2 id="2-configure-api-versioning-in-programcs">2. Configure API Versioning in Program.cs</h2>
-<p>Add and configure the API versioning services using the new package in the ConfigureServices
-method.
-Example Configuration:</p>
+<ol>
+  <li>Install the New API Versioning NuGet Package
+Install the Asp.Versioning.Mvc package to use the new API versioning library.
+dotnet add package Asp.Versioning.Mvc</li>
+  <li>Configure API Versioning in <code>Program.cs</code>
+Add and configure the API versioning services using the new package in the ConfigureServices
+method.</li>
+</ol>
+<p>Example Configuration:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -782,17 +687,17 @@ Example Configuration:</p>
   {
    options.ReportApiVersions = true; // Include API versions in response headers
    options.AssumeDefaultVersionWhenUnspecified = true; // Assume default version if none
-}</code></pre>
-    </div>
-  <p>specified
+specified
    options.DefaultApiVersion = new ApiVersion(1, 0); // Set default API version
    options.ApiVersionReader = new HeaderApiVersionReader(&quot;api-version&quot;); // Read version from
 header
-  });</p>
-
-<h2 id="3-define-api-versions-in-controllers">3. Define API Versions in Controllers</h2>
-<p>Use the [ApiVersion] attribute to specify which versions a controller or action method supports.
-Example:</p>
+  });</code></pre>
+    </div>
+  <ol>
+  <li>Define API Versions in Controllers
+Use the [ApiVersion] attribute to specify which versions a controller or action method supports.</li>
+</ol>
+<h3>Example</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -807,44 +712,25 @@ Example:</p>
 public class ProductsController : ControllerBase
 {
   [HttpGet]
-}</code></pre>
-    </div>
-  <p>[ApiVersion(&quot;1.0&quot;)]</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">public IActionResult GetV1()
+  [ApiVersion(&quot;1.0&quot;)]
+  public IActionResult GetV1()
   {
    return Ok(&quot;API Version 1.0&quot;);
   }
-  [HttpGet]</code></pre>
-    </div>
-  <p>[ApiVersion(&quot;2.0&quot;)]</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">[Route(&quot;v2&quot;)]
+  [HttpGet]
+  [ApiVersion(&quot;2.0&quot;)]
+  [Route(&quot;v2&quot;)]
   public IActionResult GetV2()
   {
    return Ok(&quot;API Version 2.0&quot;);
-  }</code></pre>
+  }
+}</code></pre>
     </div>
-  
-<h2 id="4-specify-api-versions-in-routes">4. Specify API Versions in Routes</h2>
-<p>You can include the API version in the route to differentiate between versions.
-Example:</p>
+  <ol>
+  <li>Specify API Versions in Routes
+You can include the API version in the route to differentiate between versions.</li>
+</ol>
+<h3>Example</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -905,21 +791,10 @@ public class ProductsController : ControllerBase
   services.AddApiVersioning(options =&gt;
   {
    options.ApiVersionReader = new QueryStringApiVersionReader(&quot;api-version&quot;); // Read version
+from query string
+  });
 }
-}</code></pre>
-    </div>
-  <p>from query string
-  });</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">[ApiController]
+[ApiController]
 [Route(&quot;api/products&quot;)]
 public class ProductsController : ControllerBase
 {
@@ -931,60 +806,54 @@ public class ProductsController : ControllerBase
   }
 }</code></pre>
     </div>
-  <p>Detailed Explanation of Code</p>
+  <h3>Detailed Explanation of Code</h3>
 <ul>
-  <li>• AddApiVersioning: Configures API versioning services, including options for default version,</li>
+  <li>AddApiVersioning: Configures API versioning services, including options for default version,
+      version reporting, and version readers.</li>
+  <li>[ApiVersion] Attribute: Specifies the supported versions for a controller or action method.</li>
+  <li>Routes: Define versioned routes to access different API versions.</li>
+  <li>Version Readers: Methods to extract version information from request headers, URLs, or
+      query strings.</li>
 </ul>
-<p>version reporting, and version readers.</p>
-<ul>
-  <li>• [ApiVersion] Attribute: Specifies the supported versions for a controller or action method.</li>
-  <li>• Routes: Define versioned routes to access different API versions.</li>
-  <li>• Version Readers: Methods to extract version information from request headers, URLs, or</li>
-</ul>
-<p>query strings.</p>
 <p>Example Request with Postman:</p>
 <ul>
-  <li>• Set the api-version header or use versioned URLs to test different API versions.</li>
+  <li>Set the api-version header or use versioned URLs to test different API versions.</li>
 </ul>
 
 <h2 id="key-points-to-remember-1">Key Points to Remember</h2>
-<ul>
-  <li>1. API Versioning: Allows multiple versions of an API to coexist and ensures backward</li>
-</ul>
-<p>compatibility.</p>
-
-<h2 id="2-new-package-use-aspversioningmvc-instead-of-the-deprecated">2. New Package: Use Asp.Versioning.Mvc instead of the deprecated</h2>
-<p>Microsoft.AspNetCore.Mvc.Versioning.</p>
-<ul>
-  <li>3. Configuration: Set up API versioning in Program.cs using AddApiVersioning.</li>
-  <li>4. Versioning Methods: Use header, URL segment, or query string methods to handle API</li>
-</ul>
-<p>versions.</p>
-<ul>
-  <li>5. Testing: Validate versioning using tools like Postman or curl to ensure proper version</li>
-</ul>
-<p>handling.</p>
+<ol>
+  <li>API Versioning: Allows multiple versions of an API to coexist and ensures backward
+      compatibility.</li>
+  <li>New Package: Use Asp.Versioning.Mvc instead of the deprecated
+      Microsoft.AspNetCore.Mvc.Versioning.</li>
+  <li>Configuration: Set up API versioning in <code>Program.cs</code> using AddApiVersioning.</li>
+  <li>Versioning Methods: Use header, URL segment, or query string methods to handle API
+      versions.</li>
+  <li>Testing: Validate versioning using tools like Postman or curl to ensure proper version
+      handling.</li>
+</ol>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
 <section class="cheatsheet-section" aria-labelledby="cheat-sheet-quick-reference">
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
-  <p>Section 27 – Swagger – Cheat Sheet</p>
   <h3 id="introduction-to-swagger">Introduction to Swagger</h3>
-  <p>Swagger is a set of open-source tools that help developers to generate interactive UI to document,
+<p>Swagger is a set of open-source tools that help developers to generate interactive UI to document,
 test RESTful services.
 Swagger is a set of tools to implement Open API.</p>
-  <h3 id="1-swasbuckleaspnetcore">1. Swasbuckle.AspNetCore</h3>
-  <p>Framework that makes it easy to use swagger in asp.net core.</p>
-  <h3 id="2-swagger">2. Swagger</h3>
-  <p>Set of tools to generate UI to document &amp; test RESTful services.</p>
-  <h3 id="3-open-api">3. Open API</h3>
-  <p>Specification that defines how to write API specifications in JSON).</p>
+<ol>
+  <li>Swasbuckle.AspNetCore
+Framework that makes it easy to use swagger in asp.net core.</li>
+  <li>Swagger
+Set of tools to generate UI to document &amp; test RESTful services.</li>
+  <li>Open API
+Specification that defines how to write API specifications in JSON).</li>
+</ol>
   <h3 id="api-versions-1">API Versions</h3>
-  <p>API Versioning is the practice of transparently managing changes to your API, where the client
+<p>API Versioning is the practice of transparently managing changes to your API, where the client
 requests a specific version of API; and the server executes the same version of the API code.</p>
   <h3 id="content-negotiation-1">Content Negotiation</h3>
-  <p>Content negotiation is the process of selecting the appropriate format or language of the content to
+<p>Content negotiation is the process of selecting the appropriate format or language of the content to
 be exchanged between the client (browser) and Web API.</p>
 </section>
 
@@ -1006,13 +875,13 @@ be exchanged between the client (browser) and Web API.</p>
       <nav class="bottom-nav" aria-label="Previous and Next Section Navigation">
         
       <a href="section-26.html" class="nav-card prev" aria-label="Previous Section: Sec 26 - Web API">
-        <span class="nav-direction">← Previous Section</span>
+        <span class="nav-direction">&larr; Previous Section</span>
         <span class="nav-title">Sec 26: Web API</span>
       </a>
     
         
       <a href="section-28.html" class="nav-card next" aria-label="Next Section: Sec 28 - Angular and CORS">
-        <span class="nav-direction">Next Section →</span>
+        <span class="nav-direction">Next Section &rarr;</span>
         <span class="nav-title">Sec 28: Angular and CORS</span>
       </a>
     
@@ -1020,8 +889,8 @@ be exchanged between the client (browser) and Web API.</p>
 
       <!-- Section Footer -->
       <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); color: var(--text-dim); font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;" role="contentinfo">
-        <span>ASP.NET Core Masterclass — Offline Documentation Portal</span>
-        <a href="#top" style="color: var(--text-muted); text-decoration: none;">↑ Back to top</a>
+        <span>ASP.NET Core Masterclass &mdash; Offline Documentation Portal</span>
+        <a href="#top" style="color: var(--text-muted); text-decoration: none;">&uarr; Back to top</a>
       </footer>
     </main>
 
@@ -1039,18 +908,6 @@ be exchanged between the client (browser) and Web API.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#1-install-swagger-nuget-packages" class="toc-link">1. Install Swagger NuGet Packages</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#2-configure-swagger-in-programcs" class="toc-link">2. Configure Swagger in Program.cs</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#4-testing-the-api-documentation" class="toc-link">4. Testing the API Documentation</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#detailed-explanation-of-code" class="toc-link">Detailed Explanation of Code</a>
         </li>
       
@@ -1064,14 +921,6 @@ be exchanged between the client (browser) and Web API.</p>
       
         <li class="toc-item">
           <a href="#how-content-negotiation-works" class="toc-link">How Content Negotiation Works</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#1-json-formatter" class="toc-link">1. JSON Formatter</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#3-custom-formatters" class="toc-link">3. Custom Formatters</a>
         </li>
       
         <li class="toc-item">
@@ -1095,27 +944,7 @@ be exchanged between the client (browser) and Web API.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#1-install-the-new-api-versioning-nuget-package" class="toc-link">1. Install the New API Versioning NuGet Package</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#2-configure-api-versioning-in-programcs" class="toc-link">2. Configure API Versioning in Program.cs</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#3-define-api-versions-in-controllers" class="toc-link">3. Define API Versions in Controllers</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#4-specify-api-versions-in-routes" class="toc-link">4. Specify API Versions in Routes</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#key-points-to-remember-1" class="toc-link">Key Points to Remember</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#2-new-package-use-aspversioningmvc-instead-of-the-deprecated" class="toc-link">2. New Package: Use Asp.Versioning.Mvc instead of the deprecated</a>
         </li>
       
         <li class="toc-item">

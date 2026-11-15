@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Section 10: Partial Views — ASP.NET Core Masterclass</title>
+  <title>Section 10: Partial Views &mdash; ASP.NET Core Masterclass</title>
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
   <link rel="alternate icon" href="../favicon.ico">
   <link rel="stylesheet" href="../assets/css/docs.css">
@@ -16,7 +16,9 @@
   <!-- Top Navigation Header -->
   <header class="top-header" role="banner">
     <div class="header-left">
-      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">☰</button>
+      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
       <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
         <span class="sidebar-toggle-text">« Collapse</span>
@@ -41,7 +43,9 @@
       </a>
 
       <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
-        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
         <span class="search-text">Search topics, syntax, concepts...</span>
         <kbd class="kbd-shortcut">Ctrl+K</kbd>
       </button>
@@ -367,15 +371,6 @@
         <span>» Expand Sidebar</span>
       </button>
 
-      <!-- Breadcrumbs -->
-      <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
-        <a href="../index.html">Course Index</a>
-        <span class="crumb-sep" aria-hidden="true">/</span>
-        <span>Module 3</span>
-        <span class="crumb-sep" aria-hidden="true">/</span>
-        <span style="color: var(--text-main); font-weight: 600;">Section 10</span>
-      </nav>
-
       <!-- Section Banner Header -->
       <header class="section-banner">
         <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
@@ -410,40 +405,29 @@ embedded within other views. They are designed to encapsulate specific UI elemen
 forms, or widgets, allowing you to avoid repeating code and maintain a more organized structure.
 Why Use Partial Views?</p>
 <ul>
-  <li>• Reusability: A single partial view can be used in multiple views, saving development time</li>
+  <li>Reusability: A single partial view can be used in multiple views, saving development time
+      and reducing the potential for inconsistencies.</li>
+  <li>Modularity: Partial views help break down complex views into smaller, more manageable
+      components, making your code easier to read and maintain.</li>
+  <li>Dynamic Content: You can pass data to partial views, making them dynamic and adaptable
+      to different contexts.</li>
 </ul>
-<p>and reducing the potential for inconsistencies.</p>
-<ul>
-  <li>• Modularity: Partial views help break down complex views into smaller, more manageable</li>
-</ul>
-<p>components, making your code easier to read and maintain.</p>
-<ul>
-  <li>• Dynamic Content: You can pass data to partial views, making them dynamic and adaptable</li>
-</ul>
-<p>to different contexts.</p>
 
 <h2 id="notes">Notes</h2>
 <ul>
-  <li>• Naming Convention: Partial views are typically named with a leading underscore (e.g.,</li>
+  <li>Naming Convention: Partial views are typically named with a leading underscore (e.g.,
+      _ListPartialView.cshtml). This convention helps distinguish them from full views.</li>
+  <li>Location: By default, partial views are located in the Views/Shared folder or in the same
+      folder as the view that uses them. You can override the default location by specifying the full
+      path.</li>
+  <li>Rendering: You can render partial views in your main views using:</li>
+  <li>Tag Helpers: &lt;partial name=&quot;_ListPartialView&quot; /&gt; or &lt;partial
+           name=&quot;_ListPartialView&quot; model=&quot;yourModel&quot; /&gt;</li>
+  <li>HTML Helper: @await Html.PartialAsync(&quot;_ListPartialView&quot;) or @await
+           Html.PartialAsync(&quot;_ListPartialView&quot;, yourModel)
+Code Example
+_ListPartialView.cshtml (Partial View)</li>
 </ul>
-<p>_ListPartialView.cshtml). This convention helps distinguish them from full views.</p>
-<ul>
-  <li>• Location: By default, partial views are located in the Views/Shared folder or in the same</li>
-</ul>
-<p>folder as the view that uses them. You can override the default location by specifying the full
-      path.</p>
-<ul>
-  <li>• Rendering: You can render partial views in your main views using:</li>
-  <li>o Tag Helpers: &lt;partial name=&quot;_ListPartialView&quot; /&gt; or &lt;partial</li>
-</ul>
-<p>name=&quot;_ListPartialView&quot; model=&quot;yourModel&quot; /&gt;</p>
-<ul>
-  <li>o HTML Helper: @await Html.PartialAsync(&quot;_ListPartialView&quot;) or @await</li>
-</ul>
-<p>Html.PartialAsync(&quot;_ListPartialView&quot;, yourModel)</p>
-
-<h2 id="code-example">Code Example</h2>
-<p>_ListPartialView.cshtml (Partial View)</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -509,31 +493,25 @@ Views/Home/Index.cshtml (Main View)</p>
         </button>
       </div>
       <pre><code class="language-razor">&lt;/div&gt;
-&lt;h3&gt;ListTitle in View: @ViewData[&quot;ListTitle&quot;]&lt;/h3&gt;</code></pre>
+&lt;h3&gt;ListTitle in View: @ViewData[&quot;ListTitle&quot;]&lt;/h3&gt;
+This main view renders the _ListPartialView twice:</code></pre>
     </div>
-  <p>This main view renders the _ListPartialView twice:</p>
-<ul>
+  <ul>
   <li>1. First Rendering:</li>
-  <li>o The @ViewBag.ListTitle value in the partial view will be null (as it wasn&#39;t explicitly set</li>
-</ul>
-<p>before the partial view is rendered).</p>
-<ul>
-  <li>o The @ViewBag.ListItems will also be null and the loop will not execute.</li>
-  <li>o A new ViewDataDictionary named myViewData is created.</li>
+  <li>The @ViewBag.ListTitle value in the partial view will be null (as it wasn&#39;t explicitly set
+           before the partial view is rendered).</li>
+  <li>The @ViewBag.ListItems will also be null and the loop will not execute.</li>
+  <li>A new ViewDataDictionary named myViewData is created.</li>
   <li>2. Second Rendering:</li>
-  <li>o The myViewData dictionary is used to pass the ListTitle (&quot;Countries&quot;) and ListItems (a</li>
+  <li>The myViewData dictionary is used to pass the ListTitle (&quot;Countries&quot;) and ListItems (a
+           list of countries) to the partial view.</li>
+  <li>The partial view will display the list of countries because ViewBag.ListItems is not
+           null.</li>
+  <li>After the partial view has rendered, the ViewData[&quot;ListTitle&quot;] still refers to the
+           original value (&quot;Asp.Net Core Demo App&quot;) set in the controller. This is because the
+           myViewData dictionary is a separate instance of ViewDataDictionary.</li>
 </ul>
-<p>list of countries) to the partial view.</p>
-<ul>
-  <li>o The partial view will display the list of countries because ViewBag.ListItems is not</li>
-</ul>
-<p>null.</p>
-<ul>
-  <li>o After the partial view has rendered, the ViewData[&quot;ListTitle&quot;] still refers to the</li>
-</ul>
-<p>original value (&quot;Asp.Net Core Demo App&quot;) set in the controller. This is because the
-           myViewData dictionary is a separate instance of ViewDataDictionary.
-Views/Home/About.cshtml (Main View)</p>
+<p>Views/Home/About.cshtml (Main View)</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -555,20 +533,16 @@ same as the first render in Index.cshtml.</p>
 
 <h2 id="notes-1">Notes</h2>
 <ul>
-  <li>• Reusability: Partial views are essential for DRY (Don&#39;t Repeat Yourself) development in your</li>
+  <li>Reusability: Partial views are essential for DRY (Don&#39;t Repeat Yourself) development in your
+      views.</li>
+  <li>Flexibility: You can pass data to partial views to make them dynamic.</li>
+  <li>Rendering Options: Use tag helpers or HTML helpers to render partial views.</li>
+  <li>Data Sharing: Ensure that your partial views have access to the necessary data using view
+      models.</li>
+  <li>Organization: Partial views contribute to a well-structured and maintainable codebase.</li>
+  <li>View Reusability: The same partial view can be rendered multiple times on the same page,
+      each time with a different set of data.</li>
 </ul>
-<p>views.</p>
-<ul>
-  <li>• Flexibility: You can pass data to partial views to make them dynamic.</li>
-  <li>• Rendering Options: Use tag helpers or HTML helpers to render partial views.</li>
-  <li>• Data Sharing: Ensure that your partial views have access to the necessary data using view</li>
-</ul>
-<p>models.</p>
-<ul>
-  <li>• Organization: Partial views contribute to a well-structured and maintainable codebase.</li>
-  <li>• View Reusability: The same partial view can be rendered multiple times on the same page,</li>
-</ul>
-<p>each time with a different set of data.</p>
 
 <h2 id="strongly-typed-partial-views">Strongly Typed Partial Views</h2>
 <p>A strongly typed partial view, just like a strongly typed view, is associated with a specific model class
@@ -578,33 +552,25 @@ partial view.</p>
 
 <h2 id="benefits-of-strongly-typed-partial-views">Benefits of Strongly Typed Partial Views</h2>
 <ul>
-  <li>• Type Safety: Catches errors during development due to mismatched data types or property</li>
-</ul>
-<p>names.</p>
-<ul>
-  <li>• IntelliSense: Provides autocompletion and suggestions for model properties, leading to</li>
-</ul>
-<p>faster and more accurate coding.</p>
-<ul>
-  <li>• Refactoring: Makes it easier to update partial views when your model changes.</li>
+  <li>Type Safety: Catches errors during development due to mismatched data types or property
+      names.</li>
+  <li>IntelliSense: Provides autocompletion and suggestions for model properties, leading to
+      faster and more accurate coding.</li>
+  <li>Refactoring: Makes it easier to update partial views when your model changes.</li>
 </ul>
 
 <h2 id="how-to-use-strongly-typed-partial-views">How to Use Strongly Typed Partial Views</h2>
-<ul>
-  <li>1. Create a Model Class: Define a class that represents the data structure you want to pass to</li>
-</ul>
-<p>your partial view.</p>
-<ul>
-  <li>2. Use @model in the Partial View: Add the @model directive at the top of your partial view,</li>
-</ul>
-<p>specifying the model class: @model YourNamespace.YourModel.</p>
-<ul>
-  <li>3. Pass the Model: When rendering the partial view from your main view, pass an instance of</li>
-</ul>
-<p>your model class using the model attribute of the &lt;partial&gt; tag helper or the model
-      parameter of the Html.PartialAsync method.</p>
+<ol>
+  <li>Create a Model Class: Define a class that represents the data structure you want to pass to
+      your partial view.</li>
+  <li>Use @model in the Partial View: Add the @model directive at the top of your partial view,
+      specifying the model class: @model YourNamespace.YourModel.</li>
+  <li>Pass the Model: When rendering the partial view from your main view, pass an instance of
+      your model class using the model attribute of the &lt;partial&gt; tag helper or the model
+      parameter of the Html.PartialAsync method.</li>
+</ol>
 
-<h2 id="code-example-1">Code Example</h2>
+<h2 id="code-example">Code Example</h2>
 <p>ListModel.cs (Model)</p>
 
     <div class="code-block">
@@ -646,13 +612,15 @@ _ListPartialView.cshtml (Strongly Typed Partial View)</p>
   &lt;/ul&gt;
 &lt;/div&gt;</code></pre>
     </div>
-  <p>• @model ListModel: This directive indicates that this partial view expects a model of type
-      ListModel.</p>
-<ul>
-  <li>• Access Model Properties: You can directly access properties of the model object using</li>
+  <ul>
+  <li>@model ListModel: This directive indicates that this partial view expects a model of type</li>
 </ul>
-<p>@Model.PropertyName.
-Index.cshtml (Main View)</p>
+<p>ListModel.</p>
+<ul>
+  <li>Access Model Properties: You can directly access properties of the model object using
+      @Model.PropertyName.</li>
+</ul>
+<p>Index.cshtml (Main View)</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -683,11 +651,11 @@ Index.cshtml (Main View)</p>
     </div>
   <p>&lt;partial name=&quot;_ListPartialView&quot; model=&quot;listModel&quot; /&gt;</p>
 <ul>
-  <li>• Creating the Model: An instance of ListModel is created and populated with data.</li>
-  <li>• Passing the Model: The model attribute in the &lt;partial&gt; tag helper is used to pass the</li>
+  <li>Creating the Model: An instance of ListModel is created and populated with data.</li>
+  <li>Passing the Model: The model attribute in the &lt;partial&gt; tag helper is used to pass the
+      listModel to the _ListPartialView partial view.</li>
 </ul>
-<p>listModel to the _ListPartialView partial view.
-About.cshtml (Main View)</p>
+<p>About.cshtml (Main View)</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -702,36 +670,24 @@ About.cshtml (Main View)</p>
   listModel.ListTitle = &quot;Programming Languages&quot;;
   listModel.ListItems = new List&lt;string&gt;()
   {
-}
-}</code></pre>
-    </div>
-  <p>&quot;Java&quot;,
+  &quot;Java&quot;,
   &quot;C#&quot;,
-  &quot;Python&quot;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">await Html.RenderPartialAsync(&quot;_ListPartialView&quot;, listModel);</code></pre>
+  &quot;Python&quot;
+  };
+  await Html.RenderPartialAsync(&quot;_ListPartialView&quot;, listModel);
+}</code></pre>
     </div>
   <p>Same as the Index.cshtml, but using the Html.RenderPartialAsync HTML helper.</p>
 
 <h2 id="notes-2">Notes</h2>
 <ul>
-  <li>• Strongly Typed: Use @model to specify the type of data expected by the partial view.</li>
-  <li>• Pass the Model: Pass an instance of your model class when rendering the partial view.</li>
-  <li>• Type Safety and IntelliSense: Benefit from compile-time checking and code completion</li>
+  <li>Strongly Typed: Use @model to specify the type of data expected by the partial view.</li>
+  <li>Pass the Model: Pass an instance of your model class when rendering the partial view.</li>
+  <li>Type Safety and IntelliSense: Benefit from compile-time checking and code completion
+      when working with model properties.</li>
+  <li>Best Practice: Strongly typed partial views promote clean, maintainable, and less errorprone
+code.</li>
 </ul>
-<p>when working with model properties.</p>
-<ul>
-  <li>• Best Practice: Strongly typed partial views promote clean, maintainable, and less errorprone</li>
-</ul>
-<p>code.</p>
 
 <h2 id="partialviewresult">PartialViewResult</h2>
 <p>In ASP.NET Core MVC, a PartialViewResult is a specific type of ActionResult designed for returning
@@ -740,23 +696,19 @@ markup (.cshtml) that can be embedded within other views. However, instead of be
 full page, they&#39;re intended to be a fragment of HTML that can be inserted into a larger view.
 Why Use PartialViewResult?</p>
 <ul>
-  <li>• Dynamic Content Delivery: You can use PartialViewResult to load content dynamically into</li>
+  <li>Dynamic Content Delivery: You can use PartialViewResult to load content dynamically into
+      your main view using AJAX or other client-side techniques.</li>
+  <li>Separation of Concerns: This result type helps keep your controller actions focused on
+      returning data and leaves the rendering of that data to the view.</li>
+  <li>Simplified Testing: Since PartialViewResult doesn&#39;t involve rendering a complete page, it&#39;s
+      often easier to unit test your action methods that return partial views.</li>
 </ul>
-<p>your main view using AJAX or other client-side techniques.</p>
-<ul>
-  <li>• Separation of Concerns: This result type helps keep your controller actions focused on</li>
-</ul>
-<p>returning data and leaves the rendering of that data to the view.</p>
-<ul>
-  <li>• Simplified Testing: Since PartialViewResult doesn&#39;t involve rendering a complete page, it&#39;s</li>
-</ul>
-<p>often easier to unit test your action methods that return partial views.</p>
 
 <h2 id="creating-a-partialviewresult">Creating a PartialViewResult</h2>
 <p>In your controller actions, you can return a PartialViewResult in a couple of ways:</p>
-<ul>
-  <li>1. Direct Instantiation:</li>
-</ul>
+<ol>
+  <li>Direct Instantiation:</li>
+</ol>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -770,24 +722,14 @@ Why Use PartialViewResult?</p>
 {
   ViewName = &quot;_ListPartialView&quot;, // Name of the partial view
   ViewData = new ViewDataDictionary(ViewData, model) // Pass the model data
-};</code></pre>
-    </div>
-  <p>2. Using the PartialView() Helper Method:</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">return PartialView(&quot;_ListPartialView&quot;, model); // Much simpler way</code></pre>
+};
+   2. Using the PartialView() Helper Method:
+return PartialView(&quot;_ListPartialView&quot;, model); // Much simpler way</code></pre>
     </div>
   <p>The PartialView() method is a shorthand provided by the Controller base class for conveniently
 creating a PartialViewResult.</p>
 
-<h2 id="code-example-2">Code Example</h2>
+<h2 id="code-example-1">Code Example</h2>
 <p>Views/Home/Index.cshtml (Main View)</p>
 
     <div class="code-block">
@@ -800,7 +742,7 @@ creating a PartialViewResult.</p>
       </div>
       <pre><code class="language-csharp">&lt;button class=&quot;button button-blue-back&quot; type=&quot;button&quot; id=&quot;button-load&quot;&gt;Load Programming</code></pre>
     </div>
-  <p>Languages&lt;/button&gt;</p>
+  <p>Languages<code>&lt;/button&gt;</code></p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -853,100 +795,79 @@ public IActionResult ProgrammingLanguages()
     </div>
   <p>In this action method:</p>
 <ul>
-  <li>1. Data Preparation: A ListModel object is created and populated with data for the list (title</li>
-</ul>
-<p>and items).</p>
-<ul>
-  <li>2. Partial View Returned: The PartialView() method is used to return a PartialViewResult. The</li>
-</ul>
-<p>method takes two arguments:</p>
-<ul>
-  <li>o &quot;_ListPartialView&quot;: The name of the partial view file (located in Views/Shared by</li>
-</ul>
-<p>default).</p>
-<ul>
-  <li>o listModel: The model data to pass to the partial view.</li>
-  <li>o When this action method is called via the URL /programming-languages by the</li>
-</ul>
-<p>javascript code on the page, it returns the partial view along with the data that is
+  <li>1. Data Preparation: A ListModel object is created and populated with data for the list (title
+      and items).</li>
+  <li>2. Partial View Returned: The PartialView() method is used to return a PartialViewResult. The
+      method takes two arguments:</li>
+  <li>&quot;_ListPartialView&quot;: The name of the partial view file (located in Views/Shared by
+           default).</li>
+  <li>listModel: The model data to pass to the partial view.</li>
+  <li>When this action method is called via the URL /programming-languages by the
+           javascript code on the page, it returns the partial view along with the data that is
            then injected into the div with class programming-languages-content by the
-           javascript.
-Important Points:</p>
-<ul>
-  <li>• AJAX and Dynamic Loading: PartialViewResult is frequently used in conjunction with AJAX to</li>
+           javascript.</li>
 </ul>
-<p>load content dynamically without full page refreshes.</p>
+<p>Important Points:</p>
 <ul>
-  <li>• View Model (Best Practice): Always try to use a view model to pass data to your partial</li>
+  <li>AJAX and Dynamic Loading: PartialViewResult is frequently used in conjunction with AJAX to
+      load content dynamically without full page refreshes.</li>
+  <li>View Model (Best Practice): Always try to use a view model to pass data to your partial
+      views for better type safety and maintainability.</li>
+  <li>Caching: Consider using output caching on your partial views to improve performance if they
+      render data that doesn&#39;t change frequently.</li>
 </ul>
-<p>views for better type safety and maintainability.</p>
-<ul>
-  <li>• Caching: Consider using output caching on your partial views to improve performance if they</li>
-</ul>
-<p>render data that doesn&#39;t change frequently.</p>
 
 <h2 id="key-points-to-remember">Key Points to Remember</h2>
 <p>Partial Views: Reusable View Components</p>
 <ul>
-  <li>• Purpose: Encapsulate reusable UI elements or chunks of Razor markup (.cshtml) to avoid</li>
-</ul>
-<p>repetition.</p>
-<ul>
-  <li>• Benefits:</li>
-  <li>o Increased code reusability</li>
-  <li>o Improved code organization and maintainability</li>
-  <li>o Dynamic content generation</li>
-  <li>• Naming Convention: Prefixed with an underscore (e.g., _PartialName.cshtml).</li>
-  <li>• Location: Typically in Views/Shared or alongside the main view.</li>
-  <li>• Rendering Options:</li>
-  <li>o Tag Helpers: &lt;partial name=&quot;_PartialName&quot; /&gt; or &lt;partial name=&quot;_PartialName&quot;</li>
-</ul>
-<p>model=&quot;yourModel&quot; /&gt;</p>
-<ul>
-  <li>o HTML Helper: @await Html.PartialAsync(&quot;_PartialName&quot;, model)</li>
-</ul>
-
-<h2 id="viewdata-in-partial-views">ViewData in Partial Views</h2>
-<ul>
-  <li>• Purpose: Pass data to partial views from the parent view or controller.</li>
-  <li>• Usage:</li>
-  <li>o In the parent view or controller: ViewData[&quot;key&quot;] = value</li>
-  <li>o In the partial view: @ViewData[&quot;key&quot;]</li>
-  <li>• Caveat: ViewData is not strongly typed; be careful with type casting and null checks.</li>
+  <li>Purpose: Encapsulate reusable UI elements or chunks of Razor markup (.cshtml) to avoid
+      repetition.</li>
+  <li>Benefits:</li>
+  <li>Increased code reusability</li>
+  <li>Improved code organization and maintainability</li>
+  <li>Dynamic content generation</li>
+  <li>Naming Convention: Prefixed with an underscore (e.g., _PartialName.cshtml).</li>
+  <li>Location: Typically in Views/Shared or alongside the main view.</li>
+  <li>Rendering Options:</li>
+  <li>Tag Helpers: &lt;partial name=&quot;_PartialName&quot; /&gt; or &lt;partial name=&quot;_PartialName&quot;
+           model=&quot;yourModel&quot; /&gt;</li>
+  <li>HTML Helper: @await Html.PartialAsync(&quot;_PartialName&quot;, model)
+ViewData in Partial Views</li>
+  <li>Purpose: Pass data to partial views from the parent view or controller.</li>
+  <li>Usage:</li>
+  <li>In the parent view or controller: ViewData[&quot;key&quot;] = value</li>
+  <li>In the partial view: @ViewData[&quot;key&quot;]</li>
+  <li>Caveat: ViewData is not strongly typed; be careful with type casting and null checks.</li>
 </ul>
 
 <h2 id="strongly-typed-partial-views-1">Strongly Typed Partial Views</h2>
 <ul>
-  <li>• Purpose: Associate a partial view with a specific model class using the @model directive.</li>
-  <li>• Benefits:</li>
-  <li>o Type safety: Catches errors during development.</li>
-  <li>o IntelliSense: Code completion for model properties.</li>
-  <li>o Maintainability: Easier updates when models change.</li>
-  <li>• How to Use:</li>
+  <li>Purpose: Associate a partial view with a specific model class using the @model directive.</li>
+  <li>Benefits:</li>
+  <li>Type safety: Catches errors during development.</li>
+  <li>IntelliSense: Code completion for model properties.</li>
+  <li>Maintainability: Easier updates when models change.</li>
+  <li>How to Use:</li>
   <li>1. Create a model class.</li>
   <li>2. Use @model YourModel in the partial view.</li>
-  <li>3. Pass a model instance when rendering: &lt;partial model=&quot;yourModelInstance&quot; /&gt; or @await</li>
-</ul>
-<p>Html.PartialAsync(&quot;_PartialName&quot;, yourModelInstance)</p>
-
-<h2 id="partialviewresult-1">PartialViewResult</h2>
-<ul>
-  <li>• Purpose: Return a partial view from a controller action (often for AJAX requests).</li>
-  <li>• Creation:</li>
-  <li>o return PartialView(&quot;_PartialName&quot;, model); (preferred)</li>
-  <li>o return new PartialViewResult { ViewName = &quot;_PartialName&quot;, ViewData = ... };</li>
+  <li>3. Pass a model instance when rendering: &lt;partial model=&quot;yourModelInstance&quot; /&gt; or @await
+Html.PartialAsync(&quot;_PartialName&quot;, yourModelInstance)
+PartialViewResult</li>
+  <li>Purpose: Return a partial view from a controller action (often for AJAX requests).</li>
+  <li>Creation:</li>
+  <li>return PartialView(&quot;_PartialName&quot;, model); (preferred)</li>
+  <li>return new PartialViewResult { ViewName = &quot;_PartialName&quot;, ViewData = ... };</li>
 </ul>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
 <section class="cheatsheet-section" aria-labelledby="cheat-sheet-quick-reference">
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
-  <p>Section 10 – Partial Views – Cheat Sheet</p>
   <h3 id="partial-views-1">Partial Views</h3>
-  <p>Partial view is a razor markup file (.cshtml) that can&#39;t be invoked individually from the controller; but
+<p>Partial view is a razor markup file (.cshtml) that can&#39;t be invoked individually from the controller; but
 can be invoked from any view within the same web application.</p>
   <h3 id="invoking-partial-views">Invoking Partial Views</h3>
-  <p>&lt;partial name=&quot;partial view name&quot; /&gt;
+<p>&lt;partial name=&quot;partial view name&quot; /&gt;
 Returns the content to the parent view.
 @await Html.PartialAsync(&quot;partial view name&quot;)
 Returns the content to the parent view.</p>
@@ -961,9 +882,9 @@ Returns the content to the parent view.</p>
       </div>
       <pre><code class="language-csharp">@{ await Html.RenderPartialAsync(&quot;partial view name&quot;); }</code></pre>
     </div>
-    <p>Streams the content to the browser.</p>
+  <p>Streams the content to the browser.</p>
   <h3 id="partial-views-with-viewdata">Partial Views with ViewData</h3>
-  <p>When partial view is invoked, it receives a copy of the parent view&#39;s ViewData object.
+<p>When partial view is invoked, it receives a copy of the parent view&#39;s ViewData object.
 So, any changes made in the ViewData in the partial view, do NOT effect the ViewData of the parent
 view.
 Optionally, you can supply a custom ViewData object to the partial view, if you don&#39;t want the partial
@@ -980,10 +901,12 @@ view to access the entire ViewData of the parent view.</p>
       </div>
       <pre><code class="language-csharp">@{ await Html.RenderPartialAsync(&quot;partial view name&quot;, ViewData); }</code></pre>
     </div>
-    <p>-- or --
-&lt;partial name=&quot;partial view name&quot; view-data=&quot;ViewData&quot; /&gt;</p>
+  <ul>
+  <li>r --</li>
+</ul>
+<p>&lt;partial name=&quot;partial view name&quot; view-data=&quot;ViewData&quot; /&gt;</p>
   <h3 id="strongly-typed-partial-views-2">Strongly Typed Partial Views</h3>
-  <p>Strongly Typed Partial View is a partial view that is bound to a specified model class.
+<p>Strongly Typed Partial View is a partial view that is bound to a specified model class.
 So, it gets all the benefits of a strongly typed view.</p>
   <h3 id="invoking-strongly-typed-partial-view">Invoking Strongly-Typed Partial View</h3>
 
@@ -997,10 +920,12 @@ So, it gets all the benefits of a strongly typed view.</p>
       </div>
       <pre><code class="language-csharp">@{ await Html.RenderPartialAsync(&quot;partial view name&quot;, Model); }</code></pre>
     </div>
-    <p>-- or --
-&lt;partial name=&quot;partial view name&quot; model=&quot;Model&quot; /&gt;</p>
-  <h3 id="partialviewresult-2">PartialViewResult</h3>
-  <p>PartialViewResult can represent the content of a partial .
+  <ul>
+  <li>r --</li>
+</ul>
+<p>&lt;partial name=&quot;partial view name&quot; model=&quot;Model&quot; /&gt;</p>
+  <h3 id="partialviewresult-1">PartialViewResult</h3>
+<p>PartialViewResult can represent the content of a partial .
 Generally useful to fetch partial view&#39;s content into the browser, by making an asynchronous
 request (XMLHttpRequest / fetch request) from the browser.</p>
 
@@ -1014,7 +939,7 @@ request (XMLHttpRequest / fetch request) from the browser.</p>
       </div>
       <pre><code class="language-csharp">return new PartialViewResult() { ViewName = &quot;partial view name&quot;, Model = model };</code></pre>
     </div>
-    <p>[or]</p>
+  <p>[or]</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1046,13 +971,13 @@ request (XMLHttpRequest / fetch request) from the browser.</p>
       <nav class="bottom-nav" aria-label="Previous and Next Section Navigation">
         
       <a href="section-09.html" class="nav-card prev" aria-label="Previous Section: Sec 09 - Layout Views">
-        <span class="nav-direction">← Previous Section</span>
+        <span class="nav-direction">&larr; Previous Section</span>
         <span class="nav-title">Sec 09: Layout Views</span>
       </a>
     
         
       <a href="section-11.html" class="nav-card next" aria-label="Next Section: Sec 11 - View Components">
-        <span class="nav-direction">Next Section →</span>
+        <span class="nav-direction">Next Section &rarr;</span>
         <span class="nav-title">Sec 11: View Components</span>
       </a>
     
@@ -1060,8 +985,8 @@ request (XMLHttpRequest / fetch request) from the browser.</p>
 
       <!-- Section Footer -->
       <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); color: var(--text-dim); font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;" role="contentinfo">
-        <span>ASP.NET Core Masterclass — Offline Documentation Portal</span>
-        <a href="#top" style="color: var(--text-muted); text-decoration: none;">↑ Back to top</a>
+        <span>ASP.NET Core Masterclass &mdash; Offline Documentation Portal</span>
+        <a href="#top" style="color: var(--text-muted); text-decoration: none;">&uarr; Back to top</a>
       </footer>
     </main>
 
@@ -1076,10 +1001,6 @@ request (XMLHttpRequest / fetch request) from the browser.</p>
       
         <li class="toc-item">
           <a href="#notes" class="toc-link">Notes</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#code-example" class="toc-link">Code Example</a>
         </li>
       
         <li class="toc-item">
@@ -1099,7 +1020,7 @@ request (XMLHttpRequest / fetch request) from the browser.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#code-example-1" class="toc-link">Code Example</a>
+          <a href="#code-example" class="toc-link">Code Example</a>
         </li>
       
         <li class="toc-item">
@@ -1115,7 +1036,7 @@ request (XMLHttpRequest / fetch request) from the browser.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#code-example-2" class="toc-link">Code Example</a>
+          <a href="#code-example-1" class="toc-link">Code Example</a>
         </li>
       
         <li class="toc-item">
@@ -1123,15 +1044,7 @@ request (XMLHttpRequest / fetch request) from the browser.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#viewdata-in-partial-views" class="toc-link">ViewData in Partial Views</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#strongly-typed-partial-views-1" class="toc-link">Strongly Typed Partial Views</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#partialviewresult-1" class="toc-link">PartialViewResult</a>
         </li>
       
         <li class="toc-item">

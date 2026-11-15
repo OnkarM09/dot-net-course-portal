@@ -303,65 +303,37 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   1. Encapsulation of Business Logic: Services provide a clean way to encapsulate complex"
-          ],
-          "text": "   1. Encapsulation of Business Logic: Services provide a clean way to encapsulate complex"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   1. Encapsulation of Business Logic: Services provide a clean way to encapsulate complex",
             "      operations and keep them separate from your presentation layer (controllers and views)."
           ],
-          "text": "      operations and keep them separate from your presentation layer (controllers and views)."
+          "text": "   1. Encapsulation of Business Logic: Services provide a clean way to encapsulate complex\n      operations and keep them separate from your presentation layer (controllers and views)."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   2. Reusability: A single service can be used by multiple controllers, promoting DRY (Don't"
-          ],
-          "text": "   2. Reusability: A single service can be used by multiple controllers, promoting DRY (Don't"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   2. Reusability: A single service can be used by multiple controllers, promoting DRY (Don't",
             "      Repeat Yourself) principles and making your code more maintainable."
           ],
-          "text": "      Repeat Yourself) principles and making your code more maintainable."
+          "text": "   2. Reusability: A single service can be used by multiple controllers, promoting DRY (Don't\n      Repeat Yourself) principles and making your code more maintainable."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   3. Testability: Services can be easily unit tested in isolation, allowing you to verify the"
-          ],
-          "text": "   3. Testability: Services can be easily unit tested in isolation, allowing you to verify the"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   3. Testability: Services can be easily unit tested in isolation, allowing you to verify the",
             "      correctness of your business logic without the overhead of running the entire application."
           ],
-          "text": "      correctness of your business logic without the overhead of running the entire application."
+          "text": "   3. Testability: Services can be easily unit tested in isolation, allowing you to verify the\n      correctness of your business logic without the overhead of running the entire application."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   4. Dependency Injection (DI): Services are typically registered in the DI container, making them"
-          ],
-          "text": "   4. Dependency Injection (DI): Services are typically registered in the DI container, making them"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   4. Dependency Injection (DI): Services are typically registered in the DI container, making them",
             "      easily accessible to controllers and other components within your application."
           ],
-          "text": "      easily accessible to controllers and other components within your application."
+          "text": "   4. Dependency Injection (DI): Services are typically registered in the DI container, making them\n      easily accessible to controllers and other components within your application."
         },
         {
           "type": "heading",
@@ -375,33 +347,19 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Data Access: Communicating with databases or other data sources to fetch, insert, update,"
-          ],
-          "text": "   • Data Access: Communicating with databases or other data sources to fetch, insert, update,"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • Data Access: Communicating with databases or other data sources to fetch, insert, update,",
             "      or delete data."
           ],
-          "text": "      or delete data."
+          "text": "   • Data Access: Communicating with databases or other data sources to fetch, insert, update,\n      or delete data."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Business Rules: Implementing the rules that govern how your application behaves (e.g.,"
-          ],
-          "text": "   • Business Rules: Implementing the rules that govern how your application behaves (e.g.,"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • Business Rules: Implementing the rules that govern how your application behaves (e.g.,",
             "      validation, calculations, transformations)."
           ],
-          "text": "      validation, calculations, transformations)."
+          "text": "   • Business Rules: Implementing the rules that govern how your application behaves (e.g.,\n      validation, calculations, transformations)."
         },
         {
           "type": "list_item",
@@ -963,20 +921,20 @@
           "lines": [
             "   return View(cities); // Pass the data to the view",
             "  }",
-            "}"
+            "}",
+            "Note that in this code example, there is no dependency injection being used. In real-world projects,",
+            "it's good practice to register your services with ASP.NET Core's built-in dependency injection"
           ],
-          "text": "   return View(cities); // Pass the data to the view\n  }\n}"
+          "text": "   return View(cities); // Pass the data to the view\n  }\n}\nNote that in this code example, there is no dependency injection being used. In real-world projects,\nit's good practice to register your services with ASP.NET Core's built-in dependency injection"
         },
         {
           "type": "prose",
           "page": 3,
           "lines": [
-            "Note that in this code example, there is no dependency injection being used. In real-world projects,",
-            "it's good practice to register your services with ASP.NET Core's built-in dependency injection",
             "container and then have them injected into your controllers (or other components) through the",
             "constructor."
           ],
-          "text": "Note that in this code example, there is no dependency injection being used. In real-world projects,\nit's good practice to register your services with ASP.NET Core's built-in dependency injection\ncontainer and then have them injected into your controllers (or other components) through the\nconstructor."
+          "text": "container and then have them injected into your controllers (or other components) through the\nconstructor."
         },
         {
           "type": "heading",
@@ -990,17 +948,10 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   1. CitiesService Class: This class represents a simple service that holds a list of city names and"
-          ],
-          "text": "   1. CitiesService Class: This class represents a simple service that holds a list of city names and"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   1. CitiesService Class: This class represents a simple service that holds a list of city names and",
             "      provides a GetCities method to retrieve them."
           ],
-          "text": "      provides a GetCities method to retrieve them."
+          "text": "   1. CitiesService Class: This class represents a simple service that holds a list of city names and\n      provides a GetCities method to retrieve them."
         },
         {
           "type": "list_item",
@@ -1022,33 +973,19 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "        o Instantiation: In this simplified example, the CitiesService object is created directly"
-          ],
-          "text": "        o Instantiation: In this simplified example, the CitiesService object is created directly"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "        o Instantiation: In this simplified example, the CitiesService object is created directly",
             "           within the controller's constructor."
           ],
-          "text": "           within the controller's constructor."
+          "text": "        o Instantiation: In this simplified example, the CitiesService object is created directly\n           within the controller's constructor."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "        o Action Method: The Index action method calls the GetCities method of the"
-          ],
-          "text": "        o Action Method: The Index action method calls the GetCities method of the"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "        o Action Method: The Index action method calls the GetCities method of the",
             "           _citiesService to retrieve the list of cities and then passes this data to the view."
           ],
-          "text": "           _citiesService to retrieve the list of cities and then passes this data to the view."
+          "text": "        o Action Method: The Index action method calls the GetCities method of the\n           _citiesService to retrieve the list of cities and then passes this data to the view."
         },
         {
           "type": "heading",
@@ -1062,81 +999,46 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Single Responsibility Principle (SRP): Design your services to have a single responsibility to"
-          ],
-          "text": "   • Single Responsibility Principle (SRP): Design your services to have a single responsibility to"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Single Responsibility Principle (SRP): Design your services to have a single responsibility to",
             "      keep them focused and maintainable."
           ],
-          "text": "      keep them focused and maintainable."
+          "text": "   • Single Responsibility Principle (SRP): Design your services to have a single responsibility to\n      keep them focused and maintainable."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Dependency Injection: Use dependency injection to manage service lifetimes and"
-          ],
-          "text": "   • Dependency Injection: Use dependency injection to manage service lifetimes and"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Dependency Injection: Use dependency injection to manage service lifetimes and",
             "      dependencies, making your code loosely coupled and easier to test."
           ],
-          "text": "      dependencies, making your code loosely coupled and easier to test."
+          "text": "   • Dependency Injection: Use dependency injection to manage service lifetimes and\n      dependencies, making your code loosely coupled and easier to test."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Interface-Based Programming: Define interfaces for your services to create abstraction"
-          ],
-          "text": "   • Interface-Based Programming: Define interfaces for your services to create abstraction"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Interface-Based Programming: Define interfaces for your services to create abstraction",
             "      layers and facilitate testing with mocks."
           ],
-          "text": "      layers and facilitate testing with mocks."
+          "text": "   • Interface-Based Programming: Define interfaces for your services to create abstraction\n      layers and facilitate testing with mocks."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Clear Naming: Use descriptive names for your services and their methods to make your code"
-          ],
-          "text": "   • Clear Naming: Use descriptive names for your services and their methods to make your code"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Clear Naming: Use descriptive names for your services and their methods to make your code",
             "      self-documenting."
           ],
-          "text": "      self-documenting."
+          "text": "   • Clear Naming: Use descriptive names for your services and their methods to make your code\n      self-documenting."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Testing: Write unit tests for your services to ensure that your business logic works correctly"
-          ],
-          "text": "   • Testing: Write unit tests for your services to ensure that your business logic works correctly"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Testing: Write unit tests for your services to ensure that your business logic works correctly",
             "      in isolation."
           ],
-          "text": "      in isolation."
+          "text": "   • Testing: Write unit tests for your services to ensure that your business logic works correctly\n      in isolation."
         },
         {
           "type": "heading",
@@ -1150,17 +1052,10 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Encapsulation: Services encapsulate the \"how\" of your application logic, separating it from"
-          ],
-          "text": "   • Encapsulation: Services encapsulate the \"how\" of your application logic, separating it from"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Encapsulation: Services encapsulate the \"how\" of your application logic, separating it from",
             "      the presentation layer."
           ],
-          "text": "      the presentation layer."
+          "text": "   • Encapsulation: Services encapsulate the \"how\" of your application logic, separating it from\n      the presentation layer."
         },
         {
           "type": "list_item",
@@ -1409,17 +1304,10 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Dependency Injection: Services are typically managed by the DI container and injected into"
-          ],
-          "text": "   • Dependency Injection: Services are typically managed by the DI container and injected into"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • Dependency Injection: Services are typically managed by the DI container and injected into",
             "      controllers."
           ],
-          "text": "      controllers."
+          "text": "   • Dependency Injection: Services are typically managed by the DI container and injected into\n      controllers."
         },
         {
           "type": "heading",
@@ -1441,17 +1329,10 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   1. High-level modules should not depend on low-level modules. Both should depend on"
-          ],
-          "text": "   1. High-level modules should not depend on low-level modules. Both should depend on"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   1. High-level modules should not depend on low-level modules. Both should depend on",
             "      abstractions."
           ],
-          "text": "      abstractions."
+          "text": "   1. High-level modules should not depend on low-level modules. Both should depend on\n      abstractions."
         },
         {
           "type": "list_item",
@@ -1473,17 +1354,10 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Instead of tightly coupling your classes by having them depend on concrete"
-          ],
-          "text": "   • Instead of tightly coupling your classes by having them depend on concrete"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • Instead of tightly coupling your classes by having them depend on concrete",
             "      implementations, they should depend on abstractions (interfaces or abstract classes)."
           ],
-          "text": "      implementations, they should depend on abstractions (interfaces or abstract classes)."
+          "text": "   • Instead of tightly coupling your classes by having them depend on concrete\n      implementations, they should depend on abstractions (interfaces or abstract classes)."
         },
         {
           "type": "list_item",
@@ -1522,33 +1396,19 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Loose Coupling: Reduces the direct dependencies between classes, making them easier to"
-          ],
-          "text": "   • Loose Coupling: Reduces the direct dependencies between classes, making them easier to"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • Loose Coupling: Reduces the direct dependencies between classes, making them easier to",
             "      change and test independently."
           ],
-          "text": "      change and test independently."
+          "text": "   • Loose Coupling: Reduces the direct dependencies between classes, making them easier to\n      change and test independently."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Flexibility: You can easily swap out different implementations of dependencies without"
-          ],
-          "text": "   • Flexibility: You can easily swap out different implementations of dependencies without"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • Flexibility: You can easily swap out different implementations of dependencies without",
             "      affecting the consuming class."
           ],
-          "text": "      affecting the consuming class."
+          "text": "   • Flexibility: You can easily swap out different implementations of dependencies without\n      affecting the consuming class."
         }
       ],
       "char_count_raw": 1726,
@@ -1789,33 +1649,19 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Testability: Unit testing becomes much easier, as you can provide mock dependencies to"
-          ],
-          "text": "   • Testability: Unit testing becomes much easier, as you can provide mock dependencies to"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Testability: Unit testing becomes much easier, as you can provide mock dependencies to",
             "      isolate the code under test."
           ],
-          "text": "      isolate the code under test."
+          "text": "   • Testability: Unit testing becomes much easier, as you can provide mock dependencies to\n      isolate the code under test."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Maintainability: Code becomes more modular, easier to understand, and less prone to"
-          ],
-          "text": "   • Maintainability: Code becomes more modular, easier to understand, and less prone to"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Maintainability: Code becomes more modular, easier to understand, and less prone to",
             "      ripple effects from changes."
           ],
-          "text": "      ripple effects from changes."
+          "text": "   • Maintainability: Code becomes more modular, easier to understand, and less prone to\n      ripple effects from changes."
         },
         {
           "type": "heading",
@@ -1885,17 +1731,10 @@
           "page": 5,
           "lines": [
             "// Program.cs (or Startup.cs)",
-            "builder.Services.Add(new ServiceDescriptor("
-          ],
-          "text": "// Program.cs (or Startup.cs)\nbuilder.Services.Add(new ServiceDescriptor("
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "builder.Services.Add(new ServiceDescriptor(",
             "  typeof(ICitiesService), // Interface to register"
           ],
-          "text": "  typeof(ICitiesService), // Interface to register"
+          "text": "// Program.cs (or Startup.cs)\nbuilder.Services.Add(new ServiceDescriptor(\n  typeof(ICitiesService), // Interface to register"
         }
       ],
       "char_count_raw": 961,
@@ -2172,17 +2011,10 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   1. Service Registration: The CitiesService is registered in the DI container using the Add"
-          ],
-          "text": "   1. Service Registration: The CitiesService is registered in the DI container using the Add"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   1. Service Registration: The CitiesService is registered in the DI container using the Add",
             "      method. The ServiceDescriptor specifies:"
           ],
-          "text": "      method. The ServiceDescriptor specifies:"
+          "text": "   1. Service Registration: The CitiesService is registered in the DI container using the Add\n      method. The ServiceDescriptor specifies:"
         },
         {
           "type": "list_item",
@@ -2204,34 +2036,20 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "        o The lifetime of the service (ServiceLifetime.Transient means a new instance is"
-          ],
-          "text": "        o The lifetime of the service (ServiceLifetime.Transient means a new instance is"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "        o The lifetime of the service (ServiceLifetime.Transient means a new instance is",
             "           created for each request)."
           ],
-          "text": "           created for each request)."
+          "text": "        o The lifetime of the service (ServiceLifetime.Transient means a new instance is\n           created for each request)."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   2. Constructor Injection: The HomeController constructor has a parameter of type"
-          ],
-          "text": "   2. Constructor Injection: The HomeController constructor has a parameter of type"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   2. Constructor Injection: The HomeController constructor has a parameter of type",
             "      ICitiesService. This means the DI container will automatically provide an instance of",
             "      CitiesService when the controller is created."
           ],
-          "text": "      ICitiesService. This means the DI container will automatically provide an instance of\n      CitiesService when the controller is created."
+          "text": "   2. Constructor Injection: The HomeController constructor has a parameter of type\n      ICitiesService. This means the DI container will automatically provide an instance of\n      CitiesService when the controller is created."
         },
         {
           "type": "heading",
@@ -2245,17 +2063,10 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Abstractions: Focus on designing interfaces or abstract classes to represent your"
-          ],
-          "text": "   • Abstractions: Focus on designing interfaces or abstract classes to represent your"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • Abstractions: Focus on designing interfaces or abstract classes to represent your",
             "      dependencies."
           ],
-          "text": "      dependencies."
+          "text": "   • Abstractions: Focus on designing interfaces or abstract classes to represent your\n      dependencies."
         },
         {
           "type": "list_item",
@@ -2496,33 +2307,19 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Dependency Injection: Use DI containers (like the one built into ASP.NET Core) to manage"
-          ],
-          "text": "   • Dependency Injection: Use DI containers (like the one built into ASP.NET Core) to manage"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Dependency Injection: Use DI containers (like the one built into ASP.NET Core) to manage",
             "      and resolve dependencies."
           ],
-          "text": "      and resolve dependencies."
+          "text": "   • Dependency Injection: Use DI containers (like the one built into ASP.NET Core) to manage\n      and resolve dependencies."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Service Lifetimes: Understand the different service lifetimes (Transient, Scoped, Singleton)"
-          ],
-          "text": "   • Service Lifetimes: Understand the different service lifetimes (Transient, Scoped, Singleton)"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Service Lifetimes: Understand the different service lifetimes (Transient, Scoped, Singleton)",
             "      and choose the right one for each service."
           ],
-          "text": "      and choose the right one for each service."
+          "text": "   • Service Lifetimes: Understand the different service lifetimes (Transient, Scoped, Singleton)\n      and choose the right one for each service."
         },
         {
           "type": "heading",
@@ -2544,19 +2341,12 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o Imagine a traditional light switch directly wired to a specific light bulb. If you want to"
-          ],
-          "text": "        o Imagine a traditional light switch directly wired to a specific light bulb. If you want to"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "        o Imagine a traditional light switch directly wired to a specific light bulb. If you want to",
             "           change the light bulb to a different type, you might need to rewire the switch, as it's",
             "           tightly coupled to the original bulb. This is analogous to tightly coupled code, where",
             "           classes depend directly on specific implementations of other classes."
           ],
-          "text": "           change the light bulb to a different type, you might need to rewire the switch, as it's\n           tightly coupled to the original bulb. This is analogous to tightly coupled code, where\n           classes depend directly on specific implementations of other classes."
+          "text": "        o Imagine a traditional light switch directly wired to a specific light bulb. If you want to\n           change the light bulb to a different type, you might need to rewire the switch, as it's\n           tightly coupled to the original bulb. This is analogous to tightly coupled code, where\n           classes depend directly on specific implementations of other classes."
         },
         {
           "type": "list_item",
@@ -2578,51 +2368,37 @@
           "type": "code",
           "page": 7,
           "lines": [
-            "           interface (an abstraction), while the plug represents a class that implements this"
+            "           interface (an abstraction), while the plug represents a class that implements this",
+            "           interface. You can plug any compatible device (light bulb, fan, etc.) into the outlet,",
+            "           and it will work. This is the essence of DIP - depending on abstractions, not concrete"
           ],
-          "text": "           interface (an abstraction), while the plug represents a class that implements this"
+          "text": "           interface (an abstraction), while the plug represents a class that implements this\n           interface. You can plug any compatible device (light bulb, fan, etc.) into the outlet,\n           and it will work. This is the essence of DIP - depending on abstractions, not concrete"
         },
         {
           "type": "prose",
           "page": 7,
           "lines": [
-            "           interface. You can plug any compatible device (light bulb, fan, etc.) into the outlet,",
-            "           and it will work. This is the essence of DIP - depending on abstractions, not concrete",
             "           implementations."
           ],
-          "text": "           interface. You can plug any compatible device (light bulb, fan, etc.) into the outlet,\n           and it will work. This is the essence of DIP - depending on abstractions, not concrete\n           implementations."
+          "text": "           implementations."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o The \"inversion of control\" comes in because the outlet (interface) dictates the shape"
-          ],
-          "text": "        o The \"inversion of control\" comes in because the outlet (interface) dictates the shape"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "        o The \"inversion of control\" comes in because the outlet (interface) dictates the shape",
             "           of the plug (implementation), not the other way around."
           ],
-          "text": "           of the plug (implementation), not the other way around."
+          "text": "        o The \"inversion of control\" comes in because the outlet (interface) dictates the shape\n           of the plug (implementation), not the other way around."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o \"Dependency injection\" happens when you plug a device into the outlet. The outlet"
-          ],
-          "text": "        o \"Dependency injection\" happens when you plug a device into the outlet. The outlet"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "        o \"Dependency injection\" happens when you plug a device into the outlet. The outlet",
             "           doesn't create the device; it simply receives it and allows it to function."
           ],
-          "text": "           doesn't create the device; it simply receives it and allows it to function."
+          "text": "        o \"Dependency injection\" happens when you plug a device into the outlet. The outlet\n           doesn't create the device; it simply receives it and allows it to function."
         },
         {
           "type": "heading",
@@ -3057,20 +2833,13 @@
             "  {",
             "   _light.Illuminate();",
             "  }",
-            "}"
+            "}",
+            "In the DIP version:"
           ],
-          "text": "  }\n  public void TurnOn()\n  {\n   _light.Illuminate();\n  }\n}"
+          "text": "  }\n  public void TurnOn()\n  {\n   _light.Illuminate();\n  }\n}\nIn the DIP version:"
         },
         {
           "type": "prose",
-          "page": 9,
-          "lines": [
-            "In the DIP version:"
-          ],
-          "text": "In the DIP version:"
-        },
-        {
-          "type": "list_item",
           "page": 9,
           "lines": [
             "   • LightSwitch depends on the ILight interface, not a specific bulb."
@@ -3089,18 +2858,11 @@
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • The LightSwitch constructor takes an ILight parameter (dependency injection). Now, you can"
-          ],
-          "text": "   • The LightSwitch constructor takes an ILight parameter (dependency injection). Now, you can"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   • The LightSwitch constructor takes an ILight parameter (dependency injection). Now, you can",
             "      pass in any object that implements ILight (a different type of bulb, a fan, etc.), and the",
             "      LightSwitch will work with it."
           ],
-          "text": "      pass in any object that implements ILight (a different type of bulb, a fan, etc.), and the\n      LightSwitch will work with it."
+          "text": "   • The LightSwitch constructor takes an ILight parameter (dependency injection). Now, you can\n      pass in any object that implements ILight (a different type of bulb, a fan, etc.), and the\n      LightSwitch will work with it."
         },
         {
           "type": "heading",
@@ -3130,17 +2892,10 @@
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • DI: Implement IoC by having dependencies provided to your classes (often through"
-          ],
-          "text": "   • DI: Implement IoC by having dependencies provided to your classes (often through"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   • DI: Implement IoC by having dependencies provided to your classes (often through",
             "      constructors)."
           ],
-          "text": "      constructors)."
+          "text": "   • DI: Implement IoC by having dependencies provided to your classes (often through\n      constructors)."
         },
         {
           "type": "list_item",
@@ -3414,17 +3169,10 @@
           "type": "list_item",
           "page": 10,
           "lines": [
-            "        o Usage: Ideal for lightweight, stateless services where each request requires a fresh"
-          ],
-          "text": "        o Usage: Ideal for lightweight, stateless services where each request requires a fresh"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "        o Usage: Ideal for lightweight, stateless services where each request requires a fresh",
             "           instance."
           ],
-          "text": "           instance."
+          "text": "        o Usage: Ideal for lightweight, stateless services where each request requires a fresh\n           instance."
         },
         {
           "type": "list_item",
@@ -3446,49 +3194,28 @@
           "type": "list_item",
           "page": 10,
           "lines": [
-            "        o Creation: A single instance is created per HTTP request (or scope) within your"
-          ],
-          "text": "        o Creation: A single instance is created per HTTP request (or scope) within your"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "        o Creation: A single instance is created per HTTP request (or scope) within your",
             "           application."
           ],
-          "text": "           application."
+          "text": "        o Creation: A single instance is created per HTTP request (or scope) within your\n           application."
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "        o Lifetime: The instance is shared throughout the request and disposed of when the"
-          ],
-          "text": "        o Lifetime: The instance is shared throughout the request and disposed of when the"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "        o Lifetime: The instance is shared throughout the request and disposed of when the",
             "           request ends."
           ],
-          "text": "           request ends."
+          "text": "        o Lifetime: The instance is shared throughout the request and disposed of when the\n           request ends."
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "        o Usage: The most common lifetime for web applications. Ensures consistency within"
-          ],
-          "text": "        o Usage: The most common lifetime for web applications. Ensures consistency within"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "        o Usage: The most common lifetime for web applications. Ensures consistency within",
             "           a request while avoiding long-lived objects."
           ],
-          "text": "           a request while avoiding long-lived objects."
+          "text": "        o Usage: The most common lifetime for web applications. Ensures consistency within\n           a request while avoiding long-lived objects."
         },
         {
           "type": "list_item",
@@ -3526,33 +3253,19 @@
           "type": "list_item",
           "page": 10,
           "lines": [
-            "        o Usage: Suitable for stateless services, caches, background tasks, or configurations"
-          ],
-          "text": "        o Usage: Suitable for stateless services, caches, background tasks, or configurations"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "        o Usage: Suitable for stateless services, caches, background tasks, or configurations",
             "           that you want to load once and share globally."
           ],
-          "text": "           that you want to load once and share globally."
+          "text": "        o Usage: Suitable for stateless services, caches, background tasks, or configurations\n           that you want to load once and share globally."
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "        o Example: Application-wide configuration settings, shared caches, singleton design"
-          ],
-          "text": "        o Example: Application-wide configuration settings, shared caches, singleton design"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "        o Example: Application-wide configuration settings, shared caches, singleton design",
             "           pattern implementations."
           ],
-          "text": "           pattern implementations."
+          "text": "        o Example: Application-wide configuration settings, shared caches, singleton design\n           pattern implementations."
         }
       ],
       "char_count_raw": 1397,
@@ -3753,50 +3466,29 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • State: If your service holds state that needs to be unique per request, use Scoped. If the"
-          ],
-          "text": "   • State: If your service holds state that needs to be unique per request, use Scoped. If the"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   • State: If your service holds state that needs to be unique per request, use Scoped. If the",
             "      state needs to be shared globally, use Singleton. If state is irrelevant, Transient is often",
             "      sufficient."
           ],
-          "text": "      state needs to be shared globally, use Singleton. If state is irrelevant, Transient is often\n      sufficient."
+          "text": "   • State: If your service holds state that needs to be unique per request, use Scoped. If the\n      state needs to be shared globally, use Singleton. If state is irrelevant, Transient is often\n      sufficient."
         },
         {
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • Resource Usage: Singleton services consume memory for the entire application lifetime, so"
-          ],
-          "text": "   • Resource Usage: Singleton services consume memory for the entire application lifetime, so"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   • Resource Usage: Singleton services consume memory for the entire application lifetime, so",
             "      use them judiciously."
           ],
-          "text": "      use them judiciously."
+          "text": "   • Resource Usage: Singleton services consume memory for the entire application lifetime, so\n      use them judiciously."
         },
         {
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • Concurrency: Be mindful of concurrency issues when using singleton services in multithreaded"
-          ],
-          "text": "   • Concurrency: Be mindful of concurrency issues when using singleton services in multithreaded"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   • Concurrency: Be mindful of concurrency issues when using singleton services in multithreaded",
             "environments."
           ],
-          "text": "environments."
+          "text": "   • Concurrency: Be mindful of concurrency issues when using singleton services in multithreaded\nenvironments."
         },
         {
           "type": "heading",
@@ -3829,49 +3521,28 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • Prefer Scoped for Web Apps: In most cases, Scoped is the recommended lifetime for"
-          ],
-          "text": "   • Prefer Scoped for Web Apps: In most cases, Scoped is the recommended lifetime for"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   • Prefer Scoped for Web Apps: In most cases, Scoped is the recommended lifetime for",
             "      services in web applications."
           ],
-          "text": "      services in web applications."
+          "text": "   • Prefer Scoped for Web Apps: In most cases, Scoped is the recommended lifetime for\n      services in web applications."
         },
         {
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • Avoid Captive Dependencies: Don't inject a shorter-lived service (e.g., Transient) into a"
-          ],
-          "text": "   • Avoid Captive Dependencies: Don't inject a shorter-lived service (e.g., Transient) into a"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   • Avoid Captive Dependencies: Don't inject a shorter-lived service (e.g., Transient) into a",
             "      longer-lived one (e.g., Singleton). This can lead to unexpected behavior and memory leaks."
           ],
-          "text": "      longer-lived one (e.g., Singleton). This can lead to unexpected behavior and memory leaks."
+          "text": "   • Avoid Captive Dependencies: Don't inject a shorter-lived service (e.g., Transient) into a\n      longer-lived one (e.g., Singleton). This can lead to unexpected behavior and memory leaks."
         },
         {
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • Consider Thread Safety: If you use a singleton service, ensure it's thread-safe if it will be"
-          ],
-          "text": "   • Consider Thread Safety: If you use a singleton service, ensure it's thread-safe if it will be"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   • Consider Thread Safety: If you use a singleton service, ensure it's thread-safe if it will be",
             "      accessed concurrently."
           ],
-          "text": "      accessed concurrently."
+          "text": "   • Consider Thread Safety: If you use a singleton service, ensure it's thread-safe if it will be\n      accessed concurrently."
         }
       ],
       "char_count_raw": 1235,
@@ -4152,14 +3823,28 @@
           "text": "        o Benefits:"
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 12,
           "lines": [
-            "              ▪ Easy to understand and use.",
-            "              ▪ Encourages loose coupling and testability.",
+            "              ▪ Easy to understand and use."
+          ],
+          "text": "              ▪ Easy to understand and use."
+        },
+        {
+          "type": "list_item",
+          "page": 12,
+          "lines": [
+            "              ▪ Encourages loose coupling and testability."
+          ],
+          "text": "              ▪ Encourages loose coupling and testability."
+        },
+        {
+          "type": "list_item",
+          "page": 12,
+          "lines": [
             "              ▪ Ensures that required dependencies are available before the class is used."
           ],
-          "text": "              ▪ Easy to understand and use.\n              ▪ Encourages loose coupling and testability.\n              ▪ Ensures that required dependencies are available before the class is used."
+          "text": "              ▪ Ensures that required dependencies are available before the class is used."
         },
         {
           "type": "list_item",
@@ -4180,33 +3865,19 @@
             "  {",
             "   _productService = productService;",
             "  }",
-            "}"
-          ],
-          "text": "public class ProductsController : Controller\n{\n  private readonly IProductService _productService;\n  public ProductsController(IProductService productService)\n  {\n   _productService = productService;\n  }\n}"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "}",
             "   2. Property Injection (Less Common):"
           ],
-          "text": "   2. Property Injection (Less Common):"
-        },
-        {
-          "type": "list_item",
-          "page": 12,
-          "lines": [
-            "        o Mechanism: Dependencies are assigned to public properties with a [FromServices]"
-          ],
-          "text": "        o Mechanism: Dependencies are assigned to public properties with a [FromServices]"
+          "text": "public class ProductsController : Controller\n{\n  private readonly IProductService _productService;\n  public ProductsController(IProductService productService)\n  {\n   _productService = productService;\n  }\n}\n   2. Property Injection (Less Common):"
         },
         {
           "type": "prose",
           "page": 12,
           "lines": [
+            "        o Mechanism: Dependencies are assigned to public properties with a [FromServices]",
             "           attribute."
           ],
-          "text": "           attribute."
+          "text": "        o Mechanism: Dependencies are assigned to public properties with a [FromServices]\n           attribute."
         },
         {
           "type": "list_item",
@@ -4217,14 +3888,21 @@
           "text": "        o Benefits:"
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 12,
           "lines": [
             "              ▪ Can be useful when you have optional dependencies or want to avoid",
-            "                 constructor clutter.",
+            "                 constructor clutter."
+          ],
+          "text": "              ▪ Can be useful when you have optional dependencies or want to avoid\n                 constructor clutter."
+        },
+        {
+          "type": "list_item",
+          "page": 12,
+          "lines": [
             "              ▪ Allows for lazy loading of dependencies."
           ],
-          "text": "              ▪ Can be useful when you have optional dependencies or want to avoid\n                 constructor clutter.\n              ▪ Allows for lazy loading of dependencies."
+          "text": "              ▪ Allows for lazy loading of dependencies."
         },
         {
           "type": "list_item",
@@ -4468,20 +4146,13 @@
           "lines": [
             "    [FromServices]",
             "    public ILogger<MyMiddleware> Logger { get; set; }",
-            "}"
+            "}",
+            "   3. Method Injection (Least Common):"
           ],
-          "text": "    [FromServices]\n    public ILogger<MyMiddleware> Logger { get; set; }\n}"
+          "text": "    [FromServices]\n    public ILogger<MyMiddleware> Logger { get; set; }\n}\n   3. Method Injection (Least Common):"
         },
         {
           "type": "prose",
-          "page": 13,
-          "lines": [
-            "   3. Method Injection (Least Common):"
-          ],
-          "text": "   3. Method Injection (Least Common):"
-        },
-        {
-          "type": "list_item",
           "page": 13,
           "lines": [
             "        o Mechanism: Dependencies are passed as parameters to individual methods."
@@ -4497,14 +4168,21 @@
           "text": "        o Benefits:"
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 13,
           "lines": [
-            "              ▪ Provides fine-grained control over when dependencies are resolved.",
+            "              ▪ Provides fine-grained control over when dependencies are resolved."
+          ],
+          "text": "              ▪ Provides fine-grained control over when dependencies are resolved."
+        },
+        {
+          "type": "list_item",
+          "page": 13,
+          "lines": [
             "              ▪ Can be useful in cases where you only need a dependency within a specific",
             "                 method."
           ],
-          "text": "              ▪ Provides fine-grained control over when dependencies are resolved.\n              ▪ Can be useful in cases where you only need a dependency within a specific\n                 method."
+          "text": "              ▪ Can be useful in cases where you only need a dependency within a specific\n                 method."
         },
         {
           "type": "list_item",
@@ -4569,17 +4247,10 @@
           "type": "list_item",
           "page": 13,
           "lines": [
-            "        o Useful for scenarios where a dependency is needed only in a particular action"
-          ],
-          "text": "        o Useful for scenarios where a dependency is needed only in a particular action"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "        o Useful for scenarios where a dependency is needed only in a particular action",
             "           method."
           ],
-          "text": "           method."
+          "text": "        o Useful for scenarios where a dependency is needed only in a particular action\n           method."
         },
         {
           "type": "list_item",
@@ -4847,65 +4518,37 @@
           "type": "list_item",
           "page": 14,
           "lines": [
-            "   • Constructor Injection: The recommended and most common approach for mandatory"
-          ],
-          "text": "   • Constructor Injection: The recommended and most common approach for mandatory"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "   • Constructor Injection: The recommended and most common approach for mandatory",
             "      dependencies."
           ],
-          "text": "      dependencies."
+          "text": "   • Constructor Injection: The recommended and most common approach for mandatory\n      dependencies."
         },
         {
           "type": "list_item",
           "page": 14,
           "lines": [
-            "   • Property Injection: Use for optional dependencies or when constructor injection is"
-          ],
-          "text": "   • Property Injection: Use for optional dependencies or when constructor injection is"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "   • Property Injection: Use for optional dependencies or when constructor injection is",
             "      cumbersome."
           ],
-          "text": "      cumbersome."
+          "text": "   • Property Injection: Use for optional dependencies or when constructor injection is\n      cumbersome."
         },
         {
           "type": "list_item",
           "page": 14,
           "lines": [
-            "   • Method Injection: Consider this for dependencies that are only needed within specific"
-          ],
-          "text": "   • Method Injection: Consider this for dependencies that are only needed within specific"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "   • Method Injection: Consider this for dependencies that are only needed within specific",
             "      methods or for finer control over dependency resolution."
           ],
-          "text": "      methods or for finer control over dependency resolution."
+          "text": "   • Method Injection: Consider this for dependencies that are only needed within specific\n      methods or for finer control over dependency resolution."
         },
         {
           "type": "list_item",
           "page": 14,
           "lines": [
-            "   • Action Method Injection: Ideal for scenarios where a dependency is required only within a"
-          ],
-          "text": "   • Action Method Injection: Ideal for scenarios where a dependency is required only within a"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "   • Action Method Injection: Ideal for scenarios where a dependency is required only within a",
             "      specific action method."
           ],
-          "text": "      specific action method."
+          "text": "   • Action Method Injection: Ideal for scenarios where a dependency is required only within a\n      specific action method."
         },
         {
           "type": "heading",
@@ -4919,65 +4562,37 @@
           "type": "list_item",
           "page": 14,
           "lines": [
-            "   • Loose Coupling: Regardless of the injection type, the core principle of DI is to achieve loose"
-          ],
-          "text": "   • Loose Coupling: Regardless of the injection type, the core principle of DI is to achieve loose"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "   • Loose Coupling: Regardless of the injection type, the core principle of DI is to achieve loose",
             "      coupling between components."
           ],
-          "text": "      coupling between components."
+          "text": "   • Loose Coupling: Regardless of the injection type, the core principle of DI is to achieve loose\n      coupling between components."
         },
         {
           "type": "list_item",
           "page": 14,
           "lines": [
-            "   • Dependency Inversion Principle (DIP): Ensure that your classes depend on abstractions"
-          ],
-          "text": "   • Dependency Inversion Principle (DIP): Ensure that your classes depend on abstractions"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "   • Dependency Inversion Principle (DIP): Ensure that your classes depend on abstractions",
             "      (interfaces) rather than concrete implementations."
           ],
-          "text": "      (interfaces) rather than concrete implementations."
+          "text": "   • Dependency Inversion Principle (DIP): Ensure that your classes depend on abstractions\n      (interfaces) rather than concrete implementations."
         },
         {
           "type": "list_item",
           "page": 14,
           "lines": [
-            "   • Dependency Injection Container: ASP.NET Core's built-in DI container handles the"
-          ],
-          "text": "   • Dependency Injection Container: ASP.NET Core's built-in DI container handles the"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "   • Dependency Injection Container: ASP.NET Core's built-in DI container handles the",
             "      registration and resolution of services."
           ],
-          "text": "      registration and resolution of services."
+          "text": "   • Dependency Injection Container: ASP.NET Core's built-in DI container handles the\n      registration and resolution of services."
         },
         {
           "type": "list_item",
           "page": 14,
           "lines": [
-            "   • Service Lifetimes: Understand the different service lifetimes (Transient, Scoped, Singleton)"
-          ],
-          "text": "   • Service Lifetimes: Understand the different service lifetimes (Transient, Scoped, Singleton)"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "   • Service Lifetimes: Understand the different service lifetimes (Transient, Scoped, Singleton)",
             "      and choose the appropriate one for each dependency."
           ],
-          "text": "      and choose the appropriate one for each dependency."
+          "text": "   • Service Lifetimes: Understand the different service lifetimes (Transient, Scoped, Singleton)\n      and choose the appropriate one for each dependency."
         },
         {
           "type": "heading",
@@ -4988,7 +4603,7 @@
           "text": "Best Practices of DI"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 14,
           "lines": [
             "1. Constructor Injection as the Default"
@@ -4999,18 +4614,11 @@
           "type": "list_item",
           "page": 14,
           "lines": [
-            "   • Why: Constructor injection is the most straightforward and reliable way to inject"
-          ],
-          "text": "   • Why: Constructor injection is the most straightforward and reliable way to inject"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "   • Why: Constructor injection is the most straightforward and reliable way to inject",
             "      dependencies. It ensures that a class has all its required dependencies before it can be used,",
             "      promoting object validity."
           ],
-          "text": "      dependencies. It ensures that a class has all its required dependencies before it can be used,\n      promoting object validity."
+          "text": "   • Why: Constructor injection is the most straightforward and reliable way to inject\n      dependencies. It ensures that a class has all its required dependencies before it can be used,\n      promoting object validity."
         },
         {
           "type": "list_item",
@@ -5299,34 +4907,27 @@
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • Why: Interfaces promote loose coupling, enabling you to easily swap implementations"
-          ],
-          "text": "   • Why: Interfaces promote loose coupling, enabling you to easily swap implementations"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "   • Why: Interfaces promote loose coupling, enabling you to easily swap implementations",
             "      during testing or when using different environments."
           ],
-          "text": "      during testing or when using different environments."
+          "text": "   • Why: Interfaces promote loose coupling, enabling you to easily swap implementations\n      during testing or when using different environments."
         },
         {
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • How: Define interfaces for your services and have your classes depend on the interfaces, not"
+            "   • How: Define interfaces for your services and have your classes depend on the interfaces, not",
+            "      concrete implementations."
           ],
-          "text": "   • How: Define interfaces for your services and have your classes depend on the interfaces, not"
+          "text": "   • How: Define interfaces for your services and have your classes depend on the interfaces, not\n      concrete implementations."
         },
         {
           "type": "prose",
           "page": 15,
           "lines": [
-            "      concrete implementations.",
             "C#"
           ],
-          "text": "      concrete implementations.\nC#"
+          "text": "C#"
         },
         {
           "type": "code",
@@ -5349,18 +4950,11 @@
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • Why: The Service Locator pattern involves directly accessing the DI container from within"
-          ],
-          "text": "   • Why: The Service Locator pattern involves directly accessing the DI container from within"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "   • Why: The Service Locator pattern involves directly accessing the DI container from within",
             "      your classes (e.g., using IServiceProvider.GetService()). This tightly couples your code to the",
             "      DI container and makes testing harder."
           ],
-          "text": "      your classes (e.g., using IServiceProvider.GetService()). This tightly couples your code to the\n      DI container and makes testing harder."
+          "text": "   • Why: The Service Locator pattern involves directly accessing the DI container from within\n      your classes (e.g., using IServiceProvider.GetService()). This tightly couples your code to the\n      DI container and makes testing harder."
         },
         {
           "type": "list_item",
@@ -5371,7 +4965,7 @@
           "text": "   • How: Instead, have the DI container inject dependencies directly into your classes."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 15,
           "lines": [
             "4. Register Dependencies at the Composition Root"
@@ -5382,37 +4976,23 @@
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • Why: The composition root (typically the Program.cs or Startup.cs file) is where you should"
-          ],
-          "text": "   • Why: The composition root (typically the Program.cs or Startup.cs file) is where you should"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "   • Why: The composition root (typically the Program.cs or Startup.cs file) is where you should",
             "      configure your DI container. This centralizes dependency registration and makes it easier to",
             "      manage and understand your application's structure."
           ],
-          "text": "      configure your DI container. This centralizes dependency registration and makes it easier to\n      manage and understand your application's structure."
+          "text": "   • Why: The composition root (typically the Program.cs or Startup.cs file) is where you should\n      configure your DI container. This centralizes dependency registration and makes it easier to\n      manage and understand your application's structure."
         },
         {
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • How: Use the IServiceCollection.Add* methods (e.g., AddTransient, AddScoped,"
-          ],
-          "text": "   • How: Use the IServiceCollection.Add* methods (e.g., AddTransient, AddScoped,"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "   • How: Use the IServiceCollection.Add* methods (e.g., AddTransient, AddScoped,",
             "      AddSingleton) to register your services and their lifetimes."
           ],
-          "text": "      AddSingleton) to register your services and their lifetimes."
+          "text": "   • How: Use the IServiceCollection.Add* methods (e.g., AddTransient, AddScoped,\n      AddSingleton) to register your services and their lifetimes."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 15,
           "lines": [
             "5. Choose the Appropriate Service Lifetime"
@@ -5682,20 +5262,13 @@
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • How: Carefully consider the nature of your service (stateful vs. stateless) and its usage"
-          ],
-          "text": "   • How: Carefully consider the nature of your service (stateful vs. stateless) and its usage"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • How: Carefully consider the nature of your service (stateful vs. stateless) and its usage",
             "      patterns to choose the right lifetime."
           ],
-          "text": "      patterns to choose the right lifetime."
+          "text": "   • How: Carefully consider the nature of your service (stateful vs. stateless) and its usage\n      patterns to choose the right lifetime."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 16,
           "lines": [
             "6. Avoid Captive Dependencies"
@@ -5706,37 +5279,23 @@
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • Why: A captive dependency occurs when you inject a shorter-lived service (e.g., Transient)"
-          ],
-          "text": "   • Why: A captive dependency occurs when you inject a shorter-lived service (e.g., Transient)"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • Why: A captive dependency occurs when you inject a shorter-lived service (e.g., Transient)",
             "      into a longer-lived service (e.g., Singleton). This can lead to unexpected behavior and",
             "      memory leaks."
           ],
-          "text": "      into a longer-lived service (e.g., Singleton). This can lead to unexpected behavior and\n      memory leaks."
+          "text": "   • Why: A captive dependency occurs when you inject a shorter-lived service (e.g., Transient)\n      into a longer-lived service (e.g., Singleton). This can lead to unexpected behavior and\n      memory leaks."
         },
         {
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • How: Ensure that your service lifetimes are compatible and that you don't inadvertently"
-          ],
-          "text": "   • How: Ensure that your service lifetimes are compatible and that you don't inadvertently"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • How: Ensure that your service lifetimes are compatible and that you don't inadvertently",
             "      capture a transient instance within a singleton."
           ],
-          "text": "      capture a transient instance within a singleton."
+          "text": "   • How: Ensure that your service lifetimes are compatible and that you don't inadvertently\n      capture a transient instance within a singleton."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 16,
           "lines": [
             "7. Use Decorators to Add Cross-Cutting Concerns"
@@ -5747,36 +5306,22 @@
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • Why: Decorators wrap existing services and allow you to add additional behavior (e.g.,"
-          ],
-          "text": "   • Why: Decorators wrap existing services and allow you to add additional behavior (e.g.,"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • Why: Decorators wrap existing services and allow you to add additional behavior (e.g.,",
             "      logging, caching) without modifying the original service."
           ],
-          "text": "      logging, caching) without modifying the original service."
+          "text": "   • Why: Decorators wrap existing services and allow you to add additional behavior (e.g.,\n      logging, caching) without modifying the original service."
         },
         {
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • How: Implement the same interface as the service you want to decorate and inject the"
-          ],
-          "text": "   • How: Implement the same interface as the service you want to decorate and inject the"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • How: Implement the same interface as the service you want to decorate and inject the",
             "      original service into the decorator."
           ],
-          "text": "      original service into the decorator."
+          "text": "   • How: Implement the same interface as the service you want to decorate and inject the\n      original service into the decorator."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 16,
           "lines": [
             "8. Leverage Options Pattern for Configuration"
@@ -5787,17 +5332,10 @@
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • Why: The Options pattern provides a strongly typed way to access configuration settings in"
-          ],
-          "text": "   • Why: The Options pattern provides a strongly typed way to access configuration settings in"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • Why: The Options pattern provides a strongly typed way to access configuration settings in",
             "      your services."
           ],
-          "text": "      your services."
+          "text": "   • Why: The Options pattern provides a strongly typed way to access configuration settings in\n      your services."
         },
         {
           "type": "list_item",
@@ -5811,41 +5349,13 @@
           "type": "code",
           "page": 16,
           "lines": [
-            "      interface to inject them."
-          ],
-          "text": "      interface to inject them."
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
-            "9. Consider Pure DI for Testability"
-          ],
-          "text": "9. Consider Pure DI for Testability"
-        },
-        {
-          "type": "list_item",
-          "page": 16,
-          "lines": [
-            "   • Why: Pure DI (avoiding the IServiceProvider altogether) makes your classes more testable,"
-          ],
-          "text": "   • Why: Pure DI (avoiding the IServiceProvider altogether) makes your classes more testable,"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
-            "      as you can easily provide mock dependencies during unit testing."
-          ],
-          "text": "      as you can easily provide mock dependencies during unit testing."
-        },
-        {
-          "type": "list_item",
-          "page": 16,
-          "lines": [
+            "      interface to inject them.",
+            "9. Consider Pure DI for Testability",
+            "   • Why: Pure DI (avoiding the IServiceProvider altogether) makes your classes more testable,",
+            "      as you can easily provide mock dependencies during unit testing.",
             "   • How: Design your classes so that all their dependencies are passed through the constructor"
           ],
-          "text": "   • How: Design your classes so that all their dependencies are passed through the constructor"
+          "text": "      interface to inject them.\n9. Consider Pure DI for Testability\n   • Why: Pure DI (avoiding the IServiceProvider altogether) makes your classes more testable,\n      as you can easily provide mock dependencies during unit testing.\n   • How: Design your classes so that all their dependencies are passed through the constructor"
         },
         {
           "type": "prose",
@@ -5856,7 +5366,7 @@
           "text": "      or other injection points."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 16,
           "lines": [
             "10. Don't Overuse DI"
@@ -5867,33 +5377,19 @@
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • Why: Dependency injection is a powerful tool, but it should be used judiciously. Overusing it"
-          ],
-          "text": "   • Why: Dependency injection is a powerful tool, but it should be used judiciously. Overusing it"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • Why: Dependency injection is a powerful tool, but it should be used judiciously. Overusing it",
             "      can lead to complex object graphs and make code harder to reason about."
           ],
-          "text": "      can lead to complex object graphs and make code harder to reason about."
+          "text": "   • Why: Dependency injection is a powerful tool, but it should be used judiciously. Overusing it\n      can lead to complex object graphs and make code harder to reason about."
         },
         {
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • How: Don't inject every single class in your application. Use DI for services and components"
-          ],
-          "text": "   • How: Don't inject every single class in your application. Use DI for services and components"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • How: Don't inject every single class in your application. Use DI for services and components",
             "      with clear dependencies and where you need flexibility and testability."
           ],
-          "text": "      with clear dependencies and where you need flexibility and testability."
+          "text": "   • How: Don't inject every single class in your application. Use DI for services and components\n      with clear dependencies and where you need flexibility and testability."
         }
       ],
       "char_count_raw": 1749,
@@ -6145,49 +5641,28 @@
           "type": "list_item",
           "page": 17,
           "lines": [
-            "   • Flexibility: Offers a wider range of component lifetime scopes and registration options"
-          ],
-          "text": "   • Flexibility: Offers a wider range of component lifetime scopes and registration options"
-        },
-        {
-          "type": "prose",
-          "page": 17,
-          "lines": [
+            "   • Flexibility: Offers a wider range of component lifetime scopes and registration options",
             "      compared to the built-in container."
           ],
-          "text": "      compared to the built-in container."
+          "text": "   • Flexibility: Offers a wider range of component lifetime scopes and registration options\n      compared to the built-in container."
         },
         {
           "type": "list_item",
           "page": 17,
           "lines": [
-            "   • Customization: Provides more fine-grained control over how dependencies are resolved and"
-          ],
-          "text": "   • Customization: Provides more fine-grained control over how dependencies are resolved and"
-        },
-        {
-          "type": "prose",
-          "page": 17,
-          "lines": [
+            "   • Customization: Provides more fine-grained control over how dependencies are resolved and",
             "      managed."
           ],
-          "text": "      managed."
+          "text": "   • Customization: Provides more fine-grained control over how dependencies are resolved and\n      managed."
         },
         {
           "type": "list_item",
           "page": 17,
           "lines": [
-            "   • Advanced Features: Supports features like module-based registration, property injection,"
-          ],
-          "text": "   • Advanced Features: Supports features like module-based registration, property injection,"
-        },
-        {
-          "type": "prose",
-          "page": 17,
-          "lines": [
+            "   • Advanced Features: Supports features like module-based registration, property injection,",
             "      assembly scanning, and interception (for cross-cutting concerns)."
           ],
-          "text": "      assembly scanning, and interception (for cross-cutting concerns)."
+          "text": "   • Advanced Features: Supports features like module-based registration, property injection,\n      assembly scanning, and interception (for cross-cutting concerns)."
         },
         {
           "type": "list_item",
@@ -6209,50 +5684,36 @@
           "type": "list_item",
           "page": 17,
           "lines": [
-            "   1. Install Package: Add the Autofac.Extensions.DependencyInjection NuGet package to your"
-          ],
-          "text": "   1. Install Package: Add the Autofac.Extensions.DependencyInjection NuGet package to your"
-        },
-        {
-          "type": "prose",
-          "page": 17,
-          "lines": [
+            "   1. Install Package: Add the Autofac.Extensions.DependencyInjection NuGet package to your",
             "      project."
           ],
-          "text": "      project."
+          "text": "   1. Install Package: Add the Autofac.Extensions.DependencyInjection NuGet package to your\n      project."
         },
         {
           "type": "list_item",
           "page": 17,
           "lines": [
-            "   2. Configure Container: In your Program.cs (or Startup.cs in older versions), replace the default"
+            "   2. Configure Container: In your Program.cs (or Startup.cs in older versions), replace the default",
+            "      service provider factory with Autofac's:"
           ],
-          "text": "   2. Configure Container: In your Program.cs (or Startup.cs in older versions), replace the default"
+          "text": "   2. Configure Container: In your Program.cs (or Startup.cs in older versions), replace the default\n      service provider factory with Autofac's:"
         },
         {
-          "type": "prose",
+          "type": "code",
           "page": 17,
           "lines": [
-            "      service provider factory with Autofac's:",
             "builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());"
           ],
-          "text": "      service provider factory with Autofac's:\nbuilder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());"
-        },
-        {
-          "type": "list_item",
-          "page": 17,
-          "lines": [
-            "   3. Register Services: Use the builder.Host.ConfigureContainer<ContainerBuilder> method to"
-          ],
-          "text": "   3. Register Services: Use the builder.Host.ConfigureContainer<ContainerBuilder> method to"
+          "text": "builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());"
         },
         {
           "type": "prose",
           "page": 17,
           "lines": [
+            "   3. Register Services: Use the builder.Host.ConfigureContainer<ContainerBuilder> method to",
             "      access Autofac's ContainerBuilder and register your services: C#"
           ],
-          "text": "      access Autofac's ContainerBuilder and register your services: C#"
+          "text": "   3. Register Services: Use the builder.Host.ConfigureContainer<ContainerBuilder> method to\n      access Autofac's ContainerBuilder and register your services: C#"
         },
         {
           "type": "list_item",
@@ -6279,7 +5740,7 @@
           "text": "   6. // Your Autofac registration logic here"
         },
         {
-          "type": "prose",
+          "type": "code",
           "page": 17,
           "lines": [
             "});"
@@ -6287,7 +5748,7 @@
           "text": "});"
         },
         {
-          "type": "heading",
+          "type": "prose",
           "page": 17,
           "lines": [
             "Code"
@@ -6534,38 +5995,17 @@
           "page": 18,
           "lines": [
             "// Program.cs",
-            "// ... other imports ..."
-          ],
-          "text": "// Program.cs\n// ... other imports ..."
-        },
-        {
-          "type": "prose",
-          "page": 18,
-          "lines": [
+            "// ... other imports ...",
             "builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory()); // Use Autofac",
             "builder.Services.AddControllersWithViews(); // Add MVC services",
-            "builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>"
+            "builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>",
+            "{",
+            "  containerBuilder.RegisterType<CitiesService>().As<ICitiesService>().InstancePerLifetimeScope(); //"
           ],
-          "text": "builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory()); // Use Autofac\nbuilder.Services.AddControllersWithViews(); // Add MVC services\nbuilder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>"
-        },
-        {
-          "type": "code",
-          "page": 18,
-          "lines": [
-            "{"
-          ],
-          "text": "{"
+          "text": "// Program.cs\n// ... other imports ...\nbuilder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory()); // Use Autofac\nbuilder.Services.AddControllersWithViews(); // Add MVC services\nbuilder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>\n{\n  containerBuilder.RegisterType<CitiesService>().As<ICitiesService>().InstancePerLifetimeScope(); //"
         },
         {
           "type": "prose",
-          "page": 18,
-          "lines": [
-            "  containerBuilder.RegisterType<CitiesService>().As<ICitiesService>().InstancePerLifetimeScope(); //"
-          ],
-          "text": "  containerBuilder.RegisterType<CitiesService>().As<ICitiesService>().InstancePerLifetimeScope(); //"
-        },
-        {
-          "type": "heading",
           "page": 18,
           "lines": [
             "Register CitiesService as Scoped"
@@ -6573,21 +6013,14 @@
           "text": "Register CitiesService as Scoped"
         },
         {
-          "type": "prose",
-          "page": 18,
-          "lines": [
-            "});"
-          ],
-          "text": "});"
-        },
-        {
           "type": "code",
           "page": 18,
           "lines": [
+            "});",
             "var app = builder.Build();",
             "// ... the rest of the code ..."
           ],
-          "text": "var app = builder.Build();\n// ... the rest of the code ..."
+          "text": "});\nvar app = builder.Build();\n// ... the rest of the code ..."
         },
         {
           "type": "prose",
@@ -6601,33 +6034,19 @@
           "type": "list_item",
           "page": 18,
           "lines": [
-            "   1. UseServiceProviderFactory: This line tells ASP.NET Core to use Autofac as the service"
-          ],
-          "text": "   1. UseServiceProviderFactory: This line tells ASP.NET Core to use Autofac as the service"
-        },
-        {
-          "type": "prose",
-          "page": 18,
-          "lines": [
+            "   1. UseServiceProviderFactory: This line tells ASP.NET Core to use Autofac as the service",
             "      provider."
           ],
-          "text": "      provider."
+          "text": "   1. UseServiceProviderFactory: This line tells ASP.NET Core to use Autofac as the service\n      provider."
         },
         {
           "type": "list_item",
           "page": 18,
           "lines": [
-            "   2. AddControllersWithViews: This registers the necessary services for MVC (models, views,"
-          ],
-          "text": "   2. AddControllersWithViews: This registers the necessary services for MVC (models, views,"
-        },
-        {
-          "type": "prose",
-          "page": 18,
-          "lines": [
+            "   2. AddControllersWithViews: This registers the necessary services for MVC (models, views,",
             "      controllers)."
           ],
-          "text": "      controllers)."
+          "text": "   2. AddControllersWithViews: This registers the necessary services for MVC (models, views,\n      controllers)."
         },
         {
           "type": "list_item",
@@ -6641,18 +6060,11 @@
           "type": "list_item",
           "page": 18,
           "lines": [
-            "   4. RegisterType<CitiesService>().As<ICitiesService>().InstancePerLifetimeScope();: This"
-          ],
-          "text": "   4. RegisterType<CitiesService>().As<ICitiesService>().InstancePerLifetimeScope();: This"
-        },
-        {
-          "type": "prose",
-          "page": 18,
-          "lines": [
+            "   4. RegisterType<CitiesService>().As<ICitiesService>().InstancePerLifetimeScope();: This",
             "      registers the CitiesService class as an implementation of the ICitiesService interface with a",
             "      scoped lifetime."
           ],
-          "text": "      registers the CitiesService class as an implementation of the ICitiesService interface with a\n      scoped lifetime."
+          "text": "   4. RegisterType<CitiesService>().As<ICitiesService>().InstancePerLifetimeScope();: This\n      registers the CitiesService class as an implementation of the ICitiesService interface with a\n      scoped lifetime."
         },
         {
           "type": "heading",
@@ -6706,17 +6118,10 @@
           "type": "list_item",
           "page": 18,
           "lines": [
-            "        o SingleInstance() (equivalent to Singleton)"
-          ],
-          "text": "        o SingleInstance() (equivalent to Singleton)"
-        },
-        {
-          "type": "heading",
-          "page": 18,
-          "lines": [
+            "        o SingleInstance() (equivalent to Singleton)",
             "Notes"
           ],
-          "text": "Notes"
+          "text": "        o SingleInstance() (equivalent to Singleton)\nNotes"
         }
       ],
       "char_count_raw": 1319,
@@ -6997,33 +6402,19 @@
           "type": "list_item",
           "page": 19,
           "lines": [
-            "   • Registration: Use Autofac's syntax (RegisterType, As, lifetime scopes) within the"
-          ],
-          "text": "   • Registration: Use Autofac's syntax (RegisterType, As, lifetime scopes) within the"
-        },
-        {
-          "type": "prose",
-          "page": 19,
-          "lines": [
+            "   • Registration: Use Autofac's syntax (RegisterType, As, lifetime scopes) within the",
             "      ConfigureContainer lambda."
           ],
-          "text": "      ConfigureContainer lambda."
+          "text": "   • Registration: Use Autofac's syntax (RegisterType, As, lifetime scopes) within the\n      ConfigureContainer lambda."
         },
         {
           "type": "list_item",
           "page": 19,
           "lines": [
-            "   • Familiar Concepts: The underlying concepts of DI (abstractions, lifetimes) remain the same,"
-          ],
-          "text": "   • Familiar Concepts: The underlying concepts of DI (abstractions, lifetimes) remain the same,"
-        },
-        {
-          "type": "prose",
-          "page": 19,
-          "lines": [
+            "   • Familiar Concepts: The underlying concepts of DI (abstractions, lifetimes) remain the same,",
             "      just with different syntax."
           ],
-          "text": "      just with different syntax."
+          "text": "   • Familiar Concepts: The underlying concepts of DI (abstractions, lifetimes) remain the same,\n      just with different syntax."
         },
         {
           "type": "heading",
@@ -7049,38 +6440,24 @@
           "type": "list_item",
           "page": 19,
           "lines": [
-            "   1. Request Scope (Default): In ASP.NET Core web applications, the most common scope is the"
-          ],
-          "text": "   1. Request Scope (Default): In ASP.NET Core web applications, the most common scope is the"
-        },
-        {
-          "type": "prose",
-          "page": 19,
-          "lines": [
+            "   1. Request Scope (Default): In ASP.NET Core web applications, the most common scope is the",
             "      request scope. A new scope is automatically created at the beginning of each HTTP request.",
             "      All scoped services are resolved from this request scope and remain alive throughout the",
             "      entire request-response cycle. Once the request is processed, the scope is disposed, and all",
             "      scoped services within it are also disposed."
           ],
-          "text": "      request scope. A new scope is automatically created at the beginning of each HTTP request.\n      All scoped services are resolved from this request scope and remain alive throughout the\n      entire request-response cycle. Once the request is processed, the scope is disposed, and all\n      scoped services within it are also disposed."
+          "text": "   1. Request Scope (Default): In ASP.NET Core web applications, the most common scope is the\n      request scope. A new scope is automatically created at the beginning of each HTTP request.\n      All scoped services are resolved from this request scope and remain alive throughout the\n      entire request-response cycle. Once the request is processed, the scope is disposed, and all\n      scoped services within it are also disposed."
         },
         {
           "type": "list_item",
           "page": 19,
           "lines": [
-            "   2. Explicitly Creating Scopes: You can also create custom scopes manually. This is useful in"
-          ],
-          "text": "   2. Explicitly Creating Scopes: You can also create custom scopes manually. This is useful in"
-        },
-        {
-          "type": "prose",
-          "page": 19,
-          "lines": [
+            "   2. Explicitly Creating Scopes: You can also create custom scopes manually. This is useful in",
             "      scenarios where you need a scoped lifetime for operations that don't directly correspond to",
             "      an HTTP request (e.g., background tasks, unit testing). You can create a scope using the",
             "      IServiceProvider.CreateScope() method."
           ],
-          "text": "      scenarios where you need a scoped lifetime for operations that don't directly correspond to\n      an HTTP request (e.g., background tasks, unit testing). You can create a scope using the\n      IServiceProvider.CreateScope() method."
+          "text": "   2. Explicitly Creating Scopes: You can also create custom scopes manually. This is useful in\n      scenarios where you need a scoped lifetime for operations that don't directly correspond to\n      an HTTP request (e.g., background tasks, unit testing). You can create a scope using the\n      IServiceProvider.CreateScope() method."
         },
         {
           "type": "heading",
@@ -7364,49 +6741,28 @@
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • Creation: A new instance of a scoped service is created the first time it's requested within a"
-          ],
-          "text": "   • Creation: A new instance of a scoped service is created the first time it's requested within a"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • Creation: A new instance of a scoped service is created the first time it's requested within a",
             "      scope."
           ],
-          "text": "      scope."
+          "text": "   • Creation: A new instance of a scoped service is created the first time it's requested within a\n      scope."
         },
         {
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • Sharing: Subsequent requests for the same scoped service within the same scope will"
-          ],
-          "text": "   • Sharing: Subsequent requests for the same scoped service within the same scope will"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • Sharing: Subsequent requests for the same scoped service within the same scope will",
             "      receive the same instance."
           ],
-          "text": "      receive the same instance."
+          "text": "   • Sharing: Subsequent requests for the same scoped service within the same scope will\n      receive the same instance."
         },
         {
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • Disposal: When the scope is disposed (e.g., at the end of an HTTP request), all scoped"
-          ],
-          "text": "   • Disposal: When the scope is disposed (e.g., at the end of an HTTP request), all scoped"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • Disposal: When the scope is disposed (e.g., at the end of an HTTP request), all scoped",
             "      services within that scope are also disposed."
           ],
-          "text": "      services within that scope are also disposed."
+          "text": "   • Disposal: When the scope is disposed (e.g., at the end of an HTTP request), all scoped\n      services within that scope are also disposed."
         },
         {
           "type": "heading",
@@ -7420,49 +6776,28 @@
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • State Management: Scoped services are perfect for managing state that needs to persist"
-          ],
-          "text": "   • State Management: Scoped services are perfect for managing state that needs to persist"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • State Management: Scoped services are perfect for managing state that needs to persist",
             "      throughout a request but should not leak across different requests."
           ],
-          "text": "      throughout a request but should not leak across different requests."
+          "text": "   • State Management: Scoped services are perfect for managing state that needs to persist\n      throughout a request but should not leak across different requests."
         },
         {
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • Efficient Resource Usage: Scopes ensure that you don't create unnecessary instances of"
-          ],
-          "text": "   • Efficient Resource Usage: Scopes ensure that you don't create unnecessary instances of"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • Efficient Resource Usage: Scopes ensure that you don't create unnecessary instances of",
             "      services, leading to better memory management."
           ],
-          "text": "      services, leading to better memory management."
+          "text": "   • Efficient Resource Usage: Scopes ensure that you don't create unnecessary instances of\n      services, leading to better memory management."
         },
         {
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • Consistency: Scoped services provide a consistent view of data and state within a single"
-          ],
-          "text": "   • Consistency: Scoped services provide a consistent view of data and state within a single"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • Consistency: Scoped services provide a consistent view of data and state within a single",
             "      request."
           ],
-          "text": "      request."
+          "text": "   • Consistency: Scoped services provide a consistent view of data and state within a single\n      request."
         },
         {
           "type": "heading",
@@ -7476,65 +6811,37 @@
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • Database Contexts (EF Core): A new database context instance is usually created per"
-          ],
-          "text": "   • Database Contexts (EF Core): A new database context instance is usually created per"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • Database Contexts (EF Core): A new database context instance is usually created per",
             "      request to ensure data isolation and avoid concurrency issues."
           ],
-          "text": "      request to ensure data isolation and avoid concurrency issues."
+          "text": "   • Database Contexts (EF Core): A new database context instance is usually created per\n      request to ensure data isolation and avoid concurrency issues."
         },
         {
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • User-Specific Data: Services holding data specific to the current user (e.g., shopping cart) are"
-          ],
-          "text": "   • User-Specific Data: Services holding data specific to the current user (e.g., shopping cart) are"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • User-Specific Data: Services holding data specific to the current user (e.g., shopping cart) are",
             "      often scoped to the request."
           ],
-          "text": "      often scoped to the request."
+          "text": "   • User-Specific Data: Services holding data specific to the current user (e.g., shopping cart) are\n      often scoped to the request."
         },
         {
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • Logging with Context: If you need to log information with request-specific context, a scoped"
-          ],
-          "text": "   • Logging with Context: If you need to log information with request-specific context, a scoped"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • Logging with Context: If you need to log information with request-specific context, a scoped",
             "      logger is beneficial."
           ],
-          "text": "      logger is beneficial."
+          "text": "   • Logging with Context: If you need to log information with request-specific context, a scoped\n      logger is beneficial."
         },
         {
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • Transactions: If you need to maintain transactional integrity within a request, you can use a"
-          ],
-          "text": "   • Transactions: If you need to maintain transactional integrity within a request, you can use a"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • Transactions: If you need to maintain transactional integrity within a request, you can use a",
             "      scoped service to manage the transaction."
           ],
-          "text": "      scoped service to manage the transaction."
+          "text": "   • Transactions: If you need to maintain transactional integrity within a request, you can use a\n      scoped service to manage the transaction."
         },
         {
           "type": "heading",
@@ -7548,34 +6855,20 @@
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • Avoid Captive Dependencies: Be cautious of injecting a scoped service into a singleton"
-          ],
-          "text": "   • Avoid Captive Dependencies: Be cautious of injecting a scoped service into a singleton"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • Avoid Captive Dependencies: Be cautious of injecting a scoped service into a singleton",
             "      service. This can lead to unexpected behavior and memory leaks because the scoped service",
             "      will be held alive for the entire application lifetime."
           ],
-          "text": "      service. This can lead to unexpected behavior and memory leaks because the scoped service\n      will be held alive for the entire application lifetime."
+          "text": "   • Avoid Captive Dependencies: Be cautious of injecting a scoped service into a singleton\n      service. This can lead to unexpected behavior and memory leaks because the scoped service\n      will be held alive for the entire application lifetime."
         },
         {
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • Explicit Disposal: When you create custom scopes, remember to dispose them properly"
-          ],
-          "text": "   • Explicit Disposal: When you create custom scopes, remember to dispose them properly"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • Explicit Disposal: When you create custom scopes, remember to dispose them properly",
             "      using a using statement or by manually calling Dispose() on the IServiceScope object."
           ],
-          "text": "      using a using statement or by manually calling Dispose() on the IServiceScope object."
+          "text": "   • Explicit Disposal: When you create custom scopes, remember to dispose them properly\n      using a using statement or by manually calling Dispose() on the IServiceScope object."
         }
       ],
       "char_count_raw": 1801,
@@ -7824,17 +7117,10 @@
           "type": "list_item",
           "page": 21,
           "lines": [
-            "   • Core Idea: High-level modules shouldn't depend on low-level modules; both should depend"
-          ],
-          "text": "   • Core Idea: High-level modules shouldn't depend on low-level modules; both should depend"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "   • Core Idea: High-level modules shouldn't depend on low-level modules; both should depend",
             "      on abstractions (interfaces/abstract classes)."
           ],
-          "text": "      on abstractions (interfaces/abstract classes)."
+          "text": "   • Core Idea: High-level modules shouldn't depend on low-level modules; both should depend\n      on abstractions (interfaces/abstract classes)."
         },
         {
           "type": "list_item",
@@ -7856,17 +7142,10 @@
           "type": "list_item",
           "page": 21,
           "lines": [
-            "   • Core Idea: Transfer control of object creation and management from your code to a"
-          ],
-          "text": "   • Core Idea: Transfer control of object creation and management from your code to a"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "   • Core Idea: Transfer control of object creation and management from your code to a",
             "      framework or container (e.g., the DI container)."
           ],
-          "text": "      framework or container (e.g., the DI container)."
+          "text": "   • Core Idea: Transfer control of object creation and management from your code to a\n      framework or container (e.g., the DI container)."
         },
         {
           "type": "list_item",
@@ -7888,17 +7167,10 @@
           "type": "list_item",
           "page": 21,
           "lines": [
-            "   • Core Idea: Dependencies are provided (injected) into a class from an external source (usually"
-          ],
-          "text": "   • Core Idea: Dependencies are provided (injected) into a class from an external source (usually"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "   • Core Idea: Dependencies are provided (injected) into a class from an external source (usually",
             "      a DI container)."
           ],
-          "text": "      a DI container)."
+          "text": "   • Core Idea: Dependencies are provided (injected) into a class from an external source (usually\n      a DI container)."
         },
         {
           "type": "list_item",
@@ -7912,33 +7184,19 @@
           "type": "list_item",
           "page": 21,
           "lines": [
-            "        o Constructor Injection: Dependencies are passed as constructor parameters (most"
-          ],
-          "text": "        o Constructor Injection: Dependencies are passed as constructor parameters (most"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "        o Constructor Injection: Dependencies are passed as constructor parameters (most",
             "           common)."
           ],
-          "text": "           common)."
+          "text": "        o Constructor Injection: Dependencies are passed as constructor parameters (most\n           common)."
         },
         {
           "type": "list_item",
           "page": 21,
           "lines": [
-            "        o Property Injection: Dependencies are assigned to properties with the [FromServices]"
-          ],
-          "text": "        o Property Injection: Dependencies are assigned to properties with the [FromServices]"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "        o Property Injection: Dependencies are assigned to properties with the [FromServices]",
             "           attribute."
           ],
-          "text": "           attribute."
+          "text": "        o Property Injection: Dependencies are assigned to properties with the [FromServices]\n           attribute."
         },
         {
           "type": "list_item",
@@ -7984,17 +7242,10 @@
           "type": "list_item",
           "page": 21,
           "lines": [
-            "        o Maintainability"
-          ],
-          "text": "        o Maintainability"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "        o Maintainability",
             "Service Lifetimes in ASP.NET Core DI"
           ],
-          "text": "Service Lifetimes in ASP.NET Core DI"
+          "text": "        o Maintainability\nService Lifetimes in ASP.NET Core DI"
         },
         {
           "type": "list_item",
@@ -8288,15 +7539,29 @@
           "text": "   • Integration:"
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 22,
           "lines": [
-            "              ▪ Install Autofac.Extensions.DependencyInjection.",
+            "              ▪ Install Autofac.Extensions.DependencyInjection."
+          ],
+          "text": "              ▪ Install Autofac.Extensions.DependencyInjection."
+        },
+        {
+          "type": "list_item",
+          "page": 22,
+          "lines": [
             "              ▪ Use builder.Host.UseServiceProviderFactory(new",
-            "                 AutofacServiceProviderFactory()) in Program.cs.",
+            "                 AutofacServiceProviderFactory()) in Program.cs."
+          ],
+          "text": "              ▪ Use builder.Host.UseServiceProviderFactory(new\n                 AutofacServiceProviderFactory()) in Program.cs."
+        },
+        {
+          "type": "list_item",
+          "page": 22,
+          "lines": [
             "              ▪ Register services in builder.Host.ConfigureContainer<ContainerBuilder>."
           ],
-          "text": "              ▪ Install Autofac.Extensions.DependencyInjection.\n              ▪ Use builder.Host.UseServiceProviderFactory(new\n                 AutofacServiceProviderFactory()) in Program.cs.\n              ▪ Register services in builder.Host.ConfigureContainer<ContainerBuilder>."
+          "text": "              ▪ Register services in builder.Host.ConfigureContainer<ContainerBuilder>."
         },
         {
           "type": "heading",
@@ -8326,49 +7591,28 @@
           "type": "list_item",
           "page": 22,
           "lines": [
-            "   • InstancePerDependency() (Transient), SingleInstance() (Singleton)"
-          ],
-          "text": "   • InstancePerDependency() (Transient), SingleInstance() (Singleton)"
-        },
-        {
-          "type": "heading",
-          "page": 22,
-          "lines": [
+            "   • InstancePerDependency() (Transient), SingleInstance() (Singleton)",
             "Interview Tips"
           ],
-          "text": "Interview Tips"
+          "text": "   • InstancePerDependency() (Transient), SingleInstance() (Singleton)\nInterview Tips"
         },
         {
           "type": "list_item",
           "page": 22,
           "lines": [
-            "   • Conceptual Understanding: Be able to explain the principles of DIP, IoC, and DI and how"
-          ],
-          "text": "   • Conceptual Understanding: Be able to explain the principles of DIP, IoC, and DI and how"
-        },
-        {
-          "type": "prose",
-          "page": 22,
-          "lines": [
+            "   • Conceptual Understanding: Be able to explain the principles of DIP, IoC, and DI and how",
             "      they relate to each other."
           ],
-          "text": "      they relate to each other."
+          "text": "   • Conceptual Understanding: Be able to explain the principles of DIP, IoC, and DI and how\n      they relate to each other."
         },
         {
           "type": "list_item",
           "page": 22,
           "lines": [
-            "   • Practical Application: Demonstrate your ability to choose the right lifetime for a given"
-          ],
-          "text": "   • Practical Application: Demonstrate your ability to choose the right lifetime for a given"
-        },
-        {
-          "type": "prose",
-          "page": 22,
-          "lines": [
+            "   • Practical Application: Demonstrate your ability to choose the right lifetime for a given",
             "      service and explain the implications of each choice."
           ],
-          "text": "      service and explain the implications of each choice."
+          "text": "   • Practical Application: Demonstrate your ability to choose the right lifetime for a given\n      service and explain the implications of each choice."
         },
         {
           "type": "list_item",
@@ -8382,33 +7626,19 @@
           "type": "list_item",
           "page": 22,
           "lines": [
-            "   • Autofac: Highlight the benefits of using Autofac over the built-in container and showcase"
-          ],
-          "text": "   • Autofac: Highlight the benefits of using Autofac over the built-in container and showcase"
-        },
-        {
-          "type": "prose",
-          "page": 22,
-          "lines": [
+            "   • Autofac: Highlight the benefits of using Autofac over the built-in container and showcase",
             "      your knowledge of its registration syntax."
           ],
-          "text": "      your knowledge of its registration syntax."
+          "text": "   • Autofac: Highlight the benefits of using Autofac over the built-in container and showcase\n      your knowledge of its registration syntax."
         },
         {
           "type": "list_item",
           "page": 22,
           "lines": [
-            "   • Troubleshooting: Explain how you would diagnose common DI issues (e.g., circular"
-          ],
-          "text": "   • Troubleshooting: Explain how you would diagnose common DI issues (e.g., circular"
-        },
-        {
-          "type": "prose",
-          "page": 22,
-          "lines": [
+            "   • Troubleshooting: Explain how you would diagnose common DI issues (e.g., circular",
             "      dependencies, incorrect lifetimes)."
           ],
-          "text": "      dependencies, incorrect lifetimes)."
+          "text": "   • Troubleshooting: Explain how you would diagnose common DI issues (e.g., circular\n      dependencies, incorrect lifetimes)."
         }
       ],
       "char_count_raw": 1333,

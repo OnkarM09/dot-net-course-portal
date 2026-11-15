@@ -319,66 +319,17 @@
           "type": "code",
           "page": 1,
           "lines": [
-            "{"
-          ],
-          "text": "{"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
-            "\"profiles\":"
-          ],
-          "text": "\"profiles\":"
-        },
-        {
-          "type": "code",
-          "page": 1,
-          "lines": [
-            "{"
-          ],
-          "text": "{"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
-            " \"profileName\":"
-          ],
-          "text": " \"profileName\":"
-        },
-        {
-          "type": "code",
-          "page": 1,
-          "lines": [
-            " {"
-          ],
-          "text": " {"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
-            " \"environmentVariables\":"
-          ],
-          "text": " \"environmentVariables\":"
-        },
-        {
-          "type": "code",
-          "page": 1,
-          "lines": [
-            " {"
-          ],
-          "text": " {"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "{",
+            "\"profiles\":",
+            "{",
+            " \"profileName\":",
+            " {",
+            " \"environmentVariables\":",
+            " {",
             "  \"DOTNET_ENVIRONMENT\": \"EnvironmentNameHere\",",
             "  \"ASPNETCORE_ENVIRONMENT\": \"EnvironmentNameHere\""
           ],
-          "text": "  \"DOTNET_ENVIRONMENT\": \"EnvironmentNameHere\",\n  \"ASPNETCORE_ENVIRONMENT\": \"EnvironmentNameHere\""
+          "text": "{\n\"profiles\":\n{\n \"profileName\":\n {\n \"environmentVariables\":\n {\n  \"DOTNET_ENVIRONMENT\": \"EnvironmentNameHere\",\n  \"ASPNETCORE_ENVIRONMENT\": \"EnvironmentNameHere\""
         }
       ],
       "char_count_raw": 817,
@@ -566,13 +517,20 @@
           "type": "prose",
           "page": 2,
           "lines": [
-            "Access Environment in Program.cs",
-            "app.Environment"
+            "Access Environment in Program.cs"
           ],
-          "text": "Access Environment in Program.cs\napp.Environment"
+          "text": "Access Environment in Program.cs"
         },
         {
-          "type": "heading",
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "app.Environment"
+          ],
+          "text": "app.Environment"
+        },
+        {
+          "type": "prose",
           "page": 2,
           "lines": [
             "IWebHostEnvironment"
@@ -903,20 +861,20 @@
           "type": "prose",
           "page": 4,
           "lines": [
-            "in Program.cs",
-            "if (app.Environment.IsDevelopment()"
+            "in Program.cs"
           ],
-          "text": "in Program.cs\nif (app.Environment.IsDevelopment()"
+          "text": "in Program.cs"
         },
         {
           "type": "code",
           "page": 4,
           "lines": [
+            "if (app.Environment.IsDevelopment()",
             "{",
             "app.UseDeveloperExceptionPage();",
             "}"
           ],
-          "text": "{\napp.UseDeveloperExceptionPage();\n}"
+          "text": "if (app.Environment.IsDevelopment()\n{\napp.UseDeveloperExceptionPage();\n}"
         },
         {
           "type": "prose",

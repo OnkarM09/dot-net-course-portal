@@ -478,17 +478,10 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • It can access the action method parameters, read them & do necessary manipulations on"
-          ],
-          "text": "   • It can access the action method parameters, read them & do necessary manipulations on"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • It can access the action method parameters, read them & do necessary manipulations on",
             "      them."
           ],
-          "text": "      them."
+          "text": "   • It can access the action method parameters, read them & do necessary manipulations on\n      them."
         },
         {
           "type": "list_item",
@@ -502,18 +495,11 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • It can short-circuit the action (prevent action method from execution) and return a different"
-          ],
-          "text": "   • It can short-circuit the action (prevent action method from execution) and return a different"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • It can short-circuit the action (prevent action method from execution) and return a different",
             "      IActionResult.",
             "'OnActionExecuted' method"
           ],
-          "text": "      IActionResult.\n'OnActionExecuted' method"
+          "text": "   • It can short-circuit the action (prevent action method from execution) and return a different\n      IActionResult.\n'OnActionExecuted' method"
         },
         {
           "type": "list_item",
@@ -652,28 +638,21 @@
           "lines": [
             "What are global filters?",
             "Global filters are applied to all action methods of all controllers in the project.",
-            "How to add global filters in Program.cs?",
-            "builder.Services.AddControllersWithViews(options => {",
-            " options.Filters.Add<FilterClassName>(); //add by type"
+            "How to add global filters in Program.cs?"
           ],
-          "text": "What are global filters?\nGlobal filters are applied to all action methods of all controllers in the project.\nHow to add global filters in Program.cs?\nbuilder.Services.AddControllersWithViews(options => {\n options.Filters.Add<FilterClassName>(); //add by type"
+          "text": "What are global filters?\nGlobal filters are applied to all action methods of all controllers in the project.\nHow to add global filters in Program.cs?"
         },
         {
           "type": "code",
           "page": 4,
           "lines": [
-            " //or"
-          ],
-          "text": " //or"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "builder.Services.AddControllersWithViews(options => {",
+            " options.Filters.Add<FilterClassName>(); //add by type",
+            " //or",
             " options.Filters.Add(new FilterClassName()); //add filter instance",
             "});"
           ],
-          "text": " options.Filters.Add(new FilterClassName()); //add filter instance\n});"
+          "text": "builder.Services.AddControllersWithViews(options => {\n options.Filters.Add<FilterClassName>(); //add by type\n //or\n options.Filters.Add(new FilterClassName()); //add filter instance\n});"
         }
       ],
       "char_count_raw": 362,
@@ -1125,22 +1104,8 @@
             " {",
             "  Order = order;",
             " }",
-            " public async Task OnActionExecutionAsync(ActionExecutingContext context,"
-          ],
-          "text": "public class FilterClassName : IAsyncActionFilter, IOrderedFilter\n{\n public int Order { get; set; } //Defines sequence of execution\n public FilterClassName(int order)\n {\n  Order = order;\n }\n public async Task OnActionExecutionAsync(ActionExecutingContext context,"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
-            "ActionExecutionDelegate next)"
-          ],
-          "text": "ActionExecutionDelegate next)"
-        },
-        {
-          "type": "code",
-          "page": 7,
-          "lines": [
+            " public async Task OnActionExecutionAsync(ActionExecutingContext context,",
+            "ActionExecutionDelegate next)",
             " {",
             "  //TO DO: before logic here",
             "  await next();",
@@ -1148,7 +1113,7 @@
             " }",
             "}"
           ],
-          "text": " {\n  //TO DO: before logic here\n  await next();\n  //TO DO: after logic here\n }\n}"
+          "text": "public class FilterClassName : IAsyncActionFilter, IOrderedFilter\n{\n public int Order { get; set; } //Defines sequence of execution\n public FilterClassName(int order)\n {\n  Order = order;\n }\n public async Task OnActionExecutionAsync(ActionExecutingContext context,\nActionExecutionDelegate next)\n {\n  //TO DO: before logic here\n  await next();\n  //TO DO: after logic here\n }\n}"
         }
       ],
       "char_count_raw": 493,
@@ -1318,17 +1283,10 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • It can access the action method parameters, read them & do necessary manipulations on"
-          ],
-          "text": "   • It can access the action method parameters, read them & do necessary manipulations on"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • It can access the action method parameters, read them & do necessary manipulations on",
             "      them."
           ],
-          "text": "      them."
+          "text": "   • It can access the action method parameters, read them & do necessary manipulations on\n      them."
         },
         {
           "type": "list_item",
@@ -1342,18 +1300,11 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • It can short-circuit the action (prevent action method from execution) and return a different"
-          ],
-          "text": "   • It can short-circuit the action (prevent action method from execution) and return a different"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • It can short-circuit the action (prevent action method from execution) and return a different",
             "      IActionResult.",
             "'OnActionExecuted' method"
           ],
-          "text": "      IActionResult.\n'OnActionExecuted' method"
+          "text": "   • It can short-circuit the action (prevent action method from execution) and return a different\n      IActionResult.\n'OnActionExecuted' method"
         },
         {
           "type": "list_item",
@@ -1553,22 +1504,8 @@
             "{",
             " Order = order;",
             "}",
-            "public async Task OnActionExecutionAsync(ActionExecutingContext context,"
-          ],
-          "text": "public class FilterClassName : IAsyncActionFilter, IOrderedFilter\n{\npublic int Order { get; set; } //Defines sequence of execution\npublic FilterClassName(int order)\n{\n Order = order;\n}\npublic async Task OnActionExecutionAsync(ActionExecutingContext context,"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
-            "ActionExecutionDelegate next)"
-          ],
-          "text": "ActionExecutionDelegate next)"
-        },
-        {
-          "type": "code",
-          "page": 9,
-          "lines": [
+            "public async Task OnActionExecutionAsync(ActionExecutingContext context,",
+            "ActionExecutionDelegate next)",
             "{",
             " //TO DO: before logic here",
             " context.Result = some_action_result; //you can return any type of IActionResult",
@@ -1576,7 +1513,7 @@
             "}",
             "}"
           ],
-          "text": "{\n //TO DO: before logic here\n context.Result = some_action_result; //you can return any type of IActionResult\n //Not calling next(). So it leads remaining filters & action method short-circuited.\n}\n}"
+          "text": "public class FilterClassName : IAsyncActionFilter, IOrderedFilter\n{\npublic int Order { get; set; } //Defines sequence of execution\npublic FilterClassName(int order)\n{\n Order = order;\n}\npublic async Task OnActionExecutionAsync(ActionExecutingContext context,\nActionExecutionDelegate next)\n{\n //TO DO: before logic here\n context.Result = some_action_result; //you can return any type of IActionResult\n //Not calling next(). So it leads remaining filters & action method short-circuited.\n}\n}"
         },
         {
           "type": "prose",
@@ -1737,82 +1674,47 @@
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • It can access the IActionResult returned by the action method."
-          ],
-          "text": "   • It can access the IActionResult returned by the action method."
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • It can access the IActionResult returned by the action method.",
             "'OnResultExecuting' method"
           ],
-          "text": "'OnResultExecuting' method"
+          "text": "   • It can access the IActionResult returned by the action method.\n'OnResultExecuting' method"
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • It can continue executing the IActionResult normally, by not assigning \"Result\" property of"
-          ],
-          "text": "   • It can continue executing the IActionResult normally, by not assigning \"Result\" property of"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • It can continue executing the IActionResult normally, by not assigning \"Result\" property of",
             "      the context."
           ],
-          "text": "      the context."
+          "text": "   • It can continue executing the IActionResult normally, by not assigning \"Result\" property of\n      the context."
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • It can short-circuit the action (prevent IActionResult from execution) and return a different"
-          ],
-          "text": "   • It can short-circuit the action (prevent IActionResult from execution) and return a different"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • It can short-circuit the action (prevent IActionResult from execution) and return a different",
             "      IActionResult.",
             "'OnResultExecuted' method"
           ],
-          "text": "      IActionResult.\n'OnResultExecuted' method"
+          "text": "   • It can short-circuit the action (prevent IActionResult from execution) and return a different\n      IActionResult.\n'OnResultExecuted' method"
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • It can manipulate the last-moment changes in the response, such as adding necessary"
-          ],
-          "text": "   • It can manipulate the last-moment changes in the response, such as adding necessary"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • It can manipulate the last-moment changes in the response, such as adding necessary",
             "      response headers."
           ],
-          "text": "      response headers."
+          "text": "   • It can manipulate the last-moment changes in the response, such as adding necessary\n      response headers."
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • It should not throw exceptions because, exceptions raised in result filters would not be"
-          ],
-          "text": "   • It should not throw exceptions because, exceptions raised in result filters would not be"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • It should not throw exceptions because, exceptions raised in result filters would not be",
             "      caught by the exception filter."
           ],
-          "text": "      caught by the exception filter."
+          "text": "   • It should not throw exceptions because, exceptions raised in result filters would not be\n      caught by the exception filter."
         }
       ],
       "char_count_raw": 653,
@@ -2158,22 +2060,8 @@
             " {",
             "  Order = order;",
             " }",
-            " public async Task OnResultExecutionAsync(ResultExecutingContext context,"
-          ],
-          "text": "public class FilterClassName : IAsyncResultFilter, IOrderedFilter\n{\n public int Order { get; set; } //Defines sequence of execution\n public FilterClassName(int order)\n {\n  Order = order;\n }\n public async Task OnResultExecutionAsync(ResultExecutingContext context,"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
-            "ResultExecutionDelegate next)"
-          ],
-          "text": "ResultExecutionDelegate next)"
-        },
-        {
-          "type": "code",
-          "page": 12,
-          "lines": [
+            " public async Task OnResultExecutionAsync(ResultExecutingContext context,",
+            "ResultExecutionDelegate next)",
             " {",
             " //TO DO: before logic here",
             " await next();",
@@ -2181,7 +2069,7 @@
             " }",
             "}"
           ],
-          "text": " {\n //TO DO: before logic here\n await next();\n //TO DO: after logic here\n }\n}"
+          "text": "public class FilterClassName : IAsyncResultFilter, IOrderedFilter\n{\n public int Order { get; set; } //Defines sequence of execution\n public FilterClassName(int order)\n {\n  Order = order;\n }\n public async Task OnResultExecutionAsync(ResultExecutingContext context,\nResultExecutionDelegate next)\n {\n //TO DO: before logic here\n await next();\n //TO DO: after logic here\n }\n}"
         },
         {
           "type": "prose",
@@ -2319,19 +2207,19 @@
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   • It can short-circuit the action (prevent IActionResult from execution) and return a different"
+            "   • It can short-circuit the action (prevent IActionResult from execution) and return a different",
+            "      IActionResult."
           ],
-          "text": "   • It can short-circuit the action (prevent IActionResult from execution) and return a different"
+          "text": "   • It can short-circuit the action (prevent IActionResult from execution) and return a different\n      IActionResult."
         },
         {
           "type": "prose",
           "page": 13,
           "lines": [
-            "      IActionResult.",
             "Eg: Short-circuit if an unsupported content type is requested.",
             "'OnResourceExecuted' method"
           ],
-          "text": "      IActionResult.\nEg: Short-circuit if an unsupported content type is requested.\n'OnResourceExecuted' method"
+          "text": "Eg: Short-circuit if an unsupported content type is requested.\n'OnResourceExecuted' method"
         },
         {
           "type": "list_item",
@@ -2685,22 +2573,8 @@
             " {",
             "  Order = order;",
             " }",
-            " public async Task OnResourceExecutionAsync(ResourceExecutingContext context,"
-          ],
-          "text": "public class FilterClassName : IAsyncResourceFilter, IOrderedFilter\n{\n public int Order { get; set; } //Defines sequence of execution\n public FilterClassName(int order)\n {\n  Order = order;\n }\n public async Task OnResourceExecutionAsync(ResourceExecutingContext context,"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
-            "ResourceExecutionDelegate next)"
-          ],
-          "text": "ResourceExecutionDelegate next)"
-        },
-        {
-          "type": "code",
-          "page": 15,
-          "lines": [
+            " public async Task OnResourceExecutionAsync(ResourceExecutingContext context,",
+            "ResourceExecutionDelegate next)",
             " {",
             "  //TO DO: before logic here",
             "  await next();",
@@ -2708,7 +2582,7 @@
             " }",
             "}"
           ],
-          "text": " {\n  //TO DO: before logic here\n  await next();\n  //TO DO: after logic here\n }\n}"
+          "text": "public class FilterClassName : IAsyncResourceFilter, IOrderedFilter\n{\n public int Order { get; set; } //Defines sequence of execution\n public FilterClassName(int order)\n {\n  Order = order;\n }\n public async Task OnResourceExecutionAsync(ResourceExecutingContext context,\nResourceExecutionDelegate next)\n {\n  //TO DO: before logic here\n  await next();\n  //TO DO: after logic here\n }\n}"
         },
         {
           "type": "prose",
@@ -2950,17 +2824,10 @@
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • Don't throw exceptions in OnAuthorize method, as they will not be handled by exception"
-          ],
-          "text": "   • Don't throw exceptions in OnAuthorize method, as they will not be handled by exception"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • Don't throw exceptions in OnAuthorize method, as they will not be handled by exception",
             "      filters."
           ],
-          "text": "      filters."
+          "text": "   • Don't throw exceptions in OnAuthorize method, as they will not be handled by exception\n      filters."
         },
         {
           "type": "heading",
@@ -3134,50 +3001,29 @@
           "type": "list_item",
           "page": 17,
           "lines": [
-            "   • Handles unhandled exceptions that occur in controller creation, model binding, action filters"
-          ],
-          "text": "   • Handles unhandled exceptions that occur in controller creation, model binding, action filters"
-        },
-        {
-          "type": "prose",
-          "page": 17,
-          "lines": [
+            "   • Handles unhandled exceptions that occur in controller creation, model binding, action filters",
             "      or action methods."
           ],
-          "text": "      or action methods."
+          "text": "   • Handles unhandled exceptions that occur in controller creation, model binding, action filters\n      or action methods."
         },
         {
           "type": "list_item",
           "page": 17,
           "lines": [
-            "   • Doesn't handle the unhandled exceptions that occur in authorization filters, resource filters,"
-          ],
-          "text": "   • Doesn't handle the unhandled exceptions that occur in authorization filters, resource filters,"
-        },
-        {
-          "type": "prose",
-          "page": 17,
-          "lines": [
+            "   • Doesn't handle the unhandled exceptions that occur in authorization filters, resource filters,",
             "      result filters or IActionResult execution."
           ],
-          "text": "      result filters or IActionResult execution."
+          "text": "   • Doesn't handle the unhandled exceptions that occur in authorization filters, resource filters,\n      result filters or IActionResult execution."
         },
         {
           "type": "list_item",
           "page": 17,
           "lines": [
-            "   • Recommended to be used only when you want a different error handling and generate"
-          ],
-          "text": "   • Recommended to be used only when you want a different error handling and generate"
-        },
-        {
-          "type": "prose",
-          "page": 17,
-          "lines": [
+            "   • Recommended to be used only when you want a different error handling and generate",
             "      different result for specific controllers; otherwise, ErrorHandlingMiddleware is",
             "      recommended over Exception Filters."
           ],
-          "text": "      different result for specific controllers; otherwise, ErrorHandlingMiddleware is\n      recommended over Exception Filters."
+          "text": "   • Recommended to be used only when you want a different error handling and generate\n      different result for specific controllers; otherwise, ErrorHandlingMiddleware is\n      recommended over Exception Filters."
         }
       ],
       "char_count_raw": 567,
@@ -4079,22 +3925,8 @@
           "lines": [
             "public class FilterClassName : IAsyncAlwaysRunResultFilter",
             "{",
-            " public async Task OnResultExecutionAsync(ResultExecutingContext context,"
-          ],
-          "text": "public class FilterClassName : IAsyncAlwaysRunResultFilter\n{\n public async Task OnResultExecutionAsync(ResultExecutingContext context,"
-        },
-        {
-          "type": "prose",
-          "page": 26,
-          "lines": [
-            "ResultExecutionDelegate next)"
-          ],
-          "text": "ResultExecutionDelegate next)"
-        },
-        {
-          "type": "code",
-          "page": 26,
-          "lines": [
+            " public async Task OnResultExecutionAsync(ResultExecutingContext context,",
+            "ResultExecutionDelegate next)",
             " {",
             " //TO DO: before logic here",
             " await next();",
@@ -4102,7 +3934,7 @@
             " }",
             "}"
           ],
-          "text": " {\n //TO DO: before logic here\n await next();\n //TO DO: after logic here\n }\n}"
+          "text": "public class FilterClassName : IAsyncAlwaysRunResultFilter\n{\n public async Task OnResultExecutionAsync(ResultExecutingContext context,\nResultExecutionDelegate next)\n {\n //TO DO: before logic here\n await next();\n //TO DO: after logic here\n }\n}"
         }
       ],
       "char_count_raw": 553,
@@ -4539,22 +4371,8 @@
             "{",
             " public void OnActionExecuting(ActionExecutingContext context)",
             " {",
-            "  //get list of filters applied to the current working action method"
-          ],
-          "text": "public class FilterClassName : IActionFilter //or any other filter interface\n{\n public void OnActionExecuting(ActionExecutingContext context)\n {\n  //get list of filters applied to the current working action method"
-        },
-        {
-          "type": "prose",
-          "page": 28,
-          "lines": [
-            "  if (context.Filters.OfType<SkipResultFilter>().Any())"
-          ],
-          "text": "  if (context.Filters.OfType<SkipResultFilter>().Any())"
-        },
-        {
-          "type": "code",
-          "page": 28,
-          "lines": [
+            "  //get list of filters applied to the current working action method",
+            "  if (context.Filters.OfType<SkipResultFilter>().Any())",
             "  {",
             "  return;",
             "  }",
@@ -4566,7 +4384,7 @@
             " }",
             "}"
           ],
-          "text": "  {\n  return;\n  }\n  //TO DO: before logic here\n }\n public void OnActionExecuted(ActionExecutedContext context)\n {\n  //TO DO: after logic here\n }\n}"
+          "text": "public class FilterClassName : IActionFilter //or any other filter interface\n{\n public void OnActionExecuting(ActionExecutingContext context)\n {\n  //get list of filters applied to the current working action method\n  if (context.Filters.OfType<SkipResultFilter>().Any())\n  {\n  return;\n  }\n  //TO DO: before logic here\n }\n public void OnActionExecuted(ActionExecutedContext context)\n {\n  //TO DO: after logic here\n }\n}"
         },
         {
           "type": "prose",
@@ -4833,25 +4651,11 @@
           "page": 29,
           "lines": [
             "public IActionResult ActionMethod()",
-            "{"
-          ],
-          "text": "public IActionResult ActionMethod()\n{"
-        },
-        {
-          "type": "prose",
-          "page": 29,
-          "lines": [
-            " …"
-          ],
-          "text": " …"
-        },
-        {
-          "type": "code",
-          "page": 29,
-          "lines": [
+            "{",
+            " …",
             "}"
           ],
-          "text": "}"
+          "text": "public IActionResult ActionMethod()\n{\n …\n}"
         },
         {
           "type": "prose",
@@ -4882,25 +4686,11 @@
           "page": 29,
           "lines": [
             "public IActionResult ActionMethod()",
-            "{"
-          ],
-          "text": "public IActionResult ActionMethod()\n{"
-        },
-        {
-          "type": "prose",
-          "page": 29,
-          "lines": [
-            " …"
-          ],
-          "text": " …"
-        },
-        {
-          "type": "code",
-          "page": 29,
-          "lines": [
+            "{",
+            " …",
             "}"
           ],
-          "text": "}"
+          "text": "public IActionResult ActionMethod()\n{\n …\n}"
         },
         {
           "type": "prose",
@@ -4922,17 +4712,10 @@
           "type": "list_item",
           "page": 29,
           "lines": [
-            "   • Filter instances are created by using Microsoft.Extensions.DependencyInjection."
-          ],
-          "text": "   • Filter instances are created by using Microsoft.Extensions.DependencyInjection."
-        },
-        {
-          "type": "prose",
-          "page": 29,
-          "lines": [
+            "   • Filter instances are created by using Microsoft.Extensions.DependencyInjection.",
             "      ObjectFactory."
           ],
-          "text": "      ObjectFactory."
+          "text": "   • Filter instances are created by using Microsoft.Extensions.DependencyInjection.\n      ObjectFactory."
         },
         {
           "type": "list_item",
@@ -4946,33 +4729,19 @@
           "type": "list_item",
           "page": 29,
           "lines": [
-            "   • The lifetime of filter instances is by default transient (a new filter instance gets created every"
-          ],
-          "text": "   • The lifetime of filter instances is by default transient (a new filter instance gets created every"
-        },
-        {
-          "type": "prose",
-          "page": 29,
-          "lines": [
+            "   • The lifetime of filter instances is by default transient (a new filter instance gets created every",
             "      time when it is invoked)."
           ],
-          "text": "      time when it is invoked)."
+          "text": "   • The lifetime of filter instances is by default transient (a new filter instance gets created every\n      time when it is invoked)."
         },
         {
           "type": "list_item",
           "page": 29,
           "lines": [
-            "   • But optionally, you can re-use the same instance of filter class across multiple requests, by"
-          ],
-          "text": "   • But optionally, you can re-use the same instance of filter class across multiple requests, by"
-        },
-        {
-          "type": "prose",
-          "page": 29,
-          "lines": [
+            "   • But optionally, you can re-use the same instance of filter class across multiple requests, by",
             "      setting a property called TypeFilterAttribute.IsReusable to 'true'."
           ],
-          "text": "      setting a property called TypeFilterAttribute.IsReusable to 'true'."
+          "text": "   • But optionally, you can re-use the same instance of filter class across multiple requests, by\n      setting a property called TypeFilterAttribute.IsReusable to 'true'."
         },
         {
           "type": "list_item",
@@ -5205,33 +4974,19 @@
           "type": "list_item",
           "page": 30,
           "lines": [
-            "   • The lifetime of filter instances is the actual lifetime of the filter class added in the IoC"
-          ],
-          "text": "   • The lifetime of filter instances is the actual lifetime of the filter class added in the IoC"
-        },
-        {
-          "type": "prose",
-          "page": 30,
-          "lines": [
+            "   • The lifetime of filter instances is the actual lifetime of the filter class added in the IoC",
             "      container."
           ],
-          "text": "      container."
+          "text": "   • The lifetime of filter instances is the actual lifetime of the filter class added in the IoC\n      container."
         },
         {
           "type": "list_item",
           "page": 30,
           "lines": [
-            "   • Eg: If the filter class is added to the IoC container with AddScoped() method, then its"
-          ],
-          "text": "   • Eg: If the filter class is added to the IoC container with AddScoped() method, then its"
-        },
-        {
-          "type": "prose",
-          "page": 30,
-          "lines": [
+            "   • Eg: If the filter class is added to the IoC container with AddScoped() method, then its",
             "      instances are scoped."
           ],
-          "text": "      instances are scoped."
+          "text": "   • Eg: If the filter class is added to the IoC container with AddScoped() method, then its\n      instances are scoped."
         },
         {
           "type": "list_item",
@@ -5512,17 +5267,10 @@
           "type": "list_item",
           "page": 31,
           "lines": [
-            "   • IAsyncResultFilter"
-          ],
-          "text": "   • IAsyncResultFilter"
-        },
-        {
-          "type": "prose",
-          "page": 31,
-          "lines": [
+            "   • IAsyncResultFilter",
             "Filter attributes:"
           ],
-          "text": "Filter attributes:"
+          "text": "   • IAsyncResultFilter\nFilter attributes:"
         },
         {
           "type": "list_item",
@@ -5711,18 +5459,11 @@
             " public void OnActionExecuted(ActionExecutedContext context)",
             " {",
             " }",
-            "}"
-          ],
-          "text": "public class FilterClassName : IActionFilter, IOrderedFilter\n{\n public int Order { get; set; }\n public FilterClassName(IService service, type arg)\n {\n }\n public void OnActionExecuting(ActionExecutingContext context)\n {\n }\n public void OnActionExecuted(ActionExecutedContext context)\n {\n }\n}"
-        },
-        {
-          "type": "prose",
-          "page": 32,
-          "lines": [
+            "}",
             "[TypeFilter(typeof(FilterClassName),",
             "Arguments = new object[] { arg1, … })]"
           ],
-          "text": "[TypeFilter(typeof(FilterClassName),\nArguments = new object[] { arg1, … })]"
+          "text": "public class FilterClassName : IActionFilter, IOrderedFilter\n{\n public int Order { get; set; }\n public FilterClassName(IService service, type arg)\n {\n }\n public void OnActionExecuting(ActionExecutingContext context)\n {\n }\n public void OnActionExecuted(ActionExecutedContext context)\n {\n }\n}\n[TypeFilter(typeof(FilterClassName),\nArguments = new object[] { arg1, … })]"
         }
       ],
       "char_count_raw": 403,
@@ -6234,22 +5975,8 @@
           "lines": [
             "namespace Microsoft.AspNetCore.Mvc.Filters",
             "{",
-            " public class ActionFilterAttribute : Attribute, IActionFilter, IAsyncActionFilter, IOrderedFilter,"
-          ],
-          "text": "namespace Microsoft.AspNetCore.Mvc.Filters\n{\n public class ActionFilterAttribute : Attribute, IActionFilter, IAsyncActionFilter, IOrderedFilter,"
-        },
-        {
-          "type": "prose",
-          "page": 34,
-          "lines": [
-            "IResultFilter, IAsyncResultFilter"
-          ],
-          "text": "IResultFilter, IAsyncResultFilter"
-        },
-        {
-          "type": "code",
-          "page": 34,
-          "lines": [
+            " public class ActionFilterAttribute : Attribute, IActionFilter, IAsyncActionFilter, IOrderedFilter,",
+            "IResultFilter, IAsyncResultFilter",
             " {",
             "  public virtual void OnActionExecuting(ActionExecutingContext context) { }",
             "  public virtual void OnActionExecuted(ActionExecutedContext context) { }",
@@ -6263,7 +5990,7 @@
             " }",
             "}"
           ],
-          "text": " {\n  public virtual void OnActionExecuting(ActionExecutingContext context) { }\n  public virtual void OnActionExecuted(ActionExecutedContext context) { }\n  public virtual void OnResultExecuting(ActionExecutingContext context) { }\n  public virtual void OnResultExecuted(ActionExecutedContext context) { }\n  public virtual Task OnActionExecutionAsync(ActionExecutingContext context,\nActionExecutionDelegate next) { }\n  public virtual Task OnResultExecutionAsync(ResultExecutingContext context,\nResultExecutionDelegate next) { }\n  public int Order { get; set; }\n }\n}"
+          "text": "namespace Microsoft.AspNetCore.Mvc.Filters\n{\n public class ActionFilterAttribute : Attribute, IActionFilter, IAsyncActionFilter, IOrderedFilter,\nIResultFilter, IAsyncResultFilter\n {\n  public virtual void OnActionExecuting(ActionExecutingContext context) { }\n  public virtual void OnActionExecuted(ActionExecutedContext context) { }\n  public virtual void OnResultExecuting(ActionExecutingContext context) { }\n  public virtual void OnResultExecuted(ActionExecutedContext context) { }\n  public virtual Task OnActionExecutionAsync(ActionExecutingContext context,\nActionExecutionDelegate next) { }\n  public virtual Task OnResultExecutionAsync(ResultExecutingContext context,\nResultExecutionDelegate next) { }\n  public int Order { get; set; }\n }\n}"
         },
         {
           "type": "prose",
@@ -6302,34 +6029,27 @@
           "type": "list_item",
           "page": 34,
           "lines": [
-            "   • Filter should be applied to controller or action methods by using [ServiceFilter] or"
+            "   • Filter should be applied to controller or action methods by using [ServiceFilter] or",
+            "      [TypeFilter] attributes; otherwise can be applied as global filter in the Program.cs."
           ],
-          "text": "   • Filter should be applied to controller or action methods by using [ServiceFilter] or"
+          "text": "   • Filter should be applied to controller or action methods by using [ServiceFilter] or\n      [TypeFilter] attributes; otherwise can be applied as global filter in the Program.cs."
         },
         {
           "type": "prose",
           "page": 34,
           "lines": [
-            "      [TypeFilter] attributes; otherwise can be applied as global filter in the Program.cs.",
             "Eg: [TypeFilter(typeof(FilterClassName))] //lengthy"
           ],
-          "text": "      [TypeFilter] attributes; otherwise can be applied as global filter in the Program.cs.\nEg: [TypeFilter(typeof(FilterClassName))] //lengthy"
+          "text": "Eg: [TypeFilter(typeof(FilterClassName))] //lengthy"
         },
         {
           "type": "list_item",
           "page": 34,
           "lines": [
-            "   • Filter class can receive arguments only through constructor parameters; but only with"
-          ],
-          "text": "   • Filter class can receive arguments only through constructor parameters; but only with"
-        },
-        {
-          "type": "prose",
-          "page": 34,
-          "lines": [
+            "   • Filter class can receive arguments only through constructor parameters; but only with",
             "      [TypeFilter] attribute; not with [ServiceFilter] attribute."
           ],
-          "text": "      [TypeFilter] attribute; not with [ServiceFilter] attribute."
+          "text": "   • Filter class can receive arguments only through constructor parameters; but only with\n      [TypeFilter] attribute; not with [ServiceFilter] attribute."
         }
       ],
       "char_count_raw": 1431,
@@ -6442,17 +6162,10 @@
           "type": "list_item",
           "page": 35,
           "lines": [
-            "   • Filter class MAY override desired (either or both methods - \"Executing\" and \"Executed\")"
-          ],
-          "text": "   • Filter class MAY override desired (either or both methods - \"Executing\" and \"Executed\")"
-        },
-        {
-          "type": "prose",
-          "page": 35,
-          "lines": [
+            "   • Filter class MAY override desired (either or both methods - \"Executing\" and \"Executed\")",
             "      methods."
           ],
-          "text": "      methods."
+          "text": "   • Filter class MAY override desired (either or both methods - \"Executing\" and \"Executed\")\n      methods."
         },
         {
           "type": "list_item",
@@ -6474,18 +6187,11 @@
           "type": "list_item",
           "page": 35,
           "lines": [
-            "   • Filter can be applied to controller or action methods by directly using the filter class name"
-          ],
-          "text": "   • Filter can be applied to controller or action methods by directly using the filter class name"
-        },
-        {
-          "type": "prose",
-          "page": 35,
-          "lines": [
+            "   • Filter can be applied to controller or action methods by directly using the filter class name",
             "      itself (without using [ServiceFilter] or [TypeFilter] attributes); otherwise can be applied as",
             "      global filter in the Program.cs."
           ],
-          "text": "      itself (without using [ServiceFilter] or [TypeFilter] attributes); otherwise can be applied as\n      global filter in the Program.cs."
+          "text": "   • Filter can be applied to controller or action methods by directly using the filter class name\n      itself (without using [ServiceFilter] or [TypeFilter] attributes); otherwise can be applied as\n      global filter in the Program.cs."
         },
         {
           "type": "list_item",
@@ -6499,17 +6205,10 @@
           "type": "list_item",
           "page": 35,
           "lines": [
-            "   • Filter class can receive arguments either through constructor parameters or filter class's"
-          ],
-          "text": "   • Filter class can receive arguments either through constructor parameters or filter class's"
-        },
-        {
-          "type": "prose",
-          "page": 35,
-          "lines": [
+            "   • Filter class can receive arguments either through constructor parameters or filter class's",
             "      properties."
           ],
-          "text": "      properties."
+          "text": "   • Filter class can receive arguments either through constructor parameters or filter class's\n      properties."
         }
       ],
       "char_count_raw": 667,
@@ -6702,22 +6401,8 @@
           "type": "code",
           "page": 36,
           "lines": [
-            "public class FilterClassNameAttribute : Attribute,"
-          ],
-          "text": "public class FilterClassNameAttribute : Attribute,"
-        },
-        {
-          "type": "prose",
-          "page": 36,
-          "lines": [
-            "IFilterFactory"
-          ],
-          "text": "IFilterFactory"
-        },
-        {
-          "type": "code",
-          "page": 36,
-          "lines": [
+            "public class FilterClassNameAttribute : Attribute,",
+            "IFilterFactory",
             "{",
             " public type Prop1 { get; set; }",
             " public FilterClassName(type arg1, type arg2)",
@@ -6725,30 +6410,16 @@
             "  this.Prop1 = arg1; this.Prop2 = arg2;",
             " }",
             " public IFilterMetadata CreateInstance(IServiceProvider serviceProvider)",
-            " {"
-          ],
-          "text": "{\n public type Prop1 { get; set; }\n public FilterClassName(type arg1, type arg2)\n {\n  this.Prop1 = arg1; this.Prop2 = arg2;\n }\n public IFilterMetadata CreateInstance(IServiceProvider serviceProvider)\n {"
-        },
-        {
-          "type": "prose",
-          "page": 36,
-          "lines": [
+            " {",
             "  FilterClassName filter = serviceProvider.GetRequiredService<FilterClassName>(); //instantiate the",
             "filter",
             "  filter.Property1 = Prop1;",
-            "  …"
-          ],
-          "text": "  FilterClassName filter = serviceProvider.GetRequiredService<FilterClassName>(); //instantiate the\nfilter\n  filter.Property1 = Prop1;\n  …"
-        },
-        {
-          "type": "code",
-          "page": 36,
-          "lines": [
+            "  …",
             "  return filter;",
             " }",
             "}"
           ],
-          "text": "  return filter;\n }\n}"
+          "text": "public class FilterClassNameAttribute : Attribute,\nIFilterFactory\n{\n public type Prop1 { get; set; }\n public FilterClassName(type arg1, type arg2)\n {\n  this.Prop1 = arg1; this.Prop2 = arg2;\n }\n public IFilterMetadata CreateInstance(IServiceProvider serviceProvider)\n {\n  FilterClassName filter = serviceProvider.GetRequiredService<FilterClassName>(); //instantiate the\nfilter\n  filter.Property1 = Prop1;\n  …\n  return filter;\n }\n}"
         },
         {
           "type": "prose",
@@ -7162,17 +6833,10 @@
           "type": "list_item",
           "page": 38,
           "lines": [
-            "   • Filter CAN be applied as an attribute to the controller or action method. Eg:"
-          ],
-          "text": "   • Filter CAN be applied as an attribute to the controller or action method. Eg:"
-        },
-        {
-          "type": "prose",
-          "page": 38,
-          "lines": [
+            "   • Filter CAN be applied as an attribute to the controller or action method. Eg:",
             "      [FilterClassName]"
           ],
-          "text": "      [FilterClassName]"
+          "text": "   • Filter CAN be applied as an attribute to the controller or action method. Eg:\n      [FilterClassName]"
         },
         {
           "type": "list_item",
@@ -7186,17 +6850,10 @@
           "type": "list_item",
           "page": 38,
           "lines": [
-            "   • Filter class CAN receive arguments either through constructor parameters or filter class's"
-          ],
-          "text": "   • Filter class CAN receive arguments either through constructor parameters or filter class's"
-        },
-        {
-          "type": "prose",
-          "page": 38,
-          "lines": [
+            "   • Filter class CAN receive arguments either through constructor parameters or filter class's",
             "      properties."
           ],
-          "text": "      properties."
+          "text": "   • Filter class CAN receive arguments either through constructor parameters or filter class's\n      properties."
         },
         {
           "type": "heading",
@@ -7210,17 +6867,10 @@
           "type": "list_item",
           "page": 38,
           "lines": [
-            "   • Filter CAN be applied as an attribute to the controller or action method. Eg:"
-          ],
-          "text": "   • Filter CAN be applied as an attribute to the controller or action method. Eg:"
-        },
-        {
-          "type": "prose",
-          "page": 38,
-          "lines": [
+            "   • Filter CAN be applied as an attribute to the controller or action method. Eg:",
             "      [FilterClassName]"
           ],
-          "text": "      [FilterClassName]"
+          "text": "   • Filter CAN be applied as an attribute to the controller or action method. Eg:\n      [FilterClassName]"
         },
         {
           "type": "list_item",
@@ -7234,21 +6884,21 @@
           "type": "list_item",
           "page": 38,
           "lines": [
-            "   • Filter class CAN receive arguments only through filter class's properties, if it is instantiated"
+            "   • Filter class CAN receive arguments only through filter class's properties, if it is instantiated",
+            "      through ServiceProvider (using DI)."
           ],
-          "text": "   • Filter class CAN receive arguments only through filter class's properties, if it is instantiated"
+          "text": "   • Filter class CAN receive arguments only through filter class's properties, if it is instantiated\n      through ServiceProvider (using DI)."
         },
         {
           "type": "prose",
           "page": 38,
           "lines": [
-            "      through ServiceProvider (using DI).",
             "Alternatively, if you don't need to inject services using DI in the filter class; you can instantiate the",
             "filter class with 'new' keyword, in the CreateInstance() method of IFilterFactory; then the filter class",
             "can receive arguments either as constructor parameters or properties.",
             "Filters [vs] Middleware"
           ],
-          "text": "      through ServiceProvider (using DI).\nAlternatively, if you don't need to inject services using DI in the filter class; you can instantiate the\nfilter class with 'new' keyword, in the CreateInstance() method of IFilterFactory; then the filter class\ncan receive arguments either as constructor parameters or properties.\nFilters [vs] Middleware"
+          "text": "Alternatively, if you don't need to inject services using DI in the filter class; you can instantiate the\nfilter class with 'new' keyword, in the CreateInstance() method of IFilterFactory; then the filter class\ncan receive arguments either as constructor parameters or properties.\nFilters [vs] Middleware"
         }
       ],
       "char_count_raw": 983,

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Section 26: Web API — ASP.NET Core Masterclass</title>
+  <title>Section 26: Web API &mdash; ASP.NET Core Masterclass</title>
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
   <link rel="alternate icon" href="../favicon.ico">
   <link rel="stylesheet" href="../assets/css/docs.css">
@@ -16,7 +16,9 @@
   <!-- Top Navigation Header -->
   <header class="top-header" role="banner">
     <div class="header-left">
-      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">☰</button>
+      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
       <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
         <span class="sidebar-toggle-text">« Collapse</span>
@@ -41,7 +43,9 @@
       </a>
 
       <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
-        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
         <span class="search-text">Search topics, syntax, concepts...</span>
         <kbd class="kbd-shortcut">Ctrl+K</kbd>
       </button>
@@ -367,15 +371,6 @@
         <span>» Expand Sidebar</span>
       </button>
 
-      <!-- Breadcrumbs -->
-      <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
-        <a href="../index.html">Course Index</a>
-        <span class="crumb-sep" aria-hidden="true">/</span>
-        <span>Module 6</span>
-        <span class="crumb-sep" aria-hidden="true">/</span>
-        <span style="color: var(--text-main); font-weight: 600;">Section 26</span>
-      </nav>
-
       <!-- Section Banner Header -->
       <header class="section-banner">
         <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
@@ -404,75 +399,61 @@
       <!-- Body Content -->
       <article class="docs-content">
         <p>ASP.NET Core Web API and RESTful Principles</p>
-
-<h2 id="1-understanding-web-api">1. Understanding Web API</h2>
-<p>ASP.NET Core Web API allows developers to create HTTP services that can be consumed by a variety
+<ol>
+  <li>Understanding Web API
+ASP.NET Core Web API allows developers to create HTTP services that can be consumed by a variety
 of clients, including browsers, mobile applications, and other services. Web APIs are lightweight,
-stateless, and can be consumed by any device capable of making HTTP requests.
-Key Concepts:</p>
+stateless, and can be consumed by any device capable of making HTTP requests.</li>
+</ol>
+<p>Key Concepts:</p>
 <ul>
-  <li>• Stateless Communication: Each request from a client must contain all the information</li>
-</ul>
-<p>needed for the server to understand and process the request.</p>
-<ul>
-  <li>• JSON/XML Format: ASP.NET Core Web API primarily communicates using JSON, but it can</li>
-</ul>
-<p>also support other formats like XML.</p>
-
-<h2 id="2-restful-architecture">2. RESTful Architecture</h2>
-<p>REST (Representational State Transfer) is an architectural style that defines constraints and
+  <li>Stateless Communication: Each request from a client must contain all the information
+      needed for the server to understand and process the request.</li>
+  <li>JSON/XML Format: ASP.NET Core Web API primarily communicates using JSON, but it can
+      also support other formats like XML.</li>
+  <li>2. RESTful Architecture
+REST (Representational State Transfer) is an architectural style that defines constraints and
 principles to create web services. RESTful APIs follow these principles to ensure scalability, simplicity,
-and performance.
-RESTful Principles:</p>
-<ul>
-  <li>• Client-Server Architecture: Separation of concerns between the client and server. The client</li>
+and performance.</li>
 </ul>
-<p>is responsible for the user interface, while the server handles data storage and processing.</p>
+<p>RESTful Principles:</p>
 <ul>
-  <li>• Statelessness: Every interaction between the client and server is independent. The server</li>
+  <li>Client-Server Architecture: Separation of concerns between the client and server. The client
+      is responsible for the user interface, while the server handles data storage and processing.</li>
+  <li>Statelessness: Every interaction between the client and server is independent. The server
+      does not store the client&#39;s state.</li>
+  <li>Cacheability: Responses must explicitly indicate whether caching is allowed. Caching
+      improves performance by reducing the need to repeat requests.</li>
+  <li>Uniform Interface: All requests are made to a single, well-defined interface using standard
+      HTTP methods such as GET, POST, PUT, and DELETE.</li>
+  <li>Resource Identification: Resources (data) are identified using URIs (Uniform Resource
+      Identifiers), and they are acted upon using HTTP methods.</li>
+  <li>3. RESTful Constraints in Web API</li>
+  <li>Resources and URIs: REST revolves around resources, which can be anything such as a user,
+      product, or order. A resource is identified by a URI.</li>
 </ul>
-<p>does not store the client&#39;s state.</p>
-<ul>
-  <li>• Cacheability: Responses must explicitly indicate whether caching is allowed. Caching</li>
-</ul>
-<p>improves performance by reducing the need to repeat requests.</p>
-<ul>
-  <li>• Uniform Interface: All requests are made to a single, well-defined interface using standard</li>
-</ul>
-<p>HTTP methods such as GET, POST, PUT, and DELETE.</p>
-<ul>
-  <li>• Resource Identification: Resources (data) are identified using URIs (Uniform Resource</li>
-</ul>
-<p>Identifiers), and they are acted upon using HTTP methods.</p>
-
-<h2 id="3-restful-constraints-in-web-api">3. RESTful Constraints in Web API</h2>
-<ul>
-  <li>• Resources and URIs: REST revolves around resources, which can be anything such as a user,</li>
-</ul>
-<p>product, or order. A resource is identified by a URI.
-Example:</p>
+<h3>Example</h3>
 
 <h2 id="get-apiproducts12345">GET /api/products/12345</h2>
 <p>In this example, the resource is product and 12345 is the identifier (ID) for a specific product.</p>
 <ul>
-  <li>• Statelessness: Each HTTP request contains all necessary information, such as headers,</li>
+  <li>Statelessness: Each HTTP request contains all necessary information, such as headers,
+      request body, etc. The server doesn’t store any session data.</li>
+  <li>HTTP Methods in REST:</li>
+  <li>GET: Retrieve data.</li>
+  <li>POST: Create a new resource.</li>
+  <li>PUT: Update an existing resource.</li>
+  <li>DELETE: Remove a resource.</li>
+  <li>4. Implementing a Simple Web API with REST Principles
+To get started, we’ll implement a simple API following RESTful principles. In this example, we’ll build
+a ProductsController to handle a list of products.</li>
 </ul>
-<p>request body, etc. The server doesn’t store any session data.</p>
+<p>Step 1: Create a New ASP.NET Core Web API Project</p>
+<p>dotnet new webapi -n ProductApi</p>
+<p>Step 2: Define the Product Model In ASP.NET Core, resources are often represented by models. For</p>
 <ul>
-  <li>• HTTP Methods in REST:</li>
-  <li>o GET: Retrieve data.</li>
-  <li>o POST: Create a new resource.</li>
-  <li>o PUT: Update an existing resource.</li>
-  <li>o DELETE: Remove a resource.</li>
+  <li>ur API, a Product model might look like this:</li>
 </ul>
-
-<h2 id="4-implementing-a-simple-web-api-with-rest-principles">4. Implementing a Simple Web API with REST Principles</h2>
-<p>To get started, we’ll implement a simple API following RESTful principles. In this example, we’ll build
-a ProductsController to handle a list of products.
-Step 1: Create a New ASP.NET Core Web API Project
-dotnet new webapi -n ProductApi
-Step 2: Define the Product Model In ASP.NET Core, resources are often represented by models. For
-our API, a Product model might look like this:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -507,23 +488,11 @@ public class ProductsController : ControllerBase
 {
   private static List&lt;Product&gt; products = new List&lt;Product&gt;
   {
-}
-}</code></pre>
-    </div>
-  <p>new Product { Id = 1, Name = &quot;Laptop&quot;, Price = 999.99m, Description = &quot;A high-performance
+   new Product { Id = 1, Name = &quot;Laptop&quot;, Price = 999.99m, Description = &quot;A high-performance
 laptop&quot; },
    new Product { Id = 2, Name = &quot;Smartphone&quot;, Price = 499.99m, Description = &quot;A flagship
-smartphone&quot; },</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">};
+smartphone&quot; },
+  };
   // GET: api/products
   [HttpGet]
   public ActionResult&lt;IEnumerable&lt;Product&gt;&gt; GetProducts()
@@ -534,19 +503,9 @@ smartphone&quot; },</p>
   [HttpGet(&quot;{id}&quot;)]
   public ActionResult&lt;Product&gt; GetProduct(int id)
   {
-   var product = products.FirstOrDefault(p =&gt; p.Id == id);</code></pre>
-    </div>
-  <p>if (product == null)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+   var product = products.FirstOrDefault(p =&gt; p.Id == id);
+   if (product == null)
+   {
      return NotFound();
    }
    return product;
@@ -563,19 +522,9 @@ smartphone&quot; },</p>
   [HttpPut(&quot;{id}&quot;)]
   public IActionResult UpdateProduct(int id, Product updatedProduct)
   {
-   var product = products.FirstOrDefault(p =&gt; p.Id == id);</code></pre>
-    </div>
-  <p>if (product == null)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+   var product = products.FirstOrDefault(p =&gt; p.Id == id);
+   if (product == null)
+   {
      return NotFound();
    }
    product.Name = updatedProduct.Name;
@@ -587,86 +536,58 @@ smartphone&quot; },</p>
   [HttpDelete(&quot;{id}&quot;)]
   public IActionResult DeleteProduct(int id)
   {
-   var product = products.FirstOrDefault(p =&gt; p.Id == id);</code></pre>
-    </div>
-  <p>if (product == null)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+   var product = products.FirstOrDefault(p =&gt; p.Id == id);
+   if (product == null)
+   {
      return NotFound();
    }
    products.Remove(product);
-   return NoContent();</code></pre>
+   return NoContent();
+  }
+}
+Explanation of Code:</code></pre>
     </div>
-  <p>Explanation of Code:</p>
+  <p>1. [Route(&quot;api/[controller]&quot;)]: This defines the base route for the controller. api/products
+      would map to ProductsController.</p>
 <ul>
-  <li>1. [Route(&quot;api/[controller]&quot;)]: This defines the base route for the controller. api/products</li>
-</ul>
-<p>would map to ProductsController.</p>
-<ul>
-  <li>2. [HttpGet]: Handles HTTP GET requests. GetProducts() returns all products, and</li>
-</ul>
-<p>GetProduct(int id) retrieves a specific product based on its ID.</p>
-<ul>
-  <li>3. [HttpPost]: Handles HTTP POST requests. CreateProduct() adds a new product to the</li>
-</ul>
-<p>collection.</p>
-<ul>
+  <li>2. [HttpGet]: Handles HTTP GET requests. GetProducts() returns all products, and
+      GetProduct(int id) retrieves a specific product based on its ID.</li>
+  <li>3. [HttpPost]: Handles HTTP POST requests. CreateProduct() adds a new product to the
+      collection.</li>
   <li>4. [HttpPut(&quot;{id}&quot;)]: Handles HTTP PUT requests to update an existing product.</li>
   <li>5. [HttpDelete(&quot;{id}&quot;)]: Handles HTTP DELETE requests to remove a product.</li>
-</ul>
-
-<h2 id="5-http-status-codes">5. HTTP Status Codes</h2>
-<p>In a RESTful API, it&#39;s essential to return proper HTTP status codes that indicate the result of the
-operation:</p>
-<ul>
-  <li>• 200 OK: The request was successful (e.g., for GET requests).</li>
-  <li>• 201 Created: A resource was successfully created (e.g., for POST requests).</li>
-  <li>• 204 No Content: The request was successful, but there is no content to return (e.g., for PUT</li>
-</ul>
-<p>or DELETE requests).</p>
-<ul>
-  <li>• 404 Not Found: The resource was not found (e.g., when requesting a product that doesn&#39;t</li>
-</ul>
-<p>exist).</p>
-<ul>
-  <li>• 400 Bad Request: The request was malformed or invalid.</li>
+  <li>5. HTTP Status Codes
+In a RESTful API, it&#39;s essential to return proper HTTP status codes that indicate the result of the
+operation:</li>
+  <li>200 OK: The request was successful (e.g., for GET requests).</li>
+  <li>201 Created: A resource was successfully created (e.g., for POST requests).</li>
+  <li>204 No Content: The request was successful, but there is no content to return (e.g., for PUT
+      or DELETE requests).</li>
+  <li>404 Not Found: The resource was not found (e.g., when requesting a product that doesn&#39;t
+      exist).</li>
+  <li>400 Bad Request: The request was malformed or invalid.</li>
 </ul>
 <p>Key Points to Remember:</p>
 <ul>
-  <li>• ASP.NET Core Web API allows building lightweight, stateless HTTP services that can be</li>
+  <li>ASP.NET Core Web API allows building lightweight, stateless HTTP services that can be
+      consumed by various clients.</li>
+  <li>REST is an architectural style that emphasizes scalability, simplicity, and performance
+      through statelessness and resource identification.</li>
+  <li>HTTP methods (GET, POST, PUT, DELETE) define operations on resources, and each method
+      has a specific use in REST.</li>
+  <li>Controllers in ASP.NET Core Web API handle incoming requests and map them to actions
+      that perform business logic.</li>
+  <li>Always return appropriate HTTP status codes to inform clients about the result of their
+      request.</li>
 </ul>
-<p>consumed by various clients.</p>
-<ul>
-  <li>• REST is an architectural style that emphasizes scalability, simplicity, and performance</li>
-</ul>
-<p>through statelessness and resource identification.</p>
-<ul>
-  <li>• HTTP methods (GET, POST, PUT, DELETE) define operations on resources, and each method</li>
-</ul>
-<p>has a specific use in REST.</p>
-<ul>
-  <li>• Controllers in ASP.NET Core Web API handle incoming requests and map them to actions</li>
-</ul>
-<p>that perform business logic.</p>
-<ul>
-  <li>• Always return appropriate HTTP status codes to inform clients about the result of their</li>
-</ul>
-<p>request.</p>
 
 <h2 id="web-api-controllers">Web API Controllers</h2>
 <p>In ASP.NET Core, Web API Controllers serve as the backbone for handling HTTP requests. Controllers
 define a set of actions (methods) that respond to HTTP verbs like GET, POST, PUT, and DELETE. These
 actions interact with the data model and return responses to the client.</p>
-
-<h2 id="1-what-is-a-web-api-controller">1. What is a Web API Controller?</h2>
+<ol>
+  <li>What is a Web API Controller?</li>
+</ol>
 <p>A Web API controller is a class that handles HTTP requests and generates appropriate HTTP
 responses. It inherits from the ControllerBase class (which we’ll cover later) and uses attributes to
 define routing, HTTP methods, and input/output handling.
@@ -687,17 +608,18 @@ public class ProductsController : ControllerBase
   // Example action methods
 }</code></pre>
     </div>
-  <p>• [ApiController]: This attribute makes it easier to build a Web API by handling things like
-      automatic model state validation, binding, and responses.</p>
-<ul>
-  <li>• [Route]: Defines the URI path for the controller. Here, [controller] will automatically be</li>
+  <ul>
+  <li>[ApiController]: This attribute makes it easier to build a Web API by handling things like</li>
 </ul>
-<p>replaced by the controller&#39;s name (e.g., ProductsController → api/products).</p>
-
-<h2 id="2-action-methods-in-web-api-controllers">2. Action Methods in Web API Controllers</h2>
-<p>Action methods in a controller handle specific HTTP requests (GET, POST, etc.) and correspond to
-operations on resources.
-Example: CRUD Operations for a Products API
+<p>automatic model state validation, binding, and responses.</p>
+<ul>
+  <li>[Route]: Defines the URI path for the controller. Here, [controller] will automatically be
+      replaced by the controller&#39;s name (e.g., ProductsController → api/products).</li>
+  <li>2. Action Methods in Web API Controllers
+Action methods in a controller handle specific HTTP requests (GET, POST, etc.) and correspond to
+operations on resources.</li>
+</ul>
+<p>Example: CRUD Operations for a Products API
 Here’s a more detailed example of how each action method maps to an HTTP verb:</p>
 
     <div class="code-block">
@@ -724,20 +646,8 @@ public class ProductsController : ControllerBase
   public ActionResult&lt;Product&gt; GetProduct(int id)
   {
    var product = products.FirstOrDefault(p =&gt; p.Id == id);
-}
-}</code></pre>
-    </div>
-  <p>if (product == null)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+   if (product == null)
+   {
      return NotFound(); // Return 404 if not found
    }
    return Ok(product); // Return 200 OK with the product
@@ -754,19 +664,9 @@ public class ProductsController : ControllerBase
   [HttpPut(&quot;{id}&quot;)]
   public IActionResult UpdateProduct(int id, Product updatedProduct)
   {
-   var product = products.FirstOrDefault(p =&gt; p.Id == id);</code></pre>
-    </div>
-  <p>if (product == null)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+   var product = products.FirstOrDefault(p =&gt; p.Id == id);
+   if (product == null)
+   {
      return NotFound();
    }
    product.Name = updatedProduct.Name;
@@ -778,56 +678,41 @@ public class ProductsController : ControllerBase
   [HttpDelete(&quot;{id}&quot;)]
   public IActionResult DeleteProduct(int id)
   {
-   var product = products.FirstOrDefault(p =&gt; p.Id == id);</code></pre>
-    </div>
-  <p>if (product == null)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+   var product = products.FirstOrDefault(p =&gt; p.Id == id);
+   if (product == null)
+   {
      return NotFound();
    }
    products.Remove(product);
-   return NoContent();</code></pre>
+   return NoContent();
+  }
+}
+Explanation of the Code:
+   1. [HttpGet]:</code></pre>
     </div>
-  <p>Explanation of the Code:</p>
-<ul>
-  <li>1. [HttpGet]:</li>
-  <li>o The GetProducts() method responds to HTTP GET requests to api/products.</li>
-  <li>o The GetProduct(int id) method responds to GET requests for a specific product</li>
+  <ul>
+  <li>The GetProducts() method responds to HTTP GET requests to api/products.</li>
 </ul>
-<p>(api/products/1).</p>
 <ul>
-  <li>o Returns the products or a 404 response if the product isn’t found.</li>
+  <li>The GetProduct(int id) method responds to GET requests for a specific product
+           (api/products/1).</li>
+  <li>Returns the products or a 404 response if the product isn’t found.</li>
   <li>2. [HttpPost]:</li>
-  <li>o The CreateProduct() method responds to HTTP POST requests to api/products.</li>
-  <li>o It creates a new product and returns a 201 (Created) status along with the newly</li>
-</ul>
-<p>created product.</p>
-<ul>
+  <li>The CreateProduct() method responds to HTTP POST requests to api/products.</li>
+  <li>It creates a new product and returns a 201 (Created) status along with the newly
+           created product.</li>
   <li>3. [HttpPut]:</li>
-  <li>o The UpdateProduct() method responds to HTTP PUT requests to api/products/{id}.</li>
-  <li>o Updates an existing product and returns a 204 (No Content) response if the update</li>
-</ul>
-<p>was successful.</p>
-<ul>
+  <li>The UpdateProduct() method responds to HTTP PUT requests to api/products/{id}.</li>
+  <li>Updates an existing product and returns a 204 (No Content) response if the update
+           was successful.</li>
   <li>4. [HttpDelete]:</li>
-  <li>o The DeleteProduct() method responds to HTTP DELETE requests to</li>
+  <li>The DeleteProduct() method responds to HTTP DELETE requests to
+           api/products/{id}.</li>
+  <li>Deletes a product and returns a 204 (No Content) response.</li>
+  <li>3. Attribute Routing
+Routing in ASP.NET Core Web API can be done using attribute routing, which allows developers to
+define routes directly on action methods and controllers.</li>
 </ul>
-<p>api/products/{id}.</p>
-<ul>
-  <li>o Deletes a product and returns a 204 (No Content) response.</li>
-</ul>
-
-<h2 id="3-attribute-routing">3. Attribute Routing</h2>
-<p>Routing in ASP.NET Core Web API can be done using attribute routing, which allows developers to
-define routes directly on action methods and controllers.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -842,33 +727,22 @@ public ActionResult&lt;IEnumerable&lt;Product&gt;&gt; SearchProducts(string name
 {
   var matchedProducts = products.Where(p =&gt; p.Name.Contains(name,
 StringComparison.OrdinalIgnoreCase)).ToList();
-}</code></pre>
-    </div>
-  <p>if (!matchedProducts.Any())</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  if (!matchedProducts.Any())
+  {
    return NotFound();
   }
-  return Ok(matchedProducts);</code></pre>
+  return Ok(matchedProducts);
+}</code></pre>
     </div>
   <p>Here, the [HttpGet(&quot;search/{name}&quot;)] attribute defines a custom route. This method allows users to
 search for products by name using the endpoint api/products/search/{name}.</p>
-
-<h2 id="4-binding-data-to-controllers">4. Binding Data to Controllers</h2>
-<p>Controllers often need to bind incoming HTTP data to method parameters. ASP.NET Core provides
-several ways to achieve this:</p>
 <ul>
-  <li>• From Route: Bind data from the route parameters.</li>
-  <li>• From Query: Bind data from query strings.</li>
-  <li>• From Body: Bind data from the request body (usually JSON).</li>
+  <li>4. Binding Data to Controllers
+Controllers often need to bind incoming HTTP data to method parameters. ASP.NET Core provides
+several ways to achieve this:</li>
+  <li>From Route: Bind data from the route parameters.</li>
+  <li>From Query: Bind data from query strings.</li>
+  <li>From Body: Bind data from the request body (usually JSON).</li>
 </ul>
 <p>Example: Data Binding</p>
 
@@ -889,14 +763,13 @@ public ActionResult&lt;Product&gt; GetProduct(int id, [FromQuery] string search)
     </div>
   <p>In this example:</p>
 <ul>
-  <li>• The id is automatically bound from the route (api/products/1).</li>
-  <li>• The search parameter is bound from the query string (api/products/1?search=laptop).</li>
+  <li>The id is automatically bound from the route (api/products/1).</li>
+  <li>The search parameter is bound from the query string (api/products/1?search=laptop).</li>
+  <li>5. Validation in Web API Controllers
+Validation ensures that incoming data is correct before performing any business logic. ASP.NET Core
+provides a built-in validation system through Data Annotations.</li>
 </ul>
-
-<h2 id="5-validation-in-web-api-controllers">5. Validation in Web API Controllers</h2>
-<p>Validation ensures that incoming data is correct before performing any business logic. ASP.NET Core
-provides a built-in validation system through Data Annotations.
-Example: Validating a Product Model</p>
+<p>Example: Validating a Product Model</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -910,23 +783,13 @@ Example: Validating a Product Model</p>
 {
   public int Id { get; set; }
   [Required(ErrorMessage = &quot;Name is required.&quot;)]
-}</code></pre>
-    </div>
-  <p>[MaxLength(50)]</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">public string Name { get; set; }
+  [MaxLength(50)]
+  public string Name { get; set; }
   [Range(0.01, 9999.99, ErrorMessage = &quot;Price must be between 0.01 and 9999.99.&quot;)]
   public decimal Price { get; set; }
   [StringLength(200)]
-  public string Description { get; set; }</code></pre>
+  public string Description { get; set; }
+}</code></pre>
     </div>
   
 <h2 id="validating-in-the-controller">Validating in the Controller</h2>
@@ -942,37 +805,30 @@ Example: Validating a Product Model</p>
       <pre><code class="language-csharp">[HttpPost]
 public ActionResult&lt;Product&gt; CreateProduct(Product newProduct)
 {
-}</code></pre>
-    </div>
-  <p>if (!ModelState.IsValid)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  if (!ModelState.IsValid)
+  {
    return BadRequest(ModelState); // Return 400 with validation errors
   }
   newProduct.Id = products.Count + 1;
   products.Add(newProduct);
-  return CreatedAtAction(nameof(GetProduct), new { id = newProduct.Id }, newProduct);</code></pre>
+  return CreatedAtAction(nameof(GetProduct), new { id = newProduct.Id }, newProduct);
+}</code></pre>
     </div>
-  <p>• [Required]: Ensures that the Name property cannot be empty.</p>
+  <ul>
+  <li>[Required]: Ensures that the Name property cannot be empty.</li>
+</ul>
 <ul>
-  <li>• [MaxLength] and [StringLength]: Restrict the length of strings.</li>
-  <li>• [Range]: Ensures that Price is within a specific range.</li>
+  <li>[MaxLength] and [StringLength]: Restrict the length of strings.</li>
+  <li>[Range]: Ensures that Price is within a specific range.</li>
 </ul>
 <p>If the validation fails, the controller will return a 400 Bad Request response with detailed error
 messages.</p>
-
-<h2 id="6-dependency-injection-in-web-api-controllers">6. Dependency Injection in Web API Controllers</h2>
-<p>ASP.NET Core provides built-in Dependency Injection (DI), making it easier to manage
-dependencies, such as services and data repositories.
-Example: Injecting a Service into a Controller
+<ol>
+  <li>Dependency Injection in Web API Controllers
+ASP.NET Core provides built-in Dependency Injection (DI), making it easier to manage
+dependencies, such as services and data repositories.</li>
+</ol>
+<p>Example: Injecting a Service into a Controller
 Define a service:</p>
 
     <div class="code-block">
@@ -993,19 +849,9 @@ public class ProductService : IProductService
   {
    // Logic to retrieve products
   }
-}</code></pre>
-    </div>
-  <p>In the controller, inject the service via the constructor:</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">[ApiController]
+}
+In the controller, inject the service via the constructor:
+[ApiController]
 [Route(&quot;api/[controller]&quot;)]
 public class ProductsController : ControllerBase
 {
@@ -1019,47 +865,38 @@ public class ProductsController : ControllerBase
   {
    return Ok(_productService.GetProducts());
   }
-}</code></pre>
+}
+In Program.cs, register the service:
+eservices.AddScoped&lt;IProductService, ProductService&gt;();</code></pre>
     </div>
-  <p>In Program.cs, register the service:
-eservices.AddScoped&lt;IProductService, ProductService&gt;();
-Dependency injection helps in writing testable, maintainable code and keeps concerns separated.</p>
+  <p>Dependency injection helps in writing testable, maintainable code and keeps concerns separated.</p>
 <p>Key Points to Remember:</p>
 <ul>
-  <li>• Web API Controllers handle HTTP requests and send responses. Each action method</li>
+  <li>Web API Controllers handle HTTP requests and send responses. Each action method
+      corresponds to an HTTP verb (GET, POST, PUT, DELETE).</li>
+  <li>The [ApiController] attribute adds several helpful features, such as automatic model
+      validation and response handling.</li>
+  <li>Routing in Web API can be handled using attribute routing. Custom routes can be defined
+      with parameters.</li>
+  <li>ASP.NET Core automatically binds data from the route, query string, and request body to
+      action method parameters.</li>
+  <li>Validation can be performed using Data Annotations. If validation fails, the controller
+      returns a 400 Bad Request with details.</li>
+  <li>ASP.NET Core has built-in dependency injection, which helps to manage services and
+      dependencies cleanly.</li>
 </ul>
-<p>corresponds to an HTTP verb (GET, POST, PUT, DELETE).</p>
-<ul>
-  <li>• The [ApiController] attribute adds several helpful features, such as automatic model</li>
-</ul>
-<p>validation and response handling.</p>
-<ul>
-  <li>• Routing in Web API can be handled using attribute routing. Custom routes can be defined</li>
-</ul>
-<p>with parameters.</p>
-<ul>
-  <li>• ASP.NET Core automatically binds data from the route, query string, and request body to</li>
-</ul>
-<p>action method parameters.</p>
-<ul>
-  <li>• Validation can be performed using Data Annotations. If validation fails, the controller</li>
-</ul>
-<p>returns a 400 Bad Request with details.</p>
-<ul>
-  <li>• ASP.NET Core has built-in dependency injection, which helps to manage services and</li>
-</ul>
-<p>dependencies cleanly.</p>
 <p>API Controllers vs. MVC Controllers
 In ASP.NET Core, both API controllers and MVC controllers are foundational components for
 handling requests, but they have distinct purposes and are used in different scenarios.
 Understanding the differences between them helps in choosing the right controller type for specific
 needs.</p>
-
-<h2 id="1-overview-of-api-controllers">1. Overview of API Controllers</h2>
-<p>API controllers are specialized controllers designed to build RESTful APIs. They primarily handle data
+<ol>
+  <li>Overview of API Controllers
+API controllers are specialized controllers designed to build RESTful APIs. They primarily handle data
 exchanges over HTTP using JSON or XML formats. Typically, API controllers are used when the client
 is a mobile app, a web frontend consuming APIs (like Angular or React), or when the goal is to build a
-service-oriented architecture.</p>
+service-oriented architecture.</li>
+</ol>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1081,15 +918,16 @@ public class ProductsController : ControllerBase
   }
 }</code></pre>
     </div>
-  <p>• [ApiController] attribute is used to facilitate Web API-specific behavior.</p>
-<ul>
-  <li>• API controllers return serialized data (JSON or XML) rather than HTML views.</li>
+  <ul>
+  <li>[ApiController] attribute is used to facilitate Web API-specific behavior.</li>
 </ul>
-
-<h2 id="2-overview-of-mvc-controllers">2. Overview of MVC Controllers</h2>
-<p>MVC controllers are used to handle both requests for HTML pages and data-driven requests in
+<ul>
+  <li>API controllers return serialized data (JSON or XML) rather than HTML views.</li>
+  <li>2. Overview of MVC Controllers
+MVC controllers are used to handle both requests for HTML pages and data-driven requests in
 traditional web applications. The MVC (Model-View-Controller) pattern separates concerns by
-having controllers handle the request, the view render the HTML, and the model represent the data.</p>
+having controllers handle the request, the view render the HTML, and the model represent the data.</li>
+</ul>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1108,20 +946,21 @@ having controllers handle the request, the view render the HTML, and the model r
   }
 }</code></pre>
     </div>
-  <p>• [Controller] base class is used, and action methods typically return View() to render HTML
-      views.</p>
-<ul>
-  <li>• MVC controllers are used in server-rendered applications (like Razor Pages or ASP.NET</li>
+  <ul>
+  <li>[Controller] base class is used, and action methods typically return View() to render HTML</li>
 </ul>
-<p>MVC).</p>
-
-<h2 id="3-differences-between-api-and-mvc-controllers">3. Differences Between API and MVC Controllers</h2>
-<p>Base Class:
+<p>views.</p>
+<ul>
+  <li>MVC controllers are used in server-rendered applications (like Razor Pages or ASP.NET
+      MVC).</li>
+  <li>3. Differences Between API and MVC Controllers
+Base Class:
 API controllers inherit from ControllerBase, which is specifically designed for APIs. It provides core
 features for handling HTTP requests without view support. On the other hand, MVC controllers
 inherit from Controller, which includes all the features of ControllerBase plus additional methods for
-handling views, making it suitable for traditional web applications.
-Return Types:
+handling views, making it suitable for traditional web applications.</li>
+</ul>
+<p>Return Types:
 API controllers typically return data in formats like JSON or XML. They often use ActionResult or
 ActionResult&lt;T&gt; to provide flexible HTTP responses. In contrast, MVC controllers generally return
 HTML views using the View() method, or other specific formats like PartialView().</p>
@@ -1160,17 +999,17 @@ validation fails. In MVC controllers, however, you need to manually check the mo
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">using ModelState.IsValid.</code></pre>
+      <pre><code class="language-csharp">using ModelState.IsValid.
+4. ControllerBase vs. Controller</code></pre>
     </div>
-  <p>4. ControllerBase vs. Controller
-The ControllerBase class is a base class for API controllers that provides core features, but without
+  <p>The ControllerBase class is a base class for API controllers that provides core features, but without
 view support. On the other hand, Controller inherits from ControllerBase and includes additional
 functionalities for MVC features like views and Razor Pages.
 ControllerBase (for API Controllers):</p>
 <ul>
-  <li>• Focused on returning data (JSON, XML).</li>
-  <li>• Doesn’t include methods for rendering views (View(), PartialView()).</li>
-  <li>• Recommended for building RESTful services or Web APIs.</li>
+  <li>Focused on returning data (JSON, XML).</li>
+  <li>Doesn’t include methods for rendering views (View(), PartialView()).</li>
+  <li>Recommended for building RESTful services or Web APIs.</li>
 </ul>
 
     <div class="code-block">
@@ -1192,11 +1031,9 @@ ControllerBase (for API Controllers):</p>
     </div>
   <p>Controller (for MVC Controllers):</p>
 <ul>
-  <li>• Inherits all the features of ControllerBase but adds methods for working with views (View(),</li>
-</ul>
-<p>PartialView()).</p>
-<ul>
-  <li>• Used for server-side rendering of HTML pages.</li>
+  <li>Inherits all the features of ControllerBase but adds methods for working with views (View(),
+      PartialView()).</li>
+  <li>Used for server-side rendering of HTML pages.</li>
 </ul>
 
     <div class="code-block">
@@ -1219,11 +1056,11 @@ ControllerBase (for API Controllers):</p>
 The return types differ significantly between the two controllers:
 In API Controllers:</p>
 <ul>
-  <li>• JSON or XML: API controllers typically return data serialized in JSON or XML.</li>
-  <li>• ActionResult&lt;T&gt;: Introduced in ASP.NET Core 2.1, it provides type safety while allowing</li>
+  <li>JSON or XML: API controllers typically return data serialized in JSON or XML.</li>
+  <li>ActionResult&lt;T&gt;: Introduced in ASP.NET Core 2.1, it provides type safety while allowing
+      flexible HTTP responses.</li>
 </ul>
-<p>flexible HTTP responses.
-Example:</p>
+<h3>Example</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1237,11 +1074,11 @@ Example:</p>
 public ActionResult&lt;IEnumerable&lt;Product&gt;&gt; GetProducts()
 {
   return Ok(new List&lt;Product&gt;());
-}</code></pre>
+}
+In MVC Controllers:</code></pre>
     </div>
-  <p>In MVC Controllers:</p>
-<ul>
-  <li>• View: MVC controllers often return View() for HTML page rendering.</li>
+  <ul>
+  <li>View: MVC controllers often return View() for HTML page rendering.</li>
 </ul>
 <p>Example:</p>
 
@@ -1258,11 +1095,12 @@ public ActionResult&lt;IEnumerable&lt;Product&gt;&gt; GetProducts()
   return View(); // Returns an HTML view
 }</code></pre>
     </div>
-  
-<h2 id="6-automatic-model-validation-in-api-controllers">6. Automatic Model Validation in API Controllers</h2>
-<p>When the [ApiController] attribute is applied, ASP.NET Core automatically validates incoming data
+  <ol>
+  <li>Automatic Model Validation in API Controllers
+When the [ApiController] attribute is applied, ASP.NET Core automatically validates incoming data
 models before calling the action method. If validation fails, a 400 Bad Request response is returned
-with validation error details. This behavior simplifies model validation in API controllers.</p>
+with validation error details. This behavior simplifies model validation in API controllers.</li>
+</ol>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1296,75 +1134,52 @@ public class ProductsController : ControllerBase
       </div>
       <pre><code class="language-csharp">public IActionResult SaveProduct(Product product)
 {
-}</code></pre>
-    </div>
-  <p>if (!ModelState.IsValid)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  if (!ModelState.IsValid)
+  {
    return View(product); // Return view with validation errors
   }
   // Save the product and return a success view
-  return RedirectToAction(&quot;Index&quot;);</code></pre>
+  return RedirectToAction(&quot;Index&quot;);
+}</code></pre>
     </div>
-  
-<h2 id="7-restful-api-vs-mvc">7. RESTful API vs MVC</h2>
-<ul>
-  <li>• RESTful API: Focuses on exposing resources (like Product, Order, etc.) over HTTP. It deals</li>
-</ul>
-<p>with data and operations related to resources (e.g., GET all products, POST new product).</p>
-<ul>
-  <li>o Operates with different HTTP methods (GET, POST, PUT, DELETE).</li>
-  <li>o Returns data in JSON or XML format.</li>
-  <li>o Typically consumed by front-end applications (React, Angular) or other services.</li>
-  <li>• MVC (Model-View-Controller): Primarily for server-side rendered web applications.</li>
-  <li>o The controller handles requests and returns views (HTML pages).</li>
-  <li>o The model represents the data, and the view is the rendered HTML.</li>
+  <ul>
+  <li>7. RESTful API vs MVC</li>
+  <li>RESTful API: Focuses on exposing resources (like Product, Order, etc.) over HTTP. It deals
+      with data and operations related to resources (e.g., GET all products, POST new product).</li>
+  <li>Operates with different HTTP methods (GET, POST, PUT, DELETE).</li>
+  <li>Returns data in JSON or XML format.</li>
+  <li>Typically consumed by front-end applications (React, Angular) or other services.</li>
+  <li>MVC (Model-View-Controller): Primarily for server-side rendered web applications.</li>
+  <li>The controller handles requests and returns views (HTML pages).</li>
+  <li>The model represents the data, and the view is the rendered HTML.</li>
 </ul>
 <p>When to Use API Controllers vs. MVC Controllers</p>
 <ul>
-  <li>• Use API Controllers when:</li>
-  <li>o You are building a RESTful API.</li>
-  <li>o The primary client is a mobile app, a SPA (Single Page Application), or other services</li>
-</ul>
-<p>consuming JSON/XML.</p>
-<ul>
-  <li>o You don’t need to return views or HTML content.</li>
-  <li>• Use MVC Controllers when:</li>
-  <li>o You are building a server-rendered web application.</li>
-  <li>o You need to return HTML views along with data.</li>
-  <li>o You are building a traditional web application with Razor pages.</li>
+  <li>Use API Controllers when:</li>
+  <li>You are building a RESTful API.</li>
+  <li>The primary client is a mobile app, a SPA (Single Page Application), or other services
+           consuming JSON/XML.</li>
+  <li>You don’t need to return views or HTML content.</li>
+  <li>Use MVC Controllers when:</li>
+  <li>You are building a server-rendered web application.</li>
+  <li>You need to return HTML views along with data.</li>
+  <li>You are building a traditional web application with Razor pages.</li>
 </ul>
 <p>Key Points to Remember:</p>
-<ul>
-  <li>1. API Controllers are designed for building RESTful services, and they typically return data like</li>
-</ul>
-<p>JSON or XML.</p>
-<ul>
-  <li>2. MVC Controllers are meant for rendering HTML views in traditional web applications.</li>
-  <li>3. [ApiController] Attribute: Adds useful features like automatic model validation and</li>
-</ul>
-<p>automatic response handling for Web API controllers.</p>
-<ul>
-  <li>4. ControllerBase is used for API controllers and does not support views. Controller is used in</li>
-</ul>
-<p>MVC applications where views are needed.</p>
-<ul>
-  <li>5. Automatic Model Validation: API controllers automatically validate models and return a 400</li>
-</ul>
-<p>Bad Request if validation fails, while MVC controllers require manual model validation using
-      ModelState.IsValid.</p>
-<ul>
-  <li>6. API Controllers are often consumed by front-end frameworks like Angular or React, or other</li>
-</ul>
-<p>systems that expect JSON/XML responses.</p>
+<ol>
+  <li>API Controllers are designed for building RESTful services, and they typically return data like
+      JSON or XML.</li>
+  <li>MVC Controllers are meant for rendering HTML views in traditional web applications.</li>
+  <li>[ApiController] Attribute: Adds useful features like automatic model validation and
+      automatic response handling for Web API controllers.</li>
+  <li>ControllerBase is used for API controllers and does not support views. Controller is used in
+      MVC applications where views are needed.</li>
+  <li>Automatic Model Validation: API controllers automatically validate models and return a 400
+      Bad Request if validation fails, while MVC controllers require manual model validation using
+      ModelState.IsValid.</li>
+  <li>API Controllers are often consumed by front-end frameworks like Angular or React, or other
+      systems that expect JSON/XML responses.</li>
+</ol>
 
 <h2 id="entity-framework-core-with-web-api">Entity Framework Core with Web API</h2>
 <p>Entity Framework Core (EF Core) is an object-relational mapper (ORM) for .NET that enables
@@ -1373,22 +1188,23 @@ code for database operations like queries, inserts, updates, and deletes. Integr
 Web API allows your API to interact with databases in a clean, maintainable way.
 In this part, we&#39;ll explore how EF Core can be used with a Web API to manage data, focusing on
 creating, reading, updating, and deleting records (commonly known as CRUD operations).</p>
-
-<h2 id="1-setup-ef-core-in-an-aspnet-core-web-api">1. Setup EF Core in an ASP.NET Core Web API</h2>
-<p>Before using EF Core in a Web API project, you need to add the necessary NuGet packages and
-configure the database context.
-Step 1: Add EF Core NuGet Packages
+<ol>
+  <li>Setup EF Core in an ASP.NET Core Web API
+Before using EF Core in a Web API project, you need to add the necessary NuGet packages and
+configure the database context.</li>
+</ol>
+<p>Step 1: Add EF Core NuGet Packages
 You need to install the following NuGet packages:</p>
 <ul>
-  <li>• Microsoft.EntityFrameworkCore</li>
-  <li>• Microsoft.EntityFrameworkCore.SqlServer (or another provider like MySQL, PostgreSQL,</li>
-</ul>
-<p>etc.)
+  <li>Microsoft.EntityFrameworkCore</li>
+  <li>Microsoft.EntityFrameworkCore.SqlServer (or another provider like MySQL, PostgreSQL,
+      etc.)
 You can install them using the .NET CLI:
 dotnet add package Microsoft.EntityFrameworkCore
-dotnet add package Microsoft.EntityFrameworkCore.SqlServer</p>
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer</li>
+</ul>
 <p>Step 2: Define the Database Context
-In EF Core, the DbContext class represents a session with the database. It is used to configure the
+In EF Core, the <code>DbContext</code> class represents a session with the database. It is used to configure the
 database connection and expose DbSet properties, which represent tables in the database.</p>
 
     <div class="code-block">
@@ -1408,12 +1224,14 @@ database connection and expose DbSet properties, which represent tables in the d
   public DbSet&lt;Product&gt; Products { get; set; }
 }</code></pre>
     </div>
-  <p>• The AppDbContext class inherits from DbContext.</p>
-<ul>
-  <li>• The Products DbSet represents the Products table in the database.</li>
+  <ul>
+  <li>The AppDbContext class inherits from <code>DbContext</code>.</li>
 </ul>
-<p>Step 3: Configure the Database Connection in appsettings.json
-You configure the database connection string in the appsettings.json file:</p>
+<ul>
+  <li>The Products DbSet represents the Products table in the database.</li>
+</ul>
+<p>Step 3: Configure the Database Connection in <code>appsettings.json</code>
+You configure the database connection string in the <code>appsettings.json</code> file:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1425,23 +1243,12 @@ You configure the database connection string in the appsettings.json file:</p>
       </div>
       <pre><code class="language-json">{
  &quot;ConnectionStrings&quot;: {
-}
+  &quot;DefaultConnection&quot;: &quot;Server=localhost;Database=ecommerce_db;Trusted_Connection=True;&quot;
+ }
 }</code></pre>
     </div>
-  <p>&quot;DefaultConnection&quot;: &quot;Server=localhost;Database=ecommerce_db;Trusted_Connection=True;&quot;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp"></code></pre>
-    </div>
-  <p>Step 4: Register the DbContext in Program.cs
-In the Program.cs file (depending on your ASP.NET Core version), register the DbContext to enable
+  <p>Step 4: Register the <code>DbContext</code> in <code>Program.cs</code>
+In the <code>Program.cs</code> file (depending on your ASP.NET Core version), register the <code>DbContext</code> to enable
 dependency injection.</p>
 
     <div class="code-block">
@@ -1453,19 +1260,9 @@ dependency injection.</p>
         </button>
       </div>
       <pre><code class="language-csharp">var builder = WebApplication.CreateBuilder(args);
-// Register the AppDbContext with the connection string</code></pre>
-    </div>
-  <p>builder.Services.AddDbContext&lt;AppDbContext&gt;(options =&gt;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">options.UseSqlServer(builder.Configuration.GetConnectionString(&quot;DefaultConnection&quot;)));
+// Register the AppDbContext with the connection string
+builder.Services.AddDbContext&lt;AppDbContext&gt;(options =&gt;
+  options.UseSqlServer(builder.Configuration.GetConnectionString(&quot;DefaultConnection&quot;)));
 var app = builder.Build();</code></pre>
     </div>
   <p>2. Create the Model
@@ -1489,16 +1286,17 @@ Here’s an example of a simple Product model:</p>
   public int Stock { get; set; }
 }</code></pre>
     </div>
-  <p>• Id: Primary key for the table. By convention, EF Core will treat any property named Id or
-      &lt;ClassName&gt;Id as the primary key.</p>
-<ul>
-  <li>• Other properties like Name, Price, and Stock map to columns in the Products table.</li>
+  <ul>
+  <li>Id: Primary key for the table. By convention, EF Core will treat any property named Id or</li>
 </ul>
-
-<h2 id="3-crud-operations-in-web-api-with-ef-core">3. CRUD Operations in Web API with EF Core</h2>
-<p>Now that the model and DbContext are set up, let&#39;s implement the standard CRUD operations
-(Create, Read, Update, and Delete) in a Web API controller using EF Core.
-Step 1: Create the API Controller</p>
+<p>&lt;ClassName&gt;Id as the primary key.</p>
+<ul>
+  <li>Other properties like Name, Price, and Stock map to columns in the Products table.</li>
+  <li>3. CRUD Operations in Web API with EF Core
+Now that the model and <code>DbContext</code> are set up, let&#39;s implement the standard CRUD operations
+(Create, Read, Update, and Delete) in a Web API controller using EF Core.</li>
+</ul>
+<p>Step 1: Create the API Controller</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1541,12 +1339,14 @@ public async Task&lt;ActionResult&lt;Product&gt;&gt; CreateProduct([FromBody] Pr
   return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, product);
 }</code></pre>
     </div>
-  <p>• The [HttpPost] attribute specifies that this method handles POST requests.</p>
-<ul>
-  <li>• The CreatedAtAction method returns a 201 status code with the location of the created</li>
+  <ul>
+  <li>The [HttpPost] attribute specifies that this method handles POST requests.</li>
 </ul>
-<p>resource.
-Step 3: Read (GET) All Products</p>
+<ul>
+  <li>The CreatedAtAction method returns a 201 status code with the location of the created
+      resource.</li>
+</ul>
+<p>Step 3: Read (GET) All Products</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1563,9 +1363,11 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Product&gt;&gt;&gt; GetProdu
   return Ok(products);
 }</code></pre>
     </div>
-  <p>• The [HttpGet] attribute specifies that this method handles GET requests.</p>
+  <ul>
+  <li>The [HttpGet] attribute specifies that this method handles GET requests.</li>
+</ul>
 <ul>
-  <li>• The ToListAsync method retrieves all the products from the database asynchronously.</li>
+  <li>The ToListAsync method retrieves all the products from the database asynchronously.</li>
 </ul>
 <p>Step 4: Read (GET) Product by ID</p>
 
@@ -1581,27 +1383,19 @@ public async Task&lt;ActionResult&lt;IEnumerable&lt;Product&gt;&gt;&gt; GetProdu
 public async Task&lt;ActionResult&lt;Product&gt;&gt; GetProductById(int id)
 {
   var product = await _context.Products.FindAsync(id);
-}</code></pre>
-    </div>
-  <p>if (product == null)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  if (product == null)
+  {
    return NotFound();
   }
-  return Ok(product);</code></pre>
+  return Ok(product);
+}</code></pre>
     </div>
-  <p>• The {id} route parameter captures the product ID from the URL.</p>
+  <ul>
+  <li>The {id} route parameter captures the product ID from the URL.</li>
+</ul>
 <ul>
-  <li>• The FindAsync method fetches the product with the given ID.</li>
-  <li>• If the product is not found, it returns a 404 status code.</li>
+  <li>The FindAsync method fetches the product with the given ID.</li>
+  <li>If the product is not found, it returns a 404 status code.</li>
 </ul>
 <p>Step 5: Update a Product (PUT)</p>
 
@@ -1616,29 +1410,21 @@ public async Task&lt;ActionResult&lt;Product&gt;&gt; GetProductById(int id)
       <pre><code class="language-csharp">[HttpPut(&quot;{id}&quot;)]
 public async Task&lt;IActionResult&gt; UpdateProduct(int id, [FromBody] Product product)
 {
-}</code></pre>
-    </div>
-  <p>if (id != product.Id)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  if (id != product.Id)
+  {
    return BadRequest();
   }
   _context.Entry(product).State = EntityState.Modified;
   await _context.SaveChangesAsync();
-  return NoContent(); // Return 204 No Content on successful update</code></pre>
+  return NoContent(); // Return 204 No Content on successful update
+}</code></pre>
     </div>
-  <p>• The [HttpPut] attribute specifies that this method handles PUT requests.</p>
+  <ul>
+  <li>The [HttpPut] attribute specifies that this method handles PUT requests.</li>
+</ul>
 <ul>
-  <li>• The Entry method is used to mark the product entity as modified in the context.</li>
-  <li>• The method returns a 204 No Content response when the update is successful.</li>
+  <li>The Entry method is used to mark the product entity as modified in the context.</li>
+  <li>The method returns a 204 No Content response when the update is successful.</li>
 </ul>
 <p>Step 6: Delete a Product (DELETE)</p>
 
@@ -1654,81 +1440,59 @@ public async Task&lt;IActionResult&gt; UpdateProduct(int id, [FromBody] Product 
 public async Task&lt;IActionResult&gt; DeleteProduct(int id)
 {
   var product = await _context.Products.FindAsync(id);
-}</code></pre>
-    </div>
-  <p>if (product == null)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  if (product == null)
+  {
    return NotFound();
   }
   _context.Products.Remove(product);
   await _context.SaveChangesAsync();
-  return NoContent();</code></pre>
+  return NoContent();
+}</code></pre>
     </div>
-  <p>• The [HttpDelete] attribute specifies that this method handles DELETE requests.</p>
-<ul>
-  <li>• If the product is found, it is removed from the Products DbSet and the changes are saved.</li>
-  <li>• The method returns a 204 No Content response when the deletion is successful.</li>
+  <ul>
+  <li>The [HttpDelete] attribute specifies that this method handles DELETE requests.</li>
 </ul>
-
-<h2 id="4-migration-creating-the-database">4. Migration: Creating the Database</h2>
-<p>EF Core uses migrations to keep the database schema in sync with the data model. To create the
+<ul>
+  <li>If the product is found, it is removed from the Products DbSet and the changes are saved.</li>
+  <li>The method returns a 204 No Content response when the deletion is successful.</li>
+  <li>4. Migration: Creating the Database
+EF Core uses migrations to keep the database schema in sync with the data model. To create the
 initial database schema, follow these steps:
 Step 1: Add Migration
 Run the following command in the terminal to create a migration based on the model:
 dotnet ef migrations add InitialCreate
 This command creates a migration script that includes the schema changes (e.g., creating the
-Products table).</p>
+Products table).</li>
+</ul>
 <p>Step 2: Update the Database
 Run the following command to apply the migration and update the database:
 dotnet ef database update
 This will create the database (if it doesn&#39;t exist) and apply the migration to generate the necessary
 tables.</p>
-
-<h2 id="5-using-ef-core-in-production">5. Using EF Core in Production</h2>
-<p>For production environments, ensure the following:</p>
 <ul>
-  <li>• Use appropriate database providers and connection strings for cloud services (e.g., Azure</li>
+  <li>5. Using EF Core in Production
+For production environments, ensure the following:</li>
+  <li>Use appropriate database providers and connection strings for cloud services (e.g., Azure
+      SQL).</li>
+  <li>Implement caching strategies to reduce the load on the database for frequently accessed
+      data.</li>
+  <li>Use transactions when performing multiple related database operations to ensure
+      consistency.</li>
 </ul>
-<p>SQL).</p>
-<ul>
-  <li>• Implement caching strategies to reduce the load on the database for frequently accessed</li>
-</ul>
-<p>data.</p>
-<ul>
-  <li>• Use transactions when performing multiple related database operations to ensure</li>
-</ul>
-<p>consistency.
-Key Points to Remember:</p>
-<ul>
-  <li>1. DbContext represents the session with the database and is the main class for interacting</li>
-</ul>
-<p>with data using EF Core.</p>
-<ul>
-  <li>2. DbSet&lt;T&gt; represents a table in the database, and each DbSet in the DbContext is mapped to</li>
-</ul>
-<p>a model class.</p>
-<ul>
-  <li>3. Use [FromBody] to bind the incoming JSON data to the model when creating or updating</li>
-</ul>
-<p>records.</p>
-<ul>
-  <li>4. The SaveChangesAsync method persists changes to the database.</li>
-  <li>5. Migrations help in syncing the database schema with your model. Use dotnet ef migrations</li>
-</ul>
-<p>add and dotnet ef database update to manage database updates.</p>
-<ul>
-  <li>6. API controllers with EF Core use asynchronous methods (like ToListAsync, FindAsync) to</li>
-</ul>
-<p>ensure non-blocking I/O operations, which is crucial for scalability in web applications.</p>
+<p>Key Points to Remember:</p>
+<ol>
+  <li><code>DbContext</code> represents the session with the database and is the main class for interacting
+      with data using EF Core.</li>
+  <li>DbSet&lt;T&gt; represents a table in the database, and each DbSet in the <code>DbContext</code> is mapped to
+      a model class.</li>
+  <li>Use [FromBody] to bind the incoming JSON data to the model when creating or updating
+      records.</li>
+  <li>The SaveChangesAsync method persists changes to the database.</li>
+  <li>Migrations help in syncing the database schema with your model. Use dotnet ef migrations
+      add and dotnet ef database update to manage database updates.</li>
+  <li>API controllers with EF Core use asynchronous methods (like ToListAsync, FindAsync) to
+      ensure non-blocking I/O operations, which is crucial for scalability in web applications.</li>
+</ol>
 
 <h2 id="different-return-types-of-web-api-action-methods">Different Return Types of Web API Action Methods</h2>
 <p>In ASP.NET Core Web APIs, action methods (or controller methods) can return different types of
@@ -1745,12 +1509,15 @@ meaningful HTTP responses for different situations (success, failure, errors, et
       </div>
       <pre><code class="language-csharp">return type depends on whether the action method will return data, status codes, or a combination</code></pre>
     </div>
-  <p>of both.
-Let’s explore the most commonly used return types in Web API:</p>
-
-<h2 id="1-void">1. Void</h2>
-<p>A method can return nothing if no data or status needs to be explicitly returned. This is mostly used
-for operations like logging where no client feedback is necessary.</p>
+  <ul>
+  <li>f both.</li>
+</ul>
+<p>Let’s explore the most commonly used return types in Web API:</p>
+<ol>
+  <li>Void
+A method can return nothing if no data or status needs to be explicitly returned. This is mostly used
+for operations like logging where no client feedback is necessary.</li>
+</ol>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1767,15 +1534,16 @@ public void LogActivity([FromBody] Activity activity)
   _logger.Log(activity);
 }</code></pre>
     </div>
-  <p>• Use case: This return type is rare in Web APIs, as APIs generally need to communicate
-      results back to the client.</p>
-<ul>
-  <li>• Implicit response: The response will still return a status code like 200 OK.</li>
+  <ul>
+  <li>Use case: This return type is rare in Web APIs, as APIs generally need to communicate</li>
 </ul>
-
-<h2 id="2-primitive-types-eg-int-string-bool">2. Primitive Types (e.g., int, string, bool)</h2>
-<p>Action methods can return simple primitive types, like integers, strings, or booleans. This is useful
-when you want to send back basic data without a complex structure.</p>
+<p>results back to the client.</p>
+<ul>
+  <li>Implicit response: The response will still return a status code like 200 OK.</li>
+  <li>2. Primitive Types (e.g., int, string, bool)
+Action methods can return simple primitive types, like integers, strings, or booleans. This is useful
+when you want to send back basic data without a complex structure.</li>
+</ul>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1791,14 +1559,15 @@ public int GetUserId(int id)
   return id;
 }</code></pre>
     </div>
-  <p>• Use case: Return basic data, such as an ID, a confirmation message, or a flag (true/false).</p>
-<ul>
-  <li>• Default response: The response type will be a JSON representation of the primitive type.</li>
+  <ul>
+  <li>Use case: Return basic data, such as an ID, a confirmation message, or a flag (true/false).</li>
 </ul>
-
-<h2 id="3-ienumerablet-or-listt">3. IEnumerable&lt;T&gt; or List&lt;T&gt;</h2>
-<p>When retrieving a collection of items, it’s common to return an IEnumerable&lt;T&gt; or List&lt;T&gt;. This is
-used for operations like GET /products where multiple items are fetched.</p>
+<ul>
+  <li>Default response: The response type will be a JSON representation of the primitive type.</li>
+  <li>3. IEnumerable&lt;T&gt; or List&lt;T&gt;
+When retrieving a collection of items, it’s common to return an IEnumerable&lt;T&gt; or List&lt;T&gt;. This is
+used for operations like GET /products where multiple items are fetched.</li>
+</ul>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1814,14 +1583,15 @@ public IEnumerable&lt;Product&gt; GetProducts()
   return _context.Products.ToList();
 }</code></pre>
     </div>
-  <p>• Use case: Return lists or collections of objects (e.g., products, users).</p>
-<ul>
-  <li>• Default response: A JSON array of objects is returned to the client.</li>
+  <ul>
+  <li>Use case: Return lists or collections of objects (e.g., products, users).</li>
 </ul>
-
-<h2 id="4-object">4. Object</h2>
-<p>You can return a custom object that represents a specific model or entity. This is ideal when
-returning structured data such as a single resource (e.g., a product, user, etc.).</p>
+<ul>
+  <li>Default response: A JSON array of objects is returned to the client.</li>
+  <li>4. Object
+You can return a custom object that represents a specific model or entity. This is ideal when
+returning structured data such as a single resource (e.g., a product, user, etc.).</li>
+</ul>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1837,15 +1607,16 @@ public Product GetProduct(int id)
   return _context.Products.Find(id);
 }</code></pre>
     </div>
-  <p>• Use case: Return a single item or structured data object.</p>
-<ul>
-  <li>• Default response: A JSON object is returned with the properties of the entity.</li>
+  <ul>
+  <li>Use case: Return a single item or structured data object.</li>
 </ul>
-
-<h2 id="5-task-taskt-asynchronous-methods">5. Task / Task&lt;T&gt; (Asynchronous Methods)</h2>
-<p>In modern web applications, it is common to use asynchronous methods that return a Task or
+<ul>
+  <li>Default response: A JSON object is returned with the properties of the entity.</li>
+  <li>5. Task / Task&lt;T&gt; (Asynchronous Methods)
+In modern web applications, it is common to use asynchronous methods that return a Task or
 Task&lt;T&gt;. Asynchronous programming helps prevent blocking of threads and allows more efficient
-use of resources.</p>
+use of resources.</li>
+</ul>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1861,15 +1632,16 @@ public async Task&lt;Product&gt; GetProductAsync(int id)
   return await _context.Products.FindAsync(id);
 }</code></pre>
     </div>
-  <p>• Use case: Async methods for database operations, HTTP calls, or other I/O-bound tasks.</p>
-<ul>
-  <li>• Default response: A JSON response wrapped in a Task for asynchronous execution.</li>
+  <ul>
+  <li>Use case: Async methods for database operations, HTTP calls, or other I/O-bound tasks.</li>
 </ul>
-
-<h2 id="6-actionresultt">6. ActionResult&lt;T&gt;</h2>
-<p>This is a flexible return type that allows you to return either a specific type (like an object) or an
+<ul>
+  <li>Default response: A JSON response wrapped in a Task for asynchronous execution.</li>
+  <li>6. ActionResult&lt;T&gt;
+This is a flexible return type that allows you to return either a specific type (like an object) or an
 HTTP response (like NotFound, BadRequest, etc.). ActionResult&lt;T&gt; is a combination of both
-ActionResult and the specific return type T.</p>
+ActionResult and the specific return type T.</li>
+</ul>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1883,27 +1655,19 @@ ActionResult and the specific return type T.</p>
 public async Task&lt;ActionResult&lt;Product&gt;&gt; GetProduct(int id)
 {
   var product = await _context.Products.FindAsync(id);
-}</code></pre>
-    </div>
-  <p>if (product == null)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  if (product == null)
+  {
    return NotFound();
   }
-  return product;</code></pre>
+  return product;
+}</code></pre>
     </div>
-  <p>• Use case: Allows returning either an object (successful response) or an error status (failure
-      response) in the same method.</p>
+  <ul>
+  <li>Use case: Allows returning either an object (successful response) or an error status (failure</li>
+</ul>
+<p>response) in the same method.</p>
 <ul>
-  <li>• Default response: If the result is successful, it returns the object in JSON format. If not, it can</li>
+  <li>Default response: If the result is successful, it returns the object in JSON format. If not, it can</li>
 </ul>
 
     <div class="code-block">
@@ -1916,11 +1680,12 @@ public async Task&lt;ActionResult&lt;Product&gt;&gt; GetProduct(int id)
       </div>
       <pre><code class="language-csharp">return a specific status code like 404 Not Found.</code></pre>
     </div>
-  
-<h2 id="7-iactionresult">7. IActionResult</h2>
-<p>IActionResult is a more generic return type that allows you to return any kind of HTTP response
+  <ol>
+  <li><code>IActionResult</code>
+<code>IActionResult</code> is a more generic return type that allows you to return any kind of HTTP response
 (success, error, redirect, etc.). It does not specify the actual type of the returned data, allowing full
-control over the response.</p>
+control over the response.</li>
+</ol>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1934,34 +1699,21 @@ control over the response.</p>
 public async Task&lt;IActionResult&gt; DeleteProduct(int id)
 {
   var product = await _context.Products.FindAsync(id);
-}</code></pre>
-    </div>
-  <p>if (product == null)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  if (product == null)
+  {
    return NotFound();
   }
   _context.Products.Remove(product);
   await _context.SaveChangesAsync();
-  return NoContent(); // Return 204 No Content</code></pre>
+  return NoContent(); // Return 204 No Content
+}
+   • Use case: Gives you the flexibility to return HTTP status codes or formatted results (e.g.,
+      JSON).
+   • Default response: You can specify the response format by using methods like Ok(),
+      BadRequest(), NotFound(), or NoContent().
+8. Custom Response Wrappers</code></pre>
     </div>
-  <p>• Use case: Gives you the flexibility to return HTTP status codes or formatted results (e.g.,
-      JSON).</p>
-<ul>
-  <li>• Default response: You can specify the response format by using methods like Ok(),</li>
-</ul>
-<p>BadRequest(), NotFound(), or NoContent().</p>
-
-<h2 id="8-custom-response-wrappers">8. Custom Response Wrappers</h2>
-<p>In some cases, you might want to return a custom response format, which could include both data
+  <p>In some cases, you might want to return a custom response format, which could include both data
 and metadata such as status, message, or pagination info.</p>
 
     <div class="code-block">
@@ -1982,19 +1734,8 @@ and metadata such as status, message, or pagination info.</p>
 public async Task&lt;ActionResult&lt;ApiResponse&lt;Product&gt;&gt;&gt; GetProduct(int id)
 {
   var product = await _context.Products.FindAsync(id);
-}</code></pre>
-    </div>
-  <p>if (product == null)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  if (product == null)
+  {
    return new ApiResponse&lt;Product&gt;
    {
      Success = false,
@@ -2006,15 +1747,17 @@ public async Task&lt;ActionResult&lt;ApiResponse&lt;Product&gt;&gt;&gt; GetProdu
    Success = true,
    Data = product,
    Message = &quot;Product retrieved successfully&quot;
-  };</code></pre>
+  };
+}</code></pre>
     </div>
-  <p>• Use case: When you need a consistent response structure across the entire API.</p>
-<ul>
-  <li>• Default response: A custom JSON response with fields like Success, Data, and Message.</li>
+  <ul>
+  <li>Use case: When you need a consistent response structure across the entire API.</li>
 </ul>
-
-<h2 id="9-fileresult-physicalfileresult">9. FileResult / PhysicalFileResult</h2>
-<p>When returning files (such as PDFs, images, or CSVs), you can use the FileResult or PhysicalFileResult</p>
+<ul>
+  <li>Default response: A custom JSON response with fields like Success, Data, and Message.</li>
+  <li>9. FileResult / PhysicalFileResult
+When returning files (such as PDFs, images, or CSVs), you can use the FileResult or PhysicalFileResult</li>
+</ul>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2033,22 +1776,20 @@ public IActionResult DownloadFile(string fileName)
   return File(fileBytes, &quot;application/octet-stream&quot;, fileName);
 }</code></pre>
     </div>
-  <p>• Use case: When you need to return a file (e.g., downloading reports, images).</p>
+  <ul>
+  <li>Use case: When you need to return a file (e.g., downloading reports, images).</li>
+</ul>
 <ul>
-  <li>• Default response: A file download prompt is shown to the user.</li>
+  <li>Default response: A file download prompt is shown to the user.</li>
 </ul>
 <p>Key Points to Remember:</p>
-<ul>
-  <li>1. Primitive Types: Suitable for returning simple data like strings or numbers. The data will be</li>
-</ul>
-<p>automatically serialized to JSON.</p>
-<ul>
-  <li>2. IEnumerable&lt;T&gt; or List&lt;T&gt;: Ideal for returning collections of data, such as lists of products</li>
-</ul>
-<p>or users.</p>
-<ul>
-  <li>3. Object: When you need to return a single entity (e.g., a product or user), use an object</li>
-</ul>
+<ol>
+  <li>Primitive Types: Suitable for returning simple data like strings or numbers. The data will be
+      automatically serialized to JSON.</li>
+  <li>IEnumerable&lt;T&gt; or List&lt;T&gt;: Ideal for returning collections of data, such as lists of products
+      or users.</li>
+  <li>Object: When you need to return a single entity (e.g., a product or user), use an object</li>
+</ol>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2058,23 +1799,19 @@ public IActionResult DownloadFile(string fileName)
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">return type.</code></pre>
+      <pre><code class="language-csharp">return type.
+   4. ActionResult&lt;T&gt;: Provides flexibility, allowing you to return either a specific result or an</code></pre>
     </div>
-  <p>4. ActionResult&lt;T&gt;: Provides flexibility, allowing you to return either a specific result or an
-      error status code (like 404 NotFound).</p>
-<ul>
-  <li>5. IActionResult: The most flexible return type, giving you full control over the HTTP response</li>
-</ul>
-<p>(e.g., Ok, BadRequest, NotFound).</p>
-<ul>
-  <li>6. Task / Task&lt;T&gt;: Use for asynchronous operations to prevent blocking threads in I/O-bound</li>
-</ul>
-<p>operations (common in database and network calls).</p>
-<ul>
-  <li>7. FileResult: Use when you need to return files from your Web API (e.g., for file downloads).</li>
-  <li>8. Custom Wrappers: Can be used to return consistent response formats, which include data</li>
-</ul>
-<p>and additional metadata such as success status and error messages.</p>
+  <p>error status code (like 404 NotFound).</p>
+<ol>
+  <li><code>IActionResult</code>: The most flexible return type, giving you full control over the HTTP response
+      (e.g., Ok, BadRequest, NotFound).</li>
+  <li>Task / Task&lt;T&gt;: Use for asynchronous operations to prevent blocking threads in I/O-bound
+      operations (common in database and network calls).</li>
+  <li>FileResult: Use when you need to return files from your Web API (e.g., for file downloads).</li>
+  <li>Custom Wrappers: Can be used to return consistent response formats, which include data
+      and additional metadata such as success status and error messages.</li>
+</ol>
 
 <h2 id="controllerbase">ControllerBase</h2>
 <p>ControllerBase is a foundational class in ASP.NET Core MVC and Web API applications. It provides a
@@ -2088,9 +1825,9 @@ Web API controllers. Unlike Controller, which is used for MVC (Model-View-Contro
 that involve views, ControllerBase is tailored for building APIs without views.
 Key Features:</p>
 <ul>
-  <li>• Action Methods: ControllerBase provides methods that handle HTTP requests and respond</li>
+  <li>Action Methods: ControllerBase provides methods that handle HTTP requests and respond
+      with results. These methods are often decorated with HTTP attribute annotations like</li>
 </ul>
-<p>with results. These methods are often decorated with HTTP attribute annotations like</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2100,21 +1837,19 @@ Key Features:</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">[HttpGet], [HttpPost], [HttpPut], and [HttpDelete].</code></pre>
+      <pre><code class="language-csharp">[HttpGet], [HttpPost], [HttpPut], and [HttpDelete].
+   • Response Types: It includes methods for returning various HTTP responses, including JSON</code></pre>
     </div>
-  <p>• Response Types: It includes methods for returning various HTTP responses, including JSON
-      content, status codes, and more.</p>
+  <p>content, status codes, and more.</p>
 <ul>
-  <li>• Dependency Injection: ControllerBase supports dependency injection, allowing you to inject</li>
-</ul>
-<p>services like repositories or application services directly into the controller.</p>
-<ul>
-  <li>• Model Binding and Validation: It provides built-in support for model binding and validation,</li>
-</ul>
-<p>making it easy to work with data coming from HTTP requests.
+  <li>Dependency Injection: ControllerBase supports dependency injection, allowing you to inject
+      services like repositories or application services directly into the controller.</li>
+  <li>Model Binding and Validation: It provides built-in support for model binding and validation,
+      making it easy to work with data coming from HTTP requests.
    •
 Example Usage:
-Here’s a simple example of how ControllerBase is used in a Web API controller:</p>
+Here’s a simple example of how ControllerBase is used in a Web API controller:</li>
+</ul>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2148,21 +1883,8 @@ namespace MyApi.Controllers
    public ActionResult&lt;Product&gt; GetProduct(int id)
    {
      var product = _context.Products.Find(id);
-}
-}
-}</code></pre>
-    </div>
-  <p>if (product == null)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+     if (product == null)
+     {
       return NotFound(); // Returns a 404 Not Found response
      }
      return Ok(product); // Returns a 200 OK response with the product
@@ -2172,55 +1894,37 @@ namespace MyApi.Controllers
    {
      _context.Products.Add(product);
      _context.SaveChanges();
-     return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product); // Returns a</code></pre>
-    </div>
-  <p>201 Created response</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp"></code></pre>
+     return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product); // Returns a
+201 Created response
+   }
+  }
+}</code></pre>
     </div>
   <p>Explanation of Key Elements:</p>
 <ul>
   <li>1. Attributes:</li>
-  <li>o [ApiController]: Indicates that the controller responds to Web API requests.</li>
-  <li>o [Route(&quot;api/[controller]&quot;)]: Defines the base route for the controller’s endpoints.</li>
-</ul>
-<p>[controller] is replaced with the controller’s name (e.g., Products).</p>
-<ul>
+  <li>[ApiController]: Indicates that the controller responds to Web API requests.</li>
+  <li>[Route(&quot;api/[controller]&quot;)]: Defines the base route for the controller’s endpoints.
+           [controller] is replaced with the controller’s name (e.g., Products).</li>
   <li>2. Dependency Injection:</li>
-  <li>o The constructor accepts an ApplicationDbContext instance, demonstrating how</li>
-</ul>
-<p>services are injected into controllers.</p>
-<ul>
+  <li>The constructor accepts an ApplicationDbContext instance, demonstrating how
+           services are injected into controllers.</li>
   <li>3. Action Methods:</li>
-  <li>o GetProducts(): Returns a list of products with a 200 OK response.</li>
-  <li>o GetProduct(int id): Retrieves a specific product by ID. If not found, it returns a 404</li>
+  <li>GetProducts(): Returns a list of products with a 200 OK response.</li>
+  <li>GetProduct(int id): Retrieves a specific product by ID. If not found, it returns a 404
+           Not Found response.</li>
+  <li>CreateProduct(Product product): Adds a new product to the database and returns a
+           201 Created response with the newly created product.</li>
 </ul>
-<p>Not Found response.</p>
+<p>Key Methods of ControllerBase:</p>
 <ul>
-  <li>o CreateProduct(Product product): Adds a new product to the database and returns a</li>
-</ul>
-<p>201 Created response with the newly created product.
-Key Methods of ControllerBase:</p>
-<ul>
-  <li>• Ok(): Returns a 200 OK response with optional content.</li>
-  <li>• CreatedAtAction(): Returns a 201 Created response, typically used after a resource has been</li>
-</ul>
-<p>created.</p>
-<ul>
-  <li>• NotFound(): Returns a 404 Not Found response when a resource is not found.</li>
-  <li>• BadRequest(): Returns a 400 Bad Request response, often used when the client sends</li>
-</ul>
-<p>invalid data.</p>
-<ul>
-  <li>• NoContent(): Returns a 204 No Content response, used for successful requests that don’t</li>
+  <li>Ok(): Returns a 200 OK response with optional content.</li>
+  <li>CreatedAtAction(): Returns a 201 Created response, typically used after a resource has been
+      created.</li>
+  <li>NotFound(): Returns a 404 Not Found response when a resource is not found.</li>
+  <li>BadRequest(): Returns a 400 Bad Request response, often used when the client sends
+      invalid data.</li>
+  <li>NoContent(): Returns a 204 No Content response, used for successful requests that don’t</li>
 </ul>
 
     <div class="code-block">
@@ -2231,29 +1935,25 @@ Key Methods of ControllerBase:</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">return data.</code></pre>
+      <pre><code class="language-csharp">return data.
+Advantages of Using ControllerBase:</code></pre>
     </div>
-  <p>Advantages of Using ControllerBase:</p>
-<ul>
-  <li>• No View Support: Ideal for Web APIs as it does not include view-related features, which are</li>
+  <ul>
+  <li>No View Support: Ideal for Web APIs as it does not include view-related features, which are</li>
 </ul>
 <p>not needed for APIs.</p>
 <ul>
-  <li>• Focus on API Responses: It focuses on handling HTTP requests and responses, making it</li>
+  <li>Focus on API Responses: It focuses on handling HTTP requests and responses, making it
+      straightforward for API development.</li>
+  <li>Dependency Injection: Seamlessly integrates with ASP.NET Core’s dependency injection
+      system for service management.</li>
 </ul>
-<p>straightforward for API development.</p>
-<ul>
-  <li>• Dependency Injection: Seamlessly integrates with ASP.NET Core’s dependency injection</li>
-</ul>
-<p>system for service management.</p>
 <p>Key Points to Remember:</p>
-<ul>
-  <li>1. Purpose: ControllerBase is used as the base class for Web API controllers, providing essential</li>
-</ul>
-<p>methods for handling HTTP requests and responses without view support.</p>
-<ul>
-  <li>2. Action Methods: Used to handle various HTTP operations (GET, POST, PUT, DELETE) and</li>
-</ul>
+<ol>
+  <li>Purpose: ControllerBase is used as the base class for Web API controllers, providing essential
+      methods for handling HTTP requests and responses without view support.</li>
+  <li>Action Methods: Used to handle various HTTP operations (GET, POST, PUT, DELETE) and</li>
+</ol>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2263,171 +1963,123 @@ Key Methods of ControllerBase:</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">return appropriate responses.</code></pre>
+      <pre><code class="language-csharp">return appropriate responses.
+   3. Response Methods: Includes methods like Ok(), NotFound(), BadRequest(), NoContent() for</code></pre>
     </div>
-  <p>3. Response Methods: Includes methods like Ok(), NotFound(), BadRequest(), NoContent() for
-      standard HTTP responses.</p>
-<ul>
-  <li>4. Dependency Injection: Supports injection of services (e.g., repositories) directly into</li>
-</ul>
-<p>controllers.</p>
-<ul>
-  <li>5. No View Support: Focuses on APIs and does not support views, unlike the Controller class</li>
-</ul>
-<p>used in MVC applications.</p>
+  <p>standard HTTP responses.</p>
+<ol>
+  <li>Dependency Injection: Supports injection of services (e.g., repositories) directly into
+      controllers.</li>
+  <li>No View Support: Focuses on APIs and does not support views, unlike the Controller class
+      used in MVC applications.</li>
+</ol>
 
 <h2 id="summary">Summary</h2>
 <p>In this section, we’ve covered several foundational concepts related to ASP.NET Core Web API
 development, including RESTful principles, the role of Web API controllers, differences between API
 and MVC controllers, integration with Entity Framework Core, return types for Web API methods,
-and the use of IActionResult vs ActionResult&lt;T&gt;.
+and the use of <code>IActionResult</code> vs ActionResult&lt;T&gt;.
 Here’s a consolidated overview of each concept:</p>
-
-<h2 id="1-aspnet-core-web-api-and-restful-principles">1. ASP.NET Core Web API and RESTful Principles</h2>
 <ul>
-  <li>• RESTful Principles: REST (Representational State Transfer) is an architectural style for</li>
-</ul>
-<p>designing networked applications. RESTful APIs use HTTP requests to perform CRUD
+  <li>1. ASP.NET Core Web API and RESTful Principles</li>
+  <li>RESTful Principles: REST (Representational State Transfer) is an architectural style for
+      designing networked applications. RESTful APIs use HTTP requests to perform CRUD
       operations and follow principles such as statelessness, resource-based URIs, and standard
-      HTTP methods (GET, POST, PUT, DELETE).</p>
-<ul>
-  <li>• Resource-Based: Resources are entities that APIs expose (e.g., products, users). URIs should</li>
+      HTTP methods (GET, POST, PUT, DELETE).</li>
+  <li>Resource-Based: Resources are entities that APIs expose (e.g., products, users). URIs should
+      represent resources, and actions should be performed using HTTP methods.</li>
+  <li>Stateless: Each request from a client must contain all necessary information for the server to
+      fulfill the request. The server does not store client state between requests.</li>
+  <li>Uniform Interface: A consistent, standard way to interact with resources across the API. This
+      includes using standard HTTP methods and status codes.</li>
+  <li>2. Web API Controllers</li>
+  <li>Purpose: Web API controllers are responsible for handling HTTP requests and returning
+      responses in the form of JSON or XML data. They inherit from ControllerBase and are
+      typically decorated with [ApiController] to enable Web API-specific features.</li>
+  <li>Attributes: [Route] defines the route template for the controller, and [ApiController]
+      enables automatic model validation and binding.</li>
+  <li>3. API Controllers vs MVC Controllers</li>
+  <li>API Controllers:</li>
+  <li>Inherit from ControllerBase.</li>
+  <li>Designed for handling HTTP requests and returning data (usually in JSON format).</li>
+  <li>Do not include support for rendering views.</li>
+  <li>MVC Controllers:</li>
+  <li>Inherit from Controller.</li>
+  <li>Designed for handling requests that involve rendering views.</li>
+  <li>Include support for view-related features, such as returning HTML content and using
+           Razor views.</li>
+  <li>4. Entity Framework Core with Web API</li>
+  <li>Purpose: EF Core is an Object-Relational Mapper (ORM) that provides a way to interact with
+      databases using .NET objects. It abstracts database operations and enables CRUD operations
+      through LINQ queries.</li>
+  <li>Integration: Typically involves setting up a <code>DbContext</code> class to manage entities and configure
+      relationships. Controllers use dependency injection to access the <code>DbContext</code> for data
+      operations.</li>
+  <li>5. Different Return Types of Web API Action Methods</li>
+  <li><code>IActionResult</code>:</li>
+  <li>Provides flexibility to return various types of responses and HTTP status codes.</li>
+  <li>Example: Ok(), NotFound(), BadRequest(), Redirect(), File().</li>
+  <li>ActionResult&lt;T&gt;:</li>
+  <li>Combines <code>IActionResult</code> with a specific return type, allowing you to return both data
+           and status codes from the same action method.</li>
+  <li>Example: Returning a Product object with Ok(product).</li>
+  <li>6. <code>IActionResult</code> vs ActionResult&lt;T&gt;</li>
+  <li><code>IActionResult</code>:</li>
+  <li>Provides control over different HTTP responses and status codes.</li>
+  <li>Suitable for scenarios requiring diverse response types.</li>
+  <li>ActionResult&lt;T&gt;:</li>
+  <li>Simplifies returning data and status codes together.</li>
+  <li>Ideal for methods returning a specific type along with potential status codes.</li>
+  <li>7. ControllerBase</li>
+  <li>Purpose: Serves as the base class for Web API controllers, focusing on handling HTTP
+      requests and responses without view support.</li>
+  <li>Key Methods: Includes methods like Ok(), NotFound(), BadRequest(), NoContent(), and
+      CreatedAtAction().</li>
+  <li>Dependency Injection: Supports injecting services into controllers for data operations and
+      business logic.</li>
 </ul>
-<p>represent resources, and actions should be performed using HTTP methods.</p>
-<ul>
-  <li>• Stateless: Each request from a client must contain all necessary information for the server to</li>
-</ul>
-<p>fulfill the request. The server does not store client state between requests.</p>
-<ul>
-  <li>• Uniform Interface: A consistent, standard way to interact with resources across the API. This</li>
-</ul>
-<p>includes using standard HTTP methods and status codes.</p>
-
-<h2 id="2-web-api-controllers">2. Web API Controllers</h2>
-<ul>
-  <li>• Purpose: Web API controllers are responsible for handling HTTP requests and returning</li>
-</ul>
-<p>responses in the form of JSON or XML data. They inherit from ControllerBase and are
-      typically decorated with [ApiController] to enable Web API-specific features.</p>
-<ul>
-  <li>• Attributes: [Route] defines the route template for the controller, and [ApiController]</li>
-</ul>
-<p>enables automatic model validation and binding.</p>
-
-<h2 id="3-api-controllers-vs-mvc-controllers">3. API Controllers vs MVC Controllers</h2>
-<ul>
-  <li>• API Controllers:</li>
-  <li>o Inherit from ControllerBase.</li>
-  <li>o Designed for handling HTTP requests and returning data (usually in JSON format).</li>
-  <li>o Do not include support for rendering views.</li>
-  <li>• MVC Controllers:</li>
-  <li>o Inherit from Controller.</li>
-  <li>o Designed for handling requests that involve rendering views.</li>
-  <li>o Include support for view-related features, such as returning HTML content and using</li>
-</ul>
-<p>Razor views.</p>
-
-<h2 id="4-entity-framework-core-with-web-api">4. Entity Framework Core with Web API</h2>
-<ul>
-  <li>• Purpose: EF Core is an Object-Relational Mapper (ORM) that provides a way to interact with</li>
-</ul>
-<p>databases using .NET objects. It abstracts database operations and enables CRUD operations
-      through LINQ queries.</p>
-<ul>
-  <li>• Integration: Typically involves setting up a DbContext class to manage entities and configure</li>
-</ul>
-<p>relationships. Controllers use dependency injection to access the DbContext for data
-      operations.</p>
-
-<h2 id="5-different-return-types-of-web-api-action-methods">5. Different Return Types of Web API Action Methods</h2>
-<ul>
-  <li>• IActionResult:</li>
-  <li>o Provides flexibility to return various types of responses and HTTP status codes.</li>
-  <li>o Example: Ok(), NotFound(), BadRequest(), Redirect(), File().</li>
-  <li>• ActionResult&lt;T&gt;:</li>
-  <li>o Combines IActionResult with a specific return type, allowing you to return both data</li>
-</ul>
-<p>and status codes from the same action method.</p>
-<ul>
-  <li>o Example: Returning a Product object with Ok(product).</li>
-</ul>
-
-<h2 id="6-iactionresult-vs-actionresultt">6. IActionResult vs ActionResult&lt;T&gt;</h2>
-<ul>
-  <li>• IActionResult:</li>
-  <li>o Provides control over different HTTP responses and status codes.</li>
-  <li>o Suitable for scenarios requiring diverse response types.</li>
-  <li>• ActionResult&lt;T&gt;:</li>
-  <li>o Simplifies returning data and status codes together.</li>
-  <li>o Ideal for methods returning a specific type along with potential status codes.</li>
-</ul>
-
-<h2 id="7-controllerbase">7. ControllerBase</h2>
-<ul>
-  <li>• Purpose: Serves as the base class for Web API controllers, focusing on handling HTTP</li>
-</ul>
-<p>requests and responses without view support.</p>
-<ul>
-  <li>• Key Methods: Includes methods like Ok(), NotFound(), BadRequest(), NoContent(), and</li>
-</ul>
-<p>CreatedAtAction().</p>
-<ul>
-  <li>• Dependency Injection: Supports injecting services into controllers for data operations and</li>
-</ul>
-<p>business logic.</p>
 
 <h2 id="key-points-to-remember">Key Points to Remember</h2>
-<ul>
-  <li>1. RESTful Principles: Focus on resource-based URIs, stateless communication, and uniform</li>
-</ul>
-<p>interfaces for API design.</p>
-<ul>
-  <li>2. Web API Controllers: Inherit from ControllerBase, handle HTTP requests, and return data</li>
-</ul>
-<p>responses.</p>
-<ul>
-  <li>3. API vs MVC Controllers: API controllers handle data responses without views, while MVC</li>
-</ul>
-<p>controllers manage both data and view rendering.</p>
-<ul>
-  <li>4. Entity Framework Core: Used for ORM in ASP.NET Core, enabling CRUD operations and data</li>
-</ul>
-<p>management.</p>
-<ul>
-  <li>5. Return Types: IActionResult provides flexible responses, while ActionResult&lt;T&gt; combines</li>
-</ul>
-<p>data and status codes.</p>
-<ul>
-  <li>6. ControllerBase: Core class for Web API controllers, focusing on HTTP request handling and</li>
-</ul>
-<p>response generation.</p>
+<ol>
+  <li>RESTful Principles: Focus on resource-based URIs, stateless communication, and uniform
+      interfaces for API design.</li>
+  <li>Web API Controllers: Inherit from ControllerBase, handle HTTP requests, and return data
+      responses.</li>
+  <li>API vs MVC Controllers: API controllers handle data responses without views, while MVC
+      controllers manage both data and view rendering.</li>
+  <li>Entity Framework Core: Used for ORM in ASP.NET Core, enabling CRUD operations and data
+      management.</li>
+  <li>Return Types: <code>IActionResult</code> provides flexible responses, while ActionResult&lt;T&gt; combines
+      data and status codes.</li>
+  <li>ControllerBase: Core class for Web API controllers, focusing on HTTP request handling and
+      response generation.</li>
+</ol>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
 <section class="cheatsheet-section" aria-labelledby="cheat-sheet-quick-reference">
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
-  <p>Section 26 – Asp.Net Core Web API – Cheat Sheet</p>
   <h3 id="introduction-to-web-api">Introduction to Web API</h3>
-  <p>ASP.NET Core Web API is a component (part) of ASP.NET Core, which is used create HTTP-based
+<p>ASP.NET Core Web API is a component (part) of ASP.NET Core, which is used create HTTP-based
 RESTful services (also known as HTTP services) that can be consumed (invoked) by wide range of
 client applications such as single-page web applications, mobile applications etc.
 Asp.Net Core:</p>
-  <ul>
-    <li>• Asp.Net Core MVC</li>
-    <li>• Asp.Net Core Web API</li>
-    <li>• Asp.Net Core Blazor</li>
-    <li>• Asp.Net Core Razor Pages</li>
-  </ul>
-  <h3 id="restful-web-api-services">RESTful / Web API Services</h3>
-  <p>RESTful services (Representational State Transfer) is an architecture style that defines to create HTTP
+<ul>
+  <li>Asp.Net Core MVC</li>
+  <li>Asp.Net Core Web API</li>
+  <li>Asp.Net Core Blazor</li>
+  <li>Asp.Net Core Razor Pages
+RESTful / Web API Services
+RESTful services (Representational State Transfer) is an architecture style that defines to create HTTP
 services that receives HTTP GET, POST, PUT, DELETE requests; perform CRUD operations on the
-appropriate data source; and returns JSON / XML data as response to the client.</p>
+appropriate data source; and returns JSON / XML data as response to the client.</li>
+</ul>
   <h3 id="web-api-controllers-1">Web API Controllers</h3>
-  <p>Should be either or both:</p>
-  <ul>
-    <li>• The class name should be suffixed with &quot;Controller&quot;. Eg: ProductsController</li>
-    <li>• The [ApiController] attribute is applied to the same class or to its base class.</li>
-  </ul>
+<p>Should be either or both:</p>
+<ul>
+  <li>The class name should be suffixed with &quot;Controller&quot;. Eg: ProductsController</li>
+  <li>The [ApiController] attribute is applied to the same class or to its base class.</li>
+</ul>
   <h3 id="controller">Controller</h3>
 
     <div class="code-block">
@@ -2442,29 +2094,35 @@ appropriate data source; and returns JSON / XML data as response to the client.<
 class ClassNameController
 {
  //action methods here
-}</code></pre>
+}
+Optional:</code></pre>
     </div>
-    <p>Optional:</p>
   <ul>
-    <li>• Is a public class.</li>
-    <li>• Inherited from Microsoft.AspNetCore.Mvc.ControllerBase.</li>
-  </ul>
+  <li>Is a public class.</li>
+</ul>
+<ul>
+  <li>Inherited from Microsoft.AspNetCore.Mvc.ControllerBase.</li>
+</ul>
   <h3 id="introduction-to-entityframeworkcore">Introduction to EntityFrameworkCore</h3>
-  <p>EntityFrameworkCore is light-weight, extensible and cross-platform framework for accessing
+<p>EntityFrameworkCore is light-weight, extensible and cross-platform framework for accessing
 databases in .NET applications.
 It is the most-used database framework for Asp.Net Core Apps.</p>
   <h3 id="efcore-models">EFCore Models</h3>
   <h3 id="pros-cons-of-entityframeworkcore">Pros &amp; Cons of EntityFrameworkCore</h3>
-  <h3 id="1-shorter-code">1. Shorter Code</h3>
-  <p>The CRUD operations / calling stored procedures are done with shorter amount of code than
-ADO.NET.</p>
-  <h3 id="2-performance">2. Performance</h3>
-  <p>EFCore performs slower than ADO.NET.
-So ADO.NET or its alternatives (such as Dapper) are recommended for larger &amp; high-traffic
+<ol>
+  <li>Shorter Code
+The CRUD operations / calling stored procedures are done with shorter amount of code than
+ADO.NET.</li>
+  <li>Performance
+EFCore performs slower than ADO.NET.</li>
+</ol>
+<p>So ADO.NET or its alternatives (such as Dapper) are recommended for larger &amp; high-traffic
 applications.</p>
-  <h3 id="3-strongly-typed">3. Strongly-Typed</h3>
-  <p>The columns as created as properties in model class.
-So the Intellisense offers columns of the table as properties, while writing the code.
+<ol>
+  <li>Strongly-Typed
+The columns as created as properties in model class.</li>
+</ol>
+<p>So the Intellisense offers columns of the table as properties, while writing the code.
 Plus, the developer need not convert data types of values; it&#39;s automatically done by EFCore itself.</p>
   <h3 id="problemdetails">ProblemDetails</h3>
   <h3 id="problemdetails-1">ProblemDetails</h3>
@@ -2479,24 +2137,13 @@ Plus, the developer need not convert data types of values; it&#39;s automaticall
       </div>
       <pre><code class="language-csharp">public class ProblemDetails
 {
-}</code></pre>
-    </div>
-    <p>string? Type { get; set; } //URI references that identifies the problem type
+ string? Type { get; set; } //URI references that identifies the problem type
  string? Title { get; set; } //Summary of the problem type
  int? Status { get; set; } //HTTP response status code
- string? Detail { get; set; } //Explanation of the problem</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp"></code></pre>
+ string? Detail { get; set; } //Explanation of the problem
+}</code></pre>
     </div>
-    <p>ValidationProblemDetails</p>
+  <p>ValidationProblemDetails</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2508,25 +2155,14 @@ Plus, the developer need not convert data types of values; it&#39;s automaticall
       </div>
       <pre><code class="language-csharp">public class ValidationProblemDetails : ProblemDetails
 {
-}</code></pre>
-    </div>
-    <p>string? Type { get; set; } //URI references that identifies the problem type
+ string? Type { get; set; } //URI references that identifies the problem type
  string? Title { get; set; } //Summary of the problem type
  int? Status { get; set; } //HTTP response status code
  string? Detail { get; set; } //Explanation of the problem
- IDictionary&lt;string, string[]&gt; Errors { get; set; } //List of validation errors</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp"></code></pre>
+ IDictionary&lt;string, string[]&gt; Errors { get; set; } //List of validation errors
+}</code></pre>
     </div>
-    <p>IActionResult [vs] ActionResult</p>
+  <p><code>IActionResult</code> [vs] ActionResult</p>
   <h3 id="iactionresult">IActionResult</h3>
 
     <div class="code-block">
@@ -2539,21 +2175,10 @@ Plus, the developer need not convert data types of values; it&#39;s automaticall
       </div>
       <pre><code class="language-csharp">public interface IActionResult
 {
+ Task ExecuteResultAsync(ActionContext context); //converts an object into response
 }</code></pre>
     </div>
-    <p>Task ExecuteResultAsync(ActionContext context); //converts an object into response</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp"></code></pre>
-    </div>
-    <p>ActionResult&lt;T&gt;</p>
+  <p>ActionResult&lt;T&gt;</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2565,21 +2190,10 @@ Plus, the developer need not convert data types of values; it&#39;s automaticall
       </div>
       <pre><code class="language-csharp">public sealed class ActionResult&lt;T&gt;
 {
+ IActionResult Convert(); //converts the object into ObjectResult
 }</code></pre>
     </div>
-    <p>IActionResult Convert(); //converts the object into ObjectResult</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp"></code></pre>
-    </div>
-    <p>IActionResult</p>
+  <p><code>IActionResult</code></p>
   <h3 id="objectresult">ObjectResult</h3>
 </section>
 
@@ -2601,13 +2215,13 @@ Plus, the developer need not convert data types of values; it&#39;s automaticall
       <nav class="bottom-nav" aria-label="Previous and Next Section Navigation">
         
       <a href="section-25.html" class="nav-card prev" aria-label="Previous Section: Sec 25 - Identity and Authorization">
-        <span class="nav-direction">← Previous Section</span>
+        <span class="nav-direction">&larr; Previous Section</span>
         <span class="nav-title">Sec 25: Identity and Authorization</span>
       </a>
     
         
       <a href="section-27.html" class="nav-card next" aria-label="Next Section: Sec 27 - Swagger">
-        <span class="nav-direction">Next Section →</span>
+        <span class="nav-direction">Next Section &rarr;</span>
         <span class="nav-title">Sec 27: Swagger</span>
       </a>
     
@@ -2615,8 +2229,8 @@ Plus, the developer need not convert data types of values; it&#39;s automaticall
 
       <!-- Section Footer -->
       <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); color: var(--text-dim); font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;" role="contentinfo">
-        <span>ASP.NET Core Masterclass — Offline Documentation Portal</span>
-        <a href="#top" style="color: var(--text-muted); text-decoration: none;">↑ Back to top</a>
+        <span>ASP.NET Core Masterclass &mdash; Offline Documentation Portal</span>
+        <a href="#top" style="color: var(--text-muted); text-decoration: none;">&uarr; Back to top</a>
       </footer>
     </main>
 
@@ -2626,27 +2240,7 @@ Plus, the developer need not convert data types of values; it&#39;s automaticall
       <ul class="toc-list">
         
         <li class="toc-item">
-          <a href="#1-understanding-web-api" class="toc-link">1. Understanding Web API</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#2-restful-architecture" class="toc-link">2. RESTful Architecture</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#3-restful-constraints-in-web-api" class="toc-link">3. RESTful Constraints in Web API</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#get-apiproducts12345" class="toc-link">GET /api/products/12345</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#4-implementing-a-simple-web-api-with-rest-principles" class="toc-link">4. Implementing a Simple Web API with REST Principles</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#5-http-status-codes" class="toc-link">5. HTTP Status Codes</a>
         </li>
       
         <li class="toc-item">
@@ -2654,51 +2248,7 @@ Plus, the developer need not convert data types of values; it&#39;s automaticall
         </li>
       
         <li class="toc-item">
-          <a href="#1-what-is-a-web-api-controller" class="toc-link">1. What is a Web API Controller?</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#2-action-methods-in-web-api-controllers" class="toc-link">2. Action Methods in Web API Controllers</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#3-attribute-routing" class="toc-link">3. Attribute Routing</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#4-binding-data-to-controllers" class="toc-link">4. Binding Data to Controllers</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#5-validation-in-web-api-controllers" class="toc-link">5. Validation in Web API Controllers</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#validating-in-the-controller" class="toc-link">Validating in the Controller</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#6-dependency-injection-in-web-api-controllers" class="toc-link">6. Dependency Injection in Web API Controllers</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#1-overview-of-api-controllers" class="toc-link">1. Overview of API Controllers</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#2-overview-of-mvc-controllers" class="toc-link">2. Overview of MVC Controllers</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#3-differences-between-api-and-mvc-controllers" class="toc-link">3. Differences Between API and MVC Controllers</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#6-automatic-model-validation-in-api-controllers" class="toc-link">6. Automatic Model Validation in API Controllers</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#7-restful-api-vs-mvc" class="toc-link">7. RESTful API vs MVC</a>
         </li>
       
         <li class="toc-item">
@@ -2706,59 +2256,7 @@ Plus, the developer need not convert data types of values; it&#39;s automaticall
         </li>
       
         <li class="toc-item">
-          <a href="#1-setup-ef-core-in-an-aspnet-core-web-api" class="toc-link">1. Setup EF Core in an ASP.NET Core Web API</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#3-crud-operations-in-web-api-with-ef-core" class="toc-link">3. CRUD Operations in Web API with EF Core</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#4-migration-creating-the-database" class="toc-link">4. Migration: Creating the Database</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#5-using-ef-core-in-production" class="toc-link">5. Using EF Core in Production</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#different-return-types-of-web-api-action-methods" class="toc-link">Different Return Types of Web API Action Methods</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#1-void" class="toc-link">1. Void</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#2-primitive-types-eg-int-string-bool" class="toc-link">2. Primitive Types (e.g., int, string, bool)</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#3-ienumerablet-or-listt" class="toc-link">3. IEnumerable&lt;T&gt; or List&lt;T&gt;</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#4-object" class="toc-link">4. Object</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#5-task-taskt-asynchronous-methods" class="toc-link">5. Task / Task&lt;T&gt; (Asynchronous Methods)</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#6-actionresultt" class="toc-link">6. ActionResult&lt;T&gt;</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#7-iactionresult" class="toc-link">7. IActionResult</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#8-custom-response-wrappers" class="toc-link">8. Custom Response Wrappers</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#9-fileresult-physicalfileresult" class="toc-link">9. FileResult / PhysicalFileResult</a>
         </li>
       
         <li class="toc-item">
@@ -2771,34 +2269,6 @@ Plus, the developer need not convert data types of values; it&#39;s automaticall
       
         <li class="toc-item">
           <a href="#summary" class="toc-link">Summary</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#1-aspnet-core-web-api-and-restful-principles" class="toc-link">1. ASP.NET Core Web API and RESTful Principles</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#2-web-api-controllers" class="toc-link">2. Web API Controllers</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#3-api-controllers-vs-mvc-controllers" class="toc-link">3. API Controllers vs MVC Controllers</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#4-entity-framework-core-with-web-api" class="toc-link">4. Entity Framework Core with Web API</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#5-different-return-types-of-web-api-action-methods" class="toc-link">5. Different Return Types of Web API Action Methods</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#6-iactionresult-vs-actionresultt" class="toc-link">6. IActionResult vs ActionResult&lt;T&gt;</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#7-controllerbase" class="toc-link">7. ControllerBase</a>
         </li>
       
         <li class="toc-item">

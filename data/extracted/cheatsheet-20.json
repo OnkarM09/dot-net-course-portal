@@ -446,28 +446,14 @@
           "lines": [
             "{",
             "\"Logging\": {",
-            " \"LogLevel\": {"
-          ],
-          "text": "{\n\"Logging\": {\n \"LogLevel\": {"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            " \"LogLevel\": {",
             " \"Default\": \"Debug | Information | Warning | Error| Critical\"",
-            " \"Microsoft.AspNetCore\": \"Debug | Information | Warning | Error | Critical\""
-          ],
-          "text": " \"Default\": \"Debug | Information | Warning | Error| Critical\"\n \"Microsoft.AspNetCore\": \"Debug | Information | Warning | Error | Critical\""
-        },
-        {
-          "type": "code",
-          "page": 2,
-          "lines": [
+            " \"Microsoft.AspNetCore\": \"Debug | Information | Warning | Error | Critical\"",
             " }",
             "}",
             "}"
           ],
-          "text": " }\n}\n}"
+          "text": "{\n\"Logging\": {\n \"LogLevel\": {\n \"Default\": \"Debug | Information | Warning | Error| Critical\"\n \"Microsoft.AspNetCore\": \"Debug | Information | Warning | Error | Critical\"\n }\n}\n}"
         },
         {
           "type": "prose",
@@ -671,15 +657,15 @@
             "Logging Providers",
             "Logging provider specifies where to store / display logs.",
             "The built-in logging providers in asp.net core doesn't support file / database logging providers.",
-            "in Program.cs:",
-            "builder.Host.ConfigureLogging(logging =>"
+            "in Program.cs:"
           ],
-          "text": "Logging Providers\nLogging provider specifies where to store / display logs.\nThe built-in logging providers in asp.net core doesn't support file / database logging providers.\nin Program.cs:\nbuilder.Host.ConfigureLogging(logging =>"
+          "text": "Logging Providers\nLogging provider specifies where to store / display logs.\nThe built-in logging providers in asp.net core doesn't support file / database logging providers.\nin Program.cs:"
         },
         {
           "type": "code",
           "page": 3,
           "lines": [
+            "builder.Host.ConfigureLogging(logging =>",
             "{",
             " logging.ClearProviders();",
             " logging.AddConsole();",
@@ -687,7 +673,7 @@
             " logging.AddEventLog();",
             "});"
           ],
-          "text": "{\n logging.ClearProviders();\n logging.AddConsole();\n logging.AddDebug();\n logging.AddEventLog();\n});"
+          "text": "builder.Host.ConfigureLogging(logging =>\n{\n logging.ClearProviders();\n logging.AddConsole();\n logging.AddDebug();\n logging.AddEventLog();\n});"
         }
       ],
       "char_count_raw": 488,
@@ -1372,20 +1358,20 @@
           "type": "prose",
           "page": 5,
           "lines": [
-            "Program.cs:",
-            "builder.Serices.AddHttpLogging(options =>"
+            "Program.cs:"
           ],
-          "text": "Program.cs:\nbuilder.Serices.AddHttpLogging(options =>"
+          "text": "Program.cs:"
         },
         {
           "type": "code",
           "page": 5,
           "lines": [
+            "builder.Serices.AddHttpLogging(options =>",
             "{",
             " options.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.YourOption;",
             "});"
           ],
-          "text": "{\n options.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.YourOption;\n});"
+          "text": "builder.Serices.AddHttpLogging(options =>\n{\n options.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.YourOption;\n});"
         },
         {
           "type": "prose",
@@ -1558,63 +1544,21 @@
           "page": 6,
           "lines": [
             "{",
-            "\"Serilog\": {"
-          ],
-          "text": "{\n\"Serilog\": {"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "\"Serilog\": {",
             " \"Using\": [",
             "  \"Serilog.Sinks.YourSinkHere\"",
             " ],",
             " \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",",
-            " \"WriteTo\": ["
-          ],
-          "text": " \"Using\": [\n  \"Serilog.Sinks.YourSinkHere\"\n ],\n \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",\n \"WriteTo\": ["
-        },
-        {
-          "type": "code",
-          "page": 6,
-          "lines": [
-            " {"
-          ],
-          "text": " {"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            " \"WriteTo\": [",
+            " {",
             "  \"Name\": \"YourSinkHere\",",
-            "  \"Args\": \"YourArguments\""
-          ],
-          "text": "  \"Name\": \"YourSinkHere\",\n  \"Args\": \"YourArguments\""
-        },
-        {
-          "type": "code",
-          "page": 6,
-          "lines": [
-            " }"
-          ],
-          "text": " }"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
-            " ]"
-          ],
-          "text": " ]"
-        },
-        {
-          "type": "code",
-          "page": 6,
-          "lines": [
+            "  \"Args\": \"YourArguments\"",
+            " }",
+            " ]",
             "}",
             "}"
           ],
-          "text": "}\n}"
+          "text": "{\n\"Serilog\": {\n \"Using\": [\n  \"Serilog.Sinks.YourSinkHere\"\n ],\n \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",\n \"WriteTo\": [\n {\n  \"Name\": \"YourSinkHere\",\n  \"Args\": \"YourArguments\"\n }\n ]\n}\n}"
         }
       ],
       "char_count_raw": 238,
@@ -1743,62 +1687,48 @@
           "type": "prose",
           "page": 7,
           "lines": [
-            "Program.cs:",
-            "builder.Host.UseSerilog(HostBuilderContext context,",
-            "IServiceProvider services, LoggerConfiguration configuration) =>"
+            "Program.cs:"
           ],
-          "text": "Program.cs:\nbuilder.Host.UseSerilog(HostBuilderContext context,\nIServiceProvider services, LoggerConfiguration configuration) =>"
+          "text": "Program.cs:"
         },
         {
           "type": "code",
           "page": 7,
           "lines": [
-            "{"
-          ],
-          "text": "{"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "builder.Host.UseSerilog(HostBuilderContext context,",
+            "IServiceProvider services, LoggerConfiguration configuration) =>",
+            "{",
             " configuration",
             " .ReadFrom.Configuration(context.Configuration) //read configuration settings from built-in"
           ],
-          "text": " configuration\n .ReadFrom.Configuration(context.Configuration) //read configuration settings from built-in"
-        },
-        {
-          "type": "heading",
-          "page": 7,
-          "lines": [
-            "IConfiguration"
-          ],
-          "text": "IConfiguration"
+          "text": "builder.Host.UseSerilog(HostBuilderContext context,\nIServiceProvider services, LoggerConfiguration configuration) =>\n{\n configuration\n .ReadFrom.Configuration(context.Configuration) //read configuration settings from built-in"
         },
         {
           "type": "prose",
           "page": 7,
           "lines": [
-            " .ReadFrom.Services(services); //read services from built-in IServiceProvider",
+            "IConfiguration",
+            " .ReadFrom.Services(services); //read services from built-in IServiceProvider"
+          ],
+          "text": "IConfiguration\n .ReadFrom.Services(services); //read services from built-in IServiceProvider"
+        },
+        {
+          "type": "code",
+          "page": 7,
+          "lines": [
             "});"
           ],
-          "text": " .ReadFrom.Services(services); //read services from built-in IServiceProvider\n});"
-        },
-        {
-          "type": "heading",
-          "page": 7,
-          "lines": [
-            "Serilog - File Sink"
-          ],
-          "text": "Serilog - File Sink"
+          "text": "});"
         },
         {
           "type": "prose",
           "page": 7,
           "lines": [
+            "Serilog - File Sink",
             "The \"Serilog.Sinks.File\" logs into a specified file.",
             "You can configure the filename, rolling interval, file size limit etc., using configuration settings."
           ],
-          "text": "The \"Serilog.Sinks.File\" logs into a specified file.\nYou can configure the filename, rolling interval, file size limit etc., using configuration settings."
+          "text": "Serilog - File Sink\nThe \"Serilog.Sinks.File\" logs into a specified file.\nYou can configure the filename, rolling interval, file size limit etc., using configuration settings."
         }
       ],
       "char_count_raw": 525,
@@ -1985,64 +1915,22 @@
           "page": 8,
           "lines": [
             "{",
-            "\"Serilog\": {"
-          ],
-          "text": "{\n\"Serilog\": {"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "\"Serilog\": {",
             "  \"Using\": [ \"Serilog.Sinks.File\" ],",
             "  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",",
-            "  \"WriteTo\": ["
-          ],
-          "text": "  \"Using\": [ \"Serilog.Sinks.File\" ],\n  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",\n  \"WriteTo\": ["
-        },
-        {
-          "type": "code",
-          "page": 8,
-          "lines": [
-            "  {"
-          ],
-          "text": "  {"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "  \"WriteTo\": [",
+            "  {",
             "  \"Name\": \"File\",",
             "  \"Args\": [",
             "   \"path\": \"folder/filename.ext\",",
             "   \"rollingInterval\": \"Minute | Hour | Day | Month | Year | Infinite\",",
-            "  ]"
-          ],
-          "text": "  \"Name\": \"File\",\n  \"Args\": [\n   \"path\": \"folder/filename.ext\",\n   \"rollingInterval\": \"Minute | Hour | Day | Month | Year | Infinite\",\n  ]"
-        },
-        {
-          "type": "code",
-          "page": 8,
-          "lines": [
-            "  }"
-          ],
-          "text": "  }"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
-            " ]"
-          ],
-          "text": " ]"
-        },
-        {
-          "type": "code",
-          "page": 8,
-          "lines": [
+            "  ]",
+            "  }",
+            " ]",
             " }",
             "}"
           ],
-          "text": " }\n}"
+          "text": "{\n\"Serilog\": {\n  \"Using\": [ \"Serilog.Sinks.File\" ],\n  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",\n  \"WriteTo\": [\n  {\n  \"Name\": \"File\",\n  \"Args\": [\n   \"path\": \"folder/filename.ext\",\n   \"rollingInterval\": \"Minute | Hour | Day | Month | Year | Infinite\",\n  ]\n  }\n ]\n }\n}"
         },
         {
           "type": "prose",
@@ -2239,64 +2127,22 @@
           "page": 9,
           "lines": [
             "{",
-            " \"Serilog\": {"
-          ],
-          "text": "{\n \"Serilog\": {"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            " \"Serilog\": {",
             "  \"Using\": [ \"Serilog.Sinks.MSSqlServer\" ],",
             "  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",",
-            "  \"WriteTo\": ["
-          ],
-          "text": "  \"Using\": [ \"Serilog.Sinks.MSSqlServer\" ],\n  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",\n  \"WriteTo\": ["
-        },
-        {
-          "type": "code",
-          "page": 9,
-          "lines": [
-            "  {"
-          ],
-          "text": "  {"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "  \"WriteTo\": [",
+            "  {",
             "  \"Name\": \"MSSqlServer\",",
             "  \"Args\": [",
             "   \"connectionString\": \"your_connection_string_here\",",
             "   \"tableName\": \"table_name\",",
-            "  ]"
-          ],
-          "text": "  \"Name\": \"MSSqlServer\",\n  \"Args\": [\n   \"connectionString\": \"your_connection_string_here\",\n   \"tableName\": \"table_name\",\n  ]"
-        },
-        {
-          "type": "code",
-          "page": 9,
-          "lines": [
-            "  }"
-          ],
-          "text": "  }"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
-            " ]"
-          ],
-          "text": " ]"
-        },
-        {
-          "type": "code",
-          "page": 9,
-          "lines": [
+            "  ]",
+            "  }",
+            " ]",
             " }",
             "}"
           ],
-          "text": " }\n}"
+          "text": "{\n \"Serilog\": {\n  \"Using\": [ \"Serilog.Sinks.MSSqlServer\" ],\n  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",\n  \"WriteTo\": [\n  {\n  \"Name\": \"MSSqlServer\",\n  \"Args\": [\n   \"connectionString\": \"your_connection_string_here\",\n   \"tableName\": \"table_name\",\n  ]\n  }\n ]\n }\n}"
         },
         {
           "type": "prose",
@@ -2493,63 +2339,21 @@
           "page": 10,
           "lines": [
             "{",
-            " \"Serilog\": {"
-          ],
-          "text": "{\n \"Serilog\": {"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            " \"Serilog\": {",
             "  \"Using\": [ \"Serilog.Sinks.Seq\" ],",
             "  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",",
-            "  \"WriteTo\": ["
-          ],
-          "text": "  \"Using\": [ \"Serilog.Sinks.Seq\" ],\n  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",\n  \"WriteTo\": ["
-        },
-        {
-          "type": "code",
-          "page": 10,
-          "lines": [
-            "  {"
-          ],
-          "text": "  {"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "  \"WriteTo\": [",
+            "  {",
             "   \"Name\": \"Seq\",",
             "   \"Args\": [",
             "    \"serverUrl\": \"http://localhost:5341\"",
-            "   ]"
-          ],
-          "text": "   \"Name\": \"Seq\",\n   \"Args\": [\n    \"serverUrl\": \"http://localhost:5341\"\n   ]"
-        },
-        {
-          "type": "code",
-          "page": 10,
-          "lines": [
-            "  }"
-          ],
-          "text": "  }"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
-            "  ]"
-          ],
-          "text": "  ]"
-        },
-        {
-          "type": "code",
-          "page": 10,
-          "lines": [
+            "   ]",
+            "  }",
+            "  ]",
             " }",
             "}"
           ],
-          "text": " }\n}"
+          "text": "{\n \"Serilog\": {\n  \"Using\": [ \"Serilog.Sinks.Seq\" ],\n  \"MinimumLevel\": \"Debug | Information | Warning | Error | Critical\",\n  \"WriteTo\": [\n  {\n   \"Name\": \"Seq\",\n   \"Args\": [\n    \"serverUrl\": \"http://localhost:5341\"\n   ]\n  }\n  ]\n }\n}"
         },
         {
           "type": "prose",

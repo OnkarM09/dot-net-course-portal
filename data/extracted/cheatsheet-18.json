@@ -593,20 +593,20 @@
           "page": 3,
           "lines": [
             "Represents a single database table; each column is represented as a model property.",
-            "Add DbContext as Service in Program.cs:",
-            "builder.Services.AddDbContext<DbContextClassName>( options => {"
+            "Add DbContext as Service in Program.cs:"
           ],
-          "text": "Represents a single database table; each column is represented as a model property.\nAdd DbContext as Service in Program.cs:\nbuilder.Services.AddDbContext<DbContextClassName>( options => {"
+          "text": "Represents a single database table; each column is represented as a model property.\nAdd DbContext as Service in Program.cs:"
         },
         {
           "type": "code",
           "page": 3,
           "lines": [
+            "builder.Services.AddDbContext<DbContextClassName>( options => {",
             "options.UseSqlServer();",
             "}",
             ");"
           ],
-          "text": "options.UseSqlServer();\n}\n);"
+          "text": "builder.Services.AddDbContext<DbContextClassName>( options => {\noptions.UseSqlServer();\n}\n);"
         }
       ],
       "char_count_raw": 666,
@@ -808,20 +808,20 @@
           "type": "code",
           "page": 4,
           "lines": [
-            "//Executes the migration; the database will be created or table schema gets updated as a result."
+            "//Executes the migration; the database will be created or table schema gets updated as a result.",
+            "Seed Data",
+            "in DbContext:",
+            "modelBuilder.Entity<ModelClass>().HasData(entityObject);"
           ],
-          "text": "//Executes the migration; the database will be created or table schema gets updated as a result."
+          "text": "//Executes the migration; the database will be created or table schema gets updated as a result.\nSeed Data\nin DbContext:\nmodelBuilder.Entity<ModelClass>().HasData(entityObject);"
         },
         {
           "type": "prose",
           "page": 4,
           "lines": [
-            "Seed Data",
-            "in DbContext:",
-            "modelBuilder.Entity<ModelClass>().HasData(entityObject);",
             "It adds initial data (initial rows) in tables, when the database is newly created."
           ],
-          "text": "Seed Data\nin DbContext:\nmodelBuilder.Entity<ModelClass>().HasData(entityObject);\nIt adds initial data (initial rows) in tables, when the database is newly created."
+          "text": "It adds initial data (initial rows) in tables, when the database is newly created."
         },
         {
           "type": "heading",
@@ -1047,22 +1047,22 @@
           "page": 5,
           "lines": [
             "LINQ Query:",
-            "_dbContext.DbSetName",
-            ".Where(item => item.Property == value)",
-            ".OrderBy(item => item.Property)",
-            ".Select(item => item);"
+            "_dbContext.DbSetName"
           ],
-          "text": "LINQ Query:\n_dbContext.DbSetName\n.Where(item => item.Property == value)\n.OrderBy(item => item.Property)\n.Select(item => item);"
+          "text": "LINQ Query:\n_dbContext.DbSetName"
         },
         {
           "type": "code",
           "page": 5,
           "lines": [
+            ".Where(item => item.Property == value)",
+            ".OrderBy(item => item.Property)",
+            ".Select(item => item);",
             "//Specifies condition for where clause",
             "//Specifies condition for 'order by' clause",
             "//Expression to be executed for each row"
           ],
-          "text": "//Specifies condition for where clause\n//Specifies condition for 'order by' clause\n//Expression to be executed for each row"
+          "text": ".Where(item => item.Property == value)\n.OrderBy(item => item.Property)\n.Select(item => item);\n//Specifies condition for where clause\n//Specifies condition for 'order by' clause\n//Expression to be executed for each row"
         },
         {
           "type": "prose",
@@ -1568,29 +1568,15 @@
           "page": 7,
           "lines": [
             "//Eg: \"EXECUTE [dbo].[StoredProcName] @Param1 @Parm2",
-            "//A list of objects of SqlParameter type"
-          ],
-          "text": "//Eg: \"EXECUTE [dbo].[StoredProcName] @Param1 @Parm2\n//A list of objects of SqlParameter type"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "//A list of objects of SqlParameter type",
             "Stored Procedure for Retrieving (Select):",
             "IQueryable<Model> DbSetName.FromSqlRaw(",
             "string sql,",
-            "paramsobject[] parameters)"
-          ],
-          "text": "Stored Procedure for Retrieving (Select):\nIQueryable<Model> DbSetName.FromSqlRaw(\nstring sql,\nparamsobject[] parameters)"
-        },
-        {
-          "type": "code",
-          "page": 7,
-          "lines": [
+            "paramsobject[] parameters)",
             "//Eg: \"EXECUTE [dbo].[StoredProcName] @Param1 @Parm2\"",
             "//A list of objects of SqlParameter type"
           ],
-          "text": "//Eg: \"EXECUTE [dbo].[StoredProcName] @Param1 @Parm2\"\n//A list of objects of SqlParameter type"
+          "text": "//Eg: \"EXECUTE [dbo].[StoredProcName] @Param1 @Parm2\n//A list of objects of SqlParameter type\nStored Procedure for Retrieving (Select):\nIQueryable<Model> DbSetName.FromSqlRaw(\nstring sql,\nparamsobject[] parameters)\n//Eg: \"EXECUTE [dbo].[StoredProcName] @Param1 @Parm2\"\n//A list of objects of SqlParameter type"
         }
       ],
       "char_count_raw": 527,
@@ -1916,42 +1902,14 @@
           "page": 8,
           "lines": [
             "public class ModelClass",
-            "{"
-          ],
-          "text": "public class ModelClass\n{"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
-            " [Column(\"ColumnName\", TypeName = \"datatype\")]"
-          ],
-          "text": " [Column(\"ColumnName\", TypeName = \"datatype\")]"
-        },
-        {
-          "type": "code",
-          "page": 8,
-          "lines": [
-            " public DataType PropertyName { get; set; }"
-          ],
-          "text": " public DataType PropertyName { get; set; }"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "{",
             " [Column(\"ColumnName\", TypeName = \"datatype\")]",
-            " publicDataTypePropertyName { get; set; }"
-          ],
-          "text": " [Column(\"ColumnName\", TypeName = \"datatype\")]\n publicDataTypePropertyName { get; set; }"
-        },
-        {
-          "type": "code",
-          "page": 8,
-          "lines": [
+            " public DataType PropertyName { get; set; }",
+            " [Column(\"ColumnName\", TypeName = \"datatype\")]",
+            " publicDataTypePropertyName { get; set; }",
             "}"
           ],
-          "text": "}"
+          "text": "public class ModelClass\n{\n [Column(\"ColumnName\", TypeName = \"datatype\")]\n public DataType PropertyName { get; set; }\n [Column(\"ColumnName\", TypeName = \"datatype\")]\n publicDataTypePropertyName { get; set; }\n}"
         },
         {
           "type": "prose",
@@ -2207,30 +2165,16 @@
             "public class CustomDbContext : DbContext",
             "{",
             " protected override void OnModelCreating(ModelBuilder modelBuilder)",
-            " {"
-          ],
-          "text": "public class CustomDbContext : DbContext\n{\n protected override void OnModelCreating(ModelBuilder modelBuilder)\n {\n  //Specify table name (and schema name optionally) to be mapped to the model class\n  modelBuilder.Entity<ModelClass>( ).ToTable(\"table_name\", schema: \"schema_name\");\n  //Specify view name (and schema name optionally) to be mapped to the model class\n  modelBuilder.Entity<ModelClass>( ).ToView(\"view_name\", schema: \"schema_name\");\n  //Specify default schema name applicable for all tables in the DbContext\n  modelBuilder.HasDefaultSchema(\"schema_name\");\n }\n}\npublic class CustomDbContext : DbContext\n{\n protected override void OnModelCreating(ModelBuilder modelBuilder)\n {"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            " {",
             "  modelBuilder.Entity<ModelClass>( ).Property(temp => temp.PropertyName)",
             "  .HasColumnName(\"column_name\") //Specifies column name in table",
             "  .HasColumnType(\"data_type\") //Specifies column data type in table",
-            "  .HasDefaultValue(\"default_value\") //Specifies default value of the column"
-          ],
-          "text": "  modelBuilder.Entity<ModelClass>( ).Property(temp => temp.PropertyName)\n  .HasColumnName(\"column_name\") //Specifies column name in table\n  .HasColumnType(\"data_type\") //Specifies column data type in table\n  .HasDefaultValue(\"default_value\") //Specifies default value of the column"
-        },
-        {
-          "type": "code",
-          "page": 9,
-          "lines": [
+            "  .HasDefaultValue(\"default_value\") //Specifies default value of the column",
             " }",
             "}",
             "public class CustomDbContext : DbContext"
           ],
-          "text": " }\n}\npublic class CustomDbContext : DbContext"
+          "text": "public class CustomDbContext : DbContext\n{\n protected override void OnModelCreating(ModelBuilder modelBuilder)\n {\n  //Specify table name (and schema name optionally) to be mapped to the model class\n  modelBuilder.Entity<ModelClass>( ).ToTable(\"table_name\", schema: \"schema_name\");\n  //Specify view name (and schema name optionally) to be mapped to the model class\n  modelBuilder.Entity<ModelClass>( ).ToView(\"view_name\", schema: \"schema_name\");\n  //Specify default schema name applicable for all tables in the DbContext\n  modelBuilder.HasDefaultSchema(\"schema_name\");\n }\n}\npublic class CustomDbContext : DbContext\n{\n protected override void OnModelCreating(ModelBuilder modelBuilder)\n {\n  modelBuilder.Entity<ModelClass>( ).Property(temp => temp.PropertyName)\n  .HasColumnName(\"column_name\") //Specifies column name in table\n  .HasColumnType(\"data_type\") //Specifies column data type in table\n  .HasDefaultValue(\"default_value\") //Specifies default value of the column\n }\n}\npublic class CustomDbContext : DbContext"
         }
       ],
       "char_count_raw": 1021,
@@ -2518,29 +2462,15 @@
             "{",
             " protected override void OnModelCreating(ModelBuilder modelBuilder)",
             " {",
-            "  //Specifies relation between primary key and foreign key among two tables"
-          ],
-          "text": "public class CustomDbContext : DbContext\n{\n protected override void OnModelCreating(ModelBuilder modelBuilder)\n {\n  //Specifies relation between primary key and foreign key among two tables"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "  //Specifies relation between primary key and foreign key among two tables",
             "  modelBuilder.Entity<ChildModel>( )",
             "  .HasOne<ParentModel>(parent => parent.ParentReferencePropertyInChildModel)",
             "  .WithMany(child => child.ChildReferencePropertyInParentModel) //optional",
-            "  .HasForeignKey(child => child.ForeignKeyPropertyInChildModel)"
-          ],
-          "text": "  modelBuilder.Entity<ChildModel>( )\n  .HasOne<ParentModel>(parent => parent.ParentReferencePropertyInChildModel)\n  .WithMany(child => child.ChildReferencePropertyInParentModel) //optional\n  .HasForeignKey(child => child.ForeignKeyPropertyInChildModel)"
-        },
-        {
-          "type": "code",
-          "page": 11,
-          "lines": [
+            "  .HasForeignKey(child => child.ForeignKeyPropertyInChildModel)",
             " }",
             "}"
           ],
-          "text": " }\n}"
+          "text": "public class CustomDbContext : DbContext\n{\n protected override void OnModelCreating(ModelBuilder modelBuilder)\n {\n  //Specifies relation between primary key and foreign key among two tables\n  modelBuilder.Entity<ChildModel>( )\n  .HasOne<ParentModel>(parent => parent.ParentReferencePropertyInChildModel)\n  .WithMany(child => child.ChildReferencePropertyInParentModel) //optional\n  .HasForeignKey(child => child.ForeignKeyPropertyInChildModel)\n }\n}"
         }
       ],
       "char_count_raw": 536,
@@ -2709,17 +2639,10 @@
           "type": "list_item",
           "page": 12,
           "lines": [
-            "   • Can execute I/O bound code or CPU-bound code"
-          ],
-          "text": "   • Can execute I/O bound code or CPU-bound code"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "   • Can execute I/O bound code or CPU-bound code",
             "await"
           ],
-          "text": "await"
+          "text": "   • Can execute I/O bound code or CPU-bound code\nawait"
         },
         {
           "type": "list_item",

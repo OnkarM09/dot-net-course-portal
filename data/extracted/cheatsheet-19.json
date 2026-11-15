@@ -689,22 +689,15 @@
           "text": "Normal object creation"
         },
         {
-          "type": "prose",
+          "type": "code",
           "page": 3,
           "lines": [
             "new ModelClass() {",
             "Property1 = value,",
-            "Property2 = value"
-          ],
-          "text": "new ModelClass() {\nProperty1 = value,\nProperty2 = value"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
+            "Property2 = value",
             "}"
           ],
-          "text": "}"
+          "text": "new ModelClass() {\nProperty1 = value,\nProperty2 = value\n}"
         },
         {
           "type": "prose",
@@ -2633,27 +2626,13 @@
           "type": "code",
           "page": 14,
           "lines": [
-            "var dbContextOptions ="
-          ],
-          "text": "var dbContextOptions ="
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "var dbContextOptions =",
             "new DbContextOptionsBuilder<DbContextClassName>()",
             ".UseInMemoryDatabase(\"database_name\");",
-            ".Options;"
-          ],
-          "text": "new DbContextOptionsBuilder<DbContextClassName>()\n.UseInMemoryDatabase(\"database_name\");\n.Options;"
-        },
-        {
-          "type": "code",
-          "page": 14,
-          "lines": [
+            ".Options;",
             "var dbContext = newDbContextClassName(dbContextOptions);"
           ],
-          "text": "var dbContext = newDbContextClassName(dbContextOptions);"
+          "text": "var dbContextOptions =\nnew DbContextOptionsBuilder<DbContextClassName>()\n.UseInMemoryDatabase(\"database_name\");\n.Options;\nvar dbContext = newDbContextClassName(dbContextOptions);"
         }
       ],
       "char_count_raw": 286,

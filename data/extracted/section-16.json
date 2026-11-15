@@ -283,18 +283,11 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Typically, the Index action method in your controller will be responsible for handling"
-          ],
-          "text": "        o Typically, the Index action method in your controller will be responsible for handling"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "        o Typically, the Index action method in your controller will be responsible for handling",
             "           the \"read\" operation. It retrieves data from a service layer (your business logic),",
             "           processes it if needed, and passes it to a view for display."
           ],
-          "text": "           the \"read\" operation. It retrieves data from a service layer (your business logic),\n           processes it if needed, and passes it to a view for display."
+          "text": "        o Typically, the Index action method in your controller will be responsible for handling\n           the \"read\" operation. It retrieves data from a service layer (your business logic),\n           processes it if needed, and passes it to a view for display."
         },
         {
           "type": "list_item",
@@ -305,30 +298,37 @@
           "text": "        o Common tasks in the Index action:"
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 1,
           "lines": [
-            "              ▪ Fetching a list of items from the database.",
-            "              ▪ Applying filtering or sorting based on query parameters or user input.",
-            "              ▪ Preparing a view model to package the data for the view."
+            "              ▪ Fetching a list of items from the database."
           ],
-          "text": "              ▪ Fetching a list of items from the database.\n              ▪ Applying filtering or sorting based on query parameters or user input.\n              ▪ Preparing a view model to package the data for the view."
+          "text": "              ▪ Fetching a list of items from the database."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Return type: Typically an IActionResult, often returning a ViewResult that renders"
+            "              ▪ Applying filtering or sorting based on query parameters or user input."
           ],
-          "text": "        o Return type: Typically an IActionResult, often returning a ViewResult that renders"
+          "text": "              ▪ Applying filtering or sorting based on query parameters or user input."
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 1,
           "lines": [
+            "              ▪ Preparing a view model to package the data for the view."
+          ],
+          "text": "              ▪ Preparing a view model to package the data for the view."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "        o Return type: Typically an IActionResult, often returning a ViewResult that renders",
             "           the \"Index\" view."
           ],
-          "text": "           the \"Index\" view."
+          "text": "        o Return type: Typically an IActionResult, often returning a ViewResult that renders\n           the \"Index\" view."
         },
         {
           "type": "list_item",
@@ -347,17 +347,24 @@
           "text": "        o The Create action typically has two versions:"
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 1,
           "lines": [
             "              ▪ HttpGet (Displaying the Form): This action simply returns the \"Create\" view,",
-            "                 which contains a form for the user to fill in.",
+            "                 which contains a form for the user to fill in."
+          ],
+          "text": "              ▪ HttpGet (Displaying the Form): This action simply returns the \"Create\" view,\n                 which contains a form for the user to fill in."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
             "              ▪ HttpPost (Processing the Form Submission): This action receives the form",
             "                 data (usually via model binding), validates it, and if valid, passes it to the",
             "                 service layer to create the new entity in the database. Then, it typically",
             "                 redirects to the \"Index\" action to display the updated list of items."
           ],
-          "text": "              ▪ HttpGet (Displaying the Form): This action simply returns the \"Create\" view,\n                 which contains a form for the user to fill in.\n              ▪ HttpPost (Processing the Form Submission): This action receives the form\n                 data (usually via model binding), validates it, and if valid, passes it to the\n                 service layer to create the new entity in the database. Then, it typically\n                 redirects to the \"Index\" action to display the updated list of items."
+          "text": "              ▪ HttpPost (Processing the Form Submission): This action receives the form\n                 data (usually via model binding), validates it, and if valid, passes it to the\n                 service layer to create the new entity in the database. Then, it typically\n                 redirects to the \"Index\" action to display the updated list of items."
         },
         {
           "type": "heading",
@@ -395,33 +402,19 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Could use partial views to break down complex UI elements (e.g., a partial view for"
-          ],
-          "text": "        o Could use partial views to break down complex UI elements (e.g., a partial view for"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "        o Could use partial views to break down complex UI elements (e.g., a partial view for",
             "           each item in the list)."
           ],
-          "text": "           each item in the list)."
+          "text": "        o Could use partial views to break down complex UI elements (e.g., a partial view for\n           each item in the list)."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Should be strongly typed to a view model (e.g., IEnumerable<PersonResponse> in"
-          ],
-          "text": "        o Should be strongly typed to a view model (e.g., IEnumerable<PersonResponse> in"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "        o Should be strongly typed to a view model (e.g., IEnumerable<PersonResponse> in",
             "           your code) for type safety and maintainability."
           ],
-          "text": "           your code) for type safety and maintainability."
+          "text": "        o Should be strongly typed to a view model (e.g., IEnumerable<PersonResponse> in\n           your code) for type safety and maintainability."
         }
       ],
       "char_count_raw": 1630,
@@ -686,49 +679,28 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o Uses tag helpers (<form>, <input>, <select>, etc.) or HTML helpers to generate the"
-          ],
-          "text": "        o Uses tag helpers (<form>, <input>, <select>, etc.) or HTML helpers to generate the"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "        o Uses tag helpers (<form>, <input>, <select>, etc.) or HTML helpers to generate the",
             "           form elements."
           ],
-          "text": "           form elements."
+          "text": "        o Uses tag helpers (<form>, <input>, <select>, etc.) or HTML helpers to generate the\n           form elements."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o Includes validation attributes on form fields to provide immediate feedback to the"
-          ],
-          "text": "        o Includes validation attributes on form fields to provide immediate feedback to the"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "        o Includes validation attributes on form fields to provide immediate feedback to the",
             "           user."
           ],
-          "text": "           user."
+          "text": "        o Includes validation attributes on form fields to provide immediate feedback to the\n           user."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o Should be strongly typed to the appropriate model class (e.g., PersonAddRequest in"
-          ],
-          "text": "        o Should be strongly typed to the appropriate model class (e.g., PersonAddRequest in"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "        o Should be strongly typed to the appropriate model class (e.g., PersonAddRequest in",
             "           your code) to take advantage of model binding and validation."
           ],
-          "text": "           your code) to take advantage of model binding and validation."
+          "text": "        o Should be strongly typed to the appropriate model class (e.g., PersonAddRequest in\n           your code) to take advantage of model binding and validation."
         },
         {
           "type": "heading",
@@ -759,49 +731,28 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o It uses ViewBag to pass sorting information (current sort column and order) to the"
-          ],
-          "text": "        o It uses ViewBag to pass sorting information (current sort column and order) to the"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "        o It uses ViewBag to pass sorting information (current sort column and order) to the",
             "           view."
           ],
-          "text": "           view."
+          "text": "        o It uses ViewBag to pass sorting information (current sort column and order) to the\n           view."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o A partial view (_GridColumnHeader) is used to render each table column header as a"
-          ],
-          "text": "        o A partial view (_GridColumnHeader) is used to render each table column header as a"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "        o A partial view (_GridColumnHeader) is used to render each table column header as a",
             "           link, which, when clicked, triggers a sort action."
           ],
-          "text": "           link, which, when clicked, triggers a sort action."
+          "text": "        o A partial view (_GridColumnHeader) is used to render each table column header as a\n           link, which, when clicked, triggers a sort action."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o The query string parameters (sortBy and sortOrder) are used to control the sorting"
-          ],
-          "text": "        o The query string parameters (sortBy and sortOrder) are used to control the sorting"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "        o The query string parameters (sortBy and sortOrder) are used to control the sorting",
             "           logic on both the client and server sides."
           ],
-          "text": "           logic on both the client and server sides."
+          "text": "        o The query string parameters (sortBy and sortOrder) are used to control the sorting\n           logic on both the client and server sides."
         },
         {
           "type": "list_item",
@@ -823,33 +774,19 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o A form with a dropdown (searchBy) and a text input (searchString) allows users to"
-          ],
-          "text": "        o A form with a dropdown (searchBy) and a text input (searchString) allows users to"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "        o A form with a dropdown (searchBy) and a text input (searchString) allows users to",
             "           filter the results."
           ],
-          "text": "           filter the results."
+          "text": "        o A form with a dropdown (searchBy) and a text input (searchString) allows users to\n           filter the results."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o The search parameters are submitted to the Index action, which then calls the"
-          ],
-          "text": "        o The search parameters are submitted to the Index action, which then calls the"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "        o The search parameters are submitted to the Index action, which then calls the",
             "           service's GetFilteredPersons method to retrieve the filtered results."
           ],
-          "text": "           service's GetFilteredPersons method to retrieve the filtered results."
+          "text": "        o The search parameters are submitted to the Index action, which then calls the\n           service's GetFilteredPersons method to retrieve the filtered results."
         },
         {
           "type": "heading",
@@ -863,33 +800,19 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • Strongly Typed Views: Always use strongly typed views and view models for type safety and"
-          ],
-          "text": "   • Strongly Typed Views: Always use strongly typed views and view models for type safety and"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   • Strongly Typed Views: Always use strongly typed views and view models for type safety and",
             "      maintainability."
           ],
-          "text": "      maintainability."
+          "text": "   • Strongly Typed Views: Always use strongly typed views and view models for type safety and\n      maintainability."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • Separation of Concerns: Keep your views focused on presentation logic and delegate data"
-          ],
-          "text": "   • Separation of Concerns: Keep your views focused on presentation logic and delegate data"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   • Separation of Concerns: Keep your views focused on presentation logic and delegate data",
             "      access and manipulation to your controllers and services."
           ],
-          "text": "      access and manipulation to your controllers and services."
+          "text": "   • Separation of Concerns: Keep your views focused on presentation logic and delegate data\n      access and manipulation to your controllers and services."
         }
       ],
       "char_count_raw": 1568,
@@ -1138,81 +1061,46 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Partial Views: Use partial views to create reusable UI components, especially for complex"
-          ],
-          "text": "   • Partial Views: Use partial views to create reusable UI components, especially for complex"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Partial Views: Use partial views to create reusable UI components, especially for complex",
             "      lists or grids."
           ],
-          "text": "      lists or grids."
+          "text": "   • Partial Views: Use partial views to create reusable UI components, especially for complex\n      lists or grids."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Tag Helpers: Utilize tag helpers to simplify form generation and interaction with models in"
-          ],
-          "text": "   • Tag Helpers: Utilize tag helpers to simplify form generation and interaction with models in"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Tag Helpers: Utilize tag helpers to simplify form generation and interaction with models in",
             "      your views."
           ],
-          "text": "      your views."
+          "text": "   • Tag Helpers: Utilize tag helpers to simplify form generation and interaction with models in\n      your views."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Validation: Implement validation in your models using data annotations and custom"
-          ],
-          "text": "   • Validation: Implement validation in your models using data annotations and custom"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Validation: Implement validation in your models using data annotations and custom",
             "      validation attributes."
           ],
-          "text": "      validation attributes."
+          "text": "   • Validation: Implement validation in your models using data annotations and custom\n      validation attributes."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Error Handling: Handle potential errors gracefully and provide informative error messages to"
-          ],
-          "text": "   • Error Handling: Handle potential errors gracefully and provide informative error messages to"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Error Handling: Handle potential errors gracefully and provide informative error messages to",
             "      the user."
           ],
-          "text": "      the user."
+          "text": "   • Error Handling: Handle potential errors gracefully and provide informative error messages to\n      the user."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Client-Side Enhancement: Use JavaScript to enhance the user experience with features like"
-          ],
-          "text": "   • Client-Side Enhancement: Use JavaScript to enhance the user experience with features like"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Client-Side Enhancement: Use JavaScript to enhance the user experience with features like",
             "      client-side validation, AJAX-based filtering/sorting, and dynamic updates."
           ],
-          "text": "      client-side validation, AJAX-based filtering/sorting, and dynamic updates."
+          "text": "   • Client-Side Enhancement: Use JavaScript to enhance the user experience with features like\n      client-side validation, AJAX-based filtering/sorting, and dynamic updates."
         },
         {
           "type": "heading",
@@ -1226,81 +1114,46 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Complex Logic in Views: Avoid complex business logic in your views. Keep them simple and"
-          ],
-          "text": "   • Complex Logic in Views: Avoid complex business logic in your views. Keep them simple and"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Complex Logic in Views: Avoid complex business logic in your views. Keep them simple and",
             "      focused on presentation."
           ],
-          "text": "      focused on presentation."
+          "text": "   • Complex Logic in Views: Avoid complex business logic in your views. Keep them simple and\n      focused on presentation."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Tight Coupling: Don't tightly couple your views to specific controllers or models. Strive for"
-          ],
-          "text": "   • Tight Coupling: Don't tightly couple your views to specific controllers or models. Strive for"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Tight Coupling: Don't tightly couple your views to specific controllers or models. Strive for",
             "      reusability."
           ],
-          "text": "      reusability."
+          "text": "   • Tight Coupling: Don't tightly couple your views to specific controllers or models. Strive for\n      reusability."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Overuse of ViewBag or ViewData: Prefer strongly typed models for passing data to your"
-          ],
-          "text": "   • Overuse of ViewBag or ViewData: Prefer strongly typed models for passing data to your"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Overuse of ViewBag or ViewData: Prefer strongly typed models for passing data to your",
             "      views."
           ],
-          "text": "      views."
+          "text": "   • Overuse of ViewBag or ViewData: Prefer strongly typed models for passing data to your\n      views."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Hardcoding Strings: Avoid hardcoding strings like column names or sorting options. Use"
-          ],
-          "text": "   • Hardcoding Strings: Avoid hardcoding strings like column names or sorting options. Use"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Hardcoding Strings: Avoid hardcoding strings like column names or sorting options. Use",
             "      constants or enums for better maintainability."
           ],
-          "text": "      constants or enums for better maintainability."
+          "text": "   • Hardcoding Strings: Avoid hardcoding strings like column names or sorting options. Use\n      constants or enums for better maintainability."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Neglecting Security: Always validate and sanitize user input, especially in search"
-          ],
-          "text": "   • Neglecting Security: Always validate and sanitize user input, especially in search"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Neglecting Security: Always validate and sanitize user input, especially in search",
             "      functionality, to prevent vulnerabilities."
           ],
-          "text": "      functionality, to prevent vulnerabilities."
+          "text": "   • Neglecting Security: Always validate and sanitize user input, especially in search\n      functionality, to prevent vulnerabilities."
         },
         {
           "type": "heading",
@@ -1613,33 +1466,19 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "        o Create: Display a form for creating a new item (Get) and process the form"
-          ],
-          "text": "        o Create: Display a form for creating a new item (Get) and process the form"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "        o Create: Display a form for creating a new item (Get) and process the form",
             "           submission (Post)."
           ],
-          "text": "           submission (Post)."
+          "text": "        o Create: Display a form for creating a new item (Get) and process the form\n           submission (Post)."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "        o Edit/{id}: Display a form for editing an existing item (Get) and process the form"
-          ],
-          "text": "        o Edit/{id}: Display a form for editing an existing item (Get) and process the form"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "        o Edit/{id}: Display a form for editing an existing item (Get) and process the form",
             "           submission (Post)."
           ],
-          "text": "           submission (Post)."
+          "text": "        o Edit/{id}: Display a form for editing an existing item (Get) and process the form\n           submission (Post)."
         },
         {
           "type": "list_item",
@@ -1653,17 +1492,10 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Model Binding: Use parameters and attributes ([FromQuery], [FromRoute], [FromBody]) to"
-          ],
-          "text": "   • Model Binding: Use parameters and attributes ([FromQuery], [FromRoute], [FromBody]) to"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • Model Binding: Use parameters and attributes ([FromQuery], [FromRoute], [FromBody]) to",
             "      bind data from the request."
           ],
-          "text": "      bind data from the request."
+          "text": "   • Model Binding: Use parameters and attributes ([FromQuery], [FromRoute], [FromBody]) to\n      bind data from the request."
         },
         {
           "type": "list_item",
@@ -1701,17 +1533,10 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "        o Use RedirectToAction, RedirectToRoute, or Redirect after successful POST requests"
-          ],
-          "text": "        o Use RedirectToAction, RedirectToRoute, or Redirect after successful POST requests"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "        o Use RedirectToAction, RedirectToRoute, or Redirect after successful POST requests",
             "           (Create/Edit/Delete) to prevent duplicate submissions."
           ],
-          "text": "           (Create/Edit/Delete) to prevent duplicate submissions."
+          "text": "        o Use RedirectToAction, RedirectToRoute, or Redirect after successful POST requests\n           (Create/Edit/Delete) to prevent duplicate submissions."
         },
         {
           "type": "list_item",
@@ -1725,17 +1550,10 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Error Handling: Return appropriate status codes (e.g., 400 Bad Request, 404 Not Found) for"
-          ],
-          "text": "   • Error Handling: Return appropriate status codes (e.g., 400 Bad Request, 404 Not Found) for"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • Error Handling: Return appropriate status codes (e.g., 400 Bad Request, 404 Not Found) for",
             "      errors."
           ],
-          "text": "      errors."
+          "text": "   • Error Handling: Return appropriate status codes (e.g., 400 Bad Request, 404 Not Found) for\n      errors."
         },
         {
           "type": "heading",
@@ -1757,49 +1575,28 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Razor View Engine: Use Razor syntax (@Model, @Html, etc.) to embed C# code in your"
-          ],
-          "text": "   • Razor View Engine: Use Razor syntax (@Model, @Html, etc.) to embed C# code in your"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • Razor View Engine: Use Razor syntax (@Model, @Html, etc.) to embed C# code in your",
             "      views."
           ],
-          "text": "      views."
+          "text": "   • Razor View Engine: Use Razor syntax (@Model, @Html, etc.) to embed C# code in your\n      views."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Strongly Typed Views: Use the @model directive to bind a view to a specific model class"
-          ],
-          "text": "   • Strongly Typed Views: Use the @model directive to bind a view to a specific model class"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • Strongly Typed Views: Use the @model directive to bind a view to a specific model class",
             "      (view model)."
           ],
-          "text": "      (view model)."
+          "text": "   • Strongly Typed Views: Use the @model directive to bind a view to a specific model class\n      (view model)."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Displaying Data: Use Razor syntax to access and display model properties (e.g.,"
-          ],
-          "text": "   • Displaying Data: Use Razor syntax to access and display model properties (e.g.,"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • Displaying Data: Use Razor syntax to access and display model properties (e.g.,",
             "      @Model.Name)."
           ],
-          "text": "      @Model.Name)."
+          "text": "   • Displaying Data: Use Razor syntax to access and display model properties (e.g.,\n      @Model.Name)."
         },
         {
           "type": "list_item",
@@ -1818,7 +1615,7 @@
           "text": "   • Validation: Display validation error messages using @Html.ValidationSummary() and"
         },
         {
-          "type": "prose",
+          "type": "code",
           "page": 4,
           "lines": [
             "      @Html.ValidationMessageFor()."
@@ -2040,17 +1837,10 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Partial Views: Use partial views (_PartialName.cshtml) for reusable UI components (e.g., a"
-          ],
-          "text": "   • Partial Views: Use partial views (_PartialName.cshtml) for reusable UI components (e.g., a"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Partial Views: Use partial views (_PartialName.cshtml) for reusable UI components (e.g., a",
             "      list item template)."
           ],
-          "text": "      list item template)."
+          "text": "   • Partial Views: Use partial views (_PartialName.cshtml) for reusable UI components (e.g., a\n      list item template)."
         },
         {
           "type": "list_item",
@@ -2080,17 +1870,10 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "        o Use query string parameters (e.g., ?sort=name_desc) to control sorting and filtering"
-          ],
-          "text": "        o Use query string parameters (e.g., ?sort=name_desc) to control sorting and filtering"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "        o Use query string parameters (e.g., ?sort=name_desc) to control sorting and filtering",
             "           on the server-side."
           ],
-          "text": "           on the server-side."
+          "text": "        o Use query string parameters (e.g., ?sort=name_desc) to control sorting and filtering\n           on the server-side."
         },
         {
           "type": "list_item",
@@ -2112,17 +1895,10 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Separate Concerns: Keep your controllers focused on handling requests and your views"
-          ],
-          "text": "   • Separate Concerns: Keep your controllers focused on handling requests and your views"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Separate Concerns: Keep your controllers focused on handling requests and your views",
             "      focused on presentation."
           ],
-          "text": "      focused on presentation."
+          "text": "   • Separate Concerns: Keep your controllers focused on handling requests and your views\n      focused on presentation."
         },
         {
           "type": "list_item",
@@ -2136,17 +1912,10 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • DTO (Data Transfer Objects): Use DTOs to transfer data between your controllers and"
-          ],
-          "text": "   • DTO (Data Transfer Objects): Use DTOs to transfer data between your controllers and"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • DTO (Data Transfer Objects): Use DTOs to transfer data between your controllers and",
             "      services."
           ],
-          "text": "      services."
+          "text": "   • DTO (Data Transfer Objects): Use DTOs to transfer data between your controllers and\n      services."
         },
         {
           "type": "list_item",
@@ -2184,17 +1953,10 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Model Binding & Validation: Show proficiency in using model binding and validation"
-          ],
-          "text": "   • Model Binding & Validation: Show proficiency in using model binding and validation"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Model Binding & Validation: Show proficiency in using model binding and validation",
             "      attributes."
           ],
-          "text": "      attributes."
+          "text": "   • Model Binding & Validation: Show proficiency in using model binding and validation\n      attributes."
         },
         {
           "type": "list_item",
@@ -2208,33 +1970,19 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Error Handling & Redirects: Explain how to handle errors gracefully and prevent duplicate"
-          ],
-          "text": "   • Error Handling & Redirects: Explain how to handle errors gracefully and prevent duplicate"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Error Handling & Redirects: Explain how to handle errors gracefully and prevent duplicate",
             "      form submissions."
           ],
-          "text": "      form submissions."
+          "text": "   • Error Handling & Redirects: Explain how to handle errors gracefully and prevent duplicate\n      form submissions."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Best Practices: Discuss how to follow the best practices mentioned above to write clean and"
-          ],
-          "text": "   • Best Practices: Discuss how to follow the best practices mentioned above to write clean and"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Best Practices: Discuss how to follow the best practices mentioned above to write clean and",
             "      maintainable code."
           ],
-          "text": "      maintainable code."
+          "text": "   • Best Practices: Discuss how to follow the best practices mentioned above to write clean and\n      maintainable code."
         }
       ],
       "char_count_raw": 1429,

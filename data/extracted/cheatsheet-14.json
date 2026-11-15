@@ -195,53 +195,46 @@
           "text": "   1. appsettings.json"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 1,
           "lines": [
-            "2. Environment Variables"
+            "   2. Environment Variables"
           ],
-          "text": "2. Environment Variables"
+          "text": "   2. Environment Variables"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 1,
           "lines": [
-            "3. File Configuration (JSON, INI or XML files)"
+            "   3. File Configuration (JSON, INI or XML files)"
           ],
-          "text": "3. File Configuration (JSON, INI or XML files)"
+          "text": "   3. File Configuration (JSON, INI or XML files)"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 1,
           "lines": [
-            "4. In-Memory Configuration"
+            "   4. In-Memory Configuration"
           ],
-          "text": "4. In-Memory Configuration"
+          "text": "   4. In-Memory Configuration"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 1,
           "lines": [
-            "5. Secret Manager"
+            "   5. Secret Manager",
+            "Access Configuration",
+            "in Program.cs:"
           ],
-          "text": "5. Secret Manager"
+          "text": "   5. Secret Manager\nAccess Configuration\nin Program.cs:"
         },
         {
-          "type": "heading",
+          "type": "code",
           "page": 1,
           "lines": [
-            "Access Configuration"
-          ],
-          "text": "Access Configuration"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
-            "in Program.cs:",
             "app.Configuration"
           ],
-          "text": "in Program.cs:\napp.Configuration"
+          "text": "app.Configuration"
         }
       ],
       "char_count_raw": 595,
@@ -601,43 +594,15 @@
           "type": "code",
           "page": 3,
           "lines": [
-            "{"
-          ],
-          "text": "{"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
-            "\"MasterKey\":"
-          ],
-          "text": "\"MasterKey\":"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
-            "{"
-          ],
-          "text": "{"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "{",
+            "\"MasterKey\":",
+            "{",
             " \"Key1\": \"value\"",
-            " \"Key2\": \"value\""
-          ],
-          "text": " \"Key1\": \"value\"\n \"Key2\": \"value\""
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
+            " \"Key2\": \"value\"",
             "}",
             "}"
           ],
-          "text": "}\n}"
+          "text": "{\n\"MasterKey\":\n{\n \"Key1\": \"value\"\n \"Key2\": \"value\"\n}\n}"
         },
         {
           "type": "prose",
@@ -825,10 +790,17 @@
           "type": "prose",
           "page": 4,
           "lines": [
-            "in Program.cs:",
+            "in Program.cs:"
+          ],
+          "text": "in Program.cs:"
+        },
+        {
+          "type": "code",
+          "page": 4,
+          "lines": [
             "builder.Services.Configure<Model>(builder.Configuration.GetSection(\"MasterKey\"));"
           ],
-          "text": "in Program.cs:\nbuilder.Services.Configure<Model>(builder.Configuration.GetSection(\"MasterKey\"));"
+          "text": "builder.Services.Configure<Model>(builder.Configuration.GetSection(\"MasterKey\"));"
         }
       ],
       "char_count_raw": 670,
@@ -1296,30 +1268,30 @@
           "type": "prose",
           "page": 8,
           "lines": [
-            "in Program.cs:",
+            "in Program.cs:"
+          ],
+          "text": "in Program.cs:"
+        },
+        {
+          "type": "code",
+          "page": 8,
+          "lines": [
             "builder.Host.ConfigureAppConfiguration( (hostingContext, config) => {",
             "  config.AddJsonFile(\"filename.json\", optional: true, reloadOnChange: true);",
             "});"
           ],
-          "text": "in Program.cs:\nbuilder.Host.ConfigureAppConfiguration( (hostingContext, config) => {\n  config.AddJsonFile(\"filename.json\", optional: true, reloadOnChange: true);\n});"
-        },
-        {
-          "type": "heading",
-          "page": 8,
-          "lines": [
-            "Http Client"
-          ],
-          "text": "Http Client"
+          "text": "builder.Host.ConfigureAppConfiguration( (hostingContext, config) => {\n  config.AddJsonFile(\"filename.json\", optional: true, reloadOnChange: true);\n});"
         },
         {
           "type": "prose",
           "page": 8,
           "lines": [
+            "Http Client",
             "HttpClient is a class for sending HTTP requests to a specific HTTP resource (using its URL) and",
             "receiving HTTP responses from the same.",
             "Examples: Making a request to a third-party weather API, ChatGPT etc."
           ],
-          "text": "HttpClient is a class for sending HTTP requests to a specific HTTP resource (using its URL) and\nreceiving HTTP responses from the same.\nExamples: Making a request to a third-party weather API, ChatGPT etc."
+          "text": "Http Client\nHttpClient is a class for sending HTTP requests to a specific HTTP resource (using its URL) and\nreceiving HTTP responses from the same.\nExamples: Making a request to a third-party weather API, ChatGPT etc."
         }
       ],
       "char_count_raw": 453,
@@ -1482,17 +1454,10 @@
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • DefaultRequestHeaders"
-          ],
-          "text": "   • DefaultRequestHeaders"
-        },
-        {
-          "type": "heading",
-          "page": 9,
-          "lines": [
+            "   • DefaultRequestHeaders",
             "Methods"
           ],
-          "text": "Methods"
+          "text": "   • DefaultRequestHeaders\nMethods"
         },
         {
           "type": "list_item",

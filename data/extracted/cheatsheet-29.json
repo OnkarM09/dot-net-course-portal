@@ -436,57 +436,57 @@
           "text": "Contents of JWT"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 4,
           "lines": [
-            "1. Header (base 64 string)"
+            "1. Header (base 64 string)",
+            "Defines the type of token and the signing algorithm used."
           ],
-          "text": "1. Header (base 64 string)"
+          "text": "1. Header (base 64 string)\nDefines the type of token and the signing algorithm used."
         },
         {
           "type": "prose",
           "page": 4,
           "lines": [
-            "Defines the type of token and the signing algorithm used.",
             "Eg: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
           ],
-          "text": "Defines the type of token and the signing algorithm used.\nEg: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
+          "text": "Eg: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 4,
           "lines": [
-            "2. Payload (base 64 string)"
+            "2. Payload (base 64 string)",
+            "Contains user claims (user details such as name, email or user type)."
           ],
-          "text": "2. Payload (base 64 string)"
+          "text": "2. Payload (base 64 string)\nContains user claims (user details such as name, email or user type)."
         },
         {
           "type": "prose",
           "page": 4,
           "lines": [
-            "Contains user claims (user details such as name, email or user type).",
             "Eg: { \"userId\": \"b08f86af-35da-48f2-8fab-cef3904660bd\"}",
             "Eg: eyJ1c2VySWQiOiJiMDhmOZhZi0zNWRhLTQ4ZjItOOTA0NjYwYmQifQ"
           ],
-          "text": "Contains user claims (user details such as name, email or user type).\nEg: { \"userId\": \"b08f86af-35da-48f2-8fab-cef3904660bd\"}\nEg: eyJ1c2VySWQiOiJiMDhmOZhZi0zNWRhLTQ4ZjItOOTA0NjYwYmQifQ"
+          "text": "Eg: { \"userId\": \"b08f86af-35da-48f2-8fab-cef3904660bd\"}\nEg: eyJ1c2VySWQiOiJiMDhmOZhZi0zNWRhLTQ4ZjItOOTA0NjYwYmQifQ"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 4,
           "lines": [
-            "3. Signature (base 64 string)"
+            "3. Signature (base 64 string)",
+            "It is used to verify to ensure that the message wasn't changed along the way."
           ],
-          "text": "3. Signature (base 64 string)"
+          "text": "3. Signature (base 64 string)\nIt is used to verify to ensure that the message wasn't changed along the way."
         },
         {
           "type": "prose",
           "page": 4,
           "lines": [
-            "It is used to verify to ensure that the message wasn't changed along the way.",
             "It is usually signed by using a secret key (HMAC algorithm).",
             "-xN_h82PHVTA9vdoHrcZxH-x5"
           ],
-          "text": "It is used to verify to ensure that the message wasn't changed along the way.\nIt is usually signed by using a secret key (HMAC algorithm).\n-xN_h82PHVTA9vdoHrcZxH-x5"
+          "text": "It is usually signed by using a secret key (HMAC algorithm).\n-xN_h82PHVTA9vdoHrcZxH-x5"
         },
         {
           "type": "heading",
@@ -509,26 +509,12 @@
           "type": "code",
           "page": 4,
           "lines": [
-            "      {"
-          ],
-          "text": "      {"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "      {",
             "      \"typ\": \"JWT\",",
-            "      \"alg\": \"HS256\""
-          ],
-          "text": "      \"typ\": \"JWT\",\n      \"alg\": \"HS256\""
-        },
-        {
-          "type": "code",
-          "page": 4,
-          "lines": [
+            "      \"alg\": \"HS256\"",
             "      }"
           ],
-          "text": "      }"
+          "text": "      {\n      \"typ\": \"JWT\",\n      \"alg\": \"HS256\"\n      }"
         },
         {
           "type": "prose",
@@ -542,25 +528,11 @@
           "type": "code",
           "page": 4,
           "lines": [
-            "      {"
-          ],
-          "text": "      {"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
-            "      \"userId\": \"b08f86af-35da-48f2-8fab-cef3904660bd\""
-          ],
-          "text": "      \"userId\": \"b08f86af-35da-48f2-8fab-cef3904660bd\""
-        },
-        {
-          "type": "code",
-          "page": 4,
-          "lines": [
+            "      {",
+            "      \"userId\": \"b08f86af-35da-48f2-8fab-cef3904660bd\"",
             "      }"
           ],
-          "text": "      }"
+          "text": "      {\n      \"userId\": \"b08f86af-35da-48f2-8fab-cef3904660bd\"\n      }"
         },
         {
           "type": "prose",

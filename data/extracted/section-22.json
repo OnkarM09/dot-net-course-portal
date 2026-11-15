@@ -279,33 +279,19 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Centralize Error Handling: Implement a single point where you can catch and handle"
-          ],
-          "text": "   • Centralize Error Handling: Implement a single point where you can catch and handle"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • Centralize Error Handling: Implement a single point where you can catch and handle",
             "      exceptions from different parts of your application."
           ],
-          "text": "      exceptions from different parts of your application."
+          "text": "   • Centralize Error Handling: Implement a single point where you can catch and handle\n      exceptions from different parts of your application."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Custom Error Responses: Generate appropriate error responses (HTML pages, JSON"
-          ],
-          "text": "   • Custom Error Responses: Generate appropriate error responses (HTML pages, JSON"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • Custom Error Responses: Generate appropriate error responses (HTML pages, JSON",
             "      messages) for different types of exceptions."
           ],
-          "text": "      messages) for different types of exceptions."
+          "text": "   • Custom Error Responses: Generate appropriate error responses (HTML pages, JSON\n      messages) for different types of exceptions."
         },
         {
           "type": "list_item",
@@ -336,49 +322,28 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Provide Context: Include additional information in the exception object that helps you"
-          ],
-          "text": "   • Provide Context: Include additional information in the exception object that helps you"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • Provide Context: Include additional information in the exception object that helps you",
             "      understand the root cause of the error."
           ],
-          "text": "      understand the root cause of the error."
+          "text": "   • Provide Context: Include additional information in the exception object that helps you\n      understand the root cause of the error."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Categorization: Differentiate between different types of errors based on their exception"
-          ],
-          "text": "   • Categorization: Differentiate between different types of errors based on their exception"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • Categorization: Differentiate between different types of errors based on their exception",
             "      types."
           ],
-          "text": "      types."
+          "text": "   • Categorization: Differentiate between different types of errors based on their exception\n      types."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Error Handling Logic: Implement custom logic in your exception handling middleware to"
-          ],
-          "text": "   • Error Handling Logic: Implement custom logic in your exception handling middleware to"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • Error Handling Logic: Implement custom logic in your exception handling middleware to",
             "      respond to specific custom exceptions differently."
           ],
-          "text": "      respond to specific custom exceptions differently."
+          "text": "   • Error Handling Logic: Implement custom logic in your exception handling middleware to\n      respond to specific custom exceptions differently."
         },
         {
           "type": "heading",
@@ -645,37 +610,23 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • Custom Error Pages: You can configure UseExceptionHandler to redirect to a specific error"
-          ],
-          "text": "   • Custom Error Pages: You can configure UseExceptionHandler to redirect to a specific error"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   • Custom Error Pages: You can configure UseExceptionHandler to redirect to a specific error",
             "      page or endpoint (e.g., /Error) when an exception occurs. This allows you to present a userfriendly",
             "error message or provide additional information to help users understand what",
             "      happened."
           ],
-          "text": "      page or endpoint (e.g., /Error) when an exception occurs. This allows you to present a userfriendly\nerror message or provide additional information to help users understand what\n      happened."
+          "text": "   • Custom Error Pages: You can configure UseExceptionHandler to redirect to a specific error\n      page or endpoint (e.g., /Error) when an exception occurs. This allows you to present a userfriendly\nerror message or provide additional information to help users understand what\n      happened."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • Development vs. Production: In development environments, you often use"
-          ],
-          "text": "   • Development vs. Production: In development environments, you often use"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   • Development vs. Production: In development environments, you often use",
             "      UseDeveloperExceptionPage to display a detailed error page with stack traces and other",
             "      diagnostic information. In production, you should use UseExceptionHandler to hide those",
             "      sensitive details and provide a more generic error message."
           ],
-          "text": "      UseDeveloperExceptionPage to display a detailed error page with stack traces and other\n      diagnostic information. In production, you should use UseExceptionHandler to hide those\n      sensitive details and provide a more generic error message."
+          "text": "   • Development vs. Production: In development environments, you often use\n      UseDeveloperExceptionPage to display a detailed error page with stack traces and other\n      diagnostic information. In production, you should use UseExceptionHandler to hide those\n      sensitive details and provide a more generic error message."
         },
         {
           "type": "heading",
@@ -697,48 +648,20 @@
             "// Injected logger",
             "  private readonly IDiagnosticContext _diagnosticContext; // For enriching Serilog logs",
             "  // Constructor injection",
-            "  public ExceptionHandlingMiddleware(RequestDelegate next,"
-          ],
-          "text": "// ExceptionHandlingMiddleware.cs\npublic class ExceptionHandlingMiddleware\n{\n  private readonly RequestDelegate _next;\n  private readonly ILogger<ExceptionHandlingMiddleware> _logger;\n// Injected logger\n  private readonly IDiagnosticContext _diagnosticContext; // For enriching Serilog logs\n  // Constructor injection\n  public ExceptionHandlingMiddleware(RequestDelegate next,"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
-            "ILogger<ExceptionHandlingMiddleware> logger, IDiagnosticContext diagnosticContext)"
-          ],
-          "text": "ILogger<ExceptionHandlingMiddleware> logger, IDiagnosticContext diagnosticContext)"
-        },
-        {
-          "type": "code",
-          "page": 2,
-          "lines": [
+            "  public ExceptionHandlingMiddleware(RequestDelegate next,",
+            "ILogger<ExceptionHandlingMiddleware> logger, IDiagnosticContext diagnosticContext)",
             "  {",
             "   _next = next; // Represents the next middleware in the pipeline",
             "   _logger = logger;",
             "   _diagnosticContext = diagnosticContext;",
             "  }",
             "  public async Task Invoke(HttpContext httpContext)",
-            "  {"
-          ],
-          "text": "  {\n   _next = next; // Represents the next middleware in the pipeline\n   _logger = logger;\n   _diagnosticContext = diagnosticContext;\n  }\n  public async Task Invoke(HttpContext httpContext)\n  {"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
-            "   try"
-          ],
-          "text": "   try"
-        },
-        {
-          "type": "code",
-          "page": 2,
-          "lines": [
+            "  {",
+            "   try",
             "   {",
             "     await _next(httpContext);"
           ],
-          "text": "   {\n     await _next(httpContext);"
+          "text": "// ExceptionHandlingMiddleware.cs\npublic class ExceptionHandlingMiddleware\n{\n  private readonly RequestDelegate _next;\n  private readonly ILogger<ExceptionHandlingMiddleware> _logger;\n// Injected logger\n  private readonly IDiagnosticContext _diagnosticContext; // For enriching Serilog logs\n  // Constructor injection\n  public ExceptionHandlingMiddleware(RequestDelegate next,\nILogger<ExceptionHandlingMiddleware> logger, IDiagnosticContext diagnosticContext)\n  {\n   _next = next; // Represents the next middleware in the pipeline\n   _logger = logger;\n   _diagnosticContext = diagnosticContext;\n  }\n  public async Task Invoke(HttpContext httpContext)\n  {\n   try\n   {\n     await _next(httpContext);"
         }
       ],
       "char_count_raw": 1263,
@@ -980,133 +903,35 @@
           "page": 3,
           "lines": [
             "     // Invoke the next middleware",
-            "   }"
-          ],
-          "text": "     // Invoke the next middleware\n   }"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
-            "   catch (Exception ex)"
-          ],
-          "text": "   catch (Exception ex)"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
+            "   }",
+            "   catch (Exception ex)",
             "   {",
-            "     // Log the inner exception if present, otherwise log the original exception"
-          ],
-          "text": "   {\n     // Log the inner exception if present, otherwise log the original exception"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
-            "     if (ex.InnerException != null)"
-          ],
-          "text": "     if (ex.InnerException != null)"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
-            "     {"
-          ],
-          "text": "     {"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "     // Log the inner exception if present, otherwise log the original exception",
+            "     if (ex.InnerException != null)",
+            "     {",
             "      _logger.LogError(\"{ExceptionType} {ExceptionMessage}\",",
-            "ex.InnerException.GetType().ToString(), ex.InnerException.Message);"
-          ],
-          "text": "      _logger.LogError(\"{ExceptionType} {ExceptionMessage}\",\nex.InnerException.GetType().ToString(), ex.InnerException.Message);"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
-            "     }"
-          ],
-          "text": "     }"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
-            "     else"
-          ],
-          "text": "     else"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
-            "     {"
-          ],
-          "text": "     {"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "ex.InnerException.GetType().ToString(), ex.InnerException.Message);",
+            "     }",
+            "     else",
+            "     {",
             "      _logger.LogError(\"{ExceptionType} {ExceptionMessage}\", ex.GetType().ToString(),",
-            "ex.Message);"
-          ],
-          "text": "      _logger.LogError(\"{ExceptionType} {ExceptionMessage}\", ex.GetType().ToString(),\nex.Message);"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
+            "ex.Message);",
             "     }",
             "     // (Optional) You can customize the error response here",
             "     // httpContext.Response.StatusCode = 500;",
-            "     // await httpContext.Response.WriteAsync(\"Error occurred\");"
-          ],
-          "text": "     }\n     // (Optional) You can customize the error response here\n     // httpContext.Response.StatusCode = 500;\n     // await httpContext.Response.WriteAsync(\"Error occurred\");"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
-            "     throw; // Re-throw the exception for further handling (e.g., by UseExceptionHandler)"
-          ],
-          "text": "     throw; // Re-throw the exception for further handling (e.g., by UseExceptionHandler)"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
+            "     // await httpContext.Response.WriteAsync(\"Error occurred\");",
+            "     throw; // Re-throw the exception for further handling (e.g., by UseExceptionHandler)",
             "   }",
             "  }",
             "}",
             "// Extension method for easy registration",
             "public static class ExceptionHandlingMiddlewareExtensions",
             "{",
-            "  public static IApplicationBuilder UseExceptionHandlingMiddleware(this IApplicationBuilder"
-          ],
-          "text": "   }\n  }\n}\n// Extension method for easy registration\npublic static class ExceptionHandlingMiddlewareExtensions\n{\n  public static IApplicationBuilder UseExceptionHandlingMiddleware(this IApplicationBuilder"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
-            "builder)"
-          ],
-          "text": "builder)"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
+            "  public static IApplicationBuilder UseExceptionHandlingMiddleware(this IApplicationBuilder",
+            "builder)",
             "  {"
           ],
-          "text": "  {"
+          "text": "     // Invoke the next middleware\n   }\n   catch (Exception ex)\n   {\n     // Log the inner exception if present, otherwise log the original exception\n     if (ex.InnerException != null)\n     {\n      _logger.LogError(\"{ExceptionType} {ExceptionMessage}\",\nex.InnerException.GetType().ToString(), ex.InnerException.Message);\n     }\n     else\n     {\n      _logger.LogError(\"{ExceptionType} {ExceptionMessage}\", ex.GetType().ToString(),\nex.Message);\n     }\n     // (Optional) You can customize the error response here\n     // httpContext.Response.StatusCode = 500;\n     // await httpContext.Response.WriteAsync(\"Error occurred\");\n     throw; // Re-throw the exception for further handling (e.g., by UseExceptionHandler)\n   }\n  }\n}\n// Extension method for easy registration\npublic static class ExceptionHandlingMiddlewareExtensions\n{\n  public static IApplicationBuilder UseExceptionHandlingMiddleware(this IApplicationBuilder\nbuilder)\n  {"
         }
       ],
       "char_count_raw": 843,
@@ -1365,18 +1190,11 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Constructor Injection: It receives the RequestDelegate (_next), an ILogger, and an"
-          ],
-          "text": "   • Constructor Injection: It receives the RequestDelegate (_next), an ILogger, and an"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • Constructor Injection: It receives the RequestDelegate (_next), an ILogger, and an",
             "      IDiagnosticContext (used for adding contextual information to Serilog logs) through",
             "      constructor injection."
           ],
-          "text": "      IDiagnosticContext (used for adding contextual information to Serilog logs) through\n      constructor injection."
+          "text": "   • Constructor Injection: It receives the RequestDelegate (_next), an ILogger, and an\n      IDiagnosticContext (used for adding contextual information to Serilog logs) through\n      constructor injection."
         },
         {
           "type": "list_item",
@@ -1398,97 +1216,55 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "        2. try-catch Block: Catches any exceptions thrown during the execution of subsequent"
-          ],
-          "text": "        2. try-catch Block: Catches any exceptions thrown during the execution of subsequent"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "        2. try-catch Block: Catches any exceptions thrown during the execution of subsequent",
             "           middleware or the action method."
           ],
-          "text": "           middleware or the action method."
+          "text": "        2. try-catch Block: Catches any exceptions thrown during the execution of subsequent\n           middleware or the action method."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "        3. Logging: Logs the exception details using Serilog, including the exception type and"
-          ],
-          "text": "        3. Logging: Logs the exception details using Serilog, including the exception type and"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "        3. Logging: Logs the exception details using Serilog, including the exception type and",
             "           message. If there's an inner exception, it logs that instead."
           ],
-          "text": "           message. If there's an inner exception, it logs that instead."
+          "text": "        3. Logging: Logs the exception details using Serilog, including the exception type and\n           message. If there's an inner exception, it logs that instead."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "        4. Re-throwing: The throw; statement re-throws the exception, allowing it to be"
+            "        4. Re-throwing: The throw; statement re-throws the exception, allowing it to be",
+            "           handled further up the pipeline, potentially by the UseExceptionHandler",
+            "           middleware."
           ],
-          "text": "        4. Re-throwing: The throw; statement re-throws the exception, allowing it to be"
+          "text": "        4. Re-throwing: The throw; statement re-throws the exception, allowing it to be\n           handled further up the pipeline, potentially by the UseExceptionHandler\n           middleware."
         },
         {
           "type": "prose",
           "page": 4,
           "lines": [
-            "           handled further up the pipeline, potentially by the UseExceptionHandler",
-            "           middleware.",
             "Program.cs"
           ],
-          "text": "           handled further up the pipeline, potentially by the UseExceptionHandler\n           middleware.\nProgram.cs"
+          "text": "Program.cs"
         },
         {
           "type": "code",
           "page": 4,
           "lines": [
             "// ... (other configuration) ...",
-            "var app = builder.Build();"
-          ],
-          "text": "// ... (other configuration) ...\nvar app = builder.Build();"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
-            "if (app.Environment.IsDevelopment())"
-          ],
-          "text": "if (app.Environment.IsDevelopment())"
-        },
-        {
-          "type": "code",
-          "page": 4,
-          "lines": [
+            "var app = builder.Build();",
+            "if (app.Environment.IsDevelopment())",
             "{",
             "  app.UseDeveloperExceptionPage(); // Detailed error page in development",
-            "}"
-          ],
-          "text": "{\n  app.UseDeveloperExceptionPage(); // Detailed error page in development\n}"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
-            "else"
-          ],
-          "text": "else"
-        },
-        {
-          "type": "code",
-          "page": 4,
-          "lines": [
+            "}",
+            "else",
             "{",
             "  app.UseExceptionHandler(\"/Error\"); // Redirect to a custom error page in other environments",
             "  app.UseExceptionHandlingMiddleware(); // Use the custom exception handling middleware",
             "}"
           ],
-          "text": "{\n  app.UseExceptionHandler(\"/Error\"); // Redirect to a custom error page in other environments\n  app.UseExceptionHandlingMiddleware(); // Use the custom exception handling middleware\n}"
+          "text": "// ... (other configuration) ...\nvar app = builder.Build();\nif (app.Environment.IsDevelopment())\n{\n  app.UseDeveloperExceptionPage(); // Detailed error page in development\n}\nelse\n{\n  app.UseExceptionHandler(\"/Error\"); // Redirect to a custom error page in other environments\n  app.UseExceptionHandlingMiddleware(); // Use the custom exception handling middleware\n}"
         }
       ],
       "char_count_raw": 1232,
@@ -1665,51 +1441,37 @@
           "type": "code",
           "page": 5,
           "lines": [
-            "// ... (other middleware and routing) ..."
+            "// ... (other middleware and routing) ...",
+            "   • UseDeveloperExceptionPage(): This middleware is enabled only in the Development"
           ],
-          "text": "// ... (other middleware and routing) ..."
+          "text": "// ... (other middleware and routing) ...\n   • UseDeveloperExceptionPage(): This middleware is enabled only in the Development"
         },
         {
           "type": "prose",
           "page": 5,
           "lines": [
-            "   • UseDeveloperExceptionPage(): This middleware is enabled only in the Development",
             "      environment to provide detailed error information for debugging."
           ],
-          "text": "   • UseDeveloperExceptionPage(): This middleware is enabled only in the Development\n      environment to provide detailed error information for debugging."
+          "text": "      environment to provide detailed error information for debugging."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • UseExceptionHandler(\"/Error\"): In non-development environments, this middleware"
-          ],
-          "text": "   • UseExceptionHandler(\"/Error\"): In non-development environments, this middleware"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • UseExceptionHandler(\"/Error\"): In non-development environments, this middleware",
             "      redirects to the \"/Error\" endpoint (which you'll need to define in your controllers) when an",
             "      unhandled exception occurs."
           ],
-          "text": "      redirects to the \"/Error\" endpoint (which you'll need to define in your controllers) when an\n      unhandled exception occurs."
+          "text": "   • UseExceptionHandler(\"/Error\"): In non-development environments, this middleware\n      redirects to the \"/Error\" endpoint (which you'll need to define in your controllers) when an\n      unhandled exception occurs."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • UseExceptionHandlingMiddleware(): This registers your custom exception handling"
-          ],
-          "text": "   • UseExceptionHandlingMiddleware(): This registers your custom exception handling"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • UseExceptionHandlingMiddleware(): This registers your custom exception handling",
             "      middleware, which will catch and log exceptions before they reach UseExceptionHandler."
           ],
-          "text": "      middleware, which will catch and log exceptions before they reach UseExceptionHandler."
+          "text": "   • UseExceptionHandlingMiddleware(): This registers your custom exception handling\n      middleware, which will catch and log exceptions before they reach UseExceptionHandler."
         },
         {
           "type": "heading",
@@ -1723,49 +1485,28 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Centralized Error Handling: Use exception handling middleware or UseExceptionHandler to"
-          ],
-          "text": "   • Centralized Error Handling: Use exception handling middleware or UseExceptionHandler to"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Centralized Error Handling: Use exception handling middleware or UseExceptionHandler to",
             "      create a single point for managing exceptions."
           ],
-          "text": "      create a single point for managing exceptions."
+          "text": "   • Centralized Error Handling: Use exception handling middleware or UseExceptionHandler to\n      create a single point for managing exceptions."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Environment-Specific Behavior: Provide detailed error information in development, but use"
-          ],
-          "text": "   • Environment-Specific Behavior: Provide detailed error information in development, but use"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Environment-Specific Behavior: Provide detailed error information in development, but use",
             "      generic error pages in production for security."
           ],
-          "text": "      generic error pages in production for security."
+          "text": "   • Environment-Specific Behavior: Provide detailed error information in development, but use\n      generic error pages in production for security."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Custom Exceptions: Consider creating custom exceptions to convey specific error conditions"
-          ],
-          "text": "   • Custom Exceptions: Consider creating custom exceptions to convey specific error conditions"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Custom Exceptions: Consider creating custom exceptions to convey specific error conditions",
             "      in your application."
           ],
-          "text": "      in your application."
+          "text": "   • Custom Exceptions: Consider creating custom exceptions to convey specific error conditions\n      in your application."
         },
         {
           "type": "list_item",
@@ -1779,33 +1520,19 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • User-Friendly Error Messages: Provide clear and informative error messages to users,"
-          ],
-          "text": "   • User-Friendly Error Messages: Provide clear and informative error messages to users,"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • User-Friendly Error Messages: Provide clear and informative error messages to users,",
             "      guiding them on how to resolve the issue."
           ],
-          "text": "      guiding them on how to resolve the issue."
+          "text": "   • User-Friendly Error Messages: Provide clear and informative error messages to users,\n      guiding them on how to resolve the issue."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Testing: Write unit tests for your exception handling middleware and custom exception"
-          ],
-          "text": "   • Testing: Write unit tests for your exception handling middleware and custom exception"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Testing: Write unit tests for your exception handling middleware and custom exception",
             "      classes to ensure they work as expected."
           ],
-          "text": "      classes to ensure they work as expected."
+          "text": "   • Testing: Write unit tests for your exception handling middleware and custom exception\n      classes to ensure they work as expected."
         }
       ],
       "char_count_raw": 1301,
@@ -2246,17 +1973,10 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Centralized Handling: Use exception handling middleware or UseExceptionHandler to"
-          ],
-          "text": "   • Centralized Handling: Use exception handling middleware or UseExceptionHandler to"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • Centralized Handling: Use exception handling middleware or UseExceptionHandler to",
             "      manage exceptions in one place."
           ],
-          "text": "      manage exceptions in one place."
+          "text": "   • Centralized Handling: Use exception handling middleware or UseExceptionHandler to\n      manage exceptions in one place."
         },
         {
           "type": "list_item",
@@ -2278,17 +1998,10 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "        o Production: Use UseExceptionHandler for generic error pages, avoid exposing"
-          ],
-          "text": "        o Production: Use UseExceptionHandler for generic error pages, avoid exposing"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "        o Production: Use UseExceptionHandler for generic error pages, avoid exposing",
             "           sensitive details."
           ],
-          "text": "           sensitive details."
+          "text": "        o Production: Use UseExceptionHandler for generic error pages, avoid exposing\n           sensitive details."
         },
         {
           "type": "list_item",
@@ -2425,17 +2138,10 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • HTTP Status Codes: Use appropriate status codes to indicate the type of error (e.g., 400 Bad"
-          ],
-          "text": "   • HTTP Status Codes: Use appropriate status codes to indicate the type of error (e.g., 400 Bad"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • HTTP Status Codes: Use appropriate status codes to indicate the type of error (e.g., 400 Bad",
             "      Request, 404 Not Found, 500 Internal Server Error)."
           ],
-          "text": "      Request, 404 Not Found, 500 Internal Server Error)."
+          "text": "   • HTTP Status Codes: Use appropriate status codes to indicate the type of error (e.g., 400 Bad\n      Request, 404 Not Found, 500 Internal Server Error)."
         },
         {
           "type": "heading",
@@ -2449,33 +2155,19 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Explain the Flow: Articulate how exceptions are handled in ASP.NET Core MVC and the role"
-          ],
-          "text": "   • Explain the Flow: Articulate how exceptions are handled in ASP.NET Core MVC and the role"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Explain the Flow: Articulate how exceptions are handled in ASP.NET Core MVC and the role",
             "      of middleware."
           ],
-          "text": "      of middleware."
+          "text": "   • Explain the Flow: Articulate how exceptions are handled in ASP.NET Core MVC and the role\n      of middleware."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Custom Middleware: Discuss scenarios where you would create custom exception handling"
-          ],
-          "text": "   • Custom Middleware: Discuss scenarios where you would create custom exception handling"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Custom Middleware: Discuss scenarios where you would create custom exception handling",
             "      middleware."
           ],
-          "text": "      middleware."
+          "text": "   • Custom Middleware: Discuss scenarios where you would create custom exception handling\n      middleware."
         },
         {
           "type": "list_item",

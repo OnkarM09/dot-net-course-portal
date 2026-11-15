@@ -299,28 +299,21 @@
           "text": "Core Layers"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 1,
           "lines": [
-            "1. Domain Layer (Core)"
+            "   1. Domain Layer (Core)"
           ],
-          "text": "1. Domain Layer (Core)"
+          "text": "   1. Domain Layer (Core)"
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Purpose: The heart of your application, containing your business rules and domain"
-          ],
-          "text": "        o Purpose: The heart of your application, containing your business rules and domain"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "        o Purpose: The heart of your application, containing your business rules and domain",
             "           models."
           ],
-          "text": "           models."
+          "text": "        o Purpose: The heart of your application, containing your business rules and domain\n           models."
         },
         {
           "type": "list_item",
@@ -331,43 +324,57 @@
           "text": "        o Contents:"
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 1,
           "lines": [
             "              ▪ Entities: Represent the core concepts of your domain (e.g., Person, Order,",
-            "                 Product).",
-            "              ▪ Value Objects: Immutable objects representing concepts like Money,",
-            "                 Address, or EmailAddress.",
-            "              ▪ Domain Services: Encapsulate complex business logic or operations that",
-            "                 involve multiple entities.",
-            "              ▪ Interfaces (Contracts): Define the contracts for repositories and other",
-            "                 dependencies."
+            "                 Product)."
           ],
-          "text": "              ▪ Entities: Represent the core concepts of your domain (e.g., Person, Order,\n                 Product).\n              ▪ Value Objects: Immutable objects representing concepts like Money,\n                 Address, or EmailAddress.\n              ▪ Domain Services: Encapsulate complex business logic or operations that\n                 involve multiple entities.\n              ▪ Interfaces (Contracts): Define the contracts for repositories and other\n                 dependencies."
+          "text": "              ▪ Entities: Represent the core concepts of your domain (e.g., Person, Order,\n                 Product)."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Dependencies: None. The domain layer is independent of any external"
+            "              ▪ Value Objects: Immutable objects representing concepts like Money,",
+            "                 Address, or EmailAddress."
           ],
-          "text": "        o Dependencies: None. The domain layer is independent of any external"
+          "text": "              ▪ Value Objects: Immutable objects representing concepts like Money,\n                 Address, or EmailAddress."
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 1,
           "lines": [
+            "              ▪ Domain Services: Encapsulate complex business logic or operations that",
+            "                 involve multiple entities."
+          ],
+          "text": "              ▪ Domain Services: Encapsulate complex business logic or operations that\n                 involve multiple entities."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "              ▪ Interfaces (Contracts): Define the contracts for repositories and other",
+            "                 dependencies."
+          ],
+          "text": "              ▪ Interfaces (Contracts): Define the contracts for repositories and other\n                 dependencies."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
+            "        o Dependencies: None. The domain layer is independent of any external",
             "           infrastructure or frameworks."
           ],
-          "text": "           infrastructure or frameworks."
+          "text": "        o Dependencies: None. The domain layer is independent of any external\n           infrastructure or frameworks."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 1,
           "lines": [
-            "2. Application Layer"
+            "   2. Application Layer"
           ],
-          "text": "2. Application Layer"
+          "text": "   2. Application Layer"
         },
         {
           "type": "list_item",
@@ -386,17 +393,31 @@
           "text": "        o Contents:"
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 1,
           "lines": [
             "              ▪ Use Cases (Application Services): Implement the high-level use cases or",
-            "                 operations of your system (e.g., CreatePerson, GetPersonById).",
+            "                 operations of your system (e.g., CreatePerson, GetPersonById)."
+          ],
+          "text": "              ▪ Use Cases (Application Services): Implement the high-level use cases or\n                 operations of your system (e.g., CreatePerson, GetPersonById)."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
             "              ▪ DTOs (Data Transfer Objects): Represent data structures used for",
-            "                 communication between layers.",
+            "                 communication between layers."
+          ],
+          "text": "              ▪ DTOs (Data Transfer Objects): Represent data structures used for\n                 communication between layers."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
             "              ▪ Interfaces (Contracts): Define the contracts for infrastructure services (e.g.,",
             "                 repositories, email services)."
           ],
-          "text": "              ▪ Use Cases (Application Services): Implement the high-level use cases or\n                 operations of your system (e.g., CreatePerson, GetPersonById).\n              ▪ DTOs (Data Transfer Objects): Represent data structures used for\n                 communication between layers.\n              ▪ Interfaces (Contracts): Define the contracts for infrastructure services (e.g.,\n                 repositories, email services)."
+          "text": "              ▪ Interfaces (Contracts): Define the contracts for infrastructure services (e.g.,\n                 repositories, email services)."
         },
         {
           "type": "list_item",
@@ -666,28 +687,21 @@
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 2,
           "lines": [
-            "3. Infrastructure Layer"
+            "   3. Infrastructure Layer"
           ],
-          "text": "3. Infrastructure Layer"
+          "text": "   3. Infrastructure Layer"
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o Purpose: Implements the technical details of how your application interacts with"
-          ],
-          "text": "        o Purpose: Implements the technical details of how your application interacts with"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "        o Purpose: Implements the technical details of how your application interacts with",
             "           external systems (databases, file systems, email services, etc.)."
           ],
-          "text": "           external systems (databases, file systems, email services, etc.)."
+          "text": "        o Purpose: Implements the technical details of how your application interacts with\n           external systems (databases, file systems, email services, etc.)."
         },
         {
           "type": "list_item",
@@ -698,38 +712,38 @@
           "text": "        o Contents:"
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 2,
           "lines": [
-            "              ▪ Repositories: Implement the data access logic for your entities.",
-            "              ▪ Services: Implement the interfaces defined in the application layer for",
-            "                 interacting with external systems (e.g., EmailService, FileStorageService)."
+            "              ▪ Repositories: Implement the data access logic for your entities."
           ],
-          "text": "              ▪ Repositories: Implement the data access logic for your entities.\n              ▪ Services: Implement the interfaces defined in the application layer for\n                 interacting with external systems (e.g., EmailService, FileStorageService)."
+          "text": "              ▪ Repositories: Implement the data access logic for your entities."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o Dependencies: Depends on the Application Layer and any external libraries or"
+            "              ▪ Services: Implement the interfaces defined in the application layer for",
+            "                 interacting with external systems (e.g., EmailService, FileStorageService)."
           ],
-          "text": "        o Dependencies: Depends on the Application Layer and any external libraries or"
+          "text": "              ▪ Services: Implement the interfaces defined in the application layer for\n                 interacting with external systems (e.g., EmailService, FileStorageService)."
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 2,
           "lines": [
+            "        o Dependencies: Depends on the Application Layer and any external libraries or",
             "           frameworks needed for infrastructure tasks."
           ],
-          "text": "           frameworks needed for infrastructure tasks."
+          "text": "        o Dependencies: Depends on the Application Layer and any external libraries or\n           frameworks needed for infrastructure tasks."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 2,
           "lines": [
-            "4. Presentation Layer (UI)"
+            "   4. Presentation Layer (UI)"
           ],
-          "text": "4. Presentation Layer (UI)"
+          "text": "   4. Presentation Layer (UI)"
         },
         {
           "type": "list_item",
@@ -748,15 +762,29 @@
           "text": "        o Contents:"
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 2,
           "lines": [
             "              ▪ Controllers: Handle HTTP requests, interact with use cases, and return views",
-            "                 or API responses.",
-            "              ▪ Views: Render the user interface.",
+            "                 or API responses."
+          ],
+          "text": "              ▪ Controllers: Handle HTTP requests, interact with use cases, and return views\n                 or API responses."
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
+            "              ▪ Views: Render the user interface."
+          ],
+          "text": "              ▪ Views: Render the user interface."
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
             "              ▪ View Models: Shape data for presentation in views."
           ],
-          "text": "              ▪ Controllers: Handle HTTP requests, interact with use cases, and return views\n                 or API responses.\n              ▪ Views: Render the user interface.\n              ▪ View Models: Shape data for presentation in views."
+          "text": "              ▪ View Models: Shape data for presentation in views."
         },
         {
           "type": "list_item",
@@ -767,12 +795,12 @@
           "text": "        o Dependencies: Depends on the Application Layer."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 2,
           "lines": [
-            "5. Tests"
+            "   5. Tests"
           ],
-          "text": "5. Tests"
+          "text": "   5. Tests"
         },
         {
           "type": "list_item",
@@ -791,50 +819,57 @@
           "text": "        o Contents:"
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 2,
           "lines": [
             "              ▪ Unit Tests: Test individual units of code (e.g., domain models, services) in",
-            "                 isolation.",
-            "              ▪ Integration Tests: Test the interaction between multiple components.",
+            "                 isolation."
+          ],
+          "text": "              ▪ Unit Tests: Test individual units of code (e.g., domain models, services) in\n                 isolation."
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
+            "              ▪ Integration Tests: Test the interaction between multiple components."
+          ],
+          "text": "              ▪ Integration Tests: Test the interaction between multiple components."
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
             "              ▪ End-to-End Tests: Test the entire application flow from the user's",
-            "                 perspective.",
+            "                 perspective."
+          ],
+          "text": "              ▪ End-to-End Tests: Test the entire application flow from the user's\n                 perspective."
+        },
+        {
+          "type": "prose",
+          "page": 2,
+          "lines": [
             "Dependency Direction:"
           ],
-          "text": "              ▪ Unit Tests: Test individual units of code (e.g., domain models, services) in\n                 isolation.\n              ▪ Integration Tests: Test the interaction between multiple components.\n              ▪ End-to-End Tests: Test the entire application flow from the user's\n                 perspective.\nDependency Direction:"
+          "text": "Dependency Direction:"
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • Inner Layers to Outer Layers: Dependencies flow from the inner layers (Domain) to the"
-          ],
-          "text": "   • Inner Layers to Outer Layers: Dependencies flow from the inner layers (Domain) to the"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   • Inner Layers to Outer Layers: Dependencies flow from the inner layers (Domain) to the",
             "      outer layers (Presentation)."
           ],
-          "text": "      outer layers (Presentation)."
+          "text": "   • Inner Layers to Outer Layers: Dependencies flow from the inner layers (Domain) to the\n      outer layers (Presentation)."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • Abstraction: Outer layers depend on abstractions (interfaces) defined in the inner layers."
-          ],
-          "text": "   • Abstraction: Outer layers depend on abstractions (interfaces) defined in the inner layers."
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   • Abstraction: Outer layers depend on abstractions (interfaces) defined in the inner layers.",
             "      This allows you to easily swap implementations in the outer layers without affecting the core",
             "      business logic."
           ],
-          "text": "      This allows you to easily swap implementations in the outer layers without affecting the core\n      business logic."
+          "text": "   • Abstraction: Outer layers depend on abstractions (interfaces) defined in the inner layers.\n      This allows you to easily swap implementations in the outer layers without affecting the core\n      business logic."
         }
       ],
       "char_count_raw": 1533,
@@ -1574,22 +1609,8 @@
             "  }",
             "  [HttpPost]",
             "  public async Task<IActionResult> Create(PersonDto personDto)",
-            "  {"
-          ],
-          "text": "   await _dbContext.SaveChangesAsync();\n   return person;\n  }\n  // ... other methods ...\n}\n// Presentation Layer (UI) - Controller\npublic class PersonsController : Controller\n{\n  private readonly IPersonsService _personsService;\n  public PersonsController(IPersonsService personsService)\n  {\n   _personsService = personsService;\n  }\n  [HttpPost]\n  public async Task<IActionResult> Create(PersonDto personDto)\n  {"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
-            "   if (!ModelState.IsValid)"
-          ],
-          "text": "   if (!ModelState.IsValid)"
-        },
-        {
-          "type": "code",
-          "page": 5,
-          "lines": [
+            "  {",
+            "   if (!ModelState.IsValid)",
             "   {",
             "     return BadRequest(ModelState);",
             "   }",
@@ -1600,7 +1621,7 @@
             "  // ... other actions ...",
             "}"
           ],
-          "text": "   {\n     return BadRequest(ModelState);\n   }\n   var createdPerson = await _personsService.CreatePerson(personDto);\n   return CreatedAtAction(nameof(GetPersonById), new { id = createdPerson.PersonId },\ncreatedPerson);\n  }\n  // ... other actions ...\n}"
+          "text": "   await _dbContext.SaveChangesAsync();\n   return person;\n  }\n  // ... other methods ...\n}\n// Presentation Layer (UI) - Controller\npublic class PersonsController : Controller\n{\n  private readonly IPersonsService _personsService;\n  public PersonsController(IPersonsService personsService)\n  {\n   _personsService = personsService;\n  }\n  [HttpPost]\n  public async Task<IActionResult> Create(PersonDto personDto)\n  {\n   if (!ModelState.IsValid)\n   {\n     return BadRequest(ModelState);\n   }\n   var createdPerson = await _personsService.CreatePerson(personDto);\n   return CreatedAtAction(nameof(GetPersonById), new { id = createdPerson.PersonId },\ncreatedPerson);\n  }\n  // ... other actions ...\n}"
         }
       ],
       "char_count_raw": 641,
@@ -1841,17 +1862,10 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • The Application layer defines the IPersonsService interface and the PersonsService"
-          ],
-          "text": "   • The Application layer defines the IPersonsService interface and the PersonsService"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • The Application layer defines the IPersonsService interface and the PersonsService",
             "      implementation that uses the repository to perform CRUD operations."
           ],
-          "text": "      implementation that uses the repository to perform CRUD operations."
+          "text": "   • The Application layer defines the IPersonsService interface and the PersonsService\n      implementation that uses the repository to perform CRUD operations."
         },
         {
           "type": "list_item",
@@ -1865,18 +1879,18 @@
           "type": "code",
           "page": 6,
           "lines": [
-            "      interface and interacts with the database."
+            "      interface and interacts with the database.",
+            "   • The Presentation layer has the PersonsController that handles requests, uses the"
           ],
-          "text": "      interface and interacts with the database."
+          "text": "      interface and interacts with the database.\n   • The Presentation layer has the PersonsController that handles requests, uses the"
         },
         {
           "type": "prose",
           "page": 6,
           "lines": [
-            "   • The Presentation layer has the PersonsController that handles requests, uses the",
             "      PersonsService, and returns appropriate responses."
           ],
-          "text": "   • The Presentation layer has the PersonsController that handles requests, uses the\n      PersonsService, and returns appropriate responses."
+          "text": "      PersonsService, and returns appropriate responses."
         },
         {
           "type": "heading",
@@ -1930,17 +1944,10 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Flexibility: You can easily swap out implementations in the outer layers (e.g., change the"
-          ],
-          "text": "   • Flexibility: You can easily swap out implementations in the outer layers (e.g., change the"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • Flexibility: You can easily swap out implementations in the outer layers (e.g., change the",
             "      database provider) without affecting the core business logic."
           ],
-          "text": "      database provider) without affecting the core business logic."
+          "text": "   • Flexibility: You can easily swap out implementations in the outer layers (e.g., change the\n      database provider) without affecting the core business logic."
         },
         {
           "type": "heading",
@@ -1962,33 +1969,19 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Separation of Concerns: Decouples the different parts of your application into well-defined"
-          ],
-          "text": "   • Separation of Concerns: Decouples the different parts of your application into well-defined"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • Separation of Concerns: Decouples the different parts of your application into well-defined",
             "      layers."
           ],
-          "text": "      layers."
+          "text": "   • Separation of Concerns: Decouples the different parts of your application into well-defined\n      layers."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Dependency Inversion Principle (DIP): Inner layers define abstractions (interfaces), outer"
-          ],
-          "text": "   • Dependency Inversion Principle (DIP): Inner layers define abstractions (interfaces), outer"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • Dependency Inversion Principle (DIP): Inner layers define abstractions (interfaces), outer",
             "      layers depend on these abstractions, leading to loose coupling."
           ],
-          "text": "      layers depend on these abstractions, leading to loose coupling."
+          "text": "   • Dependency Inversion Principle (DIP): Inner layers define abstractions (interfaces), outer\n      layers depend on these abstractions, leading to loose coupling."
         },
         {
           "type": "list_item",
@@ -2010,17 +2003,10 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Flexibility: You can swap out implementations in outer layers without affecting the core"
-          ],
-          "text": "   • Flexibility: You can swap out implementations in outer layers without affecting the core"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • Flexibility: You can swap out implementations in outer layers without affecting the core",
             "      business logic."
           ],
-          "text": "      business logic."
+          "text": "   • Flexibility: You can swap out implementations in outer layers without affecting the core\n      business logic."
         }
       ],
       "char_count_raw": 1675,
@@ -2341,17 +2327,10 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o Contains implementations of repositories, services for interacting with external"
-          ],
-          "text": "        o Contains implementations of repositories, services for interacting with external"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "        o Contains implementations of repositories, services for interacting with external",
             "           systems (e.g., email, database)."
           ],
-          "text": "           systems (e.g., email, database)."
+          "text": "        o Contains implementations of repositories, services for interacting with external\n           systems (e.g., email, database)."
         },
         {
           "type": "list_item",
@@ -2453,17 +2432,10 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Focus on Business Logic: The domain layer is at the center, emphasizing the core of your"
-          ],
-          "text": "   • Focus on Business Logic: The domain layer is at the center, emphasizing the core of your"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Focus on Business Logic: The domain layer is at the center, emphasizing the core of your",
             "      application."
           ],
-          "text": "      application."
+          "text": "   • Focus on Business Logic: The domain layer is at the center, emphasizing the core of your\n      application."
         }
       ],
       "char_count_raw": 1266,
@@ -2616,33 +2588,19 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Explain the Layers: Be able to clearly explain the purpose of each layer and how they"
-          ],
-          "text": "   • Explain the Layers: Be able to clearly explain the purpose of each layer and how they"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Explain the Layers: Be able to clearly explain the purpose of each layer and how they",
             "      interact."
           ],
-          "text": "      interact."
+          "text": "   • Explain the Layers: Be able to clearly explain the purpose of each layer and how they\n      interact."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Dependency Direction: Emphasize that dependencies flow inwards towards the Domain"
-          ],
-          "text": "   • Dependency Direction: Emphasize that dependencies flow inwards towards the Domain"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Dependency Direction: Emphasize that dependencies flow inwards towards the Domain",
             "      layer."
           ],
-          "text": "      layer."
+          "text": "   • Dependency Direction: Emphasize that dependencies flow inwards towards the Domain\n      layer."
         },
         {
           "type": "list_item",
@@ -2664,66 +2622,45 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Benefits: Articulate the advantages of Clean Architecture in terms of maintainability,"
+            "   • Benefits: Articulate the advantages of Clean Architecture in terms of maintainability,",
+            "      testability, and flexibility."
           ],
-          "text": "   • Benefits: Articulate the advantages of Clean Architecture in terms of maintainability,"
+          "text": "   • Benefits: Articulate the advantages of Clean Architecture in terms of maintainability,\n      testability, and flexibility."
         },
         {
           "type": "prose",
           "page": 8,
           "lines": [
-            "      testability, and flexibility.",
             "Remember:"
           ],
-          "text": "      testability, and flexibility.\nRemember:"
+          "text": "Remember:"
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Trade-offs: Clean Architecture adds some complexity, so consider if it's appropriate for your"
-          ],
-          "text": "   • Trade-offs: Clean Architecture adds some complexity, so consider if it's appropriate for your"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Trade-offs: Clean Architecture adds some complexity, so consider if it's appropriate for your",
             "      project's size and requirements."
           ],
-          "text": "      project's size and requirements."
+          "text": "   • Trade-offs: Clean Architecture adds some complexity, so consider if it's appropriate for your\n      project's size and requirements."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Focus on the Domain: The domain layer should be the most important and stable part of"
-          ],
-          "text": "   • Focus on the Domain: The domain layer should be the most important and stable part of"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Focus on the Domain: The domain layer should be the most important and stable part of",
             "      your application."
           ],
-          "text": "      your application."
+          "text": "   • Focus on the Domain: The domain layer should be the most important and stable part of\n      your application."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Continuous Refactoring: As your application evolves, continuously refactor to maintain the"
-          ],
-          "text": "   • Continuous Refactoring: As your application evolves, continuously refactor to maintain the"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Continuous Refactoring: As your application evolves, continuously refactor to maintain the",
             "      separation of concerns and keep your code clean."
           ],
-          "text": "      separation of concerns and keep your code clean."
+          "text": "   • Continuous Refactoring: As your application evolves, continuously refactor to maintain the\n      separation of concerns and keep your code clean."
         }
       ],
       "char_count_raw": 892,

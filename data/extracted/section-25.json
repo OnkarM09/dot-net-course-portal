@@ -270,17 +270,10 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • User Management: Handle user registration, login, logout, password reset, and profile"
-          ],
-          "text": "   • User Management: Handle user registration, login, logout, password reset, and profile"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • User Management: Handle user registration, login, logout, password reset, and profile",
             "      management."
           ],
-          "text": "      management."
+          "text": "   • User Management: Handle user registration, login, logout, password reset, and profile\n      management."
         },
         {
           "type": "list_item",
@@ -294,33 +287,19 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Claims-Based Authorization: Make authorization decisions based on claims (attributes)"
-          ],
-          "text": "   • Claims-Based Authorization: Make authorization decisions based on claims (attributes)"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • Claims-Based Authorization: Make authorization decisions based on claims (attributes)",
             "      associated with a user."
           ],
-          "text": "      associated with a user."
+          "text": "   • Claims-Based Authorization: Make authorization decisions based on claims (attributes)\n      associated with a user."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • External Login Providers: Integrate with external authentication providers (Google,"
-          ],
-          "text": "   • External Login Providers: Integrate with external authentication providers (Google,"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • External Login Providers: Integrate with external authentication providers (Google,",
             "      Facebook, etc.)."
           ],
-          "text": "      Facebook, etc.)."
+          "text": "   • External Login Providers: Integrate with external authentication providers (Google,\n      Facebook, etc.)."
         },
         {
           "type": "list_item",
@@ -350,49 +329,28 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o ApplicationUser: Extends the IdentityUser class to represent your application's"
-          ],
-          "text": "        o ApplicationUser: Extends the IdentityUser class to represent your application's"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "        o ApplicationUser: Extends the IdentityUser class to represent your application's",
             "           users. It can include additional properties like PersonName (in your example)."
           ],
-          "text": "           users. It can include additional properties like PersonName (in your example)."
+          "text": "        o ApplicationUser: Extends the IdentityUser class to represent your application's\n           users. It can include additional properties like PersonName (in your example)."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o ApplicationRole: Extends the IdentityRole class to define roles within your"
-          ],
-          "text": "        o ApplicationRole: Extends the IdentityRole class to define roles within your"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "        o ApplicationRole: Extends the IdentityRole class to define roles within your",
             "           application."
           ],
-          "text": "           application."
+          "text": "        o ApplicationRole: Extends the IdentityRole class to define roles within your\n           application."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • UserManager<TUser>: A core service for managing user accounts (creating, deleting,"
-          ],
-          "text": "   • UserManager<TUser>: A core service for managing user accounts (creating, deleting,"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • UserManager<TUser>: A core service for managing user accounts (creating, deleting,",
             "      finding, updating)."
           ],
-          "text": "      finding, updating)."
+          "text": "   • UserManager<TUser>: A core service for managing user accounts (creating, deleting,\n      finding, updating)."
         },
         {
           "type": "list_item",
@@ -705,17 +663,10 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • Constructor: The constructor injects the UserManager, SignInManager, and RoleManager"
-          ],
-          "text": "   • Constructor: The constructor injects the UserManager, SignInManager, and RoleManager"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   • Constructor: The constructor injects the UserManager, SignInManager, and RoleManager",
             "      services."
           ],
-          "text": "      services."
+          "text": "   • Constructor: The constructor injects the UserManager, SignInManager, and RoleManager\n      services."
         },
         {
           "type": "list_item",
@@ -758,13 +709,20 @@
           "text": "        3. Role Handling:"
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 2,
           "lines": [
-            "              ▪ Creates the Admin or User role if it doesn't exist.",
+            "              ▪ Creates the Admin or User role if it doesn't exist."
+          ],
+          "text": "              ▪ Creates the Admin or User role if it doesn't exist."
+        },
+        {
+          "type": "list_item",
+          "page": 2,
+          "lines": [
             "              ▪ Assigns the user to the selected role."
           ],
-          "text": "              ▪ Creates the Admin or User role if it doesn't exist.\n              ▪ Assigns the user to the selected role."
+          "text": "              ▪ Assigns the user to the selected role."
         },
         {
           "type": "list_item",
@@ -786,17 +744,10 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        6. Error Handling: If user creation fails, adds errors to the ModelState and re-renders"
-          ],
-          "text": "        6. Error Handling: If user creation fails, adds errors to the ModelState and re-renders"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "        6. Error Handling: If user creation fails, adds errors to the ModelState and re-renders",
             "           the Register view."
           ],
-          "text": "           the Register view."
+          "text": "        6. Error Handling: If user creation fails, adds errors to the ModelState and re-renders\n           the Register view."
         },
         {
           "type": "list_item",
@@ -823,20 +774,13 @@
           "text": "        1. Model Validation: Checks if the submitted LoginDTO is valid."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 2,
           "lines": [
-            "2. Sign-In Attempt: Attempts to sign in the user using"
-          ],
-          "text": "2. Sign-In Attempt: Attempts to sign in the user using"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "        2. Sign-In Attempt: Attempts to sign in the user using",
             "           _signInManager.PasswordSignInAsync."
           ],
-          "text": "           _signInManager.PasswordSignInAsync."
+          "text": "        2. Sign-In Attempt: Attempts to sign in the user using\n           _signInManager.PasswordSignInAsync."
         },
         {
           "type": "list_item",
@@ -847,30 +791,30 @@
           "text": "        3. Redirect (if successful):"
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 2,
           "lines": [
-            "              ▪ Redirects to the Admin area's Home/Index if the user is an admin.",
-            "              ▪ Redirects to the ReturnUrl (if provided and valid) or to",
-            "                 PersonsController.Index otherwise."
+            "              ▪ Redirects to the Admin area's Home/Index if the user is an admin."
           ],
-          "text": "              ▪ Redirects to the Admin area's Home/Index if the user is an admin.\n              ▪ Redirects to the ReturnUrl (if provided and valid) or to\n                 PersonsController.Index otherwise."
+          "text": "              ▪ Redirects to the Admin area's Home/Index if the user is an admin."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        4. Error Handling: If sign-in fails, adds an error to the ModelState and re-renders the"
+            "              ▪ Redirects to the ReturnUrl (if provided and valid) or to",
+            "                 PersonsController.Index otherwise."
           ],
-          "text": "        4. Error Handling: If sign-in fails, adds an error to the ModelState and re-renders the"
+          "text": "              ▪ Redirects to the ReturnUrl (if provided and valid) or to\n                 PersonsController.Index otherwise."
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 2,
           "lines": [
+            "        4. Error Handling: If sign-in fails, adds an error to the ModelState and re-renders the",
             "           Login view."
           ],
-          "text": "           Login view."
+          "text": "        4. Error Handling: If sign-in fails, adds an error to the ModelState and re-renders the\n           Login view."
         },
         {
           "type": "list_item",
@@ -916,17 +860,10 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o [AllowAnonymous]: Allows anonymous users to access this action (useful for clientside"
-          ],
-          "text": "        o [AllowAnonymous]: Allows anonymous users to access this action (useful for clientside"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "        o [AllowAnonymous]: Allows anonymous users to access this action (useful for clientside",
             "validation)."
           ],
-          "text": "validation)."
+          "text": "        o [AllowAnonymous]: Allows anonymous users to access this action (useful for clientside\nvalidation)."
         }
       ],
       "char_count_raw": 1524,
@@ -1191,34 +1128,27 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "        o Checks for Existing User: Uses _userManager.FindByEmailAsync to see if a user with"
-          ],
-          "text": "        o Checks for Existing User: Uses _userManager.FindByEmailAsync to see if a user with"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "        o Checks for Existing User: Uses _userManager.FindByEmailAsync to see if a user with",
             "           the given email already exists."
           ],
-          "text": "           the given email already exists."
+          "text": "        o Checks for Existing User: Uses _userManager.FindByEmailAsync to see if a user with\n           the given email already exists."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "        o Returns JSON: Returns true if the email is available (no user found) and false"
+            "        o Returns JSON: Returns true if the email is available (no user found) and false",
+            "           otherwise."
           ],
-          "text": "        o Returns JSON: Returns true if the email is available (no user found) and false"
+          "text": "        o Returns JSON: Returns true if the email is available (no user found) and false\n           otherwise."
         },
         {
           "type": "prose",
           "page": 3,
           "lines": [
-            "           otherwise.",
             "Program.cs:"
           ],
-          "text": "           otherwise.\nProgram.cs:"
+          "text": "Program.cs:"
         },
         {
           "type": "list_item",
@@ -1232,17 +1162,10 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • AddIdentity<ApplicationUser, ApplicationRole>: Configures ASP.NET Core Identity with"
-          ],
-          "text": "   • AddIdentity<ApplicationUser, ApplicationRole>: Configures ASP.NET Core Identity with"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • AddIdentity<ApplicationUser, ApplicationRole>: Configures ASP.NET Core Identity with",
             "      your custom user and role types."
           ],
-          "text": "      your custom user and role types."
+          "text": "   • AddIdentity<ApplicationUser, ApplicationRole>: Configures ASP.NET Core Identity with\n      your custom user and role types."
         },
         {
           "type": "list_item",
@@ -1256,33 +1179,19 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • AddEntityFrameworkStores<ApplicationDbContext>: Configures EF Core to store Identity"
-          ],
-          "text": "   • AddEntityFrameworkStores<ApplicationDbContext>: Configures EF Core to store Identity"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • AddEntityFrameworkStores<ApplicationDbContext>: Configures EF Core to store Identity",
             "      data in your ApplicationDbContext."
           ],
-          "text": "      data in your ApplicationDbContext."
+          "text": "   • AddEntityFrameworkStores<ApplicationDbContext>: Configures EF Core to store Identity\n      data in your ApplicationDbContext."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • AddDefaultTokenProviders(): Adds default token providers for features like password reset"
-          ],
-          "text": "   • AddDefaultTokenProviders(): Adds default token providers for features like password reset"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • AddDefaultTokenProviders(): Adds default token providers for features like password reset",
             "      and two-factor authentication."
           ],
-          "text": "      and two-factor authentication."
+          "text": "   • AddDefaultTokenProviders(): Adds default token providers for features like password reset\n      and two-factor authentication."
         },
         {
           "type": "list_item",
@@ -1320,17 +1229,10 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • ConfigureApplicationCookie(): Customizes the cookie authentication options, setting the"
-          ],
-          "text": "   • ConfigureApplicationCookie(): Customizes the cookie authentication options, setting the"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • ConfigureApplicationCookie(): Customizes the cookie authentication options, setting the",
             "      login path."
           ],
-          "text": "      login path."
+          "text": "   • ConfigureApplicationCookie(): Customizes the cookie authentication options, setting the\n      login path."
         },
         {
           "type": "list_item",
@@ -1352,33 +1254,19 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • IdentityUser and IdentityRole: Extend these base classes for your custom user and role"
-          ],
-          "text": "   • IdentityUser and IdentityRole: Extend these base classes for your custom user and role"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • IdentityUser and IdentityRole: Extend these base classes for your custom user and role",
             "      models."
           ],
-          "text": "      models."
+          "text": "   • IdentityUser and IdentityRole: Extend these base classes for your custom user and role\n      models."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • UserManager, SignInManager, RoleManager: Core services for managing users, sign-in/out,"
-          ],
-          "text": "   • UserManager, SignInManager, RoleManager: Core services for managing users, sign-in/out,"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • UserManager, SignInManager, RoleManager: Core services for managing users, sign-in/out,",
             "      and roles."
           ],
-          "text": "      and roles."
+          "text": "   • UserManager, SignInManager, RoleManager: Core services for managing users, sign-in/out,\n      and roles."
         },
         {
           "type": "list_item",
@@ -1416,17 +1304,10 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Tag Helpers: In views, use tag helpers like asp-controller, asp-action, asp-for, and aspvalidation"
-          ],
-          "text": "   • Tag Helpers: In views, use tag helpers like asp-controller, asp-action, asp-for, and aspvalidation"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Tag Helpers: In views, use tag helpers like asp-controller, asp-action, asp-for, and aspvalidation",
             "-for."
           ],
-          "text": "-for."
+          "text": "   • Tag Helpers: In views, use tag helpers like asp-controller, asp-action, asp-for, and aspvalidation\n-for."
         }
       ],
       "char_count_raw": 1756,
@@ -1659,17 +1540,10 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Client-Side Validation: You can enhance user experience by adding client-side validation"
-          ],
-          "text": "   • Client-Side Validation: You can enhance user experience by adding client-side validation"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • Client-Side Validation: You can enhance user experience by adding client-side validation",
             "      using JavaScript libraries."
           ],
-          "text": "      using JavaScript libraries."
+          "text": "   • Client-Side Validation: You can enhance user experience by adding client-side validation\n      using JavaScript libraries."
         },
         {
           "type": "list_item",
@@ -1683,33 +1557,19 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Remote Validation: Allows for server-side validation of user input on the client-side using"
-          ],
-          "text": "   • Remote Validation: Allows for server-side validation of user input on the client-side using"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • Remote Validation: Allows for server-side validation of user input on the client-side using",
             "      AJAX."
           ],
-          "text": "      AJAX."
+          "text": "   • Remote Validation: Allows for server-side validation of user input on the client-side using\n      AJAX."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Areas: Organize large applications into logical areas, each with its own set of controllers,"
-          ],
-          "text": "   • Areas: Organize large applications into logical areas, each with its own set of controllers,"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • Areas: Organize large applications into logical areas, each with its own set of controllers,",
             "      views, and models."
           ],
-          "text": "      views, and models."
+          "text": "   • Areas: Organize large applications into logical areas, each with its own set of controllers,\n      views, and models."
         },
         {
           "type": "list_item",
@@ -1731,17 +1591,10 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • XSRF (Cross-Site Request Forgery) Protection: Use [ValidateAntiForgeryToken] and tag"
-          ],
-          "text": "   • XSRF (Cross-Site Request Forgery) Protection: Use [ValidateAntiForgeryToken] and tag"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • XSRF (Cross-Site Request Forgery) Protection: Use [ValidateAntiForgeryToken] and tag",
             "      helpers in forms to prevent CSRF attacks."
           ],
-          "text": "      helpers in forms to prevent CSRF attacks."
+          "text": "   • XSRF (Cross-Site Request Forgery) Protection: Use [ValidateAntiForgeryToken] and tag\n      helpers in forms to prevent CSRF attacks."
         },
         {
           "type": "heading",
@@ -1811,17 +1664,10 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "        o Two-factor authentication (2FA)"
-          ],
-          "text": "        o Two-factor authentication (2FA)"
-        },
-        {
-          "type": "heading",
-          "page": 4,
-          "lines": [
+            "        o Two-factor authentication (2FA)",
             "Identity Models"
           ],
-          "text": "Identity Models"
+          "text": "        o Two-factor authentication (2FA)\nIdentity Models"
         },
         {
           "type": "list_item",
@@ -2094,65 +1940,37 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Login and Logout Buttons: Use asp-controller and asp-action tag helpers to create"
-          ],
-          "text": "   • Login and Logout Buttons: Use asp-controller and asp-action tag helpers to create"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Login and Logout Buttons: Use asp-controller and asp-action tag helpers to create",
             "      login/logout links."
           ],
-          "text": "      login/logout links."
+          "text": "   • Login and Logout Buttons: Use asp-controller and asp-action tag helpers to create\n      login/logout links."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Active Nav Link: Use a custom tag helper or CSS classes to highlight the active navigation"
-          ],
-          "text": "   • Active Nav Link: Use a custom tag helper or CSS classes to highlight the active navigation"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Active Nav Link: Use a custom tag helper or CSS classes to highlight the active navigation",
             "      link."
           ],
-          "text": "      link."
+          "text": "   • Active Nav Link: Use a custom tag helper or CSS classes to highlight the active navigation\n      link."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Remote Validation: Use [Remote] attribute on model properties for server-side validation"
-          ],
-          "text": "   • Remote Validation: Use [Remote] attribute on model properties for server-side validation"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Remote Validation: Use [Remote] attribute on model properties for server-side validation",
             "      during form input."
           ],
-          "text": "      during form input."
+          "text": "   • Remote Validation: Use [Remote] attribute on model properties for server-side validation\n      during form input."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Conventional Routing: Use route attributes ([Route]) to define routes for actions like"
-          ],
-          "text": "   • Conventional Routing: Use route attributes ([Route]) to define routes for actions like"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Conventional Routing: Use route attributes ([Route]) to define routes for actions like",
             "      Register and Login."
           ],
-          "text": "      Register and Login."
+          "text": "   • Conventional Routing: Use route attributes ([Route]) to define routes for actions like\n      Register and Login."
         },
         {
           "type": "heading",
@@ -2166,33 +1984,19 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Password Complexity: Configure password requirements in AddIdentity (e.g., length, special"
-          ],
-          "text": "   • Password Complexity: Configure password requirements in AddIdentity (e.g., length, special"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Password Complexity: Configure password requirements in AddIdentity (e.g., length, special",
             "      characters)."
           ],
-          "text": "      characters)."
+          "text": "   • Password Complexity: Configure password requirements in AddIdentity (e.g., length, special\n      characters)."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Authorization Policies: Use [Authorize] and Authorize(policyName) to protect actions and"
-          ],
-          "text": "   • Authorization Policies: Use [Authorize] and Authorize(policyName) to protect actions and"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Authorization Policies: Use [Authorize] and Authorize(policyName) to protect actions and",
             "      define custom policies."
           ],
-          "text": "      define custom policies."
+          "text": "   • Authorization Policies: Use [Authorize] and Authorize(policyName) to protect actions and\n      define custom policies."
         },
         {
           "type": "list_item",
@@ -2222,17 +2026,10 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "        o Use [ValidateAntiForgeryToken] in actions and @Html.AntiForgeryToken() in forms"
-          ],
-          "text": "        o Use [ValidateAntiForgeryToken] in actions and @Html.AntiForgeryToken() in forms"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "        o Use [ValidateAntiForgeryToken] in actions and @Html.AntiForgeryToken() in forms",
             "           to prevent CSRF attacks."
           ],
-          "text": "           to prevent CSRF attacks."
+          "text": "        o Use [ValidateAntiForgeryToken] in actions and @Html.AntiForgeryToken() in forms\n           to prevent CSRF attacks."
         },
         {
           "type": "heading",
@@ -2254,33 +2051,19 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Areas: Organize large applications into logical areas, each with its own set of controllers and"
-          ],
-          "text": "   • Areas: Organize large applications into logical areas, each with its own set of controllers and"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Areas: Organize large applications into logical areas, each with its own set of controllers and",
             "      views."
           ],
-          "text": "      views."
+          "text": "   • Areas: Organize large applications into logical areas, each with its own set of controllers and\n      views."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Claims-Based Authorization: Make authorization decisions based on claims associated with"
-          ],
-          "text": "   • Claims-Based Authorization: Make authorization decisions based on claims associated with"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Claims-Based Authorization: Make authorization decisions based on claims associated with",
             "      the user."
           ],
-          "text": "      the user."
+          "text": "   • Claims-Based Authorization: Make authorization decisions based on claims associated with\n      the user."
         }
       ],
       "char_count_raw": 1289,
@@ -2446,42 +2229,21 @@
           "text": "   • Registering a user:"
         },
         {
-          "type": "prose",
-          "page": 6,
-          "lines": [
-            "ApplicationUser user = new ApplicationUser() { /* ... */ };",
-            "IdentityResult result = await _userManager.CreateAsync(user, registerDTO.Password);"
-          ],
-          "text": "ApplicationUser user = new ApplicationUser() { /* ... */ };\nIdentityResult result = await _userManager.CreateAsync(user, registerDTO.Password);"
-        },
-        {
-          "type": "list_item",
-          "page": 6,
-          "lines": [
-            "   • Signing in a user:"
-          ],
-          "text": "   • Signing in a user:"
-        },
-        {
           "type": "code",
           "page": 6,
           "lines": [
+            "ApplicationUser user = new ApplicationUser() { /* ... */ };",
+            "IdentityResult result = await _userManager.CreateAsync(user, registerDTO.Password);",
+            "   • Signing in a user:",
             "var result = await _signInManager.PasswordSignInAsync(loginDTO.Email, loginDTO.Password,",
-            "isPersistent: false, lockoutOnFailure: false);"
-          ],
-          "text": "var result = await _signInManager.PasswordSignInAsync(loginDTO.Email, loginDTO.Password,\nisPersistent: false, lockoutOnFailure: false);"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "isPersistent: false, lockoutOnFailure: false);",
             "   • Checking user roles:",
             "if (await _userManager.IsInRoleAsync(user, \"Admin\")) { /* ... */ }"
           ],
-          "text": "   • Checking user roles:\nif (await _userManager.IsInRoleAsync(user, \"Admin\")) { /* ... */ }"
+          "text": "ApplicationUser user = new ApplicationUser() { /* ... */ };\nIdentityResult result = await _userManager.CreateAsync(user, registerDTO.Password);\n   • Signing in a user:\nvar result = await _signInManager.PasswordSignInAsync(loginDTO.Email, loginDTO.Password,\nisPersistent: false, lockoutOnFailure: false);\n   • Checking user roles:\nif (await _userManager.IsInRoleAsync(user, \"Admin\")) { /* ... */ }"
         },
         {
-          "type": "heading",
+          "type": "prose",
           "page": 6,
           "lines": [
             "Interview Tips"
@@ -2492,17 +2254,10 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Concepts: Explain authentication vs. authorization, role-based vs. claims-based"
-          ],
-          "text": "   • Concepts: Explain authentication vs. authorization, role-based vs. claims-based"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • Concepts: Explain authentication vs. authorization, role-based vs. claims-based",
             "      authorization."
           ],
-          "text": "      authorization."
+          "text": "   • Concepts: Explain authentication vs. authorization, role-based vs. claims-based\n      authorization."
         },
         {
           "type": "list_item",
@@ -2516,33 +2271,19 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Security: Emphasize the importance of security best practices (HTTPS, XSRF protection,"
-          ],
-          "text": "   • Security: Emphasize the importance of security best practices (HTTPS, XSRF protection,"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • Security: Emphasize the importance of security best practices (HTTPS, XSRF protection,",
             "      password hashing)."
           ],
-          "text": "      password hashing)."
+          "text": "   • Security: Emphasize the importance of security best practices (HTTPS, XSRF protection,\n      password hashing)."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Customization: Discuss how you would customize Identity (e.g., adding user profile fields,"
-          ],
-          "text": "   • Customization: Discuss how you would customize Identity (e.g., adding user profile fields,"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • Customization: Discuss how you would customize Identity (e.g., adding user profile fields,",
             "      creating custom authorization policies)."
           ],
-          "text": "      creating custom authorization policies)."
+          "text": "   • Customization: Discuss how you would customize Identity (e.g., adding user profile fields,\n      creating custom authorization policies)."
         }
       ],
       "char_count_raw": 870,

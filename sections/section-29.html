@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Section 29: JWT with Web API — ASP.NET Core Masterclass</title>
+  <title>Section 29: JWT with Web API &mdash; ASP.NET Core Masterclass</title>
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
   <link rel="alternate icon" href="../favicon.ico">
   <link rel="stylesheet" href="../assets/css/docs.css">
@@ -16,7 +16,9 @@
   <!-- Top Navigation Header -->
   <header class="top-header" role="banner">
     <div class="header-left">
-      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">☰</button>
+      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
       <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
         <span class="sidebar-toggle-text">« Collapse</span>
@@ -41,7 +43,9 @@
       </a>
 
       <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
-        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
         <span class="search-text">Search topics, syntax, concepts...</span>
         <kbd class="kbd-shortcut">Ctrl+K</kbd>
       </button>
@@ -367,15 +371,6 @@
         <span>» Expand Sidebar</span>
       </button>
 
-      <!-- Breadcrumbs -->
-      <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
-        <a href="../index.html">Course Index</a>
-        <span class="crumb-sep" aria-hidden="true">/</span>
-        <span>Module 7</span>
-        <span class="crumb-sep" aria-hidden="true">/</span>
-        <span style="color: var(--text-main); font-weight: 600;">Section 29</span>
-      </nav>
-
       <!-- Section Banner Header -->
       <header class="section-banner">
         <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
@@ -408,73 +403,53 @@
 <p>JWT (JSON Web Token) is an open standard (RFC 7519) used for securely transmitting information
 between two parties as a JSON object. JWT is widely used for authentication and authorization
 purposes because it is stateless, compact, and easy to verify.</p>
-
-<h2 id="1-structure-of-jwt">1. Structure of JWT</h2>
-<p>A JWT token consists of three parts separated by periods:</p>
 <ul>
-  <li>• Header: Contains metadata about the token, including the type of token (JWT) and the</li>
-</ul>
-<p>hashing algorithm (e.g., HMAC, SHA256).</p>
-<ul>
-  <li>• Payload: Holds the claims, or information, such as user ID and roles. Claims can be:</li>
-  <li>o Registered Claims: Predefined claims, e.g., iss (issuer), sub (subject), and exp</li>
-</ul>
-<p>(expiration).</p>
-<ul>
-  <li>o Public Claims: Custom claims that are not reserved, e.g., user_id.</li>
-  <li>o Private Claims: Custom claims that are agreed upon between parties but are unique</li>
-</ul>
-<p>to that transaction.</p>
-<ul>
-  <li>• Signature: Ensures that the token was not tampered with and verifies the authenticity.</li>
+  <li>1. Structure of JWT
+A JWT token consists of three parts separated by periods:</li>
+  <li>Header: Contains metadata about the token, including the type of token (JWT) and the
+      hashing algorithm (e.g., HMAC, SHA256).</li>
+  <li>Payload: Holds the claims, or information, such as user ID and roles. Claims can be:</li>
+  <li>Registered Claims: Predefined claims, e.g., iss (issuer), sub (subject), and exp
+           (expiration).</li>
+  <li>Public Claims: Custom claims that are not reserved, e.g., user_id.</li>
+  <li>Private Claims: Custom claims that are agreed upon between parties but are unique
+           to that transaction.</li>
+  <li>Signature: Ensures that the token was not tampered with and verifies the authenticity.</li>
 </ul>
 <p>Example JWT:
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0Iiwicm9sZSI6ImFkbWluIiwiaWF0Ijox
 NTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
 Each part of the JWT is Base64Url-encoded:</p>
-
-<h2 id="1-header-eyjhbgcioijiuzi1niisinr5cci6ikpxvcj9">1. Header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</h2>
 <ul>
+  <li>1. Header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</li>
   <li>2. Payload: eyJ1c2VySWQiOiIxMjM0Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTE2MjM5MDIyfQ</li>
-</ul>
-
-<h2 id="3-signature-sflkxwrjsmekkf2qt4fwpmejf36pok6yjv_adqssw5c">3. Signature: SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</h2>
-
-<h2 id="2-steps-for-jwt-token-generation-and-validation">2. Steps for JWT Token Generation and Validation</h2>
-<ul>
+  <li>3. Signature: SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</li>
+  <li>2. Steps for JWT Token Generation and Validation</li>
   <li>1. Token Creation:</li>
-  <li>o The server creates a token when a user logs in.</li>
-  <li>o It encodes the header and payload, and then hashes these using a secret key and the</li>
-</ul>
-<p>algorithm specified in the header to create the signature.</p>
-<ul>
+  <li>The server creates a token when a user logs in.</li>
+  <li>It encodes the header and payload, and then hashes these using a secret key and the
+           algorithm specified in the header to create the signature.</li>
   <li>2. Token Transmission:</li>
-  <li>o After generation, the server sends the JWT token to the client (usually in the</li>
-</ul>
-<p>response header).</p>
-<ul>
-  <li>o The client stores the token (typically in localStorage or a cookie).</li>
+  <li>After generation, the server sends the JWT token to the client (usually in the
+           response header).</li>
+  <li>The client stores the token (typically in localStorage or a cookie).</li>
   <li>3. Token Validation:</li>
-  <li>o When a client makes an authenticated request, it sends the JWT in the Authorization</li>
-</ul>
-<p>header as a Bearer token.</p>
-<ul>
-  <li>o The server decodes the token, checks the signature, and validates claims like</li>
-</ul>
-<p>expiration (exp).</p>
-<ul>
-  <li>o If valid, the server processes the request, otherwise, it rejects it.</li>
+  <li>When a client makes an authenticated request, it sends the JWT in the Authorization
+           header as a Bearer token.</li>
+  <li>The server decodes the token, checks the signature, and validates claims like
+           expiration (exp).</li>
+  <li>If valid, the server processes the request, otherwise, it rejects it.</li>
 </ul>
 
 <h2 id="example-flow">Example Flow</h2>
 <ul>
   <li>1. User Login:</li>
-  <li>o The client sends login credentials to the server.</li>
-  <li>o The server authenticates the user and, if successful, generates a JWT.</li>
-  <li>o The server sends the token back to the client.</li>
+  <li>The client sends login credentials to the server.</li>
+  <li>The server authenticates the user and, if successful, generates a JWT.</li>
+  <li>The server sends the token back to the client.</li>
   <li>2. Requesting Protected Resource:</li>
-  <li>o The client includes the JWT in the request header to access a protected endpoint.</li>
-  <li>o The server verifies the JWT and, if valid, allows access.</li>
+  <li>The client includes the JWT in the request header to access a protected endpoint.</li>
+  <li>The server verifies the JWT and, if valid, allows access.</li>
 </ul>
 
 <h2 id="jwt-in-the-authorization-header">JWT in the Authorization Header</h2>
@@ -483,109 +458,79 @@ Authorization: Bearer &lt;JWT_TOKEN&gt;</p>
 
 <h2 id="pros-of-jwts-for-authentication-and-authorization">Pros of JWTs for Authentication and Authorization</h2>
 <ul>
-  <li>• Stateless: No need to store sessions on the server, making it scalable.</li>
-  <li>• Compact: The Base64Url-encoded format makes JWTs lightweight and fast to transmit.</li>
-  <li>• Self-contained: Contains all necessary information about the user, like roles and</li>
-</ul>
-<p>permissions.</p>
-<ul>
-  <li>• Cross-platform: Compatible with many languages and frameworks.</li>
+  <li>Stateless: No need to store sessions on the server, making it scalable.</li>
+  <li>Compact: The Base64Url-encoded format makes JWTs lightweight and fast to transmit.</li>
+  <li>Self-contained: Contains all necessary information about the user, like roles and
+      permissions.</li>
+  <li>Cross-platform: Compatible with many languages and frameworks.</li>
 </ul>
 
 <h2 id="jwt-algorithm-how-tokens-are-generated">JWT Algorithm &amp; How Tokens Are Generated</h2>
 <p>JWTs can be signed and sometimes encrypted to enhance security. The signing process is essential to
 ensure that the token was not tampered with after it was created. Here’s a detailed breakdown of
 how JWT tokens are generated and the algorithms used:</p>
-
-<h2 id="1-jwt-algorithms">1. JWT Algorithms</h2>
-<p>The algorithm defines how the token’s header and payload will be signed. JWT supports several
-algorithms, but the most commonly used ones are:</p>
 <ul>
-  <li>• HS256 (HMAC with SHA-256): Uses a secret key to create a hash of the header and payload.</li>
-</ul>
-<p>It’s symmetric, meaning the same secret key is used for both signing and verifying.</p>
-<ul>
-  <li>• RS256 (RSA Signature with SHA-256): Uses a public-private key pair for signing and</li>
-</ul>
-<p>verification. The private key signs the token, and the public key verifies it. This is asymmetric,
+  <li>1. JWT Algorithms
+The algorithm defines how the token’s header and payload will be signed. JWT supports several
+algorithms, but the most commonly used ones are:</li>
+  <li>HS256 (HMAC with SHA-256): Uses a secret key to create a hash of the header and payload.
+      It’s symmetric, meaning the same secret key is used for both signing and verifying.</li>
+  <li>RS256 (RSA Signature with SHA-256): Uses a public-private key pair for signing and
+      verification. The private key signs the token, and the public key verifies it. This is asymmetric,
       making it more secure for distributed applications, as you don’t need to share the private
-      key.
-The header of a JWT specifies the algorithm used, such as:</p>
+      key.</li>
+</ul>
+<p>The header of a JWT specifies the algorithm used, such as:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
-        <span class="language-label">C#</span>
+        <span class="language-label">JSON</span>
         <button class="copy-code-btn" type="button" aria-label="Copy code">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">{
+      <pre><code class="language-json">{
+ &quot;alg&quot;: &quot;HS256&quot;,
+ &quot;typ&quot;: &quot;JWT&quot;
 }</code></pre>
     </div>
-  <p>&quot;alg&quot;: &quot;HS256&quot;,
- &quot;typ&quot;: &quot;JWT&quot;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp"></code></pre>
-    </div>
-  
-<h2 id="2-generating-jwt-tokens">2. Generating JWT Tokens</h2>
-<p>To generate a JWT, the server:</p>
-<ul>
-  <li>1. Creates a Header: Defines the type (JWT) and algorithm (e.g., HS256).</li>
-  <li>2. Creates a Payload: This can include registered claims like iss (issuer), exp (expiration),</li>
-</ul>
-<p>custom claims such as user_id, role, etc.</p>
-<ul>
-  <li>3. Signs the Token: Based on the algorithm specified in the header, the server signs the header</li>
-</ul>
-<p>and payload.
-Let’s break down each component in the process with an example.
+  <ol>
+  <li>Generating JWT Tokens
+To generate a JWT, the server:</li>
+  <li>Creates a Header: Defines the type (JWT) and algorithm (e.g., HS256).</li>
+  <li>Creates a Payload: This can include registered claims like iss (issuer), exp (expiration),
+      custom claims such as user_id, role, etc.</li>
+  <li>Signs the Token: Based on the algorithm specified in the header, the server signs the header
+      and payload.</li>
+</ol>
+<p>Let’s break down each component in the process with an example.
 Example: Generating a JWT Using HS256
 Let’s consider a payload with a user_id and role.
 Payload:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
-        <span class="language-label">C#</span>
+        <span class="language-label">JSON</span>
         <button class="copy-code-btn" type="button" aria-label="Copy code">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">{
-}</code></pre>
-    </div>
-  <p>&quot;user_id&quot;: &quot;12345&quot;,
+      <pre><code class="language-json">{
+ &quot;user_id&quot;: &quot;12345&quot;,
  &quot;role&quot;: &quot;admin&quot;,
- &quot;exp&quot;: 1704067199</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp"></code></pre>
+ &quot;exp&quot;: 1704067199
+}</code></pre>
     </div>
   <p>1. Encoding: The payload and header are Base64Url-encoded.</p>
 <ul>
   <li>2. Signature Generation:</li>
-  <li>o The header and payload are combined into a single string: header.payload.</li>
-  <li>o Using the HS256 algorithm, the server signs the token using a secret key, say</li>
+  <li>The header and payload are combined into a single string: header.payload.</li>
+  <li>Using the HS256 algorithm, the server signs the token using a secret key, say
+           my_secret_key.</li>
 </ul>
-<p>my_secret_key.
-Signature Creation:</p>
+<p>Signature Creation:</p>
 
 <h2 id="hmacsha256">HMACSHA256(</h2>
 <p>base64UrlEncode(header) + &quot;.&quot; +
@@ -595,15 +540,14 @@ Signature Creation:</p>
 The result is a token that looks like:
 JhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3M
 DQwNjcxOTl9.pxE2T5jzz73YQDd_6YYKTYGFlAlySeyxTWmXaDsX6IM</p>
-
-<h2 id="3-token-verification">3. Token Verification</h2>
-<p>When the client presents this JWT to the server:</p>
 <ul>
+  <li>3. Token Verification
+When the client presents this JWT to the server:</li>
   <li>1. The server extracts the header, payload, and signature.</li>
   <li>2. It uses the algorithm defined in the header and the same secret key to generate a signature.</li>
   <li>3. The server compares this newly generated signature to the one in the JWT.</li>
-  <li>o If they match, the token is verified.</li>
-  <li>o If they don’t match or the token is expired (exp claim), the server rejects it.</li>
+  <li>If they match, the token is verified.</li>
+  <li>If they don’t match or the token is expired (exp claim), the server rejects it.</li>
 </ul>
 <p>Example Code: Generating and Verifying JWT in .NET
 Below is an example code snippet that uses System.IdentityModel.Tokens.Jwt to generate and verify
@@ -627,52 +571,22 @@ public string GenerateJwtToken(string userId, string role, string secretKey)
 {
   var claims = new[]
   {
-}
-}</code></pre>
-    </div>
-  <p>new Claim(JwtRegisteredClaimNames.Sub, userId),
+   new Claim(JwtRegisteredClaimNames.Sub, userId),
    new Claim(&quot;role&quot;, role),
-   new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
+   new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+  };
+  var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
   var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-  var token = new JwtSecurityToken(</code></pre>
-    </div>
-  <p>issuer: &quot;my_app&quot;,
+  var token = new JwtSecurityToken(
+   issuer: &quot;my_app&quot;,
    audience: &quot;my_app&quot;,
    claims: claims,
    expires: DateTime.Now.AddMinutes(30),
-   signingCredentials: creds);</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">return new JwtSecurityTokenHandler().WriteToken(token);</code></pre>
-    </div>
-  <p>Verifying a JWT:</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">public ClaimsPrincipal ValidateJwtToken(string token, string secretKey)
+   signingCredentials: creds);
+  return new JwtSecurityTokenHandler().WriteToken(token);
+}
+Verifying a JWT:
+public ClaimsPrincipal ValidateJwtToken(string token, string secretKey)
 {
   var tokenHandler = new JwtSecurityTokenHandler();
   var key = Encoding.UTF8.GetBytes(secretKey);
@@ -683,152 +597,93 @@ public string GenerateJwtToken(string userId, string role, string secretKey)
    ValidateIssuer = false,
    ValidateAudience = false
   };
-}</code></pre>
-    </div>
-  <p>try</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  try
+  {
    var principal = tokenHandler.ValidateToken(token, validationParameters, out _);
    return principal;
-  }</code></pre>
-    </div>
-  <p>catch (Exception)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  }
+  catch (Exception)
+  {
    return null; // Token is invalid or expired
-  }</code></pre>
+  }
+}
+In the above example:</code></pre>
     </div>
-  <p>In the above example:</p>
-<ul>
-  <li>• GenerateJwtToken creates a token for a user with a given role.</li>
-  <li>• ValidateJwtToken verifies the JWT’s signature and returns the claims if it’s valid, or null if it</li>
+  <ul>
+  <li>GenerateJwtToken creates a token for a user with a given role.</li>
 </ul>
-<p>isn’t.</p>
+<ul>
+  <li>ValidateJwtToken verifies the JWT’s signature and returns the claims if it’s valid, or null if it
+      isn’t.</li>
+</ul>
 
 <h2 id="best-practices-and-common-pitfalls-of-jwt">Best Practices and Common Pitfalls of JWT</h2>
 <p>When working with JWTs, security and efficiency are essential. Here’s a guide to the best practices
 and common pitfalls to avoid:</p>
-
-<h2 id="1-best-practices">1. Best Practices</h2>
-<p>a. Use Strong Secret Keys (for Symmetric Algorithms like HS256)</p>
 <ul>
-  <li>• Ensure that the secret key used for signing JWTs is long, complex, and stored securely.</li>
-  <li>• Avoid using predictable or weak keys, as this would make it easier for attackers to forge</li>
+  <li>1. Best Practices
+a. Use Strong Secret Keys (for Symmetric Algorithms like HS256)</li>
+  <li>Ensure that the secret key used for signing JWTs is long, complex, and stored securely.</li>
+  <li>Avoid using predictable or weak keys, as this would make it easier for attackers to forge
+      tokens.</li>
+  <li>Rotate keys periodically to minimize the risk of token tampering.
+b. Use Asymmetric Algorithms (e.g., RS256) for Public Key Verification</li>
+  <li>For distributed applications, using asymmetric signing algorithms like RS256 can be more
+      secure.</li>
+  <li>In RS256, the private key is used to sign the JWT, and the public key is used to verify it, so
+      you can share the public key with different services without exposing the private key.
+c. Limit the Claims in the JWT Payload</li>
+  <li>Only include essential information (such as user_id, role, and any custom claims required) in
+      the payload to reduce token size and limit data exposure.</li>
+  <li>Avoid storing sensitive data in JWTs, as they are easily readable by anyone who has access to
+      them.</li>
 </ul>
-<p>tokens.</p>
-<ul>
-  <li>• Rotate keys periodically to minimize the risk of token tampering.</li>
-</ul>
-<p>b. Use Asymmetric Algorithms (e.g., RS256) for Public Key Verification</p>
-<ul>
-  <li>• For distributed applications, using asymmetric signing algorithms like RS256 can be more</li>
-</ul>
-<p>secure.</p>
-<ul>
-  <li>• In RS256, the private key is used to sign the JWT, and the public key is used to verify it, so</li>
-</ul>
-<p>you can share the public key with different services without exposing the private key.
-c. Limit the Claims in the JWT Payload</p>
-<ul>
-  <li>• Only include essential information (such as user_id, role, and any custom claims required) in</li>
-</ul>
-<p>the payload to reduce token size and limit data exposure.</p>
-<ul>
-  <li>• Avoid storing sensitive data in JWTs, as they are easily readable by anyone who has access to</li>
-</ul>
-<p>them.</p>
 <p>d. Set Expiration Times and Use Short-Lived Tokens</p>
 <ul>
-  <li>• JWTs should have short expiration times (exp claim) to minimize the window of opportunity</li>
-</ul>
-<p>for attackers.</p>
-<ul>
-  <li>• Set a reasonable token lifespan based on the application&#39;s security requirements. Typically,</li>
-</ul>
-<p>tokens are set to expire within minutes or hours for high-security apps.
-e. Implement Refresh Tokens for Long-Lived Sessions</p>
-<ul>
-  <li>• Instead of making JWTs valid for extended periods, use short-lived tokens with refresh</li>
-</ul>
-<p>tokens to allow the user to obtain a new JWT without re-authenticating.</p>
-<ul>
-  <li>• Refresh tokens are stored securely on the client side (usually in HTTP-only cookies) and are</li>
-</ul>
-<p>only exchanged when a new JWT is needed.
-f. Store Tokens Securely</p>
-<ul>
-  <li>• Store tokens in secure, HTTP-only cookies to protect them from client-side JavaScript access,</li>
-</ul>
-<p>reducing the risk of cross-site scripting (XSS) attacks.</p>
-<ul>
-  <li>• Avoid storing tokens in localStorage or sessionStorage if possible, as they are vulnerable to</li>
-</ul>
-<p>XSS attacks.
-g. Validate All Claims in the Token</p>
-<ul>
-  <li>• Verify essential claims like iss (issuer) and aud (audience) to confirm the token was issued by</li>
-</ul>
-<p>your server and is intended for your application.</p>
-<ul>
-  <li>• Always validate the exp (expiration) claim to ensure the token hasn’t expired.</li>
-</ul>
-<p>h. Monitor for JWT Revocation</p>
-<ul>
-  <li>• Keep track of tokens that should be invalidated before they expire, such as when a user logs</li>
-</ul>
-<p>out or when tokens are compromised.</p>
-<ul>
-  <li>• JWTs are stateless and, by default, cannot be revoked, so implementing a revocation list or</li>
-</ul>
-<p>managing blacklists in a cache can help mitigate this.</p>
-
-<h2 id="2-common-pitfalls">2. Common Pitfalls</h2>
-<p>a. Overly Long Token Expiration Times</p>
-<ul>
-  <li>• Avoid issuing tokens with excessively long lifespans, as this increases the risk if a token is</li>
-</ul>
-<p>compromised. Keep token expiration times short and utilize refresh tokens for long sessions.
-b. Including Sensitive Data in the Payload</p>
-<ul>
-  <li>• Avoid putting sensitive information like passwords, credit card numbers, or private keys in</li>
-</ul>
-<p>the JWT payload. JWTs can be easily decoded without the secret key, exposing any
+  <li>JWTs should have short expiration times (exp claim) to minimize the window of opportunity
+      for attackers.</li>
+  <li>Set a reasonable token lifespan based on the application&#39;s security requirements. Typically,
+      tokens are set to expire within minutes or hours for high-security apps.
+e. Implement Refresh Tokens for Long-Lived Sessions</li>
+  <li>Instead of making JWTs valid for extended periods, use short-lived tokens with refresh
+      tokens to allow the user to obtain a new JWT without re-authenticating.</li>
+  <li>Refresh tokens are stored securely on the client side (usually in HTTP-only cookies) and are
+      only exchanged when a new JWT is needed.
+f. Store Tokens Securely</li>
+  <li>Store tokens in secure, HTTP-only cookies to protect them from client-side JavaScript access,
+      reducing the risk of cross-site scripting (XSS) attacks.</li>
+  <li>Avoid storing tokens in localStorage or sessionStorage if possible, as they are vulnerable to
+      XSS attacks.
+g. Validate All Claims in the Token</li>
+  <li>Verify essential claims like iss (issuer) and aud (audience) to confirm the token was issued by
+      your server and is intended for your application.</li>
+  <li>Always validate the exp (expiration) claim to ensure the token hasn’t expired.
+h. Monitor for JWT Revocation</li>
+  <li>Keep track of tokens that should be invalidated before they expire, such as when a user logs
+      out or when tokens are compromised.</li>
+  <li>JWTs are stateless and, by default, cannot be revoked, so implementing a revocation list or
+      managing blacklists in a cache can help mitigate this.</li>
+  <li>2. Common Pitfalls
+a. Overly Long Token Expiration Times</li>
+  <li>Avoid issuing tokens with excessively long lifespans, as this increases the risk if a token is
+      compromised. Keep token expiration times short and utilize refresh tokens for long sessions.
+b. Including Sensitive Data in the Payload</li>
+  <li>Avoid putting sensitive information like passwords, credit card numbers, or private keys in
+      the JWT payload. JWTs can be easily decoded without the secret key, exposing any
       information inside the payload.
-c. Lack of Signature Validation</p>
-<ul>
-  <li>• Always verify the JWT’s signature to ensure it was issued by a trusted source. Skipping this</li>
+c. Lack of Signature Validation</li>
+  <li>Always verify the JWT’s signature to ensure it was issued by a trusted source. Skipping this
+      step opens the application to forged tokens and security vulnerabilities.
+d. Using Weak Signing Algorithms</li>
+  <li>Some algorithms (e.g., none) don’t sign the JWT at all, making it easy to modify and reissue.
+      Always use secure signing algorithms like HS256 or RS256.
+e. Not Using HTTPS</li>
+  <li>When transmitting JWTs over HTTP, the tokens can be intercepted. Always use HTTPS to
+      encrypt token transmission, protecting against man-in-the-middle (MITM) attacks.</li>
+  <li>3. Example Code: JWT Best Practices in ASP.NET Core
+In the following example, we generate and validate JWTs using HS256, set a short expiration time,
+and demonstrate the importance of HTTPS:</li>
 </ul>
-<p>step opens the application to forged tokens and security vulnerabilities.
-d. Using Weak Signing Algorithms</p>
-<ul>
-  <li>• Some algorithms (e.g., none) don’t sign the JWT at all, making it easy to modify and reissue.</li>
-</ul>
-<p>Always use secure signing algorithms like HS256 or RS256.
-e. Not Using HTTPS</p>
-<ul>
-  <li>• When transmitting JWTs over HTTP, the tokens can be intercepted. Always use HTTPS to</li>
-</ul>
-<p>encrypt token transmission, protecting against man-in-the-middle (MITM) attacks.</p>
-
-<h2 id="3-example-code-jwt-best-practices-in-aspnet-core">3. Example Code: JWT Best Practices in ASP.NET Core</h2>
-<p>In the following example, we generate and validate JWTs using HS256, set a short expiration time,
-and demonstrate the importance of HTTPS:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -857,41 +712,19 @@ public class JwtHelper
   {
    var claims = new[]
    {
-}
-}
-}</code></pre>
-    </div>
-  <p>new Claim(JwtRegisteredClaimNames.Sub, userId),
+     new Claim(JwtRegisteredClaimNames.Sub, userId),
      new Claim(&quot;role&quot;, role),
-     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey));
+     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+   };
+   var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey));
    var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-   var token = new JwtSecurityToken(</code></pre>
-    </div>
-  <p>issuer: &quot;my_app&quot;,
+   var token = new JwtSecurityToken(
+     issuer: &quot;my_app&quot;,
      audience: &quot;my_app&quot;,
      claims: claims,
      expires: DateTime.UtcNow.AddMinutes(_expiryMinutes),
-     signingCredentials: creds);</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">return new JwtSecurityTokenHandler().WriteToken(token);
+     signingCredentials: creds);
+   return new JwtSecurityTokenHandler().WriteToken(token);
   }
   // Validate the JWT by checking expiration, issuer, and signature
   public ClaimsPrincipal ValidateToken(string token)
@@ -907,66 +740,44 @@ public class JwtHelper
      ValidIssuer = &quot;my_app&quot;,
      ValidAudience = &quot;my_app&quot;,
      ClockSkew = TimeSpan.Zero
-   };</code></pre>
-    </div>
-  <p>try</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+   };
+   try
+   {
      return tokenHandler.ValidateToken(token, validationParameters, out _);
-   }</code></pre>
-    </div>
-  <p>catch</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+   }
+   catch
+   {
      return null; // Invalid token
-   }</code></pre>
+   }
+  }
+}</code></pre>
     </div>
   <p>In this code:</p>
 <ul>
-  <li>• GenerateToken method creates a JWT with a user ID and role, setting a short expiration</li>
-</ul>
-<p>time (expiryMinutes) and signing it using the HS256 algorithm.</p>
-<ul>
-  <li>• ValidateToken method validates the token, checking the signature, issuer, and audience,</li>
-</ul>
-<p>which helps enforce claims and ensure secure token handling.</p>
-
-<h2 id="4-token-revocation-example">4. Token Revocation Example</h2>
-<p>You could store revoked tokens in a cache like Redis with an expiration equal to the token’s
+  <li>GenerateToken method creates a JWT with a user ID and role, setting a short expiration
+      time (expiryMinutes) and signing it using the HS256 algorithm.</li>
+  <li>ValidateToken method validates the token, checking the signature, issuer, and audience,
+      which helps enforce claims and ensure secure token handling.</li>
+  <li>4. Token Revocation Example
+You could store revoked tokens in a cache like Redis with an expiration equal to the token’s
 expiration time, then check each token against this list when validating. Although this approach adds
-state management, it effectively addresses early revocation requirements.
-JWT Authentication and Authorization with JWT in ASP.NET Core Web API
-This section provides a step-by-step guide on implementing JWT authentication and authorization in
-an ASP.NET Core Web API. This integration ensures that users can securely access resources based
-on their identity and roles.</p>
-
-<h2 id="1-setting-up-jwt-authentication-in-aspnet-core">1. Setting Up JWT Authentication in ASP.NET Core</h2>
-<p>To enable JWT-based authentication, start by configuring the authentication service within the
-Startup.cs file (or Program.cs/AppSettings.json in newer versions of ASP.NET Core):
+state management, it effectively addresses early revocation requirements.</li>
+</ul>
+<p>JWT Authentication and Authorization with JWT in ASP.NET Core Web API</p>
+<p>This section provides a step-by-step guide on implementing JWT authentication and authorization in</p>
+<p>an ASP.NET Core Web API. This integration ensures that users can securely access resources based</p>
+<ul>
+  <li>n their identity and roles.</li>
+</ul>
+<ol>
+  <li>Setting Up JWT Authentication in ASP.NET Core
+To enable JWT-based authentication, start by configuring the authentication service within the
+<code>Startup.cs</code> file (or <code>Program.cs</code>/AppSettings.json in newer versions of ASP.NET Core):
 Step 1: Install the Necessary NuGet Packages
 dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
-Step 2: Add JWT Settings to appsettings.json
-In your appsettings.json file, define the JWT options (such as Issuer, Audience, and SecretKey):
-&quot;JwtSettings&quot;: {
- &quot;SecretKey&quot;: &quot;Your_Secret_Key_Here&quot;,
- &quot;Issuer&quot;: &quot;my_app&quot;,
- &quot;Audience&quot;: &quot;my_app_audience&quot;</p>
+Step 2: Add JWT Settings to <code>appsettings.json</code>
+In your <code>appsettings.json</code> file, define the JWT options (such as Issuer, Audience, and SecretKey):</li>
+</ol>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -976,9 +787,13 @@ In your appsettings.json file, define the JWT options (such as Issuer, Audience,
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp"></code></pre>
+      <pre><code class="language-csharp">&quot;JwtSettings&quot;: {
+ &quot;SecretKey&quot;: &quot;Your_Secret_Key_Here&quot;,
+ &quot;Issuer&quot;: &quot;my_app&quot;,
+ &quot;Audience&quot;: &quot;my_app_audience&quot;
+}</code></pre>
     </div>
-  <p>Step 3: Configure Authentication in Program.cs
+  <p>Step 3: Configure Authentication in <code>Program.cs</code>
 Add the JWT authentication scheme in the ConfigureServices method:</p>
 
     <div class="code-block">
@@ -995,34 +810,14 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 // Retrieve settings from appsettings.json
 var jwtSettings = builder.Configuration.GetSection(&quot;JwtSettings&quot;);
-var secretKey = jwtSettings.GetValue&lt;string&gt;(&quot;SecretKey&quot;);</code></pre>
-    </div>
-  <p>builder.Services.AddAuthentication(options =&gt;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+var secretKey = jwtSettings.GetValue&lt;string&gt;(&quot;SecretKey&quot;);
+builder.Services.AddAuthentication(options =&gt;
+{
   options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
   options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-})</code></pre>
-    </div>
-  <p>.AddJwtBearer(options =&gt;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+})
+.AddJwtBearer(options =&gt;
+{
   options.TokenValidationParameters = new TokenValidationParameters
   {
    ValidateIssuer = true,
@@ -1036,10 +831,11 @@ var secretKey = jwtSettings.GetValue&lt;string&gt;(&quot;SecretKey&quot;);</code
 });
 builder.Services.AddAuthorization();</code></pre>
     </div>
-  
-<h2 id="2-protecting-endpoints-with-jwt-authorization">2. Protecting Endpoints with JWT Authorization</h2>
-<p>After setting up authentication, you can protect specific endpoints by adding the [Authorize]
-attribute, which restricts access to authenticated users only.</p>
+  <ol>
+  <li>Protecting Endpoints with JWT Authorization
+After setting up authentication, you can protect specific endpoints by adding the [Authorize]
+attribute, which restricts access to authenticated users only.</li>
+</ol>
 
 <h2 id="example-controller-with-secured-endpoints">Example Controller with Secured Endpoints</h2>
 <p>Here’s an example of a controller with secured actions:</p>
@@ -1076,17 +872,14 @@ public class SecureDataController : ControllerBase
     </div>
   <p>In this code:</p>
 <ul>
-  <li>• The [Authorize] attribute ensures that the user must be authenticated to access</li>
+  <li>The [Authorize] attribute ensures that the user must be authenticated to access
+      GetSecureInfo.</li>
+  <li>The [Authorize(Roles = &quot;Admin&quot;)] attribute restricts access to users with the Admin role,
+      enforcing role-based authorization.</li>
+  <li>3. Generating JWT Tokens for Users
+For authentication to work, you’ll need a way to issue JWT tokens. Typically, this is handled by an
+AuthController where users authenticate with credentials and receive a token upon successful login.</li>
 </ul>
-<p>GetSecureInfo.</p>
-<ul>
-  <li>• The [Authorize(Roles = &quot;Admin&quot;)] attribute restricts access to users with the Admin role,</li>
-</ul>
-<p>enforcing role-based authorization.</p>
-
-<h2 id="3-generating-jwt-tokens-for-users">3. Generating JWT Tokens for Users</h2>
-<p>For authentication to work, you’ll need a way to issue JWT tokens. Typically, this is handled by an
-AuthController where users authenticate with credentials and receive a token upon successful login.</p>
 
 <h2 id="creating-an-authcontroller-for-login-and-token-generation">Creating an AuthController for Login and Token Generation</h2>
 <p>In AuthController, implement a login method to verify user credentials and generate a JWT:</p>
@@ -1118,20 +911,8 @@ public class AuthController : ControllerBase
   public IActionResult Login([FromBody] LoginModel model)
   {
    // Simplified example: In practice, you would validate against a user database
-}
-}</code></pre>
-    </div>
-  <p>if (model.Username == &quot;testuser&quot; &amp;&amp; model.Password == &quot;password&quot;)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+   if (model.Username == &quot;testuser&quot; &amp;&amp; model.Password == &quot;password&quot;)
+   {
      var token = GenerateJwtToken(model.Username);
      return Ok(new { Token = token });
    }
@@ -1143,29 +924,21 @@ public class AuthController : ControllerBase
    var secretKey = jwtSettings.GetValue&lt;string&gt;(&quot;SecretKey&quot;);
    var claims = new[]
    {
-}</code></pre>
-    </div>
-  <p>new Claim(JwtRegisteredClaimNames.Sub, username),
+     new Claim(JwtRegisteredClaimNames.Sub, username),
      new Claim(&quot;role&quot;, &quot;User&quot;),
-     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
+     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+   };
+   var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
    var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-   var token = new JwtSecurityToken(</code></pre>
-    </div>
-  <p>issuer: jwtSettings.GetValue&lt;string&gt;(&quot;Issuer&quot;),
+   var token = new JwtSecurityToken(
+     issuer: jwtSettings.GetValue&lt;string&gt;(&quot;Issuer&quot;),
      audience: jwtSettings.GetValue&lt;string&gt;(&quot;Audience&quot;),
      claims: claims,
-     expires: DateTime.UtcNow.AddMinutes(30),</p>
-<p>signingCredentials: creds);</p>
+     expires: DateTime.UtcNow.AddMinutes(30),
+}
+}</code></pre>
+    </div>
+  <p>signingCredentials: creds);</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1175,66 +948,54 @@ public class AuthController : ControllerBase
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">return new JwtSecurityTokenHandler().WriteToken(token);</code></pre>
+      <pre><code class="language-csharp">{
+{
+   return new JwtSecurityTokenHandler().WriteToken(token);
+  }
+}
+In this example:</code></pre>
     </div>
-  <p>In this example:</p>
-<ul>
-  <li>• The Login action checks credentials, and if they’re correct, calls GenerateJwtToken.</li>
-  <li>• GenerateJwtToken generates a JWT with claims such as sub (subject, or username) and role.</li>
-  <li>• JwtSecurityTokenHandler.WriteToken(token) serializes the JWT, making it ready to send as a</li>
+  <ul>
+  <li>The Login action checks credentials, and if they’re correct, calls GenerateJwtToken.</li>
 </ul>
-<p>response.</p>
+<ul>
+  <li>GenerateJwtToken generates a JWT with claims such as sub (subject, or username) and role.</li>
+  <li>JwtSecurityTokenHandler.WriteToken(token) serializes the JWT, making it ready to send as a
+      response.</li>
+</ul>
 
 <h2 id="testing-jwt-authentication-and-authorization">Testing JWT Authentication and Authorization</h2>
 <ul>
   <li>1. Authenticate by calling api/auth/login with valid credentials to receive a JWT.</li>
-  <li>2. Access Protected Endpoints by passing the JWT in the Authorization header with the prefix</li>
-</ul>
-<p>Bearer, as shown below:
+  <li>2. Access Protected Endpoints by passing the JWT in the Authorization header with the prefix
+      Bearer, as shown below:
 GET /api/SecureData/secure-info HTTP/1.1
-Authorization: Bearer {JWT_TOKEN}</p>
-
-<h2 id="refresh-tokens">Refresh Tokens</h2>
-<p>JWTs are often short-lived to minimize risks in case a token is compromised. However, short
+Authorization: Bearer {JWT_TOKEN}
+Refresh Tokens
+JWTs are often short-lived to minimize risks in case a token is compromised. However, short
 expiration times can cause frequent interruptions for users. Refresh tokens help maintain user
 sessions smoothly by allowing clients to request a new JWT without requiring the user to reauthenticate
-.</p>
-
-<h2 id="1-what-is-a-refresh-token">1. What is a Refresh Token?</h2>
-<ul>
-  <li>• A refresh token is a long-lived token issued alongside the JWT, allowing the client to request</li>
-</ul>
-<p>a new JWT when it expires.</p>
-<ul>
-  <li>• Unlike the JWT, which is sent on every request to the API, the refresh token is only sent to</li>
-</ul>
-<p>the authorization server when renewing the JWT.</p>
-
-<h2 id="2-how-refresh-tokens-work-in-jwt-authentication">2. How Refresh Tokens Work in JWT Authentication</h2>
-<p>Here’s a simplified flow:</p>
-<ul>
-  <li>1. User Authenticates: Upon successful login, the server issues both a JWT and a refresh token</li>
-</ul>
-<p>to the client.</p>
-<ul>
+.</li>
+  <li>1. What is a Refresh Token?</li>
+  <li>A refresh token is a long-lived token issued alongside the JWT, allowing the client to request
+      a new JWT when it expires.</li>
+  <li>Unlike the JWT, which is sent on every request to the API, the refresh token is only sent to
+      the authorization server when renewing the JWT.</li>
+  <li>2. How Refresh Tokens Work in JWT Authentication
+Here’s a simplified flow:</li>
+  <li>1. User Authenticates: Upon successful login, the server issues both a JWT and a refresh token
+      to the client.</li>
   <li>2. Using JWT: The client uses the JWT to access protected resources until it expires.</li>
   <li>3. Token Expiry and Refresh:</li>
-  <li>o When the JWT expires, the client sends the refresh token to a secure endpoint to</li>
-</ul>
-<p>obtain a new JWT.</p>
-<ul>
-  <li>o If the refresh token is valid, the server issues a new JWT and, optionally, a new</li>
-</ul>
-<p>refresh token.</p>
-<ul>
+  <li>When the JWT expires, the client sends the refresh token to a secure endpoint to
+           obtain a new JWT.</li>
+  <li>If the refresh token is valid, the server issues a new JWT and, optionally, a new
+           refresh token.</li>
   <li>4. Logout: When a user logs out, the refresh token is invalidated to prevent further access.</li>
-</ul>
-
-<h2 id="3-implementing-refresh-tokens-in-aspnet-core">3. Implementing Refresh Tokens in ASP.NET Core</h2>
-<p>To implement refresh tokens, you need:</p>
-<ul>
-  <li>• A storage solution to store and verify refresh tokens (often a database).</li>
-  <li>• An endpoint for issuing new tokens when the JWT expires.</li>
+  <li>3. Implementing Refresh Tokens in ASP.NET Core
+To implement refresh tokens, you need:</li>
+  <li>A storage solution to store and verify refresh tokens (often a database).</li>
+  <li>An endpoint for issuing new tokens when the JWT expires.</li>
 </ul>
 <p>Step 1: Extend AuthController with Refresh Token Logic
       Model for Refresh Token: Define a model to represent a refresh token in your database.
@@ -1301,26 +1062,16 @@ sessions smoothly by allowing clients to request a new JWT without requiring the
       <pre><code class="language-csharp">[HttpPost(&quot;login&quot;)]
       public IActionResult Login([FromBody] LoginModel model)
       {
-}</code></pre>
-    </div>
-  <p>if (model.Username == &quot;testuser&quot; &amp;&amp; model.Password == &quot;password&quot;)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+       if (model.Username == &quot;testuser&quot; &amp;&amp; model.Password == &quot;password&quot;)
+       {
          var jwtToken = GenerateJwtToken(model.Username);
          var refreshToken = GenerateRefreshToken();
          // Store refreshToken in database associated with user
          SaveRefreshTokenToDatabase(model.Username, refreshToken);
          return Ok(new { Token = jwtToken, RefreshToken = refreshToken });
        }
-       return Unauthorized(&quot;Invalid credentials&quot;);</code></pre>
+       return Unauthorized(&quot;Invalid credentials&quot;);
+      }</code></pre>
     </div>
   <p>Step 2: Implement Refresh Token Endpoint
 Create an endpoint in AuthController to allow clients to refresh their JWT using the refresh token:</p>
@@ -1337,19 +1088,8 @@ Create an endpoint in AuthController to allow clients to refresh their JWT using
 public IActionResult RefreshToken([FromBody] RefreshTokenRequest request)
 {
   var savedToken = GetStoredRefreshToken(request.RefreshToken);
-}</code></pre>
-    </div>
-  <p>if (savedToken == null || savedToken.IsRevoked || savedToken.ExpiryDate &lt; DateTime.UtcNow)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  if (savedToken == null || savedToken.IsRevoked || savedToken.ExpiryDate &lt; DateTime.UtcNow)
+  {
    return Unauthorized(&quot;Invalid or expired refresh token.&quot;);
   }
   // Issue new JWT and refresh token
@@ -1357,72 +1097,55 @@ public IActionResult RefreshToken([FromBody] RefreshTokenRequest request)
   var newRefreshToken = GenerateRefreshToken();
   // Update refresh token in the database
   UpdateStoredRefreshToken(savedToken, newRefreshToken);
-  return Ok(new { Token = newJwtToken, RefreshToken = newRefreshToken });</code></pre>
+  return Ok(new { Token = newJwtToken, RefreshToken = newRefreshToken });
+}
+In this endpoint:</code></pre>
     </div>
-  <p>In this endpoint:</p>
+  <ul>
+  <li>The refresh token is validated against the database.</li>
+</ul>
 <ul>
-  <li>• The refresh token is validated against the database.</li>
-  <li>• If valid, a new JWT and refresh token are issued and returned.</li>
-  <li>• The previous refresh token is updated or revoked as per security policy.</li>
+  <li>If valid, a new JWT and refresh token are issued and returned.</li>
+  <li>The previous refresh token is updated or revoked as per security policy.</li>
 </ul>
 <p>Step 3: Store and Validate Refresh Tokens in Database
 To manage refresh tokens securely:</p>
 <ul>
-  <li>• Save Tokens: Store tokens in a secure database table with fields such as Token, UserId,</li>
-</ul>
-<p>ExpiryDate, and IsRevoked.</p>
-<ul>
-  <li>• Expire and Revoke: Set expiration dates for refresh tokens, and revoke tokens on logout to</li>
-</ul>
-<p>prevent unauthorized access.</p>
-
-<h2 id="4-security-best-practices-for-refresh-tokens">4. Security Best Practices for Refresh Tokens</h2>
-<ul>
-  <li>• Store Refresh Tokens Securely: Keep them in a secure HTTP-only cookie or local storage on</li>
-</ul>
-<p>the client side.</p>
-<ul>
-  <li>• Rotate Tokens: Issue a new refresh token each time a JWT is refreshed to reduce the risk of</li>
-</ul>
-<p>token reuse.</p>
-<ul>
-  <li>• Limit Token Scope: Only allow the refresh token to request new JWTs, not access resources</li>
-</ul>
-<p>directly.</p>
-<ul>
-  <li>• Short Expiration for JWT: Keep JWTs short-lived, and use refresh tokens for session</li>
-</ul>
-<p>persistence.</p>
-<ul>
-  <li>• Implement Logout: Invalidate refresh tokens on user logout to prevent further use.</li>
+  <li>Save Tokens: Store tokens in a secure database table with fields such as Token, UserId,
+      ExpiryDate, and IsRevoked.</li>
+  <li>Expire and Revoke: Set expiration dates for refresh tokens, and revoke tokens on logout to
+      prevent unauthorized access.</li>
+  <li>4. Security Best Practices for Refresh Tokens</li>
+  <li>Store Refresh Tokens Securely: Keep them in a secure HTTP-only cookie or local storage on
+      the client side.</li>
+  <li>Rotate Tokens: Issue a new refresh token each time a JWT is refreshed to reduce the risk of
+      token reuse.</li>
+  <li>Limit Token Scope: Only allow the refresh token to request new JWTs, not access resources
+      directly.</li>
+  <li>Short Expiration for JWT: Keep JWTs short-lived, and use refresh tokens for session
+      persistence.</li>
+  <li>Implement Logout: Invalidate refresh tokens on user logout to prevent further use.</li>
 </ul>
 
 <h2 id="key-points-to-remember-for-jwt-authentication-and-refresh-tokens">Key Points to Remember for JWT Authentication and Refresh Tokens</h2>
-<ul>
-  <li>1. JWT Structure: Understand the structure (header, payload, signature) and how it ensures</li>
-</ul>
-<p>data integrity.</p>
-<ul>
-  <li>2. Role of Refresh Tokens: Used to extend session duration without frequent reauthentication</li>
-</ul>
-<p>.</p>
-<ul>
-  <li>3. Secure JWT and Refresh Tokens: Use best practices to store, validate, and revoke tokens.</li>
-  <li>4. Code Flow: Be familiar with code for generating JWTs, securing endpoints, and</li>
-</ul>
-<p>implementing refresh logic.</p>
-<ul>
-  <li>5. ASP.NET Core Integration: Master setup and configuration in ASP.NET Core, including</li>
-</ul>
-<p>authentication, authorization, and token validation.</p>
+<ol>
+  <li>JWT Structure: Understand the structure (header, payload, signature) and how it ensures
+      data integrity.</li>
+  <li>Role of Refresh Tokens: Used to extend session duration without frequent reauthentication
+.</li>
+  <li>Secure JWT and Refresh Tokens: Use best practices to store, validate, and revoke tokens.</li>
+  <li>Code Flow: Be familiar with code for generating JWTs, securing endpoints, and
+      implementing refresh logic.</li>
+  <li>ASP.NET Core Integration: Master setup and configuration in ASP.NET Core, including
+      authentication, authorization, and token validation.</li>
+</ol>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
 <section class="cheatsheet-section" aria-labelledby="cheat-sheet-quick-reference">
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
-  <p>Section 29 – JWT &amp; Web API Authentication – Cheat Sheet</p>
   <h3 id="identity-with-web-api">Identity with Web API</h3>
-  <p>It is an API that manages users, passwords, profile data, roles, tokens, email confirmation, external
+<p>It is an API that manages users, passwords, profile data, roles, tokens, email confirmation, external
 logins etc.
 It is by default built on top of EntityFrameworkCore; you can also create custom data stores.</p>
   <h3 id="register-endpoint">Register Endpoint</h3>
@@ -1430,76 +1153,62 @@ It is by default built on top of EntityFrameworkCore; you can also create custom
   <h3 id="login-endpoint">Login Endpoint</h3>
   <h3 id="login-ui">Login UI</h3>
   <h3 id="introduction-to-jwt">Introduction to JWT</h3>
-  <p>A JSON Web Token (JWT) is a compact and self-contained object for securely transmitting
+<p>A JSON Web Token (JWT) is a compact and self-contained object for securely transmitting
 information between parties as a JSON object.</p>
   <h3 id="contents-of-jwt">Contents of JWT</h3>
-  <h3 id="1-header-base-64-string">1. Header (base 64 string)</h3>
-  <p>Defines the type of token and the signing algorithm used.
-Eg: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9</p>
-  <h3 id="2-payload-base-64-string">2. Payload (base 64 string)</h3>
-  <p>Contains user claims (user details such as name, email or user type).
-Eg: { &quot;userId&quot;: &quot;b08f86af-35da-48f2-8fab-cef3904660bd&quot;}
+<ol>
+  <li>Header (base 64 string)
+Defines the type of token and the signing algorithm used.</li>
+</ol>
+<p>Eg: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9</p>
+<ol>
+  <li>Payload (base 64 string)
+Contains user claims (user details such as name, email or user type).</li>
+</ol>
+<p>Eg: { &quot;userId&quot;: &quot;b08f86af-35da-48f2-8fab-cef3904660bd&quot;}
 Eg: eyJ1c2VySWQiOiJiMDhmOZhZi0zNWRhLTQ4ZjItOOTA0NjYwYmQifQ</p>
-  <h3 id="3-signature-base-64-string">3. Signature (base 64 string)</h3>
-  <p>It is used to verify to ensure that the message wasn&#39;t changed along the way.
-It is usually signed by using a secret key (HMAC algorithm).
--xN_h82PHVTA9vdoHrcZxH-x5</p>
+<ol>
+  <li>Signature (base 64 string)
+It is used to verify to ensure that the message wasn&#39;t changed along the way.</li>
+</ol>
+<p>It is usually signed by using a secret key (HMAC algorithm).</p>
+<ul>
+  <li>xN_h82PHVTA9vdoHrcZxH-x5</li>
+</ul>
   <h3 id="jwt-algorithm">JWT Algorithm</h3>
-  <p>Inputs:
+<p>Inputs:
 header</p>
 
     <div class="code-block">
       <div class="code-toolbar">
-        <span class="language-label">C#</span>
+        <span class="language-label">JSON</span>
         <button class="copy-code-btn" type="button" aria-label="Copy code">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">{
-}</code></pre>
+      <pre><code class="language-json">{
+      &quot;typ&quot;: &quot;JWT&quot;,
+      &quot;alg&quot;: &quot;HS256&quot;
+      }</code></pre>
     </div>
-    <p>&quot;typ&quot;: &quot;JWT&quot;,
-      &quot;alg&quot;: &quot;HS256&quot;</p>
+  <p>payload</p>
 
     <div class="code-block">
       <div class="code-toolbar">
-        <span class="language-label">C#</span>
+        <span class="language-label">JSON</span>
         <button class="copy-code-btn" type="button" aria-label="Copy code">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp"></code></pre>
+      <pre><code class="language-json">{
+      &quot;userId&quot;: &quot;b08f86af-35da-48f2-8fab-cef3904660bd&quot;
+      }</code></pre>
     </div>
-    <p>payload</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
-}</code></pre>
-    </div>
-    <p>&quot;userId&quot;: &quot;b08f86af-35da-48f2-8fab-cef3904660bd&quot;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp"></code></pre>
-    </div>
-    <p>secret</p>
+  <p>secret</p>
   <h3 id="mysecret">MySecret</h3>
-  <p>Algorithm:
+<p>Algorithm:
       data = base64Encode( header ) + &quot;.&quot; + base64Encode( payload )
       hashedData = hash( data, secret )
       signature = base64encode( hashedData )
@@ -1508,7 +1217,7 @@ Example JWT token:
       eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOO
       TA0NjYwYmQifQ.-xN_h82PHVTCMA9vdoHrcZxH-x5mb11y1537t3rGzcM</p>
   <h3 id="refresh-tokens-jwt">Refresh Tokens - JWT</h3>
-  <p>A refresh token is a token (base-64 string of a random number) that is used to obtain a new JWT
+<p>A refresh token is a token (base-64 string of a random number) that is used to obtain a new JWT
 token every time, when it is expired.</p>
 </section>
 
@@ -1530,13 +1239,13 @@ token every time, when it is expired.</p>
       <nav class="bottom-nav" aria-label="Previous and Next Section Navigation">
         
       <a href="section-28.html" class="nav-card prev" aria-label="Previous Section: Sec 28 - Angular and CORS">
-        <span class="nav-direction">← Previous Section</span>
+        <span class="nav-direction">&larr; Previous Section</span>
         <span class="nav-title">Sec 28: Angular and CORS</span>
       </a>
     
         
       <a href="section-30.html" class="nav-card next" aria-label="Next Section: Sec 30 - Minimal API">
-        <span class="nav-direction">Next Section →</span>
+        <span class="nav-direction">Next Section &rarr;</span>
         <span class="nav-title">Sec 30: Minimal API</span>
       </a>
     
@@ -1544,8 +1253,8 @@ token every time, when it is expired.</p>
 
       <!-- Section Footer -->
       <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); color: var(--text-dim); font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;" role="contentinfo">
-        <span>ASP.NET Core Masterclass — Offline Documentation Portal</span>
-        <a href="#top" style="color: var(--text-muted); text-decoration: none;">↑ Back to top</a>
+        <span>ASP.NET Core Masterclass &mdash; Offline Documentation Portal</span>
+        <a href="#top" style="color: var(--text-muted); text-decoration: none;">&uarr; Back to top</a>
       </footer>
     </main>
 
@@ -1556,22 +1265,6 @@ token every time, when it is expired.</p>
         
         <li class="toc-item">
           <a href="#jwt-tokens-and-how-they-work-internally" class="toc-link">JWT Tokens and How They Work Internally</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#1-structure-of-jwt" class="toc-link">1. Structure of JWT</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#1-header-eyjhbgcioijiuzi1niisinr5cci6ikpxvcj9" class="toc-link">1. Header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#3-signature-sflkxwrjsmekkf2qt4fwpmejf36pok6yjv_adqssw5c" class="toc-link">3. Signature: SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#2-steps-for-jwt-token-generation-and-validation" class="toc-link">2. Steps for JWT Token Generation and Validation</a>
         </li>
       
         <li class="toc-item">
@@ -1591,19 +1284,7 @@ token every time, when it is expired.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#1-jwt-algorithms" class="toc-link">1. JWT Algorithms</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#2-generating-jwt-tokens" class="toc-link">2. Generating JWT Tokens</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#hmacsha256" class="toc-link">HMACSHA256(</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#3-token-verification" class="toc-link">3. Token Verification</a>
         </li>
       
         <li class="toc-item">
@@ -1611,35 +1292,7 @@ token every time, when it is expired.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#1-best-practices" class="toc-link">1. Best Practices</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#2-common-pitfalls" class="toc-link">2. Common Pitfalls</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#3-example-code-jwt-best-practices-in-aspnet-core" class="toc-link">3. Example Code: JWT Best Practices in ASP.NET Core</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#4-token-revocation-example" class="toc-link">4. Token Revocation Example</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#1-setting-up-jwt-authentication-in-aspnet-core" class="toc-link">1. Setting Up JWT Authentication in ASP.NET Core</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#2-protecting-endpoints-with-jwt-authorization" class="toc-link">2. Protecting Endpoints with JWT Authorization</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#example-controller-with-secured-endpoints" class="toc-link">Example Controller with Secured Endpoints</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#3-generating-jwt-tokens-for-users" class="toc-link">3. Generating JWT Tokens for Users</a>
         </li>
       
         <li class="toc-item">
@@ -1648,26 +1301,6 @@ token every time, when it is expired.</p>
       
         <li class="toc-item">
           <a href="#testing-jwt-authentication-and-authorization" class="toc-link">Testing JWT Authentication and Authorization</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#refresh-tokens" class="toc-link">Refresh Tokens</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#1-what-is-a-refresh-token" class="toc-link">1. What is a Refresh Token?</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#2-how-refresh-tokens-work-in-jwt-authentication" class="toc-link">2. How Refresh Tokens Work in JWT Authentication</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#3-implementing-refresh-tokens-in-aspnet-core" class="toc-link">3. Implementing Refresh Tokens in ASP.NET Core</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#4-security-best-practices-for-refresh-tokens" class="toc-link">4. Security Best Practices for Refresh Tokens</a>
         </li>
       
         <li class="toc-item">

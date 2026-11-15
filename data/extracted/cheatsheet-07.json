@@ -735,26 +735,12 @@
           "page": 5,
           "lines": [
             "class ClassName",
-            "{"
-          ],
-          "text": "class ClassName\n{"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
-            " [Attribute] //applies validation rule on this property"
-          ],
-          "text": " [Attribute] //applies validation rule on this property"
-        },
-        {
-          "type": "code",
-          "page": 5,
-          "lines": [
+            "{",
+            " [Attribute] //applies validation rule on this property",
             " public type PropertyName { get; set; }",
             "}"
           ],
-          "text": " public type PropertyName { get; set; }\n}"
+          "text": "class ClassName\n{\n [Attribute] //applies validation rule on this property\n public type PropertyName { get; set; }\n}"
         },
         {
           "type": "prose",
@@ -1239,17 +1225,10 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Base class for all validation attributes such as RequiredAttribute,"
-          ],
-          "text": "   • Base class for all validation attributes such as RequiredAttribute,"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Base class for all validation attributes such as RequiredAttribute,",
             "      RegularExpressionAttribute, RangeAttribute, StringLengthAttribute, CompareAttribute etc."
           ],
-          "text": "      RegularExpressionAttribute, RangeAttribute, StringLengthAttribute, CompareAttribute etc."
+          "text": "   • Base class for all validation attributes such as RequiredAttribute,\n      RegularExpressionAttribute, RangeAttribute, StringLengthAttribute, CompareAttribute etc."
         },
         {
           "type": "list_item",
@@ -1542,29 +1521,15 @@
             "{",
             " //model properties here",
             " public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)",
-            " {"
-          ],
-          "text": "class ClassName : IValidatableObject\n{\n //model properties here\n public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)\n {"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
-            "  if (condition)"
-          ],
-          "text": "  if (condition)"
-        },
-        {
-          "type": "code",
-          "page": 8,
-          "lines": [
+            " {",
+            "  if (condition)",
             "  {",
             "  yield return new ValidationResult(\"error message\");",
             "  }",
             " }",
             "}"
           ],
-          "text": "  {\n  yield return new ValidationResult(\"error message\");\n  }\n }\n}"
+          "text": "class ClassName : IValidatableObject\n{\n //model properties here\n public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)\n {\n  if (condition)\n  {\n  yield return new ValidationResult(\"error message\");\n  }\n }\n}"
         },
         {
           "type": "prose",
@@ -1586,17 +1551,10 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • The Validate() method executes after validating all property-level validations are executed;"
-          ],
-          "text": "   • The Validate() method executes after validating all property-level validations are executed;"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • The Validate() method executes after validating all property-level validations are executed;",
             "      but doesn't execute if at least one property-level validations result error."
           ],
-          "text": "      but doesn't execute if at least one property-level validations result error."
+          "text": "   • The Validate() method executes after validating all property-level validations are executed;\n      but doesn't execute if at least one property-level validations result error."
         },
         {
           "type": "heading",
@@ -1797,60 +1755,39 @@
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • [Bind] attribute specifies that only the specified properties should be included in model"
-          ],
-          "text": "   • [Bind] attribute specifies that only the specified properties should be included in model"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   • [Bind] attribute specifies that only the specified properties should be included in model",
             "      binding."
           ],
-          "text": "      binding."
+          "text": "   • [Bind] attribute specifies that only the specified properties should be included in model\n      binding."
         },
         {
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • Prevents over-posting (post values into unexpected properties) especially in 'Create'"
+            "   • Prevents over-posting (post values into unexpected properties) especially in 'Create'",
+            "      scenarios."
           ],
-          "text": "   • Prevents over-posting (post values into unexpected properties) especially in 'Create'"
+          "text": "   • Prevents over-posting (post values into unexpected properties) especially in 'Create'\n      scenarios."
         },
         {
           "type": "prose",
           "page": 9,
           "lines": [
-            "      scenarios.",
             "[BindNever]"
           ],
-          "text": "      scenarios.\n[BindNever]"
+          "text": "[BindNever]"
         },
         {
           "type": "code",
           "page": 9,
           "lines": [
             "class ModelClassName",
-            "{"
-          ],
-          "text": "class ModelClassName\n{"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
-            " [BindNever]"
-          ],
-          "text": " [BindNever]"
-        },
-        {
-          "type": "code",
-          "page": 9,
-          "lines": [
+            "{",
+            " [BindNever]",
             " public type PropertyName { get; set; }",
             "}"
           ],
-          "text": " public type PropertyName { get; set; }\n}"
+          "text": "class ModelClassName\n{\n [BindNever]\n public type PropertyName { get; set; }\n}"
         },
         {
           "type": "prose",
@@ -2097,18 +2034,11 @@
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • Provides a method called BindModelAsync, to define logic for binding (reading) data from"
-          ],
-          "text": "   • Provides a method called BindModelAsync, to define logic for binding (reading) data from"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • Provides a method called BindModelAsync, to define logic for binding (reading) data from",
             "      the request and creating a model object that has be received as parameter in the action",
             "      method."
           ],
-          "text": "      the request and creating a model object that has be received as parameter in the action\n      method."
+          "text": "   • Provides a method called BindModelAsync, to define logic for binding (reading) data from\n      the request and creating a model object that has be received as parameter in the action\n      method."
         }
       ],
       "char_count_raw": 609,

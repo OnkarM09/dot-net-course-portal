@@ -235,17 +235,10 @@
             "endpoints.MapGet(…);",
             "endpoints.MapPost(…);",
             ");",
-            "Executes the appropriate endpoint based on the endpoint selected by the above UseRouting()"
-          ],
-          "text": "app.UseEndPoints(endpoints =>\n{\nendpoints.Map(…);\nendpoints.MapGet(…);\nendpoints.MapPost(…);\n);\nExecutes the appropriate endpoint based on the endpoint selected by the above UseRouting()"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "Executes the appropriate endpoint based on the endpoint selected by the above UseRouting()",
             "method."
           ],
-          "text": "method."
+          "text": "app.UseEndPoints(endpoints =>\n{\nendpoints.Map(…);\nendpoints.MapGet(…);\nendpoints.MapPost(…);\n);\nExecutes the appropriate endpoint based on the endpoint selected by the above UseRouting()\nmethod."
         }
       ],
       "char_count_raw": 602,
@@ -451,63 +444,56 @@
           "text": "Map, MapGet, MapPost"
         },
         {
-          "type": "prose",
+          "type": "code",
           "page": 2,
           "lines": [
             "endpoints.Map( )",
-            "endpoints.Map(\"path\", async (HttpContext context) =>"
-          ],
-          "text": "endpoints.Map( )\nendpoints.Map(\"path\", async (HttpContext context) =>"
-        },
-        {
-          "type": "code",
-          "page": 2,
-          "lines": [
+            "endpoints.Map(\"path\", async (HttpContext context) =>",
             "{",
             "//code",
             "});"
           ],
-          "text": "{\n//code\n});"
+          "text": "endpoints.Map( )\nendpoints.Map(\"path\", async (HttpContext context) =>\n{\n//code\n});"
         },
         {
           "type": "prose",
           "page": 2,
           "lines": [
-            "Executes the endpoint when a HTTP request's url path begins with the specified path.",
+            "Executes the endpoint when a HTTP request's url path begins with the specified path."
+          ],
+          "text": "Executes the endpoint when a HTTP request's url path begins with the specified path."
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
             "endpoints.MapGet( )",
-            "endpoints.MapGet(\"path\", async (HttpContext context) =>"
-          ],
-          "text": "Executes the endpoint when a HTTP request's url path begins with the specified path.\nendpoints.MapGet( )\nendpoints.MapGet(\"path\", async (HttpContext context) =>"
-        },
-        {
-          "type": "code",
-          "page": 2,
-          "lines": [
+            "endpoints.MapGet(\"path\", async (HttpContext context) =>",
             "{",
             "//code",
             "});"
           ],
-          "text": "{\n//code\n});"
+          "text": "endpoints.MapGet( )\nendpoints.MapGet(\"path\", async (HttpContext context) =>\n{\n//code\n});"
         },
         {
           "type": "prose",
           "page": 2,
           "lines": [
-            "Executes the endpoint when a HTTP GET request's url path begins with the specified path.",
-            "endpoints.MapPost( )",
-            "endpoints.MapPost(\"path\", async (HttpContext context) =>"
+            "Executes the endpoint when a HTTP GET request's url path begins with the specified path."
           ],
-          "text": "Executes the endpoint when a HTTP GET request's url path begins with the specified path.\nendpoints.MapPost( )\nendpoints.MapPost(\"path\", async (HttpContext context) =>"
+          "text": "Executes the endpoint when a HTTP GET request's url path begins with the specified path."
         },
         {
           "type": "code",
           "page": 2,
           "lines": [
+            "endpoints.MapPost( )",
+            "endpoints.MapPost(\"path\", async (HttpContext context) =>",
             "{",
             "//code",
             "});"
           ],
-          "text": "{\n//code\n});"
+          "text": "endpoints.MapPost( )\nendpoints.MapPost(\"path\", async (HttpContext context) =>\n{\n//code\n});"
         },
         {
           "type": "prose",
@@ -1468,46 +1454,18 @@
           "lines": [
             "public class ClassName : IRouteConstraint",
             "{",
-            " public bool Match(HttpContext? HttpContext, IRouter? route, string routeKey,"
-          ],
-          "text": "public class ClassName : IRouteConstraint\n{\n public bool Match(HttpContext? HttpContext, IRouter? route, string routeKey,"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
-            "RouteValueDictionary values, RouteDirection routeDirection)"
-          ],
-          "text": "RouteValueDictionary values, RouteDirection routeDirection)"
-        },
-        {
-          "type": "code",
-          "page": 7,
-          "lines": [
+            " public bool Match(HttpContext? HttpContext, IRouter? route, string routeKey,",
+            "RouteValueDictionary values, RouteDirection routeDirection)",
             " {",
             "  //return true or false",
             " }",
-            "}"
-          ],
-          "text": " {\n  //return true or false\n }\n}"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
-            "builder.Services.AddRouting(options =>"
-          ],
-          "text": "builder.Services.AddRouting(options =>"
-        },
-        {
-          "type": "code",
-          "page": 7,
-          "lines": [
+            "}",
+            "builder.Services.AddRouting(options =>",
             "{",
             " options.ConstraintMap.Add(\"name\", typeof(ClassName));",
             "}); //adding the custom constraint to routing"
           ],
-          "text": "{\n options.ConstraintMap.Add(\"name\", typeof(ClassName));\n}); //adding the custom constraint to routing"
+          "text": "public class ClassName : IRouteConstraint\n{\n public bool Match(HttpContext? HttpContext, IRouter? route, string routeKey,\nRouteValueDictionary values, RouteDirection routeDirection)\n {\n  //return true or false\n }\n}\nbuilder.Services.AddRouting(options =>\n{\n options.ConstraintMap.Add(\"name\", typeof(ClassName));\n}); //adding the custom constraint to routing"
         }
       ],
       "char_count_raw": 413,

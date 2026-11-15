@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Section 30: Minimal API — ASP.NET Core Masterclass</title>
+  <title>Section 30: Minimal API &mdash; ASP.NET Core Masterclass</title>
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
   <link rel="alternate icon" href="../favicon.ico">
   <link rel="stylesheet" href="../assets/css/docs.css">
@@ -16,7 +16,9 @@
   <!-- Top Navigation Header -->
   <header class="top-header" role="banner">
     <div class="header-left">
-      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">☰</button>
+      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
       <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
         <span class="sidebar-toggle-text">« Collapse</span>
@@ -41,7 +43,9 @@
       </a>
 
       <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
-        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
         <span class="search-text">Search topics, syntax, concepts...</span>
         <kbd class="kbd-shortcut">Ctrl+K</kbd>
       </button>
@@ -367,15 +371,6 @@
         <span>» Expand Sidebar</span>
       </button>
 
-      <!-- Breadcrumbs -->
-      <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
-        <a href="../index.html">Course Index</a>
-        <span class="crumb-sep" aria-hidden="true">/</span>
-        <span>Module 7</span>
-        <span class="crumb-sep" aria-hidden="true">/</span>
-        <span style="color: var(--text-main); font-weight: 600;">Section 30</span>
-      </nav>
-
       <!-- Section Banner Header -->
       <header class="section-banner">
         <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
@@ -407,15 +402,15 @@
 Minimal APIs in ASP.NET Core allow you to create HTTP APIs with minimal code and configuration.
 They simplify the process of building APIs by reducing the boilerplate code typically required with
 traditional controller-based approaches.</p>
-
-<h2 id="1-minimal-api-overview">1. Minimal API Overview</h2>
-<p>Minimal APIs provide a streamlined way to define routes and handle HTTP requests directly in the
-Program.cs file, eliminating the need for controllers and action methods. This approach is especially
-useful for small, microservices, or applications where you want to reduce overhead.</p>
-
-<h2 id="2-defining-minimal-apis">2. Defining Minimal APIs</h2>
-<p>Basic Example:
-Here’s how to set up a basic minimal API in Program.cs:</p>
+<ol>
+  <li>Minimal API Overview
+Minimal APIs provide a streamlined way to define routes and handle HTTP requests directly in the
+<code>Program.cs</code> file, eliminating the need for controllers and action methods. This approach is especially
+useful for small, microservices, or applications where you want to reduce overhead.</li>
+  <li>Defining Minimal APIs
+Basic Example:
+Here’s how to set up a basic minimal API in <code>Program.cs</code>:</li>
+</ol>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -430,12 +425,15 @@ var app = builder.Build();
 app.MapGet(&quot;/hello&quot;, () =&gt; &quot;Hello, world!&quot;);
 app.Run();</code></pre>
     </div>
-  <p>• MapGet: Maps an HTTP GET request to a handler. In this example, a request to /hello
-      returns the string &quot;Hello, world!&quot;.</p>
-
-<h2 id="3-route-parameters">3. Route Parameters</h2>
-<p>You can define route parameters to capture values from the URL and use them in your handlers.
-Example:</p>
+  <ul>
+  <li><code>MapGet</code>: Maps an HTTP GET request to a handler. In this example, a request to /hello</li>
+</ul>
+<p>returns the string &quot;Hello, world!&quot;.</p>
+<ol>
+  <li>Route Parameters
+You can define route parameters to capture values from the URL and use them in your handlers.</li>
+</ol>
+<h3>Example</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -447,13 +445,16 @@ Example:</p>
       </div>
       <pre><code class="language-csharp">app.MapGet(&quot;/greet/{name}&quot;, (string name) =&gt; $&quot;Hello, {name}!&quot;);</code></pre>
     </div>
-  <p>• {name}: Captures the route parameter from the URL. If you access /greet/Alice, the handler
-      will return &quot;Hello, Alice!&quot;.</p>
-
-<h2 id="4-mapgroups">4. MapGroups</h2>
-<p>MapGroups is used to group related routes together. This can be helpful for organizing routes that
-share a common prefix.
-Example:</p>
+  <ul>
+  <li>{name}: Captures the route parameter from the URL. If you access /greet/Alice, the handler</li>
+</ul>
+<p>will return &quot;Hello, Alice!&quot;.</p>
+<ol>
+  <li>MapGroups
+MapGroups is used to group related routes together. This can be helpful for organizing routes that
+share a common prefix.</li>
+</ol>
+<h3>Example</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -467,13 +468,16 @@ Example:</p>
  .MapGet(&quot;/products&quot;, () =&gt; new[] { &quot;Product1&quot;, &quot;Product2&quot; })
  .MapGet(&quot;/orders&quot;, () =&gt; new[] { &quot;Order1&quot;, &quot;Order2&quot; });</code></pre>
     </div>
-  <p>• MapGroup: Groups routes under the /api prefix. Routes are then mapped to endpoints such
-      as /api/products and /api/orders.</p>
-
-<h2 id="5-iresult">5. IResult</h2>
-<p>IResult represents the result of an HTTP request and can be used to return various types of
-responses.
-Example:</p>
+  <ul>
+  <li><code>MapGroup</code>: Groups routes under the /api prefix. Routes are then mapped to endpoints such</li>
+</ul>
+<p>as /api/products and /api/orders.</p>
+<ol>
+  <li><code>IResult</code>
+<code>IResult</code> represents the result of an HTTP request and can be used to return various types of
+responses.</li>
+</ol>
+<h3>Example</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -488,19 +492,20 @@ Example:</p>
   return Results.Ok(new { Status = &quot;Running&quot; }); // Return 200 OK with JSON response
 });</code></pre>
     </div>
-  <p>• Results.Ok: Creates a result that indicates a successful HTTP response with a status code of
-      200 and includes a JSON payload.
-Other common IResult methods include:</p>
-<ul>
-  <li>• Results.NotFound() for a 404 Not Found response.</li>
-  <li>• Results.BadRequest() for a 400 Bad Request response.</li>
-  <li>• Results.Created() for a 201 Created response.</li>
+  <ul>
+  <li>Results.Ok: Creates a result that indicates a successful HTTP response with a status code of</li>
 </ul>
-
-<h2 id="6-endpoint-filters">6. Endpoint Filters</h2>
-<p>Endpoint filters allow you to run custom logic before or after the request handler is executed. They
-can be used for tasks like validation, logging, or authentication.
-Example of a Simple Endpoint Filter:</p>
+<p>200 and includes a JSON payload.</p>
+<p>Other common <code>IResult</code> methods include:</p>
+<ul>
+  <li>Results.NotFound() for a 404 Not Found response.</li>
+  <li>Results.BadRequest() for a 400 Bad Request response.</li>
+  <li>Results.Created() for a 201 Created response.</li>
+  <li>6. Endpoint Filters
+Endpoint filters allow you to run custom logic before or after the request handler is executed. They
+can be used for tasks like validation, logging, or authentication.</li>
+</ul>
+<p>Example of a Simple Endpoint Filter:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -513,19 +518,7 @@ Example of a Simple Endpoint Filter:</p>
       <pre><code class="language-csharp">public class LoggingFilter : IEndpointFilter
 {
   public Task&lt;object?&gt; InvokeAsync(EndpointFilterInvocationContext context,
-}</code></pre>
-    </div>
-  <p>EndpointFilterInvocationDelegate next)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+EndpointFilterInvocationDelegate next)
   {
    Console.WriteLine(&quot;Handling request...&quot;);
    return next(context);
@@ -537,12 +530,15 @@ app.MapGet(&quot;/data&quot;, () =&gt; &quot;Some data&quot;)
  .AddEndpointFilter&lt;LoggingFilter&gt;();
 app.Run();</code></pre>
     </div>
-  <p>• IEndpointFilter: Interface used to create filters that can be added to endpoints.</p>
-
-<h2 id="7-iendpointfilter-interface">7. IEndpointFilter Interface</h2>
-<p>The IEndpointFilter interface is used to create custom filters that can be applied to endpoints. This
-allows you to inject logic into the request processing pipeline.
-Example of Custom Filter Implementation:</p>
+  <ul>
+  <li>IEndpointFilter: Interface used to create filters that can be added to endpoints.</li>
+</ul>
+<ol>
+  <li>IEndpointFilter Interface
+The IEndpointFilter interface is used to create custom filters that can be applied to endpoints. This
+allows you to inject logic into the request processing pipeline.</li>
+</ol>
+<p>Example of Custom Filter Implementation:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -555,19 +551,8 @@ Example of Custom Filter Implementation:</p>
       <pre><code class="language-csharp">public class CustomFilter : IEndpointFilter
 {
   public Task&lt;object?&gt; InvokeAsync(EndpointFilterInvocationContext context,
-}</code></pre>
-    </div>
-  <p>EndpointFilterInvocationDelegate next)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+EndpointFilterInvocationDelegate next)
+  {
    // Custom logic before request handling
    Console.WriteLine(&quot;Custom filter logic before handler.&quot;);
    // Call the next filter or endpoint
@@ -575,74 +560,66 @@ Example of Custom Filter Implementation:</p>
    // Custom logic after request handling
    Console.WriteLine(&quot;Custom filter logic after handler.&quot;);
    return result;
-  }</code></pre>
+  }
+}</code></pre>
     </div>
-  <p>Detailed Explanation of Code</p>
+  <h3>Detailed Explanation of Code</h3>
 <ul>
-  <li>• Minimal APIs: Provide a way to define routes and request handlers directly in Program.cs,</li>
-</ul>
-<p>simplifying the API development process.</p>
-<ul>
-  <li>• Route Parameters: Capture values from URLs and use them in request handlers.</li>
-  <li>• MapGroups: Organize related routes under a common prefix.</li>
-  <li>• IResult: Represents HTTP responses and can be used to return various types of responses</li>
-</ul>
-<p>(OK, NotFound, etc.).</p>
-<ul>
-  <li>• Endpoint Filters: Allow custom logic to be executed before or after request handlers.</li>
-  <li>• IEndpointFilter: Interface for creating custom endpoint filters.</li>
+  <li>Minimal APIs: Provide a way to define routes and request handlers directly in <code>Program.cs</code>,
+      simplifying the API development process.</li>
+  <li>Route Parameters: Capture values from URLs and use them in request handlers.</li>
+  <li>MapGroups: Organize related routes under a common prefix.</li>
+  <li><code>IResult</code>: Represents HTTP responses and can be used to return various types of responses
+      (OK, NotFound, etc.).</li>
+  <li>Endpoint Filters: Allow custom logic to be executed before or after request handlers.</li>
+  <li>IEndpointFilter: Interface for creating custom endpoint filters.</li>
 </ul>
 
 <h2 id="key-points-to-remember">Key Points to Remember</h2>
-<ul>
-  <li>1. Minimal APIs: Simplify API development with direct route and handler definitions in</li>
-</ul>
-<p>Program.cs.</p>
-<ul>
-  <li>2. Route Parameters: Use {param} syntax to capture values from URLs.</li>
-  <li>3. MapGroups: Group related routes under a common prefix for better organization.</li>
-  <li>4. IResult: Return various HTTP responses using built-in methods like Results.Ok,</li>
-</ul>
-<p>Results.NotFound, etc.</p>
-<ul>
-  <li>5. Endpoint Filters: Implement custom logic in request handling using IEndpointFilter.</li>
-</ul>
+<ol>
+  <li>Minimal APIs: Simplify API development with direct route and handler definitions in
+      <code>Program.cs</code>.</li>
+  <li>Route Parameters: Use {param} syntax to capture values from URLs.</li>
+  <li>MapGroups: Group related routes under a common prefix for better organization.</li>
+  <li><code>IResult</code>: Return various HTTP responses using built-in methods like Results.Ok,
+      Results.NotFound, etc.</li>
+  <li>Endpoint Filters: Implement custom logic in request handling using IEndpointFilter.</li>
+</ol>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
 <section class="cheatsheet-section" aria-labelledby="cheat-sheet-quick-reference">
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
-  <p>Section 30 – Minimal API– Cheat Sheet</p>
   <h3 id="overview-of-minimal-api">Overview of Minimal API</h3>
-  <ul>
-    <li>It is a Microsoft&#39;s API that is used to create HTTP services (or HTTP APIs) with minimal</li>
-  </ul>
-  <p>dependencies on packages.</p>
-  <ul>
-    <li>Alternative to Web API Controllers. Mainly used to create HTTP services or Microservices.</li>
-  </ul>
+<ul>
+  <li>It is a Microsoft&#39;s API that is used to create HTTP services (or HTTP APIs) with minimal
+dependencies on packages.</li>
+  <li>Alternative to Web API Controllers. Mainly used to create HTTP services or Microservices.</li>
+</ul>
   <h3 id="rest-api-representational-state-transfer">REST API (Representational State Transfer)</h3>
-  <p>MVC Controller (Microsoft.AspNetCore.Mvc.Controller)</p>
-  <ul>
-    <li>• Full support for model binding and model validation.</li>
-    <li>• Full support for views.</li>
-    <li>• Full support for filters &amp; filter pipeline.</li>
-  </ul>
-  <p>API Controller (Microsoft.AspNetCore.Mvc.ApiControllerAttribute)</p>
-  <ul>
-    <li>• Full support for model binding and model validation.</li>
-    <li>• No support for views.</li>
-    <li>• Full support for filters &amp; filter pipeline.</li>
-  </ul>
-  <p>Minimal API (IApplicationBuilder.Map* Methods)</p>
-  <ul>
-    <li>• Limited support for custom model binding and custom model validation (needs to improve).</li>
-    <li>• No support for views.</li>
-    <li>• No support for filters &amp; filter pipeline; but supports &quot;Endpoint Filters&quot; alternatively.</li>
-  </ul>
+<p>MVC Controller (Microsoft.AspNetCore.Mvc.Controller)</p>
+<ul>
+  <li>Full support for model binding and model validation.</li>
+  <li>Full support for views.</li>
+  <li>Full support for filters &amp; filter pipeline.</li>
+</ul>
+<p>API Controller (Microsoft.AspNetCore.Mvc.ApiControllerAttribute)</p>
+<ul>
+  <li>Full support for model binding and model validation.</li>
+  <li>No support for views.</li>
+  <li>Full support for filters &amp; filter pipeline.</li>
+</ul>
+<p>Minimal API (IApplicationBuilder.Map* Methods)</p>
+<ul>
+  <li>Limited support for custom model binding and custom model validation (needs to improve).</li>
+  <li>No support for views.</li>
+  <li>No support for filters &amp; filter pipeline; but supports &quot;Endpoint Filters&quot; alternatively.</li>
+</ul>
   <h3 id="routing-in-minimal-api">Routing in Minimal API</h3>
-  <h3 id="1-mapget">1. MapGet()</h3>
-  <p>Creates an endpoint that receives HTTP GET request.</p>
+<ol>
+  <li><code>MapGet</code>()
+      Creates an endpoint that receives HTTP GET request.</li>
+</ol>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -654,10 +631,10 @@ Example of Custom Filter Implementation:</p>
       </div>
       <pre><code class="language-csharp">app.MapGet(&quot;/route&quot;, async (HttpContext context) =&gt; {
        await context.Response.WriteAsync(&quot;your response&quot;);
-      });</code></pre>
+      });
+2. MapPost()</code></pre>
     </div>
-    <p>2. MapPost()
-      Creates an endpoint that receives HTTP DELETE request.</p>
+  <p>Creates an endpoint that receives HTTP DELETE request.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -669,10 +646,10 @@ Example of Custom Filter Implementation:</p>
       </div>
       <pre><code class="language-csharp">app.MapDelete(&quot;/route&quot;, async (HttpContext context) =&gt; {
        await context.Response.WriteAsync(&quot;your response&quot;);
-      });</code></pre>
+      });
+3. MapPut()</code></pre>
     </div>
-    <p>3. MapPut()
-      Creates an endpoint that receives HTTP PUT request.</p>
+  <p>Creates an endpoint that receives HTTP PUT request.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -684,10 +661,10 @@ Example of Custom Filter Implementation:</p>
       </div>
       <pre><code class="language-csharp">app.MapPut(&quot;/route&quot;, async (HttpContext context) =&gt; {
        await context.Response.WriteAsync(&quot;your response&quot;);
-      });</code></pre>
+      });
+4. MapDelete()</code></pre>
     </div>
-    <p>4. MapDelete()
-      Creates an endpoint that receives HTTP DELETE request.</p>
+  <p>Creates an endpoint that receives HTTP DELETE request.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -702,8 +679,18 @@ Example of Custom Filter Implementation:</p>
       });</code></pre>
     </div>
     <h3 id="route-parameters-in-minimal-api">Route Parameters in Minimal API</h3>
-  <p>Route parameters can be created as you were creating them in UseEndpoints() or in MVC
-      controllers.</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">Route parameters can be created as you were creating them in UseEndpoints() or in MVC</code></pre>
+    </div>
+  <p>controllers.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -717,9 +704,19 @@ Example of Custom Filter Implementation:</p>
        await context.Response.WriteAsync(&quot;your response&quot;);
 });</code></pre>
     </div>
-    <p>Route Constraints in Minimal API
-      Route constraints can be used as you were using them in UseEndpoints() or in MVC
-      controllers.</p>
+  <p>Route Constraints in Minimal API</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">Route constraints can be used as you were using them in UseEndpoints() or in MVC</code></pre>
+    </div>
+  <p>controllers.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -731,15 +728,25 @@ Example of Custom Filter Implementation:</p>
       </div>
       <pre><code class="language-csharp">app.MapGet(&quot;/route/{parameter:constraint}&quot;, async (HttpContext context) =&gt; {
        await context.Response.WriteAsync(&quot;your response&quot;);
-      });</code></pre>
+      });
+      Eg: int, bool, datetime, decimal, double, float, guid, long, Minlength, maxlength, length, min,
+      max, range, alpha, regex, required</code></pre>
     </div>
-    <p>Eg: int, bool, datetime, decimal, double, float, guid, long, Minlength, maxlength, length, min,
-      max, range, alpha, regex, required</p>
-  <h3 id="map-groups-in-minimal-api">Map Groups in Minimal API</h3>
-  <p>A map group (or route group) is a set of endpoints with a common prefix.
-      A map group is a collection of endpoints created with Map* methods such as MapGet(),
-      MapPost() etc.</p>
-  <h3 id="mapget">MapGet()</h3>
+  <p>Map Groups in Minimal API
+      A map group (or route group) is a set of endpoints with a common prefix.</p>
+
+    <div class="code-block">
+      <div class="code-toolbar">
+        <span class="language-label">C#</span>
+        <button class="copy-code-btn" type="button" aria-label="Copy code">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span class="copy-feedback">Copy</span>
+        </button>
+      </div>
+      <pre><code class="language-csharp">A map group is a collection of endpoints created with Map* methods such as MapGet(),
+      MapPost() etc.
+MapGet()</code></pre>
+    </div>
   <p>Creates an endpoint that receives HTTP GET request.</p>
 
     <div class="code-block">
@@ -754,21 +761,23 @@ Example of Custom Filter Implementation:</p>
       mapGroup.MapGet(…);
       mapGroup.MapPost(..);</code></pre>
     </div>
-    <p>IResult
-The Microsoft.AspNetCore.Http.IResult is the base interface that is implemented by different result
+  <p><code>IResult</code>
+The Microsoft.AspNetCore.Http.<code>IResult</code> is the base interface that is implemented by different result
 types such as Ok, Json, BadRequest etc., which can be returned by endpoints in minimal API.</p>
-  <h3 id="1-resultsok">1. Results.Ok( )</h3>
-  <h3 id="2-resultsjson">2. Results.Json( )</h3>
-  <h3 id="3-resultstext">3. Results.Text( )</h3>
-  <h3 id="4-resultsfile">4. Results.File( )</h3>
-  <h3 id="5-resultsbadrequest">5. Results.BadRequest( )</h3>
-  <h3 id="6-resultsnotfound">6. Results.NotFound( )</h3>
-  <h3 id="7-resultsunauthorized">7. Results.Unauthorized( )</h3>
-  <h3 id="8-resultsvalidationproblem">8. Results.ValidationProblem( )</h3>
-  <h3 id="iresult-implementations">IResult Implementations</h3>
-  <h3 id="1-resultsok-1">1. Results.Ok</h3>
-  <p>Response Content-type: application/json [or] text/plain
-Response Status Code: 200</p>
+<ol>
+  <li>Results.Ok( )</li>
+  <li>Results.Json( )</li>
+  <li>Results.Text( )</li>
+  <li>Results.File( )</li>
+  <li>Results.BadRequest( )</li>
+  <li>Results.NotFound( )</li>
+  <li>Results.Unauthorized( )</li>
+  <li>Results.ValidationProblem( )
+<code>IResult</code> Implementations</li>
+  <li>Results.Ok
+Response Content-type: application/json [or] text/plain
+Response Status Code: 200</li>
+</ol>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -780,9 +789,11 @@ Response Status Code: 200</p>
       </div>
       <pre><code class="language-csharp">return Results.Ok(response_object); //can be a string or model</code></pre>
     </div>
-    <h3 id="2-resultsjson-1">2. Results.Json</h3>
-  <p>Response Content-type: application/json
-      Response Status Code: 200</p>
+  <ol>
+  <li>Results.Json
+      Response Content-type: application/json
+      Response Status Code: 200</li>
+</ol>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -794,7 +805,7 @@ Response Status Code: 200</p>
       </div>
       <pre><code class="language-csharp">return Results.Json(response_object); //should be a model</code></pre>
     </div>
-    <p>3. Results.Text
+  <p>3. Results.Text
       Response Content-type: text/plain
       Response Status Code: 200</p>
 
@@ -808,7 +819,7 @@ Response Status Code: 200</p>
       </div>
       <pre><code class="language-csharp">return Results.Text(response_string); //should be a string</code></pre>
     </div>
-    <p>4. Results.File
+  <p>4. Results.File
       Response Content-type: application/octet-stream
       Response Status Code: 200</p>
 
@@ -822,7 +833,7 @@ Response Status Code: 200</p>
       </div>
       <pre><code class="language-csharp">return Results.File(stream_object); //should be &#39;System.IO.Stream&#39; type</code></pre>
     </div>
-    <p>5. Results.BadRequest
+  <p>5. Results.BadRequest
       Response Content-type: N/A
       Response Status Code: 400</p>
 
@@ -836,7 +847,7 @@ Response Status Code: 200</p>
       </div>
       <pre><code class="language-csharp">return Results.BadRequest(response_object); //can be a string or model</code></pre>
     </div>
-    <p>6. Results.NotFound
+  <p>6. Results.NotFound
       Response Content-type: N/A
       Response Status Code: 404</p>
 
@@ -850,7 +861,7 @@ Response Status Code: 200</p>
       </div>
       <pre><code class="language-csharp">return Results.NotFound(response_object); //can be a string or model</code></pre>
     </div>
-    <p>7. Results.Unauthorized
+  <p>7. Results.Unauthorized
       Response Content-type: N/A
       Response Status Code: 401</p>
 
@@ -864,9 +875,11 @@ Response Status Code: 200</p>
       </div>
       <pre><code class="language-csharp">return Results.Unauthorized(response_object); //can be a string or model</code></pre>
     </div>
-    <h3 id="8-resultsvalidationproblem-1">8. Results.ValidationProblem</h3>
-  <p>Response Content-type: application/json
-      Response Status Code: 400</p>
+  <ol>
+  <li>Results.ValidationProblem
+      Response Content-type: application/json
+      Response Status Code: 400</li>
+</ol>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -878,14 +891,14 @@ Response Status Code: 200</p>
       </div>
       <pre><code class="language-csharp">return Results.ValidationProblem(response_object); //automatically creates JSON with</code></pre>
     </div>
-    <p>validation errors</p>
+  <p>validation errors</p>
   <h3 id="endpoint-filter">Endpoint Filter</h3>
-  <p>EndPoint Filters execute much like &#39;action filters&#39; i.e., &#39;before&#39; and &#39;after&#39; the execution of minimal
+<p>EndPoint Filters execute much like &#39;action filters&#39; i.e., &#39;before&#39; and &#39;after&#39; the execution of minimal
 API endpoint.
 They are mainly used to validate parameters of the endpoint.</p>
   <h3 id="creating-an-endpoint-filter">Creating an Endpoint Filter</h3>
   <h3 id="endpoint-filters-can-be-registered-by-providing-a-delegate-that-takes-a">Endpoint filters can be registered by providing a Delegate that takes a</h3>
-  <p>EndpointFilterInvocationContext and returns a EndpointFilterDelegate.</p>
+<p>EndpointFilterInvocationContext and returns a EndpointFilterDelegate.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -905,9 +918,9 @@ They are mainly used to validate parameters of the endpoint.</p>
        return result;
       });</code></pre>
     </div>
-    <p>IEndpointFilter</p>
+  <p>IEndpointFilter</p>
   <h3 id="creating-an-endpoint-filter-by-implementing-iendpointfilter-interface">Creating an Endpoint Filter by implementing IEndpointFilter interface</h3>
-  <p>The InvokeAsync() method takes a EndpointFilterInvocationContext and returns a
+<p>The InvokeAsync() method takes a EndpointFilterInvocationContext and returns a
       EndpointFilterDelegate.</p>
 
     <div class="code-block">
@@ -921,24 +934,14 @@ They are mainly used to validate parameters of the endpoint.</p>
       <pre><code class="language-csharp">class CustomEndpointFilter : IEndpointFilter
       {
        public async ValueTask&lt;object?&gt; InvokeAsync(EndpointFilterInvocationContext context,
-}</code></pre>
-    </div>
-    <p>EndpointFilterDelegate next)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+      EndpointFilterDelegate next)
+       {
         //before logic
         var result = await next(context); //calls subsequent filter or endpoint
         //after logic
         return result;
-       }</code></pre>
+       }
+      }</code></pre>
     </div>
   </section>
 
@@ -960,7 +963,7 @@ They are mainly used to validate parameters of the endpoint.</p>
       <nav class="bottom-nav" aria-label="Previous and Next Section Navigation">
         
       <a href="section-29.html" class="nav-card prev" aria-label="Previous Section: Sec 29 - JWT with Web API">
-        <span class="nav-direction">← Previous Section</span>
+        <span class="nav-direction">&larr; Previous Section</span>
         <span class="nav-title">Sec 29: JWT with Web API</span>
       </a>
     
@@ -969,8 +972,8 @@ They are mainly used to validate parameters of the endpoint.</p>
 
       <!-- Section Footer -->
       <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); color: var(--text-dim); font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;" role="contentinfo">
-        <span>ASP.NET Core Masterclass — Offline Documentation Portal</span>
-        <a href="#top" style="color: var(--text-muted); text-decoration: none;">↑ Back to top</a>
+        <span>ASP.NET Core Masterclass &mdash; Offline Documentation Portal</span>
+        <a href="#top" style="color: var(--text-muted); text-decoration: none;">&uarr; Back to top</a>
       </footer>
     </main>
 
@@ -979,34 +982,6 @@ They are mainly used to validate parameters of the endpoint.</p>
       <div class="toc-title">On This Page</div>
       <ul class="toc-list">
         
-        <li class="toc-item">
-          <a href="#1-minimal-api-overview" class="toc-link">1. Minimal API Overview</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#2-defining-minimal-apis" class="toc-link">2. Defining Minimal APIs</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#3-route-parameters" class="toc-link">3. Route Parameters</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#4-mapgroups" class="toc-link">4. MapGroups</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#5-iresult" class="toc-link">5. IResult</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#6-endpoint-filters" class="toc-link">6. Endpoint Filters</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#7-iendpointfilter-interface" class="toc-link">7. IEndpointFilter Interface</a>
-        </li>
-      
         <li class="toc-item">
           <a href="#key-points-to-remember" class="toc-link">Key Points to Remember</a>
         </li>

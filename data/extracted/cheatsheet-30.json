@@ -163,17 +163,10 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "- It is a Microsoft's API that is used to create HTTP services (or HTTP APIs) with minimal"
-          ],
-          "text": "- It is a Microsoft's API that is used to create HTTP services (or HTTP APIs) with minimal"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "- It is a Microsoft's API that is used to create HTTP services (or HTTP APIs) with minimal",
             "dependencies on packages."
           ],
-          "text": "dependencies on packages."
+          "text": "- It is a Microsoft's API that is used to create HTTP services (or HTTP APIs) with minimal\ndependencies on packages."
         },
         {
           "type": "list_item",
@@ -507,20 +500,13 @@
           "text": "Routing in Minimal API"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 2,
           "lines": [
-            "1. MapGet()"
-          ],
-          "text": "1. MapGet()"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "1. MapGet()",
             "      Creates an endpoint that receives HTTP GET request."
           ],
-          "text": "      Creates an endpoint that receives HTTP GET request."
+          "text": "1. MapGet()\n      Creates an endpoint that receives HTTP GET request."
         },
         {
           "type": "code",
@@ -528,18 +514,18 @@
           "lines": [
             "      app.MapGet(\"/route\", async (HttpContext context) => {",
             "       await context.Response.WriteAsync(\"your response\");",
-            "      });"
+            "      });",
+            "2. MapPost()"
           ],
-          "text": "      app.MapGet(\"/route\", async (HttpContext context) => {\n       await context.Response.WriteAsync(\"your response\");\n      });"
+          "text": "      app.MapGet(\"/route\", async (HttpContext context) => {\n       await context.Response.WriteAsync(\"your response\");\n      });\n2. MapPost()"
         },
         {
           "type": "prose",
           "page": 2,
           "lines": [
-            "2. MapPost()",
             "      Creates an endpoint that receives HTTP DELETE request."
           ],
-          "text": "2. MapPost()\n      Creates an endpoint that receives HTTP DELETE request."
+          "text": "      Creates an endpoint that receives HTTP DELETE request."
         },
         {
           "type": "code",
@@ -547,18 +533,18 @@
           "lines": [
             "      app.MapDelete(\"/route\", async (HttpContext context) => {",
             "       await context.Response.WriteAsync(\"your response\");",
-            "      });"
+            "      });",
+            "3. MapPut()"
           ],
-          "text": "      app.MapDelete(\"/route\", async (HttpContext context) => {\n       await context.Response.WriteAsync(\"your response\");\n      });"
+          "text": "      app.MapDelete(\"/route\", async (HttpContext context) => {\n       await context.Response.WriteAsync(\"your response\");\n      });\n3. MapPut()"
         },
         {
           "type": "prose",
           "page": 2,
           "lines": [
-            "3. MapPut()",
             "      Creates an endpoint that receives HTTP PUT request."
           ],
-          "text": "3. MapPut()\n      Creates an endpoint that receives HTTP PUT request."
+          "text": "      Creates an endpoint that receives HTTP PUT request."
         },
         {
           "type": "code",
@@ -566,18 +552,18 @@
           "lines": [
             "      app.MapPut(\"/route\", async (HttpContext context) => {",
             "       await context.Response.WriteAsync(\"your response\");",
-            "      });"
+            "      });",
+            "4. MapDelete()"
           ],
-          "text": "      app.MapPut(\"/route\", async (HttpContext context) => {\n       await context.Response.WriteAsync(\"your response\");\n      });"
+          "text": "      app.MapPut(\"/route\", async (HttpContext context) => {\n       await context.Response.WriteAsync(\"your response\");\n      });\n4. MapDelete()"
         },
         {
           "type": "prose",
           "page": 2,
           "lines": [
-            "4. MapDelete()",
             "      Creates an endpoint that receives HTTP DELETE request."
           ],
-          "text": "4. MapDelete()\n      Creates an endpoint that receives HTTP DELETE request."
+          "text": "      Creates an endpoint that receives HTTP DELETE request."
         },
         {
           "type": "code",
@@ -753,13 +739,20 @@
           "text": "Route Parameters in Minimal API"
         },
         {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            "      Route parameters can be created as you were creating them in UseEndpoints() or in MVC"
+          ],
+          "text": "      Route parameters can be created as you were creating them in UseEndpoints() or in MVC"
+        },
+        {
           "type": "prose",
           "page": 3,
           "lines": [
-            "      Route parameters can be created as you were creating them in UseEndpoints() or in MVC",
             "      controllers."
           ],
-          "text": "      Route parameters can be created as you were creating them in UseEndpoints() or in MVC\n      controllers."
+          "text": "      controllers."
         },
         {
           "type": "code",
@@ -775,11 +768,25 @@
           "type": "prose",
           "page": 3,
           "lines": [
-            "Route Constraints in Minimal API",
-            "      Route constraints can be used as you were using them in UseEndpoints() or in MVC",
+            "Route Constraints in Minimal API"
+          ],
+          "text": "Route Constraints in Minimal API"
+        },
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
+            "      Route constraints can be used as you were using them in UseEndpoints() or in MVC"
+          ],
+          "text": "      Route constraints can be used as you were using them in UseEndpoints() or in MVC"
+        },
+        {
+          "type": "prose",
+          "page": 3,
+          "lines": [
             "      controllers."
           ],
-          "text": "Route Constraints in Minimal API\n      Route constraints can be used as you were using them in UseEndpoints() or in MVC\n      controllers."
+          "text": "      controllers."
         },
         {
           "type": "code",
@@ -787,36 +794,29 @@
           "lines": [
             "      app.MapGet(\"/route/{parameter:constraint}\", async (HttpContext context) => {",
             "       await context.Response.WriteAsync(\"your response\");",
-            "      });"
-          ],
-          "text": "      app.MapGet(\"/route/{parameter:constraint}\", async (HttpContext context) => {\n       await context.Response.WriteAsync(\"your response\");\n      });"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "      });",
             "      Eg: int, bool, datetime, decimal, double, float, guid, long, Minlength, maxlength, length, min,",
             "      max, range, alpha, regex, required"
           ],
-          "text": "      Eg: int, bool, datetime, decimal, double, float, guid, long, Minlength, maxlength, length, min,\n      max, range, alpha, regex, required"
-        },
-        {
-          "type": "heading",
-          "page": 3,
-          "lines": [
-            "Map Groups in Minimal API"
-          ],
-          "text": "Map Groups in Minimal API"
+          "text": "      app.MapGet(\"/route/{parameter:constraint}\", async (HttpContext context) => {\n       await context.Response.WriteAsync(\"your response\");\n      });\n      Eg: int, bool, datetime, decimal, double, float, guid, long, Minlength, maxlength, length, min,\n      max, range, alpha, regex, required"
         },
         {
           "type": "prose",
           "page": 3,
           "lines": [
-            "      A map group (or route group) is a set of endpoints with a common prefix.",
+            "Map Groups in Minimal API",
+            "      A map group (or route group) is a set of endpoints with a common prefix."
+          ],
+          "text": "Map Groups in Minimal API\n      A map group (or route group) is a set of endpoints with a common prefix."
+        },
+        {
+          "type": "code",
+          "page": 3,
+          "lines": [
             "      A map group is a collection of endpoints created with Map* methods such as MapGet(),",
             "      MapPost() etc."
           ],
-          "text": "      A map group (or route group) is a set of endpoints with a common prefix.\n      A map group is a collection of endpoints created with Map* methods such as MapGet(),\n      MapPost() etc."
+          "text": "      A map group is a collection of endpoints created with Map* methods such as MapGet(),\n      MapPost() etc."
         }
       ],
       "char_count_raw": 843,
@@ -998,7 +998,7 @@
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "code",
           "page": 4,
           "lines": [
             "MapGet()"
@@ -1034,93 +1034,79 @@
           "text": "IResult\nThe Microsoft.AspNetCore.Http.IResult is the base interface that is implemented by different result\ntypes such as Ok, Json, BadRequest etc., which can be returned by endpoints in minimal API."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 4,
           "lines": [
-            "1. Results.Ok( )"
+            "   1. Results.Ok( )"
           ],
-          "text": "1. Results.Ok( )"
+          "text": "   1. Results.Ok( )"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 4,
           "lines": [
-            "2. Results.Json( )"
+            "   2. Results.Json( )"
           ],
-          "text": "2. Results.Json( )"
+          "text": "   2. Results.Json( )"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 4,
           "lines": [
-            "3. Results.Text( )"
+            "   3. Results.Text( )"
           ],
-          "text": "3. Results.Text( )"
+          "text": "   3. Results.Text( )"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 4,
           "lines": [
-            "4. Results.File( )"
+            "   4. Results.File( )"
           ],
-          "text": "4. Results.File( )"
+          "text": "   4. Results.File( )"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 4,
           "lines": [
-            "5. Results.BadRequest( )"
+            "   5. Results.BadRequest( )"
           ],
-          "text": "5. Results.BadRequest( )"
+          "text": "   5. Results.BadRequest( )"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 4,
           "lines": [
-            "6. Results.NotFound( )"
+            "   6. Results.NotFound( )"
           ],
-          "text": "6. Results.NotFound( )"
+          "text": "   6. Results.NotFound( )"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 4,
           "lines": [
-            "7. Results.Unauthorized( )"
+            "   7. Results.Unauthorized( )"
           ],
-          "text": "7. Results.Unauthorized( )"
+          "text": "   7. Results.Unauthorized( )"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 4,
           "lines": [
-            "8. Results.ValidationProblem( )"
-          ],
-          "text": "8. Results.ValidationProblem( )"
-        },
-        {
-          "type": "heading",
-          "page": 4,
-          "lines": [
+            "   8. Results.ValidationProblem( )",
             "IResult Implementations"
           ],
-          "text": "IResult Implementations"
+          "text": "   8. Results.ValidationProblem( )\nIResult Implementations"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 4,
           "lines": [
-            "1. Results.Ok"
-          ],
-          "text": "1. Results.Ok"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "1. Results.Ok",
             "Response Content-type: application/json [or] text/plain",
             "Response Status Code: 200"
           ],
-          "text": "Response Content-type: application/json [or] text/plain\nResponse Status Code: 200"
+          "text": "1. Results.Ok\nResponse Content-type: application/json [or] text/plain\nResponse Status Code: 200"
         },
         {
           "type": "code",
@@ -1334,21 +1320,14 @@
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 5,
           "lines": [
-            "2. Results.Json"
-          ],
-          "text": "2. Results.Json"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "2. Results.Json",
             "      Response Content-type: application/json",
             "      Response Status Code: 200"
           ],
-          "text": "      Response Content-type: application/json\n      Response Status Code: 200"
+          "text": "2. Results.Json\n      Response Content-type: application/json\n      Response Status Code: 200"
         },
         {
           "type": "code",
@@ -1532,21 +1511,14 @@
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 6,
           "lines": [
-            "8. Results.ValidationProblem"
-          ],
-          "text": "8. Results.ValidationProblem"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "8. Results.ValidationProblem",
             "      Response Content-type: application/json",
             "      Response Status Code: 400"
           ],
-          "text": "      Response Content-type: application/json\n      Response Status Code: 400"
+          "text": "8. Results.ValidationProblem\n      Response Content-type: application/json\n      Response Status Code: 400"
         },
         {
           "type": "code",
@@ -1880,22 +1852,8 @@
           "lines": [
             "      class CustomEndpointFilter : IEndpointFilter",
             "      {",
-            "       public async ValueTask<object?> InvokeAsync(EndpointFilterInvocationContext context,"
-          ],
-          "text": "      class CustomEndpointFilter : IEndpointFilter\n      {\n       public async ValueTask<object?> InvokeAsync(EndpointFilterInvocationContext context,"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
-            "      EndpointFilterDelegate next)"
-          ],
-          "text": "      EndpointFilterDelegate next)"
-        },
-        {
-          "type": "code",
-          "page": 7,
-          "lines": [
+            "       public async ValueTask<object?> InvokeAsync(EndpointFilterInvocationContext context,",
+            "      EndpointFilterDelegate next)",
             "       {",
             "        //before logic",
             "        var result = await next(context); //calls subsequent filter or endpoint",
@@ -1904,7 +1862,7 @@
             "       }",
             "      }"
           ],
-          "text": "       {\n        //before logic\n        var result = await next(context); //calls subsequent filter or endpoint\n        //after logic\n        return result;\n       }\n      }"
+          "text": "      class CustomEndpointFilter : IEndpointFilter\n      {\n       public async ValueTask<object?> InvokeAsync(EndpointFilterInvocationContext context,\n      EndpointFilterDelegate next)\n       {\n        //before logic\n        var result = await next(context); //calls subsequent filter or endpoint\n        //after logic\n        return result;\n       }\n      }"
         }
       ],
       "char_count_raw": 866,

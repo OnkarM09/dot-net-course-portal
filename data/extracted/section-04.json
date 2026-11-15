@@ -308,19 +308,19 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   3. Invoke the next middleware in the pipeline or short-circuit the process and generate a"
+            "   3. Invoke the next middleware in the pipeline or short-circuit the process and generate a",
+            "      response itself."
           ],
-          "text": "   3. Invoke the next middleware in the pipeline or short-circuit the process and generate a"
+          "text": "   3. Invoke the next middleware in the pipeline or short-circuit the process and generate a\n      response itself."
         },
         {
           "type": "prose",
           "page": 1,
           "lines": [
-            "      response itself.",
             "This pipeline allows you to modularize your application's logic and add features like authentication,",
             "logging, error handling, routing, and more in a clean and maintainable way."
           ],
-          "text": "      response itself.\nThis pipeline allows you to modularize your application's logic and add features like authentication,\nlogging, error handling, routing, and more in a clean and maintainable way."
+          "text": "This pipeline allows you to modularize your application's logic and add features like authentication,\nlogging, error handling, routing, and more in a clean and maintainable way."
         },
         {
           "type": "heading",
@@ -336,12 +336,26 @@
           "lines": [
             "Imagine the request pipeline as a series of connected pipes. Each piece of middleware is like a valve",
             "in this pipeline, allowing you to control the flow of information and apply specific operations at",
-            "different stages. The order you register your middleware matters, as they are executed sequentially.",
-            "app.Use vs. app.Run",
+            "different stages. The order you register your middleware matters, as they are executed sequentially."
+          ],
+          "text": "Imagine the request pipeline as a series of connected pipes. Each piece of middleware is like a valve\nin this pipeline, allowing you to control the flow of information and apply specific operations at\ndifferent stages. The order you register your middleware matters, as they are executed sequentially."
+        },
+        {
+          "type": "code",
+          "page": 1,
+          "lines": [
+            "app.Use vs. app.Run"
+          ],
+          "text": "app.Use vs. app.Run"
+        },
+        {
+          "type": "prose",
+          "page": 1,
+          "lines": [
             "These two methods are fundamental for adding middleware to your pipeline, but they have key",
             "differences:"
           ],
-          "text": "Imagine the request pipeline as a series of connected pipes. Each piece of middleware is like a valve\nin this pipeline, allowing you to control the flow of information and apply specific operations at\ndifferent stages. The order you register your middleware matters, as they are executed sequentially.\napp.Use vs. app.Run\nThese two methods are fundamental for adding middleware to your pipeline, but they have key\ndifferences:"
+          "text": "These two methods are fundamental for adding middleware to your pipeline, but they have key\ndifferences:"
         },
         {
           "type": "list_item",
@@ -355,34 +369,20 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Non-Terminal Middleware: This type of middleware typically performs some action"
-          ],
-          "text": "        o Non-Terminal Middleware: This type of middleware typically performs some action"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "        o Non-Terminal Middleware: This type of middleware typically performs some action",
             "           and then calls the next delegate to pass control to the next middleware in the",
             "           pipeline."
           ],
-          "text": "           and then calls the next delegate to pass control to the next middleware in the\n           pipeline."
+          "text": "        o Non-Terminal Middleware: This type of middleware typically performs some action\n           and then calls the next delegate to pass control to the next middleware in the\n           pipeline."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Can Modify Request/Response: It can change the request or response before"
-          ],
-          "text": "        o Can Modify Request/Response: It can change the request or response before"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "        o Can Modify Request/Response: It can change the request or response before",
             "           passing it along."
           ],
-          "text": "           passing it along."
+          "text": "        o Can Modify Request/Response: It can change the request or response before\n           passing it along."
         },
         {
           "type": "list_item",
@@ -404,33 +404,19 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Terminal Middleware: This middleware doesn't call next; it ends the pipeline and"
-          ],
-          "text": "        o Terminal Middleware: This middleware doesn't call next; it ends the pipeline and"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "        o Terminal Middleware: This middleware doesn't call next; it ends the pipeline and",
             "           generates the response itself."
           ],
-          "text": "           generates the response itself."
+          "text": "        o Terminal Middleware: This middleware doesn't call next; it ends the pipeline and\n           generates the response itself."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Often Used for the Final Response: It's commonly used for handling requests that"
-          ],
-          "text": "        o Often Used for the Final Response: It's commonly used for handling requests that"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "        o Often Used for the Final Response: It's commonly used for handling requests that",
             "           don't need further processing (e.g., returning a simple message)."
           ],
-          "text": "           don't need further processing (e.g., returning a simple message)."
+          "text": "        o Often Used for the Final Response: It's commonly used for handling requests that\n           don't need further processing (e.g., returning a simple message)."
         }
       ],
       "char_count_raw": 1743,
@@ -639,18 +625,18 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o Can't Modify Request: Since it's the end of the line, it cannot modify the request"
+            "        o Can't Modify Request: Since it's the end of the line, it cannot modify the request",
+            "           before passing it on."
           ],
-          "text": "        o Can't Modify Request: Since it's the end of the line, it cannot modify the request"
+          "text": "        o Can't Modify Request: Since it's the end of the line, it cannot modify the request\n           before passing it on."
         },
         {
           "type": "prose",
           "page": 2,
           "lines": [
-            "           before passing it on.",
             "Code 1: The Consequence of Multiple app.Run Calls"
           ],
-          "text": "           before passing it on.\nCode 1: The Consequence of Multiple app.Run Calls"
+          "text": "Code 1: The Consequence of Multiple app.Run Calls"
         },
         {
           "type": "code",
@@ -952,17 +938,10 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   1. The first app.Use writes \"Hello \" to the response and then calls next to pass control to the"
-          ],
-          "text": "   1. The first app.Use writes \"Hello \" to the response and then calls next to pass control to the"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   1. The first app.Use writes \"Hello \" to the response and then calls next to pass control to the",
             "      next middleware."
           ],
-          "text": "      next middleware."
+          "text": "   1. The first app.Use writes \"Hello \" to the response and then calls next to pass control to the\n      next middleware."
         },
         {
           "type": "list_item",
@@ -976,17 +955,10 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   3. The final app.Run (which is terminal) writes \"Hello again\" and ends the pipeline. The result"
-          ],
-          "text": "   3. The final app.Run (which is terminal) writes \"Hello again\" and ends the pipeline. The result"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   3. The final app.Run (which is terminal) writes \"Hello again\" and ends the pipeline. The result",
             "      would be output of \"Hello Hello again Hello again\"."
           ],
-          "text": "      would be output of \"Hello Hello again Hello again\"."
+          "text": "   3. The final app.Run (which is terminal) writes \"Hello again\" and ends the pipeline. The result\n      would be output of \"Hello Hello again Hello again\"."
         },
         {
           "type": "heading",
@@ -1000,49 +972,28 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Middleware Order is Crucial: The order in which you register middleware matters, as they"
-          ],
-          "text": "   • Middleware Order is Crucial: The order in which you register middleware matters, as they"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Middleware Order is Crucial: The order in which you register middleware matters, as they",
             "      are executed in sequence."
           ],
-          "text": "      are executed in sequence."
+          "text": "   • Middleware Order is Crucial: The order in which you register middleware matters, as they\n      are executed in sequence."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Use app.Use for Non-Terminal Actions: Use it for tasks like authentication, logging, or"
-          ],
-          "text": "   • Use app.Use for Non-Terminal Actions: Use it for tasks like authentication, logging, or"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Use app.Use for Non-Terminal Actions: Use it for tasks like authentication, logging, or",
             "      modifying headers/bodies."
           ],
-          "text": "      modifying headers/bodies."
+          "text": "   • Use app.Use for Non-Terminal Actions: Use it for tasks like authentication, logging, or\n      modifying headers/bodies."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Use app.Run to Terminate the Pipeline: Employ it when you want to generate the final"
-          ],
-          "text": "   • Use app.Run to Terminate the Pipeline: Employ it when you want to generate the final"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Use app.Run to Terminate the Pipeline: Employ it when you want to generate the final",
             "      response."
           ],
-          "text": "      response."
+          "text": "   • Use app.Run to Terminate the Pipeline: Employ it when you want to generate the final\n      response."
         },
         {
           "type": "list_item",
@@ -1056,52 +1007,38 @@
           "type": "code",
           "page": 3,
           "lines": [
-            "      return a response early if needed."
+            "      return a response early if needed.",
+            "Custom Middleware in ASP.NET Cor"
           ],
-          "text": "      return a response early if needed."
+          "text": "      return a response early if needed.\nCustom Middleware in ASP.NET Cor"
         },
         {
           "type": "prose",
           "page": 3,
           "lines": [
-            "Custom Middleware in ASP.NET Cor",
             "While ASP.NET Core provides a plethora of built-in middleware components, sometimes you need to",
             "create your own to address specific requirements unique to your application. Custom middleware",
             "allows you to:"
           ],
-          "text": "Custom Middleware in ASP.NET Cor\nWhile ASP.NET Core provides a plethora of built-in middleware components, sometimes you need to\ncreate your own to address specific requirements unique to your application. Custom middleware\nallows you to:"
+          "text": "While ASP.NET Core provides a plethora of built-in middleware components, sometimes you need to\ncreate your own to address specific requirements unique to your application. Custom middleware\nallows you to:"
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Encapsulate logic: Bundle related operations (e.g., logging, security checks, custom headers)"
-          ],
-          "text": "   • Encapsulate logic: Bundle related operations (e.g., logging, security checks, custom headers)"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Encapsulate logic: Bundle related operations (e.g., logging, security checks, custom headers)",
             "      into a reusable component."
           ],
-          "text": "      into a reusable component."
+          "text": "   • Encapsulate logic: Bundle related operations (e.g., logging, security checks, custom headers)\n      into a reusable component."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Customize behavior: Tailor the request/response pipeline to precisely match your"
-          ],
-          "text": "   • Customize behavior: Tailor the request/response pipeline to precisely match your"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Customize behavior: Tailor the request/response pipeline to precisely match your",
             "      application's needs."
           ],
-          "text": "      application's needs."
+          "text": "   • Customize behavior: Tailor the request/response pipeline to precisely match your\n      application's needs."
         },
         {
           "type": "list_item",
@@ -1358,17 +1295,10 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   1. Implement IMiddleware: This interface requires a single method: InvokeAsync(HttpContext"
-          ],
-          "text": "   1. Implement IMiddleware: This interface requires a single method: InvokeAsync(HttpContext"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   1. Implement IMiddleware: This interface requires a single method: InvokeAsync(HttpContext",
             "      context, RequestDelegate next). This is the heart of your middleware's logic."
           ],
-          "text": "      context, RequestDelegate next). This is the heart of your middleware's logic."
+          "text": "   1. Implement IMiddleware: This interface requires a single method: InvokeAsync(HttpContext\n      context, RequestDelegate next). This is the heart of your middleware's logic."
         },
         {
           "type": "list_item",
@@ -1636,20 +1566,13 @@
           "type": "code",
           "page": 5,
           "lines": [
-            "}"
+            "}",
+            "   • MyCustomMiddleware Class: This class implements IMiddleware. Its InvokeAsync method:"
           ],
-          "text": "}"
+          "text": "}\n   • MyCustomMiddleware Class: This class implements IMiddleware. Its InvokeAsync method:"
         },
         {
           "type": "prose",
-          "page": 5,
-          "lines": [
-            "   • MyCustomMiddleware Class: This class implements IMiddleware. Its InvokeAsync method:"
-          ],
-          "text": "   • MyCustomMiddleware Class: This class implements IMiddleware. Its InvokeAsync method:"
-        },
-        {
-          "type": "list_item",
           "page": 5,
           "lines": [
             "        o Writes \"My Custom Middleware - Starts\" to the response."
@@ -1668,33 +1591,19 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "        o Writes \"My Custom Middleware - Ends\" to the response after the next middleware"
-          ],
-          "text": "        o Writes \"My Custom Middleware - Ends\" to the response after the next middleware"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "        o Writes \"My Custom Middleware - Ends\" to the response after the next middleware",
             "           has finished."
           ],
-          "text": "           has finished."
+          "text": "        o Writes \"My Custom Middleware - Ends\" to the response after the next middleware\n           has finished."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • CustomMiddlewareExtension Class: This provides a convenient extension method"
-          ],
-          "text": "   • CustomMiddlewareExtension Class: This provides a convenient extension method"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • CustomMiddlewareExtension Class: This provides a convenient extension method",
             "      UseMyCustomMiddleware to register your middleware in the Startup.Configure method."
           ],
-          "text": "      UseMyCustomMiddleware to register your middleware in the Startup.Configure method."
+          "text": "   • CustomMiddlewareExtension Class: This provides a convenient extension method\n      UseMyCustomMiddleware to register your middleware in the Startup.Configure method."
         },
         {
           "type": "code",
@@ -1702,22 +1611,8 @@
           "lines": [
             "// Program.cs (or Startup.cs)",
             "using MiddlewareExample.CustomMiddleware;",
-            "// ..."
-          ],
-          "text": "// Program.cs (or Startup.cs)\nusing MiddlewareExample.CustomMiddleware;\n// ..."
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
-            "builder.Services.AddTransient<MyCustomMiddleware>(); // Register as transient"
-          ],
-          "text": "builder.Services.AddTransient<MyCustomMiddleware>(); // Register as transient"
-        },
-        {
-          "type": "code",
-          "page": 5,
-          "lines": [
+            "// ...",
+            "builder.Services.AddTransient<MyCustomMiddleware>(); // Register as transient",
             "app.Use(async (HttpContext context, RequestDelegate next) => {",
             "  await context.Response.WriteAsync(\"From Midleware 1\\n\");",
             "  await next(context);",
@@ -1727,7 +1622,7 @@
             "  await context.Response.WriteAsync(\"From Middleware 3\\n\");",
             "});"
           ],
-          "text": "app.Use(async (HttpContext context, RequestDelegate next) => {\n  await context.Response.WriteAsync(\"From Midleware 1\\n\");\n  await next(context);\n});\napp.UseMyCustomMiddleware(); // Use the extension method\napp.Run(async (HttpContext context) => {\n  await context.Response.WriteAsync(\"From Middleware 3\\n\");\n});"
+          "text": "// Program.cs (or Startup.cs)\nusing MiddlewareExample.CustomMiddleware;\n// ...\nbuilder.Services.AddTransient<MyCustomMiddleware>(); // Register as transient\napp.Use(async (HttpContext context, RequestDelegate next) => {\n  await context.Response.WriteAsync(\"From Midleware 1\\n\");\n  await next(context);\n});\napp.UseMyCustomMiddleware(); // Use the extension method\napp.Run(async (HttpContext context) => {\n  await context.Response.WriteAsync(\"From Middleware 3\\n\");\n});"
         },
         {
           "type": "prose",
@@ -1741,17 +1636,10 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   1. Registration: You register MyCustomMiddleware as a transient service so that ASP.NET Core"
-          ],
-          "text": "   1. Registration: You register MyCustomMiddleware as a transient service so that ASP.NET Core"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   1. Registration: You register MyCustomMiddleware as a transient service so that ASP.NET Core",
             "      can create instances of it when needed."
           ],
-          "text": "      can create instances of it when needed."
+          "text": "   1. Registration: You register MyCustomMiddleware as a transient service so that ASP.NET Core\n      can create instances of it when needed."
         }
       ],
       "char_count_raw": 1081,
@@ -2000,34 +1888,20 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   2. Pipeline Integration: The app.UseMyCustomMiddleware() extension method seamlessly"
-          ],
-          "text": "   2. Pipeline Integration: The app.UseMyCustomMiddleware() extension method seamlessly"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   2. Pipeline Integration: The app.UseMyCustomMiddleware() extension method seamlessly",
             "      adds your middleware to the pipeline."
           ],
-          "text": "      adds your middleware to the pipeline."
+          "text": "   2. Pipeline Integration: The app.UseMyCustomMiddleware() extension method seamlessly\n      adds your middleware to the pipeline."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   3. Execution Order: Middleware components are executed in the order they are added to the"
-          ],
-          "text": "   3. Execution Order: Middleware components are executed in the order they are added to the"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   3. Execution Order: Middleware components are executed in the order they are added to the",
             "      pipeline. In this case, the order would be Middleware 1, MyCustomMiddleware, then",
             "      Middleware 3."
           ],
-          "text": "      pipeline. In this case, the order would be Middleware 1, MyCustomMiddleware, then\n      Middleware 3."
+          "text": "   3. Execution Order: Middleware components are executed in the order they are added to the\n      pipeline. In this case, the order would be Middleware 1, MyCustomMiddleware, then\n      Middleware 3."
         },
         {
           "type": "heading",
@@ -2131,50 +2005,36 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Invoke Method: This is the heart of the middleware, containing the logic that handles each"
-          ],
-          "text": "   • Invoke Method: This is the heart of the middleware, containing the logic that handles each"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • Invoke Method: This is the heart of the middleware, containing the logic that handles each",
             "      request."
           ],
-          "text": "      request."
+          "text": "   • Invoke Method: This is the heart of the middleware, containing the logic that handles each\n      request."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • RequestDelegate: The Invoke method takes a RequestDelegate parameter (_next in your"
-          ],
-          "text": "   • RequestDelegate: The Invoke method takes a RequestDelegate parameter (_next in your"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • RequestDelegate: The Invoke method takes a RequestDelegate parameter (_next in your",
             "      example). This delegate represents the next middleware in the pipeline."
           ],
-          "text": "      example). This delegate represents the next middleware in the pipeline."
+          "text": "   • RequestDelegate: The Invoke method takes a RequestDelegate parameter (_next in your\n      example). This delegate represents the next middleware in the pipeline."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Flexibility: You have full control over the request and response objects within the Invoke"
+            "   • Flexibility: You have full control over the request and response objects within the Invoke",
+            "      method."
           ],
-          "text": "   • Flexibility: You have full control over the request and response objects within the Invoke"
+          "text": "   • Flexibility: You have full control over the request and response objects within the Invoke\n      method."
         },
         {
           "type": "prose",
           "page": 6,
           "lines": [
-            "      method.",
             "Code Breakdown: HelloCustomMiddleware"
           ],
-          "text": "      method.\nCode Breakdown: HelloCustomMiddleware"
+          "text": "Code Breakdown: HelloCustomMiddleware"
         },
         {
           "type": "code",
@@ -2431,23 +2291,9 @@
             "   _next = next;",
             "  }",
             "  public async Task Invoke(HttpContext httpContext)",
-            "  {"
-          ],
-          "text": "  private readonly RequestDelegate _next;\n  public HelloCustomMiddleware(RequestDelegate next)\n  {\n   _next = next;\n  }\n  public async Task Invoke(HttpContext httpContext)\n  {"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "  {",
             "   if (httpContext.Request.Query.ContainsKey(\"firstname\") &&",
-            "     httpContext.Request.Query.ContainsKey(\"lastname\"))"
-          ],
-          "text": "   if (httpContext.Request.Query.ContainsKey(\"firstname\") &&\n     httpContext.Request.Query.ContainsKey(\"lastname\"))"
-        },
-        {
-          "type": "code",
-          "page": 7,
-          "lines": [
+            "     httpContext.Request.Query.ContainsKey(\"lastname\"))",
             "   {",
             "     string fullName = httpContext.Request.Query[\"firstname\"] + \" \" +",
             "httpContext.Request.Query[\"lastname\"];",
@@ -2463,33 +2309,19 @@
             "  {",
             "   return builder.UseMiddleware<HelloCustomMiddleware>();",
             "  }",
-            "}"
-          ],
-          "text": "   {\n     string fullName = httpContext.Request.Query[\"firstname\"] + \" \" +\nhttpContext.Request.Query[\"lastname\"];\n     await httpContext.Response.WriteAsync(fullName);\n   }\n   await _next(httpContext);\n  }\n}\n// Extension method for easy registration\npublic static class HelloCustomModdleExtensions\n{\n  public static IApplicationBuilder UseHelloCustomMiddleware(this IApplicationBuilder builder)\n  {\n   return builder.UseMiddleware<HelloCustomMiddleware>();\n  }\n}"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "}",
             "Let's analyze each part:"
           ],
-          "text": "Let's analyze each part:"
-        },
-        {
-          "type": "list_item",
-          "page": 7,
-          "lines": [
-            "   1. Constructor: The constructor receives the RequestDelegate, which is stored for later use to"
-          ],
-          "text": "   1. Constructor: The constructor receives the RequestDelegate, which is stored for later use to"
+          "text": "  private readonly RequestDelegate _next;\n  public HelloCustomMiddleware(RequestDelegate next)\n  {\n   _next = next;\n  }\n  public async Task Invoke(HttpContext httpContext)\n  {\n   if (httpContext.Request.Query.ContainsKey(\"firstname\") &&\n     httpContext.Request.Query.ContainsKey(\"lastname\"))\n   {\n     string fullName = httpContext.Request.Query[\"firstname\"] + \" \" +\nhttpContext.Request.Query[\"lastname\"];\n     await httpContext.Response.WriteAsync(fullName);\n   }\n   await _next(httpContext);\n  }\n}\n// Extension method for easy registration\npublic static class HelloCustomModdleExtensions\n{\n  public static IApplicationBuilder UseHelloCustomMiddleware(this IApplicationBuilder builder)\n  {\n   return builder.UseMiddleware<HelloCustomMiddleware>();\n  }\n}\nLet's analyze each part:"
         },
         {
           "type": "prose",
           "page": 7,
           "lines": [
+            "   1. Constructor: The constructor receives the RequestDelegate, which is stored for later use to",
             "      invoke the next middleware in the pipeline."
           ],
-          "text": "      invoke the next middleware in the pipeline."
+          "text": "   1. Constructor: The constructor receives the RequestDelegate, which is stored for later use to\n      invoke the next middleware in the pipeline."
         }
       ],
       "char_count_raw": 867,
@@ -2762,53 +2594,39 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "        o Crucially: It calls await _next(httpContext); to continue the middleware chain. This"
-          ],
-          "text": "        o Crucially: It calls await _next(httpContext); to continue the middleware chain. This"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "        o Crucially: It calls await _next(httpContext); to continue the middleware chain. This",
             "           line ensures that the request is passed on to subsequent middleware components,",
             "           even if a full name is generated."
           ],
-          "text": "           line ensures that the request is passed on to subsequent middleware components,\n           even if a full name is generated."
+          "text": "        o Crucially: It calls await _next(httpContext); to continue the middleware chain. This\n           line ensures that the request is passed on to subsequent middleware components,\n           even if a full name is generated."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "        o By design, any code after this line, such as the comment \"//after logic\", would not"
-          ],
-          "text": "        o By design, any code after this line, such as the comment \"//after logic\", would not"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "        o By design, any code after this line, such as the comment \"//after logic\", would not",
             "           execute for requests containing both \"firstname\" and \"lastname\", as the await",
             "           _next(httpContext); line immediately transfers control to the next middleware in the",
             "           pipeline."
           ],
-          "text": "           execute for requests containing both \"firstname\" and \"lastname\", as the await\n           _next(httpContext); line immediately transfers control to the next middleware in the\n           pipeline."
+          "text": "        o By design, any code after this line, such as the comment \"//after logic\", would not\n           execute for requests containing both \"firstname\" and \"lastname\", as the await\n           _next(httpContext); line immediately transfers control to the next middleware in the\n           pipeline."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   3. UseHelloCustomMiddleware Extension: This extension method simplifies the registration"
+            "   3. UseHelloCustomMiddleware Extension: This extension method simplifies the registration",
+            "      process by hiding the details of instantiating and using your custom middleware class."
           ],
-          "text": "   3. UseHelloCustomMiddleware Extension: This extension method simplifies the registration"
+          "text": "   3. UseHelloCustomMiddleware Extension: This extension method simplifies the registration\n      process by hiding the details of instantiating and using your custom middleware class."
         },
         {
           "type": "prose",
           "page": 8,
           "lines": [
-            "      process by hiding the details of instantiating and using your custom middleware class.",
             "Program.cs (or Startup.cs): Using the Middleware"
           ],
-          "text": "      process by hiding the details of instantiating and using your custom middleware class.\nProgram.cs (or Startup.cs): Using the Middleware"
+          "text": "Program.cs (or Startup.cs): Using the Middleware"
         },
         {
           "type": "code",
@@ -2817,20 +2635,13 @@
             "// ... other middleware ...",
             "app.UseMyCustomMiddleware();",
             "app.UseHelloCustomMiddleware();",
-            "// ..."
+            "// ...",
+            "How It Works"
           ],
-          "text": "// ... other middleware ...\napp.UseMyCustomMiddleware();\napp.UseHelloCustomMiddleware();\n// ..."
+          "text": "// ... other middleware ...\napp.UseMyCustomMiddleware();\napp.UseHelloCustomMiddleware();\n// ...\nHow It Works"
         },
         {
           "type": "prose",
-          "page": 8,
-          "lines": [
-            "How It Works"
-          ],
-          "text": "How It Works"
-        },
-        {
-          "type": "list_item",
           "page": 8,
           "lines": [
             "   1. When a request arrives, ASP.NET Core traverses the middleware pipeline."
@@ -2857,17 +2668,10 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   4. Regardless of whether it generates the greeting, the middleware calls next(context) to pass"
-          ],
-          "text": "   4. Regardless of whether it generates the greeting, the middleware calls next(context) to pass"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   4. Regardless of whether it generates the greeting, the middleware calls next(context) to pass",
             "      the request along to the next middleware component in the pipeline."
           ],
-          "text": "      the request along to the next middleware component in the pipeline."
+          "text": "   4. Regardless of whether it generates the greeting, the middleware calls next(context) to pass\n      the request along to the next middleware component in the pipeline."
         },
         {
           "type": "heading",
@@ -2889,33 +2693,19 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Control: You have fine-grained control over how the request is processed and how the"
-          ],
-          "text": "   • Control: You have fine-grained control over how the request is processed and how the"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Control: You have fine-grained control over how the request is processed and how the",
             "      response is generated."
           ],
-          "text": "      response is generated."
+          "text": "   • Control: You have fine-grained control over how the request is processed and how the\n      response is generated."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Extension Methods: Use extension methods to make middleware registration clean and"
-          ],
-          "text": "   • Extension Methods: Use extension methods to make middleware registration clean and"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Extension Methods: Use extension methods to make middleware registration clean and",
             "      readable."
           ],
-          "text": "      readable."
+          "text": "   • Extension Methods: Use extension methods to make middleware registration clean and\n      readable."
         }
       ],
       "char_count_raw": 1677,
@@ -3196,17 +2986,10 @@
           "type": "list_item",
           "page": 9,
           "lines": [
-            "        o Examples: UseExceptionHandler, UseDeveloperExceptionPage (for development"
-          ],
-          "text": "        o Examples: UseExceptionHandler, UseDeveloperExceptionPage (for development"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "        o Examples: UseExceptionHandler, UseDeveloperExceptionPage (for development",
             "           environments)."
           ],
-          "text": "           environments)."
+          "text": "        o Examples: UseExceptionHandler, UseDeveloperExceptionPage (for development\n           environments)."
         },
         {
           "type": "list_item",
@@ -3340,17 +3123,10 @@
           "type": "list_item",
           "page": 9,
           "lines": [
-            "        o Purpose: Determines whether a user is allowed to access a particular resource or"
-          ],
-          "text": "        o Purpose: Determines whether a user is allowed to access a particular resource or"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "        o Purpose: Determines whether a user is allowed to access a particular resource or",
             "           perform a certain action."
           ],
-          "text": "           perform a certain action."
+          "text": "        o Purpose: Determines whether a user is allowed to access a particular resource or\n           perform a certain action."
         },
         {
           "type": "list_item",
@@ -3372,17 +3148,10 @@
           "type": "list_item",
           "page": 9,
           "lines": [
-            "        o Purpose: Your application-specific middleware components to handle tasks like"
-          ],
-          "text": "        o Purpose: Your application-specific middleware components to handle tasks like"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "        o Purpose: Your application-specific middleware components to handle tasks like",
             "           logging, feature flags, etc."
           ],
-          "text": "           logging, feature flags, etc."
+          "text": "        o Purpose: Your application-specific middleware components to handle tasks like\n           logging, feature flags, etc."
         },
         {
           "type": "heading",
@@ -3396,17 +3165,10 @@
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • Early Exception Handling: Catching exceptions early prevents them from propagating and"
-          ],
-          "text": "   • Early Exception Handling: Catching exceptions early prevents them from propagating and"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   • Early Exception Handling: Catching exceptions early prevents them from propagating and",
             "      causing further issues down the pipeline."
           ],
-          "text": "      causing further issues down the pipeline."
+          "text": "   • Early Exception Handling: Catching exceptions early prevents them from propagating and\n      causing further issues down the pipeline."
         }
       ],
       "char_count_raw": 1309,
@@ -3663,81 +3425,46 @@
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • Security First: HTTPS redirection, authentication, and authorization are essential for securing"
-          ],
-          "text": "   • Security First: HTTPS redirection, authentication, and authorization are essential for securing"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • Security First: HTTPS redirection, authentication, and authorization are essential for securing",
             "      your application."
           ],
-          "text": "      your application."
+          "text": "   • Security First: HTTPS redirection, authentication, and authorization are essential for securing\n      your application."
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • Performance Optimization: Static files, response caching, and compression are placed early"
-          ],
-          "text": "   • Performance Optimization: Static files, response caching, and compression are placed early"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • Performance Optimization: Static files, response caching, and compression are placed early",
             "      to optimize the response generation process."
           ],
-          "text": "      to optimize the response generation process."
+          "text": "   • Performance Optimization: Static files, response caching, and compression are placed early\n      to optimize the response generation process."
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • Routing as a Foundation: Routing determines how requests are handled by your"
-          ],
-          "text": "   • Routing as a Foundation: Routing determines how requests are handled by your"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • Routing as a Foundation: Routing determines how requests are handled by your",
             "      application's core logic."
           ],
-          "text": "      application's core logic."
+          "text": "   • Routing as a Foundation: Routing determines how requests are handled by your\n      application's core logic."
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • CORS for Flexibility: CORS allows your application to be consumed by a wider range of"
-          ],
-          "text": "   • CORS for Flexibility: CORS allows your application to be consumed by a wider range of"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • CORS for Flexibility: CORS allows your application to be consumed by a wider range of",
             "      clients."
           ],
-          "text": "      clients."
+          "text": "   • CORS for Flexibility: CORS allows your application to be consumed by a wider range of\n      clients."
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • Custom Middleware: Your custom middleware can be placed strategically within the"
-          ],
-          "text": "   • Custom Middleware: Your custom middleware can be placed strategically within the"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • Custom Middleware: Your custom middleware can be placed strategically within the",
             "      pipeline to apply logic at the appropriate stage."
           ],
-          "text": "      pipeline to apply logic at the appropriate stage."
+          "text": "   • Custom Middleware: Your custom middleware can be placed strategically within the\n      pipeline to apply logic at the appropriate stage."
         },
         {
           "type": "heading",
@@ -3760,57 +3487,36 @@
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • Health Checks: You might want to place health check middleware very early in the pipeline"
-          ],
-          "text": "   • Health Checks: You might want to place health check middleware very early in the pipeline"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • Health Checks: You might want to place health check middleware very early in the pipeline",
             "      to quickly determine the application's status without executing other middleware",
             "      components."
           ],
-          "text": "      to quickly determine the application's status without executing other middleware\n      components."
+          "text": "   • Health Checks: You might want to place health check middleware very early in the pipeline\n      to quickly determine the application's status without executing other middleware\n      components."
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • Specialized Middleware: Some middleware components may have specific ordering"
+            "   • Specialized Middleware: Some middleware components may have specific ordering",
+            "      requirements documented by their providers."
           ],
-          "text": "   • Specialized Middleware: Some middleware components may have specific ordering"
+          "text": "   • Specialized Middleware: Some middleware components may have specific ordering\n      requirements documented by their providers."
         },
         {
           "type": "prose",
           "page": 10,
           "lines": [
-            "      requirements documented by their providers.",
             "Example (Program.cs or Startup.cs):"
           ],
-          "text": "      requirements documented by their providers.\nExample (Program.cs or Startup.cs):"
+          "text": "Example (Program.cs or Startup.cs):"
         },
         {
           "type": "code",
           "page": 10,
           "lines": [
             "var builder = WebApplication.CreateBuilder(args);",
-            "var app = builder.Build();"
-          ],
-          "text": "var builder = WebApplication.CreateBuilder(args);\nvar app = builder.Build();"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
-            "if (app.Environment.IsDevelopment())"
-          ],
-          "text": "if (app.Environment.IsDevelopment())"
-        },
-        {
-          "type": "code",
-          "page": 10,
-          "lines": [
+            "var app = builder.Build();",
+            "if (app.Environment.IsDevelopment())",
             "{",
             "  app.UseDeveloperExceptionPage();",
             "}",
@@ -3820,7 +3526,7 @@
             "app.UseAuthentication();",
             "app.UseAuthorization();"
           ],
-          "text": "{\n  app.UseDeveloperExceptionPage();\n}\napp.UseHttpsRedirection();\napp.UseStaticFiles();\napp.UseRouting();\napp.UseAuthentication();\napp.UseAuthorization();"
+          "text": "var builder = WebApplication.CreateBuilder(args);\nvar app = builder.Build();\nif (app.Environment.IsDevelopment())\n{\n  app.UseDeveloperExceptionPage();\n}\napp.UseHttpsRedirection();\napp.UseStaticFiles();\napp.UseRouting();\napp.UseAuthentication();\napp.UseAuthorization();"
         }
       ],
       "char_count_raw": 1357,
@@ -4096,17 +3802,10 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • Predicate (Condition): A function that takes the HttpContext and returns true if the"
-          ],
-          "text": "   • Predicate (Condition): A function that takes the HttpContext and returns true if the"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   • Predicate (Condition): A function that takes the HttpContext and returns true if the",
             "      middleware branch should be executed, false otherwise."
           ],
-          "text": "      middleware branch should be executed, false otherwise."
+          "text": "   • Predicate (Condition): A function that takes the HttpContext and returns true if the\n      middleware branch should be executed, false otherwise."
         },
         {
           "type": "list_item",
@@ -4395,52 +4094,38 @@
           "type": "list_item",
           "page": 12,
           "lines": [
-            "   1. Predicate Evaluation: When a request comes in, the UseWhen() method first evaluates the"
-          ],
-          "text": "   1. Predicate Evaluation: When a request comes in, the UseWhen() method first evaluates the"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "   1. Predicate Evaluation: When a request comes in, the UseWhen() method first evaluates the",
             "      predicate function against the HttpContext."
           ],
-          "text": "      predicate function against the HttpContext."
+          "text": "   1. Predicate Evaluation: When a request comes in, the UseWhen() method first evaluates the\n      predicate function against the HttpContext."
         },
         {
           "type": "list_item",
           "page": 12,
           "lines": [
-            "   2. Branching (if true): If the predicate returns true, the middleware branch specified in the"
-          ],
-          "text": "   2. Branching (if true): If the predicate returns true, the middleware branch specified in the"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "   2. Branching (if true): If the predicate returns true, the middleware branch specified in the",
             "      configuration action is executed. The request flows through this branch, potentially",
             "      undergoing modifications or generating a response."
           ],
-          "text": "      configuration action is executed. The request flows through this branch, potentially\n      undergoing modifications or generating a response."
+          "text": "   2. Branching (if true): If the predicate returns true, the middleware branch specified in the\n      configuration action is executed. The request flows through this branch, potentially\n      undergoing modifications or generating a response."
         },
         {
           "type": "list_item",
           "page": 12,
           "lines": [
-            "   3. Rejoining the Main Pipeline: After the branch is executed (or skipped if the predicate was"
+            "   3. Rejoining the Main Pipeline: After the branch is executed (or skipped if the predicate was",
+            "      false), the request flow rejoins the main pipeline, continuing with the next middleware",
+            "      components registered after the UseWhen() call."
           ],
-          "text": "   3. Rejoining the Main Pipeline: After the branch is executed (or skipped if the predicate was"
+          "text": "   3. Rejoining the Main Pipeline: After the branch is executed (or skipped if the predicate was\n      false), the request flow rejoins the main pipeline, continuing with the next middleware\n      components registered after the UseWhen() call."
         },
         {
           "type": "prose",
           "page": 12,
           "lines": [
-            "      false), the request flow rejoins the main pipeline, continuing with the next middleware",
-            "      components registered after the UseWhen() call.",
             "Code Example: Explained"
           ],
-          "text": "      false), the request flow rejoins the main pipeline, continuing with the next middleware\n      components registered after the UseWhen() call.\nCode Example: Explained"
+          "text": "Code Example: Explained"
         },
         {
           "type": "code",
@@ -4475,34 +4160,20 @@
           "type": "list_item",
           "page": 12,
           "lines": [
-            "   • Branch Middleware: If the \"username\" parameter is present, the branch middleware is"
-          ],
-          "text": "   • Branch Middleware: If the \"username\" parameter is present, the branch middleware is"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "   • Branch Middleware: If the \"username\" parameter is present, the branch middleware is",
             "      executed. It writes \"Hello from Middleware branch\" to the response and then calls next to",
             "      allow the rest of the pipeline to continue."
           ],
-          "text": "      executed. It writes \"Hello from Middleware branch\" to the response and then calls next to\n      allow the rest of the pipeline to continue."
+          "text": "   • Branch Middleware: If the \"username\" parameter is present, the branch middleware is\n      executed. It writes \"Hello from Middleware branch\" to the response and then calls next to\n      allow the rest of the pipeline to continue."
         },
         {
           "type": "list_item",
           "page": 12,
           "lines": [
-            "   • Main Pipeline: The final app.Run middleware is part of the main pipeline. It writes \"Hello"
-          ],
-          "text": "   • Main Pipeline: The final app.Run middleware is part of the main pipeline. It writes \"Hello"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "   • Main Pipeline: The final app.Run middleware is part of the main pipeline. It writes \"Hello",
             "      from middleware at main chain\" to the response."
           ],
-          "text": "      from middleware at main chain\" to the response."
+          "text": "   • Main Pipeline: The final app.Run middleware is part of the main pipeline. It writes \"Hello\n      from middleware at main chain\" to the response."
         },
         {
           "type": "heading",
@@ -4743,155 +4414,92 @@
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   • If the request contains the \"username\" query parameter (e.g., /path?username=John), the"
-          ],
-          "text": "   • If the request contains the \"username\" query parameter (e.g., /path?username=John), the"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "   • If the request contains the \"username\" query parameter (e.g., /path?username=John), the",
             "      output will be:"
           ],
-          "text": "      output will be:"
+          "text": "   • If the request contains the \"username\" query parameter (e.g., /path?username=John), the\n      output will be:"
         },
         {
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   • Hello from Middleware branch"
-          ],
-          "text": "   • Hello from Middleware branch"
-        },
-        {
-          "type": "heading",
-          "page": 13,
-          "lines": [
+            "   • Hello from Middleware branch",
             "Hello from middleware at main chain"
           ],
-          "text": "Hello from middleware at main chain"
+          "text": "   • Hello from Middleware branch\nHello from middleware at main chain"
         },
         {
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   • If the request does not contain the \"username\" parameter (e.g., /path), the output will be:"
-          ],
-          "text": "   • If the request does not contain the \"username\" parameter (e.g., /path), the output will be:"
-        },
-        {
-          "type": "heading",
-          "page": 13,
-          "lines": [
-            "Hello from middleware at main chain"
-          ],
-          "text": "Hello from middleware at main chain"
-        },
-        {
-          "type": "heading",
-          "page": 13,
-          "lines": [
+            "   • If the request does not contain the \"username\" parameter (e.g., /path), the output will be:",
+            "Hello from middleware at main chain",
             "When to Use UseWhen()"
           ],
-          "text": "When to Use UseWhen()"
+          "text": "   • If the request does not contain the \"username\" parameter (e.g., /path), the output will be:\nHello from middleware at main chain\nWhen to Use UseWhen()"
         },
         {
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   • Conditional Features: Enable or disable certain features based on the request (e.g., logging"
-          ],
-          "text": "   • Conditional Features: Enable or disable certain features based on the request (e.g., logging"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "   • Conditional Features: Enable or disable certain features based on the request (e.g., logging",
             "      only for certain users, applying caching rules based on query parameters)."
           ],
-          "text": "      only for certain users, applying caching rules based on query parameters)."
+          "text": "   • Conditional Features: Enable or disable certain features based on the request (e.g., logging\n      only for certain users, applying caching rules based on query parameters)."
         },
         {
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   • Dynamic Pipelines: Create pipelines that adapt to different requests (e.g., different"
-          ],
-          "text": "   • Dynamic Pipelines: Create pipelines that adapt to different requests (e.g., different"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "   • Dynamic Pipelines: Create pipelines that adapt to different requests (e.g., different",
             "      authentication middleware for specific routes)."
           ],
-          "text": "      authentication middleware for specific routes)."
+          "text": "   • Dynamic Pipelines: Create pipelines that adapt to different requests (e.g., different\n      authentication middleware for specific routes)."
         },
         {
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   • A/B Testing: Route a subset of users through alternative middleware branches for"
-          ],
-          "text": "   • A/B Testing: Route a subset of users through alternative middleware branches for"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "   • A/B Testing: Route a subset of users through alternative middleware branches for",
             "      experimentation."
           ],
-          "text": "      experimentation."
+          "text": "   • A/B Testing: Route a subset of users through alternative middleware branches for\n      experimentation."
         },
         {
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   • Debugging and Diagnostics: Apply diagnostic middleware only in development"
+            "   • Debugging and Diagnostics: Apply diagnostic middleware only in development",
+            "      environments."
           ],
-          "text": "   • Debugging and Diagnostics: Apply diagnostic middleware only in development"
+          "text": "   • Debugging and Diagnostics: Apply diagnostic middleware only in development\n      environments."
         },
         {
           "type": "prose",
           "page": 13,
           "lines": [
-            "      environments.",
             "Key Points to Remember:",
             "Conceptual Understanding:"
           ],
-          "text": "      environments.\nKey Points to Remember:\nConceptual Understanding:"
+          "text": "Key Points to Remember:\nConceptual Understanding:"
         },
         {
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   1. The Pipeline: Middleware forms a pipeline for HTTP requests and responses. Each"
-          ],
-          "text": "   1. The Pipeline: Middleware forms a pipeline for HTTP requests and responses. Each"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "   1. The Pipeline: Middleware forms a pipeline for HTTP requests and responses. Each",
             "      component can inspect, modify, or terminate the flow."
           ],
-          "text": "      component can inspect, modify, or terminate the flow."
+          "text": "   1. The Pipeline: Middleware forms a pipeline for HTTP requests and responses. Each\n      component can inspect, modify, or terminate the flow."
         },
         {
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   2. Order Matters: Middleware is executed in the order it's registered. Think carefully about the"
-          ],
-          "text": "   2. Order Matters: Middleware is executed in the order it's registered. Think carefully about the"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "   2. Order Matters: Middleware is executed in the order it's registered. Think carefully about the",
             "      sequence."
           ],
-          "text": "      sequence."
+          "text": "   2. Order Matters: Middleware is executed in the order it's registered. Think carefully about the\n      sequence."
         },
         {
           "type": "list_item",
@@ -4918,7 +4526,7 @@
           "text": "        o Custom: You can create your own to add specific logic to your app."
         },
         {
-          "type": "prose",
+          "type": "code",
           "page": 13,
           "lines": [
             "app.Use vs. app.Run:"
@@ -4926,7 +4534,7 @@
           "text": "app.Use vs. app.Run:"
         },
         {
-          "type": "list_item",
+          "type": "prose",
           "page": 13,
           "lines": [
             "   1. app.Use: For non-terminal middleware. It calls next to pass control to the next component."
@@ -5156,98 +4764,91 @@
           "type": "list_item",
           "page": 14,
           "lines": [
-            "   2. Benefits: Encapsulates logic, improves code organization, and allows you to tailor your"
+            "   2. Benefits: Encapsulates logic, improves code organization, and allows you to tailor your",
+            "      application's behavior."
           ],
-          "text": "   2. Benefits: Encapsulates logic, improves code organization, and allows you to tailor your"
+          "text": "   2. Benefits: Encapsulates logic, improves code organization, and allows you to tailor your\n      application's behavior."
         },
         {
           "type": "prose",
           "page": 14,
           "lines": [
-            "      application's behavior.",
             "Recommended Order: (Not strict, but a good guideline)"
           ],
-          "text": "      application's behavior.\nRecommended Order: (Not strict, but a good guideline)"
+          "text": "Recommended Order: (Not strict, but a good guideline)"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 14,
           "lines": [
-            "1. Exception Handling"
+            "   1. Exception Handling"
           ],
-          "text": "1. Exception Handling"
+          "text": "   1. Exception Handling"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 14,
           "lines": [
-            "2. HTTPS Redirection"
+            "   2. HTTPS Redirection"
           ],
-          "text": "2. HTTPS Redirection"
+          "text": "   2. HTTPS Redirection"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 14,
           "lines": [
-            "3. Static Files"
+            "   3. Static Files"
           ],
-          "text": "3. Static Files"
+          "text": "   3. Static Files"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 14,
           "lines": [
-            "4. Routing"
+            "   4. Routing"
           ],
-          "text": "4. Routing"
+          "text": "   4. Routing"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 14,
           "lines": [
-            "5. CORS"
+            "   5. CORS"
           ],
-          "text": "5. CORS"
+          "text": "   5. CORS"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 14,
           "lines": [
-            "6. Authentication"
+            "   6. Authentication"
           ],
-          "text": "6. Authentication"
+          "text": "   6. Authentication"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 14,
           "lines": [
-            "7. Authorization"
+            "   7. Authorization"
           ],
-          "text": "7. Authorization"
+          "text": "   7. Authorization"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 14,
           "lines": [
-            "8. Custom Middleware"
+            "   8. Custom Middleware"
           ],
-          "text": "8. Custom Middleware"
+          "text": "   8. Custom Middleware"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 14,
           "lines": [
-            "9. MVC/Razor Pages/Minimal APIs"
-          ],
-          "text": "9. MVC/Razor Pages/Minimal APIs"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "   9. MVC/Razor Pages/Minimal APIs",
             "Bonus Points:"
           ],
-          "text": "Bonus Points:"
+          "text": "   9. MVC/Razor Pages/Minimal APIs\nBonus Points:"
         },
         {
           "type": "list_item",
@@ -5269,17 +4870,10 @@
           "type": "list_item",
           "page": 14,
           "lines": [
-            "   • Middleware Ordering Flexibility: Understand the reasons behind the recommended order,"
-          ],
-          "text": "   • Middleware Ordering Flexibility: Understand the reasons behind the recommended order,"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "   • Middleware Ordering Flexibility: Understand the reasons behind the recommended order,",
             "      but also know when to deviate from it based on your application's specific requirements."
           ],
-          "text": "      but also know when to deviate from it based on your application's specific requirements."
+          "text": "   • Middleware Ordering Flexibility: Understand the reasons behind the recommended order,\n      but also know when to deviate from it based on your application's specific requirements."
         }
       ],
       "char_count_raw": 870,

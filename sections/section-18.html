@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Section 18: EntityFrameworkCore — ASP.NET Core Masterclass</title>
+  <title>Section 18: EntityFrameworkCore &mdash; ASP.NET Core Masterclass</title>
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
   <link rel="alternate icon" href="../favicon.ico">
   <link rel="stylesheet" href="../assets/css/docs.css">
@@ -16,7 +16,9 @@
   <!-- Top Navigation Header -->
   <header class="top-header" role="banner">
     <div class="header-left">
-      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">☰</button>
+      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
       <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
         <span class="sidebar-toggle-text">« Collapse</span>
@@ -41,7 +43,9 @@
       </a>
 
       <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
-        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
         <span class="search-text">Search topics, syntax, concepts...</span>
         <kbd class="kbd-shortcut">Ctrl+K</kbd>
       </button>
@@ -367,15 +371,6 @@
         <span>» Expand Sidebar</span>
       </button>
 
-      <!-- Breadcrumbs -->
-      <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
-        <a href="../index.html">Course Index</a>
-        <span class="crumb-sep" aria-hidden="true">/</span>
-        <span>Module 5</span>
-        <span class="crumb-sep" aria-hidden="true">/</span>
-        <span style="color: var(--text-main); font-weight: 600;">Section 18</span>
-      </nav>
-
       <!-- Section Banner Header -->
       <header class="section-banner">
         <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
@@ -411,242 +406,176 @@ rather than raw SQL queries. This abstraction makes your code more maintainable,
 productive.</p>
 
 <h2 id="how-ef-core-works">How EF Core Works</h2>
-<ul>
-  <li>1. Entities and DbContext: You define classes that represent your database tables (entities)</li>
-</ul>
-<p>and a DbContext class that acts as a bridge between your entities and the database.</p>
-<ul>
-  <li>2. Mapping: EF Core handles the mapping between your entities and the database tables,</li>
-</ul>
-<p>including column names, data types, relationships, and constraints.</p>
-<ul>
-  <li>3. Querying and Saving: You use LINQ (Language Integrated Query) to query your data and</li>
-</ul>
-<p>interact with your entities. EF Core translates your LINQ queries into efficient SQL
+<ol>
+  <li>Entities and <code>DbContext</code>: You define classes that represent your database tables (entities)
+      and a <code>DbContext</code> class that acts as a bridge between your entities and the database.</li>
+  <li>Mapping: EF Core handles the mapping between your entities and the database tables,
+      including column names, data types, relationships, and constraints.</li>
+  <li>Querying and Saving: You use LINQ (Language Integrated Query) to query your data and
+      interact with your entities. EF Core translates your LINQ queries into efficient SQL
       statements and executes them against the database. You can also add, update, and delete
-      entities, and EF Core takes care of persisting these changes to the database.</p>
+      entities, and EF Core takes care of persisting these changes to the database.</li>
+</ol>
 
 <h2 id="pros-of-ef-core">Pros of EF Core</h2>
 <ul>
-  <li>• Developer Productivity: Reduced boilerplate code for database interactions, allowing you to</li>
+  <li>Developer Productivity: Reduced boilerplate code for database interactions, allowing you to
+      focus on your application&#39;s business logic.</li>
+  <li>Object-Oriented Approach: Work with data using familiar object-oriented concepts, making
+      your code more intuitive and easier to reason about.</li>
+  <li>Strongly Typed Queries: LINQ provides compile-time type safety for your queries, reducing
+      the risk of runtime errors.</li>
+  <li>Cross-Platform: EF Core is cross-platform, supporting various database providers (SQL
+      Server, SQLite, PostgreSQL, MySQL, etc.).</li>
+  <li>Automatic Change Tracking: EF Core keeps track of changes made to entities, making it easy
+      to persist those changes to the database.</li>
+  <li>Migrations: The migrations feature simplifies database schema evolution, allowing you to
+      incrementally update your database as your application&#39;s model changes.</li>
 </ul>
-<p>focus on your application&#39;s business logic.</p>
-<ul>
-  <li>• Object-Oriented Approach: Work with data using familiar object-oriented concepts, making</li>
-</ul>
-<p>your code more intuitive and easier to reason about.</p>
-<ul>
-  <li>• Strongly Typed Queries: LINQ provides compile-time type safety for your queries, reducing</li>
-</ul>
-<p>the risk of runtime errors.</p>
-<ul>
-  <li>• Cross-Platform: EF Core is cross-platform, supporting various database providers (SQL</li>
-</ul>
-<p>Server, SQLite, PostgreSQL, MySQL, etc.).</p>
-<ul>
-  <li>• Automatic Change Tracking: EF Core keeps track of changes made to entities, making it easy</li>
-</ul>
-<p>to persist those changes to the database.</p>
-<ul>
-  <li>• Migrations: The migrations feature simplifies database schema evolution, allowing you to</li>
-</ul>
-<p>incrementally update your database as your application&#39;s model changes.</p>
 
 <h2 id="cons-of-ef-core">Cons of EF Core</h2>
 <ul>
-  <li>• Abstraction Overhead: The abstraction layer introduced by EF Core can sometimes lead to</li>
-</ul>
-<p>less optimized SQL queries compared to hand-written SQL. However, you can often mitigate
+  <li>Abstraction Overhead: The abstraction layer introduced by EF Core can sometimes lead to
+      less optimized SQL queries compared to hand-written SQL. However, you can often mitigate
       this by understanding EF Core&#39;s behavior and using techniques like raw SQL queries or stored
-      procedures when necessary.</p>
-<ul>
-  <li>• Learning Curve: While EF Core simplifies many aspects of data access, there is still a learning</li>
+      procedures when necessary.</li>
+  <li>Learning Curve: While EF Core simplifies many aspects of data access, there is still a learning
+      curve to understand its concepts and best practices.</li>
 </ul>
-<p>curve to understand its concepts and best practices.</p>
 
 <h2 id="nuget-packages-for-ef-core">NuGet Packages for EF Core</h2>
 <ul>
-  <li>• Microsoft.EntityFrameworkCore: The core package containing the essential functionality of</li>
+  <li>Microsoft.EntityFrameworkCore: The core package containing the essential functionality of
+      EF Core.</li>
+  <li>Microsoft.EntityFrameworkCore.SqlServer: Database provider for SQL Server.</li>
+  <li>Microsoft.EntityFrameworkCore.Sqlite: Database provider for SQLite.</li>
+  <li>Microsoft.EntityFrameworkCore.InMemory: An in-memory database provider, primarily
+      used for testing.</li>
+  <li>Microsoft.EntityFrameworkCore.Design: Tools for working with migrations and scaffolding.</li>
+  <li>Microsoft.EntityFrameworkCore.Tools: The dotnet ef command-line tools for managing
+      migrations and database operations.</li>
+  <li>Other Providers: There are also database providers for PostgreSQL, MySQL, and other
+      databases.</li>
 </ul>
-<p>EF Core.</p>
-<ul>
-  <li>• Microsoft.EntityFrameworkCore.SqlServer: Database provider for SQL Server.</li>
-  <li>• Microsoft.EntityFrameworkCore.Sqlite: Database provider for SQLite.</li>
-  <li>• Microsoft.EntityFrameworkCore.InMemory: An in-memory database provider, primarily</li>
-</ul>
-<p>used for testing.</p>
-<ul>
-  <li>• Microsoft.EntityFrameworkCore.Design: Tools for working with migrations and scaffolding.</li>
-  <li>• Microsoft.EntityFrameworkCore.Tools: The dotnet ef command-line tools for managing</li>
-</ul>
-<p>migrations and database operations.</p>
-<ul>
-  <li>• Other Providers: There are also database providers for PostgreSQL, MySQL, and other</li>
-</ul>
-<p>databases.</p>
 
 <h2 id="choosing-a-database-provider">Choosing a Database Provider</h2>
 <p>The choice of database provider depends on your project&#39;s requirements:</p>
 <ul>
-  <li>• SQL Server: A popular choice for enterprise applications with robust features and scalability.</li>
-  <li>• SQLite: A lightweight, file-based database suitable for small to medium-sized applications or</li>
-</ul>
-<p>embedded scenarios.</p>
-<ul>
-  <li>• PostgreSQL: A powerful open-source relational database known for its extensibility and</li>
-</ul>
-<p>standards compliance.</p>
-<ul>
-  <li>• MySQL: Another open-source relational database popular for web applications.</li>
-  <li>• InMemory: Ideal for testing and scenarios where you don&#39;t need data persistence.</li>
+  <li>SQL Server: A popular choice for enterprise applications with robust features and scalability.</li>
+  <li>SQLite: A lightweight, file-based database suitable for small to medium-sized applications or
+      embedded scenarios.</li>
+  <li>PostgreSQL: A powerful open-source relational database known for its extensibility and
+      standards compliance.</li>
+  <li>MySQL: Another open-source relational database popular for web applications.</li>
+  <li>InMemory: Ideal for testing and scenarios where you don&#39;t need data persistence.</li>
 </ul>
 
 <h2 id="notes">Notes</h2>
 <ul>
-  <li>• ORM: EF Core is an Object-Relational Mapper that simplifies database interaction.</li>
-  <li>• Core Concepts: Entities (DbContext), mapping, querying with LINQ, change tracking,</li>
+  <li>ORM: EF Core is an Object-Relational Mapper that simplifies database interaction.</li>
+  <li>Core Concepts: Entities (<code>DbContext</code>), mapping, querying with LINQ, change tracking,
+      migrations.</li>
+  <li>Pros: Productivity, object-oriented, type safety, cross-platform, migrations.</li>
+  <li>Cons: Potential for abstraction overhead, learning curve.</li>
+  <li>Packages: The core package, database providers, design-time tools.</li>
+  <li>Choose the Right Database: Consider factors like scalability, features, licensing, and your
+      team&#39;s expertise when selecting a database and provider.</li>
 </ul>
-<p>migrations.</p>
-<ul>
-  <li>• Pros: Productivity, object-oriented, type safety, cross-platform, migrations.</li>
-  <li>• Cons: Potential for abstraction overhead, learning curve.</li>
-  <li>• Packages: The core package, database providers, design-time tools.</li>
-  <li>• Choose the Right Database: Consider factors like scalability, features, licensing, and your</li>
-</ul>
-<p>team&#39;s expertise when selecting a database and provider.
-EF Core Architecture: A Three-Layer Approach</p>
+<p>EF Core Architecture: A Three-Layer Approach</p>
 <ul>
   <li>1. Conceptual Model (Entity Model):</li>
-  <li>o This is your C# code representation of the database schema. You define entity</li>
-</ul>
-<p>classes that represent your database tables, along with their properties (columns)
-           and relationships between entities.</p>
-<ul>
-  <li>o The entity classes form the heart of your domain model, reflecting the real-world</li>
-</ul>
-<p>concepts your application deals with.</p>
-<ul>
+  <li>This is your C# code representation of the database schema. You define entity
+           classes that represent your database tables, along with their properties (columns)
+           and relationships between entities.</li>
+  <li>The entity classes form the heart of your domain model, reflecting the real-world
+           concepts your application deals with.</li>
   <li>2. Mapping:</li>
-  <li>o EF Core handles the mapping between your entity classes and the underlying</li>
-</ul>
-<p>database schema. This includes mapping property names to column names, data
-           types, relationships (foreign keys), and constraints.</p>
-<ul>
-  <li>o You can customize this mapping using fluent APIs or data annotations in your entity</li>
-</ul>
-<p>classes.</p>
-<ul>
+  <li>EF Core handles the mapping between your entity classes and the underlying
+           database schema. This includes mapping property names to column names, data
+           types, relationships (foreign keys), and constraints.</li>
+  <li>You can customize this mapping using fluent APIs or data annotations in your entity
+           classes.</li>
   <li>3. Storage Model (Database Schema):</li>
-  <li>o This is the actual structure of your database (tables, columns, relationships). EF Core</li>
+  <li>This is the actual structure of your database (tables, columns, relationships). EF Core
+           can either generate the database schema based on your entity model or work with
+           an existing database.</li>
 </ul>
-<p>can either generate the database schema based on your entity model or work with
-           an existing database.
-How EF Core Works: A Simplified View</p>
+<p>How EF Core Works: A Simplified View</p>
 <ul>
-  <li>1. DbContext:</li>
-  <li>o You create a DbContext class that acts as a session with the database. This class is</li>
-</ul>
-<p>responsible for tracking entity changes, managing transactions, and translating LINQ
-           queries into SQL commands.</p>
-<ul>
-  <li>o Think of it as a bridge between your C# code and the database.</li>
+  <li>1. <code>DbContext</code>:</li>
+  <li>You create a <code>DbContext</code> class that acts as a session with the database. This class is
+           responsible for tracking entity changes, managing transactions, and translating LINQ
+           queries into SQL commands.</li>
+  <li>Think of it as a bridge between your C# code and the database.</li>
   <li>2. Querying:</li>
-  <li>o You write LINQ queries against your DbContext to fetch data from the database.</li>
-  <li>o EF Core translates these LINQ queries into optimized SQL queries and executes them</li>
-</ul>
-<p>against the database.</p>
-<ul>
-  <li>o It then materializes the results into your entity objects, which you can work with in</li>
-</ul>
-<p>your application.</p>
-<ul>
+  <li>You write LINQ queries against your <code>DbContext</code> to fetch data from the database.</li>
+  <li>EF Core translates these LINQ queries into optimized SQL queries and executes them
+           against the database.</li>
+  <li>It then materializes the results into your entity objects, which you can work with in
+           your application.</li>
   <li>3. Saving Changes:</li>
-  <li>o When you modify entities in your code, EF Core tracks those changes.</li>
-  <li>o When you call SaveChanges() on your DbContext, EF Core generates SQL commands</li>
+  <li>When you modify entities in your code, EF Core tracks those changes.</li>
+  <li>When you call SaveChanges() on your <code>DbContext</code>, EF Core generates SQL commands
+           to update the database based on the tracked changes.</li>
+  <li>This includes inserts, updates, and deletes to keep your database synchronized with
+           your entity objects.</li>
 </ul>
-<p>to update the database based on the tracked changes.</p>
-<ul>
-  <li>o This includes inserts, updates, and deletes to keep your database synchronized with</li>
-</ul>
-<p>your entity objects.
-EF Core Approaches: Which One to Choose?</p>
+<p>EF Core Approaches: Which One to Choose?</p>
 <ul>
   <li>1. Code First:</li>
-  <li>o You start by defining your entity classes, and EF Core creates the database schema</li>
-</ul>
-<p>based on those classes.</p>
-<ul>
-  <li>o Use this approach when you are starting from scratch or have full control over your</li>
-</ul>
-<p>database schema.</p>
-<ul>
-  <li>o It&#39;s flexible and well-suited for rapid development.</li>
+  <li>You start by defining your entity classes, and EF Core creates the database schema
+           based on those classes.</li>
+  <li>Use this approach when you are starting from scratch or have full control over your
+           database schema.</li>
+  <li>It&#39;s flexible and well-suited for rapid development.</li>
   <li>2. Database First:</li>
-  <li>o You start with an existing database, and EF Core generates entity classes based on</li>
-</ul>
-<p>the schema.</p>
-<ul>
-  <li>o Use this approach when you have a legacy database that you need to integrate with.</li>
-  <li>o It can save time initially but may require manual adjustments to the generated code.</li>
+  <li>You start with an existing database, and EF Core generates entity classes based on
+           the schema.</li>
+  <li>Use this approach when you have a legacy database that you need to integrate with.</li>
+  <li>It can save time initially but may require manual adjustments to the generated code.</li>
   <li>3. Model First (Not in EF Core):</li>
-  <li>o This approach involves designing a visual model (EDMX) of your database schema,</li>
+  <li>This approach involves designing a visual model (EDMX) of your database schema,
+           and EF generates the code from the model.</li>
+  <li>While it was available in earlier versions of Entity Framework, it&#39;s not supported in
+           EF Core.</li>
 </ul>
-<p>and EF generates the code from the model.</p>
-<ul>
-  <li>o While it was available in earlier versions of Entity Framework, it&#39;s not supported in</li>
-</ul>
-<p>EF Core.</p>
 
 <h2 id="notes-1">Notes</h2>
 <ul>
-  <li>• ORM: EF Core is an Object-Relational Mapper, bridging the gap between your code and the</li>
+  <li>ORM: EF Core is an Object-Relational Mapper, bridging the gap between your code and the
+      database.</li>
+  <li>Key Components: <code>DbContext</code>, entity classes, LINQ queries, SaveChanges().</li>
+  <li>Approaches: Choose between Code First and Database First based on your project&#39;s starting
+      point and requirements.</li>
+  <li>Benefits: Increased productivity, type safety, simplified data access, and cross-platform
+      compatibility.</li>
 </ul>
-<p>database.</p>
-<ul>
-  <li>• Key Components: DbContext, entity classes, LINQ queries, SaveChanges().</li>
-  <li>• Approaches: Choose between Code First and Database First based on your project&#39;s starting</li>
-</ul>
-<p>point and requirements.</p>
-<ul>
-  <li>• Benefits: Increased productivity, type safety, simplified data access, and cross-platform</li>
-</ul>
-<p>compatibility.</p>
 
 <h2 id="dbcontext">DbContext</h2>
-<p>In EF Core, the DbContext class serves as a central hub for your database interaction. Think of it as a
+<p>In EF Core, the <code>DbContext</code> class serves as a central hub for your database interaction. Think of it as a
 session with your database. It&#39;s responsible for:</p>
-<ul>
-  <li>1. Connecting to the Database: The DbContext establishes the connection to your database</li>
-</ul>
-<p>using the connection string you provide in your configuration.</p>
-<ul>
-  <li>2. Managing Entities: The DbContext tracks changes made to entity instances, manages their</li>
-</ul>
-<p>lifecycle (adding, deleting, updating), and coordinates the persistence of those changes back
-      to the database.</p>
-<ul>
-  <li>3. Querying Data: You use LINQ (Language-Integrated Query) to formulate queries against your</li>
-</ul>
-<p>entities through the DbContext. EF Core then translates these queries into SQL statements,
-      executes them against the database, and materializes the results into your entity objects.</p>
-<ul>
-  <li>4. Change Tracking: EF Core automatically tracks changes you make to your entities in</li>
-</ul>
-<p>memory. When you call SaveChanges(), EF Core detects these changes and generates the
-      appropriate SQL commands (INSERT, UPDATE, DELETE) to persist them to the database.
-DbSet: Your Entity Collection
-DbSet&lt;TEntity&gt; represents a collection of a specific entity type within your DbContext. It exposes
+<ol>
+  <li>Connecting to the Database: The <code>DbContext</code> establishes the connection to your database
+      using the connection string you provide in your configuration.</li>
+  <li>Managing Entities: The <code>DbContext</code> tracks changes made to entity instances, manages their
+      lifecycle (adding, deleting, updating), and coordinates the persistence of those changes back
+      to the database.</li>
+  <li>Querying Data: You use LINQ (Language-Integrated Query) to formulate queries against your
+      entities through the <code>DbContext</code>. EF Core then translates these queries into SQL statements,
+      executes them against the database, and materializes the results into your entity objects.</li>
+  <li>Change Tracking: EF Core automatically tracks changes you make to your entities in
+      memory. When you call SaveChanges(), EF Core detects these changes and generates the
+      appropriate SQL commands (INSERT, UPDATE, DELETE) to persist them to the database.</li>
+</ol>
+<p>DbSet: Your Entity Collection
+DbSet&lt;TEntity&gt; represents a collection of a specific entity type within your <code>DbContext</code>. It exposes
 methods for querying, adding, updating, and deleting entities of that type.</p>
 <ul>
-  <li>• Mapping: Each DbSet property in your DbContext is mapped to a corresponding table in</li>
+  <li>Mapping: Each DbSet property in your <code>DbContext</code> is mapped to a corresponding table in
+      your database. EF Core takes care of this mapping based on conventions or explicit
+      configurations you provide.</li>
+  <li>Usage: You interact with the database through your DbSet properties. For example,</li>
 </ul>
-<p>your database. EF Core takes care of this mapping based on conventions or explicit
-      configurations you provide.</p>
-<ul>
-  <li>• Usage: You interact with the database through your DbSet properties. For example,</li>
-</ul>
-<p>context.Persons.Add(newPerson); would add a new Person entity to the database.
-Code Example: PersonsDbContext</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -656,7 +585,9 @@ Code Example: PersonsDbContext</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">// PersonsDbContext.cs
+      <pre><code class="language-csharp">context.Persons.Add(newPerson); would add a new Person entity to the database.
+Code Example: PersonsDbContext
+// PersonsDbContext.cs
 using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
@@ -668,82 +599,62 @@ namespace Entities
    public DbSet&lt;Country&gt; Countries { get; set; }
    public DbSet&lt;Person&gt; Persons { get; set; }
    // OnModelCreating is used to customize your model mappings, but for this example we won&#39;t
-}
-}</code></pre>
-    </div>
-  <p>change anything.</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">protected override void OnModelCreating(ModelBuilder modelBuilder)
+change anything.
+   protected override void OnModelCreating(ModelBuilder modelBuilder)
    {
      base.OnModelCreating(modelBuilder);
      modelBuilder.Entity&lt;Country&gt;().ToTable(&quot;Countries&quot;);
      modelBuilder.Entity&lt;Person&gt;().ToTable(&quot;Persons&quot;);
-   }</code></pre>
+   }
+  }
+}
+In this example:</code></pre>
     </div>
-  <p>In this example:</p>
-<ul>
-  <li>• PersonsDbContext derives from DbContext.</li>
-  <li>• Countries and Persons are DbSet properties representing the Country and Person entities</li>
+  <ul>
+  <li>PersonsDbContext derives from <code>DbContext</code>.</li>
 </ul>
-<p>respectively.</p>
 <ul>
-  <li>• OnModelCreating is overridden to customize the mapping between your entities and</li>
+  <li>Countries and Persons are DbSet properties representing the Country and Person entities
+      respectively.</li>
+  <li>OnModelCreating is overridden to customize the mapping between your entities and
+      database tables (though we aren&#39;t customizing anything in this case).</li>
 </ul>
-<p>database tables (though we aren&#39;t customizing anything in this case).</p>
 
 <h2 id="notes-2">Notes</h2>
 <ul>
-  <li>• DbContext:</li>
-  <li>o Represents a session with your database.</li>
-  <li>o Handles entity management, change tracking, querying, and saving changes.</li>
-  <li>o Often injected as a scoped service in your ASP.NET Core application.</li>
-  <li>• DbSet:</li>
-  <li>o Represents a collection of a specific entity type.</li>
-  <li>o Provides methods for querying, adding, updating, and deleting entities.</li>
-  <li>o Each DbSet is mapped to a corresponding table in your database.</li>
+  <li><code>DbContext</code>:</li>
+  <li>Represents a session with your database.</li>
+  <li>Handles entity management, change tracking, querying, and saving changes.</li>
+  <li>Often injected as a scoped service in your ASP.NET Core application.</li>
+  <li>DbSet:</li>
+  <li>Represents a collection of a specific entity type.</li>
+  <li>Provides methods for querying, adding, updating, and deleting entities.</li>
+  <li>Each DbSet is mapped to a corresponding table in your database.</li>
 </ul>
 
 <h2 id="important-considerations">Important Considerations</h2>
 <ul>
-  <li>• Entity Classes: Your entity classes define the shape of your data and should align with your</li>
+  <li>Entity Classes: Your entity classes define the shape of your data and should align with your
+      domain model.</li>
+  <li>Data Annotations and Fluent API: Use these techniques to configure the mapping between
+      your entities and database tables.</li>
+  <li>Relationships: EF Core supports relationships between entities (one-to-one, one-to-many,
+      many-to-many), and you can define them using navigation properties or fluent API
+      configuration.</li>
+  <li>Connection String: Ensure you provide the correct connection string in your <code>appsettings.json</code>
+      (or environment variables) so EF Core knows how to connect to your database.</li>
 </ul>
-<p>domain model.</p>
-<ul>
-  <li>• Data Annotations and Fluent API: Use these techniques to configure the mapping between</li>
-</ul>
-<p>your entities and database tables.</p>
-<ul>
-  <li>• Relationships: EF Core supports relationships between entities (one-to-one, one-to-many,</li>
-</ul>
-<p>many-to-many), and you can define them using navigation properties or fluent API
-      configuration.</p>
-<ul>
-  <li>• Connection String: Ensure you provide the correct connection string in your appsettings.json</li>
-</ul>
-<p>(or environment variables) so EF Core knows how to connect to your database.</p>
 
 <h2 id="connection-strings">Connection Strings</h2>
 <p>In the world of databases, a connection string is essentially the address your application uses to
 locate and connect to your database server. It contains vital information like:</p>
 <ul>
-  <li>• Data Source (Server): The name or IP address of the database server.</li>
-  <li>• Initial Catalog (Database Name): The specific database on the server you want to connect</li>
-</ul>
-<p>to.</p>
-<ul>
-  <li>• Credentials (Optional): If your database requires authentication, you&#39;ll include the username</li>
-</ul>
-<p>and password.</p>
-<ul>
-  <li>• Additional Settings: Options like connection timeout, encryption settings, and more.</li>
+  <li>Data Source (Server): The name or IP address of the database server.</li>
+  <li>Initial Catalog (Database Name): The specific database on the server you want to connect
+      to.</li>
+  <li>Credentials (Optional): If your database requires authentication, you&#39;ll include the username
+      and password.</li>
+  <li>Additional Settings: Options like connection timeout, encryption settings, and more.</li>
 </ul>
 
 <h2 id="sql-server-connection-string-format-example">SQL Server Connection String Format (Example)</h2>
@@ -752,57 +663,28 @@ Security=True;Connect
 Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFa
 ilover=False</p>
 <ul>
-  <li>• Data Source=(localdb)\MSSQLLocalDB: Specifies the server name. In this case, it&#39;s using the</li>
+  <li>Data Source=(localdb)\MSSQLLocalDB: Specifies the server name. In this case, it&#39;s using the
+      local SQL Server Express LocalDB instance.</li>
+  <li>Initial Catalog=PersonsDatabase: Indicates that the database to connect to is named
+      &quot;PersonsDatabase.&quot;</li>
+  <li>Integrated Security=True: Uses Windows authentication (the application&#39;s identity) to
+      connect to the database.</li>
+  <li>Connect Timeout=30: Sets the maximum time (in seconds) to wait for a connection to be
+      established.</li>
+  <li>Encrypt=False, TrustServerCertificate=False: Options related to encryption and certificate
+      validation (can be set to true for production environments).</li>
+  <li>ApplicationIntent=ReadWrite: Specifies the intended use of the connection (read/write in
+      this case).</li>
+  <li>MultiSubnetFailover=False: Relates to high availability scenarios (not relevant for most basic
+      setups).</li>
 </ul>
-<p>local SQL Server Express LocalDB instance.</p>
+<p>Storing Connection Strings in ASP.NET Core</p>
 <ul>
-  <li>• Initial Catalog=PersonsDatabase: Indicates that the database to connect to is named</li>
+  <li>1. <code>appsettings.json</code> (Recommended):</li>
+  <li>The preferred location for storing your connection string (and other configuration
+           settings).</li>
+  <li>It&#39;s organized by sections (like &quot;ConnectionStrings&quot;):</li>
 </ul>
-<p>&quot;PersonsDatabase.&quot;</p>
-<ul>
-  <li>• Integrated Security=True: Uses Windows authentication (the application&#39;s identity) to</li>
-</ul>
-<p>connect to the database.</p>
-<ul>
-  <li>• Connect Timeout=30: Sets the maximum time (in seconds) to wait for a connection to be</li>
-</ul>
-<p>established.</p>
-<ul>
-  <li>• Encrypt=False, TrustServerCertificate=False: Options related to encryption and certificate</li>
-</ul>
-<p>validation (can be set to true for production environments).</p>
-<ul>
-  <li>• ApplicationIntent=ReadWrite: Specifies the intended use of the connection (read/write in</li>
-</ul>
-<p>this case).</p>
-<ul>
-  <li>• MultiSubnetFailover=False: Relates to high availability scenarios (not relevant for most basic</li>
-</ul>
-<p>setups).
-Storing Connection Strings in ASP.NET Core</p>
-<ul>
-  <li>1. appsettings.json (Recommended):</li>
-  <li>o The preferred location for storing your connection string (and other configuration</li>
-</ul>
-<p>settings).</p>
-<ul>
-  <li>o It&#39;s organized by sections (like &quot;ConnectionStrings&quot;):</li>
-</ul>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">JSON</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-json">{
- &quot;ConnectionStrings&quot;: {
-}
-}</code></pre>
-    </div>
-  <p>&quot;DefaultConnection&quot;: &quot;...&quot; // Your connection string here</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -812,24 +694,25 @@ Storing Connection Strings in ASP.NET Core</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp"></code></pre>
+      <pre><code class="language-csharp">{
+ &quot;ConnectionStrings&quot;: {
+  &quot;DefaultConnection&quot;: &quot;...&quot; // Your connection string here
+ }
+}
+   2. Environment Variables:</code></pre>
     </div>
-  <p>2. Environment Variables:</p>
-<ul>
-  <li>o More secure for sensitive information, as environment variables are not stored in</li>
+  <ul>
+  <li>More secure for sensitive information, as environment variables are not stored in</li>
 </ul>
 <p>code.</p>
 <ul>
-  <li>o Use the prefix ConnectionStrings__ for your connection string environment variable:</li>
-</ul>
-
-<h2 id="bash">Bash</h2>
-<p>set ASPNETCORE_ConnectionStrings__DefaultConnection=&quot;...&quot; // In Command Prompt
-$env:ASPNETCORE_ConnectionStrings__DefaultConnection = &quot;...&quot; // In PowerShell</p>
-<ul>
+  <li>Use the prefix ConnectionStrings__ for your connection string environment variable:
+Bash
+set ASPNETCORE_ConnectionStrings__DefaultConnection=&quot;...&quot; // In Command Prompt
+$env:ASPNETCORE_ConnectionStrings__DefaultConnection = &quot;...&quot; // In PowerShell</li>
   <li>3. User Secrets (Development Only):</li>
-  <li>o Best for keeping sensitive information out of your source code during development.</li>
-  <li>o Use the dotnet user-secrets commands to manage them.</li>
+  <li>Best for keeping sensitive information out of your source code during development.</li>
+  <li>Use the dotnet user-secrets commands to manage them.</li>
 </ul>
 
 <h2 id="injecting-and-using-the-connection-string-in-ef-core">Injecting and Using the Connection String in EF Core</h2>
@@ -847,38 +730,30 @@ builder.Services.AddDbContext&lt;PersonsDbContext&gt;(options =&gt; {
   options.UseSqlServer(builder.Configuration.GetConnectionString(&quot;DefaultConnection&quot;));
 });</code></pre>
     </div>
-  <p>• AddDbContext&lt;PersonsDbContext&gt;(): Registers your DbContext with the DI container and
-      configures it.</p>
-<ul>
-  <li>• options.UseSqlServer(...): Specifies that you&#39;re using SQL Server and provides the</li>
+  <ul>
+  <li>AddDbContext&lt;PersonsDbContext&gt;(): Registers your <code>DbContext</code> with the DI container and</li>
 </ul>
-<p>connection string.</p>
+<p>configures it.</p>
 <ul>
-  <li>• builder.Configuration.GetConnectionString(&quot;DefaultConnection&quot;): Retrieves the</li>
+  <li>ptions.UseSqlServer(...): Specifies that you&#39;re using SQL Server and provides the
+      connection string.</li>
+  <li>builder.Configuration.GetConnectionString(&quot;DefaultConnection&quot;): Retrieves the
+      connection string from the &quot;ConnectionStrings:DefaultConnection&quot; key in the configuration.</li>
 </ul>
-<p>connection string from the &quot;ConnectionStrings:DefaultConnection&quot; key in the configuration.</p>
 
 <h2 id="best-practices">Best Practices</h2>
 <ul>
-  <li>• Separate Environments: Store different connection strings for development, staging, and</li>
+  <li>Separate Environments: Store different connection strings for development, staging, and
+      production environments (e.g., appsettings.Development.json, appsettings.Production.json).</li>
+  <li>Environment Variables in Production: Use environment variables to store your production
+      connection string for security.</li>
+  <li>User Secrets in Development: Use user secrets during development to keep sensitive data
+      out of source control.</li>
+  <li>Secure Storage: Consider using Azure Key Vault or other secret management solutions for
+      production environments.</li>
+  <li>Connection Resiliency: For production, implement connection resiliency strategies to handle
+      transient database errors.</li>
 </ul>
-<p>production environments (e.g., appsettings.Development.json, appsettings.Production.json).</p>
-<ul>
-  <li>• Environment Variables in Production: Use environment variables to store your production</li>
-</ul>
-<p>connection string for security.</p>
-<ul>
-  <li>• User Secrets in Development: Use user secrets during development to keep sensitive data</li>
-</ul>
-<p>out of source control.</p>
-<ul>
-  <li>• Secure Storage: Consider using Azure Key Vault or other secret management solutions for</li>
-</ul>
-<p>production environments.</p>
-<ul>
-  <li>• Connection Resiliency: For production, implement connection resiliency strategies to handle</li>
-</ul>
-<p>transient database errors.</p>
 
 <h2 id="seed-data-in-ef-core">Seed Data in EF Core</h2>
 <p>Seed data refers to the initial data that you populate your database with when it&#39;s created or when
@@ -887,36 +762,26 @@ environment, providing sample data to work with or establishing default values f
 
 <h2 id="purpose">Purpose</h2>
 <ul>
-  <li>• Initial Data: Sets up your database with meaningful data for development, testing, or</li>
-</ul>
-<p>demonstration purposes.</p>
-<ul>
-  <li>• Reference Data: Populates tables with lookup data (e.g., countries, states, categories).</li>
-  <li>• Default Values: Establishes default values for specific columns.</li>
+  <li>Initial Data: Sets up your database with meaningful data for development, testing, or
+      demonstration purposes.</li>
+  <li>Reference Data: Populates tables with lookup data (e.g., countries, states, categories).</li>
+  <li>Default Values: Establishes default values for specific columns.</li>
 </ul>
 
 <h2 id="how-seed-data-works-in-ef-core">How Seed Data Works in EF Core</h2>
 <ul>
-  <li>1. OnModelCreating Method: You define your seed data within the OnModelCreating method</li>
+  <li>1. OnModelCreating Method: You define your seed data within the OnModelCreating method
+      of your <code>DbContext</code> class. This method is called when EF Core builds your model.</li>
+  <li>2. HasData Method: EF Core provides the HasData method on the EntityTypeBuilder class,
+      which allows you to associate seed data with specific entities.</li>
+  <li>This method can be used with Code First or with Migrations (where the seed data is
+           automatically integrated into your migration scripts).</li>
+  <li>3. Migration Generation (Optional): If you&#39;re using migrations, EF Core will automatically
+      detect your seed data and generate the necessary SQL statements to insert the data into
+      your database when you apply the migration.</li>
+  <li>4. Direct Seeding (Optional): You can also choose to directly seed your database by calling
+      EnsureCreated on your <code>DbContext</code> or using custom code to insert the data.</li>
 </ul>
-<p>of your DbContext class. This method is called when EF Core builds your model.</p>
-<ul>
-  <li>2. HasData Method: EF Core provides the HasData method on the EntityTypeBuilder class,</li>
-</ul>
-<p>which allows you to associate seed data with specific entities.</p>
-<ul>
-  <li>o This method can be used with Code First or with Migrations (where the seed data is</li>
-</ul>
-<p>automatically integrated into your migration scripts).</p>
-<ul>
-  <li>3. Migration Generation (Optional): If you&#39;re using migrations, EF Core will automatically</li>
-</ul>
-<p>detect your seed data and generate the necessary SQL statements to insert the data into
-      your database when you apply the migration.</p>
-<ul>
-  <li>4. Direct Seeding (Optional): You can also choose to directly seed your database by calling</li>
-</ul>
-<p>EnsureCreated on your DbContext or using custom code to insert the data.</p>
 
 <h2 id="code-example">Code Example</h2>
 
@@ -947,95 +812,44 @@ namespace Entities
      modelBuilder.Entity&lt;Person&gt;().ToTable(&quot;Persons&quot;);
      // Seed Data for Countries
      string countriesJson = System.IO.File.ReadAllText(&quot;countries.json&quot;); // Read country data
-}
-}
-}</code></pre>
-    </div>
-  <p>List&lt;Country&gt; countries =
+     List&lt;Country&gt; countries =
 System.Text.Json.JsonSerializer.Deserialize&lt;List&lt;Country&gt;&gt;(countriesJson);
-     foreach (Country country in countries)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
-}</code></pre>
-    </div>
-  <p>modelBuilder.Entity&lt;Country&gt;().HasData(country); // Add each country as seed data</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">// Seed Data for Persons
-     string personsJson = System.IO.File.ReadAllText(&quot;persons.json&quot;); // Read person data</code></pre>
-    </div>
-  <p>List&lt;Person&gt; persons =
+     foreach (Country country in countries)
+     {
+      modelBuilder.Entity&lt;Country&gt;().HasData(country); // Add each country as seed data
+     }
+     // Seed Data for Persons
+     string personsJson = System.IO.File.ReadAllText(&quot;persons.json&quot;); // Read person data
+     List&lt;Person&gt; persons =
 System.Text.Json.JsonSerializer.Deserialize&lt;List&lt;Person&gt;&gt;(personsJson);
-     foreach (Person person in persons)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+     foreach (Person person in persons)
+     {
+      modelBuilder.Entity&lt;Person&gt;().HasData(person); // Add each person as seed data
+     }
+   }
+  }
 }</code></pre>
-    </div>
-  <p>modelBuilder.Entity&lt;Person&gt;().HasData(person); // Add each person as seed data</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp"></code></pre>
     </div>
   <p>In this code:</p>
 <ul>
-  <li>• Countries and persons are read from external json files and seeded to database using</li>
-</ul>
-<p>HasData.</p>
-<ul>
-  <li>• HasData takes object of the specified entity type as parameter.</li>
+  <li>Countries and persons are read from external json files and seeded to database using
+      HasData.</li>
+  <li>HasData takes object of the specified entity type as parameter.</li>
 </ul>
 
 <h2 id="best-practices-1">Best Practices</h2>
 <ul>
-  <li>• Separate Seed Data: Store seed data in separate files (e.g., JSON, CSV) to keep your</li>
+  <li>Separate Seed Data: Store seed data in separate files (e.g., JSON, CSV) to keep your
+      <code>DbContext</code> clean and maintainable.</li>
+  <li>Idempotent Seeds: Design your seed data so that it can be applied multiple times without
+      causing errors or duplicates.</li>
+  <li>Conditional Seeding: Consider using environment checks to apply different seed data based
+      on the environment (e.g., more comprehensive data for development).</li>
+  <li>Order of Seeding: If you have relationships between entities, ensure the correct seeding
+      order to avoid foreign key constraint violations.</li>
+  <li>Large Datasets: For very large datasets, consider using bulk insert mechanisms for
+      performance optimization.</li>
 </ul>
-<p>DbContext clean and maintainable.</p>
-<ul>
-  <li>• Idempotent Seeds: Design your seed data so that it can be applied multiple times without</li>
-</ul>
-<p>causing errors or duplicates.</p>
-<ul>
-  <li>• Conditional Seeding: Consider using environment checks to apply different seed data based</li>
-</ul>
-<p>on the environment (e.g., more comprehensive data for development).</p>
-<ul>
-  <li>• Order of Seeding: If you have relationships between entities, ensure the correct seeding</li>
-</ul>
-<p>order to avoid foreign key constraint violations.</p>
-<ul>
-  <li>• Large Datasets: For very large datasets, consider using bulk insert mechanisms for</li>
-</ul>
-<p>performance optimization.</p>
 
 <h2 id="code-first-migrations">Code First Migrations</h2>
 <p>Code First Migrations in EF Core provide a structured and automated way to manage changes to
@@ -1045,244 +859,176 @@ time.</p>
 
 <h2 id="purpose-1">Purpose</h2>
 <ul>
-  <li>• Track Changes: Migrations track the changes you make to your entity classes and generate</li>
-</ul>
-<p>migration scripts (C# code) that represent those changes.</p>
-<ul>
-  <li>• Version Control: Each migration has a unique version and can be tracked in source control,</li>
-</ul>
-<p>providing a clear history of your schema modifications.</p>
-<ul>
-  <li>• Apply Changes: You can use the dotnet ef command or the Package Manager Console to</li>
-</ul>
-<p>apply migrations to your database, updating the schema accordingly.</p>
-<ul>
-  <li>• Rollbacks: Migrations can be rolled back if needed, undoing previous schema changes.</li>
+  <li>Track Changes: Migrations track the changes you make to your entity classes and generate
+      migration scripts (C# code) that represent those changes.</li>
+  <li>Version Control: Each migration has a unique version and can be tracked in source control,
+      providing a clear history of your schema modifications.</li>
+  <li>Apply Changes: You can use the dotnet ef command or the Package Manager Console to
+      apply migrations to your database, updating the schema accordingly.</li>
+  <li>Rollbacks: Migrations can be rolled back if needed, undoing previous schema changes.</li>
 </ul>
 
 <h2 id="when-to-use-code-first-migrations">When to Use Code First Migrations</h2>
 <ul>
-  <li>• Code First Approach: Use migrations if you are following the Code First approach in EF Core,</li>
+  <li>Code First Approach: Use migrations if you are following the Code First approach in EF Core,
+      where you define your database model using C# classes and let EF Core create the database
+      based on that model.</li>
+  <li>Evolving Schema: Whenever you make changes to your entity classes (add properties,
+      rename tables, modify relationships), you&#39;ll use migrations to apply those changes to your
+      database.</li>
+  <li>Team Environments: Migrations are essential for team collaboration, as they allow everyone
+      to keep their databases in sync with the evolving codebase.</li>
 </ul>
-<p>where you define your database model using C# classes and let EF Core create the database
-      based on that model.</p>
-<ul>
-  <li>• Evolving Schema: Whenever you make changes to your entity classes (add properties,</li>
-</ul>
-<p>rename tables, modify relationships), you&#39;ll use migrations to apply those changes to your
-      database.</p>
-<ul>
-  <li>• Team Environments: Migrations are essential for team collaboration, as they allow everyone</li>
-</ul>
-<p>to keep their databases in sync with the evolving codebase.</p>
 
 <h2 id="using-code-first-migrations-with-the-package-manager-console">Using Code First Migrations with the Package Manager Console</h2>
-<ul>
-  <li>1. Enable Migrations:</li>
-</ul>
-
-<h2 id="enable-migrations">Enable-Migrations</h2>
-<p>This command is usually only needed once to set up the migrations infrastructure in
-           your project.</p>
-<ul>
-  <li>2. Add a Migration:</li>
-</ul>
+<ol>
+  <li>Enable Migrations:
+           Enable-Migrations
+           This command is usually only needed once to set up the migrations infrastructure in
+           your project.</li>
+  <li>Add a Migration:</li>
+</ol>
 <p>Add-Migration &lt;MigrationName&gt;</p>
 <ul>
-  <li>o Replace &lt;MigrationName&gt; with a descriptive name for your migration (e.g.,</li>
+  <li>Replace &lt;MigrationName&gt; with a descriptive name for your migration (e.g.,
+           &quot;AddProductsTable&quot;).</li>
+  <li>EF Core will analyze your model changes and generate a migration file in the
+           Migrations folder. This file contains Up and Down methods to apply and revert the
+           changes, respectively.</li>
+  <li>3. View Migration Details:
+      Get-Migrations
+      Lists all the migrations in your project, their versions, and whether they have been applied to
+      the database.</li>
+  <li>4. Update the Database:
+      Update-Database
+      Applies any pending migrations to your database, bringing it up to date with your model.</li>
+  <li>5. Revert a Migration:
+      Update-Database –TargetMigration &lt;MigrationName&gt;
+      Rolls back the database to the specified migration.</li>
 </ul>
-<p>&quot;AddProductsTable&quot;).</p>
+<p>Important Considerations:</p>
 <ul>
-  <li>o EF Core will analyze your model changes and generate a migration file in the</li>
+  <li>Backup Your Database: Always make a backup before applying migrations, especially in
+      production environments.</li>
+  <li>Seed Data: If you need to seed data, include that logic in your migrations or create a
+      separate seeder class.</li>
+  <li>Complex Changes: For complex schema changes that can&#39;t be easily automated by
+      migrations, consider writing custom SQL scripts or using tools like the Entity Framework
+      Power Tools.</li>
+  <li>Version Control: Check in your migration files into source control so that the entire team can
+      track schema changes.</li>
+  <li>Naming Conventions: Use clear and descriptive names for your migrations to make it easier
+      to understand the history of your database schema.</li>
 </ul>
-<p>Migrations folder. This file contains Up and Down methods to apply and revert the
-           changes, respectively.</p>
-<ul>
-  <li>3. View Migration Details:</li>
-</ul>
-
-<h2 id="get-migrations">Get-Migrations</h2>
-<p>Lists all the migrations in your project, their versions, and whether they have been applied to
-      the database.</p>
-<ul>
-  <li>4. Update the Database:</li>
-</ul>
-
-<h2 id="update-database">Update-Database</h2>
-<p>Applies any pending migrations to your database, bringing it up to date with your model.</p>
-<ul>
-  <li>5. Revert a Migration:</li>
-</ul>
-<p>Update-Database –TargetMigration &lt;MigrationName&gt;
-      Rolls back the database to the specified migration.
-Important Considerations:</p>
-<ul>
-  <li>• Backup Your Database: Always make a backup before applying migrations, especially in</li>
-</ul>
-<p>production environments.</p>
-<ul>
-  <li>• Seed Data: If you need to seed data, include that logic in your migrations or create a</li>
-</ul>
-<p>separate seeder class.</p>
-<ul>
-  <li>• Complex Changes: For complex schema changes that can&#39;t be easily automated by</li>
-</ul>
-<p>migrations, consider writing custom SQL scripts or using tools like the Entity Framework
-      Power Tools.</p>
-<ul>
-  <li>• Version Control: Check in your migration files into source control so that the entire team can</li>
-</ul>
-<p>track schema changes.</p>
-<ul>
-  <li>• Naming Conventions: Use clear and descriptive names for your migrations to make it easier</li>
-</ul>
-<p>to understand the history of your database schema.</p>
 
 <h2 id="best-practices-2">Best Practices</h2>
 <ul>
-  <li>• Small, Focused Migrations: Create small, incremental migrations that focus on a single</li>
+  <li>Small, Focused Migrations: Create small, incremental migrations that focus on a single
+      feature or change. This makes them easier to understand, review, and potentially rollback if
+      needed.</li>
+  <li>Descriptive Names: Use clear and descriptive names for your migrations to reflect the
+      changes they contain (e.g., &quot;AddProductTable,&quot; &quot;RenameCustomerColumn&quot;).</li>
+  <li>Data Preservation: When possible, design your migrations in a way that preserves existing
+      data in the database. Avoid destructive changes like dropping tables or columns if you can
+      modify them instead.</li>
+  <li>Review Migrations: Always review the generated migration code before applying it to your
+      database, especially in production environments. Make sure the changes are what you
+      expect.</li>
+  <li>Automate in CI/CD: Integrate migration execution into your continuous integration and
+      deployment (CI/CD) pipeline to ensure that your database schema stays in sync with your
+      application code.</li>
 </ul>
-<p>feature or change. This makes them easier to understand, review, and potentially rollback if
-      needed.</p>
-<ul>
-  <li>• Descriptive Names: Use clear and descriptive names for your migrations to reflect the</li>
-</ul>
-<p>changes they contain (e.g., &quot;AddProductTable,&quot; &quot;RenameCustomerColumn&quot;).</p>
-<ul>
-  <li>• Data Preservation: When possible, design your migrations in a way that preserves existing</li>
-</ul>
-<p>data in the database. Avoid destructive changes like dropping tables or columns if you can
-      modify them instead.</p>
-<ul>
-  <li>• Review Migrations: Always review the generated migration code before applying it to your</li>
-</ul>
-<p>database, especially in production environments. Make sure the changes are what you
-      expect.</p>
-<ul>
-  <li>• Automate in CI/CD: Integrate migration execution into your continuous integration and</li>
-</ul>
-<p>deployment (CI/CD) pipeline to ensure that your database schema stays in sync with your
-      application code.</p>
 
 <h2 id="controller-actions">Controller Actions</h2>
 <ul>
-  <li>• Index (Read):</li>
-  <li>o Purpose: Displays a list of Person entities, optionally filtered and sorted.</li>
-  <li>o Key Steps:</li>
+  <li>Index (Read):</li>
+  <li>Purpose: Displays a list of Person entities, optionally filtered and sorted.</li>
+  <li>Key Steps:</li>
   <li>1. Retrieval: Gets filtered and sorted person data from the PersonsService.</li>
   <li>2. ViewBag Preparation:</li>
-</ul>
-<p>▪ Populates ViewBag with search field options (SearchFields), the
+  <li>Populates ViewBag with search field options (SearchFields), the
                       currently applied search filter (CurrentSearchBy,
                       CurrentSearchString), and sorting information (CurrentSortBy,
-                      CurrentSortOrder).</p>
-
-<h2 id="3-view-rendering-returns-the-index-view-passing-the-filtered-and-sorted">3. View Rendering: Returns the Index view, passing the filtered and sorted</h2>
-<p>person data as the model.</p>
-<ul>
-  <li>• Create (Create):</li>
-  <li>o Purpose: Handles both the display of the create form (GET) and the processing of</li>
-</ul>
-<p>the form submission (POST).</p>
-<ul>
-  <li>o Key Steps (GET):</li>
-</ul>
-
-<h2 id="1-country-list-retrieval-fetches-countries-from-countriesservice-and">1. Country List Retrieval: Fetches countries from CountriesService and</h2>
-<p>prepares a SelectList for the dropdown in the form.</p>
-<ul>
+                      CurrentSortOrder).</li>
+  <li>3. View Rendering: Returns the Index view, passing the filtered and sorted
+                 person data as the model.</li>
+  <li>Create (Create):</li>
+  <li>Purpose: Handles both the display of the create form (GET) and the processing of
+           the form submission (POST).</li>
+  <li>Key Steps (GET):</li>
+  <li>1. Country List Retrieval: Fetches countries from CountriesService and
+                 prepares a SelectList for the dropdown in the form.</li>
   <li>2. View Rendering: Returns the Create view.</li>
-  <li>o Key Steps (POST):</li>
-</ul>
-
-<h2 id="1-model-binding-binds-the-submitted-form-data-to-a-personaddrequest">1. Model Binding: Binds the submitted form data to a PersonAddRequest</h2>
-<p>object.</p>
-<ul>
+  <li>Key Steps (POST):</li>
+  <li>1. Model Binding: Binds the submitted form data to a PersonAddRequest
+                 object.</li>
   <li>2. Validation: Checks if the model state is valid (using data annotations).</li>
-  <li>3. Creation and Redirect (if valid): Calls _personsService.AddPerson to create</li>
+  <li>3. Creation and Redirect (if valid): Calls _personsService.AddPerson to create
+                 the new person and redirects to the Index action.</li>
+  <li>4. Error Handling (if invalid): Repopulates ViewBag with countries and error
+                 messages, then returns the Create view with the errors displayed.</li>
+  <li>Edit (Update):</li>
+  <li>Similar to the Create action, it handles both GET (displaying the edit form) and POST
+           (processing the form submission) requests.</li>
+  <li>Retrieves the person to edit from the database based on the personID route
+           parameter.</li>
+  <li>Populates the form with the existing person&#39;s data.</li>
+  <li>Validates the form submission, updates the person if valid, and redirects to Index.</li>
+  <li>Delete (Delete):</li>
+  <li>Similar to the Edit action, it also handles both GET and POST requests.</li>
+  <li>Retrieves the person to delete based on the personID route parameter.</li>
+  <li>Displays a confirmation view (GET) to the user.</li>
+  <li>If the user confirms, performs the deletion using _personsService.DeletePerson
+           (POST) and redirects to Index.</li>
 </ul>
-<p>the new person and redirects to the Index action.</p>
-<ul>
-  <li>4. Error Handling (if invalid): Repopulates ViewBag with countries and error</li>
-</ul>
-<p>messages, then returns the Create view with the errors displayed.</p>
-<ul>
-  <li>• Edit (Update):</li>
-  <li>o Similar to the Create action, it handles both GET (displaying the edit form) and POST</li>
-</ul>
-<p>(processing the form submission) requests.</p>
-<ul>
-  <li>o Retrieves the person to edit from the database based on the personID route</li>
-</ul>
-<p>parameter.</p>
-<ul>
-  <li>o Populates the form with the existing person&#39;s data.</li>
-  <li>o Validates the form submission, updates the person if valid, and redirects to Index.</li>
-  <li>• Delete (Delete):</li>
-  <li>o Similar to the Edit action, it also handles both GET and POST requests.</li>
-  <li>o Retrieves the person to delete based on the personID route parameter.</li>
-  <li>o Displays a confirmation view (GET) to the user.</li>
-  <li>o If the user confirms, performs the deletion using _personsService.DeletePerson</li>
-</ul>
-<p>(POST) and redirects to Index.</p>
 
 <h2 id="views">Views</h2>
 <ul>
-  <li>• Index.cshtml:</li>
-  <li>o Displays a table of persons with filtering, sorting, and links to edit/delete actions.</li>
-  <li>o Employs a partial view (_GridColumnHeader) to render sortable column headers.</li>
-  <li>o Utilizes tag helpers for form creation and link generation.</li>
-  <li>• Create.cshtml and Edit.cshtml:</li>
-  <li>o Render forms for creating/editing a person, using tag helpers (asp-for, aspvalidation</li>
-</ul>
-<p>-for, etc.) for model binding and validation.</p>
-<ul>
-  <li>o Includes a dropdown for country selection, populated from the ViewBag.Countries.</li>
-  <li>• Delete.cshtml:</li>
-  <li>o Displays a confirmation message and a form with a hidden field for PersonID.</li>
+  <li>Index.cshtml:</li>
+  <li>Displays a table of persons with filtering, sorting, and links to edit/delete actions.</li>
+  <li>Employs a partial view (_GridColumnHeader) to render sortable column headers.</li>
+  <li>Utilizes tag helpers for form creation and link generation.</li>
+  <li>Create.cshtml and Edit.cshtml:</li>
+  <li>Render forms for creating/editing a person, using tag helpers (asp-for, aspvalidation
+-for, etc.) for model binding and validation.</li>
+  <li>Includes a dropdown for country selection, populated from the ViewBag.Countries.</li>
+  <li>Delete.cshtml:</li>
+  <li>Displays a confirmation message and a form with a hidden field for PersonID.</li>
 </ul>
 
 <h2 id="enabling-client-side-validation">Enabling Client-Side Validation</h2>
 <ul>
-  <li>• Script Section: The @section scripts block in Create.cshtml and Edit.cshtml includes scripts</li>
+  <li>Script Section: The @section scripts block in Create.cshtml and Edit.cshtml includes scripts
+      for jQuery, jQuery Validate, and jQuery Unobtrusive Validation.</li>
+  <li>Data Annotations: The model classes (PersonAddRequest, PersonUpdateRequest) are
+      decorated with data annotation attributes (e.g., [Required], [EmailAddress]) which are used
+      by the client-side validation libraries to enforce the rules.</li>
 </ul>
-<p>for jQuery, jQuery Validate, and jQuery Unobtrusive Validation.</p>
-<ul>
-  <li>• Data Annotations: The model classes (PersonAddRequest, PersonUpdateRequest) are</li>
-</ul>
-<p>decorated with data annotation attributes (e.g., [Required], [EmailAddress]) which are used
-      by the client-side validation libraries to enforce the rules.</p>
 
 <h2 id="how-httppost-action-method-submission-works">How HttpPost Action Method Submission Works</h2>
-<ul>
-  <li>1. Form Submission: The user submits the form, triggering a POST request to the server.</li>
-  <li>2. Model Binding: ASP.NET Core&#39;s model binder extracts the data from the request and</li>
-</ul>
-<p>attempts to create an instance of the model specified in the action method parameter (e.g.,
-      PersonAddRequest).</p>
-<ul>
-  <li>3. Model Validation: The model binder runs the validation logic specified by data annotations</li>
-</ul>
-<p>and any custom validators.</p>
-<ul>
-  <li>4. Action Execution (If Valid): If ModelState.IsValid is true, the action method&#39;s logic executes</li>
-</ul>
-<p>(e.g., calling the _personsService.AddPerson method).</p>
-<ul>
-  <li>5. Result (If Invalid): If ModelState.IsValid is false, the action returns the same view, including</li>
-</ul>
-<p>error messages in ViewBag.Errors.</p>
+<ol>
+  <li>Form Submission: The user submits the form, triggering a POST request to the server.</li>
+  <li>Model Binding: ASP.NET Core&#39;s model binder extracts the data from the request and
+      attempts to create an instance of the model specified in the action method parameter (e.g.,
+      PersonAddRequest).</li>
+  <li>Model Validation: The model binder runs the validation logic specified by data annotations
+      and any custom validators.</li>
+  <li>Action Execution (If Valid): If ModelState.IsValid is true, the action method&#39;s logic executes
+      (e.g., calling the _personsService.AddPerson method).</li>
+  <li>Result (If Invalid): If ModelState.IsValid is false, the action returns the same view, including
+      error messages in ViewBag.Errors.</li>
+</ol>
 
 <h2 id="key-points-and-best-practices">Key Points and Best Practices</h2>
 <ul>
-  <li>• Strong Typing: Always prefer using strongly typed views and view models.</li>
-  <li>• Thin Controllers: Keep controller actions concise and delegate business logic to services.</li>
-  <li>• Dependency Injection: Inject services into your controllers for loose coupling.</li>
-  <li>• DTOs: Use DTOs to prevent overposting vulnerabilities.</li>
-  <li>• Validation: Implement both server-side and client-side validation.</li>
-  <li>• Error Handling: Handle exceptions gracefully and return appropriate status codes and error</li>
+  <li>Strong Typing: Always prefer using strongly typed views and view models.</li>
+  <li>Thin Controllers: Keep controller actions concise and delegate business logic to services.</li>
+  <li>Dependency Injection: Inject services into your controllers for loose coupling.</li>
+  <li>DTOs: Use DTOs to prevent overposting vulnerabilities.</li>
+  <li>Validation: Implement both server-side and client-side validation.</li>
+  <li>Error Handling: Handle exceptions gracefully and return appropriate status codes and error
+      messages.</li>
 </ul>
-<p>messages.</p>
 
 <h2 id="stored-procedures-in-ef-core">Stored Procedures in EF Core</h2>
 <p>Stored procedures are precompiled SQL code blocks stored within the database. While EF Core
@@ -1292,21 +1038,15 @@ to execute complex database operations not easily expressed in LINQ.</p>
 
 <h2 id="notes-3">Notes</h2>
 <ul>
-  <li>• Execution: EF Core allows you to execute stored procedures using FromSqlRaw (for queries)</li>
+  <li>Execution: EF Core allows you to execute stored procedures using FromSqlRaw (for queries)
+      or ExecuteSqlRaw (for non-query commands).</li>
+  <li>Parameterization: You must use parameterized queries to prevent SQL injection
+      vulnerabilities.</li>
+  <li>Limitations: EF Core doesn&#39;t fully support mapping stored procedure results to complex
+      entities with relationships (use result classes or projection for those cases).</li>
+  <li>Creating Stored Procedures: You typically create stored procedures directly in your database
+      (e.g., using SQL Server Management Studio) rather than from within EF Core.</li>
 </ul>
-<p>or ExecuteSqlRaw (for non-query commands).</p>
-<ul>
-  <li>• Parameterization: You must use parameterized queries to prevent SQL injection</li>
-</ul>
-<p>vulnerabilities.</p>
-<ul>
-  <li>• Limitations: EF Core doesn&#39;t fully support mapping stored procedure results to complex</li>
-</ul>
-<p>entities with relationships (use result classes or projection for those cases).</p>
-<ul>
-  <li>• Creating Stored Procedures: You typically create stored procedures directly in your database</li>
-</ul>
-<p>(e.g., using SQL Server Management Studio) rather than from within EF Core.</p>
 
 <h2 id="code-explanation">Code Explanation</h2>
 
@@ -1328,79 +1068,45 @@ public class PersonsDbContext : DbContext
   }
   public int sp_InsertPerson(Person person)
   {
-}
-}</code></pre>
-    </div>
-  <p>SqlParameter[] parameters = new SqlParameter[]</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
-}</code></pre>
-    </div>
-  <p>new SqlParameter(&quot;@PersonID&quot;, person.PersonID),</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+   SqlParameter[] parameters = new SqlParameter[]
+   {
+     new SqlParameter(&quot;@PersonID&quot;, person.PersonID),
 // ... (Other parameters for PersonName, Email, etc.
 )
    };
    return Database.ExecuteSqlRaw(&quot;EXECUTE [dbo].[InsertPerson] @PersonID, @PersonName,
-@Email, @DateOfBirth, @Gender, @CountryID, @Address, @ReceiveNewsLetters&quot;, parameters);</code></pre>
+@Email, @DateOfBirth, @Gender, @CountryID, @Address, @ReceiveNewsLetters&quot;, parameters);
+  }
+}</code></pre>
     </div>
   <p>In this code:</p>
 <ul>
-  <li>• sp_GetAllPersons() Method:</li>
-  <li>o Executes a stored procedure named GetAllPersons.</li>
-  <li>o Uses FromSqlRaw to treat the stored procedure&#39;s result set as a queryable collection</li>
-</ul>
-<p>of Person entities.</p>
-<ul>
-  <li>o Returns a list of Person objects retrieved from the stored procedure&#39;s result set.</li>
-  <li>• sp_InsertPerson() Method:</li>
-  <li>o Takes a Person object as input.</li>
-  <li>o Creates an array of SqlParameter objects to pass values to the stored procedure.</li>
-  <li>o Uses Database.ExecuteSqlRaw to execute the InsertPerson stored procedure,</li>
-</ul>
-<p>passing the parameterized values.</p>
-<ul>
-  <li>o Returns the number of rows affected by the insert operation.</li>
+  <li>sp_GetAllPersons() Method:</li>
+  <li>Executes a stored procedure named GetAllPersons.</li>
+  <li>Uses FromSqlRaw to treat the stored procedure&#39;s result set as a queryable collection
+           of Person entities.</li>
+  <li>Returns a list of Person objects retrieved from the stored procedure&#39;s result set.</li>
+  <li>sp_InsertPerson() Method:</li>
+  <li>Takes a Person object as input.</li>
+  <li>Creates an array of SqlParameter objects to pass values to the stored procedure.</li>
+  <li>Uses Database.ExecuteSqlRaw to execute the InsertPerson stored procedure,
+           passing the parameterized values.</li>
+  <li>Returns the number of rows affected by the insert operation.</li>
 </ul>
 
 <h2 id="best-practices-3">Best Practices</h2>
 <ul>
-  <li>• Parameterization: Always parameterize your stored procedure calls to prevent SQL</li>
+  <li>Parameterization: Always parameterize your stored procedure calls to prevent SQL
+      injection.</li>
+  <li>Result Classes (Optional): If your stored procedure returns data that doesn&#39;t directly map to
+      your entities, create separate result classes and use projection to map the data.</li>
+  <li>Naming: Use a consistent naming convention for your stored procedure methods in the
+      <code>DbContext</code> (e.g., the &quot;sp_&quot; prefix).</li>
+  <li>Transactions (Optional): Wrap multiple stored procedure calls in a transaction to ensure
+      data consistency.</li>
+  <li>Logging: Consider adding logging to track stored procedure execution and any errors that
+      might occur.</li>
 </ul>
-<p>injection.</p>
-<ul>
-  <li>• Result Classes (Optional): If your stored procedure returns data that doesn&#39;t directly map to</li>
-</ul>
-<p>your entities, create separate result classes and use projection to map the data.</p>
-<ul>
-  <li>• Naming: Use a consistent naming convention for your stored procedure methods in the</li>
-</ul>
-<p>DbContext (e.g., the &quot;sp_&quot; prefix).</p>
-<ul>
-  <li>• Transactions (Optional): Wrap multiple stored procedure calls in a transaction to ensure</li>
-</ul>
-<p>data consistency.</p>
-<ul>
-  <li>• Logging: Consider adding logging to track stored procedure execution and any errors that</li>
-</ul>
-<p>might occur.</p>
 
 <h2 id="fluent-api">Fluent API</h2>
 <p>In EF Core, the Fluent API provides an alternative to data annotations for configuring your domain
@@ -1409,86 +1115,58 @@ constraints, and other database-specific details that might not be easily expres
 alone.
 Why Use the Fluent API?</p>
 <ul>
-  <li>• Flexibility: It offers a broader range of configuration options than data annotations, enabling</li>
+  <li>Flexibility: It offers a broader range of configuration options than data annotations, enabling
+      you to tackle more intricate scenarios.</li>
+  <li>Separation of Concerns: Keeps your entity classes clean and focused on their domain logic,
+      without cluttering them with database-specific attributes.</li>
+  <li>Readability: The fluent API&#39;s method chaining syntax can be more expressive and readable
+      than attribute-based configuration.</li>
 </ul>
-<p>you to tackle more intricate scenarios.</p>
-<ul>
-  <li>• Separation of Concerns: Keeps your entity classes clean and focused on their domain logic,</li>
-</ul>
-<p>without cluttering them with database-specific attributes.</p>
-<ul>
-  <li>• Readability: The fluent API&#39;s method chaining syntax can be more expressive and readable</li>
-</ul>
-<p>than attribute-based configuration.</p>
 
 <h2 id="using-the-fluent-api">Using the Fluent API</h2>
-<p>You define Fluent API configurations within the OnModelCreating method of your DbContext class.
+<p>You define Fluent API configurations within the OnModelCreating method of your <code>DbContext</code> class.
 This method is called when EF Core builds your model, giving you the opportunity to customize how
 entities and their properties are mapped to the database.</p>
 
 <h2 id="important-fluent-api-methods">Important Fluent API Methods</h2>
 <ul>
   <li>1. Entity-Level Configuration:</li>
-  <li>o modelBuilder.Entity&lt;TEntity&gt;(): This method gets an EntityTypeBuilder for a specific</li>
-</ul>
-<p>entity type (TEntity). It&#39;s the starting point for configuring an entity.</p>
-<ul>
-  <li>o ToTable(string tableName): Configures the name of the database table for the</li>
-</ul>
-<p>entity.</p>
-<ul>
-  <li>o HasKey(e =&gt; e.Property): Specifies the primary key property for the entity.</li>
-  <li>o HasAlternateKey(e =&gt; e.Property): Specifies an alternate key (unique constraint) for</li>
-</ul>
-<p>the entity.</p>
-<ul>
-  <li>o Ignore(string propertyName): Excludes a property from being mapped to the</li>
-</ul>
-<p>database.</p>
-<ul>
-  <li>o HasQueryFilter(Expression&lt;Func&lt;TEntity, bool&gt;&gt; filter): Applies a global filter to the</li>
-</ul>
-<p>entity.</p>
-<ul>
+  <li>modelBuilder.Entity&lt;TEntity&gt;(): This method gets an EntityTypeBuilder for a specific
+           entity type (TEntity). It&#39;s the starting point for configuring an entity.</li>
+  <li>ToTable(string tableName): Configures the name of the database table for the
+           entity.</li>
+  <li>HasKey(e =&gt; e.Property): Specifies the primary key property for the entity.</li>
+  <li>HasAlternateKey(e =&gt; e.Property): Specifies an alternate key (unique constraint) for
+           the entity.</li>
+  <li>Ignore(string propertyName): Excludes a property from being mapped to the
+           database.</li>
+  <li>HasQueryFilter(Expression&lt;Func&lt;TEntity, bool&gt;&gt; filter): Applies a global filter to the
+           entity.</li>
   <li>2. Property-Level Configuration:</li>
-  <li>o Property(e =&gt; e.Property): Gets a PropertyBuilder for a specific property of the</li>
-</ul>
-<p>entity.</p>
-<ul>
-  <li>o HasColumnName(string columnName): Specifies the column name in the database</li>
-</ul>
-<p>for the property.</p>
-<ul>
-  <li>o HasColumnType(string typeName): Sets the data type of the column (e.g., nvarchar,</li>
-</ul>
-<p>int, datetime2).</p>
-<ul>
-  <li>o HasMaxLength(int maxLength): Sets the maximum length for a string property.</li>
-  <li>o IsRequired(): Makes the property required in the database (not nullable).</li>
-  <li>o HasDefaultValue(object value): Sets the default value for the property.</li>
-  <li>o HasDefaultValueSql(string sql): Sets the default value using a SQL expression.</li>
-  <li>o ValueGeneratedOnAdd() or ValueGeneratedNever(): Controls how the value is</li>
-</ul>
-<p>generated (automatic, never, on update).</p>
-<ul>
+  <li>Property(e =&gt; e.Property): Gets a PropertyBuilder for a specific property of the
+           entity.</li>
+  <li>HasColumnName(string columnName): Specifies the column name in the database
+           for the property.</li>
+  <li>HasColumnType(string typeName): Sets the data type of the column (e.g., nvarchar,
+           int, datetime2).</li>
+  <li>HasMaxLength(int maxLength): Sets the maximum length for a string property.</li>
+  <li>IsRequired(): Makes the property required in the database (not nullable).</li>
+  <li>HasDefaultValue(object value): Sets the default value for the property.</li>
+  <li>HasDefaultValueSql(string sql): Sets the default value using a SQL expression.</li>
+  <li>ValueGeneratedOnAdd() or ValueGeneratedNever(): Controls how the value is
+           generated (automatic, never, on update).</li>
   <li>3. Relationship Configuration:</li>
-  <li>o HasOne(e =&gt; e.NavigationProperty): Configures a one-to-one relationship.</li>
-  <li>o WithMany(e =&gt; e.NavigationProperty): Configures a one-to-many relationship.</li>
-  <li>o HasForeignKey(e =&gt; e.Property): Specifies the foreign key property for the</li>
-</ul>
-<p>relationship.</p>
-<ul>
-  <li>o HasPrincipalKey(e =&gt; e.Property): Specifies the principal key property for the</li>
-</ul>
-<p>relationship.</p>
-<ul>
-  <li>o WithMany().HasForeignKey(e =&gt; e.Property): Configures a many-to-many</li>
-</ul>
-<p>relationship.</p>
-<ul>
+  <li>HasOne(e =&gt; e.NavigationProperty): Configures a one-to-one relationship.</li>
+  <li>WithMany(e =&gt; e.NavigationProperty): Configures a one-to-many relationship.</li>
+  <li>HasForeignKey(e =&gt; e.Property): Specifies the foreign key property for the
+           relationship.</li>
+  <li>HasPrincipalKey(e =&gt; e.Property): Specifies the principal key property for the
+           relationship.</li>
+  <li>WithMany().HasForeignKey(e =&gt; e.Property): Configures a many-to-many
+           relationship.</li>
   <li>4. Index and Constraint Configuration:</li>
-  <li>o HasIndex(e =&gt; e.Property): Creates an index on a property or properties.</li>
-  <li>o HasCheckConstraint(string name, string sql): Adds a check constraint to the table.</li>
+  <li>HasIndex(e =&gt; e.Property): Creates an index on a property or properties.</li>
+  <li>HasCheckConstraint(string name, string sql): Adds a check constraint to the table.</li>
 </ul>
 
 <h2 id="code-example-1">Code Example</h2>
@@ -1506,81 +1184,57 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 {
   // ... table mappings and seed data ...
   // Fluent API Configuration
-}</code></pre>
-    </div>
-  <p>modelBuilder.Entity&lt;Person&gt;()
+  modelBuilder.Entity&lt;Person&gt;()
    .Property(temp =&gt; temp.TIN) // Configure the TIN property
    .HasColumnName(&quot;TaxIdentificationNumber&quot;)
    .HasColumnType(&quot;varchar(8)&quot;)
-   .HasDefaultValue(&quot;ABC12345&quot;);</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">// ... other Fluent API configurations ...</code></pre>
+   .HasDefaultValue(&quot;ABC12345&quot;);
+  // ... other Fluent API configurations ...
+}</code></pre>
     </div>
   <p>In this code:</p>
-<ul>
-  <li>1. modelBuilder.Entity&lt;Person&gt;(): Gets the entity type builder for the Person entity.</li>
-  <li>2. .Property(temp =&gt; temp.TIN): Gets the property builder for the TIN property.</li>
-  <li>3. .HasColumnName(&quot;TaxIdentificationNumber&quot;): Sets the column name in the database to</li>
-</ul>
-<p>&quot;TaxIdentificationNumber&quot;.</p>
-<ul>
-  <li>4. .HasColumnType(&quot;varchar(8)&quot;): Sets the column&#39;s data type to varchar(8).</li>
-  <li>5. .HasDefaultValue(&quot;ABC12345&quot;): Sets the default value for the TIN column to &quot;ABC12345&quot;.</li>
-  <li>6. .HasCheckConstraint(&quot;CHK_TIN&quot;, &quot;len([TaxIdentificationNumber]) = 8&quot;): This will apply a</li>
-</ul>
-<p>check constraint on the table, where the length of the Tax Identification number must be
-      exactly 8.</p>
+<ol>
+  <li>modelBuilder.Entity&lt;Person&gt;(): Gets the entity type builder for the Person entity.</li>
+  <li>.Property(temp =&gt; temp.TIN): Gets the property builder for the TIN property.</li>
+  <li>.HasColumnName(&quot;TaxIdentificationNumber&quot;): Sets the column name in the database to
+      &quot;TaxIdentificationNumber&quot;.</li>
+  <li>.HasColumnType(&quot;varchar(8)&quot;): Sets the column&#39;s data type to varchar(8).</li>
+  <li>.HasDefaultValue(&quot;ABC12345&quot;): Sets the default value for the TIN column to &quot;ABC12345&quot;.</li>
+  <li>.HasCheckConstraint(&quot;CHK_TIN&quot;, &quot;len([TaxIdentificationNumber]) = 8&quot;): This will apply a
+      check constraint on the table, where the length of the Tax Identification number must be
+      exactly 8.</li>
+</ol>
 
 <h2 id="referential-integrity-primary-keys-and-foreign-keys">Referential Integrity, Primary Keys, and Foreign Keys</h2>
 <ul>
-  <li>• Referential Integrity: This is a database concept that ensures the consistency and validity of</li>
+  <li>Referential Integrity: This is a database concept that ensures the consistency and validity of
+      relationships between tables. It prevents actions that would break these relationships, such
+      as deleting a record that is referenced by other records in another table.</li>
+  <li>Primary Key: A unique identifier for each record in a table. It ensures that each row is
+      uniquely identifiable and enforces entity integrity. Primary keys are typically of integer or
+      GUID types.</li>
+  <li>In EF Core, you can mark a property as a primary key using the [Key] attribute or the
+           Fluent API&#39;s HasKey() method.</li>
+  <li>Foreign Key: A column (or set of columns) in a table that refers to the primary key of
+      another table. Foreign keys establish relationships between tables and enforce referential
+      integrity.</li>
+  <li>In EF Core, you define foreign keys using the [ForeignKey] attribute, the Fluent API&#39;s
+           HasForeignKey() method, or by convention (if the property name follows a specific
+           pattern).</li>
 </ul>
-<p>relationships between tables. It prevents actions that would break these relationships, such
-      as deleting a record that is referenced by other records in another table.</p>
-<ul>
-  <li>• Primary Key: A unique identifier for each record in a table. It ensures that each row is</li>
-</ul>
-<p>uniquely identifiable and enforces entity integrity. Primary keys are typically of integer or
-      GUID types.</p>
-<ul>
-  <li>o In EF Core, you can mark a property as a primary key using the [Key] attribute or the</li>
-</ul>
-<p>Fluent API&#39;s HasKey() method.</p>
-<ul>
-  <li>• Foreign Key: A column (or set of columns) in a table that refers to the primary key of</li>
-</ul>
-<p>another table. Foreign keys establish relationships between tables and enforce referential
-      integrity.</p>
-<ul>
-  <li>o In EF Core, you define foreign keys using the [ForeignKey] attribute, the Fluent API&#39;s</li>
-</ul>
-<p>HasForeignKey() method, or by convention (if the property name follows a specific
-           pattern).</p>
 
 <h2 id="managing-relationships-in-ef-core-models">Managing Relationships in EF Core Models</h2>
 <ul>
   <li>1. Navigation Properties:</li>
-  <li>o These are properties in your entity classes that hold references to related entities.</li>
-  <li>o They allow you to navigate from one entity to its related entities without writing</li>
-</ul>
-<p>explicit joins in your queries.</p>
-<ul>
-  <li>o Declare navigation properties with the appropriate types: public virtual</li>
-</ul>
-<p>ICollection&lt;Person&gt;? Persons { get; set; } in the Country class.</p>
-<ul>
+  <li>These are properties in your entity classes that hold references to related entities.</li>
+  <li>They allow you to navigate from one entity to its related entities without writing
+           explicit joins in your queries.</li>
+  <li>Declare navigation properties with the appropriate types: public virtual
+           ICollection&lt;Person&gt;? Persons { get; set; } in the Country class.</li>
   <li>2. Fluent API:</li>
-  <li>o Use the Fluent API in your DbContext&#39;s OnModelCreating method to define</li>
+  <li>Use the Fluent API in your <code>DbContext</code>&#39;s OnModelCreating method to define
+           relationships explicitly.</li>
 </ul>
-<p>relationships explicitly.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1590,26 +1244,18 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">// PersonsDbContext.cs</code></pre>
-    </div>
-  <p>modelBuilder.Entity&lt;Person&gt;(entity =&gt;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+      <pre><code class="language-csharp">// PersonsDbContext.cs
+           modelBuilder.Entity&lt;Person&gt;(entity =&gt;
+           {
              entity.HasOne(p =&gt; p.Country)
                .WithMany(c =&gt; c.Persons)
                .HasForeignKey(p =&gt; p.CountryID);
            });</code></pre>
     </div>
-  <p>• This configuration establishes a one-to-many relationship between Country and Person. A
-      country can have many persons, and a person belongs to one country. The CountryID</p>
+  <ul>
+  <li>This configuration establishes a one-to-many relationship between Country and Person. A</li>
+</ul>
+<p>country can have many persons, and a person belongs to one country. The CountryID</p>
 <p>property in the Person class is the foreign key pointing to the CountryID primary key in the
       Country class.</p>
 
@@ -1643,139 +1289,108 @@ data for each entity.</p>
         </button>
       </div>
       <pre><code class="language-csharp">// Find all persons from the USA, including their country details
-var peopleFromUSA = _dbContext.Persons</code></pre>
-    </div>
-  <p>.Include(p =&gt; p.Country) // Eagerly load the Country entity
+var peopleFromUSA = _dbContext.Persons
+  .Include(p =&gt; p.Country) // Eagerly load the Country entity
   .Where(p =&gt; p.Country.CountryName == &quot;USA&quot;)
-  .ToList();</p>
-
-<h2 id="best-practices-4">Best Practices</h2>
+  .ToList();</code></pre>
+    </div>
+  <p>Best Practices</p>
 <ul>
-  <li>• Choose the Right Relationship: Carefully consider the nature of your data to select the</li>
+  <li>Choose the Right Relationship: Carefully consider the nature of your data to select the
+      correct relationship type (one-to-one, one-to-many, many-to-many).</li>
+  <li>Cascading Behavior: Decide how you want EF Core to handle cascading actions (e.g., when
+      deleting a country, should it delete the associated persons?). You can configure this in the
+      Fluent API using options like OnDelete.</li>
+  <li>Performance Considerations: Avoid overusing Include() if you don&#39;t need the related data in
+      your current operation. It can lead to fetching more data than necessary.</li>
+  <li>Explicit Loading: If you need to load related data only in certain cases, use explicit loading
+      (Load() method) instead of Include().</li>
 </ul>
-<p>correct relationship type (one-to-one, one-to-many, many-to-many).</p>
-<ul>
-  <li>• Cascading Behavior: Decide how you want EF Core to handle cascading actions (e.g., when</li>
-</ul>
-<p>deleting a country, should it delete the associated persons?). You can configure this in the
-      Fluent API using options like OnDelete.</p>
-<ul>
-  <li>• Performance Considerations: Avoid overusing Include() if you don&#39;t need the related data in</li>
-</ul>
-<p>your current operation. It can lead to fetching more data than necessary.</p>
-<ul>
-  <li>• Explicit Loading: If you need to load related data only in certain cases, use explicit loading</li>
-</ul>
-<p>(Load() method) instead of Include().</p>
 
 <h2 id="things-to-avoid">Things to Avoid</h2>
 <ul>
-  <li>• Lazy Loading (Default in EF Core): By default, EF Core enables lazy loading, which means</li>
+  <li>Lazy Loading (Default in EF Core): By default, EF Core enables lazy loading, which means
+      related entities are loaded on demand when you first access their navigation properties. This</li>
 </ul>
-<p>related entities are loaded on demand when you first access their navigation properties. This</p>
 <p>can lead to performance issues if you&#39;re not careful. You can disable lazy loading if it doesn&#39;t
       fit your needs.</p>
 <ul>
-  <li>• Ignoring Referential Integrity: Improperly configured relationships can lead to data</li>
+  <li>Ignoring Referential Integrity: Improperly configured relationships can lead to data
+      inconsistency and unexpected behavior.</li>
 </ul>
-<p>inconsistency and unexpected behavior.</p>
 
 <h2 id="crud-operations-with-entity-framework-core">CRUD Operations with Entity Framework Core</h2>
-<p>EF Core, as an Object-Relational Mapper (ORM), simplifies database interactions by allowing you to
-work with data as C# objects (entities). Let&#39;s see how this translates into implementing CRUD
-operations within your controllers.</p>
+<p>EF Core, as an Object-Relational Mapper (ORM), simplifies database interactions by allowing you to</p>
+<p>work with data as C# objects (entities). Let&#39;s see how this translates into implementing CRUD</p>
+<ul>
+  <li>perations within your controllers.</li>
+</ul>
 
 <h2 id="controller-actions-1">Controller Actions</h2>
 <ul>
-  <li>• Index (Read):</li>
-  <li>o Purpose: Display a list of entities.</li>
-  <li>o Data Source: Retrieves Person entities using _personsService.GetAllPersons(),</li>
-</ul>
-<p>applying filters and sorting based on query parameters if provided.</p>
-<ul>
-  <li>o ViewBag: Populates ViewBag with:</li>
-</ul>
-<p>▪ Search fields and their display names.
-              ▪ The current search and sort criteria for display in the view.</p>
-<ul>
-  <li>o View: Returns the &quot;Index&quot; view with the retrieved and processed data.</li>
-  <li>o Error Handling: None in this example, but ideally, you&#39;d handle exceptions from the</li>
-</ul>
-<p>service and potentially display error messages in the view.</p>
-<ul>
-  <li>• Create (Create):</li>
-  <li>o Purpose:</li>
-</ul>
-<p>▪ (GET) Displays a form for creating a new person.
-              ▪ (POST) Processes the submitted form data to add a new person.</p>
-<ul>
-  <li>o Data Source (GET): Retrieves countries from _countriesService.GetAllCountries() to</li>
-</ul>
-<p>populate a country dropdown.</p>
-<ul>
-  <li>o Model Binding (POST): Binds the incoming form data to a PersonAddRequest object.</li>
-  <li>o Validation:</li>
-</ul>
-<p>▪ Server-Side: Checks if ModelState.IsValid.
-              ▪ Client-Side: Uses jQuery Validation and Unobtrusive Validation to provide
-                 immediate feedback in the browser.</p>
-<ul>
-  <li>o Logic:</li>
-</ul>
-<p>▪ (POST-Valid): Calls _personsService.AddPerson to create the new person
-                 and redirects to the Index action.
-              ▪ (POST-Invalid): Repopulates the ViewBag (countries and errors) and rerenders
-the Create view with validation errors.</p>
-<ul>
-  <li>• Edit (Update):</li>
-  <li>o Purpose:</li>
-</ul>
-<p>▪ (GET) Displays a form for editing an existing person.
-              ▪ (POST) Processes the submitted form data to update the person&#39;s details.</p>
-<ul>
-  <li>o Data Source (GET):</li>
-</ul>
-<p>▪ Fetches the person to edit based on personID from the PersonsService.
-              ▪ Retrieves countries from _countriesService.GetAllCountries() for the
-                 dropdown.</p>
-<ul>
-  <li>o Model Binding (POST): Binds the form data to a PersonUpdateRequest object.</li>
-  <li>o Validation &amp; Logic: Same as in the Create action.</li>
-  <li>• Delete (Delete):</li>
-  <li>o Purpose:</li>
-</ul>
-<p>▪ (GET): Displays a confirmation page for deleting a person.
-              ▪ (POST): Deletes the person.</p>
-<ul>
-  <li>o Data Source (GET): Fetches the person to delete based on personID.</li>
-  <li>o Model Binding (POST): Binds only the PersonID from the form.</li>
-  <li>o Logic (POST): Calls _personsService.DeletePerson and redirects to the Index action.</li>
+  <li>Index (Read):</li>
+  <li>Purpose: Display a list of entities.</li>
+  <li>Data Source: Retrieves Person entities using _personsService.GetAllPersons(),
+           applying filters and sorting based on query parameters if provided.</li>
+  <li>ViewBag: Populates ViewBag with:</li>
+  <li>Search fields and their display names.</li>
+  <li>The current search and sort criteria for display in the view.</li>
+  <li>View: Returns the &quot;Index&quot; view with the retrieved and processed data.</li>
+  <li>Error Handling: None in this example, but ideally, you&#39;d handle exceptions from the
+           service and potentially display error messages in the view.</li>
+  <li>Create (Create):</li>
+  <li>Purpose:</li>
+  <li>(GET) Displays a form for creating a new person.</li>
+  <li>(POST) Processes the submitted form data to add a new person.</li>
+  <li>Data Source (GET): Retrieves countries from _countriesService.GetAllCountries() to
+           populate a country dropdown.</li>
+  <li>Model Binding (POST): Binds the incoming form data to a PersonAddRequest object.</li>
+  <li>Validation:</li>
+  <li>Server-Side: Checks if ModelState.IsValid.</li>
+  <li>Client-Side: Uses jQuery Validation and Unobtrusive Validation to provide
+                 immediate feedback in the browser.</li>
+  <li>Logic:</li>
+  <li>(POST-Valid): Calls _personsService.AddPerson to create the new person
+                 and redirects to the Index action.</li>
+  <li>(POST-Invalid): Repopulates the ViewBag (countries and errors) and rerenders
+the Create view with validation errors.</li>
+  <li>Edit (Update):</li>
+  <li>Purpose:</li>
+  <li>(GET) Displays a form for editing an existing person.</li>
+  <li>(POST) Processes the submitted form data to update the person&#39;s details.</li>
+  <li>Data Source (GET):</li>
+  <li>Fetches the person to edit based on personID from the PersonsService.</li>
+  <li>Retrieves countries from _countriesService.GetAllCountries() for the
+                 dropdown.</li>
+  <li>Model Binding (POST): Binds the form data to a PersonUpdateRequest object.</li>
+  <li>Validation &amp; Logic: Same as in the Create action.</li>
+  <li>Delete (Delete):</li>
+  <li>Purpose:</li>
+  <li>(GET): Displays a confirmation page for deleting a person.</li>
+  <li>(POST): Deletes the person.</li>
+  <li>Data Source (GET): Fetches the person to delete based on personID.</li>
+  <li>Model Binding (POST): Binds only the PersonID from the form.</li>
+  <li>Logic (POST): Calls _personsService.DeletePerson and redirects to the Index action.</li>
 </ul>
 <p>EF Core CRUD Operations (in the PersonsService):</p>
 <ul>
-  <li>• AddPerson:</li>
-  <li>o Adds a new Person entity to the Persons DbSet of the DbContext.</li>
-  <li>o Calls _db.SaveChanges() to persist the changes to the database.</li>
-  <li>• GetAllPersons: Retrieves all Person entities from the database using</li>
+  <li>AddPerson:</li>
+  <li>Adds a new Person entity to the Persons DbSet of the <code>DbContext</code>.</li>
+  <li>Calls _db.SaveChanges() to persist the changes to the database.</li>
+  <li>GetAllPersons: Retrieves all Person entities from the database using
+      _db.Persons.Include(&quot;Country&quot;).ToListAsync(). The .Include(&quot;Country&quot;) ensures eager loading
+      of the related Country entity for each person.</li>
+  <li>GetPersonByPersonID: Retrieves a specific person based on their ID using
+      _db.Persons.FirstOrDefaultAsync(temp =&gt; temp.PersonID == personID).</li>
+  <li>UpdatePerson: Updates the properties of an existing person and calls _db.SaveChanges() to
+      save the changes.</li>
+  <li>DeletePerson: Removes a person from the database and calls _db.SaveChanges() to persist
+      the deletion.</li>
 </ul>
-<p>_db.Persons.Include(&quot;Country&quot;).ToListAsync(). The .Include(&quot;Country&quot;) ensures eager loading
-      of the related Country entity for each person.</p>
-<ul>
-  <li>• GetPersonByPersonID: Retrieves a specific person based on their ID using</li>
-</ul>
-<p>_db.Persons.FirstOrDefaultAsync(temp =&gt; temp.PersonID == personID).</p>
-<ul>
-  <li>• UpdatePerson: Updates the properties of an existing person and calls _db.SaveChanges() to</li>
-</ul>
-<p>save the changes.</p>
-<ul>
-  <li>• DeletePerson: Removes a person from the database and calls _db.SaveChanges() to persist</li>
-</ul>
-<p>the deletion.</p>
 
-<h2 id="best-practices-5">Best Practices</h2>
+<h2 id="best-practices-4">Best Practices</h2>
 <ul>
-  <li>• Asynchronous Operations: The service methods in your example correctly use async and</li>
+  <li>Asynchronous Operations: The service methods in your example correctly use async and</li>
 </ul>
 
     <div class="code-block">
@@ -1790,24 +1405,18 @@ the Create view with validation errors.</p>
     </div>
   <p>the responsiveness and scalability of your application.</p>
 <ul>
-  <li>• Dependency Injection: The services (IPersonsService, ICountriesService) are injected into the</li>
+  <li>Dependency Injection: The services (IPersonsService, ICountriesService) are injected into the
+      controller, following the Dependency Inversion Principle (DIP) and making the code more
+      testable.</li>
+  <li>Data Transfer Objects (DTOs): The use of PersonAddRequest, PersonResponse, etc. helps to
+      keep your domain model (the Person class) separate from your presentation layer,
+      preventing overposting vulnerabilities and improving the maintainability of your code.</li>
+  <li>Validation: Both client-side (jQuery Validate) and server-side (model state validation in the
+      controller) are used to ensure data integrity.</li>
+  <li>Error Handling: Exceptions are caught, and appropriate error messages or redirections are
+      provided.</li>
 </ul>
-<p>controller, following the Dependency Inversion Principle (DIP) and making the code more
-      testable.</p>
-<ul>
-  <li>• Data Transfer Objects (DTOs): The use of PersonAddRequest, PersonResponse, etc. helps to</li>
-</ul>
-<p>keep your domain model (the Person class) separate from your presentation layer,
-      preventing overposting vulnerabilities and improving the maintainability of your code.</p>
-<ul>
-  <li>• Validation: Both client-side (jQuery Validate) and server-side (model state validation in the</li>
-</ul>
-<p>controller) are used to ensure data integrity.</p>
-<ul>
-  <li>• Error Handling: Exceptions are caught, and appropriate error messages or redirections are</li>
-</ul>
-<p>provided.
-Generating PDFs in ASP.NET Core MVC
+<p>Generating PDFs in ASP.NET Core MVC
 Creating PDF files directly within your ASP.NET Core MVC applications is a valuable feature for
 generating reports, invoices, tickets, or any other documents you need in a portable and widely
 supported format. Several libraries exist to simplify this process, and Rotativa is one popular choice.</p>
@@ -1818,20 +1427,16 @@ Core by leveraging your existing Razor views.</p>
 
 <h2 id="notes-about-rotativa">Notes About Rotativa</h2>
 <ul>
-  <li>• Installation: Install the Rotativa.AspNetCore NuGet package.</li>
-  <li>• ViewAsPdf: Rotativa provides an ViewAsPdf action result that you can return from your</li>
+  <li>Installation: Install the Rotativa.AspNetCore NuGet package.</li>
+  <li>ViewAsPdf: Rotativa provides an ViewAsPdf action result that you can return from your
+      controller actions. This action result takes your view name, model data, and optionally,
+      custom settings.</li>
+  <li>Customization: You can customize various aspects of the PDF, including margins, page
+      orientation, header/footer content, and more.</li>
+  <li>Dependency on Wkhtmltopdf: Rotativa depends on the wkhtmltopdf executable, which
+      needs to be installed on your system (or accessible in your deployment environment).</li>
 </ul>
-<p>controller actions. This action result takes your view name, model data, and optionally,
-      custom settings.</p>
-<ul>
-  <li>• Customization: You can customize various aspects of the PDF, including margins, page</li>
-</ul>
-<p>orientation, header/footer content, and more.</p>
-<ul>
-  <li>• Dependency on Wkhtmltopdf: Rotativa depends on the wkhtmltopdf executable, which</li>
-</ul>
-<p>needs to be installed on your system (or accessible in your deployment environment).
-Code Example:
+<p>Code Example:
 Controller Action (PersonsController.cs)</p>
 
     <div class="code-block">
@@ -1869,9 +1474,9 @@ public async Task&lt;IActionResult&gt; PersonsPDF()
   <p>1. Retrieves Data: Fetches a list of PersonResponse objects from the _personsService.</p>
 <ul>
   <li>2. ViewAsPdf Action Result: Creates a ViewAsPdf action result:</li>
-  <li>o &quot;PersonsPDF&quot;: Specifies the name of the view to render as a PDF.</li>
-  <li>o persons: Passes the list of persons as the model to the view.</li>
-  <li>o ViewData: Passes the ViewData object containing the page title.</li>
+  <li>&quot;PersonsPDF&quot;: Specifies the name of the view to render as a PDF.</li>
+  <li>persons: Passes the list of persons as the model to the view.</li>
+  <li>ViewData: Passes the ViewData object containing the page title.</li>
   <li>3. Customization: Configures the PDF&#39;s margins and orientation.</li>
 </ul>
 <p>View (PersonsPDF.cshtml)</p>
@@ -1961,32 +1566,28 @@ public async Task&lt;IActionResult&gt; PersonsPDF()
       </div>
       <pre><code class="language-razor">&lt;/table&gt;</code></pre>
     </div>
-  <p>• The view&#39;s content is plain HTML, using a foreach loop and razor syntax to loop through the
-      data and create a table to display the results.</p>
+  <ul>
+  <li>The view&#39;s content is plain HTML, using a foreach loop and razor syntax to loop through the</li>
+</ul>
+<p>data and create a table to display the results.</p>
 
-<h2 id="best-practices-6">Best Practices</h2>
+<h2 id="best-practices-5">Best Practices</h2>
 <ul>
-  <li>• Separate PDF Views: Create dedicated views for PDF generation to avoid cluttering your</li>
+  <li>Separate PDF Views: Create dedicated views for PDF generation to avoid cluttering your
+      regular views with PDF-specific styling or layout.</li>
+  <li>CSS for Styling: Use CSS (either inline or linked) to style your PDF content.</li>
+  <li>wkhtmltopdf Options: Familiarize yourself with the available wkhtmltopdf options to
+      customize the generated PDF (headers, footers, page size, etc.).</li>
+  <li>Deployment: Ensure that wkhtmltopdf is installed on your production server if you&#39;re using
+      Rotativa.</li>
 </ul>
-<p>regular views with PDF-specific styling or layout.</p>
-<ul>
-  <li>• CSS for Styling: Use CSS (either inline or linked) to style your PDF content.</li>
-  <li>• wkhtmltopdf Options: Familiarize yourself with the available wkhtmltopdf options to</li>
-</ul>
-<p>customize the generated PDF (headers, footers, page size, etc.).</p>
-<ul>
-  <li>• Deployment: Ensure that wkhtmltopdf is installed on your production server if you&#39;re using</li>
-</ul>
-<p>Rotativa.</p>
 
 <h2 id="alternative-libraries">Alternative Libraries</h2>
 <ul>
-  <li>• iTextSharp/iText7: A powerful library for creating and manipulating PDF documents</li>
-</ul>
-<p>programmatically.</p>
-<ul>
-  <li>• QuestPDF: A modern, fluent library for generating PDFs from C# code.</li>
-  <li>• IronPDF: Allows you to convert HTML to PDF with ease.</li>
+  <li>iTextSharp/iText7: A powerful library for creating and manipulating PDF documents
+      programmatically.</li>
+  <li>QuestPDF: A modern, fluent library for generating PDFs from C# code.</li>
+  <li>IronPDF: Allows you to convert HTML to PDF with ease.</li>
 </ul>
 <p>Generating CSV Files in ASP.NET Core MVC
 Comma-Separated Values (CSV) files are a simple and widely supported format for exporting tabular
@@ -1998,24 +1599,20 @@ your data, especially with the help of the CsvHelper library.</p>
 <p>CsvHelper is a popular and well-maintained .NET library designed for reading and writing CSV files
 with ease. It handles tasks like:</p>
 <ul>
-  <li>• Reading: Parsing CSV files into strongly typed objects or dynamic collections.</li>
-  <li>• Writing: Generating CSV files from your data, customizing delimiters, headers, and</li>
+  <li>Reading: Parsing CSV files into strongly typed objects or dynamic collections.</li>
+  <li>Writing: Generating CSV files from your data, customizing delimiters, headers, and
+      formatting.</li>
+  <li>Mapping: Mapping your class properties to CSV columns using conventions or explicit
+      configuration.</li>
 </ul>
-<p>formatting.</p>
-<ul>
-  <li>• Mapping: Mapping your class properties to CSV columns using conventions or explicit</li>
-</ul>
-<p>configuration.</p>
 
 <h2 id="notes-about-csvhelper">Notes About CsvHelper</h2>
 <ul>
-  <li>• Installation: Install the CsvHelper NuGet package.</li>
-  <li>• CsvWriter and CsvReader: These are the core classes for writing and reading CSV data.</li>
-  <li>• Customization: You can customize how your CSV data is read or written using configuration</li>
-</ul>
-<p>options and mapping strategies.</p>
-<ul>
-  <li>• Flexibility: CsvHelper supports various CSV formats, delimiters, and encoding options.</li>
+  <li>Installation: Install the CsvHelper NuGet package.</li>
+  <li>CsvWriter and CsvReader: These are the core classes for writing and reading CSV data.</li>
+  <li>Customization: You can customize how your CSV data is read or written using configuration
+      options and mapping strategies.</li>
+  <li>Flexibility: CsvHelper supports various CSV formats, delimiters, and encoding options.</li>
 </ul>
 <p>Code Example:
 Controller Action (PersonsController.cs)</p>
@@ -2031,32 +1628,20 @@ Controller Action (PersonsController.cs)</p>
       <pre><code class="language-csharp">[Route(&quot;PersonsCSV&quot;)]
 public async Task&lt;IActionResult&gt; PersonsCSV()
 {
+  MemoryStream memoryStream = await _personsService.GetPersonsCSV(); // Get CSV data from
+the service
+  return File(memoryStream, &quot;application/octet-stream&quot;, &quot;persons.csv&quot;);
 }</code></pre>
-    </div>
-  <p>MemoryStream memoryStream = await _personsService.GetPersonsCSV(); // Get CSV data from
-the service</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">return File(memoryStream, &quot;application/octet-stream&quot;, &quot;persons.csv&quot;);</code></pre>
     </div>
   <p>1. CSV Data Retrieval: The action method calls _personsService.GetPersonsCSV() to get a
       MemoryStream containing the CSV data. This method handles the logic of fetching data
       from the database, formatting it as CSV, and writing it to the memory stream.</p>
 <ul>
-  <li>2. File Result: The File() method is used to return a FileContentResult action result. The</li>
-</ul>
-<p>arguments include:</p>
-<ul>
-  <li>o memoryStream: The stream containing the CSV data.</li>
-  <li>o &quot;application/octet-stream&quot;: The content type for CSV files (forces download).</li>
-  <li>o &quot;persons.csv&quot;: The suggested filename for the downloaded file.</li>
+  <li>2. File Result: The File() method is used to return a FileContentResult action result. The
+      arguments include:</li>
+  <li>memoryStream: The stream containing the CSV data.</li>
+  <li>&quot;application/octet-stream&quot;: The content type for CSV files (forces download).</li>
+  <li>&quot;persons.csv&quot;: The suggested filename for the downloaded file.</li>
 </ul>
 <p>Service Method (PersonsService.GetPersonsCSV())</p>
 
@@ -2072,213 +1657,185 @@ the service</p>
 {
   MemoryStream memoryStream = new MemoryStream();
   StreamWriter streamWriter = new StreamWriter(memoryStream);
-}</code></pre>
-    </div>
-  <p>CsvWriter csvWriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture, leaveOpen:
+  CsvWriter csvWriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture, leaveOpen:
 true);
   csvWriter.WriteHeader&lt;PersonResponse&gt;(); // Write CSV headers based on the PersonResponse
 class
   csvWriter.NextRecord();
   List&lt;PersonResponse&gt; persons = _db.Persons // Query persons from the database
    .Include(&quot;Country&quot;)
-   .Select(temp =&gt; temp.ToPersonResponse()).ToList();</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">await csvWriter.WriteRecordsAsync(persons); // Write person data as CSV rows
+   .Select(temp =&gt; temp.ToPersonResponse()).ToList();
+  await csvWriter.WriteRecordsAsync(persons); // Write person data as CSV rows
   memoryStream.Position = 0; // Reset the stream position
-  return memoryStream;</code></pre>
+  return memoryStream;
+}</code></pre>
     </div>
   <p>1. Create Stream: A MemoryStream is created to hold the CSV data.</p>
-<ul>
-  <li>2. CSV Writer: A CsvWriter is initialized, using the memory stream and specifying the culture</li>
-</ul>
-<p>info (to ensure consistent number and date formatting).</p>
-<ul>
-  <li>3. Headers: csvWriter.WriteHeader&lt;PersonResponse&gt;() writes the CSV header row using the</li>
-</ul>
-<p>property names of the PersonResponse class.</p>
-<ul>
-  <li>4. Data Retrieval: A LINQ query retrieves all Person entities along with their related Country</li>
-</ul>
-<p>information (eager loading).</p>
-<ul>
-  <li>5. Data Writing: csvWriter.WriteRecordsAsync(persons) writes each PersonResponse object as</li>
-</ul>
-<p>a row in the CSV file.</p>
-<ul>
-  <li>6. Reset Stream Position: The memoryStream.Position is reset to the beginning so that the</li>
-</ul>
-<p>controller action can read the entire CSV content.</p>
+<ol>
+  <li>CSV Writer: A CsvWriter is initialized, using the memory stream and specifying the culture
+      info (to ensure consistent number and date formatting).</li>
+  <li>Headers: csvWriter.WriteHeader&lt;PersonResponse&gt;() writes the CSV header row using the
+      property names of the PersonResponse class.</li>
+  <li>Data Retrieval: A LINQ query retrieves all Person entities along with their related Country
+      information (eager loading).</li>
+  <li>Data Writing: csvWriter.WriteRecordsAsync(persons) writes each PersonResponse object as
+      a row in the CSV file.</li>
+  <li>Reset Stream Position: The memoryStream.Position is reset to the beginning so that the
+      controller action can read the entire CSV content.</li>
+</ol>
 
-<h2 id="best-practices-7">Best Practices</h2>
+<h2 id="best-practices-6">Best Practices</h2>
 <ul>
-  <li>• Choose the Right Library: CsvHelper is a great choice, but explore other libraries if you have</li>
+  <li>Choose the Right Library: CsvHelper is a great choice, but explore other libraries if you have
+      specific requirements (e.g., FastCsvParser for large files).</li>
+  <li>Streaming: For large datasets, consider streaming the CSV generation process to avoid
+      loading all data into memory at once.</li>
+  <li>Customization: Customize the CSV format (delimiter, headers, etc.) as needed.</li>
+  <li>Error Handling: Handle potential errors during CSV generation (e.g., invalid data).</li>
+  <li>Security: If you are including sensitive information in the CSV, consider encryption or other
+      security measures.</li>
 </ul>
-<p>specific requirements (e.g., FastCsvParser for large files).</p>
-<ul>
-  <li>• Streaming: For large datasets, consider streaming the CSV generation process to avoid</li>
-</ul>
-<p>loading all data into memory at once.</p>
-<ul>
-  <li>• Customization: Customize the CSV format (delimiter, headers, etc.) as needed.</li>
-  <li>• Error Handling: Handle potential errors during CSV generation (e.g., invalid data).</li>
-  <li>• Security: If you are including sensitive information in the CSV, consider encryption or other</li>
-</ul>
-<p>security measures.</p>
 
 <h2 id="key-points-to-remember">Key Points to Remember</h2>
 
 <h2 id="entity-framework-core-ef-core">Entity Framework Core (EF Core)</h2>
 <ul>
-  <li>• Purpose: Object-Relational Mapper (ORM) that simplifies database interaction in .NET.</li>
-  <li>• Core Concepts:</li>
-  <li>o DbContext: A session with the database, tracks changes, handles queries.</li>
-  <li>o DbSet&lt;T&gt;: Represents a collection of a specific entity type.</li>
-  <li>o Entities: C# classes that model your database tables.</li>
-  <li>o Mapping: Defines how entities and database tables/columns correspond.</li>
-  <li>o LINQ Queries: Query the database using C#.</li>
-  <li>o Change Tracking: EF Core tracks changes to entities for efficient updates.</li>
-  <li>o Migrations: Manages changes to your database schema over time.</li>
+  <li>Purpose: Object-Relational Mapper (ORM) that simplifies database interaction in .NET.</li>
+  <li>Core Concepts:</li>
+  <li><code>DbContext</code>: A session with the database, tracks changes, handles queries.</li>
+  <li>DbSet&lt;T&gt;: Represents a collection of a specific entity type.</li>
+  <li>Entities: C# classes that model your database tables.</li>
+  <li>Mapping: Defines how entities and database tables/columns correspond.</li>
+  <li>LINQ Queries: Query the database using C#.</li>
+  <li>Change Tracking: EF Core tracks changes to entities for efficient updates.</li>
+  <li>Migrations: Manages changes to your database schema over time.</li>
 </ul>
 
 <h2 id="ef-core-approaches">EF Core Approaches</h2>
 <ul>
-  <li>• Code First: Define your model with C# classes, EF Core creates the database.</li>
-  <li>• Database First: Start with an existing database, EF Core generates entity classes.</li>
+  <li>Code First: Define your model with C# classes, EF Core creates the database.</li>
+  <li>Database First: Start with an existing database, EF Core generates entity classes.</li>
 </ul>
 
 <h2 id="fluent-api-1">Fluent API</h2>
 <ul>
-  <li>• Purpose: Alternative to data annotations for configuring the model in code.</li>
-  <li>• Key Methods:</li>
-  <li>o modelBuilder.Entity&lt;T&gt;(): Configures an entity.</li>
-  <li>o ToTable(), HasKey(), HasAlternateKey(): Table and key configuration.</li>
-  <li>o Property(): Configures a property&#39;s column name, type, constraints, etc.</li>
-  <li>o HasOne(), WithMany(): Configures relationships.</li>
-  <li>o HasIndex(), HasCheckConstraint(): Creates indexes and constraints.</li>
+  <li>Purpose: Alternative to data annotations for configuring the model in code.</li>
+  <li>Key Methods:</li>
+  <li>modelBuilder.Entity&lt;T&gt;(): Configures an entity.</li>
+  <li>ToTable(), HasKey(), HasAlternateKey(): Table and key configuration.</li>
+  <li>Property(): Configures a property&#39;s column name, type, constraints, etc.</li>
+  <li>HasOne(), WithMany(): Configures relationships.</li>
+  <li>HasIndex(), HasCheckConstraint(): Creates indexes and constraints.</li>
 </ul>
 
 <h2 id="relationships">Relationships</h2>
 <ul>
-  <li>• Types: One-to-one, one-to-many, many-to-many.</li>
-  <li>• Navigation Properties: Properties in your entities that reference related entities.</li>
-  <li>• Foreign Keys: Define using [ForeignKey], fluent API, or convention.</li>
-  <li>• LINQ Queries: Use navigation properties for querying related data.</li>
-  <li>• Include(): Eagerly load related entities in a single query.</li>
+  <li>Types: One-to-one, one-to-many, many-to-many.</li>
+  <li>Navigation Properties: Properties in your entities that reference related entities.</li>
+  <li>Foreign Keys: Define using [ForeignKey], fluent API, or convention.</li>
+  <li>LINQ Queries: Use navigation properties for querying related data.</li>
+  <li>Include(): Eagerly load related entities in a single query.</li>
 </ul>
 
 <h2 id="code-first-migrations-1">Code First Migrations</h2>
 <ul>
-  <li>• Purpose: Manage database schema changes as your model evolves.</li>
-  <li>• Commands (Package Manager Console):</li>
-  <li>o Add-Migration &quot;Name&quot;: Creates a new migration.</li>
-  <li>o Update-Database: Applies pending migrations to the database.</li>
-  <li>o Remove-Migration: Reverts the last migration.</li>
+  <li>Purpose: Manage database schema changes as your model evolves.</li>
+  <li>Commands (Package Manager Console):</li>
+  <li>Add-Migration &quot;Name&quot;: Creates a new migration.</li>
+  <li>Update-Database: Applies pending migrations to the database.</li>
+  <li>Remove-Migration: Reverts the last migration.</li>
 </ul>
 
 <h2 id="seed-data">Seed Data</h2>
 <ul>
-  <li>• Purpose: Populate the database with initial data.</li>
-  <li>• HasData() Method: Used within OnModelCreating to seed data.</li>
+  <li>Purpose: Populate the database with initial data.</li>
+  <li>HasData() Method: Used within OnModelCreating to seed data.</li>
 </ul>
 
 <h2 id="stored-procedures">Stored Procedures</h2>
 <ul>
-  <li>• FromSqlRaw: Executes a stored procedure and maps results to entities.</li>
-  <li>• ExecuteSqlRaw: Executes a stored procedure that doesn&#39;t return results.</li>
-  <li>• Parameterization: Always use parameters to prevent SQL injection.</li>
+  <li>FromSqlRaw: Executes a stored procedure and maps results to entities.</li>
+  <li>ExecuteSqlRaw: Executes a stored procedure that doesn&#39;t return results.</li>
+  <li>Parameterization: Always use parameters to prevent SQL injection.</li>
 </ul>
 
 <h2 id="async-operations">Async Operations</h2>
 <ul>
-  <li>• ToListAsync(), FirstOrDefaultAsync(), SaveChangesAsync(): Asynchronous versions of</li>
-</ul>
-<p>common EF Core methods.</p>
-<ul>
-  <li>• Benefits: Improved scalability and responsiveness by avoiding blocking the main thread.</li>
+  <li>ToListAsync(), FirstOrDefaultAsync(), SaveChangesAsync(): Asynchronous versions of
+      common EF Core methods.</li>
+  <li>Benefits: Improved scalability and responsiveness by avoiding blocking the main thread.</li>
 </ul>
 
 <h2 id="generating-files">Generating Files</h2>
 <ul>
-  <li>• PDFs (e.g., Rotativa):</li>
-  <li>o Install the library.</li>
-  <li>o Use ViewAsPdf to render a view as a PDF.</li>
-  <li>• CSVs (e.g., CsvHelper):</li>
-  <li>o Install the library.</li>
-  <li>o Use CsvWriter to write data to a CSV file or stream.</li>
+  <li>PDFs (e.g., Rotativa):</li>
+  <li>Install the library.</li>
+  <li>Use ViewAsPdf to render a view as a PDF.</li>
+  <li>CSVs (e.g., CsvHelper):</li>
+  <li>Install the library.</li>
+  <li>Use CsvWriter to write data to a CSV file or stream.</li>
 </ul>
 
-<h2 id="best-practices-8">Best Practices</h2>
+<h2 id="best-practices-7">Best Practices</h2>
 <ul>
-  <li>• Repository Pattern: Consider using it to abstract data access logic.</li>
-  <li>• Unit of Work Pattern: Group multiple database operations into a single transaction.</li>
-  <li>• Connection Resiliency: Implement strategies to handle transient errors when connecting to</li>
-</ul>
-<p>the database.</p>
-<ul>
-  <li>• Caching: Cache query results where appropriate to improve performance.</li>
+  <li>Repository Pattern: Consider using it to abstract data access logic.</li>
+  <li>Unit of Work Pattern: Group multiple database operations into a single transaction.</li>
+  <li>Connection Resiliency: Implement strategies to handle transient errors when connecting to
+      the database.</li>
+  <li>Caching: Cache query results where appropriate to improve performance.</li>
 </ul>
 
 <h2 id="interview-tips">Interview Tips</h2>
 <ul>
-  <li>• Concepts: Explain the core concepts of EF Core and the benefits of using an ORM.</li>
-  <li>• Relationships: Demonstrate how to define and work with relationships between entities.</li>
-  <li>• Migrations: Discuss the importance of migrations for managing schema changes.</li>
-  <li>• Best Practices: Showcase your knowledge of best practices like using the repository pattern,</li>
+  <li>Concepts: Explain the core concepts of EF Core and the benefits of using an ORM.</li>
+  <li>Relationships: Demonstrate how to define and work with relationships between entities.</li>
+  <li>Migrations: Discuss the importance of migrations for managing schema changes.</li>
+  <li>Best Practices: Showcase your knowledge of best practices like using the repository pattern,
+      asynchronous operations, and handling errors.</li>
 </ul>
-<p>asynchronous operations, and handling errors.</p>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
 <section class="cheatsheet-section" aria-labelledby="cheat-sheet-quick-reference">
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
-  <p>Section 18 – EntityFrameworkCore – Cheat Sheet</p>
   <h3 id="introduction-to-entityframeworkcore">Introduction to EntityFrameworkCore</h3>
-  <p>EntityFrameworkCore is light-weight, extensible and cross-platform framework for accessing
+<p>EntityFrameworkCore is light-weight, extensible and cross-platform framework for accessing
 databases in .NET applications.
 It is the most-used database framework for Asp.Net Core Apps.</p>
   <h3 id="efcore-models">EFCore Models</h3>
   <h3 id="pros-cons-of-entityframeworkcore">Pros &amp; Cons of EntityFrameworkCore</h3>
   <h3 id="shorter-code">Shorter Code</h3>
-  <p>The CRUD operations / calling stored procedures are done with shorter amount of code than
+<p>The CRUD operations / calling stored procedures are done with shorter amount of code than
 ADO.NET.</p>
   <h3 id="performance">Performance</h3>
-  <p>EFCore performs slower than ADO.NET.
+<p>EFCore performs slower than ADO.NET.
 So ADO.NET or its alternatives (such as Dapper) are recommended for larger &amp; high-traffic
 applications.</p>
   <h3 id="strongly-typed">Strongly-Typed</h3>
-  <p>The columns as created as properties in model class.
+<p>The columns as created as properties in model class.
 So the Intellisense offers columns of the table as properties, while writing the code.
 Plus, the developer need not convert data types of values; it&#39;s automatically done by EFCore itself.</p>
   <h3 id="approaches-in-entity-framework-core">Approaches in Entity Framework Core</h3>
   <h3 id="efcore-approaches">EFCore Approaches</h3>
   <h3 id="pros-and-cons-of-efcore-approaches">Pros and Cons of EFCore Approaches</h3>
   <h3 id="codefirst-approach">CodeFirst Approach</h3>
-  <p>Suitable for newer databases.
+<p>Suitable for newer databases.
 Manual changes to DB will be most probably lost because your code defines the database.
 Stored procedures are to be written as a part of C# code.
 Suitable for smaller applications or prototype-level applications only; but not for larger or high dataintense
 applications.</p>
   <h3 id="dbfirst-approach">DbFirst Approach</h3>
-  <p>Suitable if you have an existing database or DB designed by DBAs, developed separately.
+<p>Suitable if you have an existing database or DB designed by DBAs, developed separately.
 Manual changes to DB can be done independently.
 Stored procedures, indexes, triggers etc., can be created with T-SQL independently.
 Suitable for larger applications and high data-intense applications.</p>
   <h3 id="dbcontext-and-dbset">DbContext and DbSet</h3>
   <h3 id="dbcontext-1">DbContext</h3>
-  <p>An instance of DbContext is responsible to hold a set of DbSets&#39; and represent a connection with
+<p>An instance of <code>DbContext</code> is responsible to hold a set of DbSets&#39; and represent a connection with
 database.</p>
   <h3 id="dbset">DbSet</h3>
-  <p>Represents a single database table; each column is represented as a model property.
-Add DbContext as Service in Program.cs:
-builder.Services.AddDbContext&lt;DbContextClassName&gt;( options =&gt; {</p>
+<p>Represents a single database table; each column is represented as a model property.
+Add <code>DbContext</code> as Service in <code>Program.cs</code>:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2288,14 +1845,14 @@ builder.Services.AddDbContext&lt;DbContextClassName&gt;( options =&gt; {</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">{
+      <pre><code class="language-csharp">builder.Services.AddDbContext&lt;DbContextClassName&gt;( options =&gt; {
 options.UseSqlServer();
 }
 );</code></pre>
     </div>
     <h3 id="code-first-migrations-2">Code-First Migrations</h3>
   <h3 id="migrations">Migrations</h3>
-  <p>Creates or updates database based on the changes made in the model.
+<p>Creates or updates database based on the changes made in the model.
 in Package Manager Console (PMC):</p>
   <h3 id="add-migration-migrationname">Add-Migration MigrationName</h3>
 
@@ -2309,7 +1866,7 @@ in Package Manager Console (PMC):</p>
       </div>
       <pre><code class="language-csharp">//Adds a migration file that contains C# code to update the database</code></pre>
     </div>
-    <p>Update-Database -Verbose</p>
+  <p>Update-Database -Verbose</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2319,22 +1876,19 @@ in Package Manager Console (PMC):</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">//Executes the migration; the database will be created or table schema gets updated as a result.</code></pre>
-    </div>
-    <p>Seed Data
+      <pre><code class="language-csharp">//Executes the migration; the database will be created or table schema gets updated as a result.
+Seed Data
 in DbContext:
-modelBuilder.Entity&lt;ModelClass&gt;().HasData(entityObject);
-It adds initial data (initial rows) in tables, when the database is newly created.</p>
+modelBuilder.Entity&lt;ModelClass&gt;().HasData(entityObject);</code></pre>
+    </div>
+  <p>It adds initial data (initial rows) in tables, when the database is newly created.</p>
   <h3 id="ef-crud-operations-query">EF CRUD Operations - Query</h3>
   <h3 id="select-sql">SELECT - SQL</h3>
   <h3 id="select-column1-column2-from-tablename">SELECT Column1, Column2 FROM TableName</h3>
-  <p>WHERE Column = value</p>
+<p>WHERE Column = value</p>
   <h3 id="order-by-column">ORDER BY Column</h3>
-  <p>LINQ Query:
-_dbContext.DbSetName
-.Where(item =&gt; item.Property == value)
-.OrderBy(item =&gt; item.Property)
-.Select(item =&gt; item);</p>
+<p>LINQ Query:
+_dbContext.DbSetName</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2344,14 +1898,17 @@ _dbContext.DbSetName
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">//Specifies condition for where clause
+      <pre><code class="language-csharp">.Where(item =&gt; item.Property == value)
+.OrderBy(item =&gt; item.Property)
+.Select(item =&gt; item);
+//Specifies condition for where clause
 //Specifies condition for &#39;order by&#39; clause
 //Expression to be executed for each row</code></pre>
     </div>
-    <p>EF CRUD Operations - Insert</p>
+  <p>EF CRUD Operations - Insert</p>
   <h3 id="insert-sql">INSERT - SQL</h3>
   <h3 id="insert-into-tablenamecolumn1-column2-values-value1-value2">INSERT INTO TableName(Column1, Column2) VALUES (Value1, Value2)</h3>
-  <p>Add:
+<p>Add:
 _dbContext.DbSetName.Add(entityObject);</p>
 
     <div class="code-block">
@@ -2367,11 +1924,11 @@ SaveChanges()
 _dbContext.SaveChanges();
 //Generates the SQL INSERT statement based on the model object data and executes the same at</code></pre>
     </div>
-    <p>database server.</p>
+  <p>database server.</p>
   <h3 id="ef-crud-operations-delete">EF CRUD Operations - Delete</h3>
   <h3 id="delete-sql">DELETE - SQL</h3>
   <h3 id="delete-from-tablename-where-condition">DELETE FROM TableName WHERE Condition</h3>
-  <p>Remove:
+<p>Remove:
 _dbContext.DbSetName.Remove(entityObject);</p>
 
     <div class="code-block">
@@ -2387,10 +1944,10 @@ SaveChanges()
 _dbContext.SaveChanges();
 //Generates the SQL DELETE statement based on the model object data and executes the same at</code></pre>
     </div>
-    <p>database server.</p>
+  <p>database server.</p>
   <h3 id="ef-crud-operations-update">EF CRUD Operations - Update</h3>
   <h3 id="update-sql">UPDATE - SQL</h3>
-  <p>UPDATE TableName SET Column1 = Value1, Column2 = Value2 WHERE PrimaryKey = Value
+<p>UPDATE TableName SET Column1 = Value1, Column2 = Value2 WHERE PrimaryKey = Value
 Update:
 entityObject.Property = value;</p>
 
@@ -2404,9 +1961,9 @@ entityObject.Property = value;</p>
       </div>
       <pre><code class="language-csharp">//Updates the specified value in the specific property of the model object (entity object) to the</code></pre>
     </div>
-    <p>DbSet.</p>
+  <p>DbSet.</p>
   <h3 id="savechanges">SaveChanges()</h3>
-  <p>_dbContext.SaveChanges();</p>
+<p>_dbContext.SaveChanges();</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2418,12 +1975,12 @@ entityObject.Property = value;</p>
       </div>
       <pre><code class="language-csharp">//Generates the SQL UPDATE statement based on the model object data and executes the same at</code></pre>
     </div>
-    <p>database server.</p>
-  <p>How EF Query Works?</p>
+  <p>database server.</p>
+<p>How EF Query Works?</p>
   <h3 id="workflow-of-query-processing-in-ef">Workflow of Query Processing in EF</h3>
   <h3 id="ef-calling-stored-procedures">EF - Calling Stored Procedures</h3>
-  <p>Stored Procedure for CUD (INSERT | UPDATE | DELETE):
-int DbContext.Database.ExecuteSqlRaw(
+<p>Stored Procedure for CUD (INSERT | UPDATE | DELETE):
+int <code>DbContext</code>.Database.ExecuteSqlRaw(
 string sql,
 params object[] parameters)</p>
 
@@ -2436,40 +1993,30 @@ params object[] parameters)</p>
         </button>
       </div>
       <pre><code class="language-csharp">//Eg: &quot;EXECUTE [dbo].[StoredProcName] @Param1 @Parm2
-//A list of objects of SqlParameter type</code></pre>
-    </div>
-    <p>Stored Procedure for Retrieving (Select):
+//A list of objects of SqlParameter type
+Stored Procedure for Retrieving (Select):
 IQueryable&lt;Model&gt; DbSetName.FromSqlRaw(
 string sql,
-paramsobject[] parameters)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">//Eg: &quot;EXECUTE [dbo].[StoredProcName] @Param1 @Parm2&quot;
+paramsobject[] parameters)
+//Eg: &quot;EXECUTE [dbo].[StoredProcName] @Param1 @Parm2&quot;
 //A list of objects of SqlParameter type</code></pre>
     </div>
     <h3 id="creating-stored-procedure-sql-server">Creating Stored Procedure (SQL Server)</h3>
-  <p>CREATE PROCEDURE [schema].[procedure_name]
+<p>CREATE PROCEDURE [schema].[procedure_name]
 (@parameter_name data_type, @parameter_name data_type)</p>
   <h3 id="as-begin">AS BEGIN</h3>
-  <p>statements</p>
+<p>statements</p>
   <h3 id="end">END</h3>
   <h3 id="advantages-of-stored-procedure">Advantages of Stored Procedure</h3>
   <h3 id="single-database-call">Single database call</h3>
-  <p>You can execute multiple / complex SQL statements with a single database call.
+<p>You can execute multiple / complex SQL statements with a single database call.
 As a result, you&#39;ll get:</p>
-  <ul>
-    <li>• Better performance (as you reduce the number of database calls)</li>
-    <li>• Complex database operations such as using temporary tables / cursors becomes easier.</li>
-  </ul>
+<ul>
+  <li>Better performance (as you reduce the number of database calls)</li>
+  <li>Complex database operations such as using temporary tables / cursors becomes easier.</li>
+</ul>
   <h3 id="maintainability">Maintainability</h3>
-  <p>The SQL statements can be changed easily WITHOUT modifying anything in the application source
+<p>The SQL statements can be changed easily WITHOUT modifying anything in the application source
 code (as long as inputs and outputs doesn&#39;t change)
 [Column] Attribute</p>
   <h3 id="model-class">Model class</h3>
@@ -2484,34 +2031,13 @@ code (as long as inputs and outputs doesn&#39;t change)
       </div>
       <pre><code class="language-csharp">public class ModelClass
 {
+ [Column(&quot;ColumnName&quot;, TypeName = &quot;datatype&quot;)]
+ public DataType PropertyName { get; set; }
+ [Column(&quot;ColumnName&quot;, TypeName = &quot;datatype&quot;)]
+ publicDataTypePropertyName { get; set; }
 }</code></pre>
     </div>
-    <p>[Column(&quot;ColumnName&quot;, TypeName = &quot;datatype&quot;)]</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">public DataType PropertyName { get; set; }</code></pre>
-    </div>
-    <p>[Column(&quot;ColumnName&quot;, TypeName = &quot;datatype&quot;)]
- publicDataTypePropertyName { get; set; }</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp"></code></pre>
-    </div>
-    <p>Specifies column name and data type of SQL Server table.</p>
+  <p>Specifies column name and data type of SQL Server table.</p>
   <h3 id="ef-fluent-api">EF - Fluent API</h3>
   <h3 id="dbcontext-class">DbContext class</h3>
 
@@ -2539,23 +2065,13 @@ public class CustomDbContext : DbContext
 {
  protected override void OnModelCreating(ModelBuilder modelBuilder)
  {
-}
-}</code></pre>
-    </div>
-    <p>modelBuilder.Entity&lt;ModelClass&gt;( ).Property(temp =&gt; temp.PropertyName)
+  modelBuilder.Entity&lt;ModelClass&gt;( ).Property(temp =&gt; temp.PropertyName)
   .HasColumnName(&quot;column_name&quot;) //Specifies column name in table
   .HasColumnType(&quot;data_type&quot;) //Specifies column data type in table
-  .HasDefaultValue(&quot;default_value&quot;) //Specifies default value of the column</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">public class CustomDbContext : DbContext
+  .HasDefaultValue(&quot;default_value&quot;) //Specifies default value of the column
+ }
+}
+public class CustomDbContext : DbContext
 {
  protected override void OnModelCreating(ModelBuilder modelBuilder)
  {
@@ -2566,7 +2082,7 @@ public class CustomDbContext : DbContext
 }
 }</code></pre>
     </div>
-    <p>EF - Table Relations with Fluent API</p>
+  <p>EF - Table Relations with Fluent API</p>
   <h3 id="table-relations">Table Relations</h3>
   <h3 id="ef-table-relations-with-navigation-properties">EF - Table Relations with Navigation Properties</h3>
   <h3 id="ef-table-relations-with-fluent-api">EF - Table Relations with Fluent API</h3>
@@ -2585,37 +2101,24 @@ public class CustomDbContext : DbContext
  protected override void OnModelCreating(ModelBuilder modelBuilder)
  {
   //Specifies relation between primary key and foreign key among two tables
-}
-}</code></pre>
-    </div>
-    <p>modelBuilder.Entity&lt;ChildModel&gt;( )
+  modelBuilder.Entity&lt;ChildModel&gt;( )
   .HasOne&lt;ParentModel&gt;(parent =&gt; parent.ParentReferencePropertyInChildModel)
   .WithMany(child =&gt; child.ChildReferencePropertyInParentModel) //optional
-  .HasForeignKey(child =&gt; child.ForeignKeyPropertyInChildModel)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp"></code></pre>
+  .HasForeignKey(child =&gt; child.ForeignKeyPropertyInChildModel)
+ }
+}</code></pre>
     </div>
     <h3 id="ef-async-operations">EF - Async Operations</h3>
-  <p>async</p>
-  <ul>
-    <li>• The method is awaitable.</li>
-    <li>• Can execute I/O bound code or CPU-bound code</li>
-  </ul>
-  <p>await</p>
-  <ul>
-    <li>• Waits for the I/O bound or CPU-bound code execution gets completed.</li>
-    <li>• After completion, it returns the return value.</li>
-  </ul>
+<p>async</p>
+<ul>
+  <li>The method is awaitable.</li>
+  <li>Can execute I/O bound code or CPU-bound code
+await</li>
+  <li>Waits for the I/O bound or CPU-bound code execution gets completed.</li>
+  <li>After completion, it returns the return value.</li>
+</ul>
   <h3 id="generate-pdf-files">Generate PDF Files</h3>
-  <p>Rotativa.AspNetCore:</p>
+<p>Rotativa.AspNetCore:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -2634,9 +2137,9 @@ return new ViewAsPdf(&quot;ViewName&quot;, ModelObject, ViewData)
 }</code></pre>
     </div>
     <h3 id="generate-csv-files-csvhelper">Generate CSV Files (CSVHelper)</h3>
-  <p>CsvWriter:</p>
+<p>CsvWriter:</p>
   <h3 id="writerecordsrecords">WriteRecords(records)</h3>
-  <p>Writes all objects in the given collection.
+<p>Writes all objects in the given collection.
 Eg:
 1,abc
 2,def
@@ -2645,18 +2148,18 @@ Writes all property names as headings.
 Eg:</p>
   <h3 id="id-name">Id, Name</h3>
   <h3 id="writerecordrecord">WriteRecord(record)</h3>
-  <p>Writes the given object as a row.
+<p>Writes the given object as a row.
 Eg:
 1, abc</p>
   <h3 id="writefield-value">WriteField( value )</h3>
-  <p>Writes given value.</p>
+<p>Writes given value.</p>
   <h3 id="nextrecord">NextRecord( )</h3>
-  <p>Moves to the next line.</p>
+<p>Moves to the next line.</p>
   <h3 id="flush">Flush( )</h3>
-  <p>Writes the current data to the stream.</p>
+<p>Writes the current data to the stream.</p>
   <h3 id="generate-excel-files-epplus">Generate Excel Files (EPPlus)</h3>
   <h3 id="excelworksheet">ExcelWorksheet</h3>
-  <p>[&quot;cell_address&quot;].Value
+<p>[&quot;cell_address&quot;].Value
 Sets or gets value at the specified cell.
 [&quot;cell_address&quot;].Style
 Sets or gets formatting style of the specific cell.</p>
@@ -2680,13 +2183,13 @@ Sets or gets formatting style of the specific cell.</p>
       <nav class="bottom-nav" aria-label="Previous and Next Section Navigation">
         
       <a href="section-17.html" class="nav-card prev" aria-label="Previous Section: Sec 17 - Tag Helpers">
-        <span class="nav-direction">← Previous Section</span>
+        <span class="nav-direction">&larr; Previous Section</span>
         <span class="nav-title">Sec 17: Tag Helpers</span>
       </a>
     
         
       <a href="section-19.html" class="nav-card next" aria-label="Next Section: Sec 19 - Unit Testing - Advanced">
-        <span class="nav-direction">Next Section →</span>
+        <span class="nav-direction">Next Section &rarr;</span>
         <span class="nav-title">Sec 19: Unit Testing - Advanced</span>
       </a>
     
@@ -2694,8 +2197,8 @@ Sets or gets formatting style of the specific cell.</p>
 
       <!-- Section Footer -->
       <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); color: var(--text-dim); font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;" role="contentinfo">
-        <span>ASP.NET Core Masterclass — Offline Documentation Portal</span>
-        <a href="#top" style="color: var(--text-muted); text-decoration: none;">↑ Back to top</a>
+        <span>ASP.NET Core Masterclass &mdash; Offline Documentation Portal</span>
+        <a href="#top" style="color: var(--text-muted); text-decoration: none;">&uarr; Back to top</a>
       </footer>
     </main>
 
@@ -2757,10 +2260,6 @@ Sets or gets formatting style of the specific cell.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#bash" class="toc-link">Bash</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#injecting-and-using-the-connection-string-in-ef-core" class="toc-link">Injecting and Using the Connection String in EF Core</a>
         </li>
       
@@ -2805,35 +2304,11 @@ Sets or gets formatting style of the specific cell.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#enable-migrations" class="toc-link">Enable-Migrations</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#get-migrations" class="toc-link">Get-Migrations</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#update-database" class="toc-link">Update-Database</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#best-practices-2" class="toc-link">Best Practices</a>
         </li>
       
         <li class="toc-item">
           <a href="#controller-actions" class="toc-link">Controller Actions</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#3-view-rendering-returns-the-index-view-passing-the-filtered-and-sorted" class="toc-link">3. View Rendering: Returns the Index view, passing the filtered and sorted</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#1-country-list-retrieval-fetches-countries-from-countriesservice-and" class="toc-link">1. Country List Retrieval: Fetches countries from CountriesService and</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#1-model-binding-binds-the-submitted-form-data-to-a-personaddrequest" class="toc-link">1. Model Binding: Binds the submitted form data to a PersonAddRequest</a>
         </li>
       
         <li class="toc-item">
@@ -2897,10 +2372,6 @@ Sets or gets formatting style of the specific cell.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices-4" class="toc-link">Best Practices</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#things-to-avoid" class="toc-link">Things to Avoid</a>
         </li>
       
@@ -2913,7 +2384,7 @@ Sets or gets formatting style of the specific cell.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices-5" class="toc-link">Best Practices</a>
+          <a href="#best-practices-4" class="toc-link">Best Practices</a>
         </li>
       
         <li class="toc-item">
@@ -2921,7 +2392,7 @@ Sets or gets formatting style of the specific cell.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices-6" class="toc-link">Best Practices</a>
+          <a href="#best-practices-5" class="toc-link">Best Practices</a>
         </li>
       
         <li class="toc-item">
@@ -2937,7 +2408,7 @@ Sets or gets formatting style of the specific cell.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices-7" class="toc-link">Best Practices</a>
+          <a href="#best-practices-6" class="toc-link">Best Practices</a>
         </li>
       
         <li class="toc-item">
@@ -2981,7 +2452,7 @@ Sets or gets formatting style of the specific cell.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#best-practices-8" class="toc-link">Best Practices</a>
+          <a href="#best-practices-7" class="toc-link">Best Practices</a>
         </li>
       
         <li class="toc-item">

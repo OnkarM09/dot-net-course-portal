@@ -278,49 +278,28 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Readability: Tests become more self-explanatory and easier to understand, even for"
-          ],
-          "text": "   • Readability: Tests become more self-explanatory and easier to understand, even for"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • Readability: Tests become more self-explanatory and easier to understand, even for",
             "      developers who are not familiar with the codebase."
           ],
-          "text": "      developers who are not familiar with the codebase."
+          "text": "   • Readability: Tests become more self-explanatory and easier to understand, even for\n      developers who are not familiar with the codebase."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Maintainability: Changes to the underlying code often result in more understandable test"
-          ],
-          "text": "   • Maintainability: Changes to the underlying code often result in more understandable test"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • Maintainability: Changes to the underlying code often result in more understandable test",
             "      failures due to the descriptive nature of the assertions."
           ],
-          "text": "      failures due to the descriptive nature of the assertions."
+          "text": "   • Maintainability: Changes to the underlying code often result in more understandable test\n      failures due to the descriptive nature of the assertions."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Rich API: Offers a vast collection of assertion methods covering various scenarios"
-          ],
-          "text": "   • Rich API: Offers a vast collection of assertion methods covering various scenarios"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • Rich API: Offers a vast collection of assertion methods covering various scenarios",
             "      (collections, strings, exceptions, and more), making it easier to write comprehensive tests."
           ],
-          "text": "      (collections, strings, exceptions, and more), making it easier to write comprehensive tests."
+          "text": "   • Rich API: Offers a vast collection of assertion methods covering various scenarios\n      (collections, strings, exceptions, and more), making it easier to write comprehensive tests."
         },
         {
           "type": "list_item",
@@ -342,14 +321,7 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Basic Assertions:"
-          ],
-          "text": "   • Basic Assertions:"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • Basic Assertions:",
             "           result.Should().Be(5); // result should be equal to 5",
             "           result.Should().NotBe(10); // result should not be equal to 10",
             "           result.Should().BeTrue(); // result should be true",
@@ -357,25 +329,18 @@
             "           result.Should().BeNull(); // result should be null",
             "           result.Should().NotBeNull(); // result should not be null"
           ],
-          "text": "           result.Should().Be(5); // result should be equal to 5\n           result.Should().NotBe(10); // result should not be equal to 10\n           result.Should().BeTrue(); // result should be true\n           result.Should().BeFalse(); // result should be false\n           result.Should().BeNull(); // result should be null\n           result.Should().NotBeNull(); // result should not be null"
+          "text": "   • Basic Assertions:\n           result.Should().Be(5); // result should be equal to 5\n           result.Should().NotBe(10); // result should not be equal to 10\n           result.Should().BeTrue(); // result should be true\n           result.Should().BeFalse(); // result should be false\n           result.Should().BeNull(); // result should be null\n           result.Should().NotBeNull(); // result should not be null"
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Collection Assertions:"
-          ],
-          "text": "   • Collection Assertions:"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • Collection Assertions:",
             "           list.Should().HaveCount(3); // list should have 3 elements",
             "           list.Should().Contain(\"apple\"); // list should contain \"apple\"",
             "           list.Should().OnlyContain(x => x > 0); // all elements in list should be greater than 0"
           ],
-          "text": "           list.Should().HaveCount(3); // list should have 3 elements\n           list.Should().Contain(\"apple\"); // list should contain \"apple\"\n           list.Should().OnlyContain(x => x > 0); // all elements in list should be greater than 0"
+          "text": "   • Collection Assertions:\n           list.Should().HaveCount(3); // list should have 3 elements\n           list.Should().Contain(\"apple\"); // list should contain \"apple\"\n           list.Should().OnlyContain(x => x > 0); // all elements in list should be greater than 0"
         }
       ],
       "char_count_raw": 1654,
@@ -577,41 +542,41 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • String Assertions:"
-          ],
-          "text": "   • String Assertions:"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   • String Assertions:",
             "           name.Should().StartWith(\"John\"); // name should start with \"John\"",
             "           name.Should().EndWith(\"Doe\"); // name should end with \"Doe\"",
             "           name.Should().Contain(\"Middle\"); // name should contain \"Middle\"",
             "           name.Should().MatchRegex(@\"\\d{3}-\\d{3}-\\d{4}\"); // name should match a phone",
             "           number pattern"
           ],
-          "text": "           name.Should().StartWith(\"John\"); // name should start with \"John\"\n           name.Should().EndWith(\"Doe\"); // name should end with \"Doe\"\n           name.Should().Contain(\"Middle\"); // name should contain \"Middle\"\n           name.Should().MatchRegex(@\"\\d{3}-\\d{3}-\\d{4}\"); // name should match a phone\n           number pattern"
+          "text": "   • String Assertions:\n           name.Should().StartWith(\"John\"); // name should start with \"John\"\n           name.Should().EndWith(\"Doe\"); // name should end with \"Doe\"\n           name.Should().Contain(\"Middle\"); // name should contain \"Middle\"\n           name.Should().MatchRegex(@\"\\d{3}-\\d{3}-\\d{4}\"); // name should match a phone\n           number pattern"
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • Exception Assertions:"
+            "   • Exception Assertions:",
+            "           Action act = () => someMethod();",
+            "           act.Should().Throw<ArgumentException>(); // should throw ArgumentException",
+            "           act.Should().Throw<Exception>()"
           ],
-          "text": "   • Exception Assertions:"
+          "text": "   • Exception Assertions:\n           Action act = () => someMethod();\n           act.Should().Throw<ArgumentException>(); // should throw ArgumentException\n           act.Should().Throw<Exception>()"
+        },
+        {
+          "type": "code",
+          "page": 2,
+          "lines": [
+            "             .WithMessage(\"Invalid operation\"); // should throw an exception with a specific"
+          ],
+          "text": "             .WithMessage(\"Invalid operation\"); // should throw an exception with a specific"
         },
         {
           "type": "prose",
           "page": 2,
           "lines": [
-            "           Action act = () => someMethod();",
-            "           act.Should().Throw<ArgumentException>(); // should throw ArgumentException",
-            "           act.Should().Throw<Exception>()",
-            "             .WithMessage(\"Invalid operation\"); // should throw an exception with a specific",
             "           message"
           ],
-          "text": "           Action act = () => someMethod();\n           act.Should().Throw<ArgumentException>(); // should throw ArgumentException\n           act.Should().Throw<Exception>()\n             .WithMessage(\"Invalid operation\"); // should throw an exception with a specific\n           message"
+          "text": "           message"
         },
         {
           "type": "list_item",
@@ -911,17 +876,10 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Test Data Generation: Easily create instances of your classes with sensible default values for"
-          ],
-          "text": "   • Test Data Generation: Easily create instances of your classes with sensible default values for"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Test Data Generation: Easily create instances of your classes with sensible default values for",
             "      properties."
           ],
-          "text": "      properties."
+          "text": "   • Test Data Generation: Easily create instances of your classes with sensible default values for\n      properties."
         },
         {
           "type": "list_item",
@@ -959,18 +917,11 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   2. Use the [AutoData] Attribute: Decorate your test methods with [AutoData]. AutoFixture will"
-          ],
-          "text": "   2. Use the [AutoData] Attribute: Decorate your test methods with [AutoData]. AutoFixture will"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   2. Use the [AutoData] Attribute: Decorate your test methods with [AutoData]. AutoFixture will",
             "      automatically generate instances of the required types and pass them as arguments to your",
             "      test methods."
           ],
-          "text": "      automatically generate instances of the required types and pass them as arguments to your\n      test methods."
+          "text": "   2. Use the [AutoData] Attribute: Decorate your test methods with [AutoData]. AutoFixture will\n      automatically generate instances of the required types and pass them as arguments to your\n      test methods."
         },
         {
           "type": "heading",
@@ -985,44 +936,16 @@
           "page": 3,
           "lines": [
             "public class PersonControllerTests",
-            "{"
-          ],
-          "text": "public class PersonControllerTests\n{"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
-            "  [Theory, AutoData] // AutoFixture will create a Person instance for the test"
-          ],
-          "text": "  [Theory, AutoData] // AutoFixture will create a Person instance for the test"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
-            "  public void CreatePerson_ValidPerson_ReturnsOk(Person person, Mock<IPersonsService>"
-          ],
-          "text": "  public void CreatePerson_ValidPerson_ReturnsOk(Person person, Mock<IPersonsService>"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
-            "mockPersonsService)"
-          ],
-          "text": "mockPersonsService)"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
+            "{",
+            "  [Theory, AutoData] // AutoFixture will create a Person instance for the test",
+            "  public void CreatePerson_ValidPerson_ReturnsOk(Person person, Mock<IPersonsService>",
+            "mockPersonsService)",
             "  {",
             "   // ... (rest of your test)",
             "  }",
             "}"
           ],
-          "text": "  {\n   // ... (rest of your test)\n  }\n}"
+          "text": "public class PersonControllerTests\n{\n  [Theory, AutoData] // AutoFixture will create a Person instance for the test\n  public void CreatePerson_ValidPerson_ReturnsOk(Person person, Mock<IPersonsService>\nmockPersonsService)\n  {\n   // ... (rest of your test)\n  }\n}"
         },
         {
           "type": "prose",
@@ -1280,17 +1203,10 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   1. Create a Mock: You start by creating a mock object for the interface of the dependency you"
-          ],
-          "text": "   1. Create a Mock: You start by creating a mock object for the interface of the dependency you"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   1. Create a Mock: You start by creating a mock object for the interface of the dependency you",
             "      want to replace."
           ],
-          "text": "      want to replace."
+          "text": "   1. Create a Mock: You start by creating a mock object for the interface of the dependency you\n      want to replace."
         },
         {
           "type": "code",
@@ -1307,59 +1223,52 @@
             "   2. Set Up Behavior: You configure how the mock should behave when its methods are called.",
             "      This typically involves specifying the return values, throwing exceptions, or verifying the",
             "      arguments passed to the methods.",
-            "mockPersonRepository.Setup(repo => repo.GetAllPersons())",
+            "mockPersonRepository.Setup(repo => repo.GetAllPersons())"
+          ],
+          "text": "   2. Set Up Behavior: You configure how the mock should behave when its methods are called.\n      This typically involves specifying the return values, throwing exceptions, or verifying the\n      arguments passed to the methods.\nmockPersonRepository.Setup(repo => repo.GetAllPersons())"
+        },
+        {
+          "type": "code",
+          "page": 4,
+          "lines": [
             "       .ReturnsAsync(new List<Person> { /* your test data */ });"
           ],
-          "text": "   2. Set Up Behavior: You configure how the mock should behave when its methods are called.\n      This typically involves specifying the return values, throwing exceptions, or verifying the\n      arguments passed to the methods.\nmockPersonRepository.Setup(repo => repo.GetAllPersons())\n       .ReturnsAsync(new List<Person> { /* your test data */ });"
-        },
-        {
-          "type": "list_item",
-          "page": 4,
-          "lines": [
-            "   3. Inject the Mock: You inject the mock object into the class you're testing, either through"
-          ],
-          "text": "   3. Inject the Mock: You inject the mock object into the class you're testing, either through"
+          "text": "       .ReturnsAsync(new List<Person> { /* your test data */ });"
         },
         {
           "type": "prose",
           "page": 4,
           "lines": [
+            "   3. Inject the Mock: You inject the mock object into the class you're testing, either through",
             "      constructor injection or property injection."
           ],
-          "text": "      constructor injection or property injection."
+          "text": "   3. Inject the Mock: You inject the mock object into the class you're testing, either through\n      constructor injection or property injection."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   4. Exercise Your Code: You call the methods of the class under test, which will interact with the"
-          ],
-          "text": "   4. Exercise Your Code: You call the methods of the class under test, which will interact with the"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   4. Exercise Your Code: You call the methods of the class under test, which will interact with the",
             "      mock object instead of the real dependency."
           ],
-          "text": "      mock object instead of the real dependency."
+          "text": "   4. Exercise Your Code: You call the methods of the class under test, which will interact with the\n      mock object instead of the real dependency."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   5. Verify Interactions: You use Moq's verification features to check if the mock's methods were"
+            "   5. Verify Interactions: You use Moq's verification features to check if the mock's methods were",
+            "      called as expected and with the correct parameters."
           ],
-          "text": "   5. Verify Interactions: You use Moq's verification features to check if the mock's methods were"
+          "text": "   5. Verify Interactions: You use Moq's verification features to check if the mock's methods were\n      called as expected and with the correct parameters."
         },
         {
           "type": "prose",
           "page": 4,
           "lines": [
-            "      called as expected and with the correct parameters.",
             "Code:"
           ],
-          "text": "      called as expected and with the correct parameters.\nCode:"
+          "text": "Code:"
         },
         {
           "type": "code",
@@ -1598,23 +1507,9 @@
           "page": 5,
           "lines": [
             "       // Create a mock DbContext using EntityFrameworkCoreMock",
-            "       var dbContextMock = new DbContextMock<ApplicationDbContext>("
-          ],
-          "text": "       // Create a mock DbContext using EntityFrameworkCoreMock\n       var dbContextMock = new DbContextMock<ApplicationDbContext>("
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "       var dbContextMock = new DbContextMock<ApplicationDbContext>(",
             "         new DbContextOptionsBuilder<ApplicationDbContext>().Options",
-            "       );"
-          ],
-          "text": "         new DbContextOptionsBuilder<ApplicationDbContext>().Options\n       );"
-        },
-        {
-          "type": "code",
-          "page": 5,
-          "lines": [
+            "       );",
             "       // Mock the Countries DbSet with initial data",
             "       dbContextMock.CreateDbSetMock(temp => temp.Countries, new List<Country> { });",
             "       // Mock the Persons DbSet with initial data",
@@ -1623,7 +1518,7 @@
             "       _countriesService = new CountriesService(dbContextMock.Object);",
             "       _personService = new PersonsService(_personsRepository); // Pass the mocked repository"
           ],
-          "text": "       // Mock the Countries DbSet with initial data\n       dbContextMock.CreateDbSetMock(temp => temp.Countries, new List<Country> { });\n       // Mock the Persons DbSet with initial data\n       dbContextMock.CreateDbSetMock(temp => temp.Persons, new List<Person> { });\n       //Create services based on mocked DbContext object\n       _countriesService = new CountriesService(dbContextMock.Object);\n       _personService = new PersonsService(_personsRepository); // Pass the mocked repository"
+          "text": "       // Create a mock DbContext using EntityFrameworkCoreMock\n       var dbContextMock = new DbContextMock<ApplicationDbContext>(\n         new DbContextOptionsBuilder<ApplicationDbContext>().Options\n       );\n       // Mock the Countries DbSet with initial data\n       dbContextMock.CreateDbSetMock(temp => temp.Countries, new List<Country> { });\n       // Mock the Persons DbSet with initial data\n       dbContextMock.CreateDbSetMock(temp => temp.Persons, new List<Person> { });\n       //Create services based on mocked DbContext object\n       _countriesService = new CountriesService(dbContextMock.Object);\n       _personService = new PersonsService(_personsRepository); // Pass the mocked repository"
         },
         {
           "type": "prose",
@@ -1638,33 +1533,19 @@
           "type": "code",
           "page": 5,
           "lines": [
-            "      }"
-          ],
-          "text": "      }"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "      }",
             "This code:"
           ],
-          "text": "This code:"
-        },
-        {
-          "type": "list_item",
-          "page": 5,
-          "lines": [
-            "   1. Creates mock objects for the IPersonsRepository interface and the ApplicationDbContext"
-          ],
-          "text": "   1. Creates mock objects for the IPersonsRepository interface and the ApplicationDbContext"
+          "text": "      }\nThis code:"
         },
         {
           "type": "prose",
           "page": 5,
           "lines": [
+            "   1. Creates mock objects for the IPersonsRepository interface and the ApplicationDbContext",
             "      class."
           ],
-          "text": "      class."
+          "text": "   1. Creates mock objects for the IPersonsRepository interface and the ApplicationDbContext\n      class."
         },
         {
           "type": "list_item",
@@ -1678,17 +1559,10 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   3. Initializes your services, passing the mock repository (_personsRepository) to your"
-          ],
-          "text": "   3. Initializes your services, passing the mock repository (_personsRepository) to your"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   3. Initializes your services, passing the mock repository (_personsRepository) to your",
             "      PersonsService."
           ],
-          "text": "      PersonsService."
+          "text": "   3. Initializes your services, passing the mock repository (_personsRepository) to your\n      PersonsService."
         },
         {
           "type": "code",
@@ -1702,13 +1576,27 @@
           "type": "prose",
           "page": 5,
           "lines": [
-            "_personRepositoryMock",
+            "_personRepositoryMock"
+          ],
+          "text": "_personRepositoryMock"
+        },
+        {
+          "type": "code",
+          "page": 5,
+          "lines": [
             ".Setup(temp => temp.AddPerson(It.IsAny<Person>()))",
-            ".ReturnsAsync(person);",
+            ".ReturnsAsync(person);"
+          ],
+          "text": ".Setup(temp => temp.AddPerson(It.IsAny<Person>()))\n.ReturnsAsync(person);"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
             "This code configures the mock repository to return the person object whenever the AddPerson",
             "method is called with any Person object."
           ],
-          "text": "_personRepositoryMock\n.Setup(temp => temp.AddPerson(It.IsAny<Person>()))\n.ReturnsAsync(person);\nThis code configures the mock repository to return the person object whenever the AddPerson\nmethod is called with any Person object."
+          "text": "This code configures the mock repository to return the person object whenever the AddPerson\nmethod is called with any Person object."
         }
       ],
       "char_count_raw": 1225,
@@ -1925,49 +1813,28 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Focus on Behavior: Mock only the interactions you need to control in your test. Avoid overmocking"
-          ],
-          "text": "   • Focus on Behavior: Mock only the interactions you need to control in your test. Avoid overmocking"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • Focus on Behavior: Mock only the interactions you need to control in your test. Avoid overmocking",
             "."
           ],
-          "text": "."
+          "text": "   • Focus on Behavior: Mock only the interactions you need to control in your test. Avoid overmocking\n."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Loose Coupling: Design your classes with dependency injection in mind, making it easy to"
-          ],
-          "text": "   • Loose Coupling: Design your classes with dependency injection in mind, making it easy to"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • Loose Coupling: Design your classes with dependency injection in mind, making it easy to",
             "      swap out real dependencies for mocks."
           ],
-          "text": "      swap out real dependencies for mocks."
+          "text": "   • Loose Coupling: Design your classes with dependency injection in mind, making it easy to\n      swap out real dependencies for mocks."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Verification (Optional): Use Verify to ensure that your code interacts with the mock as"
-          ],
-          "text": "   • Verification (Optional): Use Verify to ensure that your code interacts with the mock as"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • Verification (Optional): Use Verify to ensure that your code interacts with the mock as",
             "      expected."
           ],
-          "text": "      expected."
+          "text": "   • Verification (Optional): Use Verify to ensure that your code interacts with the mock as\n      expected."
         },
         {
           "type": "list_item",
@@ -1989,17 +1856,10 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Mocking Everything: Don't mock classes that you are testing directly. The goal is to isolate"
-          ],
-          "text": "   • Mocking Everything: Don't mock classes that you are testing directly. The goal is to isolate"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • Mocking Everything: Don't mock classes that you are testing directly. The goal is to isolate",
             "      the unit under test, not eliminate all dependencies."
           ],
-          "text": "      the unit under test, not eliminate all dependencies."
+          "text": "   • Mocking Everything: Don't mock classes that you are testing directly. The goal is to isolate\n      the unit under test, not eliminate all dependencies."
         },
         {
           "type": "list_item",
@@ -2013,17 +1873,10 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Verifying Implementation Details: Focus on verifying behavior, not specific implementation"
-          ],
-          "text": "   • Verifying Implementation Details: Focus on verifying behavior, not specific implementation"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • Verifying Implementation Details: Focus on verifying behavior, not specific implementation",
             "      details."
           ],
-          "text": "      details."
+          "text": "   • Verifying Implementation Details: Focus on verifying behavior, not specific implementation\n      details."
         },
         {
           "type": "heading",
@@ -2056,33 +1909,19 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Real-World Scenarios: Integration tests simulate real user interactions, revealing potential"
-          ],
-          "text": "   • Real-World Scenarios: Integration tests simulate real user interactions, revealing potential"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • Real-World Scenarios: Integration tests simulate real user interactions, revealing potential",
             "      issues that might not be caught by unit tests."
           ],
-          "text": "      issues that might not be caught by unit tests."
+          "text": "   • Real-World Scenarios: Integration tests simulate real user interactions, revealing potential\n      issues that might not be caught by unit tests."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • End-to-End Testing: They help you verify that the entire flow of a request, from routing to"
-          ],
-          "text": "   • End-to-End Testing: They help you verify that the entire flow of a request, from routing to"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • End-to-End Testing: They help you verify that the entire flow of a request, from routing to",
             "      model binding, validation, service calls, and view rendering, works correctly."
           ],
-          "text": "      model binding, validation, service calls, and view rendering, works correctly."
+          "text": "   • End-to-End Testing: They help you verify that the entire flow of a request, from routing to\n      model binding, validation, service calls, and view rendering, works correctly."
         }
       ],
       "char_count_raw": 1447,
@@ -2363,33 +2202,19 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Database Interaction Testing: Integration tests can test how your application interacts with"
-          ],
-          "text": "   • Database Interaction Testing: Integration tests can test how your application interacts with"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Database Interaction Testing: Integration tests can test how your application interacts with",
             "      a real (or in-memory) database, ensuring data persistence and retrieval are accurate."
           ],
-          "text": "      a real (or in-memory) database, ensuring data persistence and retrieval are accurate."
+          "text": "   • Database Interaction Testing: Integration tests can test how your application interacts with\n      a real (or in-memory) database, ensuring data persistence and retrieval are accurate."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Confidence in Deployment: A strong suite of integration tests boosts your confidence when"
-          ],
-          "text": "   • Confidence in Deployment: A strong suite of integration tests boosts your confidence when"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Confidence in Deployment: A strong suite of integration tests boosts your confidence when",
             "      deploying your application, reducing the likelihood of unexpected errors in production."
           ],
-          "text": "      deploying your application, reducing the likelihood of unexpected errors in production."
+          "text": "   • Confidence in Deployment: A strong suite of integration tests boosts your confidence when\n      deploying your application, reducing the likelihood of unexpected errors in production."
         },
         {
           "type": "heading",
@@ -2403,49 +2228,28 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Test Server: You create a test server instance using a custom WebApplicationFactory, which"
-          ],
-          "text": "   • Test Server: You create a test server instance using a custom WebApplicationFactory, which"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Test Server: You create a test server instance using a custom WebApplicationFactory, which",
             "      allows you to simulate your application's behavior in a test environment."
           ],
-          "text": "      allows you to simulate your application's behavior in a test environment."
+          "text": "   • Test Server: You create a test server instance using a custom WebApplicationFactory, which\n      allows you to simulate your application's behavior in a test environment."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • HTTP Client: You use an HttpClient to send HTTP requests to the test server, mimicking how"
-          ],
-          "text": "   • HTTP Client: You use an HttpClient to send HTTP requests to the test server, mimicking how"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • HTTP Client: You use an HttpClient to send HTTP requests to the test server, mimicking how",
             "      a real client (like a browser) would interact with your application."
           ],
-          "text": "      a real client (like a browser) would interact with your application."
+          "text": "   • HTTP Client: You use an HttpClient to send HTTP requests to the test server, mimicking how\n      a real client (like a browser) would interact with your application."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Assertions: Use assertions (e.g., from FluentAssertions or xUnit's built-in assertions) to"
-          ],
-          "text": "   • Assertions: Use assertions (e.g., from FluentAssertions or xUnit's built-in assertions) to"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Assertions: Use assertions (e.g., from FluentAssertions or xUnit's built-in assertions) to",
             "      validate the responses received from the server."
           ],
-          "text": "      validate the responses received from the server."
+          "text": "   • Assertions: Use assertions (e.g., from FluentAssertions or xUnit's built-in assertions) to\n      validate the responses received from the server."
         },
         {
           "type": "heading",
@@ -2459,17 +2263,10 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Focus on Integration: Test the interactions between components, not the isolated behavior"
-          ],
-          "text": "   • Focus on Integration: Test the interactions between components, not the isolated behavior"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Focus on Integration: Test the interactions between components, not the isolated behavior",
             "      of individual units."
           ],
-          "text": "      of individual units."
+          "text": "   • Focus on Integration: Test the interactions between components, not the isolated behavior\n      of individual units."
         },
         {
           "type": "list_item",
@@ -2483,98 +2280,56 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o In-Memory: Use an in-memory database (e.g., UseInMemoryDatabase) for faster"
-          ],
-          "text": "        o In-Memory: Use an in-memory database (e.g., UseInMemoryDatabase) for faster"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "        o In-Memory: Use an in-memory database (e.g., UseInMemoryDatabase) for faster",
             "           tests and data isolation."
           ],
-          "text": "           tests and data isolation."
+          "text": "        o In-Memory: Use an in-memory database (e.g., UseInMemoryDatabase) for faster\n           tests and data isolation."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o Real Database (Optional): For more realistic testing, use a test database with a"
-          ],
-          "text": "        o Real Database (Optional): For more realistic testing, use a test database with a"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "        o Real Database (Optional): For more realistic testing, use a test database with a",
             "           separate schema or dataset."
           ],
-          "text": "           separate schema or dataset."
+          "text": "        o Real Database (Optional): For more realistic testing, use a test database with a\n           separate schema or dataset."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Test Environment: Configure your test server to use a \"Test\" environment to avoid"
-          ],
-          "text": "   • Test Environment: Configure your test server to use a \"Test\" environment to avoid"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Test Environment: Configure your test server to use a \"Test\" environment to avoid",
             "      accidentally affecting your development or production databases."
           ],
-          "text": "      accidentally affecting your development or production databases."
+          "text": "   • Test Environment: Configure your test server to use a \"Test\" environment to avoid\n      accidentally affecting your development or production databases."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Clean Up: If you're using a real database, ensure you clean up the test data after each test or"
-          ],
-          "text": "   • Clean Up: If you're using a real database, ensure you clean up the test data after each test or"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Clean Up: If you're using a real database, ensure you clean up the test data after each test or",
             "      test class to maintain data consistency."
           ],
-          "text": "      test class to maintain data consistency."
+          "text": "   • Clean Up: If you're using a real database, ensure you clean up the test data after each test or\n      test class to maintain data consistency."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Avoid External Dependencies: If your application relies on external APIs or services, consider"
-          ],
-          "text": "   • Avoid External Dependencies: If your application relies on external APIs or services, consider"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Avoid External Dependencies: If your application relies on external APIs or services, consider",
             "      mocking or stubbing them for integration tests to avoid network dependencies and keep",
             "      tests fast and reliable."
           ],
-          "text": "      mocking or stubbing them for integration tests to avoid network dependencies and keep\n      tests fast and reliable."
+          "text": "   • Avoid External Dependencies: If your application relies on external APIs or services, consider\n      mocking or stubbing them for integration tests to avoid network dependencies and keep\n      tests fast and reliable."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Clear Test Names: Use descriptive names that explain the purpose and expected behavior of"
-          ],
-          "text": "   • Clear Test Names: Use descriptive names that explain the purpose and expected behavior of"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Clear Test Names: Use descriptive names that explain the purpose and expected behavior of",
             "      each test."
           ],
-          "text": "      each test."
+          "text": "   • Clear Test Names: Use descriptive names that explain the purpose and expected behavior of\n      each test."
         },
         {
           "type": "heading",
@@ -2844,122 +2599,38 @@
             "void ConfigureWebHost(IWebHostBuilder builder)",
             "  {",
             "   base.ConfigureWebHost(builder);",
-            "   builder.UseEnvironment(\"Test\"); 1. www.nuget.org"
-          ],
-          "text": "void ConfigureWebHost(IWebHostBuilder builder)\n  {\n   base.ConfigureWebHost(builder);\n   builder.UseEnvironment(\"Test\"); 1. www.nuget.org"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
-            "www.nuget.org"
-          ],
-          "text": "www.nuget.org"
-        },
-        {
-          "type": "code",
-          "page": 8,
-          "lines": [
+            "   builder.UseEnvironment(\"Test\"); 1. www.nuget.org",
+            "www.nuget.org",
             "// Set the environment to \"Test\"",
             "   builder.ConfigureServices(services => {",
             "     // Replace the default DbContext configuration with an in-memory database",
             "     var descriptor = services.SingleOrDefault(temp => temp.ServiceType ==",
-            "typeof(DbContextOptions<ApplicationDbContext>));"
-          ],
-          "text": "// Set the environment to \"Test\"\n   builder.ConfigureServices(services => {\n     // Replace the default DbContext configuration with an in-memory database\n     var descriptor = services.SingleOrDefault(temp => temp.ServiceType ==\ntypeof(DbContextOptions<ApplicationDbContext>));"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
-            "     if (descriptor != null)"
-          ],
-          "text": "     if (descriptor != null)"
-        },
-        {
-          "type": "code",
-          "page": 8,
-          "lines": [
+            "typeof(DbContextOptions<ApplicationDbContext>));",
+            "     if (descriptor != null)",
             "     {",
-            "      services.Remove(descriptor); 1. github.com"
-          ],
-          "text": "     {\n      services.Remove(descriptor); 1. github.com"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
-            "MIT github.com"
-          ],
-          "text": "MIT github.com"
-        },
-        {
-          "type": "code",
-          "page": 8,
-          "lines": [
-            "     }"
-          ],
-          "text": "     }"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
-            "     services.AddDbContext<ApplicationDbContext>(options =>"
-          ],
-          "text": "     services.AddDbContext<ApplicationDbContext>(options =>"
-        },
-        {
-          "type": "code",
-          "page": 8,
-          "lines": [
+            "      services.Remove(descriptor); 1. github.com",
+            "MIT github.com",
+            "     }",
+            "     services.AddDbContext<ApplicationDbContext>(options =>",
             "     {",
-            "      options.UseInMemoryDatabase(\"DatbaseForTesting\"); 1. github.com"
-          ],
-          "text": "     {\n      options.UseInMemoryDatabase(\"DatbaseForTesting\"); 1. github.com"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "      options.UseInMemoryDatabase(\"DatbaseForTesting\"); 1. github.com",
             "github.com",
             "     });",
-            "   });"
-          ],
-          "text": "github.com\n     });\n   });"
-        },
-        {
-          "type": "code",
-          "page": 8,
-          "lines": [
+            "   });",
             "  }",
-            "}"
-          ],
-          "text": "  }\n}"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "}",
             "This class sets up a customized WebApplicationFactory for your integration tests:"
           ],
-          "text": "This class sets up a customized WebApplicationFactory for your integration tests:"
-        },
-        {
-          "type": "list_item",
-          "page": 8,
-          "lines": [
-            "   1. Inherits from WebApplicationFactory<Program>: This base class provides the core"
-          ],
-          "text": "   1. Inherits from WebApplicationFactory<Program>: This base class provides the core"
+          "text": "void ConfigureWebHost(IWebHostBuilder builder)\n  {\n   base.ConfigureWebHost(builder);\n   builder.UseEnvironment(\"Test\"); 1. www.nuget.org\nwww.nuget.org\n// Set the environment to \"Test\"\n   builder.ConfigureServices(services => {\n     // Replace the default DbContext configuration with an in-memory database\n     var descriptor = services.SingleOrDefault(temp => temp.ServiceType ==\ntypeof(DbContextOptions<ApplicationDbContext>));\n     if (descriptor != null)\n     {\n      services.Remove(descriptor); 1. github.com\nMIT github.com\n     }\n     services.AddDbContext<ApplicationDbContext>(options =>\n     {\n      options.UseInMemoryDatabase(\"DatbaseForTesting\"); 1. github.com\ngithub.com\n     });\n   });\n  }\n}\nThis class sets up a customized WebApplicationFactory for your integration tests:"
         },
         {
           "type": "prose",
           "page": 8,
           "lines": [
+            "   1. Inherits from WebApplicationFactory<Program>: This base class provides the core",
             "      functionality for creating a test server instance."
           ],
-          "text": "      functionality for creating a test server instance."
+          "text": "   1. Inherits from WebApplicationFactory<Program>: This base class provides the core\n      functionality for creating a test server instance."
         }
       ],
       "char_count_raw": 867,
@@ -3176,50 +2847,36 @@
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   2. ConfigureWebHost Override: You override this method to customize the configuration of"
-          ],
-          "text": "   2. ConfigureWebHost Override: You override this method to customize the configuration of"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   2. ConfigureWebHost Override: You override this method to customize the configuration of",
             "      the test server."
           ],
-          "text": "      the test server."
+          "text": "   2. ConfigureWebHost Override: You override this method to customize the configuration of\n      the test server."
         },
         {
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   3. UseEnvironment(\"Test\"): Sets the ASPNETCORE_ENVIRONMENT variable to \"Test\", ensuring"
-          ],
-          "text": "   3. UseEnvironment(\"Test\"): Sets the ASPNETCORE_ENVIRONMENT variable to \"Test\", ensuring"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   3. UseEnvironment(\"Test\"): Sets the ASPNETCORE_ENVIRONMENT variable to \"Test\", ensuring",
             "      that the application loads any test-specific configuration settings from appsettings.Test.json."
           ],
-          "text": "      that the application loads any test-specific configuration settings from appsettings.Test.json."
+          "text": "   3. UseEnvironment(\"Test\"): Sets the ASPNETCORE_ENVIRONMENT variable to \"Test\", ensuring\n      that the application loads any test-specific configuration settings from appsettings.Test.json."
         },
         {
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   4. ConfigureServices: Replaces the default database context configuration with an in-memory"
+            "   4. ConfigureServices: Replaces the default database context configuration with an in-memory",
+            "      database provider for testing."
           ],
-          "text": "   4. ConfigureServices: Replaces the default database context configuration with an in-memory"
+          "text": "   4. ConfigureServices: Replaces the default database context configuration with an in-memory\n      database provider for testing."
         },
         {
           "type": "prose",
           "page": 9,
           "lines": [
-            "      database provider for testing.",
             "PersonsControllerIntegrationTest:"
           ],
-          "text": "      database provider for testing.\nPersonsControllerIntegrationTest:"
+          "text": "PersonsControllerIntegrationTest:"
         },
         {
           "type": "code",
@@ -3227,43 +2884,15 @@
           "lines": [
             "public class PersonsControllerIntegrationTest : IClassFixture<CustomWebApplicationFactory>",
             "{",
-            "  private readonly HttpClient _client; 1. github.com"
-          ],
-          "text": "public class PersonsControllerIntegrationTest : IClassFixture<CustomWebApplicationFactory>\n{\n  private readonly HttpClient _client; 1. github.com"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
-            "github.com"
-          ],
-          "text": "github.com"
-        },
-        {
-          "type": "code",
-          "page": 9,
-          "lines": [
+            "  private readonly HttpClient _client; 1. github.com",
+            "github.com",
             "  // Constructor injection of the custom factory",
             "  public PersonsControllerIntegrationTest(CustomWebApplicationFactory factory)",
             "  {",
             "   _client = factory.CreateClient(); // Create an HttpClient to interact with the test server",
-            "  }"
-          ],
-          "text": "  // Constructor injection of the custom factory\n  public PersonsControllerIntegrationTest(CustomWebApplicationFactory factory)\n  {\n   _client = factory.CreateClient(); // Create an HttpClient to interact with the test server\n  }"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "  }",
             "  #region Index",
-            "  [Fact]"
-          ],
-          "text": "  #region Index\n  [Fact]"
-        },
-        {
-          "type": "code",
-          "page": 9,
-          "lines": [
+            "  [Fact]",
             "  public async Task Index_ToReturnView()",
             "  {",
             "   // Act: Send a GET request to the \"/Persons/Index\" endpoint",
@@ -3272,7 +2901,7 @@
             "   // 1. Check if the response was successful (status code 2xx)",
             "   response.Should().BeSuccessful();"
           ],
-          "text": "  public async Task Index_ToReturnView()\n  {\n   // Act: Send a GET request to the \"/Persons/Index\" endpoint\n   HttpResponseMessage response = await _client.GetAsync(\"/Persons/Index\");\n   // Assert:\n   // 1. Check if the response was successful (status code 2xx)\n   response.Should().BeSuccessful();"
+          "text": "public class PersonsControllerIntegrationTest : IClassFixture<CustomWebApplicationFactory>\n{\n  private readonly HttpClient _client; 1. github.com\ngithub.com\n  // Constructor injection of the custom factory\n  public PersonsControllerIntegrationTest(CustomWebApplicationFactory factory)\n  {\n   _client = factory.CreateClient(); // Create an HttpClient to interact with the test server\n  }\n  #region Index\n  [Fact]\n  public async Task Index_ToReturnView()\n  {\n   // Act: Send a GET request to the \"/Persons/Index\" endpoint\n   HttpResponseMessage response = await _client.GetAsync(\"/Persons/Index\");\n   // Assert:\n   // 1. Check if the response was successful (status code 2xx)\n   response.Should().BeSuccessful();"
         }
       ],
       "char_count_raw": 1122,
@@ -3553,34 +3182,20 @@
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   1. IClassFixture<CustomWebApplicationFactory>: This interface tells xUnit to create a single"
-          ],
-          "text": "   1. IClassFixture<CustomWebApplicationFactory>: This interface tells xUnit to create a single"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   1. IClassFixture<CustomWebApplicationFactory>: This interface tells xUnit to create a single",
             "      instance of CustomWebApplicationFactory and share it among all tests in this class. This",
             "      ensures that the test server is created only once, improving performance."
           ],
-          "text": "      instance of CustomWebApplicationFactory and share it among all tests in this class. This\n      ensures that the test server is created only once, improving performance."
+          "text": "   1. IClassFixture<CustomWebApplicationFactory>: This interface tells xUnit to create a single\n      instance of CustomWebApplicationFactory and share it among all tests in this class. This\n      ensures that the test server is created only once, improving performance."
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   2. Constructor Injection: The constructor receives the factory and uses it to create an"
-          ],
-          "text": "   2. Constructor Injection: The constructor receives the factory and uses it to create an"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   2. Constructor Injection: The constructor receives the factory and uses it to create an",
             "      HttpClient that can send requests to the test server."
           ],
-          "text": "      HttpClient that can send requests to the test server."
+          "text": "   2. Constructor Injection: The constructor receives the factory and uses it to create an\n      HttpClient that can send requests to the test server."
         },
         {
           "type": "list_item",
@@ -3607,15 +3222,29 @@
           "text": "        o Assert:"
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 10,
           "lines": [
-            "              ▪ Checks if the response status code indicates success (2xx).",
-            "              ▪ Parses the HTML response body using HtmlAgilityPack.",
+            "              ▪ Checks if the response status code indicates success (2xx)."
+          ],
+          "text": "              ▪ Checks if the response status code indicates success (2xx)."
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
+            "              ▪ Parses the HTML response body using HtmlAgilityPack."
+          ],
+          "text": "              ▪ Parses the HTML response body using HtmlAgilityPack."
+        },
+        {
+          "type": "list_item",
+          "page": 10,
+          "lines": [
             "              ▪ Asserts that the response contains a <table> element with the class",
             "                 \"persons\". This verifies that the Index view is rendering correctly."
           ],
-          "text": "              ▪ Checks if the response status code indicates success (2xx).\n              ▪ Parses the HTML response body using HtmlAgilityPack.\n              ▪ Asserts that the response contains a <table> element with the class\n                 \"persons\". This verifies that the Index view is rendering correctly."
+          "text": "              ▪ Asserts that the response contains a <table> element with the class\n                 \"persons\". This verifies that the Index view is rendering correctly."
         },
         {
           "type": "heading",
@@ -3629,17 +3258,10 @@
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • Purpose: Integration tests verify interactions between components, not isolated unit"
-          ],
-          "text": "   • Purpose: Integration tests verify interactions between components, not isolated unit"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • Purpose: Integration tests verify interactions between components, not isolated unit",
             "      behavior."
           ],
-          "text": "      behavior."
+          "text": "   • Purpose: Integration tests verify interactions between components, not isolated unit\n      behavior."
         },
         {
           "type": "list_item",
@@ -3864,17 +3486,10 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • In-Memory Database: Use an in-memory database for testing to isolate data and improve"
-          ],
-          "text": "   • In-Memory Database: Use an in-memory database for testing to isolate data and improve"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   • In-Memory Database: Use an in-memory database for testing to isolate data and improve",
             "      speed."
           ],
-          "text": "      speed."
+          "text": "   • In-Memory Database: Use an in-memory database for testing to isolate data and improve\n      speed."
         },
         {
           "type": "list_item",
@@ -4032,33 +3647,19 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "        o Throws(exception) or ThrowsAsync(exception): Simulates an exception being"
-          ],
-          "text": "        o Throws(exception) or ThrowsAsync(exception): Simulates an exception being"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "        o Throws(exception) or ThrowsAsync(exception): Simulates an exception being",
             "           thrown."
           ],
-          "text": "           thrown."
+          "text": "        o Throws(exception) or ThrowsAsync(exception): Simulates an exception being\n           thrown."
         },
         {
           "type": "list_item",
           "page": 11,
           "lines": [
-            "        o Verify(expression, times): Ensures a method was called the expected number of"
-          ],
-          "text": "        o Verify(expression, times): Ensures a method was called the expected number of"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "        o Verify(expression, times): Ensures a method was called the expected number of",
             "           times."
           ],
-          "text": "           times."
+          "text": "        o Verify(expression, times): Ensures a method was called the expected number of\n           times."
         }
       ],
       "char_count_raw": 1419,
@@ -4435,17 +4036,10 @@
           "type": "list_item",
           "page": 12,
           "lines": [
-            "   • Interfaces: Define interfaces (e.g., IPersonsRepository) to abstract data access and facilitate"
-          ],
-          "text": "   • Interfaces: Define interfaces (e.g., IPersonsRepository) to abstract data access and facilitate"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "   • Interfaces: Define interfaces (e.g., IPersonsRepository) to abstract data access and facilitate",
             "      mocking."
           ],
-          "text": "      mocking."
+          "text": "   • Interfaces: Define interfaces (e.g., IPersonsRepository) to abstract data access and facilitate\n      mocking."
         },
         {
           "type": "list_item",
@@ -4718,17 +4312,10 @@
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   • Purpose: Test how multiple components (controllers, views, services, and sometimes even a"
-          ],
-          "text": "   • Purpose: Test how multiple components (controllers, views, services, and sometimes even a"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "   • Purpose: Test how multiple components (controllers, views, services, and sometimes even a",
             "      real database) work together."
           ],
-          "text": "      real database) work together."
+          "text": "   • Purpose: Test how multiple components (controllers, views, services, and sometimes even a\n      real database) work together."
         },
         {
           "type": "list_item",
@@ -4758,17 +4345,10 @@
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   • Test Environment: Set the ASPNETCORE_ENVIRONMENT to \"Test\" for test-specific"
-          ],
-          "text": "   • Test Environment: Set the ASPNETCORE_ENVIRONMENT to \"Test\" for test-specific"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "   • Test Environment: Set the ASPNETCORE_ENVIRONMENT to \"Test\" for test-specific",
             "      configuration."
           ],
-          "text": "      configuration."
+          "text": "   • Test Environment: Set the ASPNETCORE_ENVIRONMENT to \"Test\" for test-specific\n      configuration."
         },
         {
           "type": "heading",
@@ -4806,17 +4386,10 @@
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   • Real-World Scenarios: Connect these concepts to real-world testing challenges and how you"
-          ],
-          "text": "   • Real-World Scenarios: Connect these concepts to real-world testing challenges and how you"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "   • Real-World Scenarios: Connect these concepts to real-world testing challenges and how you",
             "      would solve them."
           ],
-          "text": "      would solve them."
+          "text": "   • Real-World Scenarios: Connect these concepts to real-world testing challenges and how you\n      would solve them."
         }
       ],
       "char_count_raw": 1217,

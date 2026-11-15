@@ -294,7 +294,7 @@ async function auditSite() {
       if (!cbHtml.includes('class="language-label"')) {
         violations.push({ file: pagePath, rule: 'Code Language Label', message: 'Code block missing language-label' });
       }
-      if (!cbHtml.includes('class="copy-code-btn"')) {
+      if (!/\bcopy-code-btn\b/.test(cbHtml)) {
         violations.push({ file: pagePath, rule: 'Code Copy Button', message: 'Code block missing copy-code-btn' });
       }
 

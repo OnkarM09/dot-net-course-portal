@@ -238,33 +238,19 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Development: Your local development environment. It's where you build and test your"
-          ],
-          "text": "   • Development: Your local development environment. It's where you build and test your"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • Development: Your local development environment. It's where you build and test your",
             "      application."
           ],
-          "text": "      application."
+          "text": "   • Development: Your local development environment. It's where you build and test your\n      application."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Staging: A pre-production environment that closely mirrors your production setup. You use"
-          ],
-          "text": "   • Staging: A pre-production environment that closely mirrors your production setup. You use"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • Staging: A pre-production environment that closely mirrors your production setup. You use",
             "      it for final testing and validation."
           ],
-          "text": "      it for final testing and validation."
+          "text": "   • Staging: A pre-production environment that closely mirrors your production setup. You use\n      it for final testing and validation."
         },
         {
           "type": "list_item",
@@ -303,50 +289,29 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • launchSettings.json: For Visual Studio, you can set the ASPNETCORE_ENVIRONMENT"
-          ],
-          "text": "   • launchSettings.json: For Visual Studio, you can set the ASPNETCORE_ENVIRONMENT"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • launchSettings.json: For Visual Studio, you can set the ASPNETCORE_ENVIRONMENT",
             "      variable in the launchSettings.json file within your project's Properties folder."
           ],
-          "text": "      variable in the launchSettings.json file within your project's Properties folder."
+          "text": "   • launchSettings.json: For Visual Studio, you can set the ASPNETCORE_ENVIRONMENT\n      variable in the launchSettings.json file within your project's Properties folder."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Environment Variables: Set the ASPNETCORE_ENVIRONMENT variable directly in your"
-          ],
-          "text": "   • Environment Variables: Set the ASPNETCORE_ENVIRONMENT variable directly in your"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • Environment Variables: Set the ASPNETCORE_ENVIRONMENT variable directly in your",
             "      system's environment variables."
           ],
-          "text": "      system's environment variables."
+          "text": "   • Environment Variables: Set the ASPNETCORE_ENVIRONMENT variable directly in your\n      system's environment variables."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Command Line: When running your application from the command line, you can set the"
-          ],
-          "text": "   • Command Line: When running your application from the command line, you can set the"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • Command Line: When running your application from the command line, you can set the",
             "      environment variable using the --environment or -e flag:Bash",
             "dotnet run --environment Staging"
           ],
-          "text": "      environment variable using the --environment or -e flag:Bash\ndotnet run --environment Staging"
+          "text": "   • Command Line: When running your application from the command line, you can set the\n      environment variable using the --environment or -e flag:Bash\ndotnet run --environment Staging"
         }
       ],
       "char_count_raw": 1405,
@@ -596,104 +561,62 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   2. Conditional Configuration: You can use conditional logic based on the environment name to"
+            "   2. Conditional Configuration: You can use conditional logic based on the environment name to",
+            "      configure different settings or middleware."
           ],
-          "text": "   2. Conditional Configuration: You can use conditional logic based on the environment name to"
+          "text": "   2. Conditional Configuration: You can use conditional logic based on the environment name to\n      configure different settings or middleware."
         },
         {
           "type": "prose",
           "page": 2,
           "lines": [
-            "      configure different settings or middleware.",
-            "C#",
-            "if (app.Environment.IsDevelopment())"
+            "C#"
           ],
-          "text": "      configure different settings or middleware.\nC#\nif (app.Environment.IsDevelopment())"
+          "text": "C#"
         },
         {
           "type": "code",
           "page": 2,
           "lines": [
+            "if (app.Environment.IsDevelopment())",
             "{",
             "  app.UseDeveloperExceptionPage(); // Use a detailed error page in development",
-            "}"
-          ],
-          "text": "{\n  app.UseDeveloperExceptionPage(); // Use a detailed error page in development\n}"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
-            "else"
-          ],
-          "text": "else"
-        },
-        {
-          "type": "code",
-          "page": 2,
-          "lines": [
+            "}",
+            "else",
             "{",
             "  app.UseExceptionHandler(\"/Error\"); // Use a generic error page in production",
-            "}"
-          ],
-          "text": "{\n  app.UseExceptionHandler(\"/Error\"); // Use a generic error page in production\n}"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "}",
             "   3. Environment-Specific Configuration Files:"
           ],
-          "text": "   3. Environment-Specific Configuration Files:"
-        },
-        {
-          "type": "list_item",
-          "page": 2,
-          "lines": [
-            "        o You can create environment-specific configuration files like"
-          ],
-          "text": "        o You can create environment-specific configuration files like"
+          "text": "if (app.Environment.IsDevelopment())\n{\n  app.UseDeveloperExceptionPage(); // Use a detailed error page in development\n}\nelse\n{\n  app.UseExceptionHandler(\"/Error\"); // Use a generic error page in production\n}\n   3. Environment-Specific Configuration Files:"
         },
         {
           "type": "prose",
           "page": 2,
           "lines": [
+            "        o You can create environment-specific configuration files like",
             "           appsettings.Development.json, appsettings.Staging.json, and",
             "           appsettings.Production.json."
           ],
-          "text": "           appsettings.Development.json, appsettings.Staging.json, and\n           appsettings.Production.json."
+          "text": "        o You can create environment-specific configuration files like\n           appsettings.Development.json, appsettings.Staging.json, and\n           appsettings.Production.json."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o ASP.NET Core automatically loads the appropriate configuration file based on the"
-          ],
-          "text": "        o ASP.NET Core automatically loads the appropriate configuration file based on the"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "        o ASP.NET Core automatically loads the appropriate configuration file based on the",
             "           current environment."
           ],
-          "text": "           current environment."
+          "text": "        o ASP.NET Core automatically loads the appropriate configuration file based on the\n           current environment."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o Use these files to store settings that vary between environments, such as database"
-          ],
-          "text": "        o Use these files to store settings that vary between environments, such as database"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "        o Use these files to store settings that vary between environments, such as database",
             "           connection strings or API keys."
           ],
-          "text": "           connection strings or API keys."
+          "text": "        o Use these files to store settings that vary between environments, such as database\n           connection strings or API keys."
         },
         {
           "type": "list_item",
@@ -934,131 +857,68 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Environment-Specific Configuration: Separate your configuration into environment-specific"
-          ],
-          "text": "   • Environment-Specific Configuration: Separate your configuration into environment-specific"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Environment-Specific Configuration: Separate your configuration into environment-specific",
             "      files to avoid exposing sensitive data (like production database credentials) in your",
             "      development environment."
           ],
-          "text": "      files to avoid exposing sensitive data (like production database credentials) in your\n      development environment."
+          "text": "   • Environment-Specific Configuration: Separate your configuration into environment-specific\n      files to avoid exposing sensitive data (like production database credentials) in your\n      development environment."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Middleware Pipelines: Tailor your middleware pipelines for each environment. For example,"
-          ],
-          "text": "   • Middleware Pipelines: Tailor your middleware pipelines for each environment. For example,"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Middleware Pipelines: Tailor your middleware pipelines for each environment. For example,",
             "      use UseDeveloperExceptionPage in development but UseExceptionHandler in production."
           ],
-          "text": "      use UseDeveloperExceptionPage in development but UseExceptionHandler in production."
+          "text": "   • Middleware Pipelines: Tailor your middleware pipelines for each environment. For example,\n      use UseDeveloperExceptionPage in development but UseExceptionHandler in production."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Logging: Configure different logging levels and targets for different environments (e.g., more"
-          ],
-          "text": "   • Logging: Configure different logging levels and targets for different environments (e.g., more"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Logging: Configure different logging levels and targets for different environments (e.g., more",
             "      verbose logging in development)."
           ],
-          "text": "      verbose logging in development)."
+          "text": "   • Logging: Configure different logging levels and targets for different environments (e.g., more\n      verbose logging in development)."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Feature Flags: Use environment variables or configuration values to toggle features on or off"
+            "   • Feature Flags: Use environment variables or configuration values to toggle features on or off",
+            "      depending on the environment."
           ],
-          "text": "   • Feature Flags: Use environment variables or configuration values to toggle features on or off"
+          "text": "   • Feature Flags: Use environment variables or configuration values to toggle features on or off\n      depending on the environment."
         },
         {
           "type": "prose",
           "page": 3,
           "lines": [
-            "      depending on the environment.",
             "Example (Program.cs)"
           ],
-          "text": "      depending on the environment.\nExample (Program.cs)"
+          "text": "Example (Program.cs)"
         },
         {
           "type": "code",
           "page": 3,
           "lines": [
             "var builder = WebApplication.CreateBuilder(args);",
-            "var app = builder.Build();"
-          ],
-          "text": "var builder = WebApplication.CreateBuilder(args);\nvar app = builder.Build();"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
-            "if (app.Environment.IsDevelopment())"
-          ],
-          "text": "if (app.Environment.IsDevelopment())"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
+            "var app = builder.Build();",
+            "if (app.Environment.IsDevelopment())",
             "{",
             "  // Development-specific configuration",
-            "}"
-          ],
-          "text": "{\n  // Development-specific configuration\n}"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
-            "else if (app.Environment.IsStaging())"
-          ],
-          "text": "else if (app.Environment.IsStaging())"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
+            "}",
+            "else if (app.Environment.IsStaging())",
             "{",
             "  // Staging-specific configuration",
-            "}"
-          ],
-          "text": "{\n  // Staging-specific configuration\n}"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
-            "else // Production"
-          ],
-          "text": "else // Production"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
+            "}",
+            "else // Production",
             "{",
             "  // Production-specific configuration",
             "}",
             "// ... Rest of your application setup ..."
           ],
-          "text": "{\n  // Production-specific configuration\n}\n// ... Rest of your application setup ..."
+          "text": "var builder = WebApplication.CreateBuilder(args);\nvar app = builder.Build();\nif (app.Environment.IsDevelopment())\n{\n  // Development-specific configuration\n}\nelse if (app.Environment.IsStaging())\n{\n  // Staging-specific configuration\n}\nelse // Production\n{\n  // Production-specific configuration\n}\n// ... Rest of your application setup ..."
         }
       ],
       "char_count_raw": 1005,
@@ -1307,17 +1167,10 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Configuration: Use environment-specific configuration files (appsettings.{Environment}.json)"
-          ],
-          "text": "   • Configuration: Use environment-specific configuration files (appsettings.{Environment}.json)"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • Configuration: Use environment-specific configuration files (appsettings.{Environment}.json)",
             "      for organization."
           ],
-          "text": "      for organization."
+          "text": "   • Configuration: Use environment-specific configuration files (appsettings.{Environment}.json)\n      for organization."
         },
         {
           "type": "list_item",
@@ -1331,22 +1184,22 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Best Practices: Follow the best practices mentioned above to ensure a smooth deployment"
+            "   • Best Practices: Follow the best practices mentioned above to ensure a smooth deployment",
+            "      process and optimal behavior in each environment."
           ],
-          "text": "   • Best Practices: Follow the best practices mentioned above to ensure a smooth deployment"
+          "text": "   • Best Practices: Follow the best practices mentioned above to ensure a smooth deployment\n      process and optimal behavior in each environment."
         },
         {
           "type": "prose",
           "page": 4,
           "lines": [
-            "      process and optimal behavior in each environment.",
             "Understanding launchSettings.json",
             "This file is primarily used by Visual Studio to configure how your ASP.NET Core application launches",
             "during development. It contains settings for different profiles (e.g., IIS Express, ProjectName) and",
             "provides a convenient way to set environment variables without modifying your system's global",
             "environment variables."
           ],
-          "text": "      process and optimal behavior in each environment.\nUnderstanding launchSettings.json\nThis file is primarily used by Visual Studio to configure how your ASP.NET Core application launches\nduring development. It contains settings for different profiles (e.g., IIS Express, ProjectName) and\nprovides a convenient way to set environment variables without modifying your system's global\nenvironment variables."
+          "text": "Understanding launchSettings.json\nThis file is primarily used by Visual Studio to configure how your ASP.NET Core application launches\nduring development. It contains settings for different profiles (e.g., IIS Express, ProjectName) and\nprovides a convenient way to set environment variables without modifying your system's global\nenvironment variables."
         },
         {
           "type": "heading",
@@ -1376,14 +1229,7 @@
           "type": "code",
           "page": 4,
           "lines": [
-            "{"
-          ],
-          "text": "{"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "{",
             " \"iisSettings\": { ... }, // Settings for IIS Express (if used)",
             " \"profiles\": {",
             "  \"IIS Express\": { ... }, // Configuration for IIS Express profile",
@@ -1393,17 +1239,10 @@
             "  \"launchBrowser\": true,",
             "  \"applicationUrl\": \"https://localhost:7272;http://localhost:5248\", // URLs to launch",
             "  \"environmentVariables\": {",
-            "   \"ASPNETCORE_ENVIRONMENT\": \"Development\" // Setting the environment"
-          ],
-          "text": " \"iisSettings\": { ... }, // Settings for IIS Express (if used)\n \"profiles\": {\n  \"IIS Express\": { ... }, // Configuration for IIS Express profile\n  \"YourProjectName\": { // Configuration for running the project directly\n  \"commandName\": \"Project\",\n  \"dotnetRunMessages\": \"true\",\n  \"launchBrowser\": true,\n  \"applicationUrl\": \"https://localhost:7272;http://localhost:5248\", // URLs to launch\n  \"environmentVariables\": {\n   \"ASPNETCORE_ENVIRONMENT\": \"Development\" // Setting the environment"
-        },
-        {
-          "type": "code",
-          "page": 4,
-          "lines": [
+            "   \"ASPNETCORE_ENVIRONMENT\": \"Development\" // Setting the environment",
             "  }"
           ],
-          "text": "  }"
+          "text": "{\n \"iisSettings\": { ... }, // Settings for IIS Express (if used)\n \"profiles\": {\n  \"IIS Express\": { ... }, // Configuration for IIS Express profile\n  \"YourProjectName\": { // Configuration for running the project directly\n  \"commandName\": \"Project\",\n  \"dotnetRunMessages\": \"true\",\n  \"launchBrowser\": true,\n  \"applicationUrl\": \"https://localhost:7272;http://localhost:5248\", // URLs to launch\n  \"environmentVariables\": {\n   \"ASPNETCORE_ENVIRONMENT\": \"Development\" // Setting the environment\n  }"
         }
       ],
       "char_count_raw": 1363,
@@ -1721,19 +1560,19 @@
           "page": 5,
           "lines": [
             "You can also use a custom environment name if needed.",
-            "Example: Setting the Development Environment",
-            "\"environmentVariables\": {",
-            " \"ASPNETCORE_ENVIRONMENT\": \"Development\""
+            "Example: Setting the Development Environment"
           ],
-          "text": "You can also use a custom environment name if needed.\nExample: Setting the Development Environment\n\"environmentVariables\": {\n \"ASPNETCORE_ENVIRONMENT\": \"Development\""
+          "text": "You can also use a custom environment name if needed.\nExample: Setting the Development Environment"
         },
         {
           "type": "code",
           "page": 5,
           "lines": [
+            "\"environmentVariables\": {",
+            " \"ASPNETCORE_ENVIRONMENT\": \"Development\"",
             "}"
           ],
-          "text": "}"
+          "text": "\"environmentVariables\": {\n \"ASPNETCORE_ENVIRONMENT\": \"Development\"\n}"
         },
         {
           "type": "prose",
@@ -1760,54 +1599,33 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Environment-Specific Configuration Files: Remember that you'll still need to create"
-          ],
-          "text": "   • Environment-Specific Configuration Files: Remember that you'll still need to create"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Environment-Specific Configuration Files: Remember that you'll still need to create",
             "      environment-specific configuration files (e.g., appsettings.Development.json) to store",
             "      settings that vary between environments. launchSettings.json only sets the environment",
             "      variable."
           ],
-          "text": "      environment-specific configuration files (e.g., appsettings.Development.json) to store\n      settings that vary between environments. launchSettings.json only sets the environment\n      variable."
+          "text": "   • Environment-Specific Configuration Files: Remember that you'll still need to create\n      environment-specific configuration files (e.g., appsettings.Development.json) to store\n      settings that vary between environments. launchSettings.json only sets the environment\n      variable."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Local Development: The launchSettings.json file is primarily for local development with"
-          ],
-          "text": "   • Local Development: The launchSettings.json file is primarily for local development with"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Local Development: The launchSettings.json file is primarily for local development with",
             "      Visual Studio. When you deploy your application to a server, you'll typically set the",
             "      ASPNETCORE_ENVIRONMENT variable through the hosting environment's configuration",
             "      (e.g., in the web server's configuration file or environment variables)."
           ],
-          "text": "      Visual Studio. When you deploy your application to a server, you'll typically set the\n      ASPNETCORE_ENVIRONMENT variable through the hosting environment's configuration\n      (e.g., in the web server's configuration file or environment variables)."
+          "text": "   • Local Development: The launchSettings.json file is primarily for local development with\n      Visual Studio. When you deploy your application to a server, you'll typically set the\n      ASPNETCORE_ENVIRONMENT variable through the hosting environment's configuration\n      (e.g., in the web server's configuration file or environment variables)."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Multiple Profiles: launchSettings.json can contain multiple profiles, each with its own set of"
-          ],
-          "text": "   • Multiple Profiles: launchSettings.json can contain multiple profiles, each with its own set of"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Multiple Profiles: launchSettings.json can contain multiple profiles, each with its own set of",
             "      environment variables. This allows you to easily switch between different configurations",
             "      during development."
           ],
-          "text": "      environment variables. This allows you to easily switch between different configurations\n      during development."
+          "text": "   • Multiple Profiles: launchSettings.json can contain multiple profiles, each with its own set of\n      environment variables. This allows you to easily switch between different configurations\n      during development."
         }
       ],
       "char_count_raw": 1761,
@@ -2073,17 +1891,10 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Configuration settings"
-          ],
-          "text": "   • Configuration settings"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • Configuration settings",
             "This information is invaluable for identifying and fixing issues quickly."
           ],
-          "text": "This information is invaluable for identifying and fixing issues quickly."
+          "text": "   • Configuration settings\nThis information is invaluable for identifying and fixing issues quickly."
         },
         {
           "type": "heading",
@@ -2097,55 +1908,41 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Development: The Developer Exception Page is enabled by default in the Development"
-          ],
-          "text": "   • Development: The Developer Exception Page is enabled by default in the Development"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • Development: The Developer Exception Page is enabled by default in the Development",
             "      environment. This makes sense because during development, you want as much information",
             "      as possible to help you troubleshoot."
           ],
-          "text": "      environment. This makes sense because during development, you want as much information\n      as possible to help you troubleshoot."
+          "text": "   • Development: The Developer Exception Page is enabled by default in the Development\n      environment. This makes sense because during development, you want as much information\n      as possible to help you troubleshoot."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • Production and Other Environments: In production or other non-development"
+            "   • Production and Other Environments: In production or other non-development",
+            "      environments, this page is typically disabled due to security concerns. Exposing detailed",
+            "      exception information to the public could reveal vulnerabilities or sensitive details about",
+            "      your application's internal workings."
           ],
-          "text": "   • Production and Other Environments: In production or other non-development"
+          "text": "   • Production and Other Environments: In production or other non-development\n      environments, this page is typically disabled due to security concerns. Exposing detailed\n      exception information to the public could reveal vulnerabilities or sensitive details about\n      your application's internal workings."
         },
         {
           "type": "prose",
           "page": 6,
           "lines": [
-            "      environments, this page is typically disabled due to security concerns. Exposing detailed",
-            "      exception information to the public could reveal vulnerabilities or sensitive details about",
-            "      your application's internal workings.",
             "IWebHostEnvironment Interface: Accessing Environment Information",
             "The IWebHostEnvironment interface gives you access to information about the hosting environment",
             "of your ASP.NET Core application. It includes properties like:"
           ],
-          "text": "      environments, this page is typically disabled due to security concerns. Exposing detailed\n      exception information to the public could reveal vulnerabilities or sensitive details about\n      your application's internal workings.\nIWebHostEnvironment Interface: Accessing Environment Information\nThe IWebHostEnvironment interface gives you access to information about the hosting environment\nof your ASP.NET Core application. It includes properties like:"
+          "text": "IWebHostEnvironment Interface: Accessing Environment Information\nThe IWebHostEnvironment interface gives you access to information about the hosting environment\nof your ASP.NET Core application. It includes properties like:"
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "   • EnvironmentName: The name of the current environment (Development, Staging,"
-          ],
-          "text": "   • EnvironmentName: The name of the current environment (Development, Staging,"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "   • EnvironmentName: The name of the current environment (Development, Staging,",
             "      Production, or a custom name)."
           ],
-          "text": "      Production, or a custom name)."
+          "text": "   • EnvironmentName: The name of the current environment (Development, Staging,\n      Production, or a custom name)."
         },
         {
           "type": "list_item",
@@ -2457,40 +2254,40 @@
           "type": "code",
           "page": 7,
           "lines": [
-            "// Program.cs"
-          ],
-          "text": "// Program.cs"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "// Program.cs",
             "if (app.Environment.IsDevelopment() || app.Environment.IsStaging() ||",
-            "app.Environment.IsEnvironment(\"Beta\"))"
-          ],
-          "text": "if (app.Environment.IsDevelopment() || app.Environment.IsStaging() ||\napp.Environment.IsEnvironment(\"Beta\"))"
-        },
-        {
-          "type": "code",
-          "page": 7,
-          "lines": [
+            "app.Environment.IsEnvironment(\"Beta\"))",
             "{",
             "  app.UseDeveloperExceptionPage();",
             "}"
           ],
-          "text": "{\n  app.UseDeveloperExceptionPage();\n}"
+          "text": "// Program.cs\nif (app.Environment.IsDevelopment() || app.Environment.IsStaging() ||\napp.Environment.IsEnvironment(\"Beta\"))\n{\n  app.UseDeveloperExceptionPage();\n}"
         },
         {
           "type": "prose",
           "page": 7,
           "lines": [
             "In this code snippet, the Developer Exception Page is only enabled if the environment is",
-            "Development, Staging, or a custom environment named \"Beta\". You can use",
+            "Development, Staging, or a custom environment named \"Beta\". You can use"
+          ],
+          "text": "In this code snippet, the Developer Exception Page is only enabled if the environment is\nDevelopment, Staging, or a custom environment named \"Beta\". You can use"
+        },
+        {
+          "type": "code",
+          "page": 7,
+          "lines": [
             "app.Environment.IsDevelopment() etc. because they are just shorthands for",
-            "app.Environment.EnvironmentName == \"Development\". This can be helpful in scenarios where you",
+            "app.Environment.EnvironmentName == \"Development\". This can be helpful in scenarios where you"
+          ],
+          "text": "app.Environment.IsDevelopment() etc. because they are just shorthands for\napp.Environment.EnvironmentName == \"Development\". This can be helpful in scenarios where you"
+        },
+        {
+          "type": "prose",
+          "page": 7,
+          "lines": [
             "want to include staging in your development processes."
           ],
-          "text": "In this code snippet, the Developer Exception Page is only enabled if the environment is\nDevelopment, Staging, or a custom environment named \"Beta\". You can use\napp.Environment.IsDevelopment() etc. because they are just shorthands for\napp.Environment.EnvironmentName == \"Development\". This can be helpful in scenarios where you\nwant to include staging in your development processes."
+          "text": "want to include staging in your development processes."
         }
       ],
       "char_count_raw": 1137,
@@ -2739,134 +2536,85 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Purpose: The Developer Exception Page provides detailed error information during"
-          ],
-          "text": "   • Purpose: The Developer Exception Page provides detailed error information during"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Purpose: The Developer Exception Page provides detailed error information during",
             "      development."
           ],
-          "text": "      development."
+          "text": "   • Purpose: The Developer Exception Page provides detailed error information during\n      development."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Environments: It's enabled by default in Development, but you can customize its behavior"
-          ],
-          "text": "   • Environments: It's enabled by default in Development, but you can customize its behavior"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Environments: It's enabled by default in Development, but you can customize its behavior",
             "      based on other environments."
           ],
-          "text": "      based on other environments."
+          "text": "   • Environments: It's enabled by default in Development, but you can customize its behavior\n      based on other environments."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • IWebHostEnvironment: Use this interface to access environment information within your"
-          ],
-          "text": "   • IWebHostEnvironment: Use this interface to access environment information within your"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • IWebHostEnvironment: Use this interface to access environment information within your",
             "      controllers or middleware."
           ],
-          "text": "      controllers or middleware."
+          "text": "   • IWebHostEnvironment: Use this interface to access environment information within your\n      controllers or middleware."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Security: Always disable the Developer Exception Page in production to avoid exposing"
-          ],
-          "text": "   • Security: Always disable the Developer Exception Page in production to avoid exposing"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Security: Always disable the Developer Exception Page in production to avoid exposing",
             "      sensitive details."
           ],
-          "text": "      sensitive details."
+          "text": "   • Security: Always disable the Developer Exception Page in production to avoid exposing\n      sensitive details."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Custom Error Pages: For production, use app.UseExceptionHandler to create custom error"
+            "   • Custom Error Pages: For production, use app.UseExceptionHandler to create custom error",
+            "      pages that provide a user-friendly message without revealing internal information."
           ],
-          "text": "   • Custom Error Pages: For production, use app.UseExceptionHandler to create custom error"
+          "text": "   • Custom Error Pages: For production, use app.UseExceptionHandler to create custom error\n      pages that provide a user-friendly message without revealing internal information."
         },
         {
           "type": "prose",
           "page": 8,
           "lines": [
-            "      pages that provide a user-friendly message without revealing internal information.",
             "<environment> Tag Helper",
             "The <environment> tag helper is a versatile tool that allows you to include or exclude specific",
             "content in your views depending on the current environment your ASP.NET Core application is",
             "running in.",
             "This is particularly useful for scenarios where you want to:"
           ],
-          "text": "      pages that provide a user-friendly message without revealing internal information.\n<environment> Tag Helper\nThe <environment> tag helper is a versatile tool that allows you to include or exclude specific\ncontent in your views depending on the current environment your ASP.NET Core application is\nrunning in.\nThis is particularly useful for scenarios where you want to:"
+          "text": "<environment> Tag Helper\nThe <environment> tag helper is a versatile tool that allows you to include or exclude specific\ncontent in your views depending on the current environment your ASP.NET Core application is\nrunning in.\nThis is particularly useful for scenarios where you want to:"
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Include Development Resources: Load unminified CSS or JavaScript files during"
-          ],
-          "text": "   • Include Development Resources: Load unminified CSS or JavaScript files during"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Include Development Resources: Load unminified CSS or JavaScript files during",
             "      development to facilitate debugging and testing."
           ],
-          "text": "      development to facilitate debugging and testing."
+          "text": "   • Include Development Resources: Load unminified CSS or JavaScript files during\n      development to facilitate debugging and testing."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Optimize for Production: Load minified and bundled assets in production to improve"
-          ],
-          "text": "   • Optimize for Production: Load minified and bundled assets in production to improve"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Optimize for Production: Load minified and bundled assets in production to improve",
             "      performance."
           ],
-          "text": "      performance."
+          "text": "   • Optimize for Production: Load minified and bundled assets in production to improve\n      performance."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Display Environment-Specific Content: Show different messages, warnings, or features"
-          ],
-          "text": "   • Display Environment-Specific Content: Show different messages, warnings, or features"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Display Environment-Specific Content: Show different messages, warnings, or features",
             "      based on the environment."
           ],
-          "text": "      based on the environment."
+          "text": "   • Display Environment-Specific Content: Show different messages, warnings, or features\n      based on the environment."
         },
         {
           "type": "heading",
@@ -3135,33 +2883,19 @@
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • include: A comma-separated list of environment names for which the content should be"
-          ],
-          "text": "   • include: A comma-separated list of environment names for which the content should be"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   • include: A comma-separated list of environment names for which the content should be",
             "      rendered."
           ],
-          "text": "      rendered."
+          "text": "   • include: A comma-separated list of environment names for which the content should be\n      rendered."
         },
         {
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • exclude: A comma-separated list of environment names for which the content should not be"
-          ],
-          "text": "   • exclude: A comma-separated list of environment names for which the content should not be"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   • exclude: A comma-separated list of environment names for which the content should not be",
             "      rendered."
           ],
-          "text": "      rendered."
+          "text": "   • exclude: A comma-separated list of environment names for which the content should not be\n      rendered."
         },
         {
           "type": "heading",
@@ -3196,36 +2930,22 @@
           "text": "How It Works"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 9,
           "lines": [
-            "1. Environment Check: The <environment> tag helper reads the value of the"
-          ],
-          "text": "1. Environment Check: The <environment> tag helper reads the value of the"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   1. Environment Check: The <environment> tag helper reads the value of the",
             "      ASPNETCORE_ENVIRONMENT environment variable to determine the current environment."
           ],
-          "text": "      ASPNETCORE_ENVIRONMENT environment variable to determine the current environment."
+          "text": "   1. Environment Check: The <environment> tag helper reads the value of the\n      ASPNETCORE_ENVIRONMENT environment variable to determine the current environment."
         },
         {
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   2. Conditional Rendering: Based on the include or exclude attributes and the current"
-          ],
-          "text": "   2. Conditional Rendering: Based on the include or exclude attributes and the current"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   2. Conditional Rendering: Based on the include or exclude attributes and the current",
             "      environment, it either renders or skips the content within the tag helper."
           ],
-          "text": "      environment, it either renders or skips the content within the tag helper."
+          "text": "   2. Conditional Rendering: Based on the include or exclude attributes and the current\n      environment, it either renders or skips the content within the tag helper."
         },
         {
           "type": "heading",
@@ -3277,33 +2997,19 @@
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • Flexibility: Easily adapt your views to different environments without complex conditional"
-          ],
-          "text": "   • Flexibility: Easily adapt your views to different environments without complex conditional"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   • Flexibility: Easily adapt your views to different environments without complex conditional",
             "      logic."
           ],
-          "text": "      logic."
+          "text": "   • Flexibility: Easily adapt your views to different environments without complex conditional\n      logic."
         },
         {
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • Performance Optimization: Serve optimized assets in production while retaining flexibility in"
-          ],
-          "text": "   • Performance Optimization: Serve optimized assets in production while retaining flexibility in"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   • Performance Optimization: Serve optimized assets in production while retaining flexibility in",
             "      development."
           ],
-          "text": "      development."
+          "text": "   • Performance Optimization: Serve optimized assets in production while retaining flexibility in\n      development."
         }
       ],
       "char_count_raw": 1275,
@@ -3512,17 +3218,10 @@
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • Environment-Specific Content: Display warnings, messages, or debug tools only when"
-          ],
-          "text": "   • Environment-Specific Content: Display warnings, messages, or debug tools only when"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • Environment-Specific Content: Display warnings, messages, or debug tools only when",
             "      needed."
           ],
-          "text": "      needed."
+          "text": "   • Environment-Specific Content: Display warnings, messages, or debug tools only when\n      needed."
         },
         {
           "type": "heading",
@@ -3536,49 +3235,28 @@
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • Use for Static Assets: Primarily leverage the <environment> tag helper for including or"
-          ],
-          "text": "   • Use for Static Assets: Primarily leverage the <environment> tag helper for including or"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • Use for Static Assets: Primarily leverage the <environment> tag helper for including or",
             "      excluding static files (CSS, JavaScript) based on the environment."
           ],
-          "text": "      excluding static files (CSS, JavaScript) based on the environment."
+          "text": "   • Use for Static Assets: Primarily leverage the <environment> tag helper for including or\n      excluding static files (CSS, JavaScript) based on the environment."
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • Avoid Complex Logic: Keep the content within <environment> tags relatively simple. If you"
-          ],
-          "text": "   • Avoid Complex Logic: Keep the content within <environment> tags relatively simple. If you"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • Avoid Complex Logic: Keep the content within <environment> tags relatively simple. If you",
             "      need more complex logic, consider using a partial view or a view component."
           ],
-          "text": "      need more complex logic, consider using a partial view or a view component."
+          "text": "   • Avoid Complex Logic: Keep the content within <environment> tags relatively simple. If you\n      need more complex logic, consider using a partial view or a view component."
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • Custom Environments: If you need more than the standard environments, define and use"
-          ],
-          "text": "   • Custom Environments: If you need more than the standard environments, define and use"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • Custom Environments: If you need more than the standard environments, define and use",
             "      your own."
           ],
-          "text": "      your own."
+          "text": "   • Custom Environments: If you need more than the standard environments, define and use\n      your own."
         },
         {
           "type": "heading",
@@ -3592,85 +3270,57 @@
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • Flexibility: Setting the environment variable directly from the terminal allows you to easily"
-          ],
-          "text": "   • Flexibility: Setting the environment variable directly from the terminal allows you to easily"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • Flexibility: Setting the environment variable directly from the terminal allows you to easily",
             "      switch between different environments (development, staging, production) without",
             "      modifying configuration files or IDE settings."
           ],
-          "text": "      switch between different environments (development, staging, production) without\n      modifying configuration files or IDE settings."
+          "text": "   • Flexibility: Setting the environment variable directly from the terminal allows you to easily\n      switch between different environments (development, staging, production) without\n      modifying configuration files or IDE settings."
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • Automation: This approach is easily scriptable, enabling you to automate deployment"
-          ],
-          "text": "   • Automation: This approach is easily scriptable, enabling you to automate deployment"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • Automation: This approach is easily scriptable, enabling you to automate deployment",
             "      processes and seamlessly change configurations for different environments."
           ],
-          "text": "      processes and seamlessly change configurations for different environments."
+          "text": "   • Automation: This approach is easily scriptable, enabling you to automate deployment\n      processes and seamlessly change configurations for different environments."
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • Non-Windows Environments: If you're working on macOS or Linux, the terminal is the"
+            "   • Non-Windows Environments: If you're working on macOS or Linux, the terminal is the",
+            "      primary way to manage environment variables."
           ],
-          "text": "   • Non-Windows Environments: If you're working on macOS or Linux, the terminal is the"
+          "text": "   • Non-Windows Environments: If you're working on macOS or Linux, the terminal is the\n      primary way to manage environment variables."
         },
         {
           "type": "prose",
           "page": 10,
           "lines": [
-            "      primary way to manage environment variables.",
             "Setting ASPNETCORE_ENVIRONMENT in PowerShell"
           ],
-          "text": "      primary way to manage environment variables.\nSetting ASPNETCORE_ENVIRONMENT in PowerShell"
+          "text": "Setting ASPNETCORE_ENVIRONMENT in PowerShell"
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • Windows, macOS, Linux:"
-          ],
-          "text": "   • Windows, macOS, Linux:"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • Windows, macOS, Linux:",
             "$env:ASPNETCORE_ENVIRONMENT = \"Development\" # Set to Development",
             "$env:ASPNETCORE_ENVIRONMENT = \"Production\" # Set to Production"
           ],
-          "text": "$env:ASPNETCORE_ENVIRONMENT = \"Development\" # Set to Development\n$env:ASPNETCORE_ENVIRONMENT = \"Production\" # Set to Production"
+          "text": "   • Windows, macOS, Linux:\n$env:ASPNETCORE_ENVIRONMENT = \"Development\" # Set to Development\n$env:ASPNETCORE_ENVIRONMENT = \"Production\" # Set to Production"
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • Scope: In PowerShell, environment variables set with $env: are typically limited to the"
-          ],
-          "text": "   • Scope: In PowerShell, environment variables set with $env: are typically limited to the"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • Scope: In PowerShell, environment variables set with $env: are typically limited to the",
             "      current session. To make them persistent, you need to modify the system or user",
             "      environment variables (see below)."
           ],
-          "text": "      current session. To make them persistent, you need to modify the system or user\n      environment variables (see below)."
+          "text": "   • Scope: In PowerShell, environment variables set with $env: are typically limited to the\n      current session. To make them persistent, you need to modify the system or user\n      environment variables (see below)."
         }
       ],
       "char_count_raw": 1486,
@@ -3919,46 +3569,25 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • Windows:"
-          ],
-          "text": "   • Windows:"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   • Windows:",
             "set ASPNETCORE_ENVIRONMENT=Development # Set to Development",
             "set ASPNETCORE_ENVIRONMENT=Production # Set to Production",
             "Scope: By default, variables set with the set command are temporary and only apply to the current",
             "command prompt session. To make them persistent, use the /M switch:",
             "setx ASPNETCORE_ENVIRONMENT Development /M # Set for the user account (persistent)"
           ],
-          "text": "set ASPNETCORE_ENVIRONMENT=Development # Set to Development\nset ASPNETCORE_ENVIRONMENT=Production # Set to Production\nScope: By default, variables set with the set command are temporary and only apply to the current\ncommand prompt session. To make them persistent, use the /M switch:\nsetx ASPNETCORE_ENVIRONMENT Development /M # Set for the user account (persistent)"
+          "text": "   • Windows:\nset ASPNETCORE_ENVIRONMENT=Development # Set to Development\nset ASPNETCORE_ENVIRONMENT=Production # Set to Production\nScope: By default, variables set with the set command are temporary and only apply to the current\ncommand prompt session. To make them persistent, use the /M switch:\nsetx ASPNETCORE_ENVIRONMENT Development /M # Set for the user account (persistent)"
         },
         {
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • macOS and Linux (bash):"
-          ],
-          "text": "   • macOS and Linux (bash):"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   • macOS and Linux (bash):",
             "export ASPNETCORE_ENVIRONMENT=Development # Set to Development",
-            "export ASPNETCORE_ENVIRONMENT=Production # Set to Production"
-          ],
-          "text": "export ASPNETCORE_ENVIRONMENT=Development # Set to Development\nexport ASPNETCORE_ENVIRONMENT=Production # Set to Production"
-        },
-        {
-          "type": "heading",
-          "page": 11,
-          "lines": [
+            "export ASPNETCORE_ENVIRONMENT=Production # Set to Production",
             "Making Environment Variables Persistent"
           ],
-          "text": "Making Environment Variables Persistent"
+          "text": "   • macOS and Linux (bash):\nexport ASPNETCORE_ENVIRONMENT=Development # Set to Development\nexport ASPNETCORE_ENVIRONMENT=Production # Set to Production\nMaking Environment Variables Persistent"
         },
         {
           "type": "list_item",
@@ -4001,20 +3630,13 @@
           "text": "        4. Under \"System variables\" (or \"User variables\" for a specific user), click \"New\"."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 11,
           "lines": [
-            "5. Enter ASPNETCORE_ENVIRONMENT as the variable name and the desired"
-          ],
-          "text": "5. Enter ASPNETCORE_ENVIRONMENT as the variable name and the desired"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "        5. Enter ASPNETCORE_ENVIRONMENT as the variable name and the desired",
             "           environment as the value."
           ],
-          "text": "           environment as the value."
+          "text": "        5. Enter ASPNETCORE_ENVIRONMENT as the variable name and the desired\n           environment as the value."
         },
         {
           "type": "list_item",
@@ -4028,34 +3650,20 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "        o Edit your shell's configuration file (.bashrc, .zshrc, etc.) and add the following line"
-          ],
-          "text": "        o Edit your shell's configuration file (.bashrc, .zshrc, etc.) and add the following line"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "        o Edit your shell's configuration file (.bashrc, .zshrc, etc.) and add the following line",
             "           (replacing Development with your desired environment):Bash",
             "export ASPNETCORE_ENVIRONMENT=Development"
           ],
-          "text": "           (replacing Development with your desired environment):Bash\nexport ASPNETCORE_ENVIRONMENT=Development"
+          "text": "        o Edit your shell's configuration file (.bashrc, .zshrc, etc.) and add the following line\n           (replacing Development with your desired environment):Bash\nexport ASPNETCORE_ENVIRONMENT=Development"
         },
         {
           "type": "list_item",
           "page": 11,
           "lines": [
-            "        o After saving the file, run source ~/.bashrc (or the appropriate command for your"
-          ],
-          "text": "        o After saving the file, run source ~/.bashrc (or the appropriate command for your"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "        o After saving the file, run source ~/.bashrc (or the appropriate command for your",
             "           shell) to reload the configuration."
           ],
-          "text": "           shell) to reload the configuration."
+          "text": "        o After saving the file, run source ~/.bashrc (or the appropriate command for your\n           shell) to reload the configuration."
         },
         {
           "type": "heading",
@@ -4069,18 +3677,11 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • Overriding: When multiple ways of setting the environment are used, the most specific one"
-          ],
-          "text": "   • Overriding: When multiple ways of setting the environment are used, the most specific one"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   • Overriding: When multiple ways of setting the environment are used, the most specific one",
             "      takes precedence. For example, a value set in the terminal will override the value in",
             "      launchSettings.json."
           ],
-          "text": "      takes precedence. For example, a value set in the terminal will override the value in\n      launchSettings.json."
+          "text": "   • Overriding: When multiple ways of setting the environment are used, the most specific one\n      takes precedence. For example, a value set in the terminal will override the value in\n      launchSettings.json."
         }
       ],
       "char_count_raw": 1546,
@@ -4297,32 +3898,25 @@
           "type": "list_item",
           "page": 12,
           "lines": [
-            "   • Case-Sensitivity (Linux/macOS): Environment variable names are case-sensitive on Linux"
-          ],
-          "text": "   • Case-Sensitivity (Linux/macOS): Environment variable names are case-sensitive on Linux"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "   • Case-Sensitivity (Linux/macOS): Environment variable names are case-sensitive on Linux",
             "      and macOS. Be sure to use the correct capitalization (ASPNETCORE_ENVIRONMENT)."
           ],
-          "text": "      and macOS. Be sure to use the correct capitalization (ASPNETCORE_ENVIRONMENT)."
+          "text": "   • Case-Sensitivity (Linux/macOS): Environment variable names are case-sensitive on Linux\n      and macOS. Be sure to use the correct capitalization (ASPNETCORE_ENVIRONMENT)."
         },
         {
           "type": "list_item",
           "page": 12,
           "lines": [
-            "   • Environment-Specific Configuration Files: Even after setting the environment variable,"
+            "   • Environment-Specific Configuration Files: Even after setting the environment variable,",
+            "      ensure you have the corresponding appsettings.{Environment}.json files in your project to",
+            "      load the correct settings for that environment."
           ],
-          "text": "   • Environment-Specific Configuration Files: Even after setting the environment variable,"
+          "text": "   • Environment-Specific Configuration Files: Even after setting the environment variable,\n      ensure you have the corresponding appsettings.{Environment}.json files in your project to\n      load the correct settings for that environment."
         },
         {
           "type": "prose",
           "page": 12,
           "lines": [
-            "      ensure you have the corresponding appsettings.{Environment}.json files in your project to",
-            "      load the correct settings for that environment.",
             "Example: Running Your App with Different Environments",
             "# PowerShell",
             "$env:ASPNETCORE_ENVIRONMENT = \"Development\"",
@@ -4334,7 +3928,7 @@
             "export ASPNETCORE_ENVIRONMENT=Staging",
             "dotnet run"
           ],
-          "text": "      ensure you have the corresponding appsettings.{Environment}.json files in your project to\n      load the correct settings for that environment.\nExample: Running Your App with Different Environments\n# PowerShell\n$env:ASPNETCORE_ENVIRONMENT = \"Development\"\ndotnet run\n# Command Prompt (Windows)\nset ASPNETCORE_ENVIRONMENT=Production\ndotnet run\n# bash (macOS/Linux)\nexport ASPNETCORE_ENVIRONMENT=Staging\ndotnet run"
+          "text": "Example: Running Your App with Different Environments\n# PowerShell\n$env:ASPNETCORE_ENVIRONMENT = \"Development\"\ndotnet run\n# Command Prompt (Windows)\nset ASPNETCORE_ENVIRONMENT=Production\ndotnet run\n# bash (macOS/Linux)\nexport ASPNETCORE_ENVIRONMENT=Staging\ndotnet run"
         },
         {
           "type": "heading",
@@ -4348,17 +3942,10 @@
           "type": "list_item",
           "page": 12,
           "lines": [
-            "   • Purpose: Provide named configurations to tailor your app's behavior for different scenarios"
-          ],
-          "text": "   • Purpose: Provide named configurations to tailor your app's behavior for different scenarios"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "   • Purpose: Provide named configurations to tailor your app's behavior for different scenarios",
             "      (development, staging, production, etc.)."
           ],
-          "text": "      (development, staging, production, etc.)."
+          "text": "   • Purpose: Provide named configurations to tailor your app's behavior for different scenarios\n      (development, staging, production, etc.)."
         },
         {
           "type": "list_item",
@@ -4396,17 +3983,10 @@
           "type": "list_item",
           "page": 12,
           "lines": [
-            "        o launchSettings.json (Development): Set within the environmentVariables section of"
-          ],
-          "text": "        o launchSettings.json (Development): Set within the environmentVariables section of"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "        o launchSettings.json (Development): Set within the environmentVariables section of",
             "           a profile."
           ],
-          "text": "           a profile."
+          "text": "        o launchSettings.json (Development): Set within the environmentVariables section of\n           a profile."
         },
         {
           "type": "list_item",
@@ -4647,17 +4227,10 @@
           "type": "list_item",
           "page": 13,
           "lines": [
-            "        o Command Line: Use --environment or -e flag when running the app (e.g., dotnet run"
-          ],
-          "text": "        o Command Line: Use --environment or -e flag when running the app (e.g., dotnet run"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "        o Command Line: Use --environment or -e flag when running the app (e.g., dotnet run",
             "           --environment Staging)."
           ],
-          "text": "           --environment Staging)."
+          "text": "        o Command Line: Use --environment or -e flag when running the app (e.g., dotnet run\n           --environment Staging)."
         },
         {
           "type": "list_item",
@@ -4671,17 +4244,10 @@
           "type": "list_item",
           "page": 13,
           "lines": [
-            "        o Use it in your code to access environment information (e.g., EnvironmentName,"
-          ],
-          "text": "        o Use it in your code to access environment information (e.g., EnvironmentName,"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "        o Use it in your code to access environment information (e.g., EnvironmentName,",
             "           WebRootPath)."
           ],
-          "text": "           WebRootPath)."
+          "text": "        o Use it in your code to access environment information (e.g., EnvironmentName,\n           WebRootPath)."
         },
         {
           "type": "list_item",
@@ -4699,20 +4265,13 @@
             "           public MyController(IWebHostEnvironment env)",
             "           {",
             "             _env = env;",
-            "           }"
+            "           }",
+            "   • Environment-Specific Configuration:"
           ],
-          "text": "           private readonly IWebHostEnvironment _env;\n           public MyController(IWebHostEnvironment env)\n           {\n             _env = env;\n           }"
+          "text": "           private readonly IWebHostEnvironment _env;\n           public MyController(IWebHostEnvironment env)\n           {\n             _env = env;\n           }\n   • Environment-Specific Configuration:"
         },
         {
           "type": "prose",
-          "page": 13,
-          "lines": [
-            "   • Environment-Specific Configuration:"
-          ],
-          "text": "   • Environment-Specific Configuration:"
-        },
-        {
-          "type": "list_item",
           "page": 13,
           "lines": [
             "        o Create files like appsettings.Development.json, appsettings.Staging.json, etc."
@@ -4747,39 +4306,25 @@
           "type": "list_item",
           "page": 13,
           "lines": [
-            "        o Use if (app.Environment.IsDevelopment()) or similar methods to apply settings or"
+            "        o Use if (app.Environment.IsDevelopment()) or similar methods to apply settings or",
+            "           middleware based on the environment."
           ],
-          "text": "        o Use if (app.Environment.IsDevelopment()) or similar methods to apply settings or"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
-            "           middleware based on the environment.",
-            "                 if (app.Environment.IsDevelopment())"
-          ],
-          "text": "           middleware based on the environment.\n                 if (app.Environment.IsDevelopment())"
+          "text": "        o Use if (app.Environment.IsDevelopment()) or similar methods to apply settings or\n           middleware based on the environment."
         },
         {
           "type": "code",
           "page": 13,
           "lines": [
+            "                 if (app.Environment.IsDevelopment())",
             "                 {",
             "                  app.UseDeveloperExceptionPage();",
-            "                 }"
+            "                 }",
+            "   • Default Environments:"
           ],
-          "text": "                 {\n                  app.UseDeveloperExceptionPage();\n                 }"
+          "text": "                 if (app.Environment.IsDevelopment())\n                 {\n                  app.UseDeveloperExceptionPage();\n                 }\n   • Default Environments:"
         },
         {
           "type": "prose",
-          "page": 13,
-          "lines": [
-            "   • Default Environments:"
-          ],
-          "text": "   • Default Environments:"
-        },
-        {
-          "type": "list_item",
           "page": 13,
           "lines": [
             "        o Development: Default for local development."
@@ -4961,17 +4506,10 @@
           "type": "list_item",
           "page": 14,
           "lines": [
-            "        o Tailor Middleware: Use different middleware pipelines for different environments"
-          ],
-          "text": "        o Tailor Middleware: Use different middleware pipelines for different environments"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "        o Tailor Middleware: Use different middleware pipelines for different environments",
             "           (e.g., enable DeveloperExceptionPage only in development)."
           ],
-          "text": "           (e.g., enable DeveloperExceptionPage only in development)."
+          "text": "        o Tailor Middleware: Use different middleware pipelines for different environments\n           (e.g., enable DeveloperExceptionPage only in development)."
         },
         {
           "type": "list_item",
@@ -5001,65 +4539,37 @@
           "type": "list_item",
           "page": 14,
           "lines": [
-            "   • Explain the Why: Be able to articulate the reasons for using environments (configuration,"
-          ],
-          "text": "   • Explain the Why: Be able to articulate the reasons for using environments (configuration,"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "   • Explain the Why: Be able to articulate the reasons for using environments (configuration,",
             "      security, flexibility)."
           ],
-          "text": "      security, flexibility)."
+          "text": "   • Explain the Why: Be able to articulate the reasons for using environments (configuration,\n      security, flexibility)."
         },
         {
           "type": "list_item",
           "page": 14,
           "lines": [
-            "   • Configuration: Show how you would use appsettings.{Environment}.json files to manage"
-          ],
-          "text": "   • Configuration: Show how you would use appsettings.{Environment}.json files to manage"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "   • Configuration: Show how you would use appsettings.{Environment}.json files to manage",
             "      environment-specific settings."
           ],
-          "text": "      environment-specific settings."
+          "text": "   • Configuration: Show how you would use appsettings.{Environment}.json files to manage\n      environment-specific settings."
         },
         {
           "type": "list_item",
           "page": 14,
           "lines": [
-            "   • Middleware: Explain how you would customize middleware pipelines based on the"
-          ],
-          "text": "   • Middleware: Explain how you would customize middleware pipelines based on the"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "   • Middleware: Explain how you would customize middleware pipelines based on the",
             "      environment."
           ],
-          "text": "      environment."
+          "text": "   • Middleware: Explain how you would customize middleware pipelines based on the\n      environment."
         },
         {
           "type": "list_item",
           "page": 14,
           "lines": [
-            "   • Deployment: Discuss how you would set the environment variable when deploying to"
-          ],
-          "text": "   • Deployment: Discuss how you would set the environment variable when deploying to"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "   • Deployment: Discuss how you would set the environment variable when deploying to",
             "      different servers."
           ],
-          "text": "      different servers."
+          "text": "   • Deployment: Discuss how you would set the environment variable when deploying to\n      different servers."
         }
       ],
       "char_count_raw": 814,

@@ -313,16 +313,23 @@
           "text": "        o Types of Models:"
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 1,
           "lines": [
             "              ▪ Business Model (Domain Model): Represents the real-world entities and",
-            "                 relationships of your application domain (e.g., Product, Customer, Order).",
+            "                 relationships of your application domain (e.g., Product, Customer, Order)."
+          ],
+          "text": "              ▪ Business Model (Domain Model): Represents the real-world entities and\n                 relationships of your application domain (e.g., Product, Customer, Order)."
+        },
+        {
+          "type": "list_item",
+          "page": 1,
+          "lines": [
             "              ▪ View Model: A tailored model specifically designed to provide data to a",
             "                 view. It might aggregate data from multiple business models or contain",
             "                 properties for UI-specific concerns."
           ],
-          "text": "              ▪ Business Model (Domain Model): Represents the real-world entities and\n                 relationships of your application domain (e.g., Product, Customer, Order).\n              ▪ View Model: A tailored model specifically designed to provide data to a\n                 view. It might aggregate data from multiple business models or contain\n                 properties for UI-specific concerns."
+          "text": "              ▪ View Model: A tailored model specifically designed to provide data to a\n                 view. It might aggregate data from multiple business models or contain\n                 properties for UI-specific concerns."
         },
         {
           "type": "list_item",
@@ -344,17 +351,10 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Typically, views are HTML templates with embedded server-side code (Razor syntax"
-          ],
-          "text": "        o Typically, views are HTML templates with embedded server-side code (Razor syntax"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "        o Typically, views are HTML templates with embedded server-side code (Razor syntax",
             "           in ASP.NET Core) that dynamically generate the content."
           ],
-          "text": "           in ASP.NET Core) that dynamically generate the content."
+          "text": "        o Typically, views are HTML templates with embedded server-side code (Razor syntax\n           in ASP.NET Core) that dynamically generate the content."
         },
         {
           "type": "list_item",
@@ -376,17 +376,10 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o Receives user input (from requests), interacts with the model to perform actions or"
-          ],
-          "text": "        o Receives user input (from requests), interacts with the model to perform actions or"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "        o Receives user input (from requests), interacts with the model to perform actions or",
             "           retrieve data, and then selects the appropriate view to present the results."
           ],
-          "text": "           retrieve data, and then selects the appropriate view to present the results."
+          "text": "        o Receives user input (from requests), interacts with the model to perform actions or\n           retrieve data, and then selects the appropriate view to present the results."
         },
         {
           "type": "heading",
@@ -400,35 +393,21 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   1. Routing: The incoming request is processed by the routing middleware, which determines"
-          ],
-          "text": "   1. Routing: The incoming request is processed by the routing middleware, which determines"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   1. Routing: The incoming request is processed by the routing middleware, which determines",
             "      the appropriate controller and action method to handle it based on the URL pattern and",
             "      HTTP method."
           ],
-          "text": "      the appropriate controller and action method to handle it based on the URL pattern and\n      HTTP method."
+          "text": "   1. Routing: The incoming request is processed by the routing middleware, which determines\n      the appropriate controller and action method to handle it based on the URL pattern and\n      HTTP method."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   2. Model Binding: If the action method has parameters, the model binder extracts data from"
-          ],
-          "text": "   2. Model Binding: If the action method has parameters, the model binder extracts data from"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   2. Model Binding: If the action method has parameters, the model binder extracts data from",
             "      the request (query string, route values, form data, body) and attempts to convert it into the",
             "      types expected by the parameters."
           ],
-          "text": "      the request (query string, route values, form data, body) and attempts to convert it into the\n      types expected by the parameters."
+          "text": "   2. Model Binding: If the action method has parameters, the model binder extracts data from\n      the request (query string, route values, form data, body) and attempts to convert it into the\n      types expected by the parameters."
         }
       ],
       "char_count_raw": 1641,
@@ -669,34 +648,20 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   3. Model Validation: The model binder validates the bound data using data annotations and"
-          ],
-          "text": "   3. Model Validation: The model binder validates the bound data using data annotations and"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   3. Model Validation: The model binder validates the bound data using data annotations and",
             "      any custom validation logic you've implemented. If validation fails, errors are added to the",
             "      ModelState object."
           ],
-          "text": "      any custom validation logic you've implemented. If validation fails, errors are added to the\n      ModelState object."
+          "text": "   3. Model Validation: The model binder validates the bound data using data annotations and\n      any custom validation logic you've implemented. If validation fails, errors are added to the\n      ModelState object."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   4. Controller Action Execution: If the model is valid, the controller action method executes its"
-          ],
-          "text": "   4. Controller Action Execution: If the model is valid, the controller action method executes its"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   4. Controller Action Execution: If the model is valid, the controller action method executes its",
             "      logic, which might involve:"
           ],
-          "text": "      logic, which might involve:"
+          "text": "   4. Controller Action Execution: If the model is valid, the controller action method executes its\n      logic, which might involve:"
         },
         {
           "type": "list_item",
@@ -726,33 +691,19 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   5. View Selection: The controller selects the appropriate view to render and passes the view"
-          ],
-          "text": "   5. View Selection: The controller selects the appropriate view to render and passes the view"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   5. View Selection: The controller selects the appropriate view to render and passes the view",
             "      model to it."
           ],
-          "text": "      model to it."
+          "text": "   5. View Selection: The controller selects the appropriate view to render and passes the view\n      model to it."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   6. View Rendering: The view engine (Razor) generates the HTML output based on the view"
-          ],
-          "text": "   6. View Rendering: The view engine (Razor) generates the HTML output based on the view"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   6. View Rendering: The view engine (Razor) generates the HTML output based on the view",
             "      template and the data in the view model."
           ],
-          "text": "      template and the data in the view model."
+          "text": "   6. View Rendering: The view engine (Razor) generates the HTML output based on the view\n      template and the data in the view model."
         },
         {
           "type": "list_item",
@@ -1113,17 +1064,10 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "        o Uses Razor syntax to combine HTML markup with C# code for dynamic content"
-          ],
-          "text": "        o Uses Razor syntax to combine HTML markup with C# code for dynamic content"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "        o Uses Razor syntax to combine HTML markup with C# code for dynamic content",
             "           generation."
           ],
-          "text": "           generation."
+          "text": "        o Uses Razor syntax to combine HTML markup with C# code for dynamic content\n           generation."
         },
         {
           "type": "heading",
@@ -1137,17 +1081,10 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Separation of Concerns (SoC): The clear division of responsibilities makes code more"
-          ],
-          "text": "   • Separation of Concerns (SoC): The clear division of responsibilities makes code more"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Separation of Concerns (SoC): The clear division of responsibilities makes code more",
             "      organized, maintainable, and testable."
           ],
-          "text": "      organized, maintainable, and testable."
+          "text": "   • Separation of Concerns (SoC): The clear division of responsibilities makes code more\n      organized, maintainable, and testable."
         },
         {
           "type": "list_item",
@@ -1169,17 +1106,10 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Parallel Development: Different team members can work on different parts of the"
-          ],
-          "text": "   • Parallel Development: Different team members can work on different parts of the"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Parallel Development: Different team members can work on different parts of the",
             "      application simultaneously."
           ],
-          "text": "      application simultaneously."
+          "text": "   • Parallel Development: Different team members can work on different parts of the\n      application simultaneously."
         },
         {
           "type": "list_item",
@@ -1246,35 +1176,21 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Dynamic Content: Views can generate dynamic content based on data passed to them from"
-          ],
-          "text": "   • Dynamic Content: Views can generate dynamic content based on data passed to them from"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Dynamic Content: Views can generate dynamic content based on data passed to them from",
             "      the controller (the model). This allows you to display information fetched from databases,",
             "      user inputs, and other sources."
           ],
-          "text": "      the controller (the model). This allows you to display information fetched from databases,\n      user inputs, and other sources."
+          "text": "   • Dynamic Content: Views can generate dynamic content based on data passed to them from\n      the controller (the model). This allows you to display information fetched from databases,\n      user inputs, and other sources."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Razor Syntax: Views use Razor syntax, which starts with @ symbols, to embed C# code"
-          ],
-          "text": "   • Razor Syntax: Views use Razor syntax, which starts with @ symbols, to embed C# code"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Razor Syntax: Views use Razor syntax, which starts with @ symbols, to embed C# code",
             "      within the HTML. This code can perform tasks like looping through data collections,",
             "      conditional rendering, and accessing model properties."
           ],
-          "text": "      within the HTML. This code can perform tasks like looping through data collections,\n      conditional rendering, and accessing model properties."
+          "text": "   • Razor Syntax: Views use Razor syntax, which starts with @ symbols, to embed C# code\n      within the HTML. This code can perform tasks like looping through data collections,\n      conditional rendering, and accessing model properties."
         }
       ],
       "char_count_raw": 1763,
@@ -1575,50 +1491,29 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • By Convention: By default, the view engine looks for views in the"
-          ],
-          "text": "   • By Convention: By default, the view engine looks for views in the"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • By Convention: By default, the view engine looks for views in the",
             "      Views/[ControllerName]/[ActionName].cshtml path. For example, the Index action method",
             "      in the HomeController would look for a view file at Views/Home/Index.cshtml."
           ],
-          "text": "      Views/[ControllerName]/[ActionName].cshtml path. For example, the Index action method\n      in the HomeController would look for a view file at Views/Home/Index.cshtml."
+          "text": "   • By Convention: By default, the view engine looks for views in the\n      Views/[ControllerName]/[ActionName].cshtml path. For example, the Index action method\n      in the HomeController would look for a view file at Views/Home/Index.cshtml."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Overriding with ViewName: You can explicitly specify the view name using the ViewName"
-          ],
-          "text": "   • Overriding with ViewName: You can explicitly specify the view name using the ViewName"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • Overriding with ViewName: You can explicitly specify the view name using the ViewName",
             "      property of the ViewResult or the View() helper method."
           ],
-          "text": "      property of the ViewResult or the View() helper method."
+          "text": "   • Overriding with ViewName: You can explicitly specify the view name using the ViewName\n      property of the ViewResult or the View() helper method."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Shared Views: Shared views are stored in the Views/Shared folder and can be used by"
-          ],
-          "text": "   • Shared Views: Shared views are stored in the Views/Shared folder and can be used by"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • Shared Views: Shared views are stored in the Views/Shared folder and can be used by",
             "      multiple controllers."
           ],
-          "text": "      multiple controllers."
+          "text": "   • Shared Views: Shared views are stored in the Views/Shared folder and can be used by\n      multiple controllers."
         },
         {
           "type": "heading",
@@ -1632,25 +1527,11 @@
           "type": "code",
           "page": 4,
           "lines": [
-            "// Program.cs"
-          ],
-          "text": "// Program.cs"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
-            "builder.Services.AddControllersWithViews(); // Enables MVC features"
-          ],
-          "text": "builder.Services.AddControllersWithViews(); // Enables MVC features"
-        },
-        {
-          "type": "code",
-          "page": 4,
-          "lines": [
+            "// Program.cs",
+            "builder.Services.AddControllersWithViews(); // Enables MVC features",
             "// ..."
           ],
-          "text": "// ..."
+          "text": "// Program.cs\nbuilder.Services.AddControllersWithViews(); // Enables MVC features\n// ..."
         }
       ],
       "char_count_raw": 1463,
@@ -1903,65 +1784,37 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   1. Enabling MVC: The AddControllersWithViews() method configures the application for MVC,"
-          ],
-          "text": "   1. Enabling MVC: The AddControllersWithViews() method configures the application for MVC,"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   1. Enabling MVC: The AddControllersWithViews() method configures the application for MVC,",
             "      including view support."
           ],
-          "text": "      including view support."
+          "text": "   1. Enabling MVC: The AddControllersWithViews() method configures the application for MVC,\n      including view support."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   2. Controller Action: The Index action method in HomeController returns a ViewResult without"
-          ],
-          "text": "   2. Controller Action: The Index action method in HomeController returns a ViewResult without"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   2. Controller Action: The Index action method in HomeController returns a ViewResult without",
             "      specifying a view name."
           ],
-          "text": "      specifying a view name."
+          "text": "   2. Controller Action: The Index action method in HomeController returns a ViewResult without\n      specifying a view name."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   3. View Location: Since no view name is explicitly provided, the MVC framework follows the"
-          ],
-          "text": "   3. View Location: Since no view name is explicitly provided, the MVC framework follows the"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   3. View Location: Since no view name is explicitly provided, the MVC framework follows the",
             "      convention and looks for the view at Views/Home/Index.cshtml."
           ],
-          "text": "      convention and looks for the view at Views/Home/Index.cshtml."
+          "text": "   3. View Location: Since no view name is explicitly provided, the MVC framework follows the\n      convention and looks for the view at Views/Home/Index.cshtml."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   4. View Content: The Index.cshtml view contains simple HTML that will be rendered as the"
-          ],
-          "text": "   4. View Content: The Index.cshtml view contains simple HTML that will be rendered as the"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   4. View Content: The Index.cshtml view contains simple HTML that will be rendered as the",
             "      response."
           ],
-          "text": "      response."
+          "text": "   4. View Content: The Index.cshtml view contains simple HTML that will be rendered as the\n      response."
         }
       ],
       "char_count_raw": 731,
@@ -2256,14 +2109,28 @@
           "text": "        o Use Cases:"
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 6,
           "lines": [
-            "              ▪ Declaring variables",
-            "              ▪ Defining complex logic",
+            "              ▪ Declaring variables"
+          ],
+          "text": "              ▪ Declaring variables"
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
+            "              ▪ Defining complex logic"
+          ],
+          "text": "              ▪ Defining complex logic"
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
             "              ▪ Executing database queries or other operations"
           ],
-          "text": "              ▪ Declaring variables\n              ▪ Defining complex logic\n              ▪ Executing database queries or other operations"
+          "text": "              ▪ Executing database queries or other operations"
         },
         {
           "type": "list_item",
@@ -2290,13 +2157,20 @@
           "text": "        o Use Cases:"
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 6,
           "lines": [
-            "              ▪ Displaying values from variables or model properties",
+            "              ▪ Displaying values from variables or model properties"
+          ],
+          "text": "              ▪ Displaying values from variables or model properties"
+        },
+        {
+          "type": "list_item",
+          "page": 6,
+          "lines": [
             "              ▪ Calling helper methods or functions"
           ],
-          "text": "              ▪ Displaying values from variables or model properties\n              ▪ Calling helper methods or functions"
+          "text": "              ▪ Calling helper methods or functions"
         },
         {
           "type": "list_item",
@@ -2323,21 +2197,14 @@
           "text": "        o Use Cases:"
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 6,
           "lines": [
             "              ▪ Displaying plain text, HTML snippets, or values that might contain HTML",
-            "                 characters"
-          ],
-          "text": "              ▪ Displaying plain text, HTML snippets, or values that might contain HTML\n                 characters"
-        },
-        {
-          "type": "heading",
-          "page": 6,
-          "lines": [
+            "                 characters",
             "Control Flow in Razor Views"
           ],
-          "text": "Control Flow in Razor Views"
+          "text": "              ▪ Displaying plain text, HTML snippets, or values that might contain HTML\n                 characters\nControl Flow in Razor Views"
         },
         {
           "type": "list_item",
@@ -2369,25 +2236,11 @@
           "lines": [
             "@if (person.DateOfBirth.HasValue)",
             "{",
-            "  <p>Age: @(Math.Round((DateTime.Now - person.DateOfBirth).Value.TotalDays / 365.25)) years"
-          ],
-          "text": "@if (person.DateOfBirth.HasValue)\n{\n  <p>Age: @(Math.Round((DateTime.Now - person.DateOfBirth).Value.TotalDays / 365.25)) years"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
-            "old</p>"
-          ],
-          "text": "old</p>"
-        },
-        {
-          "type": "code",
-          "page": 6,
-          "lines": [
+            "  <p>Age: @(Math.Round((DateTime.Now - person.DateOfBirth).Value.TotalDays / 365.25)) years",
+            "old</p>",
             "}"
           ],
-          "text": "}"
+          "text": "@if (person.DateOfBirth.HasValue)\n{\n  <p>Age: @(Math.Round((DateTime.Now - person.DateOfBirth).Value.TotalDays / 365.25)) years\nold</p>\n}"
         }
       ],
       "char_count_raw": 1044,
@@ -2609,46 +2462,25 @@
       ],
       "blocks": [
         {
-          "type": "prose",
-          "page": 7,
-          "lines": [
-            "else"
-          ],
-          "text": "else"
-        },
-        {
           "type": "code",
           "page": 7,
           "lines": [
+            "else",
             "{",
             "  <p>Date of birth is unknown</p>",
-            "}"
-          ],
-          "text": "{\n  <p>Date of birth is unknown</p>\n}"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "}",
             "   2. @switch:"
           ],
-          "text": "   2. @switch:"
-        },
-        {
-          "type": "list_item",
-          "page": 7,
-          "lines": [
-            "        o Purpose: Choose one of several blocks of code to execute based on the value of an"
-          ],
-          "text": "        o Purpose: Choose one of several blocks of code to execute based on the value of an"
+          "text": "else\n{\n  <p>Date of birth is unknown</p>\n}\n   2. @switch:"
         },
         {
           "type": "prose",
           "page": 7,
           "lines": [
+            "        o Purpose: Choose one of several blocks of code to execute based on the value of an",
             "           expression."
           ],
-          "text": "           expression."
+          "text": "        o Purpose: Choose one of several blocks of code to execute based on the value of an\n           expression."
         },
         {
           "type": "list_item",
@@ -2663,69 +2495,27 @@
           "page": 7,
           "lines": [
             "@switch (person.PersonGender)",
-            "{"
-          ],
-          "text": "@switch (person.PersonGender)\n{"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
-            "  case Gender.Male:"
-          ],
-          "text": "  case Gender.Male:"
-        },
-        {
-          "type": "code",
-          "page": 7,
-          "lines": [
+            "{",
+            "  case Gender.Male:",
             "   <p>November 19 is International Men's Day</p>",
-            "   break;"
-          ],
-          "text": "   <p>November 19 is International Men's Day</p>\n   break;"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
-            "  case Gender.Female:"
-          ],
-          "text": "  case Gender.Female:"
-        },
-        {
-          "type": "code",
-          "page": 7,
-          "lines": [
+            "   break;",
+            "  case Gender.Female:",
             "   <p>March 8 is International Women's Day</p>",
             "   break;",
             "  // ... other cases ...",
-            "}"
-          ],
-          "text": "   <p>March 8 is International Women's Day</p>\n   break;\n  // ... other cases ...\n}"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "}",
             "   3. @foreach:"
           ],
-          "text": "   3. @foreach:"
-        },
-        {
-          "type": "list_item",
-          "page": 7,
-          "lines": [
-            "        o Purpose: Iterate over a collection (e.g., a list or array) and render HTML for each"
-          ],
-          "text": "        o Purpose: Iterate over a collection (e.g., a list or array) and render HTML for each"
+          "text": "@switch (person.PersonGender)\n{\n  case Gender.Male:\n   <p>November 19 is International Men's Day</p>\n   break;\n  case Gender.Female:\n   <p>March 8 is International Women's Day</p>\n   break;\n  // ... other cases ...\n}\n   3. @foreach:"
         },
         {
           "type": "prose",
           "page": 7,
           "lines": [
+            "        o Purpose: Iterate over a collection (e.g., a list or array) and render HTML for each",
             "           item."
           ],
-          "text": "           item."
+          "text": "        o Purpose: Iterate over a collection (e.g., a list or array) and render HTML for each\n           item."
         },
         {
           "type": "list_item",
@@ -3020,49 +2810,28 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Razor Syntax: Familiarize yourself with Razor syntax (code blocks, expressions, literals) for"
-          ],
-          "text": "   • Razor Syntax: Familiarize yourself with Razor syntax (code blocks, expressions, literals) for"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Razor Syntax: Familiarize yourself with Razor syntax (code blocks, expressions, literals) for",
             "      embedding C# code in your views."
           ],
-          "text": "      embedding C# code in your views."
+          "text": "   • Razor Syntax: Familiarize yourself with Razor syntax (code blocks, expressions, literals) for\n      embedding C# code in your views."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Control Flow: Understand how to use if, else, switch, foreach, and for to control the flow of"
-          ],
-          "text": "   • Control Flow: Understand how to use if, else, switch, foreach, and for to control the flow of"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Control Flow: Understand how to use if, else, switch, foreach, and for to control the flow of",
             "      logic and create dynamic views."
           ],
-          "text": "      logic and create dynamic views."
+          "text": "   • Control Flow: Understand how to use if, else, switch, foreach, and for to control the flow of\n      logic and create dynamic views."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Model Binding: Views often work with models passed from the controller. Use Razor"
-          ],
-          "text": "   • Model Binding: Views often work with models passed from the controller. Use Razor"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Model Binding: Views often work with models passed from the controller. Use Razor",
             "      expressions to access and display model properties."
           ],
-          "text": "      expressions to access and display model properties."
+          "text": "   • Model Binding: Views often work with models passed from the controller. Use Razor\n      expressions to access and display model properties."
         },
         {
           "type": "heading",
@@ -3094,17 +2863,10 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Declaration: Local functions are declared using the standard C# method syntax, typically"
-          ],
-          "text": "   • Declaration: Local functions are declared using the standard C# method syntax, typically"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Declaration: Local functions are declared using the standard C# method syntax, typically",
             "      within an @functions { ... } block."
           ],
-          "text": "      within an @functions { ... } block."
+          "text": "   • Declaration: Local functions are declared using the standard C# method syntax, typically\n      within an @functions { ... } block."
         },
         {
           "type": "list_item",
@@ -3118,17 +2880,10 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Parameters and Return Types: Local functions can take parameters and return values, just"
-          ],
-          "text": "   • Parameters and Return Types: Local functions can take parameters and return values, just"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Parameters and Return Types: Local functions can take parameters and return values, just",
             "      like regular C# methods."
           ],
-          "text": "      like regular C# methods."
+          "text": "   • Parameters and Return Types: Local functions can take parameters and return values, just\n      like regular C# methods."
         },
         {
           "type": "list_item",
@@ -3142,17 +2897,10 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Access to View Data: Local functions can access variables and model properties declared"
-          ],
-          "text": "   • Access to View Data: Local functions can access variables and model properties declared"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Access to View Data: Local functions can access variables and model properties declared",
             "      within the same code block."
           ],
-          "text": "      within the same code block."
+          "text": "   • Access to View Data: Local functions can access variables and model properties declared\n      within the same code block."
         }
       ],
       "char_count_raw": 1346,
@@ -3417,33 +3165,19 @@
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • Reusability: Call local functions multiple times within the same view, avoiding code"
-          ],
-          "text": "   • Reusability: Call local functions multiple times within the same view, avoiding code"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   • Reusability: Call local functions multiple times within the same view, avoiding code",
             "      duplication."
           ],
-          "text": "      duplication."
+          "text": "   • Reusability: Call local functions multiple times within the same view, avoiding code\n      duplication."
         },
         {
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • Cleaner Views: Reduce the amount of inline C# code scattered throughout your HTML"
-          ],
-          "text": "   • Cleaner Views: Reduce the amount of inline C# code scattered throughout your HTML"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   • Cleaner Views: Reduce the amount of inline C# code scattered throughout your HTML",
             "      markup."
           ],
-          "text": "      markup."
+          "text": "   • Cleaner Views: Reduce the amount of inline C# code scattered throughout your HTML\n      markup."
         },
         {
           "type": "heading",
@@ -3459,82 +3193,26 @@
           "lines": [
             "@using ViewsExample.Models",
             "@{",
-            "  string appTitle = \"Asp.Net Core Demo App\";"
-          ],
-          "text": "@using ViewsExample.Models\n@{\n  string appTitle = \"Asp.Net Core Demo App\";"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
-            "  List<Person> people = new List<Person>()"
-          ],
-          "text": "  List<Person> people = new List<Person>()"
-        },
-        {
-          "type": "code",
-          "page": 9,
-          "lines": [
+            "  string appTitle = \"Asp.Net Core Demo App\";",
+            "  List<Person> people = new List<Person>()",
             "  {",
             "   // ... (person data)",
             "  };",
             "}",
-            "@functions {"
-          ],
-          "text": "  {\n   // ... (person data)\n  };\n}\n@functions {"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
-            "  double? GetAge(DateTime? dateOfBirth)"
-          ],
-          "text": "  double? GetAge(DateTime? dateOfBirth)"
-        },
-        {
-          "type": "code",
-          "page": 9,
-          "lines": [
-            "  {"
-          ],
-          "text": "  {"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
-            "   if (dateOfBirth is not null)"
-          ],
-          "text": "   if (dateOfBirth is not null)"
-        },
-        {
-          "type": "code",
-          "page": 9,
-          "lines": [
+            "@functions {",
+            "  double? GetAge(DateTime? dateOfBirth)",
+            "  {",
+            "   if (dateOfBirth is not null)",
             "   {",
             "     return Math.Round((DateTime.Now - dateOfBirth.Value).TotalDays / 365.25);",
-            "   }"
-          ],
-          "text": "   {\n     return Math.Round((DateTime.Now - dateOfBirth.Value).TotalDays / 365.25);\n   }"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
-            "   else"
-          ],
-          "text": "   else"
-        },
-        {
-          "type": "code",
-          "page": 9,
-          "lines": [
+            "   }",
+            "   else",
             "   {",
             "     return null;",
             "   }",
             "  }"
           ],
-          "text": "   {\n     return null;\n   }\n  }"
+          "text": "@using ViewsExample.Models\n@{\n  string appTitle = \"Asp.Net Core Demo App\";\n  List<Person> people = new List<Person>()\n  {\n   // ... (person data)\n  };\n}\n@functions {\n  double? GetAge(DateTime? dateOfBirth)\n  {\n   if (dateOfBirth is not null)\n   {\n     return Math.Round((DateTime.Now - dateOfBirth.Value).TotalDays / 365.25);\n   }\n   else\n   {\n     return null;\n   }\n  }"
         }
       ],
       "char_count_raw": 721,
@@ -3817,22 +3495,8 @@
             "   @for (int i = 0; i < 2; i++)",
             "   {",
             "     Person person = people[i];",
-            "     <div>"
-          ],
-          "text": "   <h1>Welcome to @Name</h1>\n   @for (int i = 0; i < 2; i++)\n   {\n     Person person = people[i];\n     <div>"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
-            "      @person.Name"
-          ],
-          "text": "      @person.Name"
-        },
-        {
-          "type": "code",
-          "page": 10,
-          "lines": [
+            "     <div>",
+            "      @person.Name",
             "      <span>, </span>",
             "      <span>@person.PersonGender</span>",
             "      @if (person.DateOfBirth != null)",
@@ -3843,7 +3507,7 @@
             "     </div>",
             "   }"
           ],
-          "text": "      <span>, </span>\n      <span>@person.PersonGender</span>\n      @if (person.DateOfBirth != null)\n      {\n        <span>@person.DateOfBirth.Value.ToString(\"MM/dd/yyyy\")</span>\n        <span>@GetAge(person.DateOfBirth) years old</span>\n      }\n     </div>\n   }"
+          "text": "   <h1>Welcome to @Name</h1>\n   @for (int i = 0; i < 2; i++)\n   {\n     Person person = people[i];\n     <div>\n      @person.Name\n      <span>, </span>\n      <span>@person.PersonGender</span>\n      @if (person.DateOfBirth != null)\n      {\n        <span>@person.DateOfBirth.Value.ToString(\"MM/dd/yyyy\")</span>\n        <span>@GetAge(person.DateOfBirth) years old</span>\n      }\n     </div>\n   }"
         },
         {
           "type": "prose",
@@ -4086,51 +3750,37 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   1. Local Function: GetAge(DateTime? dateOfBirth) calculates the age of a person based on"
-          ],
-          "text": "   1. Local Function: GetAge(DateTime? dateOfBirth) calculates the age of a person based on"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   1. Local Function: GetAge(DateTime? dateOfBirth) calculates the age of a person based on",
             "      their date of birth."
           ],
-          "text": "      their date of birth."
+          "text": "   1. Local Function: GetAge(DateTime? dateOfBirth) calculates the age of a person based on\n      their date of birth."
         },
         {
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   2. Local Variable: int x = 10; This is not used in the view but demonstrates how to declare local"
-          ],
-          "text": "   2. Local Variable: int x = 10; This is not used in the view but demonstrates how to declare local"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   2. Local Variable: int x = 10; This is not used in the view but demonstrates how to declare local",
             "      variables within a Razor code block."
           ],
-          "text": "      variables within a Razor code block."
+          "text": "   2. Local Variable: int x = 10; This is not used in the view but demonstrates how to declare local\n      variables within a Razor code block."
         },
         {
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   3. Local Property: string Name { get; set; } = \"Hello name\"; This is used to set the title of the"
+            "   3. Local Property: string Name { get; set; } = \"Hello name\"; This is used to set the title of the",
+            "      page."
           ],
-          "text": "   3. Local Property: string Name { get; set; } = \"Hello name\"; This is used to set the title of the"
+          "text": "   3. Local Property: string Name { get; set; } = \"Hello name\"; This is used to set the title of the\n      page."
         },
         {
           "type": "prose",
           "page": 11,
           "lines": [
-            "      page.",
             "The GetAge function is called within the @foreach loop to display the age of each person if their",
             "date of birth is available."
           ],
-          "text": "      page.\nThe GetAge function is called within the @foreach loop to display the age of each person if their\ndate of birth is available."
+          "text": "The GetAge function is called within the @foreach loop to display the age of each person if their\ndate of birth is available."
         },
         {
           "type": "heading",
@@ -4144,38 +3794,31 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • Overuse: Avoid overusing local functions. They're great for encapsulation, but too many can"
-          ],
-          "text": "   • Overuse: Avoid overusing local functions. They're great for encapsulation, but too many can"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   • Overuse: Avoid overusing local functions. They're great for encapsulation, but too many can",
             "      make your views harder to follow."
           ],
-          "text": "      make your views harder to follow."
+          "text": "   • Overuse: Avoid overusing local functions. They're great for encapsulation, but too many can\n      make your views harder to follow."
         },
         {
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • Alternatives: Consider helper methods or view components for more complex or reusable"
+            "   • Alternatives: Consider helper methods or view components for more complex or reusable",
+            "      logic."
           ],
-          "text": "   • Alternatives: Consider helper methods or view components for more complex or reusable"
+          "text": "   • Alternatives: Consider helper methods or view components for more complex or reusable\n      logic."
         },
         {
           "type": "prose",
           "page": 11,
           "lines": [
-            "      logic.",
             "Html.Raw()",
             "In Razor views, the default behavior is to automatically encode HTML content to prevent potential",
             "security vulnerabilities like cross-site scripting (XSS) attacks. However, sometimes you have",
             "legitimate HTML content (e.g., from a rich text editor or a trusted source) that you want to render",
             "as-is, without encoding. This is where Html.Raw() comes in."
           ],
-          "text": "      logic.\nHtml.Raw()\nIn Razor views, the default behavior is to automatically encode HTML content to prevent potential\nsecurity vulnerabilities like cross-site scripting (XSS) attacks. However, sometimes you have\nlegitimate HTML content (e.g., from a rich text editor or a trusted source) that you want to render\nas-is, without encoding. This is where Html.Raw() comes in."
+          "text": "Html.Raw()\nIn Razor views, the default behavior is to automatically encode HTML content to prevent potential\nsecurity vulnerabilities like cross-site scripting (XSS) attacks. However, sometimes you have\nlegitimate HTML content (e.g., from a rich text editor or a trusted source) that you want to render\nas-is, without encoding. This is where Html.Raw() comes in."
         },
         {
           "type": "heading",
@@ -4189,49 +3832,28 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • Bypass HTML Encoding: Html.Raw() prevents Razor from encoding the HTML content you"
-          ],
-          "text": "   • Bypass HTML Encoding: Html.Raw() prevents Razor from encoding the HTML content you"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   • Bypass HTML Encoding: Html.Raw() prevents Razor from encoding the HTML content you",
             "      provide, allowing it to be rendered directly in the browser."
           ],
-          "text": "      provide, allowing it to be rendered directly in the browser."
+          "text": "   • Bypass HTML Encoding: Html.Raw() prevents Razor from encoding the HTML content you\n      provide, allowing it to be rendered directly in the browser."
         },
         {
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • Displaying Trusted HTML: Use it when you trust the source of the HTML content and want"
-          ],
-          "text": "   • Displaying Trusted HTML: Use it when you trust the source of the HTML content and want"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   • Displaying Trusted HTML: Use it when you trust the source of the HTML content and want",
             "      to preserve its formatting and structure."
           ],
-          "text": "      to preserve its formatting and structure."
+          "text": "   • Displaying Trusted HTML: Use it when you trust the source of the HTML content and want\n      to preserve its formatting and structure."
         },
         {
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • Dynamic Content Generation: Html.Raw() can be used to dynamically insert HTML"
-          ],
-          "text": "   • Dynamic Content Generation: Html.Raw() can be used to dynamically insert HTML"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   • Dynamic Content Generation: Html.Raw() can be used to dynamically insert HTML",
             "      fragments into your views based on data or logic."
           ],
-          "text": "      fragments into your views based on data or logic."
+          "text": "   • Dynamic Content Generation: Html.Raw() can be used to dynamically insert HTML\n      fragments into your views based on data or logic."
         },
         {
           "type": "heading",
@@ -4242,7 +3864,7 @@
           "text": "Syntax"
         },
         {
-          "type": "prose",
+          "type": "code",
           "page": 11,
           "lines": [
             "@Html.Raw(htmlContent)"
@@ -4505,35 +4127,21 @@
           "type": "list_item",
           "page": 12,
           "lines": [
-            "   • Security Risk: Use Html.Raw() with extreme caution. If the htmlContent originates from"
-          ],
-          "text": "   • Security Risk: Use Html.Raw() with extreme caution. If the htmlContent originates from"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "   • Security Risk: Use Html.Raw() with extreme caution. If the htmlContent originates from",
             "      user input or an untrusted source, it could lead to XSS vulnerabilities. Always sanitize and",
             "      validate user-generated content before rendering it with Html.Raw()."
           ],
-          "text": "      user input or an untrusted source, it could lead to XSS vulnerabilities. Always sanitize and\n      validate user-generated content before rendering it with Html.Raw()."
+          "text": "   • Security Risk: Use Html.Raw() with extreme caution. If the htmlContent originates from\n      user input or an untrusted source, it could lead to XSS vulnerabilities. Always sanitize and\n      validate user-generated content before rendering it with Html.Raw()."
         },
         {
           "type": "list_item",
           "page": 12,
           "lines": [
-            "   • Content Security Policy (CSP): Consider implementing a CSP to further mitigate XSS risks. A"
-          ],
-          "text": "   • Content Security Policy (CSP): Consider implementing a CSP to further mitigate XSS risks. A"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "   • Content Security Policy (CSP): Consider implementing a CSP to further mitigate XSS risks. A",
             "      CSP defines a set of rules that govern how the browser handles external scripts, styles, and",
             "      other resources."
           ],
-          "text": "      CSP defines a set of rules that govern how the browser handles external scripts, styles, and\n      other resources."
+          "text": "   • Content Security Policy (CSP): Consider implementing a CSP to further mitigate XSS risks. A\n      CSP defines a set of rules that govern how the browser handles external scripts, styles, and\n      other resources."
         },
         {
           "type": "heading",
@@ -4562,22 +4170,22 @@
             "<html>",
             "<head>",
             "  </head>",
-            "<body>",
-            "  @Html.Raw(alertMessage)"
+            "<body>"
           ],
-          "text": "<!DOCTYPE html>\n<html>\n<head>\n  </head>\n<body>\n  @Html.Raw(alertMessage)"
+          "text": "<!DOCTYPE html>\n<html>\n<head>\n  </head>\n<body>"
         },
         {
           "type": "code",
           "page": 12,
           "lines": [
+            "  @Html.Raw(alertMessage)",
             "  <h1>Welcome</h1>",
             "  @for (int i = 0; i < 2; i++)",
             "  {",
             "   // ... (rest of the view code) ...",
             "  }"
           ],
-          "text": "  <h1>Welcome</h1>\n  @for (int i = 0; i < 2; i++)\n  {\n   // ... (rest of the view code) ...\n  }"
+          "text": "  @Html.Raw(alertMessage)\n  <h1>Welcome</h1>\n  @for (int i = 0; i < 2; i++)\n  {\n   // ... (rest of the view code) ...\n  }"
         },
         {
           "type": "prose",
@@ -4812,68 +4420,40 @@
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   1. Raw HTML String: The variable alertMessage contains a string of HTML that includes a"
-          ],
-          "text": "   1. Raw HTML String: The variable alertMessage contains a string of HTML that includes a"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "   1. Raw HTML String: The variable alertMessage contains a string of HTML that includes a",
             "      <script> tag intended to display an alert message with the number of people found."
           ],
-          "text": "      <script> tag intended to display an alert message with the number of people found."
+          "text": "   1. Raw HTML String: The variable alertMessage contains a string of HTML that includes a\n      <script> tag intended to display an alert message with the number of people found."
         },
         {
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   2. Html.Raw() Usage: The @Html.Raw(alertMessage) line tells Razor to render the contents of"
-          ],
-          "text": "   2. Html.Raw() Usage: The @Html.Raw(alertMessage) line tells Razor to render the contents of"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "   2. Html.Raw() Usage: The @Html.Raw(alertMessage) line tells Razor to render the contents of",
             "      alertMessage directly into the HTML output without encoding. This will result in the",
             "      following HTML in the output:",
             "<script>alert('3 people found')</script>"
           ],
-          "text": "      alertMessage directly into the HTML output without encoding. This will result in the\n      following HTML in the output:\n<script>alert('3 people found')</script>"
+          "text": "   2. Html.Raw() Usage: The @Html.Raw(alertMessage) line tells Razor to render the contents of\n      alertMessage directly into the HTML output without encoding. This will result in the\n      following HTML in the output:\n<script>alert('3 people found')</script>"
         },
         {
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   3. Client-Side Execution: When the browser parses this HTML, it will execute the JavaScript"
-          ],
-          "text": "   3. Client-Side Execution: When the browser parses this HTML, it will execute the JavaScript"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "   3. Client-Side Execution: When the browser parses this HTML, it will execute the JavaScript",
             "      code inside the <script> tag, triggering an alert box."
           ],
-          "text": "      code inside the <script> tag, triggering an alert box."
+          "text": "   3. Client-Side Execution: When the browser parses this HTML, it will execute the JavaScript\n      code inside the <script> tag, triggering an alert box."
         },
         {
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   4. No sanitization: In this example, since the number of people is not user input, there is no"
-          ],
-          "text": "   4. No sanitization: In this example, since the number of people is not user input, there is no"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "   4. No sanitization: In this example, since the number of people is not user input, there is no",
             "      risk of XSS attack. However, if the content of the alert message is coming from user input, it",
             "      is essential to santize it before displaying it to prevent XSS attacks."
           ],
-          "text": "      risk of XSS attack. However, if the content of the alert message is coming from user input, it\n      is essential to santize it before displaying it to prevent XSS attacks."
+          "text": "   4. No sanitization: In this example, since the number of people is not user input, there is no\n      risk of XSS attack. However, if the content of the alert message is coming from user input, it\n      is essential to santize it before displaying it to prevent XSS attacks."
         },
         {
           "type": "heading",
@@ -4887,17 +4467,10 @@
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   • Trust but Verify: Only use Html.Raw() when you're absolutely sure the content is safe and"
-          ],
-          "text": "   • Trust but Verify: Only use Html.Raw() when you're absolutely sure the content is safe and"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "   • Trust but Verify: Only use Html.Raw() when you're absolutely sure the content is safe and",
             "      from a trusted source."
           ],
-          "text": "      from a trusted source."
+          "text": "   • Trust but Verify: Only use Html.Raw() when you're absolutely sure the content is safe and\n      from a trusted source."
         },
         {
           "type": "list_item",
@@ -4911,33 +4484,19 @@
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   • Alternative Approaches: If you need to inject dynamic HTML content, consider safer"
-          ],
-          "text": "   • Alternative Approaches: If you need to inject dynamic HTML content, consider safer"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "   • Alternative Approaches: If you need to inject dynamic HTML content, consider safer",
             "      alternatives like partial views or view components."
           ],
-          "text": "      alternatives like partial views or view components."
+          "text": "   • Alternative Approaches: If you need to inject dynamic HTML content, consider safer\n      alternatives like partial views or view components."
         },
         {
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   • Content Security Policy (CSP): Implement a CSP to add an extra layer of protection against"
-          ],
-          "text": "   • Content Security Policy (CSP): Implement a CSP to add an extra layer of protection against"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "   • Content Security Policy (CSP): Implement a CSP to add an extra layer of protection against",
             "      XSS attacks."
           ],
-          "text": "      XSS attacks."
+          "text": "   • Content Security Policy (CSP): Implement a CSP to add an extra layer of protection against\n      XSS attacks."
         },
         {
           "type": "heading",
@@ -5252,18 +4811,18 @@
           "type": "list_item",
           "page": 14,
           "lines": [
-            "   • Views: You retrieve values from the ViewData dictionary or the ViewBag dynamic object in"
+            "   • Views: You retrieve values from the ViewData dictionary or the ViewBag dynamic object in",
+            "      the view to render content."
           ],
-          "text": "   • Views: You retrieve values from the ViewData dictionary or the ViewBag dynamic object in"
+          "text": "   • Views: You retrieve values from the ViewData dictionary or the ViewBag dynamic object in\n      the view to render content."
         },
         {
           "type": "prose",
           "page": 14,
           "lines": [
-            "      the view to render content.",
             "Code of ViewData:"
           ],
-          "text": "      the view to render content.\nCode of ViewData:"
+          "text": "Code of ViewData:"
         },
         {
           "type": "code",
@@ -5544,66 +5103,38 @@
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • Choose One: It's generally recommended to pick either ViewData or ViewBag and use it"
-          ],
-          "text": "   • Choose One: It's generally recommended to pick either ViewData or ViewBag and use it"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "   • Choose One: It's generally recommended to pick either ViewData or ViewBag and use it",
             "      consistently throughout your project to maintain a clear and unified approach."
           ],
-          "text": "      consistently throughout your project to maintain a clear and unified approach."
+          "text": "   • Choose One: It's generally recommended to pick either ViewData or ViewBag and use it\n      consistently throughout your project to maintain a clear and unified approach."
         },
         {
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • Strong Typing with View Models: While ViewData and ViewBag offer flexibility, they lack"
-          ],
-          "text": "   • Strong Typing with View Models: While ViewData and ViewBag offer flexibility, they lack"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "   • Strong Typing with View Models: While ViewData and ViewBag offer flexibility, they lack",
             "      compile-time type safety. For larger applications, prefer strongly typed view models to pass",
             "      data to views."
           ],
-          "text": "      compile-time type safety. For larger applications, prefer strongly typed view models to pass\n      data to views."
+          "text": "   • Strong Typing with View Models: While ViewData and ViewBag offer flexibility, they lack\n      compile-time type safety. For larger applications, prefer strongly typed view models to pass\n      data to views."
         },
         {
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • Limited Scope: Understand that ViewData and ViewBag data exists only for the duration of"
-          ],
-          "text": "   • Limited Scope: Understand that ViewData and ViewBag data exists only for the duration of"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "   • Limited Scope: Understand that ViewData and ViewBag data exists only for the duration of",
             "      the current request and response cycle. It's not meant for persisting data between requests."
           ],
-          "text": "      the current request and response cycle. It's not meant for persisting data between requests."
+          "text": "   • Limited Scope: Understand that ViewData and ViewBag data exists only for the duration of\n      the current request and response cycle. It's not meant for persisting data between requests."
         },
         {
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • Meaningful Keys: Use descriptive and meaningful keys for your data to improve code"
-          ],
-          "text": "   • Meaningful Keys: Use descriptive and meaningful keys for your data to improve code"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "   • Meaningful Keys: Use descriptive and meaningful keys for your data to improve code",
             "      readability."
           ],
-          "text": "      readability."
+          "text": "   • Meaningful Keys: Use descriptive and meaningful keys for your data to improve code\n      readability."
         },
         {
           "type": "heading",
@@ -5617,49 +5148,28 @@
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • Overuse: Don't overstuff ViewData or ViewBag with excessive data. Keep it concise and"
-          ],
-          "text": "   • Overuse: Don't overstuff ViewData or ViewBag with excessive data. Keep it concise and"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "   • Overuse: Don't overstuff ViewData or ViewBag with excessive data. Keep it concise and",
             "      focused on the specific information needed by the view."
           ],
-          "text": "      focused on the specific information needed by the view."
+          "text": "   • Overuse: Don't overstuff ViewData or ViewBag with excessive data. Keep it concise and\n      focused on the specific information needed by the view."
         },
         {
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • Magic Strings: Avoid hardcoding strings for keys. Use constants or enums for better"
-          ],
-          "text": "   • Magic Strings: Avoid hardcoding strings for keys. Use constants or enums for better"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "   • Magic Strings: Avoid hardcoding strings for keys. Use constants or enums for better",
             "      maintainability."
           ],
-          "text": "      maintainability."
+          "text": "   • Magic Strings: Avoid hardcoding strings for keys. Use constants or enums for better\n      maintainability."
         },
         {
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • Sensitive Data: Never pass sensitive data like passwords or authentication tokens through"
-          ],
-          "text": "   • Sensitive Data: Never pass sensitive data like passwords or authentication tokens through"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "   • Sensitive Data: Never pass sensitive data like passwords or authentication tokens through",
             "      ViewData or ViewBag."
           ],
-          "text": "      ViewData or ViewBag."
+          "text": "   • Sensitive Data: Never pass sensitive data like passwords or authentication tokens through\n      ViewData or ViewBag."
         },
         {
           "type": "heading",
@@ -5961,65 +5471,37 @@
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • Complex Data: When your view needs to display or interact with complex data structures"
-          ],
-          "text": "   • Complex Data: When your view needs to display or interact with complex data structures"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • Complex Data: When your view needs to display or interact with complex data structures",
             "      that have multiple properties or relationships."
           ],
-          "text": "      that have multiple properties or relationships."
+          "text": "   • Complex Data: When your view needs to display or interact with complex data structures\n      that have multiple properties or relationships."
         },
         {
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • Type Safety: When you want to catch type-related errors during development, rather than"
-          ],
-          "text": "   • Type Safety: When you want to catch type-related errors during development, rather than"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • Type Safety: When you want to catch type-related errors during development, rather than",
             "      at runtime."
           ],
-          "text": "      at runtime."
+          "text": "   • Type Safety: When you want to catch type-related errors during development, rather than\n      at runtime."
         },
         {
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • IntelliSense: When you want the full power of Visual Studio's IntelliSense to help you code"
-          ],
-          "text": "   • IntelliSense: When you want the full power of Visual Studio's IntelliSense to help you code"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • IntelliSense: When you want the full power of Visual Studio's IntelliSense to help you code",
             "      faster and with fewer errors."
           ],
-          "text": "      faster and with fewer errors."
+          "text": "   • IntelliSense: When you want the full power of Visual Studio's IntelliSense to help you code\n      faster and with fewer errors."
         },
         {
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • Refactoring: When you need to change the model, strongly typed views make it easier to"
-          ],
-          "text": "   • Refactoring: When you need to change the model, strongly typed views make it easier to"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • Refactoring: When you need to change the model, strongly typed views make it easier to",
             "      update the corresponding views automatically."
           ],
-          "text": "      update the corresponding views automatically."
+          "text": "   • Refactoring: When you need to change the model, strongly typed views make it easier to\n      update the corresponding views automatically."
         },
         {
           "type": "heading",
@@ -6033,84 +5515,56 @@
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • Use View Models: Instead of directly passing your business models to views, create"
-          ],
-          "text": "   • Use View Models: Instead of directly passing your business models to views, create"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • Use View Models: Instead of directly passing your business models to views, create",
             "      specialized view models tailored to the data needed by each view. This helps keep your",
             "      views clean and focused."
           ],
-          "text": "      specialized view models tailored to the data needed by each view. This helps keep your\n      views clean and focused."
+          "text": "   • Use View Models: Instead of directly passing your business models to views, create\n      specialized view models tailored to the data needed by each view. This helps keep your\n      views clean and focused."
         },
         {
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • Naming Conventions: Follow standard naming conventions for your view models (e.g.,"
-          ],
-          "text": "   • Naming Conventions: Follow standard naming conventions for your view models (e.g.,"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • Naming Conventions: Follow standard naming conventions for your view models (e.g.,",
             "      ProductViewModel, OrderDetailsViewModel)."
           ],
-          "text": "      ProductViewModel, OrderDetailsViewModel)."
+          "text": "   • Naming Conventions: Follow standard naming conventions for your view models (e.g.,\n      ProductViewModel, OrderDetailsViewModel)."
         },
         {
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • Keep Views Simple: Views should primarily focus on presentation logic. Avoid complex"
-          ],
-          "text": "   • Keep Views Simple: Views should primarily focus on presentation logic. Avoid complex"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • Keep Views Simple: Views should primarily focus on presentation logic. Avoid complex",
             "      business logic within views."
           ],
-          "text": "      business logic within views."
+          "text": "   • Keep Views Simple: Views should primarily focus on presentation logic. Avoid complex\n      business logic within views."
         },
         {
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • Partial Views: Leverage partial views for reusable components, passing view models to them"
-          ],
-          "text": "   • Partial Views: Leverage partial views for reusable components, passing view models to them"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • Partial Views: Leverage partial views for reusable components, passing view models to them",
             "      as needed."
           ],
-          "text": "      as needed."
+          "text": "   • Partial Views: Leverage partial views for reusable components, passing view models to them\n      as needed."
         },
         {
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • Leverage Tag Helpers: Explore the use of Tag Helpers, which provide a more HTML-friendly"
+            "   • Leverage Tag Helpers: Explore the use of Tag Helpers, which provide a more HTML-friendly",
+            "      way to interact with your models in views."
           ],
-          "text": "   • Leverage Tag Helpers: Explore the use of Tag Helpers, which provide a more HTML-friendly"
+          "text": "   • Leverage Tag Helpers: Explore the use of Tag Helpers, which provide a more HTML-friendly\n      way to interact with your models in views."
         },
         {
           "type": "prose",
           "page": 16,
           "lines": [
-            "      way to interact with your models in views.",
             "Code:",
             "Controller (HomeController.cs)"
           ],
-          "text": "      way to interact with your models in views.\nCode:\nController (HomeController.cs)"
+          "text": "Code:\nController (HomeController.cs)"
         },
         {
           "type": "code",
@@ -6120,34 +5574,13 @@
             "[Route(\"home\")]",
             "[Route(\"/\")]",
             "public IActionResult Index()",
-            "{"
-          ],
-          "text": "// ...\n[Route(\"home\")]\n[Route(\"/\")]\npublic IActionResult Index()\n{"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
-            "  List<Person> people = new List<Person>()"
-          ],
-          "text": "  List<Person> people = new List<Person>()"
-        },
-        {
-          "type": "code",
-          "page": 16,
-          "lines": [
-            "  {"
-          ],
-          "text": "  {"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "{",
+            "  List<Person> people = new List<Person>()",
+            "  {",
             "   new Person() { Name = \"John\", DateOfBirth = DateTime.Parse(\"2000-05-06\"), PersonGender =",
             "Gender.Male},"
           ],
-          "text": "   new Person() { Name = \"John\", DateOfBirth = DateTime.Parse(\"2000-05-06\"), PersonGender =\nGender.Male},"
+          "text": "// ...\n[Route(\"home\")]\n[Route(\"/\")]\npublic IActionResult Index()\n{\n  List<Person> people = new List<Person>()\n  {\n   new Person() { Name = \"John\", DateOfBirth = DateTime.Parse(\"2000-05-06\"), PersonGender =\nGender.Male},"
         }
       ],
       "char_count_raw": 1474,
@@ -6361,19 +5794,12 @@
       ],
       "blocks": [
         {
-          "type": "prose",
+          "type": "code",
           "page": 17,
           "lines": [
             "   new Person() { Name = \"Linda\", DateOfBirth = DateTime.Parse(\"2005-01-09\"), PersonGender =",
             "Gender.Female},",
-            "   new Person() { Name = \"Susan\", DateOfBirth = null, PersonGender = Gender.Other}"
-          ],
-          "text": "   new Person() { Name = \"Linda\", DateOfBirth = DateTime.Parse(\"2005-01-09\"), PersonGender =\nGender.Female},\n   new Person() { Name = \"Susan\", DateOfBirth = null, PersonGender = Gender.Other}"
-        },
-        {
-          "type": "code",
-          "page": 17,
-          "lines": [
+            "   new Person() { Name = \"Susan\", DateOfBirth = null, PersonGender = Gender.Other}",
             "  };",
             "  return View(\"Index\", people); // Pass the 'people' list as the model",
             "}",
@@ -6385,7 +5811,7 @@
             "  return View(matchingPerson); // Pass a single 'Person' object as the model",
             "}"
           ],
-          "text": "  };\n  return View(\"Index\", people); // Pass the 'people' list as the model\n}\n[Route(\"person-details/{name}\")]\npublic IActionResult Details(string? name)\n{\n  // ... (Retrieve the person based on the name) ...\n  Person? matchingPerson = people.Where(temp => temp.Name == name).FirstOrDefault();\n  return View(matchingPerson); // Pass a single 'Person' object as the model\n}"
+          "text": "   new Person() { Name = \"Linda\", DateOfBirth = DateTime.Parse(\"2005-01-09\"), PersonGender =\nGender.Female},\n   new Person() { Name = \"Susan\", DateOfBirth = null, PersonGender = Gender.Other}\n  };\n  return View(\"Index\", people); // Pass the 'people' list as the model\n}\n[Route(\"person-details/{name}\")]\npublic IActionResult Details(string? name)\n{\n  // ... (Retrieve the person based on the name) ...\n  Person? matchingPerson = people.Where(temp => temp.Name == name).FirstOrDefault();\n  return View(matchingPerson); // Pass a single 'Person' object as the model\n}"
         },
         {
           "type": "prose",
@@ -6670,22 +6096,8 @@
             "  {",
             "   <div class=\"box float-left w-50\">",
             "     <h3>@person.Name</h3>",
-            "     <table class=\"table w-100\">"
-          ],
-          "text": "  @foreach (Person person in Model)\n  {\n   <div class=\"box float-left w-50\">\n     <h3>@person.Name</h3>\n     <table class=\"table w-100\">"
-        },
-        {
-          "type": "prose",
-          "page": 18,
-          "lines": [
-            "      <tbody>"
-          ],
-          "text": "      <tbody>"
-        },
-        {
-          "type": "code",
-          "page": 18,
-          "lines": [
+            "     <table class=\"table w-100\">",
+            "      <tbody>",
             "      <tr>",
             "        <td>Gender</td>",
             "        <td>@person.PersonGender</td>",
@@ -6693,29 +6105,15 @@
             "      <tr>",
             "        <td>Date of Birth</td>",
             "        <td>@person.DateOfBirth?.ToString(\"MM/dd/yyyy\")</td>",
-            "      </tr>"
-          ],
-          "text": "      <tr>\n        <td>Gender</td>\n        <td>@person.PersonGender</td>\n      </tr>\n      <tr>\n        <td>Date of Birth</td>\n        <td>@person.DateOfBirth?.ToString(\"MM/dd/yyyy\")</td>\n      </tr>"
-        },
-        {
-          "type": "prose",
-          "page": 18,
-          "lines": [
-            "      </tbody>"
-          ],
-          "text": "      </tbody>"
-        },
-        {
-          "type": "code",
-          "page": 18,
-          "lines": [
+            "      </tr>",
+            "      </tbody>",
             "     </table>",
             "     <a href=\"/person-details/@person.Name\">Details</a>",
             "   </div>",
             "  }",
             "  </div>"
           ],
-          "text": "     </table>\n     <a href=\"/person-details/@person.Name\">Details</a>\n   </div>\n  }\n  </div>"
+          "text": "  @foreach (Person person in Model)\n  {\n   <div class=\"box float-left w-50\">\n     <h3>@person.Name</h3>\n     <table class=\"table w-100\">\n      <tbody>\n      <tr>\n        <td>Gender</td>\n        <td>@person.PersonGender</td>\n      </tr>\n      <tr>\n        <td>Date of Birth</td>\n        <td>@person.DateOfBirth?.ToString(\"MM/dd/yyyy\")</td>\n      </tr>\n      </tbody>\n     </table>\n     <a href=\"/person-details/@person.Name\">Details</a>\n   </div>\n  }\n  </div>"
         },
         {
           "type": "prose",
@@ -7335,65 +6733,37 @@
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • Encapsulation: Keeps your view logic organized and prevents your views from becoming"
-          ],
-          "text": "   • Encapsulation: Keeps your view logic organized and prevents your views from becoming"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • Encapsulation: Keeps your view logic organized and prevents your views from becoming",
             "      tightly coupled to your underlying business models."
           ],
-          "text": "      tightly coupled to your underlying business models."
+          "text": "   • Encapsulation: Keeps your view logic organized and prevents your views from becoming\n      tightly coupled to your underlying business models."
         },
         {
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • Flexibility: Allows you to combine data from different sources (multiple models,"
-          ],
-          "text": "   • Flexibility: Allows you to combine data from different sources (multiple models,"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • Flexibility: Allows you to combine data from different sources (multiple models,",
             "      configuration settings, etc.) into a single object for the view."
           ],
-          "text": "      configuration settings, etc.) into a single object for the view."
+          "text": "   • Flexibility: Allows you to combine data from different sources (multiple models,\n      configuration settings, etc.) into a single object for the view."
         },
         {
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • Type Safety: Strongly typed views with view models offer compile-time type checking and"
-          ],
-          "text": "   • Type Safety: Strongly typed views with view models offer compile-time type checking and"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • Type Safety: Strongly typed views with view models offer compile-time type checking and",
             "      IntelliSense, improving development efficiency."
           ],
-          "text": "      IntelliSense, improving development efficiency."
+          "text": "   • Type Safety: Strongly typed views with view models offer compile-time type checking and\n      IntelliSense, improving development efficiency."
         },
         {
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • Data Shaping: You can create properties in the view model specifically designed for how you"
-          ],
-          "text": "   • Data Shaping: You can create properties in the view model specifically designed for how you"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • Data Shaping: You can create properties in the view model specifically designed for how you",
             "      want to display data in the view, such as formatted strings or calculated values."
           ],
-          "text": "      want to display data in the view, such as formatted strings or calculated values."
+          "text": "   • Data Shaping: You can create properties in the view model specifically designed for how you\n      want to display data in the view, such as formatted strings or calculated values."
         },
         {
           "type": "heading",
@@ -7407,34 +6777,20 @@
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   1. Define the View Model: Create a new class in your Models folder to represent the view"
-          ],
-          "text": "   1. Define the View Model: Create a new class in your Models folder to represent the view"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   1. Define the View Model: Create a new class in your Models folder to represent the view",
             "      model. This class will have properties to hold the data from the various models your view",
             "      needs."
           ],
-          "text": "      model. This class will have properties to hold the data from the various models your view\n      needs."
+          "text": "   1. Define the View Model: Create a new class in your Models folder to represent the view\n      model. This class will have properties to hold the data from the various models your view\n      needs."
         },
         {
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   2. Populate in the Controller: In your controller action, retrieve the data from your different"
-          ],
-          "text": "   2. Populate in the Controller: In your controller action, retrieve the data from your different"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   2. Populate in the Controller: In your controller action, retrieve the data from your different",
             "      models and use them to create an instance of your view model."
           ],
-          "text": "      models and use them to create an instance of your view model."
+          "text": "   2. Populate in the Controller: In your controller action, retrieve the data from your different\n      models and use them to create an instance of your view model."
         },
         {
           "type": "list_item",
@@ -7448,19 +6804,19 @@
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   4. Access in the View: In your view, use the @model directive at the top to specify the type of"
+            "   4. Access in the View: In your view, use the @model directive at the top to specify the type of",
+            "      your view model. You can then access the view model's properties using",
+            "      Model.<PropertyName>."
           ],
-          "text": "   4. Access in the View: In your view, use the @model directive at the top to specify the type of"
+          "text": "   4. Access in the View: In your view, use the @model directive at the top to specify the type of\n      your view model. You can then access the view model's properties using\n      Model.<PropertyName>."
         },
         {
           "type": "prose",
           "page": 20,
           "lines": [
-            "      your view model. You can then access the view model's properties using",
-            "      Model.<PropertyName>.",
             "Code Example: PersonAndProductWrapperModel"
           ],
-          "text": "      your view model. You can then access the view model's properties using\n      Model.<PropertyName>.\nCode Example: PersonAndProductWrapperModel"
+          "text": "Code Example: PersonAndProductWrapperModel"
         },
         {
           "type": "code",
@@ -7684,23 +7040,9 @@
             "}",
             "// HomeController.cs (Controller)",
             "public IActionResult SomeAction()",
-            "{"
-          ],
-          "text": "}\n// HomeController.cs (Controller)\npublic IActionResult SomeAction()\n{"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "{",
             "  Person person = GetPersonData(); // Fetch person data",
-            "  Product product = GetProductData(); // Fetch product data"
-          ],
-          "text": "  Person person = GetPersonData(); // Fetch person data\n  Product product = GetProductData(); // Fetch product data"
-        },
-        {
-          "type": "code",
-          "page": 21,
-          "lines": [
+            "  Product product = GetProductData(); // Fetch product data",
             "  var viewModel = new PersonAndProductWrapperModel",
             "  {",
             "   PersonData = person,",
@@ -7709,7 +7051,7 @@
             "  return View(viewModel);",
             "}"
           ],
-          "text": "  var viewModel = new PersonAndProductWrapperModel\n  {\n   PersonData = person,\n   ProductData = product\n  };\n  return View(viewModel);\n}"
+          "text": "}\n// HomeController.cs (Controller)\npublic IActionResult SomeAction()\n{\n  Person person = GetPersonData(); // Fetch person data\n  Product product = GetProductData(); // Fetch product data\n  var viewModel = new PersonAndProductWrapperModel\n  {\n   PersonData = person,\n   ProductData = product\n  };\n  return View(viewModel);\n}"
         },
         {
           "type": "prose",
@@ -8359,48 +7701,34 @@
           "type": "list_item",
           "page": 23,
           "lines": [
-            "   • Organization: View models help keep your views focused on presentation and your"
-          ],
-          "text": "   • Organization: View models help keep your views focused on presentation and your"
-        },
-        {
-          "type": "prose",
-          "page": 23,
-          "lines": [
+            "   • Organization: View models help keep your views focused on presentation and your",
             "      controllers focused on data retrieval and processing."
           ],
-          "text": "      controllers focused on data retrieval and processing."
+          "text": "   • Organization: View models help keep your views focused on presentation and your\n      controllers focused on data retrieval and processing."
         },
         {
           "type": "list_item",
           "page": 23,
           "lines": [
-            "   • Maintainability: When your underlying models change, you only need to update your view"
-          ],
-          "text": "   • Maintainability: When your underlying models change, you only need to update your view"
-        },
-        {
-          "type": "prose",
-          "page": 23,
-          "lines": [
+            "   • Maintainability: When your underlying models change, you only need to update your view",
             "      model, not every view that uses that data."
           ],
-          "text": "      model, not every view that uses that data."
+          "text": "   • Maintainability: When your underlying models change, you only need to update your view\n      model, not every view that uses that data."
         },
         {
           "type": "list_item",
           "page": 23,
           "lines": [
-            "   • Flexibility: You can include additional properties in your view model that aren't part of your"
+            "   • Flexibility: You can include additional properties in your view model that aren't part of your",
+            "      original models. This could be formatting options, computed values, or flags for controlling",
+            "      the view's behavior."
           ],
-          "text": "   • Flexibility: You can include additional properties in your view model that aren't part of your"
+          "text": "   • Flexibility: You can include additional properties in your view model that aren't part of your\n      original models. This could be formatting options, computed values, or flags for controlling\n      the view's behavior."
         },
         {
           "type": "prose",
           "page": 23,
           "lines": [
-            "      original models. This could be formatting options, computed values, or flags for controlling",
-            "      the view's behavior.",
             "_ViewImports.cshtml",
             "The _ViewImports.cshtml file is a special file in ASP.NET Core MVC that allows you to centralize",
             "common directives and settings that apply to multiple views within your application. This file",
@@ -8408,88 +7736,53 @@
             "subfolders to apply the settings to views within those specific folders.",
             "What Can You Put in _ViewImports.cshtml?"
           ],
-          "text": "      original models. This could be formatting options, computed values, or flags for controlling\n      the view's behavior.\n_ViewImports.cshtml\nThe _ViewImports.cshtml file is a special file in ASP.NET Core MVC that allows you to centralize\ncommon directives and settings that apply to multiple views within your application. This file\ntypically resides in the Views folder at the root of your project, but you can also place it within\nsubfolders to apply the settings to views within those specific folders.\nWhat Can You Put in _ViewImports.cshtml?"
+          "text": "_ViewImports.cshtml\nThe _ViewImports.cshtml file is a special file in ASP.NET Core MVC that allows you to centralize\ncommon directives and settings that apply to multiple views within your application. This file\ntypically resides in the Views folder at the root of your project, but you can also place it within\nsubfolders to apply the settings to views within those specific folders.\nWhat Can You Put in _ViewImports.cshtml?"
         },
         {
           "type": "list_item",
           "page": 23,
           "lines": [
-            "   • @using Directives: Import namespaces that you frequently use in your views. This"
-          ],
-          "text": "   • @using Directives: Import namespaces that you frequently use in your views. This"
-        },
-        {
-          "type": "prose",
-          "page": 23,
-          "lines": [
+            "   • @using Directives: Import namespaces that you frequently use in your views. This",
             "      eliminates the need to include these directives in every individual view."
           ],
-          "text": "      eliminates the need to include these directives in every individual view."
+          "text": "   • @using Directives: Import namespaces that you frequently use in your views. This\n      eliminates the need to include these directives in every individual view."
         },
         {
           "type": "list_item",
           "page": 23,
           "lines": [
-            "   • @addTagHelper Directives: Make Tag Helpers available to your views. Tag Helpers are"
-          ],
-          "text": "   • @addTagHelper Directives: Make Tag Helpers available to your views. Tag Helpers are"
-        },
-        {
-          "type": "prose",
-          "page": 23,
-          "lines": [
+            "   • @addTagHelper Directives: Make Tag Helpers available to your views. Tag Helpers are",
             "      server-side code snippets that generate or modify HTML elements in a more intuitive way",
             "      than traditional Razor syntax."
           ],
-          "text": "      server-side code snippets that generate or modify HTML elements in a more intuitive way\n      than traditional Razor syntax."
+          "text": "   • @addTagHelper Directives: Make Tag Helpers available to your views. Tag Helpers are\n      server-side code snippets that generate or modify HTML elements in a more intuitive way\n      than traditional Razor syntax."
         },
         {
           "type": "list_item",
           "page": 23,
           "lines": [
-            "   • @inject Directives: Inject services into your views, making them accessible for use in your"
-          ],
-          "text": "   • @inject Directives: Inject services into your views, making them accessible for use in your"
-        },
-        {
-          "type": "prose",
-          "page": 23,
-          "lines": [
+            "   • @inject Directives: Inject services into your views, making them accessible for use in your",
             "      Razor code."
           ],
-          "text": "      Razor code."
+          "text": "   • @inject Directives: Inject services into your views, making them accessible for use in your\n      Razor code."
         },
         {
           "type": "list_item",
           "page": 23,
           "lines": [
-            "   • @model Directive (Optional): Specify a default model type for all views in the directory or"
-          ],
-          "text": "   • @model Directive (Optional): Specify a default model type for all views in the directory or"
-        },
-        {
-          "type": "prose",
-          "page": 23,
-          "lines": [
+            "   • @model Directive (Optional): Specify a default model type for all views in the directory or",
             "      subdirectories (not recommended for complex projects)."
           ],
-          "text": "      subdirectories (not recommended for complex projects)."
+          "text": "   • @model Directive (Optional): Specify a default model type for all views in the directory or\n      subdirectories (not recommended for complex projects)."
         },
         {
           "type": "list_item",
           "page": 23,
           "lines": [
-            "   • @layout Directive (Optional): Set a default layout for all views in the directory or"
-          ],
-          "text": "   • @layout Directive (Optional): Set a default layout for all views in the directory or"
-        },
-        {
-          "type": "prose",
-          "page": 23,
-          "lines": [
+            "   • @layout Directive (Optional): Set a default layout for all views in the directory or",
             "      subdirectories."
           ],
-          "text": "      subdirectories."
+          "text": "   • @layout Directive (Optional): Set a default layout for all views in the directory or\n      subdirectories."
         },
         {
           "type": "heading",
@@ -8739,17 +8032,10 @@
           "type": "list_item",
           "page": 24,
           "lines": [
-            "   2. Parent directories: It then checks the parent directory of the view, and so on, up to the root"
-          ],
-          "text": "   2. Parent directories: It then checks the parent directory of the view, and so on, up to the root"
-        },
-        {
-          "type": "prose",
-          "page": 24,
-          "lines": [
+            "   2. Parent directories: It then checks the parent directory of the view, and so on, up to the root",
             "      Views folder."
           ],
-          "text": "      Views folder."
+          "text": "   2. Parent directories: It then checks the parent directory of the view, and so on, up to the root\n      Views folder."
         },
         {
           "type": "list_item",
@@ -8807,18 +8093,18 @@
           "type": "list_item",
           "page": 24,
           "lines": [
-            "   • Improved Readability: Keep your individual view files cleaner and more focused on their"
+            "   • Improved Readability: Keep your individual view files cleaner and more focused on their",
+            "      specific content."
           ],
-          "text": "   • Improved Readability: Keep your individual view files cleaner and more focused on their"
+          "text": "   • Improved Readability: Keep your individual view files cleaner and more focused on their\n      specific content."
         },
         {
           "type": "prose",
           "page": 24,
           "lines": [
-            "      specific content.",
             "Code of View:"
           ],
-          "text": "      specific content.\nCode of View:"
+          "text": "Code of View:"
         },
         {
           "type": "code",
@@ -9115,49 +8401,28 @@
           "type": "list_item",
           "page": 25,
           "lines": [
-            "   • Scoping: Directives in _ViewImports.cshtml are scoped to the directory and its"
-          ],
-          "text": "   • Scoping: Directives in _ViewImports.cshtml are scoped to the directory and its"
-        },
-        {
-          "type": "prose",
-          "page": 25,
-          "lines": [
+            "   • Scoping: Directives in _ViewImports.cshtml are scoped to the directory and its",
             "      subdirectories."
           ],
-          "text": "      subdirectories."
+          "text": "   • Scoping: Directives in _ViewImports.cshtml are scoped to the directory and its\n      subdirectories."
         },
         {
           "type": "list_item",
           "page": 25,
           "lines": [
-            "   • Overriding: Settings in a child folder's _ViewImports.cshtml file override those in parent"
-          ],
-          "text": "   • Overriding: Settings in a child folder's _ViewImports.cshtml file override those in parent"
-        },
-        {
-          "type": "prose",
-          "page": 25,
-          "lines": [
+            "   • Overriding: Settings in a child folder's _ViewImports.cshtml file override those in parent",
             "      folders."
           ],
-          "text": "      folders."
+          "text": "   • Overriding: Settings in a child folder's _ViewImports.cshtml file override those in parent\n      folders."
         },
         {
           "type": "list_item",
           "page": 25,
           "lines": [
-            "   • Flexibility: Use multiple _ViewImports.cshtml files in different folders to manage settings at"
-          ],
-          "text": "   • Flexibility: Use multiple _ViewImports.cshtml files in different folders to manage settings at"
-        },
-        {
-          "type": "prose",
-          "page": 25,
-          "lines": [
+            "   • Flexibility: Use multiple _ViewImports.cshtml files in different folders to manage settings at",
             "      a more granular level."
           ],
-          "text": "      a more granular level."
+          "text": "   • Flexibility: Use multiple _ViewImports.cshtml files in different folders to manage settings at\n      a more granular level."
         },
         {
           "type": "heading",
@@ -9179,33 +8444,19 @@
           "type": "list_item",
           "page": 25,
           "lines": [
-            "   • DRY Principle: Adhere to the Don't Repeat Yourself (DRY) principle by avoiding redundant"
-          ],
-          "text": "   • DRY Principle: Adhere to the Don't Repeat Yourself (DRY) principle by avoiding redundant"
-        },
-        {
-          "type": "prose",
-          "page": 25,
-          "lines": [
+            "   • DRY Principle: Adhere to the Don't Repeat Yourself (DRY) principle by avoiding redundant",
             "      code."
           ],
-          "text": "      code."
+          "text": "   • DRY Principle: Adhere to the Don't Repeat Yourself (DRY) principle by avoiding redundant\n      code."
         },
         {
           "type": "list_item",
           "page": 25,
           "lines": [
-            "   • Scoping and Overriding: Understand how the cascading nature of _ViewImports.cshtml files"
-          ],
-          "text": "   • Scoping and Overriding: Understand how the cascading nature of _ViewImports.cshtml files"
-        },
-        {
-          "type": "prose",
-          "page": 25,
-          "lines": [
+            "   • Scoping and Overriding: Understand how the cascading nature of _ViewImports.cshtml files",
             "      works."
           ],
-          "text": "      works."
+          "text": "   • Scoping and Overriding: Understand how the cascading nature of _ViewImports.cshtml files\n      works."
         },
         {
           "type": "heading",
@@ -9230,49 +8481,28 @@
           "type": "list_item",
           "page": 25,
           "lines": [
-            "   • Reduce Duplication: Avoid writing the same code repeatedly for common UI elements"
-          ],
-          "text": "   • Reduce Duplication: Avoid writing the same code repeatedly for common UI elements"
-        },
-        {
-          "type": "prose",
-          "page": 25,
-          "lines": [
+            "   • Reduce Duplication: Avoid writing the same code repeatedly for common UI elements",
             "      across your application."
           ],
-          "text": "      across your application."
+          "text": "   • Reduce Duplication: Avoid writing the same code repeatedly for common UI elements\n      across your application."
         },
         {
           "type": "list_item",
           "page": 25,
           "lines": [
-            "   • Consistent UI: Maintain a unified look and feel across different pages and sections of your"
-          ],
-          "text": "   • Consistent UI: Maintain a unified look and feel across different pages and sections of your"
-        },
-        {
-          "type": "prose",
-          "page": 25,
-          "lines": [
+            "   • Consistent UI: Maintain a unified look and feel across different pages and sections of your",
             "      site."
           ],
-          "text": "      site."
+          "text": "   • Consistent UI: Maintain a unified look and feel across different pages and sections of your\n      site."
         },
         {
           "type": "list_item",
           "page": 25,
           "lines": [
-            "   • Simplified Maintenance: Update the shared view once, and the changes automatically apply"
-          ],
-          "text": "   • Simplified Maintenance: Update the shared view once, and the changes automatically apply"
-        },
-        {
-          "type": "prose",
-          "page": 25,
-          "lines": [
+            "   • Simplified Maintenance: Update the shared view once, and the changes automatically apply",
             "      to all views that use it."
           ],
-          "text": "      to all views that use it."
+          "text": "   • Simplified Maintenance: Update the shared view once, and the changes automatically apply\n      to all views that use it."
         },
         {
           "type": "heading",
@@ -9513,33 +8743,19 @@
           "type": "list_item",
           "page": 26,
           "lines": [
-            "   1. Location: By default, ASP.NET Core MVC looks for shared views in the Views/Shared folder."
-          ],
-          "text": "   1. Location: By default, ASP.NET Core MVC looks for shared views in the Views/Shared folder."
-        },
-        {
-          "type": "prose",
-          "page": 26,
-          "lines": [
+            "   1. Location: By default, ASP.NET Core MVC looks for shared views in the Views/Shared folder.",
             "      You can also create subfolders within Views/Shared to further organize your shared views."
           ],
-          "text": "      You can also create subfolders within Views/Shared to further organize your shared views."
+          "text": "   1. Location: By default, ASP.NET Core MVC looks for shared views in the Views/Shared folder.\n      You can also create subfolders within Views/Shared to further organize your shared views."
         },
         {
           "type": "list_item",
           "page": 26,
           "lines": [
-            "   2. Naming: Name your shared views in a way that reflects their purpose or content. Common"
-          ],
-          "text": "   2. Naming: Name your shared views in a way that reflects their purpose or content. Common"
-        },
-        {
-          "type": "prose",
-          "page": 26,
-          "lines": [
+            "   2. Naming: Name your shared views in a way that reflects their purpose or content. Common",
             "      examples include:"
           ],
-          "text": "      examples include:"
+          "text": "   2. Naming: Name your shared views in a way that reflects their purpose or content. Common\n      examples include:"
         },
         {
           "type": "list_item",
@@ -9553,17 +8769,10 @@
           "type": "list_item",
           "page": 26,
           "lines": [
-            "        o _PartialName.cshtml: Smaller, reusable components (partial views) that can be"
-          ],
-          "text": "        o _PartialName.cshtml: Smaller, reusable components (partial views) that can be"
-        },
-        {
-          "type": "prose",
-          "page": 26,
-          "lines": [
+            "        o _PartialName.cshtml: Smaller, reusable components (partial views) that can be",
             "           embedded in other views."
           ],
-          "text": "           embedded in other views."
+          "text": "        o _PartialName.cshtml: Smaller, reusable components (partial views) that can be\n           embedded in other views."
         },
         {
           "type": "list_item",
@@ -9585,15 +8794,15 @@
           "type": "list_item",
           "page": 26,
           "lines": [
-            "        o View(): Can be used to render a shared view directly, but it's more common to use"
+            "        o View(): Can be used to render a shared view directly, but it's more common to use",
+            "           PartialView() for partial views and reserve View() for full pages."
           ],
-          "text": "        o View(): Can be used to render a shared view directly, but it's more common to use"
+          "text": "        o View(): Can be used to render a shared view directly, but it's more common to use\n           PartialView() for partial views and reserve View() for full pages."
         },
         {
           "type": "prose",
           "page": 26,
           "lines": [
-            "           PartialView() for partial views and reserve View() for full pages.",
             "Code Example: Shared View All.cshtml",
             "<!DOCTYPE html>",
             "<html>",
@@ -9604,7 +8813,7 @@
             "</head>",
             "<body>"
           ],
-          "text": "           PartialView() for partial views and reserve View() for full pages.\nCode Example: Shared View All.cshtml\n<!DOCTYPE html>\n<html>\n<head>\n  <title>All Products</title>\n  <meta charset=\"UTF-8\" />\n  <link href=\"~/StyleSheet.css\" rel=\"stylesheet\" />\n</head>\n<body>"
+          "text": "Code Example: Shared View All.cshtml\n<!DOCTYPE html>\n<html>\n<head>\n  <title>All Products</title>\n  <meta charset=\"UTF-8\" />\n  <link href=\"~/StyleSheet.css\" rel=\"stylesheet\" />\n</head>\n<body>"
         },
         {
           "type": "code",
@@ -9904,52 +9113,38 @@
           "type": "list_item",
           "page": 27,
           "lines": [
-            "   • Naming Convention: Prefix the names of partial views with an underscore (e.g.,"
-          ],
-          "text": "   • Naming Convention: Prefix the names of partial views with an underscore (e.g.,"
-        },
-        {
-          "type": "prose",
-          "page": 27,
-          "lines": [
+            "   • Naming Convention: Prefix the names of partial views with an underscore (e.g.,",
             "      _ProductCard.cshtml) to distinguish them from full views."
           ],
-          "text": "      _ProductCard.cshtml) to distinguish them from full views."
+          "text": "   • Naming Convention: Prefix the names of partial views with an underscore (e.g.,\n      _ProductCard.cshtml) to distinguish them from full views."
         },
         {
           "type": "list_item",
           "page": 27,
           "lines": [
-            "   • Data Passing: Use view models to pass data to shared views, ensuring that the view has"
-          ],
-          "text": "   • Data Passing: Use view models to pass data to shared views, ensuring that the view has"
-        },
-        {
-          "type": "prose",
-          "page": 27,
-          "lines": [
+            "   • Data Passing: Use view models to pass data to shared views, ensuring that the view has",
             "      access to all the information it needs to render correctly."
           ],
-          "text": "      access to all the information it needs to render correctly."
+          "text": "   • Data Passing: Use view models to pass data to shared views, ensuring that the view has\n      access to all the information it needs to render correctly."
         },
         {
           "type": "list_item",
           "page": 27,
           "lines": [
-            "   • Flexibility: You can override shared views within specific controllers if you need to customize"
+            "   • Flexibility: You can override shared views within specific controllers if you need to customize",
+            "      them for a particular use case."
           ],
-          "text": "   • Flexibility: You can override shared views within specific controllers if you need to customize"
+          "text": "   • Flexibility: You can override shared views within specific controllers if you need to customize\n      them for a particular use case."
         },
         {
           "type": "prose",
           "page": 27,
           "lines": [
-            "      them for a particular use case.",
             "Shared views are a cornerstone of maintainable and scalable ASP.NET Core MVC applications. By",
             "leveraging their reusability, you can significantly streamline your development process and ensure a",
             "consistent user experience across your website or application."
           ],
-          "text": "      them for a particular use case.\nShared views are a cornerstone of maintainable and scalable ASP.NET Core MVC applications. By\nleveraging their reusability, you can significantly streamline your development process and ensure a\nconsistent user experience across your website or application."
+          "text": "Shared views are a cornerstone of maintainable and scalable ASP.NET Core MVC applications. By\nleveraging their reusability, you can significantly streamline your development process and ensure a\nconsistent user experience across your website or application."
         }
       ],
       "char_count_raw": 1402,
@@ -10195,7 +9390,7 @@
           "text": "Key Points to Remember"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 28,
           "lines": [
             "1. Views"
@@ -10238,20 +9433,13 @@
           "type": "list_item",
           "page": 28,
           "lines": [
-            "   • Model Binding: Views often receive data from controllers (the model) for dynamic"
-          ],
-          "text": "   • Model Binding: Views often receive data from controllers (the model) for dynamic"
-        },
-        {
-          "type": "prose",
-          "page": 28,
-          "lines": [
+            "   • Model Binding: Views often receive data from controllers (the model) for dynamic",
             "      rendering."
           ],
-          "text": "      rendering."
+          "text": "   • Model Binding: Views often receive data from controllers (the model) for dynamic\n      rendering."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 28,
           "lines": [
             "2. Razor Syntax Essentials"
@@ -10299,7 +9487,7 @@
           "text": "   • Comments: @*...*@ for server-side comments."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 28,
           "lines": [
             "3. Local Functions"
@@ -10331,7 +9519,7 @@
           "text": "   • Benefits: Improved organization, readability, and reusability within a view."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 28,
           "lines": [
             "4. Html.Raw()"
@@ -10363,7 +9551,7 @@
           "text": "   • Alternatives: Consider partial views or view components for dynamic HTML generation."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 28,
           "lines": [
             "5. ViewData and ViewBag"
@@ -10398,17 +9586,10 @@
           "type": "list_item",
           "page": 28,
           "lines": [
-            "   • Recommendation: Prefer strongly typed views or view models for better type safety and"
-          ],
-          "text": "   • Recommendation: Prefer strongly typed views or view models for better type safety and"
-        },
-        {
-          "type": "prose",
-          "page": 28,
-          "lines": [
+            "   • Recommendation: Prefer strongly typed views or view models for better type safety and",
             "      maintainability."
           ],
-          "text": "      maintainability."
+          "text": "   • Recommendation: Prefer strongly typed views or view models for better type safety and\n      maintainability."
         }
       ],
       "char_count_raw": 1492,
@@ -10606,7 +9787,7 @@
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 29,
           "lines": [
             "6. Strongly Typed Views"
@@ -10670,7 +9851,7 @@
           "text": "   • Benefits: Reduce redundancy, ensure consistency, and improve readability."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 29,
           "lines": [
             "8. Shared Views"
@@ -10729,65 +9910,37 @@
           "type": "list_item",
           "page": 29,
           "lines": [
-            "   • Razor Syntax: Be ready to write examples of different Razor syntax elements and explain"
-          ],
-          "text": "   • Razor Syntax: Be ready to write examples of different Razor syntax elements and explain"
-        },
-        {
-          "type": "prose",
-          "page": 29,
-          "lines": [
+            "   • Razor Syntax: Be ready to write examples of different Razor syntax elements and explain",
             "      their use cases."
           ],
-          "text": "      their use cases."
+          "text": "   • Razor Syntax: Be ready to write examples of different Razor syntax elements and explain\n      their use cases."
         },
         {
           "type": "list_item",
           "page": 29,
           "lines": [
-            "   • View Logic: Discuss when it's appropriate to use local functions or view models in your"
-          ],
-          "text": "   • View Logic: Discuss when it's appropriate to use local functions or view models in your"
-        },
-        {
-          "type": "prose",
-          "page": 29,
-          "lines": [
+            "   • View Logic: Discuss when it's appropriate to use local functions or view models in your",
             "      views."
           ],
-          "text": "      views."
+          "text": "   • View Logic: Discuss when it's appropriate to use local functions or view models in your\n      views."
         },
         {
           "type": "list_item",
           "page": 29,
           "lines": [
-            "   • Security: Emphasize the importance of security (input validation, avoiding Html.Raw() for"
-          ],
-          "text": "   • Security: Emphasize the importance of security (input validation, avoiding Html.Raw() for"
-        },
-        {
-          "type": "prose",
-          "page": 29,
-          "lines": [
+            "   • Security: Emphasize the importance of security (input validation, avoiding Html.Raw() for",
             "      untrusted content) when working with views."
           ],
-          "text": "      untrusted content) when working with views."
+          "text": "   • Security: Emphasize the importance of security (input validation, avoiding Html.Raw() for\n      untrusted content) when working with views."
         },
         {
           "type": "list_item",
           "page": 29,
           "lines": [
-            "   • Best Practices: Demonstrate your knowledge of using view models, shared views, and"
-          ],
-          "text": "   • Best Practices: Demonstrate your knowledge of using view models, shared views, and"
-        },
-        {
-          "type": "prose",
-          "page": 29,
-          "lines": [
+            "   • Best Practices: Demonstrate your knowledge of using view models, shared views, and",
             "      _ViewImports.cshtml for cleaner and more maintainable code."
           ],
-          "text": "      _ViewImports.cshtml for cleaner and more maintainable code."
+          "text": "   • Best Practices: Demonstrate your knowledge of using view models, shared views, and\n      _ViewImports.cshtml for cleaner and more maintainable code."
         }
       ],
       "char_count_raw": 1268,

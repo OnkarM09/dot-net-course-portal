@@ -375,17 +375,10 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Example: /products?category=electronics&sort=price_desc"
-          ],
-          "text": "   • Example: /products?category=electronics&sort=price_desc"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • Example: /products?category=electronics&sort=price_desc",
             "Best Practices (Query Strings):"
           ],
-          "text": "Best Practices (Query Strings):"
+          "text": "   • Example: /products?category=electronics&sort=price_desc\nBest Practices (Query Strings):"
         }
       ],
       "char_count_raw": 1556,
@@ -634,49 +627,28 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • Limit Sensitive Data: Avoid passing sensitive information like passwords or credit card"
-          ],
-          "text": "   • Limit Sensitive Data: Avoid passing sensitive information like passwords or credit card"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   • Limit Sensitive Data: Avoid passing sensitive information like passwords or credit card",
             "      details in query strings."
           ],
-          "text": "      details in query strings."
+          "text": "   • Limit Sensitive Data: Avoid passing sensitive information like passwords or credit card\n      details in query strings."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • Sanitize Input: Always sanitize and validate query string values to prevent security"
-          ],
-          "text": "   • Sanitize Input: Always sanitize and validate query string values to prevent security"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   • Sanitize Input: Always sanitize and validate query string values to prevent security",
             "      vulnerabilities."
           ],
-          "text": "      vulnerabilities."
+          "text": "   • Sanitize Input: Always sanitize and validate query string values to prevent security\n      vulnerabilities."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • Keep It Simple: Use clear and meaningful parameter names. Avoid excessively long query"
-          ],
-          "text": "   • Keep It Simple: Use clear and meaningful parameter names. Avoid excessively long query"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   • Keep It Simple: Use clear and meaningful parameter names. Avoid excessively long query",
             "      strings."
           ],
-          "text": "      strings."
+          "text": "   • Keep It Simple: Use clear and meaningful parameter names. Avoid excessively long query\n      strings."
         },
         {
           "type": "list_item",
@@ -698,33 +670,19 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • Sensitive Data: Never pass sensitive data like passwords or authentication tokens in query"
-          ],
-          "text": "   • Sensitive Data: Never pass sensitive data like passwords or authentication tokens in query"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   • Sensitive Data: Never pass sensitive data like passwords or authentication tokens in query",
             "      strings."
           ],
-          "text": "      strings."
+          "text": "   • Sensitive Data: Never pass sensitive data like passwords or authentication tokens in query\n      strings."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • Complex Objects: Avoid passing complex objects as query strings due to URL length"
-          ],
-          "text": "   • Complex Objects: Avoid passing complex objects as query strings due to URL length"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   • Complex Objects: Avoid passing complex objects as query strings due to URL length",
             "      limitations."
           ],
-          "text": "      limitations."
+          "text": "   • Complex Objects: Avoid passing complex objects as query strings due to URL length\n      limitations."
         },
         {
           "type": "list_item",
@@ -1058,33 +1016,19 @@
           "type": "code",
           "page": 3,
           "lines": [
-            "}"
-          ],
-          "text": "}"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "}",
             "In this action method:"
           ],
-          "text": "In this action method:"
-        },
-        {
-          "type": "list_item",
-          "page": 3,
-          "lines": [
-            "   • bookid and isloggedin parameters are automatically bound from the query string and route"
-          ],
-          "text": "   • bookid and isloggedin parameters are automatically bound from the query string and route"
+          "text": "}\nIn this action method:"
         },
         {
           "type": "prose",
           "page": 3,
           "lines": [
+            "   • bookid and isloggedin parameters are automatically bound from the query string and route",
             "      data."
           ],
-          "text": "      data."
+          "text": "   • bookid and isloggedin parameters are automatically bound from the query string and route\n      data."
         },
         {
           "type": "heading",
@@ -1104,20 +1048,13 @@
             "{",
             "  int id = Convert.ToInt32(Request.RouteValues[\"id\"]);",
             "  return Content($\"<h1>Book Store {id}</h1>\", \"text/html\");",
-            "}"
+            "}",
+            "In this action method:"
           ],
-          "text": "// StoreController.cs\n[Route(\"store/books/{id}\")] // Route with a required parameter\npublic IActionResult Books()\n{\n  int id = Convert.ToInt32(Request.RouteValues[\"id\"]);\n  return Content($\"<h1>Book Store {id}</h1>\", \"text/html\");\n}"
+          "text": "// StoreController.cs\n[Route(\"store/books/{id}\")] // Route with a required parameter\npublic IActionResult Books()\n{\n  int id = Convert.ToInt32(Request.RouteValues[\"id\"]);\n  return Content($\"<h1>Book Store {id}</h1>\", \"text/html\");\n}\nIn this action method:"
         },
         {
           "type": "prose",
-          "page": 3,
-          "lines": [
-            "In this action method:"
-          ],
-          "text": "In this action method:"
-        },
-        {
-          "type": "list_item",
           "page": 3,
           "lines": [
             "   • id is a required parameter."
@@ -1170,17 +1107,10 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Usage: Apply this attribute to action method parameters that you expect to receive values"
-          ],
-          "text": "   • Usage: Apply this attribute to action method parameters that you expect to receive values"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Usage: Apply this attribute to action method parameters that you expect to receive values",
             "      from the query string portion of the URL (the part after the \"?\")."
           ],
-          "text": "      from the query string portion of the URL (the part after the \"?\")."
+          "text": "   • Usage: Apply this attribute to action method parameters that you expect to receive values\n      from the query string portion of the URL (the part after the \"?\")."
         },
         {
           "type": "list_item",
@@ -1446,17 +1376,10 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Usage: Apply this attribute to action method parameters that you expect to receive values"
-          ],
-          "text": "   • Usage: Apply this attribute to action method parameters that you expect to receive values"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • Usage: Apply this attribute to action method parameters that you expect to receive values",
             "      from the route template of the URL."
           ],
-          "text": "      from the route template of the URL."
+          "text": "   • Usage: Apply this attribute to action method parameters that you expect to receive values\n      from the route template of the URL."
         },
         {
           "type": "list_item",
@@ -1471,21 +1394,14 @@
           "page": 4,
           "lines": [
             "[Route(\"products/{id}\")]",
-            "public IActionResult Details([FromRoute] int id) { ... }"
-          ],
-          "text": "[Route(\"products/{id}\")]\npublic IActionResult Details([FromRoute] int id) { ... }"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "public IActionResult Details([FromRoute] int id) { ... }",
             "In this example, the id parameter would be bound to the value of the id segment in the URL (e.g.,",
             "/products/123)."
           ],
-          "text": "In this example, the id parameter would be bound to the value of the id segment in the URL (e.g.,\n/products/123)."
+          "text": "[Route(\"products/{id}\")]\npublic IActionResult Details([FromRoute] int id) { ... }\nIn this example, the id parameter would be bound to the value of the id segment in the URL (e.g.,\n/products/123)."
         },
         {
-          "type": "heading",
+          "type": "prose",
           "page": 4,
           "lines": [
             "Code"
@@ -1517,38 +1433,31 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • bookid (FromQuery): The model binder will attempt to retrieve the bookid value exclusively"
-          ],
-          "text": "   • bookid (FromQuery): The model binder will attempt to retrieve the bookid value exclusively"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • bookid (FromQuery): The model binder will attempt to retrieve the bookid value exclusively",
             "      from the query string. If it's not present in the query string, it will be set to null due to the",
             "      nullable type (int?)."
           ],
-          "text": "      from the query string. If it's not present in the query string, it will be set to null due to the\n      nullable type (int?)."
+          "text": "   • bookid (FromQuery): The model binder will attempt to retrieve the bookid value exclusively\n      from the query string. If it's not present in the query string, it will be set to null due to the\n      nullable type (int?)."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • isloggedin (FromRoute): The model binder will specifically look for the isloggedin value in"
+            "   • isloggedin (FromRoute): The model binder will specifically look for the isloggedin value in",
+            "      the route data. If the parameter is not present in the route, it will default to null due to the",
+            "      nullable boolean type (bool?)."
           ],
-          "text": "   • isloggedin (FromRoute): The model binder will specifically look for the isloggedin value in"
+          "text": "   • isloggedin (FromRoute): The model binder will specifically look for the isloggedin value in\n      the route data. If the parameter is not present in the route, it will default to null due to the\n      nullable boolean type (bool?)."
         },
         {
           "type": "prose",
           "page": 4,
           "lines": [
-            "      the route data. If the parameter is not present in the route, it will default to null due to the",
-            "      nullable boolean type (bool?).",
             "Combined Binding:",
             "By using both [FromQuery] and [FromRoute] on different parameters in the same action method,",
             "you can effectively bind values from both the query string and route data simultaneously."
           ],
-          "text": "      the route data. If the parameter is not present in the route, it will default to null due to the\n      nullable boolean type (bool?).\nCombined Binding:\nBy using both [FromQuery] and [FromRoute] on different parameters in the same action method,\nyou can effectively bind values from both the query string and route data simultaneously."
+          "text": "Combined Binding:\nBy using both [FromQuery] and [FromRoute] on different parameters in the same action method,\nyou can effectively bind values from both the query string and route data simultaneously."
         }
       ],
       "char_count_raw": 1333,
@@ -1805,66 +1714,38 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Explicit Binding: Use [FromQuery] and [FromRoute] for explicit control over where the"
-          ],
-          "text": "   • Explicit Binding: Use [FromQuery] and [FromRoute] for explicit control over where the"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Explicit Binding: Use [FromQuery] and [FromRoute] for explicit control over where the",
             "      model binder gets values for your action method parameters."
           ],
-          "text": "      model binder gets values for your action method parameters."
+          "text": "   • Explicit Binding: Use [FromQuery] and [FromRoute] for explicit control over where the\n      model binder gets values for your action method parameters."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Flexibility: You can combine both attributes in the same action to bind from multiple"
-          ],
-          "text": "   • Flexibility: You can combine both attributes in the same action to bind from multiple"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Flexibility: You can combine both attributes in the same action to bind from multiple",
             "      sources."
           ],
-          "text": "      sources."
+          "text": "   • Flexibility: You can combine both attributes in the same action to bind from multiple\n      sources."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Default Behavior: Even without these attributes, ASP.NET Core's model binding will try to"
-          ],
-          "text": "   • Default Behavior: Even without these attributes, ASP.NET Core's model binding will try to"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Default Behavior: Even without these attributes, ASP.NET Core's model binding will try to",
             "      intelligently determine the binding source. However, using these attributes makes your code",
             "      more explicit and less prone to unexpected behavior."
           ],
-          "text": "      intelligently determine the binding source. However, using these attributes makes your code\n      more explicit and less prone to unexpected behavior."
+          "text": "   • Default Behavior: Even without these attributes, ASP.NET Core's model binding will try to\n      intelligently determine the binding source. However, using these attributes makes your code\n      more explicit and less prone to unexpected behavior."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Type Conversion: The model binder automatically attempts to convert values to the"
-          ],
-          "text": "   • Type Conversion: The model binder automatically attempts to convert values to the"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Type Conversion: The model binder automatically attempts to convert values to the",
             "      appropriate data types for your action method parameters."
           ],
-          "text": "      appropriate data types for your action method parameters."
+          "text": "   • Type Conversion: The model binder automatically attempts to convert values to the\n      appropriate data types for your action method parameters."
         },
         {
           "type": "heading",
@@ -1896,17 +1777,10 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "        o Structure: Provide a well-defined structure for your data, including properties that"
-          ],
-          "text": "        o Structure: Provide a well-defined structure for your data, including properties that"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "        o Structure: Provide a well-defined structure for your data, including properties that",
             "           correspond to the fields or attributes of your data entities."
           ],
-          "text": "           correspond to the fields or attributes of your data entities."
+          "text": "        o Structure: Provide a well-defined structure for your data, including properties that\n           correspond to the fields or attributes of your data entities."
         },
         {
           "type": "list_item",
@@ -1920,30 +1794,9 @@
           "type": "code",
           "page": 5,
           "lines": [
-            "           [StringLength], and [Range]."
-          ],
-          "text": "           [StringLength], and [Range]."
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
-            "        o Organization: Keep your application's data logic organized and maintainable."
-          ],
-          "text": "        o Organization: Keep your application's data logic organized and maintainable."
-        },
-        {
-          "type": "list_item",
-          "page": 5,
-          "lines": [
-            "   • Example Model Class:"
-          ],
-          "text": "   • Example Model Class:"
-        },
-        {
-          "type": "code",
-          "page": 5,
-          "lines": [
+            "           [StringLength], and [Range].",
+            "        o Organization: Keep your application's data logic organized and maintainable.",
+            "   • Example Model Class:",
             "// Book.cs (Model)",
             "namespace IActionResultExample.Models",
             "{",
@@ -1953,7 +1806,7 @@
             "   public string? Author { get; set; }",
             "   public override string ToString() // For easy display in this example"
           ],
-          "text": "// Book.cs (Model)\nnamespace IActionResultExample.Models\n{\n  public class Book\n  {\n   public int? BookId { get; set; }\n   public string? Author { get; set; }\n   public override string ToString() // For easy display in this example"
+          "text": "           [StringLength], and [Range].\n        o Organization: Keep your application's data logic organized and maintainable.\n   • Example Model Class:\n// Book.cs (Model)\nnamespace IActionResultExample.Models\n{\n  public class Book\n  {\n   public int? BookId { get; set; }\n   public string? Author { get; set; }\n   public override string ToString() // For easy display in this example"
         }
       ],
       "char_count_raw": 1450,
@@ -1961,8 +1814,8 @@
     },
     {
       "page_number": 6,
-      "raw_text": "{\nreturn $\"Book object - Book id: {BookId}, Author: {Author}\";\n}\n}\n}\nModel Binding with Model Classes\nModel binding with model classes simplifies the process of populating your model objects with data\nfrom incoming HTTP requests. Instead of manually extracting values from query strings, route data,\nor form data, you can directly use the model class as a parameter in your action method.\n• How it Works:\n1. Action Parameter: Declare an action method parameter of your model class type.\n2. Model Binding: The model binder automatically maps incoming request data to the\nproperties of your model class based on their names.\n3. Attribute Usage: You can use attributes like [FromQuery], [FromRoute], and\n[FromBody] to specify where the model binder should look for the data for each\nproperty.\nCode\n// HomeController.cs\n[Route(\"bookstore/{bookid?}/{isloggedin?}\")]\n//Url: /bookstore/1/false?bookid=20&isloggedin=true&author=harsha\npublic IActionResult Index([FromQuery] int? bookid, [FromRoute] bool? isloggedin, Book book)\n{\n// ... validation and response logic ...\nreturn Content($\"Book id: {bookid}, Book: {book}\", \"text/plain\");\n}\nIn this code:\n1. Model Class Parameter: The action method Index has a parameter named book.\n",
-      "repaired_text": "   {\n     return $\"Book object - Book id: {BookId}, Author: {Author}\";\n   }\n  }\n}\nModel Binding with Model Classes\nModel binding with model classes simplifies the process of populating your model objects with data\nfrom incoming HTTP requests. Instead of manually extracting values from query strings, route data,\nor form data, you can directly use the model class as a parameter in your action method.\n   • How it Works:\n        1. Action Parameter: Declare an action method parameter of your model class type.\n        2. Model Binding: The model binder automatically maps incoming request data to the\n           properties of your model class based on their names.\n        3. Attribute Usage: You can use attributes like [FromQuery], [FromRoute], and\n           [FromBody] to specify where the model binder should look for the data for each\n           property.\nCode\n// HomeController.cs\n[Route(\"bookstore/{bookid?}/{isloggedin?}\")]\n//Url: /bookstore/1/false?bookid=20&isloggedin=true&author=harsha\npublic IActionResult Index([FromQuery] int? bookid, [FromRoute] bool? isloggedin, Book book)\n{\n  // ... validation and response logic ...\n  return Content($\"Book id: {bookid}, Book: {book}\", \"text/plain\");\n}\nIn this code:\n   1. Model Class Parameter: The action method Index has a parameter named book.",
+      "raw_text": "{\nreturn $\"Book object - Book id: {BookId}, Author: {Author}\";\n}\n}\n}\nModel Binding with Model Classes\nModel binding with model classes simplifies the process of populating your model objects with data\nfrom incoming HTTP requests. Instead of manually extracting values from query strings, route data,\nor form data, you can directly use the model class as a parameter in your action method.\n• How it Works:\n1. Action Parameter: Declare an action method parameter of your model class type.\n2. Model Binding: The model binder automatically maps incoming request data to the\nproperties of your model class based on their names.\n3. Attribute Usage: You can use attributes like [FromQuery], [FromRoute], and\n[FromBody] to specify where the model binder should look for the data for each\nproperty.\nCode\n// HomeController.cs\n[Route(\"bookstore/{bookid?}/{isloggedin?}\")]\n//Url: /bookstore/1/false?bookid=20&isloggedin=true&author=john\npublic IActionResult Index([FromQuery] int? bookid, [FromRoute] bool? isloggedin, Book book)\n{\n// ... validation and response logic ...\nreturn Content($\"Book id: {bookid}, Book: {book}\", \"text/plain\");\n}\nIn this code:\n1. Model Class Parameter: The action method Index has a parameter named book.\n",
+      "repaired_text": "   {\n     return $\"Book object - Book id: {BookId}, Author: {Author}\";\n   }\n  }\n}\nModel Binding with Model Classes\nModel binding with model classes simplifies the process of populating your model objects with data\nfrom incoming HTTP requests. Instead of manually extracting values from query strings, route data,\nor form data, you can directly use the model class as a parameter in your action method.\n   • How it Works:\n        1. Action Parameter: Declare an action method parameter of your model class type.\n        2. Model Binding: The model binder automatically maps incoming request data to the\n           properties of your model class based on their names.\n        3. Attribute Usage: You can use attributes like [FromQuery], [FromRoute], and\n           [FromBody] to specify where the model binder should look for the data for each\n           property.\nCode\n// HomeController.cs\n[Route(\"bookstore/{bookid?}/{isloggedin?}\")]\n//Url: /bookstore/1/false?bookid=20&isloggedin=true&author=john\npublic IActionResult Index([FromQuery] int? bookid, [FromRoute] bool? isloggedin, Book book)\n{\n  // ... validation and response logic ...\n  return Content($\"Book id: {bookid}, Book: {book}\", \"text/plain\");\n}\nIn this code:\n   1. Model Class Parameter: The action method Index has a parameter named book.",
       "lines": [
         {
           "text": "   {",
@@ -2117,8 +1970,8 @@
           "fontName": "g_d12_f3"
         },
         {
-          "text": "//Url: /bookstore/1/false?bookid=20&isloggedin=true&author=harsha",
-          "rawText": "//Url: /bookstore/1/false?bookid=20&isloggedin=true&author=harsha",
+          "text": "//Url: /bookstore/1/false?bookid=20&isloggedin=true&author=john",
+          "rawText": "//Url: /bookstore/1/false?bookid=20&isloggedin=true&author=john",
           "x": 72.024,
           "y": 259.61,
           "fontSize": 11.04,
@@ -2225,17 +2078,10 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "        2. Model Binding: The model binder automatically maps incoming request data to the"
-          ],
-          "text": "        2. Model Binding: The model binder automatically maps incoming request data to the"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "        2. Model Binding: The model binder automatically maps incoming request data to the",
             "           properties of your model class based on their names."
           ],
-          "text": "           properties of your model class based on their names."
+          "text": "        2. Model Binding: The model binder automatically maps incoming request data to the\n           properties of your model class based on their names."
         },
         {
           "type": "list_item",
@@ -2275,14 +2121,14 @@
           "lines": [
             "// HomeController.cs",
             "[Route(\"bookstore/{bookid?}/{isloggedin?}\")]",
-            "//Url: /bookstore/1/false?bookid=20&isloggedin=true&author=harsha",
+            "//Url: /bookstore/1/false?bookid=20&isloggedin=true&author=john",
             "public IActionResult Index([FromQuery] int? bookid, [FromRoute] bool? isloggedin, Book book)",
             "{",
             "  // ... validation and response logic ...",
             "  return Content($\"Book id: {bookid}, Book: {book}\", \"text/plain\");",
             "}"
           ],
-          "text": "// HomeController.cs\n[Route(\"bookstore/{bookid?}/{isloggedin?}\")]\n//Url: /bookstore/1/false?bookid=20&isloggedin=true&author=harsha\npublic IActionResult Index([FromQuery] int? bookid, [FromRoute] bool? isloggedin, Book book)\n{\n  // ... validation and response logic ...\n  return Content($\"Book id: {bookid}, Book: {book}\", \"text/plain\");\n}"
+          "text": "// HomeController.cs\n[Route(\"bookstore/{bookid?}/{isloggedin?}\")]\n//Url: /bookstore/1/false?bookid=20&isloggedin=true&author=john\npublic IActionResult Index([FromQuery] int? bookid, [FromRoute] bool? isloggedin, Book book)\n{\n  // ... validation and response logic ...\n  return Content($\"Book id: {bookid}, Book: {book}\", \"text/plain\");\n}"
         },
         {
           "type": "prose",
@@ -2306,8 +2152,8 @@
     },
     {
       "page_number": 7,
-      "raw_text": "2. [FromQuery] Attribute: The BookId property of the Book class has the [FromQuery]\nattribute, indicating that its value should be retrieved from the query string.\n3. Automatic Binding: When a request like\n/bookstore/1/false?bookid=20&isloggedin=true&author=harsha comes in:\no bookid (int?) will be 20 (from the query string, due to [FromQuery]).\no isloggedin (bool?) will be true (from the route data, due to [FromRoute]).\no book.Author (string?) will be \"harsha\" (from the query string, because no attribute\nwas specified for the Author property so it defaults to looking in the query string).\nNotes\n• Simplified Code: Model binding reduces boilerplate code for extracting data from requests.\n• Strong Typing: You work with strongly typed model objects in your actions.\n• Clear Intent: Attributes like [FromQuery], [FromRoute], and [FromBody] make your code\nmore explicit.\n• Automatic Conversion: The model binder tries to convert request data to match the types of\nyour model properties.\n• Complex Types: You can bind complex objects from JSON or XML data in request bodies\n(using [FromBody]).\n• Validation: Leverage model validation attributes to ensure data integrity.\nURL Encoding\nURL encoding (or percent-encoding) is a mechanism to encode special characters in URLs that are\nnot allowed in their raw form. This encoding is essential to ensure that URLs are transmitted\ncorrectly and that the server interprets them correctly.\n• Special Characters: Characters like spaces, ampersands (&), question marks (?), and non-\nASCII characters need to be encoded.\n• Encoding Format: Special characters are replaced with a percent sign (%) followed by two\nhexadecimal digits representing their ASCII code.\n• Example: A space is encoded as %20, and an ampersand is encoded as %26.\n",
-      "repaired_text": "   2. [FromQuery] Attribute: The BookId property of the Book class has the [FromQuery]\n      attribute, indicating that its value should be retrieved from the query string.\n   3. Automatic Binding: When a request like\n      /bookstore/1/false?bookid=20&isloggedin=true&author=harsha comes in:\n        o bookid (int?) will be 20 (from the query string, due to [FromQuery]).\n        o isloggedin (bool?) will be true (from the route data, due to [FromRoute]).\n        o book.Author (string?) will be \"harsha\" (from the query string, because no attribute\n           was specified for the Author property so it defaults to looking in the query string).\nNotes\n   • Simplified Code: Model binding reduces boilerplate code for extracting data from requests.\n   • Strong Typing: You work with strongly typed model objects in your actions.\n   • Clear Intent: Attributes like [FromQuery], [FromRoute], and [FromBody] make your code\n      more explicit.\n   • Automatic Conversion: The model binder tries to convert request data to match the types of\n      your model properties.\n   • Complex Types: You can bind complex objects from JSON or XML data in request bodies\n      (using [FromBody]).\n   • Validation: Leverage model validation attributes to ensure data integrity.\nURL Encoding\nURL encoding (or percent-encoding) is a mechanism to encode special characters in URLs that are\nnot allowed in their raw form. This encoding is essential to ensure that URLs are transmitted\ncorrectly and that the server interprets them correctly.\n   • Special Characters: Characters like spaces, ampersands (&), question marks (?), and non-\n      ASCII characters need to be encoded.\n   • Encoding Format: Special characters are replaced with a percent sign (%) followed by two\n      hexadecimal digits representing their ASCII code.\n   • Example: A space is encoded as %20, and an ampersand is encoded as %26.",
+      "raw_text": "2. [FromQuery] Attribute: The BookId property of the Book class has the [FromQuery]\nattribute, indicating that its value should be retrieved from the query string.\n3. Automatic Binding: When a request like\n/bookstore/1/false?bookid=20&isloggedin=true&author=john comes in:\no bookid (int?) will be 20 (from the query string, due to [FromQuery]).\no isloggedin (bool?) will be true (from the route data, due to [FromRoute]).\no book.Author (string?) will be \"john\" (from the query string, because no attribute\nwas specified for the Author property so it defaults to looking in the query string).\nNotes\n• Simplified Code: Model binding reduces boilerplate code for extracting data from requests.\n• Strong Typing: You work with strongly typed model objects in your actions.\n• Clear Intent: Attributes like [FromQuery], [FromRoute], and [FromBody] make your code\nmore explicit.\n• Automatic Conversion: The model binder tries to convert request data to match the types of\nyour model properties.\n• Complex Types: You can bind complex objects from JSON or XML data in request bodies\n(using [FromBody]).\n• Validation: Leverage model validation attributes to ensure data integrity.\nURL Encoding\nURL encoding (or percent-encoding) is a mechanism to encode special characters in URLs that are\nnot allowed in their raw form. This encoding is essential to ensure that URLs are transmitted\ncorrectly and that the server interprets them correctly.\n• Special Characters: Characters like spaces, ampersands (&), question marks (?), and non-\nASCII characters need to be encoded.\n• Encoding Format: Special characters are replaced with a percent sign (%) followed by two\nhexadecimal digits representing their ASCII code.\n• Example: A space is encoded as %20, and an ampersand is encoded as %26.\n",
+      "repaired_text": "   2. [FromQuery] Attribute: The BookId property of the Book class has the [FromQuery]\n      attribute, indicating that its value should be retrieved from the query string.\n   3. Automatic Binding: When a request like\n      /bookstore/1/false?bookid=20&isloggedin=true&author=john comes in:\n        o bookid (int?) will be 20 (from the query string, due to [FromQuery]).\n        o isloggedin (bool?) will be true (from the route data, due to [FromRoute]).\n        o book.Author (string?) will be \"john\" (from the query string, because no attribute\n           was specified for the Author property so it defaults to looking in the query string).\nNotes\n   • Simplified Code: Model binding reduces boilerplate code for extracting data from requests.\n   • Strong Typing: You work with strongly typed model objects in your actions.\n   • Clear Intent: Attributes like [FromQuery], [FromRoute], and [FromBody] make your code\n      more explicit.\n   • Automatic Conversion: The model binder tries to convert request data to match the types of\n      your model properties.\n   • Complex Types: You can bind complex objects from JSON or XML data in request bodies\n      (using [FromBody]).\n   • Validation: Leverage model validation attributes to ensure data integrity.\nURL Encoding\nURL encoding (or percent-encoding) is a mechanism to encode special characters in URLs that are\nnot allowed in their raw form. This encoding is essential to ensure that URLs are transmitted\ncorrectly and that the server interprets them correctly.\n   • Special Characters: Characters like spaces, ampersands (&), question marks (?), and non-\n      ASCII characters need to be encoded.\n   • Encoding Format: Special characters are replaced with a percent sign (%) followed by two\n      hexadecimal digits representing their ASCII code.\n   • Example: A space is encoded as %20, and an ampersand is encoded as %26.",
       "lines": [
         {
           "text": "   2. [FromQuery] Attribute: The BookId property of the Book class has the [FromQuery]",
@@ -2334,8 +2180,8 @@
           "fontName": "g_d12_f3"
         },
         {
-          "text": "      /bookstore/1/false?bookid=20&isloggedin=true&author=harsha comes in:",
-          "rawText": "/bookstore/1/false?bookid=20&isloggedin=true&author=harsha comes in:",
+          "text": "      /bookstore/1/false?bookid=20&isloggedin=true&author=john comes in:",
+          "rawText": "/bookstore/1/false?bookid=20&isloggedin=true&author=john comes in:",
           "x": 108.02,
           "y": 707.98,
           "fontSize": 11.04,
@@ -2358,8 +2204,8 @@
           "fontName": "g_d12_f7"
         },
         {
-          "text": "        o book.Author (string?) will be \"harsha\" (from the query string, because no attribute",
-          "rawText": "o book.Author (string?) will be \"harsha\" (from the query string, because no attribute",
+          "text": "        o book.Author (string?) will be \"john\" (from the query string, because no attribute",
+          "rawText": "o book.Author (string?) will be \"john\" (from the query string, because no attribute",
           "x": 126.02,
           "y": 640.54,
           "fontSize": 11.04,
@@ -2531,33 +2377,19 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   2. [FromQuery] Attribute: The BookId property of the Book class has the [FromQuery]"
-          ],
-          "text": "   2. [FromQuery] Attribute: The BookId property of the Book class has the [FromQuery]"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   2. [FromQuery] Attribute: The BookId property of the Book class has the [FromQuery]",
             "      attribute, indicating that its value should be retrieved from the query string."
           ],
-          "text": "      attribute, indicating that its value should be retrieved from the query string."
+          "text": "   2. [FromQuery] Attribute: The BookId property of the Book class has the [FromQuery]\n      attribute, indicating that its value should be retrieved from the query string."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 7,
           "lines": [
-            "3. Automatic Binding: When a request like"
+            "   3. Automatic Binding: When a request like",
+            "      /bookstore/1/false?bookid=20&isloggedin=true&author=john comes in:"
           ],
-          "text": "3. Automatic Binding: When a request like"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
-            "      /bookstore/1/false?bookid=20&isloggedin=true&author=harsha comes in:"
-          ],
-          "text": "      /bookstore/1/false?bookid=20&isloggedin=true&author=harsha comes in:"
+          "text": "   3. Automatic Binding: When a request like\n      /bookstore/1/false?bookid=20&isloggedin=true&author=john comes in:"
         },
         {
           "type": "list_item",
@@ -2579,17 +2411,10 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "        o book.Author (string?) will be \"harsha\" (from the query string, because no attribute"
-          ],
-          "text": "        o book.Author (string?) will be \"harsha\" (from the query string, because no attribute"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "        o book.Author (string?) will be \"john\" (from the query string, because no attribute",
             "           was specified for the Author property so it defaults to looking in the query string)."
           ],
-          "text": "           was specified for the Author property so it defaults to looking in the query string)."
+          "text": "        o book.Author (string?) will be \"john\" (from the query string, because no attribute\n           was specified for the Author property so it defaults to looking in the query string)."
         },
         {
           "type": "heading",
@@ -2619,49 +2444,28 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Clear Intent: Attributes like [FromQuery], [FromRoute], and [FromBody] make your code"
-          ],
-          "text": "   • Clear Intent: Attributes like [FromQuery], [FromRoute], and [FromBody] make your code"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Clear Intent: Attributes like [FromQuery], [FromRoute], and [FromBody] make your code",
             "      more explicit."
           ],
-          "text": "      more explicit."
+          "text": "   • Clear Intent: Attributes like [FromQuery], [FromRoute], and [FromBody] make your code\n      more explicit."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Automatic Conversion: The model binder tries to convert request data to match the types of"
-          ],
-          "text": "   • Automatic Conversion: The model binder tries to convert request data to match the types of"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Automatic Conversion: The model binder tries to convert request data to match the types of",
             "      your model properties."
           ],
-          "text": "      your model properties."
+          "text": "   • Automatic Conversion: The model binder tries to convert request data to match the types of\n      your model properties."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Complex Types: You can bind complex objects from JSON or XML data in request bodies"
-          ],
-          "text": "   • Complex Types: You can bind complex objects from JSON or XML data in request bodies"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Complex Types: You can bind complex objects from JSON or XML data in request bodies",
             "      (using [FromBody])."
           ],
-          "text": "      (using [FromBody])."
+          "text": "   • Complex Types: You can bind complex objects from JSON or XML data in request bodies\n      (using [FromBody])."
         },
         {
           "type": "list_item",
@@ -2693,33 +2497,19 @@
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Special Characters: Characters like spaces, ampersands (&), question marks (?), and non-"
-          ],
-          "text": "   • Special Characters: Characters like spaces, ampersands (&), question marks (?), and non-"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Special Characters: Characters like spaces, ampersands (&), question marks (?), and non-",
             "      ASCII characters need to be encoded."
           ],
-          "text": "      ASCII characters need to be encoded."
+          "text": "   • Special Characters: Characters like spaces, ampersands (&), question marks (?), and non-\n      ASCII characters need to be encoded."
         },
         {
           "type": "list_item",
           "page": 7,
           "lines": [
-            "   • Encoding Format: Special characters are replaced with a percent sign (%) followed by two"
-          ],
-          "text": "   • Encoding Format: Special characters are replaced with a percent sign (%) followed by two"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
+            "   • Encoding Format: Special characters are replaced with a percent sign (%) followed by two",
             "      hexadecimal digits representing their ASCII code."
           ],
-          "text": "      hexadecimal digits representing their ASCII code."
+          "text": "   • Encoding Format: Special characters are replaced with a percent sign (%) followed by two\n      hexadecimal digits representing their ASCII code."
         },
         {
           "type": "list_item",
@@ -2952,18 +2742,11 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "        o Purpose: The default encoding for HTML forms. It encodes form data as key-value"
-          ],
-          "text": "        o Purpose: The default encoding for HTML forms. It encodes form data as key-value"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "        o Purpose: The default encoding for HTML forms. It encodes form data as key-value",
             "           pairs separated by ampersands (&) and with equal signs (=) between keys and",
             "           values. Spaces are converted to plus signs (+)."
           ],
-          "text": "           pairs separated by ampersands (&) and with equal signs (=) between keys and\n           values. Spaces are converted to plus signs (+)."
+          "text": "        o Purpose: The default encoding for HTML forms. It encodes form data as key-value\n           pairs separated by ampersands (&) and with equal signs (=) between keys and\n           values. Spaces are converted to plus signs (+)."
         },
         {
           "type": "list_item",
@@ -2993,17 +2776,10 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "        o Purpose: Designed for submitting forms with files or large amounts of data. Each"
-          ],
-          "text": "        o Purpose: Designed for submitting forms with files or large amounts of data. Each"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "        o Purpose: Designed for submitting forms with files or large amounts of data. Each",
             "           form field is sent as a separate part, with its own content type and headers."
           ],
-          "text": "           form field is sent as a separate part, with its own content type and headers."
+          "text": "        o Purpose: Designed for submitting forms with files or large amounts of data. Each\n           form field is sent as a separate part, with its own content type and headers."
         },
         {
           "type": "list_item",
@@ -3033,17 +2809,10 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "        o Purpose: A newer and more flexible format for form submissions that can handle"
-          ],
-          "text": "        o Purpose: A newer and more flexible format for form submissions that can handle"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "        o Purpose: A newer and more flexible format for form submissions that can handle",
             "           both simple and complex data, including files."
           ],
-          "text": "           both simple and complex data, including files."
+          "text": "        o Purpose: A newer and more flexible format for form submissions that can handle\n           both simple and complex data, including files."
         },
         {
           "type": "list_item",
@@ -3105,17 +2874,10 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Model Binding: ASP.NET Core MVC automatically handles binding form data (submitted via"
-          ],
-          "text": "   • Model Binding: ASP.NET Core MVC automatically handles binding form data (submitted via"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Model Binding: ASP.NET Core MVC automatically handles binding form data (submitted via",
             "      POST) to your model classes based on the Content-Type header."
           ],
-          "text": "      POST) to your model classes based on the Content-Type header."
+          "text": "   • Model Binding: ASP.NET Core MVC automatically handles binding form data (submitted via\n      POST) to your model classes based on the Content-Type header."
         }
       ],
       "char_count_raw": 1417,
@@ -3422,49 +3184,28 @@
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • Security: Protects against common attacks like SQL injection, cross-site scripting (XSS), and"
-          ],
-          "text": "   • Security: Protects against common attacks like SQL injection, cross-site scripting (XSS), and"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   • Security: Protects against common attacks like SQL injection, cross-site scripting (XSS), and",
             "      overposting."
           ],
-          "text": "      overposting."
+          "text": "   • Security: Protects against common attacks like SQL injection, cross-site scripting (XSS), and\n      overposting."
         },
         {
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • Data Integrity: Ensures that the data stored in your database or used in your application"
-          ],
-          "text": "   • Data Integrity: Ensures that the data stored in your database or used in your application"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   • Data Integrity: Ensures that the data stored in your database or used in your application",
             "      logic is valid."
           ],
-          "text": "      logic is valid."
+          "text": "   • Data Integrity: Ensures that the data stored in your database or used in your application\n      logic is valid."
         },
         {
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • User Experience: Provides immediate feedback to users, guiding them to correct input"
-          ],
-          "text": "   • User Experience: Provides immediate feedback to users, guiding them to correct input"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   • User Experience: Provides immediate feedback to users, guiding them to correct input",
             "      errors."
           ],
-          "text": "      errors."
+          "text": "   • User Experience: Provides immediate feedback to users, guiding them to correct input\n      errors."
         },
         {
           "type": "heading",
@@ -3478,82 +3219,47 @@
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   1. Validate on Both Sides: Validate data both on the client-side (using JavaScript) for"
-          ],
-          "text": "   1. Validate on Both Sides: Validate data both on the client-side (using JavaScript) for"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   1. Validate on Both Sides: Validate data both on the client-side (using JavaScript) for",
             "      immediate feedback and on the server-side for security (as client-side validation can be",
             "      bypassed)."
           ],
-          "text": "      immediate feedback and on the server-side for security (as client-side validation can be\n      bypassed)."
+          "text": "   1. Validate on Both Sides: Validate data both on the client-side (using JavaScript) for\n      immediate feedback and on the server-side for security (as client-side validation can be\n      bypassed)."
         },
         {
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   2. Use Data Annotations: Leverage the built-in data annotation attributes provided by the"
-          ],
-          "text": "   2. Use Data Annotations: Leverage the built-in data annotation attributes provided by the"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   2. Use Data Annotations: Leverage the built-in data annotation attributes provided by the",
             "      System.ComponentModel.DataAnnotations namespace to express validation rules concisely."
           ],
-          "text": "      System.ComponentModel.DataAnnotations namespace to express validation rules concisely."
+          "text": "   2. Use Data Annotations: Leverage the built-in data annotation attributes provided by the\n      System.ComponentModel.DataAnnotations namespace to express validation rules concisely."
         },
         {
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   3. Custom Validation Attributes: Create custom validation attributes for more complex or"
-          ],
-          "text": "   3. Custom Validation Attributes: Create custom validation attributes for more complex or"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   3. Custom Validation Attributes: Create custom validation attributes for more complex or",
             "      domain-specific rules."
           ],
-          "text": "      domain-specific rules."
+          "text": "   3. Custom Validation Attributes: Create custom validation attributes for more complex or\n      domain-specific rules."
         },
         {
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   4. Model State: Always check the ModelState.IsValid property in your controller actions before"
-          ],
-          "text": "   4. Model State: Always check the ModelState.IsValid property in your controller actions before"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   4. Model State: Always check the ModelState.IsValid property in your controller actions before",
             "      processing the data. If it's invalid, return an appropriate error response."
           ],
-          "text": "      processing the data. If it's invalid, return an appropriate error response."
+          "text": "   4. Model State: Always check the ModelState.IsValid property in your controller actions before\n      processing the data. If it's invalid, return an appropriate error response."
         },
         {
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   5. Display Error Messages: Clearly display error messages to the user, indicating which fields"
-          ],
-          "text": "   5. Display Error Messages: Clearly display error messages to the user, indicating which fields"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   5. Display Error Messages: Clearly display error messages to the user, indicating which fields",
             "      are invalid and why."
           ],
-          "text": "      are invalid and why."
+          "text": "   5. Display Error Messages: Clearly display error messages to the user, indicating which fields\n      are invalid and why."
         },
         {
           "type": "heading",
@@ -3859,17 +3565,10 @@
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   • ModelState.IsValid: A boolean property that indicates whether all validation rules passed"
-          ],
-          "text": "   • ModelState.IsValid: A boolean property that indicates whether all validation rules passed"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   • ModelState.IsValid: A boolean property that indicates whether all validation rules passed",
             "      (true) or if there were any errors (false)."
           ],
-          "text": "      (true) or if there were any errors (false)."
+          "text": "   • ModelState.IsValid: A boolean property that indicates whether all validation rules passed\n      (true) or if there were any errors (false)."
         },
         {
           "type": "list_item",
@@ -3904,47 +3603,19 @@
             "{",
             "  // ... other properties",
             "  [Required(ErrorMessage = \"{0} can't be blank\")]",
-            "  [Compare(\"Password\", ErrorMessage = \"{0} and {1} do not match\")]"
-          ],
-          "text": "// Person.cs (Model)\npublic class Person\n{\n  // ... other properties\n  [Required(ErrorMessage = \"{0} can't be blank\")]\n  [Compare(\"Password\", ErrorMessage = \"{0} and {1} do not match\")]"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
-            "  [Display(Name = \"Re-enter Password\")]"
-          ],
-          "text": "  [Display(Name = \"Re-enter Password\")]"
-        },
-        {
-          "type": "code",
-          "page": 10,
-          "lines": [
+            "  [Compare(\"Password\", ErrorMessage = \"{0} and {1} do not match\")]",
+            "  [Display(Name = \"Re-enter Password\")]",
             "  public string? ConfirmPassword { get; set; }",
             "  // ... other properties",
             "}",
             "// (In your controller action)",
             "public IActionResult Create(Person person)",
-            "{"
-          ],
-          "text": "  public string? ConfirmPassword { get; set; }\n  // ... other properties\n}\n// (In your controller action)\npublic IActionResult Create(Person person)\n{"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
-            "  if (!ModelState.IsValid)"
-          ],
-          "text": "  if (!ModelState.IsValid)"
-        },
-        {
-          "type": "code",
-          "page": 10,
-          "lines": [
+            "{",
+            "  if (!ModelState.IsValid)",
             "  {",
             "   return View(person); // Return to the view with validation errors"
           ],
-          "text": "  {\n   return View(person); // Return to the view with validation errors"
+          "text": "// Person.cs (Model)\npublic class Person\n{\n  // ... other properties\n  [Required(ErrorMessage = \"{0} can't be blank\")]\n  [Compare(\"Password\", ErrorMessage = \"{0} and {1} do not match\")]\n  [Display(Name = \"Re-enter Password\")]\n  public string? ConfirmPassword { get; set; }\n  // ... other properties\n}\n// (In your controller action)\npublic IActionResult Create(Person person)\n{\n  if (!ModelState.IsValid)\n  {\n   return View(person); // Return to the view with validation errors"
         }
       ],
       "char_count_raw": 969,
@@ -4203,18 +3874,11 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   2. Model State Check: The controller action checks ModelState.IsValid. If false, the original"
-          ],
-          "text": "   2. Model State Check: The controller action checks ModelState.IsValid. If false, the original"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   2. Model State Check: The controller action checks ModelState.IsValid. If false, the original",
             "      view is re-rendered with the model object containing validation errors, allowing the user to",
             "      correct them."
           ],
-          "text": "      view is re-rendered with the model object containing validation errors, allowing the user to\n      correct them."
+          "text": "   2. Model State Check: The controller action checks ModelState.IsValid. If false, the original\n      view is re-rendered with the model object containing validation errors, allowing the user to\n      correct them."
         },
         {
           "type": "list_item",
@@ -4225,20 +3889,13 @@
           "text": "   3. Error Display: The view typically uses the @Html.ValidationSummary() and"
         },
         {
-          "type": "prose",
+          "type": "code",
           "page": 11,
           "lines": [
-            "      @Html.ValidationMessageFor() helper methods to display error messages to the user."
-          ],
-          "text": "      @Html.ValidationMessageFor() helper methods to display error messages to the user."
-        },
-        {
-          "type": "heading",
-          "page": 11,
-          "lines": [
+            "      @Html.ValidationMessageFor() helper methods to display error messages to the user.",
             "Custom Validation with ValidationAttribute"
           ],
-          "text": "Custom Validation with ValidationAttribute"
+          "text": "      @Html.ValidationMessageFor() helper methods to display error messages to the user.\nCustom Validation with ValidationAttribute"
         },
         {
           "type": "prose",
@@ -4270,18 +3927,11 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   2. Override IsValid: The core of your custom validation logic lies in the IsValid method. This"
-          ],
-          "text": "   2. Override IsValid: The core of your custom validation logic lies in the IsValid method. This"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   2. Override IsValid: The core of your custom validation logic lies in the IsValid method. This",
             "      method receives the value to be validated and a ValidationContext object (containing",
             "      additional information about the model)."
           ],
-          "text": "      method receives the value to be validated and a ValidationContext object (containing\n      additional information about the model)."
+          "text": "   2. Override IsValid: The core of your custom validation logic lies in the IsValid method. This\n      method receives the value to be validated and a ValidationContext object (containing\n      additional information about the model)."
         },
         {
           "type": "list_item",
@@ -4303,17 +3953,10 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "        o If the value is invalid, return a new ValidationResult object with your custom error"
-          ],
-          "text": "        o If the value is invalid, return a new ValidationResult object with your custom error"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "        o If the value is invalid, return a new ValidationResult object with your custom error",
             "           message."
           ],
-          "text": "           message."
+          "text": "        o If the value is invalid, return a new ValidationResult object with your custom error\n           message."
         },
         {
           "type": "heading",
@@ -4578,100 +4221,30 @@
             "   OtherPropertyName = otherPropertyName;",
             "  }",
             "  protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)",
-            "  {"
-          ],
-          "text": "  // Constructor\n  public DateRangeValidatorAttribute(string otherPropertyName)\n  {\n   OtherPropertyName = otherPropertyName;\n  }\n  protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)\n  {"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
-            "   if (value != null)"
-          ],
-          "text": "   if (value != null)"
-        },
-        {
-          "type": "code",
-          "page": 12,
-          "lines": [
+            "  {",
+            "   if (value != null)",
             "   {",
             "     // Get the \"to_date\"",
             "     DateTime toDate = Convert.ToDateTime(value);",
             "     // Get the \"from_date\"",
-            "     var otherProperty = validationContext.ObjectType.GetProperty(OtherPropertyName);"
-          ],
-          "text": "   {\n     // Get the \"to_date\"\n     DateTime toDate = Convert.ToDateTime(value);\n     // Get the \"from_date\"\n     var otherProperty = validationContext.ObjectType.GetProperty(OtherPropertyName);"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
-            "     if (otherProperty != null)"
-          ],
-          "text": "     if (otherProperty != null)"
-        },
-        {
-          "type": "code",
-          "page": 12,
-          "lines": [
+            "     var otherProperty = validationContext.ObjectType.GetProperty(OtherPropertyName);",
+            "     if (otherProperty != null)",
             "     {",
             "      DateTime fromDate =",
-            "Convert.ToDateTime(otherProperty.GetValue(validationContext.ObjectInstance));"
-          ],
-          "text": "     {\n      DateTime fromDate =\nConvert.ToDateTime(otherProperty.GetValue(validationContext.ObjectInstance));"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
-            "      if (fromDate > toDate)"
-          ],
-          "text": "      if (fromDate > toDate)"
-        },
-        {
-          "type": "code",
-          "page": 12,
-          "lines": [
+            "Convert.ToDateTime(otherProperty.GetValue(validationContext.ObjectInstance));",
+            "      if (fromDate > toDate)",
             "      {",
-            "        return new ValidationResult(ErrorMessage, new string[] { OtherPropertyName,"
-          ],
-          "text": "      {\n        return new ValidationResult(ErrorMessage, new string[] { OtherPropertyName,"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
-            "validationContext.MemberName }); // Indicate the specific properties involved in the error"
-          ],
-          "text": "validationContext.MemberName }); // Indicate the specific properties involved in the error"
-        },
-        {
-          "type": "code",
-          "page": 12,
-          "lines": [
-            "      }"
-          ],
-          "text": "      }"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
-            "      else"
-          ],
-          "text": "      else"
-        },
-        {
-          "type": "code",
-          "page": 12,
-          "lines": [
+            "        return new ValidationResult(ErrorMessage, new string[] { OtherPropertyName,",
+            "validationContext.MemberName }); // Indicate the specific properties involved in the error",
+            "      }",
+            "      else",
             "      {",
             "        return ValidationResult.Success;",
             "      }",
             "     }",
             "     return null; // Return null if otherProperty is null"
           ],
-          "text": "      {\n        return ValidationResult.Success;\n      }\n     }\n     return null; // Return null if otherProperty is null"
+          "text": "  // Constructor\n  public DateRangeValidatorAttribute(string otherPropertyName)\n  {\n   OtherPropertyName = otherPropertyName;\n  }\n  protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)\n  {\n   if (value != null)\n   {\n     // Get the \"to_date\"\n     DateTime toDate = Convert.ToDateTime(value);\n     // Get the \"from_date\"\n     var otherProperty = validationContext.ObjectType.GetProperty(OtherPropertyName);\n     if (otherProperty != null)\n     {\n      DateTime fromDate =\nConvert.ToDateTime(otherProperty.GetValue(validationContext.ObjectInstance));\n      if (fromDate > toDate)\n      {\n        return new ValidationResult(ErrorMessage, new string[] { OtherPropertyName,\nvalidationContext.MemberName }); // Indicate the specific properties involved in the error\n      }\n      else\n      {\n        return ValidationResult.Success;\n      }\n     }\n     return null; // Return null if otherProperty is null"
         }
       ],
       "char_count_raw": 827,
@@ -4923,17 +4496,10 @@
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   • OtherPropertyName: Specifies the name of the property to compare against (in this case,"
-          ],
-          "text": "   • OtherPropertyName: Specifies the name of the property to compare against (in this case,"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "   • OtherPropertyName: Specifies the name of the property to compare against (in this case,",
             "      FromDate)."
           ],
-          "text": "      FromDate)."
+          "text": "   • OtherPropertyName: Specifies the name of the property to compare against (in this case,\n      FromDate)."
         },
         {
           "type": "list_item",
@@ -4955,33 +4521,19 @@
           "type": "list_item",
           "page": 13,
           "lines": [
-            "        o It compares the dates and returns an error message if toDate is earlier than"
-          ],
-          "text": "        o It compares the dates and returns an error message if toDate is earlier than"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "        o It compares the dates and returns an error message if toDate is earlier than",
             "           fromDate."
           ],
-          "text": "           fromDate."
+          "text": "        o It compares the dates and returns an error message if toDate is earlier than\n           fromDate."
         },
         {
           "type": "list_item",
           "page": 13,
           "lines": [
-            "        o The error message includes the names of both properties, providing clear feedback"
-          ],
-          "text": "        o The error message includes the names of both properties, providing clear feedback"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "        o The error message includes the names of both properties, providing clear feedback",
             "           to the user."
           ],
-          "text": "           to the user."
+          "text": "        o The error message includes the names of both properties, providing clear feedback\n           to the user."
         },
         {
           "type": "heading",
@@ -5001,43 +4553,15 @@
             "  public string DefaultErrorMessage { get; set; } = \"Year should not be less than {0}\";",
             "  // ... (constructors) ...",
             "  protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)",
-            "  {"
-          ],
-          "text": "public class MinimumYearValidatorAttribute : ValidationAttribute\n{\n  public int MinimumYear { get; set; } = 2000;\n  public string DefaultErrorMessage { get; set; } = \"Year should not be less than {0}\";\n  // ... (constructors) ...\n  protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)\n  {"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
-            "   if (value != null)"
-          ],
-          "text": "   if (value != null)"
-        },
-        {
-          "type": "code",
-          "page": 13,
-          "lines": [
+            "  {",
+            "   if (value != null)",
             "   {",
-            "     DateTime date = (DateTime)value;"
-          ],
-          "text": "   {\n     DateTime date = (DateTime)value;"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
-            "     if (date.Year >= MinimumYear)"
-          ],
-          "text": "     if (date.Year >= MinimumYear)"
-        },
-        {
-          "type": "code",
-          "page": 13,
-          "lines": [
+            "     DateTime date = (DateTime)value;",
+            "     if (date.Year >= MinimumYear)",
             "     {",
             "      return ValidationResult.Success;"
           ],
-          "text": "     {\n      return ValidationResult.Success;"
+          "text": "public class MinimumYearValidatorAttribute : ValidationAttribute\n{\n  public int MinimumYear { get; set; } = 2000;\n  public string DefaultErrorMessage { get; set; } = \"Year should not be less than {0}\";\n  // ... (constructors) ...\n  protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)\n  {\n   if (value != null)\n   {\n     DateTime date = (DateTime)value;\n     if (date.Year >= MinimumYear)\n     {\n      return ValidationResult.Success;"
         }
       ],
       "char_count_raw": 950,
@@ -5254,46 +4778,18 @@
           "type": "code",
           "page": 14,
           "lines": [
-            "     }"
-          ],
-          "text": "     }"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
-            "     else"
-          ],
-          "text": "     else"
-        },
-        {
-          "type": "code",
-          "page": 14,
-          "lines": [
+            "     }",
+            "     else",
             "     {",
-            "      return new ValidationResult(string.Format(ErrorMessage ?? DefaultErrorMessage,"
-          ],
-          "text": "     {\n      return new ValidationResult(string.Format(ErrorMessage ?? DefaultErrorMessage,"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
-            "MinimumYear)); // Use custom or default error message"
-          ],
-          "text": "MinimumYear)); // Use custom or default error message"
-        },
-        {
-          "type": "code",
-          "page": 14,
-          "lines": [
+            "      return new ValidationResult(string.Format(ErrorMessage ?? DefaultErrorMessage,",
+            "MinimumYear)); // Use custom or default error message",
             "     }",
             "   }",
             "   return null;",
             "  }",
             "}"
           ],
-          "text": "     }\n   }\n   return null;\n  }\n}"
+          "text": "     }\n     else\n     {\n      return new ValidationResult(string.Format(ErrorMessage ?? DefaultErrorMessage,\nMinimumYear)); // Use custom or default error message\n     }\n   }\n   return null;\n  }\n}"
         },
         {
           "type": "prose",
@@ -5366,33 +4862,19 @@
           "type": "list_item",
           "page": 14,
           "lines": [
-            "   • Interface: IValidatableObject is an interface with a single method:"
-          ],
-          "text": "   • Interface: IValidatableObject is an interface with a single method:"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "   • Interface: IValidatableObject is an interface with a single method:",
             "      Validate(ValidationContext context)."
           ],
-          "text": "      Validate(ValidationContext context)."
+          "text": "   • Interface: IValidatableObject is an interface with a single method:\n      Validate(ValidationContext context)."
         },
         {
           "type": "list_item",
           "page": 14,
           "lines": [
-            "   • Validate Method: This method is called by the model binder after individual property-level"
-          ],
-          "text": "   • Validate Method: This method is called by the model binder after individual property-level"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "   • Validate Method: This method is called by the model binder after individual property-level",
             "      validations (data annotations) have been checked."
           ],
-          "text": "      validations (data annotations) have been checked."
+          "text": "   • Validate Method: This method is called by the model binder after individual property-level\n      validations (data annotations) have been checked."
         }
       ],
       "char_count_raw": 1093,
@@ -5633,33 +5115,19 @@
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • Yielding Errors: Within the Validate method, you can yield ValidationResult objects for any"
-          ],
-          "text": "   • Yielding Errors: Within the Validate method, you can yield ValidationResult objects for any"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "   • Yielding Errors: Within the Validate method, you can yield ValidationResult objects for any",
             "      errors you find. This allows you to report multiple errors for the entire model at once."
           ],
-          "text": "      errors you find. This allows you to report multiple errors for the entire model at once."
+          "text": "   • Yielding Errors: Within the Validate method, you can yield ValidationResult objects for any\n      errors you find. This allows you to report multiple errors for the entire model at once."
         },
         {
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • Model State Integration: The errors you yield are automatically added to the ModelState"
-          ],
-          "text": "   • Model State Integration: The errors you yield are automatically added to the ModelState"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "   • Model State Integration: The errors you yield are automatically added to the ModelState",
             "      object, making them available for error display in your views."
           ],
-          "text": "      object, making them available for error display in your views."
+          "text": "   • Model State Integration: The errors you yield are automatically added to the ModelState\n      object, making them available for error display in your views."
         },
         {
           "type": "heading",
@@ -5673,49 +5141,28 @@
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • Cross-Property Validation: When validation logic depends on the values of multiple"
-          ],
-          "text": "   • Cross-Property Validation: When validation logic depends on the values of multiple"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "   • Cross-Property Validation: When validation logic depends on the values of multiple",
             "      properties (e.g., \"Start Date\" must be before \"End Date\")."
           ],
-          "text": "      properties (e.g., \"Start Date\" must be before \"End Date\")."
+          "text": "   • Cross-Property Validation: When validation logic depends on the values of multiple\n      properties (e.g., \"Start Date\" must be before \"End Date\")."
         },
         {
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • Complex Business Rules: When your validation rules involve complex logic or database"
-          ],
-          "text": "   • Complex Business Rules: When your validation rules involve complex logic or database"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "   • Complex Business Rules: When your validation rules involve complex logic or database",
             "      lookups."
           ],
-          "text": "      lookups."
+          "text": "   • Complex Business Rules: When your validation rules involve complex logic or database\n      lookups."
         },
         {
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • Customizable Errors: When you want more control over the error messages displayed to the"
-          ],
-          "text": "   • Customizable Errors: When you want more control over the error messages displayed to the"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "   • Customizable Errors: When you want more control over the error messages displayed to the",
             "      user."
           ],
-          "text": "      user."
+          "text": "   • Customizable Errors: When you want more control over the error messages displayed to the\n      user."
         },
         {
           "type": "heading",
@@ -5737,44 +5184,16 @@
             "  public int? Age { get; set; } // New property",
             "  // ... (other properties and methods) ...",
             "  public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)",
-            "  {"
-          ],
-          "text": "// Person.cs (Model)\npublic class Person : IValidatableObject\n{\n  // ... (properties with data annotations) ...\n  public DateTime? DateOfBirth { get; set; }\n  public int? Age { get; set; } // New property\n  // ... (other properties and methods) ...\n  public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)\n  {"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
-            "   if (DateOfBirth.HasValue == false && Age.HasValue == false)"
-          ],
-          "text": "   if (DateOfBirth.HasValue == false && Age.HasValue == false)"
-        },
-        {
-          "type": "code",
-          "page": 15,
-          "lines": [
+            "  {",
+            "   if (DateOfBirth.HasValue == false && Age.HasValue == false)",
             "   {",
-            "     yield return new ValidationResult(\"Either of Date of Birth or Age must be supplied\", new[] {"
-          ],
-          "text": "   {\n     yield return new ValidationResult(\"Either of Date of Birth or Age must be supplied\", new[] {"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
-            "nameof(Age) }); // Yield an error"
-          ],
-          "text": "nameof(Age) }); // Yield an error"
-        },
-        {
-          "type": "code",
-          "page": 15,
-          "lines": [
+            "     yield return new ValidationResult(\"Either of Date of Birth or Age must be supplied\", new[] {",
+            "nameof(Age) }); // Yield an error",
             "   }",
             "  }",
             "}"
           ],
-          "text": "   }\n  }\n}"
+          "text": "// Person.cs (Model)\npublic class Person : IValidatableObject\n{\n  // ... (properties with data annotations) ...\n  public DateTime? DateOfBirth { get; set; }\n  public int? Age { get; set; } // New property\n  // ... (other properties and methods) ...\n  public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)\n  {\n   if (DateOfBirth.HasValue == false && Age.HasValue == false)\n   {\n     yield return new ValidationResult(\"Either of Date of Birth or Age must be supplied\", new[] {\nnameof(Age) }); // Yield an error\n   }\n  }\n}"
         }
       ],
       "char_count_raw": 1230,
@@ -6012,20 +5431,13 @@
           "text": "In this example:"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 16,
           "lines": [
-            "1. Implementation of IValidatableObject: The Person class now implements"
-          ],
-          "text": "1. Implementation of IValidatableObject: The Person class now implements"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   1. Implementation of IValidatableObject: The Person class now implements",
             "      IValidatableObject."
           ],
-          "text": "      IValidatableObject."
+          "text": "   1. Implementation of IValidatableObject: The Person class now implements\n      IValidatableObject."
         },
         {
           "type": "list_item",
@@ -6039,51 +5451,30 @@
           "type": "list_item",
           "page": 16,
           "lines": [
-            "        o It checks if either DateOfBirth or Age is provided. If neither is present, it yields a"
-          ],
-          "text": "        o It checks if either DateOfBirth or Age is provided. If neither is present, it yields a"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "        o It checks if either DateOfBirth or Age is provided. If neither is present, it yields a",
             "           ValidationResult indicating that at least one of these properties must be supplied."
           ],
-          "text": "           ValidationResult indicating that at least one of these properties must be supplied."
+          "text": "        o It checks if either DateOfBirth or Age is provided. If neither is present, it yields a\n           ValidationResult indicating that at least one of these properties must be supplied."
         },
         {
           "type": "list_item",
           "page": 16,
           "lines": [
-            "        o Notice how the error message is specifically associated with the Age property using"
-          ],
-          "text": "        o Notice how the error message is specifically associated with the Age property using"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "        o Notice how the error message is specifically associated with the Age property using",
             "           new[] { nameof(Age) }. This helps target the error message to the correct field in",
             "           your view."
           ],
-          "text": "           new[] { nameof(Age) }. This helps target the error message to the correct field in\n           your view."
+          "text": "        o Notice how the error message is specifically associated with the Age property using\n           new[] { nameof(Age) }. This helps target the error message to the correct field in\n           your view."
         },
         {
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   3. Model State Update: When you use this model in your controller, the validation errors from"
-          ],
-          "text": "   3. Model State Update: When you use this model in your controller, the validation errors from"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   3. Model State Update: When you use this model in your controller, the validation errors from",
             "      the Validate method will automatically be added to the ModelState, and you can check",
             "      ModelState.IsValid to determine if the model is valid."
           ],
-          "text": "      the Validate method will automatically be added to the ModelState, and you can check\n      ModelState.IsValid to determine if the model is valid."
+          "text": "   3. Model State Update: When you use this model in your controller, the validation errors from\n      the Validate method will automatically be added to the ModelState, and you can check\n      ModelState.IsValid to determine if the model is valid."
         },
         {
           "type": "heading",
@@ -6097,33 +5488,19 @@
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • Model-Level Validation: IValidatableObject is ideal for validation logic that goes beyond"
-          ],
-          "text": "   • Model-Level Validation: IValidatableObject is ideal for validation logic that goes beyond"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • Model-Level Validation: IValidatableObject is ideal for validation logic that goes beyond",
             "      individual properties."
           ],
-          "text": "      individual properties."
+          "text": "   • Model-Level Validation: IValidatableObject is ideal for validation logic that goes beyond\n      individual properties."
         },
         {
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • Yielding Errors: Use the yield return statement to return multiple validation errors from the"
-          ],
-          "text": "   • Yielding Errors: Use the yield return statement to return multiple validation errors from the"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • Yielding Errors: Use the yield return statement to return multiple validation errors from the",
             "      Validate method."
           ],
-          "text": "      Validate method."
+          "text": "   • Yielding Errors: Use the yield return statement to return multiple validation errors from the\n      Validate method."
         },
         {
           "type": "list_item",
@@ -6137,17 +5514,10 @@
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • Integration with Data Annotations: IValidatableObject works in conjunction with data"
-          ],
-          "text": "   • Integration with Data Annotations: IValidatableObject works in conjunction with data"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • Integration with Data Annotations: IValidatableObject works in conjunction with data",
             "      annotations, providing a comprehensive validation approach."
           ],
-          "text": "      annotations, providing a comprehensive validation approach."
+          "text": "   • Integration with Data Annotations: IValidatableObject works in conjunction with data\n      annotations, providing a comprehensive validation approach."
         },
         {
           "type": "code",
@@ -6186,17 +5556,10 @@
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • Usage: Apply this attribute to your action method parameter (e.g., the model class) and"
-          ],
-          "text": "   • Usage: Apply this attribute to your action method parameter (e.g., the model class) and"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • Usage: Apply this attribute to your action method parameter (e.g., the model class) and",
             "      provide a list of property names as arguments."
           ],
-          "text": "      provide a list of property names as arguments."
+          "text": "   • Usage: Apply this attribute to your action method parameter (e.g., the model class) and\n      provide a list of property names as arguments."
         }
       ],
       "char_count_raw": 1631,
@@ -6459,17 +5822,10 @@
           "type": "list_item",
           "page": 17,
           "lines": [
-            "   • Usage: Apply this attribute directly to model properties that you never want to be bound"
-          ],
-          "text": "   • Usage: Apply this attribute directly to model properties that you never want to be bound"
-        },
-        {
-          "type": "prose",
-          "page": 17,
-          "lines": [
+            "   • Usage: Apply this attribute directly to model properties that you never want to be bound",
             "      from the request."
           ],
-          "text": "      from the request."
+          "text": "   • Usage: Apply this attribute directly to model properties that you never want to be bound\n      from the request."
         },
         {
           "type": "list_item",
@@ -6485,26 +5841,12 @@
           "lines": [
             "public class Product",
             "{",
-            "  // ... other properties"
-          ],
-          "text": "public class Product\n{\n  // ... other properties"
-        },
-        {
-          "type": "prose",
-          "page": 17,
-          "lines": [
-            "  [BindNever]"
-          ],
-          "text": "  [BindNever]"
-        },
-        {
-          "type": "code",
-          "page": 17,
-          "lines": [
+            "  // ... other properties",
+            "  [BindNever]",
             "  public DateTime CreatedAt { get; set; } // Never bind from request",
             "}"
           ],
-          "text": "  public DateTime CreatedAt { get; set; } // Never bind from request\n}"
+          "text": "public class Product\n{\n  // ... other properties\n  [BindNever]\n  public DateTime CreatedAt { get; set; } // Never bind from request\n}"
         },
         {
           "type": "prose",
@@ -6773,19 +6115,12 @@
           "type": "list_item",
           "page": 18,
           "lines": [
-            "   1. DateOfBirth (BindNever): The [BindNever] attribute on the DateOfBirth property tells the"
-          ],
-          "text": "   1. DateOfBirth (BindNever): The [BindNever] attribute on the DateOfBirth property tells the"
-        },
-        {
-          "type": "prose",
-          "page": 18,
-          "lines": [
+            "   1. DateOfBirth (BindNever): The [BindNever] attribute on the DateOfBirth property tells the",
             "      model binder to completely ignore any data for this property coming from the request. Even",
             "      if the incoming request contains a value for DateOfBirth, it won't be assigned to the model",
             "      property."
           ],
-          "text": "      model binder to completely ignore any data for this property coming from the request. Even\n      if the incoming request contains a value for DateOfBirth, it won't be assigned to the model\n      property."
+          "text": "   1. DateOfBirth (BindNever): The [BindNever] attribute on the DateOfBirth property tells the\n      model binder to completely ignore any data for this property coming from the request. Even\n      if the incoming request contains a value for DateOfBirth, it won't be assigned to the model\n      property."
         },
         {
           "type": "heading",
@@ -6799,65 +6134,37 @@
           "type": "list_item",
           "page": 18,
           "lines": [
-            "   • Security: [BindNever] is a valuable tool for preventing overposting attacks, where an"
-          ],
-          "text": "   • Security: [BindNever] is a valuable tool for preventing overposting attacks, where an"
-        },
-        {
-          "type": "prose",
-          "page": 18,
-          "lines": [
+            "   • Security: [BindNever] is a valuable tool for preventing overposting attacks, where an",
             "      attacker tries to submit data for properties that shouldn't be modifiable from a client."
           ],
-          "text": "      attacker tries to submit data for properties that shouldn't be modifiable from a client."
+          "text": "   • Security: [BindNever] is a valuable tool for preventing overposting attacks, where an\n      attacker tries to submit data for properties that shouldn't be modifiable from a client."
         },
         {
           "type": "list_item",
           "page": 18,
           "lines": [
-            "   • Explicit Control: [Bind] and [BindNever] give you precise control over which model"
-          ],
-          "text": "   • Explicit Control: [Bind] and [BindNever] give you precise control over which model"
-        },
-        {
-          "type": "prose",
-          "page": 18,
-          "lines": [
+            "   • Explicit Control: [Bind] and [BindNever] give you precise control over which model",
             "      properties are populated from incoming requests."
           ],
-          "text": "      properties are populated from incoming requests."
+          "text": "   • Explicit Control: [Bind] and [BindNever] give you precise control over which model\n      properties are populated from incoming requests."
         },
         {
           "type": "list_item",
           "page": 18,
           "lines": [
-            "   • Default Behavior: Without these attributes, the model binder attempts to bind all public"
-          ],
-          "text": "   • Default Behavior: Without these attributes, the model binder attempts to bind all public"
-        },
-        {
-          "type": "prose",
-          "page": 18,
-          "lines": [
+            "   • Default Behavior: Without these attributes, the model binder attempts to bind all public",
             "      properties of your model class."
           ],
-          "text": "      properties of your model class."
+          "text": "   • Default Behavior: Without these attributes, the model binder attempts to bind all public\n      properties of your model class."
         },
         {
           "type": "list_item",
           "page": 18,
           "lines": [
-            "   • Complex Types: You can use [Bind] on nested complex properties to specify which"
-          ],
-          "text": "   • Complex Types: You can use [Bind] on nested complex properties to specify which"
-        },
-        {
-          "type": "prose",
-          "page": 18,
-          "lines": [
+            "   • Complex Types: You can use [Bind] on nested complex properties to specify which",
             "      properties within those objects should be bound."
           ],
-          "text": "      properties within those objects should be bound."
+          "text": "   • Complex Types: You can use [Bind] on nested complex properties to specify which\n      properties within those objects should be bound."
         }
       ],
       "char_count_raw": 1155,
@@ -7157,117 +6464,75 @@
           "type": "list_item",
           "page": 19,
           "lines": [
-            "   1. Request Body Identification: When a request arrives, the model binding middleware"
-          ],
-          "text": "   1. Request Body Identification: When a request arrives, the model binding middleware"
-        },
-        {
-          "type": "prose",
-          "page": 19,
-          "lines": [
+            "   1. Request Body Identification: When a request arrives, the model binding middleware",
             "      examines the Content-Type header to determine the format of the data in the request body.",
             "      Typically, this is either application/json for JSON data or application/xml for XML data."
           ],
-          "text": "      examines the Content-Type header to determine the format of the data in the request body.\n      Typically, this is either application/json for JSON data or application/xml for XML data."
+          "text": "   1. Request Body Identification: When a request arrives, the model binding middleware\n      examines the Content-Type header to determine the format of the data in the request body.\n      Typically, this is either application/json for JSON data or application/xml for XML data."
         },
         {
           "type": "list_item",
           "page": 19,
           "lines": [
-            "   2. Input Formatter Selection: Based on the Content-Type, the middleware selects an"
-          ],
-          "text": "   2. Input Formatter Selection: Based on the Content-Type, the middleware selects an"
-        },
-        {
-          "type": "prose",
-          "page": 19,
-          "lines": [
+            "   2. Input Formatter Selection: Based on the Content-Type, the middleware selects an",
             "      appropriate input formatter. Input formatters are responsible for deserializing the raw",
             "      request body into a format that the model binder can understand."
           ],
-          "text": "      appropriate input formatter. Input formatters are responsible for deserializing the raw\n      request body into a format that the model binder can understand."
+          "text": "   2. Input Formatter Selection: Based on the Content-Type, the middleware selects an\n      appropriate input formatter. Input formatters are responsible for deserializing the raw\n      request body into a format that the model binder can understand."
         },
         {
           "type": "list_item",
           "page": 19,
           "lines": [
-            "   3. Model Binding: The model binder takes the deserialized data and attempts to map it to the"
-          ],
-          "text": "   3. Model Binding: The model binder takes the deserialized data and attempts to map it to the"
-        },
-        {
-          "type": "prose",
-          "page": 19,
-          "lines": [
+            "   3. Model Binding: The model binder takes the deserialized data and attempts to map it to the",
             "      properties of your model class. This mapping is typically done based on property names, but",
             "      you can customize it using various model binding attributes."
           ],
-          "text": "      properties of your model class. This mapping is typically done based on property names, but\n      you can customize it using various model binding attributes."
+          "text": "   3. Model Binding: The model binder takes the deserialized data and attempts to map it to the\n      properties of your model class. This mapping is typically done based on property names, but\n      you can customize it using various model binding attributes."
         },
         {
           "type": "list_item",
           "page": 19,
           "lines": [
-            "   4. Validation: After binding, the model undergoes validation to ensure it adheres to the rules"
+            "   4. Validation: After binding, the model undergoes validation to ensure it adheres to the rules",
+            "      defined by data annotations or custom validation logic."
           ],
-          "text": "   4. Validation: After binding, the model undergoes validation to ensure it adheres to the rules"
+          "text": "   4. Validation: After binding, the model undergoes validation to ensure it adheres to the rules\n      defined by data annotations or custom validation logic."
         },
         {
           "type": "prose",
           "page": 19,
           "lines": [
-            "      defined by data annotations or custom validation logic.",
             "Benefits of [FromBody]"
           ],
-          "text": "      defined by data annotations or custom validation logic.\nBenefits of [FromBody]"
+          "text": "Benefits of [FromBody]"
         },
         {
           "type": "list_item",
           "page": 19,
           "lines": [
-            "   • Complex Data Handling: Easily bind complex objects with nested properties from JSON or"
-          ],
-          "text": "   • Complex Data Handling: Easily bind complex objects with nested properties from JSON or"
-        },
-        {
-          "type": "prose",
-          "page": 19,
-          "lines": [
+            "   • Complex Data Handling: Easily bind complex objects with nested properties from JSON or",
             "      XML payloads."
           ],
-          "text": "      XML payloads."
+          "text": "   • Complex Data Handling: Easily bind complex objects with nested properties from JSON or\n      XML payloads."
         },
         {
           "type": "list_item",
           "page": 19,
           "lines": [
-            "   • Separation of Concerns: The input formatter handles deserialization, keeping your controller"
-          ],
-          "text": "   • Separation of Concerns: The input formatter handles deserialization, keeping your controller"
-        },
-        {
-          "type": "prose",
-          "page": 19,
-          "lines": [
+            "   • Separation of Concerns: The input formatter handles deserialization, keeping your controller",
             "      actions clean."
           ],
-          "text": "      actions clean."
+          "text": "   • Separation of Concerns: The input formatter handles deserialization, keeping your controller\n      actions clean."
         },
         {
           "type": "list_item",
           "page": 19,
           "lines": [
-            "   • API-Friendly: Aligns well with RESTful API practices, where data is often transmitted in the"
-          ],
-          "text": "   • API-Friendly: Aligns well with RESTful API practices, where data is often transmitted in the"
-        },
-        {
-          "type": "prose",
-          "page": 19,
-          "lines": [
+            "   • API-Friendly: Aligns well with RESTful API practices, where data is often transmitted in the",
             "      request body."
           ],
-          "text": "      request body."
+          "text": "   • API-Friendly: Aligns well with RESTful API practices, where data is often transmitted in the\n      request body."
         },
         {
           "type": "heading",
@@ -7286,17 +6551,10 @@
             "// Example JSON: { \"PersonName\": \"William\", \"Email\": \"william@example.com\", \"Phone\": \"123456\",",
             "\"Password\": \"william123\", \"ConfirmPassword\": \"william123\" }",
             "public IActionResult Index([FromBody] Person person)",
-            "{"
-          ],
-          "text": "// HomeController.cs\n[Route(\"register\")]\n// Example JSON: { \"PersonName\": \"William\", \"Email\": \"william@example.com\", \"Phone\": \"123456\",\n\"Password\": \"william123\", \"ConfirmPassword\": \"william123\" }\npublic IActionResult Index([FromBody] Person person)\n{"
-        },
-        {
-          "type": "prose",
-          "page": 19,
-          "lines": [
+            "{",
             "  if (!ModelState.IsValid)"
           ],
-          "text": "  if (!ModelState.IsValid)"
+          "text": "// HomeController.cs\n[Route(\"register\")]\n// Example JSON: { \"PersonName\": \"William\", \"Email\": \"william@example.com\", \"Phone\": \"123456\",\n\"Password\": \"william123\", \"ConfirmPassword\": \"william123\" }\npublic IActionResult Index([FromBody] Person person)\n{\n  if (!ModelState.IsValid)"
         }
       ],
       "char_count_raw": 1884,
@@ -7549,65 +6807,37 @@
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   1. [FromBody] Attribute: The [FromBody] attribute on the person parameter instructs the"
-          ],
-          "text": "   1. [FromBody] Attribute: The [FromBody] attribute on the person parameter instructs the"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   1. [FromBody] Attribute: The [FromBody] attribute on the person parameter instructs the",
             "      model binder to look for the data in the request body."
           ],
-          "text": "      model binder to look for the data in the request body."
+          "text": "   1. [FromBody] Attribute: The [FromBody] attribute on the person parameter instructs the\n      model binder to look for the data in the request body."
         },
         {
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   2. JSON Deserialization: If the request has a Content-Type of application/json, the built-in"
-          ],
-          "text": "   2. JSON Deserialization: If the request has a Content-Type of application/json, the built-in"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   2. JSON Deserialization: If the request has a Content-Type of application/json, the built-in",
             "      JSON input formatter will deserialize the JSON data in the request body into a Person object."
           ],
-          "text": "      JSON input formatter will deserialize the JSON data in the request body into a Person object."
+          "text": "   2. JSON Deserialization: If the request has a Content-Type of application/json, the built-in\n      JSON input formatter will deserialize the JSON data in the request body into a Person object."
         },
         {
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   3. Model Validation: The ModelState.IsValid check ensures the deserialized Person object"
-          ],
-          "text": "   3. Model Validation: The ModelState.IsValid check ensures the deserialized Person object"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   3. Model Validation: The ModelState.IsValid check ensures the deserialized Person object",
             "      meets your validation criteria."
           ],
-          "text": "      meets your validation criteria."
+          "text": "   3. Model Validation: The ModelState.IsValid check ensures the deserialized Person object\n      meets your validation criteria."
         },
         {
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   4. Successful Response: If the model is valid, the Content result returns a string representation"
-          ],
-          "text": "   4. Successful Response: If the model is valid, the Content result returns a string representation"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   4. Successful Response: If the model is valid, the Content result returns a string representation",
             "      of the Person object."
           ],
-          "text": "      of the Person object."
+          "text": "   4. Successful Response: If the model is valid, the Content result returns a string representation\n      of the Person object."
         },
         {
           "type": "heading",
@@ -7621,50 +6851,29 @@
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • Single [FromBody] Parameter: ASP.NET Core model binding allows only one parameter per"
-          ],
-          "text": "   • Single [FromBody] Parameter: ASP.NET Core model binding allows only one parameter per"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • Single [FromBody] Parameter: ASP.NET Core model binding allows only one parameter per",
             "      action method to be decorated with [FromBody]. This is because the request body is",
             "      typically a single stream of data."
           ],
-          "text": "      action method to be decorated with [FromBody]. This is because the request body is\n      typically a single stream of data."
+          "text": "   • Single [FromBody] Parameter: ASP.NET Core model binding allows only one parameter per\n      action method to be decorated with [FromBody]. This is because the request body is\n      typically a single stream of data."
         },
         {
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • Content-Type: The Content-Type header of the request must match the expected format"
-          ],
-          "text": "   • Content-Type: The Content-Type header of the request must match the expected format"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • Content-Type: The Content-Type header of the request must match the expected format",
             "      (e.g., application/json) for the correct input formatter to be used."
           ],
-          "text": "      (e.g., application/json) for the correct input formatter to be used."
+          "text": "   • Content-Type: The Content-Type header of the request must match the expected format\n      (e.g., application/json) for the correct input formatter to be used."
         },
         {
           "type": "list_item",
           "page": 20,
           "lines": [
-            "   • Security: Always validate and sanitize data from the request body to protect against"
-          ],
-          "text": "   • Security: Always validate and sanitize data from the request body to protect against"
-        },
-        {
-          "type": "prose",
-          "page": 20,
-          "lines": [
+            "   • Security: Always validate and sanitize data from the request body to protect against",
             "      vulnerabilities like overposting and injection attacks."
           ],
-          "text": "      vulnerabilities like overposting and injection attacks."
+          "text": "   • Security: Always validate and sanitize data from the request body to protect against\n      vulnerabilities like overposting and injection attacks."
         },
         {
           "type": "heading",
@@ -7948,66 +7157,38 @@
           "type": "list_item",
           "page": 21,
           "lines": [
-            "   1. Content Negotiation: The model binding process begins with content negotiation, where"
-          ],
-          "text": "   1. Content Negotiation: The model binding process begins with content negotiation, where"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "   1. Content Negotiation: The model binding process begins with content negotiation, where",
             "      ASP.NET Core examines the Content-Type header of the request to determine the format of",
             "      the incoming data (e.g., JSON, XML)."
           ],
-          "text": "      ASP.NET Core examines the Content-Type header of the request to determine the format of\n      the incoming data (e.g., JSON, XML)."
+          "text": "   1. Content Negotiation: The model binding process begins with content negotiation, where\n      ASP.NET Core examines the Content-Type header of the request to determine the format of\n      the incoming data (e.g., JSON, XML)."
         },
         {
           "type": "list_item",
           "page": 21,
           "lines": [
-            "   2. Input Formatter Selection: Based on the Content-Type, ASP.NET Core selects an appropriate"
-          ],
-          "text": "   2. Input Formatter Selection: Based on the Content-Type, ASP.NET Core selects an appropriate"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "   2. Input Formatter Selection: Based on the Content-Type, ASP.NET Core selects an appropriate",
             "      input formatter that knows how to handle that specific data format."
           ],
-          "text": "      input formatter that knows how to handle that specific data format."
+          "text": "   2. Input Formatter Selection: Based on the Content-Type, ASP.NET Core selects an appropriate\n      input formatter that knows how to handle that specific data format."
         },
         {
           "type": "list_item",
           "page": 21,
           "lines": [
-            "   3. Deserialization: The selected input formatter deserializes the raw data from the request"
-          ],
-          "text": "   3. Deserialization: The selected input formatter deserializes the raw data from the request"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "   3. Deserialization: The selected input formatter deserializes the raw data from the request",
             "      body into C# objects, collections, or other supported types."
           ],
-          "text": "      body into C# objects, collections, or other supported types."
+          "text": "   3. Deserialization: The selected input formatter deserializes the raw data from the request\n      body into C# objects, collections, or other supported types."
         },
         {
           "type": "list_item",
           "page": 21,
           "lines": [
-            "   4. Model Binding: The deserialized data is then passed to the model binder, which populates"
-          ],
-          "text": "   4. Model Binding: The deserialized data is then passed to the model binder, which populates"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "   4. Model Binding: The deserialized data is then passed to the model binder, which populates",
             "      the parameters of your action method."
           ],
-          "text": "      the parameters of your action method."
+          "text": "   4. Model Binding: The deserialized data is then passed to the model binder, which populates\n      the parameters of your action method."
         },
         {
           "type": "heading",
@@ -8021,49 +7202,28 @@
           "type": "list_item",
           "page": 21,
           "lines": [
-            "   • NewtonsoftJsonInputFormatter: Handles JSON (JavaScript Object Notation) data using the"
-          ],
-          "text": "   • NewtonsoftJsonInputFormatter: Handles JSON (JavaScript Object Notation) data using the"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "   • NewtonsoftJsonInputFormatter: Handles JSON (JavaScript Object Notation) data using the",
             "      popular Newtonsoft.Json library."
           ],
-          "text": "      popular Newtonsoft.Json library."
+          "text": "   • NewtonsoftJsonInputFormatter: Handles JSON (JavaScript Object Notation) data using the\n      popular Newtonsoft.Json library."
         },
         {
           "type": "list_item",
           "page": 21,
           "lines": [
-            "   • SystemTextJsonInputFormatter: Handles JSON data using the built-in System.Text.Json"
-          ],
-          "text": "   • SystemTextJsonInputFormatter: Handles JSON data using the built-in System.Text.Json"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "   • SystemTextJsonInputFormatter: Handles JSON data using the built-in System.Text.Json",
             "      serializer."
           ],
-          "text": "      serializer."
+          "text": "   • SystemTextJsonInputFormatter: Handles JSON data using the built-in System.Text.Json\n      serializer."
         },
         {
           "type": "list_item",
           "page": 21,
           "lines": [
-            "   • XmlSerializerInputFormatter: Handles XML (Extensible Markup Language) data using the"
-          ],
-          "text": "   • XmlSerializerInputFormatter: Handles XML (Extensible Markup Language) data using the"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "   • XmlSerializerInputFormatter: Handles XML (Extensible Markup Language) data using the",
             "      XmlSerializer."
           ],
-          "text": "      XmlSerializer."
+          "text": "   • XmlSerializerInputFormatter: Handles XML (Extensible Markup Language) data using the\n      XmlSerializer."
         },
         {
           "type": "heading",
@@ -8077,34 +7237,20 @@
           "type": "list_item",
           "page": 21,
           "lines": [
-            "   1. Default Formatters: ASP.NET Core MVC includes NewtonsoftJsonInputFormatter as a default"
-          ],
-          "text": "   1. Default Formatters: ASP.NET Core MVC includes NewtonsoftJsonInputFormatter as a default"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "   1. Default Formatters: ASP.NET Core MVC includes NewtonsoftJsonInputFormatter as a default",
             "      formatter."
           ],
-          "text": "      formatter."
+          "text": "   1. Default Formatters: ASP.NET Core MVC includes NewtonsoftJsonInputFormatter as a default\n      formatter."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 21,
           "lines": [
-            "2. Additional Formatters: You can add support for other formatters (like"
-          ],
-          "text": "2. Additional Formatters: You can add support for other formatters (like"
-        },
-        {
-          "type": "prose",
-          "page": 21,
-          "lines": [
+            "   2. Additional Formatters: You can add support for other formatters (like",
             "      XmlSerializerInputFormatter) by explicitly registering them in your application's startup",
             "      configuration."
           ],
-          "text": "      XmlSerializerInputFormatter) by explicitly registering them in your application's startup\n      configuration."
+          "text": "   2. Additional Formatters: You can add support for other formatters (like\n      XmlSerializerInputFormatter) by explicitly registering them in your application's startup\n      configuration."
         },
         {
           "type": "heading",
@@ -8120,19 +7266,19 @@
           "lines": [
             "var builder = WebApplication.CreateBuilder(args);",
             "builder.Services.AddControllers().AddXmlSerializerFormatters();",
-            "// ... other configuration ..."
+            "// ... other configuration ...",
+            "In this code, the .AddXmlSerializerFormatters() extension method registers the"
           ],
-          "text": "var builder = WebApplication.CreateBuilder(args);\nbuilder.Services.AddControllers().AddXmlSerializerFormatters();\n// ... other configuration ..."
+          "text": "var builder = WebApplication.CreateBuilder(args);\nbuilder.Services.AddControllers().AddXmlSerializerFormatters();\n// ... other configuration ...\nIn this code, the .AddXmlSerializerFormatters() extension method registers the"
         },
         {
           "type": "prose",
           "page": 21,
           "lines": [
-            "In this code, the .AddXmlSerializerFormatters() extension method registers the",
             "XmlSerializerInputFormatter, enabling your application to handle requests with an application/xml",
             "content type."
           ],
-          "text": "In this code, the .AddXmlSerializerFormatters() extension method registers the\nXmlSerializerInputFormatter, enabling your application to handle requests with an application/xml\ncontent type."
+          "text": "XmlSerializerInputFormatter, enabling your application to handle requests with an application/xml\ncontent type."
         }
       ],
       "char_count_raw": 1680,
@@ -8405,35 +7551,21 @@
           "type": "list_item",
           "page": 22,
           "lines": [
-            "   • Implicit Binding: If the Content-Type header of the request matches a supported format, the"
-          ],
-          "text": "   • Implicit Binding: If the Content-Type header of the request matches a supported format, the"
-        },
-        {
-          "type": "prose",
-          "page": 22,
-          "lines": [
+            "   • Implicit Binding: If the Content-Type header of the request matches a supported format, the",
             "      corresponding input formatter is automatically used. You don't need to explicitly specify",
             "      which formatter to use in your action method."
           ],
-          "text": "      corresponding input formatter is automatically used. You don't need to explicitly specify\n      which formatter to use in your action method."
+          "text": "   • Implicit Binding: If the Content-Type header of the request matches a supported format, the\n      corresponding input formatter is automatically used. You don't need to explicitly specify\n      which formatter to use in your action method."
         },
         {
           "type": "list_item",
           "page": 22,
           "lines": [
-            "   • Explicit Binding ([FromBody]): You can use the [FromBody] attribute on an action method"
-          ],
-          "text": "   • Explicit Binding ([FromBody]): You can use the [FromBody] attribute on an action method"
-        },
-        {
-          "type": "prose",
-          "page": 22,
-          "lines": [
+            "   • Explicit Binding ([FromBody]): You can use the [FromBody] attribute on an action method",
             "      parameter to explicitly tell the model binder to look for the data in the request body. This is",
             "      often used when you have complex objects that need to be deserialized."
           ],
-          "text": "      parameter to explicitly tell the model binder to look for the data in the request body. This is\n      often used when you have complex objects that need to be deserialized."
+          "text": "   • Explicit Binding ([FromBody]): You can use the [FromBody] attribute on an action method\n      parameter to explicitly tell the model binder to look for the data in the request body. This is\n      often used when you have complex objects that need to be deserialized."
         },
         {
           "type": "heading",
@@ -8447,66 +7579,38 @@
           "type": "list_item",
           "page": 22,
           "lines": [
-            "   • Content Negotiation: The success of model binding depends on the client sending a valid"
-          ],
-          "text": "   • Content Negotiation: The success of model binding depends on the client sending a valid"
-        },
-        {
-          "type": "prose",
-          "page": 22,
-          "lines": [
+            "   • Content Negotiation: The success of model binding depends on the client sending a valid",
             "      Content-Type header that your application supports."
           ],
-          "text": "      Content-Type header that your application supports."
+          "text": "   • Content Negotiation: The success of model binding depends on the client sending a valid\n      Content-Type header that your application supports."
         },
         {
           "type": "list_item",
           "page": 22,
           "lines": [
-            "   • Error Handling: Handle potential deserialization errors gracefully. If the input formatter"
-          ],
-          "text": "   • Error Handling: Handle potential deserialization errors gracefully. If the input formatter"
-        },
-        {
-          "type": "prose",
-          "page": 22,
-          "lines": [
+            "   • Error Handling: Handle potential deserialization errors gracefully. If the input formatter",
             "      cannot parse the request body, return an appropriate error response (e.g., 400 Bad",
             "      Request)."
           ],
-          "text": "      cannot parse the request body, return an appropriate error response (e.g., 400 Bad\n      Request)."
+          "text": "   • Error Handling: Handle potential deserialization errors gracefully. If the input formatter\n      cannot parse the request body, return an appropriate error response (e.g., 400 Bad\n      Request)."
         },
         {
           "type": "list_item",
           "page": 22,
           "lines": [
-            "   • Security: Always validate and sanitize data deserialized from the request body to protect"
-          ],
-          "text": "   • Security: Always validate and sanitize data deserialized from the request body to protect"
-        },
-        {
-          "type": "prose",
-          "page": 22,
-          "lines": [
+            "   • Security: Always validate and sanitize data deserialized from the request body to protect",
             "      against security vulnerabilities."
           ],
-          "text": "      against security vulnerabilities."
+          "text": "   • Security: Always validate and sanitize data deserialized from the request body to protect\n      against security vulnerabilities."
         },
         {
           "type": "list_item",
           "page": 22,
           "lines": [
-            "   • Custom Input Formatters: For highly specialized scenarios or custom data formats, you can"
-          ],
-          "text": "   • Custom Input Formatters: For highly specialized scenarios or custom data formats, you can"
-        },
-        {
-          "type": "prose",
-          "page": 22,
-          "lines": [
+            "   • Custom Input Formatters: For highly specialized scenarios or custom data formats, you can",
             "      create your own input formatters by implementing the IInputFormatter interface."
           ],
-          "text": "      create your own input formatters by implementing the IInputFormatter interface."
+          "text": "   • Custom Input Formatters: For highly specialized scenarios or custom data formats, you can\n      create your own input formatters by implementing the IInputFormatter interface."
         },
         {
           "type": "heading",
@@ -8538,17 +7642,10 @@
           "type": "list_item",
           "page": 22,
           "lines": [
-            "   • Flexibility: Handle complex or custom data formats that the default model binder doesn't"
-          ],
-          "text": "   • Flexibility: Handle complex or custom data formats that the default model binder doesn't"
-        },
-        {
-          "type": "prose",
-          "page": 22,
-          "lines": [
+            "   • Flexibility: Handle complex or custom data formats that the default model binder doesn't",
             "      understand."
           ],
-          "text": "      understand."
+          "text": "   • Flexibility: Handle complex or custom data formats that the default model binder doesn't\n      understand."
         },
         {
           "type": "list_item",
@@ -8562,17 +7659,10 @@
           "type": "list_item",
           "page": 22,
           "lines": [
-            "   • Complete Control: Take full control over the binding process, from parsing the raw data to"
-          ],
-          "text": "   • Complete Control: Take full control over the binding process, from parsing the raw data to"
-        },
-        {
-          "type": "prose",
-          "page": 22,
-          "lines": [
+            "   • Complete Control: Take full control over the binding process, from parsing the raw data to",
             "      populating your model object."
           ],
-          "text": "      populating your model object."
+          "text": "   • Complete Control: Take full control over the binding process, from parsing the raw data to\n      populating your model object."
         },
         {
           "type": "heading",
@@ -8822,20 +7912,13 @@
           "type": "code",
           "page": 23,
           "lines": [
-            "}"
+            "}",
+            "The core of your custom logic resides in the BindModelAsync method, where you:"
           ],
-          "text": "}"
+          "text": "}\nThe core of your custom logic resides in the BindModelAsync method, where you:"
         },
         {
           "type": "prose",
-          "page": 23,
-          "lines": [
-            "The core of your custom logic resides in the BindModelAsync method, where you:"
-          ],
-          "text": "The core of your custom logic resides in the BindModelAsync method, where you:"
-        },
-        {
-          "type": "list_item",
           "page": 23,
           "lines": [
             "   1. Retrieve raw data from the bindingContext.ValueProvider."
@@ -8888,20 +7971,13 @@
             "   bindingContext.Result = ModelBindingResult.Success(person);",
             "   return Task.CompletedTask;",
             "  }",
-            "}"
+            "}",
+            "In this example, PersonModelBinder:"
           ],
-          "text": "// PersonModelBinder.cs\npublic class PersonModelBinder : IModelBinder\n{\n  public Task BindModelAsync(ModelBindingContext bindingContext)\n  {\n   Person person = new Person();\n   // ... (Logic to extract and populate properties from the ValueProvider) ...\n   bindingContext.Result = ModelBindingResult.Success(person);\n   return Task.CompletedTask;\n  }\n}"
+          "text": "// PersonModelBinder.cs\npublic class PersonModelBinder : IModelBinder\n{\n  public Task BindModelAsync(ModelBindingContext bindingContext)\n  {\n   Person person = new Person();\n   // ... (Logic to extract and populate properties from the ValueProvider) ...\n   bindingContext.Result = ModelBindingResult.Success(person);\n   return Task.CompletedTask;\n  }\n}\nIn this example, PersonModelBinder:"
         },
         {
           "type": "prose",
-          "page": 23,
-          "lines": [
-            "In this example, PersonModelBinder:"
-          ],
-          "text": "In this example, PersonModelBinder:"
-        },
-        {
-          "type": "list_item",
           "page": 23,
           "lines": [
             "   1. Creates a new Person object."
@@ -8912,17 +7988,10 @@
           "type": "list_item",
           "page": 23,
           "lines": [
-            "   2. Extracts values for different properties (e.g., PersonName, Email, Phone) from the"
-          ],
-          "text": "   2. Extracts values for different properties (e.g., PersonName, Email, Phone) from the"
-        },
-        {
-          "type": "prose",
-          "page": 23,
-          "lines": [
+            "   2. Extracts values for different properties (e.g., PersonName, Email, Phone) from the",
             "      ValueProvider (which can access form data, query string, route data, etc.)."
           ],
-          "text": "      ValueProvider (which can access form data, query string, route data, etc.)."
+          "text": "   2. Extracts values for different properties (e.g., PersonName, Email, Phone) from the\n      ValueProvider (which can access form data, query string, route data, etc.)."
         },
         {
           "type": "list_item",
@@ -9207,22 +8276,8 @@
             "public class PersonBinderProvider : IModelBinderProvider",
             "{",
             "  public IModelBinder? GetBinder(ModelBinderProviderContext context)",
-            "  {"
-          ],
-          "text": "public class PersonBinderProvider : IModelBinderProvider\n{\n  public IModelBinder? GetBinder(ModelBinderProviderContext context)\n  {"
-        },
-        {
-          "type": "prose",
-          "page": 24,
-          "lines": [
-            "   if (context.Metadata.ModelType == typeof(Person))"
-          ],
-          "text": "   if (context.Metadata.ModelType == typeof(Person))"
-        },
-        {
-          "type": "code",
-          "page": 24,
-          "lines": [
+            "  {",
+            "   if (context.Metadata.ModelType == typeof(Person))",
             "   {",
             "     return new BinderTypeModelBinder(typeof(PersonModelBinder));",
             "   }",
@@ -9230,7 +8285,7 @@
             "  }",
             "}"
           ],
-          "text": "   {\n     return new BinderTypeModelBinder(typeof(PersonModelBinder));\n   }\n   return null;\n  }\n}"
+          "text": "public class PersonBinderProvider : IModelBinderProvider\n{\n  public IModelBinder? GetBinder(ModelBinderProviderContext context)\n  {\n   if (context.Metadata.ModelType == typeof(Person))\n   {\n     return new BinderTypeModelBinder(typeof(PersonModelBinder));\n   }\n   return null;\n  }\n}"
         },
         {
           "type": "prose",
@@ -9509,14 +8564,7 @@
           "type": "code",
           "page": 25,
           "lines": [
-            "{"
-          ],
-          "text": "{"
-        },
-        {
-          "type": "prose",
-          "page": 25,
-          "lines": [
+            "{",
             "  \"FirstName\": \"John\",",
             "  \"LastName\": \"Doe\",",
             "  \"Email\": \"john.doe@example.com\",",
@@ -9524,17 +8572,10 @@
             "  \"Password\": \"password123\",",
             "  \"ConfirmPassword\": \"password123\",",
             "  \"Price\": 59.99,",
-            "  \"DateOfBirth\": \"2000-01-01\""
-          ],
-          "text": "  \"FirstName\": \"John\",\n  \"LastName\": \"Doe\",\n  \"Email\": \"john.doe@example.com\",\n  \"Phone\": \"1234567890\",\n  \"Password\": \"password123\",\n  \"ConfirmPassword\": \"password123\",\n  \"Price\": 59.99,\n  \"DateOfBirth\": \"2000-01-01\""
-        },
-        {
-          "type": "code",
-          "page": 25,
-          "lines": [
+            "  \"DateOfBirth\": \"2000-01-01\"",
             "}"
           ],
-          "text": "}"
+          "text": "{\n  \"FirstName\": \"John\",\n  \"LastName\": \"Doe\",\n  \"Email\": \"john.doe@example.com\",\n  \"Phone\": \"1234567890\",\n  \"Password\": \"password123\",\n  \"ConfirmPassword\": \"password123\",\n  \"Price\": 59.99,\n  \"DateOfBirth\": \"2000-01-01\"\n}"
         },
         {
           "type": "prose",
@@ -9548,81 +8589,46 @@
           "type": "list_item",
           "page": 25,
           "lines": [
-            "   • Complexity: Custom model binders can become complex, so use them judiciously when the"
-          ],
-          "text": "   • Complexity: Custom model binders can become complex, so use them judiciously when the"
-        },
-        {
-          "type": "prose",
-          "page": 25,
-          "lines": [
+            "   • Complexity: Custom model binders can become complex, so use them judiciously when the",
             "      default behavior is insufficient."
           ],
-          "text": "      default behavior is insufficient."
+          "text": "   • Complexity: Custom model binders can become complex, so use them judiciously when the\n      default behavior is insufficient."
         },
         {
           "type": "list_item",
           "page": 25,
           "lines": [
-            "   • Testability: Write unit tests for your custom model binders to ensure they function correctly"
-          ],
-          "text": "   • Testability: Write unit tests for your custom model binders to ensure they function correctly"
-        },
-        {
-          "type": "prose",
-          "page": 25,
-          "lines": [
+            "   • Testability: Write unit tests for your custom model binders to ensure they function correctly",
             "      in different scenarios."
           ],
-          "text": "      in different scenarios."
+          "text": "   • Testability: Write unit tests for your custom model binders to ensure they function correctly\n      in different scenarios."
         },
         {
           "type": "list_item",
           "page": 25,
           "lines": [
-            "   • Performance: Be mindful of performance when implementing complex parsing or validation"
-          ],
-          "text": "   • Performance: Be mindful of performance when implementing complex parsing or validation"
-        },
-        {
-          "type": "prose",
-          "page": 25,
-          "lines": [
+            "   • Performance: Be mindful of performance when implementing complex parsing or validation",
             "      logic in your binder."
           ],
-          "text": "      logic in your binder."
+          "text": "   • Performance: Be mindful of performance when implementing complex parsing or validation\n      logic in your binder."
         },
         {
           "type": "list_item",
           "page": 25,
           "lines": [
-            "   • Error Handling: Handle potential exceptions during data extraction and validation to provide"
-          ],
-          "text": "   • Error Handling: Handle potential exceptions during data extraction and validation to provide"
-        },
-        {
-          "type": "prose",
-          "page": 25,
-          "lines": [
+            "   • Error Handling: Handle potential exceptions during data extraction and validation to provide",
             "      informative error responses."
           ],
-          "text": "      informative error responses."
+          "text": "   • Error Handling: Handle potential exceptions during data extraction and validation to provide\n      informative error responses."
         },
         {
           "type": "list_item",
           "page": 25,
           "lines": [
-            "   • Alternative Approaches: In some cases, using a custom input formatter in conjunction with"
-          ],
-          "text": "   • Alternative Approaches: In some cases, using a custom input formatter in conjunction with"
-        },
-        {
-          "type": "prose",
-          "page": 25,
-          "lines": [
+            "   • Alternative Approaches: In some cases, using a custom input formatter in conjunction with",
             "      a simpler model binder might be a more suitable approach."
           ],
-          "text": "      a simpler model binder might be a more suitable approach."
+          "text": "   • Alternative Approaches: In some cases, using a custom input formatter in conjunction with\n      a simpler model binder might be a more suitable approach."
         }
       ],
       "char_count_raw": 1005,
@@ -9890,49 +8896,28 @@
           "type": "list_item",
           "page": 26,
           "lines": [
-            "   1. Collection Property in the Model: Your model class should have a property that's a"
-          ],
-          "text": "   1. Collection Property in the Model: Your model class should have a property that's a"
-        },
-        {
-          "type": "prose",
-          "page": 26,
-          "lines": [
+            "   1. Collection Property in the Model: Your model class should have a property that's a",
             "      collection type (e.g., List<T>, T[])."
           ],
-          "text": "      collection type (e.g., List<T>, T[])."
+          "text": "   1. Collection Property in the Model: Your model class should have a property that's a\n      collection type (e.g., List<T>, T[])."
         },
         {
           "type": "list_item",
           "page": 26,
           "lines": [
-            "   2. Naming Convention: The incoming request parameters should follow a specific naming"
-          ],
-          "text": "   2. Naming Convention: The incoming request parameters should follow a specific naming"
-        },
-        {
-          "type": "prose",
-          "page": 26,
-          "lines": [
+            "   2. Naming Convention: The incoming request parameters should follow a specific naming",
             "      convention to indicate which values belong to the collection."
           ],
-          "text": "      convention to indicate which values belong to the collection."
+          "text": "   2. Naming Convention: The incoming request parameters should follow a specific naming\n      convention to indicate which values belong to the collection."
         },
         {
           "type": "list_item",
           "page": 26,
           "lines": [
-            "   3. Model Binder Magic: The model binder automatically recognizes the naming convention"
-          ],
-          "text": "   3. Model Binder Magic: The model binder automatically recognizes the naming convention"
-        },
-        {
-          "type": "prose",
-          "page": 26,
-          "lines": [
+            "   3. Model Binder Magic: The model binder automatically recognizes the naming convention",
             "      and populates the collection property accordingly."
           ],
-          "text": "      and populates the collection property accordingly."
+          "text": "   3. Model Binder Magic: The model binder automatically recognizes the naming convention\n      and populates the collection property accordingly."
         },
         {
           "type": "heading",
@@ -9954,17 +8939,10 @@
           "type": "list_item",
           "page": 26,
           "lines": [
-            "   • Same Name: items, items, items, ... (Used for collections like ICollection<T>)"
-          ],
-          "text": "   • Same Name: items, items, items, ... (Used for collections like ICollection<T>)"
-        },
-        {
-          "type": "heading",
-          "page": 26,
-          "lines": [
+            "   • Same Name: items, items, items, ... (Used for collections like ICollection<T>)",
             "Code"
           ],
-          "text": "Code"
+          "text": "   • Same Name: items, items, items, ... (Used for collections like ICollection<T>)\nCode"
         },
         {
           "type": "code",
@@ -10232,14 +9210,7 @@
           "type": "code",
           "page": 27,
           "lines": [
-            "{"
-          ],
-          "text": "{"
-        },
-        {
-          "type": "prose",
-          "page": 27,
-          "lines": [
+            "{",
             "  \"PersonName\": \"Alice\",",
             "  \"Email\": \"alice@example.com\",",
             "  \"Phone\": \"1234567890\",",
@@ -10247,27 +9218,20 @@
             "  \"ConfirmPassword\": \"alicepassword\",",
             "  \"Price\": 59.99,",
             "  \"DateOfBirth\": \"1995-03-15\",",
-            "  \"Tags\": [\"music\", \"reading\", \"coding\"]"
+            "  \"Tags\": [\"music\", \"reading\", \"coding\"]",
+            "}",
+            "Response The response should look like:",
+            "Person object - Person name: Alice, Email: alice@example.com, Phone: 1234567890, Password:"
           ],
-          "text": "  \"PersonName\": \"Alice\",\n  \"Email\": \"alice@example.com\",\n  \"Phone\": \"1234567890\",\n  \"Password\": \"alicepassword\",\n  \"ConfirmPassword\": \"alicepassword\",\n  \"Price\": 59.99,\n  \"DateOfBirth\": \"1995-03-15\",\n  \"Tags\": [\"music\", \"reading\", \"coding\"]"
-        },
-        {
-          "type": "code",
-          "page": 27,
-          "lines": [
-            "}"
-          ],
-          "text": "}"
+          "text": "{\n  \"PersonName\": \"Alice\",\n  \"Email\": \"alice@example.com\",\n  \"Phone\": \"1234567890\",\n  \"Password\": \"alicepassword\",\n  \"ConfirmPassword\": \"alicepassword\",\n  \"Price\": 59.99,\n  \"DateOfBirth\": \"1995-03-15\",\n  \"Tags\": [\"music\", \"reading\", \"coding\"]\n}\nResponse The response should look like:\nPerson object - Person name: Alice, Email: alice@example.com, Phone: 1234567890, Password:"
         },
         {
           "type": "prose",
           "page": 27,
           "lines": [
-            "Response The response should look like:",
-            "Person object - Person name: Alice, Email: alice@example.com, Phone: 1234567890, Password:",
             "alicepassword, Confirm Password: alicepassword, Price: 59.99, Tags: music,reading,coding"
           ],
-          "text": "Response The response should look like:\nPerson object - Person name: Alice, Email: alice@example.com, Phone: 1234567890, Password:\nalicepassword, Confirm Password: alicepassword, Price: 59.99, Tags: music,reading,coding"
+          "text": "alicepassword, Confirm Password: alicepassword, Price: 59.99, Tags: music,reading,coding"
         },
         {
           "type": "heading",
@@ -10297,17 +9261,10 @@
           "type": "list_item",
           "page": 27,
           "lines": [
-            "   3. Model Binding: The model binder automatically recognizes the Tags array in the JSON data"
-          ],
-          "text": "   3. Model Binding: The model binder automatically recognizes the Tags array in the JSON data"
-        },
-        {
-          "type": "prose",
-          "page": 27,
-          "lines": [
+            "   3. Model Binding: The model binder automatically recognizes the Tags array in the JSON data",
             "      and populates the Person.Tags list with the corresponding values."
           ],
-          "text": "      and populates the Person.Tags list with the corresponding values."
+          "text": "   3. Model Binding: The model binder automatically recognizes the Tags array in the JSON data\n      and populates the Person.Tags list with the corresponding values."
         },
         {
           "type": "heading",
@@ -10321,33 +9278,19 @@
           "type": "list_item",
           "page": 27,
           "lines": [
-            "   • Naming: Follow the correct naming convention (indexed or same name) for your collection"
-          ],
-          "text": "   • Naming: Follow the correct naming convention (indexed or same name) for your collection"
-        },
-        {
-          "type": "prose",
-          "page": 27,
-          "lines": [
+            "   • Naming: Follow the correct naming convention (indexed or same name) for your collection",
             "      parameters in the request data."
           ],
-          "text": "      parameters in the request data."
+          "text": "   • Naming: Follow the correct naming convention (indexed or same name) for your collection\n      parameters in the request data."
         },
         {
           "type": "list_item",
           "page": 27,
           "lines": [
-            "   • Flexibility: You can bind to a variety of collection types, including lists, arrays, and custom"
-          ],
-          "text": "   • Flexibility: You can bind to a variety of collection types, including lists, arrays, and custom"
-        },
-        {
-          "type": "prose",
-          "page": 27,
-          "lines": [
+            "   • Flexibility: You can bind to a variety of collection types, including lists, arrays, and custom",
             "      collections that implement ICollection<T>."
           ],
-          "text": "      collections that implement ICollection<T>."
+          "text": "   • Flexibility: You can bind to a variety of collection types, including lists, arrays, and custom\n      collections that implement ICollection<T>."
         }
       ],
       "char_count_raw": 1193,
@@ -10588,33 +9531,19 @@
           "type": "list_item",
           "page": 28,
           "lines": [
-            "   • Validation: Apply validation attributes to your collection properties (e.g., [Required],"
-          ],
-          "text": "   • Validation: Apply validation attributes to your collection properties (e.g., [Required],"
-        },
-        {
-          "type": "prose",
-          "page": 28,
-          "lines": [
+            "   • Validation: Apply validation attributes to your collection properties (e.g., [Required],",
             "      [MaxLength]) to ensure data integrity."
           ],
-          "text": "      [MaxLength]) to ensure data integrity."
+          "text": "   • Validation: Apply validation attributes to your collection properties (e.g., [Required],\n      [MaxLength]) to ensure data integrity."
         },
         {
           "type": "list_item",
           "page": 28,
           "lines": [
-            "   • Custom Model Binders: If you have complex collection binding scenarios, you can create"
-          ],
-          "text": "   • Custom Model Binders: If you have complex collection binding scenarios, you can create"
-        },
-        {
-          "type": "prose",
-          "page": 28,
-          "lines": [
+            "   • Custom Model Binders: If you have complex collection binding scenarios, you can create",
             "      custom model binders to handle them."
           ],
-          "text": "      custom model binders to handle them."
+          "text": "   • Custom Model Binders: If you have complex collection binding scenarios, you can create\n      custom model binders to handle them."
         },
         {
           "type": "code",
@@ -10640,67 +9569,46 @@
           "type": "list_item",
           "page": 28,
           "lines": [
-            "   1. Header Identification: When a request arrives, ASP.NET Core's model binding system"
-          ],
-          "text": "   1. Header Identification: When a request arrives, ASP.NET Core's model binding system"
-        },
-        {
-          "type": "prose",
-          "page": 28,
-          "lines": [
+            "   1. Header Identification: When a request arrives, ASP.NET Core's model binding system",
             "      identifies action parameters marked with the [FromHeader] attribute."
           ],
-          "text": "      identifies action parameters marked with the [FromHeader] attribute."
+          "text": "   1. Header Identification: When a request arrives, ASP.NET Core's model binding system\n      identifies action parameters marked with the [FromHeader] attribute."
         },
         {
           "type": "list_item",
           "page": 28,
           "lines": [
-            "   2. Header Extraction: It then examines the request headers to locate the headers that match"
-          ],
-          "text": "   2. Header Extraction: It then examines the request headers to locate the headers that match"
-        },
-        {
-          "type": "prose",
-          "page": 28,
-          "lines": [
+            "   2. Header Extraction: It then examines the request headers to locate the headers that match",
             "      the names specified in the [FromHeader] attribute."
           ],
-          "text": "      the names specified in the [FromHeader] attribute."
+          "text": "   2. Header Extraction: It then examines the request headers to locate the headers that match\n      the names specified in the [FromHeader] attribute."
         },
         {
           "type": "list_item",
           "page": 28,
           "lines": [
-            "   3. Value Assignment: If the matching header is found, its value is assigned to the"
+            "   3. Value Assignment: If the matching header is found, its value is assigned to the",
+            "      corresponding action parameter. If the header is not present or its value cannot be",
+            "      converted to the parameter's type, the model state will be marked as invalid."
           ],
-          "text": "   3. Value Assignment: If the matching header is found, its value is assigned to the"
+          "text": "   3. Value Assignment: If the matching header is found, its value is assigned to the\n      corresponding action parameter. If the header is not present or its value cannot be\n      converted to the parameter's type, the model state will be marked as invalid."
         },
         {
           "type": "prose",
           "page": 28,
           "lines": [
-            "      corresponding action parameter. If the header is not present or its value cannot be",
-            "      converted to the parameter's type, the model state will be marked as invalid.",
             "Why Use [FromHeader]?"
           ],
-          "text": "      corresponding action parameter. If the header is not present or its value cannot be\n      converted to the parameter's type, the model state will be marked as invalid.\nWhy Use [FromHeader]?"
+          "text": "Why Use [FromHeader]?"
         },
         {
           "type": "list_item",
           "page": 28,
           "lines": [
-            "   • Access to Metadata: HTTP headers contain valuable information about the client, request,"
-          ],
-          "text": "   • Access to Metadata: HTTP headers contain valuable information about the client, request,"
-        },
-        {
-          "type": "prose",
-          "page": 28,
-          "lines": [
+            "   • Access to Metadata: HTTP headers contain valuable information about the client, request,",
             "      and the data being transmitted."
           ],
-          "text": "      and the data being transmitted."
+          "text": "   • Access to Metadata: HTTP headers contain valuable information about the client, request,\n      and the data being transmitted."
         },
         {
           "type": "list_item",
@@ -10714,33 +9622,19 @@
           "type": "list_item",
           "page": 28,
           "lines": [
-            "   • Security: Headers are often used for transmitting authentication tokens and other securityrelated"
-          ],
-          "text": "   • Security: Headers are often used for transmitting authentication tokens and other securityrelated"
-        },
-        {
-          "type": "prose",
-          "page": 28,
-          "lines": [
+            "   • Security: Headers are often used for transmitting authentication tokens and other securityrelated",
             "information."
           ],
-          "text": "information."
+          "text": "   • Security: Headers are often used for transmitting authentication tokens and other securityrelated\ninformation."
         },
         {
           "type": "list_item",
           "page": 28,
           "lines": [
-            "   • Content Negotiation: Headers like Accept are used to determine the preferred format for"
-          ],
-          "text": "   • Content Negotiation: Headers like Accept are used to determine the preferred format for"
-        },
-        {
-          "type": "prose",
-          "page": 28,
-          "lines": [
+            "   • Content Negotiation: Headers like Accept are used to determine the preferred format for",
             "      the response (e.g., JSON, XML)."
           ],
-          "text": "      the response (e.g., JSON, XML)."
+          "text": "   • Content Negotiation: Headers like Accept are used to determine the preferred format for\n      the response (e.g., JSON, XML)."
         },
         {
           "type": "heading",
@@ -11050,34 +9944,20 @@
           "type": "list_item",
           "page": 29,
           "lines": [
-            "   2. Header Extraction: When a request is made to the /register endpoint, the model binder will"
-          ],
-          "text": "   2. Header Extraction: When a request is made to the /register endpoint, the model binder will"
-        },
-        {
-          "type": "prose",
-          "page": 29,
-          "lines": [
+            "   2. Header Extraction: When a request is made to the /register endpoint, the model binder will",
             "      look for the User-Agent header in the request and assign its value to the UserAgent",
             "      parameter."
           ],
-          "text": "      look for the User-Agent header in the request and assign its value to the UserAgent\n      parameter."
+          "text": "   2. Header Extraction: When a request is made to the /register endpoint, the model binder will\n      look for the User-Agent header in the request and assign its value to the UserAgent\n      parameter."
         },
         {
           "type": "list_item",
           "page": 29,
           "lines": [
-            "   3. Response: The Content result now includes both the person's information (from the request"
-          ],
-          "text": "   3. Response: The Content result now includes both the person's information (from the request"
-        },
-        {
-          "type": "prose",
-          "page": 29,
-          "lines": [
+            "   3. Response: The Content result now includes both the person's information (from the request",
             "      body) and the value of the User-Agent header in the response."
           ],
-          "text": "      body) and the value of the User-Agent header in the response."
+          "text": "   3. Response: The Content result now includes both the person's information (from the request\n      body) and the value of the User-Agent header in the response."
         },
         {
           "type": "heading",
@@ -11111,65 +9991,37 @@
           "type": "list_item",
           "page": 29,
           "lines": [
-            "   • Case-Insensitivity: Header names are case-insensitive, so you can use [FromHeader(Name ="
-          ],
-          "text": "   • Case-Insensitivity: Header names are case-insensitive, so you can use [FromHeader(Name ="
-        },
-        {
-          "type": "prose",
-          "page": 29,
-          "lines": [
+            "   • Case-Insensitivity: Header names are case-insensitive, so you can use [FromHeader(Name =",
             "      \"user-agent\")] or [FromHeader(Name = \"USER-AGENT\")]."
           ],
-          "text": "      \"user-agent\")] or [FromHeader(Name = \"USER-AGENT\")]."
+          "text": "   • Case-Insensitivity: Header names are case-insensitive, so you can use [FromHeader(Name =\n      \"user-agent\")] or [FromHeader(Name = \"USER-AGENT\")]."
         },
         {
           "type": "list_item",
           "page": 29,
           "lines": [
-            "   • Multiple Headers: You can use [FromHeader] on multiple parameters to bind values from"
-          ],
-          "text": "   • Multiple Headers: You can use [FromHeader] on multiple parameters to bind values from"
-        },
-        {
-          "type": "prose",
-          "page": 29,
-          "lines": [
+            "   • Multiple Headers: You can use [FromHeader] on multiple parameters to bind values from",
             "      different headers."
           ],
-          "text": "      different headers."
+          "text": "   • Multiple Headers: You can use [FromHeader] on multiple parameters to bind values from\n      different headers."
         },
         {
           "type": "list_item",
           "page": 29,
           "lines": [
-            "   • Default Values: If a header is not present in the request, you can specify a default value for"
-          ],
-          "text": "   • Default Values: If a header is not present in the request, you can specify a default value for"
-        },
-        {
-          "type": "prose",
-          "page": 29,
-          "lines": [
+            "   • Default Values: If a header is not present in the request, you can specify a default value for",
             "      the parameter using the ? operator (e.g., string? UserAgent)."
           ],
-          "text": "      the parameter using the ? operator (e.g., string? UserAgent)."
+          "text": "   • Default Values: If a header is not present in the request, you can specify a default value for\n      the parameter using the ? operator (e.g., string? UserAgent)."
         },
         {
           "type": "list_item",
           "page": 29,
           "lines": [
-            "   • Alternative: If you need to access multiple headers or have more complex header parsing"
-          ],
-          "text": "   • Alternative: If you need to access multiple headers or have more complex header parsing"
-        },
-        {
-          "type": "prose",
-          "page": 29,
-          "lines": [
+            "   • Alternative: If you need to access multiple headers or have more complex header parsing",
             "      logic, consider using Request.Headers directly in your action method."
           ],
-          "text": "      logic, consider using Request.Headers directly in your action method."
+          "text": "   • Alternative: If you need to access multiple headers or have more complex header parsing\n      logic, consider using Request.Headers directly in your action method."
         }
       ],
       "char_count_raw": 1787,
@@ -11431,7 +10283,7 @@
           "text": "Key Points to Remember"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 30,
           "lines": [
             "1. Model Binding: Bridging HTTP and C#"
@@ -11442,33 +10294,19 @@
           "type": "list_item",
           "page": 30,
           "lines": [
-            "   • Purpose: Automatically maps data from HTTP requests (form data, route values, query"
-          ],
-          "text": "   • Purpose: Automatically maps data from HTTP requests (form data, route values, query"
-        },
-        {
-          "type": "prose",
-          "page": 30,
-          "lines": [
+            "   • Purpose: Automatically maps data from HTTP requests (form data, route values, query",
             "      strings, headers, body) to action method parameters or model properties."
           ],
-          "text": "      strings, headers, body) to action method parameters or model properties."
+          "text": "   • Purpose: Automatically maps data from HTTP requests (form data, route values, query\n      strings, headers, body) to action method parameters or model properties."
         },
         {
           "type": "list_item",
           "page": 30,
           "lines": [
-            "   • Benefits: Reduces boilerplate code, provides strong typing, and simplifies data handling in"
-          ],
-          "text": "   • Benefits: Reduces boilerplate code, provides strong typing, and simplifies data handling in"
-        },
-        {
-          "type": "prose",
-          "page": 30,
-          "lines": [
+            "   • Benefits: Reduces boilerplate code, provides strong typing, and simplifies data handling in",
             "      actions."
           ],
-          "text": "      actions."
+          "text": "   • Benefits: Reduces boilerplate code, provides strong typing, and simplifies data handling in\n      actions."
         },
         {
           "type": "list_item",
@@ -11498,36 +10336,22 @@
           "type": "list_item",
           "page": 30,
           "lines": [
-            "        3. Model Binder Selection: Chooses the appropriate model binder based on the"
-          ],
-          "text": "        3. Model Binder Selection: Chooses the appropriate model binder based on the"
-        },
-        {
-          "type": "prose",
-          "page": 30,
-          "lines": [
+            "        3. Model Binder Selection: Chooses the appropriate model binder based on the",
             "           parameter type and attributes."
           ],
-          "text": "           parameter type and attributes."
+          "text": "        3. Model Binder Selection: Chooses the appropriate model binder based on the\n           parameter type and attributes."
         },
         {
           "type": "list_item",
           "page": 30,
           "lines": [
-            "        4. Property Mapping: Maps values from the value provider to model properties based"
-          ],
-          "text": "        4. Property Mapping: Maps values from the value provider to model properties based"
-        },
-        {
-          "type": "prose",
-          "page": 30,
-          "lines": [
+            "        4. Property Mapping: Maps values from the value provider to model properties based",
             "           on name matching and attributes."
           ],
-          "text": "           on name matching and attributes."
+          "text": "        4. Property Mapping: Maps values from the value provider to model properties based\n           on name matching and attributes."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 30,
           "lines": [
             "2. Model Validation: Ensuring Data Integrity"
@@ -11538,17 +10362,10 @@
           "type": "list_item",
           "page": 30,
           "lines": [
-            "   • Purpose: Ensures that data submitted to your application meets predefined criteria before"
-          ],
-          "text": "   • Purpose: Ensures that data submitted to your application meets predefined criteria before"
-        },
-        {
-          "type": "prose",
-          "page": 30,
-          "lines": [
+            "   • Purpose: Ensures that data submitted to your application meets predefined criteria before",
             "      processing."
           ],
-          "text": "      processing."
+          "text": "   • Purpose: Ensures that data submitted to your application meets predefined criteria before\n      processing."
         },
         {
           "type": "list_item",
@@ -11570,49 +10387,28 @@
           "type": "list_item",
           "page": 30,
           "lines": [
-            "        o Data Annotations: Use attributes like [Required], [StringLength], [Range], etc. (from"
-          ],
-          "text": "        o Data Annotations: Use attributes like [Required], [StringLength], [Range], etc. (from"
-        },
-        {
-          "type": "prose",
-          "page": 30,
-          "lines": [
+            "        o Data Annotations: Use attributes like [Required], [StringLength], [Range], etc. (from",
             "           System.ComponentModel.DataAnnotations) to decorate model properties."
           ],
-          "text": "           System.ComponentModel.DataAnnotations) to decorate model properties."
+          "text": "        o Data Annotations: Use attributes like [Required], [StringLength], [Range], etc. (from\n           System.ComponentModel.DataAnnotations) to decorate model properties."
         },
         {
           "type": "list_item",
           "page": 30,
           "lines": [
-            "        o IValidatableObject: Implement this interface to perform custom model-level"
-          ],
-          "text": "        o IValidatableObject: Implement this interface to perform custom model-level"
-        },
-        {
-          "type": "prose",
-          "page": 30,
-          "lines": [
+            "        o IValidatableObject: Implement this interface to perform custom model-level",
             "           validation logic."
           ],
-          "text": "           validation logic."
+          "text": "        o IValidatableObject: Implement this interface to perform custom model-level\n           validation logic."
         },
         {
           "type": "list_item",
           "page": 30,
           "lines": [
-            "        o Custom Validation Attributes: Create your own attributes inheriting from"
-          ],
-          "text": "        o Custom Validation Attributes: Create your own attributes inheriting from"
-        },
-        {
-          "type": "prose",
-          "page": 30,
-          "lines": [
+            "        o Custom Validation Attributes: Create your own attributes inheriting from",
             "           ValidationAttribute for more complex rules."
           ],
-          "text": "           ValidationAttribute for more complex rules."
+          "text": "        o Custom Validation Attributes: Create your own attributes inheriting from\n           ValidationAttribute for more complex rules."
         },
         {
           "type": "list_item",
@@ -11626,33 +10422,19 @@
           "type": "list_item",
           "page": 30,
           "lines": [
-            "   • Centralized Validation: The ModelState object tracks the validation state of your model"
-          ],
-          "text": "   • Centralized Validation: The ModelState object tracks the validation state of your model"
-        },
-        {
-          "type": "prose",
-          "page": 30,
-          "lines": [
+            "   • Centralized Validation: The ModelState object tracks the validation state of your model",
             "      after binding."
           ],
-          "text": "      after binding."
+          "text": "   • Centralized Validation: The ModelState object tracks the validation state of your model\n      after binding."
         },
         {
           "type": "list_item",
           "page": 30,
           "lines": [
-            "   • ModelState.IsValid: A boolean property indicating whether the model is valid or contains"
-          ],
-          "text": "   • ModelState.IsValid: A boolean property indicating whether the model is valid or contains"
-        },
-        {
-          "type": "prose",
-          "page": 30,
-          "lines": [
+            "   • ModelState.IsValid: A boolean property indicating whether the model is valid or contains",
             "      errors."
           ],
-          "text": "      errors."
+          "text": "   • ModelState.IsValid: A boolean property indicating whether the model is valid or contains\n      errors."
         },
         {
           "type": "list_item",
@@ -11858,7 +10640,7 @@
       ],
       "blocks": [
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 31,
           "lines": [
             "4. Attributes: Fine-Tuning Model Binding and Validation"
@@ -11914,7 +10696,7 @@
           "text": "   • [BindNever]: Excludes specific properties from binding (prevents overposting)."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 31,
           "lines": [
             "5. Custom Model Binders"
@@ -11925,17 +10707,10 @@
           "type": "list_item",
           "page": 31,
           "lines": [
-            "   • Purpose: Create your own logic to extract and map data to models when the default"
-          ],
-          "text": "   • Purpose: Create your own logic to extract and map data to models when the default"
-        },
-        {
-          "type": "prose",
-          "page": 31,
-          "lines": [
+            "   • Purpose: Create your own logic to extract and map data to models when the default",
             "      behavior is insufficient."
           ],
-          "text": "      behavior is insufficient."
+          "text": "   • Purpose: Create your own logic to extract and map data to models when the default\n      behavior is insufficient."
         },
         {
           "type": "list_item",
@@ -11949,17 +10724,10 @@
           "type": "list_item",
           "page": 31,
           "lines": [
-            "   • ModelBindingContext: This context object provides access to the value providers, model"
-          ],
-          "text": "   • ModelBindingContext: This context object provides access to the value providers, model"
-        },
-        {
-          "type": "prose",
-          "page": 31,
-          "lines": [
+            "   • ModelBindingContext: This context object provides access to the value providers, model",
             "      metadata, and other relevant information."
           ],
-          "text": "      metadata, and other relevant information."
+          "text": "   • ModelBindingContext: This context object provides access to the value providers, model\n      metadata, and other relevant information."
         },
         {
           "type": "heading",
@@ -11973,65 +10741,37 @@
           "type": "list_item",
           "page": 31,
           "lines": [
-            "   • Default Model Binder: Understand the default model binding behavior and when you need"
-          ],
-          "text": "   • Default Model Binder: Understand the default model binding behavior and when you need"
-        },
-        {
-          "type": "prose",
-          "page": 31,
-          "lines": [
+            "   • Default Model Binder: Understand the default model binding behavior and when you need",
             "      customization."
           ],
-          "text": "      customization."
+          "text": "   • Default Model Binder: Understand the default model binding behavior and when you need\n      customization."
         },
         {
           "type": "list_item",
           "page": 31,
           "lines": [
-            "   • Input Formatters: Know how input formatters work to deserialize request bodies in different"
-          ],
-          "text": "   • Input Formatters: Know how input formatters work to deserialize request bodies in different"
-        },
-        {
-          "type": "prose",
-          "page": 31,
-          "lines": [
+            "   • Input Formatters: Know how input formatters work to deserialize request bodies in different",
             "      formats (JSON, XML)."
           ],
-          "text": "      formats (JSON, XML)."
+          "text": "   • Input Formatters: Know how input formatters work to deserialize request bodies in different\n      formats (JSON, XML)."
         },
         {
           "type": "list_item",
           "page": 31,
           "lines": [
-            "   • Collection Binding: Be familiar with how to bind collections (lists, arrays) using proper"
-          ],
-          "text": "   • Collection Binding: Be familiar with how to bind collections (lists, arrays) using proper"
-        },
-        {
-          "type": "prose",
-          "page": 31,
-          "lines": [
+            "   • Collection Binding: Be familiar with how to bind collections (lists, arrays) using proper",
             "      naming conventions."
           ],
-          "text": "      naming conventions."
+          "text": "   • Collection Binding: Be familiar with how to bind collections (lists, arrays) using proper\n      naming conventions."
         },
         {
           "type": "list_item",
           "page": 31,
           "lines": [
-            "   • Error Handling: Always check ModelState.IsValid in your actions and handle invalid model"
-          ],
-          "text": "   • Error Handling: Always check ModelState.IsValid in your actions and handle invalid model"
-        },
-        {
-          "type": "prose",
-          "page": 31,
-          "lines": [
+            "   • Error Handling: Always check ModelState.IsValid in your actions and handle invalid model",
             "      states gracefully."
           ],
-          "text": "      states gracefully."
+          "text": "   • Error Handling: Always check ModelState.IsValid in your actions and handle invalid model\n      states gracefully."
         },
         {
           "type": "list_item",

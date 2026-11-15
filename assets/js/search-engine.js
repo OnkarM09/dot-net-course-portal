@@ -23,7 +23,9 @@
       <div class="search-modal-backdrop" id="searchModalBackdrop" role="dialog" aria-modal="true" aria-label="Search ASP.NET Core Documentation" tabindex="-1">
         <div class="search-modal" role="document">
           <div class="search-modal-header">
-            <span class="search-input-icon" aria-hidden="true">🔍</span>
+            <span class="search-input-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </span>
             <input type="text" class="search-modal-input" id="searchModalInput" placeholder="Search topics, syntax, concepts (e.g. 'Partial Views', 'Dependency Injection', 'JWT')..." autocomplete="off" spellcheck="false" aria-label="Search curriculum query" />
             <button class="search-close-btn" id="searchCloseBtn" aria-label="Close search dialog" type="button">ESC</button>
           </div>
@@ -307,6 +309,9 @@
   });
 
   document.addEventListener('DOMContentLoaded', () => {
+    // Ensure Search Modal is injected into the DOM on initial load
+    injectSearchModal();
+
     // Attach to all search trigger buttons
     document.querySelectorAll('.search-trigger-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {

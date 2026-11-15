@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Section 15: xUnit — ASP.NET Core Masterclass</title>
+  <title>Section 15: xUnit &mdash; ASP.NET Core Masterclass</title>
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
   <link rel="alternate icon" href="../favicon.ico">
   <link rel="stylesheet" href="../assets/css/docs.css">
@@ -16,7 +16,9 @@
   <!-- Top Navigation Header -->
   <header class="top-header" role="banner">
     <div class="header-left">
-      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">☰</button>
+      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
       <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
         <span class="sidebar-toggle-text">« Collapse</span>
@@ -41,7 +43,9 @@
       </a>
 
       <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
-        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
         <span class="search-text">Search topics, syntax, concepts...</span>
         <kbd class="kbd-shortcut">Ctrl+K</kbd>
       </button>
@@ -367,15 +371,6 @@
         <span>» Expand Sidebar</span>
       </button>
 
-      <!-- Breadcrumbs -->
-      <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
-        <a href="../index.html">Course Index</a>
-        <span class="crumb-sep" aria-hidden="true">/</span>
-        <span>Module 5</span>
-        <span class="crumb-sep" aria-hidden="true">/</span>
-        <span style="color: var(--text-main); font-weight: 600;">Section 15</span>
-      </nav>
-
       <!-- Section Banner Header -->
       <header class="section-banner">
         <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
@@ -408,77 +403,55 @@
 <p>Unit testing is a software development practice where you write code to test individual units (usually
 classes or methods) in isolation from the rest of the application. This helps you:</p>
 <ul>
-  <li>• Catch Bugs Early: Identify and fix issues early in the development cycle.</li>
-  <li>• Refactor with Confidence: Make changes to your code knowing that your tests will alert you</li>
-</ul>
-<p>if you break something.</p>
-<ul>
-  <li>• Improve Design: Guide you towards writing modular and loosely coupled code.</li>
-  <li>• Document Behavior: Tests serve as living documentation, illustrating how your code is</li>
-</ul>
-<p>intended to be used.
+  <li>Catch Bugs Early: Identify and fix issues early in the development cycle.</li>
+  <li>Refactor with Confidence: Make changes to your code knowing that your tests will alert you
+      if you break something.</li>
+  <li>Improve Design: Guide you towards writing modular and loosely coupled code.</li>
+  <li>Document Behavior: Tests serve as living documentation, illustrating how your code is
+      intended to be used.
 xUnit
 xUnit is a popular open-source unit testing framework for .NET. It provides attributes and assertions
-to write and organize your tests easily. Some reasons to choose xUnit:</p>
-<ul>
-  <li>• Extensibility: It&#39;s highly extensible, allowing you to create custom attributes and assertions.</li>
-  <li>• Community: It has a large and active community, offering support and resources.</li>
-  <li>• Integration: It seamlessly integrates with popular tools like Visual Studio, ReSharper, and</li>
-</ul>
-<p>build servers.</p>
-<ul>
-  <li>• Performance: xUnit is known for its speed and efficiency.</li>
+to write and organize your tests easily. Some reasons to choose xUnit:</li>
+  <li>Extensibility: It&#39;s highly extensible, allowing you to create custom attributes and assertions.</li>
+  <li>Community: It has a large and active community, offering support and resources.</li>
+  <li>Integration: It seamlessly integrates with popular tools like Visual Studio, ReSharper, and
+      build servers.</li>
+  <li>Performance: xUnit is known for its speed and efficiency.</li>
 </ul>
 
 <h2 id="best-practices-for-unit-testing">Best Practices for Unit Testing</h2>
 <ul>
-  <li>1. Isolate Units: Test each unit in isolation from its dependencies. Use mocking frameworks</li>
-</ul>
-<p>(Moq, NSubstitute) to create mock objects for dependencies.</p>
-<ul>
+  <li>1. Isolate Units: Test each unit in isolation from its dependencies. Use mocking frameworks
+      (Moq, NSubstitute) to create mock objects for dependencies.</li>
   <li>2. Arrange-Act-Assert (AAA): Structure your tests using the AAA pattern:</li>
-  <li>o Arrange: Set up the necessary preconditions and inputs for your test.</li>
-  <li>o Act: Execute the code under test.</li>
-  <li>o Assert: Verify that the results match your expectations.</li>
-  <li>3. One Assert Per Test: Each test should ideally focus on verifying a single behavior or</li>
-</ul>
-<p>outcome.</p>
-<ul>
+  <li>Arrange: Set up the necessary preconditions and inputs for your test.</li>
+  <li>Act: Execute the code under test.</li>
+  <li>Assert: Verify that the results match your expectations.</li>
+  <li>3. One Assert Per Test: Each test should ideally focus on verifying a single behavior or
+      outcome.</li>
   <li>4. Clear Naming: Use descriptive names for your test classes and methods.</li>
-  <li>5. Test Doubles (Mocks, Stubs, Fakes): Utilize test doubles to control and isolate the behavior</li>
-</ul>
-<p>of dependencies.</p>
-<ul>
+  <li>5. Test Doubles (Mocks, Stubs, Fakes): Utilize test doubles to control and isolate the behavior
+      of dependencies.</li>
   <li>6. Test Edge Cases: Don&#39;t forget to test boundary conditions and unusual inputs.</li>
-  <li>7. Don&#39;t Test External Systems: Avoid testing code that interacts with databases, file systems,</li>
+  <li>7. Don&#39;t Test External Systems: Avoid testing code that interacts with databases, file systems,
+      or network services directly in your unit tests. Mock these dependencies instead.</li>
+  <li>8. Keep Tests Fast: Unit tests should run quickly (milliseconds). If your tests are slow, they&#39;ll
+      become a bottleneck in your development process.</li>
 </ul>
-<p>or network services directly in your unit tests. Mock these dependencies instead.</p>
-<ul>
-  <li>8. Keep Tests Fast: Unit tests should run quickly (milliseconds). If your tests are slow, they&#39;ll</li>
-</ul>
-<p>become a bottleneck in your development process.</p>
 
 <h2 id="things-to-avoid-in-unit-testing">Things to Avoid in Unit Testing</h2>
 <ul>
-  <li>• Testing Implementation Details: Focus on testing the behavior of your code, not how it&#39;s</li>
+  <li>Testing Implementation Details: Focus on testing the behavior of your code, not how it&#39;s
+      implemented internally.</li>
+  <li>Slow Tests: Unit tests should be fast. Avoid unnecessary setup or teardown that slows down
+      your test suite.</li>
+  <li>Interdependent Tests: Tests should be independent of each other. The order in which they
+      run should not matter.</li>
+  <li>Logic in Tests: Keep the logic within your tests as simple as possible. Complex tests are hard
+      to understand and maintain.</li>
+  <li>Testing Trivial Things: Don&#39;t waste time writing tests for trivial code that&#39;s unlikely to break
+      (e.g., simple property getters/setters).</li>
 </ul>
-<p>implemented internally.</p>
-<ul>
-  <li>• Slow Tests: Unit tests should be fast. Avoid unnecessary setup or teardown that slows down</li>
-</ul>
-<p>your test suite.</p>
-<ul>
-  <li>• Interdependent Tests: Tests should be independent of each other. The order in which they</li>
-</ul>
-<p>run should not matter.</p>
-<ul>
-  <li>• Logic in Tests: Keep the logic within your tests as simple as possible. Complex tests are hard</li>
-</ul>
-<p>to understand and maintain.</p>
-<ul>
-  <li>• Testing Trivial Things: Don&#39;t waste time writing tests for trivial code that&#39;s unlikely to break</li>
-</ul>
-<p>(e.g., simple property getters/setters).</p>
 
 <h2 id="example-test-class-conceptual">Example Test Class (Conceptual)</h2>
 
@@ -492,25 +465,15 @@ to write and organize your tests easily. Some reasons to choose xUnit:</p>
       </div>
       <pre><code class="language-csharp">public class CalculatorTests
 {
-}</code></pre>
-    </div>
-  <p>[Fact] // Test attribute</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">public void Add_ShouldReturnCorrectSum()
+  [Fact] // Test attribute
+  public void Add_ShouldReturnCorrectSum()
   {
    // Arrange
    var calculator = new Calculator();
    // Act
    var result = calculator.Add(2, 3);
    // Assert
+}
 }</code></pre>
     </div>
   <p>Assert.Equal(5, result); // xUnit assertion</p>
@@ -527,13 +490,11 @@ to write and organize your tests easily. Some reasons to choose xUnit:</p>
     </div>
   <p>xUnit Attributes</p>
 <ul>
-  <li>• [Fact]: Marks a method as a test that should always pass.</li>
-  <li>• [Theory]: Marks a method as a test that should be run with multiple data sets (using</li>
-</ul>
-<p>[InlineData], etc.).
-xUnit Assertions</p>
-<ul>
-  <li>• Assert.Equal, Assert.NotEqual, Assert.True, Assert.False, Assert.Throws, etc.</li>
+  <li>[Fact]: Marks a method as a test that should always pass.</li>
+  <li>[Theory]: Marks a method as a test that should be run with multiple data sets (using
+      [InlineData], etc.).
+xUnit Assertions</li>
+  <li>Assert.Equal, Assert.NotEqual, Assert.True, Assert.False, Assert.Throws, etc.</li>
 </ul>
 
 <h2 id="unit-testing">Unit Testing</h2>
@@ -541,21 +502,19 @@ xUnit Assertions</p>
 maintainability, and focuses on the essential elements of a test:</p>
 <ul>
   <li>1. Arrange:</li>
-  <li>o Set up the necessary preconditions for your test.</li>
-  <li>o Create instances of the class or objects you want to test.</li>
-  <li>o Initialize variables, mock dependencies (if any), and set up any required data.</li>
+  <li>Set up the necessary preconditions for your test.</li>
+  <li>Create instances of the class or objects you want to test.</li>
+  <li>Initialize variables, mock dependencies (if any), and set up any required data.</li>
   <li>2. Act:</li>
-  <li>o Execute the code under test (the method or function you want to verify).</li>
-  <li>o This is where you perform the action you want to test, like calling a method with</li>
-</ul>
-<p>specific input values.</p>
-<ul>
+  <li>Execute the code under test (the method or function you want to verify).</li>
+  <li>This is where you perform the action you want to test, like calling a method with
+           specific input values.</li>
   <li>3. Assert:</li>
-  <li>o Verify the outcome or behavior of the code under test.</li>
-  <li>o Use assertions to compare the actual results against your expected results.</li>
-  <li>o xUnit provides a rich set of assertions (e.g., Assert.Equal, Assert.True, Assert.Throws)</li>
+  <li>Verify the outcome or behavior of the code under test.</li>
+  <li>Use assertions to compare the actual results against your expected results.</li>
+  <li>xUnit provides a rich set of assertions (e.g., Assert.Equal, Assert.True, Assert.Throws)
+           to check various conditions.</li>
 </ul>
-<p>to check various conditions.</p>
 
 <h2 id="code-example">Code Example</h2>
 
@@ -572,214 +531,140 @@ namespace CRUDTests
 {
   public class UnitTest1
   {
-}
-}</code></pre>
-    </div>
-  <p>[Fact] // Test attribute</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">public void Test1()
+   [Fact] // Test attribute
+   public void Test1()
    {
      // Arrange
-}</code></pre>
-    </div>
-  <p>MyMath mm = new MyMath(); // Create an instance of MyMath</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">int input1 = 10, input2 = 5;
+     MyMath mm = new MyMath(); // Create an instance of MyMath
+     int input1 = 10, input2 = 5;
      int expected = 15; // Define the expected result
      // Act
      int actual = mm.Add(input1, input2); // Call the method under test
-     // Assert</code></pre>
-    </div>
-  <p>Assert.Equal(expected, actual); // Verify the result</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp"></code></pre>
+     // Assert
+     Assert.Equal(expected, actual); // Verify the result
+   }
+  }
+}</code></pre>
     </div>
   
 <h2 id="detailed-explanation">Detailed Explanation</h2>
 <ul>
-  <li>1. Namespace and Class: The UnitTest1 class resides in the CRUDTests namespace, which is a</li>
-</ul>
-<p>typical convention for organizing unit tests.</p>
-<ul>
-  <li>2. [Fact] Attribute: The [Fact] attribute marks the Test1 method as a test case. xUnit will</li>
-</ul>
-<p>automatically discover and execute this method.</p>
-<ul>
+  <li>1. Namespace and Class: The UnitTest1 class resides in the CRUDTests namespace, which is a
+      typical convention for organizing unit tests.</li>
+  <li>2. [Fact] Attribute: The [Fact] attribute marks the Test1 method as a test case. xUnit will
+      automatically discover and execute this method.</li>
   <li>3. Arrange:</li>
-  <li>o MyMath mm = new MyMath();: Creates an instance of the MyMath class (assuming</li>
-</ul>
-<p>it&#39;s the class you want to test).</p>
-<ul>
-  <li>o int input1 = 10, input2 = 5;: Sets up the input values for the Add method.</li>
-  <li>o int expected = 15;: Defines the expected output of the Add method.</li>
+  <li>MyMath mm = new MyMath();: Creates an instance of the MyMath class (assuming
+           it&#39;s the class you want to test).</li>
+  <li>int input1 = 10, input2 = 5;: Sets up the input values for the Add method.</li>
+  <li>int expected = 15;: Defines the expected output of the Add method.</li>
   <li>4. Act:</li>
-  <li>o int actual = mm.Add(input1, input2);: Calls the Add method with the input values</li>
-</ul>
-<p>and stores the result in the actual variable. This is the core action being tested.</p>
-<ul>
+  <li>int actual = mm.Add(input1, input2);: Calls the Add method with the input values
+           and stores the result in the actual variable. This is the core action being tested.</li>
   <li>5. Assert:</li>
-  <li>o Assert.Equal(expected, actual);: This xUnit assertion verifies that the actual result</li>
+  <li>Assert.Equal(expected, actual);: This xUnit assertion verifies that the actual result
+           (the output of the Add method) is equal to the expected value. If they are not equal,
+           the test will fail.</li>
 </ul>
-<p>(the output of the Add method) is equal to the expected value. If they are not equal,
-           the test will fail.</p>
 
 <h2 id="notes">Notes</h2>
 <ul>
-  <li>• Clarity: The AAA pattern makes your test code easy to read and understand.</li>
-  <li>• Focus: Each test should concentrate on a single aspect of your code&#39;s behavior.</li>
-  <li>• Testability: Write your code in a way that makes it testable. This often means designing with</li>
+  <li>Clarity: The AAA pattern makes your test code easy to read and understand.</li>
+  <li>Focus: Each test should concentrate on a single aspect of your code&#39;s behavior.</li>
+  <li>Testability: Write your code in a way that makes it testable. This often means designing with
+      dependency injection in mind so that you can easily mock dependencies.</li>
+  <li>Fast Feedback: Unit tests should be fast. If they are slow, it discourages you from running
+      them frequently.</li>
+  <li>Complete Coverage: Aim for high test coverage, ensuring that you test all important
+      branches and conditions in your code.</li>
 </ul>
-<p>dependency injection in mind so that you can easily mock dependencies.</p>
-<ul>
-  <li>• Fast Feedback: Unit tests should be fast. If they are slow, it discourages you from running</li>
-</ul>
-<p>them frequently.</p>
-<ul>
-  <li>• Complete Coverage: Aim for high test coverage, ensuring that you test all important</li>
-</ul>
-<p>branches and conditions in your code.</p>
 
 <h2 id="crud-operations">CRUD Operations</h2>
 <p>CRUD operations are the fundamental actions you perform on data in a persistent storage (like a
 database):</p>
 <ul>
-  <li>• Create (C): Adding new data records.</li>
-  <li>• Read (R): Retrieving or fetching existing data.</li>
-  <li>• Update (U): Modifying existing data.</li>
-  <li>• Delete (D): Removing data records.</li>
+  <li>Create (C): Adding new data records.</li>
+  <li>Read (R): Retrieving or fetching existing data.</li>
+  <li>Update (U): Modifying existing data.</li>
+  <li>Delete (D): Removing data records.</li>
 </ul>
 <p>Business Logic Implementation: Services and Controllers
 In ASP.NET Core MVC, CRUD operations are typically handled through a combination of services and
 controllers:</p>
 <ul>
-  <li>• Services: Services encapsulate the core business logic related to your data entities. They</li>
-</ul>
-<p>interact with the data access layer (e.g., Entity Framework Core) to perform database
+  <li>Services: Services encapsulate the core business logic related to your data entities. They
+      interact with the data access layer (e.g., Entity Framework Core) to perform database
       operations (create, read, update, delete). Services should be designed with the Dependency
       Inversion Principle (DIP) in mind, depending on abstractions (interfaces) rather than
-      concrete implementations.</p>
-<ul>
-  <li>• Controllers: Controllers handle incoming HTTP requests from clients, invoke the appropriate</li>
+      concrete implementations.</li>
+  <li>Controllers: Controllers handle incoming HTTP requests from clients, invoke the appropriate
+      service methods to perform CRUD operations, and return the results to the client, often as
+      JSON data, views, or files.</li>
 </ul>
-<p>service methods to perform CRUD operations, and return the results to the client, often as
-      JSON data, views, or files.
-Code Example: In-Depth
+<p>Code Example: In-Depth
 Let&#39;s analyze the provided code, which demonstrates a CRUD implementation for Person entities.</p>
-<ul>
-  <li>1. Service Interfaces (IPersonsService, ICountriesService): These interfaces define the</li>
-</ul>
-<p>contracts for your services, specifying the methods for CRUD operations (AddPerson,
-      GetAllPersons, GetPersonByPersonID, etc.).</p>
-<ul>
-  <li>2. Service Implementations (PersonsService, CountriesService): These classes implement the</li>
-</ul>
-<p>interfaces and provide the actual logic for interacting with data.</p>
-<ul>
-  <li>3. DTO Classes: Data Transfer Objects (DTOs) like PersonAddRequest, PersonResponse,</li>
-</ul>
-<p>CountryAddRequest, and CountryResponse are used to transfer data between layers of your
-      application (controller and service).</p>
+<ol>
+  <li>Service Interfaces (IPersonsService, ICountriesService): These interfaces define the
+      contracts for your services, specifying the methods for CRUD operations (AddPerson,
+      GetAllPersons, GetPersonByPersonID, etc.).</li>
+  <li>Service Implementations (PersonsService, CountriesService): These classes implement the
+      interfaces and provide the actual logic for interacting with data.</li>
+  <li>DTO Classes: Data Transfer Objects (DTOs) like PersonAddRequest, PersonResponse,
+      CountryAddRequest, and CountryResponse are used to transfer data between layers of your
+      application (controller and service).</li>
+</ol>
 
 <h2 id="best-practices">Best Practices</h2>
 <ul>
-  <li>• Separation of Concerns (SoC): Strictly separate your business logic (in services) from your</li>
+  <li>Separation of Concerns (SoC): Strictly separate your business logic (in services) from your
+      presentation logic (in controllers and views).</li>
+  <li>Dependency Inversion Principle (DIP): Design your services to depend on abstractions
+      (interfaces) rather than concrete implementations for better testability and flexibility.</li>
+  <li>Dependency Injection (DI): Utilize DI to inject service dependencies into your controllers.</li>
+  <li>Data Transfer Objects (DTOs): Use DTOs to control the shape of data exchanged between
+      layers and prevent overposting vulnerabilities.</li>
+  <li>Validation: Thoroughly validate all input data (using model validation and potentially custom
+      validation) to prevent invalid or malicious data from entering your system.</li>
+  <li>Error Handling: Implement robust error handling in both your services and controllers to
+      gracefully manage unexpected situations and provide informative error messages to clients.</li>
 </ul>
-<p>presentation logic (in controllers and views).</p>
-<ul>
-  <li>• Dependency Inversion Principle (DIP): Design your services to depend on abstractions</li>
-</ul>
-<p>(interfaces) rather than concrete implementations for better testability and flexibility.</p>
-<ul>
-  <li>• Dependency Injection (DI): Utilize DI to inject service dependencies into your controllers.</li>
-  <li>• Data Transfer Objects (DTOs): Use DTOs to control the shape of data exchanged between</li>
-</ul>
-<p>layers and prevent overposting vulnerabilities.</p>
-<ul>
-  <li>• Validation: Thoroughly validate all input data (using model validation and potentially custom</li>
-</ul>
-<p>validation) to prevent invalid or malicious data from entering your system.</p>
-<ul>
-  <li>• Error Handling: Implement robust error handling in both your services and controllers to</li>
-</ul>
-<p>gracefully manage unexpected situations and provide informative error messages to clients.</p>
 
 <h2 id="additional-tips">Additional Tips</h2>
 <ul>
-  <li>• Repository Pattern: Consider using the Repository pattern to further abstract your data</li>
+  <li>Repository Pattern: Consider using the Repository pattern to further abstract your data
+      access logic from your services.</li>
+  <li>Unit Testing: Write unit tests for your services to verify that your CRUD operations work
+      correctly.</li>
+  <li>Asynchronous Operations: Use async and await keywords for database operations to
+      improve responsiveness and scalability.</li>
+  <li>API Design: If you are building a RESTful API, adhere to RESTful principles for resource
+      naming, HTTP methods, and status codes.</li>
 </ul>
-<p>access logic from your services.</p>
-<ul>
-  <li>• Unit Testing: Write unit tests for your services to verify that your CRUD operations work</li>
-</ul>
-<p>correctly.</p>
-<ul>
-  <li>• Asynchronous Operations: Use async and await keywords for database operations to</li>
-</ul>
-<p>improve responsiveness and scalability.</p>
-<ul>
-  <li>• API Design: If you are building a RESTful API, adhere to RESTful principles for resource</li>
-</ul>
-<p>naming, HTTP methods, and status codes.
-Example: Adding a Person Using Postman</p>
-<ul>
-  <li>1. Select the HTTP method POST.</li>
-  <li>2. Enter the URL: /persons/addperson.</li>
-  <li>3. In the &quot;Body&quot; tab of Postman, select &quot;raw&quot; and then choose &quot;JSON&quot; from the dropdown.</li>
-</ul>
-<p>Paste the following JSON data:</p>
+<p>Example: Adding a Person Using Postman</p>
+<ol>
+  <li>Select the HTTP method POST.</li>
+  <li>Enter the URL: /persons/addperson.</li>
+  <li>In the &quot;Body&quot; tab of Postman, select &quot;raw&quot; and then choose &quot;JSON&quot; from the dropdown.
+      Paste the following JSON data:</li>
+</ol>
 
     <div class="code-block">
       <div class="code-toolbar">
-        <span class="language-label">C#</span>
+        <span class="language-label">JSON</span>
         <button class="copy-code-btn" type="button" aria-label="Copy code">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">{
-}</code></pre>
-    </div>
-  <p>&quot;PersonName&quot;: &quot;John Doe&quot;,
+      <pre><code class="language-json">{
+ &quot;PersonName&quot;: &quot;John Doe&quot;,
  &quot;Email&quot;: &quot;john.doe@example.com&quot;,
  &quot;DateOfBirth&quot;: &quot;1990-01-01&quot;,
  &quot;Gender&quot;: &quot;Male&quot;,
  &quot;CountryID&quot;: &quot;c366d10d-622e-402c-a35e-2e02662f0049&quot;,
  &quot;Address&quot;: &quot;123 Main Street&quot;,
- &quot;ReceiveNewsLetters&quot;: true</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp"></code></pre>
+ &quot;ReceiveNewsLetters&quot;: true
+}</code></pre>
     </div>
   <p>4. Click the &quot;Send&quot; button to execute the request.</p>
 <p>By following these guidelines, you&#39;ll be well-equipped to build robust and maintainable applications
@@ -787,38 +672,34 @@ that can efficiently handle CRUD operations and manage complex business logic. P
 if you have any other questions.</p>
 
 <h2 id="unit-testing-1">Unit Testing</h2>
-<p>Unit testing is a software development practice where you write tests to verify the behavior of
-individual units or components of your application in isolation. In ASP.NET Core MVC, these units are
-often your service classes, which encapsulate the core business logic related to data manipulation
-and other operations.
-Why Unit Test CRUD Operations and Business Logic?</p>
+<p>Unit testing is a software development practice where you write tests to verify the behavior of</p>
+<p>individual units or components of your application in isolation. In ASP.NET Core MVC, these units are</p>
 <ul>
-  <li>• Find Errors Early: Unit tests help you catch bugs and logical errors early in the development</li>
+  <li>ften your service classes, which encapsulate the core business logic related to data manipulation</li>
 </ul>
-<p>cycle before they cause problems in your application.</p>
+<p>and other operations.</p>
+<p>Why Unit Test CRUD Operations and Business Logic?</p>
 <ul>
-  <li>• Refactoring Confidence: When you modify or refactor your code, unit tests provide a safety</li>
+  <li>Find Errors Early: Unit tests help you catch bugs and logical errors early in the development
+      cycle before they cause problems in your application.</li>
+  <li>Refactoring Confidence: When you modify or refactor your code, unit tests provide a safety
+      net, ensuring that your changes haven&#39;t broken existing functionality.</li>
+  <li>Documentation: Unit tests act as living documentation, illustrating how your code should
+      behave under different scenarios.</li>
 </ul>
-<p>net, ensuring that your changes haven&#39;t broken existing functionality.</p>
-<ul>
-  <li>• Documentation: Unit tests act as living documentation, illustrating how your code should</li>
-</ul>
-<p>behave under different scenarios.</p>
 
 <h2 id="key-principles">Key Principles</h2>
 <ul>
-  <li>• Isolation: Test each unit (e.g., a service method) in isolation from its dependencies</li>
+  <li>Isolation: Test each unit (e.g., a service method) in isolation from its dependencies
+      (database, other services). Use mocks or stubs to simulate the behavior of dependencies.</li>
+  <li>Arrange-Act-Assert (AAA): Structure your tests using this pattern:</li>
+  <li>Arrange: Set up the necessary preconditions (create test data, mock objects).</li>
+  <li>Act: Call the method under test.</li>
+  <li>Assert: Verify that the actual outcome matches the expected outcome.</li>
+  <li>Focus: Each test should focus on a specific behavior or functionality of the unit being tested.</li>
+  <li>Fast Feedback: Unit tests should be fast and run frequently as part of your development
+      process.</li>
 </ul>
-<p>(database, other services). Use mocks or stubs to simulate the behavior of dependencies.</p>
-<ul>
-  <li>• Arrange-Act-Assert (AAA): Structure your tests using this pattern:</li>
-  <li>o Arrange: Set up the necessary preconditions (create test data, mock objects).</li>
-  <li>o Act: Call the method under test.</li>
-  <li>o Assert: Verify that the actual outcome matches the expected outcome.</li>
-  <li>• Focus: Each test should focus on a specific behavior or functionality of the unit being tested.</li>
-  <li>• Fast Feedback: Unit tests should be fast and run frequently as part of your development</li>
-</ul>
-<p>process.</p>
 
 <h2 id="code-example-1">Code Example</h2>
 
@@ -834,31 +715,10 @@ Why Unit Test CRUD Operations and Business Logic?</p>
 public class CountriesServiceTest
 {
   // ... (Constructor and setup) ...
-}</code></pre>
-    </div>
-  <p>#region AddCountry</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">// ... (Other test cases) ...</code></pre>
-    </div>
-  <p>[Fact]</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">public void AddCountry_ProperCountryDetails()
+  #region AddCountry
+  // ... (Other test cases) ...
+  [Fact]
+  public void AddCountry_ProperCountryDetails()
   {
    // Arrange
    CountryAddRequest? request = new CountryAddRequest() { CountryName = &quot;Japan&quot; };
@@ -868,9 +728,19 @@ public class CountriesServiceTest
    // Assert
    Assert.True(response.CountryID != Guid.Empty);
    Assert.Contains(response, countries_from_GetAllCountries);
-  }</code></pre>
+  }
+  #endregion
+  // ... (Tests for GetAllCountries and GetCountryByCountryID) ...
+}</code></pre>
     </div>
-  <p>#endregion</p>
+  <p>Explanation of the Test Case AddCountry_ProperCountryDetails</p>
+<ul>
+  <li>1. Arrange: A valid CountryAddRequest object with the country name &quot;Japan&quot; is created.</li>
+  <li>2. Act: The AddCountry method of the CountriesService is called with the request object. The
+      GetAllCountries method is also called to get the updated list of countries.</li>
+  <li>3. Assert:</li>
+  <li>It checks if the CountryID in the response is not an empty GUID, indicating that a</li>
+</ul>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -880,140 +750,107 @@ public class CountriesServiceTest
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">// ... (Tests for GetAllCountries and GetCountryByCountryID) ...</code></pre>
+      <pre><code class="language-csharp">new country was added successfully.
+        o It verifies that the newly added country (response) is included in the list returned by</code></pre>
     </div>
-  <p>Explanation of the Test Case AddCountry_ProperCountryDetails</p>
-<ul>
-  <li>1. Arrange: A valid CountryAddRequest object with the country name &quot;Japan&quot; is created.</li>
-  <li>2. Act: The AddCountry method of the CountriesService is called with the request object. The</li>
-</ul>
-<p>GetAllCountries method is also called to get the updated list of countries.</p>
-<ul>
-  <li>3. Assert:</li>
-  <li>o It checks if the CountryID in the response is not an empty GUID, indicating that a</li>
-</ul>
-<p>new country was added successfully.</p>
-<ul>
-  <li>o It verifies that the newly added country (response) is included in the list returned by</li>
-</ul>
-<p>GetAllCountries.</p>
+  <p>GetAllCountries.</p>
 
 <h2 id="additional-considerations">Additional Considerations</h2>
 <ul>
-  <li>• Test Coverage: Strive for high test coverage to ensure you are testing all critical paths and</li>
+  <li>Test Coverage: Strive for high test coverage to ensure you are testing all critical paths and
+      edge cases in your business logic.</li>
+  <li>Test Data: Use meaningful and diverse test data to thoroughly exercise your code.</li>
+  <li>Mocking Dependencies: When testing components that interact with external systems
+      (databases, APIs), use mocking frameworks like Moq or NSubstitute to isolate the unit under
+      test.</li>
+  <li>Integration Tests: In addition to unit tests, write integration tests to verify how your
+      components interact with each other and with external systems.</li>
 </ul>
-<p>edge cases in your business logic.</p>
-<ul>
-  <li>• Test Data: Use meaningful and diverse test data to thoroughly exercise your code.</li>
-  <li>• Mocking Dependencies: When testing components that interact with external systems</li>
-</ul>
-<p>(databases, APIs), use mocking frameworks like Moq or NSubstitute to isolate the unit under
-      test.</p>
-<ul>
-  <li>• Integration Tests: In addition to unit tests, write integration tests to verify how your</li>
-</ul>
-<p>components interact with each other and with external systems.</p>
 
 <h2 id="key-points-to-remember">Key Points to Remember</h2>
 
 <h2 id="core-concepts">Core Concepts</h2>
 <ul>
-  <li>• Unit Testing: Testing individual units (classes, methods) in isolation.</li>
-  <li>• Benefits: Early bug detection, confident refactoring, improved design, living documentation.</li>
-  <li>• xUnit Framework: Popular .NET testing framework known for extensibility, community,</li>
+  <li>Unit Testing: Testing individual units (classes, methods) in isolation.</li>
+  <li>Benefits: Early bug detection, confident refactoring, improved design, living documentation.</li>
+  <li>xUnit Framework: Popular .NET testing framework known for extensibility, community,
+      integration, and performance.</li>
 </ul>
-<p>integration, and performance.</p>
 
 <h2 id="aaa-arrange-act-assert-pattern">AAA (Arrange-Act-Assert) Pattern</h2>
-<ul>
-  <li>1. Arrange: Set up the test&#39;s preconditions (create objects, initialize variables, mock</li>
-</ul>
-<p>dependencies).</p>
-<ul>
-  <li>2. Act: Execute the code under test (call the method you&#39;re testing).</li>
-  <li>3. Assert: Verify the outcome against expected results using assertions.</li>
-</ul>
+<ol>
+  <li>Arrange: Set up the test&#39;s preconditions (create objects, initialize variables, mock
+      dependencies).</li>
+  <li>Act: Execute the code under test (call the method you&#39;re testing).</li>
+  <li>Assert: Verify the outcome against expected results using assertions.</li>
+</ol>
 <p>xUnit Attributes</p>
 <ul>
-  <li>• [Fact]: Marks a method as a simple test case.</li>
-  <li>• [Theory]: Marks a method for data-driven testing (multiple inputs).</li>
-  <li>• [InlineData]: Provides data sets for [Theory] tests.</li>
-  <li>• [ClassFixture]: Shares a fixture instance across all tests in a class.</li>
-</ul>
-<p>xUnit Assertions</p>
-<ul>
-  <li>• Assert.Equal(expected, actual)</li>
-  <li>• Assert.NotEqual(expected, actual)</li>
-  <li>• Assert.True(condition)</li>
-  <li>• Assert.False(condition)</li>
-  <li>• Assert.Null(object)</li>
-  <li>• Assert.NotNull(object)</li>
-  <li>• Assert.Throws&lt;TException&gt;(() =&gt; codeToExecute)</li>
-</ul>
-
-<h2 id="mocking">Mocking</h2>
-<ul>
-  <li>• Purpose: Isolate the unit under test by replacing dependencies with mock objects.</li>
-  <li>• Frameworks: Moq, NSubstitute, FakeItEasy are popular mocking frameworks.</li>
-  <li>• Benefits:</li>
-  <li>o Control dependency behavior.</li>
-  <li>o Avoid hitting external systems (databases, network).</li>
-  <li>o Focus on testing your logic.</li>
+  <li>[Fact]: Marks a method as a simple test case.</li>
+  <li>[Theory]: Marks a method for data-driven testing (multiple inputs).</li>
+  <li>[InlineData]: Provides data sets for [Theory] tests.</li>
+  <li>[ClassFixture]: Shares a fixture instance across all tests in a class.
+xUnit Assertions</li>
+  <li>Assert.Equal(expected, actual)</li>
+  <li>Assert.NotEqual(expected, actual)</li>
+  <li>Assert.True(condition)</li>
+  <li>Assert.False(condition)</li>
+  <li>Assert.Null(object)</li>
+  <li>Assert.NotNull(object)</li>
+  <li>Assert.Throws&lt;TException&gt;(() =&gt; codeToExecute)
+Mocking</li>
+  <li>Purpose: Isolate the unit under test by replacing dependencies with mock objects.</li>
+  <li>Frameworks: Moq, NSubstitute, FakeItEasy are popular mocking frameworks.</li>
+  <li>Benefits:</li>
+  <li>Control dependency behavior.</li>
+  <li>Avoid hitting external systems (databases, network).</li>
+  <li>Focus on testing your logic.</li>
 </ul>
 
 <h2 id="best-practices-1">Best Practices</h2>
 <ul>
-  <li>• One Assert Per Test: Each test should ideally focus on verifying one thing.</li>
-  <li>• Clear Naming: Use descriptive names that explain the purpose of the test.</li>
-  <li>• Test Edge Cases: Don&#39;t just test the happy path; cover boundary conditions and error</li>
-</ul>
-<p>scenarios.</p>
-<ul>
-  <li>• Don&#39;t Test External Systems: Use mocks for databases, file systems, and network calls.</li>
-  <li>• Keep Tests Fast: Unit tests should run quickly (milliseconds) to encourage frequent</li>
-</ul>
-<p>execution.</p>
-<ul>
-  <li>• Test Doubles: Understand the different types of test doubles (mocks, stubs, fakes) and when</li>
-</ul>
-<p>to use them.</p>
-<ul>
-  <li>• Refactor Tests: Keep your tests clean and maintainable, just like your production code.</li>
+  <li>One Assert Per Test: Each test should ideally focus on verifying one thing.</li>
+  <li>Clear Naming: Use descriptive names that explain the purpose of the test.</li>
+  <li>Test Edge Cases: Don&#39;t just test the happy path; cover boundary conditions and error
+      scenarios.</li>
+  <li>Don&#39;t Test External Systems: Use mocks for databases, file systems, and network calls.</li>
+  <li>Keep Tests Fast: Unit tests should run quickly (milliseconds) to encourage frequent
+      execution.</li>
+  <li>Test Doubles: Understand the different types of test doubles (mocks, stubs, fakes) and when
+      to use them.</li>
+  <li>Refactor Tests: Keep your tests clean and maintainable, just like your production code.</li>
 </ul>
 
 <h2 id="things-to-avoid">Things to Avoid</h2>
 <ul>
-  <li>• Testing Implementation Details: Focus on testing behavior, not how the code is written</li>
-</ul>
-<p>internally.</p>
-<ul>
-  <li>• Slow Tests: Unit tests should not take long to execute.</li>
-  <li>• Test Dependencies: Isolate the unit under test by mocking dependencies.</li>
-  <li>• Logic in Tests: Keep test code simple and avoid complex branching logic.</li>
-  <li>• Testing Trivial Things: Don&#39;t waste time testing trivial code (e.g., simple getters/setters).</li>
+  <li>Testing Implementation Details: Focus on testing behavior, not how the code is written
+      internally.</li>
+  <li>Slow Tests: Unit tests should not take long to execute.</li>
+  <li>Test Dependencies: Isolate the unit under test by mocking dependencies.</li>
+  <li>Logic in Tests: Keep test code simple and avoid complex branching logic.</li>
+  <li>Testing Trivial Things: Don&#39;t waste time testing trivial code (e.g., simple getters/setters).</li>
 </ul>
 
 <h2 id="interview-tips">Interview Tips</h2>
 <ul>
-  <li>• AAA Pattern: Be able to explain and demonstrate the Arrange-Act-Assert pattern.</li>
-  <li>• Mocking: Understand the concept of mocking and why it&#39;s important for unit testing.</li>
-  <li>• Best Practices: Be familiar with the best practices and pitfalls to avoid.</li>
-  <li>• Code Example: Be prepared to write a simple unit test showcasing these concepts.</li>
-  <li>• Explain Benefits: Articulate the value of unit testing in terms of code quality, maintainability,</li>
+  <li>AAA Pattern: Be able to explain and demonstrate the Arrange-Act-Assert pattern.</li>
+  <li>Mocking: Understand the concept of mocking and why it&#39;s important for unit testing.</li>
+  <li>Best Practices: Be familiar with the best practices and pitfalls to avoid.</li>
+  <li>Code Example: Be prepared to write a simple unit test showcasing these concepts.</li>
+  <li>Explain Benefits: Articulate the value of unit testing in terms of code quality, maintainability,
+      and preventing regressions.</li>
 </ul>
-<p>and preventing regressions.</p>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
 <section class="cheatsheet-section" aria-labelledby="cheat-sheet-quick-reference">
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
-  <p>Section 15 – xUnit – Cheat Sheet</p>
   <h3 id="introduction-to-xunit">Introduction to xUnit</h3>
-  <p>xUnit is the free, open source unit testing tool for .NET Framework.</p>
-  <ul>
-    <li>• Easy and extensible.</li>
-    <li>• Best to use with a mocking framework called &quot;Moq&quot;.</li>
-  </ul>
+<p>xUnit is the free, open source unit testing tool for .NET Framework.</p>
+<ul>
+  <li>Easy and extensible.</li>
+  <li>Best to use with a mocking framework called &quot;Moq&quot;.</li>
+</ul>
   <h3 id="add-country-xunit-test">Add Country - xUnit Test</h3>
 
     <div class="code-block">
@@ -1050,7 +887,7 @@ public class CountriesServiceTest
 //Return all CountryResponse objects
 }</code></pre>
     </div>
-    <p>Get Country by Country ID - xUnit Test</p>
+  <p>Get Country by Country ID - xUnit Test</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1068,7 +905,7 @@ public class CountriesServiceTest
 //Return CountryResponse object
 }</code></pre>
     </div>
-    <p>Add Person - xUnit Test</p>
+  <p>Add Person - xUnit Test</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1106,7 +943,7 @@ public class CountriesServiceTest
 //Return PersonResponse object
 }</code></pre>
     </div>
-    <p>Get All Persons - xUnit Test</p>
+  <p>Get All Persons - xUnit Test</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1122,7 +959,7 @@ public class CountriesServiceTest
 //Return all PersonResponse objects
 }</code></pre>
     </div>
-    <p>Get Filtered Persons - xUnit Test</p>
+  <p>Get Filtered Persons - xUnit Test</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1150,26 +987,16 @@ public class CountriesServiceTest
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">public List&lt;PersonResponse&gt; GetSortedPersons(List&lt;PersonResponse&gt; allPersons,</code></pre>
-    </div>
-    <p>string sortBy, SortOrderEnum sortOrder)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+      <pre><code class="language-csharp">public List&lt;PersonResponse&gt; GetSortedPersons(List&lt;PersonResponse&gt; allPersons,
+string sortBy, SortOrderEnum sortOrder)
+{
 //Check if &quot;sortBy&quot; is not null.
 //Get sorted persons from &quot;allPersons&quot; based on given &quot;sortBy&quot; and &quot;sortOrder&quot;.
 //Convert the sorted persons from &quot;Person&quot; type to &quot;PersonResponse&quot; type.
 //Return all sorted PersonResponse objects
 }</code></pre>
     </div>
-    <p>Update Person - xUnit Test</p>
+  <p>Update Person - xUnit Test</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1229,13 +1056,13 @@ public class CountriesServiceTest
       <nav class="bottom-nav" aria-label="Previous and Next Section Navigation">
         
       <a href="section-14.html" class="nav-card prev" aria-label="Previous Section: Sec 14 - Configuration">
-        <span class="nav-direction">← Previous Section</span>
+        <span class="nav-direction">&larr; Previous Section</span>
         <span class="nav-title">Sec 14: Configuration</span>
       </a>
     
         
       <a href="section-16.html" class="nav-card next" aria-label="Next Section: Sec 16 - CRUD Operations">
-        <span class="nav-direction">Next Section →</span>
+        <span class="nav-direction">Next Section &rarr;</span>
         <span class="nav-title">Sec 16: CRUD Operations</span>
       </a>
     
@@ -1243,8 +1070,8 @@ public class CountriesServiceTest
 
       <!-- Section Footer -->
       <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); color: var(--text-dim); font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;" role="contentinfo">
-        <span>ASP.NET Core Masterclass — Offline Documentation Portal</span>
-        <a href="#top" style="color: var(--text-muted); text-decoration: none;">↑ Back to top</a>
+        <span>ASP.NET Core Masterclass &mdash; Offline Documentation Portal</span>
+        <a href="#top" style="color: var(--text-muted); text-decoration: none;">&uarr; Back to top</a>
       </footer>
     </main>
 
@@ -1323,10 +1150,6 @@ public class CountriesServiceTest
       
         <li class="toc-item">
           <a href="#aaa-arrange-act-assert-pattern" class="toc-link">AAA (Arrange-Act-Assert) Pattern</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#mocking" class="toc-link">Mocking</a>
         </li>
       
         <li class="toc-item">

@@ -198,27 +198,13 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • Asp.Net Core Razor Pages"
-          ],
-          "text": "   • Asp.Net Core Razor Pages"
-        },
-        {
-          "type": "heading",
-          "page": 1,
-          "lines": [
-            "RESTful / Web API Services"
-          ],
-          "text": "RESTful / Web API Services"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • Asp.Net Core Razor Pages",
+            "RESTful / Web API Services",
             "RESTful services (Representational State Transfer) is an architecture style that defines to create HTTP",
             "services that receives HTTP GET, POST, PUT, DELETE requests; perform CRUD operations on the",
             "appropriate data source; and returns JSON / XML data as response to the client."
           ],
-          "text": "RESTful services (Representational State Transfer) is an architecture style that defines to create HTTP\nservices that receives HTTP GET, POST, PUT, DELETE requests; perform CRUD operations on the\nappropriate data source; and returns JSON / XML data as response to the client."
+          "text": "   • Asp.Net Core Razor Pages\nRESTful / Web API Services\nRESTful services (Representational State Transfer) is an architecture style that defines to create HTTP\nservices that receives HTTP GET, POST, PUT, DELETE requests; perform CRUD operations on the\nappropriate data source; and returns JSON / XML data as response to the client."
         }
       ],
       "char_count_raw": 785,
@@ -415,20 +401,13 @@
             "class ClassNameController",
             "{",
             " //action methods here",
-            "}"
+            "}",
+            "Optional:"
           ],
-          "text": "[ApiController]\nclass ClassNameController\n{\n //action methods here\n}"
+          "text": "[ApiController]\nclass ClassNameController\n{\n //action methods here\n}\nOptional:"
         },
         {
           "type": "prose",
-          "page": 2,
-          "lines": [
-            "Optional:"
-          ],
-          "text": "Optional:"
-        },
-        {
-          "type": "list_item",
           "page": 2,
           "lines": [
             "   • Is a public class."
@@ -593,57 +572,50 @@
           "text": "Pros & Cons of EntityFrameworkCore"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 3,
           "lines": [
-            "1. Shorter Code"
-          ],
-          "text": "1. Shorter Code"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "1. Shorter Code",
             "The CRUD operations / calling stored procedures are done with shorter amount of code than",
             "ADO.NET."
           ],
-          "text": "The CRUD operations / calling stored procedures are done with shorter amount of code than\nADO.NET."
+          "text": "1. Shorter Code\nThe CRUD operations / calling stored procedures are done with shorter amount of code than\nADO.NET."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 3,
           "lines": [
-            "2. Performance"
+            "2. Performance",
+            "EFCore performs slower than ADO.NET."
           ],
-          "text": "2. Performance"
+          "text": "2. Performance\nEFCore performs slower than ADO.NET."
         },
         {
           "type": "prose",
           "page": 3,
           "lines": [
-            "EFCore performs slower than ADO.NET.",
             "So ADO.NET or its alternatives (such as Dapper) are recommended for larger & high-traffic",
             "applications."
           ],
-          "text": "EFCore performs slower than ADO.NET.\nSo ADO.NET or its alternatives (such as Dapper) are recommended for larger & high-traffic\napplications."
+          "text": "So ADO.NET or its alternatives (such as Dapper) are recommended for larger & high-traffic\napplications."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 3,
           "lines": [
-            "3. Strongly-Typed"
+            "3. Strongly-Typed",
+            "The columns as created as properties in model class."
           ],
-          "text": "3. Strongly-Typed"
+          "text": "3. Strongly-Typed\nThe columns as created as properties in model class."
         },
         {
           "type": "prose",
           "page": 3,
           "lines": [
-            "The columns as created as properties in model class.",
             "So the Intellisense offers columns of the table as properties, while writing the code.",
             "Plus, the developer need not convert data types of values; it's automatically done by EFCore itself."
           ],
-          "text": "The columns as created as properties in model class.\nSo the Intellisense offers columns of the table as properties, while writing the code.\nPlus, the developer need not convert data types of values; it's automatically done by EFCore itself."
+          "text": "So the Intellisense offers columns of the table as properties, while writing the code.\nPlus, the developer need not convert data types of values; it's automatically done by EFCore itself."
         }
       ],
       "char_count_raw": 579,
@@ -869,28 +841,14 @@
           "page": 4,
           "lines": [
             "public class ProblemDetails",
-            "{"
-          ],
-          "text": "public class ProblemDetails\n{"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "{",
             " string? Type { get; set; } //URI references that identifies the problem type",
             " string? Title { get; set; } //Summary of the problem type",
             " int? Status { get; set; } //HTTP response status code",
-            " string? Detail { get; set; } //Explanation of the problem"
-          ],
-          "text": " string? Type { get; set; } //URI references that identifies the problem type\n string? Title { get; set; } //Summary of the problem type\n int? Status { get; set; } //HTTP response status code\n string? Detail { get; set; } //Explanation of the problem"
-        },
-        {
-          "type": "code",
-          "page": 4,
-          "lines": [
+            " string? Detail { get; set; } //Explanation of the problem",
             "}"
           ],
-          "text": "}"
+          "text": "public class ProblemDetails\n{\n string? Type { get; set; } //URI references that identifies the problem type\n string? Title { get; set; } //Summary of the problem type\n int? Status { get; set; } //HTTP response status code\n string? Detail { get; set; } //Explanation of the problem\n}"
         },
         {
           "type": "prose",
@@ -905,29 +863,15 @@
           "page": 4,
           "lines": [
             "public class ValidationProblemDetails : ProblemDetails",
-            "{"
-          ],
-          "text": "public class ValidationProblemDetails : ProblemDetails\n{"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "{",
             " string? Type { get; set; } //URI references that identifies the problem type",
             " string? Title { get; set; } //Summary of the problem type",
             " int? Status { get; set; } //HTTP response status code",
             " string? Detail { get; set; } //Explanation of the problem",
-            " IDictionary<string, string[]> Errors { get; set; } //List of validation errors"
-          ],
-          "text": " string? Type { get; set; } //URI references that identifies the problem type\n string? Title { get; set; } //Summary of the problem type\n int? Status { get; set; } //HTTP response status code\n string? Detail { get; set; } //Explanation of the problem\n IDictionary<string, string[]> Errors { get; set; } //List of validation errors"
-        },
-        {
-          "type": "code",
-          "page": 4,
-          "lines": [
+            " IDictionary<string, string[]> Errors { get; set; } //List of validation errors",
             "}"
           ],
-          "text": "}"
+          "text": "public class ValidationProblemDetails : ProblemDetails\n{\n string? Type { get; set; } //URI references that identifies the problem type\n string? Title { get; set; } //Summary of the problem type\n int? Status { get; set; } //HTTP response status code\n string? Detail { get; set; } //Explanation of the problem\n IDictionary<string, string[]> Errors { get; set; } //List of validation errors\n}"
         },
         {
           "type": "prose",
@@ -950,25 +894,11 @@
           "page": 4,
           "lines": [
             "public interface IActionResult",
-            "{"
-          ],
-          "text": "public interface IActionResult\n{"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
-            " Task ExecuteResultAsync(ActionContext context); //converts an object into response"
-          ],
-          "text": " Task ExecuteResultAsync(ActionContext context); //converts an object into response"
-        },
-        {
-          "type": "code",
-          "page": 4,
-          "lines": [
+            "{",
+            " Task ExecuteResultAsync(ActionContext context); //converts an object into response",
             "}"
           ],
-          "text": "}"
+          "text": "public interface IActionResult\n{\n Task ExecuteResultAsync(ActionContext context); //converts an object into response\n}"
         }
       ],
       "char_count_raw": 883,
@@ -1042,25 +972,11 @@
           "page": 5,
           "lines": [
             "public sealed class ActionResult<T>",
-            "{"
-          ],
-          "text": "public sealed class ActionResult<T>\n{"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
-            " IActionResult Convert(); //converts the object into ObjectResult"
-          ],
-          "text": " IActionResult Convert(); //converts the object into ObjectResult"
-        },
-        {
-          "type": "code",
-          "page": 5,
-          "lines": [
+            "{",
+            " IActionResult Convert(); //converts the object into ObjectResult",
             "}"
           ],
-          "text": "}"
+          "text": "public sealed class ActionResult<T>\n{\n IActionResult Convert(); //converts the object into ObjectResult\n}"
         },
         {
           "type": "prose",

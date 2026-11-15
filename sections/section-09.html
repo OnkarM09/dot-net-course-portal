@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Section 09: Layout Views — ASP.NET Core Masterclass</title>
+  <title>Section 09: Layout Views &mdash; ASP.NET Core Masterclass</title>
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
   <link rel="alternate icon" href="../favicon.ico">
   <link rel="stylesheet" href="../assets/css/docs.css">
@@ -16,7 +16,9 @@
   <!-- Top Navigation Header -->
   <header class="top-header" role="banner">
     <div class="header-left">
-      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">☰</button>
+      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
       <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
         <span class="sidebar-toggle-text">« Collapse</span>
@@ -41,7 +43,9 @@
       </a>
 
       <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
-        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
         <span class="search-text">Search topics, syntax, concepts...</span>
         <kbd class="kbd-shortcut">Ctrl+K</kbd>
       </button>
@@ -367,15 +371,6 @@
         <span>» Expand Sidebar</span>
       </button>
 
-      <!-- Breadcrumbs -->
-      <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
-        <a href="../index.html">Course Index</a>
-        <span class="crumb-sep" aria-hidden="true">/</span>
-        <span>Module 3</span>
-        <span class="crumb-sep" aria-hidden="true">/</span>
-        <span style="color: var(--text-main); font-weight: 600;">Section 09</span>
-      </nav>
-
       <!-- Section Banner Header -->
       <header class="section-banner">
         <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
@@ -410,37 +405,27 @@ elements that you want to share across multiple pages within your application. T
 headers, navigation bars, footers, sidebars, and other common UI components.
 Why Use Layout Views?</p>
 <ul>
-  <li>• Reusability: Avoid repeating common HTML, CSS, and JavaScript code in every view.</li>
-  <li>• Consistency: Maintain a uniform look and feel across your entire application.</li>
-  <li>• Simplified Maintenance: Make updates to the layout view once, and the changes</li>
-</ul>
-<p>automatically apply to all views that use it.</p>
-<ul>
-  <li>• Improved Organization: Separate the structure of your pages from their specific content.</li>
+  <li>Reusability: Avoid repeating common HTML, CSS, and JavaScript code in every view.</li>
+  <li>Consistency: Maintain a uniform look and feel across your entire application.</li>
+  <li>Simplified Maintenance: Make updates to the layout view once, and the changes
+      automatically apply to all views that use it.</li>
+  <li>Improved Organization: Separate the structure of your pages from their specific content.</li>
 </ul>
 
 <h2 id="how-layout-views-work">How Layout Views Work</h2>
 <ul>
-  <li>1. The _Layout.cshtml File: The main layout view is typically named _Layout.cshtml and placed</li>
-</ul>
-<p>in the Views/Shared folder. You can also have multiple layout files if needed.</p>
-<ul>
-  <li>2. RenderBody() Method: The layout view contains a special Razor method called</li>
-</ul>
-<p>RenderBody(). This is a placeholder where the content of the specific view (e.g.,
-      Index.cshtml, About.cshtml) will be inserted.</p>
-<ul>
-  <li>3. Specifying the Layout: In your individual views, you use the Layout property to indicate</li>
-</ul>
-<p>which layout view to use. This can be done in two ways:</p>
-<ul>
-  <li>o Implicitly (Convention-based): If you don&#39;t explicitly specify a layout, ASP.NET Core</li>
-</ul>
-<p>MVC automatically uses the _Layout.cshtml file in the Views/Shared folder.</p>
-<ul>
-  <li>o Explicitly: Use the Layout property at the top of your view:</li>
-  <li>o @{</li>
-  <li>o Layout = &quot;~/Views/Shared/_Layout.cshtml&quot;;</li>
+  <li>1. The _Layout.cshtml File: The main layout view is typically named _Layout.cshtml and placed
+      in the Views/Shared folder. You can also have multiple layout files if needed.</li>
+  <li>2. RenderBody() Method: The layout view contains a special Razor method called
+      RenderBody(). This is a placeholder where the content of the specific view (e.g.,
+      Index.cshtml, About.cshtml) will be inserted.</li>
+  <li>3. Specifying the Layout: In your individual views, you use the Layout property to indicate
+      which layout view to use. This can be done in two ways:</li>
+  <li>Implicitly (Convention-based): If you don&#39;t explicitly specify a layout, ASP.NET Core
+           MVC automatically uses the _Layout.cshtml file in the Views/Shared folder.</li>
+  <li>Explicitly: Use the Layout property at the top of your view:</li>
+  <li>@{</li>
+  <li>Layout = &quot;~/Views/Shared/_Layout.cshtml&quot;;</li>
 </ul>
 
     <div class="code-block">
@@ -497,13 +482,11 @@ Why Use Layout Views?</p>
   <p>&lt;/body&gt;
 &lt;/html&gt;</p>
 <ul>
-  <li>• @ViewData[&quot;Title&quot;]: Dynamically sets the title of the page. This value will be provided by</li>
+  <li>@ViewData[&quot;Title&quot;]: Dynamically sets the title of the page. This value will be provided by
+      the individual views.</li>
+  <li>RenderBody(): This placeholder will be replaced by the content of the specific view being
+      rendered.</li>
 </ul>
-<p>the individual views.</p>
-<ul>
-  <li>• RenderBody(): This placeholder will be replaced by the content of the specific view being</li>
-</ul>
-<p>rendered.</p>
 <p>Index.cshtml (Content View)</p>
 
     <div class="code-block">
@@ -521,12 +504,14 @@ Why Use Layout Views?</p>
 &lt;h1&gt;Home&lt;/h1&gt;
 &lt;p&gt;Welcome to home page&lt;/p&gt;</code></pre>
     </div>
-  <p>• Layout Property: Sets the layout for this view.</p>
-<ul>
-  <li>• ViewData[&quot;Title&quot;]: Sets the value for the Title property, which will be used in the layout</li>
+  <ul>
+  <li>Layout Property: Sets the layout for this view.</li>
 </ul>
-<p>view.
-About.cshtml (Content View)</p>
+<ul>
+  <li>ViewData[&quot;Title&quot;]: Sets the value for the Title property, which will be used in the layout
+      view.</li>
+</ul>
+<p>About.cshtml (Content View)</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -550,27 +535,19 @@ Because the layout is not defined within the action, the default _Layout.cshtml 
 
 <h2 id="notes">Notes</h2>
 <ul>
-  <li>• Structure and Consistency: Layout views help you establish a consistent page structure</li>
+  <li>Structure and Consistency: Layout views help you establish a consistent page structure
+      throughout your application.</li>
+  <li>DRY Principle: Don&#39;t Repeat Yourself (DRY) by avoiding duplication of common elements in
+      your views.</li>
+  <li>RenderBody(): This method is essential for inserting the specific view&#39;s content into the
+      layout.</li>
+  <li>Layout Property: Use it to explicitly specify or override the layout for a particular view.</li>
+  <li>Partial Views: You can use partial views within layout views to further break down your UI
+      into reusable components.</li>
+  <li>Sections: The RenderSection method allows you to define placeholders in the layout view
+      and have individual views provide content for them.</li>
 </ul>
-<p>throughout your application.</p>
-<ul>
-  <li>• DRY Principle: Don&#39;t Repeat Yourself (DRY) by avoiding duplication of common elements in</li>
-</ul>
-<p>your views.</p>
-<ul>
-  <li>• RenderBody(): This method is essential for inserting the specific view&#39;s content into the</li>
-</ul>
-<p>layout.</p>
-<ul>
-  <li>• Layout Property: Use it to explicitly specify or override the layout for a particular view.</li>
-  <li>• Partial Views: You can use partial views within layout views to further break down your UI</li>
-</ul>
-<p>into reusable components.</p>
-<ul>
-  <li>• Sections: The RenderSection method allows you to define placeholders in the layout view</li>
-</ul>
-<p>and have individual views provide content for them.
-_ViewStart.cshtml
+<p>_ViewStart.cshtml
 The _ViewStart.cshtml file is a special file in ASP.NET Core MVC that allows you to configure
 common settings that apply to all views within a specific directory and its subdirectories. This file
 typically resides in the same folder as your views, but its effects cascade down to child folders.
@@ -579,9 +556,9 @@ The primary purpose of _ViewStart.cshtml is to specify the default layout for yo
 also use it to set other common properties for your views, but using it for the layout is the most
 common practice.</p>
 <ul>
-  <li>• Layout Property: Sets the default layout for all views in the directory and its subdirectories.</li>
-  <li>• @{</li>
-  <li>• Layout = &quot;_Layout&quot;; // Sets the default layout to _Layout.cshtml</li>
+  <li>Layout Property: Sets the default layout for all views in the directory and its subdirectories.</li>
+  <li>@{</li>
+  <li>Layout = &quot;_Layout&quot;; // Sets the default layout to _Layout.cshtml</li>
 </ul>
 
     <div class="code-block">
@@ -596,28 +573,24 @@ common practice.</p>
     </div>
   <p>You can specify the full path to the layout view if needed.</p>
 <ul>
-  <li>• Other Properties: While less common, you could set other properties of the View object</li>
+  <li>Other Properties: While less common, you could set other properties of the View object
+      within _ViewStart.cshtml. However, it&#39;s generally recommended to keep the main purpose
+      of this file to define the default layout.</li>
 </ul>
-<p>within _ViewStart.cshtml. However, it&#39;s generally recommended to keep the main purpose
-      of this file to define the default layout.</p>
 
 <h2 id="how-it-works">How It Works</h2>
 <p>When ASP.NET Core MVC processes a request for a view, it looks for a _ViewStart.cshtml file in the
 following order:</p>
-<ul>
-  <li>1. The same directory as the view: If found, the layout specified in this file is applied to the</li>
-</ul>
-<p>view.</p>
-<ul>
-  <li>2. Parent directories: It then checks parent directories of the view, recursively, until it reaches</li>
-</ul>
-<p>the root Views folder.</p>
-<ul>
-  <li>3. Root Views folder: Finally, it checks the _ViewStart.cshtml file in the root Views folder. If a</li>
-</ul>
-<p>layout is specified there, it will be used as the default for any view that hasn&#39;t had a layout
-      explicitly set.
-Code Example:
+<ol>
+  <li>The same directory as the view: If found, the layout specified in this file is applied to the
+      view.</li>
+  <li>Parent directories: It then checks parent directories of the view, recursively, until it reaches
+      the root Views folder.</li>
+  <li>Root Views folder: Finally, it checks the _ViewStart.cshtml file in the root Views folder. If a
+      layout is specified there, it will be used as the default for any view that hasn&#39;t had a layout
+      explicitly set.</li>
+</ol>
+<p>Code Example:
 Imagine you have the following file structure:</p>
 
 <h2 id="views">Views/</h2>
@@ -632,37 +605,29 @@ Imagine you have the following file structure:</p>
    Index.cshtml
    Details.cshtml</p>
 <ul>
-  <li>• The Home/Index.cshtml and Home/About.cshtml views will use _Layout.cshtml as their</li>
+  <li>The Home/Index.cshtml and Home/About.cshtml views will use _Layout.cshtml as their
+      layout (inherited from the root Views folder&#39;s _ViewStart.cshtml).</li>
+  <li>The Products/Index.cshtml and Products/Details.cshtml views will use
+      _ProductLayout.cshtml as their layout (specified in their own directory&#39;s _ViewStart.cshtml).</li>
 </ul>
-<p>layout (inherited from the root Views folder&#39;s _ViewStart.cshtml).</p>
+<p>Benefits of Using _ViewStart.cshtml</p>
 <ul>
-  <li>• The Products/Index.cshtml and Products/Details.cshtml views will use</li>
+  <li>DRY (Don&#39;t Repeat Yourself): Avoids repeating the layout specification in every view file.</li>
+  <li>Centralized Configuration: Makes it easy to change the default layout for an entire section
+      of your views.</li>
+  <li>Maintainability: Simplifies updating your application&#39;s layout without modifying individual
+      views.</li>
 </ul>
-<p>_ProductLayout.cshtml as their layout (specified in their own directory&#39;s _ViewStart.cshtml).
-Benefits of Using _ViewStart.cshtml</p>
-<ul>
-  <li>• DRY (Don&#39;t Repeat Yourself): Avoids repeating the layout specification in every view file.</li>
-  <li>• Centralized Configuration: Makes it easy to change the default layout for an entire section</li>
-</ul>
-<p>of your views.</p>
-<ul>
-  <li>• Maintainability: Simplifies updating your application&#39;s layout without modifying individual</li>
-</ul>
-<p>views.</p>
 
 <h2 id="important-considerations">Important Considerations</h2>
 <ul>
-  <li>• Override with Layout Property: You can still override the default layout in individual views</li>
+  <li>Override with Layout Property: You can still override the default layout in individual views
+      by explicitly setting the Layout property.</li>
+  <li>Cascading Behavior: Understand the cascading behavior when you have multiple
+      _ViewStart.cshtml files in different directories.</li>
+  <li>Scoping: Be aware that _ViewStart.cshtml affects views within the same directory and its
+      subdirectories.</li>
 </ul>
-<p>by explicitly setting the Layout property.</p>
-<ul>
-  <li>• Cascading Behavior: Understand the cascading behavior when you have multiple</li>
-</ul>
-<p>_ViewStart.cshtml files in different directories.</p>
-<ul>
-  <li>• Scoping: Be aware that _ViewStart.cshtml affects views within the same directory and its</li>
-</ul>
-<p>subdirectories.</p>
 
 <h2 id="dynamic-layout-views">Dynamic Layout Views</h2>
 <p>While the _ViewStart.cshtml file is excellent for setting default layouts, sometimes you need more
@@ -674,18 +639,14 @@ within individual views. This allows you to dynamically change the layout used f
 particular view based on the data or context of the request.</p>
 
 <h2 id="how-to-apply-dynamic-layouts">How to Apply Dynamic Layouts</h2>
-<ul>
-  <li>1. Conditional Logic: Use conditional statements (if, else, switch) in your Razor view to</li>
-</ul>
-<p>determine which layout to apply based on specific criteria.</p>
-<ul>
-  <li>2. Set Layout Property: Within the conditional blocks, assign the appropriate layout path to the</li>
-</ul>
-<p>Layout property.</p>
-<ul>
-  <li>3. Render the View: The MVC framework will use the dynamically assigned layout to render</li>
-</ul>
-<p>the final page.</p>
+<ol>
+  <li>Conditional Logic: Use conditional statements (if, else, switch) in your Razor view to
+      determine which layout to apply based on specific criteria.</li>
+  <li>Set Layout Property: Within the conditional blocks, assign the appropriate layout path to the
+      Layout property.</li>
+  <li>Render the View: The MVC framework will use the dynamically assigned layout to render
+      the final page.</li>
+</ol>
 <p>Code Example: Dynamic Layout Based on ViewBag.ProductID</p>
 
     <div class="code-block">
@@ -699,19 +660,7 @@ particular view based on the data or context of the request.</p>
       <pre><code class="language-csharp">// Views/Products/Search.cshtml
 @{
   ViewData[&quot;Title&quot;] = &quot;Search Products&quot;;
-}</code></pre>
-    </div>
-  <p>if (ViewBag.ProductID != null)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  if (ViewBag.ProductID != null)
   {
    Layout = &quot;~/Views/Shared/_ProductsLayout.cshtml&quot;;
   }
@@ -720,49 +669,39 @@ particular view based on the data or context of the request.</p>
 &lt;p&gt;search details here&lt;/p&gt;</code></pre>
     </div>
   <p>Explanation</p>
-<ul>
-  <li>1. Checking Condition: The code first checks if ViewBag.ProductID is not null. This suggests that</li>
-</ul>
-<p>the view is being rendered in the context of a specific product (since the product ID is
-      available).</p>
-<ul>
-  <li>2. Setting Layout: If ViewBag.ProductID is not null, the Layout property is set to</li>
-</ul>
-<p>~/Views/Shared/_ProductsLayout.cshtml. This means that the view will use a different
-      layout than the default one potentially specified in the _ViewStart.cshtml.</p>
-<ul>
-  <li>3. Default Layout: If ViewBag.ProductID is null, the view will fall back to the default layout,</li>
-</ul>
-<p>which is either specified in the _ViewStart.cshtml file or the application&#39;s global
-      configuration.</p>
+<ol>
+  <li>Checking Condition: The code first checks if ViewBag.ProductID is not null. This suggests that
+      the view is being rendered in the context of a specific product (since the product ID is
+      available).</li>
+  <li>Setting Layout: If ViewBag.ProductID is not null, the Layout property is set to
+      ~/Views/Shared/_ProductsLayout.cshtml. This means that the view will use a different
+      layout than the default one potentially specified in the _ViewStart.cshtml.</li>
+  <li>Default Layout: If ViewBag.ProductID is null, the view will fall back to the default layout,
+      which is either specified in the _ViewStart.cshtml file or the application&#39;s global
+      configuration.</li>
+</ol>
 
 <h2 id="additional-considerations">Additional Considerations</h2>
 <ul>
-  <li>• Flexibility: You can use any condition you need to determine the appropriate layout. This</li>
+  <li>Flexibility: You can use any condition you need to determine the appropriate layout. This
+      could involve checking model properties, user roles, configuration settings, or other dynamic
+      values.</li>
+  <li>Performance: If you have complex layout selection logic, consider moving it to your
+      controller or a helper method to keep your views clean.</li>
+  <li>Maintainability: Organize your layouts clearly, and document the conditions under which
+      each layout is used.</li>
 </ul>
-<p>could involve checking model properties, user roles, configuration settings, or other dynamic
-      values.</p>
-<ul>
-  <li>• Performance: If you have complex layout selection logic, consider moving it to your</li>
-</ul>
-<p>controller or a helper method to keep your views clean.</p>
-<ul>
-  <li>• Maintainability: Organize your layouts clearly, and document the conditions under which</li>
-</ul>
-<p>each layout is used.</p>
 
 <h2 id="important-considerations-1">Important Considerations</h2>
 <ul>
-  <li>• View Model: The preferred way to pass data from the controller to the view is by using a</li>
+  <li>View Model: The preferred way to pass data from the controller to the view is by using a
+      strongly typed view model. ViewBag is not type-safe and could lead to run-time errors if not
+      used with care.</li>
+  <li>Error Handling: Handle the case where ViewBag.ProductID might not be set correctly or
+      could be null when you expect it to have a value. This could help avoid unexpected runtime
+      errors.</li>
 </ul>
-<p>strongly typed view model. ViewBag is not type-safe and could lead to run-time errors if not
-      used with care.</p>
-<ul>
-  <li>• Error Handling: Handle the case where ViewBag.ProductID might not be set correctly or</li>
-</ul>
-<p>could be null when you expect it to have a value. This could help avoid unexpected runtime
-      errors.
-Example Usage in Controller (ProductsController.cs)</p>
+<p>Example Usage in Controller (ProductsController.cs)</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -790,34 +729,25 @@ to control the placement and organization of content within your page&#39;s over
 
 <h2 id="key-concepts">Key Concepts</h2>
 <ul>
-  <li>• @RenderSection() in Layout:</li>
-  <li>o Purpose: Defines a placeholder (section) in the layout view where content can be</li>
-</ul>
-<p>inserted from specific views.</p>
-<ul>
-  <li>o Syntax:</li>
-</ul>
-<p>@RenderSection(&quot;sectionName&quot;, required: true/false)
-              ▪ sectionName: A unique name for the section.
-              ▪ required: A boolean flag indicating whether the section is required (default
+  <li>@RenderSection() in Layout:</li>
+  <li>Purpose: Defines a placeholder (section) in the layout view where content can be
+           inserted from specific views.</li>
+  <li>Syntax:
+@RenderSection(&quot;sectionName&quot;, required: true/false)</li>
+  <li>sectionName: A unique name for the section.</li>
+  <li>required: A boolean flag indicating whether the section is required (default
                  is true). If true, views using this layout must provide content for this section;
-                 otherwise, an exception is thrown.</p>
-<ul>
-  <li>• @section in Content Views:</li>
-  <li>o Purpose: Provides the content to be inserted into the corresponding section in the</li>
+                 otherwise, an exception is thrown.</li>
+  <li>@section in Content Views:</li>
+  <li>Purpose: Provides the content to be inserted into the corresponding section in the
+           layout view.</li>
+  <li>Syntax:
+        o</li>
+  <li>@section sectionName {
+  ... }
+Code Example
+_Layout.cshtml (Layout View)</li>
 </ul>
-<p>layout view.</p>
-<ul>
-  <li>o Syntax:</li>
-</ul>
-<p>o</p>
-<ul>
-  <li>o @section sectionName {</li>
-</ul>
-<p>... }</p>
-
-<h2 id="code-example-1">Code Example</h2>
-<p>_Layout.cshtml (Layout View)</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -863,38 +793,28 @@ not to provide content for it.</p>
   <p>footer_section of the layout view.</p>
 
 <h2 id="how-it-works-1">How It Works</h2>
-<ul>
-  <li>1. When ASP.NET Core renders a view that uses the _Layout.cshtml layout, it encounters the</li>
-</ul>
-<p>@RenderSection(&quot;footer_section&quot;, false) line.</p>
-<ul>
-  <li>2. If the content view (e.g., Contact.cshtml) provides a @section footer_section block, that</li>
-</ul>
-<p>content is inserted into the layout at the @RenderSection location.</p>
-<ul>
-  <li>3. If the content view does not provide a @section footer_section block, and the section is</li>
-</ul>
-<p>marked as optional (false), no content is rendered in that section. If the section is required
-      (true), an error will be thrown.</p>
+<ol>
+  <li>When ASP.NET Core renders a view that uses the _Layout.cshtml layout, it encounters the
+      @RenderSection(&quot;footer_section&quot;, false) line.</li>
+  <li>If the content view (e.g., Contact.cshtml) provides a @section footer_section block, that
+      content is inserted into the layout at the @RenderSection location.</li>
+  <li>If the content view does not provide a @section footer_section block, and the section is
+      marked as optional (false), no content is rendered in that section. If the section is required
+      (true), an error will be thrown.</li>
+</ol>
 
 <h2 id="notes-1">Notes</h2>
 <ul>
-  <li>• Flexibility: Sections let you dynamically control the placement of content in your layout.</li>
-  <li>• Reusability: You can reuse the same layout with different content views, each providing</li>
+  <li>Flexibility: Sections let you dynamically control the placement of content in your layout.</li>
+  <li>Reusability: You can reuse the same layout with different content views, each providing
+      their own section content.</li>
+  <li>Organization: Keep your layout code clean and focused by breaking down the page into
+      logical sections.</li>
+  <li>Optional vs. Required: Use the required flag in @RenderSection wisely to control whether
+      views must provide content for a section.</li>
+  <li>Default Content: You can provide default content within the @RenderSection block in the
+      layout view, which will be rendered if the content view doesn&#39;t override it.</li>
 </ul>
-<p>their own section content.</p>
-<ul>
-  <li>• Organization: Keep your layout code clean and focused by breaking down the page into</li>
-</ul>
-<p>logical sections.</p>
-<ul>
-  <li>• Optional vs. Required: Use the required flag in @RenderSection wisely to control whether</li>
-</ul>
-<p>views must provide content for a section.</p>
-<ul>
-  <li>• Default Content: You can provide default content within the @RenderSection block in the</li>
-</ul>
-<p>layout view, which will be rendered if the content view doesn&#39;t override it.</p>
 
 <h2 id="nested-layout-views">Nested Layout Views</h2>
 <p>In ASP.NET Core MVC, nested layout views allow you to create hierarchical layouts where one layout
@@ -903,37 +823,29 @@ content or override specific sections of its parent layout, while still inheriti
 and common elements.
 Why Use Nested Layouts?</p>
 <ul>
-  <li>• Enhanced Reusability: Achieve even greater reusability by creating multiple layers of layout</li>
+  <li>Enhanced Reusability: Achieve even greater reusability by creating multiple layers of layout
+      views. This is particularly useful for large applications with distinct sections or modules that
+      share some common elements but also have unique layout requirements.</li>
+  <li>Fine-Grained Control: Customize specific areas of a layout without duplicating large chunks
+      of code. You can create a base layout for the entire application and then have specialized
+      layouts for different sections, such as the header, navigation, or footer.</li>
+  <li>Maintainability: Manage and update layout elements more efficiently by making changes at
+      the appropriate level in the layout hierarchy.</li>
 </ul>
-<p>views. This is particularly useful for large applications with distinct sections or modules that
-      share some common elements but also have unique layout requirements.</p>
-<ul>
-  <li>• Fine-Grained Control: Customize specific areas of a layout without duplicating large chunks</li>
-</ul>
-<p>of code. You can create a base layout for the entire application and then have specialized
-      layouts for different sections, such as the header, navigation, or footer.</p>
-<ul>
-  <li>• Maintainability: Manage and update layout elements more efficiently by making changes at</li>
-</ul>
-<p>the appropriate level in the layout hierarchy.</p>
 
 <h2 id="implementing-nested-layouts">Implementing Nested Layouts</h2>
 <ul>
-  <li>1. Parent Layout: Create a parent layout view that defines the main structure and common</li>
+  <li>1. Parent Layout: Create a parent layout view that defines the main structure and common
+      elements. Typically, this is your _Layout.cshtml file in the Views/Shared folder.</li>
+  <li>2. Child Layout: Create a child layout view that inherits from the parent layout. In the child
+      layout, you can:</li>
+  <li>Add new sections or content.</li>
+  <li>Override sections defined in the parent layout using @section.</li>
+  <li>Set the Layout property to the parent layout&#39;s path.</li>
+  <li>3. Content View: In your content views, you don&#39;t need to explicitly specify the child layout. It
+      will automatically inherit from the parent layout if you don&#39;t set a Layout property.</li>
 </ul>
-<p>elements. Typically, this is your _Layout.cshtml file in the Views/Shared folder.</p>
-<ul>
-  <li>2. Child Layout: Create a child layout view that inherits from the parent layout. In the child</li>
-</ul>
-<p>layout, you can:</p>
-<ul>
-  <li>o Add new sections or content.</li>
-  <li>o Override sections defined in the parent layout using @section.</li>
-  <li>o Set the Layout property to the parent layout&#39;s path.</li>
-  <li>3. Content View: In your content views, you don&#39;t need to explicitly specify the child layout. It</li>
-</ul>
-<p>will automatically inherit from the parent layout if you don&#39;t set a Layout property.
-Code Example: In-Depth
+<p>Code Example: In-Depth
 _MasterLayout.cshtml (Parent Layout)
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1043,12 +955,12 @@ _Layout.cshtml (Child Layout)</p>
   <p>&lt;/body&gt;
 &lt;/html&gt;</p>
 <ul>
-  <li>• Layout = &quot;~/Views/Shared/_MasterLayout.cshtml&quot;: Specifies the parent layout.</li>
-  <li>• Additional Content: The child layout adds the navbar, page content area, and footer section.</li>
-  <li>• RenderBody(): Inherits this placeholder from the parent layout, so the content view&#39;s</li>
+  <li>Layout = &quot;~/Views/Shared/_MasterLayout.cshtml&quot;: Specifies the parent layout.</li>
+  <li>Additional Content: The child layout adds the navbar, page content area, and footer section.</li>
+  <li>RenderBody(): Inherits this placeholder from the parent layout, so the content view&#39;s
+      content will ultimately be rendered here.</li>
 </ul>
-<p>content will ultimately be rendered here.
-_ViewStart.cshtml</p>
+<p>_ViewStart.cshtml</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1065,115 +977,104 @@ _ViewStart.cshtml</p>
   <p>This sets the default layout for all views in the application to be _Layout.cshtml.</p>
 
 <h2 id="how-the-nesting-works">How the Nesting Works</h2>
-<ul>
-  <li>1. When a view is rendered, ASP.NET Core first looks for a _ViewStart.cshtml file.</li>
-  <li>2. _ViewStart.cshtml specifies _Layout.cshtml as the default layout.</li>
-  <li>3. _Layout.cshtml, in turn, specifies _MasterLayout.cshtml as its parent.</li>
-  <li>4. The content view is rendered within the @RenderBody() section of _Layout.cshtml.</li>
-  <li>5. The combined content of _Layout.cshtml is then rendered within the @RenderBody()</li>
-</ul>
-<p>section of _MasterLayout.cshtml.</p>
+<ol>
+  <li>When a view is rendered, ASP.NET Core first looks for a _ViewStart.cshtml file.</li>
+  <li>_ViewStart.cshtml specifies _Layout.cshtml as the default layout.</li>
+  <li>_Layout.cshtml, in turn, specifies _MasterLayout.cshtml as its parent.</li>
+  <li>The content view is rendered within the @RenderBody() section of _Layout.cshtml.</li>
+  <li>The combined content of _Layout.cshtml is then rendered within the @RenderBody()
+      section of _MasterLayout.cshtml.</li>
+</ol>
 
 <h2 id="notes-2">Notes</h2>
 <ul>
-  <li>• Flexibility: Nested layouts provide flexibility to create complex and modular UI structures.</li>
-  <li>• Inheritance: Child layouts inherit the structure and content of their parent layouts.</li>
-  <li>• Overriding: Child layouts can override or extend sections defined in the parent layout.</li>
-  <li>• Maintainability: Makes it easier to update and manage the overall layout of your</li>
+  <li>Flexibility: Nested layouts provide flexibility to create complex and modular UI structures.</li>
+  <li>Inheritance: Child layouts inherit the structure and content of their parent layouts.</li>
+  <li>Overriding: Child layouts can override or extend sections defined in the parent layout.</li>
+  <li>Maintainability: Makes it easier to update and manage the overall layout of your
+      application.</li>
 </ul>
-<p>application.</p>
 
 <h2 id="key-points-to-remember">Key points to remember</h2>
 <p>Layout Views: Mastering Page Structure</p>
 <ul>
-  <li>• Purpose: Define a common template for the structure and shared elements of your web</li>
-</ul>
-<p>pages.</p>
-<ul>
-  <li>• Benefits:</li>
-  <li>o Reusability: Avoid code duplication.</li>
-  <li>o Consistency: Maintain a uniform look and feel across pages.</li>
-  <li>o Maintainability: Update the layout once, and changes apply everywhere.</li>
-  <li>• _Layout.cshtml: The main layout file, usually placed in the Views/Shared folder.</li>
-  <li>• RenderBody(): Placeholder in the layout view where the specific view&#39;s content is inserted.</li>
-  <li>• Layout Property:</li>
-  <li>o Used in content views to specify which layout to use.</li>
-  <li>o Can be set dynamically based on conditions in the view.</li>
-  <li>o If not set, the default _Layout.cshtml is used.</li>
+  <li>Purpose: Define a common template for the structure and shared elements of your web
+      pages.</li>
+  <li>Benefits:</li>
+  <li>Reusability: Avoid code duplication.</li>
+  <li>Consistency: Maintain a uniform look and feel across pages.</li>
+  <li>Maintainability: Update the layout once, and changes apply everywhere.</li>
+  <li>_Layout.cshtml: The main layout file, usually placed in the Views/Shared folder.</li>
+  <li>RenderBody(): Placeholder in the layout view where the specific view&#39;s content is inserted.</li>
+  <li>Layout Property:</li>
+  <li>Used in content views to specify which layout to use.</li>
+  <li>Can be set dynamically based on conditions in the view.</li>
+  <li>If not set, the default _Layout.cshtml is used.</li>
 </ul>
 
 <h2 id="sections">Sections</h2>
 <ul>
-  <li>• Purpose: Define placeholders in the layout for content from specific views.</li>
-  <li>• @RenderSection(&quot;sectionName&quot;, required: true/false): Declares a section in the layout.</li>
-  <li>• @section sectionName { ... }: Provides content for the section in the content view.</li>
-  <li>• Optional vs. Required: Control whether a section is mandatory or optional using the</li>
+  <li>Purpose: Define placeholders in the layout for content from specific views.</li>
+  <li>@RenderSection(&quot;sectionName&quot;, required: true/false): Declares a section in the layout.</li>
+  <li>@section sectionName { ... }: Provides content for the section in the content view.</li>
+  <li>Optional vs. Required: Control whether a section is mandatory or optional using the
+      required flag.</li>
 </ul>
-<p>required flag.</p>
 
 <h2 id="nested-layouts">Nested Layouts</h2>
 <ul>
-  <li>• Purpose: Create hierarchical layouts where one layout inherits from another.</li>
-  <li>• Benefits: Increased reusability and fine-grained control over layout customization.</li>
-  <li>• Implementation:</li>
-  <li>o Set the Layout property in the child layout to point to the parent layout.</li>
-  <li>o Use @RenderBody() in both layouts.</li>
+  <li>Purpose: Create hierarchical layouts where one layout inherits from another.</li>
+  <li>Benefits: Increased reusability and fine-grained control over layout customization.</li>
+  <li>Implementation:</li>
+  <li>Set the Layout property in the child layout to point to the parent layout.</li>
+  <li>Use @RenderBody() in both layouts.</li>
 </ul>
 <p>_ViewStart.cshtml</p>
 <ul>
-  <li>• Purpose: Set the default layout for all views in a directory and its subdirectories.</li>
-  <li>• Location: Typically placed in the Views folder or in specific subfolders.</li>
-  <li>• Layout Property: Used within _ViewStart.cshtml to specify the default layout file.</li>
+  <li>Purpose: Set the default layout for all views in a directory and its subdirectories.</li>
+  <li>Location: Typically placed in the Views folder or in specific subfolders.</li>
+  <li>Layout Property: Used within _ViewStart.cshtml to specify the default layout file.</li>
 </ul>
 
 <h2 id="additional-tips">Additional Tips</h2>
 <ul>
-  <li>• View Models: Pass data to layout views using strongly typed view models.</li>
-  <li>• Partial Views: Break down complex layouts into smaller, reusable partial views.</li>
-  <li>• Sections for Flexibility: Use sections to make your layouts adaptable to different content</li>
-</ul>
-<p>views.</p>
-<ul>
-  <li>• Error Handling: Handle potential errors (e.g., missing sections) gracefully.</li>
+  <li>View Models: Pass data to layout views using strongly typed view models.</li>
+  <li>Partial Views: Break down complex layouts into smaller, reusable partial views.</li>
+  <li>Sections for Flexibility: Use sections to make your layouts adaptable to different content
+      views.</li>
+  <li>Error Handling: Handle potential errors (e.g., missing sections) gracefully.</li>
 </ul>
 
 <h2 id="interview-tips">Interview Tips</h2>
 <ul>
-  <li>• Explain the Hierarchy: Clearly articulate how nested layouts and _ViewStart.cshtml work</li>
+  <li>Explain the Hierarchy: Clearly articulate how nested layouts and _ViewStart.cshtml work
+      together to define page structure.</li>
+  <li>Code Examples: Be prepared to write code snippets demonstrating the use of layout views,
+      sections, and dynamic layout selection.</li>
+  <li>Best Practices: Discuss how to use layout views to create maintainable and reusable code.</li>
+  <li>Troubleshooting: Explain how you would debug issues related to layout views (e.g.,
+      incorrect layout rendering).</li>
 </ul>
-<p>together to define page structure.</p>
-<ul>
-  <li>• Code Examples: Be prepared to write code snippets demonstrating the use of layout views,</li>
-</ul>
-<p>sections, and dynamic layout selection.</p>
-<ul>
-  <li>• Best Practices: Discuss how to use layout views to create maintainable and reusable code.</li>
-  <li>• Troubleshooting: Explain how you would debug issues related to layout views (e.g.,</li>
-</ul>
-<p>incorrect layout rendering).</p>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
 <section class="cheatsheet-section" aria-labelledby="cheat-sheet-quick-reference">
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
-  <p>Section 9 – Layout Views – Cheat Sheet</p>
   <h3 id="layout-views-1">Layout Views</h3>
-  <p>Layout View is a web page (.cshtml) that is responsible for containing presentation logic template
+<p>Layout View is a web page (.cshtml) that is responsible for containing presentation logic template
 (commonly the html template with header, sidebar, footer etc.)</p>
   <h3 id="order-of-views-execution">Order of Views Execution</h3>
   <h3 id="layout-views-2">Layout Views</h3>
-  <ul>
-    <li>• The @RenderBody() method presents only in layout view to represent the place where</li>
-  </ul>
-  <p>exactly the content from the view has to be rendered.</p>
-  <ul>
-    <li>• The &quot;Layout&quot; property of the view specifies path of the layout view.</li>
-    <li>• It can be dynamically set in the view.</li>
-    <li>• Both View and Layout View shares the same ViewData object.</li>
-    <li>• So it is possible to send data from view to layout, since the view executes first.</li>
-    <li>• The css files / js files imported in layout view will be applicable to view also, because the</li>
-  </ul>
-  <p>content of view will be merged into the layout view at run time.</p>
+<ul>
+  <li>The @RenderBody() method presents only in layout view to represent the place where
+      exactly the content from the view has to be rendered.</li>
+  <li>The &quot;Layout&quot; property of the view specifies path of the layout view.</li>
+  <li>It can be dynamically set in the view.</li>
+  <li>Both View and Layout View shares the same ViewData object.</li>
+  <li>So it is possible to send data from view to layout, since the view executes first.</li>
+  <li>The css files / js files imported in layout view will be applicable to view also, because the
+      content of view will be merged into the layout view at run time.</li>
+</ul>
 </section>
 
       </article>
@@ -1194,13 +1095,13 @@ _ViewStart.cshtml</p>
       <nav class="bottom-nav" aria-label="Previous and Next Section Navigation">
         
       <a href="section-08.html" class="nav-card prev" aria-label="Previous Section: Sec 08 - Razor Views">
-        <span class="nav-direction">← Previous Section</span>
+        <span class="nav-direction">&larr; Previous Section</span>
         <span class="nav-title">Sec 08: Razor Views</span>
       </a>
     
         
       <a href="section-10.html" class="nav-card next" aria-label="Next Section: Sec 10 - Partial Views">
-        <span class="nav-direction">Next Section →</span>
+        <span class="nav-direction">Next Section &rarr;</span>
         <span class="nav-title">Sec 10: Partial Views</span>
       </a>
     
@@ -1208,8 +1109,8 @@ _ViewStart.cshtml</p>
 
       <!-- Section Footer -->
       <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); color: var(--text-dim); font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;" role="contentinfo">
-        <span>ASP.NET Core Masterclass — Offline Documentation Portal</span>
-        <a href="#top" style="color: var(--text-muted); text-decoration: none;">↑ Back to top</a>
+        <span>ASP.NET Core Masterclass &mdash; Offline Documentation Portal</span>
+        <a href="#top" style="color: var(--text-muted); text-decoration: none;">&uarr; Back to top</a>
       </footer>
     </main>
 
@@ -1276,10 +1177,6 @@ _ViewStart.cshtml</p>
       
         <li class="toc-item">
           <a href="#key-concepts" class="toc-link">Key Concepts</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#code-example-1" class="toc-link">Code Example</a>
         </li>
       
         <li class="toc-item">

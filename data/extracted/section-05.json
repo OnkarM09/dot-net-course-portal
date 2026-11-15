@@ -351,34 +351,27 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o The UseEndpoints middleware component is added to the pipeline, following"
-          ],
-          "text": "        o The UseEndpoints middleware component is added to the pipeline, following"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "        o The UseEndpoints middleware component is added to the pipeline, following",
             "           UseRouting."
           ],
-          "text": "           UseRouting."
+          "text": "        o The UseEndpoints middleware component is added to the pipeline, following\n           UseRouting."
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o If UseRouting found a matching endpoint, UseEndpoints executes the code (the"
+            "        o If UseRouting found a matching endpoint, UseEndpoints executes the code (the",
+            "           RequestDelegate) associated with that endpoint."
           ],
-          "text": "        o If UseRouting found a matching endpoint, UseEndpoints executes the code (the"
+          "text": "        o If UseRouting found a matching endpoint, UseEndpoints executes the code (the\n           RequestDelegate) associated with that endpoint."
         },
         {
           "type": "prose",
           "page": 1,
           "lines": [
-            "           RequestDelegate) associated with that endpoint.",
             "UseRouting vs. UseEndpoints"
           ],
-          "text": "           RequestDelegate) associated with that endpoint.\nUseRouting vs. UseEndpoints"
+          "text": "UseRouting vs. UseEndpoints"
         },
         {
           "type": "list_item",
@@ -400,17 +393,10 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "        o It adds route data to the HttpContext, which subsequent middleware can use to"
-          ],
-          "text": "        o It adds route data to the HttpContext, which subsequent middleware can use to"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "        o It adds route data to the HttpContext, which subsequent middleware can use to",
             "           make decisions."
           ],
-          "text": "           make decisions."
+          "text": "        o It adds route data to the HttpContext, which subsequent middleware can use to\n           make decisions."
         },
         {
           "type": "list_item",
@@ -659,36 +645,29 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o It's responsible for endpoint execution - invoking the code (the delegate) associated"
-          ],
-          "text": "        o It's responsible for endpoint execution - invoking the code (the delegate) associated"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "        o It's responsible for endpoint execution - invoking the code (the delegate) associated",
             "           with the matched endpoint."
           ],
-          "text": "           with the matched endpoint."
+          "text": "        o It's responsible for endpoint execution - invoking the code (the delegate) associated\n           with the matched endpoint."
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "        o It also lets you configure the endpoints (e.g., define policies, filters) using lambda"
+            "        o It also lets you configure the endpoints (e.g., define policies, filters) using lambda",
+            "           expressions."
           ],
-          "text": "        o It also lets you configure the endpoints (e.g., define policies, filters) using lambda"
+          "text": "        o It also lets you configure the endpoints (e.g., define policies, filters) using lambda\n           expressions."
         },
         {
           "type": "prose",
           "page": 2,
           "lines": [
-            "           expressions.",
             "Map* Methods: Creating Endpoints",
             "ASP.NET Core provides a family of Map* extension methods on the IEndpointRouteBuilder interface",
             "that simplify endpoint creation:"
           ],
-          "text": "           expressions.\nMap* Methods: Creating Endpoints\nASP.NET Core provides a family of Map* extension methods on the IEndpointRouteBuilder interface\nthat simplify endpoint creation:"
+          "text": "Map* Methods: Creating Endpoints\nASP.NET Core provides a family of Map* extension methods on the IEndpointRouteBuilder interface\nthat simplify endpoint creation:"
         },
         {
           "type": "list_item",
@@ -726,17 +705,10 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • MapControllerRoute, MapAreaControllerRoute: Used for configuring MVC/Razor Pages"
-          ],
-          "text": "   • MapControllerRoute, MapAreaControllerRoute: Used for configuring MVC/Razor Pages"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   • MapControllerRoute, MapAreaControllerRoute: Used for configuring MVC/Razor Pages",
             "      controllers."
           ],
-          "text": "      controllers."
+          "text": "   • MapControllerRoute, MapAreaControllerRoute: Used for configuring MVC/Razor Pages\n      controllers."
         },
         {
           "type": "list_item",
@@ -1025,23 +997,16 @@
       ],
       "blocks": [
         {
-          "type": "prose",
-          "page": 3,
-          "lines": [
-            "});"
-          ],
-          "text": "});"
-        },
-        {
           "type": "code",
           "page": 3,
           "lines": [
+            "});",
             "app.Run(async context => {",
             "  await context.Response.WriteAsync($\"Request received at {context.Request.Path}\");",
             "});",
             "   1. app.UseRouting();: This line activates routing middleware. It sets up the machinery to"
           ],
-          "text": "app.Run(async context => {\n  await context.Response.WriteAsync($\"Request received at {context.Request.Path}\");\n});\n   1. app.UseRouting();: This line activates routing middleware. It sets up the machinery to"
+          "text": "});\napp.Run(async context => {\n  await context.Response.WriteAsync($\"Request received at {context.Request.Path}\");\n});\n   1. app.UseRouting();: This line activates routing middleware. It sets up the machinery to"
         },
         {
           "type": "prose",
@@ -1055,66 +1020,38 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   2. app.UseEndpoints(endpoints => { ... });: This lambda expression configures the endpoints of"
-          ],
-          "text": "   2. app.UseEndpoints(endpoints => { ... });: This lambda expression configures the endpoints of"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   2. app.UseEndpoints(endpoints => { ... });: This lambda expression configures the endpoints of",
             "      your application:"
           ],
-          "text": "      your application:"
+          "text": "   2. app.UseEndpoints(endpoints => { ... });: This lambda expression configures the endpoints of\n      your application:"
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "        o endpoints.MapGet(\"map1\", ...);: Registers a GET endpoint that responds to the path"
-          ],
-          "text": "        o endpoints.MapGet(\"map1\", ...);: Registers a GET endpoint that responds to the path"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "        o endpoints.MapGet(\"map1\", ...);: Registers a GET endpoint that responds to the path",
             "           \"/map1\" with the text \"In Map 1\"."
           ],
-          "text": "           \"/map1\" with the text \"In Map 1\"."
+          "text": "        o endpoints.MapGet(\"map1\", ...);: Registers a GET endpoint that responds to the path\n           \"/map1\" with the text \"In Map 1\"."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "        o endpoints.MapPost(\"map2\", ...);: Registers a POST endpoint for the path \"/map2\","
-          ],
-          "text": "        o endpoints.MapPost(\"map2\", ...);: Registers a POST endpoint for the path \"/map2\","
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "        o endpoints.MapPost(\"map2\", ...);: Registers a POST endpoint for the path \"/map2\",",
             "           responding with \"In Map 2\"."
           ],
-          "text": "           responding with \"In Map 2\"."
+          "text": "        o endpoints.MapPost(\"map2\", ...);: Registers a POST endpoint for the path \"/map2\",\n           responding with \"In Map 2\"."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   3. app.Run(async context => { ... });: This is a fallback terminal middleware. If no other"
-          ],
-          "text": "   3. app.Run(async context => { ... });: This is a fallback terminal middleware. If no other"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   3. app.Run(async context => { ... });: This is a fallback terminal middleware. If no other",
             "      endpoint matches the request (e.g., if you visit \"/map3\"), it will execute this code, writing",
             "      the requested path to the response."
           ],
-          "text": "      endpoint matches the request (e.g., if you visit \"/map3\"), it will execute this code, writing\n      the requested path to the response."
+          "text": "   3. app.Run(async context => { ... });: This is a fallback terminal middleware. If no other\n      endpoint matches the request (e.g., if you visit \"/map3\"), it will execute this code, writing\n      the requested path to the response."
         },
         {
           "type": "heading",
@@ -1138,52 +1075,38 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Purpose: It allows you to access details about the matched endpoint, such as its display"
-          ],
-          "text": "   • Purpose: It allows you to access details about the matched endpoint, such as its display"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • Purpose: It allows you to access details about the matched endpoint, such as its display",
             "      name, route pattern, metadata, and more."
           ],
-          "text": "      name, route pattern, metadata, and more."
+          "text": "   • Purpose: It allows you to access details about the matched endpoint, such as its display\n      name, route pattern, metadata, and more."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • When to Use It: You typically use GetEndpoint() within middleware components to make"
-          ],
-          "text": "   • When to Use It: You typically use GetEndpoint() within middleware components to make"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • When to Use It: You typically use GetEndpoint() within middleware components to make",
             "      decisions based on the selected endpoint or to extract information that's relevant to your",
             "      custom logic."
           ],
-          "text": "      decisions based on the selected endpoint or to extract information that's relevant to your\n      custom logic."
+          "text": "   • When to Use It: You typically use GetEndpoint() within middleware components to make\n      decisions based on the selected endpoint or to extract information that's relevant to your\n      custom logic."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • Middleware Placement: The GetEndpoint() method will return a valid Endpoint object only"
+            "   • Middleware Placement: The GetEndpoint() method will return a valid Endpoint object only",
+            "      after the UseRouting middleware has executed and successfully matched the request to an",
+            "      endpoint."
           ],
-          "text": "   • Middleware Placement: The GetEndpoint() method will return a valid Endpoint object only"
+          "text": "   • Middleware Placement: The GetEndpoint() method will return a valid Endpoint object only\n      after the UseRouting middleware has executed and successfully matched the request to an\n      endpoint."
         },
         {
           "type": "prose",
           "page": 3,
           "lines": [
-            "      after the UseRouting middleware has executed and successfully matched the request to an",
-            "      endpoint.",
             "Code:"
           ],
-          "text": "      after the UseRouting middleware has executed and successfully matched the request to an\n      endpoint.\nCode:"
+          "text": "Code:"
         },
         {
           "type": "code",
@@ -1436,22 +1359,8 @@
             "// Middleware 1: Before Routing",
             "app.Use(async (context, next) =>",
             "{",
-            "  Microsoft.AspNetCore.Http.Endpoint? endPoint = context.GetEndpoint();"
-          ],
-          "text": "// Middleware 1: Before Routing\napp.Use(async (context, next) =>\n{\n  Microsoft.AspNetCore.Http.Endpoint? endPoint = context.GetEndpoint();"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
-            "  if (endPoint != null)"
-          ],
-          "text": "  if (endPoint != null)"
-        },
-        {
-          "type": "code",
-          "page": 4,
-          "lines": [
+            "  Microsoft.AspNetCore.Http.Endpoint? endPoint = context.GetEndpoint();",
+            "  if (endPoint != null)",
             "  {",
             "   await context.Response.WriteAsync($\"Endpoint: {endPoint.DisplayName}\\n\");",
             "  }",
@@ -1462,22 +1371,8 @@
             "// Middleware 2: After Routing",
             "app.Use(async (context, next) =>",
             "{",
-            "  Microsoft.AspNetCore.Http.Endpoint? endPoint = context.GetEndpoint();"
-          ],
-          "text": "  {\n   await context.Response.WriteAsync($\"Endpoint: {endPoint.DisplayName}\\n\");\n  }\n  await next(context);\n});\n// Enable Routing Middleware\napp.UseRouting();\n// Middleware 2: After Routing\napp.Use(async (context, next) =>\n{\n  Microsoft.AspNetCore.Http.Endpoint? endPoint = context.GetEndpoint();"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
-            "  if (endPoint != null)"
-          ],
-          "text": "  if (endPoint != null)"
-        },
-        {
-          "type": "code",
-          "page": 4,
-          "lines": [
+            "  Microsoft.AspNetCore.Http.Endpoint? endPoint = context.GetEndpoint();",
+            "  if (endPoint != null)",
             "  {",
             "   await context.Response.WriteAsync($\"Endpoint: {endPoint.DisplayName}\\n\");",
             "  }",
@@ -1485,26 +1380,12 @@
             "});",
             "// Creating Endpoints",
             "app.UseEndpoints(endpoints =>",
-            "{"
-          ],
-          "text": "  {\n   await context.Response.WriteAsync($\"Endpoint: {endPoint.DisplayName}\\n\");\n  }\n  await next(context);\n});\n// Creating Endpoints\napp.UseEndpoints(endpoints =>\n{"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
-            "  endpoints.MapGet(\"map1\", async (context) =>"
-          ],
-          "text": "  endpoints.MapGet(\"map1\", async (context) =>"
-        },
-        {
-          "type": "code",
-          "page": 4,
-          "lines": [
+            "{",
+            "  endpoints.MapGet(\"map1\", async (context) =>",
             "  {",
             "   await context.Response.WriteAsync(\"In Map 1\");"
           ],
-          "text": "  {\n   await context.Response.WriteAsync(\"In Map 1\");"
+          "text": "// Middleware 1: Before Routing\napp.Use(async (context, next) =>\n{\n  Microsoft.AspNetCore.Http.Endpoint? endPoint = context.GetEndpoint();\n  if (endPoint != null)\n  {\n   await context.Response.WriteAsync($\"Endpoint: {endPoint.DisplayName}\\n\");\n  }\n  await next(context);\n});\n// Enable Routing Middleware\napp.UseRouting();\n// Middleware 2: After Routing\napp.Use(async (context, next) =>\n{\n  Microsoft.AspNetCore.Http.Endpoint? endPoint = context.GetEndpoint();\n  if (endPoint != null)\n  {\n   await context.Response.WriteAsync($\"Endpoint: {endPoint.DisplayName}\\n\");\n  }\n  await next(context);\n});\n// Creating Endpoints\napp.UseEndpoints(endpoints =>\n{\n  endpoints.MapGet(\"map1\", async (context) =>\n  {\n   await context.Response.WriteAsync(\"In Map 1\");"
         }
       ],
       "char_count_raw": 717,
@@ -1750,18 +1631,11 @@
       ],
       "blocks": [
         {
-          "type": "prose",
-          "page": 5,
-          "lines": [
-            "  });",
-            "  endpoints.MapPost(\"map2\", async (context) =>"
-          ],
-          "text": "  });\n  endpoints.MapPost(\"map2\", async (context) =>"
-        },
-        {
           "type": "code",
           "page": 5,
           "lines": [
+            "  });",
+            "  endpoints.MapPost(\"map2\", async (context) =>",
             "  {",
             "   await context.Response.WriteAsync(\"In Map 2\");",
             "  });",
@@ -1771,41 +1645,20 @@
             "{",
             "  await context.Response.WriteAsync($\"Request received at {context.Request.Path}\");",
             "});",
-            "app.Run();"
-          ],
-          "text": "  {\n   await context.Response.WriteAsync(\"In Map 2\");\n  });\n});\n// Fallback Middleware\napp.Run(async context =>\n{\n  await context.Response.WriteAsync($\"Request received at {context.Request.Path}\");\n});\napp.Run();"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
-            "Let's analyze the code step-by-step:"
-          ],
-          "text": "Let's analyze the code step-by-step:"
-        },
-        {
-          "type": "list_item",
-          "page": 5,
-          "lines": [
+            "app.Run();",
+            "Let's analyze the code step-by-step:",
             "   1. Middleware 1 (Before Routing):"
           ],
-          "text": "   1. Middleware 1 (Before Routing):"
-        },
-        {
-          "type": "list_item",
-          "page": 5,
-          "lines": [
-            "        o Here, GetEndpoint() will return null because routing hasn't happened yet. The"
-          ],
-          "text": "        o Here, GetEndpoint() will return null because routing hasn't happened yet. The"
+          "text": "  });\n  endpoints.MapPost(\"map2\", async (context) =>\n  {\n   await context.Response.WriteAsync(\"In Map 2\");\n  });\n});\n// Fallback Middleware\napp.Run(async context =>\n{\n  await context.Response.WriteAsync($\"Request received at {context.Request.Path}\");\n});\napp.Run();\nLet's analyze the code step-by-step:\n   1. Middleware 1 (Before Routing):"
         },
         {
           "type": "prose",
           "page": 5,
           "lines": [
+            "        o Here, GetEndpoint() will return null because routing hasn't happened yet. The",
             "           request hasn't been matched to any specific endpoint."
           ],
-          "text": "           request hasn't been matched to any specific endpoint."
+          "text": "        o Here, GetEndpoint() will return null because routing hasn't happened yet. The\n           request hasn't been matched to any specific endpoint."
         },
         {
           "type": "list_item",
@@ -1819,17 +1672,10 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "        o This enables the routing middleware, which is responsible for matching the request"
-          ],
-          "text": "        o This enables the routing middleware, which is responsible for matching the request"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "        o This enables the routing middleware, which is responsible for matching the request",
             "           to an endpoint."
           ],
-          "text": "           to an endpoint."
+          "text": "        o This enables the routing middleware, which is responsible for matching the request\n           to an endpoint."
         },
         {
           "type": "list_item",
@@ -1843,18 +1689,11 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "        o Now, GetEndpoint() will return the matched endpoint object (if a match was found)."
-          ],
-          "text": "        o Now, GetEndpoint() will return the matched endpoint object (if a match was found)."
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "        o Now, GetEndpoint() will return the matched endpoint object (if a match was found).",
             "           You can access its DisplayName (or other properties) to get information about the",
             "           selected endpoint."
           ],
-          "text": "           You can access its DisplayName (or other properties) to get information about the\n           selected endpoint."
+          "text": "        o Now, GetEndpoint() will return the matched endpoint object (if a match was found).\n           You can access its DisplayName (or other properties) to get information about the\n           selected endpoint."
         },
         {
           "type": "list_item",
@@ -1876,17 +1715,10 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • For any other path, the display name would be null (since the fallback middleware handles"
-          ],
-          "text": "   • For any other path, the display name would be null (since the fallback middleware handles"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • For any other path, the display name would be null (since the fallback middleware handles",
             "      those cases)."
           ],
-          "text": "      those cases)."
+          "text": "   • For any other path, the display name would be null (since the fallback middleware handles\n      those cases)."
         },
         {
           "type": "list_item",
@@ -1910,8 +1742,8 @@
     },
     {
       "page_number": 6,
-      "raw_text": "5. Fallback Middleware:\no This middleware handles requests that didn't match any defined endpoints. It simply\nwrites the requested path to the response.\nRoute Parameters\nRoute parameters are placeholders within your URL patterns that capture values from incoming\nrequests. These values can then be used within your endpoint handlers to customize the response or\nperform specific actions.\nTypes of Route Parameters\n1. Required Parameters:\no Syntax: Enclosed in curly braces {}.\no Behavior: Must be provided in the URL for the route to match. If not present, the\nrequest won't match this endpoint.\no Example: /products/{id} (The id parameter is required).\n2. Optional Parameters:\no Syntax: Enclosed in curly braces {} and followed by a question mark ?.\no Behavior: Can be omitted from the URL. If not present, the parameter's value will be\nnull.\no Example: /products/details/{id?} (The id parameter is optional).\n3. Parameters with Default Values:\no Syntax: Enclosed in curly braces {}, followed by an equals sign =, and then the\ndefault value.\no Behavior: If not provided in the URL, the parameter will take the specified default\nvalue.\no Example: /employee/profile/{EmployeeName=harsha} (The EmployeeName\nparameter defaults to \"harsha\").\nCode:\n// ... (UseRouting and other middleware) ...\napp.UseEndpoints(endpoints =>\n{\n// Required Parameters\n",
-      "repaired_text": "   5. Fallback Middleware:\n        o This middleware handles requests that didn't match any defined endpoints. It simply\n           writes the requested path to the response.\nRoute Parameters\nRoute parameters are placeholders within your URL patterns that capture values from incoming\nrequests. These values can then be used within your endpoint handlers to customize the response or\nperform specific actions.\nTypes of Route Parameters\n   1. Required Parameters:\n        o Syntax: Enclosed in curly braces {}.\n        o Behavior: Must be provided in the URL for the route to match. If not present, the\n           request won't match this endpoint.\n        o Example: /products/{id} (The id parameter is required).\n   2. Optional Parameters:\n        o Syntax: Enclosed in curly braces {} and followed by a question mark ?.\n        o Behavior: Can be omitted from the URL. If not present, the parameter's value will be\n           null.\n        o Example: /products/details/{id?} (The id parameter is optional).\n   3. Parameters with Default Values:\n        o Syntax: Enclosed in curly braces {}, followed by an equals sign =, and then the\n           default value.\n        o Behavior: If not provided in the URL, the parameter will take the specified default\n           value.\n        o Example: /employee/profile/{EmployeeName=harsha} (The EmployeeName\n           parameter defaults to \"harsha\").\nCode:\n// ... (UseRouting and other middleware) ...\napp.UseEndpoints(endpoints =>\n{\n  // Required Parameters",
+      "raw_text": "5. Fallback Middleware:\no This middleware handles requests that didn't match any defined endpoints. It simply\nwrites the requested path to the response.\nRoute Parameters\nRoute parameters are placeholders within your URL patterns that capture values from incoming\nrequests. These values can then be used within your endpoint handlers to customize the response or\nperform specific actions.\nTypes of Route Parameters\n1. Required Parameters:\no Syntax: Enclosed in curly braces {}.\no Behavior: Must be provided in the URL for the route to match. If not present, the\nrequest won't match this endpoint.\no Example: /products/{id} (The id parameter is required).\n2. Optional Parameters:\no Syntax: Enclosed in curly braces {} and followed by a question mark ?.\no Behavior: Can be omitted from the URL. If not present, the parameter's value will be\nnull.\no Example: /products/details/{id?} (The id parameter is optional).\n3. Parameters with Default Values:\no Syntax: Enclosed in curly braces {}, followed by an equals sign =, and then the\ndefault value.\no Behavior: If not provided in the URL, the parameter will take the specified default\nvalue.\no Example: /employee/profile/{EmployeeName=john} (The EmployeeName\nparameter defaults to \"john\").\nCode:\n// ... (UseRouting and other middleware) ...\napp.UseEndpoints(endpoints =>\n{\n// Required Parameters\n",
+      "repaired_text": "   5. Fallback Middleware:\n        o This middleware handles requests that didn't match any defined endpoints. It simply\n           writes the requested path to the response.\nRoute Parameters\nRoute parameters are placeholders within your URL patterns that capture values from incoming\nrequests. These values can then be used within your endpoint handlers to customize the response or\nperform specific actions.\nTypes of Route Parameters\n   1. Required Parameters:\n        o Syntax: Enclosed in curly braces {}.\n        o Behavior: Must be provided in the URL for the route to match. If not present, the\n           request won't match this endpoint.\n        o Example: /products/{id} (The id parameter is required).\n   2. Optional Parameters:\n        o Syntax: Enclosed in curly braces {} and followed by a question mark ?.\n        o Behavior: Can be omitted from the URL. If not present, the parameter's value will be\n           null.\n        o Example: /products/details/{id?} (The id parameter is optional).\n   3. Parameters with Default Values:\n        o Syntax: Enclosed in curly braces {}, followed by an equals sign =, and then the\n           default value.\n        o Behavior: If not provided in the URL, the parameter will take the specified default\n           value.\n        o Example: /employee/profile/{EmployeeName=john} (The EmployeeName\n           parameter defaults to \"john\").\nCode:\n// ... (UseRouting and other middleware) ...\napp.UseEndpoints(endpoints =>\n{\n  // Required Parameters",
       "lines": [
         {
           "text": "   5. Fallback Middleware:",
@@ -2098,16 +1930,16 @@
           "fontName": "g_d8_f2"
         },
         {
-          "text": "        o Example: /employee/profile/{EmployeeName=harsha} (The EmployeeName",
-          "rawText": "o Example: /employee/profile/{EmployeeName=harsha} (The EmployeeName",
+          "text": "        o Example: /employee/profile/{EmployeeName=john} (The EmployeeName",
+          "rawText": "o Example: /employee/profile/{EmployeeName=john} (The EmployeeName",
           "x": 126.02,
           "y": 230.69,
           "fontSize": 11.04,
           "fontName": "g_d8_f5"
         },
         {
-          "text": "           parameter defaults to \"harsha\").",
-          "rawText": "parameter defaults to \"harsha\").",
+          "text": "           parameter defaults to \"john\").",
+          "rawText": "parameter defaults to \"john\").",
           "x": 144.02,
           "y": 216.14,
           "fontSize": 11.04,
@@ -2167,17 +1999,10 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "        o This middleware handles requests that didn't match any defined endpoints. It simply"
-          ],
-          "text": "        o This middleware handles requests that didn't match any defined endpoints. It simply"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "        o This middleware handles requests that didn't match any defined endpoints. It simply",
             "           writes the requested path to the response."
           ],
-          "text": "           writes the requested path to the response."
+          "text": "        o This middleware handles requests that didn't match any defined endpoints. It simply\n           writes the requested path to the response."
         },
         {
           "type": "heading",
@@ -2225,17 +2050,10 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "        o Behavior: Must be provided in the URL for the route to match. If not present, the"
-          ],
-          "text": "        o Behavior: Must be provided in the URL for the route to match. If not present, the"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "        o Behavior: Must be provided in the URL for the route to match. If not present, the",
             "           request won't match this endpoint."
           ],
-          "text": "           request won't match this endpoint."
+          "text": "        o Behavior: Must be provided in the URL for the route to match. If not present, the\n           request won't match this endpoint."
         },
         {
           "type": "list_item",
@@ -2265,17 +2083,10 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "        o Behavior: Can be omitted from the URL. If not present, the parameter's value will be"
-          ],
-          "text": "        o Behavior: Can be omitted from the URL. If not present, the parameter's value will be"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "        o Behavior: Can be omitted from the URL. If not present, the parameter's value will be",
             "           null."
           ],
-          "text": "           null."
+          "text": "        o Behavior: Can be omitted from the URL. If not present, the parameter's value will be\n           null."
         },
         {
           "type": "list_item",
@@ -2297,50 +2108,36 @@
           "type": "list_item",
           "page": 6,
           "lines": [
-            "        o Syntax: Enclosed in curly braces {}, followed by an equals sign =, and then the"
-          ],
-          "text": "        o Syntax: Enclosed in curly braces {}, followed by an equals sign =, and then the"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "        o Syntax: Enclosed in curly braces {}, followed by an equals sign =, and then the",
             "           default value."
           ],
-          "text": "           default value."
+          "text": "        o Syntax: Enclosed in curly braces {}, followed by an equals sign =, and then the\n           default value."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "        o Behavior: If not provided in the URL, the parameter will take the specified default"
-          ],
-          "text": "        o Behavior: If not provided in the URL, the parameter will take the specified default"
-        },
-        {
-          "type": "prose",
-          "page": 6,
-          "lines": [
+            "        o Behavior: If not provided in the URL, the parameter will take the specified default",
             "           value."
           ],
-          "text": "           value."
+          "text": "        o Behavior: If not provided in the URL, the parameter will take the specified default\n           value."
         },
         {
           "type": "list_item",
           "page": 6,
           "lines": [
-            "        o Example: /employee/profile/{EmployeeName=harsha} (The EmployeeName"
+            "        o Example: /employee/profile/{EmployeeName=john} (The EmployeeName",
+            "           parameter defaults to \"john\")."
           ],
-          "text": "        o Example: /employee/profile/{EmployeeName=harsha} (The EmployeeName"
+          "text": "        o Example: /employee/profile/{EmployeeName=john} (The EmployeeName\n           parameter defaults to \"john\")."
         },
         {
           "type": "prose",
           "page": 6,
           "lines": [
-            "           parameter defaults to \"harsha\").",
             "Code:"
           ],
-          "text": "           parameter defaults to \"harsha\").\nCode:"
+          "text": "Code:"
         },
         {
           "type": "code",
@@ -2359,8 +2156,8 @@
     },
     {
       "page_number": 7,
-      "raw_text": "endpoints.Map(\"files/{filename}.{extension}\", async context =>\n{\nstring? fileName = Convert.ToString(context.Request.RouteValues[\"filename\"]);\nstring? extension = Convert.ToString(context.Request.RouteValues[\"extension\"]);\nawait context.Response.WriteAsync($\"In files - {fileName} - {extension}\");\n});\n// Default Parameter\nendpoints.Map(\"employee/profile/{EmployeeName=harsha}\", async context =>\n{\nstring? employeeName = Convert.ToString(context.Request.RouteValues[\"employeename\"]);\nawait context.Response.WriteAsync($\"In Employee profile - {employeeName}\");\n});\n// Optional Parameter\nendpoints.Map(\"products/details/{id?}\", async context => {\nif (context.Request.RouteValues.ContainsKey(\"id\"))\n{\nint id = Convert.ToInt32(context.Request.RouteValues[\"id\"]);\nawait context.Response.WriteAsync($\"Products details - {id}\");\n}\nelse\n{\nawait context.Response.WriteAsync($\"Products details - id is not supplied\");\n}\n});\n});\n// ... (Fallback middleware) ...\n",
-      "repaired_text": "  endpoints.Map(\"files/{filename}.{extension}\", async context =>\n  {\n   string? fileName = Convert.ToString(context.Request.RouteValues[\"filename\"]);\n   string? extension = Convert.ToString(context.Request.RouteValues[\"extension\"]);\n   await context.Response.WriteAsync($\"In files - {fileName} - {extension}\");\n  });\n  // Default Parameter\n  endpoints.Map(\"employee/profile/{EmployeeName=harsha}\", async context =>\n  {\n   string? employeeName = Convert.ToString(context.Request.RouteValues[\"employeename\"]);\n   await context.Response.WriteAsync($\"In Employee profile - {employeeName}\");\n  });\n  // Optional Parameter\n  endpoints.Map(\"products/details/{id?}\", async context => {\n   if (context.Request.RouteValues.ContainsKey(\"id\"))\n   {\n     int id = Convert.ToInt32(context.Request.RouteValues[\"id\"]);\n     await context.Response.WriteAsync($\"Products details - {id}\");\n   }\n   else\n   {\n     await context.Response.WriteAsync($\"Products details - id is not supplied\");\n   }\n  });\n});\n// ... (Fallback middleware) ...",
+      "raw_text": "endpoints.Map(\"files/{filename}.{extension}\", async context =>\n{\nstring? fileName = Convert.ToString(context.Request.RouteValues[\"filename\"]);\nstring? extension = Convert.ToString(context.Request.RouteValues[\"extension\"]);\nawait context.Response.WriteAsync($\"In files - {fileName} - {extension}\");\n});\n// Default Parameter\nendpoints.Map(\"employee/profile/{EmployeeName=john}\", async context =>\n{\nstring? employeeName = Convert.ToString(context.Request.RouteValues[\"employeename\"]);\nawait context.Response.WriteAsync($\"In Employee profile - {employeeName}\");\n});\n// Optional Parameter\nendpoints.Map(\"products/details/{id?}\", async context => {\nif (context.Request.RouteValues.ContainsKey(\"id\"))\n{\nint id = Convert.ToInt32(context.Request.RouteValues[\"id\"]);\nawait context.Response.WriteAsync($\"Products details - {id}\");\n}\nelse\n{\nawait context.Response.WriteAsync($\"Products details - id is not supplied\");\n}\n});\n});\n// ... (Fallback middleware) ...\n",
+      "repaired_text": "  endpoints.Map(\"files/{filename}.{extension}\", async context =>\n  {\n   string? fileName = Convert.ToString(context.Request.RouteValues[\"filename\"]);\n   string? extension = Convert.ToString(context.Request.RouteValues[\"extension\"]);\n   await context.Response.WriteAsync($\"In files - {fileName} - {extension}\");\n  });\n  // Default Parameter\n  endpoints.Map(\"employee/profile/{EmployeeName=john}\", async context =>\n  {\n   string? employeeName = Convert.ToString(context.Request.RouteValues[\"employeename\"]);\n   await context.Response.WriteAsync($\"In Employee profile - {employeeName}\");\n  });\n  // Optional Parameter\n  endpoints.Map(\"products/details/{id?}\", async context => {\n   if (context.Request.RouteValues.ContainsKey(\"id\"))\n   {\n     int id = Convert.ToInt32(context.Request.RouteValues[\"id\"]);\n     await context.Response.WriteAsync($\"Products details - {id}\");\n   }\n   else\n   {\n     await context.Response.WriteAsync($\"Products details - id is not supplied\");\n   }\n  });\n});\n// ... (Fallback middleware) ...",
       "lines": [
         {
           "text": "  endpoints.Map(\"files/{filename}.{extension}\", async context =>",
@@ -2419,8 +2216,8 @@
           "fontName": "g_d8_f2"
         },
         {
-          "text": "  endpoints.Map(\"employee/profile/{EmployeeName=harsha}\", async context =>",
-          "rawText": "endpoints.Map(\"employee/profile/{EmployeeName=harsha}\", async context =>",
+          "text": "  endpoints.Map(\"employee/profile/{EmployeeName=john}\", async context =>",
+          "rawText": "endpoints.Map(\"employee/profile/{EmployeeName=john}\", async context =>",
           "x": 82.104,
           "y": 556.99,
           "fontSize": 11.04,
@@ -2573,78 +2370,29 @@
       ],
       "blocks": [
         {
-          "type": "prose",
-          "page": 7,
-          "lines": [
-            "  endpoints.Map(\"files/{filename}.{extension}\", async context =>"
-          ],
-          "text": "  endpoints.Map(\"files/{filename}.{extension}\", async context =>"
-        },
-        {
           "type": "code",
           "page": 7,
           "lines": [
+            "  endpoints.Map(\"files/{filename}.{extension}\", async context =>",
             "  {",
             "   string? fileName = Convert.ToString(context.Request.RouteValues[\"filename\"]);",
             "   string? extension = Convert.ToString(context.Request.RouteValues[\"extension\"]);",
             "   await context.Response.WriteAsync($\"In files - {fileName} - {extension}\");",
             "  });",
-            "  // Default Parameter"
-          ],
-          "text": "  {\n   string? fileName = Convert.ToString(context.Request.RouteValues[\"filename\"]);\n   string? extension = Convert.ToString(context.Request.RouteValues[\"extension\"]);\n   await context.Response.WriteAsync($\"In files - {fileName} - {extension}\");\n  });\n  // Default Parameter"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
-            "  endpoints.Map(\"employee/profile/{EmployeeName=harsha}\", async context =>"
-          ],
-          "text": "  endpoints.Map(\"employee/profile/{EmployeeName=harsha}\", async context =>"
-        },
-        {
-          "type": "code",
-          "page": 7,
-          "lines": [
+            "  // Default Parameter",
+            "  endpoints.Map(\"employee/profile/{EmployeeName=john}\", async context =>",
             "  {",
             "   string? employeeName = Convert.ToString(context.Request.RouteValues[\"employeename\"]);",
             "   await context.Response.WriteAsync($\"In Employee profile - {employeeName}\");",
             "  });",
             "  // Optional Parameter",
-            "  endpoints.Map(\"products/details/{id?}\", async context => {"
-          ],
-          "text": "  {\n   string? employeeName = Convert.ToString(context.Request.RouteValues[\"employeename\"]);\n   await context.Response.WriteAsync($\"In Employee profile - {employeeName}\");\n  });\n  // Optional Parameter\n  endpoints.Map(\"products/details/{id?}\", async context => {"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
-            "   if (context.Request.RouteValues.ContainsKey(\"id\"))"
-          ],
-          "text": "   if (context.Request.RouteValues.ContainsKey(\"id\"))"
-        },
-        {
-          "type": "code",
-          "page": 7,
-          "lines": [
+            "  endpoints.Map(\"products/details/{id?}\", async context => {",
+            "   if (context.Request.RouteValues.ContainsKey(\"id\"))",
             "   {",
             "     int id = Convert.ToInt32(context.Request.RouteValues[\"id\"]);",
             "     await context.Response.WriteAsync($\"Products details - {id}\");",
-            "   }"
-          ],
-          "text": "   {\n     int id = Convert.ToInt32(context.Request.RouteValues[\"id\"]);\n     await context.Response.WriteAsync($\"Products details - {id}\");\n   }"
-        },
-        {
-          "type": "prose",
-          "page": 7,
-          "lines": [
-            "   else"
-          ],
-          "text": "   else"
-        },
-        {
-          "type": "code",
-          "page": 7,
-          "lines": [
+            "   }",
+            "   else",
             "   {",
             "     await context.Response.WriteAsync($\"Products details - id is not supplied\");",
             "   }",
@@ -2652,7 +2400,7 @@
             "});",
             "// ... (Fallback middleware) ..."
           ],
-          "text": "   {\n     await context.Response.WriteAsync($\"Products details - id is not supplied\");\n   }\n  });\n});\n// ... (Fallback middleware) ..."
+          "text": "  endpoints.Map(\"files/{filename}.{extension}\", async context =>\n  {\n   string? fileName = Convert.ToString(context.Request.RouteValues[\"filename\"]);\n   string? extension = Convert.ToString(context.Request.RouteValues[\"extension\"]);\n   await context.Response.WriteAsync($\"In files - {fileName} - {extension}\");\n  });\n  // Default Parameter\n  endpoints.Map(\"employee/profile/{EmployeeName=john}\", async context =>\n  {\n   string? employeeName = Convert.ToString(context.Request.RouteValues[\"employeename\"]);\n   await context.Response.WriteAsync($\"In Employee profile - {employeeName}\");\n  });\n  // Optional Parameter\n  endpoints.Map(\"products/details/{id?}\", async context => {\n   if (context.Request.RouteValues.ContainsKey(\"id\"))\n   {\n     int id = Convert.ToInt32(context.Request.RouteValues[\"id\"]);\n     await context.Response.WriteAsync($\"Products details - {id}\");\n   }\n   else\n   {\n     await context.Response.WriteAsync($\"Products details - id is not supplied\");\n   }\n  });\n});\n// ... (Fallback middleware) ..."
         }
       ],
       "char_count_raw": 951,
@@ -2660,8 +2408,8 @@
     },
     {
       "page_number": 8,
-      "raw_text": "1. Required Parameters Example:\no The route files/{filename}.{extension} expects both filename and extension to be\npresent in the URL (e.g., /files/sample.txt).\no The endpoint handler extracts these values from context.Request.RouteValues and\nuses them in the response.\n2. Default Parameter Example:\no The route employee/profile/{EmployeeName=harsha} has a default value for\nEmployeeName.\no If you visit /employee/profile, the response will be \"In Employee profile - harsha\".\no If you visit /employee/profile/john, the response will be \"In Employee profile - john\".\n3. Optional Parameter Example:\no The route products/details/{id?} allows the id parameter to be omitted.\no If you visit /products/details/123, it will show the product details for ID 123.\no If you visit /products/details, it will indicate that the ID was not provided.\nRoute Constraints\nRoute constraints are an essential tool in ASP.NET Core routing that allows you to add extra\nvalidation to your route parameters. They define rules that restrict the values a parameter can\naccept, helping you filter out invalid requests before they reach your endpoint handlers.\nWhy Use Route Constraints?\n• Enhanced Validation: Ensure that only requests with valid parameter values are handled.\n• Improved Security: Prevent malicious input by rejecting requests with potentially harmful\nvalues.\n• Cleaner Code: Avoid cluttering your endpoint handlers with validation logic.\n• Explicit Routing: Make your routes more self-documenting and easier to understand.\nCommon Route Constraints\nASP.NET Core provides a variety of built-in route constraints:\n• int: Requires the parameter value to be an integer.\n• bool: Requires the parameter value to be a boolean (true or false).\n",
-      "repaired_text": "   1. Required Parameters Example:\n        o The route files/{filename}.{extension} expects both filename and extension to be\n           present in the URL (e.g., /files/sample.txt).\n        o The endpoint handler extracts these values from context.Request.RouteValues and\n           uses them in the response.\n   2. Default Parameter Example:\n        o The route employee/profile/{EmployeeName=harsha} has a default value for\n           EmployeeName.\n        o If you visit /employee/profile, the response will be \"In Employee profile - harsha\".\n        o If you visit /employee/profile/john, the response will be \"In Employee profile - john\".\n   3. Optional Parameter Example:\n        o The route products/details/{id?} allows the id parameter to be omitted.\n        o If you visit /products/details/123, it will show the product details for ID 123.\n        o If you visit /products/details, it will indicate that the ID was not provided.\nRoute Constraints\nRoute constraints are an essential tool in ASP.NET Core routing that allows you to add extra\nvalidation to your route parameters. They define rules that restrict the values a parameter can\naccept, helping you filter out invalid requests before they reach your endpoint handlers.\nWhy Use Route Constraints?\n   • Enhanced Validation: Ensure that only requests with valid parameter values are handled.\n   • Improved Security: Prevent malicious input by rejecting requests with potentially harmful\n      values.\n   • Cleaner Code: Avoid cluttering your endpoint handlers with validation logic.\n   • Explicit Routing: Make your routes more self-documenting and easier to understand.\nCommon Route Constraints\nASP.NET Core provides a variety of built-in route constraints:\n   • int: Requires the parameter value to be an integer.\n   • bool: Requires the parameter value to be a boolean (true or false).",
+      "raw_text": "1. Required Parameters Example:\no The route files/{filename}.{extension} expects both filename and extension to be\npresent in the URL (e.g., /files/sample.txt).\no The endpoint handler extracts these values from context.Request.RouteValues and\nuses them in the response.\n2. Default Parameter Example:\no The route employee/profile/{EmployeeName=john} has a default value for\nEmployeeName.\no If you visit /employee/profile, the response will be \"In Employee profile - john\".\no If you visit /employee/profile/john, the response will be \"In Employee profile - john\".\n3. Optional Parameter Example:\no The route products/details/{id?} allows the id parameter to be omitted.\no If you visit /products/details/123, it will show the product details for ID 123.\no If you visit /products/details, it will indicate that the ID was not provided.\nRoute Constraints\nRoute constraints are an essential tool in ASP.NET Core routing that allows you to add extra\nvalidation to your route parameters. They define rules that restrict the values a parameter can\naccept, helping you filter out invalid requests before they reach your endpoint handlers.\nWhy Use Route Constraints?\n• Enhanced Validation: Ensure that only requests with valid parameter values are handled.\n• Improved Security: Prevent malicious input by rejecting requests with potentially harmful\nvalues.\n• Cleaner Code: Avoid cluttering your endpoint handlers with validation logic.\n• Explicit Routing: Make your routes more self-documenting and easier to understand.\nCommon Route Constraints\nASP.NET Core provides a variety of built-in route constraints:\n• int: Requires the parameter value to be an integer.\n• bool: Requires the parameter value to be a boolean (true or false).\n",
+      "repaired_text": "   1. Required Parameters Example:\n        o The route files/{filename}.{extension} expects both filename and extension to be\n           present in the URL (e.g., /files/sample.txt).\n        o The endpoint handler extracts these values from context.Request.RouteValues and\n           uses them in the response.\n   2. Default Parameter Example:\n        o The route employee/profile/{EmployeeName=john} has a default value for\n           EmployeeName.\n        o If you visit /employee/profile, the response will be \"In Employee profile - john\".\n        o If you visit /employee/profile/john, the response will be \"In Employee profile - john\".\n   3. Optional Parameter Example:\n        o The route products/details/{id?} allows the id parameter to be omitted.\n        o If you visit /products/details/123, it will show the product details for ID 123.\n        o If you visit /products/details, it will indicate that the ID was not provided.\nRoute Constraints\nRoute constraints are an essential tool in ASP.NET Core routing that allows you to add extra\nvalidation to your route parameters. They define rules that restrict the values a parameter can\naccept, helping you filter out invalid requests before they reach your endpoint handlers.\nWhy Use Route Constraints?\n   • Enhanced Validation: Ensure that only requests with valid parameter values are handled.\n   • Improved Security: Prevent malicious input by rejecting requests with potentially harmful\n      values.\n   • Cleaner Code: Avoid cluttering your endpoint handlers with validation logic.\n   • Explicit Routing: Make your routes more self-documenting and easier to understand.\nCommon Route Constraints\nASP.NET Core provides a variety of built-in route constraints:\n   • int: Requires the parameter value to be an integer.\n   • bool: Requires the parameter value to be a boolean (true or false).",
       "lines": [
         {
           "text": "   1. Required Parameters Example:",
@@ -2712,8 +2460,8 @@
           "fontName": "g_d8_f2"
         },
         {
-          "text": "        o The route employee/profile/{EmployeeName=harsha} has a default value for",
-          "rawText": "o The route employee/profile/{EmployeeName=harsha} has a default value for",
+          "text": "        o The route employee/profile/{EmployeeName=john} has a default value for",
+          "rawText": "o The route employee/profile/{EmployeeName=john} has a default value for",
           "x": 126.02,
           "y": 640.54,
           "fontSize": 11.04,
@@ -2728,8 +2476,8 @@
           "fontName": "g_d8_f2"
         },
         {
-          "text": "        o If you visit /employee/profile, the response will be \"In Employee profile - harsha\".",
-          "rawText": "o If you visit /employee/profile, the response will be \"In Employee profile - harsha\".",
+          "text": "        o If you visit /employee/profile, the response will be \"In Employee profile - john\".",
+          "rawText": "o If you visit /employee/profile, the response will be \"In Employee profile - john\".",
           "x": 126.02,
           "y": 603.58,
           "fontSize": 11.04,
@@ -2901,33 +2649,19 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "        o The route files/{filename}.{extension} expects both filename and extension to be"
-          ],
-          "text": "        o The route files/{filename}.{extension} expects both filename and extension to be"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "        o The route files/{filename}.{extension} expects both filename and extension to be",
             "           present in the URL (e.g., /files/sample.txt)."
           ],
-          "text": "           present in the URL (e.g., /files/sample.txt)."
+          "text": "        o The route files/{filename}.{extension} expects both filename and extension to be\n           present in the URL (e.g., /files/sample.txt)."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "        o The endpoint handler extracts these values from context.Request.RouteValues and"
-          ],
-          "text": "        o The endpoint handler extracts these values from context.Request.RouteValues and"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "        o The endpoint handler extracts these values from context.Request.RouteValues and",
             "           uses them in the response."
           ],
-          "text": "           uses them in the response."
+          "text": "        o The endpoint handler extracts these values from context.Request.RouteValues and\n           uses them in the response."
         },
         {
           "type": "list_item",
@@ -2941,25 +2675,18 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "        o The route employee/profile/{EmployeeName=harsha} has a default value for"
-          ],
-          "text": "        o The route employee/profile/{EmployeeName=harsha} has a default value for"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "        o The route employee/profile/{EmployeeName=john} has a default value for",
             "           EmployeeName."
           ],
-          "text": "           EmployeeName."
+          "text": "        o The route employee/profile/{EmployeeName=john} has a default value for\n           EmployeeName."
         },
         {
           "type": "list_item",
           "page": 8,
           "lines": [
-            "        o If you visit /employee/profile, the response will be \"In Employee profile - harsha\"."
+            "        o If you visit /employee/profile, the response will be \"In Employee profile - john\"."
           ],
-          "text": "        o If you visit /employee/profile, the response will be \"In Employee profile - harsha\"."
+          "text": "        o If you visit /employee/profile, the response will be \"In Employee profile - john\"."
         },
         {
           "type": "list_item",
@@ -3032,17 +2759,10 @@
           "type": "list_item",
           "page": 8,
           "lines": [
-            "   • Improved Security: Prevent malicious input by rejecting requests with potentially harmful"
-          ],
-          "text": "   • Improved Security: Prevent malicious input by rejecting requests with potentially harmful"
-        },
-        {
-          "type": "prose",
-          "page": 8,
-          "lines": [
+            "   • Improved Security: Prevent malicious input by rejecting requests with potentially harmful",
             "      values."
           ],
-          "text": "      values."
+          "text": "   • Improved Security: Prevent malicious input by rejecting requests with potentially harmful\n      values."
         },
         {
           "type": "list_item",
@@ -3098,8 +2818,8 @@
     },
     {
       "page_number": 9,
-      "raw_text": "• datetime: Requires the parameter value to be a valid date and time string.\n• decimal, double, float, long: Require the parameter value to be of the specified numeric\ntype.\n• guid: Requires the parameter value to be a valid GUID (Globally Unique Identifier).\n• alpha: Requires the parameter value to consist only of alphabetic characters (a-z, A-Z).\n• regex: Requires the parameter value to match a regular expression pattern.\n• length: Requires the parameter value to have a specific length or within a specified range.\n• min, max, range: Require the parameter value to be greater than or equal to the minimum\n(min), less than or equal to the maximum (max), or within a specific range (range).\nCode\n// ... (UseRouting and other middleware) ...\napp.UseEndpoints(endpoints =>\n{\n// ... (other endpoints) ...\n// Alphabetic and Length Constraint\nendpoints.Map(\"employee/profile/{EmployeeName:length(4,7):alpha=harsha}\", async context =>\n{\n// ...\n});\n// Integer, Range, and Optional Constraint\nendpoints.Map(\"products/details/{id:int:range(1,1000)?}\", async context => {\n// ...\n});\n// DateTime Constraint\nendpoints.Map(\"daily-digest-report/{reportdate:datetime}\", async context =>\n{\n// ...\n",
-      "repaired_text": "   • datetime: Requires the parameter value to be a valid date and time string.\n   • decimal, double, float, long: Require the parameter value to be of the specified numeric\n      type.\n   • guid: Requires the parameter value to be a valid GUID (Globally Unique Identifier).\n   • alpha: Requires the parameter value to consist only of alphabetic characters (a-z, A-Z).\n   • regex: Requires the parameter value to match a regular expression pattern.\n   • length: Requires the parameter value to have a specific length or within a specified range.\n   • min, max, range: Require the parameter value to be greater than or equal to the minimum\n      (min), less than or equal to the maximum (max), or within a specific range (range).\nCode\n// ... (UseRouting and other middleware) ...\napp.UseEndpoints(endpoints =>\n{\n  // ... (other endpoints) ...\n  // Alphabetic and Length Constraint\n  endpoints.Map(\"employee/profile/{EmployeeName:length(4,7):alpha=harsha}\", async context =>\n  {\n   // ...\n  });\n  // Integer, Range, and Optional Constraint\n  endpoints.Map(\"products/details/{id:int:range(1,1000)?}\", async context => {\n   // ...\n  });\n  // DateTime Constraint\n  endpoints.Map(\"daily-digest-report/{reportdate:datetime}\", async context =>\n  {\n   // ...",
+      "raw_text": "• datetime: Requires the parameter value to be a valid date and time string.\n• decimal, double, float, long: Require the parameter value to be of the specified numeric\ntype.\n• guid: Requires the parameter value to be a valid GUID (Globally Unique Identifier).\n• alpha: Requires the parameter value to consist only of alphabetic characters (a-z, A-Z).\n• regex: Requires the parameter value to match a regular expression pattern.\n• length: Requires the parameter value to have a specific length or within a specified range.\n• min, max, range: Require the parameter value to be greater than or equal to the minimum\n(min), less than or equal to the maximum (max), or within a specific range (range).\nCode\n// ... (UseRouting and other middleware) ...\napp.UseEndpoints(endpoints =>\n{\n// ... (other endpoints) ...\n// Alphabetic and Length Constraint\nendpoints.Map(\"employee/profile/{EmployeeName:length(4,7):alpha=john}\", async context =>\n{\n// ...\n});\n// Integer, Range, and Optional Constraint\nendpoints.Map(\"products/details/{id:int:range(1,1000)?}\", async context => {\n// ...\n});\n// DateTime Constraint\nendpoints.Map(\"daily-digest-report/{reportdate:datetime}\", async context =>\n{\n// ...\n",
+      "repaired_text": "   • datetime: Requires the parameter value to be a valid date and time string.\n   • decimal, double, float, long: Require the parameter value to be of the specified numeric\n      type.\n   • guid: Requires the parameter value to be a valid GUID (Globally Unique Identifier).\n   • alpha: Requires the parameter value to consist only of alphabetic characters (a-z, A-Z).\n   • regex: Requires the parameter value to match a regular expression pattern.\n   • length: Requires the parameter value to have a specific length or within a specified range.\n   • min, max, range: Require the parameter value to be greater than or equal to the minimum\n      (min), less than or equal to the maximum (max), or within a specific range (range).\nCode\n// ... (UseRouting and other middleware) ...\napp.UseEndpoints(endpoints =>\n{\n  // ... (other endpoints) ...\n  // Alphabetic and Length Constraint\n  endpoints.Map(\"employee/profile/{EmployeeName:length(4,7):alpha=john}\", async context =>\n  {\n   // ...\n  });\n  // Integer, Range, and Optional Constraint\n  endpoints.Map(\"products/details/{id:int:range(1,1000)?}\", async context => {\n   // ...\n  });\n  // DateTime Constraint\n  endpoints.Map(\"daily-digest-report/{reportdate:datetime}\", async context =>\n  {\n   // ...",
       "lines": [
         {
           "text": "   • datetime: Requires the parameter value to be a valid date and time string.",
@@ -3222,8 +2942,8 @@
           "fontName": "g_d8_f2"
         },
         {
-          "text": "  endpoints.Map(\"employee/profile/{EmployeeName:length(4,7):alpha=harsha}\", async context =>",
-          "rawText": "endpoints.Map(\"employee/profile/{EmployeeName:length(4,7):alpha=harsha}\", async context =>",
+          "text": "  endpoints.Map(\"employee/profile/{EmployeeName:length(4,7):alpha=john}\", async context =>",
+          "rawText": "endpoints.Map(\"employee/profile/{EmployeeName:length(4,7):alpha=john}\", async context =>",
           "x": 82.104,
           "y": 393.05,
           "fontSize": 11.04,
@@ -3331,17 +3051,10 @@
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • decimal, double, float, long: Require the parameter value to be of the specified numeric"
-          ],
-          "text": "   • decimal, double, float, long: Require the parameter value to be of the specified numeric"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   • decimal, double, float, long: Require the parameter value to be of the specified numeric",
             "      type."
           ],
-          "text": "      type."
+          "text": "   • decimal, double, float, long: Require the parameter value to be of the specified numeric\n      type."
         },
         {
           "type": "list_item",
@@ -3379,17 +3092,10 @@
           "type": "list_item",
           "page": 9,
           "lines": [
-            "   • min, max, range: Require the parameter value to be greater than or equal to the minimum"
-          ],
-          "text": "   • min, max, range: Require the parameter value to be greater than or equal to the minimum"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
+            "   • min, max, range: Require the parameter value to be greater than or equal to the minimum",
             "      (min), less than or equal to the maximum (max), or within a specific range (range)."
           ],
-          "text": "      (min), less than or equal to the maximum (max), or within a specific range (range)."
+          "text": "   • min, max, range: Require the parameter value to be greater than or equal to the minimum\n      (min), less than or equal to the maximum (max), or within a specific range (range)."
         },
         {
           "type": "heading",
@@ -3407,22 +3113,8 @@
             "app.UseEndpoints(endpoints =>",
             "{",
             "  // ... (other endpoints) ...",
-            "  // Alphabetic and Length Constraint"
-          ],
-          "text": "// ... (UseRouting and other middleware) ...\napp.UseEndpoints(endpoints =>\n{\n  // ... (other endpoints) ...\n  // Alphabetic and Length Constraint"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
-            "  endpoints.Map(\"employee/profile/{EmployeeName:length(4,7):alpha=harsha}\", async context =>"
-          ],
-          "text": "  endpoints.Map(\"employee/profile/{EmployeeName:length(4,7):alpha=harsha}\", async context =>"
-        },
-        {
-          "type": "code",
-          "page": 9,
-          "lines": [
+            "  // Alphabetic and Length Constraint",
+            "  endpoints.Map(\"employee/profile/{EmployeeName:length(4,7):alpha=john}\", async context =>",
             "  {",
             "   // ...",
             "  });",
@@ -3430,26 +3122,12 @@
             "  endpoints.Map(\"products/details/{id:int:range(1,1000)?}\", async context => {",
             "   // ...",
             "  });",
-            "  // DateTime Constraint"
-          ],
-          "text": "  {\n   // ...\n  });\n  // Integer, Range, and Optional Constraint\n  endpoints.Map(\"products/details/{id:int:range(1,1000)?}\", async context => {\n   // ...\n  });\n  // DateTime Constraint"
-        },
-        {
-          "type": "prose",
-          "page": 9,
-          "lines": [
-            "  endpoints.Map(\"daily-digest-report/{reportdate:datetime}\", async context =>"
-          ],
-          "text": "  endpoints.Map(\"daily-digest-report/{reportdate:datetime}\", async context =>"
-        },
-        {
-          "type": "code",
-          "page": 9,
-          "lines": [
+            "  // DateTime Constraint",
+            "  endpoints.Map(\"daily-digest-report/{reportdate:datetime}\", async context =>",
             "  {",
             "   // ..."
           ],
-          "text": "  {\n   // ..."
+          "text": "// ... (UseRouting and other middleware) ...\napp.UseEndpoints(endpoints =>\n{\n  // ... (other endpoints) ...\n  // Alphabetic and Length Constraint\n  endpoints.Map(\"employee/profile/{EmployeeName:length(4,7):alpha=john}\", async context =>\n  {\n   // ...\n  });\n  // Integer, Range, and Optional Constraint\n  endpoints.Map(\"products/details/{id:int:range(1,1000)?}\", async context => {\n   // ...\n  });\n  // DateTime Constraint\n  endpoints.Map(\"daily-digest-report/{reportdate:datetime}\", async context =>\n  {\n   // ..."
         }
       ],
       "char_count_raw": 1186,
@@ -3457,8 +3135,8 @@
     },
     {
       "page_number": 10,
-      "raw_text": "});\n// GUID Constraint\nendpoints.Map(\"cities/{cityid:guid}\", async context =>\n{\n// ...\n});\n// Int, Min, Regex Constraint\nendpoints.Map(\"sales-report/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}\", async\ncontext =>\n{\n// ...\n});\n});\n// ... (Fallback middleware) ...\n1. Alphabetic and Length Constraint:\n/employee/profile/{EmployeeName:length(4,7):alpha=harsha}: Ensures EmployeeName is 4-\n7 characters long and consists only of alphabetic characters. If not supplied, it defaults to\n\"harsha\".\n2. Integer, Range, and Optional Constraint: /products/details/{id:int:range(1,1000)?}: Requires\nid to be an integer between 1 and 1000. The question mark makes it optional.\n3. DateTime Constraint: /daily-digest-report/{reportdate:datetime}: Requires reportdate to be\na valid date-time string.\n4. GUID Constraint: /cities/{cityid:guid}: Requires cityid to be a valid GUID.\n5. Integer, Min, and Regex Constraint: /sales-\nreport/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}: Requires year to be an\ninteger greater than or equal to 1900, and month to be one of the specified values (apr, jul,\noct, jan).\n",
-      "repaired_text": "  });\n  // GUID Constraint\n  endpoints.Map(\"cities/{cityid:guid}\", async context =>\n  {\n   // ...\n  });\n  // Int, Min, Regex Constraint\n  endpoints.Map(\"sales-report/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}\", async\ncontext =>\n  {\n   // ...\n  });\n});\n// ... (Fallback middleware) ...\n   1. Alphabetic and Length Constraint:\n      /employee/profile/{EmployeeName:length(4,7):alpha=harsha}: Ensures EmployeeName is 4-\n      7 characters long and consists only of alphabetic characters. If not supplied, it defaults to\n      \"harsha\".\n   2. Integer, Range, and Optional Constraint: /products/details/{id:int:range(1,1000)?}: Requires\n      id to be an integer between 1 and 1000. The question mark makes it optional.\n   3. DateTime Constraint: /daily-digest-report/{reportdate:datetime}: Requires reportdate to be\n      a valid date-time string.\n   4. GUID Constraint: /cities/{cityid:guid}: Requires cityid to be a valid GUID.\n   5. Integer, Min, and Regex Constraint: /salesreport\n/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}: Requires year to be an\n      integer greater than or equal to 1900, and month to be one of the specified values (apr, jul,\n      oct, jan).",
+      "raw_text": "});\n// GUID Constraint\nendpoints.Map(\"cities/{cityid:guid}\", async context =>\n{\n// ...\n});\n// Int, Min, Regex Constraint\nendpoints.Map(\"sales-report/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}\", async\ncontext =>\n{\n// ...\n});\n});\n// ... (Fallback middleware) ...\n1. Alphabetic and Length Constraint:\n/employee/profile/{EmployeeName:length(4,7):alpha=john}: Ensures EmployeeName is 4-\n7 characters long and consists only of alphabetic characters. If not supplied, it defaults to\n\"john\".\n2. Integer, Range, and Optional Constraint: /products/details/{id:int:range(1,1000)?}: Requires\nid to be an integer between 1 and 1000. The question mark makes it optional.\n3. DateTime Constraint: /daily-digest-report/{reportdate:datetime}: Requires reportdate to be\na valid date-time string.\n4. GUID Constraint: /cities/{cityid:guid}: Requires cityid to be a valid GUID.\n5. Integer, Min, and Regex Constraint: /sales-\nreport/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}: Requires year to be an\ninteger greater than or equal to 1900, and month to be one of the specified values (apr, jul,\noct, jan).\n",
+      "repaired_text": "  });\n  // GUID Constraint\n  endpoints.Map(\"cities/{cityid:guid}\", async context =>\n  {\n   // ...\n  });\n  // Int, Min, Regex Constraint\n  endpoints.Map(\"sales-report/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}\", async\ncontext =>\n  {\n   // ...\n  });\n});\n// ... (Fallback middleware) ...\n   1. Alphabetic and Length Constraint:\n      /employee/profile/{EmployeeName:length(4,7):alpha=john}: Ensures EmployeeName is 4-\n      7 characters long and consists only of alphabetic characters. If not supplied, it defaults to\n      \"john\".\n   2. Integer, Range, and Optional Constraint: /products/details/{id:int:range(1,1000)?}: Requires\n      id to be an integer between 1 and 1000. The question mark makes it optional.\n   3. DateTime Constraint: /daily-digest-report/{reportdate:datetime}: Requires reportdate to be\n      a valid date-time string.\n   4. GUID Constraint: /cities/{cityid:guid}: Requires cityid to be a valid GUID.\n   5. Integer, Min, and Regex Constraint: /salesreport\n/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}: Requires year to be an\n      integer greater than or equal to 1900, and month to be one of the specified values (apr, jul,\n      oct, jan).",
       "lines": [
         {
           "text": "  });",
@@ -3581,8 +3259,8 @@
           "fontName": "g_d8_f2"
         },
         {
-          "text": "      /employee/profile/{EmployeeName:length(4,7):alpha=harsha}: Ensures EmployeeName is 4-",
-          "rawText": "/employee/profile/{EmployeeName:length(4,7):alpha=harsha}: Ensures EmployeeName is 4-",
+          "text": "      /employee/profile/{EmployeeName:length(4,7):alpha=john}: Ensures EmployeeName is 4-",
+          "rawText": "/employee/profile/{EmployeeName:length(4,7):alpha=john}: Ensures EmployeeName is 4-",
           "x": 108.02,
           "y": 348.05,
           "fontSize": 11.04,
@@ -3597,8 +3275,8 @@
           "fontName": "g_d8_f2"
         },
         {
-          "text": "      \"harsha\".",
-          "rawText": "\"harsha\".",
+          "text": "      \"john\".",
+          "rawText": "\"john\".",
           "x": 108.02,
           "y": 319.13,
           "fontSize": 11.04,
@@ -3679,103 +3357,54 @@
       ],
       "blocks": [
         {
-          "type": "prose",
-          "page": 10,
-          "lines": [
-            "  });"
-          ],
-          "text": "  });"
-        },
-        {
           "type": "code",
           "page": 10,
           "lines": [
-            "  // GUID Constraint"
-          ],
-          "text": "  // GUID Constraint"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
-            "  endpoints.Map(\"cities/{cityid:guid}\", async context =>"
-          ],
-          "text": "  endpoints.Map(\"cities/{cityid:guid}\", async context =>"
-        },
-        {
-          "type": "code",
-          "page": 10,
-          "lines": [
+            "  });",
+            "  // GUID Constraint",
+            "  endpoints.Map(\"cities/{cityid:guid}\", async context =>",
             "  {",
             "   // ...",
             "  });",
-            "  // Int, Min, Regex Constraint"
-          ],
-          "text": "  {\n   // ...\n  });\n  // Int, Min, Regex Constraint"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "  // Int, Min, Regex Constraint",
             "  endpoints.Map(\"sales-report/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}\", async",
-            "context =>"
-          ],
-          "text": "  endpoints.Map(\"sales-report/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}\", async\ncontext =>"
-        },
-        {
-          "type": "code",
-          "page": 10,
-          "lines": [
+            "context =>",
             "  {",
             "   // ...",
             "  });",
             "});",
-            "// ... (Fallback middleware) ..."
+            "// ... (Fallback middleware) ...",
+            "   1. Alphabetic and Length Constraint:"
           ],
-          "text": "  {\n   // ...\n  });\n});\n// ... (Fallback middleware) ..."
+          "text": "  });\n  // GUID Constraint\n  endpoints.Map(\"cities/{cityid:guid}\", async context =>\n  {\n   // ...\n  });\n  // Int, Min, Regex Constraint\n  endpoints.Map(\"sales-report/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}\", async\ncontext =>\n  {\n   // ...\n  });\n});\n// ... (Fallback middleware) ...\n   1. Alphabetic and Length Constraint:"
         },
         {
           "type": "prose",
           "page": 10,
           "lines": [
-            "   1. Alphabetic and Length Constraint:",
-            "      /employee/profile/{EmployeeName:length(4,7):alpha=harsha}: Ensures EmployeeName is 4-",
+            "      /employee/profile/{EmployeeName:length(4,7):alpha=john}: Ensures EmployeeName is 4-",
             "      7 characters long and consists only of alphabetic characters. If not supplied, it defaults to",
-            "      \"harsha\"."
+            "      \"john\"."
           ],
-          "text": "   1. Alphabetic and Length Constraint:\n      /employee/profile/{EmployeeName:length(4,7):alpha=harsha}: Ensures EmployeeName is 4-\n      7 characters long and consists only of alphabetic characters. If not supplied, it defaults to\n      \"harsha\"."
+          "text": "      /employee/profile/{EmployeeName:length(4,7):alpha=john}: Ensures EmployeeName is 4-\n      7 characters long and consists only of alphabetic characters. If not supplied, it defaults to\n      \"john\"."
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   2. Integer, Range, and Optional Constraint: /products/details/{id:int:range(1,1000)?}: Requires"
-          ],
-          "text": "   2. Integer, Range, and Optional Constraint: /products/details/{id:int:range(1,1000)?}: Requires"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   2. Integer, Range, and Optional Constraint: /products/details/{id:int:range(1,1000)?}: Requires",
             "      id to be an integer between 1 and 1000. The question mark makes it optional."
           ],
-          "text": "      id to be an integer between 1 and 1000. The question mark makes it optional."
+          "text": "   2. Integer, Range, and Optional Constraint: /products/details/{id:int:range(1,1000)?}: Requires\n      id to be an integer between 1 and 1000. The question mark makes it optional."
         },
         {
           "type": "list_item",
           "page": 10,
           "lines": [
-            "   3. DateTime Constraint: /daily-digest-report/{reportdate:datetime}: Requires reportdate to be"
-          ],
-          "text": "   3. DateTime Constraint: /daily-digest-report/{reportdate:datetime}: Requires reportdate to be"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   3. DateTime Constraint: /daily-digest-report/{reportdate:datetime}: Requires reportdate to be",
             "      a valid date-time string."
           ],
-          "text": "      a valid date-time string."
+          "text": "   3. DateTime Constraint: /daily-digest-report/{reportdate:datetime}: Requires reportdate to be\n      a valid date-time string."
         },
         {
           "type": "list_item",
@@ -3786,22 +3415,15 @@
           "text": "   4. GUID Constraint: /cities/{cityid:guid}: Requires cityid to be a valid GUID."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 10,
           "lines": [
-            "5. Integer, Min, and Regex Constraint: /salesreport"
-          ],
-          "text": "5. Integer, Min, and Regex Constraint: /salesreport"
-        },
-        {
-          "type": "prose",
-          "page": 10,
-          "lines": [
+            "   5. Integer, Min, and Regex Constraint: /salesreport",
             "/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}: Requires year to be an",
             "      integer greater than or equal to 1900, and month to be one of the specified values (apr, jul,",
             "      oct, jan)."
           ],
-          "text": "/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}: Requires year to be an\n      integer greater than or equal to 1900, and month to be one of the specified values (apr, jul,\n      oct, jan)."
+          "text": "   5. Integer, Min, and Regex Constraint: /salesreport\n/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}: Requires year to be an\n      integer greater than or equal to 1900, and month to be one of the specified values (apr, jul,\n      oct, jan)."
         }
       ],
       "char_count_raw": 1112,
@@ -4092,17 +3714,10 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   2. Match Method: Implement the Match method, which will contain your custom validation"
-          ],
-          "text": "   2. Match Method: Implement the Match method, which will contain your custom validation"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   2. Match Method: Implement the Match method, which will contain your custom validation",
             "      logic. This method receives several parameters:"
           ],
-          "text": "      logic. This method receives several parameters:"
+          "text": "   2. Match Method: Implement the Match method, which will contain your custom validation\n      logic. This method receives several parameters:"
         },
         {
           "type": "list_item",
@@ -4140,33 +3755,19 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "        o routeDirection: Indicates whether the route is being matched for an incoming"
-          ],
-          "text": "        o routeDirection: Indicates whether the route is being matched for an incoming"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "        o routeDirection: Indicates whether the route is being matched for an incoming",
             "           request or for generating a URL."
           ],
-          "text": "           request or for generating a URL."
+          "text": "        o routeDirection: Indicates whether the route is being matched for an incoming\n           request or for generating a URL."
         },
         {
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   3. Return true or false: The Match method must return true if the parameter value is valid"
-          ],
-          "text": "   3. Return true or false: The Match method must return true if the parameter value is valid"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   3. Return true or false: The Match method must return true if the parameter value is valid",
             "      according to your constraint, and false otherwise."
           ],
-          "text": "      according to your constraint, and false otherwise."
+          "text": "   3. Return true or false: The Match method must return true if the parameter value is valid\n      according to your constraint, and false otherwise."
         },
         {
           "type": "heading",
@@ -4183,46 +3784,18 @@
             "// MonthsCustomConstraint.cs",
             "public class MonthsCustomConstraint : IRouteConstraint",
             "{",
-            "  public bool Match(HttpContext? httpContext, IRouter? route, string routeKey,"
-          ],
-          "text": "// MonthsCustomConstraint.cs\npublic class MonthsCustomConstraint : IRouteConstraint\n{\n  public bool Match(HttpContext? httpContext, IRouter? route, string routeKey,"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
-            "RouteValueDictionary values, RouteDirection routeDirection)"
-          ],
-          "text": "RouteValueDictionary values, RouteDirection routeDirection)"
-        },
-        {
-          "type": "code",
-          "page": 11,
-          "lines": [
+            "  public bool Match(HttpContext? httpContext, IRouter? route, string routeKey,",
+            "RouteValueDictionary values, RouteDirection routeDirection)",
             "  {",
-            "   // Check if the parameter value exists"
-          ],
-          "text": "  {\n   // Check if the parameter value exists"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
-            "   if (!values.ContainsKey(routeKey))"
-          ],
-          "text": "   if (!values.ContainsKey(routeKey))"
-        },
-        {
-          "type": "code",
-          "page": 11,
-          "lines": [
+            "   // Check if the parameter value exists",
+            "   if (!values.ContainsKey(routeKey))",
             "   {",
             "     return false; // Not a match",
             "   }",
             "   Regex regex = new Regex(\"^(apr|jul|oct|jan)$\");",
             "   string? monthValue = Convert.ToString(values[routeKey]);"
           ],
-          "text": "   {\n     return false; // Not a match\n   }\n   Regex regex = new Regex(\"^(apr|jul|oct|jan)$\");\n   string? monthValue = Convert.ToString(values[routeKey]);"
+          "text": "// MonthsCustomConstraint.cs\npublic class MonthsCustomConstraint : IRouteConstraint\n{\n  public bool Match(HttpContext? httpContext, IRouter? route, string routeKey,\nRouteValueDictionary values, RouteDirection routeDirection)\n  {\n   // Check if the parameter value exists\n   if (!values.ContainsKey(routeKey))\n   {\n     return false; // Not a match\n   }\n   Regex regex = new Regex(\"^(apr|jul|oct|jan)$\");\n   string? monthValue = Convert.ToString(values[routeKey]);"
         }
       ],
       "char_count_raw": 1442,
@@ -4452,49 +4025,28 @@
       ],
       "blocks": [
         {
-          "type": "prose",
-          "page": 12,
-          "lines": [
-            "   if (regex.IsMatch(monthValue))"
-          ],
-          "text": "   if (regex.IsMatch(monthValue))"
-        },
-        {
           "type": "code",
           "page": 12,
           "lines": [
+            "   if (regex.IsMatch(monthValue))",
             "   {",
             "     return true; // It's a match",
             "   }",
             "   return false; // Not a match",
             "  }",
-            "}"
-          ],
-          "text": "   {\n     return true; // It's a match\n   }\n   return false; // Not a match\n  }\n}"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "}",
             "Let's break this down:"
           ],
-          "text": "Let's break this down:"
-        },
-        {
-          "type": "list_item",
-          "page": 12,
-          "lines": [
-            "   1. Implementation of IRouteConstraint: The MonthsCustomConstraint class clearly"
-          ],
-          "text": "   1. Implementation of IRouteConstraint: The MonthsCustomConstraint class clearly"
+          "text": "   if (regex.IsMatch(monthValue))\n   {\n     return true; // It's a match\n   }\n   return false; // Not a match\n  }\n}\nLet's break this down:"
         },
         {
           "type": "prose",
           "page": 12,
           "lines": [
+            "   1. Implementation of IRouteConstraint: The MonthsCustomConstraint class clearly",
             "      implements this interface, signaling that it's a custom route constraint."
           ],
-          "text": "      implements this interface, signaling that it's a custom route constraint."
+          "text": "   1. Implementation of IRouteConstraint: The MonthsCustomConstraint class clearly\n      implements this interface, signaling that it's a custom route constraint."
         },
         {
           "type": "list_item",
@@ -4508,17 +4060,10 @@
           "type": "list_item",
           "page": 12,
           "lines": [
-            "        o It first checks if the values dictionary contains the route parameter being validated"
-          ],
-          "text": "        o It first checks if the values dictionary contains the route parameter being validated"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "        o It first checks if the values dictionary contains the route parameter being validated",
             "           (routeKey). If not, it's an immediate mismatch, and false is returned."
           ],
-          "text": "           (routeKey). If not, it's an immediate mismatch, and false is returned."
+          "text": "        o It first checks if the values dictionary contains the route parameter being validated\n           (routeKey). If not, it's an immediate mismatch, and false is returned."
         },
         {
           "type": "list_item",
@@ -4532,33 +4077,19 @@
           "type": "list_item",
           "page": 12,
           "lines": [
-            "        o The value associated with the routeKey is retrieved from the values dictionary and"
-          ],
-          "text": "        o The value associated with the routeKey is retrieved from the values dictionary and"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "        o The value associated with the routeKey is retrieved from the values dictionary and",
             "           converted to a string."
           ],
-          "text": "           converted to a string."
+          "text": "        o The value associated with the routeKey is retrieved from the values dictionary and\n           converted to a string."
         },
         {
           "type": "list_item",
           "page": 12,
           "lines": [
-            "        o The Regex.IsMatch method tests whether the retrieved value matches the allowed"
-          ],
-          "text": "        o The Regex.IsMatch method tests whether the retrieved value matches the allowed"
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
+            "        o The Regex.IsMatch method tests whether the retrieved value matches the allowed",
             "           month pattern."
           ],
-          "text": "           month pattern."
+          "text": "        o The Regex.IsMatch method tests whether the retrieved value matches the allowed\n           month pattern."
         },
         {
           "type": "list_item",
@@ -4580,27 +4111,13 @@
           "type": "code",
           "page": 12,
           "lines": [
-            "// ... (in your endpoint configuration) ..."
-          ],
-          "text": "// ... (in your endpoint configuration) ..."
-        },
-        {
-          "type": "prose",
-          "page": 12,
-          "lines": [
-            "endpoints.Map(\"sales-report/{year:int:min(1900)}/{month:months}\", async context =>"
-          ],
-          "text": "endpoints.Map(\"sales-report/{year:int:min(1900)}/{month:months}\", async context =>"
-        },
-        {
-          "type": "code",
-          "page": 12,
-          "lines": [
+            "// ... (in your endpoint configuration) ...",
+            "endpoints.Map(\"sales-report/{year:int:min(1900)}/{month:months}\", async context =>",
             "{",
             "  // ... your endpoint handler logic ...",
             "});"
           ],
-          "text": "{\n  // ... your endpoint handler logic ...\n});"
+          "text": "// ... (in your endpoint configuration) ...\nendpoints.Map(\"sales-report/{year:int:min(1900)}/{month:months}\", async context =>\n{\n  // ... your endpoint handler logic ...\n});"
         },
         {
           "type": "prose",
@@ -4919,33 +4436,19 @@
           "type": "list_item",
           "page": 13,
           "lines": [
-            "        o Explicit Matches: Endpoints defined with more specific patterns (e.g.,"
-          ],
-          "text": "        o Explicit Matches: Endpoints defined with more specific patterns (e.g.,"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "        o Explicit Matches: Endpoints defined with more specific patterns (e.g.,",
             "           /products/{id}) take precedence over those with broader patterns (e.g., /products)."
           ],
-          "text": "           /products/{id}) take precedence over those with broader patterns (e.g., /products)."
+          "text": "        o Explicit Matches: Endpoints defined with more specific patterns (e.g.,\n           /products/{id}) take precedence over those with broader patterns (e.g., /products)."
         },
         {
           "type": "list_item",
           "page": 13,
           "lines": [
-            "        o Order of Registration: If multiple endpoints with equally specific patterns could"
-          ],
-          "text": "        o Order of Registration: If multiple endpoints with equally specific patterns could"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "        o Order of Registration: If multiple endpoints with equally specific patterns could",
             "           match, the endpoint that was registered first wins."
           ],
-          "text": "           match, the endpoint that was registered first wins."
+          "text": "        o Order of Registration: If multiple endpoints with equally specific patterns could\n           match, the endpoint that was registered first wins."
         },
         {
           "type": "list_item",
@@ -4959,17 +4462,10 @@
           "type": "list_item",
           "page": 13,
           "lines": [
-            "        o Exact Match: If the request method (GET, POST, etc.) exactly matches the method"
-          ],
-          "text": "        o Exact Match: If the request method (GET, POST, etc.) exactly matches the method"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "        o Exact Match: If the request method (GET, POST, etc.) exactly matches the method",
             "           specified for an endpoint, that endpoint is preferred."
           ],
-          "text": "           specified for an endpoint, that endpoint is preferred."
+          "text": "        o Exact Match: If the request method (GET, POST, etc.) exactly matches the method\n           specified for an endpoint, that endpoint is preferred."
         },
         {
           "type": "list_item",
@@ -4983,17 +4479,10 @@
           "type": "list_item",
           "page": 13,
           "lines": [
-            "        o More Specific Constraints: Endpoints with more restrictive route constraints (e.g.,"
-          ],
-          "text": "        o More Specific Constraints: Endpoints with more restrictive route constraints (e.g.,"
-        },
-        {
-          "type": "prose",
-          "page": 13,
-          "lines": [
+            "        o More Specific Constraints: Endpoints with more restrictive route constraints (e.g.,",
             "           id:int:range(1,100) vs. id:int) are favored."
           ],
-          "text": "           id:int:range(1,100) vs. id:int) are favored."
+          "text": "        o More Specific Constraints: Endpoints with more restrictive route constraints (e.g.,\n           id:int:range(1,100) vs. id:int) are favored."
         },
         {
           "type": "list_item",
@@ -5007,18 +4496,18 @@
           "type": "list_item",
           "page": 13,
           "lines": [
-            "        o If no other endpoint matches, and you have a catch-all endpoint (defined using"
+            "        o If no other endpoint matches, and you have a catch-all endpoint (defined using",
+            "           MapFallback), it will be selected."
           ],
-          "text": "        o If no other endpoint matches, and you have a catch-all endpoint (defined using"
+          "text": "        o If no other endpoint matches, and you have a catch-all endpoint (defined using\n           MapFallback), it will be selected."
         },
         {
           "type": "prose",
           "page": 13,
           "lines": [
-            "           MapFallback), it will be selected.",
             "Order of Precedence: A Visual Summary"
           ],
-          "text": "           MapFallback), it will be selected.\nOrder of Precedence: A Visual Summary"
+          "text": "Order of Precedence: A Visual Summary"
         },
         {
           "type": "list_item",
@@ -5037,60 +4526,46 @@
           "text": "   2. Explicit Match with Exact HTTP Method and Less Specific Route Constraints"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 13,
           "lines": [
-            "3. Explicit Match with Any HTTP Method and More Specific Route Constraints"
+            "   3. Explicit Match with Any HTTP Method and More Specific Route Constraints"
           ],
-          "text": "3. Explicit Match with Any HTTP Method and More Specific Route Constraints"
-        },
-        {
-          "type": "heading",
-          "page": 13,
-          "lines": [
-            "4. Explicit Match with Any HTTP Method and Less Specific Route Constraints"
-          ],
-          "text": "4. Explicit Match with Any HTTP Method and Less Specific Route Constraints"
-        },
-        {
-          "type": "heading",
-          "page": 13,
-          "lines": [
-            "5. Order of Registration (if specificity is equal)"
-          ],
-          "text": "5. Order of Registration (if specificity is equal)"
-        },
-        {
-          "type": "heading",
-          "page": 13,
-          "lines": [
-            "6. Catch-All Endpoint (if no other match is found)"
-          ],
-          "text": "6. Catch-All Endpoint (if no other match is found)"
-        },
-        {
-          "type": "heading",
-          "page": 13,
-          "lines": [
-            "Practical Implications and Tips"
-          ],
-          "text": "Practical Implications and Tips"
+          "text": "   3. Explicit Match with Any HTTP Method and More Specific Route Constraints"
         },
         {
           "type": "list_item",
           "page": 13,
           "lines": [
-            "   • Mind Your Order: Be mindful of the order in which you register your endpoints, especially if"
+            "   4. Explicit Match with Any HTTP Method and Less Specific Route Constraints"
           ],
-          "text": "   • Mind Your Order: Be mindful of the order in which you register your endpoints, especially if"
+          "text": "   4. Explicit Match with Any HTTP Method and Less Specific Route Constraints"
         },
         {
-          "type": "prose",
+          "type": "list_item",
           "page": 13,
           "lines": [
+            "   5. Order of Registration (if specificity is equal)"
+          ],
+          "text": "   5. Order of Registration (if specificity is equal)"
+        },
+        {
+          "type": "list_item",
+          "page": 13,
+          "lines": [
+            "   6. Catch-All Endpoint (if no other match is found)",
+            "Practical Implications and Tips"
+          ],
+          "text": "   6. Catch-All Endpoint (if no other match is found)\nPractical Implications and Tips"
+        },
+        {
+          "type": "list_item",
+          "page": 13,
+          "lines": [
+            "   • Mind Your Order: Be mindful of the order in which you register your endpoints, especially if",
             "      they have similar patterns."
           ],
-          "text": "      they have similar patterns."
+          "text": "   • Mind Your Order: Be mindful of the order in which you register your endpoints, especially if\n      they have similar patterns."
         }
       ],
       "char_count_raw": 1881,
@@ -5347,33 +4822,19 @@
           "type": "list_item",
           "page": 14,
           "lines": [
-            "   • Catch-All with Caution: Catch-all endpoints can be useful, but use them sparingly to avoid"
-          ],
-          "text": "   • Catch-All with Caution: Catch-all endpoints can be useful, but use them sparingly to avoid"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "   • Catch-All with Caution: Catch-all endpoints can be useful, but use them sparingly to avoid",
             "      unintended matches."
           ],
-          "text": "      unintended matches."
+          "text": "   • Catch-All with Caution: Catch-all endpoints can be useful, but use them sparingly to avoid\n      unintended matches."
         },
         {
           "type": "list_item",
           "page": 14,
           "lines": [
-            "   • Endpoint Metadata: Explore the Endpoint object's metadata for insights into why a"
-          ],
-          "text": "   • Endpoint Metadata: Explore the Endpoint object's metadata for insights into why a"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "   • Endpoint Metadata: Explore the Endpoint object's metadata for insights into why a",
             "      particular endpoint was selected."
           ],
-          "text": "      particular endpoint was selected."
+          "text": "   • Endpoint Metadata: Explore the Endpoint object's metadata for insights into why a\n      particular endpoint was selected."
         },
         {
           "type": "heading",
@@ -5388,24 +4849,17 @@
           "page": 14,
           "lines": [
             "app.UseEndpoints(endpoints =>",
-            "{"
-          ],
-          "text": "app.UseEndpoints(endpoints =>\n{"
-        },
-        {
-          "type": "prose",
-          "page": 14,
-          "lines": [
+            "{",
             "  endpoints.MapGet(\"/products/{id:int}\", GetProductById); // Most specific",
             "  endpoints.MapGet(\"/products\", GetAllProducts); // Less specific",
             "  endpoints.MapGet(\"/{path?}\", CatchAllHandler); // Catch-all",
             "});",
             "In this example:"
           ],
-          "text": "  endpoints.MapGet(\"/products/{id:int}\", GetProductById); // Most specific\n  endpoints.MapGet(\"/products\", GetAllProducts); // Less specific\n  endpoints.MapGet(\"/{path?}\", CatchAllHandler); // Catch-all\n});\nIn this example:"
+          "text": "app.UseEndpoints(endpoints =>\n{\n  endpoints.MapGet(\"/products/{id:int}\", GetProductById); // Most specific\n  endpoints.MapGet(\"/products\", GetAllProducts); // Less specific\n  endpoints.MapGet(\"/{path?}\", CatchAllHandler); // Catch-all\n});\nIn this example:"
         },
         {
-          "type": "list_item",
+          "type": "prose",
           "page": 14,
           "lines": [
             "   • /products/123 will match the first endpoint (GetProductById)."
@@ -5734,49 +5188,28 @@
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • Basic Usage: Calling app.UseStaticFiles(); with no arguments will serve static files from the"
-          ],
-          "text": "   • Basic Usage: Calling app.UseStaticFiles(); with no arguments will serve static files from the"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "   • Basic Usage: Calling app.UseStaticFiles(); with no arguments will serve static files from the",
             "      default WebRoot directory."
           ],
-          "text": "      default WebRoot directory."
+          "text": "   • Basic Usage: Calling app.UseStaticFiles(); with no arguments will serve static files from the\n      default WebRoot directory."
         },
         {
           "type": "list_item",
           "page": 15,
           "lines": [
-            "   • Customization: You can customize the behavior of UseStaticFiles() by passing a"
-          ],
-          "text": "   • Customization: You can customize the behavior of UseStaticFiles() by passing a"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "   • Customization: You can customize the behavior of UseStaticFiles() by passing a",
             "      StaticFileOptions object:"
           ],
-          "text": "      StaticFileOptions object:"
+          "text": "   • Customization: You can customize the behavior of UseStaticFiles() by passing a\n      StaticFileOptions object:"
         },
         {
           "type": "list_item",
           "page": 15,
           "lines": [
-            "        o FileProvider: Specify a different file provider (e.g., PhysicalFileProvider) to serve files"
-          ],
-          "text": "        o FileProvider: Specify a different file provider (e.g., PhysicalFileProvider) to serve files"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "        o FileProvider: Specify a different file provider (e.g., PhysicalFileProvider) to serve files",
             "           from a custom location."
           ],
-          "text": "           from a custom location."
+          "text": "        o FileProvider: Specify a different file provider (e.g., PhysicalFileProvider) to serve files\n           from a custom location."
         },
         {
           "type": "list_item",
@@ -5790,33 +5223,19 @@
           "type": "list_item",
           "page": 15,
           "lines": [
-            "        o ContentTypeProvider: Customize how content types are determined for different file"
-          ],
-          "text": "        o ContentTypeProvider: Customize how content types are determined for different file"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "        o ContentTypeProvider: Customize how content types are determined for different file",
             "           extensions."
           ],
-          "text": "           extensions."
+          "text": "        o ContentTypeProvider: Customize how content types are determined for different file\n           extensions."
         },
         {
           "type": "list_item",
           "page": 15,
           "lines": [
-            "        o OnPrepareResponse: Perform additional actions on the response before it's sent to"
-          ],
-          "text": "        o OnPrepareResponse: Perform additional actions on the response before it's sent to"
-        },
-        {
-          "type": "prose",
-          "page": 15,
-          "lines": [
+            "        o OnPrepareResponse: Perform additional actions on the response before it's sent to",
             "           the client."
           ],
-          "text": "           the client."
+          "text": "        o OnPrepareResponse: Perform additional actions on the response before it's sent to\n           the client."
         },
         {
           "type": "heading",
@@ -6069,58 +5488,16 @@
             "app.UseStaticFiles(new StaticFileOptions()",
             "{",
             "  FileProvider = new PhysicalFileProvider(",
-            "   Path.Combine(builder.Environment.ContentRootPath, \"mywebroot\")"
-          ],
-          "text": "// Serve from a custom directory (\"mywebroot\") located within the project's ContentRootPath\napp.UseStaticFiles(new StaticFileOptions()\n{\n  FileProvider = new PhysicalFileProvider(\n   Path.Combine(builder.Environment.ContentRootPath, \"mywebroot\")"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   Path.Combine(builder.Environment.ContentRootPath, \"mywebroot\")",
             "  )",
-            "});"
-          ],
-          "text": "  )\n});"
-        },
-        {
-          "type": "code",
-          "page": 16,
-          "lines": [
-            "// ... (rest of your middleware and endpoints) ..."
-          ],
-          "text": "// ... (rest of your middleware and endpoints) ..."
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
-            "Explanation"
-          ],
-          "text": "Explanation"
-        },
-        {
-          "type": "list_item",
-          "page": 16,
-          "lines": [
-            "   1. Custom WebRoot: The WebRootPath property in WebApplicationOptions is set to \"myroot\","
-          ],
-          "text": "   1. Custom WebRoot: The WebRootPath property in WebApplicationOptions is set to \"myroot\","
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
-            "      making \"myroot\" the default location for static files served by the first app.UseStaticFiles()."
-          ],
-          "text": "      making \"myroot\" the default location for static files served by the first app.UseStaticFiles()."
-        },
-        {
-          "type": "list_item",
-          "page": 16,
-          "lines": [
+            "});",
+            "// ... (rest of your middleware and endpoints) ...",
+            "Explanation",
+            "   1. Custom WebRoot: The WebRootPath property in WebApplicationOptions is set to \"myroot\",",
+            "      making \"myroot\" the default location for static files served by the first app.UseStaticFiles().",
             "   2. Default Static Files: The initial app.UseStaticFiles(); call serves files directly from the"
           ],
-          "text": "   2. Default Static Files: The initial app.UseStaticFiles(); call serves files directly from the"
+          "text": "// Serve from a custom directory (\"mywebroot\") located within the project's ContentRootPath\napp.UseStaticFiles(new StaticFileOptions()\n{\n  FileProvider = new PhysicalFileProvider(\n   Path.Combine(builder.Environment.ContentRootPath, \"mywebroot\")\n  )\n});\n// ... (rest of your middleware and endpoints) ...\nExplanation\n   1. Custom WebRoot: The WebRootPath property in WebApplicationOptions is set to \"myroot\",\n      making \"myroot\" the default location for static files served by the first app.UseStaticFiles().\n   2. Default Static Files: The initial app.UseStaticFiles(); call serves files directly from the"
         },
         {
           "type": "prose",
@@ -6135,18 +5512,11 @@
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   3. Custom Static Files Location: The second app.UseStaticFiles call configures a"
-          ],
-          "text": "   3. Custom Static Files Location: The second app.UseStaticFiles call configures a"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   3. Custom Static Files Location: The second app.UseStaticFiles call configures a",
             "      PhysicalFileProvider to serve files from a custom location: \"mywebroot\". This directory is",
             "      located within the application's ContentRootPath (the project's root folder)."
           ],
-          "text": "      PhysicalFileProvider to serve files from a custom location: \"mywebroot\". This directory is\n      located within the application's ContentRootPath (the project's root folder)."
+          "text": "   3. Custom Static Files Location: The second app.UseStaticFiles call configures a\n      PhysicalFileProvider to serve files from a custom location: \"mywebroot\". This directory is\n      located within the application's ContentRootPath (the project's root folder)."
         },
         {
           "type": "heading",
@@ -6160,51 +5530,37 @@
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • Security: Always be cautious about the files you expose as static content. Avoid placing"
-          ],
-          "text": "   • Security: Always be cautious about the files you expose as static content. Avoid placing"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • Security: Always be cautious about the files you expose as static content. Avoid placing",
             "      sensitive information in your WebRoot or custom directories."
           ],
-          "text": "      sensitive information in your WebRoot or custom directories."
+          "text": "   • Security: Always be cautious about the files you expose as static content. Avoid placing\n      sensitive information in your WebRoot or custom directories."
         },
         {
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • Performance: Consider using caching and compression techniques to optimize the delivery"
-          ],
-          "text": "   • Performance: Consider using caching and compression techniques to optimize the delivery"
-        },
-        {
-          "type": "prose",
-          "page": 16,
-          "lines": [
+            "   • Performance: Consider using caching and compression techniques to optimize the delivery",
             "      of static files."
           ],
-          "text": "      of static files."
+          "text": "   • Performance: Consider using caching and compression techniques to optimize the delivery\n      of static files."
         },
         {
           "type": "list_item",
           "page": 16,
           "lines": [
-            "   • Content Security Policy (CSP): Implement a CSP to mitigate cross-site scripting (XSS) attacks"
+            "   • Content Security Policy (CSP): Implement a CSP to mitigate cross-site scripting (XSS) attacks",
+            "      that could exploit your static files."
           ],
-          "text": "   • Content Security Policy (CSP): Implement a CSP to mitigate cross-site scripting (XSS) attacks"
+          "text": "   • Content Security Policy (CSP): Implement a CSP to mitigate cross-site scripting (XSS) attacks\n      that could exploit your static files."
         },
         {
           "type": "prose",
           "page": 16,
           "lines": [
-            "      that could exploit your static files.",
             "By effectively managing your static files and utilizing the UseStaticFiles() middleware, you can",
             "enhance your ASP.NET Core application's performance and user experience."
           ],
-          "text": "      that could exploit your static files.\nBy effectively managing your static files and utilizing the UseStaticFiles() middleware, you can\nenhance your ASP.NET Core application's performance and user experience."
+          "text": "By effectively managing your static files and utilizing the UseStaticFiles() middleware, you can\nenhance your ASP.NET Core application's performance and user experience."
         }
       ],
       "char_count_raw": 1543,
@@ -6461,33 +5817,19 @@
           "type": "list_item",
           "page": 17,
           "lines": [
-            "   • Purpose: Matches incoming HTTP requests to specific endpoints (controllers, Razor Pages,"
-          ],
-          "text": "   • Purpose: Matches incoming HTTP requests to specific endpoints (controllers, Razor Pages,"
-        },
-        {
-          "type": "prose",
-          "page": 17,
-          "lines": [
+            "   • Purpose: Matches incoming HTTP requests to specific endpoints (controllers, Razor Pages,",
             "      minimal APIs) in your application."
           ],
-          "text": "      minimal APIs) in your application."
+          "text": "   • Purpose: Matches incoming HTTP requests to specific endpoints (controllers, Razor Pages,\n      minimal APIs) in your application."
         },
         {
           "type": "list_item",
           "page": 17,
           "lines": [
-            "   • Middleware: UseRouting and UseEndpoints are essential middleware components for"
-          ],
-          "text": "   • Middleware: UseRouting and UseEndpoints are essential middleware components for"
-        },
-        {
-          "type": "prose",
-          "page": 17,
-          "lines": [
+            "   • Middleware: UseRouting and UseEndpoints are essential middleware components for",
             "      routing."
           ],
-          "text": "      routing."
+          "text": "   • Middleware: UseRouting and UseEndpoints are essential middleware components for\n      routing."
         },
         {
           "type": "list_item",
@@ -6509,17 +5851,10 @@
           "type": "list_item",
           "page": 17,
           "lines": [
-            "   • Map* Methods: Used to define endpoints for different HTTP methods (e.g., MapGet,"
-          ],
-          "text": "   • Map* Methods: Used to define endpoints for different HTTP methods (e.g., MapGet,"
-        },
-        {
-          "type": "prose",
-          "page": 17,
-          "lines": [
+            "   • Map* Methods: Used to define endpoints for different HTTP methods (e.g., MapGet,",
             "      MapPost, MapControllerRoute)."
           ],
-          "text": "      MapPost, MapControllerRoute)."
+          "text": "   • Map* Methods: Used to define endpoints for different HTTP methods (e.g., MapGet,\n      MapPost, MapControllerRoute)."
         },
         {
           "type": "heading",
@@ -6533,17 +5868,10 @@
           "type": "list_item",
           "page": 17,
           "lines": [
-            "   • Specificity: More specific routes (with more parameters or constraints) take precedence"
-          ],
-          "text": "   • Specificity: More specific routes (with more parameters or constraints) take precedence"
-        },
-        {
-          "type": "prose",
-          "page": 17,
-          "lines": [
+            "   • Specificity: More specific routes (with more parameters or constraints) take precedence",
             "      over less specific ones."
           ],
-          "text": "      over less specific ones."
+          "text": "   • Specificity: More specific routes (with more parameters or constraints) take precedence\n      over less specific ones."
         },
         {
           "type": "list_item",
@@ -6808,17 +6136,10 @@
           "type": "list_item",
           "page": 18,
           "lines": [
-            "   • Customization: Use StaticFileOptions to change the file provider, request path, or other"
-          ],
-          "text": "   • Customization: Use StaticFileOptions to change the file provider, request path, or other"
-        },
-        {
-          "type": "prose",
-          "page": 18,
-          "lines": [
+            "   • Customization: Use StaticFileOptions to change the file provider, request path, or other",
             "      settings."
           ],
-          "text": "      settings."
+          "text": "   • Customization: Use StaticFileOptions to change the file provider, request path, or other\n      settings."
         },
         {
           "type": "heading",
@@ -6832,49 +6153,28 @@
           "type": "list_item",
           "page": 18,
           "lines": [
-            "   • Explain the Flow: Clearly articulate how a request flows through the routing middleware and"
-          ],
-          "text": "   • Explain the Flow: Clearly articulate how a request flows through the routing middleware and"
-        },
-        {
-          "type": "prose",
-          "page": 18,
-          "lines": [
+            "   • Explain the Flow: Clearly articulate how a request flows through the routing middleware and",
             "      how endpoints are selected."
           ],
-          "text": "      how endpoints are selected."
+          "text": "   • Explain the Flow: Clearly articulate how a request flows through the routing middleware and\n      how endpoints are selected."
         },
         {
           "type": "list_item",
           "page": 18,
           "lines": [
-            "   • Code Examples: Be prepared to write code snippets demonstrating endpoint registration,"
-          ],
-          "text": "   • Code Examples: Be prepared to write code snippets demonstrating endpoint registration,"
-        },
-        {
-          "type": "prose",
-          "page": 18,
-          "lines": [
+            "   • Code Examples: Be prepared to write code snippets demonstrating endpoint registration,",
             "      parameter usage, and constraint application."
           ],
-          "text": "      parameter usage, and constraint application."
+          "text": "   • Code Examples: Be prepared to write code snippets demonstrating endpoint registration,\n      parameter usage, and constraint application."
         },
         {
           "type": "list_item",
           "page": 18,
           "lines": [
-            "   • Troubleshooting: Explain how you would diagnose and fix common routing issues (e.g., 404"
-          ],
-          "text": "   • Troubleshooting: Explain how you would diagnose and fix common routing issues (e.g., 404"
-        },
-        {
-          "type": "prose",
-          "page": 18,
-          "lines": [
+            "   • Troubleshooting: Explain how you would diagnose and fix common routing issues (e.g., 404",
             "      errors, ambiguous matches)."
           ],
-          "text": "      errors, ambiguous matches)."
+          "text": "   • Troubleshooting: Explain how you would diagnose and fix common routing issues (e.g., 404\n      errors, ambiguous matches)."
         },
         {
           "type": "list_item",

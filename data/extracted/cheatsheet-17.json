@@ -277,33 +277,19 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • asp-area"
-          ],
-          "text": "   • asp-area"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • asp-area",
             "Tag Helpers for <input>, <textarea>, <label>"
           ],
-          "text": "Tag Helpers for <input>, <textarea>, <label>"
+          "text": "   • asp-area\nTag Helpers for <input>, <textarea>, <label>"
         },
         {
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • asp-for"
-          ],
-          "text": "   • asp-for"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "   • asp-for",
             "Tag Helpers for <select>"
           ],
-          "text": "Tag Helpers for <select>"
+          "text": "   • asp-for\nTag Helpers for <select>"
         },
         {
           "type": "list_item",
@@ -317,27 +303,20 @@
           "type": "list_item",
           "page": 1,
           "lines": [
-            "   • asp-items"
+            "   • asp-items",
+            "Binding",
+            "The form tags such as <input>, <label>, <textarea>, <select> can be bound with specific model",
+            "properties."
           ],
-          "text": "   • asp-items"
-        },
-        {
-          "type": "heading",
-          "page": 1,
-          "lines": [
-            "Binding"
-          ],
-          "text": "Binding"
+          "text": "   • asp-items\nBinding\nThe form tags such as <input>, <label>, <textarea>, <select> can be bound with specific model\nproperties."
         },
         {
           "type": "prose",
           "page": 1,
           "lines": [
-            "The form tags such as <input>, <label>, <textarea>, <select> can be bound with specific model",
-            "properties.",
             "It applies model property name to \"name\" and \"id\" attributes of <input> tag."
           ],
-          "text": "The form tags such as <input>, <label>, <textarea>, <select> can be bound with specific model\nproperties.\nIt applies model property name to \"name\" and \"id\" attributes of <input> tag."
+          "text": "It applies model property name to \"name\" and \"id\" attributes of <input> tag."
         }
       ],
       "char_count_raw": 748,
@@ -532,33 +511,19 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • asp-append-version"
-          ],
-          "text": "   • asp-append-version"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   • asp-append-version",
             "Tag Helpers for <span>"
           ],
-          "text": "Tag Helpers for <span>"
+          "text": "   • asp-append-version\nTag Helpers for <span>"
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • asp-validation-for"
-          ],
-          "text": "   • asp-validation-for"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   • asp-validation-for",
             "Tag Helpers for <script>"
           ],
-          "text": "Tag Helpers for <script>"
+          "text": "   • asp-validation-for\nTag Helpers for <script>"
         },
         {
           "type": "list_item",
@@ -572,59 +537,31 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • asp-fallback-test"
-          ],
-          "text": "   • asp-fallback-test"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   • asp-fallback-test",
             "Tag Helpers for <div>"
           ],
-          "text": "Tag Helpers for <div>"
+          "text": "   • asp-fallback-test\nTag Helpers for <div>"
         },
         {
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • asp-validation-summary"
-          ],
-          "text": "   • asp-validation-summary"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   • asp-validation-summary",
             "Tag Helpers for <form>"
           ],
-          "text": "Tag Helpers for <form>"
+          "text": "   • asp-validation-summary\nTag Helpers for <form>"
         },
         {
           "type": "code",
           "page": 2,
           "lines": [
             "<form asp-controller=\"ControllerName\" asp-action=\"ActionName\">",
-            "</form>"
-          ],
-          "text": "<form asp-controller=\"ControllerName\" asp-action=\"ActionName\">\n</form>"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
-            "will be converted as:"
-          ],
-          "text": "will be converted as:"
-        },
-        {
-          "type": "code",
-          "page": 2,
-          "lines": [
+            "</form>",
+            "will be converted as:",
             "<form action=\"~/ControllerName/ActionName\">",
             "</form>"
           ],
-          "text": "<form action=\"~/ControllerName/ActionName\">\n</form>"
+          "text": "<form asp-controller=\"ControllerName\" asp-action=\"ActionName\">\n</form>\nwill be converted as:\n<form action=\"~/ControllerName/ActionName\">\n</form>"
         },
         {
           "type": "prose",
@@ -850,25 +787,11 @@
           "type": "code",
           "page": 3,
           "lines": [
-            "<a asp-controller=\"ControllerName\" asp-action=\"ActionName\"> </a>"
-          ],
-          "text": "<a asp-controller=\"ControllerName\" asp-action=\"ActionName\"> </a>"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
-            "will be converted as:"
-          ],
-          "text": "will be converted as:"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
+            "<a asp-controller=\"ControllerName\" asp-action=\"ActionName\"> </a>",
+            "will be converted as:",
             "<a href=\"~/ControllerName/ActionName\"> </a>"
           ],
-          "text": "<a href=\"~/ControllerName/ActionName\"> </a>"
+          "text": "<a asp-controller=\"ControllerName\" asp-action=\"ActionName\"> </a>\nwill be converted as:\n<a href=\"~/ControllerName/ActionName\"> </a>"
         },
         {
           "type": "prose",
@@ -884,25 +807,11 @@
           "type": "code",
           "page": 3,
           "lines": [
-            "<a asp-controller=\"ControllerName\" asp-action=\"ActionName\" asp-route-parameter=\"value\" > </a>"
-          ],
-          "text": "<a asp-controller=\"ControllerName\" asp-action=\"ActionName\" asp-route-parameter=\"value\" > </a>"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
-            "will be converted as:"
-          ],
-          "text": "will be converted as:"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
+            "<a asp-controller=\"ControllerName\" asp-action=\"ActionName\" asp-route-parameter=\"value\" > </a>",
+            "will be converted as:",
             "<a href=\"~/ControllerName/ActionName/value-of-parameter\"> </a>"
           ],
-          "text": "<a href=\"~/ControllerName/ActionName/value-of-parameter\"> </a>"
+          "text": "<a asp-controller=\"ControllerName\" asp-action=\"ActionName\" asp-route-parameter=\"value\" > </a>\nwill be converted as:\n<a href=\"~/ControllerName/ActionName/value-of-parameter\"> </a>"
         },
         {
           "type": "prose",
@@ -918,25 +827,11 @@
           "type": "code",
           "page": 3,
           "lines": [
-            "<input asp-for=\"ModelProperty\" />"
-          ],
-          "text": "<input asp-for=\"ModelProperty\" />"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
-            "will be converted as:"
-          ],
-          "text": "will be converted as:"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
+            "<input asp-for=\"ModelProperty\" />",
+            "will be converted as:",
             "<input type=\"text\" name=\"ModelProperty\" id=\"ModelProperty\" value=\"ModelValue\" data-valrule"
           ],
-          "text": "<input type=\"text\" name=\"ModelProperty\" id=\"ModelProperty\" value=\"ModelValue\" data-valrule"
+          "text": "<input asp-for=\"ModelProperty\" />\nwill be converted as:\n<input type=\"text\" name=\"ModelProperty\" id=\"ModelProperty\" value=\"ModelValue\" data-valrule"
         },
         {
           "type": "prose",
@@ -954,25 +849,11 @@
           "type": "code",
           "page": 3,
           "lines": [
-            "<label asp-for=\"ModelProperty\"> </label>"
-          ],
-          "text": "<label asp-for=\"ModelProperty\"> </label>"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
-            "will be converted as:"
-          ],
-          "text": "will be converted as:"
-        },
-        {
-          "type": "code",
-          "page": 3,
-          "lines": [
+            "<label asp-for=\"ModelProperty\"> </label>",
+            "will be converted as:",
             "<label for=\"ModelProperty\"> </label>"
           ],
-          "text": "<label for=\"ModelProperty\"> </label>"
+          "text": "<label asp-for=\"ModelProperty\"> </label>\nwill be converted as:\n<label for=\"ModelProperty\"> </label>"
         }
       ],
       "char_count_raw": 1022,
@@ -1237,33 +1118,19 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Generates SHA512 hash of the image file as query string parameter appended to the file"
-          ],
-          "text": "   • Generates SHA512 hash of the image file as query string parameter appended to the file"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • Generates SHA512 hash of the image file as query string parameter appended to the file",
             "      path."
           ],
-          "text": "      path."
+          "text": "   • Generates SHA512 hash of the image file as query string parameter appended to the file\n      path."
         },
         {
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • It REGENERATES a new hash every time when the file is changed on the server. If the same"
-          ],
-          "text": "   • It REGENERATES a new hash every time when the file is changed on the server. If the same"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • It REGENERATES a new hash every time when the file is changed on the server. If the same",
             "      file is requested multiple times, file hash will NOT be regenerated."
           ],
-          "text": "      file is requested multiple times, file hash will NOT be regenerated."
+          "text": "   • It REGENERATES a new hash every time when the file is changed on the server. If the same\n      file is requested multiple times, file hash will NOT be regenerated."
         }
       ],
       "char_count_raw": 979,
@@ -1380,17 +1247,10 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • If its value is null or undefined (means, the script file at CDNUrl is not loaded), then it makes"
-          ],
-          "text": "   • If its value is null or undefined (means, the script file at CDNUrl is not loaded), then it makes"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • If its value is null or undefined (means, the script file at CDNUrl is not loaded), then it makes",
             "      another request to the LocalUrl through another script tag."
           ],
-          "text": "      another request to the LocalUrl through another script tag."
+          "text": "   • If its value is null or undefined (means, the script file at CDNUrl is not loaded), then it makes\n      another request to the LocalUrl through another script tag."
         }
       ],
       "char_count_raw": 559,

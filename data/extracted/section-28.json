@@ -273,37 +273,30 @@
           "text": "CORS enables web servers to specify which origins are allowed to access their resources. Proper\nCORS configuration ensures that your API can be accessed securely by client applications hosted on\ndifferent origins.\nConfiguring CORS in ASP.NET Core Using Program.cs\nIn the latest ASP.NET Core versions, configuration is typically done in Program.cs rather than\nStartup.cs. Here’s how you can set up CORS in Program.cs."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 1,
           "lines": [
-            "1. Install Required Package"
-          ],
-          "text": "1. Install Required Package"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
+            "1. Install Required Package",
             "No additional package is needed as CORS support is built into ASP.NET Core."
           ],
-          "text": "No additional package is needed as CORS support is built into ASP.NET Core."
+          "text": "1. Install Required Package\nNo additional package is needed as CORS support is built into ASP.NET Core."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 1,
           "lines": [
-            "2. Configure CORS in Program.cs"
+            "2. Configure CORS in Program.cs",
+            "Add CORS services and middleware in your Program.cs file."
           ],
-          "text": "2. Configure CORS in Program.cs"
+          "text": "2. Configure CORS in Program.cs\nAdd CORS services and middleware in your Program.cs file."
         },
         {
           "type": "prose",
           "page": 1,
           "lines": [
-            "Add CORS services and middleware in your Program.cs file.",
             "Example Configuration:"
           ],
-          "text": "Add CORS services and middleware in your Program.cs file.\nExample Configuration:"
+          "text": "Example Configuration:"
         },
         {
           "type": "code",
@@ -312,26 +305,12 @@
             "var builder = WebApplication.CreateBuilder(args);",
             "// Add services to the container.",
             "builder.Services.AddControllers();",
-            "// Add CORS services and configure policies"
-          ],
-          "text": "var builder = WebApplication.CreateBuilder(args);\n// Add services to the container.\nbuilder.Services.AddControllers();\n// Add CORS services and configure policies"
-        },
-        {
-          "type": "prose",
-          "page": 1,
-          "lines": [
-            "builder.Services.AddCors(options =>"
-          ],
-          "text": "builder.Services.AddCors(options =>"
-        },
-        {
-          "type": "code",
-          "page": 1,
-          "lines": [
+            "// Add CORS services and configure policies",
+            "builder.Services.AddCors(options =>",
             "{",
             "  options.AddPolicy(\"AllowAngularLocalhost\","
           ],
-          "text": "{\n  options.AddPolicy(\"AllowAngularLocalhost\","
+          "text": "var builder = WebApplication.CreateBuilder(args);\n// Add services to the container.\nbuilder.Services.AddControllers();\n// Add CORS services and configure policies\nbuilder.Services.AddCors(options =>\n{\n  options.AddPolicy(\"AllowAngularLocalhost\","
         }
       ],
       "char_count_raw": 1296,
@@ -566,59 +545,17 @@
           "lines": [
             "   {",
             "     builder.WithOrigins(\"http://localhost:4200\") // Allow Angular's localhost",
-            "       .AllowAnyMethod() // Allow any HTTP method (GET, POST, etc.)"
-          ],
-          "text": "   {\n     builder.WithOrigins(\"http://localhost:4200\") // Allow Angular's localhost\n       .AllowAnyMethod() // Allow any HTTP method (GET, POST, etc.)"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "       .AllowAnyMethod() // Allow any HTTP method (GET, POST, etc.)",
             "       .AllowAnyHeader(); // Allow any headers",
             "   });",
-            "});"
-          ],
-          "text": "       .AllowAnyHeader(); // Allow any headers\n   });\n});"
-        },
-        {
-          "type": "code",
-          "page": 2,
-          "lines": [
+            "});",
             "var app = builder.Build();",
-            "// Configure the HTTP request pipeline."
-          ],
-          "text": "var app = builder.Build();\n// Configure the HTTP request pipeline."
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
-            "if (app.Environment.IsDevelopment())"
-          ],
-          "text": "if (app.Environment.IsDevelopment())"
-        },
-        {
-          "type": "code",
-          "page": 2,
-          "lines": [
+            "// Configure the HTTP request pipeline.",
+            "if (app.Environment.IsDevelopment())",
             "{",
             "  app.UseDeveloperExceptionPage();",
-            "}"
-          ],
-          "text": "{\n  app.UseDeveloperExceptionPage();\n}"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
-            "else"
-          ],
-          "text": "else"
-        },
-        {
-          "type": "code",
-          "page": 2,
-          "lines": [
+            "}",
+            "else",
             "{",
             "  app.UseExceptionHandler(\"/Home/Error\");",
             "  app.UseHsts();",
@@ -632,7 +569,7 @@
             "app.UseEndpoints(endpoints =>",
             "{"
           ],
-          "text": "{\n  app.UseExceptionHandler(\"/Home/Error\");\n  app.UseHsts();\n}\napp.UseHttpsRedirection();\napp.UseStaticFiles();\napp.UseRouting();\napp.UseAuthorization();\n// Use CORS policy\napp.UseCors(\"AllowAngularLocalhost\");\napp.UseEndpoints(endpoints =>\n{"
+          "text": "   {\n     builder.WithOrigins(\"http://localhost:4200\") // Allow Angular's localhost\n       .AllowAnyMethod() // Allow any HTTP method (GET, POST, etc.)\n       .AllowAnyHeader(); // Allow any headers\n   });\n});\nvar app = builder.Build();\n// Configure the HTTP request pipeline.\nif (app.Environment.IsDevelopment())\n{\n  app.UseDeveloperExceptionPage();\n}\nelse\n{\n  app.UseExceptionHandler(\"/Home/Error\");\n  app.UseHsts();\n}\napp.UseHttpsRedirection();\napp.UseStaticFiles();\napp.UseRouting();\napp.UseAuthorization();\n// Use CORS policy\napp.UseCors(\"AllowAngularLocalhost\");\napp.UseEndpoints(endpoints =>\n{"
         }
       ],
       "char_count_raw": 581,
@@ -859,75 +796,54 @@
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • AddPolicy Method: Creates a CORS policy named \"AllowAngularLocalhost\". This policy"
-          ],
-          "text": "   • AddPolicy Method: Creates a CORS policy named \"AllowAngularLocalhost\". This policy"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • AddPolicy Method: Creates a CORS policy named \"AllowAngularLocalhost\". This policy",
             "      allows requests from http://localhost:4200, permits any HTTP methods, and accepts any",
             "      headers."
           ],
-          "text": "      allows requests from http://localhost:4200, permits any HTTP methods, and accepts any\n      headers."
+          "text": "   • AddPolicy Method: Creates a CORS policy named \"AllowAngularLocalhost\". This policy\n      allows requests from http://localhost:4200, permits any HTTP methods, and accepts any\n      headers."
         },
         {
           "type": "list_item",
           "page": 3,
           "lines": [
-            "   • UseCors Method: Applies the defined CORS policy. It must be called before UseRouting or"
-          ],
-          "text": "   • UseCors Method: Applies the defined CORS policy. It must be called before UseRouting or"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "   • UseCors Method: Applies the defined CORS policy. It must be called before UseRouting or",
             "      UseEndpoints."
           ],
-          "text": "      UseEndpoints."
+          "text": "   • UseCors Method: Applies the defined CORS policy. It must be called before UseRouting or\n      UseEndpoints."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 3,
           "lines": [
-            "4. More Detailed CORS Policies"
+            "4. More Detailed CORS Policies",
+            "If you need more restrictive CORS policies, you can adjust the configuration."
           ],
-          "text": "4. More Detailed CORS Policies"
+          "text": "4. More Detailed CORS Policies\nIf you need more restrictive CORS policies, you can adjust the configuration."
         },
         {
           "type": "prose",
           "page": 3,
           "lines": [
-            "If you need more restrictive CORS policies, you can adjust the configuration.",
-            "Example of a Restrictive CORS Policy:",
-            "builder.Services.AddCors(options =>"
+            "Example of a Restrictive CORS Policy:"
           ],
-          "text": "If you need more restrictive CORS policies, you can adjust the configuration.\nExample of a Restrictive CORS Policy:\nbuilder.Services.AddCors(options =>"
+          "text": "Example of a Restrictive CORS Policy:"
         },
         {
           "type": "code",
           "page": 3,
           "lines": [
+            "builder.Services.AddCors(options =>",
             "{",
             "  options.AddPolicy(\"RestrictedPolicy\",",
             "   builder =>",
             "   {",
-            "     builder.WithOrigins(\"https://specificdomain.com\") // Allow only specific domain"
-          ],
-          "text": "{\n  options.AddPolicy(\"RestrictedPolicy\",\n   builder =>\n   {\n     builder.WithOrigins(\"https://specificdomain.com\") // Allow only specific domain"
-        },
-        {
-          "type": "prose",
-          "page": 3,
-          "lines": [
+            "     builder.WithOrigins(\"https://specificdomain.com\") // Allow only specific domain",
             "       .WithMethods(\"GET\", \"POST\") // Allow only GET and POST methods",
             "       .WithHeaders(\"Authorization\", \"Content-Type\"); // Allow specific headers",
             "   });",
             "});"
           ],
-          "text": "       .WithMethods(\"GET\", \"POST\") // Allow only GET and POST methods\n       .WithHeaders(\"Authorization\", \"Content-Type\"); // Allow specific headers\n   });\n});"
+          "text": "builder.Services.AddCors(options =>\n{\n  options.AddPolicy(\"RestrictedPolicy\",\n   builder =>\n   {\n     builder.WithOrigins(\"https://specificdomain.com\") // Allow only specific domain\n       .WithMethods(\"GET\", \"POST\") // Allow only GET and POST methods\n       .WithHeaders(\"Authorization\", \"Content-Type\"); // Allow specific headers\n   });\n});"
         }
       ],
       "char_count_raw": 886,
@@ -1191,14 +1107,7 @@
             " getProducts() {",
             "  return this.http.get(this.apiUrl);",
             " }",
-            "}"
-          ],
-          "text": " private apiUrl = 'https://localhost:5001/api/products';\n constructor(private http: HttpClient) { }\n getProducts() {\n  return this.http.get(this.apiUrl);\n }\n}"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "}",
             "Example Angular Component:",
             "import { Component, OnInit } from '@angular/core';",
             "import { ApiService } from './api.service';",
@@ -1209,7 +1118,7 @@
             "export class ProductListComponent implements OnInit {",
             " products: any[] = [];"
           ],
-          "text": "Example Angular Component:\nimport { Component, OnInit } from '@angular/core';\nimport { ApiService } from './api.service';\n@Component({\n selector: 'app-product-list',\n templateUrl: './product-list.component.html'\n})\nexport class ProductListComponent implements OnInit {\n products: any[] = [];"
+          "text": " private apiUrl = 'https://localhost:5001/api/products';\n constructor(private http: HttpClient) { }\n getProducts() {\n  return this.http.get(this.apiUrl);\n }\n}\nExample Angular Component:\nimport { Component, OnInit } from '@angular/core';\nimport { ApiService } from './api.service';\n@Component({\n selector: 'app-product-list',\n templateUrl: './product-list.component.html'\n})\nexport class ProductListComponent implements OnInit {\n products: any[] = [];"
         }
       ],
       "char_count_raw": 952,
@@ -1381,19 +1290,19 @@
             " constructor(private apiService: ApiService) { }",
             " ngOnInit() {",
             "  this.apiService.getProducts().subscribe(data => {",
-            "  this.products = data;",
-            "  });"
+            "  this.products = data;"
           ],
-          "text": " constructor(private apiService: ApiService) { }\n ngOnInit() {\n  this.apiService.getProducts().subscribe(data => {\n  this.products = data;\n  });"
+          "text": " constructor(private apiService: ApiService) { }\n ngOnInit() {\n  this.apiService.getProducts().subscribe(data => {\n  this.products = data;"
         },
         {
           "type": "code",
           "page": 5,
           "lines": [
+            "  });",
             " }",
             "}"
           ],
-          "text": " }\n}"
+          "text": "  });\n }\n}"
         },
         {
           "type": "prose",
@@ -1471,17 +1380,10 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   4. Testing: Use browser developer tools to verify the presence and correctness of CORS"
-          ],
-          "text": "   4. Testing: Use browser developer tools to verify the presence and correctness of CORS"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   4. Testing: Use browser developer tools to verify the presence and correctness of CORS",
             "      headers."
           ],
-          "text": "      headers."
+          "text": "   4. Testing: Use browser developer tools to verify the presence and correctness of CORS\n      headers."
         },
         {
           "type": "list_item",

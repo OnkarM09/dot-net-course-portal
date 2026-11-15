@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Section 05: Routing — ASP.NET Core Masterclass</title>
+  <title>Section 05: Routing &mdash; ASP.NET Core Masterclass</title>
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
   <link rel="alternate icon" href="../favicon.ico">
   <link rel="stylesheet" href="../assets/css/docs.css">
@@ -16,7 +16,9 @@
   <!-- Top Navigation Header -->
   <header class="top-header" role="banner">
     <div class="header-left">
-      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">☰</button>
+      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
       <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
         <span class="sidebar-toggle-text">« Collapse</span>
@@ -41,7 +43,9 @@
       </a>
 
       <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
-        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
         <span class="search-text">Search topics, syntax, concepts...</span>
         <kbd class="kbd-shortcut">Ctrl+K</kbd>
       </button>
@@ -367,15 +371,6 @@
         <span>» Expand Sidebar</span>
       </button>
 
-      <!-- Breadcrumbs -->
-      <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
-        <a href="../index.html">Course Index</a>
-        <span class="crumb-sep" aria-hidden="true">/</span>
-        <span>Module 1</span>
-        <span class="crumb-sep" aria-hidden="true">/</span>
-        <span style="color: var(--text-main); font-weight: 600;">Section 05</span>
-      </nav>
-
       <!-- Section Banner Header -->
       <header class="section-banner">
         <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
@@ -405,58 +400,52 @@
       <article class="docs-content">
         
 <h2 id="routing">Routing</h2>
-<p>At its heart, routing is the mechanism that ASP.NET Core uses to match incoming HTTP requests to
-specific endpoints (e.g., controller actions, Razor Pages, or minimal API handlers) within your
-application. This allows you to define clean and meaningful URLs that clearly indicate the resources
-or actions being requested.
-How Routing Works in ASP.NET Core</p>
+<p>At its heart, routing is the mechanism that ASP.NET Core uses to match incoming HTTP requests to</p>
+<p>specific endpoints (e.g., controller actions, Razor Pages, or minimal API handlers) within your</p>
+<p>application. This allows you to define clean and meaningful URLs that clearly indicate the resources</p>
+<ul>
+  <li>r actions being requested.</li>
+</ul>
+<p>How Routing Works in ASP.NET Core</p>
 <ul>
   <li>1. Endpoint Registration: You define endpoints (routes) within your application, specifying:</li>
-  <li>o The URL pattern (e.g., /products, /api/orders/{id}).</li>
-  <li>o The HTTP method(s) the endpoint handles (GET, POST, etc.).</li>
-  <li>o The code to execute when the endpoint is matched (RequestDelegate).</li>
+  <li>The URL pattern (e.g., /products, /api/orders/{id}).</li>
+  <li>The HTTP method(s) the endpoint handles (GET, POST, etc.).</li>
+  <li>The code to execute when the endpoint is matched (RequestDelegate).</li>
   <li>2. Request Matching (Middleware):</li>
-  <li>o The UseRouting middleware component is added to the pipeline.</li>
-  <li>o When a request arrives, UseRouting analyzes the incoming URL and HTTP method.</li>
-  <li>o It compares the URL against your registered endpoints to find the best match.</li>
+  <li>The <code>UseRouting</code> middleware component is added to the pipeline.</li>
+  <li>When a request arrives, <code>UseRouting</code> analyzes the incoming URL and HTTP method.</li>
+  <li>It compares the URL against your registered endpoints to find the best match.</li>
   <li>3. Endpoint Execution (Middleware):</li>
-  <li>o The UseEndpoints middleware component is added to the pipeline, following</li>
+  <li>The <code>UseEndpoints</code> middleware component is added to the pipeline, following
+           <code>UseRouting</code>.</li>
+  <li>If <code>UseRouting</code> found a matching endpoint, <code>UseEndpoints</code> executes the code (the
+           RequestDelegate) associated with that endpoint.</li>
 </ul>
-<p>UseRouting.</p>
+<p><code>UseRouting</code> vs. <code>UseEndpoints</code></p>
 <ul>
-  <li>o If UseRouting found a matching endpoint, UseEndpoints executes the code (the</li>
+  <li><code>UseRouting</code>:</li>
+  <li>It&#39;s responsible for route matching - finding the right endpoint for a given request.</li>
+  <li>It adds route data to the HttpContext, which subsequent middleware can use to
+           make decisions.</li>
+  <li>It must come before <code>UseEndpoints</code>.</li>
+  <li><code>UseEndpoints</code>:</li>
+  <li>It&#39;s responsible for endpoint execution - invoking the code (the delegate) associated
+           with the matched endpoint.</li>
+  <li>It also lets you configure the endpoints (e.g., define policies, filters) using lambda
+           expressions.</li>
 </ul>
-<p>RequestDelegate) associated with that endpoint.
-UseRouting vs. UseEndpoints</p>
-<ul>
-  <li>• UseRouting:</li>
-  <li>o It&#39;s responsible for route matching - finding the right endpoint for a given request.</li>
-  <li>o It adds route data to the HttpContext, which subsequent middleware can use to</li>
-</ul>
-<p>make decisions.</p>
-<ul>
-  <li>o It must come before UseEndpoints.</li>
-  <li>• UseEndpoints:</li>
-  <li>o It&#39;s responsible for endpoint execution - invoking the code (the delegate) associated</li>
-</ul>
-<p>with the matched endpoint.</p>
-<ul>
-  <li>o It also lets you configure the endpoints (e.g., define policies, filters) using lambda</li>
-</ul>
-<p>expressions.
-Map* Methods: Creating Endpoints
+<p>Map* Methods: Creating Endpoints
 ASP.NET Core provides a family of Map* extension methods on the IEndpointRouteBuilder interface
 that simplify endpoint creation:</p>
 <ul>
-  <li>• MapGet: Creates an endpoint that only handles GET requests.</li>
-  <li>• MapPost: Creates an endpoint that only handles POST requests.</li>
-  <li>• MapPut, MapDelete: Create endpoints for PUT and DELETE requests, respectively.</li>
-  <li>• MapMethods: Creates an endpoint that handles multiple HTTP methods.</li>
-  <li>• MapControllerRoute, MapAreaControllerRoute: Used for configuring MVC/Razor Pages</li>
-</ul>
-<p>controllers.</p>
-<ul>
-  <li>• MapFallbackToFile: Used to specify a default file to serve when no other endpoint matches.</li>
+  <li><code>MapGet</code>: Creates an endpoint that only handles GET requests.</li>
+  <li><code>MapPost</code>: Creates an endpoint that only handles POST requests.</li>
+  <li><code>MapPut</code>, <code>MapDelete</code>: Create endpoints for PUT and DELETE requests, respectively.</li>
+  <li>MapMethods: Creates an endpoint that handles multiple HTTP methods.</li>
+  <li>MapControllerRoute, MapAreaControllerRoute: Used for configuring MVC/Razor Pages
+      controllers.</li>
+  <li>MapFallbackToFile: Used to specify a default file to serve when no other endpoint matches.</li>
 </ul>
 <p>Code: Detailed Explanation</p>
 
@@ -480,61 +469,40 @@ app.UseEndpoints(endpoints =&gt;
   endpoints.MapPost(&quot;map2&quot;, async (context) =&gt; {
    await context.Response.WriteAsync(&quot;In Map 2&quot;);
   });
-}</code></pre>
-    </div>
-  <p>});</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">app.Run(async context =&gt; {
+});
+app.Run(async context =&gt; {
   await context.Response.WriteAsync($&quot;Request received at {context.Request.Path}&quot;);
 });
    1. app.UseRouting();: This line activates routing middleware. It sets up the machinery to</code></pre>
     </div>
   <p>analyze incoming requests and match them against your defined endpoints.</p>
 <ul>
-  <li>2. app.UseEndpoints(endpoints =&gt; { ... });: This lambda expression configures the endpoints of</li>
+  <li>2. app.<code>UseEndpoints</code>(endpoints =&gt; { ... });: This lambda expression configures the endpoints of
+      your application:</li>
+  <li>endpoints.<code>MapGet</code>(&quot;map1&quot;, ...);: Registers a GET endpoint that responds to the path
+           &quot;/map1&quot; with the text &quot;In Map 1&quot;.</li>
+  <li>endpoints.<code>MapPost</code>(&quot;map2&quot;, ...);: Registers a POST endpoint for the path &quot;/map2&quot;,
+           responding with &quot;In Map 2&quot;.</li>
+  <li>3. app.Run(async context =&gt; { ... });: This is a fallback terminal middleware. If no other
+      endpoint matches the request (e.g., if you visit &quot;/map3&quot;), it will execute this code, writing
+      the requested path to the response.</li>
 </ul>
-<p>your application:</p>
-<ul>
-  <li>o endpoints.MapGet(&quot;map1&quot;, ...);: Registers a GET endpoint that responds to the path</li>
-</ul>
-<p>&quot;/map1&quot; with the text &quot;In Map 1&quot;.</p>
-<ul>
-  <li>o endpoints.MapPost(&quot;map2&quot;, ...);: Registers a POST endpoint for the path &quot;/map2&quot;,</li>
-</ul>
-<p>responding with &quot;In Map 2&quot;.</p>
-<ul>
-  <li>3. app.Run(async context =&gt; { ... });: This is a fallback terminal middleware. If no other</li>
-</ul>
-<p>endpoint matches the request (e.g., if you visit &quot;/map3&quot;), it will execute this code, writing
-      the requested path to the response.</p>
 
 <h2 id="getendpoint">GetEndpoint()</h2>
 <p>In ASP.NET Core, the GetEndpoint() method is a powerful tool for retrieving information about the
 specific endpoint that was selected to handle an incoming HTTP request. This method is an
 extension method available on the HttpContext object.</p>
 <ul>
-  <li>• Purpose: It allows you to access details about the matched endpoint, such as its display</li>
+  <li>Purpose: It allows you to access details about the matched endpoint, such as its display
+      name, route pattern, metadata, and more.</li>
+  <li>When to Use It: You typically use GetEndpoint() within middleware components to make
+      decisions based on the selected endpoint or to extract information that&#39;s relevant to your
+      custom logic.</li>
+  <li>Middleware Placement: The GetEndpoint() method will return a valid Endpoint object only
+      after the <code>UseRouting</code> middleware has executed and successfully matched the request to an
+      endpoint.</li>
 </ul>
-<p>name, route pattern, metadata, and more.</p>
-<ul>
-  <li>• When to Use It: You typically use GetEndpoint() within middleware components to make</li>
-</ul>
-<p>decisions based on the selected endpoint or to extract information that&#39;s relevant to your
-      custom logic.</p>
-<ul>
-  <li>• Middleware Placement: The GetEndpoint() method will return a valid Endpoint object only</li>
-</ul>
-<p>after the UseRouting middleware has executed and successfully matched the request to an
-      endpoint.
-Code:</p>
+<p>Code:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -550,19 +518,8 @@ var app = builder.Build();
 app.Use(async (context, next) =&gt;
 {
   Microsoft.AspNetCore.Http.Endpoint? endPoint = context.GetEndpoint();
-}</code></pre>
-    </div>
-  <p>if (endPoint != null)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  if (endPoint != null)
+  {
    await context.Response.WriteAsync($&quot;Endpoint: {endPoint.DisplayName}\n&quot;);
   }
   await next(context);
@@ -572,53 +529,21 @@ app.UseRouting();
 // Middleware 2: After Routing
 app.Use(async (context, next) =&gt;
 {
-  Microsoft.AspNetCore.Http.Endpoint? endPoint = context.GetEndpoint();</code></pre>
-    </div>
-  <p>if (endPoint != null)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  Microsoft.AspNetCore.Http.Endpoint? endPoint = context.GetEndpoint();
+  if (endPoint != null)
+  {
    await context.Response.WriteAsync($&quot;Endpoint: {endPoint.DisplayName}\n&quot;);
   }
   await next(context);
 });
 // Creating Endpoints
 app.UseEndpoints(endpoints =&gt;
-{</code></pre>
-    </div>
-  <p>endpoints.MapGet(&quot;map1&quot;, async (context) =&gt;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+{
+  endpoints.MapGet(&quot;map1&quot;, async (context) =&gt;
+  {
    await context.Response.WriteAsync(&quot;In Map 1&quot;);
-}</code></pre>
-    </div>
-  <p>});
-  endpoints.MapPost(&quot;map2&quot;, async (context) =&gt;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  });
+  endpoints.MapPost(&quot;map2&quot;, async (context) =&gt;
   {
    await context.Response.WriteAsync(&quot;In Map 2&quot;);
   });
@@ -628,38 +553,32 @@ app.Run(async context =&gt;
 {
   await context.Response.WriteAsync($&quot;Request received at {context.Request.Path}&quot;);
 });
-app.Run();</code></pre>
+app.Run();
+Let&#39;s analyze the code step-by-step:
+   1. Middleware 1 (Before Routing):</code></pre>
     </div>
-  <p>Let&#39;s analyze the code step-by-step:</p>
-<ul>
-  <li>1. Middleware 1 (Before Routing):</li>
-  <li>o Here, GetEndpoint() will return null because routing hasn&#39;t happened yet. The</li>
+  <ul>
+  <li>Here, GetEndpoint() will return null because routing hasn&#39;t happened yet. The</li>
 </ul>
 <p>request hasn&#39;t been matched to any specific endpoint.</p>
 <ul>
-  <li>2. app.UseRouting();</li>
-  <li>o This enables the routing middleware, which is responsible for matching the request</li>
-</ul>
-<p>to an endpoint.</p>
-<ul>
+  <li>2. app.<code>UseRouting</code>();</li>
+  <li>This enables the routing middleware, which is responsible for matching the request
+           to an endpoint.</li>
   <li>3. Middleware 2 (After Routing):</li>
-  <li>o Now, GetEndpoint() will return the matched endpoint object (if a match was found).</li>
-</ul>
-<p>You can access its DisplayName (or other properties) to get information about the
-           selected endpoint.</p>
-<ul>
-  <li>• For a GET request to &quot;/map1&quot;, the display name would be &quot;map1&quot;.</li>
-  <li>• For a POST request to &quot;/map2&quot;, the display name would be &quot;map2&quot;.</li>
-  <li>• For any other path, the display name would be null (since the fallback middleware handles</li>
-</ul>
-<p>those cases).</p>
-<ul>
+  <li>Now, GetEndpoint() will return the matched endpoint object (if a match was found).
+           You can access its DisplayName (or other properties) to get information about the
+           selected endpoint.</li>
+  <li>For a GET request to &quot;/map1&quot;, the display name would be &quot;map1&quot;.</li>
+  <li>For a POST request to &quot;/map2&quot;, the display name would be &quot;map2&quot;.</li>
+  <li>For any other path, the display name would be null (since the fallback middleware handles
+      those cases).</li>
   <li>4. Endpoint Creation:</li>
-  <li>o The app.UseEndpoints section defines your endpoints (routes).</li>
+  <li>The app.<code>UseEndpoints</code> section defines your endpoints (routes).</li>
   <li>5. Fallback Middleware:</li>
-  <li>o This middleware handles requests that didn&#39;t match any defined endpoints. It simply</li>
+  <li>This middleware handles requests that didn&#39;t match any defined endpoints. It simply
+           writes the requested path to the response.</li>
 </ul>
-<p>writes the requested path to the response.</p>
 
 <h2 id="route-parameters">Route Parameters</h2>
 <p>Route parameters are placeholders within your URL patterns that capture values from incoming
@@ -669,32 +588,24 @@ perform specific actions.</p>
 <h2 id="types-of-route-parameters">Types of Route Parameters</h2>
 <ul>
   <li>1. Required Parameters:</li>
-  <li>o Syntax: Enclosed in curly braces {}.</li>
-  <li>o Behavior: Must be provided in the URL for the route to match. If not present, the</li>
-</ul>
-<p>request won&#39;t match this endpoint.</p>
-<ul>
-  <li>o Example: /products/{id} (The id parameter is required).</li>
+  <li>Syntax: Enclosed in curly braces {}.</li>
+  <li>Behavior: Must be provided in the URL for the route to match. If not present, the
+           request won&#39;t match this endpoint.</li>
+  <li>Example: /products/{id} (The id parameter is required).</li>
   <li>2. Optional Parameters:</li>
-  <li>o Syntax: Enclosed in curly braces {} and followed by a question mark ?.</li>
-  <li>o Behavior: Can be omitted from the URL. If not present, the parameter&#39;s value will be</li>
-</ul>
-<p>null.</p>
-<ul>
-  <li>o Example: /products/details/{id?} (The id parameter is optional).</li>
+  <li>Syntax: Enclosed in curly braces {} and followed by a question mark ?.</li>
+  <li>Behavior: Can be omitted from the URL. If not present, the parameter&#39;s value will be
+           null.</li>
+  <li>Example: /products/details/{id?} (The id parameter is optional).</li>
   <li>3. Parameters with Default Values:</li>
-  <li>o Syntax: Enclosed in curly braces {}, followed by an equals sign =, and then the</li>
+  <li>Syntax: Enclosed in curly braces {}, followed by an equals sign =, and then the
+           default value.</li>
+  <li>Behavior: If not provided in the URL, the parameter will take the specified default
+           value.</li>
+  <li>Example: /employee/profile/{EmployeeName=john} (The EmployeeName
+           parameter defaults to &quot;john&quot;).</li>
 </ul>
-<p>default value.</p>
-<ul>
-  <li>o Behavior: If not provided in the URL, the parameter will take the specified default</li>
-</ul>
-<p>value.</p>
-<ul>
-  <li>o Example: /employee/profile/{EmployeeName=} (The EmployeeName</li>
-</ul>
-<p>parameter defaults to &quot;&quot;).
-Code:</p>
+<p>Code:</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -708,70 +619,26 @@ Code:</p>
 app.UseEndpoints(endpoints =&gt;
 {
   // Required Parameters
-}</code></pre>
-    </div>
-  <p>endpoints.Map(&quot;files/{filename}.{extension}&quot;, async context =&gt;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  endpoints.Map(&quot;files/{filename}.{extension}&quot;, async context =&gt;
+  {
    string? fileName = Convert.ToString(context.Request.RouteValues[&quot;filename&quot;]);
    string? extension = Convert.ToString(context.Request.RouteValues[&quot;extension&quot;]);
    await context.Response.WriteAsync($&quot;In files - {fileName} - {extension}&quot;);
   });
-  // Default Parameter</code></pre>
-    </div>
-  <p>endpoints.Map(&quot;employee/profile/{EmployeeName=}&quot;, async context =&gt;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  // Default Parameter
+  endpoints.Map(&quot;employee/profile/{EmployeeName=john}&quot;, async context =&gt;
+  {
    string? employeeName = Convert.ToString(context.Request.RouteValues[&quot;employeename&quot;]);
    await context.Response.WriteAsync($&quot;In Employee profile - {employeeName}&quot;);
   });
   // Optional Parameter
   endpoints.Map(&quot;products/details/{id?}&quot;, async context =&gt; {
-}</code></pre>
-    </div>
-  <p>if (context.Request.RouteValues.ContainsKey(&quot;id&quot;))</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+   if (context.Request.RouteValues.ContainsKey(&quot;id&quot;))
+   {
      int id = Convert.ToInt32(context.Request.RouteValues[&quot;id&quot;]);
      await context.Response.WriteAsync($&quot;Products details - {id}&quot;);
-   }</code></pre>
-    </div>
-  <p>else</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
-{
+   }
+   else
    {
      await context.Response.WriteAsync($&quot;Products details - id is not supplied&quot;);
    }
@@ -781,25 +648,19 @@ app.UseEndpoints(endpoints =&gt;
     </div>
   <ul>
   <li>1. Required Parameters Example:</li>
-  <li>o The route files/{filename}.{extension} expects both filename and extension to be</li>
-</ul>
-<p>present in the URL (e.g., /files/sample.txt).</p>
-<ul>
-  <li>o The endpoint handler extracts these values from context.Request.RouteValues and</li>
-</ul>
-<p>uses them in the response.</p>
-<ul>
+  <li>The route files/{filename}.{extension} expects both filename and extension to be
+           present in the URL (e.g., /files/sample.txt).</li>
+  <li>The endpoint handler extracts these values from context.Request.RouteValues and
+           uses them in the response.</li>
   <li>2. Default Parameter Example:</li>
-  <li>o The route employee/profile/{EmployeeName=} has a default value for</li>
-</ul>
-<p>EmployeeName.</p>
-<ul>
-  <li>o If you visit /employee/profile, the response will be &quot;In Employee profile - &quot;.</li>
-  <li>o If you visit /employee/profile/john, the response will be &quot;In Employee profile - john&quot;.</li>
+  <li>The route employee/profile/{EmployeeName=john} has a default value for
+           EmployeeName.</li>
+  <li>If you visit /employee/profile, the response will be &quot;In Employee profile - john&quot;.</li>
+  <li>If you visit /employee/profile/john, the response will be &quot;In Employee profile - john&quot;.</li>
   <li>3. Optional Parameter Example:</li>
-  <li>o The route products/details/{id?} allows the id parameter to be omitted.</li>
-  <li>o If you visit /products/details/123, it will show the product details for ID 123.</li>
-  <li>o If you visit /products/details, it will indicate that the ID was not provided.</li>
+  <li>The route products/details/{id?} allows the id parameter to be omitted.</li>
+  <li>If you visit /products/details/123, it will show the product details for ID 123.</li>
+  <li>If you visit /products/details, it will indicate that the ID was not provided.</li>
 </ul>
 
 <h2 id="route-constraints">Route Constraints</h2>
@@ -808,32 +669,28 @@ validation to your route parameters. They define rules that restrict the values 
 accept, helping you filter out invalid requests before they reach your endpoint handlers.
 Why Use Route Constraints?</p>
 <ul>
-  <li>• Enhanced Validation: Ensure that only requests with valid parameter values are handled.</li>
-  <li>• Improved Security: Prevent malicious input by rejecting requests with potentially harmful</li>
-</ul>
-<p>values.</p>
-<ul>
-  <li>• Cleaner Code: Avoid cluttering your endpoint handlers with validation logic.</li>
-  <li>• Explicit Routing: Make your routes more self-documenting and easier to understand.</li>
+  <li>Enhanced Validation: Ensure that only requests with valid parameter values are handled.</li>
+  <li>Improved Security: Prevent malicious input by rejecting requests with potentially harmful
+      values.</li>
+  <li>Cleaner Code: Avoid cluttering your endpoint handlers with validation logic.</li>
+  <li>Explicit Routing: Make your routes more self-documenting and easier to understand.</li>
 </ul>
 
 <h2 id="common-route-constraints">Common Route Constraints</h2>
 <p>ASP.NET Core provides a variety of built-in route constraints:</p>
 <ul>
-  <li>• int: Requires the parameter value to be an integer.</li>
-  <li>• bool: Requires the parameter value to be a boolean (true or false).</li>
-  <li>• datetime: Requires the parameter value to be a valid date and time string.</li>
-  <li>• decimal, double, float, long: Require the parameter value to be of the specified numeric</li>
+  <li>int: Requires the parameter value to be an integer.</li>
+  <li>bool: Requires the parameter value to be a boolean (true or false).</li>
+  <li>datetime: Requires the parameter value to be a valid date and time string.</li>
+  <li>decimal, double, float, long: Require the parameter value to be of the specified numeric
+      type.</li>
+  <li>guid: Requires the parameter value to be a valid GUID (Globally Unique Identifier).</li>
+  <li>alpha: Requires the parameter value to consist only of alphabetic characters (a-z, A-Z).</li>
+  <li>regex: Requires the parameter value to match a regular expression pattern.</li>
+  <li>length: Requires the parameter value to have a specific length or within a specified range.</li>
+  <li>min, max, range: Require the parameter value to be greater than or equal to the minimum
+      (min), less than or equal to the maximum (max), or within a specific range (range).</li>
 </ul>
-<p>type.</p>
-<ul>
-  <li>• guid: Requires the parameter value to be a valid GUID (Globally Unique Identifier).</li>
-  <li>• alpha: Requires the parameter value to consist only of alphabetic characters (a-z, A-Z).</li>
-  <li>• regex: Requires the parameter value to match a regular expression pattern.</li>
-  <li>• length: Requires the parameter value to have a specific length or within a specified range.</li>
-  <li>• min, max, range: Require the parameter value to be greater than or equal to the minimum</li>
-</ul>
-<p>(min), less than or equal to the maximum (max), or within a specific range (range).</p>
 
 <h2 id="code">Code</h2>
 
@@ -850,130 +707,70 @@ app.UseEndpoints(endpoints =&gt;
 {
   // ... (other endpoints) ...
   // Alphabetic and Length Constraint
-}</code></pre>
-    </div>
-  <p>endpoints.Map(&quot;employee/profile/{EmployeeName:length(4,7):alpha=}&quot;, async context =&gt;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  endpoints.Map(&quot;employee/profile/{EmployeeName:length(4,7):alpha=john}&quot;, async context =&gt;
+  {
    // ...
   });
   // Integer, Range, and Optional Constraint
   endpoints.Map(&quot;products/details/{id:int:range(1,1000)?}&quot;, async context =&gt; {
    // ...
   });
-  // DateTime Constraint</code></pre>
-    </div>
-  <p>endpoints.Map(&quot;daily-digest-report/{reportdate:datetime}&quot;, async context =&gt;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
-   // ...
-}</code></pre>
-    </div>
-  <p>});</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">// GUID Constraint</code></pre>
-    </div>
-  <p>endpoints.Map(&quot;cities/{cityid:guid}&quot;, async context =&gt;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  // DateTime Constraint
+  endpoints.Map(&quot;daily-digest-report/{reportdate:datetime}&quot;, async context =&gt;
+  {
    // ...
   });
-  // Int, Min, Regex Constraint</code></pre>
-    </div>
-  <p>endpoints.Map(&quot;sales-report/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}&quot;, async
-context =&gt;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+  // GUID Constraint
+  endpoints.Map(&quot;cities/{cityid:guid}&quot;, async context =&gt;
+  {
+   // ...
+  });
+  // Int, Min, Regex Constraint
+  endpoints.Map(&quot;sales-report/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}&quot;, async
+context =&gt;
   {
    // ...
   });
 });
-// ... (Fallback middleware) ...</code></pre>
+// ... (Fallback middleware) ...
+   1. Alphabetic and Length Constraint:</code></pre>
     </div>
-  <p>1. Alphabetic and Length Constraint:
-      /employee/profile/{EmployeeName:length(4,7):alpha=}: Ensures EmployeeName is 4-
+  <p>/employee/profile/{EmployeeName:length(4,7):alpha=john}: Ensures EmployeeName is 4-
       7 characters long and consists only of alphabetic characters. If not supplied, it defaults to
-      &quot;&quot;.</p>
-<ul>
-  <li>2. Integer, Range, and Optional Constraint: /products/details/{id:int:range(1,1000)?}: Requires</li>
-</ul>
-<p>id to be an integer between 1 and 1000. The question mark makes it optional.</p>
-<ul>
-  <li>3. DateTime Constraint: /daily-digest-report/{reportdate:datetime}: Requires reportdate to be</li>
-</ul>
-<p>a valid date-time string.</p>
-<ul>
-  <li>4. GUID Constraint: /cities/{cityid:guid}: Requires cityid to be a valid GUID.</li>
-</ul>
-
-<h2 id="5-integer-min-and-regex-constraint-salesreport">5. Integer, Min, and Regex Constraint: /salesreport</h2>
-<p>/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}: Requires year to be an
+      &quot;john&quot;.</p>
+<ol>
+  <li>Integer, Range, and Optional Constraint: /products/details/{id:int:range(1,1000)?}: Requires
+      id to be an integer between 1 and 1000. The question mark makes it optional.</li>
+  <li>DateTime Constraint: /daily-digest-report/{reportdate:datetime}: Requires reportdate to be
+      a valid date-time string.</li>
+  <li>GUID Constraint: /cities/{cityid:guid}: Requires cityid to be a valid GUID.</li>
+  <li>Integer, Min, and Regex Constraint: /salesreport
+/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}: Requires year to be an
       integer greater than or equal to 1900, and month to be one of the specified values (apr, jul,
-      oct, jan).</p>
+      oct, jan).</li>
+</ol>
 
 <h2 id="custom-route-constraint-classes">Custom Route Constraint Classes</h2>
-<p>While ASP.NET Core offers a variety of built-in route constraints, sometimes your application
-requires more specialized validation rules. Custom route constraint classes allow you to define your
-own criteria for determining whether a parameter value is valid.</p>
+<p>While ASP.NET Core offers a variety of built-in route constraints, sometimes your application</p>
+<p>requires more specialized validation rules. Custom route constraint classes allow you to define your</p>
+<ul>
+  <li>wn criteria for determining whether a parameter value is valid.</li>
+</ul>
 
 <h2 id="key-requirements">Key Requirements</h2>
 <ul>
   <li>1. Implement IRouteConstraint: Create a class that implements the IRouteConstraint interface.</li>
-  <li>2. Match Method: Implement the Match method, which will contain your custom validation</li>
+  <li>2. Match Method: Implement the Match method, which will contain your custom validation
+      logic. This method receives several parameters:</li>
+  <li>httpContext: The current HttpContext.</li>
+  <li>route: The IRouter object associated with the route.</li>
+  <li>routeKey: The name of the route parameter being validated.</li>
+  <li>values: A dictionary containing the route values.</li>
+  <li>routeDirection: Indicates whether the route is being matched for an incoming
+           request or for generating a URL.</li>
+  <li>3. Return true or false: The Match method must return true if the parameter value is valid
+      according to your constraint, and false otherwise.</li>
 </ul>
-<p>logic. This method receives several parameters:</p>
-<ul>
-  <li>o httpContext: The current HttpContext.</li>
-  <li>o route: The IRouter object associated with the route.</li>
-  <li>o routeKey: The name of the route parameter being validated.</li>
-  <li>o values: A dictionary containing the route values.</li>
-  <li>o routeDirection: Indicates whether the route is being matched for an incoming</li>
-</ul>
-<p>request or for generating a URL.</p>
-<ul>
-  <li>3. Return true or false: The Match method must return true if the parameter value is valid</li>
-</ul>
-<p>according to your constraint, and false otherwise.</p>
 
 <h2 id="code-1">Code</h2>
 
@@ -989,74 +786,36 @@ own criteria for determining whether a parameter value is valid.</p>
 public class MonthsCustomConstraint : IRouteConstraint
 {
   public bool Match(HttpContext? httpContext, IRouter? route, string routeKey,
-}</code></pre>
-    </div>
-  <p>RouteValueDictionary values, RouteDirection routeDirection)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+RouteValueDictionary values, RouteDirection routeDirection)
+  {
    // Check if the parameter value exists
-}</code></pre>
-    </div>
-  <p>if (!values.ContainsKey(routeKey))</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+   if (!values.ContainsKey(routeKey))
+   {
      return false; // Not a match
    }
    Regex regex = new Regex(&quot;^(apr|jul|oct|jan)$&quot;);
-   string? monthValue = Convert.ToString(values[routeKey]);</code></pre>
-    </div>
-  <p>if (regex.IsMatch(monthValue))</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+   string? monthValue = Convert.ToString(values[routeKey]);
+   if (regex.IsMatch(monthValue))
+   {
      return true; // It&#39;s a match
    }
-   return false; // Not a match</code></pre>
+   return false; // Not a match
+  }
+}
+Let&#39;s break this down:</code></pre>
     </div>
-  <p>Let&#39;s break this down:</p>
-<ul>
-  <li>1. Implementation of IRouteConstraint: The MonthsCustomConstraint class clearly</li>
-</ul>
-<p>implements this interface, signaling that it&#39;s a custom route constraint.</p>
+  <p>1. Implementation of IRouteConstraint: The MonthsCustomConstraint class clearly
+      implements this interface, signaling that it&#39;s a custom route constraint.</p>
 <ul>
   <li>2. Match Method:</li>
-  <li>o It first checks if the values dictionary contains the route parameter being validated</li>
-</ul>
-<p>(routeKey). If not, it&#39;s an immediate mismatch, and false is returned.</p>
-<ul>
-  <li>o A regular expression (^(apr|jul|oct|jan)$) is used to define the valid month values.</li>
-  <li>o The value associated with the routeKey is retrieved from the values dictionary and</li>
-</ul>
-<p>converted to a string.</p>
-<ul>
-  <li>o The Regex.IsMatch method tests whether the retrieved value matches the allowed</li>
-</ul>
-<p>month pattern.</p>
-<ul>
-  <li>o Returns true if the value matches, and false otherwise.</li>
+  <li>It first checks if the values dictionary contains the route parameter being validated
+           (routeKey). If not, it&#39;s an immediate mismatch, and false is returned.</li>
+  <li>A regular expression (^(apr|jul|oct|jan)$) is used to define the valid month values.</li>
+  <li>The value associated with the routeKey is retrieved from the values dictionary and
+           converted to a string.</li>
+  <li>The Regex.IsMatch method tests whether the retrieved value matches the allowed
+           month pattern.</li>
+  <li>Returns true if the value matches, and false otherwise.</li>
 </ul>
 
 <h2 id="using-the-custom-constraint">Using the Custom Constraint</h2>
@@ -1069,29 +828,21 @@ public class MonthsCustomConstraint : IRouteConstraint
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">// ... (in your endpoint configuration) ...</code></pre>
-    </div>
-  <p>endpoints.Map(&quot;sales-report/{year:int:min(1900)}/{month:months}&quot;, async context =&gt;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+      <pre><code class="language-csharp">// ... (in your endpoint configuration) ...
+endpoints.Map(&quot;sales-report/{year:int:min(1900)}/{month:months}&quot;, async context =&gt;
+{
   // ... your endpoint handler logic ...
 });</code></pre>
     </div>
-  <p>• Notice the :months constraint after the month parameter. This indicates that the value for
-      month should be validated against the MonthsCustomConstraint class.</p>
+  <ul>
+  <li>Notice the :months constraint after the month parameter. This indicates that the value for</li>
+</ul>
+<p>month should be validated against the MonthsCustomConstraint class.</p>
 
 <h2 id="endpoint-selection">Endpoint Selection</h2>
-<p>When a request arrives at your ASP.NET Core application, the routing middleware (UseRouting)
+<p>When a request arrives at your ASP.NET Core application, the routing middleware (<code>UseRouting</code>)
 analyzes the URL and HTTP method. It then compares this information against the collection of
-endpoints you&#39;ve defined using methods like MapGet, MapPost, etc. The goal is to find the most
+endpoints you&#39;ve defined using methods like <code>MapGet</code>, <code>MapPost</code>, etc. The goal is to find the most
 suitable endpoint to handle the request.
 However, what happens when multiple endpoints seem like potential matches? ASP.NET Core
 employs a well-defined algorithm to determine the winning endpoint.</p>
@@ -1099,57 +850,38 @@ employs a well-defined algorithm to determine the winning endpoint.</p>
 <h2 id="endpoint-selection-algorithm">Endpoint Selection Algorithm</h2>
 <ul>
   <li>1. Precedence:</li>
-  <li>o Explicit Matches: Endpoints defined with more specific patterns (e.g.,</li>
-</ul>
-<p>/products/{id}) take precedence over those with broader patterns (e.g., /products).</p>
-<ul>
-  <li>o Order of Registration: If multiple endpoints with equally specific patterns could</li>
-</ul>
-<p>match, the endpoint that was registered first wins.</p>
-<ul>
+  <li>Explicit Matches: Endpoints defined with more specific patterns (e.g.,
+           /products/{id}) take precedence over those with broader patterns (e.g., /products).</li>
+  <li>Order of Registration: If multiple endpoints with equally specific patterns could
+           match, the endpoint that was registered first wins.</li>
   <li>2. HTTP Method:</li>
-  <li>o Exact Match: If the request method (GET, POST, etc.) exactly matches the method</li>
-</ul>
-<p>specified for an endpoint, that endpoint is preferred.</p>
-<ul>
+  <li>Exact Match: If the request method (GET, POST, etc.) exactly matches the method
+           specified for an endpoint, that endpoint is preferred.</li>
   <li>3. Route Constraints:</li>
-  <li>o More Specific Constraints: Endpoints with more restrictive route constraints (e.g.,</li>
-</ul>
-<p>id:int:range(1,100) vs. id:int) are favored.</p>
-<ul>
+  <li>More Specific Constraints: Endpoints with more restrictive route constraints (e.g.,
+           id:int:range(1,100) vs. id:int) are favored.</li>
   <li>4. Catch-All (Fallback):</li>
-  <li>o If no other endpoint matches, and you have a catch-all endpoint (defined using</li>
+  <li>If no other endpoint matches, and you have a catch-all endpoint (defined using
+           MapFallback), it will be selected.</li>
 </ul>
-<p>MapFallback), it will be selected.
-Order of Precedence: A Visual Summary</p>
+<p>Order of Precedence: A Visual Summary</p>
 <ul>
   <li>1. Explicit Match with Exact HTTP Method and More Specific Route Constraints</li>
   <li>2. Explicit Match with Exact HTTP Method and Less Specific Route Constraints</li>
+  <li>3. Explicit Match with Any HTTP Method and More Specific Route Constraints</li>
+  <li>4. Explicit Match with Any HTTP Method and Less Specific Route Constraints</li>
+  <li>5. Order of Registration (if specificity is equal)</li>
+  <li>6. Catch-All Endpoint (if no other match is found)
+Practical Implications and Tips</li>
+  <li>Mind Your Order: Be mindful of the order in which you register your endpoints, especially if
+      they have similar patterns.</li>
+  <li>Specificity Wins: Define your routes as specifically as possible to avoid ambiguity.</li>
+  <li>Route Constraints: Use route constraints to narrow down the valid values for parameters.</li>
+  <li>Catch-All with Caution: Catch-all endpoints can be useful, but use them sparingly to avoid
+      unintended matches.</li>
+  <li>Endpoint Metadata: Explore the Endpoint object&#39;s metadata for insights into why a
+      particular endpoint was selected.</li>
 </ul>
-
-<h2 id="3-explicit-match-with-any-http-method-and-more-specific-route-constraints">3. Explicit Match with Any HTTP Method and More Specific Route Constraints</h2>
-
-<h2 id="4-explicit-match-with-any-http-method-and-less-specific-route-constraints">4. Explicit Match with Any HTTP Method and Less Specific Route Constraints</h2>
-
-<h2 id="5-order-of-registration-if-specificity-is-equal">5. Order of Registration (if specificity is equal)</h2>
-
-<h2 id="6-catch-all-endpoint-if-no-other-match-is-found">6. Catch-All Endpoint (if no other match is found)</h2>
-
-<h2 id="practical-implications-and-tips">Practical Implications and Tips</h2>
-<ul>
-  <li>• Mind Your Order: Be mindful of the order in which you register your endpoints, especially if</li>
-</ul>
-<p>they have similar patterns.</p>
-<ul>
-  <li>• Specificity Wins: Define your routes as specifically as possible to avoid ambiguity.</li>
-  <li>• Route Constraints: Use route constraints to narrow down the valid values for parameters.</li>
-  <li>• Catch-All with Caution: Catch-all endpoints can be useful, but use them sparingly to avoid</li>
-</ul>
-<p>unintended matches.</p>
-<ul>
-  <li>• Endpoint Metadata: Explore the Endpoint object&#39;s metadata for insights into why a</li>
-</ul>
-<p>particular endpoint was selected.</p>
 
 <h2 id="code-2">Code</h2>
 
@@ -1163,17 +895,18 @@ Order of Precedence: A Visual Summary</p>
       </div>
       <pre><code class="language-csharp">app.UseEndpoints(endpoints =&gt;
 {
-}</code></pre>
-    </div>
-  <p>endpoints.MapGet(&quot;/products/{id:int}&quot;, GetProductById); // Most specific
+  endpoints.MapGet(&quot;/products/{id:int}&quot;, GetProductById); // Most specific
   endpoints.MapGet(&quot;/products&quot;, GetAllProducts); // Less specific
   endpoints.MapGet(&quot;/{path?}&quot;, CatchAllHandler); // Catch-all
 });
-In this example:</p>
+In this example:</code></pre>
+    </div>
+  <ul>
+  <li>/products/123 will match the first endpoint (GetProductById).</li>
+</ul>
 <ul>
-  <li>• /products/123 will match the first endpoint (GetProductById).</li>
-  <li>• /products will match the second endpoint (GetAllProducts).</li>
-  <li>• /anything-else will match the catch-all endpoint (CatchAllHandler).</li>
+  <li>/products will match the second endpoint (GetAllProducts).</li>
+  <li>/anything-else will match the catch-all endpoint (CatchAllHandler).</li>
 </ul>
 
 <h2 id="resolving-ambiguity">Resolving Ambiguity</h2>
@@ -1184,10 +917,10 @@ Static Files in ASP.NET Core
 Static files are the assets that make up the visual presentation and functionality of your web
 application:</p>
 <ul>
-  <li>• HTML Files: The structure of your web pages.</li>
-  <li>• CSS Stylesheets: The styling and appearance of your content.</li>
-  <li>• JavaScript Files: The interactive elements and logic of your application.</li>
-  <li>• Images: Visual elements that enhance the user experience.</li>
+  <li>HTML Files: The structure of your web pages.</li>
+  <li>CSS Stylesheets: The styling and appearance of your content.</li>
+  <li>JavaScript Files: The interactive elements and logic of your application.</li>
+  <li>Images: Visual elements that enhance the user experience.</li>
 </ul>
 <p>ASP.NET Core provides the UseStaticFiles() middleware component to efficiently serve these static
 files directly to the browser without requiring any server-side processing.
@@ -1197,26 +930,18 @@ served. By default, this directory is named &quot;wwwroot&quot; and is located a
 However, you can customize this location if needed.
 UseStaticFiles() Middleware: Enabling Static File Serving</p>
 <ul>
-  <li>• Basic Usage: Calling app.UseStaticFiles(); with no arguments will serve static files from the</li>
+  <li>Basic Usage: Calling app.UseStaticFiles(); with no arguments will serve static files from the
+      default WebRoot directory.</li>
+  <li>Customization: You can customize the behavior of UseStaticFiles() by passing a
+      StaticFileOptions object:</li>
+  <li>FileProvider: Specify a different file provider (e.g., PhysicalFileProvider) to serve files
+           from a custom location.</li>
+  <li>RequestPath: Configure the base URL path for your static files (e.g., /static).</li>
+  <li>ContentTypeProvider: Customize how content types are determined for different file
+           extensions.</li>
+  <li>OnPrepareResponse: Perform additional actions on the response before it&#39;s sent to
+           the client.</li>
 </ul>
-<p>default WebRoot directory.</p>
-<ul>
-  <li>• Customization: You can customize the behavior of UseStaticFiles() by passing a</li>
-</ul>
-<p>StaticFileOptions object:</p>
-<ul>
-  <li>o FileProvider: Specify a different file provider (e.g., PhysicalFileProvider) to serve files</li>
-</ul>
-<p>from a custom location.</p>
-<ul>
-  <li>o RequestPath: Configure the base URL path for your static files (e.g., /static).</li>
-  <li>o ContentTypeProvider: Customize how content types are determined for different file</li>
-</ul>
-<p>extensions.</p>
-<ul>
-  <li>o OnPrepareResponse: Perform additional actions on the response before it&#39;s sent to</li>
-</ul>
-<p>the client.</p>
 
 <h2 id="code-3">Code</h2>
 
@@ -1243,134 +968,102 @@ app.UseStaticFiles(new StaticFileOptions()
 {
   FileProvider = new PhysicalFileProvider(
    Path.Combine(builder.Environment.ContentRootPath, &quot;mywebroot&quot;)
-}</code></pre>
+  )
+});
+// ... (rest of your middleware and endpoints) ...
+Explanation
+   1. Custom WebRoot: The WebRootPath property in WebApplicationOptions is set to &quot;myroot&quot;,
+      making &quot;myroot&quot; the default location for static files served by the first app.UseStaticFiles().
+   2. Default Static Files: The initial app.UseStaticFiles(); call serves files directly from the</code></pre>
     </div>
-  <p>)
-});</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">// ... (rest of your middleware and endpoints) ...</code></pre>
-    </div>
-  <p>Explanation</p>
-<ul>
-  <li>1. Custom WebRoot: The WebRootPath property in WebApplicationOptions is set to &quot;myroot&quot;,</li>
-</ul>
-<p>making &quot;myroot&quot; the default location for static files served by the first app.UseStaticFiles().</p>
-<ul>
-  <li>2. Default Static Files: The initial app.UseStaticFiles(); call serves files directly from the</li>
-</ul>
-<p>&quot;myroot&quot; directory. For instance, a request to /styles.css would look for a file named
+  <p>&quot;myroot&quot; directory. For instance, a request to /styles.css would look for a file named
       styles.css within &quot;myroot&quot;.</p>
-<ul>
-  <li>3. Custom Static Files Location: The second app.UseStaticFiles call configures a</li>
-</ul>
-<p>PhysicalFileProvider to serve files from a custom location: &quot;mywebroot&quot;. This directory is
-      located within the application&#39;s ContentRootPath (the project&#39;s root folder).</p>
+<ol>
+  <li>Custom Static Files Location: The second app.UseStaticFiles call configures a
+      PhysicalFileProvider to serve files from a custom location: &quot;mywebroot&quot;. This directory is
+      located within the application&#39;s ContentRootPath (the project&#39;s root folder).</li>
+</ol>
 
 <h2 id="important-considerations">Important Considerations</h2>
 <ul>
-  <li>• Security: Always be cautious about the files you expose as static content. Avoid placing</li>
+  <li>Security: Always be cautious about the files you expose as static content. Avoid placing
+      sensitive information in your WebRoot or custom directories.</li>
+  <li>Performance: Consider using caching and compression techniques to optimize the delivery
+      of static files.</li>
+  <li>Content Security Policy (CSP): Implement a CSP to mitigate cross-site scripting (XSS) attacks
+      that could exploit your static files.</li>
 </ul>
-<p>sensitive information in your WebRoot or custom directories.</p>
-<ul>
-  <li>• Performance: Consider using caching and compression techniques to optimize the delivery</li>
-</ul>
-<p>of static files.</p>
-<ul>
-  <li>• Content Security Policy (CSP): Implement a CSP to mitigate cross-site scripting (XSS) attacks</li>
-</ul>
-<p>that could exploit your static files.
-By effectively managing your static files and utilizing the UseStaticFiles() middleware, you can
+<p>By effectively managing your static files and utilizing the UseStaticFiles() middleware, you can
 enhance your ASP.NET Core application&#39;s performance and user experience.</p>
 <p>KeyPoints to remember:</p>
 
 <h2 id="routing-1">Routing</h2>
 <ul>
-  <li>• Purpose: Matches incoming HTTP requests to specific endpoints (controllers, Razor Pages,</li>
+  <li>Purpose: Matches incoming HTTP requests to specific endpoints (controllers, Razor Pages,
+      minimal APIs) in your application.</li>
+  <li>Middleware: <code>UseRouting</code> and <code>UseEndpoints</code> are essential middleware components for
+      routing.</li>
+  <li><code>UseRouting</code>: Analyzes the request URL and matches it to an endpoint.</li>
+  <li><code>UseEndpoints</code>: Executes the matched endpoint&#39;s code.</li>
+  <li>Map* Methods: Used to define endpoints for different HTTP methods (e.g., <code>MapGet</code>,
+      <code>MapPost</code>, MapControllerRoute).</li>
 </ul>
-<p>minimal APIs) in your application.</p>
-<ul>
-  <li>• Middleware: UseRouting and UseEndpoints are essential middleware components for</li>
-</ul>
-<p>routing.</p>
-<ul>
-  <li>o UseRouting: Analyzes the request URL and matches it to an endpoint.</li>
-  <li>o UseEndpoints: Executes the matched endpoint&#39;s code.</li>
-  <li>• Map* Methods: Used to define endpoints for different HTTP methods (e.g., MapGet,</li>
-</ul>
-<p>MapPost, MapControllerRoute).</p>
 
 <h2 id="endpoint-selection-order">Endpoint Selection Order</h2>
 <ul>
-  <li>• Specificity: More specific routes (with more parameters or constraints) take precedence</li>
-</ul>
-<p>over less specific ones.</p>
-<ul>
-  <li>• Registration Order: If multiple routes are equally specific, the one registered first wins.</li>
-  <li>• HTTP Method: Routes with an exact method match are preferred.</li>
-  <li>• Route Constraints: Routes with more restrictive constraints are favored.</li>
-  <li>• Catch-All: A fallback endpoint handles unmatched requests.</li>
+  <li>Specificity: More specific routes (with more parameters or constraints) take precedence
+      over less specific ones.</li>
+  <li>Registration Order: If multiple routes are equally specific, the one registered first wins.</li>
+  <li>HTTP Method: Routes with an exact method match are preferred.</li>
+  <li>Route Constraints: Routes with more restrictive constraints are favored.</li>
+  <li>Catch-All: A fallback endpoint handles unmatched requests.</li>
 </ul>
 
 <h2 id="route-parameters-1">Route Parameters</h2>
 <ul>
-  <li>• Types: Required ({id}), optional ({id?}), default value ({id=123}).</li>
-  <li>• Access: Parameter values are accessed through context.Request.RouteValues.</li>
+  <li>Types: Required ({id}), optional ({id?}), default value ({id=123}).</li>
+  <li>Access: Parameter values are accessed through context.Request.RouteValues.</li>
 </ul>
 
 <h2 id="route-constraints-1">Route Constraints</h2>
 <ul>
-  <li>• Purpose: Restrict the allowed values for route parameters.</li>
-  <li>• Built-in: int, bool, datetime, guid, regex, length, min, max, range, etc.</li>
-  <li>• Custom: Create classes implementing IRouteConstraint to define your own validation logic.</li>
+  <li>Purpose: Restrict the allowed values for route parameters.</li>
+  <li>Built-in: int, bool, datetime, guid, regex, length, min, max, range, etc.</li>
+  <li>Custom: Create classes implementing IRouteConstraint to define your own validation logic.</li>
 </ul>
 
 <h2 id="getendpoint-1">GetEndpoint()</h2>
 <ul>
-  <li>• Purpose: Retrieves information about the matched endpoint.</li>
-  <li>• Usage: Call context.GetEndpoint() within middleware after UseRouting.</li>
-  <li>• Information: Access endpoint properties like DisplayName, route pattern, and metadata.</li>
+  <li>Purpose: Retrieves information about the matched endpoint.</li>
+  <li>Usage: Call context.GetEndpoint() within middleware after <code>UseRouting</code>.</li>
+  <li>Information: Access endpoint properties like DisplayName, route pattern, and metadata.</li>
 </ul>
 
 <h2 id="static-files">Static Files</h2>
 <ul>
-  <li>• WebRoot: The default directory from which static files are served (usually &quot;wwwroot&quot;).</li>
-  <li>• UseStaticFiles(): Middleware for serving static files (HTML, CSS, JavaScript, images).</li>
-  <li>• Customization: Use StaticFileOptions to change the file provider, request path, or other</li>
+  <li>WebRoot: The default directory from which static files are served (usually &quot;wwwroot&quot;).</li>
+  <li>UseStaticFiles(): Middleware for serving static files (HTML, CSS, JavaScript, images).</li>
+  <li>Customization: Use StaticFileOptions to change the file provider, request path, or other
+      settings.</li>
 </ul>
-<p>settings.</p>
 
 <h2 id="key-interview-tips">Key Interview Tips</h2>
 <ul>
-  <li>• Explain the Flow: Clearly articulate how a request flows through the routing middleware and</li>
-</ul>
-<p>how endpoints are selected.</p>
-<ul>
-  <li>• Code Examples: Be prepared to write code snippets demonstrating endpoint registration,</li>
-</ul>
-<p>parameter usage, and constraint application.</p>
-<ul>
-  <li>• Troubleshooting: Explain how you would diagnose and fix common routing issues (e.g., 404</li>
-</ul>
-<p>errors, ambiguous matches).</p>
-<ul>
-  <li>• Best Practices: Discuss how to design clean, maintainable, and secure routes.</li>
+  <li>Explain the Flow: Clearly articulate how a request flows through the routing middleware and
+      how endpoints are selected.</li>
+  <li>Code Examples: Be prepared to write code snippets demonstrating endpoint registration,
+      parameter usage, and constraint application.</li>
+  <li>Troubleshooting: Explain how you would diagnose and fix common routing issues (e.g., 404
+      errors, ambiguous matches).</li>
+  <li>Best Practices: Discuss how to design clean, maintainable, and secure routes.</li>
 </ul>
 
 <hr style="margin: 3rem 0 2rem 0; border: none; border-top: 1px solid var(--border-subtle);" />
 <section class="cheatsheet-section" aria-labelledby="cheat-sheet-quick-reference">
   <h2 id="cheat-sheet-quick-reference">Cheat Sheet &amp; Quick Reference</h2>
   <p>Essential syntax reference matrices, core definitions, and key takeaways extracted from the companion Cheat Sheet.</p>
-  <p>Section 5 – Routing – Cheat Sheet</p>
   <h3 id="introduction-to-routing">Introduction to Routing</h3>
-  <p>Routing is a process of matching incoming HTTP requests by checking the HTTP method and url; and
+<p>Routing is a process of matching incoming HTTP requests by checking the HTTP method and url; and
 then invoking corresponding endpoints.</p>
   <h3 id="routing-userouting-and-useendpoints">Routing - UseRouting and UseEndPoints</h3>
 
@@ -1385,7 +1078,7 @@ then invoking corresponding endpoints.</p>
       <pre><code class="language-csharp">UseRouting( )
 app.UseRouting();</code></pre>
     </div>
-    <p>Enables routing and selects an appropriate end point based on the url path and HTTP method.</p>
+  <p>Enables routing and selects an appropriate end point based on the url path and HTTP method.</p>
   <h3 id="useendpoints">UseEndPoints( )</h3>
 
     <div class="code-block">
@@ -1403,12 +1096,10 @@ endpoints.MapGet(…);
 endpoints.MapPost(…);
 );
 Executes the appropriate endpoint based on the endpoint selected by the above UseRouting()
+method.
 }</code></pre>
     </div>
-    <p>method.</p>
-  <h3 id="map-mapget-mappost">Map, MapGet, MapPost</h3>
-  <p>endpoints.Map( )
-endpoints.Map(&quot;path&quot;, async (HttpContext context) =&gt;</p>
+    <h3 id="map-mapget-mappost">Map, MapGet, MapPost</h3>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1418,13 +1109,13 @@ endpoints.Map(&quot;path&quot;, async (HttpContext context) =&gt;</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">{
+      <pre><code class="language-csharp">endpoints.Map( )
+endpoints.Map(&quot;path&quot;, async (HttpContext context) =&gt;
+{
 //code
 });</code></pre>
     </div>
-    <p>Executes the endpoint when a HTTP request&#39;s url path begins with the specified path.
-endpoints.MapGet( )
-endpoints.MapGet(&quot;path&quot;, async (HttpContext context) =&gt;</p>
+  <p>Executes the endpoint when a HTTP request&#39;s url path begins with the specified path.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1434,13 +1125,13 @@ endpoints.MapGet(&quot;path&quot;, async (HttpContext context) =&gt;</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">{
+      <pre><code class="language-csharp">endpoints.MapGet( )
+endpoints.MapGet(&quot;path&quot;, async (HttpContext context) =&gt;
+{
 //code
 });</code></pre>
     </div>
-    <p>Executes the endpoint when a HTTP GET request&#39;s url path begins with the specified path.
-endpoints.MapPost( )
-endpoints.MapPost(&quot;path&quot;, async (HttpContext context) =&gt;</p>
+  <p>Executes the endpoint when a HTTP GET request&#39;s url path begins with the specified path.</p>
 
     <div class="code-block">
       <div class="code-toolbar">
@@ -1450,11 +1141,13 @@ endpoints.MapPost(&quot;path&quot;, async (HttpContext context) =&gt;</p>
           <span class="copy-feedback">Copy</span>
         </button>
       </div>
-      <pre><code class="language-csharp">{
+      <pre><code class="language-csharp">endpoints.MapPost( )
+endpoints.MapPost(&quot;path&quot;, async (HttpContext context) =&gt;
+{
 //code
 });</code></pre>
     </div>
-    <p>Executes the endpoint when a HTTP POST request&#39;s url path begins with the specified path.</p>
+  <p>Executes the endpoint when a HTTP POST request&#39;s url path begins with the specified path.</p>
   <h3 id="getendpoint-2">GetEndpoint( )</h3>
 
     <div class="code-block">
@@ -1467,26 +1160,26 @@ endpoints.MapPost(&quot;path&quot;, async (HttpContext context) =&gt;</p>
       </div>
       <pre><code class="language-csharp">context.GetEndpoint();</code></pre>
     </div>
-    <p>Returns an instance of Microsoft.AspNetCore.Http.Endpoint type, which represents an endpoint.
+  <p>Returns an instance of Microsoft.AspNetCore.Http.Endpoint type, which represents an endpoint.
 That instance contains two important properties: DisplayName, RequestDelegate.</p>
   <h3 id="route-parameters-2">Route Parameters</h3>
-  <p>&quot;{parameter}&quot;
+<p>&quot;{parameter}&quot;
 A route parameter can match with any value.</p>
   <h3 id="default-route-parameters">Default Route Parameters</h3>
-  <p>&quot;{parameter=default_value}&quot;
+<p>&quot;{parameter=default_value}&quot;
 A route parameter with default value matches with any value.
 It also matches with empty value. In this case, the default value will be considered into the
 parameter.</p>
   <h3 id="optional-route-parameters">Optional Route Parameters</h3>
-  <p>&quot;{parameter?}&quot;
+<p>&quot;{parameter?}&quot;
 &quot;?&quot; indicates an optional parameter.
 That means, it matches with a value or empty value also.</p>
   <h3 id="route-constraints-2">Route Constraints</h3>
-  <p>Route Parameter with Constraint:
+<p>Route Parameter with Constraint:
 &quot;{parameter:constraint}&quot;
 A route parameter that has a constraint can match with a value that satisfies the given constraint.</p>
   <h3 id="multiple-constraints">Multiple Constraints</h3>
-  <p>&quot;{parameter:constraint1:constraint2}&quot;
+<p>&quot;{parameter:constraint1:constraint2}&quot;
 A route parameter can have more than one constraint, separated with colon ( : ).
 int
 Matches with any integer.
@@ -1494,11 +1187,11 @@ Eg: {id:int} matches with 123456789, -123456789
 bool
 Matches with true or false. Case-insensitive.
 Eg: {active:bool} matches with true, false, TRUE, FALSE</p>
-  <p>datetime
+<p>datetime
 Matches a valid DateTime value with formats &quot;yyyy-MM-dd hh:mm:ss tt&quot; and &quot;MM/dd/yyyy
 hh:mm:ss tt&quot;.
 Eg: {id:datetime} matches with 2030-01-01%2011:59%20pm</p>
-  <p>decimal
+<p>decimal
 Matches with a valid decimal value.
 Eg: {price:decimal} matches with 49.99, -1, 0.01
 long
@@ -1518,7 +1211,7 @@ length(min,max)
 Matches with a string that has number of characters between given minimum and maximum length
 (both numbers including).
 Eg: {username:length(4, 7)} matches with John, Allen, William</p>
-  <p>length(value)
+<p>length(value)
 Matches with a string that has exactly specified number of characters.
 Eg: {tin:length(9)} matches with 987654321
 min(value)
@@ -1553,39 +1246,19 @@ number, such as 123-456</p>
       <pre><code class="language-csharp">public class ClassName : IRouteConstraint
 {
  public bool Match(HttpContext? HttpContext, IRouter? route, string routeKey,
-}</code></pre>
-    </div>
-    <p>RouteValueDictionary values, RouteDirection routeDirection)</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+RouteValueDictionary values, RouteDirection routeDirection)
+ {
   //return true or false
- }</code></pre>
-    </div>
-    <p>builder.Services.AddRouting(options =&gt;</p>
-
-    <div class="code-block">
-      <div class="code-toolbar">
-        <span class="language-label">C#</span>
-        <button class="copy-code-btn" type="button" aria-label="Copy code">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span class="copy-feedback">Copy</span>
-        </button>
-      </div>
-      <pre><code class="language-csharp">{
+ }
+}
+builder.Services.AddRouting(options =&gt;
+{
  options.ConstraintMap.Add(&quot;name&quot;, typeof(ClassName));
 }); //adding the custom constraint to routing</code></pre>
     </div>
     <h3 id="endpoint-selection-order-1">Endpoint Selection Order</h3>
   <h3 id="top-is-highest-precedence-will-be-evaluated-first">Top is highest precedence (will be evaluated first)</h3>
-  <p>1: URL template with more segments.
+<p>1: URL template with more segments.
 Eg: &quot;a/b/c/d&quot; is higher than &quot;a/b/c&quot;.
 2: URL template with literal text has more precedence than a parameter segment.
 Eg: &quot;a/b&quot; is higher than &quot;a/{parameter}&quot;.
@@ -1615,13 +1288,13 @@ Eg: &quot;a/{b}&quot; is higher than &quot;a/**&quot;.</p>
       <nav class="bottom-nav" aria-label="Previous and Next Section Navigation">
         
       <a href="section-04.html" class="nav-card prev" aria-label="Previous Section: Sec 04 - Middleware">
-        <span class="nav-direction">← Previous Section</span>
+        <span class="nav-direction">&larr; Previous Section</span>
         <span class="nav-title">Sec 04: Middleware</span>
       </a>
     
         
       <a href="section-06.html" class="nav-card next" aria-label="Next Section: Sec 06 - Controllers &amp; IActionResult">
-        <span class="nav-direction">Next Section →</span>
+        <span class="nav-direction">Next Section &rarr;</span>
         <span class="nav-title">Sec 06: Controllers &amp; IActionResult</span>
       </a>
     
@@ -1629,8 +1302,8 @@ Eg: &quot;a/{b}&quot; is higher than &quot;a/**&quot;.</p>
 
       <!-- Section Footer -->
       <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); color: var(--text-dim); font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;" role="contentinfo">
-        <span>ASP.NET Core Masterclass — Offline Documentation Portal</span>
-        <a href="#top" style="color: var(--text-muted); text-decoration: none;">↑ Back to top</a>
+        <span>ASP.NET Core Masterclass &mdash; Offline Documentation Portal</span>
+        <a href="#top" style="color: var(--text-muted); text-decoration: none;">&uarr; Back to top</a>
       </footer>
     </main>
 
@@ -1668,10 +1341,6 @@ Eg: &quot;a/{b}&quot; is higher than &quot;a/**&quot;.</p>
         </li>
       
         <li class="toc-item">
-          <a href="#5-integer-min-and-regex-constraint-salesreport" class="toc-link">5. Integer, Min, and Regex Constraint: /salesreport</a>
-        </li>
-      
-        <li class="toc-item">
           <a href="#custom-route-constraint-classes" class="toc-link">Custom Route Constraint Classes</a>
         </li>
       
@@ -1693,26 +1362,6 @@ Eg: &quot;a/{b}&quot; is higher than &quot;a/**&quot;.</p>
       
         <li class="toc-item">
           <a href="#endpoint-selection-algorithm" class="toc-link">Endpoint Selection Algorithm</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#3-explicit-match-with-any-http-method-and-more-specific-route-constraints" class="toc-link">3. Explicit Match with Any HTTP Method and More Specific Route Constraints</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#4-explicit-match-with-any-http-method-and-less-specific-route-constraints" class="toc-link">4. Explicit Match with Any HTTP Method and Less Specific Route Constraints</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#5-order-of-registration-if-specificity-is-equal" class="toc-link">5. Order of Registration (if specificity is equal)</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#6-catch-all-endpoint-if-no-other-match-is-found" class="toc-link">6. Catch-All Endpoint (if no other match is found)</a>
-        </li>
-      
-        <li class="toc-item">
-          <a href="#practical-implications-and-tips" class="toc-link">Practical Implications and Tips</a>
         </li>
       
         <li class="toc-item">

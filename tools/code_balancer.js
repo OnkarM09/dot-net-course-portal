@@ -103,8 +103,18 @@ export function balanceCodeBlock(code) {
     fixedLines.push(line);
   }
 
+  // Handle wrapped multi-line comment continuation for example JSON
+  for (let i = 0; i < fixedLines.length; i++) {
+    if (i > 0 && fixedLines[i - 1].trim().startsWith('//') && fixedLines[i - 1].includes('{') && fixedLines[i].includes('}')) {
+      if (!fixedLines[i].trim().startsWith('//')) {
+        fixedLines[i] = '// ' + fixedLines[i].trim();
+      }
+    }
+  }
+
   let { opens, closes } = countCodeBraces(fixedLines.join('\n'));
 
+  // Clean leading fake closing braces
   while (closes > opens && fixedLines.length > 0) {
     const first = fixedLines[0].trim();
     if (first === '}' || first === '};' || first === '});' || first === '} }' || first === '} },') {
@@ -133,6 +143,44 @@ export function balanceCodeBlock(code) {
     break;
   }
 
+  // Clean duplicate consecutive opening braces e.g. '{' followed by '{' without nested closing
+  for (let i = 0; i < fixedLines.length - 1 && opens > closes; i++) {
+    if (fixedLines[i].trim() === '{' && fixedLines[i + 1].trim() === '{') {
+      fixedLines.splice(i + 1, 1);
+      opens--;
+      i--;
+    }
+  }
+
+  // If closes > opens, scan for declarations/signatures where opening '{' was stripped and restore it
+  if (closes > opens) {
+    const signaturePats = [
+      /^(public|private|protected|internal|static|async|abstract|override|virtual|sealed)?\s*(class|interface|record|struct|enum)\s+[A-Za-z0-9_<>]+(?:\s*:[^{]*)?$/,
+      /^(public|private|protected|internal|static|async|virtual|override|abstract)?\s*[A-Za-z0-9_<>\[\]\?]+\s+[A-Za-z0-9_]+\s*\([^\)]*\)$/,
+      /^(if|else\s+if|for|foreach|while|switch)\s*\(.*\)$/,
+      /^(else|try|finally)$/,
+      /^catch(?:\s*\(.*\))?$/,
+      /^(builder|app|services|options|endpoints)\.[A-Za-z0-9_]+\(.*=>\s*$/
+    ];
+
+    for (let i = 0; i < fixedLines.length && closes > opens; i++) {
+      const lineTrim = fixedLines[i].trim();
+      const nextLineTrim = i + 1 < fixedLines.length ? fixedLines[i + 1].trim() : '';
+
+      if (lineTrim.endsWith('{')) continue;
+
+      const matchesSig = signaturePats.some(p => p.test(lineTrim));
+      if (matchesSig && !nextLineTrim.startsWith('{')) {
+        const indentMatch = fixedLines[i].match(/^(\s*)/);
+        const indent = indentMatch ? indentMatch[1] : '';
+        fixedLines.splice(i + 1, 0, indent + '{');
+        opens++;
+        i++;
+      }
+    }
+  }
+
+  // Fallbacks if still unbalanced
   while (closes > opens) {
     fixedLines.unshift('{');
     opens++;

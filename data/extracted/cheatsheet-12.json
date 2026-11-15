@@ -268,17 +268,10 @@
           "type": "list_item",
           "page": 2,
           "lines": [
-            "   • The developer of higher-level module SHOULD WAIT until the completion of development of"
-          ],
-          "text": "   • The developer of higher-level module SHOULD WAIT until the completion of development of"
-        },
-        {
-          "type": "prose",
-          "page": 2,
-          "lines": [
+            "   • The developer of higher-level module SHOULD WAIT until the completion of development of",
             "      lower-level module."
           ],
-          "text": "      lower-level module."
+          "text": "   • The developer of higher-level module SHOULD WAIT until the completion of development of\n      lower-level module."
         },
         {
           "type": "list_item",
@@ -489,17 +482,10 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • Inversion of Control (IoC) is a design pattern (reusable solution for a common problem),"
-          ],
-          "text": "   • Inversion of Control (IoC) is a design pattern (reusable solution for a common problem),"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • Inversion of Control (IoC) is a design pattern (reusable solution for a common problem),",
             "      which suggests \"IoC container\" for implementation of Dependency Inversion Principle (DIP)."
           ],
-          "text": "      which suggests \"IoC container\" for implementation of Dependency Inversion Principle (DIP)."
+          "text": "   • Inversion of Control (IoC) is a design pattern (reusable solution for a common problem),\n      which suggests \"IoC container\" for implementation of Dependency Inversion Principle (DIP)."
         },
         {
           "type": "list_item",
@@ -521,17 +507,10 @@
           "type": "list_item",
           "page": 4,
           "lines": [
-            "   • It can be implemented by other design patterns such as events, service locator, dependency"
-          ],
-          "text": "   • It can be implemented by other design patterns such as events, service locator, dependency"
-        },
-        {
-          "type": "prose",
-          "page": 4,
-          "lines": [
+            "   • It can be implemented by other design patterns such as events, service locator, dependency",
             "      injection etc."
           ],
-          "text": "      injection etc."
+          "text": "   • It can be implemented by other design patterns such as events, service locator, dependency\n      injection etc."
         }
       ],
       "char_count_raw": 430,
@@ -668,16 +647,30 @@
           "type": "prose",
           "page": 5,
           "lines": [
-            "All dependencies should be added into the IServiceCollection (acts as IoC container).",
+            "All dependencies should be added into the IServiceCollection (acts as IoC container)."
+          ],
+          "text": "All dependencies should be added into the IServiceCollection (acts as IoC container)."
+        },
+        {
+          "type": "code",
+          "page": 5,
+          "lines": [
             "builder.Services.Add(",
             " new ServiceDescriptor(",
             "  typeof (Interface),",
-            "  typeof (Service)",
+            "  typeof (Service)"
+          ],
+          "text": "builder.Services.Add(\n new ServiceDescriptor(\n  typeof (Interface),\n  typeof (Service)"
+        },
+        {
+          "type": "prose",
+          "page": 5,
+          "lines": [
             "  ServiceLifetime.LifeTime //Transient, Scoped, Singleton",
             " )",
             ");"
           ],
-          "text": "All dependencies should be added into the IServiceCollection (acts as IoC container).\nbuilder.Services.Add(\n new ServiceDescriptor(\n  typeof (Interface),\n  typeof (Service)\n  ServiceLifetime.LifeTime //Transient, Scoped, Singleton\n )\n);"
+          "text": "  ServiceLifetime.LifeTime //Transient, Scoped, Singleton\n )\n);"
         },
         {
           "type": "heading",
@@ -691,49 +684,28 @@
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • Dependency injection (DI) is a design pattern, which is a technique for achieving \"Inversion"
-          ],
-          "text": "   • Dependency injection (DI) is a design pattern, which is a technique for achieving \"Inversion"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • Dependency injection (DI) is a design pattern, which is a technique for achieving \"Inversion",
             "      of Control (IoC)\" between clients and their dependencies."
           ],
-          "text": "      of Control (IoC)\" between clients and their dependencies."
+          "text": "   • Dependency injection (DI) is a design pattern, which is a technique for achieving \"Inversion\n      of Control (IoC)\" between clients and their dependencies."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • It allows you to inject (supply) a concrete implementation object of a low-level component"
-          ],
-          "text": "   • It allows you to inject (supply) a concrete implementation object of a low-level component"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • It allows you to inject (supply) a concrete implementation object of a low-level component",
             "      into a high-level component."
           ],
-          "text": "      into a high-level component."
+          "text": "   • It allows you to inject (supply) a concrete implementation object of a low-level component\n      into a high-level component."
         },
         {
           "type": "list_item",
           "page": 5,
           "lines": [
-            "   • The client class receives the dependency object as a parameter either in the constructor or"
-          ],
-          "text": "   • The client class receives the dependency object as a parameter either in the constructor or"
-        },
-        {
-          "type": "prose",
-          "page": 5,
-          "lines": [
+            "   • The client class receives the dependency object as a parameter either in the constructor or",
             "      in a method."
           ],
-          "text": "      in a method."
+          "text": "   • The client class receives the dependency object as a parameter either in the constructor or\n      in a method."
         }
       ],
       "char_count_raw": 637,
@@ -896,20 +868,20 @@
           "text": "(Transient, Scoped, Singleton)\nA service lifetime indicates when a new object of the service has to be created by the IoC / DI\ncontainer."
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 7,
           "lines": [
-            "1. Transient: Per injection"
+            "   1. Transient: Per injection"
           ],
-          "text": "1. Transient: Per injection"
+          "text": "   1. Transient: Per injection"
         },
         {
-          "type": "heading",
+          "type": "list_item",
           "page": 7,
           "lines": [
-            "2. Scoped: Per scope (browser request)"
+            "   2. Scoped: Per scope (browser request)"
           ],
-          "text": "2. Scoped: Per scope (browser request)"
+          "text": "   2. Scoped: Per scope (browser request)"
         },
         {
           "type": "list_item",
@@ -1070,7 +1042,7 @@
           "text": "Transient"
         },
         {
-          "type": "prose",
+          "type": "code",
           "page": 8,
           "lines": [
             "builder.Services.AddTransient<IService, Service>(); //Transient Service"
@@ -1078,7 +1050,7 @@
           "text": "builder.Services.AddTransient<IService, Service>(); //Transient Service"
         },
         {
-          "type": "heading",
+          "type": "prose",
           "page": 8,
           "lines": [
             "Scoped"
@@ -1086,7 +1058,7 @@
           "text": "Scoped"
         },
         {
-          "type": "prose",
+          "type": "code",
           "page": 8,
           "lines": [
             "builder.Services.AddScoped<IService, Service>(); //Scoped Service"
@@ -1094,7 +1066,7 @@
           "text": "builder.Services.AddScoped<IService, Service>(); //Scoped Service"
         },
         {
-          "type": "heading",
+          "type": "prose",
           "page": 8,
           "lines": [
             "Singleton"
@@ -1102,7 +1074,7 @@
           "text": "Singleton"
         },
         {
-          "type": "prose",
+          "type": "code",
           "page": 8,
           "lines": [
             "builder.Services.AddSingleton<IService, Service>(); //Singleton Service"
@@ -1110,7 +1082,7 @@
           "text": "builder.Services.AddSingleton<IService, Service>(); //Singleton Service"
         },
         {
-          "type": "heading",
+          "type": "prose",
           "page": 8,
           "lines": [
             "Service Scope"
@@ -1673,17 +1645,10 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • https://autofac.readthedocs.io/en/latest/getting-started/index.html"
-          ],
-          "text": "   • https://autofac.readthedocs.io/en/latest/getting-started/index.html"
-        },
-        {
-          "type": "prose",
-          "page": 11,
-          "lines": [
+            "   • https://autofac.readthedocs.io/en/latest/getting-started/index.html",
             "Microsoft.Extensions.DependencyInjection"
           ],
-          "text": "Microsoft.Extensions.DependencyInjection"
+          "text": "   • https://autofac.readthedocs.io/en/latest/getting-started/index.html\nMicrosoft.Extensions.DependencyInjection"
         },
         {
           "type": "list_item",
@@ -1713,17 +1678,10 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • Decorators: Not supported"
-          ],
-          "text": "   • Decorators: Not supported"
-        },
-        {
-          "type": "heading",
-          "page": 11,
-          "lines": [
+            "   • Decorators: Not supported",
             "Autofac"
           ],
-          "text": "Autofac"
+          "text": "   • Decorators: Not supported\nAutofac"
         },
         {
           "type": "list_item",
@@ -1737,17 +1695,10 @@
           "type": "list_item",
           "page": 11,
           "lines": [
-            "   • Lifetimes: InstancePerDependency, InstancePerLifetimeScope, SingleInstance,"
+            "   • Lifetimes: InstancePerDependency, InstancePerLifetimeScope, SingleInstance,",
+            "      InstancePerOwned, InstancePerMatchingLifetimeScope"
           ],
-          "text": "   • Lifetimes: InstancePerDependency, InstancePerLifetimeScope, SingleInstance,"
-        },
-        {
-          "type": "heading",
-          "page": 11,
-          "lines": [
-            "InstancePerOwned, InstancePerMatchingLifetimeScope"
-          ],
-          "text": "InstancePerOwned, InstancePerMatchingLifetimeScope"
+          "text": "   • Lifetimes: InstancePerDependency, InstancePerLifetimeScope, SingleInstance,\n      InstancePerOwned, InstancePerMatchingLifetimeScope"
         },
         {
           "type": "list_item",

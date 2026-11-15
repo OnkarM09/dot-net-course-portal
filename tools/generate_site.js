@@ -62,8 +62,106 @@ function detectLanguage(code) {
   return { lang: 'csharp', label: 'C#' };
 }
 
+function formatProseText(text) {
+  if (!text) return '';
+  let safe = escapeHtml(redactForbidden(text));
+
+  // Fix double escaped tags if any
+  safe = safe
+    .replace(/&lt;code&gt;/g, '<code>')
+    .replace(/&lt;\/code&gt;/g, '</code>')
+    .replace(/&lt;p&gt;/g, '<p>')
+    .replace(/&lt;\/p&gt;/g, '</p>')
+    .replace(/&lt;span&gt;/g, '<span>')
+    .replace(/&lt;\/span&gt;/g, '</span>')
+    .replace(/&lt;strong&gt;/g, '<strong>')
+    .replace(/&lt;\/strong&gt;/g, '</strong>')
+    .replace(/&lt;em&gt;/g, '<em>')
+    .replace(/&lt;\/em&gt;/g, '</em>');
+
+  // Wrap HTML tag mentions in <code>
+  safe = safe.replace(/&lt;(table|div|span|p|a|form|input|button|header|footer|nav|ul|ol|li)&gt;/gi, '<code>&lt;$1&gt;</code>');
+  safe = safe.replace(/&lt;\/(table|div|span|p|a|form|input|button|header|footer|nav|ul|ol|li)&gt;/gi, '<code>&lt;/$1&gt;</code>');
+
+  // Wrap keywords in <code> if not already wrapped
+  const inlineCodeKeywords = [
+    'Program.cs', 'Startup.cs', 'appsettings.json', 'launchSettings.json',
+    'MapGet', 'MapPost', 'MapPut', 'MapDelete', 'MapGroup', 'UseRouting', 'UseEndpoints',
+    'IResult', 'IActionResult', 'DbContext', '[ApiController]', '[Route]', '[HttpGet]', '[HttpPost]'
+  ];
+  for (const kw of inlineCodeKeywords) {
+    const escaped = escapeHtml(kw);
+    const reg = new RegExp(`(?<!<code>)\\b${escaped.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b(?!<\\/code>)`, 'g');
+    safe = safe.replace(reg, `<code>${escaped}</code>`);
+  }
+
+  return safe;
+}
+
+function renderListBlock(items) {
+  if (!items || items.length === 0) return '';
+  const cleanedItems = items
+    .map(it => redactForbidden(it).replace(/^([•o\*\-▪\s]|&bull;)+/, '').trim())
+    .filter(Boolean);
+  if (cleanedItems.length === 0) return '';
+
+  const isNumbered = cleanedItems.every(it => /^\d+[\.\)]\s+/.test(it));
+  const tag = isNumbered ? 'ol' : 'ul';
+  let html = `<${tag}>\n`;
+  for (const it of cleanedItems) {
+    const textWithoutNum = isNumbered ? it.replace(/^\d+[\.\)]\s+/, '') : it;
+    html += `  <li>${formatProseText(textWithoutNum)}</li>\n`;
+  }
+  html += `</${tag}>\n`;
+  return html;
+}
+
+function renderProseBlock(text) {
+  const clean = redactForbidden(text).trim();
+  if (!clean) return '';
+
+  // Skip duplicated cheatsheet title
+  if (/^Section\s*\d+\s*[-–—].*Cheat\s*Sheet/i.test(clean)) {
+    return '';
+  }
+
+  // Promote recurring transitions into h3 subheadings
+  if (/^(Detailed Explanation of Code|Key Points to Remember|Basic Example:|Example:|Deep Dive & Internals|Architecture Overview)$/i.test(clean)) {
+    return `<h3>${escapeHtml(clean.replace(/:$/, ''))}</h3>\n`;
+  }
+
+  // If prose lines start with bullets (•, o, ▪, -)
+  const lines = clean.split('\n').map(l => l.trim()).filter(Boolean);
+  if (lines.length > 0 && lines.every(l => /^[•o\*\-▪]/.test(l))) {
+    return renderListBlock(lines);
+  }
+
+  if (lines.length > 1 && lines.some(l => /^[•o\*\-▪]/.test(l))) {
+    let out = '';
+    let curListItems = [];
+    for (const line of lines) {
+      if (/^[•o\*\-▪]/.test(line)) {
+        curListItems.push(line);
+      } else {
+        if (curListItems.length > 0) {
+          out += renderListBlock(curListItems);
+          curListItems = [];
+        }
+        out += `<p>${formatProseText(line)}</p>\n`;
+      }
+    }
+    if (curListItems.length > 0) {
+      out += renderListBlock(curListItems);
+    }
+    return out;
+  }
+
+  return `<p>${formatProseText(clean)}</p>\n`;
+}
+
 function renderCodeBlock(code) {
-  const balanced = balanceCodeBlock(code);
+  let balanced = balanceCodeBlock(code);
+  balanced = balanced.replace(/\n\s*In this code:\s*$/i, '');
   const { lang, label } = detectLanguage(balanced);
   const cleanCode = redactForbidden(balanced).trim();
 
@@ -82,7 +180,7 @@ function renderCodeBlock(code) {
 }
 
 function renderCallout(type, title, text) {
-  const cleanText = escapeHtml(redactForbidden(text));
+  const cleanText = formatProseText(text);
   const cleanTitle = escapeHtml(redactForbidden(title));
 
   return `
@@ -215,12 +313,7 @@ function generateArticleContent(secJson, cheatJson, searchEntries, secNum, secTi
     } else if (b.type === 'code') {
       html += renderCodeBlock(b.text);
     } else if (b.type === 'list') {
-      html += '<ul>\n';
-      for (const item of b.items) {
-        const cleanItem = redactForbidden(item).replace(/^[•o\*\-]\s+/, '').trim();
-        html += `  <li>${escapeHtml(cleanItem)}</li>\n`;
-      }
-      html += '</ul>\n';
+      html += renderListBlock(b.items);
     } else if (b.type === 'callout') {
       const t = b.text.trim();
       let calloutType = 'original';
@@ -239,10 +332,7 @@ function generateArticleContent(secJson, cheatJson, searchEntries, secNum, secTi
     } else if (b.type === 'diagram') {
       html += renderDiagram('Architecture & Concept Diagram', b.text);
     } else if (b.type === 'prose') {
-      const cleanProse = redactForbidden(b.text).trim();
-      if (cleanProse) {
-        html += `<p>${escapeHtml(cleanProse)}</p>\n`;
-      }
+      html += renderProseBlock(b.text);
     }
   }
 
@@ -337,17 +427,9 @@ function generateArticleContent(secJson, cheatJson, searchEntries, secNum, secTi
       } else if (cb.type === 'code') {
         html += renderCodeBlock(cb.text);
       } else if (cb.type === 'list') {
-        html += '  <ul>\n';
-        for (const item of cb.items) {
-          const itemText = redactForbidden(item).replace(/^[•o\*\-]\s+/, '').trim();
-          html += `    <li>${escapeHtml(itemText)}</li>\n`;
-        }
-        html += '  </ul>\n';
+        html += renderListBlock(cb.items);
       } else if (cb.type === 'prose') {
-        const proseText = redactForbidden(cb.text).trim();
-        if (proseText) {
-          html += `  <p>${escapeHtml(proseText)}</p>\n`;
-        }
+        html += renderProseBlock(cb.text);
       } else if (cb.type === 'diagram') {
         html += renderDiagram('Cheat Sheet Architecture Diagram', cb.text);
       }
@@ -445,7 +527,9 @@ function buildHeader(isRoot = false) {
 
     <div class="header-right">
       <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
-        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
         <span class="search-text">Search topics, syntax, concepts...</span>
         <kbd class="kbd-shortcut">Ctrl+K</kbd>
       </button>
@@ -462,7 +546,9 @@ function buildHeader(isRoot = false) {
   <!-- Top Navigation Header -->
   <header class="top-header" role="banner">
     <div class="header-left">
-      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">☰</button>
+      <button class="nav-toggle-btn" aria-label="Toggle Navigation Sidebar" aria-expanded="false" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
       <button class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Toggle Sidebar (Collapse/Expand)" aria-label="Toggle Sidebar" aria-expanded="true" type="button">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
         <span class="sidebar-toggle-text">« Collapse</span>
@@ -487,7 +573,9 @@ function buildHeader(isRoot = false) {
       </a>
 
       <button class="search-trigger-btn" aria-label="Search curriculum" type="button">
-        <span class="search-icon" aria-hidden="true">🔍</span>
+        <span class="search-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
         <span class="search-text">Search topics, syntax, concepts...</span>
         <kbd class="kbd-shortcut">Ctrl+K</kbd>
       </button>
@@ -557,14 +645,14 @@ async function generateAll() {
     // Build Prev/Next nav
     let prevHtml = prevSec ? `
       <a href="${prevSec.html_filename}" class="nav-card prev" aria-label="Previous Section: Sec ${prevSec.normalized_section} - ${escapeHtml(prevSec.title)}">
-        <span class="nav-direction">← Previous Section</span>
+        <span class="nav-direction">&larr; Previous Section</span>
         <span class="nav-title">Sec ${prevSec.normalized_section}: ${escapeHtml(prevSec.title)}</span>
       </a>
     ` : '<div></div>';
 
     let nextHtml = nextSec ? `
       <a href="${nextSec.html_filename}" class="nav-card next" aria-label="Next Section: Sec ${nextSec.normalized_section} - ${escapeHtml(nextSec.title)}">
-        <span class="nav-direction">Next Section →</span>
+        <span class="nav-direction">Next Section &rarr;</span>
         <span class="nav-title">Sec ${nextSec.normalized_section}: ${escapeHtml(nextSec.title)}</span>
       </a>
     ` : '<div></div>';
@@ -574,7 +662,7 @@ async function generateAll() {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Section ${secNum}: ${escapeHtml(secMeta.title)} — ASP.NET Core Masterclass</title>
+  <title>Section ${secNum}: ${escapeHtml(secMeta.title)} &mdash; ASP.NET Core Masterclass</title>
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
   <link rel="alternate icon" href="../favicon.ico">
   <link rel="stylesheet" href="../assets/css/docs.css">
@@ -598,15 +686,6 @@ async function generateAll() {
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg>
         <span>» Expand Sidebar</span>
       </button>
-
-      <!-- Breadcrumbs -->
-      <nav class="breadcrumbs" aria-label="Breadcrumb Navigation">
-        <a href="../index.html">Course Index</a>
-        <span class="crumb-sep" aria-hidden="true">/</span>
-        <span>Module ${secMeta.module_number}</span>
-        <span class="crumb-sep" aria-hidden="true">/</span>
-        <span style="color: var(--text-main); font-weight: 600;">Section ${secNum}</span>
-      </nav>
 
       <!-- Section Banner Header -->
       <header class="section-banner">
@@ -658,8 +737,8 @@ async function generateAll() {
 
       <!-- Section Footer -->
       <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); color: var(--text-dim); font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;" role="contentinfo">
-        <span>ASP.NET Core Masterclass — Offline Documentation Portal</span>
-        <a href="#top" style="color: var(--text-muted); text-decoration: none;">↑ Back to top</a>
+        <span>ASP.NET Core Masterclass &mdash; Offline Documentation Portal</span>
+        <a href="#top" style="color: var(--text-muted); text-decoration: none;">&uarr; Back to top</a>
       </footer>
     </main>
 
@@ -720,7 +799,10 @@ async function generateAll() {
             <span class="sidebar-sec-num">Sec ${sec.normalized_section}</span>
             <span>${escapeHtml(sec.title)}</span>
           </a>
-          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">${sec.page_count} pgs</span>
+          <span class="read-time-badge" style="font-size: 0.75rem; opacity: 0.85;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            ${sec.page_count} pgs
+          </span>
         </li>
       `;
     }
@@ -759,7 +841,7 @@ async function generateAll() {
         <td><span class="completion-indicator tag-pill">Pending</span></td>
         <td>
           <a href="sections/${sec.html_filename}" class="copy-code-btn" style="text-decoration: none; padding: 3px 8px; font-size: 0.8rem;">
-            Read →
+            Read &rarr;
           </a>
         </td>
       </tr>
@@ -771,7 +853,7 @@ async function generateAll() {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ASP.NET Core Masterclass — Architecture &amp; Documentation Portal</title>
+  <title>ASP.NET Core Masterclass &mdash; Architecture &amp; Documentation Portal</title>
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="alternate icon" href="favicon.ico">
   <link rel="stylesheet" href="assets/css/docs.css">
@@ -793,12 +875,14 @@ async function generateAll() {
 
       <div style="margin-bottom: 2.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
         <button class="search-trigger-btn" style="padding: 10px 20px; font-size: 1rem; border-radius: 10px; background: var(--bg-surface-elevated); border-color: var(--accent-primary);" type="button">
-          <span aria-hidden="true">🔍</span>
+          <span class="search-icon" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </span>
           <span>Open Global Search</span>
           <kbd class="kbd-shortcut">Ctrl+K</kbd>
         </button>
         <a href="sections/section-01.html" class="hero-cta-btn">
-          Start Section 01: Introduction →
+          Start Section 01: Introduction &rarr;
         </a>
       </div>
 
